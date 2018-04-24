@@ -5,11 +5,11 @@ import sphinx_bootstrap_theme
 # Customize for the specific site. Any options in the html_theme_options
 # dictionary below may be overriden here
 site_theme_options = {
-    'navbar_title': 'Curriculum Module',
+    'navbar_title': 'Curriculum Docs',
     'navbar_site_name': "Pages",
 }
 
-project = 'LaunchCode Curriculum Module'
+project = 'LaunchCode Curriculum Docs'
 
 # -- Project information -----------------------------------------------------
 
