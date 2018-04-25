@@ -1,2 +1,4 @@
 #! /bin/sh
-sphinx-build -a -b html . docs
+python tools/prebuild.py
+sphinx-build -a -b html src docs
+python tools/postbuild.py
