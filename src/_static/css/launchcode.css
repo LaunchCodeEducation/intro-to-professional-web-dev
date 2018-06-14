@@ -11,12 +11,17 @@ code {
     margin-right: 10px;
 }
 /* Trick to prevent section headings from hiding behind the navbar */
-.section { 
+.section {
     margin-top: -60px;
     padding-top: 60px;
 }
+/* Allow scrolling of dropdown */
+.dropdown-menu.globaltoc {
+  max-height: calc(100vh - 60px);
+  overflow: scroll;
+}
 
-/* Aside Boxes */
+/* Aside Boxes and Admonitions  */
 aside {
     padding: 2em;
     padding-top: 1em;
@@ -83,6 +88,50 @@ aside::before {
     content: '🚀 ';
 }
 
+admonition {
+    padding: 2em;
+    padding-top: 1em;
+    border-radius: 2px;
+    margin: 2em;
+    /*border: 1px solid #eee;*/
+    box-shadow: 0 4px 10px 0 #eee;
+}
+
+admonition::before {
+    position: relative;
+    left: -2em;
+    /*top: -1em;*/
+    padding: 0.5em;
+    padding-right: 1em;
+    font-family: "Nexa black";
+    color: rgb(54, 74, 95);
+    border-bottom: 1px solid #eee;
+}
+
+.admonition-note::before {
+    content: "✶ Note";
+}
+
+.admonition-warning::before {
+    content: "⚠️ Warning";
+}
+
+.admonition-hint::before {
+    content: "🔎 Hint";
+}
+
+.admonition-tip::before {
+    content: "🎻 Pro Tip";
+}
+
+.content admonition p {
+    margin: 0;
+    margin-top: 1em;
+}
+
+.content admonition p:first-child {
+    margin-top: 2em;
+}
 /* */
 
 pre {
