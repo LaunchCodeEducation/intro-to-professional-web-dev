@@ -8,6 +8,7 @@ from recommonmark.transform import AutoStructify
 site_theme_options = {
     'navbar_title': 'Curriculum Docs',
     'navbar_site_name': "Pages",
+    'bootswatch_theme': "codergirl",
 }
 
 project = 'LaunchCode Curriculum Docs'
@@ -72,7 +73,7 @@ html_theme = 'bootstrap'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # The logo that will appear in the navbar, relative to _static
-html_logo = '_static/images/logos/lc-logo.svg'
+html_logo = '_static/images/logos/codergirl-white.png'
 
 # Theme-specific options
 default_theme_options = {

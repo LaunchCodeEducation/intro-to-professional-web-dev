@@ -8,6 +8,8 @@ To set up a new curriculum module, see the `curriculum docs`_.
 .. toctree::
    :maxdepth: 2
 
+   tests
+
 .. _@LaunchCodeEducation: https://github.com/launchcodeeducation
 .. _@LaunchCoderGirl: https://github.com/LaunchCoderGirlSTL
 .. _curriculum docs: https://education.launchcode.org/curriculum-docs/
