@@ -10,6 +10,8 @@ Nulla scelerisque orci leo, semper tincidunt neque eleifend vel. Nullam accumsan
 Images and Figures
 ------------------
 
+Images and figures should be full-width unless the `:width:` or `:height:` are specified. Figure captions should be italicized. 
+
 .. image:: /_static/images/mentor-center.jpg
 
 .. figure:: /_static/images/peabody.jpg
@@ -19,8 +21,34 @@ Images and Figures
 Bonus Missions
 --------------
 
+Headings with the text "Bonus Mission" or "Bonus Missions" should have a rocket icon inserted before the heading via CSS.
+
 Bonus Mission
 ^^^^^^^^^^^^^
 
+Since this utilizes the heading's automatically-generated `id` attribute, it won't work if there are multiple such headings on the same page.
 
+Tables
+------
+
+
+Tables rows should alternate background color.
+
++------------------------+------------+----------+----------+
+| Header row, column 1   | Header 2   | Header 3 | Header 4 |
+| (header rows optional) |            |          |          |
++========================+============+==========+==========+
+| body row 1, column 1   | column 2   | column 3 | column 4 |
++------------------------+------------+----------+----------+
+| body row 2             | ...        | ...      |          |
++------------------------+------------+----------+----------+
+
+=====  =====  =======
+A      B      A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======
 
