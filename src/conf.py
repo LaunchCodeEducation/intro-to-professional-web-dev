@@ -149,7 +149,7 @@ html_static_path = ['_static']
 html_sidebars = {
     '**': ['localtoc.html'],
     'index': []
-    }
+}
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
