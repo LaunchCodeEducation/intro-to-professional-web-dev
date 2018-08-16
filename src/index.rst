@@ -5,12 +5,6 @@ This repository is a template for LaunchCode curriculum module sites to be hoste
 
 To set up a new curriculum module, see the `curriculum docs`_.
 
-.. toctree::
-   :maxdepth: 2
-
-   tests/styles
-
-
 .. _@LaunchCodeEducation: https://github.com/launchcodeeducation
 .. _@LaunchCoderGirl: https://github.com/LaunchCoderGirlSTL
 .. _curriculum docs: https://education.launchcode.org/curriculum-docs/
