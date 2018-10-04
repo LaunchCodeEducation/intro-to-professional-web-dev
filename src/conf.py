@@ -153,7 +153,8 @@ html_static_path = ['_static']
 html_sidebars = {
     '**': ['localtoc.html'],
     'index': [],
-    'search': []
+    'search': [],
+    'about': []
 }
 
 
