@@ -1,5 +1,9 @@
+a, a:hover, a:focus {
+	color: #df552d;
+}
+
 code {
-    color: #f47753;
+    color: #df552d;
     background-color: #f9f1ef;
 }
 .navbar-brand {
@@ -96,16 +100,19 @@ aside::before {
     content: '🚀 ';
 }
 
-admonition {
+div.admonition {
     padding: 2em;
     padding-top: 1em;
     border-radius: 2px;
     margin: 2em;
     /*border: 1px solid #eee;*/
     box-shadow: 0 4px 10px 0 #eee;
+    background-color: #fff;
+    border: none;
+    color: rgb(52, 74, 95);
 }
 
-admonition::before {
+.admonition-title {
     position: relative;
     left: -2em;
     /*top: -1em;*/
@@ -114,30 +121,59 @@ admonition::before {
     font-family: "Nexa black";
     color: rgb(54, 74, 95);
     border-bottom: 1px solid #eee;
+    display: inline-block;
 }
 
-.admonition-note::before {
-    content: "✶ Note";
+.admonition .admonition-title::before {
+    margin-right: .25em;
 }
 
-.admonition-warning::before {
-    content: "⚠️ Warning";
+.attention .admonition-title::before {
+    content: "📢 ";
 }
 
-.admonition-hint::before {
-    content: "🔎 Hint";
+.caution .admonition-title::before {
+    content: "⚠️ ";
 }
 
-.admonition-tip::before {
-    content: "🎻 Pro Tip";
+.danger .admonition-title::before {
+    content: "🧨 ";
 }
 
-.content admonition p {
+.error .admonition-title::before {
+    content: "🚨 ";
+}
+
+.hint .admonition-title::before {
+    content: "🔎 ";
+}
+
+.important .admonition-title::before {
+    content: "🔑 ";
+}
+
+.note .admonition-title::before {
+    content: "📘 ";
+}
+
+.tip .admonition-title::before {
+    content: "💡 ";
+}
+
+.warning .admonition-title::before {
+    content: "⚠️ ";
+}
+
+.admonition-generic .admonition-title::before {
+    content: "✱ ";
+}
+
+.content .admonition p.last {
     margin: 0;
     margin-top: 1em;
 }
 
-.content admonition p:first-child {
+.content .admonition p.first {
     margin-top: 2em;
 }
 /* */
