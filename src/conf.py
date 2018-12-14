@@ -133,6 +133,7 @@ default_theme_options = {
 
     'bootswatch_theme': "launchcode",
     'bootstrap_version': "3",
+    'html_logo_alt_text': 'LaunchCode logo',
 }
 
 html_theme_options = {**default_theme_options, **site_theme_options}
