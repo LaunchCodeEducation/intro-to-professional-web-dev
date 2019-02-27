@@ -6,7 +6,7 @@ from recommonmark.transform import AutoStructify
 # Customize for the specific site. Any options in the html_theme_options
 # dictionary below may be overriden here
 site_theme_options = {
-    'navbar_title': 'Intro to Web Dev',
+    'navbar_title': '',
     'navbar_site_name': "Pages",
     'bootswatch_theme': 'launchcode',
 }
@@ -30,21 +30,18 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.todo',
+    'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
 ]
 
+autosectionlabel_prefix_document = True
+
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['./_templates']
 
 # The suffix(es) of source filenames.
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst']
 
-# Configure markdown parsing
-source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
-
-html_copy_source = True
-html_show_sourcelink = True
 highlight_language = 'none'
 html_show_copyright = False
 html_show_sphinx = False
@@ -129,7 +126,7 @@ default_theme_options = {
 
     # Location of link to source.
     # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "footer",
+    'source_link_position': "",
 
     'bootswatch_theme': "launchcode",
     'bootstrap_version': "3",
@@ -152,10 +149,7 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 html_sidebars = {
-    '**': ['localtoc.html'],
-    'index': [],
-    'search': [],
-    'about': []
+    '**': []
 }
 
 
