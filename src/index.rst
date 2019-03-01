@@ -9,15 +9,15 @@ Contents
    :maxdepth: 2
    :name: chapterstoc
 
-   chapters/introduction/index.rst
-   chapters/how-programs-work/index.rst
-   chapters/how-to-write-code/index.rst
-   chapters/data-and-variables/index.rst
+   chapters/introduction/index
+   chapters/how-programs-work/index
+   chapters/how-to-write-code/index
+   chapters/data-and-variables/index
    
 .. toctree::
 
    genindex
-   glossary.rst
+   glossary
 
 Appendices
 ^^^^^^^^^^
@@ -27,5 +27,5 @@ Appendices
    :numbered:
    :name: appendicestoc
 
-   appendices/about-this-book/index.rst
+   appendices/about-this-book/index
    
