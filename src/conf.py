@@ -32,6 +32,7 @@ release = ''
 extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
+    'sphinx.ext.todo',
 ]
 
 autosectionlabel_prefix_document = True
@@ -161,7 +162,7 @@ htmlhelp_basename = 'CurriculumModuledoc'
 # -- Options for todo extension ----------------------------------------------
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 
 def setup(app):
