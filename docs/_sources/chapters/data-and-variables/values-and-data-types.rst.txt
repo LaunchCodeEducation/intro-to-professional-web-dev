@@ -1,11 +1,11 @@
 Values and Data Types
 =====================
 
-.. index:: ! value, data type, string, number, object, type, type system, console.log
+.. index:: ! value
 
 A **value** is a specific piece of data--like a word or a number--that a program manipulates. The values we have seen so far are ``5``, ``5.2``, and ``"Hello, World!"``.
 
-.. index:: ! data type, ! number, ! string
+.. index:: ! data type, ! number, ! string, ! type 
 
 Each value belongs to a category called a **data type**: ``4`` is a **number**, and ``"Hello, World!"`` is a **string**, so-called because it contains a string, or sequence, of letters. When using strings in a program, we must enclose them in either single or double quotes. 
 

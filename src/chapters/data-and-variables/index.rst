@@ -13,6 +13,7 @@ This chapter explores the first of these two fundamental components, data.
 
    values-and-data-types.rst
    variables.rst
+   more-on-variables.rst
    type-conversion.rst
    mathematical-operators.rst
    statements-and-expressions.rst
