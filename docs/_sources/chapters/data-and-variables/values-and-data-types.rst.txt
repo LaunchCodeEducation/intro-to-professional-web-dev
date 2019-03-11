@@ -7,13 +7,13 @@ A **value** is a specific piece of data--like a word or a number--that a program
 
 .. index:: ! data type, ! number, ! string
 
-Each value belongs to a category called a **data type**: ``4`` is an **number**, and ``"Hello, World!"`` is a **string**, so-called because it contains a string, or sequence, of letters. You (and the interpreter) can identify strings because they are enclosed in either single or double quotation marks.
+Each value belongs to a category called a **data type**: ``4`` is a **number**, and ``"Hello, World!"`` is a **string**, so-called because it contains a string, or sequence, of letters. When using strings in a program, we must enclose them in either single or double quotes. 
 
 .. index:: ! integer, ! float
 
-Numbers may be either **integer**--such as 1, -15, or 42--or a **float**--such as 2.12 or 3.14. An integer is a whole number, with no decimal part. A float has a decimal part.
+Numbers may be either **integer**--such as 1, -15, or 42--or a **float**--such as 2.12 or 3.14. An integer is a whole number, with no decimal part, while a float has a decimal part.
 
-.. warning:: While a number like ``3.0`` may seem like an integer because it's decimal part is 0, it is usually considered to be a float.
+.. warning:: While a number like ``3.0`` may seem like an integer because its decimal part is 0, it is usually considered to be a float.
 
 .. index:: ! typeof
 

@@ -1,12 +1,12 @@
 Data and Variables
 ==================
 
-One way that we can describe how programs work is to say that they consist of two components:
+Programs may be thought of as being made up of two things:
 
 1. Data
-2. Operations that manipulated that data
+2. Operations that manipulate data
 
-This chapter explores the first of these two fundamental componets, data. 
+This chapter explores the first of these two fundamental components, data. 
 
 .. toctree::
    :maxdepth: 3
