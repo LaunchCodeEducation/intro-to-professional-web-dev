@@ -1,33 +1,45 @@
 Type Conversion
 ===============
 
-.. index:: ! Number(), ! String()
+.. index:: ! Number(), ! String(), function, returns
 
 .. index::
    pair: type; conversion
 
 Sometimes it is necessary to convert values from one type to another. JavaScript provides a few simple functions that will allow us to do that. The functions ``Number()`` and ``String()`` will (attempt to) convert their arguments into types ``number`` and ``string``, respectively. We call these **type conversion** functions.
 
-The ``Number()`` function can take a floating point number or a string, and turn it into an integer. For floating point numbers, it *discards* the decimal portion of the number - a process we call *truncation towards zero* on the number line. Let us see this in action:
+The ``Number()`` function can take a string and turn it into an integer. Let us see this in action:
 
-.. code-block:: js
+.. sourcecode:: js
 
-    // parse a string to produce an int
-    console.log("2345", Number("2345"));
+    // prints 2345
+    console.log(Number("2345"));
+
+    // prints 'number'
+    console.log(typeof Number("2345"))
 
     // Number even works on numbers
     console.log(17, Number(17));
 
-    // This throws an error
+.. note:: As with expressions, we say that a function **returns** a value.
+
+What happens of we attempt to conver a string that doesn't directly represent a number into a number?
+
+.. sourcecode:: js
+
+    // Prints NaN
     console.log(Number("23bottles"));
 
 
-The last case shows that a string has to be a syntactically legal number, otherwise you'll get one of those pesky runtime errors. Modify the example by deleting the ``bottles`` and rerun the program. You should see the integer ``23``.
+This example shows that a string has to be a syntactically legal number for conversion to go as expected. If it is no you'll get ``NaN``, which stands for "not a number."
 
+.. index:: NaN
+
+.. note:: ``NaN`` is a **special value** in JavaScript that represents that state of data not being a number. We will learn more about ``NaN`` and other special values in a later chapter.
 
 The type converter ``String()`` turns its argument into a string. Remember that when we print a string, the quotes are removed. However, if we print the type, we can see that it is definitely ``'string'``.
 
-.. code-block:: js
+.. sourcecode:: js
 
     console.log(String(17));
     console.log(String(123.45));
@@ -36,7 +48,9 @@ The type converter ``String()`` turns its argument into a string. Remember that 
 Check Your Understanding
 ------------------------
 
-.. todo:: add check for type conversion
+.. admonition:: Question
+
+   The conversion function ``Number()`` *always* returns a 
    
 
    

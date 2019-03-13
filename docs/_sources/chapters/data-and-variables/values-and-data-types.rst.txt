@@ -19,7 +19,7 @@ Numbers may be either **integer**--such as 1, -15, or 42--or a **float**--such a
 
 If you are not sure what data type a value falls into, JavaScript has an operator called ``typeof`` which can tell you.
 
-.. code-block:: js
+.. sourcecode:: js
 
    console.log(typeof "Hello, World!");
    console.log(typeof 17);
@@ -35,41 +35,28 @@ Not surprisingly, strings are of type ``'string'`` while integers and floats are
 
 .. note::
 
-   ``typeof`` is new type of JS entity, an **operator**. It is similar to a function in that it carries out some kind of action, though the syntax is different from that of functions (notice there are no parentheses).
+   ``typeof`` is new type of JavaScript entity, an **operator**. It is similar to a function in that it carries out some kind of action, though the syntax is different from that of functions (notice there are no parentheses).
    
    We will learning about other operators in the comming sections.
 
-In a JavaScript shell, it is not necessary to use the ``console.log()`` function to see the values shown above. The shell evaluates the ``typeof ...`` portion and automatically prints the result. For example, consider the shell session shown below. When we ask the shell to evaluate ``typeof "Hello, World!"``, it responds with the appropriate answer and then goes on to display the prompt for the next use.
-
-::
-
-   $ node
-   > typeof "Hello, World!";
-   'string'
-   > typeof 17;
-   'number'
-   > "Hello, World!";
-   'Hello, World!'
-   >
-
-Note that in the last example, we simply ask the shell to evaluate the string "Hello, World".  The result is as you might expect, the string itself.
+There are data types other than String and Number, including Object and Function, which we will learn about in future chapters.
 
 More On Strings
 ---------------
 
 What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they are in quotation marks like strings.
 
-.. code-block:: js
+.. sourcecode:: js
 
     console.log(typeof "17");
     console.log(typeof "3.2");
 
 They're strings!
 
-Strings in JS can be enclosed in either single quotes (``'``) or double
+Strings in JavaScript can be enclosed in either single quotes (``'``) or double
 quotes (``"``).
 
-.. code-block:: js
+.. sourcecode:: js
 
     console.log(typeof 'This is a string.');
     console.log(typeof "And so is this.");
@@ -92,17 +79,17 @@ JavaScript doesn't care whether you use single or double quotes to surround your
 More On Numbers
 ---------------
 
-When you type a large integer, you might be tempted to use commas between groups of three digits, as in ``42,000``. This is not a legal integer in JS, but it does mean something else, which is legal:
+When you type a large integer, you might be tempted to use commas between groups of three digits, as in ``42,000``. This is not a legal integer in JavaScript, but it does mean something else, which is legal:
 
-.. code-block:: js
+.. sourcecode:: js
 
     console.log(42000);
     console.log(42,000);
 
 
-Well, that's not what we expected at all! Because of the comma, JS chose to treat this as a *pair* of values. In fact, the ``console.log()`` function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.
+Well, that's not what we expected at all! Because of the comma, JavaScript chose to treat this as a *pair* of values. In fact, the ``console.log()`` function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.
 
-.. code-block:: js
+.. sourcecode:: js
 
     console.log(42, 17, 56, 34, 11, 4.35, 32);
     console.log(3.4, "hello", 45);
@@ -123,4 +110,11 @@ When discussing the differences between programming languages, the details of ty
 Check Your Understanding
 ------------------------
 
-.. todo:: Add value/data type check
+.. admonition:: Question
+
+   Which of these is _not_ a data type in JavaScript?
+
+   #. Number
+   #. String
+   #. Letter
+   #. Object

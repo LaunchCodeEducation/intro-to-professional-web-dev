@@ -29,3 +29,7 @@ Appendices
 
    appendices/about-this-book/index
    
+.. toctree::
+   :hidden:
+
+   todos
