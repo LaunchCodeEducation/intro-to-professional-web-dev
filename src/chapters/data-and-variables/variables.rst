@@ -3,11 +3,17 @@ Variables
 
 .. index:: ! variable
 
-One of the most powerful features of a programming language is the ability to manipulate **variables**. A variable is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string.
+One of the most powerful features of a programming language is the ability to manipulate variables. A **variable** is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string.
 
-A useful visual analogy for how a variable works is that of a label that "points to" a piece of data.
+A useful visual analogy for how a variable works is that of a label that "points to" a piece of data. 
 
-.. todo:: diagram of label w/ pointer
+.. figure:: figures/variable.png
+   :height: 400px
+   :alt: A label, programmingLanguages, pointing to a piece of data, "JavaScript"
+
+   A variable can be visualized as a label poinging to a specific piece of data.
+
+In this figure, the name/label "programmingLanguage" points to the string value "JavaScript". This is more than an analogy, as it also is representative of how a variable and the associate value are stored in a computer's memory, as we will learn later.
 
 With this analogy in mind, let's look at how this formaly works in JavaScript.
 
@@ -65,7 +71,7 @@ The **assignment operator**, ``=``, should not be confused with *equality* (we w
 
 .. tip::
 
-   To avoid confusion, when reading or writing code, say to yourself 
+   To avoid confusion when reading or writing code, say to yourself 
    
         ``programmingLanguage`` is assigned ``'JavaScript'``
 
@@ -77,10 +83,6 @@ The **assignment operator**, ``=``, should not be confused with *equality* (we w
     
         ``programmingLanguage`` equals ``'JavaScript'``.
 
-A common way to represent variables on paper is to write the name with an arrow pointing to the variable's value. This kind of figure is often called a **state snapshot** because it shows what state each of the variables is in at a particular instant in time. This diagram shows the result of executing the assignment statements shown above.
-
-.. todo:: create state snapshot
-
 .. index:: 
    pair: variable; global
 
@@ -90,7 +92,7 @@ A common way to represent variables on paper is to write the name with an arrow 
 
       programmingLanguage = "JavaScript";
 
-   Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without ``let`` is valid syntax, but is results in very different behavior. Such a variable will be a **global variable**, which we will learn about in a later lesson. The main point to keep in mind now is that you always use ``let`` unless you have a specific reason not to do so.
+   Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without ``let`` is valid syntax, but is results in very different behavior. Such a variable will be a **global variable**, which we will learn more about in a later lesson. The main point to keep in mind now is that you always use ``let`` unless you have a specific reason not to do so.
 
 Evaluating Variables
 --------------------

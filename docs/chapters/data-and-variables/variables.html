@@ -80,21 +80,22 @@
     
   <div class="section" id="variables">
 <h1>4.3. Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">One of the most powerful features of a programming language is the ability to manipulate <strong>variables</strong>. A variable is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string.</p>
+<p id="index-0">One of the most powerful features of a programming language is the ability to manipulate variables. A <strong>variable</strong> is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string.</p>
 <p>A useful visual analogy for how a variable works is that of a label that “points to” a piece of data.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">diagram of label w/ pointer</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../../_images/variable.png"><img alt="A label, programmingLanguages, pointing to a piece of data, &quot;JavaScript&quot;" src="../../_images/variable.png" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-text">A variable can be visualized as a label poinging to a specific piece of data.</span></p>
 </div>
+<p>In this figure, the name/label “programmingLanguage” points to the string value “JavaScript”. This is more than an analogy, as it also is representative of how a variable and the associate value are stored in a computer’s memory, as we will learn later.</p>
 <p>With this analogy in mind, let’s look at how this formaly works in JavaScript.</p>
 <div class="section" id="declaring-and-initializing-variables-with-let">
 <h2>4.3.1. Declaring and Initializing Variables With <code class="docutils literal notranslate"><span class="pre">let</span></code><a class="headerlink" href="#declaring-and-initializing-variables-with-let" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-2"></span><p id="index-3">To create a variable in JavaScript, create a new name, or label, for the variable and precede it with <code class="docutils literal notranslate"><span class="pre">let</span></code>:</p>
+<span class="target" id="index-1"></span><p id="index-2">To create a variable in JavaScript, create a new name, or label, for the variable and precede it with <code class="docutils literal notranslate"><span class="pre">let</span></code>:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguage</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>This creates a variable named <code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code>, and the act of creating a variable is referred to as <strong>variable declaration</strong>, or simply <strong>declaration</strong>.</p>
-<span class="target" id="index-4"></span><p id="index-5">Once a variable has been declared, it may be given a value using an <strong>assignment statement</strong>, which uses the <code class="docutils literal notranslate"><span class="pre">=</span></code> to give a variable a value.</p>
+<span class="target" id="index-3"></span><p id="index-4">Once a variable has been declared, it may be given a value using an <strong>assignment statement</strong>, which uses the <code class="docutils literal notranslate"><span class="pre">=</span></code> to give a variable a value.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguage</span><span class="p">;</span>
 <span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
@@ -119,7 +120,7 @@
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>To avoid confusion, when reading or writing code, say to yourself</p>
+<p>To avoid confusion when reading or writing code, say to yourself</p>
 <blockquote>
 <div><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> is assigned <code class="docutils literal notranslate"><span class="pre">'JavaScript'</span></code></div></blockquote>
 <p>or</p>
@@ -129,18 +130,13 @@
 <blockquote class="last">
 <div><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> equals <code class="docutils literal notranslate"><span class="pre">'JavaScript'</span></code>.</div></blockquote>
 </div>
-<p>A common way to represent variables on paper is to write the name with an arrow pointing to the variable’s value. This kind of figure is often called a <strong>state snapshot</strong> because it shows what state each of the variables is in at a particular instant in time. This diagram shows the result of executing the assignment statements shown above.</p>
-<div class="admonition-todo admonition" id="index-6">
-<p class="first admonition-title">Todo</p>
-<p class="last">create state snapshot</p>
-</div>
-<div class="admonition warning" id="index-7">
+<div class="admonition warning" id="index-5">
 <p class="first admonition-title">Warning</p>
 <p>What if, by mistake, you left off <code class="docutils literal notranslate"><span class="pre">let</span></code> when declaring a variable</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p class="last">Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without <code class="docutils literal notranslate"><span class="pre">let</span></code> is valid syntax, but is results in very different behavior. Such a variable will be a <strong>global variable</strong>, which we will learn about in a later lesson. The main point to keep in mind now is that you always use <code class="docutils literal notranslate"><span class="pre">let</span></code> unless you have a specific reason not to do so.</p>
+<p class="last">Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without <code class="docutils literal notranslate"><span class="pre">let</span></code> is valid syntax, but is results in very different behavior. Such a variable will be a <strong>global variable</strong>, which we will learn more about in a later lesson. The main point to keep in mind now is that you always use <code class="docutils literal notranslate"><span class="pre">let</span></code> unless you have a specific reason not to do so.</p>
 </div>
 </div>
 <div class="section" id="evaluating-variables">
@@ -172,7 +168,7 @@
 </pre></div>
 </div>
 <p>The type of a variable is the type of the data it currently refers to.</p>
-<div class="admonition note" id="index-8">
+<div class="admonition note" id="index-6">
 <p class="first admonition-title">Note</p>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">message);</span></code> prints not <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">message</span></code> but something else entirely. In fact, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">message</span></code> is an example of an <strong>expression</strong>, which we will learn about shortly. Briefly, expressions are code segments that can be reduced to a value.</p>
 <p class="last">We say that an expression <strong>returns</strong> a value. That is, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">message</span></code> returns <code class="docutils literal notranslate"><span class="pre">'string'</span></code>.</p>

@@ -35,6 +35,10 @@ extensions = [
     'sphinx.ext.todo',
 ]
 
+# numfig:
+numfig_number_figures = True
+numfig_figure_caption_prefix = "Figure"
+
 autosectionlabel_prefix_document = True
 
 # Add any paths that contain templates here, relative to this directory.
