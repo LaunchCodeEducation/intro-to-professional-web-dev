@@ -172,7 +172,6 @@ todo_include_todos = True
 def setup(app):
     app.add_stylesheet('css/launchcode.css')
     app.add_stylesheet('css/site.css')
-    app.add_stylesheet('https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css')
     app.add_config_value('recommonmark_config', {
             'enable_eval_rst': True,
             }, True)
