@@ -31,7 +31,7 @@ What happens of we attempt to conver a string that doesn't directly represent a 
     console.log(Number("23bottles"));
 
 
-This example shows that a string has to be a syntactically legal number for conversion to go as expected. If it is no you'll get ``NaN``, which stands for "not a number."
+This example shows that a string has to be a syntactically legal number for conversion to go as expected. Examples of such strings are ``"34"`` or ``"-2.5"``. If the value cannot be cleanly converted to a number then ``NaN`` will be returned, which stands for "not a number."
 
 .. index:: NaN
 
