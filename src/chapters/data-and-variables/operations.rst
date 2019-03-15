@@ -4,13 +4,16 @@ Operations
 Operators and Operands
 ----------------------
 
+Now that we can store data in variables, let's explore how we can generate new data from existing data.
+
 .. index:: ! operator, ! operand
 
-An **operator** is one or more characters that represent computations like addition, multiplication, and division. The values an operator works on are called **operands**.
+An **operator** is one or more characters that represents a computation like addition, multiplication, or division. The values an operator works on are called **operands**.
 
 The following are all legal JavaScript expressions whose meaning is more or less clear:
 
 .. sourcecode:: js
+   :linenos:
 
     let hour = 5;
     let minute = 120;
@@ -22,7 +25,9 @@ The following are all legal JavaScript expressions whose meaning is more or less
     5 ** 2;
     (5 + 9) * (15 - 7);
 
-The tokens ``+`` and ``-``, and the use of parenthesis for grouping, mean in JavaScript what they mean in mathematics. The asterisk (``*``) is the token for multiplication, and ``**`` is the token for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.
+In the first calculation on line 4, the operator is ``+`` and the operands are ``20`` and ``32``.
+
+The symbols ``+`` and ``-``, and the use of parenthesis for grouping, mean in JavaScript what they mean in mathematics. The asterisk (``*``) is the symbol for multiplication, and ``**`` is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.
 
 .. sourcecode:: js
 
@@ -32,7 +37,17 @@ The tokens ``+`` and ``-``, and the use of parenthesis for grouping, mean in Jav
    console.log(2 ** 3);
    console.log(3 ** 2);
 
-We use the same terminology as before, stating that ``2 + 3`` **returns** the value ``1``.
+**Output**
+
+::
+
+   5
+   -1
+   6
+   8
+   9
+
+We use the same terminology as before, stating that ``2 + 3`` **returns** the value ``5``.
 
 When a variable name appears in the place of an operand, it is replaced with the value that it refers to before the operation is performed. For example, suppose that we wanted to convert 645 minutes into hours. Division is denoted by the operator ``/``.
 
@@ -42,12 +57,16 @@ When a variable name appears in the place of an operand, it is replaced with the
     let hours = minutes / 60;
     console.log(hours);
 
-The example prints ``10.75``.
+**Output**
 
-In summary, operators and operands can be combined to create expressions that are evaluated upon execution. Let's discuss some specific 
+::
 
-Arithmetic Operations
----------------------
+   10.75
+
+In summary, operators and operands can be combined to create expressions that are evaluated upon execution. Let's discuss some specific types of operators
+
+Arithmetic Operators
+--------------------
 
 .. index:: ! arithmetic operators
 
@@ -114,9 +133,9 @@ Order of Operations
 When more than one operator appears in an expression, the order of evaluation depends on the **rules of precedence**. JavaScript follows the same precedence rules for its arithmetic operators that mathematics does.
 
 #. Parentheses have the highest precedence and can be used to force an expression to evaluate in the order you want. Since expressions in parentheses are evaluated first, ``2 * (3 - 1)`` is 4, and ``(1 + 1) ** (5 - 2)`` is 8. You can also use parentheses to make an expression easier to read, as in ``(minute * 100) / 60``, even though it doesn't change the result.
-#. Exponentiation has the next highest precedence, so ``2 ** 1 + 1`` is 3 and not 4, and ``3*1**3`` is 3 and not 27. Can you explain why?
-#. Multiplication and both division operators have the same precedence, which is higher than addition and subtraction, which also have the same precedence. So ``2*3-1`` yields 5 rather than 4, and ``5-2*2`` is 1, not 6.
-#. Operators with the *same* precedence are evaluated from left-to-right. So in the expression ``6-3+2``, the subtraction happens first, yielding 3. We then add 2 to get the result 5. If the operations had been evaluated from right to left, the result would have been ``6-(3+2)``, which is 1.
+#. Exponentiation has the next highest precedence, so ``2 ** 1 + 1`` is 3 and not 4, and ``3 * 1 ** 3`` is 3 and not 27. Can you explain why?
+#. Multiplication and both division operators have the same precedence, which is higher than addition and subtraction, which also have the same precedence. So ``2 * 3 - 1`` yields 5 rather than 4, and ``5 - 2 * 2`` is 1, not 6.
+#. Operators with the *same* precedence are evaluated from left-to-right. So in the expression ``6 - 3 + 2``, the subtraction happens first, yielding 3. We then add 2 to get the result 5. If the operations had been evaluated from right to left, the result would have been ``6 - (3 + 2)``, which is 1.
 
 .. index:: PEMDAS
 
@@ -145,6 +164,13 @@ When more than one operator appears in an expression, the order of evaluation de
 
        // use parentheses to force the order you want
        console.log((2 ** 3) ** 2)   
+
+**Output**
+
+::
+
+   512
+   64
 
 
 Check Your Understanding

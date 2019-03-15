@@ -3,19 +3,19 @@ Variables
 
 .. index:: ! variable
 
-One of the most powerful features of a programming language is the ability to manipulate variables. A **variable** is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string.
+One of the most powerful features of a programming language is the ability to manipulate variables. A **variable** is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string. Variables allow us to store values for later use.
 
 A useful visual analogy for how a variable works is that of a label that "points to" a piece of data. 
 
 .. figure:: figures/variable.png
    :height: 400px
-   :alt: A label, programmingLanguages, pointing to a piece of data, "JavaScript"
+   :alt: A label, programmingLanguages, pointing to a the string value "JavaScript"
 
    A variable can be visualized as a label poinging to a specific piece of data.
 
-In this figure, the name/label "programmingLanguage" points to the string value "JavaScript". This is more than an analogy, as it also is representative of how a variable and the associate value are stored in a computer's memory, as we will learn later.
+In this figure, the name "programmingLanguage" points to the string value "JavaScript." This is more than an analogy, since it also is representative of how a variable and the associated value are stored in a computer's memory, as we will learn later.
 
-With this analogy in mind, let's look at how this formaly works in JavaScript.
+With this analogy in mind, let's look at how we can formaly create variables in JavaScript.
 
 Declaring and Initializing Variables With ``let``
 -------------------------------------------------
@@ -25,7 +25,7 @@ Declaring and Initializing Variables With ``let``
 
 .. index:: ! declaration
 
-To create a variable in JavaScript, create a new name, or label, for the variable and precede it with ``let``:
+To create a variable in JavaScript, create a new name for the variable and precede it with ``let``:
 
 .. sourcecode:: js
     
@@ -47,13 +47,31 @@ Once a variable has been declared, it may be given a value using an **assignment
    let programmingLanguage;
    programmingLanguage = "JavaScript";
 
-The act of assigning a variable a value for the first time is called **initialization**. It is possible to both declare and initialize a variable with a single line of code.
+The act of assigning a variable a value for the first time is called **initialization**. 
+
+We can visualize the action of the two lines of code above as follows. The first line creates a variable that does not yet have a value. It is a name that does not point to any data.
+
+.. figure:: figures/unassigned-variable.png
+   :height: 250px
+   :alt: The name "programmingLanguage" with no arrow connecting it to data.
+
+   The result of ``let programmingLanguage;``
+
+The second line assigns the variable a value, which connects the name to the given piece of data.
+
+.. figure:: figures/variable.png
+   :height: 400px
+   :alt: A label, programmingLanguages, pointing to a the string value "JavaScript"
+
+   The result of ``programmingLanguage = "JavaScript";``
+
+It is possible to both declare and initialize a variable with a single line of code. This is the best way to create a variable when its value is known.
 
 .. sourcecode:: js
 
    let programmingLanguage = "JavaScript";
 
-.. warning:: While ``let`` is the preferred way to create a variable in JavaScript, you will also see programmers sometimes use ``var`` to create a variable, like this:
+.. warning:: While ``let`` is the preferred way to create a variable in JavaScript, you will also see programmers sometimes use ``var`` to create a variable in JavaScript, like this:
 
    .. sourcecode:: js
 
@@ -63,7 +81,7 @@ The act of assigning a variable a value for the first time is called **initializ
 
    **🚀 Bonus Mission:** Read about `the differences between var and let <https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let>`_.
 
-The **assignment operator**, ``=``, should not be confused with *equality* (we will see later that equality uses the ``==`` operator).  The assignment statement links a *name*, on the left-hand side of the operator, with a *value*, on the right-hand side. This is why you will get an error if you try to run:
+To give a variable a value, we use the **assignment operator**, ``=``. This operator should not be confused with the concept of *equality*, which expresses whether two things are the "same" (we will see later that equality uses the ``===`` operator).  The assignment statement links a *name*, on the left-hand side of the operator, with a *value*, on the right-hand side. This is why you will get an error if you try to run:
 
 .. sourcecode:: js
 
@@ -86,18 +104,35 @@ The **assignment operator**, ``=``, should not be confused with *equality* (we w
 .. index:: 
    pair: variable; global
 
-.. warning:: What if, by mistake, you left off ``let`` when declaring a variable 
+.. warning:: What if, by mistake, you leave off ``let`` when declaring a variable?
 
    .. sourcecode:: js
 
       programmingLanguage = "JavaScript";
 
-   Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without ``let`` is valid syntax, but is results in very different behavior. Such a variable will be a **global variable**, which we will learn more about in a later lesson. The main point to keep in mind now is that you always use ``let`` unless you have a specific reason not to do so.
+   Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without ``let`` is valid syntax, but is results in very different behavior. Such a variable will be a **global variable**, which we will learn more about in a later lesson. The main point to keep in mind for now is that you should always use ``let`` unless you have a specific reason not to do so.
 
 Evaluating Variables
 --------------------
 
-If you ask JavaScript to evaluate a variable, it will produce the value that is currently linked to the variable. In other words, evaluating a variable will give you the value that is referred to by the variable.
+.. index:: variable; evaluation
+
+After a variable has been created, it may be used later in a program in any place where a value may be used. For example, we know that ``console.log`` prints a value, so we can also give ``console.log`` a variable.
+
+.. sourcecode:: js
+
+   console.log("Hello, World!");
+
+.. sourcecode:: js
+
+   let message = "Hello, World!";
+   console.log(message);
+
+These two examples have the exact same same output.
+
+Using a variable in this way is called **evaluating** a variable. If you ask JavaScript to evaluate a variable, it will produce the value that is currently linked to the variable. The effect is as if the value of the variable is substituted for the variable name in the code when executed.
+
+Think of 
 
 .. sourcecode:: js
 
@@ -109,13 +144,15 @@ If you ask JavaScript to evaluate a variable, it will produce the value that is 
     console.log(n);
     console.log(pi);
 
-In each case the printed result is the value of the variable. Here is the output of the code above:
+**Output**
 
 ::
 
     What's up, Doc?
     17
     3.14159
+
+In each case, the printed result is the value of the variable. 
 
 Like values, variables also have types. We determine the type of a variable the same way we determine the type of a value, using ``typeof``.
 
@@ -129,19 +166,20 @@ Like values, variables also have types. We determine the type of a variable the 
     console.log(typeof n);
     console.log(typeof pi);
 
+**Output**
+
+::
+
+   string
+   number
+   number
 
 The type of a variable is the type of the data it currently refers to.
-
-.. index:: expression, returns
-
-.. note:: Notice that ``console.log(typeof message);`` prints not ``typeof message`` but something else entirely. In fact, ``typeof message`` is an example of an **expression**, which we will learn about shortly. Briefly, expressions are code segments that can be reduced to a value. 
-
-   We say that an expression **returns** a value. That is, ``typeof message`` returns ``'string'``.
 
 Reassigning Variables
 ---------------------
 
-We use variables in a program to "remember" things, like the current score at the football game. But variables are *variable*. This means they can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign a different value to the same variable.
+We use variables in a program to "remember" things, like the current score at the football game. But variables are *variable*. This means they can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.
 
 To see this, read and then run the following program in a code editor. You'll notice that we change the value of ``day`` three times, and on the third assignment we even give it a value that is of a different data type.
 
@@ -154,7 +192,7 @@ To see this, read and then run the following program in a code editor. You'll no
     day = 21;
     console.log(day);
 
-A great deal of programming is about having the computer remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update or change a variable so that it will always reflect the correct total of missed calls.
+A great deal of programming is about having the computer remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
 
 .. note:: We only use ``let`` when *declaring* a variable, that is, when we create it. We do not use ``let`` when reassigning the variable to a different value. In fact, doing so will result in an error.
 
@@ -163,7 +201,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is printed when the following statements execute?
+   What is printed when the following code executes?
 
    .. sourcecode:: js
 

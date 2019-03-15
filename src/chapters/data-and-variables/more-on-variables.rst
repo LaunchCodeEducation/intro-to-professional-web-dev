@@ -15,20 +15,23 @@ One the key features of variables that we have discussed so far is their ability
 
 In some situations, however, we will want to create variables that *should not* change value. Many programming languages, including JavaScript, provide a mechanism for creating variables that may only have a single, fixed value.
 
-For example, suppose that we are writing a to-do list web application, named "Get It Done!". The title of the app might appear in multiple places, such as the title bar and the main page header.
+For example, suppose that we are writing a to-do list web application, named "Get It Done!" The title of the application might appear in multiple places, such as the title bar and the main page header.
 
 .. figure:: figures/get-it-done.png
-   :alt: A to-do list web app with application name in the title bar and main header.
+   :alt: A to-do list web application with application name in the title bar and main header.
+   :height: 300px
    
    An example to-do list web application
 
-We might store the name of our application in a variable so that it can be referenced everywhere we want to display the application name.
+We might store the name of our application in a variable so that it can be referenced anywhere we want to display the application name.
 
 .. sourcecode:: js
 
    let appName = "Get It Done!";
 
-This allows us to simply refer to the ``appName`` variable any time we want to use it throughout our application. If we change the name of the application, we only have to change one line of code, where the ``appName`` variable is initialized. The downside of this approach is that an unwitting programmer might change the value of the variable at some point in the code after it is initialized, leading to inconsistent references to the application name.
+This allows us to simply refer to the ``appName`` variable any time we want to use it throughout our application. If we change the name of the application, we only have to change one line of code, where the ``appName`` variable is initialized. 
+
+The downside of this approach is that an unwitting programmer might change the value of the variable at some point in the code after it is initialized, leading to inconsistent references to the application name. In other words, the title bar and main page header could reference different names.
 
 .. index:: ! const, ! constant
 
@@ -48,13 +51,15 @@ How does JavaScript prevent a programmer from changing the value of a constant? 
 .. sourcecode:: js
 
    const appName = "Get It Done";
-   appName = "Best TODO App Ever!";
+   appName = "Best TODO application Ever!";
 
-As we've seen with other examples--such as trying to declare a variable twice, using incorrect syntax, or failing to enclose strings in quotes--JavaScripts prevents undesired code from executing by throwing an error. In this case, the error is:
+**Output**
 
 :: 
 
    TypeError: Assignment to constant variable.
+
+As we've seen with other examples--such as trying to declare a variable twice, using incorrect syntax, or failing to enclose strings in quotes--JavaScripts prevents undesired code from executing by throwing an error.
 
 Naming Variables
 ----------------
@@ -62,13 +67,13 @@ Naming Variables
 Valid Variable Names
 ^^^^^^^^^^^^^^^^^^^^
 
-As you may have discovered already, not just any sequence of characters is a valid variable name. For example, if we try to declare a variable with a name containing spaces, JavaScript complains.
+As you may have discovered already, not just any sequence of characters is a valid variable name. For example, if we try to declare a variable with a name containing a space, JavaScript complains.
 
 .. sourcecode:: js
 
-   let app name;
+   let application name;
 
-The specific error is: 
+**Output**
 
 ::
 
@@ -82,7 +87,7 @@ JavaScript provides a broad set of rules for naming variables, but there is no r
 
 - Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do not use special characters or whitespace (space, tab, and so on).
 - Do not start a variable name with a number.
-- Avoid starting a variable name with an underscore. Doing so is a convention used by some JavaScript developers to mean something very specific, and should be avoided.
+- Avoid starting a variable name with an underscore. Doing so is a convention used by some JavaScript developers to mean something very specific about the variable, and should be avoided.
 - Do not use **keywords**, which are words reserved by JavaScript for use by the language itself. We'll discuss these in detail in a moment.
 
 Following these guidelines will prevent you from encountering errors like the one above. However, for a good programmer it is not enough to simply follow the minimal guidelines.
@@ -92,12 +97,12 @@ Good Variable Names
 
 Writing good code is about more than writing code that simply works and accomplishes the task at-hand. It is also about writing code that can be read, updated, and maintained as easily as possible. How to write code that achieves these goals is a theme we will return to again and again.
 
-One of the primary ways that code can be written poorly is to use bad variable names. For example, consider the following program. 
+One of the primary ways that code can be written poorly is by using bad variable names. For example, consider the following program. While we haven't introduced each of the components used here, you should be able to come to a general understanding of the new components. 
 
 .. sourcecode:: js
 
    let x = 5;
-   const y = 3.14
+   const y = 3.14;
    let z = y * x ** 2;
    console.log(z);
 
@@ -105,21 +110,21 @@ Understanding what this program is trying to do is not obvious, to say the least
 
 .. pull-quote:: Variable names should be descriptive, providing context about the data they contain and how they will be used.
 
-Let's look at an improved version of the program above.
+Let's look at an improved version this program.
 
 .. sourcecode:: js
 
    let radiusOfCircle = 5;
-   const pi = 3.14
-   let areaOfCircle = pi * radius ** 2;
-   console.log(area);
+   const pi = 3.14;
+   let areaOfCircle = pi * radiusOfCircle ** 2;
+   console.log(areaOfCircle);
 
 With improved variable names, it now becomes clear that the program is calcuating the area of a circle of radius 5.
 
 .. tip:: When considering program readability, think about whether or not your code will make sense to another programmer. It is not enough for code to be readable by only the programmer that originally wrote it.
 
-Lower Camel Case
-^^^^^^^^^^^^^^^^
+Lower Camel Case Variable Names
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: ! lower camel case, ! camel case
 
@@ -130,7 +135,7 @@ There is one more aspect of naming variables that you should be aware of, and th
 
 .. admonition:: Example
 
-   In the United States, it is common for two people to greet each other with a handshake. In other countries and cultures, such as those of east Asia, the convnetional greeting is to bow. 
+   In the United States, it is common for two people to greet each other with a handshake. In other countries and cultures, such as some in east Asia, the convnetional greeting is to bow. 
 
    Failing to follow a social convention is not a violation of the law, but is considered inpolite nonetheless. It is a signal that you are not part of the group, or do not respect its norms.
 
@@ -142,7 +147,7 @@ In JavaScript, most programmers use the **lower camel case** style, which stipul
 - start with a lowercase letter, and
 - capitalize each internal word.
 
-In the example from the previous section, "area of circle" became ``areaOfCircle``. This convention is called lower camel case becase it stipulates that names begin with a lowercase letter, while capitalization of internal words provides the visual analogy of a camel's humps.
+In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called lower camel case becase it stipulates that names begin with a lowercase letter, while capitalization of internal words is reminiscent of a camel's humps.
 
 .. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``. 
 
@@ -157,7 +162,7 @@ Our last note on naming variables has to do with a collection of words that are 
 
 Any word that is formally part of the JavaScript language syntax is a keyword. So far, we have seen only four keywords: ``let``, ``const``, ``var``, and ``typeof``.
 
-.. warning:: While ``console`` and ``console.log`` may seem like keywords, they are actually slightly differnt things. They are entities (an object and a function) that are available by default in most JavaScript environments.
+.. warning:: While ``console`` and ``console.log`` may seem like keywords, they are actually slightly differnt things. They are entities (an object and a function, respectively) that are available by default in most JavaScript environments.
 
 Attempting to use a keyword for anything other than it's intended use will result in an error. To see this, let's try to name a variable ``const``.
 
@@ -165,11 +170,10 @@ Attempting to use a keyword for anything other than it's intended use will resul
 
    let const;
 
-This results in the error:
+**Output**
 
 ::
 
-   Thrown:
    let const
    ^^^^^
 
@@ -186,7 +190,7 @@ Check Your Understanding
 
    Which is the best keyword for declaring a variable in most situations?
 
-   #. `var`
-   #. `let`
-   #. `const`
+   #. ``var``
+   #. ``let``
+   #. ``const``
    #. (no keyword)
