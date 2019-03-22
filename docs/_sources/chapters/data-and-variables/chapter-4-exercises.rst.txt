@@ -1,17 +1,30 @@
 Chapter 4 Exercises
 ===================
 
-#. Assign a variable named spaceShuttleName the value of Determination.
-#. Which type are each of the variables listed below?
-    
-   .. sourcecode:: js
+For the following exercises, you will use the information given below about your space shuttle.
 
-      let orbitSpeedMilesPerHour = 17500;
-      let orbitSpeedString = “17,500”;
-      let gForcesAtLaunch  = “3G”;
-      let readyForLaunch = “yes”;
-      let earthToMarsKilometers = 225000000;
-      let earthToMoonKilometers = 384400;
+.. list-table:: Space Shuttle Information
+   :widths: auto
+   :header-rows: 1
+
+   * - Data
+     - Value
+   * - Name of the space shuttle
+     - Determination
+   * - Orbit Speed (mph)
+     - 17,500
+   * - G Force at Launch
+     - 3G
+   * - Launch Status
+     - ready for launch
+   * - Distance to Mars (km)
+     - 225,000,000
+   * - Distance to the Moon (km)
+     - 384,400
+
+#. Assign a variable named spaceShuttleName the value of the name of the space shuttle.
+
+#. For each value in the table, if you were to assign them to variables in Javascript, what would be the data type?
 
 #. Time to calculate some important values for our space shuttle!
 
