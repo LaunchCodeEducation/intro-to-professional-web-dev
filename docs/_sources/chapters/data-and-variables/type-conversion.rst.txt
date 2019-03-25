@@ -12,31 +12,35 @@ JavaScript provides a few simple functions that will allow us to convert values 
 
 The ``Number()`` function can take a string and turn it into an integer. Let us see this in action:
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(Number("2345"));
-    console.log(typeof Number("2345"))
-    console.log(Number(17));
+   .. sourcecode:: js
 
-**Output**
+      console.log(Number("2345"));
+      console.log(typeof Number("2345"))
+      console.log(Number(17));
 
-:: 
+   **Output**
 
-   2345
-   number
-   17
+   :: 
+
+      2345
+      number
+      17
 
 What happens if we attempt to convert a string to a number, and the string doesn't directly represent a number?
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(Number("23bottles"));
+   .. sourcecode:: js
 
-**Output**
+      console.log(Number("23bottles"));
 
-::
+   **Output**
 
-   NaN
+   ::
+
+      NaN
 
 This example shows that a string has to be a syntactically legal number for conversion to go as expected. Examples of such strings are ``"34"`` or ``"-2.5"``. If the value cannot be cleanly converted to a number then ``NaN`` will be returned, which stands for "not a number."
 
@@ -46,19 +50,21 @@ This example shows that a string has to be a syntactically legal number for conv
 
 The type conversion function ``String()`` turns its argument into a string. Remember that when we print a string, the quotes may be removed. However, if we print the type, we can see that it is definitely ``'string'``.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(String(17));
-    console.log(String(123.45));
-    console.log(typeof String(123.45));
+   .. sourcecode:: js
 
-**Output**
+      console.log(String(17));
+      console.log(String(123.45));
+      console.log(typeof String(123.45));
 
-::
+   **Output**
 
-   17
-   123.45
-   string
+   ::
+
+      17
+      123.45
+      string
 
 Check Your Understanding
 ------------------------

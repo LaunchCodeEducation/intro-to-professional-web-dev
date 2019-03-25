@@ -17,19 +17,21 @@ Each value belongs to a category called a **data type**. We will see many differ
 
 If you are not sure what data type a value falls into, precede the value with ``typeof``.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-   console.log(typeof "Hello, World!");
-   console.log(typeof 17);
-   console.log(typeof 3.14);
+   .. sourcecode:: js
 
-**Output**
+      console.log(typeof "Hello, World!");
+      console.log(typeof 17);
+      console.log(typeof 3.14);
 
-::
+   **Output**
 
-   string
-   number
-   number
+   ::
+
+      string
+      number
+      number
 
 Not surprisingly, JavaScript reports that the data type of ``"Helo, World!"`` is ``string``, while the data type of both ``17`` and ``3.14`` is ``number``. Note that some JavaScript environments may print types names and strings with single quotes around them, as in ``'string'``, ``'number'``, and ``'hello'``.
 
@@ -72,17 +74,19 @@ Run the following code to find out.
 Strings in JavaScript can be enclosed in either single quotes (``'``) or double
 quotes (``"``).
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(typeof 'This is a string');
-    console.log(typeof "And so is this");
+   .. sourcecode:: js
 
-**Output**
+      console.log(typeof 'This is a string');
+      console.log(typeof "And so is this");
 
-::
+   **Output**
 
-   string
-   string
+   ::
+
+      string
+      string
 
 Double-quoted strings can contain single quotes inside them, as in ``"Bruce's beard"``, and single quoted strings can have double quotes inside them, as in ``'The knights who say "Ni!"'``.
 
@@ -104,31 +108,35 @@ More On Numbers
 
 When you type a large integer value, you might be tempted to use commas between groups of three digits, as in ``42,000``. This is not a legal integer in JavaScript, but it does mean something else, which is legal:
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(42000);
-    console.log(42,000);
+   .. sourcecode:: js
 
-**Output**
+      console.log(42000);
+      console.log(42,000);
 
-::
+   **Output**
 
-   42000
-   42 0
+   ::
+
+      42000
+      42 0
 
 Well, that's not what we expected at all! Because of the comma, JavaScript chose to treat ``42,000`` as a *pair* of values. In fact, the ``console.log()`` function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(42, 17, 56, 34, 11, 4.35, 32);
-    console.log(3.4, "hello", 45);
+   .. sourcecode:: js
 
-**Output**
+      console.log(42, 17, 56, 34, 11, 4.35, 32);
+      console.log(3.4, "hello", 45);
 
-::
+   **Output**
 
-   42 17 56 34 11 4.35 32
-   3.4 'hello' 45
+   ::
+
+      42 17 56 34 11 4.35 32
+      3.4 'hello' 45
 
 Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the chapter :ref:`how-programs-work`: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.
 

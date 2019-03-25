@@ -130,47 +130,49 @@ These two examples have the exact same same output.
 
 When we refer to a variable name, we are **evaluating** the variable. The effect is just as if the value of the variable is substituted for the variable name in the code when executed.
 
-Think of 
+.. admonition:: Example
 
-.. sourcecode:: js
+   .. sourcecode:: js
 
-    let message = "What's up, Doc?";
-    let n = 17;
-    let pi = 3.14159;
+      let message = "What's up, Doc?";
+      let n = 17;
+      let pi = 3.14159;
 
-    console.log(message);
-    console.log(n);
-    console.log(pi);
+      console.log(message);
+      console.log(n);
+      console.log(pi);
 
-**Output**
+   **Output**
 
-::
+   ::
 
-    What's up, Doc?
-    17
-    3.14159
+      What's up, Doc?
+      17
+      3.14159
 
 In each case, the printed result is the value of the variable. 
 
 Like values, variables also have types. We determine the type of a variable the same way we determine the type of a value, using ``typeof``.
 
-.. sourcecode:: js
-    
-    let message = "What's up, Doc?";
-    let n = 17;
-    let pi = 3.14159;
+.. admonition:: Example
 
-    console.log(typeof message);
-    console.log(typeof n);
-    console.log(typeof pi);
+   .. sourcecode:: js
+      
+      let message = "What's up, Doc?";
+      let n = 17;
+      let pi = 3.14159;
 
-**Output**
+      console.log(typeof message);
+      console.log(typeof n);
+      console.log(typeof pi);
 
-::
+   **Output**
 
-   string
-   number
-   number
+   ::
+
+      string
+      number
+      number
 
 The type of a variable is the type of the data it currently refers to.
 

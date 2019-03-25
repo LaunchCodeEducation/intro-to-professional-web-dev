@@ -17,31 +17,35 @@ Expressions need to be evaluated when the code executes in order to determine th
 
 If you ask JavaScript to print an expression using ``console.log()``, the interpreter **evaluates** the expression and displays the result.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    console.log(1 + 1);
+   .. sourcecode:: js
 
-**Output**
+      console.log(1 + 1);
 
-::
+   **Output**
 
-   2
+   ::
+
+      2
 
 This code prints not ``1 + 1`` but rather the *result* of calculating ``1 + 1`` mathemtically. In other words, ``console.log(1 + 1)`` prints the value ``2``. This is what we would expect.
 
 Since evaluating an expression produces a value, expressions can appear on the right-hand side of assignment statements. 
 
-.. sourcecode:: js
-   :linenos:
+.. admonition:: Example
 
-   let sum = 1 + 2;
-   console.log(sum);
+   .. sourcecode:: js
+      :linenos:
 
-**Output**
+      let sum = 1 + 2;
+      console.log(sum);
 
-::
+   **Output**
 
-   3
+   ::
+
+      3
 
 The value of the variable ``sum`` is the result of evaluating the expression ``1 + 2``, so the value ``3`` is printed.
 

@@ -48,16 +48,18 @@ Such an unchangeable variable is known as a **constant**, since its value is jus
 
 How does JavaScript prevent a programmer from changing the value of a constant? Let's find out. Try running the following code in an editor. What happens?
 
-.. sourcecode:: js
+.. admonition:: Example
 
-   const appName = "Get It Done";
-   appName = "Best TODO application Ever!";
+   .. sourcecode:: js
 
-**Output**
+      const appName = "Get It Done";
+      appName = "Best TODO application Ever!";
 
-:: 
+   **Output**
 
-   TypeError: Assignment to constant variable.
+   :: 
+
+      TypeError: Assignment to constant variable.
 
 As we've seen with other examples---such as trying to declare a variable twice, using incorrect syntax, or failing to enclose strings in quotes---JavaScripts prevents undesired code from executing by throwing an error.
 
@@ -69,15 +71,17 @@ Valid Variable Names
 
 As you may have discovered already, not just any sequence of characters is a valid variable name. For example, if we try to declare a variable with a name containing a space, JavaScript complains.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-   let application name;
+   .. sourcecode:: js
 
-**Output**
+      let application name;
 
-::
+   **Output**
 
-   SyntaxError: Unexpected identifier
+   ::
+
+      SyntaxError: Unexpected identifier
 
 In this case, "identifier" is another term for variable name, so the error message is saying that the variable name is not valid, or is "unexpected".
 
@@ -166,18 +170,20 @@ Any word that is formally part of the JavaScript language syntax is a keyword. S
 
 Attempting to use a keyword for anything other than it's intended use will result in an error. To see this, let's try to name a variable ``const``.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-   let const;
+   .. sourcecode:: js
 
-**Output**
+      let const;
 
-::
+   **Output**
 
-   let const
-   ^^^^^
+   ::
 
-   SyntaxError: Unexpected token const
+      let const
+      ^^^^^
+
+      SyntaxError: Unexpected token const
 
 .. tip:: Most code editors will highlight keywords in a different color than variables or other parts of your code. This serves as a visual cue that a given word is a keyword, and can help prevent mistakes.
 

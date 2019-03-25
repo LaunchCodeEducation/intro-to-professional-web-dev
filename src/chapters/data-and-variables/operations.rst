@@ -23,39 +23,43 @@ For example, in the calculation ``20 + 32``, the operator is ``+`` and the opera
 
 The symbols ``+`` and ``-``, and the use of parentheses for grouping, mean in JavaScript what they mean in mathematics. The asterisk (``*``) is the symbol for multiplication, and ``**`` is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-   console.log(2 + 3);
-   console.log(2 - 3);
-   console.log(2 * 3);
-   console.log(2 ** 3);
-   console.log(3 ** 2);
+   .. sourcecode:: js
 
-**Output**
+      console.log(2 + 3);
+      console.log(2 - 3);
+      console.log(2 * 3);
+      console.log(2 ** 3);
+      console.log(3 ** 2);
 
-::
+   **Output**
 
-   5
-   -1
-   6
-   8
-   9
+   ::
+
+      5
+      -1
+      6
+      8
+      9
 
 We use the same terminology as before, stating that ``2 + 3`` **returns** the value ``5``.
 
 When a variable name appears in the place of an operand, it is replaced with the value that it refers to before the operation is performed. For example, suppose that we wanted to convert 645 minutes into hours. Division is denoted by the operator ``/``.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-    let minutes = 645;
-    let hours = minutes / 60;
-    console.log(hours);
+   .. sourcecode:: js
 
-**Output**
+      let minutes = 645;
+      let hours = minutes / 60;
+      console.log(hours);
 
-::
+   **Output**
 
-   10.75
+   ::
+
+      10.75
 
 In summary, operators and operands can be combined to create expressions that are evaluated upon execution. Let's discuss some specific types of operators
 
@@ -147,22 +151,22 @@ When more than one operator appears in an expression, the order of evaluation de
 
 .. note::
 
-    Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator ``**``. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:
+   Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator ``**``. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:
 
-    .. sourcecode:: js
+   .. sourcecode:: js
 
-       // the right-most ** operator is applied first
-       console.log(2 ** 3 ** 2)     
+      // the right-most ** operator is applied first
+      console.log(2 ** 3 ** 2)     
 
-       // use parentheses to force the order you want
-       console.log((2 ** 3) ** 2)   
+      // use parentheses to force the order you want
+      console.log((2 ** 3) ** 2)   
 
-**Output**
+   **Output**
 
-::
+   ::
 
-   512
-   64
+      512
+      64
 
 
 Check Your Understanding

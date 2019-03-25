@@ -15,18 +15,20 @@ So far we have only seen operators that work on operands which are of type ``num
 
 Let's compare ``+`` used with numbers to ``+`` used with strings.
 
-.. sourcecode:: js
-   :linenos:
+.. admonition:: Example
 
-   console.log(1 + 1);
-   console.log("1" + "1");
+   .. sourcecode:: js
+      :linenos:
 
-**Output**
+      console.log(1 + 1);
+      console.log("1" + "1");
 
-::
+   **Output**
 
-   2
-   11
+   ::
+
+      2
+      11
 
 This example demonstrates that **the operator + behaves differently based on the data type of its operands.**
 
@@ -43,37 +45,41 @@ Compound Assignment Operators
 
 A common programming task is to update the value of a variable in reference to itself. 
 
-.. sourcecode:: js
-   :linenos:
+.. admonition:: Example
 
-   let x = 1;
-   x = x + 1;
+   .. sourcecode:: js
+      :linenos:
 
-   console.log(x);
+      let x = 1;
+      x = x + 1;
 
-**Output**
+      console.log(x);
 
-::
+   **Output**
 
-   2
+   ::
+
+      2
 
 Line 2 may seem odd to you at first, since it uses the value of the variable ``x`` to update ``x`` itself. This technique is not only legal in JavaScript (and programming in general) but is quite common. It essentially says, "update ``x`` to be one more than its current value." 
 
 This action is so common, in fact, that it has a shorthand opertor, ``+=``. The following example has the same behavior as the one above.
 
-.. sourcecode:: js
-   :linenos:
+.. admonition:: Example
 
-   let x = 1;
-   x += 1;
+   .. sourcecode:: js
+      :linenos:
 
-   console.log(x);
+      let x = 1;
+      x += 1;
 
-**Output**
+      console.log(x);
 
-::
+   **Output**
 
-   2
+   ::
+
+      2
 
 The expression ``x += 1`` is shorthand for ``x = x + 1``. 
 

@@ -83,16 +83,19 @@
 <p>A <strong>value</strong> is a specific piece of data, such as a word or a number. Some examples are <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">5.2</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>.</p>
 <p id="index-1">Each value belongs to a category called a <strong>data type</strong>. We will see many different data types throughout the course, the first two of which are the <strong>number</strong> and <strong>string</strong> types. Numeric values such as <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">3.3</span></code> are a numbers. Sequences of characters encolosed in quotes, such as <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes.</p>
 <span class="target" id="index-2"></span><p id="index-3">If you are not sure what data type a value falls into, precede the value with <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">17</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mf">3.14</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>string
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>string
 number
 number
 </pre></div>
+</div>
 </div>
 <p>Not surprisingly, JavaScript reports that the data type of <code class="docutils literal notranslate"><span class="pre">&quot;Helo,</span> <span class="pre">World!&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">string</span></code>, while the data type of both <code class="docutils literal notranslate"><span class="pre">17</span></code> and <code class="docutils literal notranslate"><span class="pre">3.14</span></code> is <code class="docutils literal notranslate"><span class="pre">number</span></code>. Note that some JavaScript environments may print types names and strings with single quotes around them, as in <code class="docutils literal notranslate"><span class="pre">'string'</span></code>, <code class="docutils literal notranslate"><span class="pre">'number'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>.</p>
 <div class="admonition note" id="index-4">
@@ -124,14 +127,17 @@ number
 </div>
 <p>Strings in JavaScript can be enclosed in either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double
 quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>).</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s1">&#39;This is a string&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;And so is this&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>string
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>string
 string
 </pre></div>
+</div>
 </div>
 <p>Double-quoted strings can contain single quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">&quot;Bruce's</span> <span class="pre">beard&quot;</span></code>, and single quoted strings can have double quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">knights</span> <span class="pre">who</span> <span class="pre">say</span> <span class="pre">&quot;Ni!&quot;'</span></code>.</p>
 <p>JavaScript doesn’t care whether you use single or double quotes to surround your strings. Once it has parsed the text of your program or command, the way it stores the value is identical in all cases, and the surrounding quotes are not part of the value.</p>
@@ -147,24 +153,30 @@ string
 <div class="section" id="more-on-numbers">
 <h2>4.1.2. More On Numbers<a class="headerlink" href="#more-on-numbers" title="Permalink to this headline">¶</a></h2>
 <p>When you type a large integer value, you might be tempted to use commas between groups of three digits, as in <code class="docutils literal notranslate"><span class="pre">42,000</span></code>. This is not a legal integer in JavaScript, but it does mean something else, which is legal:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">42000</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="mi">000</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>42000
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42000
 42 0
 </pre></div>
 </div>
+</div>
 <p>Well, that’s not what we expected at all! Because of the comma, JavaScript chose to treat <code class="docutils literal notranslate"><span class="pre">42,000</span></code> as a <em>pair</em> of values. In fact, the <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">4.35</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>42 17 56 34 11 4.35 32
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42 17 56 34 11 4.35 32
 3.4 &#39;hello&#39; 45
 </pre></div>
+</div>
 </div>
 <p>Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the chapter <a class="reference internal" href="../how-programs-work/index.html#how-programs-work"><span class="std std-ref">How Programs Work</span></a>: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.</p>
 </div>
