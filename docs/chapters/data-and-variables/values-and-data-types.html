@@ -81,7 +81,7 @@
 <h1>4.1. Values and Data Types<a class="headerlink" href="#values-and-data-types" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">Data can be stored in a program in a variety of ways. The most basic unit of data is a value.</p>
 <p>A <strong>value</strong> is a specific piece of data, such as a word or a number. Some examples are <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">5.2</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>.</p>
-<p id="index-1">Each value belongs to a category called a <strong>data type</strong>: <code class="docutils literal notranslate"><span class="pre">4</span></code> is a <strong>number</strong>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is a <strong>string</strong>, so-called because it contains a string, or sequence, of letters. When using strings in a JavaScript program, we must enclose them in either single or double quotes.</p>
+<p id="index-1">Each value belongs to a category called a <strong>data type</strong>. We will see many different data types throughout the course, the first two of which are the <strong>number</strong> and <strong>string</strong> types. Numeric values such as <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">3.3</span></code> are a numbers. Sequences of characters encolosed in quotes, such as <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes.</p>
 <span class="target" id="index-2"></span><p id="index-3">If you are not sure what data type a value falls into, precede the value with <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">17</span><span class="p">);</span>
@@ -94,11 +94,11 @@ number
 number
 </pre></div>
 </div>
-<p>Not surprisingly, strings are of type <code class="docutils literal notranslate"><span class="pre">string</span></code> while integers and floats are of type <code class="docutils literal notranslate"><span class="pre">number</span></code>. Note that some JavaScript environments may print types names and strings with single quotes around them, as in <code class="docutils literal notranslate"><span class="pre">'string'</span></code>, <code class="docutils literal notranslate"><span class="pre">'number'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>.</p>
+<p>Not surprisingly, JavaScript reports that the data type of <code class="docutils literal notranslate"><span class="pre">&quot;Helo,</span> <span class="pre">World!&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">string</span></code>, while the data type of both <code class="docutils literal notranslate"><span class="pre">17</span></code> and <code class="docutils literal notranslate"><span class="pre">3.14</span></code> is <code class="docutils literal notranslate"><span class="pre">number</span></code>. Note that some JavaScript environments may print types names and strings with single quotes around them, as in <code class="docutils literal notranslate"><span class="pre">'string'</span></code>, <code class="docutils literal notranslate"><span class="pre">'number'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>.</p>
 <div class="admonition note" id="index-4">
 <p class="first admonition-title">Note</p>
-<p>Notice that <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;);</span></code> prints not <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> but something else entirely. In fact, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is an example of an <strong>expression</strong>, which we will learn about shortly. Briefly, expressions are code segments that can be reduced to a value.</p>
-<p class="last">We say that an expression <strong>returns</strong> a value. That is, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> returns <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;);</span></code> prints out <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!</span></code> to the console. The <code class="docutils literal notranslate"><span class="pre">typeof</span></code> keyword is not printed to the console because the statement <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hellow,</span> <span class="pre">World&quot;!</span></code> is an <strong>expression</strong>. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.</p>
+<p class="last">We say that an expression <strong>returns</strong> a value. That is, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> returns the value <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
 </div>
 <div class="admonition note" id="index-5">
 <p class="first admonition-title">Note</p>
@@ -110,16 +110,18 @@ number
 <h2>4.1.1. More On Strings<a class="headerlink" href="#more-on-strings" title="Permalink to this headline">¶</a></h2>
 <p>What about values like <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>? They look like numbers, but they are in quotation marks like strings.</p>
 <p>Run the following code to find out.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;17&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;3.2&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>string
-string
-</pre></div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Data-Types">Run this program at repl.it</a></p>
 </div>
-<p>They’re strings!</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What is the data type of the values <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>?</p>
+</div>
 <p>Strings in JavaScript can be enclosed in either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double
 quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>).</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s1">&#39;This is a string&#39;</span><span class="p">);</span>
@@ -164,15 +166,15 @@ string
 3.4 &#39;hello&#39; 45
 </pre></div>
 </div>
-<p>Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the previous chapter: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.</p>
+<p>Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the chapter <a class="reference internal" href="../how-programs-work/index.html#how-programs-work"><span class="std std-ref">How Programs Work</span></a>: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.</p>
 </div>
 <div class="section" id="type-systems">
 <h2>4.1.3. Type Systems<a class="headerlink" href="#type-systems" title="Permalink to this headline">¶</a></h2>
-<p id="index-6">Every programming langauge has a <strong>type system</strong>, which is the set of rules that determine how it deals with data of different types. In particular, how values are divided up into different data types is one characteristic of a type system.</p>
+<p id="index-6">Every programming language has a <strong>type system</strong>, which is the set of rules that determine how the languages deals with data of different types. In particular, how values are divided up into different data types is one characteristic of a type system.</p>
 <p>In many programming languages, integers and floats are considered to be different data types. For example, in Python <code class="docutils literal notranslate"><span class="pre">42</span></code> is of the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type, while <code class="docutils literal notranslate"><span class="pre">42.0</span></code> is of the <code class="docutils literal notranslate"><span class="pre">float</span></code> data type.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, an inventory-tracking program might not want insist that counts of items are integers.</p>
+<p class="last">While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, consider an inventory-tracking program that stores items along with the number of each item in stock. It would not make sense for there to be float quantities of items (for example, 3.5 shirts), so the program may wish to only allow quantities to be stored as integers.</p>
 </div>
 <p>When discussing the differences between programming languages, the details of type systems are one of the main factors that programmers consider. There are other aspects of type systems beyond just how values are categorized. We will explore these in future lessons.</p>
 </div>
@@ -180,7 +182,7 @@ string
 <h2>4.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
-<p>Which of these is _not_ a data type in JavaScript?</p>
+<p>Which of these is <em>not</em> a data type in JavaScript?</p>
 <ol class="last arabic simple">
 <li>number</li>
 <li>string</li>

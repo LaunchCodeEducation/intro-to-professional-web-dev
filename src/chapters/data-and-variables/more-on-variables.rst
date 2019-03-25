@@ -6,7 +6,7 @@ The previous section covered creating, evaluating, and reassigning variables. Th
 Creating Constants With ``const``
 ---------------------------------
 
-One the key features of variables that we have discussed so far is their ability to change value. We can create a variable with one value, and then reassign it to another value.
+One of the key features of variables that we have discussed so far is their ability to change value. We can create a variable with one value, and then reassign it to another value.
 
 .. sourcecode:: js
 
@@ -59,7 +59,7 @@ How does JavaScript prevent a programmer from changing the value of a constant? 
 
    TypeError: Assignment to constant variable.
 
-As we've seen with other examples--such as trying to declare a variable twice, using incorrect syntax, or failing to enclose strings in quotes--JavaScripts prevents undesired code from executing by throwing an error.
+As we've seen with other examples---such as trying to declare a variable twice, using incorrect syntax, or failing to enclose strings in quotes---JavaScripts prevents undesired code from executing by throwing an error.
 
 Naming Variables
 ----------------
@@ -90,7 +90,7 @@ JavaScript provides a broad set of rules for naming variables, but there is no r
 - Avoid starting a variable name with an underscore. Doing so is a convention used by some JavaScript developers to mean something very specific about the variable, and should be avoided.
 - Do not use **keywords**, which are words reserved by JavaScript for use by the language itself. We'll discuss these in detail in a moment.
 
-Following these guidelines will prevent you from encountering errors like the one above. However, for a good programmer it is not enough to simply follow the minimal guidelines.
+Following these guidelines will prevent you from creating illegal variable names. While this is important, we should also strive to create good variable names.
 
 Good Variable Names
 ^^^^^^^^^^^^^^^^^^^

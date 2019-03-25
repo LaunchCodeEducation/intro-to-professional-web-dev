@@ -8,10 +8,9 @@ One of the most powerful features of a programming language is the ability to ma
 A useful visual analogy for how a variable works is that of a label that "points to" a piece of data. 
 
 .. figure:: figures/variable.png
-   :height: 400px
    :alt: A label, programmingLanguages, pointing to a the string value "JavaScript"
 
-   A variable can be visualized as a label poinging to a specific piece of data.
+   A variable can be visualized as a label pointing to a specific piece of data.
 
 In this figure, the name "programmingLanguage" points to the string value "JavaScript." This is more than an analogy, since it also is representative of how a variable and the associated value are stored in a computer's memory, as we will learn later.
 
@@ -60,7 +59,6 @@ We can visualize the action of the two lines of code above as follows. The first
 The second line assigns the variable a value, which connects the name to the given piece of data.
 
 .. figure:: figures/variable.png
-   :height: 400px
    :alt: A label, programmingLanguages, pointing to a the string value "JavaScript"
 
    The result of ``programmingLanguage = "JavaScript";``
@@ -71,7 +69,7 @@ It is possible to both declare and initialize a variable with a single line of c
 
    let programmingLanguage = "JavaScript";
 
-.. warning:: While ``let`` is the preferred way to create a variable in JavaScript, you will also see programmers sometimes use ``var`` to create a variable in JavaScript, like this:
+.. warning:: You will see some programmers use ``var`` to create a variable in JavaScript, like this:
 
    .. sourcecode:: js
 
@@ -130,7 +128,7 @@ After a variable has been created, it may be used later in a program in any plac
 
 These two examples have the exact same same output.
 
-Using a variable in this way is called **evaluating** a variable. If you ask JavaScript to evaluate a variable, it will produce the value that is currently linked to the variable. The effect is as if the value of the variable is substituted for the variable name in the code when executed.
+When we refer to a variable name, we are **evaluating** the variable. The effect is just as if the value of the variable is substituted for the variable name in the code when executed.
 
 Think of 
 
@@ -179,7 +177,7 @@ The type of a variable is the type of the data it currently refers to.
 Reassigning Variables
 ---------------------
 
-We use variables in a program to "remember" things, like the current score at the football game. But variables are *variable*. This means they can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.
+We use variables in a program to "remember" things, like the current score at the football game. As their name implies, variables can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.
 
 To see this, read and then run the following program in a code editor. You'll notice that we change the value of ``day`` three times, and on the third assignment we even give it a value that is of a different data type.
 

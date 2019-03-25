@@ -9,7 +9,7 @@ A **value** is a specific piece of data, such as a word or a number. Some exampl
 
 .. index:: ! data type, ! number, ! string, ! type 
 
-Each value belongs to a category called a **data type**: ``4`` is a **number**, and ``"Hello, World!"`` is a **string**, so-called because it contains a string, or sequence, of letters. When using strings in a JavaScript program, we must enclose them in either single or double quotes. 
+Each value belongs to a category called a **data type**. We will see many different data types throughout the course, the first two of which are the **number** and **string** types. Numeric values such as ``4`` and ``3.3`` are a numbers. Sequences of characters encolosed in quotes, such as ``"Hello, World!"``, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes. 
 
 .. index:: ! integer, ! float
 
@@ -31,13 +31,13 @@ If you are not sure what data type a value falls into, precede the value with ``
    number
    number
 
-Not surprisingly, strings are of type ``string`` while integers and floats are of type ``number``. Note that some JavaScript environments may print types names and strings with single quotes around them, as in ``'string'``, ``'number'``, and ``'hello'``.
+Not surprisingly, JavaScript reports that the data type of ``"Helo, World!"`` is ``string``, while the data type of both ``17`` and ``3.14`` is ``number``. Note that some JavaScript environments may print types names and strings with single quotes around them, as in ``'string'``, ``'number'``, and ``'hello'``.
 
 .. index:: expression, returns
 
-.. note:: Notice that ``console.log(typeof "Hello, World!");`` prints not ``typeof "Hello, World!"`` but something else entirely. In fact, ``typeof "Hello, World!"`` is an example of an **expression**, which we will learn about shortly. Briefly, expressions are code segments that can be reduced to a value. 
+.. note:: Notice that ``console.log(typeof "Hello, World!");`` prints out ``"Hello, World!`` to the console. The ``typeof`` keyword is not printed to the console because the statement ``typeof "Hellow, World"!`` is an **expression**. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.
 
-   We say that an expression **returns** a value. That is, ``typeof "Hello, World!"`` returns ``string``.
+   We say that an expression **returns** a value. That is, ``typeof "Hello, World!"`` returns the value ``string``.
 
 .. index:: operator
 
@@ -56,19 +56,18 @@ What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they 
 
 Run the following code to find out.
 
-.. sourcecode:: js
+.. admonition:: Try It!
 
-    console.log(typeof "17");
-    console.log(typeof "3.2");
+   .. sourcecode:: js
 
-**Output**
+      console.log(typeof "17");
+      console.log(typeof "3.2");
 
-::
+   `Run this program at repl.it <https://repl.it/@launchcode/Data-Types>`_
 
-   string
-   string
+.. admonition:: Question
 
-They're strings!
+   What is the data type of the values ``"17"`` and ``"3.2"``?
 
 Strings in JavaScript can be enclosed in either single quotes (``'``) or double
 quotes (``"``).
@@ -131,18 +130,18 @@ Well, that's not what we expected at all! Because of the comma, JavaScript chose
    42 17 56 34 11 4.35 32
    3.4 'hello' 45
 
-Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the previous chapter: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.
+Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the chapter :ref:`how-programs-work`: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.
 
 Type Systems
 ------------
 
 .. index:: ! type system
 
-Every programming langauge has a **type system**, which is the set of rules that determine how it deals with data of different types. In particular, how values are divided up into different data types is one characteristic of a type system.
+Every programming language has a **type system**, which is the set of rules that determine how the languages deals with data of different types. In particular, how values are divided up into different data types is one characteristic of a type system.
 
 In many programming languages, integers and floats are considered to be different data types. For example, in Python ``42`` is of the ``int`` data type, while ``42.0`` is of the ``float`` data type.
 
-.. note:: While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, an inventory-tracking program might not want insist that counts of items are integers.
+.. note:: While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, consider an inventory-tracking program that stores items along with the number of each item in stock. It would not make sense for there to be float quantities of items (for example, 3.5 shirts), so the program may wish to only allow quantities to be stored as integers.
 
 When discussing the differences between programming languages, the details of type systems are one of the main factors that programmers consider. There are other aspects of type systems beyond just how values are categorized. We will explore these in future lessons.
 
@@ -151,7 +150,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of these is _not_ a data type in JavaScript?
+   Which of these is *not* a data type in JavaScript?
 
    #. number
    #. string

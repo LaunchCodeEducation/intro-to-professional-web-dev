@@ -28,7 +28,7 @@ Let's compare ``+`` used with numbers to ``+`` used with strings.
    2
    11
 
-..pull-quote:: The operator ``+`` behaves differently based on the data type of its operands.
+This example demonstrates that **the operator + behaves differently based on the data type of its operands.**
 
 .. warning:: So far we have only seen examples of operators working with data of like type. For the examples ``1 + 1`` and ``"1" + "1"``, both operands are of type ``number`` and ``string``, respectively. 
 

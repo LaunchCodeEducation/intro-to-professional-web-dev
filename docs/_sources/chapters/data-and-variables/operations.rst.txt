@@ -12,22 +12,16 @@ An **operator** is one or more characters that represents a computation like add
 
 The following are all legal JavaScript expressions whose meaning is more or less clear:
 
-.. sourcecode:: js
-   :linenos:
+- ``20 + 32``
+- ``hour - 1``
+- ``hour * 60 + minute``
+- ``minute / 60``
+- ``5 ** 2``
+- ``(5 + 9) * (15 - 7)``
 
-    let hour = 5;
-    let minute = 120;
+For example, in the calculation ``20 + 32``, the operator is ``+`` and the operands are ``20`` and ``32``.
 
-    20 + 32;
-    hour - 1;
-    hour * 60 + minute;
-    minute / 60;
-    5 ** 2;
-    (5 + 9) * (15 - 7);
-
-In the first calculation on line 4, the operator is ``+`` and the operands are ``20`` and ``32``.
-
-The symbols ``+`` and ``-``, and the use of parenthesis for grouping, mean in JavaScript what they mean in mathematics. The asterisk (``*``) is the symbol for multiplication, and ``**`` is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.
+The symbols ``+`` and ``-``, and the use of parentheses for grouping, mean in JavaScript what they mean in mathematics. The asterisk (``*``) is the symbol for multiplication, and ``**`` is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.
 
 .. sourcecode:: js
 
@@ -117,9 +111,7 @@ The ``%`` operator returns the *remainder* obtained by carrying out integer divi
    - 6 % 2 is 0
    - 7 % 2 is 1
 
-The last two examples illustrate a general rule:
-
-.. pull-quote:: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1.   
+The last two examples illustrate a general rule: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1. 
 
 .. note:: The value returned by ``a % b`` will always be between ``0`` and ``b``.
 

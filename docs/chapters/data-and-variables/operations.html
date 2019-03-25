@@ -84,27 +84,16 @@
 <p>Now that we can store data in variables, let’s explore how we can generate new data from existing data.</p>
 <p id="index-0">An <strong>operator</strong> is one or more characters that represents a computation like addition, multiplication, or division. The values an operator works on are called <strong>operands</strong>.</p>
 <p>The following are all legal JavaScript expressions whose meaning is more or less clear:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">hour</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
- <span class="kd">let</span> <span class="nx">minute</span> <span class="o">=</span> <span class="mi">120</span><span class="p">;</span>
-
- <span class="mi">20</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
- <span class="nx">hour</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
- <span class="nx">hour</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">minute</span><span class="p">;</span>
- <span class="nx">minute</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
- <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span>
- <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">7</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-<p>In the first calculation on line 4, the operator is <code class="docutils literal notranslate"><span class="pre">+</span></code> and the operands are <code class="docutils literal notranslate"><span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">32</span></code>.</p>
-<p>The symbols <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>, and the use of parenthesis for grouping, mean in JavaScript what they mean in mathematics. The asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) is the symbol for multiplication, and <code class="docutils literal notranslate"><span class="pre">**</span></code> is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">+</span> <span class="pre">32</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">hour</span> <span class="pre">-</span> <span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">hour</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">+</span> <span class="pre">minute</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">minute</span> <span class="pre">/</span> <span class="pre">60</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">**</span> <span class="pre">2</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">+</span> <span class="pre">9)</span> <span class="pre">*</span> <span class="pre">(15</span> <span class="pre">-</span> <span class="pre">7)</span></code></li>
+</ul>
+<p>For example, in the calculation <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">+</span> <span class="pre">32</span></code>, the operator is <code class="docutils literal notranslate"><span class="pre">+</span></code> and the operands are <code class="docutils literal notranslate"><span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">32</span></code>.</p>
+<p>The symbols <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>, and the use of parentheses for grouping, mean in JavaScript what they mean in mathematics. The asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) is the symbol for multiplication, and <code class="docutils literal notranslate"><span class="pre">**</span></code> is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">);</span>
@@ -192,9 +181,7 @@
 <li>7 % 2 is 1</li>
 </ul>
 </div>
-<p>The last two examples illustrate a general rule:</p>
-<blockquote class="pull-quote">
-<div>A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1.</div></blockquote>
+<p>The last two examples illustrate a general rule: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The value returned by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> will always be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
