@@ -14,6 +14,7 @@ Contents
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
+   chapters/debugging/index
    
 .. toctree::
 
