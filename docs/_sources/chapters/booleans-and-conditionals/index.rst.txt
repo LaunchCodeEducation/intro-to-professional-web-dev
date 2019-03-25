@@ -1,14 +1,11 @@
-Booleans and Conditionals
-=========================
+Making Decisions With Conditionals
+==================================
 
 .. toctree::
    :maxdepth: 3
 
-   boolean-values
-   logical-operators
-   boolean-expressions
+   booleans
    equality
-   if-statements
-   else-clauses
-   else-if-statements
+   logical-operators
+   conditionals
    nested-conditionals
