@@ -11,8 +11,8 @@ This chapter explores the first of these two fundamental componets, data.
 .. toctree::
    :maxdepth: 3
 
-   values-and-data-types.rst
-   variables.rst
-   type-conversion.rst
-   mathematical-operators.rst
-   statements-and-expressions.rst
+   values-and-data-types
+   variables
+   type-conversion
+   mathematical-operators
+   statements-and-expressions
