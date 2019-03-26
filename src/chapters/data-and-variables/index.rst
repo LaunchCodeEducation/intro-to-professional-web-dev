@@ -16,3 +16,4 @@ This chapter explores the first of these two fundamental componets, data.
    type-conversion
    mathematical-operators
    statements-and-expressions
+   studio
