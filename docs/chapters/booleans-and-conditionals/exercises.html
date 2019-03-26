@@ -59,7 +59,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -80,6 +81,7 @@
     
   <div class="section" id="chapter-5-exercises">
 <h1>5.1. Chapter 5 Exercises<a class="headerlink" href="#chapter-5-exercises" title="Permalink to this headline">¶</a></h1>
+<p><em>[TODO: Write an introduction here.  Something to engage the user and ease them into the assignment.]</em></p>
 <ol class="arabic simple">
 <li>Declare and initialize variables in the table.</li>
 </ol>
@@ -112,26 +114,28 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Write conditional expressions and <code class="docutils literal notranslate"><span class="pre">if</span></code>,  <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements for the below rules.<ul>
-<li>crewStatus<ul>
-<li>if value is true, print <strong>“Crew Ready”</strong></li>
+<li>Use an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">/</span> <span class="pre">else</span></code> statement (a <em>conditional expression</em>) to check on the status of the crew:</li>
+</ol>
+<ul class="simple">
+<li>if crewStatus is true, print <strong>“Crew Ready”</strong></li>
 <li>else print <strong>“Crew Not Ready”</strong></li>
 </ul>
-</li>
-<li>computerStatusCode<ul>
-<li>if value is <strong>200</strong>, print <strong>“Success, computer working fine”</strong></li>
-<li>else if value is <strong>400</strong>, print <strong>“ALERT: computer not functioning”</strong></li>
+<ol class="arabic simple" start="3">
+<li>computerStatusCode</li>
+</ol>
+<ul class="simple">
+<li>if value is <strong>200</strong>, print <strong>“Please stand by. Computer is rebooting.”</strong></li>
+<li>else if value is <strong>400</strong>, print <strong>“Success! Computer working fine.”</strong></li>
+<li>else print <strong>“ALERT: Computer not functioning!”</strong></li>
 </ul>
-</li>
-<li>shuttleSpeed<ul>
+<ol class="arabic simple" start="4">
+<li>shuttleSpeed</li>
+</ol>
+<ul class="simple">
 <li>if value is <strong>&gt; 17,500</strong>, print <strong>“ALERT: could escape orbit”</strong></li>
 <li>else if value is <strong>&lt; 8000</strong>, print <strong>“ALERT: could fall out of orbit”</strong></li>
 <li>else print <strong>“Stable speed”</strong></li>
 </ul>
-</li>
-</ul>
-</li>
-</ol>
 <p>Example:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">crewStatus</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;crew ready&quot;</span><span class="p">);</span>
@@ -162,16 +166,16 @@
 <li>waveLength</li>
 </ul>
 </li>
-<li>if colorCode is “2A109” OR waveLength is 4883.1<ul>
+<li>if colorCode is “2A109” OR waveLength is 2985 nanometers.<ul>
 <li>print “Water found”</li>
 </ul>
 </li>
-<li>else if colorCode is “482C0” OR waveLength is 2392<ul>
-<li>print “Carbon found”</li>
+<li>else if colorCode is “482C0” OR waveLength is 589.0 and 589.6 nm.<ul>
+<li>print “Sodium found”</li>
 </ul>
 </li>
-<li>else if colorCode is “Z491” OR waveLength is 560<ul>
-<li>print “Silicon found”</li>
+<li>else if colorCode is “Z491” OR waveLength is 656 and 486 and 434 nm.<ul>
+<li>print “Hydrogen found”</li>
 </ul>
 </li>
 <li>else print “Non target element found”</li>

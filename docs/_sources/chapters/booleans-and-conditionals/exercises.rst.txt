@@ -1,7 +1,7 @@
 Chapter 5 Exercises
 ===================
 
-
+*[TODO: Write an introduction here.  Something to engage the user and ease them into the assignment.]*
     
 1. Declare and initialize variables in the table.
 
@@ -28,23 +28,22 @@ Example:
 
     spacSuitsOn = true;
 
-2. Write conditional expressions and ``if``,  ``else if``, and ``else`` statements for the below rules.
-   
-   * crewStatus
+2. Use an ``if / else`` statement (a *conditional expression*) to check on the status of the crew:
 
-     - if value is true, print **"Crew Ready"**
-     - else print **"Crew Not Ready"**
+- if crewStatus is true, print **"Crew Ready"**
+- else print **"Crew Not Ready"**
 
-   * computerStatusCode
+3. computerStatusCode
 
-     - if value is **200**, print **"Success, computer working fine"**
-     - else if value is **400**, print **"ALERT: computer not functioning"**
+- if value is **200**, print **"Please stand by. Computer is rebooting."**
+- else if value is **400**, print **"Success! Computer working fine."**
+- else print **"ALERT: Computer not functioning!"**
 
-   * shuttleSpeed
+4. shuttleSpeed
 
-     - if value is **> 17,500**, print **"ALERT: could escape orbit"**
-     - else if value is **< 8000**, print **"ALERT: could fall out of orbit"**
-     - else print **"Stable speed"**
+- if value is **> 17,500**, print **"ALERT: could escape orbit"**
+- else if value is **< 8000**, print **"ALERT: could fall out of orbit"**
+- else print **"Stable speed"**
 
 Example:
 
@@ -79,17 +78,17 @@ Example:
      - colorCode
      - waveLength
 
-   * if colorCode is "2A109" OR waveLength is 4883.1
+   * if colorCode is "2A109" OR waveLength is 2985 nanometers.
 
      - print "Water found"
 
-   * else if colorCode is "482C0" OR waveLength is 2392
+   * else if colorCode is "482C0" OR waveLength is 589.0 and 589.6 nm.
 
-     - print "Carbon found"
+     - print "Sodium found"
 
-   * else if colorCode is "Z491" OR waveLength is 560
+   * else if colorCode is "Z491" OR waveLength is 656 and 486 and 434 nm.
 
-     - print "Silicon found"
+     - print "Hydrogen found"
 
    * else print "Non target element found"
 
