@@ -13,7 +13,7 @@ One of the key features of variables that we have discussed so far is their abil
    let programmingLanguage = "JavaScript";
    programmingLanguage = "Python";
 
-In some situations, however, we will want to create variables that *should not* change value. Many programming languages, including JavaScript, provide a mechanism for creating variables that may only have a single, fixed value.
+In some situations, we want to create variables that cannot change value. Many programming languages, including JavaScript, provide mechanisms for programmers to make variables that are constant.
 
 For example, suppose that we are writing a to-do list web application, named "Get It Done!" The title of the application might appear in multiple places, such as the title bar and the main page header.
 

@@ -156,7 +156,7 @@ Every programming language has a **type system**, which is the set of rules that
 
 In many programming languages, integers and floats are considered to be different data types. For example, in Python ``42`` is of the ``int`` data type, while ``42.0`` is of the ``float`` data type.
 
-.. note:: While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, consider an inventory-tracking program that stores items along with the number of each item in stock. It would not make sense for there to be float quantities of items (for example, 3.5 shirts), so the program may wish to only allow quantities to be stored as integers.
+.. note:: While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, an inventory-tracking program stores items and the number of each number in stock. Since a store cannot have 3.5 shirts in stock, the programmer makes the quantity of each item integer values as opposed to floats.
 
 When discussing the differences between programming languages, the details of type systems are one of the main factors that programmers consider. There are other aspects of type systems beyond just how values are categorized. We will explore these in future lessons.
 
