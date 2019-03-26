@@ -1,9 +1,22 @@
 Chapter 5 Exercises
 ===================
 
-*[TODO: Write an introduction here.  Something to engage the user and ease them into the assignment.]*
+Attempt these excersises to test your understanding. 
+Don't worry if you struggle while working on them. Struggling and recalling
+the material will make you remember it.
+
+| Be sure to ask about the topics you don't understand in class, you won't be the only person that needs help with that topic.
     
-1. Declare and initialize variables in the table.
+.. note::
+
+   When the term **print** is used, that means to output a value to the ``console`` 
+   using ``console.log("text or a variable name")``.  
+   
+   | Print ``"hello"`` means ``console.log("hello")``
+
+Declare and initialize variables in the table
+----------------------------------------------
+Write variables for these values.
 
 .. list-table::
    :widths: auto
@@ -11,6 +24,8 @@ Chapter 5 Exercises
 
    * - Variable
      - Value
+   * - engineIndicatorLight
+     - red blinking
    * - spaceSuitsOn
      - true
    * - shuttleCabinReady
@@ -22,39 +37,45 @@ Chapter 5 Exercises
    * - shuttleSpeed
      - 15000
 
-Example:
+Read the below code. What will be printed to the console?
+----------------------------------------------------------------------
+Answer using the value of ``engineIndicatorLight`` that is defined in the table above.
 
 .. code-block:: javascript
 
-    spacSuitsOn = true;
+   if (engineIndicatorLight === "green") {
+      console.log("engines have started");
+   } else if (engineIndicatorLight === "green blinking") {
+      console.log("engines are preparing to start");
+   } else {
+      console.log("engines are off");
+   }
 
-2. Use an ``if / else`` statement (a *conditional expression*) to check on the status of the crew:
+Write conditional expressions to satisfy the safety rules below
+----------------------------------------------------------------
+Using the variables defined from the table above.
 
-- if crewStatus is true, print **"Crew Ready"**
-- else print **"Crew Not Ready"**
+#. ``crewStatus``
 
-3. computerStatusCode
+   - if crewStatus is ``true``, print ``"Crew Ready"``
+   - else print ``"Crew Not Ready"``
 
-- if value is **200**, print **"Please stand by. Computer is rebooting."**
-- else if value is **400**, print **"Success! Computer working fine."**
-- else print **"ALERT: Computer not functioning!"**
+#. ``computerStatusCode``
 
-4. shuttleSpeed
+   - if value is ``200``, print ``"Please stand by. Computer is rebooting"``
+   - else if value is ``400``, print ``"Success! Computer working fine"``
+   - else print ``"ALERT: Computer not functioning"``
 
-- if value is **> 17,500**, print **"ALERT: could escape orbit"**
-- else if value is **< 8000**, print **"ALERT: could fall out of orbit"**
-- else print **"Stable speed"**
+#. ``shuttleSpeed``
 
-Example:
+   - if value is ``> 17,500``, print ``"ALERT: could escape orbit"``
+   - else if value is ``< 8000``, print ``"ALERT: could fall out of orbit"``
+   - else print ``"Stable speed"``
 
-.. code-block:: javascript
+Do these code blocks produce the same result?
+---------------------------------------------
+Answer Yes or No
 
-    if (crewStatus) {
-        console.log("crew ready");
-    }
-
-3. Do these code blocks produce the same result?
-    
 .. code-block:: javascript
 
     if (crewStatus && computerStatusCode === 200 && spaceSuitsOn) {
@@ -71,25 +92,49 @@ Example:
         console.log("all systems go");
     }
 
-4. Use the below rules to implement the logic for "thing that reads light waves sensor" using boolean expressions and ``if``,  ``else if``, and ``else`` statements.
+Implement logic for spectrometer
+--------------------------------
+A spectrometer is used to identify what objects/planets/gases are physically made of.
 
-   * variables
+| Implement the below rules using ``if``, ``else if``, and ``else`` statements.
 
-     - colorCode
-     - waveLength
+* variables defined by spectrometer
 
-   * if colorCode is "2A109" OR waveLength is 2985 nanometers.
+  * ``colorCode``
+  * ``waveLength``
 
-     - print "Water found"
+* if ``colorCode`` is ``"2A109"`` OR ``waveLength`` is ``2985`` nanometers.
 
-   * else if colorCode is "482C0" OR waveLength is 589.0 and 589.6 nm.
+  * print ``"Water found"``
 
-     - print "Sodium found"
+* else if ``colorCode`` is ``"482C0"`` AND ``waveLength`` is ``589.0`` OR ``589.6`` nanometers.
 
-   * else if colorCode is "Z491" OR waveLength is 656 and 486 and 434 nm.
+  * print ``"Sodium found"``
 
-     - print "Hydrogen found"
+* else if ``colorCode`` is ``"Z491"`` OR ``waveLength`` is ``656`` OR ``486`` OR ``434`` nanometers.
 
-   * else print "Non target element found"
+  * print ``"Hydrogen found"``
 
-5. TODO: have students find bug in code. maybe an if/else chain that has wrong logic
+* else print ``"Non target element found"``
+
+Fix the fuel status system
+--------------------------------
+The below logic prints out the status of the fuel system. Sadly the code has a bug.
+
+| Please fix the code to print ``"Full tank"`` if ``fuelRemaining`` is equal to ``20,000``
+
+.. sourcecode:: javascript
+
+   const fuelRemaining = 21000;
+
+   if (fuelRemaining > 15000) {
+      console.log("75% fuel left");
+   } else if (fuelRemaining === 20000) {
+      console.log("Full tank");
+   } else if (fuelRemaining > 10000) {
+      console.log("50% fuel left");
+   } else if (fuelRemaining > 5000) {
+      console.log("25% fuel left");
+   } else {
+      console.log("Warning: fuel low");
+   }
