@@ -1,3 +1,5 @@
+.. _how-programs-work:
+
 How Programs Work
 =================
 
