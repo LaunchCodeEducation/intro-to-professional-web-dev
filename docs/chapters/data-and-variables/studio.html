@@ -84,53 +84,65 @@
 the very important <strong>Launch Checklist LC04</strong>. The <strong>LC04</strong> displays
 statuses and information related to the space shuttle, astronauts, and the rockets
 before launch.</p>
-<div class="section" id="requirements">
-<h2>4.6.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="declare-and-initialize-variables">
-<h3>4.6.1.1. Declare and Initialize Variables<a class="headerlink" href="#declare-and-initialize-variables" title="Permalink to this headline">¶</a></h3>
+<h2>4.6.1. Declare and Initialize Variables<a class="headerlink" href="#declare-and-initialize-variables" title="Permalink to this headline">¶</a></h2>
 <p>Declare and initialize a variable for every data point listed in the table below.
 Be careful to pay attention to the types of the values.</p>
-<p>TODO: Short example code?</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For the <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span></code> values use the <code class="docutils literal notranslate"><span class="pre">string</span></code> type. Later in the class you will learn other ways
+of working with date and time in JavaScript.</p>
+</div>
 <table border="1" class="colwidths-auto docutils">
 <tbody valign="top">
 <tr class="row-odd"><td>date</td>
-<td>“Monday 2019-03-18”</td>
+<td>Monday 2019-03-18</td>
 </tr>
 <tr class="row-even"><td>time</td>
-<td>“10:05:34 AM”</td>
+<td>10:05:34 AM</td>
 </tr>
 <tr class="row-odd"><td>astronautCount</td>
 <td>7</td>
 </tr>
 <tr class="row-even"><td>astronautStatus</td>
-<td>“ready”</td>
+<td>ready</td>
 </tr>
-<tr class="row-odd"><td>fuelWeightKiloGrams</td>
+<tr class="row-odd"><td>averageAstronautWeightKg</td>
+<td>80.7</td>
+</tr>
+<tr class="row-even"><td>crewWeightKg</td>
+<td>astronautCount * averageAstronautWeightKg</td>
+</tr>
+<tr class="row-odd"><td>fuelWeightKg</td>
 <td>760,000</td>
+</tr>
+<tr class="row-even"><td>shuttleWeightKg</td>
+<td>74842.31</td>
+</tr>
+<tr class="row-odd"><td>totalWeightKg</td>
+<td>crewWeightKg + fuelWeightKg + shuttleWeightKg</td>
 </tr>
 <tr class="row-even"><td>fuelTempCelsius</td>
 <td>-225</td>
 </tr>
-<tr class="row-odd"><td>fuelStatus</td>
-<td>“full”</td>
+<tr class="row-odd"><td>fuelLevel</td>
+<td>100%</td>
 </tr>
 <tr class="row-even"><td>weatherStatus</td>
-<td>“clear”</td>
-</tr>
-<tr class="row-odd"><td>payLoadSecured</td>
-<td>“yes”</td>
+<td>clear</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="generate-the-lc04-form">
-<h3>4.6.1.2. Generate the LC04 Form<a class="headerlink" href="#generate-the-lc04-form" title="Permalink to this headline">¶</a></h3>
-<p>Use the variables you declared and initialized to build and display the <strong>LC04</strong> using
-<code class="docutils literal notranslate"><span class="pre">console.log()</span></code> statements.</p>
-<p>The generated report should exactly like the below example, including spaces, dashes, &gt;, and <a href="#id1"><span class="problematic" id="id2">*</span></a>.</p>
+<h2>4.6.2. Generate the LC04 Form<a class="headerlink" href="#generate-the-lc04-form" title="Permalink to this headline">¶</a></h2>
+<p>Display the <strong>LC04</strong> using <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> statements and the variables you declared and initialized.</p>
+<div class="line-block">
+<div class="line">The generated report should look exactly like the below example, including spaces, dashes, &gt;, and <a href="#id1"><span class="problematic" id="id2">*</span></a>.</div>
+</div>
 </div>
 <div class="section" id="lc04-example-output">
-<h3>4.6.1.3. LC04 - Example Output<a class="headerlink" href="#lc04-example-output" title="Permalink to this headline">¶</a></h3>
+<h2>4.6.3. LC04 - Example Output<a class="headerlink" href="#lc04-example-output" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-------------------------------------</span>
 <span class="gp">&gt;</span> LC04 - LAUNCH CHECKLIST
 <span class="go">-------------------------------------</span>
@@ -147,8 +159,15 @@ Be careful to pay attention to the types of the values.</p>
 <span class="gp">&gt;</span> FUEL DATA
 <span class="go">-------------------------------------</span>
 <span class="go">* Fuel temp celsius: -225C</span>
-<span class="go">* Fuel weight: 760000KG</span>
-<span class="go">* Fuel status: full</span>
+<span class="go">* Fuel level: 100%</span>
+
+<span class="go">-------------------------------------</span>
+<span class="gp">&gt;</span> WEIGHT DATA
+<span class="go">-------------------------------------</span>
+<span class="go">* Crew weight: 564.9kg</span>
+<span class="go">* Fuel weight: 760000kg</span>
+<span class="go">* Shuttle weight: 74842.31kg</span>
+<span class="go">* Total weight: 835407.21kg</span>
 
 <span class="go">-------------------------------------</span>
 <span class="gp">&gt;</span> FLIGHT PLAN
@@ -161,14 +180,6 @@ Be careful to pay attention to the types of the values.</p>
 <span class="go">* Clear for take off: YES</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="how-to-turn-it-in">
-<h2>4.6.2. How to Turn it In?<a class="headerlink" href="#how-to-turn-it-in" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Codio instructions</li>
-<li>Non codio instructions?</li>
-</ul>
 </div>
 </div>
 
