@@ -1,7 +1,7 @@
 Chapter 5 Exercises
 ===================
 
-Attempt these excersises to test your understanding. 
+Attempt these exercises to test your understanding. 
 Don't worry if you struggle while working on them. Struggling and recalling
 the material will help you remember it.
 
@@ -134,4 +134,4 @@ Final bit of fun!
 
 a. | If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT red blinking OR ``commandOverride`` is true
    | print ``"Cleared to launch!"``
-b. Else print ``"Launch srubbed!"``
+b. Else print ``"Launch scrubbed!"``
