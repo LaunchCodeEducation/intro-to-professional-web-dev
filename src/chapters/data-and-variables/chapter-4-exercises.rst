@@ -29,7 +29,7 @@ For the following exercises, you will use the information given below about your
    * - Miles per kilometer
      - 0.621
 
-Declare and assign a variables
+Declare and assign variables
 ------------------------------
 For each row in the table above declare and assign variables.
 
@@ -37,7 +37,7 @@ Print out the type of each variable
 -----------------------------------
 For each variable you declared in the previous section, use the ``typeof`` operator to print it's type
 
-Now let's calculate a space mission!
+Calculate a space mission!
 ------------------------------------
 We need to determine how many days it will take to reach Mars.
 
@@ -55,7 +55,7 @@ c. Finally, declare a variable and assign it the value of days to Mars
 
 Print out the results of your calculations
 ------------------------------------------
-Using your result from the previous section, print to the screen a sentence that says ``"Determination will take ___ days to reach Mars."``
+Using the variable from part c above, print to the screen a sentence that says ``"Determination will take ___ days to reach Mars."``
 
 Now calculate a trip to the Moon
 --------------------------------
