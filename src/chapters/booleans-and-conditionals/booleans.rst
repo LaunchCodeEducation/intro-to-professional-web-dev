@@ -5,7 +5,7 @@ Booleans
 
 .. index:: data type
 
-One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code *only if* a given condition is met. Another way to say this is that the segment of code only if the program is in a particular state.
+One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code *only if* a given condition is met. Another way to say this is that the segment of code runs *only if* the program is in a particular state.
 
 .. admonition:: Example
 
