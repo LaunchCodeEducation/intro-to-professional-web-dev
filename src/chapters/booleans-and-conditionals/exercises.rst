@@ -1,18 +1,16 @@
 Chapter 5 Exercises
 ===================
 
-Attempt these excersises to test your understanding. 
+Attempt these exercises to test your understanding. 
 Don't worry if you struggle while working on them. Struggling and recalling
-the material will make you remember it.
+the material will help you remember it.
 
-| Be sure to ask about the topics you don't understand in class, you won't be the only person that needs help with that topic.
+| In class, be sure to ask about the topics you do not understand. You are **not** the only person who needs help with that topic.
     
 .. note::
 
    When the term **print** is used, that means to output a value to the ``console`` 
    using ``console.log("text or a variable name")``.  
-   
-   | Print ``"hello"`` means ``console.log("hello")``
 
 Declare and initialize variables in the table
 ----------------------------------------------
@@ -37,8 +35,8 @@ Write variables for these values.
    * - shuttleSpeed
      - 15000
 
-Read the below code. What will be printed to the console?
-----------------------------------------------------------------------
+Review the below code. What will be printed to the console?
+-----------------------------------------------------------
 Answer using the value of ``engineIndicatorLight`` that is defined in the table above.
 
 .. code-block:: javascript
@@ -125,7 +123,7 @@ The below logic prints out the status of the fuel system. Sadly the code has a b
 
 .. sourcecode:: javascript
 
-   const fuelRemaining = 21000;
+   const fuelRemaining = 20000;
 
    if (fuelRemaining > 15000) {
       console.log("75% fuel left");
