@@ -59,8 +59,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -83,6 +82,14 @@
 <h1>4.6. Chapter 4 Exercises<a class="headerlink" href="#chapter-4-exercises" title="Permalink to this headline">¶</a></h1>
 <p>These exercises will check your understanding of the topics in this chapter. Practice</p>
 <p>For the following exercises, you will use the information given below about your space shuttle.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>When the term <strong>print</strong> is used, that means to output a value to the <code class="docutils literal notranslate"><span class="pre">console</span></code>
+using <code class="docutils literal notranslate"><span class="pre">console.log(&quot;text</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">variable</span> <span class="pre">name&quot;)</span></code>.</p>
+<div class="last line-block">
+<div class="line">Print <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code> means <code class="docutils literal notranslate"><span class="pre">console.log(&quot;hello&quot;)</span></code></div>
+</div>
+</div>
 <table border="1" class="colwidths-auto docutils" id="id1">
 <caption><span class="caption-text">Space Shuttle Information</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <thead valign="bottom">
@@ -103,46 +110,45 @@
 <tr class="row-odd"><td>Distance to the Moon (km)</td>
 <td>384,400</td>
 </tr>
+<tr class="row-even"><td>Miles per kilometer</td>
+<td>0.621</td>
+</tr>
 </tbody>
 </table>
-<ol class="arabic">
-<li><div class="first line-block">
-<div class="line">Declare and assign a variable for each item in the table above.</div>
-<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">spaceShuttleName</span> <span class="pre">=</span> <span class="pre">&quot;Determination&quot;;</span></code></div>
+<div class="section" id="declare-and-assign-a-variables">
+<h2>4.6.1. Declare and assign a variables<a class="headerlink" href="#declare-and-assign-a-variables" title="Permalink to this headline">¶</a></h2>
+<p>For each row in the table above declare and assign variables.</p>
 </div>
+<div class="section" id="print-out-the-type-of-each-variable">
+<h2>4.6.2. Print out the type of each variable<a class="headerlink" href="#print-out-the-type-of-each-variable" title="Permalink to this headline">¶</a></h2>
+<p>For each variable you declared in the previous section, use the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator to print it’s type</p>
+</div>
+<div class="section" id="now-let-s-calculate-a-space-mission">
+<h2>4.6.3. Now let’s calculate a space mission!<a class="headerlink" href="#now-let-s-calculate-a-space-mission" title="Permalink to this headline">¶</a></h2>
+<p>We need to determine how many days it will take to reach Mars.</p>
+<ol class="loweralpha simple">
+<li>Create and assign a Miles to Mars variable<ul>
+<li>Miles per kilometer * Distance to Mars</li>
+</ul>
 </li>
-<li><div class="first line-block">
-<div class="line">Print out the type of each variable you declared using the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator.</div>
-<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">spaceShuttleName);</span></code></div>
-</div>
+<li>Next, we need a variable to hold the hours it would take to get to Mars<ul>
+<li>Miles to Mars / Shuttle Speed</li>
+</ul>
 </li>
-<li><p class="first">Now let’s calculate a space mission! We need to determine how many days it will take to reach Mars.</p>
-<ol class="loweralpha">
-<li><div class="first line-block">
-<div class="line">First, convert the distance to Mars from kilometers into miles. Use your declared variables to calculate the result.</div>
-<div class="line"><em>Hint</em>: <code class="docutils literal notranslate"><span class="pre">milesToMars</span> <span class="pre">=</span> <span class="pre">0.621</span> <span class="pre">*</span> <span class="pre">kilometersToMars</span></code></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line">Next, we need a variable to hold the hours it would take to get to Mars.</div>
-<div class="line"><em>Hint</em>: <code class="docutils literal notranslate"><span class="pre">hoursToMars</span> <span class="pre">=</span> <span class="pre">milesToMars</span> <span class="pre">/</span> <span class="pre">shuttleSpeed</span></code></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line">Finally, declare a variable and assign it the value of days to Mars.</div>
-<div class="line"><em>Hint</em>: <code class="docutils literal notranslate"><span class="pre">daysToMars</span> <span class="pre">=</span> <span class="pre">hoursToMars</span> <span class="pre">/</span> <span class="pre">24</span></code></div>
-</div>
+<li>Finally, declare a variable and assign it the value of days to Mars<ul>
+<li>Hours To Mars / 24</li>
+</ul>
 </li>
 </ol>
-</li>
-<li><div class="first line-block">
-<div class="line">Using your result from 3c above, print to the screen a sentence that says,</div>
-<div class="line"><strong>“Determination will take ___ days to reach Mars.”</strong></div>
 </div>
-</li>
-<li><p class="first">Repeat questions 3 and 4 for a space mission to the Moon.</p>
-</li>
-</ol>
+<div class="section" id="print-out-the-results-of-your-calculations">
+<h2>4.6.4. Print out the results of your calculations<a class="headerlink" href="#print-out-the-results-of-your-calculations" title="Permalink to this headline">¶</a></h2>
+<p>Using your result from the previous section, print to the screen a sentence that says <code class="docutils literal notranslate"><span class="pre">&quot;Determination</span> <span class="pre">will</span> <span class="pre">take</span> <span class="pre">___</span> <span class="pre">days</span> <span class="pre">to</span> <span class="pre">reach</span> <span class="pre">Mars.&quot;</span></code></p>
+</div>
+<div class="section" id="now-calculate-a-trip-to-the-moon">
+<h2>4.6.5. Now calculate a trip to the Moon<a class="headerlink" href="#now-calculate-a-trip-to-the-moon" title="Permalink to this headline">¶</a></h2>
+<p>Repeat the calculations but this time determine the number of days it would take to travel to the Moon.</p>
+</div>
 </div>
 
 
