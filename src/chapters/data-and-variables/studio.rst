@@ -1,5 +1,5 @@
 
-.. studio-chapter-4::
+.. _studio-chapter-4:
 
 =============================
 Studio: Launch Checklist LC04
@@ -53,7 +53,7 @@ Generate the LC04 Form
 ----------------------
 Display the **LC04** using ``console.log()`` statements and the variables you declared and initialized.
 
-| The generated report should look exactly like the below example, including spaces, dashes, >, and *.
+| The generated report should look exactly like the below example, including spaces, dashes, >, and \*.
 
 LC04 - Example Output
 ---------------------
