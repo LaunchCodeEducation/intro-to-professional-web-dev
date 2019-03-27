@@ -3,20 +3,16 @@ Chapter 5 Exercises
 
 Attempt these excersises to test your understanding. 
 Don't worry if you struggle while working on them. Struggling and recalling
-the material will make you remember it.
+the material will help you remember it.
 
-| Be sure to ask about the topics you don't understand in class, you won't be the only person that needs help with that topic.
+| In class, be sure to ask about the topics you do not understand. You are NOT the only person who needs help.
     
 .. note::
 
-   When the term **print** is used, that means to output a value to the ``console`` 
-   using ``console.log("text or a variable name")``.  
-   
-   | Print ``"hello"`` means ``console.log("hello")``
+   When the term **print** is used, it means to output a value to the ``console``.
 
 Declare and initialize variables in the table
 ----------------------------------------------
-Write variables for these values.
 
 .. list-table::
    :widths: auto
@@ -37,9 +33,9 @@ Write variables for these values.
    * - shuttleSpeed
      - 15000
 
-Read the below code. What will be printed to the console?
+Examine the code below. What will be printed to the console?
 ----------------------------------------------------------------------
-Answer using the value of ``engineIndicatorLight`` that is defined in the table above.
+Use the value of ``engineIndicatorLight`` defined above to answer this question.
 
 .. code-block:: javascript
 
@@ -62,14 +58,14 @@ Using the variables defined from the table above.
 
 #. ``computerStatusCode``
 
-   - if value is ``200``, print ``"Please stand by. Computer is rebooting"``
-   - else if value is ``400``, print ``"Success! Computer working fine"``
-   - else print ``"ALERT: Computer not functioning"``
+   - if value is ``200``, print ``"Please stand by. Computer is rebooting."``
+   - else if value is ``400``, print ``"Success! Computer online."``
+   - else print ``"ALERT: Computer offline!"``
 
 #. ``shuttleSpeed``
 
-   - if value is ``> 17,500``, print ``"ALERT: could escape orbit"``
-   - else if value is ``< 8000``, print ``"ALERT: could fall out of orbit"``
+   - if value is ``> 17,500``, print ``"ALERT: Escape velocity reached!"``
+   - else if value is ``< 8000``, print ``"ALERT: Cannot maintain orbit!"``
    - else print ``"Stable speed"``
 
 Do these code blocks produce the same result?
@@ -92,49 +88,50 @@ Answer Yes or No
         console.log("all systems go");
     }
 
-Implement logic for spectrometer
---------------------------------
-A spectrometer is used to identify what objects/planets/gases are physically made of.
+Monitor fuel status
+--------------------
+**First, declare and initialize the following variables:**
 
-| Implement the below rules using ``if``, ``else if``, and ``else`` statements.
+.. list-table::
+   :widths: auto
+   :header-rows: 1
 
-* variables defined by spectrometer
+   * - Variable
+     - Value
+   * - fuelLevel
+     - 21000
+   * - engineTemperature
+     - 1200
 
-  * ``colorCode``
-  * ``waveLength``
+**Next, implement the checks below using** ``if / else if / else`` **statements.**
 
-* if ``colorCode`` is ``"2A109"`` OR ``waveLength`` is ``2985`` nanometers.
+a. | If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is below 2500,
+   | print ``"Full tank.  Engines good."``
+b. | If ``fuelLevel`` is above 10000 AND ``engineTemperature`` is below 2500,
+   | print ``"Fuel level above 50%.  Engines good."``
+c. | If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is below 2500,
+   | print ``"Fuel level above 25%.  Engines good."``
+d. | If ``fuelLevel`` is below 5000 OR ``engineTemperature`` is above 2500,
+   | print ``"Check fuel level.  Engines running hot."``
+e. | If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR ``engineIndicatorLight`` is red blinking
+   | print ``"ENGINE FAILURE IMMINENT!"``
 
-  * print ``"Water found"``
+.. note::
+   Run your code several times with different values for ``fuelLevel``, ``engineTemperature`` and ``engineIndicatorLight``.
+   You must make sure your code prints the correct phrase for each set of conditions.
 
-* else if ``colorCode`` is ``"482C0"`` AND ``waveLength`` is ``589.0`` OR ``589.6`` nanometers.
+Final bit of fun!
+--------------------
+| The shuttle should only launch if the fuel tank is full and the engine check is OK.  
+| *However*, let's establish an override command to ignore any warnings and send the shuttle into space anyway!
 
-  * print ``"Sodium found"``
+**Create the variable** ``commandOverride`` **, and set it to be** ``true`` **or** ``false`` **.**
 
-* else if ``colorCode`` is ``"Z491"`` OR ``waveLength`` is ``656`` OR ``486`` OR ``434`` nanometers.
+| If commandOverride is ``false``, then the shuttle should only lauch if the fuel and engine check are OK.
+| If commandOverride is ``true``, then the shuttle will launch regardless of the fuel and engine status.
 
-  * print ``"Hydrogen found"``
+**Code the following** ``if / else`` **check:**
 
-* else print ``"Non target element found"``
-
-Fix the fuel status system
---------------------------------
-The below logic prints out the status of the fuel system. Sadly the code has a bug.
-
-| Please fix the code to print ``"Full tank"`` if ``fuelRemaining`` is equal to ``20,000``
-
-.. sourcecode:: javascript
-
-   const fuelRemaining = 21000;
-
-   if (fuelRemaining > 15000) {
-      console.log("75% fuel left");
-   } else if (fuelRemaining === 20000) {
-      console.log("Full tank");
-   } else if (fuelRemaining > 10000) {
-      console.log("50% fuel left");
-   } else if (fuelRemaining > 5000) {
-      console.log("25% fuel left");
-   } else {
-      console.log("Warning: fuel low");
-   }
+a. | If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT red blinking OR ``commandOverride`` is true
+   | print ``"Cleared to launch!"``
+b. Else print ``"Launch srubbed!"``
