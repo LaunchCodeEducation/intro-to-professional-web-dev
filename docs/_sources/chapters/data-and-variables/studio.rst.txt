@@ -74,16 +74,16 @@ The generated report should look *EXACTLY* like the example below -- including s
    -------------------------------------
    > FUEL DATA
    -------------------------------------
-   * Fuel temp celsius: -225C
+   * Fuel temp celsius: -225 C
    * Fuel level: 100%
 
    -------------------------------------
    > WEIGHT DATA
    -------------------------------------
-   * Crew weight: 564.9kg
-   * Fuel weight: 760000kg
-   * Shuttle weight: 74842.31kg
-   * Total weight: 835407.21kg
+   * Crew mass: 564.9 kg
+   * Fuel mass: 760000 kg
+   * Shuttle mass: 74842.31 kg
+   * Total mass: 835407.21 kg
 
    -------------------------------------
    > FLIGHT PLAN
@@ -93,4 +93,4 @@ The generated report should look *EXACTLY* like the example below -- including s
    -------------------------------------
    > OVERALL STATUS
    -------------------------------------
-   * Clear for take off: YES
+   * Clear for takeoff: YES
