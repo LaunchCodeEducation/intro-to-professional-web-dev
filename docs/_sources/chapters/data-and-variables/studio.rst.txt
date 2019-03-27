@@ -5,25 +5,25 @@
 Studio: Launch Checklist LC04
 =============================
 
-In this studio you are going to write the code that displays 
-the very important **Launch Checklist LC04**. The **LC04** displays 
-statuses and information related to the space shuttle, astronauts, and the rockets 
-before launch.
+| In this studio you are going to write code to display the *very important* **Launch Checklist LC04**. 
+| **LC04** displays information related to the space shuttle, astronauts, and rockets before launch.
 
 Declare and Initialize Variables
 --------------------------------
 Declare and initialize a variable for every data point listed in the table below.
-Be careful to pay attention to the types of the values.
+Remember to account for the different data types.
 
 .. note::
 
-   For the ``date`` and ``time`` values use the ``string`` type. Later in the class you will learn other ways 
-   of working with date and time in JavaScript.
+   For now, use the ``string`` type for the ``date`` and ``time`` values. Later in the class, we will learn other ways 
+   to work with date and time in JavaScript.
 
 .. list-table::
    :widths: auto
-   :header-rows: 0
+   :header-rows: 1
 
+   * - Variable
+     - Value
    * - date
      - Monday 2019-03-18
    * - time
@@ -32,16 +32,16 @@ Be careful to pay attention to the types of the values.
      - 7
    * - astronautStatus
      - ready
-   * - averageAstronautWeightKg
+   * - averageAstronautMass_kg
      - 80.7
-   * - crewWeightKg
-     - astronautCount * averageAstronautWeightKg
-   * - fuelWeightKg
+   * - crewMass_kg
+     - astronautCount * averageAstronautMass_kg
+   * - fuelMass_kg
      - 760,000
-   * - shuttleWeightKg
+   * - shuttleMass_kg
      - 74842.31
-   * - totalWeightKg
-     - crewWeightKg + fuelWeightKg + shuttleWeightKg
+   * - totalMass_kg
+     - crewMass_kg + fuelMass_kg + shuttleMass_kg
    * - fuelTempCelsius
      - -225
    * - fuelLevel
@@ -51,12 +51,11 @@ Be careful to pay attention to the types of the values.
 
 Generate the LC04 Form
 ----------------------
-Display the **LC04** using ``console.log()`` statements and the variables you declared and initialized.
+Display **LC04** to the ``console`` using the variables you declared and initialized.
 
-| The generated report should look exactly like the below example, including spaces, dashes, >, and \*.
+The generated report should look *EXACTLY* like the example below -- including spaces, dashes, >, and \*.
 
-LC04 - Example Output
----------------------
+**Example:**
 
 .. sourcecode:: console
    
