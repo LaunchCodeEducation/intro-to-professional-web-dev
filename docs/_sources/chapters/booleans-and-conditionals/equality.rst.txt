@@ -113,6 +113,6 @@ Check Your Understanding
    What is the difference between ``==`` and ``===``?
 
    #. There is no difference; they work exactly the same
-   #. Only ``===`` throws an error of its arguments are of different types
+   #. Only ``===`` throws an error if its arguments are of different types
    #. ``==`` will try to convert values of different types to be the same type, while ``===`` does no such conversion
    #. ``==`` works with all data types, while ``===`` works only with strings

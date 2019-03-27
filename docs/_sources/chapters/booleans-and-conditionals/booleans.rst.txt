@@ -83,7 +83,7 @@ As with the number and string data types, the boolean type has a type conversion
 
    #. Only when the string is ``"true"``.
    #. Whenever the string contains any non-whitespace character.
-   #. Whenever the string in non-empty.
+   #. Whenever the string is non-empty.
    #. Never. It converts all strings to ``false``.
 
 
@@ -194,7 +194,7 @@ An equality test is symmetric, meaning that we can swap the places of the operan
    - ``0 == false``
    - ``0 == ''``
 
-   We will explore the nuances of ``==`` in the upcoming section :ref:`equality`, and introduce two new operators, ``===`` and ``!==``, that will align more closely our intuitive notion of equality.
+   We will explore the nuances of ``==`` in the upcoming section :ref:`equality`, and introduce two new operators, ``===`` and ``!==``, that will align more closely with our intuitive notion of equality.
 
 Check Your Understanding
 ------------------------
@@ -205,5 +205,5 @@ Check Your Understanding
 
    #. ``3 == 4``
    #. ``3 + 4``
-   #. ``3 + 4 == 7``
+   #. ``3 + 4 === 7``
    #. ``"false"``

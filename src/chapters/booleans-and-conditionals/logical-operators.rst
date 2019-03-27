@@ -193,9 +193,9 @@ Truth Tables
 
 .. index:: ! truth table
 
-**Truth tables** help us understand how logical operators work by calculating all of the possible return values of a boolean expression. Let's look at the truth table for ``&&``, which displays assumes we have two boolean expressions, A and B, joined by ``&&``.
+**Truth tables** help us understand how logical operators work by calculating all of the possible return values of a boolean expression. Let's look at the truth table for ``&&``, which assumes we have two boolean expressions, A and B, joined by ``&&``.
 
-.. admonition:: Question
+.. admonition:: Example
 
    .. list-table:: Truth Table for ``&&``
       :widths: auto
