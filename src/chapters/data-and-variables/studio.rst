@@ -1,5 +1,5 @@
 
-.. _studio-chapter-4:
+.. _studio-launch-checklist-LC04:
 
 =============================
 Studio: Launch Checklist LC04
