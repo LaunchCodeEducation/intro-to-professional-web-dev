@@ -230,6 +230,7 @@ Check Your Understanding
    Which line is an example of variable initialization? (*Note: only one line is such an example.*)
 
    .. sourcecode:: js
+      :linenos:
       
       let a;
       a = 42;
