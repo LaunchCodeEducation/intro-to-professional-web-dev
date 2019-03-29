@@ -42,3 +42,7 @@ Appendices
 
    appendices/about-this-book/index.rst
    
+.. toctree::
+   :hidden:
+
+   todos
