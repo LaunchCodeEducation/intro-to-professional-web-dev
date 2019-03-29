@@ -20,6 +20,18 @@ Contents
    genindex
    glossary
 
+Studios
+^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+   :name: studiostoc
+
+   chapters/data-and-variables/studio.rst
+
+
+
 Appendices
 ^^^^^^^^^^
 
@@ -28,7 +40,7 @@ Appendices
    :numbered:
    :name: appendicestoc
 
-   appendices/about-this-book/index
+   appendices/about-this-book/index.rst
    
 .. toctree::
    :hidden:
