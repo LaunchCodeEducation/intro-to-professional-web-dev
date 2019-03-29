@@ -12,3 +12,4 @@ Data and Variables
    operations
    other-operators
    studio
+   exercises
