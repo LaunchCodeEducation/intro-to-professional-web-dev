@@ -16,4 +16,4 @@ This chapter explores the first of these two fundamental componets, data.
    type-conversion.rst
    mathematical-operators.rst
    statements-and-expressions.rst
-   chapter-4-exercises.rst
+   exercises.rst
