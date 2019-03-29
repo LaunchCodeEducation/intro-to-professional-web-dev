@@ -32,16 +32,16 @@ Remember to account for the different data types.
      - 7
    * - astronautStatus
      - ready
-   * - averageAstronautMass_kg
+   * - averageAstronautMassKg
      - 80.7
-   * - crewMass_kg
-     - astronautCount * averageAstronautMass_kg
-   * - fuelMass_kg
+   * - crewMassKg
+     - astronautCount * averageAstronautMassKg
+   * - fuelMassKg
      - 760,000
-   * - shuttleMass_kg
+   * - shuttleMassKg
      - 74842.31
-   * - totalMass_kg
-     - crewMass_kg + fuelMass_kg + shuttleMass_kg
+   * - totalMassKg
+     - crewMassKg + fuelMassKg + shuttleMassKg
    * - fuelTempCelsius
      - -225
    * - fuelLevel
