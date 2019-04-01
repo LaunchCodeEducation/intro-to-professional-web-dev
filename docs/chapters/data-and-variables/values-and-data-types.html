@@ -13,14 +13,13 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.2. Variables" href="variables.html" />
+    <link rel="next" title="4.2. Type Conversion" href="type-conversion.html" />
     <link rel="prev" title="4. Data and Variables" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -59,8 +58,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -81,56 +79,73 @@
     
   <div class="section" id="values-and-data-types">
 <h1>4.1. Values and Data Types<a class="headerlink" href="#values-and-data-types" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">A <strong>value</strong> is a specific piece of data–like a word or a number–that a program manipulates. The values we have seen so far are <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">5.2</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>.</p>
-<p id="index-1">Each value belongs to a category called a <strong>data type</strong>: <code class="docutils literal notranslate"><span class="pre">4</span></code> is an <strong>number</strong>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is a <strong>string</strong>, so-called because it contains a string, or sequence, of letters. You (and the interpreter) can identify strings because they are enclosed in either single or double quotation marks.</p>
-<p id="index-2">Numbers may be either <strong>integer</strong>–such as 1, -15, or 42–or a <strong>float</strong>–such as 2.12 or 3.14. An integer is a whole number, with no decimal part. A float has a decimal part.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">While a number like <code class="docutils literal notranslate"><span class="pre">3.0</span></code> may seem like an integer because it’s decimal part is 0, it is usually considered to be a float.</p>
-</div>
-<p id="index-3">If you are not sure what data type a value falls into, JavaScript has an operator called <code class="docutils literal notranslate"><span class="pre">typeof</span></code> which can tell you.</p>
+<p>Programs may be thought of as being made up of two things:</p>
+<ol class="arabic simple">
+<li>Data</li>
+<li>Operations that manipulate data</li>
+</ol>
+<p>This chapter focuses primarily on the first of these two fundamental components, data.</p>
+<p id="index-0">Data can be stored in a program in a variety of ways. The most basic unit of data is a value.</p>
+<p>A <strong>value</strong> is a specific piece of data, such as a word or a number. Some examples are <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">5.2</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>.</p>
+<p id="index-1">Each value belongs to a category called a <strong>data type</strong>. We will see many different data types throughout the course, the first two of which are the <strong>number</strong> and <strong>string</strong> types. Numeric values such as <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">3.3</span></code> are a numbers. Sequences of characters encolosed in quotes, such as <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes.</p>
+<span class="target" id="index-2"></span><p id="index-3">If you are not sure what data type a value falls into, precede the value with <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">17</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mf">3.14</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Not surprisingly, strings are of type <code class="docutils literal notranslate"><span class="pre">'string'</span></code> while integers and floats are of type <code class="docutils literal notranslate"><span class="pre">'number'</span></code>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When we show the value of a string using the <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> function, such as with <code class="docutils literal notranslate"><span class="pre">console.log(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code>, the quotes are no longer present. The value of the string is the sequence of characters inside the quotes. The quotes are only necessary to help JavaScript know what the value is, and are not part of the value itself.</p>
-</div>
-<div class="admonition note" id="index-4">
-<p class="first admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">typeof</span></code> is new type of JS entity, an <strong>operator</strong>. It is similar to a function in that it carries out some kind of action, though the syntax is different from that of functions (notice there are no parentheses).</p>
-<p class="last">We will learning about other operators in the comming sections.</p>
-</div>
-<p>In a JavaScript shell, it is not necessary to use the <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> function to see the values shown above. The shell evaluates the <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">...</span></code> portion and automatically prints the result. For example, consider the shell session shown below. When we ask the shell to evaluate <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, it responds with the appropriate answer and then goes on to display the prompt for the next use.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ node
-&gt; typeof &quot;Hello, World!&quot;;
-&#39;string&#39;
-&gt; typeof 17;
-&#39;number&#39;
-&gt; &quot;Hello, World!&quot;;
-&#39;Hello, World!&#39;
-&gt;
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>string
+number
+number
 </pre></div>
 </div>
-<p>Note that in the last example, we simply ask the shell to evaluate the string “Hello, World”.  The result is as you might expect, the string itself.</p>
+</div>
+<p>Not surprisingly, JavaScript reports that the data type of <code class="docutils literal notranslate"><span class="pre">&quot;Helo,</span> <span class="pre">World!&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">string</span></code>, while the data type of both <code class="docutils literal notranslate"><span class="pre">17</span></code> and <code class="docutils literal notranslate"><span class="pre">3.14</span></code> is <code class="docutils literal notranslate"><span class="pre">number</span></code>. Note that some JavaScript environments may print types names and strings with single quotes around them, as in <code class="docutils literal notranslate"><span class="pre">'string'</span></code>, <code class="docutils literal notranslate"><span class="pre">'number'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>.</p>
+<div class="admonition note" id="index-4">
+<p class="first admonition-title">Note</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;);</span></code> prints out <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!</span></code> to the console. The <code class="docutils literal notranslate"><span class="pre">typeof</span></code> keyword is not printed to the console because the statement <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hellow,</span> <span class="pre">World&quot;!</span></code> is an <strong>expression</strong>. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.</p>
+<p class="last">We say that an expression <strong>returns</strong> a value. That is, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> returns the value <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+</div>
+<div class="admonition note" id="index-5">
+<p class="first admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">typeof</span></code> is a JavaScript entity known as an <strong>operator</strong>. It is similar to a function in that it carries out some kind of action, though the syntax is different from that of functions (notice using <code class="docutils literal notranslate"><span class="pre">typeof</span></code> does not require parenthses).</p>
+<p class="last">We will more about operators in upcoming sections.</p>
+</div>
+<p>There are data types other than string and number, including object and function, which we will learn about in future chapters.</p>
 <div class="section" id="more-on-strings">
 <h2>4.1.1. More On Strings<a class="headerlink" href="#more-on-strings" title="Permalink to this headline">¶</a></h2>
 <p>What about values like <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>? They look like numbers, but they are in quotation marks like strings.</p>
+<p>Run the following code to find out.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;17&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;3.2&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>They’re strings!</p>
-<p>Strings in JS can be enclosed in either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Data-Types">Run this program at repl.it</a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What is the data type of the values <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>?</p>
+</div>
+<p>Strings in JavaScript can be enclosed in either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double
 quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>).</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s1">&#39;This is a string.&#39;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;And so is this.&quot;</span><span class="p">);</span>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s1">&#39;This is a string&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;And so is this&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Double quoted strings can contain single quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">&quot;Bruce's</span> <span class="pre">beard&quot;</span></code>, and single quoted strings can have double quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">knights</span> <span class="pre">who</span> <span class="pre">say</span> <span class="pre">&quot;Ni!&quot;'</span></code>.</p>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>string
+string
+</pre></div>
+</div>
+</div>
+<p>Double-quoted strings can contain single quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">&quot;Bruce's</span> <span class="pre">beard&quot;</span></code>, and single quoted strings can have double quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">knights</span> <span class="pre">who</span> <span class="pre">say</span> <span class="pre">&quot;Ni!&quot;'</span></code>.</p>
 <p>JavaScript doesn’t care whether you use single or double quotes to surround your strings. Once it has parsed the text of your program or command, the way it stores the value is identical in all cases, and the surrounding quotes are not part of the value.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -143,29 +158,55 @@ quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</spa
 </div>
 <div class="section" id="more-on-numbers">
 <h2>4.1.2. More On Numbers<a class="headerlink" href="#more-on-numbers" title="Permalink to this headline">¶</a></h2>
-<p>When you type a large integer, you might be tempted to use commas between groups of three digits, as in <code class="docutils literal notranslate"><span class="pre">42,000</span></code>. This is not a legal integer in JS, but it does mean something else, which is legal:</p>
+<p>When you type a large integer value, you might be tempted to use commas between groups of three digits, as in <code class="docutils literal notranslate"><span class="pre">42,000</span></code>. This is not a legal integer in JavaScript, but it does mean something else, which is legal:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">42000</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="mi">000</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Well, that’s not what we expected at all! Because of the comma, JS chose to treat this as a <em>pair</em> of values. In fact, the <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.</p>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42000
+42 0
+</pre></div>
+</div>
+</div>
+<p>Well, that’s not what we expected at all! Because of the comma, JavaScript chose to treat <code class="docutils literal notranslate"><span class="pre">42,000</span></code> as a <em>pair</em> of values. In fact, the <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">4.35</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the previous chapter: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intended.</p>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42 17 56 34 11 4.35 32
+3.4 &#39;hello&#39; 45
+</pre></div>
+</div>
+</div>
+<p>Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the chapter <a class="reference internal" href="../how-programs-work/index.html#how-programs-work"><span class="std std-ref">How Programs Work</span></a>: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.</p>
 </div>
 <div class="section" id="type-systems">
 <h2>4.1.3. Type Systems<a class="headerlink" href="#type-systems" title="Permalink to this headline">¶</a></h2>
-<p id="index-5">Every programming langauge has a <strong>type system</strong>, which is the set of rules that determine how it deals with data of different types. In particular, how values are divided up into different data types of one characteristic of a type system.</p>
+<p id="index-6">Every programming language has a <strong>type system</strong>, which is the set of rules that determine how the languages deals with data of different types. In particular, how values are divided up into different data types is one characteristic of a type system.</p>
 <p>In many programming languages, integers and floats are considered to be different data types. For example, in Python <code class="docutils literal notranslate"><span class="pre">42</span></code> is of the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type, while <code class="docutils literal notranslate"><span class="pre">42.0</span></code> is of the <code class="docutils literal notranslate"><span class="pre">float</span></code> data type.</p>
-<p>When discussing the differences between programming languages, the details of tyep systems are one of the main things that programmers consider. There are other aspects of type systems beyond just how values are categorized. We will explore these in future lessons.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">While JavaScript does not distinguish between floats and integers, at times we may wish to do so in our programs. For example, an inventory-tracking program stores items and the number of each number in stock. Since a store cannot have 3.5 shirts in stock, the programmer makes the quantity of each item integer values as opposed to floats.</p>
+</div>
+<p>When discussing the differences between programming languages, the details of type systems are one of the main factors that programmers consider. There are other aspects of type systems beyond just how values are categorized. We will explore these in future lessons.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>4.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-6">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add value/data type check</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>Which of these is <em>not</em> a data type in JavaScript?</p>
+<ol class="last arabic simple">
+<li>number</li>
+<li>string</li>
+<li>letter</li>
+<li>object</li>
+</ol>
 </div>
 </div>
 </div>
@@ -179,7 +220,7 @@ quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</spa
         <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 4. Data and Variables</a></li>
         
         
-        <li class="next"><a href="variables.html">4.2. Variables <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="type-conversion.html">4.2. Type Conversion <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
