@@ -118,8 +118,9 @@ Debugging practice
 
 5. Solve **logic errors** last.  Logic errors do not generate warning
    messages or prevent the code from running, but the program still does
-   not work as intended.  (Refer to :ref:`debugging logic errors <debugging-logic-errors>`
-   if ye need to review).
+   not work as intended.  (Refer to
+   :ref:`debugging logic errors <debugging-logic-errors>` if ye need to
+   review).
 
 a. | First, run this sample code as-is and examine the output.  Should the
       shuttle have launched?  Did it?
