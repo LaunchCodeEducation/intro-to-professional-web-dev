@@ -1,3 +1,5 @@
+.. _debugging-logic-errors:
+
 Debugging Logic Errors
 ======================
 
