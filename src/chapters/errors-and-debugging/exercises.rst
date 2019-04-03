@@ -72,7 +72,7 @@ Debugging practice
          console.log("Launch scrubbed.");
       }
 
-   Control+click (or right-click) to: `Fix it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
+   Control+click (or right-click) to: `Fix it here <https://repl.it/@jimflores5/DebugSyntaxErrors2>`__
 
 |
 
@@ -94,7 +94,7 @@ Debugging practice
          launchReady = false;
       }
 
-   Control+click to: `Fix it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
+   Control+click to: `Fix it here <https://repl.it/@jimflores5/DebugRuntimeErrors1>`__
 
 |
 
@@ -124,7 +124,7 @@ Debugging practice
          console.log("Launch scrubbed.");
       }
 
-   Control+click to: `Fix it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
+   Control+click to: `Fix it here <https://repl.it/@jimflores5/DebugRuntimeErrors2>`__
 
 |
 
@@ -134,8 +134,7 @@ Debugging practice
    :ref:`debugging logic errors <debugging-logic-errors>` if ye need to
    review).
 
-a. | First, run this sample code as-is and examine the output.  Should the
-      shuttle have launched?  Did it?
+a. | First, run this sample code as-is and examine the output.
 
    .. sourcecode:: javascript
 
@@ -144,7 +143,7 @@ a. | First, run this sample code as-is and examine the output.  Should the
       let crewStatus = true;
       let computerStatus = 'green';
 
-      if (launchReady >= 20000) {
+      if (fuelLevel >= 20000) {
          console.log('Fuel level cleared.');
          launchReady = true;
       } else {
@@ -164,10 +163,11 @@ a. | First, run this sample code as-is and examine the output.  Should the
          console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
          console.log('Liftoff!');
       } else {
-         console.log('Launch canceled.');
+         console.log('Launch scrubbed.');
       }
 
-   Control+click to: `Run it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
+   | Control+click to: `Run it here <https://repl.it/@jimflores5/DebugLogicErrors1>`__
+   | Should the shuttle have launched?  Did it?
 
 |
 
@@ -180,7 +180,7 @@ b. | Let’s break the code down into smaller chunks.  Consider the first
       let launchReady = false;
       let fuelLevel = 17000;
 
-      if (launchReady >= 20000) {
+      if (fuelLevel >= 20000) {
          console.log('Fuel level cleared.');
          launchReady = true;
       } else {
@@ -188,9 +188,9 @@ b. | Let’s break the code down into smaller chunks.  Consider the first
          launchReady = false;
       }
 
-   | Given the ``fuelLevel``, should ``launchReady`` be ``true`` or ``false``
+   | Control+click to: `Run it here <https://repl.it/@jimflores5/DebugLogicErrors2>`__
+   | Given the ``fuelLevel`` value, should ``launchReady`` be ``true`` or ``false``
       after the check?  Is the program behaving as expected?
-   | **(User validation - Yes/No?)**
 
 |
 
@@ -211,10 +211,10 @@ c. | Now consider the second if/else block.  Add another ``console.log(launchRea
          launchReady = false;
       }
 
+   | Control+click to: `Run it here <https://repl.it/@jimflores5/DebugLogicErrors3>`__
    | Given ``crewStatus`` and ``computerStatus``, should ``launchReady`` be
-      ``true`` or ``false`` after the block?  Is the program behaving as
+      ``true`` or ``false`` after this check?  Is the program behaving as
          expected?
-   | **(User validation - Yes/No?)**
 
 |
 
@@ -228,7 +228,7 @@ d. | Now consider both if/else blocks together (keeping the added ``console.log`
       let crewStatus = true;
       let computerStatus = 'green';
 
-      if (launchReady >= 20000) {
+      if (fuelLevel >= 20000) {
          console.log('Fuel level cleared.');
          launchReady = true;
       } else {
@@ -246,10 +246,10 @@ d. | Now consider both if/else blocks together (keeping the added ``console.log`
       }
       console.log(launchReady);
 
+   | Control+click to: `Run it here <https://repl.it/@jimflores5/DebugLogicErrors4>`__
    | Given the values for ``fuelLevel``, ``crewStatus`` and ``computerStatus``,
       should ``launchReady`` be ``true`` or ``false``?  Is the program
       behaving as expected?
-   | **(User validation - Yes/No?)**
 
 |
 
@@ -260,6 +260,7 @@ e. | Ahoy, Houston!  We spied a problem!  The value of ``launchReady`` assigned
       is to use a different variable to store the fuel check result.  Refactor
       yer code to do this.  Verify that yer change works by updating the
       ``console.log`` statements.
+   | `Fix it here <https://repl.it/@jimflores5/DebugLogicErrors5>`__
 
 f. Almost done, so wipe the sweat off yer brow!  Add a final ``if/else`` block
    to print a countdown and “Liftoff!” if all the checks pass, or print “Launch
