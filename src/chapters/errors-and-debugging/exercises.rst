@@ -19,9 +19,9 @@ a. Launch the shuttle ONLY IF the fuel, crew and computer all check out OK.
 
 Debugging practice
 ------------------
-1. Fix **syntax errors** first.  Run the following code as-is and squint
-   yer eyes at the error message.  Fix the mistake, and then re-run the
-   code to check it.
+1. | Fix **syntax errors** first.  Run the following code as-is and squint
+      yer eyes at the error message.  Fix the mistake, and then re-run the
+      code to check it.
 
    .. sourcecode:: javascript
 
@@ -35,6 +35,12 @@ Debugging practice
          console.log('WARNING: Insufficient fuel!');
          launchReady = false;
       }
+
+   |location_link|
+
+   .. |location_link| raw:: html
+
+      <a href="https://repl.it/@jimflores5/Debug1stSyntaxError" target="_blank">Fix it here</a>.
 
 |
 
@@ -66,6 +72,8 @@ Debugging practice
          console.log("Launch scrubbed.");
       }
 
+   Control+click (or right-click) to: `Fix it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
+
 |
 
 3. Fix **runtime errors** next.  Remember to examine the error message for
@@ -85,6 +93,8 @@ Debugging practice
          console.log('WARNING: Insufficient fuel!');
          launchReady = false;
       }
+
+   Control+click to: `Fix it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
 
 |
 
@@ -113,6 +123,8 @@ Debugging practice
       } else {
          console.log("Launch scrubbed.");
       }
+
+   Control+click to: `Fix it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
 
 |
 
@@ -155,6 +167,8 @@ a. | First, run this sample code as-is and examine the output.  Should the
          console.log('Launch canceled.');
       }
 
+   Control+click to: `Run it here <https://repl.it/@jimflores5/Debug1stSyntaxError>`__
+
 |
 
 b. | Let’s break the code down into smaller chunks.  Consider the first
@@ -181,7 +195,7 @@ b. | Let’s break the code down into smaller chunks.  Consider the first
 |
 
 c. | Now consider the second if/else block.  Add another ``console.log(launchReady)``
-      statement after this block and run the program.
+      after this block and run the program.
 
    .. sourcecode:: javascript
 
@@ -204,8 +218,8 @@ c. | Now consider the second if/else block.  Add another ``console.log(launchRea
 
 |
 
-d. | Now consider both if/else blocks together (keeping the ``console.log``
-      statements).  Run the code and examine the output.
+d. | Now consider both if/else blocks together (keeping the added ``console.log``
+      lines).  Run the code and examine the output.
 
    .. sourcecode:: javascript
 
