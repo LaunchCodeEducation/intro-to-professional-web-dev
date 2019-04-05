@@ -41,6 +41,7 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book/index.rst
+   appendices/style-guide.rst
    
 .. toctree::
    :hidden:
