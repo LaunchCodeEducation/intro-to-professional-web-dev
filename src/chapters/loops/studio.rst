@@ -15,12 +15,14 @@ Part A (Put dinner together)
     | Dessert options: [‘apple’, ‘banana’, ‘ice cream’, ‘chocolate’, ‘kiwi’,
         ‘more kale’]
 
+    Control+click (or right-click) to: `Code here <https://repl.it/@launchcode/LoopstudiopartsAandC>`__
+
 #. Construct a ``for`` loop that assembles a meal for each of 6 astronauts.
     a. The meals must include one item from each of the source arrays.
     b. Print the meal information for each astronaut.
 
 #. Optional: *Skill boost!* To enhance your learning, modify your code to:
-    a. Use string formatting to print something more interesting than “[‘chicken’, ‘rice’, ‘peas’, ‘juice’, ‘apple’]” for the meals.
+    a. Use string formatting to print something more interesting than “[‘chicken’, ‘rice’, ‘peas’, ‘juice’, ‘apple’]” for the meal outputs.
     b. Use an “array of arrays” to store the food options in a ‘pantry’.
 
 .. image:: figures/array-of-arrays.png
@@ -45,6 +47,8 @@ the engines.
         will be “AnBoCtDyEeFt”.
     | c) If ``ka`` = “LoOt” and ``blam`` = “oku!”, then the output will be
         “LookOut!”.
+
+    Control+click (or right-click) to: `Code here <https://repl.it/@launchcode/LoopstudiopartB>`__
 
 Part C (Refinements)
 --------------------
