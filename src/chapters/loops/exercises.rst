@@ -9,6 +9,8 @@ Loop Exercises
 ``for`` Practice
 -----------------
 
+Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/ForLoopExercises>`__
+
 #. Construct ``for`` loops that accomplish the following tasks:
     | a. Print the numbers 0 - 20, one number per line.
     | b. Print only the ODD values from 3 - 29, one number per line.
@@ -19,8 +21,8 @@ Loop Exercises
         you replace 50 or 20 with other numbers).
 
 #. Initialize two variables to hold the string “LaunchCode” and the array [1, 5, ‘LC101’, ‘blue’, 42], then construct ``for`` loops to accomplish the following tasks:
-    | a. Print each element of the array to a new line,
-    | b. Print each character of the string - in reverse order - to a new line,
+    | a. Print each element of the array to a new line.
+    | b. Print each character of the string - in reverse order - to a new line.
 
 #. Construct a ``for`` loop that sorts the array [2, 3, 13, 18, -5, 38, -10, 11, 0, 104] into two new arrays:
     | a. One array contains the even numbers, and the other holds the odds.
@@ -28,6 +30,8 @@ Loop Exercises
 
 ``while`` Practice
 -------------------
+
+Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/WhileLoopExercises>`__
 
 Define three variables for the LaunchCode shuttle - one for the starting
 fuel level, another for the number of astronauts aboard, and the third for
