@@ -11,3 +11,5 @@ Repeating With Loops
    accumulator-pattern
    while-loops
    choosing-loops
+   exercises
+   studio
