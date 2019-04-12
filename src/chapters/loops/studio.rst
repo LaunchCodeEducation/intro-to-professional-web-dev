@@ -7,13 +7,13 @@ automate some tasks.
 Part A (Put dinner together)
 ----------------------------
 #. First, initialize variables to store the following arrays.  Remember to use descriptive names.
-    | Protein options: [‘chicken’, ‘pork’, ‘beef’, ‘fish’, ‘beans’, ‘tofu’]
-    | Grain options: [‘rice’, ‘pasta’, ‘potato’, ‘quinoa’, ‘crackers’, ‘corn’]
-    | Vegetable options: [‘peas’, ‘green beans’, ‘edamame’, ‘broccoli’,
-        ‘asparagus’, ‘kale’]
-    | Beverage options: [‘juice’, ‘milk’, ‘soy milk’, ‘soda’, ‘tea’, ‘water’]
-    | Dessert options: [‘apple’, ‘banana’, ‘ice cream’, ‘chocolate’, ‘kiwi’,
-        ‘more kale’]
+    | Protein options: [‘chicken’, ‘pork’, ‘tofu’, ‘beef’, ‘fish’, ‘beans’]
+    | Grain options: [‘rice’, ‘pasta’, ‘corn’, ‘potato’, ‘quinoa’, ‘crackers’]
+    | Vegetable options: [‘peas’, ‘green beans’, ‘kale’, ‘edamame’, ‘broccoli’,
+        ‘asparagus’]
+    | Beverage options: [‘juice’, ‘milk’, ‘water’, ‘soy milk’, ‘soda’, ‘tea’]
+    | Dessert options: [‘apple’, ‘banana’, ‘more kale’, ‘ice cream’, ‘chocolate’,
+        ‘kiwi’]
 
     Control+click (or right-click) to: `Code here <https://repl.it/@launchcode/LoopstudiopartsAandC>`__
 

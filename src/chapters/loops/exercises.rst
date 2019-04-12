@@ -44,8 +44,8 @@ the altitude the shuttle reaches.
         (up to a maximum of 7). Validate the entry.
     | c. Use a final loop to monitor the fuel status and the altitude of the
         shuttle.  Each iteration, decrease the fuel level by 100 units for each
-        astronaut aboard.  Also, increase the altitude by 500 kilometers.
+        astronaut aboard.  Also, increase the altitude by 50 kilometers.
 
 #. Output the result with the phrase, “The shuttle gained an altitude of ___ km.”
-    | If the altitude is 36000 km or higher, add “Orbit achieved!”
+    | If the altitude is 2000 km or higher, add “Orbit achieved!”
     | Otherwise add, “Failed to reach orbit.”
