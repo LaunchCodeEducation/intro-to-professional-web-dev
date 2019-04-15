@@ -15,6 +15,7 @@ Contents
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
    chapters/html/index
+   chapters/css/index
    
 .. toctree::
 
