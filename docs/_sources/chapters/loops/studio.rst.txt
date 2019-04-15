@@ -34,10 +34,10 @@ Part B (Self-destruct system)
 If the shuttle gets hijacked by space pirates, the astronauts can activate
 a self-destruct sequence to provide some drama for the viewers at home.
 
-In order to prevent a rogue ‘naut from activating the code, it takes **two**
-crew members to begin the countdown.  Each person must enter a different
-code, after which the computer will ‘zip’ them together before overloading
-the engines.
+In order to prevent a rogue astronaut from activating the code, it takes
+**two** crew members to begin the countdown.  Each person must enter a
+different code, after which the computer will ‘zip’ them together before
+overloading the engines.
 
 4. Construct a ``for`` loop that combines two strings together, alternating the characters from each source.
     | *Examples:*
