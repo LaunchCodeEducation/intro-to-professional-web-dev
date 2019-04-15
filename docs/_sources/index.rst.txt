@@ -4,7 +4,7 @@ Introduction to Professional Web Development in JavaScript
 Contents
 --------
 
-.. toctree:: 
+.. toctree::
    :numbered:
    :maxdepth: 2
    :name: chapterstoc
@@ -14,7 +14,8 @@ Contents
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
-   
+   chapters/booster-rockets/index
+
 .. toctree::
 
    genindex
