@@ -79,10 +79,42 @@
     
   <div class="section" id="special-characters">
 <h1>6.7. Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Create strings with special characters: <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\t</span></code>, unicode (e.g. <code class="docutils literal notranslate"><span class="pre">'\u03a9'</span></code>)</li>
-<li>Include quotes with strings by escaping them</li>
-</ul>
+<p id="index-0">Aside from letters, numbers, and symbols, there is another class of characters that we will occassionally use in strings, known as <strong>special characters</strong>. These characters consist of special character combinations that all begin with <code class="docutils literal notranslate"><span class="pre">\</span></code> backslash). They allow us to include characters in string that would be difficult or impossible to include otherwise, such as Unicode characters that are not on our keyboards, control characters, and whitespace characters.</p>
+<p>The most commonly-used special characters are <code class="docutils literal notranslate"><span class="pre">\n</span></code> and <code class="docutils literal notranslate"><span class="pre">\t</span></code>, which are the newline and tab characters, respectively. They work as you would expect.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;A message\nbroken across lines,\n\tand indented&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>A message
+broken across lines,
+   and indented
+</pre></div>
+</div>
+</div>
+<p id="index-1">We can also represent Unicode characters (most of which aren’t on a normal keyboard) using special character combinations of the form <code class="docutils literal notranslate"><span class="pre">\uXXXX</span></code>, where the Xs are combinations referenced by the <a class="reference external" href="https://unicode-table.com/en/">Unicode table</a>. This allows us to use character sets other than the basic Latin characters that English is based on, such as Greek, Cyrillic, and Arabic, as well as a wider array of symbols.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The interrobang character, \u203d, combines ? and !&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>The interrobang character, ‽, combines ? and !
+</pre></div>
+</div>
+</div>
+<p id="index-2">We can also use the backslash, <code class="docutils literal notranslate"><span class="pre">\</span></code>, to include quotes within a string. This is known as <strong>escaping</strong> a character.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\&quot;The dog&#39;s favorite toy is a stuffed hedgehog,\&quot; said Chris&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;The dog&#39;s favorite toy is a stuffed hedgehog,&quot; said Chris
+</pre></div>
+</div>
+</div>
 </div>
 
 

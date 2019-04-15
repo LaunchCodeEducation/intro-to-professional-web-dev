@@ -16,13 +16,17 @@ A **character** is a string that contains exactly one element, such as ``'a'``, 
 
 We can think of strings as being built up out of characters. In this way, strings can be broken down into smaller pieces.
 
-.. todo:: diagram showing string as collection of characters
+.. figure:: figures/strings-as-collections.png
+   :alt: The string "JavaScript" broken down into invididual letters.
+
+   A string can be thought of as being made up of strings of length 1.
 
 Strings are made up of smaller pieces; they are made up of smaller strings, each containing one character. Other data types, like ``number`` and ``boolean``, are not composed of any smaller parts.
 
+.. index:: ! collection
+
 .. index::
    single: data type; collection
-   single: ! collection
 
 Data types that are comprised of smaller pieces are called **collection data types**, or simply **collection types**. Depending on what we are doing, we may want to treat a value of a collection data type as a single entity (the whole collection), or we may want to access its parts.
 

@@ -79,10 +79,51 @@
     
   <div class="section" id="template-literals">
 <h1>6.8. Template Literals<a class="headerlink" href="#template-literals" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Use template literals to create strings that rely on variable values</li>
-<li>multi-line strings</li>
-</ul>
+<p id="index-0">The ECMAScript specifications define the standard for JavaScript. The 6th edition, known as ES2015, added <strong>template literals</strong>, which allow for the automatic insertion of expressions (including variables) into strings.</p>
+<p>While normal strings are enclosed in single or double quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>), template literals are encolsed in back-tick characters, <code class="docutils literal notranslate"><span class="pre">`</span></code>. Within a template literal, any expression surrounded by <code class="docutils literal notranslate"><span class="pre">${</span> <span class="pre">}</span></code> will be evaluated, with the resulting value included in the string.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Template literals allow for variables and other expressions to be directly included in strings.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">currentAge</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Next year, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> will be </span><span class="si">${</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Jack will be 10
+</pre></div>
+</div>
+</div>
+<p>To achieve the same output with string concatenation would have required concatenation, which can get cumbersome:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Next year, &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; will be &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>In addition to allowing us to include data in strings in a cleaner, more readable way, template literals also allow us to easily create milti-line strings without using string concatenation.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">poem</span> <span class="o">=</span> <span class="sb">`The mind chases happiness.</span>
+<span class="sb">The heart creates happiness.</span>
+<span class="sb">The soul is happiness</span>
+<span class="sb">And it spreads happiness</span>
+<span class="sb">All-where.</span>
+
+<span class="sb">– Sri Chinmoy`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>The mind chases happiness.
+The heart creates happiness.
+The soul is happiness
+And it spreads happiness
+All-where.
+
+– Sri Chinmoy
+</pre></div>
+</div>
+</div>
 </div>
 
 

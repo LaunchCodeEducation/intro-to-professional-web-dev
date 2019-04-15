@@ -60,7 +60,7 @@ In JavaScript, strings are objects.
 The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on. 
 
 .. index::
-   single: ! string; length
+   single: string; length
 
 Every string that we work with will have the same properties and methods. The most useful string property is named ``length``, and it tells us how many characters are in a string.
 

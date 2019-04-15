@@ -48,4 +48,8 @@ It is important to notice that immutability applies to string *values* and not s
 
 In this example, the change made on line 2 is carried out. The difference between this example and the one above is that here we are modifying the value that the variable is storing, and not the string itself. Using our visual analogy of a variable as a label that "points at" a value, the second example has the following effect:
 
-.. todo:: diagram showing string variable reassignment
+.. figure:: figures/string-var-reassignment.png
+   :alt: A variable, nonprofit, pointing at "LaunchCode" with a lowercase-c.
+   :height: 300px
+
+   When the value of a variable storing a string is changed, the variable then points to a new value, with the old value remaining unchanged.
