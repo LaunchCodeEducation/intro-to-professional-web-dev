@@ -74,8 +74,15 @@
     
   <div class="section" id="style-guide">
 <h1>2. Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
-<p>When writing code there are the specific language rules you must follow for your code to execute. In addition to those language rules
-there are <strong>style guides</strong> which define style rules to be followed when writing code.</p>
+<p>When writing code there are specific language rules you must follow for your code to execute. In addition to those language rules
+there are <strong>style guides</strong> which define style rules to be followed when writing code. These style rules are conventions about how to write the code.
+For example: how to name variables, where to place brackets, where to put new lines.</p>
+<p><strong>Benefits of using a Style Guide</strong></p>
+<ul class="simple">
+<li>Consistently written code is easier to read</li>
+<li>Predictable variable and file names</li>
+<li>Clear rules to follow when writing code</li>
+</ul>
 <p>There are multiple style guides for each language. For consistency sake, it’s important to follow the style guide rules of your organization
 or company when writing code. The style guide for this course is below.</p>
 <div class="section" id="javascript-style-guide">
@@ -136,35 +143,82 @@ any additional words in the variable name.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="always-use-braces-for-if-statements">
-<h3>2.1.4. Always use Braces for If Statements<a class="headerlink" href="#always-use-braces-for-if-statements" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="always-use-braces-for-if-statements-and-loops">
+<h3>2.1.4. Always Use Braces for If Statements and Loops<a class="headerlink" href="#always-use-braces-for-if-statements-and-loops" title="Permalink to this headline">¶</a></h3>
 <p><strong>Good</strong></p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">fuelTempCelsius</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">220</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Bad</strong></p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">fuelTempCelsius</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">220</span><span class="p">)</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING&#39;</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="use-semicolons">
 <h3>2.1.5. Use Semicolons<a class="headerlink" href="#use-semicolons" title="Permalink to this headline">¶</a></h3>
 <p><strong>Good</strong></p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">ir</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">fuelTempCelsius</span> <span class="o">=</span> <span class="o">-</span><span class="mi">200</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">fuelTempCelsius</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">220</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Bad</strong></p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">ir</span> <span class="o">=</span> <span class="kc">false</span>
-
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">fuelTempCelsius</span> <span class="o">=</span> <span class="o">-</span><span class="mi">200</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">fuelTempCelsius</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">220</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indent-code-blocks-one-tab">
+<h3>2.1.6. Indent Code Blocks One Tab<a class="headerlink" href="#indent-code-blocks-one-tab" title="Permalink to this headline">¶</a></h3>
+<p>Indentation is a key tool for making code readable. Indent one <em>Tab</em> inside each <strong>code block</strong>.
+The definition of what a <em>Tab</em> is differs between teams. The important thing is to be consistent and use
+the same <em>Tab</em> throughout your project.</p>
+<p><strong>Good</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">drivingLogKm</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">94</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">totalKm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">drivingLogKm</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">totalKm</span> <span class="o">=</span> <span class="nx">totalKm</span> <span class="o">+</span> <span class="nx">drivingLogKm</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Adding&quot;</span><span class="p">,</span> <span class="nx">drivingLogKm</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Total Kilometers&quot;</span><span class="p">,</span> <span class="nx">totalKm</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">drivingLogKm</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;warning: trip distance longer than advised&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">totalKm</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Over limit for month&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Still under limit for month&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Bad</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">drivingLogKm</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">94</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">totalKm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">drivingLogKm</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">totalKm</span> <span class="o">=</span> <span class="nx">totalKm</span> <span class="o">+</span> <span class="nx">drivingLogKm</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Adding&quot;</span><span class="p">,</span> <span class="nx">drivingLogKm</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Total Kilometers&quot;</span><span class="p">,</span> <span class="nx">totalKm</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">drivingLogKm</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;warning: trip distance longer than advised&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">totalKm</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Over limit for month&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Still under limit for month&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
