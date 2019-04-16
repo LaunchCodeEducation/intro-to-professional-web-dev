@@ -9,3 +9,5 @@ Making Decisions With Conditionals
    logical-operators
    conditionals
    nested-conditionals
+   exercises
+   
