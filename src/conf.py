@@ -50,6 +50,7 @@ source_suffix = ['.rst']
 highlight_language = 'none'
 html_show_copyright = False
 html_show_sphinx = False
+html_copy_source = False
 
 # The master toctree document.
 master_doc = 'index'
