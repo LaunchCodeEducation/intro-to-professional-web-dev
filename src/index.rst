@@ -16,7 +16,8 @@ Contents
    chapters/booleans-and-conditionals/index
    chapters/html/index
    chapters/css/index
-   
+   chapters/git/index
+
 .. toctree::
 
    genindex
