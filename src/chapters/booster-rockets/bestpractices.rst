@@ -2,26 +2,26 @@ Best Practices: Learning To Code
 =================================
 
 For years, the education community has debated the best approach for
-*‘homework’*.  Should it be scored or not?  What is the proper amount?  Should
-it be even be used?  “Studies have shown…”
+*"homework"*.  Should it be scored or not?  What is the proper amount?  Should
+it be even be assigned?  “Studies have shown…”
 
 We cannot possibly restate all the conclusions here, nor will we present any
 part of the debates.  Instead, here are a few simple facts for LC101:
 
-#. Yes, there is homework.  This consists of prep work, exercises, studios
+#. Yes, there is homework, which consists of prep work, exercises, studios
    and assignments.
 #. Only the assignments earn a “score”.
 #. You do not have to do the ungraded homework, but you absolutely **SHOULD**.
 
 The rest of this page is our attempt to motivate you to complete ALL of the
 work for LC101.  How much encouragement you need depends on your personality.
-Feel free to read the sections that most appeal to your psyche and are likely
-to encourage you.
+Read the sections that appeal to your psyche and are most likely to encourage
+you.
 
    “Thanks, LaunchCode, but you convinced me at, ‘Do all the homework.’ ”
 
 If this is your thinking, then bless you.  Skip to the best practices listed
-in the last section.  You’re awesome!
+in the last section of this page.  *You’re awesome!*
 
 Otherwise, on to the motivational attempts...
 
@@ -34,9 +34,9 @@ Philosophy & An Appeal to Wisdom
    | - Chinese Proverb
 
 Experience is definitely the best teacher.  You could read pages and pages
-about ``for`` loops, which will give you a handle on the vocabulary, but until
-you actually construct your first working loop, your understanding will be
-incomplete.
+about ``for`` loops, which will give you a handle on the vocabulary.  However,
+until you actually construct your first working loop, your understanding will
+be incomplete.
 
    Take-home lesson: **Do your homework**.
 
