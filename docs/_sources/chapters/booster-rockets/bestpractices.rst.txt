@@ -76,7 +76,11 @@ Now let’s take a look at an imaginary student's attempt:
 
 .. sourcecode:: javascript
 
-
+   1. //Prompt the user to enter a number.
+   2. //Print ‘Even’ if it is divisible by 2, otherwise print ‘Odd’.
+   3.
+   4.
+   5.
 
 Hmmm.  A blank answer space.  What might be the reason?
    a. The student did not understand how to solve the problem.
@@ -116,16 +120,16 @@ For those who are sports fans, embrace your favorite quote(s):
 Baseball: “There may be people who have more talent than you, but there’s
 no excuse for anyone to work harder than you do.” - *Derek Jeter*
 
-Gymnastics: “I’d rather regret the risks that didn’t work out than the chances
-I didn’t take at all.” - *Simone Biles*
+Gymnastics: **“I’d rather regret the risks that didn’t work out than the chances
+I didn’t take at all.”** - *Simone Biles*
 
 Football: “I was always willing to work.  I was not the fastest or biggest
 player, but I was determined to be the best football player I could be on the
 football field, and I think I was able to accomplish that through hard work.” -
 *Jerry Rice*
 
-Soccer: “The backbone of success is...hard work, determination, good planning,
-and perseverance.” - *Mia Hamm*
+Soccer: **“The backbone of success is...hard work, determination, good planning,
+and perseverance.”** - *Mia Hamm*
 
 Tennis: “If I don't get it right, I don't stop until I do." - *Serena Williams*
 
@@ -137,7 +141,9 @@ Rocky: How can you listen to this and NOT be inspired?  (`Gonna Fly now <https:/
 Social Media
 -------------
 
-Lorem ipsum...
+`#hardworkworks <https://twitter.com/hashtag/hardworkworks?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Ehashtag>`_
+
+Rocky (`Gonna Fly now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ ) because it’s just that good.
 
 Marathon Analogy
 ----------------
@@ -147,4 +153,11 @@ Lorem ipsum...
 Best Practice Tips
 ------------------
 
-Lorem ipsum...
+*Whew!*  You made it to the bottom of the page.  Good job.  Here are some final bits of advice:
+   #. DO try every exercise, studio and practice problem.
+   #. Repeated practice helps cement the basic syntax quirks for a given programming language.
+   #. DO experiment.  Once your code correctly solves the given task, feel free to tweak it.  Great fun can be had if you ask, “What if I try ____,” and then go and do just that.  For example, if the problem asked you to sort a list alphabetically, could you order it from z to a instead?
+   #. ASK for help when you get stuck.  We’ve all been there, and there is no shame in seeking advice.  Use your instructors, TA’s, classmates and Google as the brilliant resources they are.  
+   #. The only ‘dumb questions’ are the ones that are not asked.
+   #. The rubber duck method works.  Sometimes just describing a coding problem out loud (to your screen, a co-worker or a rubber duck) sparks an idea about how to solve it.
+   #. DO NOT copy/paste answers.  There are plenty of websites where you can find complete code posted.  A simple copy/paste into the assignment box will give you a correct result, but you have completely skipped your learning opportunity.
