@@ -82,13 +82,13 @@
 <p id="index-0">One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code <em>only if</em> a given condition is met. Another way to say this is that the segment of code runs <em>only if</em> the program is in a particular state.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<p class="last">Consider a banking application that can remind you when a bill is due. The application will notify the user that a bill is due soon, but <em>only if</em> the bill has not already been paid.</p>
+<p class="last">Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but <em>only if</em> the bill has not already been paid.</p>
 </div>
-<p>In this example, we can phrase the condition as follows: Send a notification of an upcoming bill if the statement “the bill is unpaid” is true. In order to formalize such a statement in code, we need a notion of what it means to be true or false.</p>
+<p>In this example, we can phrase the condition as follows: Send a notification if “the bill is unpaid” is true. In order to formalize such a statement in code, we need a notion of what it means to be true or false.</p>
 <div class="section" id="boolean-values">
 <h2>5.1.1. Boolean Values<a class="headerlink" href="#boolean-values" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-1"></span><p id="index-2">The JavaScript data type for storing true and false values is <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, named after the British mathematician, George Boole. George Boole created <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean Algebra</a> which is the basis of all modern computer arithmetic.</p>
-<p>There are only two <strong>boolean values</strong>. They are <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. As always, JavaScript is case-sensitive, so <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are not valid boolean values.</p>
+<span class="target" id="index-1"></span><p id="index-2">The JavaScript data type for storing true and false values is called <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, named after the British mathematician, George Boole. George Boole created <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean Algebra</a> which is the basis of all modern computer arithmetic.</p>
+<p>There are only two <strong>boolean values</strong>—<code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. As always, JavaScript is case-sensitive, so <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are not valid boolean values.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
@@ -119,7 +119,7 @@ string
 </div>
 <div class="section" id="boolean-conversion">
 <h2>5.1.2. Boolean Conversion<a class="headerlink" href="#boolean-conversion" title="Permalink to this headline">¶</a></h2>
-<p id="index-3">As with the number and string data types, the boolean type has a type conversion function, <code class="docutils literal notranslate"><span class="pre">Boolean()</span></code>. It works similarly to <code class="docutils literal notranslate"><span class="pre">Number()</span></code> and <code class="docutils literal notranslate"><span class="pre">String()</span></code>, attempting to convert a non-boolean value to a boolean.</p>
+<p id="index-3">As with the number and string data types, the boolean type also has a conversion function, <code class="docutils literal notranslate"><span class="pre">Boolean()</span></code>. It works similarly to <code class="docutils literal notranslate"><span class="pre">Number()</span></code> and <code class="docutils literal notranslate"><span class="pre">String()</span></code>, attempting to convert a non-boolean value to a boolean.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
 <p>Explore how <code class="docutils literal notranslate"><span class="pre">Boolean()</span></code> converts various non-boolean values.</p>
@@ -168,6 +168,8 @@ false
 </pre></div>
 </div>
 </div>
+<div class="section" id="comparison-operators">
+<h3>5.1.3.1. Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h3>
 <p id="index-7">The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is one of six common <strong>comparison operators</strong>.</p>
 <span id="index-8"></span><table border="1" class="colwidths-auto docutils" id="id2">
 <caption><span class="caption-text">Comparison Operators</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
@@ -231,6 +233,7 @@ false
 <li><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">==</span> <span class="pre">''</span></code></li>
 </ul>
 <p class="last">We will explore the nuances of <code class="docutils literal notranslate"><span class="pre">==</span></code> in the upcoming section <a class="reference internal" href="equality.html#equality"><span class="std std-ref">Equality</span></a>, and introduce two new operators, <code class="docutils literal notranslate"><span class="pre">===</span></code> and <code class="docutils literal notranslate"><span class="pre">!==</span></code>, that will align more closely with our intuitive notion of equality.</p>
+</div>
 </div>
 </div>
 <div class="section" id="check-your-understanding">

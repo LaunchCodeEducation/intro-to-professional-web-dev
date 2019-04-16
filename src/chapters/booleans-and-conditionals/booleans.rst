@@ -9,9 +9,9 @@ One of the core features of any programming language is the ability to condition
 
 .. admonition:: Example
 
-   Consider a banking application that can remind you when a bill is due. The application will notify the user that a bill is due soon, but *only if* the bill has not already been paid.
+   Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but *only if* the bill has not already been paid.
 
-In this example, we can phrase the condition as follows: Send a notification of an upcoming bill if the statement "the bill is unpaid" is true. In order to formalize such a statement in code, we need a notion of what it means to be true or false.
+In this example, we can phrase the condition as follows: Send a notification if "the bill is unpaid" is true. In order to formalize such a statement in code, we need a notion of what it means to be true or false.
 
 Boolean Values
 --------------
@@ -21,9 +21,9 @@ Boolean Values
 .. index::
    single: boolean; value
 
-The JavaScript data type for storing true and false values is ``boolean``, named after the British mathematician, George Boole. George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_ which is the basis of all modern computer arithmetic.
+The JavaScript data type for storing true and false values is called ``boolean``, named after the British mathematician, George Boole. George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_ which is the basis of all modern computer arithmetic.
 
-There are only two **boolean values**. They are ``true`` and ``false``. As always, JavaScript is case-sensitive, so ``True`` and ``False`` are not valid boolean values.
+There are only two **boolean values**---``true`` and ``false``. As always, JavaScript is case-sensitive, so ``True`` and ``False`` are not valid boolean values.
 
 .. admonition:: Example
 
@@ -62,7 +62,7 @@ Boolean Conversion
 
 .. index:: ! Boolean(), type conversion
 
-As with the number and string data types, the boolean type has a type conversion function, ``Boolean()``. It works similarly to ``Number()`` and ``String()``, attempting to convert a non-boolean value to a boolean.
+As with the number and string data types, the boolean type also has a conversion function, ``Boolean()``. It works similarly to ``Number()`` and ``String()``, attempting to convert a non-boolean value to a boolean.
 
 .. admonition:: Try It!
 
@@ -130,6 +130,9 @@ We can also use ``==`` to see that ``true`` and ``"true"`` are not equal.
 
       false
 
+Comparison Operators
+^^^^^^^^^^^^^^^^^^^^
+
 .. index::
    single: operator; comparison
 
@@ -184,7 +187,7 @@ The ``==`` operator is one of six common **comparison operators**.
        ``'a' <= 'a'``
 
 
-Although these operations are probably familiar to you, the JavaScript symbols are different from the mathematical symbols. A common error is to use a single equal sign (``=``) instead of a double equal sign (``==``). Remember that ``=`` is an *assignment* operator and ``==`` is a *comparison* operator. Also note that ``=<`` and ``=>`` are not recognized operators.
+Although these operations are probably familiar, the JavaScript symbols are different from the mathematical symbols. A common error is to use a single equal sign (``=``) instead of a double equal sign (``==``). Remember that ``=`` is an *assignment* operator and ``==`` is a *comparison* operator. Also note that ``=<`` and ``=>`` are not recognized operators.
 
 An equality test is symmetric, meaning that we can swap the places of the operands and the result is the same.  For a variable ``a``, if ``a == 7`` is ``true`` then ``7 == a`` is also ``true``. However, an assignment statement is not symmetric: ``a = 7`` is legal while ``7 = a`` is not.
 
