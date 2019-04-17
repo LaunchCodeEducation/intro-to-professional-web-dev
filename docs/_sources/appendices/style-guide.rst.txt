@@ -5,13 +5,18 @@ When writing code there are specific language rules you must follow for your cod
 there are **style guides** which define style rules to be followed when writing code. These style rules are conventions about how to write the code.
 For example: how to name variables, where to place brackets, where to put new lines.
 
+Imagine a book written by multiple authors, each of which uses different practices for capitalization, indentation,
+and punctuation. One writes in all-lowercase and never indents paragraphs. Another capitalizes every word and uses
+only the period for punctuation. Such a book would be hard to read; reading code can be that bad if everyone isn't
+following the same style guide conventions.
+
 **Benefits of using a Style Guide**
 
 - Consistently written code is easier to read
 - Predictable variable and file names
 - Clear rules to follow when writing code
 
-There are multiple style guides for each language. For consistency sake, it's important to follow the style guide rules of your organization
+There are multiple style guides for each language. For the sake of consistency, it's important to follow the style guide rules of your organization
 or company when writing code. The style guide for this course is below.
 
 JavaScript Style Guide
