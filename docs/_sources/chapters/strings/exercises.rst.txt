@@ -26,10 +26,10 @@ String Exercises
 
 |
 
-3. The ``.length`` method returns the number of characters in a string.
+3. The ``.length`` method returns how many characters are in a string.
    However, the method will NOT give us the length of a number. If
-   ``num = 1001``, ``num.length`` returns ``undefined``. Use type conversion to
-   print the length (number of digits) of an integer.
+   ``num = 1001``, ``num.length`` returns ``undefined`` rather than 4. Use type
+   conversion to print the length (number of digits) of an integer.
 
 [Repl.it link]
 
@@ -59,14 +59,14 @@ String Exercises
       ``JavaScript``.
    b. Without using ``.slice``, use method chaining to accomplish the same
       thing.
-   c. Use bracket notation and a template literal to print, "The abbreviation for
-      'JavaScript' is 'JS'."
+   c. Use bracket notation and a template literal to print, *"The abbreviation for
+      'JavaScript' is 'JS'."*
 
 [Repl.it link]
 
 |
 
-6. Some programming languages (like Python) include a ``.title`` method to
+6. Some programming languages (like Python) include a ``title`` method to
    return a string with Every Word Capitalized (e.g. ``'title case'.title()``
    returns ``Title Case``).  JavaScript has no ``.title`` method, but that
    won't stop us! Use the string methods you know to print 'Title Case' from
