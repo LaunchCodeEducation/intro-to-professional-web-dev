@@ -3,6 +3,7 @@ What is HTML?
 
 .. index:: ! tag, ! element
 
+The internet works in many ways.
 
 With coding languages, there is a family of languages called **markup languages**. Markup languages are used to annotate the text of a document and define the structure.
 Hyper Text Markup Language (or HTML) is a coding language used to define the structure of a web page.
