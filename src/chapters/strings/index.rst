@@ -12,3 +12,4 @@ Strings
    encoding-characters
    special-characters
    template-literals
+   exercises
