@@ -3,6 +3,6 @@ HTML
 
 .. toctree::
    
-   what-is-html
+   background
    structure
    tags

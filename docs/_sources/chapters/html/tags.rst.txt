@@ -1,25 +1,62 @@
 HTML Tags
 =========
 
-Name, describe the purpose of, and use common HTML tags: <b>, <em>, <a>, <img>, <br>, <p>, <span>, <div>, <form>
+Tags have been talked about a lot so far and there are some great ones that can really help make beautiful web pages.
 
-``<b>`` is the tag that when surrounding text, makes that text bold.
-``<em>`` is the tag that when surrounding text, makes that text italic.
-``<a>`` is the tag that creates hyperlinks.
-``<img>`` is the tag that denotes images.
-``<br>`` is the tag for a single line break.
-``<p>`` is the paragraph tag.
-``<span>`` is the tag that makes a section.
-``<div>`` is the tag that defines an area of the page.
-``<form>`` is the tag that creates a form for user input.
+Tags to Know
+------------
 
-Describe the purpose of, and use additional HTML tags: <ul>, <ol>, <li>, <table>
+.. list-table::
+   :widths: auto
+   :header-rows: 1
 
-``<ul>`` is an unordered list.
-``<ol>`` is an ordered list.
-``<li>`` is the tag that denotes an element of the list. This tag is used for both ordered and unordered lists.
-``<table>`` creates a table on the page.
+   * - Tag Name
+     - Code
+     - Definition
+   * - Bold
+     - ``<b>``
+     - When surrounding text, makes that text bold.
+   * - Emphasis
+     - ``<em>``
+     - When surrounding text, makes that text italic.
+   * - Hyperlink
+     - ``<a>``
+     - Creates hyperlinks.
+   * - Image
+     - ``<img>``
+     - Denotes images.
+   * - Break
+     - ``<br>``
+     - A single line break.
+   * - Paragraph
+     - ``<p>``
+     - Creates a paragraph in text.
+   * - Section
+     - ``<span>``
+     - Makes a section in text.
+   * - Division
+     - ``<div>``
+     - Defines an area of the page.
+   * - Form
+     - ``<form>``
+     - Creates a form for user input.
+   * - Unordered List
+     - ``<ul>``
+     - Creates an unordered list.
+   * - Ordered List
+     - ``<ol>``
+     - Creates an ordered list.
+   * - List element
+     - ``<li>``
+     - Denotes an element of the list. This tag is used for both ordered and unordered lists.
+   * - Table
+     - ``<table>``
+     - Creates a table on the page.
 
-Define HTML attributes and how they are used
+Attributes
+----------
 
-Attributes can be added to HTML tags to add further specification to the tag, such as the alignment of the element or alternate text to an image.
+.. index:: ! attribute
+
+**Attributes** are added to HTML tags to add further specification to the tag, such as the alignment of the element or alternate text to an image.
+In order to add an attribute, the programmer types in the value before the closing bracket in the opening tag.
