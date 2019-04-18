@@ -22,7 +22,7 @@ String Exercises
    let texture = 'nut';
    let carb = 'bread';
 
-[Repl.it link]
+Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/StringExercises02/>`__
 
 |
 
@@ -31,7 +31,7 @@ String Exercises
    ``num = 1001``, ``num.length`` returns ``undefined`` rather than 4. Use type
    conversion to print the length (number of digits) of an integer.
 
-[Repl.it link]
+`Code it here <https://repl.it/@launchcode/StringExercises03/>`__
 
 |
 
@@ -47,7 +47,7 @@ String Exercises
       the first 'd' "* WITHOUT using ``console.log("I do not want to count the
       characters to find the location of the first 'd' ")``.
 
-[Repl.it link]
+`Code it here <https://repl.it/@launchcode/StringExercises04/>`__
 
 |
 
@@ -62,7 +62,7 @@ String Exercises
    c. Use bracket notation and a template literal to print, *"The abbreviation for
       'JavaScript' is 'JS'."*
 
-[Repl.it link]
+`Code it here <https://repl.it/@launchcode/StringExercises05/>`__
 
 |
 
@@ -72,4 +72,4 @@ String Exercises
    won't stop us! Use the string methods you know to print 'Title Case' from
    the string ``title case``.
 
-[Repl.it link]
+`Code it here <https://repl.it/@launchcode/StringExercises06/>`__
