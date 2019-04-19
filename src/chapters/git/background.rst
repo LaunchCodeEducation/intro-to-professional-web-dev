@@ -1,16 +1,14 @@
 Background
 ==========
 
-Describe the main functionality provided by a version control system (VCS)
-Describe the practical applications of this functionality: revision history, collaboration, backup
-
 A version control system (VCS) is a system which allows programmers to track changes made to code and stores different versions of a code base. 
 When programmers make a mistake or want to collaborate, a VCS allows them to roll back to a version without the bug or share their code with each other.
 
-Explain what a repository is
+Apart from **collaboration**, VCS assist programmers with keeping backups and a history of all of the revisions made to the code base over time. 
 
-A repository is the storage container for code.
+Git is just one VCS and because of its popularity, is what this chapter covers.
 
-Explain what a commit is
+.. index:: ! repository, ! commit
 
-A commit is a new version of the code that is going into the repository.
+Every single VCS has a **repository** for the code and programmers **commit** to that repository.
+A repository is the storage container for the code base. In order to update the code in the repository, a programmer commits the new version of the code that is going into the repository.
