@@ -122,3 +122,20 @@ An interesting thing happens when a function parameter has the same name as a va
 While the variable ``message`` declared on line 1 is technically visible within ``printMessage`` (that is, it is in-scope), it is hidden by the function parameter of the same name. When ``printMessage("Goodbye")`` is called and ``console.log(message)`` executes, ``message`` has the value ``"Goodbye"``, which is the argument passed into the function. This phenomenon is known **shadowing**, based on the metaphor that a function parameter "casts it's shadow over" a variable of the same name, effectively hiding it. 
 
 There is no good reason to intentionally use variable shadowing in your program. In fact, doing so can lead to confusion over which of the two variables is being used in a given situation. For this reason, you should avoid naming variables the same as function parameters within a program. 
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What does the following code output?
+
+   .. sourcecode:: js
+
+      let num = 42;
+
+      function isEven (num) { 
+         return num % 2 === 0; 
+      }
+
+      console.log(isEven(43));

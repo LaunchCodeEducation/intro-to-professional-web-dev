@@ -370,3 +370,56 @@ In this example, ``name`` is a **parameter**. It is part of the function definit
 The value ``"Lamar"`` that is use when we invoke the function on line 5 is an **argument**. It is a *specific value* that is used during the function call. 
 
 You should think of the difference between an parameter and an argument as being the same as that between a variable and a value. A variable *refers to* a specific value, just like a parameter *refers to* a specific argument when a function is called. Like a value, a variable is a concrete piece of data.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What does the following code output?
+
+   .. sourcecode:: js
+
+      function plusTwo(num) {
+          return num + 2;
+      }
+
+      let a = 2;
+
+      for (let i=0; i < 4; i++) {
+          a = plusTwo(a);
+      }
+
+      console.log(a);
+
+.. admonition:: Question
+
+   What does the following function return?
+
+   .. sourcecode:: js
+
+      function repeater(str) {
+          let repeated = str + str;
+          console.log(repeated);
+      }
+
+   #. The value of ``repeated``
+   #. Nothing (no return value)
+   #. ``undefined``
+   #. The value of ``str``
+
+.. admonition:: Question
+
+   #. What does the following code *output* when executed?
+
+   .. sourcecode:: js
+
+      function repeater(str) {
+          let repeated = str + str;
+          console.log(repeated);
+      }
+
+   #. The value of ``repeated``
+   #. Nothing (no output)
+   #. ``undefined``
+   #. The value of ``str``

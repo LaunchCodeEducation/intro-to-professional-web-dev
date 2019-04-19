@@ -73,3 +73,22 @@ We've said it before that you should use descriptive names, but now we want to e
 If you find yourself writing a comment to describe what your function does, consider whether a better name might remove the need for such additional explanation. The best function (and variable) names are those that are *self-documenting*. In other words, they are descriptive enough as to not need explanatory comments. 
 
 Using self-documenting names means that the code that *uses* your function will be more readable---your explanatory comments are not visible where the function is used. Additionally, it is easy for comments to become inaccurate; when you update your code to change behavior, there is nothing forcing you to also update your comments. For this reason, some programmers live by the maxim, "Comments lie." While we won't go so far as to say that you should never use comments in your code, we *do* believe that comments should not be used to make up for poor function and variable names.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Which is the best name for the following function?
+
+   .. sourcecode:: js
+
+      function myFunc(radius) {
+          let area = Math.PI * radius**2;
+          return area;
+      }
+
+   #. ``area``
+   #. ``calculateAreaOfCircle``
+   #. ``circle``
+   #. ``shape``

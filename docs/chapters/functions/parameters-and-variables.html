@@ -180,6 +180,22 @@ ReferenceError: strWithoutHyphens is not defined
 <p>While the variable <code class="docutils literal notranslate"><span class="pre">message</span></code> declared on line 1 is technically visible within <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> (that is, it is in-scope), it is hidden by the function parameter of the same name. When <code class="docutils literal notranslate"><span class="pre">printMessage(&quot;Goodbye&quot;)</span></code> is called and <code class="docutils literal notranslate"><span class="pre">console.log(message)</span></code> executes, <code class="docutils literal notranslate"><span class="pre">message</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;Goodbye&quot;</span></code>, which is the argument passed into the function. This phenomenon is known <strong>shadowing</strong>, based on the metaphor that a function parameter “casts it’s shadow over” a variable of the same name, effectively hiding it.</p>
 <p>There is no good reason to intentionally use variable shadowing in your program. In fact, doing so can lead to confusion over which of the two variables is being used in a given situation. For this reason, you should avoid naming variables the same as function parameters within a program.</p>
 </div>
+<div class="section" id="check-your-understanding">
+<h2>6.5.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What does the following code output?</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">isEven</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isEven</span><span class="p">(</span><span class="mi">43</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
