@@ -79,6 +79,69 @@
     
   <div class="section" id="working-with-arrays">
 <h1>7.2. Working With Arrays<a class="headerlink" href="#working-with-arrays" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bracket-notation">
+<h2>7.2.1. Bracket Notation<a class="headerlink" href="#bracket-notation" title="Permalink to this headline">¶</a></h2>
+<p>Arrays are ordered collections, meaning they will keep the order of items they contain. That order is refered to as the index.
+Like with strings, use bracket notation and an index to access a specific item in an array <code class="docutils literal notranslate"><span class="pre">array[index]</span></code>.
+Also like strings, an arrays index is zero based. An array’s index will go from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">array.length</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Print out the length of two arrays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>JavaScript
+C#
+undefined
+</pre></div>
+</div>
+</div>
+<p>Notice above that <code class="docutils literal notranslate"><span class="pre">undefined</span></code> was printed out when index 4 was referenced. <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is returned when you request an index
+that the array does not contain.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>undefined</strong> is a special value in JavaScript that means no value has been assigned. We will discuss <code class="docutils literal notranslate"><span class="pre">undefined</span></code> more later in the class.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Print out the length of two arrays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">100</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>undefined
+undefined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="arrays-are-mutable">
+<h2>7.2.2. Arrays are Mutable<a class="headerlink" href="#arrays-are-mutable" title="Permalink to this headline">¶</a></h2>
+<p>Mutability refers to what happens to when values are edited. Remember that Strings are immutable, meaning that any change
+to a string results in a new string being created. In constrast, arrays are <strong>mutable</strong>, meaning that individual items in
+an array can be edited without a new array being created.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Print out the length of two arrays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span> <span class="s2">&quot;Ember&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="nx">javaScriptFrameworks</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Ember
+Vue
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 

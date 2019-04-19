@@ -10,7 +10,7 @@ Collection Data Types
 
 .. index:: ! character
 
-A **character** is a string that contains exactly one element, such as ``'a'``, ``"?"``, or even ``" "`` (a single space character). 
+A **character** is a string that contains exactly one element, such as ``'a'``, ``"?"``, or even ``" "`` (a single space character).
 
 .. note:: Some programming languages, such as Java and C, represent characters using their own data type. For example, Java has the data type ``char``. JavaScript, however, does not consider strings and characters to be different types.
 

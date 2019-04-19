@@ -79,6 +79,87 @@
     
   <div class="section" id="arrays-are-like-strings">
 <h1>7.1. Arrays Are Like Strings<a class="headerlink" href="#arrays-are-like-strings" title="Permalink to this headline">¶</a></h1>
+<p>In the previous chapter we learned in detail how strings are a sequence, ordered collection,
+of characters that can be accessed by an index. Using String methods we can add, remove,
+replace parts of the collection. What we can’t do is store anything other than characters.</p>
+<p id="index-0">In this chapter we will learn about a more general usage collection data type called <strong>Array</strong>.
+Like strings, arrays are ordred collections. A key difference is that strings can only contain contain
+characters, arrays can store data of any type.</p>
+<p>Figure: JavaScript array from prev chapter
+Remember that a string is a sequence of strings with a length of 1</p>
+<p>Figure: Array with multiple strings included JavaScript, Python, Java, C#
+An array is a sequence of values that can vary in size and type.</p>
+<div class="section" id="delcaring-an-array">
+<h2>7.1.1. Delcaring an Array<a class="headerlink" href="#delcaring-an-array" title="Permalink to this headline">¶</a></h2>
+<p>There are multiple ways to declare a new Array. The simplest way is to use <strong>array literal</strong> notation <code class="docutils literal notranslate"><span class="pre">[]</span></code>.
+Anything enclosed in the square brackets will be <em>items</em> in the array. Each item should be followed by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>.
+If there are no items inside the brackets, then the array is considered empty.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">emptyArray</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Array items can also be declared on a new line.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s2">&quot;React&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Angular&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Ember&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Vue&quot;</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dynamic-length">
+<h2>7.1.2. Dynamic Length<a class="headerlink" href="#dynamic-length" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript array length is NOT fixed, meaning you can add or remove items dynamically.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In other languages, such as Java and C#, arrays are of a static length requiring the
+length of the array to be declared upon creation.</p>
+</div>
+<p>To check to check the lenght of an array use the <code class="docutils literal notranslate"><span class="pre">length</span></code> property, just like with strings.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Print out the length of two arrays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">emptyArray</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">emptyArray</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>0
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="varying-data-types">
+<h2>7.1.3. Varying Data Types<a class="headerlink" href="#varying-data-types" title="Permalink to this headline">¶</a></h2>
+<p>Not only can you have an array that contains multiple strings or numbers. You can have an array that contains both
+strings and numbers. The standard JavaScript array can hold any combination of values of any type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In other languages such as Java and C# all items in an array have to be of the same type. It’s rare that you would store data of multiple types, because grouped data is usually the same type.</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">grabBag</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A string value&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>7.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What is the length of these arrays?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>const classes = [“science, math, art”];
+
+const teachers = [“science”, “art”, “math”];
+</pre></div>
+</div>
+<p class="last">How can you change the <code class="docutils literal notranslate"><span class="pre">classes</span></code> array declaration to have the same number of items as the <code class="docutils literal notranslate"><span class="pre">teachers</span></code> array?</p>
+</div>
+</div>
 </div>
 
 
