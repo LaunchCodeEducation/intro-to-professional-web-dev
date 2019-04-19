@@ -8,3 +8,4 @@ Arrays
    working-with-arrays
    multi-dimensional-arrays
    array-methods
+   exercises
