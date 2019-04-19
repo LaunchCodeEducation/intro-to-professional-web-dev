@@ -14,6 +14,7 @@ Contents
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
+   chapters/functions/index
    
 .. toctree::
 
@@ -25,10 +26,9 @@ Studios
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :name: studiostoc
 
-   chapters/data-and-variables/studio.rst
+   chapters/data-and-variables/studio
 
 
 
@@ -40,7 +40,7 @@ Appendices
    :numbered:
    :name: appendicestoc
 
-   appendices/about-this-book/index.rst
+   appendices/about-this-book/index
    
 .. toctree::
    :hidden:

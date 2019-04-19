@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6.5. Parameters and Variables &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.6. Naming Functions" href="naming-functions.html" />
+    <link rel="prev" title="6.4. A Good Function-Writing Process" href="process.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">6. Functions</a></li>
+          <li class="active">6.5. Parameters and Variables</li>
+        </ol>
+      
+    
+  <div class="section" id="parameters-and-variables">
+<h1>6.5. Parameters and Variables<a class="headerlink" href="#parameters-and-variables" title="Permalink to this headline">¶</a></h1>
+<p>When discussing parameters, we said that a parameter “behaves like a variable that exists only within the function.” While this is true, the relationship between variables and parameters is a bit more complicated.</p>
+<div class="section" id="function-scope">
+<h2>6.5.1. Function Scope<a class="headerlink" href="#function-scope" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">The <strong>scope</strong> of a variable is the extent to which a variable is visible within a program. In other words, a variable’s scope consists of all locations within a program at which it can be used. Introducing functions gives us one of our first examples of limited variable scope—a situation in which a variable is not visible throughout an entire program.</p>
+<p>In particular, a variable defined within a function is not visible outside of that function.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>This function takes a string and returns the result of removing all hyphens, <code class="docutils literal notranslate"><span class="pre">-</span></code>, from the string.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">removeHyphens</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">strWithoutHyphens</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">strWithoutHyphens</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">launchCodePhone</span> <span class="o">=</span> <span class="s2">&quot;314-254-0107&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">removeHyphens</span><span class="p">(</span><span class="nx">launchCodePhone</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strWithoutHyphens</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>3142540107
+ReferenceError: strWithoutHyphens is not defined
+(rest of error message omitted)
+</pre></div>
+</div>
+</div>
+<p>The last line of this program tries to print the variable <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> to the console, resulting in an error. The previous line calls <code class="docutils literal notranslate"><span class="pre">removeHyphens</span></code>, at the end of which <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;3142540107&quot;</span></code>. However, once the function finishes execution all variables and paremeters within the function are destroyed. This is why the last line results in a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>; there is no variable named <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> in existence when that line executes.</p>
+<p>This is what we mean when we refer to scope. A variable is not necessarily usable throughout an entire program. Where it can be used depends on the context in which it is defined. For variables <em>and</em> parameters within a function, their scope is known as <strong>function scope</strong>. This means that they are only visible within the function in which they are defined.</p>
+</div>
+<div class="section" id="variable-shadowing">
+<h2>6.5.2. Variable Shadowing<a class="headerlink" href="#variable-shadowing" title="Permalink to this headline">¶</a></h2>
+<p>We just learned that variables and parameters defined within a function are not visible outside of that function. The opposite scenario is more complicated; a variable defined outside a function <em>may be</em> visible within the function, in certain circumstances.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>In some cases, a variable defined outside of a function may be visible within the function.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">printMessage</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printMessage</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
+</pre></div>
+</div>
+</div>
+<p>Even though <code class="docutils literal notranslate"><span class="pre">message</span></code> is defined outside the function, it is still visible within the function. When <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> is called and <code class="docutils literal notranslate"><span class="pre">console.log(message);</span></code> executes, <code class="docutils literal notranslate"><span class="pre">message</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, so that value is printed to the console. This means that the scope of <code class="docutils literal notranslate"><span class="pre">message</span></code> extends to the function <code class="docutils literal notranslate"><span class="pre">printMessage</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>It is NOT the case that all variables defined outside of a function are visible within <em>every</em> function. The reality is a bit more nuanced that this, and will be explored in depth in a later chapter.</p>
+<p class="last">There is, however, a specific type of variable that is visible to every function, known as a <strong>global variable</strong>. We <a class="reference internal" href="../data-and-variables/variables.html#global-var-intro"><span class="std std-ref">remarked earlier</span></a> that a global variable is created when initializing a variable without using <code class="docutils literal notranslate"><span class="pre">let</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span></code>, or <code class="docutils literal notranslate"><span class="pre">var</span></code>, and they should be used very rarely.</p>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<p>What is the output of the following program? Form a hypothesis for yourself before running it.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">printMessage</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printMessage</span><span class="p">();</span>
+<span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Goodbye&quot;</span><span class="p">;</span>
+<span class="nx">printMessage</span><span class="p">();</span>
+</pre></div>
+</div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Function-Scope">Run this program at repl.it</a></p>
+</div>
+<p id="index-1">An interesting thing happens when a function parameter has the same name as a variable that is in-scope.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">printMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printMessage</span><span class="p">(</span><span class="s2">&quot;Goodbye&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Goodbye
+</pre></div>
+</div>
+</div>
+<p>While the variable <code class="docutils literal notranslate"><span class="pre">message</span></code> declared on line 1 is technically visible within <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> (that is, it is in-scope), it is hidden by the function parameter of the same name. When <code class="docutils literal notranslate"><span class="pre">printMessage(&quot;Goodbye&quot;)</span></code> is called and <code class="docutils literal notranslate"><span class="pre">console.log(message)</span></code> executes, <code class="docutils literal notranslate"><span class="pre">message</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;Goodbye&quot;</span></code>, which is the argument passed into the function. This phenomenon is known <strong>shadowing</strong>, based on the metaphor that a function parameter “casts it’s shadow over” a variable of the same name, effectively hiding it.</p>
+<p>There is no good reason to intentionally use variable shadowing in your program. In fact, doing so can lead to confusion over which of the two variables is being used in a given situation. For this reason, you should avoid naming variables the same as function parameters within a program.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="process.html"><span aria-hidden="true">&larr;</span> 6.4. A Good Function-Writing Process</a></li>
+        
+        
+        <li class="next"><a href="naming-functions.html">6.6. Naming Functions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
