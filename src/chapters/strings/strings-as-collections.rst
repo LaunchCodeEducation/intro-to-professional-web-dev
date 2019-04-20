@@ -30,12 +30,12 @@ Strings are made up of smaller pieces; they are made up of smaller strings, each
 
 Data types that are comprised of smaller pieces are called **collection data types**, or simply **collection types**. Depending on what we are doing, we may want to treat a value of a collection data type as a single entity (the whole collection), or we may want to access its parts.
 
-Sequential Collections
-----------------------
+Ordered Collections
+-------------------
 
 .. index::
-   single: collection; indexed
+   single: collection; ordered
 
 We defined strings as *sequential* collections of characters. This means that the individual characters that make up the string are assumed to be in a particular order from left to right. The string ``"LaunchCode"`` is different from the string ``"CodeLaunch"``, even though they contain the exact same characters. 
 
-Collection types that allow their elements to be ordered are known as **indexed collections**, for reasons that will become clear to you very soon.
+Collection types that allow their elements to be ordered are known as **ordered collections**, for reasons that will become clear to you very soon.
