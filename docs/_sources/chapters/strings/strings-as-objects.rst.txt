@@ -104,3 +104,10 @@ The ``toLowerCase()`` string method returns the value of its string in all lower
       LaunchCode
 
 Notice that ``toLowerCase()`` does not alter the string itself, but instead *returns* the result of converting the string to all lowercase characters. In fact, it is not possible to alter the characters within a string, as we will now see.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Given ``word = 'Rutabaga'``, why does ``word.length`` return the integer 8, but ``word[8]`` is ``undefined``?

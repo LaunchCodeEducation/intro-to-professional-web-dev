@@ -53,3 +53,10 @@ In this example, the change made on line 2 is carried out. The difference betwee
    :height: 300px
 
    When the value of a variable storing a string is changed, the variable then points to a new value, with the old value remaining unchanged.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Given ``pet = 'cat'``, why do the statements ``console.log(pet + 's');`` and ``pet += 's';`` NOT violate the immutability of strings?

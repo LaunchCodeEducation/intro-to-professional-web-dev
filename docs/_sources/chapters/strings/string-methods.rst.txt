@@ -229,3 +229,34 @@ On some websites, the portion of an email address before the ``@`` symbol is use
    ::
 
       fake.email
+
+.. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'JavaScript';``, word.toUpperCase() returns ``JAVASCRIPT``. What would ``word.slice(4).toUpperCase()`` return?  TRY IT!  (`Repl.it <https://repl.it/@launchcode/Intro-To-Method-Chaining>`_).
+
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: javascript
+
+      let language = "JavaScript";
+      language.replace('J', 'Q');
+      language.slice(0,5);
+      console.log(language);
+
+   #. ``"JavaScript"``
+   #. ``"QavaScript"``
+   #. ``"QavaSc"``
+   #. ``"QavaS"``
+
+.. admonition:: Question
+
+   Given ``language = 'JavaScript';``, what does ``language.slice(1,6)`` return?
+
+   #. ``"avaScr"``
+   #. ``"JavaSc"``
+   #. ``"avaSc"``
+   #. ``"JavaS"``

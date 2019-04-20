@@ -57,3 +57,21 @@ In addition to allowing us to include data in strings in a cleaner, more readabl
       All-where.
 
       – Sri Chinmoy
+
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Mad Libs are games where one player asks the group to supply random words (e.g. “Give me a verb,” or, “I need a color”). The words are substituted into blanks within a story, which is then read for everyone's amusement. In elementary school classrooms, giggles and hilarity often ensue. TRY IT! Refactor the following code to replace the awkward string concatenation with template literals. Be sure to add your own choices for the variables. (`Repl.it <https://repl.it/@launchcode/String-Mad-Lib>`_)
+
+   .. sourcecode:: javascript
+
+      let pluralNoun = ;
+      let name = ;
+      let verb = ;
+      let adjective = ;
+      let color = ;
+      
+      console.log("JavaScript provides a "+ color +" collection of tools — including " + adjective + " syntax and " + pluralNoun + " — that allows "+ name +" to "+ verb +" with strings.")
