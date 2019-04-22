@@ -1,9 +1,7 @@
 Remote Repositories
 ===================
 
-Describe what a remote repository is
-
-A remote repository lives on the internet.
+A remote repository is different than a local repository in that it is stored on servers and hosted online. 
 
 Create and push to a remote repository from a local repository
 
