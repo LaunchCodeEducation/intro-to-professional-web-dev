@@ -94,13 +94,14 @@ perform some useful actions.</p>
 <h2>6.6.1. String Modification<a class="headerlink" href="#string-modification" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Use string methods to convert a word into pseudo-pig latin.<ol class="loweralpha">
-<li>Remove the first three letters from a string and move them to the end.
+<li>Remove the first three characters from a string and add them to the end.
 Ex: <code class="docutils literal notranslate"><span class="pre">'LaunchCode'</span></code> becomes <code class="docutils literal notranslate"><span class="pre">'nchCodeLau'</span></code>. Use a template literal to
 print the original and modified string in a descriptive phrase.</li>
 <li>Modify your code to accept user input. Query the user to enter the
 number of letters that will be relocated.</li>
-<li>Add validation to your code to reject user inputs that are longer than the
-word.</li>
+<li>Add validation to your code to deal with user inputs that are longer than the
+word. In such cases, default to moving 3 characters. Also, the template
+literal should note the error.</li>
 </ol>
 </li>
 </ol>
@@ -109,21 +110,12 @@ word.</li>
 <div class="section" id="array-and-string-conversion">
 <h2>6.6.2. Array and String Conversion<a class="headerlink" href="#array-and-string-conversion" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="2">
-<li>Practice using the <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods to convert between strings
-and arrays.  We can also use string methods in the process.<ol class="loweralpha">
-<li>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method operates on arrays, but not on strings. Use this
-fact to reverse the order of characters in a string. Store the result in
-a new variable, then print the original and reversed string.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">trim</span></code> method to remove any leading/trailing whitespace to
-compare two usernames (strings).  Also, use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and a
-template literal to print, ” ‘___’ and ‘___’ are matching usernames!”
-Otherwise, print, ” ‘___’ and ‘___’ are NOT matching usernames.”</li>
-<li>Use string methods to enhance your code.  The username check should NOT
-be case sensitive.  Ex: ‘Dad’ vs. ‘dad’ would be considered a match.</li>
-<li>What if we need to compare phrases that have inconsistent spacing between
-the words?  These spaces will throw off the check (e.g. <code class="docutils literal notranslate"><span class="pre">'taco</span> <span class="pre">cat'</span></code>
-and <code class="docutils literal notranslate"><span class="pre">'taco</span>&#160;&#160;&#160; <span class="pre">cat'</span></code> are the same phrase, but the <code class="docutils literal notranslate"><span class="pre">===</span></code> comparison
-returns <code class="docutils literal notranslate"><span class="pre">false</span></code>). Modify your code to deal with this spacing problem.</li>
+<li>Use methods <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> to convert back and forth between strings
+and arrays. Use delimiters to split a string into an array, then modify the
+array and convert it back to a printable string.<ol class="loweralpha">
+<li>Some task…</li>
+<li>Some follow-up task…</li>
+<li>Some final task…</li>
 </ol>
 </li>
 </ol>
@@ -132,14 +124,67 @@ returns <code class="docutils literal notranslate"><span class="pre">false</span
 <div class="section" id="multi-dimensional-arrays">
 <h2>6.6.3. Multi-dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="3">
-<li>Inventory task (multi-dim array).  Access and modify items?<ol class="loweralpha">
-<li>“stores” as individual arrays, each containing a list of numbers, strings
-and/or arrays.</li>
-<li>“franchise” as an array of the stores.</li>
-<li>Use bracket notation to access a store (e.g. franchise[2]) and check for
-an item (e.g. ‘eggs’) using the <code class="docutils literal notranslate"><span class="pre">includes</span></code> method.</li>
-<li>If found, print the store and item indices (e.g. “Store 1, index 3”).</li>
-<li>Use this task as an introduction to the next big topic - loops?</li>
+<li>Arrays can store other arrays!<ol class="loweralpha">
+<li>Use <code class="docutils literal notranslate"><span class="pre">split</span></code> to define and initialize the inventory for four cabinets
+inside the cargo hold. Alphebitize the contents of each cabinet.<ol class="lowerroman">
+<li>“water bottles, meal packs, snacks, chocolate”</li>
+<li>“space suits, jet packs, tool belts, thermal detonators”</li>
+<li>“parrots, cats, moose, alien eggs”</li>
+<li>“blankets, pillows, eyepatches, alarm clocks”</li>
+</ol>
+</li>
+<li>Initialize the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array and add the cabinet arrays to it. Print
+the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> to verify its structure.</li>
+<li>Query the user to select a cabinet in the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> (0-3).</li>
+<li>Use bracket notation and a template literal to display the contents of
+the selected cabinet.</li>
+<li><em>Bonus Mission</em>: Modify the code to query the user for BOTH a cabinet in
+<code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> AND a particular item. Use the <code class="docutils literal notranslate"><span class="pre">includes</span></code> method to check
+if the cabinet contains the selected item. Use a template literal to
+print “Cabinet ____ DOES/DOES NOT contain ____.”</li>
+</ol>
+</li>
+</ol>
+<p><strong>Repl.it link</strong></p>
+</div>
+<div class="section" id="additional-ideas-feedback-requested">
+<h2>6.6.4. Additional Ideas (Feedback Requested)<a class="headerlink" href="#additional-ideas-feedback-requested" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="4">
+<li>Practice using the <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods to convert between strings
+and arrays.  We can also use string methods in the process.<ol class="loweralpha">
+<li>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method operates on arrays, but not on strings. Use this
+fact to reverse the order of characters in a string. Store the result in
+a new variable, then print the original and reversed string.</li>
+<li><strong>Palindromes</strong> are words that have the same spelling forwards and backwards.
+For example, “soda” (ados) is NOT a palindrome, but “pop” (pop) and
+“radar” (radar) are.  Modify your code by adding an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to
+check if a word is a palindrome.  If the string is a palindrome, print,
+“___ is a palindrome!”  Otherwise, print, “___ is NOT a palindrome.”</li>
+<li>Use string methods to enhance your code.  The username check should NOT
+be case sensitive.  Ex: ‘Dad’ vs. ‘dad’ would be considered a match.</li>
+<li><em>Bonus Mission</em>: What if the string is a phrase rather than a single word?
+Any spaces may throw off the check (e.g. <code class="docutils literal notranslate"><span class="pre">'taco</span> <span class="pre">cat'</span></code> is a palindrome,
+but a simple reversal produces the different string <code class="docutils literal notranslate"><span class="pre">'tac</span> <span class="pre">ocat'</span></code>).
+Modify your code to deal with this “space problem”.</li>
+</ol>
+</li>
+</ol>
+<p><strong>Repl.it link</strong></p>
+<ol class="arabic simple" start="5">
+<li>Practice using the <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods to convert between strings
+and arrays.  We can also use string methods in the process.<ol class="loweralpha">
+<li>Reverse the order of characters in a string. Store the result in a new variable,
+then print the original and reversed string.</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">trim</span></code> method to remove leading/trailing whitespace to compare
+two usernames (strings).  Also, use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and template
+literal to print, ” ‘___’ and ‘___’ are matching usernames!” Otherwise,
+print, ” ‘___’ and ‘___’ are NOT matching usernames.”</li>
+<li>Use string methods to enhance your code.  The username check should NOT be
+case sensitive.  Ex: ‘Dad’ vs. ‘dad’ would be considered a match.</li>
+<li>What if we need to compare phrases that have inconsistent spacing between
+the words?  These spaces will throw off the check (e.g. <code class="docutils literal notranslate"><span class="pre">'taco</span> <span class="pre">cat'</span></code>
+and <code class="docutils literal notranslate"><span class="pre">'taco</span>&#160;&#160;&#160; <span class="pre">cat'</span></code> are the same phrase, but the <code class="docutils literal notranslate"><span class="pre">===</span></code> comparison
+returns <code class="docutils literal notranslate"><span class="pre">false</span></code>).  Modify your code to deal with this spacing problem.</li>
 </ol>
 </li>
 </ol>
