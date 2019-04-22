@@ -20,7 +20,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Index" href="../../genindex.html" />
+    <link rel="next" title="6.6. [str1, str2, str3] Studio" href="studio.html" />
     <link rel="prev" title="6.4. Array Methods" href="array-methods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -81,11 +81,14 @@
     
   <div class="section" id="array-exercises">
 <h1>6.5. Array Exercises<a class="headerlink" href="#array-exercises" title="Permalink to this headline">¶</a></h1>
+<p>OK, rookie.  It’s time to train you on how to modify the shuttle’s cargo
+manifest.  The following actions will teach you how to add, remove, modify and
+rearrange our records for the items stored in our hold.</p>
 <ol class="arabic simple">
-<li>Create an array called <code class="docutils literal notranslate"><span class="pre">arr</span></code> with the following entry: 273.15. Use the
-<code class="docutils literal notranslate"><span class="pre">push</span></code> method to add the following elements to the array.  Add items a &amp;
-b one at a time, then use a single <code class="docutils literal notranslate"><span class="pre">push</span></code> to add the items in part c.
-Print the array after each step to confirm the changes.<ol class="loweralpha">
+<li>Create an array called <code class="docutils literal notranslate"><span class="pre">practiceFile</span></code> with the following entry: 273.15.
+Use the <code class="docutils literal notranslate"><span class="pre">push</span></code> method to add the following elements to the array. Add
+items a &amp; b one at a time, then use a single <code class="docutils literal notranslate"><span class="pre">push</span></code> to add the items in
+part c. Print the array after each step to confirm the changes.<ol class="loweralpha">
 <li>42</li>
 <li>“hello”</li>
 <li><code class="docutils literal notranslate"><span class="pre">false</span></code>, -4.6, “87”</li>
@@ -93,81 +96,103 @@ Print the array after each step to confirm the changes.<ol class="loweralpha">
 </li>
 </ol>
 <p>Control+click (or right click) to: <a class="reference external" href="https://repl.it/&#64;launchcode/ArrayExercises01">Code it here</a></p>
+<p>Congratulations, rookie.  You can now add items to an array.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><code class="docutils literal notranslate"><span class="pre">push</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, <code class="docutils literal notranslate"><span class="pre">shift</span></code> and <code class="docutils literal notranslate"><span class="pre">unshift</span></code> are used to add/remove elements
 from the beginning/end of an array.  <strong>Bracket notation</strong> can be used to
-modify any element within an array.  Starting with the full array from
-exercise 1, write statements to do the following:<ol class="loweralpha">
-<li>Replace <code class="docutils literal notranslate"><span class="pre">false</span></code> in the array with <code class="docutils literal notranslate"><span class="pre">true</span></code>.</li>
-<li>Remove the last item from the array.  Print the element removed and the
-new array.</li>
-<li>Remove the first item from the array.  Print the element removed and the
-new array.</li>
-<li>Add the numbers 99 and 42 to the the array - one at the start and one at
-the end.</li>
+modify any element within an array.  Starting with the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array
+<code class="docutils literal notranslate"><span class="pre">['oxygen</span> <span class="pre">tanks',</span> <span class="pre">'space</span> <span class="pre">suits',</span> <span class="pre">'parrot',</span> <span class="pre">'instruction</span> <span class="pre">manual',</span>
+<span class="pre">'meal</span> <span class="pre">packs',</span> <span class="pre">'slinky',</span> <span class="pre">'security</span> <span class="pre">blanket']</span></code>, write statements to do the
+following:<ol class="loweralpha">
+<li>Use bracket notation to replace ‘slinky’ in the array with ‘space tether’.
+Print the array to confirm the change.</li>
+<li>Remove the last item from the array with <code class="docutils literal notranslate"><span class="pre">pop</span></code>. Print the element removed
+and the updated array.</li>
+<li>Remove the first item from the array with <code class="docutils literal notranslate"><span class="pre">shift</span></code>. Print the element removed
+and the updated array.</li>
+<li>Unlike <code class="docutils literal notranslate"><span class="pre">pop</span></code> and <code class="docutils literal notranslate"><span class="pre">shift</span></code>, <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">unshift</span></code> require arguments
+inside the <code class="docutils literal notranslate"><span class="pre">()</span></code>. Add the items 1168 and ‘20 meters’ to the the array -
+the number at the start and the string at the end. Print the updated
+array to confirm the changes.</li>
 <li>Use a template literal to print the final array and its length.</li>
 </ol>
 </li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/ArrayExercises02">Code it here</a></p>
+<p>Status check, rookie. Which array methods ADD items, and where are the new
+entries placed? Which methods REMOVE items, and where do the entries come from?
+Which methods require entries inside the <code class="docutils literal notranslate"><span class="pre">()</span></code>?</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>The <code class="docutils literal notranslate"><span class="pre">splice</span></code> method can be used to either add or remove items from an
-array.  It can also accomplish both tasks at the same time
-(<a class="reference external" href="https://www.w3schools.com/js/js_array_methods.asp">Reference</a>). Use <code class="docutils literal notranslate"><span class="pre">splice</span></code> to
-make the following changes to the array <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d',</span> <span class="pre">'e',</span> <span class="pre">'f']</span></code>.
-Be sure to print the array to confirm your updates.<ol class="loweralpha">
-<li>Insert the string “cat” at index 3 without replacing any other entries.</li>
-<li>Remove ‘e’ from the array.  (Hint: <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> is helpful to avoid manually
+array.  It can also accomplish both tasks at the same time. <em>Refer back to
+the chapter if you need to review the proper ``splice`` syntax</em>. Use
+<code class="docutils literal notranslate"><span class="pre">splice</span></code> to make the following changes to the final <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array
+from exercise 2. Be sure to print the array after each step to confirm your
+updates.<ol class="loweralpha">
+<li>Insert the string <code class="docutils literal notranslate"><span class="pre">'keys'</span></code> at index 3 without replacing any other
+entries.</li>
+<li>Remove ‘instruction manual’ from the array.  (Hint: <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> is helpful to avoid manually
 determining an index).</li>
-<li>Replace the elements at indexes 2 - 4 with the items “change”, 0, and
-121.</li>
+<li>Replace the elements at indexes 2 - 4 with the items ‘cat’, ‘fob’, and
+‘string cheese’.</li>
 </ol>
 </li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/ArrayExercises03">Code it here</a></p>
+<p>Well done, cadet. Now let’s look at some finer details about array methods.
+We’ve got to keep our paperwork straight, so you need to know when your actions
+change the original records.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>Some methods - like <code class="docutils literal notranslate"><span class="pre">splice</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> - alter the original array,
-while others do not. Use the arrays <code class="docutils literal notranslate"><span class="pre">['j',</span> <span class="pre">'m',</span> <span class="pre">'f',</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">6.022e23]</span></code> and
-<code class="docutils literal notranslate"><span class="pre">['x',</span> <span class="pre">'y',</span> <span class="pre">'z',</span> <span class="pre">233,</span> <span class="pre">144,</span> <span class="pre">300,</span> <span class="pre">'parsnip']</span></code> to explore the following
-methods: <code class="docutils literal notranslate"><span class="pre">concat</span></code>, <code class="docutils literal notranslate"><span class="pre">slice</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code>.<ol class="loweralpha">
+while others do not. Use the arrays <code class="docutils literal notranslate"><span class="pre">holdCabinet1</span> <span class="pre">['duct</span> <span class="pre">tape',</span> <span class="pre">'gum',</span>
+<span class="pre">3.14,</span> <span class="pre">false,</span> <span class="pre">6.022e23]</span></code> and <code class="docutils literal notranslate"><span class="pre">holdCabinet2</span> <span class="pre">['orange</span> <span class="pre">drink',</span> <span class="pre">'nerf</span> <span class="pre">toys',</span>
+<span class="pre">'camera',</span> <span class="pre">42,</span> <span class="pre">'parsnip']</span></code> to explore the following methods: <code class="docutils literal notranslate"><span class="pre">concat</span></code>,
+<code class="docutils literal notranslate"><span class="pre">slice</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code>. Refer back to the chapter if you need to
+review the proper syntax for any of these methods.<ol class="loweralpha">
 <li>Print the result of using <code class="docutils literal notranslate"><span class="pre">concat</span></code> on the two arrays.  Does <code class="docutils literal notranslate"><span class="pre">concat</span></code>
-alter the original arrays?  Verify this by printing <code class="docutils literal notranslate"><span class="pre">firstArray</span></code> after
-using the method.</li>
+alter the original arrays?  Verify this by printing <code class="docutils literal notranslate"><span class="pre">holdCabinet1</span></code>
+after using the method.</li>
 <li>Print a <code class="docutils literal notranslate"><span class="pre">slice</span></code> of two elements from each array.  Does <code class="docutils literal notranslate"><span class="pre">slice</span></code> alter the
 original arrays?</li>
-<li><code class="docutils literal notranslate"><span class="pre">reverse</span></code> the first array, and <code class="docutils literal notranslate"><span class="pre">sort</span></code> the second.  Do these methods alter
-the original arrays?</li>
+<li><code class="docutils literal notranslate"><span class="pre">reverse</span></code> the first array, and <code class="docutils literal notranslate"><span class="pre">sort</span></code> the second.  What is the difference
+between these two methods? Do the methods alter the original arrays?</li>
 </ol>
 </li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/ArrayExercises04">Code it here</a></p>
+<p>Good progress, cadet. Here are two more methods for you to examine.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="5">
 <li>The <code class="docutils literal notranslate"><span class="pre">split</span></code> method converts a string into an array, while the <code class="docutils literal notranslate"><span class="pre">join</span></code>
 method does the opposite.<ol class="loweralpha">
-<li>Try it!  Given the string <code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">=</span> <span class="pre">'Flowers</span> <span class="pre">bloom</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">spring.'</span></code>, see what
-happens when you print <code class="docutils literal notranslate"><span class="pre">str.split()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">str.split('o')</span></code> vs.
-<code class="docutils literal notranslate"><span class="pre">str.split('</span> <span class="pre">')</span></code> vs. <code class="docutils literal notranslate"><span class="pre">str.split('')</span></code>. What is the purpose of the
+<li>Try it!  Given the string <code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">=</span> <span class="pre">'In</span> <span class="pre">space,</span> <span class="pre">no</span> <span class="pre">one</span> <span class="pre">can</span> <span class="pre">hear</span> <span class="pre">you</span> <span class="pre">code.'</span></code>,
+see what happens when you print <code class="docutils literal notranslate"><span class="pre">str.split()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">str.split('e')</span></code>
+vs. <code class="docutils literal notranslate"><span class="pre">str.split('</span> <span class="pre">')</span></code> vs. <code class="docutils literal notranslate"><span class="pre">str.split('')</span></code>. What is the purpose of the
 parameter inside the <code class="docutils literal notranslate"><span class="pre">()</span></code>?</li>
-<li>Given the array <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, see what happens when
-you print <code class="docutils literal notranslate"><span class="pre">arr.join()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">arr.join('0')</span></code> vs. <code class="docutils literal notranslate"><span class="pre">arr.join('</span> <span class="pre">')</span></code> vs.
+<li>Given the array <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['B',</span> <span class="pre">'n',</span> <span class="pre">'n',</span> <span class="pre">5]</span></code>, see what happens when
+you print <code class="docutils literal notranslate"><span class="pre">arr.join()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">arr.join('a')</span></code> vs. <code class="docutils literal notranslate"><span class="pre">arr.join('</span> <span class="pre">')</span></code> vs.
 <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code>. What is the purpose of the parameter inside the <code class="docutils literal notranslate"><span class="pre">()</span></code>?</li>
 <li>Do <code class="docutils literal notranslate"><span class="pre">split</span></code> or <code class="docutils literal notranslate"><span class="pre">join</span></code> change the original string/array?</li>
+<li>The benefit, cadet, is that we can take a comma-separated string and convert
+it into a modifiable array. <strong>Try it!</strong> Alphabetize these hold contents:
+“water, space suits, food, plasma sword, batteries”, and then combine
+them into a new string.</li>
 </ol>
 </li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/ArrayExercises05">Code it here</a></p>
+<p>Nicely done, astronaut. Now it’s time to bring you fully up to speed.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -184,7 +209,8 @@ symbol and mass for different elements:<ol class="lowerroman">
 <li>Define the array <code class="docutils literal notranslate"><span class="pre">table</span></code>, and use <code class="docutils literal notranslate"><span class="pre">push</span></code> to add each of the element arrays
 to it.  Print <code class="docutils literal notranslate"><span class="pre">table</span></code> to see its structure.</li>
 <li>Use bracket notation to examine the difference between printing <code class="docutils literal notranslate"><span class="pre">table[1]</span></code> and
-<code class="docutils literal notranslate"><span class="pre">table[1][1]</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">table[1][1]</span></code>. Don’t just nod your head! I want to HEAR you describe
+this difference. Go ahead - talk to your screen.</li>
 <li>Using bracket notation and the <code class="docutils literal notranslate"><span class="pre">table</span></code> array, print the mass of element1, the
 name for element 2 and the symbol for element26.</li>
 <li><code class="docutils literal notranslate"><span class="pre">table</span></code> is an example of a <em>2-dimensional array</em>.  The first “level” contains the
@@ -195,6 +221,7 @@ each level in the array.</li>
 </li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/ArrayExercises06">Code it here</a></p>
+<p>Excellet work, records keeper. Welcome aboard.</p>
 </div>
 
 
@@ -206,7 +233,7 @@ each level in the array.</li>
         <li class="previous"><a href="array-methods.html"><span aria-hidden="true">&larr;</span> 6.4. Array Methods</a></li>
         
         
-        <li class="next"><a href="../../genindex.html">Index <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="studio.html">6.6. [str1, str2, str3] Studio <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
