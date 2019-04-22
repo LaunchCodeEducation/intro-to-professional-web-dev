@@ -69,15 +69,15 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/Ar
    method does the opposite.
 
    a. Try it!  Given the string ``str = 'Flowers bloom in the spring.'``, see what
-      happens when you print ``str.slice()`` vs. ``str.slice('a')`` vs.
-      ``str.slice(' ')`` vs. ``str.slice('')``. What is the purpose of the
+      happens when you print ``str.split()`` vs. ``str.split('o')`` vs.
+      ``str.split(' ')`` vs. ``str.split('')``. What is the purpose of the
       parameter inside the ``()``?
    b. Given the array ``arr = ['a', 'b', 'c', 1, 2, 3]``, see what happens when
       you print ``arr.join()`` vs. ``arr.join('0')`` vs. ``arr.join(' ')`` vs.
       ``arr.join('')``. What is the purpose of the parameter inside the ``()``?
    c. Do ``split`` or ``join`` change the original string/array?
 
-**Repl.it link**
+`Code it here <https://repl.it/@launchcode/ArrayExercises05>`__
 
 |
 
@@ -102,4 +102,4 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/Ar
       **Experiment!** Create a 3-dimensional array and print out one entry from
       each level in the array.
 
-**Repl.it link**
+`Code it here <https://repl.it/@launchcode/ArrayExercises06>`__
