@@ -102,8 +102,8 @@ Good progress, cadet. Here are two more methods for you to examine.
    c. Do ``split`` or ``join`` change the original string/array?
    d. The benefit, cadet, is that we can take a comma-separated string and convert
       it into a modifiable array. **Try it!** Alphabetize these hold contents:
-      "water, space suits, food, plasma sword, batteries", and then combine
-      them into a new string.
+      "water,space suits,food,plasma sword,batteries", and then combine them
+      into a new string.
 
 
 `Code it here <https://repl.it/@launchcode/ArrayExercises05>`__
