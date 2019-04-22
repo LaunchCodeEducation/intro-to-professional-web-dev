@@ -9,3 +9,4 @@ Arrays
    multi-dimensional-arrays
    array-methods
    exercises
+   studio
