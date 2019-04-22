@@ -1,14 +1,14 @@
 Arrays Are Like Strings
 =======================
 
-In the previous chapter we learned in detail how strings are a sequence, ordered collection,
+In the previous chapter we learned in detail how strings are an ordered collection
 of characters that can be accessed by an index. Using String methods we can add, remove,
 replace parts of the collection. What we can’t do is store anything other than characters.
 
 .. index:: ! array
 
-In this chapter we will learn about a more general usage collection data type called **Array**.
-Like strings, arrays are ordred collections. A key difference is that strings can only contain contain
+In this chapter we will learn about a more general use collection data type called an **Array**.
+Like strings, arrays are ordred collections. While a key difference is that strings can only contain contain
 characters, arrays can store data of any type.
 
 Figure: JavaScript array from prev chapter
@@ -17,9 +17,9 @@ Remember that a string is a sequence of strings with a length of 1
 Figure: Array with multiple strings included JavaScript, Python, Java, C#
 An array is a sequence of values that can vary in size and type.
 
-Delcaring an Array
+Declaring an Array
 ------------------
-There are multiple ways to declare a new Array. The simplest way is to use **array literal** notation ``[]``.
+There are multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``.
 Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``.
 If there are no items inside the brackets, then the array is considered empty.
 
@@ -29,7 +29,7 @@ If there are no items inside the brackets, then the array is considered empty.
 
    const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
 
-Array items can also be declared on a new line.
+Array items can also be declared on multiple lines.
 
 .. sourcecode:: js
 
@@ -47,7 +47,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
 .. note:: In other languages, such as Java and C#, arrays are of a static length requiring the
  length of the array to be declared upon creation.
 
-To check to check the lenght of an array use the ``length`` property, just like with strings.
+To check the length of an array use the ``length`` property, just like with strings.
 
 .. admonition:: Example
 
