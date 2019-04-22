@@ -10,12 +10,12 @@ Array Exercises
    b. "hello"
    c. ``false``, -4.6, "87"
 
-Control+click (or right click) to: **[Repl.it link]**
+Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/ArrayExercises01>`__
 
 |
 
 2. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
-   from the beginning/end of an array.  *Bracket notation* can be used to
+   from the beginning/end of an array.  **Bracket notation** can be used to
    modify any element within an array.  Starting with the full array from
    exercise 1, write statements to do the following:
 
@@ -24,11 +24,11 @@ Control+click (or right click) to: **[Repl.it link]**
       new array.
    c. Remove the first item from the array.  Print the element removed and the
       new array.
-   d. Add the values 99 and 42 to the the array - one at the start and one at
+   d. Add the numbers 99 and 42 to the the array - one at the start and one at
       the end.
    e. Use a template literal to print the final array and its length.
 
-**[Repl.it link]**
+`Code it here <https://repl.it/@launchcode/ArrayExercises02>`__
 
 |
 
@@ -44,22 +44,24 @@ Control+click (or right click) to: **[Repl.it link]**
    c. Replace the elements at indexes 2 - 4 with the items "change", 0, and
       121.
 
-**[Repl.it link]**
+`Code it here <https://repl.it/@launchcode/ArrayExercises03>`__
 
 |
 
 4. Some methods - like ``splice`` and ``push`` - alter the original array,
-   while others do not. Use the arrays ``['a', 'b', 'c', 0, 1, 6.022e23]`` and
-   ``['x', 'y', 'z', 2.33, 144, 3, 'parsnip']`` to explore the following
+   while others do not. Use the arrays ``['j', 'm', 'f', 0, 1, 6.022e23]`` and
+   ``['x', 'y', 'z', 233, 144, 300, 'parsnip']`` to explore the following
    methods: ``concat``, ``slice``, ``reverse``, ``sort``.
 
-   a. Does ``concat`` alter the original arrays?
+   a. Print the result of using ``concat`` on the two arrays.  Does ``concat``
+      alter the original arrays?  Verify this by printing ``firstArray`` after
+      using the method.
    b. Print a ``slice`` of two elements from each array.  Does ``slice`` alter the
       original arrays?
    c. ``reverse`` the first array, and ``sort`` the second.  Do these methods alter
       the original arrays?
 
-**[Repl.it link]**
+`Code it here <https://repl.it/@launchcode/ArrayExercises04>`__
 
 |
 
@@ -75,7 +77,7 @@ Control+click (or right click) to: **[Repl.it link]**
       ``arr.join('')``. What is the purpose of the parameter inside the ``()``?
    c. Do ``split`` or ``join`` change the original string/array?
 
-**[Repl.it link]**
+**Repl.it link**
 
 |
 
@@ -100,4 +102,4 @@ Control+click (or right click) to: **[Repl.it link]**
       **Experiment!** Create a 3-dimensional array and print out one entry from
       each level in the array.
 
-**[Repl.it link]**
+**Repl.it link**
