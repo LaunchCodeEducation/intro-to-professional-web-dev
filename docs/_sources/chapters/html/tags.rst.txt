@@ -1,7 +1,9 @@
 HTML Tags
 =========
 
-Tags have been talked about a lot so far and there are some great ones that can really help make beautiful web pages.
+Time to dive into learning about all the different tags for creating content!
+This page contains a helpful table of tags to know for beginning programmers to bookmark.
+This is by no means an exhaustive list of all HTML tags, but it is a good place to start.
 
 Tags to Know
 ------------
@@ -58,5 +60,24 @@ Attributes
 
 .. index:: ! attribute
 
-**Attributes** are added to HTML tags to add further specification to the tag, such as the alignment of the element or alternate text to an image.
-In order to add an attribute, the programmer types in the value before the closing bracket in the opening tag.
+Programmers can add extra information beyond element type to HTML tags.
+Programmers add **attributes** to HTML tags for further specification about the element's appearance.
+Examples of attributes include the alignment of the element or alternate text to an image.
+
+Programmers add attributes before the closing bracket in the opening tag, like so:
+
+.. sourcecode:: html
+   
+   <element attribute = "value">content</element>
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+ 
+   Which tag is used to make text italicized?
+
+   #. ``b``
+   #. ``i``
+   #. ``em``
+   #. ``br``

@@ -79,27 +79,73 @@
     
   <div class="section" id="html-structure">
 <h1>6.2. HTML Structure<a class="headerlink" href="#html-structure" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">HTML files need to be structured in a specific way in order for the content to show up properly on the page. Though some of the rules may seem redundant and unnecessary to programmers, the tags used to lay out the over-arching structure are vital to the browser being able to render the page correctly.</p>
-<div class="section" id="document-structure-rules">
-<h2>6.2.1. Document Structure Rules<a class="headerlink" href="#document-structure-rules" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Programmers should follow certain rules about how to structure a HTML file.
+The rules about how to structure a HTML file and the tags used to lay out this structure are vital to the browser being able to render the page.</p>
+<div class="section" id="structure-rules">
+<h2>6.2.1. Structure Rules<a class="headerlink" href="#structure-rules" title="Permalink to this headline">¶</a></h2>
+<p>When it comes to laying out the overarching structure of a HTML file, a programmer should follow 5 rules:</p>
 <ol class="arabic simple">
-<li>Every HTML file needs a <code class="docutils literal notranslate"><span class="pre">doctype</span></code> tag, specifying that the file is in fact, HTML.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> tag denotes the beginning and end of the HTML the programmer has written. This tag may seem unnecessary if the file only contains HTML, but as you incorporate JavaScript into your HTML, the <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> tag will become more and more important.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> tag holds everything that goes at the head of the document.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag holds everything that appears on the page of the document.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> tag goes in the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> of the document and is required. It gives the title of the webpage.</li>
+<li>Every HTML file needs a <code class="docutils literal notranslate"><span class="pre">DOCTYPE</span></code> tag, specifying that the file is in fact, HTML. This is the only tag that does not require a closing tag.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> tag denotes the beginning and end of the HTML the programmer has written.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> tag contains everything that goes at the head of the document.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag contains everything that appears on the page of the document.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> tag goes in the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> of the document and browsers require it. It gives the title of the webpage that appears in the tab.</li>
 </ol>
+<p>Here is an example of the structure of a HTML page based off of these rules:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Web Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      content
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      content
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="document-head">
 <h2>6.2.2. Document Head<a class="headerlink" href="#document-head" title="Permalink to this headline">¶</a></h2>
-<p>Every document head needs to include the title of the document. It may also include links to other files.</p>
+<p>So other than the title, what goes in the head of a HTML file?
+The head includes links to other files and other data about the document.
+Browsers do not display the content in the head.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title">Note</p>
+<p class="last">The head can also include some styling to make the page beautiful.
+How to do that is covered in the next chapter on CSS.</p>
+</div>
 </div>
 <div class="section" id="document-body">
 <h2>6.2.3. Document Body<a class="headerlink" href="#document-body" title="Permalink to this headline">¶</a></h2>
-<p>After the programmer has written the head of the document, it is time to move on to the body of the document. The body of the document contains all of the content that appears on the web page.
-Inside the body, programmers can add images, write text, and even add code samples with the plethora of HTML tags available. As always, the body tag needs a corresponding closing tag at the end of the content.</p>
-<p>Something else to note is adding whitespace to HTML. While spacing and tabbing over helps many programmers quickly read through theirs and their colleagues’ code, it can effect HTML rendering in the browser, though that is a relatively rare instance.
-In order to make HTML more readable without risking the page they are developing appearing wonky, programmers frequently write comments in HTML. In order to add a comment, the programmer simply uses <code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code> to indicate the start and <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code> to end the comment.</p>
+<p>After the programmer has written the head of the document, it is time to move on to the body of the document.
+The body of the document contains the content that appears on the web page.
+Within the <code class="docutils literal notranslate"><span class="pre">body</span></code> tags, programmers add images, text, and even code samples with different HTML tags.
+Content outside of the body will not appear on the page.</p>
+<p>To make HTML more readable to other programmers, programmers write comments in HTML. When adding a comment, the programmer uses <code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code> to indicate the start and <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code> to end the comment, like so:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- This is an important comment --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title">Note</p>
+<p class="last">Spacing and tabs helps many programmers read through theirs and their colleagues’ code.
+Be aware that doing so in HTML can effect how the browser renders the page in rare instances.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>6.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>Which HTML tag does not require a closing tag?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">title</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">body</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">head</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">DOCTYPE</span></code></li>
+</ol>
+</div>
 </div>
 </div>
 
