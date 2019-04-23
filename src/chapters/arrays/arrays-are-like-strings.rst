@@ -84,12 +84,12 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the length of these arrays?
+   What is the length of these arrays? *Hint look closely at the quotes in the classes array*
 
    .. sourcecode:: js
 
-      const classes = [“science, math, art”];
+      const classes = ["science, computer, art"];
 
-      const teachers = [“science”, “art”, “math”];
+      const teachers = ["Jones", "Willoughby", "Rhodes";
 
    How can you change the ``classes`` array declaration to have the same number of items as the ``teachers`` array?

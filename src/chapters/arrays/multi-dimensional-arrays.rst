@@ -1,2 +1,103 @@
 Multi-Dimensional Arrays
 ========================
+
+Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
+of arrays? Well yes we can.... Get ready to venture into a multi-dimensional universe.
+
+A **multi-Dimensional array** is an array of arrays, meaning that the values inside the *outer* array are also arrays.
+The *inner* arrays can store other values such as strings or numbers. Multi-dimensional arrays are sometimes called
+nested arrays because again there are arrays nested inside of an array.
+
+Two Dimensional Arrays
+----------------------
+The simplist form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
+spreadsheet with rows and columns. To access items in a two dimensional array use square bracket notation and
+two indexs ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
+or the "column".
+
+TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)
+
+.. admonition:: Example
+
+   Use a two dimensional array to contain three different lists of space shuttle crews.
+
+   .. sourcecode:: js
+
+      const shuttleCrews = [
+         ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
+         ['Kent Rominger', 'Ellen Ochoa', 'Bernard Harris'],
+         ['Eilen Collins', 'Winston Scott',  'Catherin Coleman']
+      ];
+
+      console.log(shuttleCrews[0][2]);
+      console.log(shuttleCrews[1][1]);
+      console.log(shuttleCrews[2][1]);
+
+   **Output**
+
+   ::
+
+      Mae Jemison
+      Ellen Ochoa
+      Winston Scott
+
+Multi-dimensions and Array Methods
+----------------------------------
+Both the inner and outer arrays in a multi-dimensional array are still altered with array
+methods.
+
+.. admonition:: Example
+
+   Use array methods to add an additional crew array and alter existing arrays.
+
+   .. sourcecode:: js
+
+      const shuttleCrews = [
+         ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
+         ['Kent Rominger', 'Ellen Ochoa', 'Bernard Harris'],
+         ['Eilen Collins', 'Winston Scott',  'Catherin Coleman']
+      ];
+
+      const newCrew = ['Mark Polansky', 'Robert Curbeam', 'Joan Higginbotham'];
+
+      // Add a new crew array to end of shuttleCrews
+      shuttleCrews.push(newCrew);
+      console.log(shuttleCrews[3][2]);
+
+      // Reverse the order of the crew at index 1
+      shuttleCrews[1].reverse();
+      console.log(shuttleCrews[1]);
+
+   **Output**
+
+   ::
+
+      Joan Higginbotham
+      [ 'Bernard Harris', 'Ellen Ochoa', 'Kent Rominger' ]
+
+Beyond Two Dimensional Arrays
+-----------------------------
+Generally there is no limit to how many dimensions you can have when creating arrays. However it is rare that you will
+use more than two dimensions. Later on in the class we will learn about more collection types that can handle complex
+problems beyond the scope of two dimensional arrays.
+
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What are the two dimensional indexes for ``"Jones"``?
+
+   .. sourcecode:: js
+
+      const school = [
+         ["science", "computer", "art"],
+         ["Jones", "Willoughby", "Rhodes"]
+      ];
+
+
+
+   How would you add ``"dance"`` to the array at ``school[0]``?
+
+   How would you add ``"Holmes"`` to the array at ``school[1]``?
