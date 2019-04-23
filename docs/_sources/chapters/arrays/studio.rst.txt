@@ -33,13 +33,23 @@ Control+click (or right click) to: **Repl.it link**
 Array and String Conversion
 ----------------------------
 
-2. Use methods ``split`` and ``join`` to convert back and forth between strings
-   and arrays. Use delimiters to split a string into an array, then modify the
-   array and convert it back to a printable string.
+2. Use the ``split`` and ``join`` methods to convert back and forth between
+   strings and arrays. Use **delimiters** to split a string into an array, then
+   modify the array and convert it back to a printable string.
 
-   a. Some task...
-   b. Some follow-up task...
-   c. Some final task...
+   a. For a given string, use the ``includes`` method to check to see if the
+      words are separated by commas (``,``), semicolons (``;``) or just spaces.
+   b. If the string uses commas to separate the words, ``split`` the string into an array, reverse
+      the entries, and then ``join`` the array into a new comma separated
+      string.
+   c. If the string uses semicolons to separate the words, ``split`` the string into an array,
+      alphabetize the entries, and then ``join`` the array into a new comma
+      separated string.
+   d. If the string uses spaces to separate the words, ``split`` the string into an array, reverse
+      alphabetize the entries, and then ``join`` the array into a new space
+      separated string.
+   e. *Consider*: What if the string uses 'comma spaces' (, ) to separate the list? Modify your
+      code to produce the same result as part "b".
 
 **Repl.it link**
 
@@ -48,23 +58,24 @@ Multi-dimensional Arrays
 
 3. Arrays can store other arrays!
 
-   a. Use ``split`` to define and initialize the inventory for four cabinets
-      inside the cargo hold. Alphebitize the contents of each cabinet.
+   a. The cargo hold in our shuttle contains several smaller storage spaces. Use
+      ``split`` to convert the following strings into four cabinet arrays.
+      Alphebitize the contents of each cabinet.
 
       i. "water bottles, meal packs, snacks, chocolate"
       ii. "space suits, jet packs, tool belts, thermal detonators"
       iii. "parrots, cats, moose, alien eggs"
       iv. "blankets, pillows, eyepatches, alarm clocks"
 
-   b. Initialize the ``cargoHold`` array and add the cabinet arrays to it. Print
-      the ``cargoHold`` to verify its structure.
+   b. Initialize a ``cargoHold`` array and add the cabinet arrays to it. Print
+      ``cargoHold`` to verify its structure.
    c. Query the user to select a cabinet in the ``cargoHold`` (0-3).
    d. Use bracket notation and a template literal to display the contents of
       the selected cabinet.
    e. *Bonus Mission*: Modify the code to query the user for BOTH a cabinet in
       ``cargoHold`` AND a particular item. Use the ``includes`` method to check
-      if the cabinet contains the selected item. Use a template literal to
-      print "Cabinet ____ DOES/DOES NOT contain ____."
+      if the cabinet contains the selected item, then print "Cabinet ____
+      DOES/DOES NOT contain ____."
 
 **Repl.it link**
 
@@ -72,7 +83,7 @@ Additional Ideas (Feedback Requested)
 -------------------------------------
 
 4. Practice using the ``split`` and ``join`` methods to convert between strings
-   and arrays.  We can also use string methods in the process.
+   and arrays. We will also use other string or array methods in the process.
 
    a. The ``reverse`` method operates on arrays, but not on strings. Use this
       fact to reverse the order of characters in a string. Store the result in
@@ -82,23 +93,24 @@ Additional Ideas (Feedback Requested)
       "radar" (radar) are.  Modify your code by adding an ``if`` statement to
       check if a word is a palindrome.  If the string is a palindrome, print,
       "___ is a palindrome!"  Otherwise, print, "___ is NOT a palindrome."
-   c. Use string methods to enhance your code.  The username check should NOT
-      be case sensitive.  Ex: 'Dad' vs. 'dad' would be considered a match.
+   c. Use string methods to enhance your code.  The palindrome check should NOT
+      be case sensitive.  Ex: 'Dad' vs. 'daD' would be considered a match.
    d. *Bonus Mission*: What if the string is a phrase rather than a single word?
       Any spaces may throw off the check (e.g. ``'taco cat'`` is a palindrome,
       but a simple reversal produces the different string ``'tac ocat'``).
-      Modify your code to deal with this "space problem".
+      Modify your code to deal with this spacing problem.
 
 **Repl.it link**
 
 5. Practice using the ``split`` and ``join`` methods to convert between strings
-   and arrays.  We can also use string methods in the process.
+   and arrays. We will also use other string or array methods in the process.
 
-   a. Reverse the order of characters in a string. Store the result in a new variable,
-      then print the original and reversed string.
+   a. The ``reverse`` method operates on arrays, but not on strings. Use this
+      fact to reverse the order of characters in a string. Store the result in
+      a new variable, then print the original and reversed string.
    b. Use the ``trim`` method to remove leading/trailing whitespace to compare
-      two usernames (strings).  Also, use an ``if`` statement and template
-      literal to print, " '___' and '___' are matching usernames!" Otherwise,
+      two usernames (strings).  Also, use an ``if`` statement and a template
+      literal to print, " '___' and '___' are matching usernames!" Otherwise
       print, " '___' and '___' are NOT matching usernames."
    c. Use string methods to enhance your code.  The username check should NOT be
       case sensitive.  Ex: 'Dad' vs. 'dad' would be considered a match.

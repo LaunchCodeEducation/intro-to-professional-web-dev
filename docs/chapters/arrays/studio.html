@@ -110,12 +110,22 @@ literal should note the error.</li>
 <div class="section" id="array-and-string-conversion">
 <h2>6.6.2. Array and String Conversion<a class="headerlink" href="#array-and-string-conversion" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="2">
-<li>Use methods <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> to convert back and forth between strings
-and arrays. Use delimiters to split a string into an array, then modify the
-array and convert it back to a printable string.<ol class="loweralpha">
-<li>Some task…</li>
-<li>Some follow-up task…</li>
-<li>Some final task…</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods to convert back and forth between
+strings and arrays. Use <strong>delimiters</strong> to split a string into an array, then
+modify the array and convert it back to a printable string.<ol class="loweralpha">
+<li>For a given string, use the <code class="docutils literal notranslate"><span class="pre">includes</span></code> method to check to see if the
+words are separated by commas (<code class="docutils literal notranslate"><span class="pre">,</span></code>), semicolons (<code class="docutils literal notranslate"><span class="pre">;</span></code>) or just spaces.</li>
+<li>If the string uses commas to separate the words, <code class="docutils literal notranslate"><span class="pre">split</span></code> the string into an array, reverse
+the entries, and then <code class="docutils literal notranslate"><span class="pre">join</span></code> the array into a new comma separated
+string.</li>
+<li>If the string uses semicolons to separate the words, <code class="docutils literal notranslate"><span class="pre">split</span></code> the string into an array,
+alphabetize the entries, and then <code class="docutils literal notranslate"><span class="pre">join</span></code> the array into a new comma
+separated string.</li>
+<li>If the string uses spaces to separate the words, <code class="docutils literal notranslate"><span class="pre">split</span></code> the string into an array, reverse
+alphabetize the entries, and then <code class="docutils literal notranslate"><span class="pre">join</span></code> the array into a new space
+separated string.</li>
+<li><em>Consider</em>: What if the string uses ‘comma spaces’ (, ) to separate the list? Modify your
+code to produce the same result as part “b”.</li>
 </ol>
 </li>
 </ol>
@@ -125,23 +135,24 @@ array and convert it back to a printable string.<ol class="loweralpha">
 <h2>6.6.3. Multi-dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="3">
 <li>Arrays can store other arrays!<ol class="loweralpha">
-<li>Use <code class="docutils literal notranslate"><span class="pre">split</span></code> to define and initialize the inventory for four cabinets
-inside the cargo hold. Alphebitize the contents of each cabinet.<ol class="lowerroman">
+<li>The cargo hold in our shuttle contains several smaller storage spaces. Use
+<code class="docutils literal notranslate"><span class="pre">split</span></code> to convert the following strings into four cabinet arrays.
+Alphebitize the contents of each cabinet.<ol class="lowerroman">
 <li>“water bottles, meal packs, snacks, chocolate”</li>
 <li>“space suits, jet packs, tool belts, thermal detonators”</li>
 <li>“parrots, cats, moose, alien eggs”</li>
 <li>“blankets, pillows, eyepatches, alarm clocks”</li>
 </ol>
 </li>
-<li>Initialize the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array and add the cabinet arrays to it. Print
-the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> to verify its structure.</li>
+<li>Initialize a <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array and add the cabinet arrays to it. Print
+<code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> to verify its structure.</li>
 <li>Query the user to select a cabinet in the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> (0-3).</li>
 <li>Use bracket notation and a template literal to display the contents of
 the selected cabinet.</li>
 <li><em>Bonus Mission</em>: Modify the code to query the user for BOTH a cabinet in
 <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> AND a particular item. Use the <code class="docutils literal notranslate"><span class="pre">includes</span></code> method to check
-if the cabinet contains the selected item. Use a template literal to
-print “Cabinet ____ DOES/DOES NOT contain ____.”</li>
+if the cabinet contains the selected item, then print “Cabinet ____
+DOES/DOES NOT contain ____.”</li>
 </ol>
 </li>
 </ol>
@@ -151,7 +162,7 @@ print “Cabinet ____ DOES/DOES NOT contain ____.”</li>
 <h2>6.6.4. Additional Ideas (Feedback Requested)<a class="headerlink" href="#additional-ideas-feedback-requested" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="4">
 <li>Practice using the <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods to convert between strings
-and arrays.  We can also use string methods in the process.<ol class="loweralpha">
+and arrays. We will also use other string or array methods in the process.<ol class="loweralpha">
 <li>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method operates on arrays, but not on strings. Use this
 fact to reverse the order of characters in a string. Store the result in
 a new variable, then print the original and reversed string.</li>
@@ -160,24 +171,25 @@ For example, “soda” (ados) is NOT a palindrome, but “pop” (pop) and
 “radar” (radar) are.  Modify your code by adding an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to
 check if a word is a palindrome.  If the string is a palindrome, print,
 “___ is a palindrome!”  Otherwise, print, “___ is NOT a palindrome.”</li>
-<li>Use string methods to enhance your code.  The username check should NOT
-be case sensitive.  Ex: ‘Dad’ vs. ‘dad’ would be considered a match.</li>
+<li>Use string methods to enhance your code.  The palindrome check should NOT
+be case sensitive.  Ex: ‘Dad’ vs. ‘daD’ would be considered a match.</li>
 <li><em>Bonus Mission</em>: What if the string is a phrase rather than a single word?
 Any spaces may throw off the check (e.g. <code class="docutils literal notranslate"><span class="pre">'taco</span> <span class="pre">cat'</span></code> is a palindrome,
 but a simple reversal produces the different string <code class="docutils literal notranslate"><span class="pre">'tac</span> <span class="pre">ocat'</span></code>).
-Modify your code to deal with this “space problem”.</li>
+Modify your code to deal with this spacing problem.</li>
 </ol>
 </li>
 </ol>
 <p><strong>Repl.it link</strong></p>
 <ol class="arabic simple" start="5">
 <li>Practice using the <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods to convert between strings
-and arrays.  We can also use string methods in the process.<ol class="loweralpha">
-<li>Reverse the order of characters in a string. Store the result in a new variable,
-then print the original and reversed string.</li>
+and arrays. We will also use other string or array methods in the process.<ol class="loweralpha">
+<li>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method operates on arrays, but not on strings. Use this
+fact to reverse the order of characters in a string. Store the result in
+a new variable, then print the original and reversed string.</li>
 <li>Use the <code class="docutils literal notranslate"><span class="pre">trim</span></code> method to remove leading/trailing whitespace to compare
-two usernames (strings).  Also, use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and template
-literal to print, ” ‘___’ and ‘___’ are matching usernames!” Otherwise,
+two usernames (strings).  Also, use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and a template
+literal to print, ” ‘___’ and ‘___’ are matching usernames!” Otherwise
 print, ” ‘___’ and ‘___’ are NOT matching usernames.”</li>
 <li>Use string methods to enhance your code.  The username check should NOT be
 case sensitive.  Ex: ‘Dad’ vs. ‘dad’ would be considered a match.</li>
