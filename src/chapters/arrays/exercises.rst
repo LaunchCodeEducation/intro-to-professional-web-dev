@@ -15,7 +15,7 @@ rearrange our records for the items stored in our hold.
 
 Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/ArrayExercises01>`__
 
-Congratulations, rookie.  You can now add items to an array.
+*Congratulations, rookie.  You can now add items to an array.*
 
 |
 
@@ -26,7 +26,7 @@ Congratulations, rookie.  You can now add items to an array.
    'meal packs', 'slinky', 'security blanket']``, write statements to do the
    following:
 
-   a. Use bracket notation to replace 'slinky' in the array with 'space tether'.
+   a. Use bracket notation to replace ``'slinky'`` in the array with ``'space tether'``.
       Print the array to confirm the change.
    b. Remove the last item from the array with ``pop``. Print the element removed
       and the updated array.
@@ -40,9 +40,9 @@ Congratulations, rookie.  You can now add items to an array.
 
 `Code it here <https://repl.it/@launchcode/ArrayExercises02>`__
 
-Status check, rookie. Which array methods ADD items, and where are the new
+*Status check, rookie. Which array methods ADD items, and where are the new
 entries placed? Which methods REMOVE items, and where do the entries come from?
-Which methods require entries inside the ``()``?
+Which methods require entries inside the ``()``?*
 
 |
 
@@ -56,15 +56,15 @@ Which methods require entries inside the ``()``?
    a. Insert the string ``'keys'`` at index 3 without replacing any other
       entries.
    b. Remove 'instruction manual' from the array.  (Hint: ``indexOf`` is helpful to avoid manually
-      determining an index).
-   c. Replace the elements at indexes 2 - 4 with the items 'cat', 'fob', and
-      'string cheese'.
+      counting an index).
+   c. Replace the elements at indexes 2 - 4 with the items ``'cat'``, ``'fob'``, and
+      ``'string cheese'``.
 
 `Code it here <https://repl.it/@launchcode/ArrayExercises03>`__
 
-Well done, cadet. Now let's look at some finer details about array methods.
+*Well done, cadet. Now let's look at some finer details about array methods.
 We've got to keep our paperwork straight, so you need to know when your actions
-change the original records.
+change the original records.*
 
 |
 
@@ -85,7 +85,7 @@ change the original records.
 
 `Code it here <https://repl.it/@launchcode/ArrayExercises04>`__
 
-Good progress, cadet. Here are two more methods for you to examine.
+*Good progress, cadet. Here are two more methods for you to examine.*
 
 |
 
@@ -100,15 +100,15 @@ Good progress, cadet. Here are two more methods for you to examine.
       you print ``arr.join()`` vs. ``arr.join('a')`` vs. ``arr.join(' ')`` vs.
       ``arr.join('')``. What is the purpose of the parameter inside the ``()``?
    c. Do ``split`` or ``join`` change the original string/array?
-   d. The benefit, cadet, is that we can take a comma-separated string and convert
-      it into a modifiable array. **Try it!** Alphabetize these hold contents:
-      "water,space suits,food,plasma sword,batteries", and then combine them
-      into a new string.
+   d. The benefit, cadet, is that we can take a string with **delimiters** (like
+      commas) and convert it into a modifiable array. *Try it!* Alphabetize
+      these hold contents: "water,space suits,food,plasma sword,batteries", and
+      then combine them into a new string.
 
 
 `Code it here <https://repl.it/@launchcode/ArrayExercises05>`__
 
-Nicely done, astronaut. Now it's time to bring you fully up to speed.
+*Nicely done, astronaut. Now it's time to bring you fully up to speed.*
 
 |
 
@@ -122,7 +122,7 @@ Nicely done, astronaut. Now it's time to bring you fully up to speed.
       ii. ``element2 = ['helium', 'He', 4.003]``
       iii. ``element26 = ['iron', 'Fe', 55.85]``
 
-   b. Define the array ``table``, and use ``push`` to add each of the element arrays
+   b. Define the array ``table``, and use ``push(arrayName)`` to add each of the element arrays
       to it.  Print ``table`` to see its structure.
    c. Use bracket notation to examine the difference between printing ``table[1]`` and
       ``table[1][1]``. Don't just nod your head! I want to HEAR you describe
@@ -136,4 +136,4 @@ Nicely done, astronaut. Now it's time to bring you fully up to speed.
 
 `Code it here <https://repl.it/@launchcode/ArrayExercises06>`__
 
-Excellet work, records keeper. Welcome aboard.
+   Excellet work, records keeper. Welcome aboard.

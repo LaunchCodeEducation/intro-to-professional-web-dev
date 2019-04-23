@@ -1,13 +1,13 @@
-[str1, str2, str3] Studio
-==========================
+Strings & Arrays Studio
+========================
 
 Strings are **ordered collections** of *characters*, which are strings of
 length 1. The characters in a string can be accessed using
 **bracket notation**.
 
-Arrays are ordered collections of elements, which can be strings, numbers,
-other arrays, etc. The elements stored in an array can be accessed using
-bracket notation.
+Arrays are ordered collections of items, which can be strings, numbers,
+other arrays, etc. The items/elements/entries stored in an array can be
+accessed using bracket notation.
 
 Strings are **immutable**, whereas arrays can be changed.
 
@@ -28,30 +28,31 @@ String Modification
       word. In such cases, default to moving 3 characters. Also, the template
       literal should note the error.
 
-Control+click (or right click) to: **Repl.it link**
+Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/StringandArrayStudio01>`__
 
 Array and String Conversion
 ----------------------------
 
-2. Use the ``split`` and ``join`` methods to convert back and forth between
-   strings and arrays. Use **delimiters** to split a string into an array, then
-   modify the array and convert it back to a printable string.
+2. The ``split`` and ``join`` methods convert back and forth between strings
+   and arrays. Use **delimiters** as reference points to split a string into an
+   array, then modify the array and convert it back to a printable string.
 
    a. For a given string, use the ``includes`` method to check to see if the
       words are separated by commas (``,``), semicolons (``;``) or just spaces.
-   b. If the string uses commas to separate the words, ``split`` the string into an array, reverse
+   b. If the string uses commas to separate the words, ``split`` it into an array, reverse
       the entries, and then ``join`` the array into a new comma separated
       string.
-   c. If the string uses semicolons to separate the words, ``split`` the string into an array,
+   c. If the string uses semicolons to separate the words, ``split`` it into an array,
       alphabetize the entries, and then ``join`` the array into a new comma
       separated string.
-   d. If the string uses spaces to separate the words, ``split`` the string into an array, reverse
+   d. If the string uses spaces to separate the words, ``split`` it into an array, reverse
       alphabetize the entries, and then ``join`` the array into a new space
       separated string.
    e. *Consider*: What if the string uses 'comma spaces' (, ) to separate the list? Modify your
-      code to produce the same result as part "b".
+      code to produce the same result as part "b", making sure that the extra
+      spaces are NOT part of the final string.
 
-**Repl.it link**
+`Code it here <https://repl.it/@launchcode/StringandArrayStudio02>`__
 
 Multi-dimensional Arrays
 -------------------------
@@ -69,15 +70,16 @@ Multi-dimensional Arrays
 
    b. Initialize a ``cargoHold`` array and add the cabinet arrays to it. Print
       ``cargoHold`` to verify its structure.
-   c. Query the user to select a cabinet in the ``cargoHold`` (0-3).
+   c. Query the user to select a cabinet (0-3) in the ``cargoHold``.
    d. Use bracket notation and a template literal to display the contents of
-      the selected cabinet.
+      the selected cabinet. If the user entered an invalid number, print an
+      error message instead.
    e. *Bonus Mission*: Modify the code to query the user for BOTH a cabinet in
       ``cargoHold`` AND a particular item. Use the ``includes`` method to check
       if the cabinet contains the selected item, then print "Cabinet ____
       DOES/DOES NOT contain ____."
 
-**Repl.it link**
+`Code it here <https://repl.it/@launchcode/StringandArrayStudio03>`__
 
 Additional Ideas (Feedback Requested)
 -------------------------------------
