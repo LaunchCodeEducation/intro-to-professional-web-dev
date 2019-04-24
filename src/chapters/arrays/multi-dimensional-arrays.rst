@@ -16,6 +16,8 @@ spreadsheet with rows and columns. To access items in a two dimensional array us
 two indexs ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
 or the "column".
 
+.. note:: The table and row analogy is used to help visualize a two dimensional array, however it's not a perfect analogy because there are no language rules forcing the inner arrays to all have the same length. The inner arrays are seperate arrays, possibly with varying lengths, that can be altered independently.
+
 TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)
 
 .. admonition:: Example
