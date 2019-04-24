@@ -423,7 +423,7 @@ how the string will be split.</div>
 </div>
 <div class="section" id="detailed-examples">
 <h2>7.4.2. Detailed Examples<a class="headerlink" href="#detailed-examples" title="Permalink to this headline">¶</a></h2>
-<p>Some of the arrays listed above require a closer look. These examples are
+<p>Some of the methods listed above require a closer look. These examples are
 arranged from least tricky to more tricky.</p>
 <div class="section" id="concat">
 <h3>7.4.2.1. <code class="docutils literal notranslate"><span class="pre">concat</span></code><a class="headerlink" href="#concat" title="Permalink to this headline">¶</a></h3>
@@ -457,7 +457,7 @@ NOT alter the original arrays.</p>
 <p><code class="docutils literal notranslate"><span class="pre">split</span></code> is actually a string method, but it complements the array method
 <code class="docutils literal notranslate"><span class="pre">join</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">split</span></code> divides a string into smaller pieces, which are stored in a new
-array. The delimiter argument determines how the string is broken apart.</p>
+array. The <strong>delimiter</strong> argument determines how the string is broken apart.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="s2">&quot;1,2,3,4&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">word</span> <span class="o">=</span> <span class="s2">&quot;Rutabaga&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">phrase</span> <span class="o">=</span> <span class="s2">&quot;Bookkeeper of balloons.&quot;</span>
@@ -482,8 +482,8 @@ array. The delimiter argument determines how the string is broken apart.</p>
 <p><em>Syntax = arrayName.slice(starting index, ending index)</em></p>
 <p>The ending index is optional.  If it is left out, <code class="docutils literal notranslate"><span class="pre">slice</span></code> returns a new array
 that includes everything from the starting index to the end of the original array.</p>
-<p>If both indices are included in the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>, the new array contains
-everything from the starting index up to BUT NOT INCLUDING the ending index.</p>
+<p>If both indices are used, the new array contains everything from the starting
+index up to BUT NOT INCLUDING the ending index.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">];</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
@@ -510,7 +510,7 @@ what we expect.</p>
 <p>From the alphabet song, we know that ‘a’ comes before ‘B’ (and certainly before
 ‘X’), but JavaScript treats capital and lowercase letters differently.  The
 default sort order places capital letters before lowercase.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">mixed</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">];</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">mixed</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">];</span>
 
 <span class="nx">mixed</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mixed</span><span class="p">);</span>
@@ -523,17 +523,73 @@ all letters.</p>
 
 <span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
-<span class="c1">//prints ``[ 10, 2, 30, 400, 8 ]``</span>
+<span class="c1">//prints [ 10, 2, 30, 400, 8 ]</span>
 </pre></div>
 </div>
-<p>Here JavaScript gets truly bizarre.  Since when is 8 larger than 400?  The
-reason is that when JavaScript sorts, it converts all numbers into strings by
-default.  Just like ‘Apple’ comes before ‘Pear’ because ‘A’ comes before ‘P’,
-the string ‘400’ begins with a ‘4’ which comes before any string starting with
-an ‘8’.  Looking only at the first digit in each number, we see the expected
-progression (1, 2, 3, 4, 8).</p>
+<p>Here JavaScript gets truly bizarre. How is 8 larger than 400?</p>
+<p>When JavaScript sorts, it converts all entries into strings by default. Just
+like ‘Apple’ comes before ‘Pear’ because ‘A’ comes before ‘P’, the string ‘400’
+begins with a ‘4’ which comes before any string starting with an ‘8’. Looking
+only at the first digit in each number, we see the expected progression
+(1, 2, 3, 4, 8).</p>
 <p>Later in this course, we will explore ways to fix this issue and correctly sort
 numerical arrays.</p>
+</div>
+<div class="section" id="splice">
+<h3>7.4.2.5. <code class="docutils literal notranslate"><span class="pre">splice</span></code><a class="headerlink" href="#splice" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><em>Syntax = arrayName.splice(index, # of elements to change, item1, item2, …)</em></div>
+<div class="line">Inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>, only the first argument is required.</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">splice</span></code> method modifies one or more elements anywhere in the array.
+Entries can be added, removed or changed. This method requires practice.</p>
+<p>Hang on, here we go.</p>
+<ol class="arabic">
+<li><p class="first">Given only one argument, <code class="docutils literal notranslate"><span class="pre">splice(index)</span></code> removes every entry from
+<code class="docutils literal notranslate"><span class="pre">index</span></code> to the end of the array.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>    <span class="c1">//Everything from index 2 and beyond is removed.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39; ]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">With two arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">items)</span></code> starts at <code class="docutils literal notranslate"><span class="pre">index</span></code>
+and removes the number of items.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>    <span class="c1">//Start at index 2 and remove 3 total entries.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39;, &#39;f&#39; ]</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">//Start at index 1 and remove 1 entry.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">//prints [ &#39;a&#39;, &#39;f&#39; ]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Given three or more arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">0,</span> <span class="pre">new</span> <span class="pre">item)</span></code> starts at
+<code class="docutils literal notranslate"><span class="pre">index</span></code> and <em>ADDS</em> the new items.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>     <span class="c1">//Start at index 2, remove 0 entries, and add &#39;hello&#39;.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Given three or more arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">items,</span> <span class="pre">new</span> <span class="pre">items)</span></code>
+starts at <code class="docutils literal notranslate"><span class="pre">index</span></code> and <em>REPLACES</em> the number of items with the new ones.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>    <span class="c1">//Start at index 2, replace 3 entries with &#39;hello&#39; and 9.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, 9, &#39;f&#39; ]</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

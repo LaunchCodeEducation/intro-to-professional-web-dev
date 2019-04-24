@@ -251,7 +251,7 @@ lists can be found here:
 Detailed Examples
 -----------------
 
-Some of the arrays listed above require a closer look. These examples are
+Some of the methods listed above require a closer look. These examples are
 arranged from least tricky to more tricky.
 
 ``concat``
@@ -292,7 +292,7 @@ NOT alter the original arrays.
 ``join``.
 
 ``split`` divides a string into smaller pieces, which are stored in a new
-array. The delimiter argument determines how the string is broken apart.
+array. The **delimiter** argument determines how the string is broken apart.
 
 .. sourcecode:: js
 
@@ -321,8 +321,8 @@ array. The delimiter argument determines how the string is broken apart.
 The ending index is optional.  If it is left out, ``slice`` returns a new array
 that includes everything from the starting index to the end of the original array.
 
-If both indices are included in the parentheses ``()``, the new array contains
-everything from the starting index up to BUT NOT INCLUDING the ending index.
+If both indices are used, the new array contains everything from the starting
+index up to BUT NOT INCLUDING the ending index.
 
 .. sourcecode:: js
 
@@ -357,7 +357,7 @@ default sort order places capital letters before lowercase.
 
 .. sourcecode:: js
 
-   let mixed = ['A', 'a', 20, 40];
+   let mixed = ['a', 'A', 20, 40];
 
    mixed.sort();
    console.log(mixed);
@@ -372,14 +372,74 @@ all letters.
 
    numbers.sort();
    console.log(numbers);
-   //prints ``[ 10, 2, 30, 400, 8 ]``
+   //prints [ 10, 2, 30, 400, 8 ]
 
-Here JavaScript gets truly bizarre.  Since when is 8 larger than 400?  The
-reason is that when JavaScript sorts, it converts all numbers into strings by
-default.  Just like 'Apple' comes before 'Pear' because 'A' comes before 'P',
-the string '400' begins with a '4' which comes before any string starting with
-an '8'.  Looking only at the first digit in each number, we see the expected
-progression (1, 2, 3, 4, 8).
+Here JavaScript gets truly bizarre. How is 8 larger than 400?
+
+When JavaScript sorts, it converts all entries into strings by default. Just
+like 'Apple' comes before 'Pear' because 'A' comes before 'P', the string '400'
+begins with a '4' which comes before any string starting with an '8'. Looking
+only at the first digit in each number, we see the expected progression
+(1, 2, 3, 4, 8).
 
 Later in this course, we will explore ways to fix this issue and correctly sort
 numerical arrays.
+
+``splice``
+++++++++++
+
+| *Syntax = arrayName.splice(index, # of elements to change, item1, item2, …)*
+| Inside the parentheses ``()``, only the first argument is required.
+
+The ``splice`` method modifies one or more elements anywhere in the array.
+Entries can be added, removed or changed. This method requires practice.
+
+Hang on, here we go.
+
+#. Given only one argument, ``splice(index)`` removes every entry from
+   ``index`` to the end of the array.
+
+   .. sourcecode:: js
+
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+      arr.splice(2);    //Everything from index 2 and beyond is removed.
+      console.log(arr);
+      //prints [ 'a', 'b' ]
+
+#. With two arguments, ``splice(index, number of items)`` starts at ``index``
+   and removes the number of items.
+
+   .. sourcecode:: js
+
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+      arr.splice(2,3);    //Start at index 2 and remove 3 total entries.
+      console.log(arr);
+      //prints [ 'a', 'b', 'f' ]
+
+      arr.splice(1,1);    //Start at index 1 and remove 1 entry.
+      console.log(arr);
+      //prints [ 'a', 'f' ]
+
+#. Given three or more arguments, ``splice(index, 0, new item)`` starts at
+   ``index`` and *ADDS* the new items.
+
+   .. sourcecode:: js
+
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+      arr.splice(2,0,'hello');     //Start at index 2, remove 0 entries, and add 'hello'.
+      console.log(arr);
+      //prints [ 'a', 'b', 'hello', 'c', 'd', 'e', 'f' ]
+
+#. Given three or more arguments, ``splice(index, number of items, new items)``
+   starts at ``index`` and *REPLACES* the number of items with the new ones.
+
+   .. sourcecode:: js
+
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+      arr.splice(2,3,'hello', 9);    //Start at index 2, replace 3 entries with 'hello' and 9.
+      console.log(arr);
+      //prints [ 'a', 'b', 'hello', 9, 'f' ]
