@@ -81,6 +81,92 @@
     
   <div class="section" id="multi-dimensional-arrays">
 <h1>7.3. Multi-Dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h1>
+<p>Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
+of arrays? Well yes we can…. Get ready to venture into a multi-dimensional universe.</p>
+<p>A <strong>multi-Dimensional array</strong> is an array of arrays, meaning that the values inside the <em>outer</em> array are also arrays.
+The <em>inner</em> arrays can store other values such as strings or numbers. Multi-dimensional arrays are sometimes called
+nested arrays because again there are arrays nested inside of an array.</p>
+<div class="section" id="two-dimensional-arrays">
+<h2>7.3.1. Two Dimensional Arrays<a class="headerlink" href="#two-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>The simplist form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
+spreadsheet with rows and columns. To access items in a two dimensional array use square bracket notation and
+two indexs <code class="docutils literal notranslate"><span class="pre">array[0][0]</span></code>. The first index is for the outer array, or the “row”, and second index is for the inner array,
+or the “column”.</p>
+<p>TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Use a two dimensional array to contain three different lists of space shuttle crews.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">shuttleCrews</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="s1">&#39;Robert Gibson&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Lee&#39;</span><span class="p">,</span> <span class="s1">&#39;Mae Jemison&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Kent Rominger&#39;</span><span class="p">,</span> <span class="s1">&#39;Ellen Ochoa&#39;</span><span class="p">,</span> <span class="s1">&#39;Bernard Harris&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Eilen Collins&#39;</span><span class="p">,</span> <span class="s1">&#39;Winston Scott&#39;</span><span class="p">,</span>  <span class="s1">&#39;Catherin Coleman&#39;</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Mae Jemison
+Ellen Ochoa
+Winston Scott
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="multi-dimensions-and-array-methods">
+<h2>7.3.2. Multi-dimensions and Array Methods<a class="headerlink" href="#multi-dimensions-and-array-methods" title="Permalink to this headline">¶</a></h2>
+<p>Both the inner and outer arrays in a multi-dimensional array are still altered with array
+methods.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Use array methods to add an additional crew array and alter existing arrays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">shuttleCrews</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="s1">&#39;Robert Gibson&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Lee&#39;</span><span class="p">,</span> <span class="s1">&#39;Mae Jemison&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Kent Rominger&#39;</span><span class="p">,</span> <span class="s1">&#39;Ellen Ochoa&#39;</span><span class="p">,</span> <span class="s1">&#39;Bernard Harris&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Eilen Collins&#39;</span><span class="p">,</span> <span class="s1">&#39;Winston Scott&#39;</span><span class="p">,</span>  <span class="s1">&#39;Catherin Coleman&#39;</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">newCrew</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mark Polansky&#39;</span><span class="p">,</span> <span class="s1">&#39;Robert Curbeam&#39;</span><span class="p">,</span> <span class="s1">&#39;Joan Higginbotham&#39;</span><span class="p">];</span>
+
+<span class="c1">// Add a new crew array to end of shuttleCrews</span>
+<span class="nx">shuttleCrews</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newCrew</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="c1">// Reverse the order of the crew at index 1</span>
+<span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Joan Higginbotham
+[ &#39;Bernard Harris&#39;, &#39;Ellen Ochoa&#39;, &#39;Kent Rominger&#39; ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="beyond-two-dimensional-arrays">
+<h2>7.3.3. Beyond Two Dimensional Arrays<a class="headerlink" href="#beyond-two-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Generally there is no limit to how many dimensions you can have when creating arrays. However it is rare that you will
+use more than two dimensions. Later on in the class we will learn about more collection types that can handle complex
+problems beyond the scope of two dimensional arrays.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>7.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What are the two dimensional indexes for <code class="docutils literal notranslate"><span class="pre">&quot;Jones&quot;</span></code>?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">school</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="s2">&quot;computer&quot;</span><span class="p">,</span> <span class="s2">&quot;art&quot;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="s2">&quot;Willoughby&quot;</span><span class="p">,</span> <span class="s2">&quot;Rhodes&quot;</span><span class="p">]</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<p>How would you add <code class="docutils literal notranslate"><span class="pre">&quot;dance&quot;</span></code> to the array at <code class="docutils literal notranslate"><span class="pre">school[0]</span></code>?</p>
+<p class="last">How would you add <code class="docutils literal notranslate"><span class="pre">&quot;Holmes&quot;</span></code> to the array at <code class="docutils literal notranslate"><span class="pre">school[1]</span></code>?</p>
+</div>
+</div>
 </div>
 
 
