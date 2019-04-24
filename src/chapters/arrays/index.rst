@@ -8,5 +8,7 @@ Arrays
    working-with-arrays
    multi-dimensional-arrays
    array-methods
+   more-array-methods
+   even-more-array-methods
    exercises
    studio

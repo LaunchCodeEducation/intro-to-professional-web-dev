@@ -1,5 +1,5 @@
 Array Methods
-=============
+==============
 
 As with strings, JavaScript provides us with useful **methods** for arrays.
 Unlike strings, arrays are *mutable* and can be changed.
@@ -12,8 +12,8 @@ printed (or assigned to a variable).
 Common Array Methods
 --------------------
 
-Here is a summary of the most frequently used array methods. More complete
-lists can be found here:
+Here is a sample of the simplest and most frequently used array methods. More
+complete lists can be found here:
 
 #. Novice list: `W3 Array Methods <https://www.w3schools.com/jsref/jsref_obj_array.asp>`__
 #. More detailed list: `MDN Web Docs <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>`__
@@ -22,10 +22,10 @@ lists can be found here:
    :header-rows: 1
 
    * - Methods That Provide Information
-     - Description & *Syntax*
+     - Description & ``Syntax``
      - Examples
    * - ``includes``
-     - | *arrayName.includes(item)*
+     - | ``arrayName.includes(item)``
        |
        | Check if an array contains the element specified in the parentheses ``()``.
        |
@@ -44,7 +44,7 @@ lists can be found here:
 
 
    * - ``indexOf``
-     - | *arrayName.indexOf(item)*
+     - | ``arrayName.indexOf(item)``
        |
        | Returns the index of the FIRST occurence of an item in the array. If the
          item is not in the array, -1 is returned.
@@ -62,7 +62,7 @@ lists can be found here:
 
 
    * - ``length``
-     - | *arrayName.length*
+     - | ``arrayName.length``
        |
        | This is a **property** rather than a method.  It returns the number of elements in an array.
      -
@@ -73,108 +73,14 @@ lists can be found here:
             charles.length;
             //returns 5
 
-.. list-table:: Removal Methods
-   :header-rows: 1
-
-   * - Methods That Remove Items
-     - Description & *Syntax*
-     - Examples
-   * - ``pop``
-     - | *arrayName.pop()*
-       |
-       | Removes and returns the LAST element in an array.
-       |
-       | No arguments are placed inside the parentheses ``()``.
-     -
-         .. sourcecode:: js
-
-            let arr = ['a', 'b', 'c', 'd', 'e'];
-            arr.pop();
-            //returns 'e'
-
-            console.log(arr);
-            //prints ['a', 'b', 'c', 'd']
-
-
-   * - ``shift``
-     - | *arrayName.shift()*
-       |
-       | Removes and returns the FIRST element in an array.
-       |
-       | No arguments are placed inside the parentheses ``()``.
-     -
-         .. sourcecode:: js
-
-            let arr = ['a', 'b', 'c', 'd', 'e'];
-            arr.shift();
-            //returns 'a'
-
-            console.log(arr);
-            //prints ['b', 'c', 'd', 'e']
-
-.. list-table:: Addition Methods
-   :header-rows: 1
-
-   * - Methods That Add Items
-     - Description & *Syntax*
-     - Examples
-   * - ``push``
-     - | *arr.push(item1, item2, ...)*
-       |
-       | Adds one or more elements to the END of an array and returns the new length.
-       |
-       | The new items may be of any data type.
-     -
-         .. sourcecode:: js
-
-            let arr = ['a', 'b', 'c'];
-
-            arr.push('d e', 'f', 42);
-            //returns 6
-
-            console.log(arr);
-            //prints ['a', 'b', 'c', 'd e', 'f', 42]
-
-
-   * - ``unshift``
-     - | *arr.unshift(item1, item2, ...)*
-       |
-       | Adds one or more elements to the START of an array and returns the new length.
-       |
-       | The new items may be of any data type.
-     -
-         .. sourcecode:: js
-
-            let arr = ['a', 'b', 'c'];
-
-            arr.unshift('hello', 121);
-            //returns 5
-
-            console.log(arr);
-            //prints ['hello', 121, 'a', 'b', 'c']
-
-.. list-table:: Add, Remove or Modify
-   :header-rows: 1
-
-   * - Methods That Add or Remove Items
-     - Description
-     - Examples
-   * - ``splice``
-     - | Adds one or more elements to an array at a specified index.
-       |
-       | Removes one or more elements from an array at a specified index.
-       |
-       | Replaces one or more elements in an array with new items.
-     - See below for syntax and examples of ``splice``.
-
 .. list-table:: Rearranging Methods
    :header-rows: 1
 
    * - Methods That Rearrange Items
-     - Description & *Syntax*
+     - Description & ``Syntax``
      - Examples
    * - ``reverse``
-     - | *arrayName.reverse()*
+     - | ``arrayName.reverse()``
        |
        | Pretty straightforward. Reverses the order of the elements in an array.
        |
@@ -190,189 +96,60 @@ lists can be found here:
 
 
    * - ``sort``
-     - | *arrayName.sort()*
+     - | ``arrayName.sort()``
        |
        | Arranges the elements of an array into increasing order (kinda).
        |
        | No arguments are placed inside the parentheses ``()``.
-     - See below for examples of ``sort``.
+     - ``sort`` examples are explored below.
 
-.. list-table:: Array Creation Methods
-   :header-rows: 1
-
-   * - Methods That Create New Arrays
-     - Description & *Syntax*
-     - Examples
-   * - ``join``
-     - | *arr.join('element connecter')*
-       |
-       | Combines all the elements of an array into a string.
-       |
-       | The entry inside the parentheses ``()`` specifies the delimiter used to
-         join the separate elements.
-     -
-         .. sourcecode:: js
-
-            let arr = [1, 2, 3, 4];
-            let words = ['hello', 'world', '!'];
-
-            console.log(arr.join("+"));
-            //prints '1+2+3+4'
-
-            console.log(words.join(""));
-            //prints 'helloworld!'
-
-            console.log(words.join("_"));
-            //prints 'hello_world_!'
-
-
-   * - ``concat``
-     - | *arrayName.concat(otherArray1, otherArray2, ...)*
-       |
-       | Combines two or more arrays and returns the result as a new array.
-     - See below for examples of ``concat``.
-
-
-   * - ``slice``
-     - | *arr.slice(starting index, ending index)*
-       |
-       | Returns selected entries of an array into a new array.
-     - See below for examples of ``slice``.
-
-   * - ``split``
-     - | *stringName.split('delimiter')*
-       |
-       | Divides a string into an array of smaller strings.
-       |
-       | The entry inside the parentheses ``()`` (the **delimiter**) determines
-         how the string will be split.
-     - See below for examples of ``split``.
-
-Detailed Examples
+``sort`` Examples
 -----------------
 
-Some of the methods listed above require a closer look. These examples are
-arranged from least tricky to more tricky.
+The general syntax for this method is:
 
-``concat``
-++++++++++
+::
 
-*Syntax = arrayName.concat(otherArray1, otherArray2, ...)*
-
-This method adds the elements of one array to the end of another. The new array
-must be stored in a variable or printed to the screen, because ``concat`` does
-NOT alter the original arrays.
-
-.. sourcecode:: js
-
-   let arr = [1, 2, 3];
-   let otherArray = ['M', 'F', 'E'];
-   let newArray = [];
-
-   newArray = arr.concat(otherArray);
-   console.log(newArray);
-   //prints [1, 2, 3, 'M', 'F', 'E']
-
-   newArray = otherArr.concat(arr);
-   console.log(newArray);
-   //prints [ 'M', 'F', 'E', 1, 2, 3 ]
-
-   console.log(arr.concat(otherArr, arr));
-   //prints [ 1, 2, 3, 'M', 'F', 'E', 1, 2, 3 ]
-
-   console.log(arr);
-   //prints [1, 2, 3]
-
-``split``
-++++++++++
-
-*Syntax = stringName.split('delimiter')*
-
-``split`` is actually a string method, but it complements the array method
-``join``.
-
-``split`` divides a string into smaller pieces, which are stored in a new
-array. The **delimiter** argument determines how the string is broken apart.
-
-.. sourcecode:: js
-
-   let numbers = "1,2,3,4";
-   let word = "Rutabaga";
-   let phrase = "Bookkeeper of balloons."
-   let arr = [];
-
-   arr = numbers.split(',');  //split the string at each comma.
-   console.log(arr);
-   //prints ['1', '2', '3', '4']  Note that the numbers are strings.
-
-   arr = phrase.split(' ');   //split the string at each space.
-   console.log(arr);
-   //prints ['Bookkeeper', 'of', 'balloons']
-
-   arr = word.split('');      //split the string at each character.
-   console.log(arr);
-   //prints ['R', 'u', 't', 'a', 'b', 'a', 'g', 'a']
-
-``slice``
-++++++++++
-
-*Syntax = arrayName.slice(starting index, ending index)*
-
-The ending index is optional.  If it is left out, ``slice`` returns a new array
-that includes everything from the starting index to the end of the original array.
-
-If both indices are used, the new array contains everything from the starting
-index up to BUT NOT INCLUDING the ending index.
-
-.. sourcecode:: js
-
-   let arr = ['a', 'b', 'c', 'd', 'e'];
-
-   arr.slice(2);
-   //returns [ 'c', 'd', 'e' ]
-
-   arr.slice(1,4);
-   //returns [ 'b', 'c', 'd' ]
-
-``sort``
-++++++++++
-
-*Syntax = arrayName.sort()*
+  arrayName.sort()
 
 This method arranges the elements of an array into increasing order.  For
 strings, this means alphabetical order.  HOWEVER, the results are not always
 what we expect.
 
-.. sourcecode:: js
+#. Alphabetical order.
 
-   let letters = ['f', 'c', 'B', 'X', 'a'];
+   .. sourcecode:: js
 
-   letters.sort();
-   console.log(letters);
-   //prints [ 'B', 'X', 'a', 'c', 'f' ]
+      let letters = ['f', 'c', 'B', 'X', 'a'];
+
+      letters.sort();
+      console.log(letters);
+      //prints [ 'B', 'X', 'a', 'c', 'f' ]
 
 From the alphabet song, we know that 'a' comes before 'B' (and certainly before
 'X'), but JavaScript treats capital and lowercase letters differently.  The
 default sort order places capital letters before lowercase.
 
-.. sourcecode:: js
+2. When numbers and strings are sorted, the default order places numbers before
+   all letters.
 
-   let mixed = ['a', 'A', 20, 40];
+   .. sourcecode:: js
 
-   mixed.sort();
-   console.log(mixed);
-   //prints [ 20, 40, 'A', 'a' ]
+      let mixed = ['a', 'A', 20, 40];
 
-When numbers and strings are sorted, the default order places numbers before
-all letters.
+      mixed.sort();
+      console.log(mixed);
+      //prints [ 20, 40, 'A', 'a' ]
 
-.. sourcecode:: js
+#. Numerical sorting.
 
-   let numbers = [2, 8, 10, 400, 30];
+   .. sourcecode:: js
 
-   numbers.sort();
-   console.log(numbers);
-   //prints [ 10, 2, 30, 400, 8 ]
+      let numbers = [2, 8, 10, 400, 30];
+
+      numbers.sort();
+      console.log(numbers);
+      //prints [ 10, 2, 30, 400, 8 ]
 
 Here JavaScript gets truly bizarre. How is 8 larger than 400?
 
@@ -384,62 +161,3 @@ only at the first digit in each number, we see the expected progression
 
 Later in this course, we will explore ways to fix this issue and correctly sort
 numerical arrays.
-
-``splice``
-++++++++++
-
-| *Syntax = arrayName.splice(index, # of elements to change, item1, item2, …)*
-| Inside the parentheses ``()``, only the first argument is required.
-
-The ``splice`` method modifies one or more elements anywhere in the array.
-Entries can be added, removed or changed. This method requires practice.
-
-Hang on, here we go.
-
-#. Given only one argument, ``splice(index)`` removes every entry from
-   ``index`` to the end of the array.
-
-   .. sourcecode:: js
-
-      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-
-      arr.splice(2);    //Everything from index 2 and beyond is removed.
-      console.log(arr);
-      //prints [ 'a', 'b' ]
-
-#. With two arguments, ``splice(index, number of items)`` starts at ``index``
-   and removes the number of items.
-
-   .. sourcecode:: js
-
-      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-
-      arr.splice(2,3);    //Start at index 2 and remove 3 total entries.
-      console.log(arr);
-      //prints [ 'a', 'b', 'f' ]
-
-      arr.splice(1,1);    //Start at index 1 and remove 1 entry.
-      console.log(arr);
-      //prints [ 'a', 'f' ]
-
-#. Given three or more arguments, ``splice(index, 0, new item)`` starts at
-   ``index`` and *ADDS* the new items.
-
-   .. sourcecode:: js
-
-      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-
-      arr.splice(2,0,'hello');     //Start at index 2, remove 0 entries, and add 'hello'.
-      console.log(arr);
-      //prints [ 'a', 'b', 'hello', 'c', 'd', 'e', 'f' ]
-
-#. Given three or more arguments, ``splice(index, number of items, new items)``
-   starts at ``index`` and *REPLACES* the number of items with the new ones.
-
-   .. sourcecode:: js
-
-      let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-
-      arr.splice(2,3,'hello', 9);    //Start at index 2, replace 3 entries with 'hello' and 9.
-      console.log(arr);
-      //prints [ 'a', 'b', 'hello', 9, 'f' ]
