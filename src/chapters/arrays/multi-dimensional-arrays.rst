@@ -4,18 +4,22 @@ Multi-Dimensional Arrays
 Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
 of arrays? Well yes we can.... Get ready to venture into a multi-dimensional universe.
 
-A **multi-Dimensional array** is an array of arrays, meaning that the values inside the *outer* array are also arrays.
-The *inner* arrays can store other values such as strings or numbers. Multi-dimensional arrays are sometimes called
-nested arrays because again there are arrays nested inside of an array.
+.. index:: ! multi-dimensional array
+
+A **multi-dimensional array** is an array of arrays, meaning that the values inside the array are also arrays.
+The *inner* arrays can store other values such as strings, numbers, or even more arrays.
+
+.. figure:: figures/multi-dimensional-array-example.jpg
+   :alt: A label, synonyms, pointing to an array that contains arrays at it's four indexes. Each inner array has a list of words that are synonyms.
 
 Two Dimensional Arrays
 ----------------------
-The simplist form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
+The simplest form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
 spreadsheet with rows and columns. To access items in a two dimensional array use square bracket notation and
-two indexs ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
+two indexes ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
 or the "column".
 
-TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)
+.. note:: The row and column analogy is used to help visualize a two dimensional array, however it's not a perfect analogy because there are no language rules forcing the inner arrays to all have the same length. The inner arrays are seperate arrays, possibly with varying lengths, that can be altered independently.
 
 .. admonition:: Example
 
@@ -41,7 +45,7 @@ TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)
       Ellen Ochoa
       Winston Scott
 
-Multi-dimensions and Array Methods
+Multi-Dimensions and Array Methods
 ----------------------------------
 Both the inner and outer arrays in a multi-dimensional array are still altered with array
 methods.

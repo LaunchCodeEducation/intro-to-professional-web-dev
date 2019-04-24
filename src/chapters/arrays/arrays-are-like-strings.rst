@@ -7,15 +7,14 @@ replace parts of the collection. What we can’t do is store anything other than
 
 .. index:: ! array
 
-In this chapter we will learn about a more general use collection data type called an **Array**.
-Like strings, arrays are ordred collections. While a key difference is that strings can only contain contain
-characters, arrays can store data of any type.
+In this chapter we will learn about a more general collection type called an **array**.
+Like strings, arrays are a sequence of values that can be accessed via an ordered index.
+The key difference between strings and arrays is that strings can only contain characters, arrays can store data of any type.
 
-Figure: JavaScript array from prev chapter
-Remember that a string is a sequence of strings with a length of 1
+Notice the values in the below figure each have an index value.
 
-Figure: Array with multiple strings included JavaScript, Python, Java, C#
-An array is a sequence of values that can vary in size and type.
+.. figure:: figures/array-example.jpg
+   :alt: A label, languages, pointing to an array that contains "Python" at index 0, "C#" at index 1, "Java" at index 2, and "JavaScript" at index 3.
 
 Declaring an Array
 ------------------
