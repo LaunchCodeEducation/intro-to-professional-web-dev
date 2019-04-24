@@ -6,5 +6,5 @@ Arrays
 
    arrays-are-like-strings
    working-with-arrays
-   multi-dimensional-arrays
    array-methods
+   multi-dimensional-arrays

@@ -1,10 +1,13 @@
 Working With Arrays
 ===================
 
-Bracket Notation
-----------------
-Arrays are ordered collections, meaning they will keep the order of items they contain. That order is refered to as the index.
-Like with strings, use bracket notation and an index to access a specific item in an array ``array[index]``.
+Bracket Notation and Index
+--------------------------
+
+.. index:: ! index
+
+Arrays are ordered collections, meaning they will keep the order of items they contain. The **index** is the number order given to items
+in an array. Like with strings, use bracket notation and an index to access a specific item in an array ``array[index]``.
 Also like strings, an array's index is zero based. Zero based indexes start go from ``0`` to ``array.length - 1``.
 
 .. admonition:: Example
@@ -35,6 +38,8 @@ Also like strings, an array's index is zero based. Zero based indexes start go f
 Notice above that ``undefined`` was printed out when index 4 was referenced. ``undefined`` is returned when you request an index
 that the array does not contain.
 
+.. index:: undefined
+
 .. note:: **undefined** is a special value in JavaScript that means no value has been assigned. We will discuss ``undefined`` more later in the class.
 
 .. admonition:: Example
@@ -56,8 +61,11 @@ that the array does not contain.
 
 Arrays are Mutable
 ------------------
-Mutability refers to what happens to when values are edited. Remember that Strings are immutable, meaning that any change
-to a string results in a new string being created. In constrast, arrays are **mutable**, meaning that individual items in
+
+.. index:: mutable
+
+In programming mutability refers to what happens when you attempt to change a value. Remember that Strings are immutable, meaning that any change
+to a string results in a new string being created. In contrast, arrays are **mutable**, meaning that individual items in
 an array can be edited without a new array being created.
 
 .. admonition:: Example
