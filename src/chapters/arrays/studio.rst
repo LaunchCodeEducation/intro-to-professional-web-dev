@@ -54,8 +54,8 @@ Array and String Conversion
 
 `Code it here <https://repl.it/@launchcode/StringandArrayStudio02>`__
 
-Multi-dimensional Arrays
--------------------------
+Multi-dimensional Arrays Bonus Mission
+---------------------------------------
 
 3. Arrays can store other arrays!
 
@@ -74,51 +74,9 @@ Multi-dimensional Arrays
    d. Use bracket notation and a template literal to display the contents of
       the selected cabinet. If the user entered an invalid number, print an
       error message instead.
-   e. *Bonus Mission*: Modify the code to query the user for BOTH a cabinet in
+   e. *Bonus to the Bonus*: Modify the code to query the user for BOTH a cabinet in
       ``cargoHold`` AND a particular item. Use the ``includes`` method to check
       if the cabinet contains the selected item, then print "Cabinet ____
       DOES/DOES NOT contain ____."
 
 `Code it here <https://repl.it/@launchcode/StringandArrayStudio03>`__
-
-Additional Ideas (Feedback Requested)
--------------------------------------
-
-4. Practice using the ``split`` and ``join`` methods to convert between strings
-   and arrays. We will also use other string or array methods in the process.
-
-   a. The ``reverse`` method operates on arrays, but not on strings. Use this
-      fact to reverse the order of characters in a string. Store the result in
-      a new variable, then print the original and reversed string.
-   b. **Palindromes** are words that have the same spelling forwards and backwards.
-      For example, "soda" (ados) is NOT a palindrome, but "pop" (pop) and
-      "radar" (radar) are.  Modify your code by adding an ``if`` statement to
-      check if a word is a palindrome.  If the string is a palindrome, print,
-      "___ is a palindrome!"  Otherwise, print, "___ is NOT a palindrome."
-   c. Use string methods to enhance your code.  The palindrome check should NOT
-      be case sensitive.  Ex: 'Dad' vs. 'daD' would be considered a match.
-   d. *Bonus Mission*: What if the string is a phrase rather than a single word?
-      Any spaces may throw off the check (e.g. ``'taco cat'`` is a palindrome,
-      but a simple reversal produces the different string ``'tac ocat'``).
-      Modify your code to deal with this spacing problem.
-
-**Repl.it link**
-
-5. Practice using the ``split`` and ``join`` methods to convert between strings
-   and arrays. We will also use other string or array methods in the process.
-
-   a. The ``reverse`` method operates on arrays, but not on strings. Use this
-      fact to reverse the order of characters in a string. Store the result in
-      a new variable, then print the original and reversed string.
-   b. Use the ``trim`` method to remove leading/trailing whitespace to compare
-      two usernames (strings).  Also, use an ``if`` statement and a template
-      literal to print, " '___' and '___' are matching usernames!" Otherwise
-      print, " '___' and '___' are NOT matching usernames."
-   c. Use string methods to enhance your code.  The username check should NOT be
-      case sensitive.  Ex: 'Dad' vs. 'dad' would be considered a match.
-   d. What if we need to compare phrases that have inconsistent spacing between
-      the words?  These spaces will throw off the check (e.g. ``'taco cat'``
-      and ``'taco    cat'`` are the same phrase, but the ``===`` comparison
-      returns ``false``).  Modify your code to deal with this spacing problem.
-
-**Repl.it link**
