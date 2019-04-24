@@ -3,17 +3,17 @@ Conditionals
 
 .. index:: ! conditional
 
-A the beginning of this chapter, we motivated our exploration of booleans in JavaScript by observing that having a formal notion of truth and falsehood would allow us to write code that executes conditionally. In other words, we want to be able to write code that only executes when a given condition is ``true``.
+At the beginning of this chapter, we decided that we wanted to be able to write code that only executes when a given condition is ``true``.
 
 Again, here is our motivating example:
 
 .. admonition:: Example
 
-   Consider a banking application that can remind you when a bill is due. The application will notify the user that a bill is due soon, but *only if* the bill has not already been paid.
+   Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but *only if* the bill has not already been paid.
 
 We summarized the condition as follows: Send a notification of an upcoming bill if the statement "the bill is unpaid" is true.
 
-In such a program, booleans would allow us to write JavaScript that represents the conditional "the bill is unpaid", and based on the truth of such a statement, execute or skip code that notifies the user of an upcoming due date.
+In such a program, JavaScript uses booleans to represent the conditional "the bill is unpaid". Based on the truth of this statement, the program executes or skips the code for notifying the user.
 
 The JavaScript construct that enables such behavior is a **conditional**.
 
@@ -31,10 +31,10 @@ The most basic form of a conditional is an **if statement**. Here's how to creat
 Let's look at each component of this new syntax.
 
 - The ``if`` statement consists of a header line and a body. The header line begins with the keyword ``if`` followed by a boolean expression enclosed in parentheses. 
-- ``condition`` is a boolean expression, that is, something that evaluates to either ``true`` or ``false``.
-- The statements that follow the condition, within ``{}``, make up a **code block**. The code within the brackets will be executed when the condition evaluates to ``true``, and will be skipped otherwise.
+- ``condition`` is a boolean expression (an expression that evaluates to either ``true`` or ``false``).
+- The statements that follow the condition, within ``{ }``, make up a **code block**. The code within the brackets ``{ }`` will be executed if the condition evaluates to true. If the condition evaluates to false, the code within the brackets is ignored.
 
-And here's an explicit example that mimics our banking example.
+Here is an explicit example that mimics our banking program.
 
 .. admonition:: Example
 
@@ -67,7 +67,7 @@ The condition in an ``if`` statement can be any boolean expression, such as ``na
 
 While not required, the code within a conditional code block is typically indented to make it more readable. Similarly, it is a common convention to place the opening ``{`` at the end of the first line, and the closing ``}`` on a line of its own following the last line of the code block. 
 
-You should follow such conventions, even though not doing so won't create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.
+You should follow such conventions, even though ignoring them will not create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.
 
 .. sourcecode:: js
 
@@ -97,7 +97,7 @@ An **else clause** can be paired with an ``if`` statement to specify code that s
    :height: 400px
    :alt: A conditional with an else clause
 
-We can add an ``else`` clause to our bank app conditional to provide a message in the case that no bills are currently due.
+We can use an ``else`` clause within our bank app to send a message if no bills are currently due.
 
 .. admonition:: Example
 
@@ -121,7 +121,7 @@ This structure is known as an **if-else statement**, and it provides a mechanism
 
 .. figure:: figures/conditional-flow.png
    :height: 500px
-   :alt: A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement
+   :alt: A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement. If the condition is true, one code block executes. If the condition is false, a different code block executes.
 
 
 ``else if`` Statements
@@ -159,7 +159,7 @@ Let's summarize the flow of execution of this conditional:
 #. Line 6 contains an else-if statement. The boolean expression ``x < y`` evaluates to ``true``, since 10 is less than 20. This triggers the execution of line 7.
 #. The code block associated with the ``else`` clause on lines 8-10 is skipped, because one of the conditions above was true.
 
-As with a simple ``if`` statment, the ``else`` clause is optional in this context as well. The following example does not print anything, since both conditions evaluate to false and there is no ``else`` clause.
+As with a simple ``if`` statement, the ``else`` clause is optional in this context as well. The following example does not print anything, since both conditions evaluate to false and there is no ``else`` clause.
 
 .. sourcecode:: js
    :linenos:
@@ -177,10 +177,10 @@ We can construct conditionals using ``if``, ``else if``, and ``else`` with a lot
 
 #. We may not use ``else`` or ``else if`` without a preceding ``if`` statement.
 #. ``else`` and ``else if`` clauses are optional.
-#. A conditional may contain mutliple ``else if`` statements, each of which must follow the ``if`` statement and precede the ``else`` clause, if one is present.
+#. Multiple ``else if`` statements may follow the ``if`` statement, but they must precede the ``else`` clause, if one is present.
 #. Only one ``else`` clause may be used.
 
-Regardless of the complexity of a conditional, *only one* of the code blocks that it contains will be executed.
+Regardless of the complexity of a conditional, *no more than one* of the code blocks will be executed.
 
 .. admonition:: Example
 

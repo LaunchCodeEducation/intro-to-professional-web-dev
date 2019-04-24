@@ -79,14 +79,14 @@
     
   <div class="section" id="conditionals">
 <h1>5.4. Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">A the beginning of this chapter, we motivated our exploration of booleans in JavaScript by observing that having a formal notion of truth and falsehood would allow us to write code that executes conditionally. In other words, we want to be able to write code that only executes when a given condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p id="index-0">At the beginning of this chapter, we decided that we wanted to be able to write code that only executes when a given condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p>Again, here is our motivating example:</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<p class="last">Consider a banking application that can remind you when a bill is due. The application will notify the user that a bill is due soon, but <em>only if</em> the bill has not already been paid.</p>
+<p class="last">Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but <em>only if</em> the bill has not already been paid.</p>
 </div>
 <p>We summarized the condition as follows: Send a notification of an upcoming bill if the statement “the bill is unpaid” is true.</p>
-<p>In such a program, booleans would allow us to write JavaScript that represents the conditional “the bill is unpaid”, and based on the truth of such a statement, execute or skip code that notifies the user of an upcoming due date.</p>
+<p>In such a program, JavaScript uses booleans to represent the conditional “the bill is unpaid”. Based on the truth of this statement, the program executes or skips the code for notifying the user.</p>
 <p>The JavaScript construct that enables such behavior is a <strong>conditional</strong>.</p>
 <div class="section" id="if-statements">
 <h2>5.4.1. <code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
@@ -97,10 +97,10 @@
 <p>Let’s look at each component of this new syntax.</p>
 <ul class="simple">
 <li>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of a header line and a body. The header line begins with the keyword <code class="docutils literal notranslate"><span class="pre">if</span></code> followed by a boolean expression enclosed in parentheses.</li>
-<li><code class="docutils literal notranslate"><span class="pre">condition</span></code> is a boolean expression, that is, something that evaluates to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
-<li>The statements that follow the condition, within <code class="docutils literal notranslate"><span class="pre">{}</span></code>, make up a <strong>code block</strong>. The code within the brackets will be executed when the condition evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, and will be skipped otherwise.</li>
+<li><code class="docutils literal notranslate"><span class="pre">condition</span></code> is a boolean expression (an expression that evaluates to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>).</li>
+<li>The statements that follow the condition, within <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>, make up a <strong>code block</strong>. The code within the brackets <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> will be executed if the condition evaluates to true. If the condition evaluates to false, the code within the brackets is ignored.</li>
 </ul>
-<p>And here’s an explicit example that mimics our banking example.</p>
+<p>Here is an explicit example that mimics our banking program.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">billHasBeenPaid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
@@ -127,7 +127,7 @@
 </div>
 </div>
 <p>While not required, the code within a conditional code block is typically indented to make it more readable. Similarly, it is a common convention to place the opening <code class="docutils literal notranslate"><span class="pre">{</span></code> at the end of the first line, and the closing <code class="docutils literal notranslate"><span class="pre">}</span></code> on a line of its own following the last line of the code block.</p>
-<p>You should follow such conventions, even though not doing so won’t create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.</p>
+<p>You should follow such conventions, even though ignoring them will not create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
 <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is even&quot;</span><span class="p">);</span>
  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is greater than 3&quot;</span><span class="p">);</span> <span class="p">}</span>
@@ -150,7 +150,7 @@
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/if-else.png"><img alt="A conditional with an else clause" src="../../_images/if-else.png" style="height: 400px;" /></a>
 </div>
-<p>We can add an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause to our bank app conditional to provide a message in the case that no bills are currently due.</p>
+<p>We can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause within our bank app to send a message if no bills are currently due.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">billHasBeenPaid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -169,7 +169,7 @@
 </div>
 <p>This structure is known as an <strong>if-else statement</strong>, and it provides a mechanism for <strong>branching</strong>. The flow of the program can take one of two paths when it reaches a condtional, depending on whether the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../../_images/conditional-flow.png"><img alt="A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement" src="../../_images/conditional-flow.png" style="height: 500px;" /></a>
+<a class="reference internal image-reference" href="../../_images/conditional-flow.png"><img alt="A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement. If the condition is true, one code block executes. If the condition is false, a different code block executes." src="../../_images/conditional-flow.png" style="height: 500px;" /></a>
 </div>
 </div>
 <div class="section" id="else-if-statements">
@@ -209,7 +209,7 @@
 <li>Line 6 contains an else-if statement. The boolean expression <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, since 10 is less than 20. This triggers the execution of line 7.</li>
 <li>The code block associated with the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause on lines 8-10 is skipped, because one of the conditions above was true.</li>
 </ol>
-<p>As with a simple <code class="docutils literal notranslate"><span class="pre">if</span></code> statment, the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is optional in this context as well. The following example does not print anything, since both conditions evaluate to false and there is no <code class="docutils literal notranslate"><span class="pre">else</span></code> clause.</p>
+<p>As with a simple <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is optional in this context as well. The following example does not print anything, since both conditions evaluate to false and there is no <code class="docutils literal notranslate"><span class="pre">else</span></code> clause.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -231,10 +231,10 @@
 <ol class="arabic simple">
 <li>We may not use <code class="docutils literal notranslate"><span class="pre">else</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> without a preceding <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</li>
 <li><code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> clauses are optional.</li>
-<li>A conditional may contain mutliple <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statements, each of which must follow the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and precede the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause, if one is present.</li>
+<li>Multiple <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statements may follow the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, but they must precede the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause, if one is present.</li>
 <li>Only one <code class="docutils literal notranslate"><span class="pre">else</span></code> clause may be used.</li>
 </ol>
-<p>Regardless of the complexity of a conditional, <em>only one</em> of the code blocks that it contains will be executed.</p>
+<p>Regardless of the complexity of a conditional, <em>no more than one</em> of the code blocks will be executed.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>

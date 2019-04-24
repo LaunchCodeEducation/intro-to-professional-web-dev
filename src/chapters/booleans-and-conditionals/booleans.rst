@@ -5,13 +5,13 @@ Booleans
 
 .. index:: data type
 
-One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code *only if* a given condition is met. Another way to say this is that the segment of code runs *only if* the program is in a particular state.
+One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code *only if* a given condition is met. 
 
 .. admonition:: Example
 
    Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but *only if* the bill has not already been paid.
 
-In this example, we can phrase the condition as follows: Send a notification if "the bill is unpaid" is true. In order to formalize such a statement in code, we need a notion of what it means to be true or false.
+The condition for the above example is: Send a notification of an upcoming bill only if the statement "the bill is unpaid" is true. In order to state something like this in JavaScript, we need to understand how programming languages represent true and false.
 
 Boolean Values
 --------------
@@ -21,9 +21,11 @@ Boolean Values
 .. index::
    single: boolean; value
 
-The JavaScript data type for storing true and false values is called ``boolean``, named after the British mathematician, George Boole. George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_ which is the basis of all modern computer arithmetic.
+The JavaScript data type for storing true and false values is called ``boolean``, named after the British mathematician, George Boole. 
 
-There are only two **boolean values**---``true`` and ``false``. As always, JavaScript is case-sensitive, so ``True`` and ``False`` are not valid boolean values.
+.. note:: George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_, which is the basis of all modern computer arithmetic. 
+
+There are only two **boolean values**---``true`` and ``false``. JavaScript is case-sensitive, so ``True`` and ``False`` are not valid boolean values.
 
 .. admonition:: Example
 
@@ -41,7 +43,7 @@ There are only two **boolean values**---``true`` and ``false``. As always, JavaS
       boolean
       boolean
 
-It is extremely important to realize that ``true`` and ``false`` are **not** strings. Surrounding the words "true" and "false" in quotes in JavaScript will result in string values rather than boolean values. 
+The values ``true`` and ``false`` are **not** strings. If you use quotes to surround booleans (``"true"`` and ``"false"``), those values become strings.
 
 .. admonition:: Example
 
@@ -79,6 +81,8 @@ As with the number and string data types, the boolean type also has a conversion
 
    `Run this program at repl.it <https://repl.it/@launchcode/Boolean-Type-Conversion>`_
 
+.. admonition:: Question
+
    Under which conditions does ``Boolean()`` convert a string to ``true``?
 
    #. Only when the string is ``"true"``.
@@ -98,7 +102,7 @@ Boolean Expressions
 
 .. index:: ! ==
 
-A **boolean expression** is an expression that evaluates to a boolean value. The equality operator, ``==``, compares two values and produces a boolean value related to whether the two values are equal to one another.
+A **boolean expression** is an expression that evaluates to either ``true`` or ``false``. The equality operator, ``==``, compares two values and returns true or false depending on whether the values are equal.
 
 .. admonition:: Example
 
@@ -147,26 +151,39 @@ The ``==`` operator is one of six common **comparison operators**.
    * - Operator
      - Description
      - Examples Returning ``true``
+     - Examples Returning ``false``
    * - Equal (``==``)
      - Returns ``true`` if the two operands are equal, and ``false`` otherwise.
      - ``7 == 7``
 
        ``"dog" == "dog"``
+     - ``7 == 5``
+
+       ``"dog" == "cat"``
    * - Not equal(``!=``)
      - Returns ``true`` if the two operands are not equal, and ``false`` otherwise.
      - ``7 != 5``
 
        ``"dog" != "cat"``
+     - ``7 != 7``
+
+       ``"dog" != "dog"``
    * - Greater than (``>``)
      - Returns ``true`` if the left-hand operand is greater than the right-hand operand, and ``false`` otherwise.
      - ``7 > 5``
 
        ``'b' > 'a'``
+     - ``5 > 7``
+
+       ``'a' > 'b'``
    * - Less than (``<``)
      - Returns ``true`` if the left-hand operand is less than the right-hand operand, and ``false`` otherwise.
      - ``5 < 7``
 
        ``'a' < 'b'``
+     - ``7 < 5``
+
+       ``'b' < 'a'``
    * - Greater than or equal (``>=``)
      - Returns ``true`` if the left-hand operand is greater than or equal to the right-hand operand, and ``false`` otherwise.
      - ``7 >= 5``
@@ -176,6 +193,9 @@ The ``==`` operator is one of six common **comparison operators**.
        ``'b' >= 'a'``
        
        ``'b' >= 'b'``
+     - ``5 >= 7``
+
+       ``'a' >= 'b'``
    * - Less than or equal (``<=``)
      - Returns ``true`` if the left-hand operand is less than or equal to the right-hand operand, and ``false`` otherwise.
      - ``5 <= 7``
@@ -185,6 +205,9 @@ The ``==`` operator is one of six common **comparison operators**.
        ``'a' <= 'b'``
 
        ``'a' <= 'a'``
+     - ``7 <= 5``
+
+       ``'b' <= 'a'``
 
 
 Although these operations are probably familiar, the JavaScript symbols are different from the mathematical symbols. A common error is to use a single equal sign (``=``) instead of a double equal sign (``==``). Remember that ``=`` is an *assignment* operator and ``==`` is a *comparison* operator. Also note that ``=<`` and ``=>`` are not recognized operators.

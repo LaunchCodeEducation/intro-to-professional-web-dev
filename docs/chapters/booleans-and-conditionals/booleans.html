@@ -79,16 +79,20 @@
     
   <div class="section" id="booleans">
 <span id="id1"></span><h1>5.1. Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code <em>only if</em> a given condition is met. Another way to say this is that the segment of code runs <em>only if</em> the program is in a particular state.</p>
+<p id="index-0">One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code <em>only if</em> a given condition is met.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p class="last">Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but <em>only if</em> the bill has not already been paid.</p>
 </div>
-<p>In this example, we can phrase the condition as follows: Send a notification if “the bill is unpaid” is true. In order to formalize such a statement in code, we need a notion of what it means to be true or false.</p>
+<p>The condition for the above example is: Send a notification of an upcoming bill only if the statement “the bill is unpaid” is true. In order to state something like this in JavaScript, we need to understand how programming languages represent true and false.</p>
 <div class="section" id="boolean-values">
 <h2>5.1.1. Boolean Values<a class="headerlink" href="#boolean-values" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-1"></span><p id="index-2">The JavaScript data type for storing true and false values is called <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, named after the British mathematician, George Boole. George Boole created <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean Algebra</a> which is the basis of all modern computer arithmetic.</p>
-<p>There are only two <strong>boolean values</strong>—<code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. As always, JavaScript is case-sensitive, so <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are not valid boolean values.</p>
+<span class="target" id="index-1"></span><p id="index-2">The JavaScript data type for storing true and false values is called <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, named after the British mathematician, George Boole.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">George Boole created <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean Algebra</a>, which is the basis of all modern computer arithmetic.</p>
+</div>
+<p>There are only two <strong>boolean values</strong>—<code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. JavaScript is case-sensitive, so <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are not valid boolean values.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
@@ -103,7 +107,7 @@ boolean
 </pre></div>
 </div>
 </div>
-<p>It is extremely important to realize that <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> are <strong>not</strong> strings. Surrounding the words “true” and “false” in quotes in JavaScript will result in string values rather than boolean values.</p>
+<p>The values <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> are <strong>not</strong> strings. If you use quotes to surround booleans (<code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code>), those values become strings.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">true</span><span class="p">);</span>
@@ -131,7 +135,10 @@ string
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s1">&#39;LaunchCode&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://repl.it/&#64;launchcode/Boolean-Type-Conversion">Run this program at repl.it</a></p>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Boolean-Type-Conversion">Run this program at repl.it</a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
 <p>Under which conditions does <code class="docutils literal notranslate"><span class="pre">Boolean()</span></code> convert a string to <code class="docutils literal notranslate"><span class="pre">true</span></code>?</p>
 <ol class="last arabic simple">
 <li>Only when the string is <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code>.</li>
@@ -143,7 +150,7 @@ string
 </div>
 <div class="section" id="boolean-expressions">
 <h2>5.1.3. Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-4"></span><span class="target" id="index-5"></span><p id="index-6">A <strong>boolean expression</strong> is an expression that evaluates to a boolean value. The equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, compares two values and produces a boolean value related to whether the two values are equal to one another.</p>
+<span class="target" id="index-4"></span><span class="target" id="index-5"></span><p id="index-6">A <strong>boolean expression</strong> is an expression that evaluates to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. The equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, compares two values and returns true or false depending on whether the values are equal.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span><span class="p">);</span>
@@ -177,6 +184,7 @@ false
 <tr class="row-odd"><th class="head">Operator</th>
 <th class="head">Description</th>
 <th class="head">Examples Returning <code class="docutils literal notranslate"><span class="pre">true</span></code></th>
+<th class="head">Examples Returning <code class="docutils literal notranslate"><span class="pre">false</span></code></th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -185,11 +193,17 @@ false
 <td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">==</span> <span class="pre">7</span></code></p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span> <span class="pre">==</span> <span class="pre">&quot;dog&quot;</span></code></p>
 </td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">==</span> <span class="pre">5</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span> <span class="pre">==</span> <span class="pre">&quot;cat&quot;</span></code></p>
+</td>
 </tr>
 <tr class="row-odd"><td>Not equal(<code class="docutils literal notranslate"><span class="pre">!=</span></code>)</td>
 <td>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the two operands are not equal, and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</td>
 <td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">!=</span> <span class="pre">5</span></code></p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span> <span class="pre">!=</span> <span class="pre">&quot;cat&quot;</span></code></p>
+</td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">!=</span> <span class="pre">7</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span> <span class="pre">!=</span> <span class="pre">&quot;dog&quot;</span></code></p>
 </td>
 </tr>
 <tr class="row-even"><td>Greater than (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)</td>
@@ -197,11 +211,17 @@ false
 <td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">&gt;</span> <span class="pre">5</span></code></p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">'b'</span> <span class="pre">&gt;</span> <span class="pre">'a'</span></code></p>
 </td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&gt;</span> <span class="pre">7</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">'a'</span> <span class="pre">&gt;</span> <span class="pre">'b'</span></code></p>
+</td>
 </tr>
 <tr class="row-odd"><td>Less than (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>)</td>
 <td>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the left-hand operand is less than the right-hand operand, and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</td>
 <td><p class="first"><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">7</span></code></p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">'a'</span> <span class="pre">&lt;</span> <span class="pre">'b'</span></code></p>
+</td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">&lt;</span> <span class="pre">5</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">'b'</span> <span class="pre">&lt;</span> <span class="pre">'a'</span></code></p>
 </td>
 </tr>
 <tr class="row-even"><td>Greater than or equal (<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>)</td>
@@ -211,6 +231,9 @@ false
 <p><code class="docutils literal notranslate"><span class="pre">'b'</span> <span class="pre">&gt;=</span> <span class="pre">'a'</span></code></p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">'b'</span> <span class="pre">&gt;=</span> <span class="pre">'b'</span></code></p>
 </td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&gt;=</span> <span class="pre">7</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">'a'</span> <span class="pre">&gt;=</span> <span class="pre">'b'</span></code></p>
+</td>
 </tr>
 <tr class="row-odd"><td>Less than or equal (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>)</td>
 <td>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the left-hand operand is less than or equal to the right-hand operand, and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</td>
@@ -218,6 +241,9 @@ false
 <p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">'a'</span> <span class="pre">&lt;=</span> <span class="pre">'b'</span></code></p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">'a'</span> <span class="pre">&lt;=</span> <span class="pre">'a'</span></code></p>
+</td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">'b'</span> <span class="pre">&lt;=</span> <span class="pre">'a'</span></code></p>
 </td>
 </tr>
 </tbody>

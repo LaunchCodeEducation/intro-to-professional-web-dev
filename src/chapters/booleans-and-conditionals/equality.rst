@@ -8,7 +8,7 @@ Loose Equality With ``==``
 
 .. index:: equality, ==
 
-In the section :ref:`booleans`, we learned about the comparison operators ``==`` and ``!=``, which test whether two values are equal or not equal, respectively. We also tipped you off to some quirks of the ``==`` operator. Specifically, when its operands are of different types, then the returned boolean value may not be what you expect.
+In the section :ref:`booleans`, we learned about the comparison operators ``==`` and ``!=``, which test whether two values are equal or not equal, respectively. However, there are some quirks with using the ``==`` operator, which occur when we use ``==`` to compare different data types.
 
 .. admonition:: Example
 
@@ -29,7 +29,8 @@ In the section :ref:`booleans`, we learned about the comparison operators ``==``
 .. index::
    single: equality; loose
 
-When we give ``==`` operands of different data types, it will still try to make a comparison. In order to properly do so, the values must be both be of the same type. JavaScript will implicitely convert the operands so that they are of the same type, and then compare the converted values to generate ``true`` or ``false``. For this reason, the ``==`` operator is often said to measure **loose equality**.
+
+In order to properly make a comparison, the two operands must be the same type. If the two operands to ``==`` are of different data types, Javascript will implicitly convert the operands so that the values are of the same data types before comparing the two. For this reason, the ``==`` operator is often said to measure **loose equality**.
 
 Type conversions with ``==`` are carried out according to a `complex set of rules <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using>`_, and while many of these conversions make some sense, others do not. 
 
@@ -54,9 +55,9 @@ For example, ``Number("7")`` returns ``7``, so it makes some sense that ``7 == "
 .. index::
    single: equality; non-transitive
 
-This example demonstrates that ``==`` is **non-transitive**. We intuitively think of the concept of equality as being transitive. In other words, if A and B are equal, and B and C are equal, then A and C should also be equal. The example above demonstrates that this is **not** the case for the ``==`` operator. 
+The == operator is **non-transitive**. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is *not* the case for the == operator.
 
-Since ``==`` does not follow rules that we typically associate with quality, unexpected results can occur when relying on it in our programs. Thankfully, JavaScript provides another operator that returns more predictable results.
+Since ``==`` does not follow rules that we typically associate with equality, unexpected results may occur if ``==`` is used in a program. Thankfully, JavaScript provides another operator that returns more predictable results.
 
 Strict Equality With ``===``
 ----------------------------
@@ -90,7 +91,7 @@ For this reason, the ``===`` operator is often said to measure **strict equality
 
 Just as equality operator ``==`` has the inequality operator ``!=``, there is also a strict inquality operator, ``!==``. The boolean expression ``a !== b`` returns ``true`` when the two operands are of different types, or if they are of the same type and have different values. 
 
-.. tip:: Use ``===`` and ``!==`` whenever possible. In this book we will use these strict operators over the loose operators from now on.
+.. tip:: USE ``===`` AND ``!==`` WHENEVER POSSIBLE. In this book we will use these strict operators over the loose operators from now on.
 
 Check Your Understanding
 ------------------------
@@ -112,7 +113,7 @@ Check Your Understanding
 
    What is the difference between ``==`` and ``===``?
 
-   #. There is no difference; they work exactly the same
-   #. Only ``===`` throws an error if its arguments are of different types
-   #. ``==`` will try to convert values of different types to be the same type, while ``===`` does no such conversion
-   #. ``==`` works with all data types, while ``===`` works only with strings
+   #. There is no difference. They work exactly the same.
+   #. Only ``===`` throws an error if its arguments are of different types.
+   #. ``==`` converts values of different types to be the same type, while ``===`` does not.
+   #. ``==`` works with all data types, while ``===`` does not.
