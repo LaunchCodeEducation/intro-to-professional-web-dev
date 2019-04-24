@@ -9,6 +9,9 @@ of arrays? Well yes we can.... Get ready to venture into a multi-dimensional uni
 A **multi-dimensional array** is an array of arrays, meaning that the values inside the array are also arrays.
 The *inner* arrays can store other values such as strings, numbers, or even more arrays.
 
+.. figure:: figures/multi-dimensional-array-example.jpg
+   :alt: A label, synonyms, pointing to an array that contains arrays at it's four indexes. Each inner array has a list of words that are synonyms.
+
 Two Dimensional Arrays
 ----------------------
 The simplest form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
@@ -16,9 +19,7 @@ spreadsheet with rows and columns. To access items in a two dimensional array us
 two indexes ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
 or the "column".
 
-.. note:: The table and row analogy is used to help visualize a two dimensional array, however it's not a perfect analogy because there are no language rules forcing the inner arrays to all have the same length. The inner arrays are seperate arrays, possibly with varying lengths, that can be altered independently.
-
-TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)
+.. note:: The row and column analogy is used to help visualize a two dimensional array, however it's not a perfect analogy because there are no language rules forcing the inner arrays to all have the same length. The inner arrays are seperate arrays, possibly with varying lengths, that can be altered independently.
 
 .. admonition:: Example
 
