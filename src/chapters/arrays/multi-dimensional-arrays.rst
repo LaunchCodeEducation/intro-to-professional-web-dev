@@ -11,9 +11,9 @@ The *inner* arrays can store other values such as strings, numbers, or even more
 
 Two Dimensional Arrays
 ----------------------
-The simplist form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
+The simplest form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
 spreadsheet with rows and columns. To access items in a two dimensional array use square bracket notation and
-two indexs ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
+two indexes ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
 or the "column".
 
 .. note:: The table and row analogy is used to help visualize a two dimensional array, however it's not a perfect analogy because there are no language rules forcing the inner arrays to all have the same length. The inner arrays are seperate arrays, possibly with varying lengths, that can be altered independently.
