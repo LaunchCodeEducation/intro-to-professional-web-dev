@@ -4,9 +4,10 @@ Multi-Dimensional Arrays
 Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
 of arrays? Well yes we can.... Get ready to venture into a multi-dimensional universe.
 
-A **multi-Dimensional array** is an array of arrays, meaning that the values inside the *outer* array are also arrays.
-The *inner* arrays can store other values such as strings or numbers. Multi-dimensional arrays are sometimes called
-nested arrays because again there are arrays nested inside of an array.
+.. index:: ! multi-dimensional array
+
+A **multi-dimensional array** is an array of arrays, meaning that the values inside the array are also arrays.
+The *inner* arrays can store other values such as strings, numbers, or even more arrays.
 
 Two Dimensional Arrays
 ----------------------
@@ -41,7 +42,7 @@ TODO: FIGURE showing array of arrays like a spreadsheet (what to put in it?)
       Ellen Ochoa
       Winston Scott
 
-Multi-dimensions and Array Methods
+Multi-Dimensions and Array Methods
 ----------------------------------
 Both the inner and outer arrays in a multi-dimensional array are still altered with array
 methods.
