@@ -1,11 +1,37 @@
 Respositories and Commits
 =========================
 
-In order to get started with a git repository, the programmer must first create one. The command for doing so is ``git init``.
+Create a Repository
+----------------------
 
-Any time a signifcant change in functionality is made, a commit should be made.
+To get started with a git repository, the programmer must first create one.
+To create a git repository, the programmer navigates to their project directory and uses the command ``git init``, like so:
 
-If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process. Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
+.. sourcecode:: bash
+
+   Students-Computer:~ student$ mkdir homework
+   Students-Computer:~ student$ cd homework
+   Students-Computer:homework student$ git init
+      Initialized empty Git repository in /Users/student/homework/.git/
+
+Now the programmer is ready to code away! 
+
+Making Commits
+-------------------
+
+After a while, the programmer has made a lot of changes and saved their code files many times over.
+So when do they make a commit to their repository?
+
+.. pull-quote::
+
+   The general rule of thumb is that any time a significant change in      functionality is made, a commit should be made.
+
+If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process. 
+
+.. admonition:: Note
+
+   Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
+
 The procedure for making a commit to a Git repository includes 4 stages.
 
 1. ``git status`` gives the programmer information about files that have been changed.
@@ -15,10 +41,59 @@ The procedure for making a commit to a Git repository includes 4 stages.
 
 If the steps above are followed correctly, the programmer will find their latest commit at the top of the log.
 
-When using ``git status``, the output is split into two categories: modified tracked files and modified untracked files.
-Tracked means that Git has an awareness of the file and untracked means that it is an entirely new file that Git has not seen before.
+Here is how the process will look in the terminal:
 
-What if a programmer wants to start collaborating with their colleagues on a new project? They might need to start with the work that one of their colleagues has already done.
-In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
-They can clone a remote repository by using the ``git clone`` command. Github and other online Git systems give users the option to clone the repository through HTTP or SSH depending on their Github profile is set up.
-Throughout this book, HTTP will be used.
+.. sourcecode:: bash
+
+   Students-Computer:homework student$ git status
+   On branch master
+
+   Initial commit
+
+   Untracked files:
+     (use "git add <file>..." to include in what will be committed)
+
+           learning-git.js
+
+   nothing added to commit but untracked files present (use "git add" to track)
+   Students-Computer:homework student$ git add .
+   Students-Computer:homework student$ git commit -m "My first commit"
+    [master (root-commit) 2c1e0af] My first commit
+     1 file changed, 1 insertion(+)
+     create mode 100644 learning-git.js
+   Students-Computer:homework student$ git log
+   commit 2c1e0af9467217d76c7e3c48bcf9389ceaa4714b
+   Author: Student <lc101.student@email.com>
+   Date:  Wed Apr 24 14:44:59 2019 -0500
+
+       My first commit
+
+To break down what happens in a commit even further:
+
+When using ``git status``, the output shows two categories: modified tracked files and modified untracked files.
+Modified tracked means that Git the file exists in the repository already, but is different than the version in the repository.
+Modified untracked means that it is a new file that is not currently in the repository.
+
+``git add`` adds files to the commit, but it does not commit those files.
+By using ``git add .``, all the modified files were added to the commit.
+If a programmer only wants add one modified file, they can do so.
+
+``git commit`` actually commits the files that were added to the repository.
+By adding ``-m "My first commit"``, a comment was added to the commit.
+This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
+
+``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
+This hash or value that is a key for Git to refer to the version.
+Programmers rarely use these hashes unless they want to roll back to that version. 
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What git command is NOT a part of the commit process?
+
+   #. ``git add``
+   #. ``git log``
+   #. ``git status``
+   #. ``git push``

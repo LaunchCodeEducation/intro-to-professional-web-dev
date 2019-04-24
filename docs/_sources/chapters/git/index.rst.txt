@@ -5,6 +5,6 @@ Git
    
    background
    repositories-and-commits
+   remote-repository
    branches
    merge
-   remote-repository
