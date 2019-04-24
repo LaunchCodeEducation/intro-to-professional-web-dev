@@ -15,11 +15,11 @@ The *inner* arrays can store other values such as strings, numbers, or even more
 Two Dimensional Arrays
 ----------------------
 The simplest form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
-spreadsheet with rows and columns. To access items in a two dimensional array use square bracket notation and
+spreadsheet with rows and columns. To access items in a two dimensional array, use square bracket notation and
 two indexes ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
 or the "column".
 
-.. note:: The row and column analogy is used to help visualize a two dimensional array, however it's not a perfect analogy because there are no language rules forcing the inner arrays to all have the same length. The inner arrays are seperate arrays, possibly with varying lengths, that can be altered independently.
+.. note:: The row and column analogy is used to help visualize a two dimensional array, however it's not a perfect analogy. There are no specific JavaScript language rules forcing the inner arrays to all have the same length. The inner arrays are separate arrays that can be of different length.
 
 .. admonition:: Example
 
@@ -64,7 +64,7 @@ methods.
 
       const newCrew = ['Mark Polansky', 'Robert Curbeam', 'Joan Higginbotham'];
 
-      // Add a new crew array to end of shuttleCrews
+      // Add a new crew array to the end of shuttleCrews
       shuttleCrews.push(newCrew);
       console.log(shuttleCrews[3][2]);
 

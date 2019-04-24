@@ -89,6 +89,6 @@ Check Your Understanding
 
       const classes = ["science, computer, art"];
 
-      const teachers = ["Jones", "Willoughby", "Rhodes";
+      const teachers = ["Jones", "Willoughby", "Rhodes"];
 
    How can you change the ``classes`` array declaration to have the same number of items as the ``teachers`` array?
