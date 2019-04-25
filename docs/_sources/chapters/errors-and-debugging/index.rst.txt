@@ -11,3 +11,4 @@ Errors and Debugging
    debugging-logic-errors
    how-to-avoid-debugging
    asking-good-questions
+   exercises
