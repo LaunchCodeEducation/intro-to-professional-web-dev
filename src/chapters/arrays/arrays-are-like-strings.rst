@@ -18,6 +18,10 @@ Notice the values in the below figure each have an index value.
 
 Declaring an Array
 ------------------
+
+.. index::
+   single: array; literal
+
 There are multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``.
 Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``.
 If there are no items inside the brackets, then the array is considered empty.

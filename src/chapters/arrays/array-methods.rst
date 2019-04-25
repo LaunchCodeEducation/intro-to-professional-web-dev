@@ -1,6 +1,9 @@
 Array Methods
 ==============
 
+.. index::
+   single: array; methods
+
 As with strings, JavaScript provides us with useful **methods** for arrays.
 Unlike strings, arrays are *mutable* and can be changed.
 

@@ -49,6 +49,9 @@ The general syntax for this method is:
 ``split`` is actually a string method, but it complements the array method
 ``join``.
 
+.. index:: ! delimiter
+   single: array; delimiter
+
 ``split`` divides a string into smaller pieces, which are stored in a new
 array. The **delimiter** argument determines how the string is broken apart.
 
