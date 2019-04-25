@@ -1,16 +1,16 @@
 Asking Good Questions
 =====================
 
-If employing the strategies outlined in this chapter still don't help you find a bug in your code, you always have other programmers to reach out to.
+If you still cannot find the bug in your code after using the strategies outlined in this chapter, do not hesitate to reach out to other programmers.
 
-Whether you are asking a question of your teaching assistant, another student, or a stranger in an online forum, you should first be able to answer the 3 questions discussed in this section.
+Whether you are asking your teaching assistant, another student, or a stranger in an online forum, you should first be able to answer the 3 questions outlined below.
 
 Not only will these questions help others assist you more directly, but they may just lead you to the answer yourself! 
 
 What is the problem with your code?
 -----------------------------------
 
-You should be able to state in general terms what the error that you are experiencing is. 
+You should be able to state in general terms the error you are experiencing.
 
 **Bad:** "My program is broken."
 

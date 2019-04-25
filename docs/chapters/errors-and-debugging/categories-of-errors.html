@@ -79,32 +79,32 @@
     
   <div class="section" id="categories-of-errors">
 <h1>6.2. Categories of Errors<a class="headerlink" href="#categories-of-errors" title="Permalink to this headline">¶</a></h1>
-<p>It is useful to distinguish between categories of errors in order to identify and fix them more quickly. Each category of error manifests itself in a different way, and different strategies may be more useful for certain categories of errors.</p>
+<p>It is useful to distinguish between categories of errors in order to quickly identify and fix them. Each category manifests itself in a different way, and some strategies may be more useful for certain types of errors.</p>
 <div class="section" id="stages-of-javascript-execution">
 <h2>6.2.1. Stages of JavaScript Execution<a class="headerlink" href="#stages-of-javascript-execution" title="Permalink to this headline">¶</a></h2>
 <p>In order to understand programming errors it is useful to understand the two stages of code execution.</p>
 <div class="section" id="parsing">
 <h3>6.2.1.1. Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">¶</a></h3>
-<p id="index-0">Before code can be run, it must first be parsed, or validated and prepared for execution. This is known as the <strong>parsing stage</strong>, and you can think of it as the analog of a pre-flight check for a plane or space craft.</p>
-<p>A lot of detailed, low-level tasks are carried out during this process, but it is enough for us to understand that during parsing is when the syntax and structure of the code is evaluated.</p>
+<p id="index-0">Before code can be run, it must first be parsed, or validated and prepared for execution. This is known as the <strong>parsing stage</strong>, and you can think of it like the pre-flight check for a plane or space craft.</p>
+<p>A lot of detailed, low-level tasks are carried out during this process, but it is enough for us to understand that parsing verifies the syntax and structure of the code.</p>
 </div>
 <div class="section" id="execution">
 <h3>6.2.1.2. Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h3>
-<p>Once our code has been parsed, its syntax has been verified as correct and the program is ready to run. The <strong>execution stage</strong> is the point at which the actions we have written into our program—printing output to the console, prompting the user for input, making calculations, etc.—are actually carried out. You can this of this stage as the analog of a plane taking flight.</p>
+<p>Once our code has been parsed, its syntax has been verified and the program is ready to run. The <strong>execution stage</strong> is when the actions written into our program—printing to the console, prompting the user for input, making calculations, etc.—are actually carried out. You can think of this stage as the plane taking flight.</p>
 </div>
 </div>
 <div class="section" id="syntax-errors">
 <h2>6.2.2. Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">JavaScript can only execute a program if the program is syntactically correct. <strong>Syntax</strong> refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punchation.</p>
-<p id="index-2">A <strong>syntax error</strong> is a violation of the formal syntax rules for a given language.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p id="index-2">A <strong>syntax error</strong> is a violation of the formal rules for a given language.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title">Examples</p>
 <p>this sentence contains a syntax error.</p>
 <p class="last">So does this one</p>
 </div>
 <p>For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more more syntax errors.</p>
 <p>Programming languages are not so forgiving. If there is a single syntax error anywhere in your program, JavaScript will display an error message and quit immediately. Since syntax is validated during the parsing stage, syntax errors are the first we see when running a program.</p>
-<p>During the first few weeks of your programming career, you will probably spend a lot of time tracking down syntax errors. However, as you gain experience, you will make fewer errors and you will also be able to find your errors faster.</p>
+<p>During the first few weeks of your programming career, you will probably spend a lot of time tracking down syntax errors. However, as you gain experience, you will make fewer errors, and you will find your errors faster.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
 <p>Find the syntax errors in the program.</p>
@@ -121,8 +121,8 @@
 </div>
 <div class="section" id="runtime-errors">
 <h2>6.2.3. Runtime Errors<a class="headerlink" href="#runtime-errors" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-3"></span><p id="index-4">The second category of error is a <strong>runtime error</strong>, so called because the error does not appear until you run the program. These errors are also called <strong>exceptions</strong> because they usually indicate that something exceptional (and bad) has happened.</p>
-<p>Runtime errors occur during the execution phase of a program. This means that we will only encounter a runtime error once the syntax of our program has been validated. We will only see runtime errors after we have fixed any syntax errors.</p>
+<span class="target" id="index-3"></span><p id="index-4">The second category consists of <strong>runtime errors</strong>, so called because they do not appear until you run the program. These errors are also called <strong>exceptions</strong> because they usually indicate that something exceptional (and bad) has happened.</p>
+<p>Runtime errors occur during the execution phase of a program, so we will only encounter them after the syntax of our program is completely correct.</p>
 <p>A common runtime error occurs when we try to use a variable that has not been created yet. This can happen if you misspell the name of a variable, as the following example shows.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
@@ -146,12 +146,12 @@
 </pre></div>
 </div>
 </div>
-<p>The syntax of our program is correct, but when the program executes an error occurs when it reaches line 2. We attempt to print the value of the variable <code class="docutils literal notranslate"><span class="pre">firstname</span></code>, but such a variable does not exist.</p>
+<p>The syntax of our program is correct, but when the program executes, an error occurs at line 2. We attempt to print the value of the variable <code class="docutils literal notranslate"><span class="pre">firstname</span></code>, but such a variable does not exist.</p>
 </div>
 <div class="section" id="logic-errors">
 <h2>6.2.4. Logic Errors<a class="headerlink" href="#logic-errors" title="Permalink to this headline">¶</a></h2>
-<p id="index-5">The third type of error is the <strong>logic error</strong>. If there is a logic error in your program, it will run successfully in the sense that the computer will not generate any error messages. However, the program will not work as intended.</p>
-<p>With a logic error, the problem is that the program you wrote is not the program you wanted to write. For example, say you were writing a program to calculate your daily earnings based on your weekly salary. You might write a program like the following:</p>
+<p id="index-5">The third type of error is the <strong>logic error</strong>. If there is a logic error in your program, it will run successfully and not generate any error messages. However, the program will not work as intended.</p>
+<p>The characteristic of logic errors is that the program you wrote is not the program you wanted. For example, say you want a program to calculate your daily earnings based on your weekly salary. You might try the following:</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">weeklyPay</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
@@ -165,8 +165,8 @@
 </pre></div>
 </div>
 </div>
-<p>The result surprises you because you thought you were making at least $100 per day (you work Monday thru Friday). According to this program, though, you are making about $85 per day. The error is a logic one because you divided your weekly pay by 7. It would have been more accurate to divide your weekly pay by 5, since that is how many days a week you are actually working.</p>
-<p>Identifying logic errors can be tricky because it requires us to work backward by looking at the output of the program and trying to figure out what it is doing. There are no error messages to help us identify the issue.</p>
+<p>The result surprises you because you thought you were making at least $100 per day (you work Monday through Friday). According to this program, though, you are making about $85 per day. The error is a logic one because you divided your weekly pay by 7. It would have been more accurate to divide your weekly pay by 5, since that is how many days a week you come to work.</p>
+<p>Identifying logic errors can be tricky because unlike syntax and runtime problems, there are no error messages to help us identify the issue. We must examine the output of the program and work backward to figure out what it is doing wrong.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>6.2.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
@@ -175,7 +175,7 @@
 <p>Label each of the following as either a syntax, runtime, or logic error.</p>
 <ol class="last arabic simple">
 <li>Trying to use a variable that has not been defined.</li>
-<li>Leaving off a close-parens, <code class="docutils literal notranslate"><span class="pre">)</span></code>, when calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code>.</li>
+<li>Leaving off a close parenthesis, <code class="docutils literal notranslate"><span class="pre">)</span></code>, when calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code>.</li>
 <li>Forgetting to divide by 100 when printing a percentage amount.</li>
 </ol>
 </div>

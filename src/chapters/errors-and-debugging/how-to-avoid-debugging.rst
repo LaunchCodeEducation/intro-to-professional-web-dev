@@ -6,17 +6,19 @@ While debugging is an unavoidable part of programming, you can reduce the number
 Start Small
 -----------
 
-This is probably the single biggest piece of advice for programmers at every level. It can be tempting to sit down and try to write an entire program at once. But when the program does not work, then you have a large number of possibilities for where things might have gone wrong. The more code, the more possibilities exist. Where to start? Where to look first? How to figure out what went wrong? 
+This is probably the best piece of advice for programmers at every level. It can be tempting to sit down and write an entire program all at once. However, this leaves a large number of possibilities when the program does not work. The errors could be hiding anywhere in the code The more code, the more possibilities exist. Where to start? How to figure out what went wrong? 
 
-When you start work on a large program, it is best to break it down into smaller steps and then start coding just one very small part of it. You might write just 2 lines of code and then make sure that the program runs properly. 
+When you start work on a large program, break the process down into smaller steps. Begin coding one very small part---even if that's just 2 lines of code. Then make sure the program runs properly before adding the next small part.
 
-Regularly running your code is quick and easy, and gives you immediate feedback about whether what you have just done is okay or not. 
+Regularly running your code is quick and easy, and doing so gives you immediate feedback about how the code will run.
 
 Keep It Working
 ---------------
 
-Once you have a small part of your program working, the next step is to figure out something small to add to it. If you keep adding small pieces to the program, one at a time, it is much easier to figure out what went wrong. Any error that occurs was almost certainly introduced by the last line or two of code that was added. Less new code means its easier to figure out where the problem is.
+Once you have a small part of your program working, the next step is to figure out something small to add to it. If you keep adding small pieces to the program, one at a time, it is much easier to figure out what went wrong. Any error that occurs was almost certainly introduced by the last line or two of code that was added. Less new code makes it easier to locate the problem.
 
-This notion of "get something working and keep it working" is a mantra that you can repeat throughout your career as a programmer. It's a great way to avoid frustration and write working code with less stress. 
+Here is your new mantra, "Get something working and keep it working." Repeat this throughout your career as a programmer. It's a great way to avoid frustration and reduce stress while creating amazing (and working) code.
 
-Plus, every time you have a little success, your brain releases a tiny bit of a chemical that makes you happy. So, you can keep yourself happy and make programming more enjoyable by creating lots of small victories for yourself.
+.. pull-quote:: Get something working and keep it working.
+
+`Research has shown <https://news.umich.edu/dopamine-new-theory-integrates-its-role-in-learning-motivation/>`_ that with every little success, your brain releases a tiny bit of a chemical that makes you happy. So you can keep yourself happy and make programming more enjoyable by creating lots of small victories for yourself.

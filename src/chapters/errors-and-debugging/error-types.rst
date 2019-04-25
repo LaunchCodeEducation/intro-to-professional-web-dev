@@ -7,9 +7,9 @@ Error Types
    single: error; runtime
    single: object; built-in
 
-An **error type** is the classification that JavaScript uses internally to group errors based on their cause. In future lessons, we will come to understand that an error type is actually something called a **built-in object**. For now, however, understanding the different types of errors will help us become faster at debugging.
+An **error type** is the classification that JavaScript uses to group errors based on their cause. In future lessons, we will learn that an error type is actually something called a **built-in object**. For now, understanding the different types of errors will help us become faster at debugging.
 
-Each error that JavaScript reports has an error type, and the type is included in the error message. For example, one of the messages we saw previously reported the error type as ``SyntaxError``.
+Each error that JavaScript reports has an error type, and the type is included in the error message. For example, :ref:`an earlier message <syntax-error>` reported the error type as ``SyntaxError``.
 
 ::
 
@@ -47,7 +47,7 @@ The following table describes all JavaScript error types. Some of these relate t
        
           console.log("hello";
 
-     - The call to ``console.log`` does not have a required close-parens.
+     - The call to ``console.log`` does not have a required close parenthesis.
    * - ``ReferenceError``
      - Occurs when a non-existent variable is used/referenced.
      - 

@@ -1,14 +1,14 @@
 Debugging Logic Errors
 ======================
 
-We have seen that we can debug runtime and syntax errors using the error messages that they produce. Logic errors, however, do not generally produce error messages. This can make them much tougher to debug.
+We can debug runtime and syntax errors using the error messages produced. Logic errors, however, do not generally produce error messages. This sometimes makes them tougher to debug.
 
-While we can't provide a step-by-step approach that will apply to every logic error you will encounter, we *can* give you some strategies to employ. Two such strategies---using debugger tools and writing tests---will be covered in future lessons. In this section, we introduce basic but effective way to debug logic errors.
+While we can't provide a step-by-step approach that applies to every possible logic error, we *can* give you some solid strategies. Two such strategies---using debugger tools and writing tests---will be covered in future lessons. In this section, we start with a basic and effective way to debug logic errors.
 
 Printing Values
 ---------------
 
-When your code runs but you don't end up with the expected results, it is important to look at the values of the variables being used.
+When your code runs but doesn't produce the expected results, it is important to check the values of the variables being used.
 
 Let's look at a program that has a logical bug.
 
@@ -74,7 +74,7 @@ Running this with an input of 100 gives the output:
    string
    Degrees K: 100273.15
 
-That's it! The variable ``degreesC`` has the value 100 that we entered, but it is a string rather than a number. So when we set ``degreesK`` with the formula ``degreesC + 273.15``, we are actually performing string concatenation instead of addition: ``"100" + 273.15`` is ``"100273.15"``.
+That's it! The variable ``degreesC`` has the value ``100``, but it is a string rather than a number. So when we set ``degreesK`` with the formula ``degreesC + 273.15``, we are actually performing string concatenation instead of addition: ``"100" + 273.15`` is ``"100273.15"``.
 
 We can fix our program by converting the user's input to the number data type.
 
