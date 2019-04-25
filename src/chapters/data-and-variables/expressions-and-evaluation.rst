@@ -15,7 +15,7 @@ The *evaluation* of an expression produces a value, known as the **return value*
 
 Expressions need to be evaluated when the code executes in order to determine the return value, or specific piece of data that should be used. Evaluation is the process of computing the return value.
 
-If you ask JavaScript to print an expression using ``console.log()``, the interpreter **evaluates** the expression and displays the result.
+If you ask JavaScript to print an expression using ``console.log``, the interpreter **evaluates** the expression and displays the result.
 
 .. admonition:: Example
 
