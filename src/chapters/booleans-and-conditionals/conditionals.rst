@@ -17,7 +17,7 @@ In such a program, JavaScript uses booleans to represent the conditional "the bi
 
 The JavaScript construct that enables such behavior is a **conditional**.
 
-``if`` Statements
+**if** Statements
 -----------------
 
 .. index:: ! if, code block
@@ -86,7 +86,7 @@ Aside from being more aesthetically pleasing, the first version also makes it ea
 
    We will generally use curly brackets for all conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.
 
-``else`` Clauses
+**else** Clauses
 ----------------
 
 .. index:: conditional, ! else, ! if-else, branching
@@ -124,7 +124,7 @@ This structure is known as an **if-else statement**, and it provides a mechanism
    :alt: A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement. If the condition is true, one code block executes. If the condition is false, a different code block executes.
 
 
-``else if`` Statements
+**else if** Statements
 ----------------------
 
 .. index:: conditional, ! else if

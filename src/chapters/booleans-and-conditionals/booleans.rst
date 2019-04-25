@@ -66,11 +66,11 @@ Boolean Conversion
 
 .. index:: ! Boolean(), type conversion
 
-As with the number and string data types, the boolean type also has a conversion function, ``Boolean()``. It works similarly to ``Number()`` and ``String()``, attempting to convert a non-boolean value to a boolean.
+As with the number and string data types, the boolean type also has a conversion function, ``Boolean``. It works similarly to the ``Number`` and ``String`` functions, attempting to convert a non-boolean value to a boolean.
 
 .. admonition:: Try It!
 
-   Explore how ``Boolean()`` converts various non-boolean values.
+   Explore how ``Boolean`` converts various non-boolean values.
 
    .. sourcecode:: js
 
@@ -85,7 +85,7 @@ As with the number and string data types, the boolean type also has a conversion
 
 .. admonition:: Question
 
-   Under which conditions does ``Boolean()`` convert a string to ``true``?
+   Under which conditions does ``Boolean`` convert a string to ``true``?
 
    #. Only when the string is ``"true"``.
    #. Whenever the string contains any non-whitespace character.
