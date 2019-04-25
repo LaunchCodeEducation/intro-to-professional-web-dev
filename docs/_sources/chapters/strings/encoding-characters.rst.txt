@@ -61,7 +61,9 @@ In summary, strings are stored in a computer using the following process:
 #. Use a character encoding, such as ASCII, to convert each of the characters to an integer.
 #. Convert each integer to a series of bits using decimal-to-binary integer conversion.
 
-.. note:: While JavaScript uses the UTF-16 encoding, we will rarely need anything outside of its ASCII subset. Thus, we'll usually talk about "ASCII codes" in JavaScript, even though it technicall supports a broader ranges of character codes.
+.. admonition:: Fun Fact
+
+   JavaScript uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about "ASCII codes" in JavaScript.
 
 Character Encodings in JavaScript
 ---------------------------------

@@ -31,6 +31,9 @@ While ``nonprofit.toLowerCase()`` evaluated to ``"launchcode"``, the value of ``
 Common Methods
 --------------
 
+.. index::
+   single: string; methods
+
 Here we present the most commonly-used string methods. There are `other string methods documentated at MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2>`_.
 
 .. list-table:: Common String Methods
