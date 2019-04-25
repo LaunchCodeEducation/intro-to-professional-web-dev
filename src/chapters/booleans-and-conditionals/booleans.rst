@@ -23,7 +23,9 @@ Boolean Values
 
 The JavaScript data type for storing true and false values is called ``boolean``, named after the British mathematician, George Boole. 
 
-.. note:: George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_, which is the basis of all modern computer arithmetic. 
+.. admonition:: Fun Fact
+
+   George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_, which is the basis of all modern computer arithmetic. 
 
 There are only two **boolean values**---``true`` and ``false``. JavaScript is case-sensitive, so ``True`` and ``False`` are not valid boolean values.
 
