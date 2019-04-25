@@ -10,6 +10,7 @@ Arrays
    array-methods
    more-array-methods
    even-more-array-methods
+   array-methods-v3
    multi-dimensional-arrays
    exercises
    studio

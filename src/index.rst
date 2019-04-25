@@ -7,7 +7,7 @@ Contents
 Chapters
 ^^^^^^^^
 
-.. toctree:: 
+.. toctree::
    :numbered:
    :maxdepth: 2
    :name: chapterstoc
@@ -44,7 +44,8 @@ Appendices
 
    appendices/about-this-book/index.rst
    appendices/style-guide.rst
-   
+   appendices/array-method-examples/index.rst
+
 .. toctree::
    :hidden:
 
