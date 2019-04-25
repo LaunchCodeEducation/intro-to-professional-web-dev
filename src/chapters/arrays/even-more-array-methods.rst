@@ -7,7 +7,7 @@ are used less often and are not as straighforward as the other methods.
 ``split``, ``join`` and ``splice`` create new arrays which can be assigned to
 a variable.
 
-The ``join`` Method
+The **join** Method
 ---------------------
 
 The general syntax for this method is:
@@ -37,7 +37,7 @@ determines the string that "glues" the array elements together.
     console.log(newArray);
     //prints 'hello_world_!'
 
-The ``split`` Method
+The **split** Method
 ---------------------
 
 The general syntax for this method is:
@@ -71,7 +71,7 @@ array. The **delimiter** argument determines how the string is broken apart.
    console.log(arr);
    //prints ['R', 'u', 't', 'a', 'b', 'a', 'g', 'a']
 
-The ``splice`` Method
+The **splice** Method
 ----------------------
 
 The general syntax for this method is:

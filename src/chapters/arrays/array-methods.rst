@@ -103,7 +103,7 @@ complete lists can be found here:
        | No arguments are placed inside the parentheses ``()``.
      - ``sort`` examples are explored below.
 
-``sort`` Examples
+**sort** Examples
 -----------------
 
 The general syntax for this method is:

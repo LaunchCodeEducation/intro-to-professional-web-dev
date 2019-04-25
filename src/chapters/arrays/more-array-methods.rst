@@ -47,7 +47,7 @@ as frequently as ``includes``, ``indexOf``, ``length``, ``reverse`` and
    :header-rows: 1
 
    * - Methods That Add Items
-     - Description & *Syntax*
+     - Description & ``Syntax``
      - Examples
    * - ``push``
      - | ``arr.push(item1, item2, ...)``
@@ -87,7 +87,7 @@ as frequently as ``includes``, ``indexOf``, ``length``, ``reverse`` and
    :header-rows: 1
 
    * - Methods That Create New Arrays
-     - Description & *Syntax*
+     - Description & ``Syntax``
      - Examples
    * - ``concat``
      - | ``arrayName.concat(otherArray1, otherArray2, ...)``
@@ -101,7 +101,7 @@ as frequently as ``includes``, ``indexOf``, ``length``, ``reverse`` and
        | Returns selected entries of an array into a new array.
      - ``slice`` examples are explored below.
 
-``concat`` Examples
+**concat** Examples
 -------------------
 
 The general syntax for this method is:
@@ -134,7 +134,7 @@ NOT alter the original arrays.
    console.log(arr);
    //prints [1, 2, 3]
 
-``slice`` Examples
+**slice** Examples
 -------------------
 
 The general syntax for this method is:
