@@ -1,8 +1,13 @@
-Booleans and Conditionals
-=========================
+Making Decisions With Conditionals
+==================================
 
 .. toctree::
    :maxdepth: 3
 
-   exercises.rst
+   booleans
+   equality
+   logical-operators
+   conditionals
+   nested-conditionals
+   exercises
    
