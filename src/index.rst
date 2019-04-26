@@ -43,9 +43,7 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
-   appendices/about-this-book/index.rst
-   appendices/style-guide.rst
-   appendices/array-method-examples/index.rst
+   appendices/array-method-examples/index
    appendices/style-guide
    appendices/string-method-examples/index
    appendices/about-this-book
