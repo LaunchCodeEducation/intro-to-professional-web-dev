@@ -7,9 +7,9 @@ The general syntax for this method is:
 
 .. sourcecode:: js
 
-   stringName.indexOf(character);
+   stringName.indexOf(substr);
 
-Given a character (a string of length 1), this method returns the integer index of the *first* occurence of the character in the string. If the character does not occur in the string, -1 is returned.
+Given a candidate substring, this method returns the integer index of the *first* occurence of the subtring in the string. If the substring does not occur in the string, -1 is returned.
 
 .. admonition:: Example
    
@@ -20,6 +20,9 @@ Given a character (a string of length 1), this method returns the integer index 
 
       // returns -1
       "LaunchCode".indexOf("A");
+
+      // returns 0
+      "dogs and dogs and dogs!".indexOf("dog");
 
 .. admonition:: Example
 

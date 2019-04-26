@@ -46,8 +46,8 @@ Here we present the most commonly-used string methods. You can find documentatio
      - Syntax
      - Description
    * - :ref:`indexOf <string-indexof-examples>`
-     - ``stringName.indexOf(character)``
-     - Returns the index of the first occurence of the character in the string, and returns -1 if the character is not found.
+     - ``stringName.indexOf(substr)``
+     - Returns the index of the first occurence of the substring in the string, and returns -1 if the substring is not found.
    * - :ref:`toLowerCase <string-tolowercase-examples>`
      - ``stringName.toLowerCase()``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.
@@ -56,10 +56,10 @@ Here we present the most commonly-used string methods. You can find documentatio
      - Returns a copy of the given string, with all lowercase letters converted to uppercase.
    * - :ref:`trim <string-trim-examples>`
      - ``stringName.trim()``
-     - Returns a copy of the given string with a leading and trailing whitespace removed.
+     - Returns a copy of the given string with the leading and trailing whitespace removed.
    * - :ref:`replace <string-replace-examples>`
      - ``stringName.replace(searchChar, replacementChar)``
-     - Given a search string ``searchChar`` and a replacement value ``replacementChar``, replace the first occurence of ``searchChar`` replaced by ``replacementChar``.
+     - Returns a copy of ``stringName``, with the first occurence of ``searchChar`` replaced by ``replacementChar``.
    * - :ref:`slice <string-slice-examples>`
      - ``stringName.slice(i, j)``
      - Return the substring consisting of characters from index ``i`` through index ``j-1``.
@@ -69,7 +69,7 @@ Here we present the most commonly-used string methods. You can find documentatio
 Check Your Understanding
 ------------------------
 
-If you haven't aready, read the method detail pages linked in the table above for the methods ``replace``, ``slice``, and ``trim``. Then answer the following questions.
+Follow the links in the table above for the ``replace``, ``slice``, and ``trim`` methods. Review the content and then answer the following questions.
 
 .. admonition:: Question
 
