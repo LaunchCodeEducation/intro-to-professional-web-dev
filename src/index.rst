@@ -15,6 +15,7 @@ Contents
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
+   chapters/booster-rockets/index
 
 .. toctree::
 
@@ -39,7 +40,7 @@ Appendices
 
    appendices/style-guide
    appendices/about-this-book
-   
+
 .. toctree::
    :hidden:
 
