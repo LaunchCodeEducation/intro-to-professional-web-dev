@@ -1,15 +1,10 @@
 Arrays Are Like Strings
 =======================
 
-In the previous chapter we learned in detail how strings are an ordered collection
-of characters that can be accessed by an index. Using String methods we can add, remove,
-replace parts of the collection. What we can’t do is store anything other than characters.
-
 .. index:: ! array
 
-In this chapter we will learn about a more general collection type called an **array**.
-Like strings, arrays are a sequence of values that can be accessed via an ordered index.
-The key difference between strings and arrays is that strings can only contain characters, arrays can store data of any type.
+Arrays are similar to strings, but are a more general collection type. Like strings, **arrays** are a sequence of values that can be
+accessed via an ordered index. Unlike strings, arrays can store data of any type.
 
 Notice the values in the below figure each have an index value.
 
@@ -43,14 +38,16 @@ Array items can also be declared on multiple lines.
       "Vue"
    ];
 
-Dynamic Length
---------------
+Array Length
+------------
+To check the length of an array, use the ``length`` property, just like with strings.
 JavaScript array length is NOT fixed, meaning you can add or remove items dynamically.
 
-.. note:: In other languages, such as Java and C#, arrays are of a static length requiring the
- length of the array to be declared upon creation.
+.. admonition:: Note
 
-To check the length of an array use the ``length`` property, just like with strings.
+   In other languages, such as Java and C#, arrays are of a static length requiring the
+   length of the array to be declared upon creation.
+
 
 .. admonition:: Example
 
@@ -73,21 +70,26 @@ To check the length of an array use the ``length`` property, just like with stri
 
 Varying Data Types
 ------------------
-Not only can you have an array that contains multiple strings or numbers. You can have an array that contains both
-strings and numbers. The standard JavaScript array can hold any combination of values of any type.
-
-.. note:: In other languages such as Java and C# all items in an array have to be of the same type. It’s rare that you would store data of multiple types, because grouped data is usually the same type.
+JavaScript arrays can hold a mixture of values of any type. For example, you can have an array that contains strings, numbers, and bools.
 
 .. sourcecode:: js
 
    const grabBag = ["A string value", true, 99, 105.5];
+
+.. admonition:: Note
+   
+   It’s rare that you would store data of multiple types in the same array, because grouped data is usually the same type. In other languages, such as Java and C#, all items in an array have to be of the same type.
+
+
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   What is the length of these arrays? *Hint look closely at the quotes in the classes array*
+   What is the length of the two arrays?
+   
+   *Hint: look closely at the quotes in the classes array.*
 
    .. sourcecode:: js
 
