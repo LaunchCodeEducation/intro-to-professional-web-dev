@@ -101,3 +101,51 @@ To see detailed examples for a particular method, control-click
    * - :ref:`split <split-examples>`
      - ``stringName.split('delimiter')``
      - Divides a string into smaller pieces, which are stored in a new array.
+
+Check Your Understanding
+------------------------
+
+Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
+``join`` methods. Review the content and then answer the following questions.
+
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: javascript
+
+      let charles = ['coder', 'Tech', 47, 23, 350];
+      charles.sort();
+      console.log(charles);
+
+   a. ``[350, 23, 47, 'Tech', 'coder']``
+   b. ``['coder', 'Tech', 23, 47, 350]``
+   c. ``[23, 47, 350, 'coder', 'Tech']``
+   d. ``[23, 350, 47, 'Tech', 'coder']``
+
+.. admonition:: Question
+
+   | Which statement converts the string ``str = 'LaunchCode students rock!'`` into the array
+   | ``['LaunchCode', 'students', 'rock!']``?
+
+   a. ``str.join(" ");``
+   b. ``str.split(" ");``
+   c. ``str.join("");``
+   d. ``str.split("");``
+
+.. admonition:: Question
+
+   What is printed by the following program?
+
+   .. sourcecode:: js
+
+      let groceryBag = ['bananas', 'apples', 'edamame', 'chips', 'cucumbers', 'milk', 'cheese'];
+      let selectedItems = [];
+
+      selectedItems = classRoster.slice(2, 5).sort();
+      console.log(selectedItems);
+
+   a. ``['chips', 'cucumbers', 'edamame']``
+   b. ``['chips', 'cucumbers', 'edamame', 'milk']``
+   c. ``['cheese', 'chips', 'cucumbers']``
+   d. ``['cheese', 'chips', 'cucumbers', 'edamame']``
