@@ -4,15 +4,13 @@ CSS Structure
 Writing CSS
 -----------
 
-.. index:: ! rule
+.. index:: ! rule, ! selector
 
 Programmers can change a lot of different styling using CSS **rules**.
 A rule includes the selector and a declaration block.
+A **selector** determines which elements will be affected by the rule.
 Inside the declaration block, programmers set CSS properties to specific values.
 CSS has a lot of different properties and it would be impossible to memorize them all.
-
-CSS has two main components: the selector and the declaration block.
-Inside the declaration block, programmers set the style rules.
 
 .. sourcecode:: css
 
@@ -28,12 +26,41 @@ The final selector is the class selector. A class is a group of HTML elements th
 
 The declaration block is a series of initializations of style rules.
 
+CSS style rules cover an infinite amount of possibilities.
+
+Here is an example of how to write the declaration block for internal and external CSS:
+
+.. sourcecode:: css
+
+   selector {
+       property: value;
+       property: value;
+       property: value;
+   }
+
+For inline CSS, the declaration block is inside one line of HTML like so:
+
+.. sourcecode:: html
+
+   <tag style="property:value;property:value;property:value;">content</tag>
+
+
+Every property in CSS has a default value. For example, ``font-color`` defaults to "black".
+For that reason, programmers only need to declare the CSS properties they want to change from the default.
+
+.. note::
+
+   HTML elements also have a default appearance.
+   When creating web pages, we should be aware of which elements are inline elements and which elements are block elements.
+   Inline elements will not start a new line (such as ``<b>``, ``<em>``, and ``<span>``) and block display elements do (such as ``<h1>``, ``<div>``, and ``<p>``).
+
+
 Linking CSS to HTML
 -------------------
 
-To get started with CSS, programmers need to link CSS to HTML.
+To get started with CSS, programmers need to add CSS to HTML.
 
-There are three different places to add CSS in an HTML file:
+There are three different places to add CSS in an HTML file as indicated above:
 
 1. External: The CSS is in a separate file linked to the HTML document in the ``<head>``. External linking of CSS is great for when programmers have large quantities of CSS that apply to the whole page.
 
@@ -46,7 +73,7 @@ There are three different places to add CSS in an HTML file:
 
    ``link`` is an HTML tag that tells the browser to connect what is inside the linked file to the web page content.
    ``rel``, ``type``, ``href`` are all HTML attributes that are required to properly link CSS and let the browser know that CSS is what is in the file and where the file is.
-   ``rel`` should be set to "stylesheet" and ``type`` will be set to "text/css" for all stylesheets.
+   ``rel`` should be set to "stylesheet", because it designates how the link relates to the page. ``type`` will be set to "text/css" for all stylesheets.
    ``href`` is where the programmer enters the path to the stylesheet that should be used for the page.
 
 2. Document or internal: All CSS styling is inside the HTML file, but within the ``<head>``. Internal use of CSS is great for when the programmer has a small amount of CSS that applies to the whole document.
@@ -55,18 +82,22 @@ There are three different places to add CSS in an HTML file:
 
       <head>
          <title>My Web Page</title>
-         <styles>
+         <style>
             selector {
                 declaration block
             }
-         </styles>
+         </style>
       </head>
 
-3. Inline: Programmers add CSS styling to individual tags. Good place to add some specific styling that applies to that one instance of the tag.
+3. Inline: Programmers add CSS styling to individual tags. This is a good place to add some specific styling.
+   There is no selector in inline CSS; instead, the ``style`` attribute is used. This is because the styling only applies to that one instance of the HTML tag.
 
    .. sourcecode:: html
     
       <tag style="declaration block">content</tag>
+
+Order of Precedence
+^^^^^^^^^^^^^^^^^^^
 
 Because there is an order of precedence to the location of CSS, it is important to be able to add or change CSS in all three locations.
 Programmers use this to their advantage if they want to be very specific with overwriting some CSS for one element.

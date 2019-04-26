@@ -118,6 +118,7 @@ Here is an example of a basic web page utilizing some of the tags above and appr
          <h1>Space Plants Are Cool</h1>
          <p>NASA discovers that plants can live in <b>outer space</b>. More innovations from this discovery to follow.</p>
          <img src = "space-flower.jpg" alt = "Flower floating in space.">
+         <!-- This image was taken by NASA and is in the Public Domain -->
       </body>
     </html>
 

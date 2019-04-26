@@ -1,37 +1,8 @@
 CSS Rules
 =========
 
-How to Write a Style Rules
---------------------------
-
-CSS style rules cover an infinite amount of amount of possibilities.
-Programmers initialize individual CSS properties within the declaration block.
-Every property in CSS has a default value. For example, ``font-color`` defaults to "black".
-Programmers only have to change what needs to be.
 Below are some examples of common CSS properties and what they do.
 It is by no means an exhaustive list of CSS properties, but it is a good place to start.
-
-Here is an example of how to write the declaration block for internal and external CSS:
-
-.. sourcecode:: css
-
-   selector {
-       property: value;
-       property: value;
-       property: value;
-   }
-
-For inline CSS, the declaration block is inside one line of HTML like so:
-
-.. sourcecode:: html
-
-   <tag style="property:value;property:value;property:value;">content</tag>
-
-
-.. admonition:: Note
-
-   HTML elements also default to how it displays on the page.
-   Inline elements will not start a new line and block display elements do.
 
 Good CSS Properties to Know
 ---------------------------
@@ -58,6 +29,41 @@ Good CSS Properties to Know
    * - ``text-align``
      - Aligns the text within an element.
      - left
+
+CSS Example
+-----------
+
+Adding CSS to the HTML page about Space Plants is the logical next step in building a website about this cool discovery.
+The astronauts building the site used the ``body``, ``h1``, and ``p`` selectors to change some of the styling of those elements.
+
+.. sourcecode:: html
+
+   <!DOCTYPE html>
+   <html>
+      <head>
+         <title>Plant-Loving Astronauts</title>
+         <style>
+            body {
+              background-color: cornflowerblue;
+            }
+            h1 {
+              color: green;
+            }
+            p {
+              font-size: 18px;
+            }
+         </style>   
+      </head>
+      <body>
+         <h1>Space Plants Are Cool</h1>
+         <p>NASA discovers that plants can live in <b>outer space</b>. More innovations from this discovery to follow.</p>
+         <img src = "space-flower.jpg" alt = "Flower floating in space.">
+         <!-- This image was taken by NASA and is in the Public Domain -->
+      </body>
+    </html>
+
+.. figure:: figures/plant-loving-astronauts-css.png
+   :alt: Made the background color blue, the heading green, and the paragraph text 18 pt. font of the website in the previous chapter about space plants.
 
 Check Your Understanding
 ------------------------

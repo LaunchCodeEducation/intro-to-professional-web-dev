@@ -79,34 +79,10 @@
     
   <div class="section" id="css-rules">
 <h1>7.3. CSS Rules<a class="headerlink" href="#css-rules" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-write-a-style-rules">
-<h2>7.3.1. How to Write a Style Rules<a class="headerlink" href="#how-to-write-a-style-rules" title="Permalink to this headline">¶</a></h2>
-<p>CSS style rules cover an infinite amount of amount of possibilities.
-Programmers initialize individual CSS properties within the declaration block.
-Every property in CSS has a default value. For example, <code class="docutils literal notranslate"><span class="pre">font-color</span></code> defaults to “black”.
-Programmers only have to change what needs to be.
-Below are some examples of common CSS properties and what they do.
+<p>Below are some examples of common CSS properties and what they do.
 It is by no means an exhaustive list of CSS properties, but it is a good place to start.</p>
-<p>Here is an example of how to write the declaration block for internal and external CSS:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span> <span class="p">{</span>
-    <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
-    <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
-    <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>For inline CSS, the declaration block is inside one line of HTML like so:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">tag</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;property:value;property:value;property:value;&quot;</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">tag</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<div class="admonition-note admonition">
-<p class="first admonition-title">Note</p>
-<p class="last">HTML elements also default to how it displays on the page.
-Inline elements will not start a new line and block display elements do.</p>
-</div>
-</div>
 <div class="section" id="good-css-properties-to-know">
-<h2>7.3.2. Good CSS Properties to Know<a class="headerlink" href="#good-css-properties-to-know" title="Permalink to this headline">¶</a></h2>
+<h2>7.3.1. Good CSS Properties to Know<a class="headerlink" href="#good-css-properties-to-know" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">CSS Property</th>
@@ -137,6 +113,39 @@ Inline elements will not start a new line and block display elements do.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="css-example">
+<h2>7.3.2. CSS Example<a class="headerlink" href="#css-example" title="Permalink to this headline">¶</a></h2>
+<p>Adding CSS to the HTML page about Space Plants is the logical next step in building a website about this cool discovery.
+The astronauts building the site used the <code class="docutils literal notranslate"><span class="pre">body</span></code>, <code class="docutils literal notranslate"><span class="pre">h1</span></code>, and <code class="docutils literal notranslate"><span class="pre">p</span></code> selectors to change some of the styling of those elements.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Plant-Loving Astronauts<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+         <span class="nt">body</span> <span class="p">{</span>
+           <span class="k">background-color</span><span class="p">:</span> <span class="kc">cornflowerblue</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nt">h1</span> <span class="p">{</span>
+           <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nt">p</span> <span class="p">{</span>
+           <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+         <span class="p">}</span>
+      <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Space Plants Are Cool<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>NASA discovers that plants can live in <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>outer space<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>. More innovations from this discovery to follow.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src </span><span class="o">=</span> <span class="s">&quot;space-flower.jpg&quot;</span> <span class="na">alt </span><span class="o">=</span> <span class="s">&quot;Flower floating in space.&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- This image was taken by NASA and is in the Public Domain --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure">
+<img alt="Made the background color blue, the heading green, and the paragraph text 18 pt. font of the website in the previous chapter about space plants." src="../../_images/plant-loving-astronauts-css.png" />
+</div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>7.3.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
