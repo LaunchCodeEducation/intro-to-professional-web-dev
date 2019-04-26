@@ -12,3 +12,5 @@ Repeating With Loops
    while-loops
    terminating-loops
    choosing-loops
+   exercises
+   studio
