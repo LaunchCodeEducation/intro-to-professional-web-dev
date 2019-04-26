@@ -21,12 +21,26 @@ Contents
    genindex
    glossary
 
+Studios
+^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :name: studiostoc
+
+   chapters/data-and-variables/studio
+
 Appendices
 ^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :name: appendicestoc
 
    appendices/about-this-book/index
+   appendices/style-guide
+   
+.. toctree::
+   :hidden:
+
+   todos
