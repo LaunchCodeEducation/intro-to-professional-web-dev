@@ -1,4 +1,4 @@
-Debugging Exercises
+Exercises: Debugging
 ====================
 
 Avast, ye scurvy dogs!  We be needn’ ta fix yonder code!
