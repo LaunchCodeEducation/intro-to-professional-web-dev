@@ -134,26 +134,38 @@ Sports Motivational Stuff
 
 Attention sports fans!  Embrace your favorite quote(s):
 
-Baseball: "There may be people who have more talent than you, but there's
-no excuse for anyone to work harder than you do." - *Derek Jeter*
+.. list-table::
+   :widths: 10 70
+   :header-rows: 1
 
-Gymnastics: "I'd rather regret the risks that didn't work out than the
-chances I didn't take at all." - *Simone Biles*
+   * - Sport
+     - Quote
+   * - Baseball
+     - "There may be people who have more talent than you, but there's
+       no excuse for anyone to work harder than you do." - *Derek Jeter*
 
-Football: "I was always willing to work.  I was not the fastest or biggest
-player, but I was determined to be the best football player I could be on the
-football field, and I think I was able to accomplish that through hard work." -
-*Jerry Rice*
+   * - Gymnastics
+     - "I'd rather regret the risks that didn't work out than the
+       chances I didn't take at all." - *Simone Biles*
 
-Soccer: "The backbone of success is...hard work, determination, good
-planning, and perseverance." - *Mia Hamm*
+   * - Football
+     - "I was always willing to work.  I was not the fastest or biggest player,
+       but I was determined to be the best football player I could be on the
+       football field, and I think I was able to accomplish that through hard work." -
+       *Jerry Rice*
 
-Tennis: "If I don't get it right, I don't stop until I do." - *Serena Williams*
+   * - Soccer
+     - "The backbone of success is...hard work, determination, good planning,
+       and perseverance." - *Mia Hamm*
 
-Rocky: *How can you listen to this and NOT be inspired?*  (`Gonna Fly now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ )
+   * - Tennis
+     - "If I don't get it right, I don't stop until I do." - *Serena Williams*
 
-Optional: Imagine your favorite motivational phrase here. - *Some admired
-person*
+   * - Rocky
+     - How can you listen to this and NOT be inspired? (`Gonna Fly now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ )
+
+   * - Optional
+     - Imagine your favorite motivational phrase here. - *Some admired person*
 
 .. admonition:: Take-home lesson:
 
