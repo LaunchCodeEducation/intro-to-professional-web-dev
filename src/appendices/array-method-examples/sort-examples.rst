@@ -1,3 +1,5 @@
+.. _sort-examples:
+
 **sort** Examples
 ==================
 
@@ -56,7 +58,7 @@ what we expect.
 
    When JavaScript sorts, it converts all entries into strings by default. Just
    like 'Apple' comes before 'Pear' because 'A' comes before 'P', the string '400'
-   begins with a '4' which comes before any string starting with an '8'. Looking
+   begins with a '4', which comes before any string starting with an '8'. Looking
    only at the first digit in each number, we see the expected progression
    (1, 2, 3, 4, 8).
 

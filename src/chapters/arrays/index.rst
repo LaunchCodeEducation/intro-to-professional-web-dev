@@ -8,9 +8,6 @@ Arrays
    arrays-are-like-strings
    working-with-arrays
    array-methods
-   more-array-methods
-   even-more-array-methods
-   array-methods-v3
    multi-dimensional-arrays
    exercises
    studio

@@ -20,7 +20,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.4. More Array Methods" href="more-array-methods.html" />
+    <link rel="next" title="7.4. Multi-Dimensional Arrays" href="multi-dimensional-arrays.html" />
     <link rel="prev" title="7.2. Working With Arrays" href="working-with-arrays.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -84,187 +84,136 @@
 <p id="index-0">As with strings, JavaScript provides us with useful <strong>methods</strong> for arrays.
 Unlike strings, arrays are <em>mutable</em> and can be changed.</p>
 <p>Some methods alter an array, while others <em>return</em> values. For example,
-<code class="docutils literal notranslate"><span class="pre">console.log(arrayName.length)</span></code> prints the number of entries inside the
-array. The <code class="docutils literal notranslate"><span class="pre">arrayName.length</span></code> action <em>returns</em> an integer, which can be
-printed (or assigned to a variable).</p>
+<code class="docutils literal notranslate"><span class="pre">console.log([1,</span> <span class="pre">2,</span> <span class="pre">3].includes(2))</span></code> prints <code class="docutils literal notranslate"><span class="pre">true</span></code>. The  action
+<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3].includes(2)</span></code> checks the array to see if it contains the item <code class="docutils literal notranslate"><span class="pre">2</span></code>
+and then <em>returns</em> a boolean which can be printed (or assigned to a variable).</p>
+<p><a class="reference internal" href="../../appendices/array-method-examples/sort-examples.html#sort-examples"><span class="std std-ref">sort</span></a></p>
 <div class="section" id="common-array-methods">
 <h2>7.3.1. Common Array Methods<a class="headerlink" href="#common-array-methods" title="Permalink to this headline">¶</a></h2>
-<p>Here is a sample of the simplest and most frequently used array methods. More
-complete lists can be found here:</p>
+<p>Here is a sample of the most frequently used array methods. More complete lists
+can be found here:</p>
 <ol class="arabic simple">
-<li>Novice list: <a class="reference external" href="https://www.w3schools.com/jsref/jsref_obj_array.asp">W3 Array Methods</a></li>
+<li>Novice list: <a class="reference external" href="https://www.w3schools.com/jsref/jsref_obj_array.asp">W3 Schools Array Methods</a></li>
 <li>More detailed list: <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN Web Docs</a></li>
 </ol>
+<p>To see detailed examples for a particular method, control-click
+(or right-click) on a its name.</p>
 <table border="1" class="docutils" id="id1">
-<caption><span class="caption-text">Informational Methods</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Methods That Return Information About The Array</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
 <col width="33%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Methods That Provide Information</th>
-<th class="head">Description &amp; <code class="docutils literal notranslate"><span class="pre">Syntax</span></code></th>
-<th class="head">Examples</th>
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">includes</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">arrayName.includes(item)</span></code></div>
-<div class="line"><br /></div>
-<div class="line">Check if an array contains the element specified in the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</div>
-<div class="line"><br /></div>
-<div class="line">Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</div>
-</div>
-</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">charles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="kd">let</span> <span class="nx">otherArr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world!&#39;</span><span class="p">];</span>
-
-<span class="nx">charles</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="c1">//returns true</span>
-
-<span class="nx">otherArr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span>
-<span class="c1">//returns false</span>
-</pre></div>
-</div>
-</td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.includes(item)</span></code></td>
+<td>Checks if an array contains the specified item.</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">indexOf</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">arrayName.indexOf(item)</span></code></div>
-<div class="line"><br /></div>
-<div class="line">Returns the index of the FIRST occurence of an item in the array. If the
-item is not in the array, -1 is returned.</div>
-</div>
-</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">charles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="kd">let</span> <span class="nx">otherArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world!&#39;</span><span class="p">];</span>
-
-<span class="nx">charles</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="c1">//returns 2</span>
-
-<span class="nx">otherArray</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span>
-<span class="c1">//returns -1</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">length</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">arrayName.length</span></code></div>
-<div class="line"><br /></div>
-<div class="line">This is a <strong>property</strong> rather than a method.  It returns the number of elements in an array.</div>
-</div>
-</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">charles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-
-<span class="nx">charles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-<span class="c1">//returns 5</span>
-</pre></div>
-</div>
-</td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.indexOf(item)</span></code></td>
+<td>Returns the index of the FIRST occurence of an item in the array. If the item is not in the array, -1 is returned.</td>
 </tr>
 </tbody>
 </table>
 <table border="1" class="docutils" id="id2">
-<caption><span class="caption-text">Rearranging Methods</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Methods That Rearrange The Entries In The Array</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
 <col width="33%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Methods That Rearrange Items</th>
-<th class="head">Description &amp; <code class="docutils literal notranslate"><span class="pre">Syntax</span></code></th>
-<th class="head">Examples</th>
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">reverse</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">arrayName.reverse()</span></code></div>
-<div class="line"><br /></div>
-<div class="line">Pretty straightforward. Reverses the order of the elements in an array.</div>
-<div class="line"><br /></div>
-<div class="line">No arguments are placed inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</div>
-</div>
-</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;At&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;zoo&#39;</span><span class="p">];</span>
-
-<span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;zoo&#39;, &#39;apple&#39;, &#39;orange&#39;, &#39;banana&#39;, &#39;At&#39; ]</span>
-</pre></div>
-</div>
-</td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.reverse()</span></code></td>
+<td>Pretty straightforward. Reverses the order of the elements in an array.</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">sort</span></code></td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">arrayName.sort()</span></code></div>
-<div class="line"><br /></div>
-<div class="line">Arranges the elements of an array into increasing order (kinda).</div>
-<div class="line"><br /></div>
-<div class="line">No arguments are placed inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</div>
-</div>
-</td>
-<td><code class="docutils literal notranslate"><span class="pre">sort</span></code> examples are explored below.</td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.sort()</span></code></td>
+<td>Arranges the elements of an array into increasing order (kinda).</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="sort-examples">
-<h2>7.3.2. <strong>sort</strong> Examples<a class="headerlink" href="#sort-examples" title="Permalink to this headline">¶</a></h2>
-<p>The general syntax for this method is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arrayName.sort()
-</pre></div>
-</div>
-<p>This method arranges the elements of an array into increasing order.  For
-strings, this means alphabetical order.  HOWEVER, the results are not always
-what we expect.</p>
-<ol class="arabic">
-<li><p class="first">Alphabetical order.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">];</span>
-
-<span class="nx">letters</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letters</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;B&#39;, &#39;X&#39;, &#39;a&#39;, &#39;c&#39;, &#39;f&#39; ]</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>From the alphabet song, we know that ‘a’ comes before ‘B’ (and certainly before
-‘X’), but JavaScript treats capital and lowercase letters differently.  The
-default sort order places capital letters before lowercase.</p>
-<ol class="arabic" start="2">
-<li><p class="first">When numbers and strings are sorted, the default order places numbers before
-all letters.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">mixed</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">];</span>
-
-<span class="nx">mixed</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mixed</span><span class="p">);</span>
-<span class="c1">//prints [ 20, 40, &#39;A&#39;, &#39;a&#39; ]</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Numerical sorting.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">30</span><span class="p">];</span>
-
-<span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
-<span class="c1">//prints [ 10, 2, 30, 400, 8 ]</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>Here JavaScript gets truly bizarre. How is 8 larger than 400?</p>
-<p>When JavaScript sorts, it converts all entries into strings by default. Just
-like ‘Apple’ comes before ‘Pear’ because ‘A’ comes before ‘P’, the string ‘400’
-begins with a ‘4’ which comes before any string starting with an ‘8’. Looking
-only at the first digit in each number, we see the expected progression
-(1, 2, 3, 4, 8).</p>
-<p>Later in this course, we will explore ways to fix this issue and correctly sort
-numerical arrays.</p>
+<table border="1" class="docutils" id="id3">
+<caption><span class="caption-text">Methods That Add Or Remove Entries From An Array</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">pop</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.pop()</span></code></td>
+<td>Removes and returns the LAST element in an array.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">push</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.push(item1,</span> <span class="pre">item2,</span> <span class="pre">...)</span></code></td>
+<td>Adds one or more items to the END of an array and returns the new length.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">shift</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.shift()</span></code></td>
+<td>Removes and returns the FIRST element in an array.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">splice</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.splice(index,</span> <span class="pre">number,</span> <span class="pre">item1,</span> <span class="pre">item2,</span> <span class="pre">...)</span></code></td>
+<td>Adds, removes or replaces one or more elements anywhere in the array.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">unshift</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arrayName.unshift(item1,</span> <span class="pre">item2,</span> <span class="pre">...)</span></code></td>
+<td>Adds one or more items to the START of an array and returns the new length.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id4">
+<caption><span class="caption-text">Methods That Create New Arrays</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">concat</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arr.concat(otherArray1,</span> <span class="pre">otherArray2,</span> <span class="pre">...)</span></code></td>
+<td>Combines two or more arrays and returns the result as a new array.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">join</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arr.join('connecter')</span></code></td>
+<td>Combines all the elements of an array into a string.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">slice</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">arr.slice(start</span> <span class="pre">index,</span> <span class="pre">end</span> <span class="pre">index)</span></code></td>
+<td>Copies selected entries of an array into a new array.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">split</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.split('delimiter')</span></code></td>
+<td>Divides a string into smaller pieces, which are stored in a new array.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -277,7 +226,7 @@ numerical arrays.</p>
         <li class="previous"><a href="working-with-arrays.html"><span aria-hidden="true">&larr;</span> 7.2. Working With Arrays</a></li>
         
         
-        <li class="next"><a href="more-array-methods.html">7.4. More Array Methods <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="multi-dimensional-arrays.html">7.4. Multi-Dimensional Arrays <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

@@ -16,16 +16,16 @@ determines the string that "glues" the array elements together.
 
       let arr = [1, 2, 3, 4];
       let words = ['hello', 'world', '!'];
-      let newArray = [];
+      let newString = '';
 
-      newArray = arr.join("+");
-      console.log(newArray);
+      newString = arr.join("+");
+      console.log(newString);
       //prints '1+2+3+4'
 
-      newArray = words.join("");
-      console.log(newArray);
+      newString = words.join("");
+      console.log(newString);
       //prints 'helloworld!'
 
-      newArray = words.join("_");
-      console.log(newArray);
+      newString = words.join("_");
+      console.log(newString);
       //prints 'hello_world_!'
