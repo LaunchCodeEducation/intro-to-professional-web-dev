@@ -9,7 +9,7 @@ of arrays? Well yes we can.... Get ready to venture into a multi-dimensional uni
 A **multi-dimensional array** is an array of arrays, meaning that the values inside the array are also arrays.
 The *inner* arrays can store other values such as strings, numbers, or even more arrays.
 
-.. figure:: figures/multi-dimensional-array-example.jpg
+.. figure:: figures/multidim-array.png
    :alt: A label, synonyms, pointing to an array that contains arrays at it's four indexes. Each inner array has a list of words that are synonyms.
 
 Two Dimensional Arrays

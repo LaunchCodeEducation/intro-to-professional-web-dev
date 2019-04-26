@@ -8,7 +8,7 @@ accessed via an ordered index. Unlike strings, arrays can store data of any type
 
 Notice the values in the below figure each have an index value.
 
-.. figure:: figures/array-example.jpg
+.. figure:: figures/Arrays-are-like-strings.png
    :alt: A label, languages, pointing to an array that contains "Python" at index 0, "C#" at index 1, "Java" at index 2, and "JavaScript" at index 3.
 
 Declaring an Array
