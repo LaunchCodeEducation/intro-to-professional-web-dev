@@ -10,12 +10,10 @@ Array Method Examples
    includes-examples
    indexOf-examples
    join-examples
-   pop-examples
-   push-examples
-   reverse-examples
-   shift-examples
+   push-and-pop-examples
+   reverse-example
+   shift-and-unshift-examples
    slice-examples
    sort-examples
    splice-examples
    split-examples
-   unshift-examples

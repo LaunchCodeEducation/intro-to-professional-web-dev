@@ -18,10 +18,10 @@ Common Array Methods
 Here is a sample of the most frequently used array methods. More complete lists
 can be found here:
 
-#. Novice list: `W3 Array Methods <https://www.w3schools.com/jsref/jsref_obj_array.asp>`__
+#. Novice list: `W3 Schools Array Methods <https://www.w3schools.com/jsref/jsref_obj_array.asp>`__
 #. More detailed list: `MDN Web Docs <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>`__
 
-Clicking on a method name will link to more detailed examples for that method.
+To see detailed examples for a particular method, click on a its name.
 
 .. list-table:: Methods That Return Information About The Array
    :header-rows: 1
@@ -51,7 +51,7 @@ Clicking on a method name will link to more detailed examples for that method.
      - ``arrayName.sort()``
      - Arranges the elements of an array into increasing order (kinda).
 
-.. list-table:: Methods That Remove Entries From An Array
+.. list-table:: Methods That Add Or Remove Entries From An Array
    :header-rows: 1
 
    * - Method
@@ -61,22 +61,20 @@ Clicking on a method name will link to more detailed examples for that method.
      - ``arrayName.pop()``
      - Removes and returns the LAST element in an array.
 
+   * - ``push``
+     - ``arrayName.push(item1, item2, ...)``
+     - Adds one or more items to the END of an array and returns the new length.
+
    * - ``shift``
      - ``arrayName.shift()``
      - Removes and returns the FIRST element in an array.
 
-.. list-table:: Methods That Add Entries To An Array
-   :header-rows: 1
-
-   * - Method
-     - Syntax
-     - Description
-   * - ``push``
-     - ``arr.push(item1, item2, ...)``
-     - Adds one or more items to the END of an array and returns the new length.
+   * - ``splice``
+     - ``arrayName.splice(index, number, item1, item2, ...)``
+     - Adds, removes or replaces one or more elements anywhere in the array.
 
    * - ``unshift``
-     - ``arr.unshift(item1, item2, ...)``
+     - ``arrayName.unshift(item1, item2, ...)``
      - Adds one or more items to the START of an array and returns the new length.
 
 .. list-table:: Methods That Create New Arrays
@@ -86,20 +84,16 @@ Clicking on a method name will link to more detailed examples for that method.
      - Syntax
      - Description
    * - ``concat``
-     - ``arrayName.concat(otherArray1, otherArray2, ...)``
+     - ``arr.concat(otherArray1, otherArray2, ...)``
      - Combines two or more arrays and returns the result as a new array.
 
    * - ``join``
-     - ``arrayName.join('connecter')``
+     - ``arr.join('connecter')``
      - Combines all the elements of an array into a string.
 
    * - ``slice``
-     - ``arr.slice(starting index, ending index)``
+     - ``arr.slice(start index, end index)``
      - Copies selected entries of an array into a new array.
-
-   * - ``splice``
-     - ``arrayName.splice(index, number, item1, item2, ...)``
-     - Adds, removes or replaces one or more elements anywhere in the array.
 
    * - ``split``
      - ``stringName.split('delimiter')``
