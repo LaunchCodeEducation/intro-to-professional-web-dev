@@ -82,41 +82,38 @@
 <p>Beyond bracket notation, there are many other tools we can use to work with strings. Talking about these tools requires some new terminology.</p>
 <div class="section" id="object-terminology">
 <h2>6.3.1. Object Terminology<a class="headerlink" href="#object-terminology" title="Permalink to this headline">¶</a></h2>
-<p id="index-0">An <strong>object</strong> is collection of related data and operations. We have already encountered one object, the built-in object <code class="docutils literal notranslate"><span class="pre">console</span></code>, which we use to output messages.</p>
+<p id="index-0">In JavaScript, strings are objects, so to understand how we can use them in our programs, we must first understand some basics about objects.</p>
+<p>An <strong>object</strong> is collection of related data and operations. An operation that can be carried out on an object is known as a <strong>method</strong>. A piece of data associated with an object is known as a <strong>property</strong>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
+<p>Suppose we had a <code class="docutils literal notranslate"><span class="pre">square</span></code> object in JavaScript. (While no such object is built into JavaScript, we will learn how we could make one in a later chapter.)</p>
+<p>Since a square has four sides of the same length, it should have a property to represent this length. This property could be called <code class="docutils literal notranslate"><span class="pre">length</span></code>. For a given square, it will have a specific value, such 4.</p>
+<p class="last">Since a square has an area, it should have a method to calculate the area. This method could be called <code class="docutils literal notranslate"><span class="pre">area</span></code>, and it should calculate the area of a square using its <code class="docutils literal notranslate"><span class="pre">length</span></code> property.</p>
+</div>
+<p>You can think of methods and properties as functions and variables, respectively, that “belong to” an object. Properties and methods are accessed using <strong>dot notation</strong>, which dictates that we use the object name, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code>, followed by the property or method name. When using a method, we must also use parentheses as we do when calling regular functions.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Returning to the <code class="docutils literal notranslate"><span class="pre">square</span></code> example, we can access its length by typing <code class="docutils literal notranslate"><span class="pre">square.length</span></code>.</p>
+<p class="last">We can calculate the area by calling <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>.</p>
+</div>
+<p>Referencing <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">area</span></code> by itself in code <em>does not</em> give you the value of <code class="docutils literal notranslate"><span class="pre">square.length</span></code> or carry out the calculation in <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>. It does not make sense to refer to a property or method without also referring to the associated object. Typing simply <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">area()</span></code> is ambiguous. There might be multiple squares, and it would be unclear which one you were asking about.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>We have already encountered one object, the built-in object <code class="docutils literal notranslate"><span class="pre">console</span></code>, which we use to output messages.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">console</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>object
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object
 </pre></div>
 </div>
+<p>JavaScript reports that the type of <code class="docutils literal notranslate"><span class="pre">console</span></code> is indeed <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p class="last">When calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code> we are calling the <code class="docutils literal notranslate"><span class="pre">log</span></code> method of the <code class="docutils literal notranslate"><span class="pre">console</span></code> object.</p>
 </div>
-<p>JavaScript reports that the type of <code class="docutils literal notranslate"><span class="pre">console</span></code> is indeed <code class="docutils literal notranslate"><span class="pre">object</span></code>. An operation that can be carried out on an object is known as a <strong>method</strong>.</p>
-<p>You can think of methods as functions that “belong to” an object. In other words, they only make sense when used in conjunction with an object. We can call <code class="docutils literal notranslate"><span class="pre">console.log()</span></code>, but we may not use <code class="docutils literal notranslate"><span class="pre">log()</span></code> on its own.</p>
-<p>A piece of data associated with an object is known as a <strong>property</strong>. While we have not had a reason to use them, the <code class="docutils literal notranslate"><span class="pre">console</span></code> object has <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">length</span></code> properties.</p>
-<p>You can think of properties as variables that “belong to” an object. They are accessed using <strong>dot notation</strong>, which dictates that we use the object name, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code>, followed by the property name.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value of the name property:&quot;</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value of the length property:&quot;</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Value of the name property: console
-Value of the length property: 0
-</pre></div>
-</div>
-</div>
-<p>Precisely what these properties of the built-in object <code class="docutils literal notranslate"><span class="pre">console</span></code> represent is not so important as the fact that they are there. Properties store data related to an object.</p>
-<p>As with methods, it does not make sense to refer to a property without also referring to the associated object. Referencing <code class="docutils literal notranslate"><span class="pre">name</span></code> by itself in code <em>does not</em> give you the value of <code class="docutils literal notranslate"><span class="pre">console.name</span></code>.</p>
-<p>Properties and methods can be used in conjunction with a specific object, as we did with <code class="docutils literal notranslate"><span class="pre">console</span></code>.</p>
 <p>We will learn quite a bit more about objects in this course, including how to use objects to create your own custom data types. This powerful JavaScript features allows us to bundle up data and functionality in useful, modular ways.</p>
 </div>
 <div class="section" id="strings-are-objects">
 <h2>6.3.2. Strings Are Objects<a class="headerlink" href="#strings-are-objects" title="Permalink to this headline">¶</a></h2>
-<p>In JavaScript, strings are objects.</p>
 <p>The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on.</p>
 <p id="index-1">Every string that we work with will have the same properties and methods. The most useful string property is named <code class="docutils literal notranslate"><span class="pre">length</span></code>, and it tells us how many characters are in a string.</p>
 <div class="admonition-example admonition">

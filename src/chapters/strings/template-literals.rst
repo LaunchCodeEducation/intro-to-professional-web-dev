@@ -3,7 +3,7 @@ Template Literals
 
 .. index:: ! template literal
 
-The ECMAScript specifications define the standard for JavaScript. The 6th edition, known as ES2015, added **template literals**, which allow for the automatic insertion of expressions (including variables) into strings.
+**Template literals** allow for the automatic insertion of expressions (including variables) into strings.
 
 While normal strings are enclosed in single or double quotes (``'`` or ``"``), template literals are encolsed in back-tick characters, `````. Within a template literal, any expression surrounded by ``${ }`` will be evaluated, with the resulting value included in the string.
 
@@ -57,6 +57,8 @@ In addition to allowing us to include data in strings in a cleaner, more readabl
       All-where.
 
       – Sri Chinmoy
+
+.. note:: The ECMAScript specifications define the standard for JavaScript. The 6th edition, known as ES2015, added template literals. Not only are template literals relatively new to JavaScript, but you may enounter environments---such as older web browsers---where they are not supported.
 
 
 Check Your Understanding

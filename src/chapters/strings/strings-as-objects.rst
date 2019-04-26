@@ -8,9 +8,31 @@ Object Terminology
 
 .. index:: object, property, method
 
-An **object** is collection of related data and operations. We have already encountered one object, the built-in object ``console``, which we use to output messages.
+In JavaScript, strings are objects, so to understand how we can use them in our programs, we must first understand some basics about objects.
+
+An **object** is collection of related data and operations. An operation that can be carried out on an object is known as a **method**. A piece of data associated with an object is known as a **property**.
 
 .. admonition:: Example
+
+   Suppose we had a ``square`` object in JavaScript. (While no such object is built into JavaScript, we will learn how we could make one in a later chapter.)
+
+   Since a square has four sides of the same length, it should have a property to represent this length. This property could be called ``length``. For a given square, it will have a specific value, such 4.
+
+   Since a square has an area, it should have a method to calculate the area. This method could be called ``area``, and it should calculate the area of a square using its ``length`` property.
+
+You can think of methods and properties as functions and variables, respectively, that "belong to" an object. Properties and methods are accessed using **dot notation**, which dictates that we use the object name, followed by a ``.``, followed by the property or method name. When using a method, we must also use parentheses as we do when calling regular functions.
+
+.. admonition:: Example
+
+   Returning to the ``square`` example, we can access its length by typing ``square.length``.
+
+   We can calculate the area by calling ``square.area()``.
+
+Referencing ``length`` or ``area`` by itself in code *does not* give you the value of ``square.length`` or carry out the calculation in ``square.area()``. It does not make sense to refer to a property or method without also referring to the associated object. Typing simply ``length`` or ``area()`` is ambiguous. There might be multiple squares, and it would be unclear which one you were asking about.
+
+.. admonition:: Example
+
+   We have already encountered one object, the built-in object ``console``, which we use to output messages.
 
    .. sourcecode:: js
 
@@ -22,40 +44,14 @@ An **object** is collection of related data and operations. We have already enco
    
       object
 
-JavaScript reports that the type of ``console`` is indeed ``object``. An operation that can be carried out on an object is known as a **method**. 
+   JavaScript reports that the type of ``console`` is indeed ``object``.
 
-You can think of methods as functions that "belong to" an object. In other words, they only make sense when used in conjunction with an object. We can call ``console.log()``, but we may not use ``log()`` on its own.
-
-A piece of data associated with an object is known as a **property**. While we have not had a reason to use them, the ``console`` object has ``name`` and ``length`` properties. 
-
-You can think of properties as variables that "belong to" an object. They are accessed using **dot notation**, which dictates that we use the object name, followed by a ``.``, followed by the property name.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-   
-      console.log("Value of the name property:", console.name);
-      console.log("Value of the length property:", console.length);
-
-   **Output**
-
-   ::
-
-      Value of the name property: console
-      Value of the length property: 0
-
-Precisely what these properties of the built-in object ``console`` represent is not so important as the fact that they are there. Properties store data related to an object.
-
-As with methods, it does not make sense to refer to a property without also referring to the associated object. Referencing ``name`` by itself in code *does not* give you the value of ``console.name``.
-
-Properties and methods can be used in conjunction with a specific object, as we did with ``console``.
+   When calling ``console.log``, we are calling the ``log`` method of the ``console`` object.
 
 We will learn quite a bit more about objects in this course, including how to use objects to create your own custom data types. This powerful JavaScript features allows us to bundle up data and functionality in useful, modular ways.
 
 Strings Are Objects
 -------------------
-
-In JavaScript, strings are objects. 
 
 The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on. 
 
