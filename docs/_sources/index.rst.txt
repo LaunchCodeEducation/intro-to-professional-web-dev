@@ -41,7 +41,8 @@ Appendices
    :numbered:
    :name: appendicestoc
 
-   appendices/about-this-book/index.rst
+   appendices/about-this-book/index
+   appendices/string-method-examples/index
    
 .. toctree::
    :hidden:

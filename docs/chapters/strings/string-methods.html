@@ -97,9 +97,13 @@ LaunchCode
 </div>
 </div>
 <p>While <code class="docutils literal notranslate"><span class="pre">nonprofit.toLowerCase()</span></code> evaluated to <code class="docutils literal notranslate"><span class="pre">&quot;launchcode&quot;</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">nonprofit</span></code> was left unchanged. This will be case for each of the string methods.</p>
-<div class="section" id="common-methods">
-<h2>6.5.1. Common Methods<a class="headerlink" href="#common-methods" title="Permalink to this headline">¶</a></h2>
-<p id="index-0">Here we present the most commonly-used string methods. There are <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2">other string methods documentated at MDN</a>.</p>
+<div class="section" id="common-string-methods">
+<h2>6.5.1. Common String Methods<a class="headerlink" href="#common-string-methods" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Here we present the most commonly-used string methods. You can find documentation for other string methods at:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.w3schools.com/jsref/jsref_obj_string.asp">W3Schools</a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2">MDN</a></li>
+</ul>
 <table border="1" class="docutils" id="id2">
 <caption><span class="caption-text">Common String Methods</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -109,181 +113,45 @@ LaunchCode
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Method</th>
+<th class="head">Syntax</th>
 <th class="head">Description</th>
-<th class="head">Example</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">indexOf</span></code></td>
-<td>Given a character, returns the integer index of the first occurence of the character in the string. If the character does not occur in the string, -1 is returned.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns 6</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">);</span>
-
-<span class="c1">// returns -1</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</td>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/string-method-examples/indexOf-examples.html#string-indexof-examples"><span class="std std-ref">indexOf</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.indexOf(character)</span></code></td>
+<td>Returns the index of the first occurence of the character in the string, and returns -1 if the character is not found.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code></td>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/string-method-examples/toLowerCase-examples.html#string-tolowercase-examples"><span class="std std-ref">toLowerCase</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.toLowerCase()</span></code></td>
 <td>Returns a copy of the given string, with all uppercase letters converted to lowercase.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;launchcode&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
-</pre></div>
-</div>
-</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">toUpperCase</span></code></td>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/string-method-examples/toUpperCase-examples.html#string-touppercase-examples"><span class="std std-ref">toUpperCase</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.toUpperCase()</span></code></td>
 <td>Returns a copy of the given string, with all lowercase letters converted to uppercase.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;LAUNCHCODE&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
-</pre></div>
-</div>
-</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">trim</span></code></td>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/string-method-examples/trim-examples.html#string-trim-examples"><span class="std std-ref">trim</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.trim()</span></code></td>
 <td>Returns a copy of the given string with a leading and trailing whitespace removed.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;The LaunchCode Foundation&quot;</span>
-<span class="s2">&quot;  The LaunchCode Foundation     &quot;</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
-</pre></div>
-</div>
-</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">replace</span></code></td>
-<td>Given a search string <code class="docutils literal notranslate"><span class="pre">s</span></code> and a replacement value <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">str.replace(s,</span> <span class="pre">r)</span></code> returns a copy of <code class="docutils literal notranslate"><span class="pre">str</span></code> with the first occurence of <code class="docutils literal notranslate"><span class="pre">s</span></code> replaced by <code class="docutils literal notranslate"><span class="pre">r</span></code>. <em>Note:</em> The <code class="docutils literal notranslate"><span class="pre">replace</span></code> method can be used in more powerful ways utilizing regular expressions. We will not cover those here, but you can <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">read more at MDN</a>.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;catrot&quot;</span>
-<span class="s2">&quot;carrot&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">);</span>
-
-<span class="c1">// returns &quot;LaunchCode&quot;</span>
-<span class="s2">&quot;Launch Code&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</td>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/string-method-examples/replace-examples.html#string-replace-examples"><span class="std std-ref">replace</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.replace(searchChar,</span> <span class="pre">replacementChar)</span></code></td>
+<td>Given a search string <code class="docutils literal notranslate"><span class="pre">searchChar</span></code> and a replacement value <code class="docutils literal notranslate"><span class="pre">replacementChar</span></code>, replace the first occurence of <code class="docutils literal notranslate"><span class="pre">searchChar</span></code> replaced by <code class="docutils literal notranslate"><span class="pre">replacementChar</span></code>.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">slice</span></code></td>
-<td>Given a starting index <code class="docutils literal notranslate"><span class="pre">i</span></code> and an optional ending index <code class="docutils literal notranslate"><span class="pre">j</span></code>, return the substring consisting of characters from index <code class="docutils literal notranslate"><span class="pre">i</span></code> through index <code class="docutils literal notranslate"><span class="pre">j-1</span></code>. If the ending index is ommitted, the returned substring includes all characters from the starting index through the end of the string.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;Launch&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-
-<span class="c1">// returns &quot;Code&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-</pre></div>
-</div>
-</td>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/string-method-examples/slice-examples.html#string-slice-examples"><span class="std std-ref">slice</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.slice(i,</span> <span class="pre">j)</span></code></td>
+<td>Return the substring consisting of characters from index <code class="docutils literal notranslate"><span class="pre">i</span></code> through index <code class="docutils literal notranslate"><span class="pre">j-1</span></code>.</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="examples">
-<h2>6.5.2. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To illustrate how string methods can be used, we will look at various validation checks that could be used when working with email addresses.</p>
-<p>In each example, we will manually initialize a variable named <code class="docutils literal notranslate"><span class="pre">input</span></code> for ease of illustration. In a real program, the value of this variable would come from user input.</p>
-<div class="section" id="trim">
-<h3>6.5.2.1. <strong>trim</strong><a class="headerlink" href="#trim" title="Permalink to this headline">¶</a></h3>
-<p>When typing an email address into a web site, a user may inadvertently type a space before and/or after the email address. We can clean up such input using the <code class="docutils literal notranslate"><span class="pre">trim</span></code> method.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>Cleaning up user input with <code class="docutils literal notranslate"><span class="pre">trim</span></code>.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot; fake.email@launchcode.org &quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>fake.email@launchcode.org
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="tolowercase">
-<h3>6.5.2.2. <strong>toLowerCase</strong><a class="headerlink" href="#tolowercase" title="Permalink to this headline">¶</a></h3>
-<p>The domain portion of an email address (the portion after the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol) is case-insensitive. Emails with domain <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> are the same as those with domain <code class="docutils literal notranslate"><span class="pre">LAUNCHCODE.ORG</span></code>. By convention, the all-lowercase version is typically used by an application.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>Standardizing an email address by converting to all lowercase characters.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;fake.email@LAUNCHCODE.ORG&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>fake.email@launchcode.org
-</pre></div>
-</div>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This example is a bit crude, since the portion of an email address <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol can be case-sensitive. If standardizing the case of an email in a real application, we would want to be more precise and only convert the domain portion to lowercase characters.</p>
-</div>
-</div>
-<div class="section" id="indexof">
-<h3>6.5.2.3. <strong>indexOf</strong><a class="headerlink" href="#indexof" title="Permalink to this headline">¶</a></h3>
-<p>An email address must contain an <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol. Checking for the presence of this symbol is a part of email address verification in most programs.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>Checking for the symbol <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;fake.email@launchcode.org&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">atIndex</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">);</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nx">atIndex</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Email contains @&quot;</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Invalid email&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Email contains @
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="replace">
-<h3>6.5.2.4. <strong>replace</strong><a class="headerlink" href="#replace" title="Permalink to this headline">¶</a></h3>
-<p>Some email providers, including Gmail, allow users to put a <code class="docutils literal notranslate"><span class="pre">.</span></code> anywhere before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol. This means that <code class="docutils literal notranslate"><span class="pre">fake.email&#64;launchcode.org</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">fakeemail&#64;launchcode.org</span></code>.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>Remove the <code class="docutils literal notranslate"><span class="pre">.</span></code> before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol in an email address.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot; fake.email@launchcode.org &quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>fakeemail@launchcode.org
-</pre></div>
-</div>
-</div>
-<p>This example illustrates a common use case of <code class="docutils literal notranslate"><span class="pre">replace</span></code>, which is to <em>remove</em> a character by replacing it with the empty string.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Notice in this example that if there is not a <code class="docutils literal notranslate"><span class="pre">.</span></code> before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol, the <code class="docutils literal notranslate"><span class="pre">.</span></code> that is part of the domain, <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> would be inadvertently removed. In a real application, we would want to isolate the portion in front of <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> using <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
-</div>
-</div>
-<div class="section" id="slice">
-<h3>6.5.2.5. <strong>slice</strong><a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h3>
-<p>On some websites, the portion of an email address before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol is used as a username. We can extract this portion of an email address using <code class="docutils literal notranslate"><span class="pre">slice</span></code> in conjunction with <code class="docutils literal notranslate"><span class="pre">indexOf</span></code>.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;fake.email@launchcode.org&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">atIndex</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">atIndex</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>fake.email
-</pre></div>
-</div>
-</div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">String methods can be combined in a process called <strong>method chaining</strong>. Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'JavaScript';</span></code>, word.toUpperCase() returns <code class="docutils literal notranslate"><span class="pre">JAVASCRIPT</span></code>. What would <code class="docutils literal notranslate"><span class="pre">word.slice(4).toUpperCase()</span></code> return?  TRY IT!  (<a class="reference external" href="https://repl.it/&#64;launchcode/Intro-To-Method-Chaining">Repl.it</a>).</p>
 </div>
 </div>
-</div>
 <div class="section" id="check-your-understanding">
-<h2>6.5.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>6.5.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>If you haven’t aready, read the method detail pages linked in the table above for the methods <code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">slice</span></code>, and <code class="docutils literal notranslate"><span class="pre">trim</span></code>. Then answer the following questions.</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p>What is printed by the following code?</p>
@@ -308,6 +176,22 @@ LaunchCode
 <li><code class="docutils literal notranslate"><span class="pre">&quot;JavaSc&quot;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">&quot;avaSc&quot;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">&quot;JavaS&quot;</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What is the value of the string printed by the following program?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">org</span> <span class="o">=</span> <span class="s2">&quot;  The LaunchCode Foundation &quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">trimmed</span> <span class="o">=</span> <span class="nx">org</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">trimmed</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">The</span> <span class="pre">LaunchCode</span> <span class="pre">Foundation</span> <span class="pre">&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">LaunchCode</span> <span class="pre">Foundation&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;TheLaunchCodeFoundation&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">The</span> <span class="pre">LaunchCode</span> <span class="pre">Foundation&quot;</span></code></li>
 </ol>
 </div>
 </div>

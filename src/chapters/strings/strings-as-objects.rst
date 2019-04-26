@@ -10,13 +10,13 @@ Object Terminology
 
 In JavaScript, strings are objects, so to understand how we can use them in our programs, we must first understand some basics about objects.
 
-An **object** is collection of related data and operations. An operation that can be carried out on an object is known as a **method**. A piece of data associated with an object is known as a **property**.
+An **object** is a collection of related data and operations. An operation that can be carried out on an object is known as a **method**. A piece of data associated with an object is known as a **property**.
 
 .. admonition:: Example
 
    Suppose we had a ``square`` object in JavaScript. (While no such object is built into JavaScript, we will learn how we could make one in a later chapter.)
 
-   Since a square has four sides of the same length, it should have a property to represent this length. This property could be called ``length``. For a given square, it will have a specific value, such 4.
+   Since a square has four sides of the same length, it should have a property to represent this length. This property could be called ``length``. For a given square, it will have a specific value, such as 4.
 
    Since a square has an area, it should have a method to calculate the area. This method could be called ``area``, and it should calculate the area of a square using its ``length`` property.
 
