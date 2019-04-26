@@ -17,8 +17,10 @@ Chapters
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
+   chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/arrays/index
+   chapters/booster-rockets/index
 
 .. toctree::
 
@@ -39,12 +41,14 @@ Appendices
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :name: appendicestoc
 
    appendices/about-this-book/index.rst
    appendices/style-guide.rst
    appendices/array-method-examples/index.rst
+   appendices/style-guide
+   appendices/string-method-examples/index
+   appendices/about-this-book
 
 .. toctree::
    :hidden:

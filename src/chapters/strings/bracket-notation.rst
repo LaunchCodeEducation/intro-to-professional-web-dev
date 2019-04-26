@@ -17,18 +17,21 @@ Consider the string ``"JavaScript"``. The ``"J"`` has index 0, the first ``"a"``
 
    The indices of a string.
 
-An expression of the form ``someString[i]`` evaluates to the character at index ``i``.
+An expression of the form ``someString[i]`` gives the character at index ``i``.
 
 .. admonition:: Example
 
-   Print out the initials of a person's name.
+   This program prints out the initials of the person's name.
 
    .. sourcecode:: js
    
       let jsCreator = "Brendan Eich";
+      let firstInitial = jsCreator[0];
+      let lastInitial = jsCreator[8];
+
       let outputStr = "JavaScript was created by somebody with initials " + 
-         jsCreator[0] + "." +
-         jsCreator[8] + ".";
+         firstInitial + "." +
+         lastInitial + ".";
 
       console.log(outputStr);
 
@@ -53,4 +56,41 @@ What happens if we try to access an index that doesn't exist, for example -1 or 
 
 .. admonition:: Question
 
-   What does an expression using bracket notation evaluate to when the index is invalid (that is, does not correspond to a character in the string)?
+   What does an expression using bracket notation evaluate to when the index is invalid (the index does not correspond to a character in the string)?
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   If ``phrase = 'Code for fun'``, then ``phrase[2]`` evaluates to:
+
+   #. ``"o"``
+   #. ``"d"``
+   #. ``"for"``
+   #. ``"fun"``
+    
+   **Answer**: ``"d"``
+
+.. admonition:: Question
+
+   Which of the following returns ``true`` given ``myStr = 'Index'``?  Choose all correct answers.
+
+   #. ``myStr[2] === 'n';``
+   #. ``myStr[4] === 'x';``
+   #. ``myStr[6] === ' ';``
+   #. ``myStr[0] === 'I';``
+
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: javascript
+
+      let phrase = "JavaScript rocks!";
+      console.log(phrase[phrase.length - 8]);
+
+   #. ``"p"``
+   #. ``"i"``
+   #. ``"r"``
+   #. ``"t"``

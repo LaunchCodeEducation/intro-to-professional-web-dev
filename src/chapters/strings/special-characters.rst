@@ -57,3 +57,16 @@ We can also use the backslash, ``\``, to include quotes within a string. This is
    ::
 
       "The dog's favorite toy is a stuffed hedgehog," said Chris
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Which of the options below print ``'Launch'`` and ``'Code'`` on separate lines?
+
+   #. ``console.log('Launch\nCode');``
+   #. ``console.log('Launch/nCode');``
+   #. ``console.log('Launch', 'Code');``
+   #. ``console.log('Launch\tCode');``
+   #. ``console.log('Launch/tCode');``
