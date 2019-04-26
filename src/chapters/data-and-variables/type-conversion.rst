@@ -8,9 +8,9 @@ Type Conversion
 
 Sometimes it is necessary to convert values from one type to another. A common example is when a program receives input from a user or a file. In this situation, numeric data may be passed to the program as strings.
 
-JavaScript provides a few simple functions that will allow us to convert values to different data types. The functions ``Number()`` and ``String()`` will (attempt to) convert their arguments into types ``number`` and ``string``, respectively. We call these **type conversion** functions.
+JavaScript provides a few simple functions that will allow us to convert values to different data types. The functions ``Number`` and ``String`` will (attempt to) convert their arguments into types ``number`` and ``string``, respectively. We call these **type conversion** functions.
 
-The ``Number()`` function can take a string and turn it into an integer. Let us see this in action:
+The ``Number`` function can take a string and turn it into an integer. Let us see this in action:
 
 .. admonition:: Example
 
@@ -48,7 +48,7 @@ This example shows that a string has to be a syntactically legal number for conv
 
 .. note:: ``NaN`` is a **special value** in JavaScript that represents that state of not being a number. We will learn more about ``NaN`` and other special values in a later chapter.
 
-The type conversion function ``String()`` turns its argument into a string. Remember that when we print a string, the quotes may be removed. However, if we print the type, we can see that it is definitely ``'string'``.
+The type conversion function ``String`` turns its argument into a string. Remember that when we print a string, the quotes may be removed. However, if we print the type, we can see that it is definitely ``'string'``.
 
 .. admonition:: Example
 
@@ -71,7 +71,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following strings result in ``NaN`` when passed to ``Number()``? (Feel free to try running each of the conversions.)
+   Which of the following strings result in ``NaN`` when passed to ``Number``? (Feel free to try running each of the conversions.)
 
    #. ``'3'``
    #. ``'three'``

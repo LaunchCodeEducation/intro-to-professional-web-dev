@@ -17,8 +17,10 @@ Chapters
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
+   chapters/errors-and-debugging/index
    chapters/strings/index
-   
+   chapters/booster-rockets/index
+
 .. toctree::
 
    genindex
@@ -38,12 +40,12 @@ Appendices
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :name: appendicestoc
 
-   appendices/about-this-book/index
+   appendices/style-guide
    appendices/string-method-examples/index
-   
+   appendices/about-this-book
+
 .. toctree::
    :hidden:
 

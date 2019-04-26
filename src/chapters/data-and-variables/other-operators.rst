@@ -1,7 +1,7 @@
 Other Operators
 ===============
 
-The String Operator ``+``
+The String Operator **+**
 --------------------------
 
 .. index::
