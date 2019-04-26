@@ -1,5 +1,5 @@
-Loop Exercises
-==============
+Exercises: Loops
+================
 
 | Practice makes better.  Repetition is a good thing.
 | Repetition is a good thing.
