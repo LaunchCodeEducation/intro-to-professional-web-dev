@@ -37,8 +37,8 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
-   appendices/about-this-book/index
    appendices/style-guide
+   appendices/about-this-book
    
 .. toctree::
    :hidden:
