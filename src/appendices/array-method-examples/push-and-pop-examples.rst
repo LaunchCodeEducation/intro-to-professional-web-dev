@@ -29,6 +29,8 @@ The new items may be of any data type.
       console.log(arr);
       //prints ['a', 'b', 'c', 'd e', 'f', 42]
 
+.. _pop:
+
 **pop**
 --------
 

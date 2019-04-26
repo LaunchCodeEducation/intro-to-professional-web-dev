@@ -1,3 +1,5 @@
+.. _array-methods:
+
 Array Methods
 ==============
 
@@ -58,7 +60,7 @@ To see detailed examples for a particular method, control-click
    * - Method
      - Syntax
      - Description
-   * - :ref:`pop <push-and-pop-examples>`
+   * - :ref:`pop <pop>`
      - ``arrayName.pop()``
      - Removes and returns the LAST element in an array.
 
@@ -74,7 +76,7 @@ To see detailed examples for a particular method, control-click
      - ``arrayName.splice(index, number, item1, item2, ...)``
      - Adds, removes or replaces one or more elements anywhere in the array.
 
-   * - :ref:`unshift <shift-and-unshift-examples>`
+   * - :ref:`unshift <unshift>`
      - ``arrayName.unshift(item1, item2, ...)``
      - Adds one or more items to the START of an array and returns the new length.
 

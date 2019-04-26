@@ -28,6 +28,8 @@ No arguments are placed inside the parentheses ``()``.
       console.log(arr);
       //prints ['b', 'c', 'd', 'e']
 
+.. _unshift:
+
 **unshift**
 -----------
 
