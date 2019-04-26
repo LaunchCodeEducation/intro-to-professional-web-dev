@@ -26,7 +26,6 @@ Studios
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :name: studiostoc
 
    chapters/data-and-variables/studio.rst
@@ -42,6 +41,7 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book/index.rst
+   appendices/style-guide.rst
    
 .. toctree::
    :hidden:
