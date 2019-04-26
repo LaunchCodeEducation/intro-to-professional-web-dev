@@ -81,7 +81,7 @@
 <span id="id1"></span><h1>6.5. String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h1>
 <p>JavaScript provides many useful methods for string objects. Recall that a method is a function that “belongs to” a specific object. Methods will typically result in some operation being carried out on the data within an object. For strings, this means that our methods will typically transform the characters of the given string in some way.</p>
 <p>As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, but instead will <em>return</em> a new string that is the result of the given operation.</p>
-<p>We saw this behavior in our first example of a string method, at the beginning of this chapter.</p>
+<p>We saw this behavior in the <code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code> example.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nonprofit</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
@@ -125,18 +125,7 @@ LaunchCode
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">charAt</span></code></td>
-<td>Given an index, returns the character at the given index. If the index is out of range, the empty string is returned.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;n&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-
-<span class="c1">// returns &quot;&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">37</span><span class="p">);</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code></td>
 <td>Returns a copy of the given string, with all uppercase letters converted to lowercase.</td>
 <td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;launchcode&quot;</span>
 <span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
@@ -144,7 +133,7 @@ LaunchCode
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">toUpperCase</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">toUpperCase</span></code></td>
 <td>Returns a copy of the given string, with all lowercase letters converted to uppercase.</td>
 <td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;LAUNCHCODE&quot;</span>
 <span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
@@ -152,7 +141,7 @@ LaunchCode
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">trim</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">trim</span></code></td>
 <td>Returns a copy of the given string with a leading and trailing whitespace removed.</td>
 <td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;The LaunchCode Foundation&quot;</span>
 <span class="s2">&quot;  The LaunchCode Foundation     &quot;</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
@@ -160,10 +149,10 @@ LaunchCode
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">replace</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">replace</span></code></td>
 <td>Given a search string <code class="docutils literal notranslate"><span class="pre">s</span></code> and a replacement value <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">str.replace(s,</span> <span class="pre">r)</span></code> returns a copy of <code class="docutils literal notranslate"><span class="pre">str</span></code> with the first occurence of <code class="docutils literal notranslate"><span class="pre">s</span></code> replaced by <code class="docutils literal notranslate"><span class="pre">r</span></code>. <em>Note:</em> The <code class="docutils literal notranslate"><span class="pre">replace</span></code> method can be used in more powerful ways utilizing regular expressions. We will not cover those here, but you can <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">read more at MDN</a>.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;cat&quot;</span>
-<span class="s2">&quot;car&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">);</span>
+<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;catrot&quot;</span>
+<span class="s2">&quot;carrot&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">);</span>
 
 <span class="c1">// returns &quot;LaunchCode&quot;</span>
 <span class="s2">&quot;Launch Code&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
@@ -171,7 +160,7 @@ LaunchCode
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">slice</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">slice</span></code></td>
 <td>Given a starting index <code class="docutils literal notranslate"><span class="pre">i</span></code> and an optional ending index <code class="docutils literal notranslate"><span class="pre">j</span></code>, return the substring consisting of characters from index <code class="docutils literal notranslate"><span class="pre">i</span></code> through index <code class="docutils literal notranslate"><span class="pre">j-1</span></code>. If the ending index is ommitted, the returned substring includes all characters from the starting index through the end of the string.</td>
 <td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;Launch&quot;</span>
 <span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>

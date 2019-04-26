@@ -7,7 +7,7 @@ JavaScript provides many useful methods for string objects. Recall that a method
 
 As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, but instead will *return* a new string that is the result of the given operation.
 
-We saw this behavior in our first example of a string method, at the beginning of this chapter.
+We saw this behavior in the ``toLowerCase`` example.
 
 .. admonition:: Example
 
@@ -53,17 +53,6 @@ Here we present the most commonly-used string methods. There are `other string m
             // returns -1
             "LaunchCode".indexOf("A");
 
-   * - ``charAt``
-     - Given an index, returns the character at the given index. If the index is out of range, the empty string is returned.
-     - 
-         .. sourcecode:: js
-         
-            // returns "n"
-            "LaunchCode".charAt(3);
-
-            // returns ""
-            "LaunchCode".charAt(37);
-
    * - ``toLowerCase``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.
      - 
@@ -93,8 +82,8 @@ Here we present the most commonly-used string methods. There are `other string m
      - 
          .. sourcecode:: js
          
-            // returns "cat"
-            "car".replace("r", "t");
+            // returns "catrot"
+            "carrot".replace("r", "t");
 
             // returns "LaunchCode"
             "Launch Code".replace(" ", "");

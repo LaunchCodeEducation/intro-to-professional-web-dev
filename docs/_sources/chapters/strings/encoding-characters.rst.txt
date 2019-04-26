@@ -44,7 +44,7 @@ The ASCII Encoding
 
 .. index:: ASCII
 
-Most of the characters that you are used to using---including letters, numbers, whitespace, punctuation, and symbols---are part of the **ASCII** (pronounced *ASS-kee*) character encoding. This standard has changed very little since the 1960s, and is a subset of all other commonly-used encodings. In other words, other encodings start with ASCII and built up to include other characters.
+Most of the characters that you are used to using---including letters, numbers, whitespace, punctuation, and symbols---are part of the **ASCII** (pronounced *ASS-kee*) character encoding. This standard has changed very little since the 1960s, and it is the foundation of all other commonly-used encodings.
 
 .. note:: ASCII stands for American Standard Code for Information Interchange, but most programmers never remember that, so you shouldn't try to either.
 

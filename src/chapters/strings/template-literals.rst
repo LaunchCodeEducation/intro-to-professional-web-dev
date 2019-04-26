@@ -24,13 +24,13 @@ While normal strings are enclosed in single or double quotes (``'`` or ``"``), t
 
       Next year, Jack will be 10
 
-To achieve the same output with string concatenation would have required concatenation, which can get cumbersome:
+Using string concatenation to achieve the same output can get cumbersome:
 
 .. sourcecode:: js
 
    console.log("Next year, " + name + " will be " + (currentAge + 1));
 
-In addition to allowing us to include data in strings in a cleaner, more readable way, template literals also allow us to easily create milti-line strings without using string concatenation.
+In addition to allowing us to include data in strings in a cleaner, more readable way, template literals also allow us to easily create multi-line strings without using string concatenation or special characters.
 
 .. admonition:: Example
 

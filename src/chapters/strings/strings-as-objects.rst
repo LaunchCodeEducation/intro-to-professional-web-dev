@@ -26,7 +26,7 @@ JavaScript reports that the type of ``console`` is indeed ``object``. An operati
 
 You can think of methods as functions that "belong to" an object. In other words, they only make sense when used in conjunction with an object. We can call ``console.log()``, but we may not use ``log()`` on its own.
 
-A piece of data that associated with an object is known as a **property**. While we have not had a reason to use them, the ``console`` object has ``name`` and ``length`` properties. 
+A piece of data associated with an object is known as a **property**. While we have not had a reason to use them, the ``console`` object has ``name`` and ``length`` properties. 
 
 You can think of properties as variables that "belong to" an object. They are accessed using **dot notation**, which dictates that we use the object name, followed by a ``.``, followed by the property name.
 
@@ -48,7 +48,7 @@ Precisely what these properties of the built-in object ``console`` represent is 
 
 As with methods, it does not make sense to refer to a property without also referring to the associated object. Referencing ``name`` by itself in code *does not* give you the value of ``console.name``.
 
-Properties and methods can be used in conjunction with a specific object, as we did with ``console``, or with a variable containing an object.
+Properties and methods can be used in conjunction with a specific object, as we did with ``console``.
 
 We will learn quite a bit more about objects in this course, including how to use objects to create your own custom data types. This powerful JavaScript features allows us to bundle up data and functionality in useful, modular ways.
 
