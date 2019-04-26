@@ -70,7 +70,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
 
 Varying Data Types
 ------------------
-JavaScript arrays can hold a mixture of values of any type. For example, you can have an array that contains strings, numbers, and bools.
+JavaScript arrays can hold a mixture of values of any type. For example, you can have an array that contains strings, numbers, and booleans.
 
 .. sourcecode:: js
 
@@ -88,7 +88,7 @@ Check Your Understanding
 .. admonition:: Question
 
    What is the length of the two arrays?
-   
+
    *Hint: look closely at the quotes in the classes array.*
 
    .. sourcecode:: js

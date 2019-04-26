@@ -6,9 +6,9 @@ Bracket Notation and Index
 
 .. index:: ! index
 
-Arrays are ordered collections, meaning they will keep the order of items they contain. The **index** is the number order given to items
-in an array. Like with strings, use bracket notation and an index to access a specific item in an array ``array[index]``.
-Also like strings, an array's index is zero based. Zero based indexes start go from ``0`` to ``array.length - 1``.
+As previously discussed, arrays are an ordered collection where each item can be accessed via index. Similar to strings, an **index** in an
+array is the number order given to items. Individual items can be accessed using bracket notation (``array[index]``).
+Indexes are zero-based, going from ``0`` to ``array.length-1``.
 
 .. admonition:: Example
 
@@ -24,7 +24,7 @@ Also like strings, an array's index is zero based. Zero based indexes start go f
       ];
       console.log(programmingLanguages[0]);
       console.log(programmingLanguages[3]);
-      // What well happen then index 4 is requested?
+      // What will happen when index 4 is requested?
       console.log(programmingLanguages[4]);
 
    **Output**
@@ -64,7 +64,7 @@ Arrays are Mutable
 
 .. index:: mutable
 
-In programming mutability refers to what happens when you attempt to change a value. Remember that Strings are immutable, meaning that any change
+In programming, mutability refers to what happens when you attempt to change a value. Remember that strings are immutable, meaning that any change
 to a string results in a new string being created. In contrast, arrays are **mutable**, meaning that individual items in
 an array can be edited without a new array being created.
 
