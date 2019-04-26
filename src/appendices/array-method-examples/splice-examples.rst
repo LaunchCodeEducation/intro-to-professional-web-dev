@@ -1,3 +1,5 @@
+.. _splice-examples:
+
 **splice** Examples
 ====================
 

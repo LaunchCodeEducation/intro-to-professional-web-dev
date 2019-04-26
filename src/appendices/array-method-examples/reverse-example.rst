@@ -1,3 +1,5 @@
+.. _reverse-example:
+
 **reverse** Example
 ====================
 

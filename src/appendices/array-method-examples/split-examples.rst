@@ -1,3 +1,5 @@
+.. _split-examples:
+
 **split** Examples
 ===================
 

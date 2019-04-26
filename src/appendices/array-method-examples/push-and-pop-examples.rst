@@ -1,3 +1,5 @@
+.. _push-and-pop-examples:
+
 **push** And **pop** Examples
 ==============================
 

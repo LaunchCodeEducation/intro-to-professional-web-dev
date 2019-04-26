@@ -1,3 +1,5 @@
+.. _indexOf-examples:
+
 **indexOf** Examples
 =====================
 
@@ -7,8 +9,8 @@ The general syntax for this method is:
 
    arrayName.indexOf(item)
 
-Returns the index of the FIRST occurence of an item in the array. If the
-item is not in the array, -1 is returned.
+This method returns the index of the FIRST occurence of an item in the array.
+If the item is not in the array, -1 is returned.
 
 .. admonition:: Example
 

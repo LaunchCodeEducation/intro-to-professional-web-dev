@@ -1,3 +1,5 @@
+.. _includes-examples:
+
 **includes** Examples
 =====================
 
@@ -7,7 +9,7 @@ The general syntax for this method is:
 
    arrayName.includes(item)
 
-This method checks if an array contains the element specified in the
+This method checks if an array contains the item specified in the
 parentheses ``()``.
 
 Returns ``true`` or ``false``.

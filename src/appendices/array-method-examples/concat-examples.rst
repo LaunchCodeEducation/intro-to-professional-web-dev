@@ -1,3 +1,5 @@
+.. _concat-examples:
+
 **concat** Examples
 ====================
 

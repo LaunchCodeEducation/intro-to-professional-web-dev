@@ -1,3 +1,5 @@
+.. _slice-examples:
+
 **slice** Examples
 ===================
 
