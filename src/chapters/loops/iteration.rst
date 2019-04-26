@@ -18,7 +18,7 @@ To see this, let's consider an appropriate, if somewhat contrived, example. Supp
 
 Not only is this highly repetetive, but it is also error-prone. Even if utilizing copy-paste functionality, the sheer volume of code makes it somewhat likely that we will make a simple mistake, such as skipping an integer or misspelling ``console``.
 
-This code is also hard to modify. If we want to make a conceptually simple change---such as printing all the way to 100, or only printing even numbers---then we are forced to update an immense amount of code. Programming languages provide tools that allow us to repeat a sequence of statements in a much simpler way that this.
+This code is also hard to modify. If we want to make a conceptually simple change---such as printing all the way to 100, or only printing even numbers---then we are forced to update an immense amount of code. Programming languages provide tools that allow us to repeat a sequence of statements in a much simpler way.
 
 .. index::
    single: loop; for

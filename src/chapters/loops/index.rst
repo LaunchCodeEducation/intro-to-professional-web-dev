@@ -10,4 +10,5 @@ Repeating With Loops
    for-statement-breakdown
    accumulator-pattern
    while-loops
+   terminating-loops
    choosing-loops

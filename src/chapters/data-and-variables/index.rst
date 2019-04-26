@@ -1,3 +1,5 @@
+.. _data-and-variables:
+
 Data and Variables
 ==================
 
@@ -11,4 +13,5 @@ Data and Variables
    expressions-and-evaluation
    operations
    other-operators
-   
+   studio
+   exercises

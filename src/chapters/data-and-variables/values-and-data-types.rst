@@ -129,7 +129,7 @@ When you type a large integer value, you might be tempted to use commas between 
       42000
       42 0
 
-Well, that's not what we expected at all! Because of the comma, JavaScript chose to treat ``42,000`` as a *pair* of values. In fact, the ``console.log()`` function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.
+Well, that's not what we expected at all! Because of the comma, JavaScript chose to treat ``42,000`` as a *pair* of values. In fact, the ``console.log`` function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.
 
 .. admonition:: Example
 

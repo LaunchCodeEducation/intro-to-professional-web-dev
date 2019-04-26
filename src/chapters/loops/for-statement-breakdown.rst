@@ -65,7 +65,7 @@ The loop variable can be initialized to any value.
          console.log(name[i]);
       }
 
-To avoid confusion and bugs, you should give your loop variable a unique name, one that you have not used elsewhere in your program. In cases for which the loop variable is serving as a "counter" for iterations of a loop, it is conventional to use ``i`` for the variable name. In the case of nested ``for`` loops (loops inside of loops), the variables ``j``, ``k``, etc. are often used.
+To avoid confusion and bugs, you should give your loop variable a unique name, one that you have not used elsewhere in your program. In cases where the loop variable is serving as a "counter" for iterations of a loop, it is conventional to use ``i`` for the variable name. In the case of nested ``for`` loops (loops inside of loops), the variables ``j``, ``k``, etc. are often used.
 
 .. note:: The loop variable is typically used by the loop body, but this is not required. The following example is a valid ``for`` loop that prints ``"LaunchCode"`` 42 times.
 
@@ -113,7 +113,7 @@ Update Expression
 .. index::
    single: for loop; update expression
 
-The final component in a for loop definition is the **updated expression**, which executes after *every* iteration of the loop. While this expression may be anything, it most often updates the value of the loop variable. 
+The final component in a for loop definition is the **update expression**, which executes after *every* iteration of the loop. While this expression may be anything, it most often updates the value of the loop variable. 
 
 In all of the examples we have seen so far, the update expression has been ``i++``, incrementing the loop variable by 1. However, it can update the loop variable in other ways.
 
