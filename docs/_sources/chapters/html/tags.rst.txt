@@ -54,6 +54,38 @@ Tags to Know
    * - Table
      - ``<table>``
      - Creates a table on the page.
+   * - Heading Level One
+     - ``<h1>``
+     - Creates a heading in the text. 
+
+.. note::
+   
+   There are multiple headings in HTML going from ``h1`` to ``h6``.
+   The headings get progressively smaller.
+   A good rule of thumb is to have only one ``h1`` in a web page and do not skip a level.
+   Headings can be resized so there is no need to do so.
+
+Tag Example
+-----------
+
+Here is an example of a basic web page utilizing some of the tags above with the HTML used to make the site.
+
+.. sourcecode:: html
+
+   <!DOCTYPE html>
+   <html>
+      <head>
+         <title>Plant-Loving Astronauts</title>
+      </head>
+      <body>
+         <h1>Space Plants Are Cool</h1>
+         <p>NASA discovers that plants can live in <b>outer space</b>. More innovations from this discovery to follow.</p>
+         <!-- add images from NASA of these space plants -->
+      </body>
+    </html>
+
+.. figure:: figures/plant-loving-astronauts.png
+   :alt: A web page with the heading, Space Plants Are Cool, and the paragraph about NASA's discovery of space plants.
 
 Attributes
 ----------
@@ -69,6 +101,30 @@ Programmers add attributes before the closing bracket in the opening tag, like s
 .. sourcecode:: html
    
    <element attribute = "value">content</element>
+
+Attributes Example
+------------------
+
+Here is an example of a basic web page utilizing some of the tags above and appropriate attributes with the HTML used to make the site.
+
+.. sourcecode:: html
+
+   <!DOCTYPE html>
+   <html>
+      <head>
+         <title>Plant-Loving Astronauts</title>
+      </head>
+      <body>
+         <h1>Space Plants Are Cool</h1>
+         <p>NASA discovers that plants can live in <b>outer space</b>. More innovations from this discovery to follow.</p>
+         <img src = "space-flower.jpg" alt = "Flower floating in space.">
+      </body>
+    </html>
+
+.. figure:: figures/plant-loving-astronauts-2.png
+   :alt: A web page with the heading, Space Plants Are Cool, and the paragraph about NASA's discovery of space plants with an accompanying picture of a flower floating in space.
+
+The ``<img>`` tag has two attributes that you will see a lot. ``src`` gives the location of the image that is being used and ``alt`` gives alternate text for screen reader users. For that reason, ``alt`` should be a concise description of what is going on in the image.
 
 Check Your Understanding
 ------------------------
