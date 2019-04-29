@@ -23,11 +23,11 @@ The new items may be of any data type.
 
       let arr = ['a', 'b', 'c'];
 
-      arr.push('d e', 'f', 42);
+      arr.push('d', 'f', 42);
       //returns 6
 
       console.log(arr);
-      //prints ['a', 'b', 'c', 'd e', 'f', 42]
+      //prints ['a', 'b', 'c', 'd', 'f', 42]
 
 .. _pop:
 

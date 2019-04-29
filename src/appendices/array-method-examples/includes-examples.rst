@@ -10,9 +10,7 @@ The general syntax for this method is:
    arrayName.includes(item)
 
 This method checks if an array contains the item specified in the
-parentheses ``()``.
-
-Returns ``true`` or ``false``.
+parentheses ``()``, and returns ``true`` or ``false``.
 
 .. admonition:: Example
 

@@ -9,7 +9,7 @@ The general syntax for this method is:
 
    arrayName.slice(starting index, ending index)
 
-This method copies selected entries of an array into a new array. ``slice``
+This method copies range of elements from one array into a new array. ``slice``
 does NOT change the original array.
 
 The ending index is optional.  If it is left out, ``slice`` returns a new array

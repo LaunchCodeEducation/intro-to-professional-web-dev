@@ -9,10 +9,7 @@ Array Methods
 As with strings, JavaScript provides us with useful **methods** for arrays.
 Unlike strings, arrays are *mutable* and can be changed.
 
-Some methods alter an array, while others *return* values. For example,
-``console.log([1, 2, 3].includes(2))`` prints ``true``. The  action
-``[1, 2, 3].includes(2)`` checks the array to see if it contains the item ``2``
-and then *returns* a boolean which can be printed (or assigned to a variable).
+Some methods alter an array, while others *return* values.
 
 Common Array Methods
 --------------------
@@ -20,8 +17,8 @@ Common Array Methods
 Here is a sample of the most frequently used array methods. More complete lists
 can be found here:
 
-#. Novice list: `W3 Schools Array Methods <https://www.w3schools.com/jsref/jsref_obj_array.asp>`__
-#. More detailed list: `MDN Web Docs <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>`__
+#. `W3 Schools Array Methods <https://www.w3schools.com/jsref/jsref_obj_array.asp>`__
+#. `MDN Web Docs <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>`__
 
 To see detailed examples for a particular method, control-click
 (or right-click) on its name.
@@ -48,7 +45,7 @@ To see detailed examples for a particular method, control-click
      - Description
    * - :ref:`reverse <reverse-example>`
      - ``arrayName.reverse()``
-     - Pretty straightforward. Reverses the order of the elements in an array.
+     - Reverses the order of the elements in an array.
 
    * - :ref:`sort <sort-examples>`
      - ``arrayName.sort()``
@@ -142,7 +139,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
       let groceryBag = ['bananas', 'apples', 'edamame', 'chips', 'cucumbers', 'milk', 'cheese'];
       let selectedItems = [];
 
-      selectedItems = classRoster.slice(2, 5).sort();
+      selectedItems = groceryBag.slice(2, 5).sort();
       console.log(selectedItems);
 
    a. ``['chips', 'cucumbers', 'edamame']``
