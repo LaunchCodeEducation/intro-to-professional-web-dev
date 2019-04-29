@@ -7,7 +7,7 @@ Contents
 Chapters
 ^^^^^^^^
 
-.. toctree:: 
+.. toctree::
    :numbered:
    :maxdepth: 2
    :name: chapterstoc
@@ -34,6 +34,15 @@ Studios
    :name: studiostoc
 
    chapters/data-and-variables/studio
+
+Assignments
+^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :name: assignmentstoc
+
+   assignments/candidateQuiz
 
 Appendices
 ^^^^^^^^^^
