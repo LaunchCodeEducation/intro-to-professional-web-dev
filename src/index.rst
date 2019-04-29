@@ -4,6 +4,9 @@ Introduction to Professional Web Development in JavaScript
 Contents
 --------
 
+Chapters
+^^^^^^^^
+
 .. toctree:: 
    :numbered:
    :maxdepth: 2
@@ -13,9 +16,12 @@ Contents
    chapters/how-programs-work/index
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
-   chapters/booleans-and-conditionals/index
+   chapters/booleans-and-conditionals/index   
+   chapters/errors-and-debugging/index
+   chapters/strings/index
    chapters/functions/index
-   
+   chapters/booster-rockets/index
+
 .. toctree::
 
    genindex
@@ -30,18 +36,17 @@ Studios
 
    chapters/data-and-variables/studio
 
-
-
 Appendices
 ^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :name: appendicestoc
 
-   appendices/about-this-book/index
-   
+   appendices/style-guide
+   appendices/string-method-examples/index
+   appendices/about-this-book
+
 .. toctree::
    :hidden:
 

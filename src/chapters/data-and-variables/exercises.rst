@@ -1,6 +1,5 @@
-===================
-Chapter 4 Exercises
-===================
+Exercises: Data and Variables
+=============================
 
 Exercises appear regularly in the book. Just like the concept checks, these exercises will check your understanding of the topics in this chapter and are a way for you to practice the skills that are covered in each chapter. 
 

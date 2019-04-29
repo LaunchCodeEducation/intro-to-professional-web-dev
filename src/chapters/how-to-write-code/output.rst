@@ -1,2 +1,2 @@
-Output With ``console.log``
+Output With **console.log**
 ===========================
