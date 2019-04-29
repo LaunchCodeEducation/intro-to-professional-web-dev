@@ -16,7 +16,7 @@ A palindrome can be defined as a word that is spelled the same backwards and for
    
    A sentence fitting this definition is, "A man, a plan, a canal: Panama." We will stick to our simpler definition for the purpose of this example.
 
-We want to write a boolean function---that is, a function that returns ``true`` or ``false``---that determines if a word is a palindrome or not.
+We want to write a boolean function---a function that returns ``true`` or ``false``---to deteremine if a word is a palindrome.
 
 One way to state the palindrome condition is to say that a palindrome is a string that is equal to its reverse. In other words, we can test for palindromes by taking a string, reversing it, and then comparing the reversed string to the original. If the two are equal, we have a palindrome.
 

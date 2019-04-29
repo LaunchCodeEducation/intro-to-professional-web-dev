@@ -7,6 +7,7 @@ Functions
    intro
    using-functions
    creating-functions
+   function-input-and-output
    process
    parameters-and-variables
    naming-functions

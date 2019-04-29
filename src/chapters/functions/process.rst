@@ -3,22 +3,22 @@
 A Good Function-Writing Process
 ===============================
 
-The function is the most complex JavaScript construct that we have seen. A function has more components to its syntax than conditionals or loops. In addition, these components can be used in more complicated ways than those other constructs.
+The function is the most complex JavaScript construct that we have seen. Functions have more components to their syntax than conditionals or loops, and can be used in more intricate ways than those constructs.
 
-To avoid frustration and bugs, it's important to approach writing functions in an intentional, structured way. This is especially true as the functions that you write become more and more complex. 
+To avoid frustration and bugs, it's important to approach writing functions in an intentional, structured way. This is essential as you start to write more complex functions. 
 
 In this section, we outline what we think is the best approach. To provide concrete examples, we will consider a fictional function that is able to make a sandwich.
 
-Design Your Function
---------------------
+Step 1: Design Your Function
+----------------------------
 
 Before putting fingers to keyboard, it is important to have a clear idea of what you want your function to do. You should ask yourself the following questions:
 
 - What data (that is, parameters) does my function need to do its job?
 - Should my function return a value? (Hint: The answer is almost always "yes.")
-- What type of value should my function return?
+- What should be the data type of my function's return value?
 - What is a good, descriptive name for my function?
-- What types do we expect the parameters to be?
+- What data types do we expect the parameters to be?
 - What are good names for my parameters? 
 
 For our sandwich function, the answers might look like this:
@@ -37,13 +37,12 @@ For our sandwich function, the answers might look like this:
    * - Parameter names and types
      - ``breadType`` (string), ``fillingType`` (string), ``condiments`` (array of strings)
     
+\* *JavaScript does not actually have a "sandwich" data type, but we want our function to be as flexible as possible. For now, recognize that returning a simple string to describe the sandwich will not be useful. In later lessons, we will learn how to create custom data types, so making a virtual, code-based "sandwich" here is not a problem.*
 
-\* *We know such a type doesn't exist in JavaScript, but the point we want to make is that you have to be specific. For example, we know we don't want to return a string that describes the sandwich. What use would that be? Additionally, we will learn how to make custom data types in a later lesson, so you could theoretically actually return something of type sandwich.*
+Step 2: Create the Basic Structure
+----------------------------------
 
-Create the Basic Structure
---------------------------
-
-Now it is time to start coding. Using the design decisions that you have just made, write the minimal syntax needed to create the function.
+Now it is time to start coding. Using the design decisions you just made, write the minimal syntax needed to create the function.
 
 Here's what an outline of our sandwich function would look like:
 
@@ -57,16 +56,16 @@ Here's what an outline of our sandwich function would look like:
 
 Doing this step before writing the body will prevent silly mistakes like leaving off a ``}`` or forgetting to define a parameter.
 
-Write the Body
---------------
+Step 3: Write the Body
+----------------------
 
 With the basic structure in place, go ahead and start writing the function body. Be sure to alternate between sub-tasks and running your code. *Do not wait until you have written the entire function body before testing your code!*
 
-We can't emphasize this enough. Going long stretches of time between program executions is a good way to end up frustrated. Recall in the chapter on debugging that we made the following recommendation to avoid bugs:
+We can't emphasize this enough. Going long stretches of time without running the program is a good way to end up frustrated. Recall in the chapter on debugging that we made the following recommendation to avoid bugs:
 
 .. todo:: Pull quote from debugging chapter, with reference link
 
 This applies *especially* to writing functions. Every good professional programmer works in this way: write a few lines of code, run it, debug any errors, repeat.
 
-Following these steps won't prevent you from making mistakes, but it will certainly reduce the number of bugs that you create while achieving good, working code faster. 
+Following these steps won't prevent you from making mistakes, but it will certainly reduce the number of bugs you create. This helps you more quickly produce solid, working code.
 

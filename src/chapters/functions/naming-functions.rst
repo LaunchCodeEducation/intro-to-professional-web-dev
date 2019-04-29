@@ -51,7 +51,7 @@ Creating a verb/noun pair for a function name doesn't always make sense, but whe
 Use Descriptive Names
 ---------------------
 
-We've said it before that you should use descriptive names, but now we want to expand on the point a bit. You should *prefer long, descriptive names over short, abbreviated names*. If you can read a function name and understand what it does from that along, that is ideal.
+We have repeatedly reminded you to use descriptive names, but now we want to expand on this point. You should *prefer long, descriptive names over short, abbreviated names*. If you can read a function name and understand what it does from the name alone, then the function has a good name.
 
 .. admonition:: Example
 
@@ -70,9 +70,9 @@ We've said it before that you should use descriptive names, but now we want to e
 
 .. _comments_lie:
 
-If you find yourself writing a comment to describe what your function does, consider whether a better name might remove the need for such additional explanation. The best function (and variable) names are those that are *self-documenting*. In other words, they are descriptive enough as to not need explanatory comments. 
+If you find yourself writing a comment to describe what your function does, consider whether a better name might remove the need for such additional explanation. The best function (and variable) names are those that are *self-documenting*---descriptive enough not to need further explanation. 
 
-Using self-documenting names means that the code that *uses* your function will be more readable---your explanatory comments are not visible where the function is used. Additionally, it is easy for comments to become inaccurate; when you update your code to change behavior, there is nothing forcing you to also update your comments. For this reason, some programmers live by the maxim, "Comments lie." While we won't go so far as to say that you should never use comments in your code, we *do* believe that comments should not be used to make up for poor function and variable names.
+Using self-documenting names means that the code that *uses* your function will be more readable, since your explanatory comments are not visible where the function is used. Additionally, it is easy for comments to become inaccurate; when you update your code to change behavior, there is nothing forcing you to also update your comments. For this reason, some programmers live by the maxim, "Comments lie." While we won't go so far as to say that you should never use comments in your code, we *do* believe that comments should not be used to make up for poor function and variable names.
 
 Check Your Understanding
 ------------------------

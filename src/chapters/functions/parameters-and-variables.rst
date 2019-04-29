@@ -1,7 +1,7 @@
 Parameters and Variables
 ========================
 
-When discussing parameters, we said that a parameter "behaves like a variable that exists only within the function." While this is true, the relationship between variables and parameters is a bit more complicated.
+Earlier, we said that a parameter "behaves like a variable that exists only within the function." While this is true, the relationship between variables and parameters is a bit more complicated.
 
 Function Scope
 --------------
@@ -10,9 +10,9 @@ Function Scope
    single: function; scope
    single: scope
 
-The **scope** of a variable is the extent to which a variable is visible within a program. In other words, a variable's scope consists of all locations within a program at which it can be used. Introducing functions gives us one of our first examples of limited variable scope---a situation in which a variable is not visible throughout an entire program.
+The **scope** of a variable is the extent to which a variable is visible within a program. Scope consists of all locations within a program where a variable can be used or modified. Introducing functions gives us one of our first examples of limited variable scope---a situation in which a variable is not visible throughout an entire program.
 
-In particular, a variable defined within a function is not visible outside of that function.
+In particular, *a variable defined using `let` within a function is not visible outside of that function.*
 
 .. admonition:: Example
 
@@ -49,7 +49,7 @@ This is what we mean when we refer to scope. A variable is not necessarily usabl
 Variable Shadowing
 ------------------
 
-We just learned that variables and parameters defined within a function are not visible outside of that function. The opposite scenario is more complicated; a variable defined outside a function *may be* visible within the function, in certain circumstances.
+We just learned that variables and parameters defined within a function are not visible outside of that function. The opposite scenario is more complicated; a variable defined outside a function *may* be visible within the function, in certain circumstances.
 
 .. admonition:: Example
 
@@ -121,7 +121,7 @@ An interesting thing happens when a function parameter has the same name as a va
 
 While the variable ``message`` declared on line 1 is technically visible within ``printMessage`` (that is, it is in-scope), it is hidden by the function parameter of the same name. When ``printMessage("Goodbye")`` is called and ``console.log(message)`` executes, ``message`` has the value ``"Goodbye"``, which is the argument passed into the function. This phenomenon is known **shadowing**, based on the metaphor that a function parameter "casts it's shadow over" a variable of the same name, effectively hiding it. 
 
-There is no good reason to intentionally use variable shadowing in your program. In fact, doing so can lead to confusion over which of the two variables is being used in a given situation. For this reason, you should avoid naming variables the same as function parameters within a program. 
+There is no good reason to intentionally use variable shadowing in your program. In fact, doing so can lead to confusion over which of the two variables is being used in a given situation. For this reason, *you should avoid naming variables and function parameters the same name.*
 
 Check Your Understanding
 ------------------------

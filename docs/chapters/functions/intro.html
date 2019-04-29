@@ -91,7 +91,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">When introducing string and array methods, we noted that a <strong>method</strong> is a function that “belongs to” an object. This distinction is important to keep in mind, and will be explored in depth in a later chapter. For now, note that a method is a special type of function.</p>
 </div>
-<p>Each of the functions we have used works in the same way. Using the function’s name, followed by parentheses, we can <em>call</em> the function, resulting in some action being carried out. Sometimes, as with <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we can provide input data within the parenteses, which the function will use to carry out its action.</p>
+<p>Each of the functions we have used works in the same way. Using the function’s name, followed by parentheses, we can <em>call</em> the function, resulting in some action being carried out. Sometimes, as with <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we can provide input data within the parentheses, which the function will use to carry out its action.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">console.log</span></code> carries out the action of printing the provided value(s). In this case, <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is printed to the console.</p>
@@ -116,30 +116,45 @@
 </pre></div>
 </div>
 </div>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Many array and string methods also return values. This program uses the string method <code class="docutils literal notranslate"><span class="pre">split</span></code> to break a string into separate components.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commaSeparatedValues</span> <span class="o">=</span> <span class="s2">&quot;Smith,Jane,100 Cherry Blossom Lane&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="nx">commaSeparatedValues</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span>
+
+<span class="o">**</span><span class="nx">Output</span><span class="o">**</span>
+
+<span class="o">::</span>
+
+   <span class="p">[</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;100 Cherry Blossom Lane&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
 <p id="index-1">Functions are extremely powerful in that they allow us to repeat actions without writing out the full code needed to carry out that action each time. They also allow us to be removed from the details of what the function is actually doing.</p>
 <p>When we want to print a message to the console using <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we do not need to be concerned with details such as what the console is, or how a string can be displayed on the console. This behavior is wrapped up within the function itself. We reap the benefits of <code class="docutils literal notranslate"><span class="pre">console.log</span></code> without needing to know how it works. This is an example of a broader programming concept known as <strong>encapsulation</strong>. Encapsulation is the process of packaging up code in a way that allows it to be resused, with the person or program using the encapsulated code not having to be concerned with the details of how it works.</p>
-<p id="index-2">A commonly-used analogy for describing the concept of a function is that of a machine that takes input, carries out some action, and gives back some result. This is known as the <strong>function machine</strong> analogy.</p>
+<p id="function-machine"><span id="index-2"></span>A commonly-used analogy for describing the concept of a function is that of a machine that takes input, carries out some action, and gives back some result. This is known as the <strong>function machine</strong> analogy.</p>
 <div class="figure" id="id1">
 <img alt="A &quot;function machine,&quot; consisting of a box which takes inputs, and from which output emerges." src="../../_images/function-machine.png" />
 <p class="caption"><span class="caption-text">The function machine</span></p>
 </div>
-<p>If we want to use a function, we must provide it some input (if needed). It then carries out an action using the input provided, and returns a result. What happens in the middle, when the function is doing its work, is “inside the machine” in a sense. If we know how a function should behave, we simply provide input, and receive output. The rest is up to the function machine itself.</p>
+<p>If we want to use a function, we must provide it some input (if needed). It carries out an action on the input and returns a result. The action occurs within the function, or “inside the machine”. If we know the purpose of a function, we simply provide it input and receive the output. The rest is up to the machine itself.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You may notice that a function like <code class="docutils literal notranslate"><span class="pre">console.log</span></code> doesn’t seem to return anything. We will soon learn that <em>every</em> function returns a value, regardless of whether or not that value is used, or is even useful.</p>
 </div>
-<p>The programming concept of a function is very similar to the concept of a mathematical function. For example, in high school algebra you learned about functions such as polynomials. These functions used a mathematical variable (the input of the function) and then carried out some procedure using the input, producing a numerical result.</p>
+<p>The programming concept of a function is very similar to the concept of a mathematical function. For example, in high school algebra you learned about functions like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">4x</span> <span class="pre">+</span> <span class="pre">7</span></code>. These functions used a mathematical input (<code class="docutils literal notranslate"><span class="pre">x</span></code>) and carried out a procedure to return a numerical result (<code class="docutils literal notranslate"><span class="pre">y</span></code>).</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<p>Consider the following polynomial:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f(x) = x² + 3x - 2
+<p>Consider the following mathematical function:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f(x) = x² + 4x - 2
 </pre></div>
 </div>
 <p>We can <em>call</em> the function by giving it a specific <em>input</em>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f(3) = 3² + 3*3 - 2 = 9 + 9 - 2 = 16
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f(3) = 3² + 4*3 - 2 = 9 + 12 - 2 = 19
 </pre></div>
 </div>
-<p class="last">The number 16 is the <em>output</em>.</p>
+<p class="last">The number 19 is the <em>output</em>.</p>
 </div>
 <div class="admonition-todo admonition" id="index-3">
 <p class="first admonition-title">Todo</p>

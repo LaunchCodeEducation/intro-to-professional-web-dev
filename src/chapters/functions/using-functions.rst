@@ -9,9 +9,9 @@ Having informally used and discussed functions, it is time to formalize a few co
    single: function; invocation
    single: function; input
 
-A **function call** is the act of using a function by referring to it's name, followed by parentheses. A synonymous term is **function invocation**, and we will sometimes say that we are "invoking a function."
+A **function call** is the act of using a function by referring to its name, followed by parentheses. A synonymous term is **function invocation**, and we will sometimes say that we are "invoking a function."
 
-Within parentheses, a comma-separated list of **function arguments** may be provided when calling a function. These are sometimes called inputs, and we say that the inputs are "passed to" the function.
+Within parentheses, a comma-separated list of **arguments** may be provided when calling a function. These are sometimes called **inputs**, and we say that the inputs are "passed to" the function.
 
 A generic function call looks like this:
 
@@ -23,7 +23,7 @@ A generic function call looks like this:
    single: value; return
    single: function; return value
 
-Every function returns a value, which can be used by the calling program---for example, to store in a variable or print to the console. This value is the **return value** of the function. 
+Every function provides a **return value**, which can be used by the calling program---for example, to store in a variable or print to the console.
 
 .. admonition:: Example
 
@@ -67,7 +67,7 @@ If a function doesn't provide an explicit return value, the special value ``unde
 .. index:: 
    single: function; side effect
 
-In some cases, calling a function results in an action being carried out that changes the state of a program outside of the function itself. Such a behavior is known as a **side effect**. 
+In some cases, calling a function results in an action that changes the state of a program outside of the function itself. Such a behavior is known as a **side effect**. 
 
 .. admonition:: Example
 
