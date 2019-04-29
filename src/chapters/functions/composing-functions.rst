@@ -52,7 +52,9 @@ Another approach is to use the fact that there is a ``reverse`` method for array
 .. sourcecode:: js
 
    function reverse(str) {
-      return str.split('').reverse().join('');
+      let lettersArray = str.split('');
+      let reversedLettersArray = lettersArray.reverse();
+      return reversedLettersArray.join('');
    }
 
 Let's break down the steps carried out by this function:
@@ -60,6 +62,13 @@ Let's break down the steps carried out by this function:
 #. **Turn the string into an array of characters.** We call ``str.split('')``, using the empty string as the splitting character, returns an array of the individual characters that make up the string.
 #. **Reverse the array of characters.** To do this, we use the built-in array method ``reverse``.
 #. **Join the reversed character array into a string.** We call ``.join('')``. Joining with the empty string is the same as concatenating each of the invididual characters together into a single string.
+
+.. admonition:: Try It!
+
+   Use method chaining to reduce the ``reverse`` function to a single line.
+
+   `Try it at repl.it <https://repl.it/@launchcode/reverse-Function>`_
+
 
 .. _palindrome-function:
 
@@ -88,7 +97,7 @@ Since ``isPalindrome`` uses our ``reverse`` function, this is an example of comp
 Functions Should Do Exactly One Thing
 -------------------------------------
 
-An important consideration when writing a function is size. By "size" we mean in-part that functions should be short, but more specifically, that a function should *do exactly one thing.* 
+An important consideration when writing a function is size. By "size" we mean that functions should be short and, more importantly, *do exactly one thing.* 
 
 This principle is easier to state than to put into practice. For example, what if we had written ``isPalindrome`` without breaking out the ``reverse`` code into a separate function?
 

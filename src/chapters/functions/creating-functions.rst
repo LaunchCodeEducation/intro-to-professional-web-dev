@@ -35,7 +35,7 @@ Following ``function`` is the **function name**, which is ``myFunction`` in the 
 .. index::
    single: function; parameter
 
-Following the function name, we define **parameters** within the parentheses. Think of parameters as variables that can be used only within the function itself. The number and names of the parameters are determined by the programmer, based on what they want the function to do. A function may also be defined with no parameters at all.
+Following the function name, we define **parameters** within the parentheses. Think of parameters as variables that can be used only within the function itself. The number and names of the parameters are determined by the programmer, based on what they want the function to do. A function may be defined with several parameters, or no parameters at all.
 
 .. index:: Typescript
 

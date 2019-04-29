@@ -117,7 +117,9 @@
 <p class="last">Add reference to array chapter where this is covered</p>
 </div>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+   <span class="kd">let</span> <span class="nx">lettersArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+   <span class="kd">let</span> <span class="nx">reversedLettersArray</span> <span class="o">=</span> <span class="nx">lettersArray</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+   <span class="k">return</span> <span class="nx">reversedLettersArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -127,6 +129,11 @@
 <li><strong>Reverse the array of characters.</strong> To do this, we use the built-in array method <code class="docutils literal notranslate"><span class="pre">reverse</span></code>.</li>
 <li><strong>Join the reversed character array into a string.</strong> We call <code class="docutils literal notranslate"><span class="pre">.join('')</span></code>. Joining with the empty string is the same as concatenating each of the invididual characters together into a single string.</li>
 </ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<p>Use method chaining to reduce the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function to a single line.</p>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/reverse-Function">Try it at repl.it</a></p>
+</div>
 </div>
 <div class="section" id="the-ispalindrome-function">
 <span id="palindrome-function"></span><h3>8.8.1.2. The <strong>isPalindrome</strong> Function<a class="headerlink" href="#the-ispalindrome-function" title="Permalink to this headline">¶</a></h3>
@@ -149,7 +156,7 @@
 </div>
 <div class="section" id="functions-should-do-exactly-one-thing">
 <h2>8.8.2. Functions Should Do Exactly One Thing<a class="headerlink" href="#functions-should-do-exactly-one-thing" title="Permalink to this headline">¶</a></h2>
-<p>An important consideration when writing a function is size. By “size” we mean in-part that functions should be short, but more specifically, that a function should <em>do exactly one thing.</em></p>
+<p>An important consideration when writing a function is size. By “size” we mean that functions should be short and, more importantly, <em>do exactly one thing.</em></p>
 <p>This principle is easier to state than to put into practice. For example, what if we had written <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> without breaking out the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> code into a separate function?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>

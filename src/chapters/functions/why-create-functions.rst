@@ -57,11 +57,11 @@ Functions Enable Code Sharing
 
 .. todo:: add reference to modules chapter
 
-As you will soon learn, encapsulating behavior within a function makes it easy for you to share that behavior across files and even projects. This becomes a critically important feature when working on large programs that consist of dozens, or even hundreds of files of code, as all professional developers do regularly. 
+As you will soon learn, encapsulating behavior within a function makes it easy for you to share that behavior across files and even projects. This becomes a critically important feature when working on large programs that consist of large numbers of files, as all professional developers do regularly. 
 
 Functions Save Millions of Lives Every Day
 ------------------------------------------
 
 Okay, not really. But the point is, functions are incredibly powerful tools that you will come to appreciate and find indispensable. Ask a professional programmer if they could do their job without functions, and the answer will be an emphatic "NO!" 
 
-While they are abstract and can be difficult to learn, we promise you that the work will be worth it. 
+While functions may seem abstract and difficult to learn at first, repeated practice will lead to mastery. We promise that your work will be worth it. 

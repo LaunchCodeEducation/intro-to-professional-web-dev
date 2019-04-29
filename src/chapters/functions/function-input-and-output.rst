@@ -191,7 +191,7 @@ Parmeters and Arguments
    single: function; argument
    single: function; parameter
 
-Over the past two sections, we introduced two function-related concepts that are very similar, and are often confusing to distinguish: *arguments* and *parameters*. The difference between the two is subtle, so we will attempt to clear that up now.
+Over the past few sections, we introduced two function-related concepts that are very similar, and are often confusing to distinguish: *arguments* and *parameters*. The difference between the two is subtle, so we will attempt to clear that up now.
 
 The easiest way to talk about the difference between arguments and parameters is by referring to an example.
 
@@ -220,6 +220,92 @@ In this example, ``name`` is a **parameter**. It is part of the function definit
 The value ``"Lamar"`` that is used when we invoke the function on line 5 is an **argument**. It is a *specific value* that is used during the function call. 
 
 The difference between a parameter and an argument is the same as that between a variable and a value. A variable *refers to* a specific value, just like a parameter *refers to* a specific argument when a function is called. Like a value, an argument is a concrete piece of data.
+
+Arguments Are Optional
+----------------------
+
+A function may be defined with several parameters, or with no parameters at all. Even if a function is defined with parameters, JavaScript will not complain if the function is called *without* specifying the value of each parameter.
+
+.. admonition:: Example
+
+   .. sourcecode:: js
+   
+      function hello(name) {
+         return `Hello, ${name}!`;
+      }
+
+      console.log(hello());
+
+   **Output**
+
+   ::
+
+      Hello, undefined!
+
+We defined ``hello`` to have one parameter, ``name``. When calling it, however, we did not provide any arguments. Regardless, the program ran without error.
+
+*Arguments are optional* when calling a function. When a function is called without specifiying a full set of arguments, any parameters that are left without values will have the value ``undefined``.
+
+Some functions---such as the string method :ref:`slice <string-slice-examples>`---are built in a way that allows that explicitly allows some arguments to be optional. Such functions will adapt their behavior based on the number of arguments present when the function is called.
+
+.. admonition:: Example
+
+   The string method ``slice`` allows the second argument to be left off. When this happens, the method behaves as if they value of the second argument is the length of the string.
+
+   .. sourcecode:: js
+   
+      // returns "Launch"
+      "LaunchCode".slice(0, 6);
+
+      // returns "Code"
+      "LaunchCode".slice(6);
+
+      // also returns "Code"
+      "LaunchCode".slice(6, 10);
+
+If your function will not work properly without one more more of its parameters defined, then it is a good idea to check the value(s) of such parameters. One way of handling such a situation is to define a "default" value for these parameters if they are ``undefined``. This is done by specifying a default value next to the parameter name, after ``=``.
+
+.. admonition:: Example
+
+   This example modifies the ``hello`` function to set a default value for ``name``, if it is not defined when the function is called.
+
+   .. sourcecode:: js
+   
+      function hello(name = "World") {
+         return `Hello, ${name}!`;
+      }
+
+      console.log(hello());
+
+   **Output**
+
+   ::
+
+      Hello, World!
+
+Just as it is possible to call a function with *fewer* arguments than it has parameters, we can also call a function with *more* arguments than it has parameters. In this case, such parameters are not available as a named variable.
+
+.. admonition:: Example
+
+   This example calls ``hello`` with two arguments, even though it is defined with only one parameter.
+
+   .. sourcecode:: js
+   
+      function hello(name = "World") {
+         return `Hello, ${name}!`;
+      }
+
+      console.log(hello("Jim", "McKelvey"));
+
+   **Output**
+
+   ::
+
+      Hello, Jim!
+
+.. admonition:: Fun Fact
+
+   These "extra" arguments can still be accessed using a special object named ``arguments``, which is made available to every function. If you are curious, `read more at MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments>`_. However, we will not need to use this advanced JavaScript feature in this course.
 
 Check Your Understanding
 ------------------------

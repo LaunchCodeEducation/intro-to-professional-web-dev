@@ -81,6 +81,8 @@ Even though ``message`` is defined outside the function, it is still visible wit
 
    What is the output of the following program? Form a hypothesis for yourself before running it.
 
+   Once you have answered that question, try relocating the declaring ``message`` to other locations to see how it affects the program. For example, you might try placing it within or after ``printMessage``.
+
    .. sourcecode:: js
    
       let message = "Hello, World!";
