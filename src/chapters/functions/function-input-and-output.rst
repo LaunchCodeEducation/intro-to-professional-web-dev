@@ -246,7 +246,32 @@ We defined ``hello`` to have one parameter, ``name``. When calling it, however, 
 
 *Arguments are optional* when calling a function. When a function is called without specifiying a full set of arguments, any parameters that are left without values will have the value ``undefined``.
 
-Some functions---such as the string method :ref:`slice <string-slice-examples>`---are built in a way that allows that explicitly allows some arguments to be optional. Such functions will adapt their behavior based on the number of arguments present when the function is called.
+.. index::
+   single: function; default parameter
+
+If your function will not work properly without one more more of its parameters defined, then you should define a **default value** for these parameters. The default value can be provided next to the parameter name, after ``=``.
+
+.. admonition:: Example
+
+   This example modifies the ``hello`` function to use a default value for ``name``. If ``name`` is not defined when ``hello`` is called, it will use the default value.
+
+   .. sourcecode:: js
+   
+      function hello(name = "World") {
+         return `Hello, ${name}!`;
+      }
+
+      console.log(hello());
+      console.log(hello("Lamar"));
+
+   **Output**
+
+   ::
+
+      Hello, World!
+      Hello, Lamar!
+
+While this may seem new, we have already seen a function that allows for some arguments to be omitted---the string method ``slice``.
 
 .. admonition:: Example
 
@@ -262,26 +287,6 @@ Some functions---such as the string method :ref:`slice <string-slice-examples>`-
 
       // also returns "Code"
       "LaunchCode".slice(6, 10);
-
-If your function will not work properly without one more more of its parameters defined, then it is a good idea to check the value(s) of such parameters. One way of handling such a situation is to define a "default" value for these parameters if they are ``undefined``. This is done by specifying a default value next to the parameter name, after ``=``.
-
-.. admonition:: Example
-
-   This example modifies the ``hello`` function to set a default value for ``name``, if it is not defined when the function is called.
-
-   .. sourcecode:: js
-   
-      function hello(name = "World") {
-         return `Hello, ${name}!`;
-      }
-
-      console.log(hello());
-
-   **Output**
-
-   ::
-
-      Hello, World!
 
 Just as it is possible to call a function with *fewer* arguments than it has parameters, we can also call a function with *more* arguments than it has parameters. In this case, such parameters are not available as a named variable.
 
