@@ -17,7 +17,7 @@ a better result?  How about printing the phrase 100 times instead?
 
 Loops simplify repetitive tasks!
 
-``for`` Practice
+**for** Practice
 -----------------
 
 Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/ForLoopExercises>`__
@@ -31,7 +31,7 @@ Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/Fo
         if the numbers are multiples of 3.  (Your code should work even if
         you replace 50 or 20 with other numbers).
 
-#. Initialize two variables to hold the string ``'LaunchCode'`` and the array ``[1, 5, ‘LC101’, ‘blue’, 42]``, then construct ``for`` loops to accomplish the following tasks:
+#. Initialize two variables to hold the string ``'LaunchCode'`` and the array ``[1, 5, 'LC101', 'blue', 42]``, then construct ``for`` loops to accomplish the following tasks:
     | a. Print each element of the array to a new line.
     | b. Print each character of the string - in reverse order - to a new line.
 
@@ -39,7 +39,7 @@ Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/Fo
     | a. One array contains the even numbers, and the other holds the odds.
     | b. Print the arrays to confirm the results.
 
-``while`` Practice
+**while** Practice
 -------------------
 
 Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/WhileLoopExercises>`__
@@ -58,6 +58,6 @@ the altitude the shuttle reaches.
         shuttle.  Each iteration, decrease the fuel level by 100 units for each
         astronaut aboard.  Also, increase the altitude by 50 kilometers.
 
-#. After the loops complete, output the result with the phrase, “The shuttle gained an altitude of ___ km.”
-    | If the altitude is 2000 km or higher, add “Orbit achieved!”
-    | Otherwise add, “Failed to reach orbit.”
+#. After the loops complete, output the result with the phrase, "The shuttle gained an altitude of ___ km."
+    | If the altitude is 2000 km or higher, add "Orbit achieved!"
+    | Otherwise add, "Failed to reach orbit."

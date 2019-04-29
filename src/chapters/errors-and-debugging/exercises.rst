@@ -1,9 +1,9 @@
 Exercises: Debugging
 ====================
 
-Avast, ye scurvy dogs!  We be needn’ ta fix yonder code!
+Avast, ye scurvy dogs!  We be needn' ta fix yonder code!
 
-The cap’n in charge of clearing the shuttle for launch(code) be out with
+The cap'n in charge of clearing the shuttle for launch(code) be out with
 an illness, and ye be the next tech in line.
 
 Yer job is to evaluate the code and fix any errors.  Remember, the lives
@@ -15,7 +15,7 @@ a. Launch the shuttle ONLY IF the fuel, crew and computer all check out OK.
 #. If a check fails, print that information to the console and scrub the
    launch (then scrub the deck).
 #. If all checks be successful, print a countdown to the console, then
-   bellow “Liftoff!”
+   bellow "Liftoff!"
 
 Debugging practice
 ------------------
@@ -45,7 +45,7 @@ Debugging practice
 |
 
 2. The next block of code hides two syntax errors.  Run the code as-is to
-   find the mistakes.  *Tip* - Don’t be too hasty, Matey!  Only ONE error will
+   find the mistakes.  *Tip* - Don't be too hasty, Matey!  Only ONE error will
    be flagged at a time.  Fix that ONE problem, and then re-run the code to
    check yer work.  Avoid trying to fix multiple issues at once.
 
@@ -171,7 +171,7 @@ a. | First, run this sample code as-is and examine the output.
 
 |
 
-b. | Let’s break the code down into smaller chunks.  Consider the first
+b. | Let's break the code down into smaller chunks.  Consider the first
       if/else block below.  Add ``console.log(launchReady)`` after this block,
       then run the program.
 
@@ -263,7 +263,7 @@ e. | Ahoy, Houston!  We spied a problem!  The value of ``launchReady`` assigned
    | `Fix it here <https://repl.it/@launchcode/DebugLogicErrors5>`__
 
 f. Almost done, so wipe the sweat off yer brow!  Add a final ``if/else`` block
-   to print a countdown and “Liftoff!” if all the checks pass, or print “Launch
-   scrubbed” if any check fails.
+   to print a countdown and "Liftoff!" if all the checks pass, or print "Launch
+   scrubbed" if any check fails.
 
-      Blimey!  That’s some good work.  Now go feed yer parrot.
+      Blimey!  That's some good work.  Now go feed yer parrot.
