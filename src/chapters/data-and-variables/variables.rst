@@ -102,6 +102,8 @@ To give a variable a value, we use the **assignment operator**, ``=``. This oper
 .. index:: 
    pair: variable; global
 
+.. _global-var-intro:
+
 .. warning:: What if, by mistake, you leave off ``let`` when declaring a variable?
 
    .. sourcecode:: js
