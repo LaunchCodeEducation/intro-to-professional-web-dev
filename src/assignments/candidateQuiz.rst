@@ -25,7 +25,7 @@ with a working piece of code, and then expand the code in a systematic way.
 Step 1: Code a minimum viable quiz app
 --------------------------------------
 
-a. Define variables to hold the candidate's name, a question, the correct
+a. Define variables to hold the candidate's name, a quiz question, the correct
    answer and the candidate's response.
 b. Ask for the candidate's name.
 c. Print the question on the screen and prompt the candidate for an answer.
@@ -43,8 +43,23 @@ Quiz Questions
 
    * - Question
      - Answer
-   * - ``What is your name?``
-     - This answer will be part of the candidate's score, but it must be part of the final report.
+   * - What is your name?
+     - This answer will NOT be part of the candidate's score, but it must be part of the final report.
+
+   * - True or false: 5000 meters = 5 kilometers
+     - "True"
+
+   * - (5 + 3)/2 * 10 = ?
+     - "40"
+
+   * - Given the array ``[8, "Zebra", "apple", 45]``, what entry is at index 2?
+     - "apple"
+
+   * - Who was the first American woman in space?
+     - "Sally Ride"
+
+   * - What is the minimum crew size for the International Space Station (ISS)?
+     - "3"
 
 Step 2: Update the quiz app to use arrays
 ------------------------------------------
