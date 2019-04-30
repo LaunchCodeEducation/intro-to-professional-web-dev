@@ -13,4 +13,4 @@ Functions
    naming-functions
    composing-functions
    why-create-functions
-   
+   exercises
