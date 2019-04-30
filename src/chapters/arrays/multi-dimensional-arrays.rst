@@ -2,12 +2,15 @@ Multi-Dimensional Arrays
 ========================
 
 Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
-of arrays? Well yes we can.... Get ready to venture into a multi-dimensional universe.
+of arrays? Well yes we can....
 
 .. index:: ! multi-dimensional array
 
 A **multi-dimensional array** is an array of arrays, meaning that the values inside the array are also arrays.
 The *inner* arrays can store other values such as strings, numbers, or even more arrays.
+
+The figure below demonstrates a synonyms array that has arrays as values. The *inner* arrays contain words that
+are synonyms of each other. Notice each inner array has an index position.
 
 .. figure:: figures/multidim-array.png
    :alt: A label, synonyms, pointing to an array that contains arrays at it's four indexes. Each inner array has a list of words that are synonyms.
