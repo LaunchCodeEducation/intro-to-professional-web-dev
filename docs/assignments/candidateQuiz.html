@@ -13,7 +13,6 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -59,8 +58,7 @@
             
 <form class="navbar-form navbar-right" action="../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -78,89 +76,30 @@
 <span id="candidatequiz"></span><h1>Assignment #1: Candidate Testing<a class="headerlink" href="#assignment-1-candidate-testing" title="Permalink to this headline">¶</a></h1>
 <p>OK, staff, we received many applications for our astronaut training program,
 and we need to do an initial evaluation of the candidates.  Management needs
-you to create a quick quiz to help select the best people.</p>
-<p>The quiz will consist of 5 questions, and the minimum passing score is 80%.
-You must design your code to do the following:</p>
+you to create a quick quiz to help select the best candidates.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Use a loop to present one question at a time to the candidate,</li>
-<li>Collect the candidate’s answers,</li>
-<li>Check those answers for accuracy,</li>
-<li>Calculate the candidate’s overall percentage,</li>
-<li>Determine if the candidate did well enough to enter our program,</li>
-<li>Display the results.</li>
+<li>Ask the candidate to enter their name</li>
+<li>Use a loop to ask five questions, one at a time, to the candidate</li>
+<li>Collect the candidate’s answers</li>
+<li>Check those answers for accuracy<ol class="loweralpha">
+<li>Case insensitive equality check</li>
 </ol>
-<p>Since this your first big task, you should approach it as a series of smaller,
-testable parts.  The following is NOT the only way to complete this assignment,
-but it provides a nice framework for thinking through the project. Start small
-with a working piece of code, and then expand the code in a systematic way.</p>
-<div class="section" id="step-1-code-a-minimum-viable-quiz-app">
-<h2>Step 1: Code a minimum viable quiz app<a class="headerlink" href="#step-1-code-a-minimum-viable-quiz-app" title="Permalink to this headline">¶</a></h2>
-<ol class="loweralpha simple">
-<li>Define variables to hold the candidate’s name, a quiz question chosen from
-the table below, the correct answer and the candidate’s response.</li>
-<li>Ask for the candidate’s name.</li>
-<li>Display the selected question and prompt the candidate for an answer.</li>
-<li>Check the candidate’s answer to see if it is correct.</li>
-<li>Provide basic feedback to the student. This should include their name and
-whether their answer was correct.</li>
+</li>
+<li>Calculate the candidate’s overall percentage</li>
+<li>Determine if the candidate did well enough to enter our program (need &gt;= 80% to pass)</li>
+<li>Display the results<ol class="loweralpha">
+<li>Example output is listed below</li>
 </ol>
-<p>Make sure your small app works properly before moving on to step 2.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Question</th>
-<th class="head">Answer</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>What is your name?</td>
-<td>This answer will NOT be scored, but it must be part of the final report.</td>
-</tr>
-<tr class="row-odd"><td>True or false: 5000 meters = 5 kilometers.</td>
-<td>“True”</td>
-</tr>
-<tr class="row-even"><td>(5 + 3)/2 * 10 = ?</td>
-<td>“40”</td>
-</tr>
-<tr class="row-odd"><td>Given the array <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">&quot;Zebra&quot;,</span> <span class="pre">&quot;apple&quot;,</span> <span class="pre">45]</span></code>, what entry is at index 2?</td>
-<td>“apple”</td>
-</tr>
-<tr class="row-even"><td>Who was the first American woman in space?</td>
-<td>“Sally Ride”</td>
-</tr>
-<tr class="row-odd"><td>What is the minimum crew size for the International Space Station (ISS)?</td>
-<td>“3”</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="step-2-update-the-quiz-app-to-use-arrays">
-<h2>Step 2: Update the quiz app to use arrays<a class="headerlink" href="#step-2-update-the-quiz-app-to-use-arrays" title="Permalink to this headline">¶</a></h2>
-<p>Now that your small app is working, expand it to deal with multiple questions.</p>
-<ol class="loweralpha simple">
-<li>Fill two arrays with the required questions and answers.</li>
-<li>You still need to ask for the candidate’s name.</li>
-<li>Using bracket notation, select one question and use that to prompt the
-candidate.</li>
-<li>Compare the candidate’s response to the proper entry in the answers array.</li>
-<li>Replace the basic feedback with a template literal.</li>
+</li>
 </ol>
-<p>Note that checking for the correct answer should be case insensitive (e.g.
-“Orbit” is the same as “orbit”).</p>
-<p>The output should include the candidate’s name, the candidate’s response, and
-whether that answer was correct.  If incorrect, provide the right answer in the
+<div class="section" id="results-output">
+<h3>Results Output<a class="headerlink" href="#results-output" title="Permalink to this headline">¶</a></h3>
+<p>The results output should include the candidate’s name, the candidate’s responses, and
+whether each answer was correct or incorrect.  If incorrect, provide the right answer in the
 feedback.</p>
-</div>
-<div class="section" id="step-3-use-iteration-to-make-the-app-better">
-<h2>Step 3: Use iteration to make the app better<a class="headerlink" href="#step-3-use-iteration-to-make-the-app-better" title="Permalink to this headline">¶</a></h2>
-<p>Add one or more loops to your code to ask all the questions in the quiz.
-Collect and check all the candidate’s answers, then calculate the final
-percentage.</p>
-<p>The format for the score report is shown below. (Note that the answers and
-percentage will vary for different candidates).</p>
+<p>You are expected to match this output format.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Candidate Name: Can Twin
 1) True or false: 5000 meters = 5 kilometers.
    Your Answer: false (incorrect)
@@ -170,8 +109,8 @@ percentage will vary for different candidates).</p>
    Your Answer: 45 (incorrect)
    Correct Answer: 40
 
-3) Given the array [8, &quot;Zebra&quot;, &quot;apple&quot;, 45], what entry is at index 2?
-   Your Answer: Apple (correct)
+3) Given the array [8, &quot;Orbit&quot;, &quot;Trajectory&quot;, 45], what entry is at index 2?
+   Your Answer: trajectory (correct)
 
 4) Who was the first American woman in space?
    Your Answer: Sally ride (correct)
@@ -184,9 +123,93 @@ percentage will vary for different candidates).</p>
 &gt;&gt;&gt; Status: FAILED &lt;&lt;&lt;
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The output will vary slightly based on the user’s answers to each question.</p>
 </div>
-<div class="section" id="step-4-submitting-your-work">
-<h2>Step 4: Submitting your work<a class="headerlink" href="#step-4-submitting-your-work" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="take-it-step-by-step">
+<h2>Take It Step by Step<a class="headerlink" href="#take-it-step-by-step" title="Permalink to this headline">¶</a></h2>
+<p>When starting any project, it’s best to approach it as a series of smaller,
+testable parts. The goal is to get smaller, simpler parts working and then expand the code in a systematic way.
+The following is NOT the only way to complete this assignment, but it provides a framework for thinking through the project.</p>
+<div class="section" id="step-1-minimum-viable-quiz">
+<h3>Step 1: Minimum Viable Quiz<a class="headerlink" href="#step-1-minimum-viable-quiz" title="Permalink to this headline">¶</a></h3>
+<ol class="loweralpha simple">
+<li>Define variables for:<ol class="arabic">
+<li>candidate’s name</li>
+<li>a quiz question (pick any question from the table in step 2)</li>
+<li>the correct answer</li>
+<li>the candidate’s response</li>
+</ol>
+</li>
+<li>Ask for the candidate’s name</li>
+<li>Display the question and prompt the candidate for an answer</li>
+<li>Check the candidate’s answer to see if it is correct</li>
+<li>Provide basic feedback to the student<ol class="arabic">
+<li>This should include their name and whether their answer was correct</li>
+</ol>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure your small app works properly before moving on to step 2.</p>
+</div>
+</div>
+<div class="section" id="step-2-use-arrays">
+<h3>Step 2: Use Arrays<a class="headerlink" href="#step-2-use-arrays" title="Permalink to this headline">¶</a></h3>
+<p>Now that your small app is working, expand it to deal with multiple questions.</p>
+<ol class="loweralpha simple">
+<li>Fill two arrays with the questions and answers listed in the table below.</li>
+<li>You still need to ask for the candidate’s name.</li>
+<li>Using bracket notation, select one question and use that to prompt the
+candidate.</li>
+<li>Compare the candidate’s response to the proper entry in the answers array.</li>
+<li>Replace the basic feedback with a template literal.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Checking for the correct answer should be case insensitive (e.g. “Orbit” is the same as “orbit”).</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Question</th>
+<th class="head">Answer</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>True or false: 5000 meters = 5 kilometers.</td>
+<td>“True”</td>
+</tr>
+<tr class="row-odd"><td>(5 + 3)/2 * 10 = ?</td>
+<td>“40”</td>
+</tr>
+<tr class="row-even"><td>Given the array <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">&quot;Orbit&quot;,</span> <span class="pre">&quot;Trajectory&quot;,</span> <span class="pre">45]</span></code>, what entry is at index 2?</td>
+<td>“Trajectory”</td>
+</tr>
+<tr class="row-odd"><td>Who was the first American woman in space?</td>
+<td>“Sally Ride”</td>
+</tr>
+<tr class="row-even"><td>What is the minimum crew size for the International Space Station (ISS)?</td>
+<td>“3”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-3-use-iteration-to-ask-all-questions">
+<h3>Step 3: Use Iteration to Ask All Questions<a class="headerlink" href="#step-3-use-iteration-to-ask-all-questions" title="Permalink to this headline">¶</a></h3>
+<p>Add one or more loops to your code to ask all the questions in the quiz.
+Collect and check all the candidate’s answers, then calculate the final
+percentage.</p>
+</div>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Lorem ipsum…</p>
 </div>
 </div>
