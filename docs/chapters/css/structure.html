@@ -7,8 +7,8 @@
     <title>7.2. CSS Structure &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -94,10 +94,11 @@ CSS has a lot of different properties and it would be impossible to memorize the
 <div class="section" id="css-selectors">
 <h3>7.2.1.1. CSS Selectors<a class="headerlink" href="#css-selectors" title="Permalink to this headline">¶</a></h3>
 <p>CSS has three different selectors that the programmer can use to make their style choices.</p>
-<p>The first one that most beginners start with is the element selector.
+<p>The first one that most beginners start with is the <strong>element selector</strong>.
 Element refers to the HTML elements, so if the selector used is <code class="docutils literal notranslate"><span class="pre">p</span></code>, then the styling will apply to all paragraph elements.</p>
-<p>The id selector is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.</p>
-<p>The final selector is the class selector. A class is a group of HTML elements that need the same styling.</p>
+<p>The <strong>id selector</strong> is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.</p>
+<p>The final selector is the <strong>class selector</strong>. A class is a group of HTML elements that need the same styling. The class name is determined by the programmer.
+The class name should be unique and have meaning like variable names.</p>
 </div>
 <div class="section" id="declaration-blocks">
 <h3>7.2.1.2. Declaration Blocks<a class="headerlink" href="#declaration-blocks" title="Permalink to this headline">¶</a></h3>
@@ -128,21 +129,24 @@ Inline elements will not start a new line (such as <code class="docutils literal
 <div class="section" id="css-examples">
 <h3>7.2.1.3. CSS Examples<a class="headerlink" href="#css-examples" title="Permalink to this headline">¶</a></h3>
 <p>Here are three different examples of how we can use selectors to make the text in a paragraph pink.</p>
-<p>Using the element selector,</p>
+<p><strong>Element Selector</strong></p>
+<p>Using the element selector to change the color of all <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> elements,</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span> <span class="p">{</span>
    <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Using the element selector will make all paragraph elements on the page have pink text.</p>
-<p>Now, if a few of the paragraphs on the page are given the class <code class="docutils literal notranslate"><span class="pre">pinkParagraph</span></code> on the HTML document, like so: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;pinkParagraph&quot;&gt;content&lt;/p&gt;</span></code>.
+<p><strong>Class Selector</strong></p>
+<p>Now, if a few of the paragraphs on the page are given the class <code class="docutils literal notranslate"><span class="pre">pink-paragraph</span></code> on the HTML document, like so: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;pink-paragraph&quot;&gt;content&lt;/p&gt;</span></code>.
 To use the class selector in CSS, we would write something like:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">pinkParagraph</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">pink-paragraph</span> <span class="p">{</span>
    <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In CSS, the class selector is preceded by <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<p><strong>Id Selector</strong></p>
 <p>If one paragraph is going to have pink text, the id selector on the HTML document would look like: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">id=&quot;pinkParagraph&quot;&gt;content&lt;/p&gt;</span></code>.
 In CSS, we would use the id selector to make the paragraph pink:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">pinkParagraph</span> <span class="p">{</span>

@@ -14,9 +14,9 @@ When it comes to laying out the overarching structure of an HTML file, a program
 1. Every HTML file needs a ``DOCTYPE`` tag, specifying the HTML version used.
    When using the current version of HTML, the ``DOCTYPE`` tag is simple to remember as it is: ``<!DOCTYPE html>``.
    This is one of few tags that does not require a closing tag.
-2. The ``<html>`` tag denotes the beginning and end of the HTML the programmer has written. 
+2. The ``<html>`` tag denotes the beginning and end of the HTML the programmer has written.
 3. The ``<head>`` tag contains data about the web page.
-4. The ``<body>`` tag contains everything that appears on the page of the document. 
+4. The ``<body>`` tag contains everything that appears on the page of the document.
 5. The ``<title>`` tag goes in the ``<head>`` of the document and browsers require it. It gives the title of the webpage that appears in the tab.
 
 Here is an example of the structure of an HTML page based off of these rules:
@@ -43,7 +43,7 @@ The head includes links to other files and other data about the document.
 Browsers do not display the content in the head.
 
 .. admonition:: Note
-   
+
    The head can also include some styling to make the page beautiful.
    How to do that is covered in the next chapter on CSS.
 
@@ -58,7 +58,7 @@ Content outside of the body will not appear on the page.
 To make HTML more readable to other programmers, programmers write comments in HTML. When adding a comment, the programmer uses ``<!--`` to indicate the start and ``-->`` to end the comment, like so:
 
 .. sourcecode:: html
-   
+
    <body>
       <!-- This is an important comment -->
    </body>
@@ -72,7 +72,7 @@ Check Your Understanding
 ------------------------
 
 .. admonition:: Question
-   
+
    Which HTML tag does not require a closing tag?
 
    #. ``title``

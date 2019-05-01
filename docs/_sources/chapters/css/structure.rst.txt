@@ -23,12 +23,15 @@ CSS Selectors
 
 CSS has three different selectors that the programmer can use to make their style choices.
 
-The first one that most beginners start with is the element selector.
+The first one that most beginners start with is the **element selector**.
 Element refers to the HTML elements, so if the selector used is ``p``, then the styling will apply to all paragraph elements.
 
-The id selector is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.
 
-The final selector is the class selector. A class is a group of HTML elements that need the same styling.
+
+The **id selector** is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.
+
+The final selector is the **class selector**. A class is a group of HTML elements that need the same styling. The class name is determined by the programmer.
+The class name should be unique and have meaning like variable names.
 
 Declaration Blocks
 ^^^^^^^^^^^^^^^^^^
@@ -68,7 +71,9 @@ CSS Examples
 
 Here are three different examples of how we can use selectors to make the text in a paragraph pink.
 
-Using the element selector,
+**Element Selector**
+
+Using the element selector to change the color of all ``<p>`` elements,
 
 .. sourcecode:: css
 
@@ -78,16 +83,20 @@ Using the element selector,
 
 Using the element selector will make all paragraph elements on the page have pink text.
 
-Now, if a few of the paragraphs on the page are given the class ``pinkParagraph`` on the HTML document, like so: ``<p class="pinkParagraph">content</p>``.
+**Class Selector**
+
+Now, if a few of the paragraphs on the page are given the class ``pink-paragraph`` on the HTML document, like so: ``<p class="pink-paragraph">content</p>``.
 To use the class selector in CSS, we would write something like:
 
 .. sourcecode:: css
-   
-   .pinkParagraph {
+
+   .pink-paragraph {
       font-color: pink;
    }
 
 In CSS, the class selector is preceded by ``.``.
+
+**Id Selector**
 
 If one paragraph is going to have pink text, the id selector on the HTML document would look like: ``<p id="pinkParagraph">content</p>``.
 In CSS, we would use the id selector to make the paragraph pink:
@@ -110,7 +119,7 @@ There are three different places to add CSS in an HTML file as indicated above:
 1. External: The CSS is in a separate file linked to the HTML document in the ``<head>``. External linking of CSS is great for when programmers have large quantities of CSS that apply to the whole page.
 
    .. sourcecode:: html
-   
+
       <head>
          <title>My Web Page</title>
          <link rel="stylesheet" type="text/css" href="styles.css">
@@ -138,7 +147,7 @@ There are three different places to add CSS in an HTML file as indicated above:
    There is no selector in inline CSS; instead, the ``style`` attribute is used. This is because the styling only applies to that one instance of the HTML tag.
 
    .. sourcecode:: html
-    
+
       <tag style="declaration block">content</tag>
 
 Order of Precedence
@@ -146,7 +155,7 @@ Order of Precedence
 
 Because there is an order of precedence to the location of CSS, it is important to be able to add or change CSS in all three locations.
 Programmers use this to their advantage if they want to be very specific with overwriting some CSS for one element.
-Inline CSS is highest in precedence with internal CSS being next and then external CSS is lowest. 
+Inline CSS is highest in precedence with internal CSS being next and then external CSS is lowest.
 
 Check Your Understanding
 ------------------------
