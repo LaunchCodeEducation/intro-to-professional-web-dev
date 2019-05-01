@@ -127,8 +127,8 @@ With improved variable names, it now becomes clear that the program is calcuatin
 
 .. tip:: When considering program readability, think about whether or not your code will make sense to another programmer. It is not enough for code to be readable by only the programmer that originally wrote it.
 
-Lower Camel Case Variable Names
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Camel Case Variable Names
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: ! lower camel case, ! camel case
 
@@ -145,13 +145,13 @@ There is one more aspect of naming variables that you should be aware of, and th
 
 There are a variety of types of conventions used by different groups of programmers. One common type of convention is that programmers that specialize in a specific language will adopt certain variable naming practices. 
 
-In JavaScript, most programmers use the **lower camel case** style, which stipulates that variable names consist of names or phrases that:
+In JavaScript, most programmers use the **camel case** style, which stipulates that variable names consist of names or phrases that:
 
 - are joined together to omit spaces,
 - start with a lowercase letter, and
 - capitalize each internal word.
 
-In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called lower camel case becase it stipulates that names begin with a lowercase letter, while capitalization of internal words is reminiscent of a camel's humps.
+In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called camel case becase the capitalization of internal words is reminiscent of a camel's humps. Another another common name for this convention is **lower camel case**, since names start with a lowercase letter.
 
 .. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``. 
 
