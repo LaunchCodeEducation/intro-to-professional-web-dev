@@ -91,13 +91,19 @@ CSS has a lot of different properties and it would be impossible to memorize the
 }
 </pre></div>
 </div>
-<p>CSS has three different selectors that the programmer can use to make their style choices.
-The first one that most beginners start with is the element selector.
-Element refers to the HTML elements, so if the selector used is <code class="docutils literal notranslate"><span class="pre">p</span></code>, then the styling will apply to all paragraph elements.
-The ID selector is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.
-The final selector is the class selector. A class is a group of HTML elements that need the same styling.</p>
-<p>The declaration block is a series of initializations of style rules.</p>
-<p>CSS style rules cover an infinite amount of possibilities.</p>
+<div class="section" id="css-selectors">
+<h3>7.2.1.1. CSS Selectors<a class="headerlink" href="#css-selectors" title="Permalink to this headline">¶</a></h3>
+<p>CSS has three different selectors that the programmer can use to make their style choices.</p>
+<p>The first one that most beginners start with is the element selector.
+Element refers to the HTML elements, so if the selector used is <code class="docutils literal notranslate"><span class="pre">p</span></code>, then the styling will apply to all paragraph elements.</p>
+<p>The id selector is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.</p>
+<p>The final selector is the class selector. A class is a group of HTML elements that need the same styling.</p>
+</div>
+<div class="section" id="declaration-blocks">
+<h3>7.2.1.2. Declaration Blocks<a class="headerlink" href="#declaration-blocks" title="Permalink to this headline">¶</a></h3>
+<p>The declaration block is a series of initializations of style rules in CSS for a selector.
+Programmers can write CSS two different ways depending on where the CSS is in relation to the HTML document.
+We will go more in depth about the differences between CSS locations in the next section.</p>
 <p>Here is an example of how to write the declaration block for internal and external CSS:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span> <span class="p">{</span>
     <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
@@ -117,6 +123,34 @@ For that reason, programmers only need to declare the CSS properties they want t
 <p class="last">HTML elements also have a default appearance.
 When creating web pages, we should be aware of which elements are inline elements and which elements are block elements.
 Inline elements will not start a new line (such as <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code>) and block display elements do (such as <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>).</p>
+</div>
+</div>
+<div class="section" id="css-examples">
+<h3>7.2.1.3. CSS Examples<a class="headerlink" href="#css-examples" title="Permalink to this headline">¶</a></h3>
+<p>Here are three different examples of how we can use selectors to make the text in a paragraph pink.</p>
+<p>Using the element selector,</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span> <span class="p">{</span>
+   <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Using the element selector will make all paragraph elements on the page have pink text.</p>
+<p>Now, if a few of the paragraphs on the page are given the class <code class="docutils literal notranslate"><span class="pre">pinkParagraph</span></code> on the HTML document, like so: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;pinkParagraph&quot;&gt;content&lt;/p&gt;</span></code>.
+To use the class selector in CSS, we would write something like:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">pinkParagraph</span> <span class="p">{</span>
+   <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In CSS, the class selector is preceded by <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<p>If one paragraph is going to have pink text, the id selector on the HTML document would look like: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">id=&quot;pinkParagraph&quot;&gt;content&lt;/p&gt;</span></code>.
+In CSS, we would use the id selector to make the paragraph pink:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">pinkParagraph</span> <span class="p">{</span>
+   <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In CSS, the id selector is preceded by <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
 </div>
 </div>
 <div class="section" id="linking-css-to-html">

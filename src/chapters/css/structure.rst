@@ -18,15 +18,24 @@ CSS has a lot of different properties and it would be impossible to memorize the
        declaration block
    }
 
+CSS Selectors
+^^^^^^^^^^^^^
+
 CSS has three different selectors that the programmer can use to make their style choices.
+
 The first one that most beginners start with is the element selector.
 Element refers to the HTML elements, so if the selector used is ``p``, then the styling will apply to all paragraph elements.
-The ID selector is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.
+
+The id selector is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.
+
 The final selector is the class selector. A class is a group of HTML elements that need the same styling.
 
-The declaration block is a series of initializations of style rules.
+Declaration Blocks
+^^^^^^^^^^^^^^^^^^
 
-CSS style rules cover an infinite amount of possibilities.
+The declaration block is a series of initializations of style rules in CSS for a selector.
+Programmers can write CSS two different ways depending on where the CSS is in relation to the HTML document.
+We will go more in depth about the differences between CSS locations in the next section.
 
 Here is an example of how to write the declaration block for internal and external CSS:
 
@@ -54,6 +63,42 @@ For that reason, programmers only need to declare the CSS properties they want t
    When creating web pages, we should be aware of which elements are inline elements and which elements are block elements.
    Inline elements will not start a new line (such as ``<b>``, ``<em>``, and ``<span>``) and block display elements do (such as ``<h1>``, ``<div>``, and ``<p>``).
 
+CSS Examples
+^^^^^^^^^^^^
+
+Here are three different examples of how we can use selectors to make the text in a paragraph pink.
+
+Using the element selector,
+
+.. sourcecode:: css
+
+   p {
+      font-color: pink;
+   }
+
+Using the element selector will make all paragraph elements on the page have pink text.
+
+Now, if a few of the paragraphs on the page are given the class ``pinkParagraph`` on the HTML document, like so: ``<p class="pinkParagraph">content</p>``.
+To use the class selector in CSS, we would write something like:
+
+.. sourcecode:: css
+   
+   .pinkParagraph {
+      font-color: pink;
+   }
+
+In CSS, the class selector is preceded by ``.``.
+
+If one paragraph is going to have pink text, the id selector on the HTML document would look like: ``<p id="pinkParagraph">content</p>``.
+In CSS, we would use the id selector to make the paragraph pink:
+
+.. sourcecode:: css
+
+   #pinkParagraph {
+      font-color: pink;
+   }
+
+In CSS, the id selector is preceded by ``#``.
 
 Linking CSS to HTML
 -------------------
