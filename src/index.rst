@@ -20,6 +20,7 @@ Chapters
    chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/functions/index
+   chapters/more-on-functions/index
    chapters/booster-rockets/index
 
 .. toctree::
