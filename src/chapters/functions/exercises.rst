@@ -23,7 +23,7 @@ elements.
 
       ['orange', 123, 'world', 'hello']
 
-      instead of ['egnaro', 321, 'dlrow', 'olleh']
+What if we wanted the array to be ['egnaro', 321, 'dlrow', 'olleh']?
 
 Let's have some fun by creating a process that reverses BOTH the order of the
 entries in an array AND the order of characters within the individual elements.
@@ -58,7 +58,7 @@ flips the order of entries in the array.
       [123, 8897, 42, 1168, 8675309]
       ['hello', 'world', 123, 'orange']
 
-[Repl.it link: Code your answers **here**.]
+[TODO: Add repl.it link.]
 
 Sort Numbers For Real
 ----------------------
@@ -98,4 +98,43 @@ array has an unknown length?
 
 *Be sure to print the results in order to verify your code*.
 
-[Repl.it link: Code your answers **here**.]
+[TODO: Add repl.it link.]
+
+More on Sorting Numbers
+------------------------
+
+The sorting approach used above is not the only way of accomplishing the task,
+nor is it the best. Details on why can be found **here** (TODO: link to
+appendix). Feel free to look up "bubble sort" to explore a different way to
+order numbers in an array.
+
+Fortunately, JavaScript has an elegant way to properly sort numbers.
+
+If you Google "JavaScript sort array of numbers" (or something similar), many
+options appear, and they all give pretty much the same result. The sites just
+differ in how much detail they provide when explaining the solution.
+
+One reference is here: `W3Schools <https://www.w3schools.com/jsref/jsref_sort.asp>`_.
+
+End result - the JavaScript syntax for numerical sorting is
+``arrayName.sort(function(a, b){return a-b});``.
+
+.. admonition:: Note
+
+   You do NOT need to understand HOW the sorting function works. You just need to
+   be able to use it.
+
+So Why Write A Sorting Function?
+---------------------------------
+
+Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
+sorting methods, so why did we ask you to build one?
+
+It's kind of a programming right of passage - design an efficient sorting
+function. Also, sorting can help you land a job.
+
+As part of a tech interview, you will probably be asked to do some live-coding.
+One standard, go-to question is to sort an array WITHOUT relying on the built
+in methods. Knowing how to think though a sorting task, generate the code and
+then clearly explain your approach will significantly boost your appeal to an
+employer.
