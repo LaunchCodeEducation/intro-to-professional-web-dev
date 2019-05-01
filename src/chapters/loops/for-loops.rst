@@ -76,17 +76,4 @@ In general, we can visualize the flow of execution of a ``for`` loop as a flowch
    
    Flow of execution of a ``for`` loop
 
-.. warning:: If the body of a ``for`` loop has only a single line of code, then it may be placed on the line below the ``for`` statement *without* enclosing brackets, like this:
-
-   .. sourcecode:: js
-   
-      for (let i = 0; i < 51; i++)
-         console.log(i);   
-
-   In such situations, is also valid JavaScript syntax to put the loop body and the ``for`` statement on the same line:
-
-   .. sourcecode:: js
-   
-      for (let i = 0; i < 51; i++) console.log(i);  
-
-   Since this can make code more difficult to read, we will *always* enclose our loop bodies in brackets. You should too!
+.. todo:: Add "worst practice" on optional brackets for single-line loops

@@ -3,7 +3,7 @@ Iteration
 
 .. index:: ! iteration
 
-When repeating the same action over and over again, a human is likely to make a mistake at some point. Computers, however, possess the incredible ability to carry out repetitive tasks without making mistakes. 
+When repeating the same action over and over again, a human is likely to make a mistake. Computers, however, possess the incredible ability to carry out repetitive tasks without making mistakes. 
 
 To see this, let's consider an appropriate, if somewhat contrived, example. Suppose you want to print out the integers 0 through 50. With the tools you currently have at your disposal, your program would look like this:
 
@@ -36,7 +36,7 @@ To give you a taste of what's to come, here is how we could write the program ab
 
 We will explore the details of this syntax shortly, but it's worth taking a moment to marvel at the simplicity of this program compared to the one above. 
 
-.. note:: Why does this loop use the integer 51 while the loop prints only to 50? This will become clear in the next section.
+.. note:: It may seem odd to you that this loop uses the integer 51, but only prints up to 50. Why this is the case will become clear in the next section.
 
 .. index:: ! DRY
 

@@ -123,6 +123,11 @@
 </div>
 <p>Instead of relying on the the initial and update expressions, as we do in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, we must manage the state of our loop manually. To do this, <em>before</em> entering the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, we will create the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> and initialize it to 0, the first number we want to print. This variable plays the same role as the loop variable in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Every iteration will print <code class="docutils literal notranslate"><span class="pre">i</span></code> and then increment <code class="docutils literal notranslate"><span class="pre">i</span></code> to the next value, until all it reaches the value 51. The loop continues to iterate until the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>You can almost read the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement as if it were in a natural language: <em>while ``i`` is less than or equal to ``51``, continue executing the body of the loop</em>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<p>What happens if you forget to include <code class="docutils literal notranslate"><span class="pre">i++</span></code> at the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop above?</p>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/While-loop-example">Try it at repl.it.</a></p>
+</div>
 </div>
 <div class="section" id="beyond-for-loops">
 <h2>8.6.4. Beyond <strong>for</strong> Loops<a class="headerlink" href="#beyond-for-loops" title="Permalink to this headline">¶</a></h2>
@@ -140,25 +145,14 @@
 </pre></div>
 </div>
 <p id="index-1">This example illustrates the additional flexibility provided by <code class="docutils literal notranslate"><span class="pre">while</span></code> loops. While we use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to iterate over fixed collections (a string, an array, a collection of integers), the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>It is <em>technically</em> possible to write a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop as a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, since <code class="docutils literal notranslate"><span class="pre">for</span></code> loops use a condition, and the initial and update expressions can be left empty. Doing so, however, results in confusing code. This should not be done under any circumstances!</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s1">&#39;Please enter a positive number:&#39;</span><span class="p">);</span>
-<span class="nx">num</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-
-<span class="k">for</span> <span class="p">(;</span> <span class="nx">num</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">)</span> <span class="p">{</span>
-   <span class="nx">num</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s1">&#39;Invalid input. Please enter a positive number:&#39;</span><span class="p">);</span>
-   <span class="nx">num</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add “worst practice” on writing a while loop as a for loop</p>
 </div>
 </div>
 <div class="section" id="infinite-loops-revisited">
 <h2>8.6.5. Infinite Loops, Revisited<a class="headerlink" href="#infinite-loops-revisited" title="Permalink to this headline">¶</a></h2>
-<p id="index-2">It is easier to create an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop than an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. To see this, consider our first <code class="docutils literal notranslate"><span class="pre">while</span></code> loop example, but where we forget to update the loop variable.</p>
+<p id="index-3">It is easier to create an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop than an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. To see this, consider our first <code class="docutils literal notranslate"><span class="pre">while</span></code> loop example, but where we forget to update the loop variable.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">)</span> <span class="p">{</span>

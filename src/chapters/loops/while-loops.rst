@@ -61,6 +61,12 @@ Instead of relying on the the initial and update expressions, as we do in a ``fo
 
 You can almost read the ``while`` statement as if it were in a natural language: *while ``i`` is less than or equal to ``51``, continue executing the body of the loop*.
 
+.. admonition:: Try It!
+
+   What happens if you forget to include ``i++`` at the end of the ``while`` loop above?
+
+   `Try it at repl.it. <https://repl.it/@launchcode/While-loop-example>`_
+
 Beyond **for** Loops
 --------------------
 
@@ -85,19 +91,7 @@ This program is an example of **input validation**. It prompts the user to enter
 
 This example illustrates the additional flexibility provided by ``while`` loops. While we use ``for`` loops to iterate over fixed collections (a string, an array, a collection of integers), the ``while`` loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.
 
-.. warning:: It is *technically* possible to write a ``while`` loop as a ``for`` loop, since ``for`` loops use a condition, and the initial and update expressions can be left empty. Doing so, however, results in confusing code. This should not be done under any circumstances!
-
-   .. sourcecode:: js
-
-      const input = require('readline-sync');
-
-      let num = input.question('Please enter a positive number:');
-      num = Number(num);
-
-      for (; num <= 0; ) {
-         num = input.question('Invalid input. Please enter a positive number:');
-         num = Number(num);
-      }
+.. todo:: Add "worst practice" on writing a while loop as a for loop
 
 Infinite Loops, Revisited
 -------------------------

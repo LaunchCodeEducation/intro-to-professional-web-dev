@@ -16,7 +16,9 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   TODO
+   You are asked to program a robot to move tennis balls from one box (Box #1) to another (Box #2), one-by-one. The robot should continue moving balls until Box #1 is empty, and balls may be added to the bo while the robot is doing its work. 
+
+   Which type of loop should you use to write the program?
 
    #. ``while`` loop
    #. ``for`` loop

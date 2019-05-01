@@ -119,6 +119,12 @@ Let's break this down step-by-step. This table shows the values of each of our v
      - ``"e"``
      - ``"eulb"``
 
+.. admonition:: Try It!
+
+   What happens if you reverse the order of of the assignment statement within the ``for`` loop, so that ``reversed = reversed + str[i];``? 
+
+   `Try it at repl.it. <https://repl.it/@launchcode/Reversing-a-string>`_
+
 Summing an Array
 ----------------
 
