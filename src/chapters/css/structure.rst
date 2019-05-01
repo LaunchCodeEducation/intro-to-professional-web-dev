@@ -12,7 +12,7 @@ A **selector** determines which elements will be affected by the rule.
 Inside the declaration block, programmers set CSS properties to specific values.
 CSS has a lot of different properties and it would be impossible to memorize them all.
 
-.. sourcecode:: css
+::
 
    selector {
        declaration block
@@ -132,7 +132,7 @@ There are three different places to add CSS in an HTML file as indicated above:
 
 2. Document or internal: All CSS styling is inside the HTML file, but within the ``<head>``. Internal use of CSS is great for when the programmer has a small amount of CSS that applies to the whole document.
 
-   .. sourcecode:: html
+   ::
 
       <head>
          <title>My Web Page</title>
