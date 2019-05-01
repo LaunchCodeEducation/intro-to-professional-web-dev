@@ -38,7 +38,7 @@ complicated tasks, one small function must call other functions.
    .. sourcecode:: js
 
       function addTwoToNumber(num){
-         return num+=2;
+         return num += 2;
       }
 
       function addFiveToNumber(value){
