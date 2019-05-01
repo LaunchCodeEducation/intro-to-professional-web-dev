@@ -16,7 +16,16 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   You are asked to program a robot to move tennis balls from one box (Box #1) to another (Box #2), one-by-one. The robot should continue moving balls until Box #1 is empty, and balls may be added to the bo while the robot is doing its work. 
+   You are asked to program a robot to move tennis balls from one box (Box #1) to another (Box #2), one-by-one. The robot should continue moving balls until Box #1 is empty, and balls may be added to the box after the robot begins its work.
+
+   Which type of loop should you use to write the program?
+
+   #. ``while`` loop
+   #. ``for`` loop
+
+.. admonition:: Question
+
+   You are asked to write a program similar to the one above, with the modification that a user may give the robot a specific number of balls to move from Box #1 to Box #2. (You can assume there will always be more balls than the user has asked the robot to move.)
 
    Which type of loop should you use to write the program?
 
