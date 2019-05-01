@@ -1,5 +1,5 @@
-Chapter 5 Exercises
-===================
+Exercises: Booleans and Conditionals
+====================================
 
 Attempt these exercises to test your understanding. 
 Don't worry if you struggle while working on them. Struggling and recalling

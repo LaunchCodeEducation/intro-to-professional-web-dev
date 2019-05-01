@@ -16,7 +16,7 @@ In this figure, the name "programmingLanguage" points to the string value "JavaS
 
 With this analogy in mind, let's look at how we can formaly create variables in JavaScript.
 
-Declaring and Initializing Variables With ``let``
+Declaring and Initializing Variables With **let**
 -------------------------------------------------
 
 .. index:: 
@@ -101,6 +101,8 @@ To give a variable a value, we use the **assignment operator**, ``=``. This oper
 
 .. index:: 
    pair: variable; global
+
+.. _global-var-intro:
 
 .. warning:: What if, by mistake, you leave off ``let`` when declaring a variable?
 
