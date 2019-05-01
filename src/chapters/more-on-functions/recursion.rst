@@ -30,7 +30,7 @@ printed by the ``console.log`` statement.
 Functions Can Call Other Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Functions should only accomplish one simple task each. To solve more
+Functions should only accomplish one (preferably simple) task. To solve more
 complicated tasks, one small function must call other functions.
 
 .. admonition:: Example
@@ -60,5 +60,15 @@ example demonstrates calling a function from within a function.
 Next Step: What is 'Recursion'?
 --------------------------------
 
+**Recursion** is the process of solving a larger problem by breaking it into
+smaller, easier steps that *can all be solved in exactly the same way*.
+
+Splitting up a large task into small, identical pieces allows us to reuse a
+single function rather than coding several different functions.
+
+Lorem ipsum...
+
 Rules for Recursion
 --------------------
+
+Lorem ipsum...
