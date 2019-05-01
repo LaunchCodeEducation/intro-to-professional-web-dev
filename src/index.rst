@@ -7,7 +7,7 @@ Contents
 Chapters
 ^^^^^^^^
 
-.. toctree:: 
+.. toctree::
    :numbered:
    :maxdepth: 2
    :name: chapterstoc
@@ -20,6 +20,9 @@ Chapters
    chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/functions/index
+   chapters/html/index
+   chapters/css/index
+   chapters/git/index
    chapters/booster-rockets/index
 
 .. toctree::
