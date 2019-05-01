@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -58,7 +59,8 @@
             
 <form class="navbar-form navbar-right" action="../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -83,22 +85,17 @@ you to create a quick quiz to help select the best candidates.</p>
 <li>Ask the candidate to enter their name</li>
 <li>Use a loop to ask five questions, one at a time, to the candidate</li>
 <li>Collect the candidate’s answers</li>
-<li>Check those answers for accuracy<ol class="loweralpha">
-<li>Case insensitive equality check</li>
-</ol>
-</li>
+<li>Check those answers for accuracy (case insensitive equality check)</li>
 <li>Calculate the candidate’s overall percentage</li>
-<li>Determine if the candidate did well enough to enter our program (need &gt;= 80% to pass)</li>
-<li>Display the results<ol class="loweralpha">
-<li>Example output is listed below</li>
-</ol>
-</li>
+<li>Determine if the candidate did well enough to enter our program (need &gt;= 80%
+to pass)</li>
+<li>Display the results. Example output is listed below.</li>
 </ol>
 <div class="section" id="results-output">
 <h3>Results Output<a class="headerlink" href="#results-output" title="Permalink to this headline">¶</a></h3>
-<p>The results output should include the candidate’s name, the candidate’s responses, and
-whether each answer was correct or incorrect.  If incorrect, provide the right answer in the
-feedback.</p>
+<p>The results output should include the candidate’s name, the candidate’s
+responses, and whether each answer was correct or incorrect.  If incorrect,
+provide the right answer in the feedback.</p>
 <p>You are expected to match this output format.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Candidate Name: Can Twin
 1) True or false: 5000 meters = 5 kilometers.
@@ -125,19 +122,20 @@ feedback.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The output will vary slightly based on the user’s answers to each question.</p>
+<p class="last">The output will vary slightly based on the candidate’s answers to each question.</p>
 </div>
 </div>
 </div>
 <div class="section" id="take-it-step-by-step">
 <h2>Take It Step by Step<a class="headerlink" href="#take-it-step-by-step" title="Permalink to this headline">¶</a></h2>
 <p>When starting any project, it’s best to approach it as a series of smaller,
-testable parts. The goal is to get smaller, simpler parts working and then expand the code in a systematic way.
-The following is NOT the only way to complete this assignment, but it provides a framework for thinking through the project.</p>
+testable parts. The goal is to get simple parts working first and then expand
+the code in a systematic way. The following is NOT the only way to complete
+this assignment, but it provides a framework for thinking through the project.</p>
 <div class="section" id="step-1-minimum-viable-quiz">
 <h3>Step 1: Minimum Viable Quiz<a class="headerlink" href="#step-1-minimum-viable-quiz" title="Permalink to this headline">¶</a></h3>
-<ol class="loweralpha simple">
-<li>Define variables for:<ol class="arabic">
+<ol class="arabic simple">
+<li>Define variables for:<ol class="loweralpha">
 <li>candidate’s name</li>
 <li>a quiz question (pick any question from the table in step 2)</li>
 <li>the correct answer</li>
@@ -147,10 +145,8 @@ The following is NOT the only way to complete this assignment, but it provides a
 <li>Ask for the candidate’s name</li>
 <li>Display the question and prompt the candidate for an answer</li>
 <li>Check the candidate’s answer to see if it is correct</li>
-<li>Provide basic feedback to the student<ol class="arabic">
-<li>This should include their name and whether their answer was correct</li>
-</ol>
-</li>
+<li>Provide basic feedback to the student. This should include their name and
+whether their answer was correct.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -160,7 +156,7 @@ The following is NOT the only way to complete this assignment, but it provides a
 <div class="section" id="step-2-use-arrays">
 <h3>Step 2: Use Arrays<a class="headerlink" href="#step-2-use-arrays" title="Permalink to this headline">¶</a></h3>
 <p>Now that your small app is working, expand it to deal with multiple questions.</p>
-<ol class="loweralpha simple">
+<ol class="arabic simple">
 <li>Fill two arrays with the questions and answers listed in the table below.</li>
 <li>You still need to ask for the candidate’s name.</li>
 <li>Using bracket notation, select one question and use that to prompt the
@@ -206,6 +202,11 @@ candidate.</li>
 <p>Add one or more loops to your code to ask all the questions in the quiz.
 Collect and check all the candidate’s answers, then calculate the final
 percentage.</p>
+<blockquote>
+<div>[TODO: Poll Ed Team for opinions on whether to provide the % calculation
+formula.]</div></blockquote>
+<p>Note that the final report MUST have the format shown in the “Results Output”
+section.</p>
 </div>
 </div>
 <div class="section" id="submitting-your-work">
