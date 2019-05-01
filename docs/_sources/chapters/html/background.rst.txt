@@ -7,6 +7,9 @@ The next two chapters cover HTML and CSS, which are the two most common language
 
 Before jumping in to learn HTML and CSS, we need to understand how web pages appear on screens.
 The process involves the browser and the server that hosts the code.
+You are probably very familiar with browsers as the tool that gives us access to the internet.
+However, programmers think of browsers a little differently.
+For them, the browser is what translates the code into a web page.
 
 When you visit a web page in a browser, three main steps happen:
 

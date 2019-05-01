@@ -21,6 +21,10 @@ The master branch is the default branch of the repository.
 Many programmers keep the live version of their code in the master branch.
 For that reason, major work should be done in a new branch, so it doesn't impact the live software.
 
+.. figure:: figures/branches.pdf
+   :alt: Diagram depicting two branches coming off of the main branch.
+
+
 Creating a New Branch
 ---------------------
 
