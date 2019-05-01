@@ -3,7 +3,7 @@ Bracket Notation
 
 Understanding strings as sequential collections of characters gives us much more than just a mental model of how they are structured. JavaScript provides a rich collection of tools---including special syntax and operations---that allows us to work with strings.
 
-.. index:: ! bracket notation
+.. index:: ! bracket notation, ! index
 
 .. index:: 
    single: string; index
