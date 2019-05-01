@@ -7,9 +7,8 @@ Array Methods
    single: array; methods
 
 As with strings, JavaScript provides us with useful **methods** for arrays.
-Unlike strings, arrays are *mutable* and can be changed.
-
-Some methods alter an array, while others *return* values.
+These methods will either *alter* an existing array, *return* information about
+the array, or *create and return* a new array.
 
 Common Array Methods
 --------------------
