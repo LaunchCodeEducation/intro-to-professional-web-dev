@@ -10,3 +10,4 @@ More on Functions
    recursion
    recursion-walkthrough
    recursion-rules
+   exercises
