@@ -8,3 +8,5 @@ More on Functions
    anonymous-functions
    functions-as-arguments
    recursion
+   recursion-walkthrough
+   recursion-rules

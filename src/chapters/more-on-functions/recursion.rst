@@ -66,9 +66,20 @@ smaller, easier steps that *can all be solved in exactly the same way*.
 Splitting up a large task into small, identical pieces allows us to reuse a
 single function rather than coding several different functions.
 
-Lorem ipsum...
+Solving the larger problem involves completing and combining the smaller parts,
+and we accomplish this either by setting up a loop to call our function lots of
+times or by using the strength of recursion.
 
-Rules for Recursion
---------------------
+Here is the clever idea behind recursion.  Instead of a loop, we simply have
+our function call *itself* over and over again until the larger problem is
+solved.
 
-Lorem ipsum...
+.. admonition:: **Recursion in a nutshell:**
+
+   a. Split a big problem into smaller, identical pieces.
+   b. Build a function to solve one small piece.
+   c. The function repeatedly calls itself until all the pieces are solved.
+
+Many new programmers (and even veteran ones) find recursion an abstract and
+tricky concept. One helpful way to approach the idea is to walk through an
+example.
