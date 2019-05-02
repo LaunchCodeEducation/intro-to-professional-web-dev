@@ -67,7 +67,7 @@ Each tag has the following structural elements:
 
 Here is an example of a line of HTML:
 
-.. sourcecode:: html
+::
 
    <element type>content</element type> 
 
