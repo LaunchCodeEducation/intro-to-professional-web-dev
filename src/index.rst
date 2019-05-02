@@ -23,6 +23,7 @@ Chapters
    chapters/html/index
    chapters/css/index
    chapters/git/index
+   chapters/dom-and-events/index
    chapters/booster-rockets/index
 
 .. toctree::
