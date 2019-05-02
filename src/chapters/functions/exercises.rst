@@ -68,7 +68,8 @@ elements.
 
       ['orange', 123, 'world', 'hello']
 
-What if we wanted the reversed array to be ['egnaro', 321, 'dlrow', 'olleh']?
+What if we wanted the reversed array to be
+``['egnaro', 321, 'dlrow', 'olleh']``?
 
 Let's have some fun by creating a process that reverses BOTH the order of the
 entries in an array AND the order of characters within the individual elements.
@@ -128,14 +129,15 @@ flips the order of entries in the array.
    | ``'radar'``
 
 6. Now we are ready to finish our complete reversal process. Create a new
-   function with one parameter, which is the array we want to change.
+   function with one parameter, which is the array we want to change. The
+   function should:
 
-   a. The function should define and initialize an empty array.
-   b. The function should loop through the old array.
-   c. For each element in the array, call ``reverseCharacters`` to flip the
+   a. Define and initialize an empty array.
+   b. Loop through the old array.
+   c. For each element in the old array, call ``reverseCharacters`` to flip the
       characters or digits.
    d. Add the reversed string (or number) to the array defined in part 'a'.
-   e. When complete, return the reversed array.
+   e. Return the final, reversed array.
    f. *Be sure to print the results from each exercise in order to verify your
       code*.
 
@@ -146,5 +148,13 @@ flips the order of entries in the array.
       ['apple', 'potato', 'Capitalized Words']
       [123, 8897, 42, 1168, 8675309]
       ['hello', 'world', 123, 'orange']
+
+   **Output**
+
+   .. sourcecode:: js
+
+      ['sdroW dezilatipaC', 'otatop', 'elppa']
+      [9035768, 8611, 24, 7988, 321]
+      ['egnaro', 321, 'dlrow', 'olleh']
 
 [TODO: Add repl.it link.]
