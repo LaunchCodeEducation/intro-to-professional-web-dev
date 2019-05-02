@@ -7,4 +7,5 @@ More on Functions
    functions-as-values
    anonymous-functions
    functions-as-arguments
+   why-use-anonymous-functions
    
