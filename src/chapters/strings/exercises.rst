@@ -1,11 +1,11 @@
-String Exercises
-----------------
+Exercises: Strings
+------------------
 
 1. Identify the result for each of the following statements:
 
    a. ``'JavaScript'[8]``
-   b. ``“Strings are sequences of characters.”[5]``
-   c. ``“Wonderful”.length``
+   b. ``"Strings are sequences of characters."[5]``
+   c. ``"Wonderful".length``
    d. ``"Do spaces count?".length``
 
 |

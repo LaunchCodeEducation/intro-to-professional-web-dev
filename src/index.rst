@@ -19,7 +19,12 @@ Chapters
    chapters/booleans-and-conditionals/index   
    chapters/errors-and-debugging/index
    chapters/strings/index
+   chapters/arrays/index
+   chapters/loops/index
    chapters/functions/index
+   chapters/html/index
+   chapters/css/index
+   chapters/git/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -35,6 +40,7 @@ Studios
    :name: studiostoc
 
    chapters/data-and-variables/studio
+   chapters/arrays/studio
 
 Assignments
 ^^^^^^^^^^^
@@ -52,6 +58,7 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
+   appendices/array-method-examples/index
    appendices/style-guide
    appendices/string-method-examples/index
    appendices/about-this-book
