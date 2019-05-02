@@ -94,29 +94,31 @@ to pass)</li>
 <div class="section" id="results-output">
 <h3>Results Output<a class="headerlink" href="#results-output" title="Permalink to this headline">¶</a></h3>
 <p>The results output should include the candidate’s name, the candidate’s
-responses, and whether each answer was correct or incorrect.  If incorrect,
-provide the right answer in the feedback.</p>
-<p>You are expected to match this output format.</p>
+responses, the correct answers, the final percentage, and if the candidate
+passed the quiz.</p>
+<p>You are expected to match this format.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Candidate Name: Can Twin
 1) True or false: 5000 meters = 5 kilometers.
-   Your Answer: false (incorrect)
-   Correct Answer: True
+Your Answer: false
+Correct Answer: true
 
 2) (5 + 3)/2 * 10 = ?
-   Your Answer: 45 (incorrect)
-   Correct Answer: 40
+Your Answer: 45
+Correct Answer: 40
 
 3) Given the array [8, &quot;Orbit&quot;, &quot;Trajectory&quot;, 45], what entry is at index 2?
-   Your Answer: trajectory (correct)
+Your Answer: trajectory
+Correct Answer: trajectory
 
 4) Who was the first American woman in space?
-   Your Answer: Sally ride (correct)
+Your Answer: sally ride
+Correct Answer: sally ride
 
 5) What is the minimum crew size for the International Space Station (ISS)?
-   Your Answer: 10 (incorrect)
-   Correct Answer: 3
+Your Answer: 10
+Correct Answer: 3
 
-&gt;&gt;&gt; Overall Grade: 40% &lt;&lt;&lt;
+&gt;&gt;&gt; Overall Grade: 40% (2 of 5 responses correct) &lt;&lt;&lt;
 &gt;&gt;&gt; Status: FAILED &lt;&lt;&lt;
 </pre></div>
 </div>
@@ -132,8 +134,8 @@ provide the right answer in the feedback.</p>
 testable parts. The goal is to get simple parts working first and then expand
 the code in a systematic way. The following is NOT the only way to complete
 this assignment, but it provides a framework for thinking through the project.</p>
-<div class="section" id="step-1-minimum-viable-quiz">
-<h3>Step 1: Minimum Viable Quiz<a class="headerlink" href="#step-1-minimum-viable-quiz" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-1-minimum-viable-quiz">
+<h3>Part 1: Minimum Viable Quiz<a class="headerlink" href="#part-1-minimum-viable-quiz" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Define variables for:<ol class="loweralpha">
 <li>candidate’s name</li>
@@ -142,22 +144,28 @@ this assignment, but it provides a framework for thinking through the project.</
 <li>the candidate’s response</li>
 </ol>
 </li>
-<li>Ask for the candidate’s name</li>
-<li>Display the question and prompt the candidate for an answer</li>
-<li>Check the candidate’s answer to see if it is correct</li>
+<li>Ask for the candidate’s name. Before moving to the next step, use
+<code class="docutils literal notranslate"><span class="pre">console.log</span></code> to verify that your code correctly stores the information.</li>
+<li>Display the question and prompt the candidate for an answer. As before, use
+<code class="docutils literal notranslate"><span class="pre">console.log</span></code> to verify that your program correctly stored the answer.</li>
+<li>Check the candidate’s answer to see if it is correct.</li>
 <li>Provide basic feedback to the student. This should include their name and
 whether their answer was correct.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Make sure your small app works properly before moving on to step 2.</p>
+<div class="last line-block">
+<div class="line">If not already done, remove the extra <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements from steps 2 &amp; 3.</div>
+<div class="line">Make sure your small app works properly before moving on to part 2.</div>
 </div>
 </div>
-<div class="section" id="step-2-use-arrays">
-<h3>Step 2: Use Arrays<a class="headerlink" href="#step-2-use-arrays" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="part-2-use-arrays">
+<h3>Part 2: Use Arrays<a class="headerlink" href="#part-2-use-arrays" title="Permalink to this headline">¶</a></h3>
 <p>Now that your small app is working, expand it to deal with multiple questions.</p>
 <ol class="arabic simple">
-<li>Fill two arrays with the questions and answers listed in the table below.</li>
+<li>Redefine your question and correct answer variables to be arrays.</li>
+<li>Fill these arrays with the questions and answers listed in the table below.</li>
 <li>You still need to ask for the candidate’s name.</li>
 <li>Using bracket notation, select one question and use that to prompt the
 candidate.</li>
@@ -197,17 +205,27 @@ candidate.</li>
 </tbody>
 </table>
 </div>
-<div class="section" id="step-3-use-iteration-to-ask-all-questions">
-<h3>Step 3: Use Iteration to Ask All Questions<a class="headerlink" href="#step-3-use-iteration-to-ask-all-questions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-3-use-iteration-to-ask-all-questions">
+<h3>Part 3: Use Iteration to Ask All Questions<a class="headerlink" href="#part-3-use-iteration-to-ask-all-questions" title="Permalink to this headline">¶</a></h3>
 <p>Add one or more loops to your code to ask all the questions in the quiz.
-Collect and check all the candidate’s answers, then calculate the final
-percentage.</p>
+Use arrays to collect and check all the candidate’s answers.  Finally,
+calculate the candidate’s score and print the results.</p>
+<p>Helpful hint - To calculate the candidate’s percentage, use the equation:</p>
 <blockquote>
-<div>[TODO: Poll Ed Team for opinions on whether to provide the % calculation
-formula.]</div></blockquote>
+<div>(Number of Correct Answers) / (Number of Questions) * 100</div></blockquote>
 <p>Note that the final report MUST have the format shown in the “Results Output”
 section.</p>
 </div>
+</div>
+<div class="section" id="sanity-checks">
+<h2>Sanity Checks<a class="headerlink" href="#sanity-checks" title="Permalink to this headline">¶</a></h2>
+<p>Before submitting your solution, make sure your program:</p>
+<ol class="loweralpha simple">
+<li>Does not consider case when checking answers.</li>
+<li>Includes at least one loop and one conditional.</li>
+<li>Uses at least one template literal.</li>
+<li>Correctly accepts or rejects a candidate based on their percentage.</li>
+</ol>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>

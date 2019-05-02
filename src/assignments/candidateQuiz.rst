@@ -23,32 +23,34 @@ Results Output
 ^^^^^^^^^^^^^^
 
 The results output should include the candidate's name, the candidate's
-responses, and whether each answer was correct or incorrect.  If incorrect,
-provide the right answer in the feedback.
+responses, the correct answers, the final percentage, and if the candidate
+passed the quiz.
 
-You are expected to match this output format.
+You are expected to match this format.
 ::
 
    Candidate Name: Can Twin
    1) True or false: 5000 meters = 5 kilometers.
-      Your Answer: false (incorrect)
-      Correct Answer: True
+   Your Answer: false
+   Correct Answer: true
 
    2) (5 + 3)/2 * 10 = ?
-      Your Answer: 45 (incorrect)
-      Correct Answer: 40
+   Your Answer: 45
+   Correct Answer: 40
 
    3) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
-      Your Answer: trajectory (correct)
+   Your Answer: trajectory
+   Correct Answer: trajectory
 
    4) Who was the first American woman in space?
-      Your Answer: Sally ride (correct)
+   Your Answer: sally ride
+   Correct Answer: sally ride
 
    5) What is the minimum crew size for the International Space Station (ISS)?
-      Your Answer: 10 (incorrect)
-      Correct Answer: 3
+   Your Answer: 10
+   Correct Answer: 3
 
-   >>> Overall Grade: 40% <<<
+   >>> Overall Grade: 40% (2 of 5 responses correct) <<<
    >>> Status: FAILED <<<
 
 .. note:: The output will vary slightly based on the candidate's answers to each question.
@@ -61,7 +63,7 @@ testable parts. The goal is to get simple parts working first and then expand
 the code in a systematic way. The following is NOT the only way to complete
 this assignment, but it provides a framework for thinking through the project.
 
-Step 1: Minimum Viable Quiz
+Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Define variables for:
@@ -71,20 +73,25 @@ Step 1: Minimum Viable Quiz
    c. the correct answer
    d. the candidate's response
 
-#. Ask for the candidate's name
-#. Display the question and prompt the candidate for an answer
-#. Check the candidate's answer to see if it is correct
+#. Ask for the candidate's name. Before moving to the next step, use
+   ``console.log`` to verify that your code correctly stores the information.
+#. Display the question and prompt the candidate for an answer. As before, use
+   ``console.log`` to verify that your program correctly stored the answer.
+#. Check the candidate's answer to see if it is correct.
 #. Provide basic feedback to the student. This should include their name and
    whether their answer was correct.
 
-.. note:: Make sure your small app works properly before moving on to step 2.
+.. note::
+   | If not already done, remove the extra ``console.log`` statements from steps 2 & 3.
+   | Make sure your small app works properly before moving on to part 2.
 
-Step 2: Use Arrays
+Part 2: Use Arrays
 ^^^^^^^^^^^^^^^^^^
 
 Now that your small app is working, expand it to deal with multiple questions.
 
-#. Fill two arrays with the questions and answers listed in the table below.
+#. Redefine your question and correct answer variables to be arrays.
+#. Fill these arrays with the questions and answers listed in the table below.
 #. You still need to ask for the candidate's name.
 #. Using bracket notation, select one question and use that to prompt the
    candidate.
@@ -114,21 +121,31 @@ Now that your small app is working, expand it to deal with multiple questions.
    * - What is the minimum crew size for the International Space Station (ISS)?
      - "3"
 
-Step 3: Use Iteration to Ask All Questions
+Part 3: Use Iteration to Ask All Questions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add one or more loops to your code to ask all the questions in the quiz.
-Collect and check all the candidate's answers, then calculate the final
-percentage.
+Use arrays to collect and check all the candidate's answers.  Finally,
+calculate the candidate's score and print the results.
 
-   [TODO: Poll Ed Team for opinions on whether to provide the % calculation
-   formula.]
+Helpful hint - To calculate the candidate's percentage, use the equation:
+
+   (Number of Correct Answers) / (Number of Questions) * 100
 
 Note that the final report MUST have the format shown in the "Results Output"
 section.
 
+Sanity Checks
+--------------
+
+Before submitting your solution, make sure your program:
+
+a. Does not consider case when checking answers.
+b. Includes at least one loop and one conditional.
+c. Uses at least one template literal.
+d. Correctly accepts or rejects a candidate based on their percentage.
 
 Submitting Your Work
---------------------
+---------------------
 
 Lorem ipsum...
