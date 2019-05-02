@@ -1,6 +1,51 @@
 Exercises: Functions
 =====================
 
+Fun Functions
+--------------
+
+1. Define a function with one parameter, which will be a string. The function
+   must do the following:
+
+   a. Have a clear, descriptive name.
+   b. Return only the last character from strings with lengths of 3 or less.
+   c. Return only the first 3 characters from strings with lengths larger than
+      3.
+
+[TODO: Add repl.it link.]
+
+|
+
+1. (Continued) Now test your function:
+
+   d. Outside of the function, define the variable ``str`` and initialize it with
+      a string (e.g. ``'Functions rock!'``).
+   e. Define a second variable and initialize it with
+      ``someNameThatIChose = myFunctionName(str);``.
+   f. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
+      with the values from ``someNameThatIChose`` and ``str``.
+
+|
+
+2. The area of a rectangle is equal to its *length x width*.
+
+   a. Define a function and the required parameters to calculate the area of a
+      rectangle.
+   b. The function should *return* the area, NOT print it.
+   c. Call your area function by passing in two arguments - the length and
+      width.
+   d. Use a template literal to print, "The area is ____ cm^2."
+   e. *Optional*: If only one argument is passed to the function, then the shape is
+      a square. Modify your code to deal with this case.
+
+.. admonition:: Test Cases and (Answers)
+
+   | length = 2, width = 4 (area = 8)
+   | length = 14, width = 7 (area = 98)
+   | length = 20 (area = 400)
+
+[TODO: Add repl.it link.]
+
 Complete Reversal
 ------------------
 
@@ -23,7 +68,7 @@ elements.
 
       ['orange', 123, 'world', 'hello']
 
-What if we wanted the array to be ['egnaro', 321, 'dlrow', 'olleh']?
+What if we wanted the reversed array to be ['egnaro', 321, 'dlrow', 'olleh']?
 
 Let's have some fun by creating a process that reverses BOTH the order of the
 entries in an array AND the order of characters within the individual elements.
@@ -33,22 +78,66 @@ practice, we will solve the array reversal by defining two functions - one that
 reverses the characters in a string (or the digits in a number) and one that
 flips the order of entries in the array.
 
-1. Create a function with one parameter that represents a string or a number.
-   When passed a string, the function returns a string with all the characters
-   reversed (e.g. "Rutabaga" becomes "agabatuR"). When passed a number, the
-   function returns a number with all the digits reversed (e.g. 1234 converts
-   to 4321 and NOT the string ``"4321"``). *Be sure to print the result
-   returned by the function to verify that your code works*. Do this before
-   moving on to the next exercise.
+4. In the *composing functions* section, we examined a function that
+   :ref:`reverses the characters in a string <reverse-a-string>` using the
+   ``split`` and ``join`` methods. Let's rebuild that function now.
 
-|
+   a. Define the function as ``reverseCharacters``. Give it one parameter, which will
+      be the string to reverse.
+   b. Within the function, ``split`` the string into an array, then reverse the
+      array.
+   c. Use ``join`` to create the reversed string and *return* that string from the
+      function.
+   d. Below the function, define and initialize a variable to hold a string.
+   e. Use ``console.log(reverseCharacters(myVariableName));`` to call the function and verify
+      that it correctly reverses the characters in the string.
+   f. *Optional*: Use method chaining to reduce the lines of code within the
+      function.
 
-2. Create a function with one parameter, which is the array we want to
-   completely reverse. The function loops through the old array and returns a
-   new array with all the elements reversed by order and by characters/digits.
-   Hint - You can always call your letter-revsersal function from within your
-   array-reversal function. *Be sure to print the results from each exercise in
-   order to verify your code*.
+.. admonition:: Sample strings for testing
+
+   | ``'apple'``
+   | ``'LC101'``
+   | ``'Capitalized Letters'``
+   | ``'I love the smell of code in the morning.'``
+
+[TODO: Add repl.it link.]
+
+5. The ``reverseCharacters`` function works great on strings, but what if the
+   argument passed to the function is a number? Using
+   ``console.log(reverseCharacters(1234));`` results in an error, since
+   ``split`` only works on strings (TRY IT). When passed a number, we want the
+   function to return a number with all the digits reversed (e.g. 1234 converts
+   to 4321 and NOT the string ``"4321"``).
+
+   a. Add an ``if`` statement to your function to check the ``typeof`` the
+      parameter.
+   b. If ``typeof`` is 'string', return the reversed string as before.
+   c. If ``typeof`` is 'number', convert the parameter to a string, reverse the
+      characters, then convert it back into a number.
+   d. Return the reversed number.
+   e. Be sure to print the result returned by the function to verify that your code
+      works for *both strings and numbers*. Do this before moving on to the
+      next exercise.
+
+.. admonition:: Samples for testing
+
+   | 1234
+   | ``'LC101'``
+   | 8675309
+   | ``'radar'``
+
+6. Now we are ready to finish our complete reversal process. Create a new
+   function with one parameter, which is the array we want to change.
+
+   a. The function should define and initialize an empty array.
+   b. The function should loop through the old array.
+   c. For each element in the array, call ``reverseCharacters`` to flip the
+      characters or digits.
+   d. Add the reversed string (or number) to the array defined in part 'a'.
+   e. When complete, return the reversed array.
+   f. *Be sure to print the results from each exercise in order to verify your
+      code*.
 
 .. admonition:: Sample arrays for testing
 
@@ -59,82 +148,3 @@ flips the order of entries in the array.
       ['hello', 'world', 123, 'orange']
 
 [TODO: Add repl.it link.]
-
-Sort Numbers For Real
-----------------------
-
-Recall that using the ``sort`` method on an array of numbers produced an
-unexpected result, since JavaScript converts the numbers to strings by default
-(TODO - add reference to the ``sort`` example page).  Let's fix this!
-
-3. Create a function with an array of numbers as its parameter. The function
-   should iterate through the array and return the minimum value from the
-   array. *Hint*: Use what you know about ``if`` statements to identify and
-   store the smallest value within the array.
-
-.. admonition:: Sample arrays for testing
-
-   .. sourcecode:: js
-
-      [ 5, 10, 2, 42 ]
-      [ -2, 0, -10, -44, 5, 3, 0, 3 ]
-      [ 200, 5, 4, 10, 8, 5, -3.3, 4.4, 0 ]
-
-4. Create another function with an array of numbers as its parameter.  Within
-   this function:
-
-   a. Define a new, empty array to hold the final sorted numbers.
-   b. Use your function from the previous exercise to find the minimum value in
-      the old array.
-   c. Add the minimum value to the new array, and remove the minimum value from
-      the old array.
-   d. Repeat parts b & c until the old array is empty.
-   e. Return the new sorted array.
-
-*Hint*: Either a ``for`` or ``while`` loop will work inside this function, but
-there IS a better choice.  Consider the task the function must accomplish as
-well as the characteristics of each type of loop. Which one best serves if the
-array has an unknown length?
-
-*Be sure to print the results in order to verify your code*.
-
-[TODO: Add repl.it link.]
-
-More on Sorting Numbers
-------------------------
-
-The sorting approach used above is not the only way of accomplishing the task,
-nor is it the best. Details on why can be found **here** (TODO: link to
-appendix). Feel free to look up "bubble sort" to explore a different way to
-order numbers in an array.
-
-Fortunately, JavaScript has an elegant way to properly sort numbers.
-
-If you Google "JavaScript sort array of numbers" (or something similar), many
-options appear, and they all give pretty much the same result. The sites just
-differ in how much detail they provide when explaining the solution.
-
-One reference is here: `W3Schools <https://www.w3schools.com/jsref/jsref_sort.asp>`_.
-
-End result - the JavaScript syntax for numerical sorting is
-``arrayName.sort(function(a, b){return a-b});``.
-
-.. admonition:: Note
-
-   You do NOT need to understand HOW the sorting function works. You just need to
-   be able to use it.
-
-So Why Write A Sorting Function?
----------------------------------
-
-Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
-sorting methods, so why did we ask you to build one?
-
-It's kind of a programming right of passage - design an efficient sorting
-function. Also, sorting can help you land a job.
-
-As part of a tech interview, you will probably be asked to do some live-coding.
-One standard, go-to question is to sort an array WITHOUT relying on the built
-in methods. Knowing how to think though a sorting task, generate the code and
-then clearly explain your approach will significantly boost your appeal to an
-employer.

@@ -81,8 +81,61 @@
     
   <div class="section" id="exercises-functions">
 <h1>8.10. Exercises: Functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fun-functions">
+<h2>8.10.1. Fun Functions<a class="headerlink" href="#fun-functions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Define a function with one parameter, which will be a string. The function
+must do the following:<ol class="loweralpha">
+<li>Have a clear, descriptive name.</li>
+<li>Return only the last character from strings with lengths of 3 or less.</li>
+<li>Return only the first 3 characters from strings with lengths larger than
+3.</li>
+</ol>
+</li>
+</ol>
+<p>[TODO: Add repl.it link.]</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple">
+<li>(Continued) Now test your function:<ol class="loweralpha" start="4">
+<li>Outside of the function, define the variable <code class="docutils literal notranslate"><span class="pre">str</span></code> and initialize it with
+a string (e.g. <code class="docutils literal notranslate"><span class="pre">'Functions</span> <span class="pre">rock!'</span></code>).</li>
+<li>Define a second variable and initialize it with
+<code class="docutils literal notranslate"><span class="pre">someNameThatIChose</span> <span class="pre">=</span> <span class="pre">myFunctionName(str);</span></code>.</li>
+<li>Use a template literal to print, <code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">put</span> <span class="pre">the</span> <span class="pre">'___'</span> <span class="pre">in</span> <span class="pre">'___'.</span></code> Fill in the blanks
+with the values from <code class="docutils literal notranslate"><span class="pre">someNameThatIChose</span></code> and <code class="docutils literal notranslate"><span class="pre">str</span></code>.</li>
+</ol>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>The area of a rectangle is equal to its <em>length x width</em>.<ol class="loweralpha">
+<li>Define a function and the required parameters to calculate the area of a
+rectangle.</li>
+<li>The function should <em>return</em> the area, NOT print it.</li>
+<li>Call your area function by passing in two arguments - the length and
+width.</li>
+<li>Use a template literal to print, “The area is ____ cm^2.”</li>
+<li><em>Optional</em>: If only one argument is passed to the function, then the shape is
+a square. Modify your code to deal with this case.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-test-cases-and-answers admonition">
+<p class="first admonition-title">Test Cases and (Answers)</p>
+<div class="last line-block">
+<div class="line">length = 2, width = 4 (area = 8)</div>
+<div class="line">length = 14, width = 7 (area = 98)</div>
+<div class="line">length = 20 (area = 400)</div>
+</div>
+</div>
+<p>[TODO: Add repl.it link.]</p>
+</div>
 <div class="section" id="complete-reversal">
-<h2>8.10.1. Complete Reversal<a class="headerlink" href="#complete-reversal" title="Permalink to this headline">¶</a></h2>
+<h2>8.10.2. Complete Reversal<a class="headerlink" href="#complete-reversal" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method flips the order of the elements within an array.
 However, <code class="docutils literal notranslate"><span class="pre">reverse</span></code> does not affect the digits or characters within those
 elements.</p>
@@ -99,32 +152,82 @@ elements.</p>
 </pre></div>
 </div>
 </div>
-<p>What if we wanted the array to be [‘egnaro’, 321, ‘dlrow’, ‘olleh’]?</p>
+<p>What if we wanted the reversed array to be [‘egnaro’, 321, ‘dlrow’, ‘olleh’]?</p>
 <p>Let’s have some fun by creating a process that reverses BOTH the order of the
 entries in an array AND the order of characters within the individual elements.</p>
 <p>Remember that a function should perform only one task. To follow this best
 practice, we will solve the array reversal by defining two functions - one that
 reverses the characters in a string (or the digits in a number) and one that
 flips the order of entries in the array.</p>
-<ol class="arabic simple">
-<li>Create a function with one parameter that represents a string or a number.
-When passed a string, the function returns a string with all the characters
-reversed (e.g. “Rutabaga” becomes “agabatuR”). When passed a number, the
-function returns a number with all the digits reversed (e.g. 1234 converts
-to 4321 and NOT the string <code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code>). <em>Be sure to print the result
-returned by the function to verify that your code works</em>. Do this before
-moving on to the next exercise.</li>
+<ol class="arabic simple" start="4">
+<li>In the <em>composing functions</em> section, we examined a function that
+<a class="reference internal" href="composing-functions.html#reverse-a-string"><span class="std std-ref">reverses the characters in a string</span></a> using the
+<code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods. Let’s rebuild that function now.<ol class="loweralpha">
+<li>Define the function as <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code>. Give it one parameter, which will
+be the string to reverse.</li>
+<li>Within the function, <code class="docutils literal notranslate"><span class="pre">split</span></code> the string into an array, then reverse the
+array.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">join</span></code> to create the reversed string and <em>return</em> that string from the
+function.</li>
+<li>Below the function, define and initialize a variable to hold a string.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">console.log(reverseCharacters(myVariableName));</span></code> to call the function and verify
+that it correctly reverses the characters in the string.</li>
+<li><em>Optional</em>: Use method chaining to reduce the lines of code within the
+function.</li>
 </ol>
-<div class="line-block">
-<div class="line"><br /></div>
+</li>
+</ol>
+<div class="admonition-sample-strings-for-testing admonition">
+<p class="first admonition-title">Sample strings for testing</p>
+<div class="last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">'apple'</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">'Capitalized</span> <span class="pre">Letters'</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">love</span> <span class="pre">the</span> <span class="pre">smell</span> <span class="pre">of</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">morning.'</span></code></div>
 </div>
-<ol class="arabic simple" start="2">
-<li>Create a function with one parameter, which is the array we want to
-completely reverse. The function loops through the old array and returns a
-new array with all the elements reversed by order and by characters/digits.
-Hint - You can always call your letter-revsersal function from within your
-array-reversal function. <em>Be sure to print the results from each exercise in
-order to verify your code</em>.</li>
+</div>
+<p>[TODO: Add repl.it link.]</p>
+<ol class="arabic simple" start="5">
+<li>The <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> function works great on strings, but what if the
+argument passed to the function is a number? Using
+<code class="docutils literal notranslate"><span class="pre">console.log(reverseCharacters(1234));</span></code> results in an error, since
+<code class="docutils literal notranslate"><span class="pre">split</span></code> only works on strings (TRY IT). When passed a number, we want the
+function to return a number with all the digits reversed (e.g. 1234 converts
+to 4321 and NOT the string <code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code>).<ol class="loweralpha">
+<li>Add an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to your function to check the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> the
+parameter.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">typeof</span></code> is ‘string’, return the reversed string as before.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">typeof</span></code> is ‘number’, convert the parameter to a string, reverse the
+characters, then convert it back into a number.</li>
+<li>Return the reversed number.</li>
+<li>Be sure to print the result returned by the function to verify that your code
+works for <em>both strings and numbers</em>. Do this before moving on to the
+next exercise.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-samples-for-testing admonition">
+<p class="first admonition-title">Samples for testing</p>
+<div class="last line-block">
+<div class="line">1234</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></div>
+<div class="line">8675309</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">'radar'</span></code></div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Now we are ready to finish our complete reversal process. Create a new
+function with one parameter, which is the array we want to change.<ol class="loweralpha">
+<li>The function should define and initialize an empty array.</li>
+<li>The function should loop through the old array.</li>
+<li>For each element in the array, call <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> to flip the
+characters or digits.</li>
+<li>Add the reversed string (or number) to the array defined in part ‘a’.</li>
+<li>When complete, return the reversed array.</li>
+<li><em>Be sure to print the results from each exercise in order to verify your
+code</em>.</li>
+</ol>
+</li>
 </ol>
 <div class="admonition-sample-arrays-for-testing admonition">
 <p class="first admonition-title">Sample arrays for testing</p>
@@ -135,76 +238,6 @@ order to verify your code</em>.</li>
 </div>
 </div>
 <p>[TODO: Add repl.it link.]</p>
-</div>
-<div class="section" id="sort-numbers-for-real">
-<h2>8.10.2. Sort Numbers For Real<a class="headerlink" href="#sort-numbers-for-real" title="Permalink to this headline">¶</a></h2>
-<p>Recall that using the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on an array of numbers produced an
-unexpected result, since JavaScript converts the numbers to strings by default
-(TODO - add reference to the <code class="docutils literal notranslate"><span class="pre">sort</span></code> example page).  Let’s fix this!</p>
-<ol class="arabic simple" start="3">
-<li>Create a function with an array of numbers as its parameter. The function
-should iterate through the array and return the minimum value from the
-array. <em>Hint</em>: Use what you know about <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to identify and
-store the smallest value within the array.</li>
-</ol>
-<div class="admonition-sample-arrays-for-testing admonition">
-<p class="first admonition-title">Sample arrays for testing</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span> <span class="p">]</span>
-<span class="p">[</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">44</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
-<span class="p">[</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="4">
-<li>Create another function with an array of numbers as its parameter.  Within
-this function:<ol class="loweralpha">
-<li>Define a new, empty array to hold the final sorted numbers.</li>
-<li>Use your function from the previous exercise to find the minimum value in
-the old array.</li>
-<li>Add the minimum value to the new array, and remove the minimum value from
-the old array.</li>
-<li>Repeat parts b &amp; c until the old array is empty.</li>
-<li>Return the new sorted array.</li>
-</ol>
-</li>
-</ol>
-<p><em>Hint</em>: Either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will work inside this function, but
-there IS a better choice.  Consider the task the function must accomplish as
-well as the characteristics of each type of loop. Which one best serves if the
-array has an unknown length?</p>
-<p><em>Be sure to print the results in order to verify your code</em>.</p>
-<p>[TODO: Add repl.it link.]</p>
-</div>
-<div class="section" id="more-on-sorting-numbers">
-<h2>8.10.3. More on Sorting Numbers<a class="headerlink" href="#more-on-sorting-numbers" title="Permalink to this headline">¶</a></h2>
-<p>The sorting approach used above is not the only way of accomplishing the task,
-nor is it the best. Details on why can be found <strong>here</strong> (TODO: link to
-appendix). Feel free to look up “bubble sort” to explore a different way to
-order numbers in an array.</p>
-<p>Fortunately, JavaScript has an elegant way to properly sort numbers.</p>
-<p>If you Google “JavaScript sort array of numbers” (or something similar), many
-options appear, and they all give pretty much the same result. The sites just
-differ in how much detail they provide when explaining the solution.</p>
-<p>One reference is here: <a class="reference external" href="https://www.w3schools.com/jsref/jsref_sort.asp">W3Schools</a>.</p>
-<p>End result - the JavaScript syntax for numerical sorting is
-<code class="docutils literal notranslate"><span class="pre">arrayName.sort(function(a,</span> <span class="pre">b){return</span> <span class="pre">a-b});</span></code>.</p>
-<div class="admonition-note admonition">
-<p class="first admonition-title">Note</p>
-<p class="last">You do NOT need to understand HOW the sorting function works. You just need to
-be able to use it.</p>
-</div>
-</div>
-<div class="section" id="so-why-write-a-sorting-function">
-<h2>8.10.4. So Why Write A Sorting Function?<a class="headerlink" href="#so-why-write-a-sorting-function" title="Permalink to this headline">¶</a></h2>
-<p>Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
-sorting methods, so why did we ask you to build one?</p>
-<p>It’s kind of a programming right of passage - design an efficient sorting
-function. Also, sorting can help you land a job.</p>
-<p>As part of a tech interview, you will probably be asked to do some live-coding.
-One standard, go-to question is to sort an array WITHOUT relying on the built
-in methods. Knowing how to think though a sorting task, generate the code and
-then clearly explain your approach will significantly boost your appeal to an
-employer.</p>
 </div>
 </div>
 
