@@ -1,5 +1,5 @@
-String Exercises
-----------------
+Exercises: Strings
+------------------
 
 1. Identify the result for each of the following statements:
 

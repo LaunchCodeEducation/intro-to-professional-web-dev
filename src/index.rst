@@ -21,6 +21,9 @@ Chapters
    chapters/strings/index
    chapters/arrays/index
    chapters/functions/index
+   chapters/html/index
+   chapters/css/index
+   chapters/git/index
    chapters/booster-rockets/index
 
 .. toctree::

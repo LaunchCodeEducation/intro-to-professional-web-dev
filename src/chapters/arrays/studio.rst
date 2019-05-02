@@ -1,4 +1,4 @@
-Strings & Arrays Studio
+Studio: Strings & Arrays
 ========================
 
 Strings are **ordered collections** of *characters*, which are strings of

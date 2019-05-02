@@ -1,5 +1,5 @@
-Array Exercises
-===============
+Exercises: Arrays
+=================
 OK, rookie.  It's time to train you on how to modify the shuttle's cargo
 manifest.  The following actions will teach you how to add, remove, modify and
 rearrange our records for the items stored in our hold.
