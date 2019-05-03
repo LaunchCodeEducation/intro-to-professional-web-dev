@@ -8,3 +8,4 @@ Git
    remote-repository
    branches
    merge
+   studio
