@@ -81,14 +81,113 @@
     
   <div class="section" id="recursion-walkthrough">
 <h1>11.5. Recursion Walkthrough<a class="headerlink" href="#recursion-walkthrough" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="creating-a-string-with-a-for-loop">
-<h2>11.5.1. Creating a String With a <strong>for</strong> loop<a class="headerlink" href="#creating-a-string-with-a-for-loop" title="Permalink to this headline">¶</a></h2>
+<p>The best way to ease into the concept of recursion is to start by taking baby
+steps through a loop task.</p>
+<p>Let’s revisit the array method <code class="docutils literal notranslate"><span class="pre">join</span></code>, which combines the elements of an
+array into a single string. If we have <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>,
+then arr.join(‘’) returns the string <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code>.</p>
+<p>We could reproduce this action with either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="section" id="joining-array-elements-with-a-loop">
+<h2>11.5.1. Joining Array Elements With a Loop<a class="headerlink" href="#joining-array-elements-with-a-loop" title="Permalink to this headline">¶</a></h2>
+<p>Examine the code samples below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through the array and add each entry into the <code class="docutils literal notranslate"><span class="pre">newString</span></code> variable.</th>
+<th class="head">Use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to add the first element in the array to <code class="docutils literal notranslate"><span class="pre">newString</span></code>, then remove that element from the array.</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">newString</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="nx">newString</span> <span class="o">=</span> <span class="nx">newString</span> <span class="o">+</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newString</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
 </div>
+<p><strong>Output</strong></p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;LC101&#39;</span>
+<span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">newString</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+   <span class="nx">newString</span> <span class="o">+=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+   <span class="nx">arr</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newString</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;LC101&#39;</span>
+<span class="p">[</span> <span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inside the each loop, the code simply adds two strings together - whatever is
+stored in <code class="docutils literal notranslate"><span class="pre">newString</span></code> plus one element from the array. In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
+the element is the next item in the sequence of entries.  In the <code class="docutils literal notranslate"><span class="pre">while</span></code>
+loop, the element is always the first entry from whatever remains in the array.</p>
+<p>OK, so the loops join the array elements together. Now let’s see how to
+accomplish the same task without a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.</p>
+</div>
+<div class="section" id="bring-in-recursion-concepts">
+<h2>11.5.2. Bring In Recursion Concepts<a class="headerlink" href="#bring-in-recursion-concepts" title="Permalink to this headline">¶</a></h2>
+<p>First, state the problem to solve: <em>Combine the elements from an array into a
+string</em>.</p>
+<p>Next, split the problem into small, identical steps. Looking at the loops
+above, the “identical step” is just adding two strings together - <code class="docutils literal notranslate"><span class="pre">newString</span></code>
+and the next entry in the array.</p>
+<p>Next, build a function to accomplish the small steps.  Let’s call the function
+<code class="docutils literal notranslate"><span class="pre">addEntry</span></code>, and we will set an array as the parameter.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">addEntry</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
+   <span class="c1">//some code here</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We want this function to repeat over and over again until the task is complete.</p>
+<p>We will add code to the function soon, but we need to take a moment to consider
+how to repeatedly call the function without using <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
 <div class="section" id="identifying-the-base-case">
-<h2>11.5.2. Identifying the Base Case<a class="headerlink" href="#identifying-the-base-case" title="Permalink to this headline">¶</a></h2>
+<h3>11.5.2.1. Identifying the Base Case<a class="headerlink" href="#identifying-the-base-case" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>. In the examples above, these conditions are <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">arr.length</span></code> and
+<code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.</p>
+<p>With recursion, we will not know how many times <code class="docutils literal notranslate"><span class="pre">addEntry</span></code> must be called. To
+make sure the code stops at the proper time, we need to identify a condtion
+that ends the process. This is called the <strong>base case</strong>.</p>
+<p>Inside <code class="docutils literal notranslate"><span class="pre">addEntry</span></code>, we use a simple <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check of the base case
+is <code class="docutils literal notranslate"><span class="pre">true</span></code>.  If so, the recursion ends and the task is complete. If not, the
+function calls itself again.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">addEntry</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
+      <span class="c1">//solve last step</span>
+      <span class="c1">//end recursion</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//solve small step</span>
+      <span class="c1">//call addEntry again</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="setting-up-a-function-to-call-itself">
-<h2>11.5.3. Setting Up A Function To Call Itself<a class="headerlink" href="#setting-up-a-function-to-call-itself" title="Permalink to this headline">¶</a></h2>
+<h3>11.5.2.2. Setting Up A Function To Call Itself<a class="headerlink" href="#setting-up-a-function-to-call-itself" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
