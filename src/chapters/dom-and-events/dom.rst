@@ -9,22 +9,94 @@ structure of the browser, HTML document, HTML elements, element attributes, and 
 
 TODO: figure about DOM?
 
-Dynamic Web Page Using the DOM
-------------------------------
-Sometimes it is necessary to update a web page based on user interaction.
-Remember that static web pages do not change after they are loaded and dynamic web pages can be dynamically updated.
-
-The DOM plays a key part in making web pages dynamic. Since the DOM is a code version of the web page you can write code
-to alter the web page. The browser will re-render the web page anytime changes made via the DOM.
-
 Global DOM Variables
 --------------------
-talk about window and document. say that more details will follow in the next section
+.. index::
+   pair: variable; global
 
-Examples
---------
-TODO: examples of changing the DOM to alter  a web page
+To utilize the DOM in JavaScript, use the DOM global variables. **Global variables** are variables that are
+usable in code without having to declare or import them. We will learn much more about these variables and their types soon,
+but fow now let's get used to the idea of using JavaScript to interact with the DOM.
+
+To start we are going to use the ``window`` and ``document`` global variables. ``window`` represents the browser
+window or tab if using a multi-tabbed browser. ``document`` represents the HTMl document inside of the window or tab.
+As mentioned above, we will go into more detail on these later.
+
+.. admonition:: Example
+
+   Here the ``window`` and ``document`` variables are used to print information to the browser's console.
+
+   .. sourcecode:: html
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+            <title>Using DOM Variables</title>
+            <script>
+               console.log("the page title:", document.title);
+               console.log("the protocol:", window.location.protocol);
+            </script>
+      </head>
+      <body>
+            contents
+      </body>
+      </html>
+
+   **Output**
+
+   ::
+
+      the page title: Using DOM Variables
+      the protocol: https:
+
+
+Dynamic Web Page Using the DOM
+------------------------------
+Sometimes it is necessary to update a web page after the page has been loaded. The DOM plays a key part
+in making web pages dynamic. Since the DOM is a code version of the web page, you can write code
+to alter the web page. The browser will re-render the web page anytime changes are made via the DOM.
+
+In order to add or edit HTML elements with cod we need to be able to get reference to them. The method
+``document.getElementById`` will search for a matching element and return a reference to it. With that
+referrence we can call methods on the element to add or edit it. We will go into more detail
+on this method and many more in the DOM methods section.
+
+.. admonition:: Example
+
+   Use ``document.getElementById`` and ``element.append`` to add text to a ``<p>`` tag.
+
+   .. sourcecode:: html
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+            <title>Add content using DOM</title>
+      </head>
+      <body>
+            <p id="main-text">Words about things...</p>
+            <script>
+               let p = document.getElementById("main-text");
+               p.append("More words about things");
+               console.log(p.innerHTML);
+            </script>
+      </body>
+      </html>
+
+   **Output**
+
+   ::
+
+      Words about things... More words about things
+
+Where to Put the ``<script>``
+-----------------------------
+
+In the previous example, notice the ``<script>`` is placed below the ``<p>`` in the HTML document.
+That is important because HTML documents are executed top down. A ``<script>`` must come after
+any other elements that will be affected by the code inside the ``<script>``. In the Events section
+we will learn about another way to handle this.
 
 Check Your Understanding
 ------------------------
-TODO
+
+TODO: ...

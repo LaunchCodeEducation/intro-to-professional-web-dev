@@ -84,24 +84,83 @@ an instance. The <strong>Document Object Model (DOM)</strong> is a set of object
 document, and all the elements on the page. The DOM objects are instances of classes that model the
 structure of the browser, HTML document, HTML elements, element attributes, and CSS.</p>
 <p>TODO: figure about DOM?</p>
-<div class="section" id="dynamic-web-page-using-the-dom">
-<h2>12.2.1. Dynamic Web Page Using the DOM<a class="headerlink" href="#dynamic-web-page-using-the-dom" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes it is necessary to update a web page based on user interaction.
-Remember that static web pages do not change after they are loaded and dynamic web pages can be dynamically updated.</p>
-<p>The DOM plays a key part in making web pages dynamic. Since the DOM is a code version of the web page you can write code
-to alter the web page. The browser will re-render the web page anytime changes made via the DOM.</p>
-</div>
 <div class="section" id="global-dom-variables">
-<h2>12.2.2. Global DOM Variables<a class="headerlink" href="#global-dom-variables" title="Permalink to this headline">¶</a></h2>
-<p>talk about window and document. say that more details will follow in the next section</p>
+<h2>12.2.1. Global DOM Variables<a class="headerlink" href="#global-dom-variables" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">To utilize the DOM in JavaScript, use the DOM global variables. <strong>Global variables</strong> are variables that are
+usable in code without having to declare or import them. We will learn much more about these variables and their types soon,
+but fow now let’s get used to the idea of using JavaScript to interact with the DOM.</p>
+<p>To start we are going to use the <code class="docutils literal notranslate"><span class="pre">window</span></code> and <code class="docutils literal notranslate"><span class="pre">document</span></code> global variables. <code class="docutils literal notranslate"><span class="pre">window</span></code> represents the browser
+window or tab if using a multi-tabbed browser. <code class="docutils literal notranslate"><span class="pre">document</span></code> represents the HTMl document inside of the window or tab.
+As mentioned above, we will go into more detail on these later.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">window</span></code> and <code class="docutils literal notranslate"><span class="pre">document</span></code> variables are used to print information to the browser’s console.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Using DOM Variables<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;the page title:&quot;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;the protocol:&quot;</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">);</span>
+      <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      contents
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
 </div>
-<div class="section" id="examples">
-<h2>12.2.3. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>TODO: examples of changing the DOM to alter  a web page</p>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>the page title: Using DOM Variables
+the protocol: https:
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dynamic-web-page-using-the-dom">
+<h2>12.2.2. Dynamic Web Page Using the DOM<a class="headerlink" href="#dynamic-web-page-using-the-dom" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it is necessary to update a web page after the page has been loaded. The DOM plays a key part
+in making web pages dynamic. Since the DOM is a code version of the web page, you can write code
+to alter the web page. The browser will re-render the web page anytime changes are made via the DOM.</p>
+<p>In order to add or edit HTML elements with cod we need to be able to get reference to them. The method
+<code class="docutils literal notranslate"><span class="pre">document.getElementById</span></code> will search for a matching element and return a reference to it. With that
+referrence we can call methods on the element to add or edit it. We will go into more detail
+on this method and many more in the DOM methods section.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">document.getElementById</span></code> and <code class="docutils literal notranslate"><span class="pre">element.append</span></code> to add text to a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Add content using DOM<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main-text&quot;</span><span class="p">&gt;</span>Words about things...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+         <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;main-text&quot;</span><span class="p">);</span>
+         <span class="nx">p</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;More words about things&quot;</span><span class="p">);</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+      <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Words about things... More words about things
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="where-to-put-the-script">
+<h2>12.2.3. Where to Put the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code><a class="headerlink" href="#where-to-put-the-script" title="Permalink to this headline">¶</a></h2>
+<p>In the previous example, notice the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> is placed below the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> in the HTML document.
+That is important because HTML documents are executed top down. A <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> must come after
+any other elements that will be affected by the code inside the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. In the Events section
+we will learn about another way to handle this.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>12.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>TODO: …</p>
 </div>
 </div>
 
