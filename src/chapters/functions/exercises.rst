@@ -12,7 +12,7 @@ Fun Functions
    c. Return only the first 3 characters from strings with lengths larger than
       3.
 
-[TODO: Add repl.it link.]
+`Code it here <https://repl.it/@launchcode/FunctionsExercises01>`__
 
 |
 
@@ -44,7 +44,7 @@ Fun Functions
    | length = 14, width = 7 (area = 98)
    | length = 20 (area = 400)
 
-[TODO: Add repl.it link.]
+`Code it here <https://repl.it/@launchcode/FunctionsExercises02>`__
 
 Complete Reversal
 ------------------
@@ -79,7 +79,7 @@ practice, we will solve the array reversal by defining two functions - one that
 reverses the characters in a string (or the digits in a number) and one that
 flips the order of entries in the array.
 
-4. In the *composing functions* section, we examined a function that
+3. In the *composing functions* section, we examined a function that
    :ref:`reverses the characters in a string <reverse-a-string>` using the
    ``split`` and ``join`` methods. Let's rebuild that function now.
 
@@ -102,16 +102,16 @@ flips the order of entries in the array.
    | ``'Capitalized Letters'``
    | ``'I love the smell of code in the morning.'``
 
-[TODO: Add repl.it link.]
+`Code it here <https://repl.it/@launchcode/FunctionsExercises03-05>`__
 
-5. The ``reverseCharacters`` function works great on strings, but what if the
+4. The ``reverseCharacters`` function works great on strings, but what if the
    argument passed to the function is a number? Using
    ``console.log(reverseCharacters(1234));`` results in an error, since
    ``split`` only works on strings (TRY IT). When passed a number, we want the
    function to return a number with all the digits reversed (e.g. 1234 converts
    to 4321 and NOT the string ``"4321"``).
 
-   a. Add an ``if`` statement to your function to check the ``typeof`` the
+   a. Add an ``if`` statement to ``reverseCharacters`` to check the ``typeof`` the
       parameter.
    b. If ``typeof`` is 'string', return the reversed string as before.
    c. If ``typeof`` is 'number', convert the parameter to a string, reverse the
@@ -128,7 +128,7 @@ flips the order of entries in the array.
    | 8675309
    | ``'radar'``
 
-6. Now we are ready to finish our complete reversal process. Create a new
+5. Now we are ready to finish our complete reversal process. Create a new
    function with one parameter, which is the array we want to change. The
    function should:
 
@@ -138,7 +138,7 @@ flips the order of entries in the array.
       characters or digits.
    d. Add the reversed string (or number) to the array defined in part 'a'.
    e. Return the final, reversed array.
-   f. *Be sure to print the results from each exercise in order to verify your
+   f. *Be sure to print the results from each test case in order to verify your
       code*.
 
 .. admonition:: Sample arrays for testing
@@ -156,5 +156,3 @@ flips the order of entries in the array.
       ['sdroW dezilatipaC', 'otatop', 'elppa']
       [9035768, 8611, 24, 7988, 321]
       ['egnaro', 321, 'dlrow', 'olleh']
-
-[TODO: Add repl.it link.]
