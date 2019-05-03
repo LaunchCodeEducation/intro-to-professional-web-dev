@@ -42,6 +42,15 @@ Studios
    chapters/data-and-variables/studio
    chapters/arrays/studio
 
+Assignments
+^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :name: assignmentstoc
+
+   assignments/candidateQuiz
+
 Appendices
 ^^^^^^^^^^
 
