@@ -95,14 +95,14 @@ flips the order of entries in the array.
    f. *Optional*: Use method chaining to reduce the lines of code within the
       function.
 
+`Code exercises 3 - 5 here <https://repl.it/@launchcode/FunctionsExercises03-05>`__
+
 .. admonition:: Sample strings for testing
 
    | ``'apple'``
    | ``'LC101'``
    | ``'Capitalized Letters'``
    | ``'I love the smell of code in the morning.'``
-
-`Code it here <https://repl.it/@launchcode/FunctionsExercises03-05>`__
 
 4. The ``reverseCharacters`` function works great on strings, but what if the
    argument passed to the function is a number? Using
