@@ -9,5 +9,6 @@ More on Functions
    functions-as-arguments
    recursion
    recursion-walkthrough
+   recursion-walkthrough2
    recursion-rules
    exercises
