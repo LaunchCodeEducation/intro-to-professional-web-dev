@@ -1,8 +1,7 @@
-Common DOM Events, Types, and Methods
-=====================================
+More DOM Methods and Properties
+===============================
 
-Know these common DOM events: load, click, hover, focus, keyup?, change, submit
-Familiar with the global variable window and some of it's methods and properties: window.alert(), window.console, window.confirm(), window.location, window.history, window.back(), window.close()
-Familiar with the global variable document and some of it's methods and properties: document.getElementById(), document.getElementsByTagName(), document.getElementsByTagName(), document.querySelector(), document.querySelectorAll(), document.write()
-Able to use Node method node.appendChild()
-Able to use Element methods and properties: element.innerHTML, element.style, element.getAttribute(), element.setAttribute(), element.addEventListener()
+* Understand and use the global variable window and these methods and properties: window.alert(), window.console, window.confirm(), window.location, window.close()
+* Understand and use the global variable document and these methods: document.getElementById(), document.getElementsByTagName(), document.getElementsByClassName(), document.querySelector(), document.querySelectorAll(), document.write()
+* Understand and use Node method node.appendChild()
+* Understand and use Element methods and properties: element.innerHTML, element.style, element.getAttribute(), element.setAttribute(), element.addEventListener()
