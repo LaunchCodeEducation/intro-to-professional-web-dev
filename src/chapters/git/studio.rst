@@ -6,7 +6,7 @@ Getting Ready: Code Together
 
 Coding together allows you to work as a team so you can build bigger projects, faster.
 
-In this studio, we will practice common git commands necessary when
+In this studio, we will practice common Git commands necessary when
 multiple people are developing on the same code base. Today, you will
 start out coding in tag-team shifts, and by the end you should have
 a good idea of how to both be working on the same code at the same
@@ -28,7 +28,7 @@ This lesson reinforces:
 Walkthrough
 -----------
 
-The instructor will discuss why GitHub is worth their study. You already know how to use a local git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.
+The instructor will discuss why GitHub is worth their study. You already know how to use a local Git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.
 
 Students *must* pair off for this exercise. If you have trouble finding a partner, ask your TA for help.
 
@@ -45,9 +45,9 @@ You and your partner will alternate tasks, so designate one of you as **Player 1
 
 .. warning:: 
 
-   As you go through these steps, you'll be working with branches, and it's very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use ``git stash`` to cleanly move your changes to another branch. Read about how to do so in our Git Stash Tutorial.
+   As you go through these steps, you'll be working with branches, and it's very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use ``Git stash`` to cleanly move your changes to another branch. Read about how to do so in our Git Stash Tutorial.
 
-.. todo:: Migrate git stash tutorial
+.. todo:: Migrate Git stash tutorial
 
 Step 1: Create a New Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -58,7 +58,7 @@ Step 1: Create a New Repository
 
    $ mkdir fireside-story
    $ cd fireside-story
-   $ git init
+   $ Git init
 
 In that directory, open a new file `index.html` in the editor of your choice. Paste in this code:
 
@@ -76,30 +76,30 @@ Once you've seen this file in the browser, let's stage and commit it.
 
 ::
 
-   $ git status
+   $ Git status
    On branch master
 
    Initial commit
 
    Untracked files:
-   (use "git add <file>..." to include in what will be committed)
+   (use "Git add <file>..." to include in what will be committed)
 
       index.html
 
-   nothing added to commit but untracked files present (use "git add" to track)
+   nothing added to commit but untracked files present (use "Git add" to track)
 
 The file is not staged. Let's add everything in this directory.
 
 ::
 
-   $ git add .
-   $ git status
+   $ Git add .
+   $ Git status
    On branch master
 
    Initial commit
 
    Changes to be committed:
-   (use "git rm --cached <file>..." to unstage)
+   (use "Git rm --cached <file>..." to unstage)
 
       new file:   index.html
 
@@ -107,11 +107,11 @@ We see that the file is staged. Let's commmit.
 
 ::
 
-   $ git commit -m 'started story'
+   $ Git commit -m 'started story'
    [master (root-commit) e1c1719] started story
    1 file changed, 5 insertions(+)
    create mode 100644 index.html
-   $ git log
+   $ Git log
    commit 679de772612099c77891d2a3fab12af8db08b651
    Author: Cheryl <cherylschaefer@gmail.com>
    Date:   Wed Apr 5 10:55:56 2017 -0500
@@ -142,8 +142,8 @@ Now go back to your terminal and follow the instructions shown on GitHub which s
 
 ::
 
-   $ git remote add origin https://github.com:cherylschaefer/fireside-story.git
-   $ git push origin master
+   $ Git remote add origin https://Github.com:cherylschaefer/fireside-story.Git
+   $ Git push origin master
 
 .. warning::
 
@@ -166,24 +166,24 @@ In your terminal, navigate to your development folder and clone down the repo. T
 
 :: 
    
-   git clone https://github.com/cherylschaefer/fireside-story.git
+   Git clone https://Github.com/cherylschaefer/fireside-story.Git
 
 Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
 
 ::
-   $ git status
+   $ Git status
    On branch master
    Your branch is up-to-date with 'origin/master'.
    nothing to commit, working directory clean
-   $ git add index.html
-   $ git commit -m 'added second line of story'
+   $ Git add index.html
+   $ Git commit -m 'added second line of story'
 
 Now we need to push up your changes so Player 1 can use them as well.
 
 ::
 
-   $ git push origin master
-   ERROR: Permission to cherylschaefer/fireside-story.git denied to player2.
+   $ Git push origin master
+   ERROR: Permission to cherylschaefer/fireside-story.Git denied to player2.
    fatal: Could not read from remote repository.
 
    Please make sure you have the correct access rights
@@ -217,14 +217,14 @@ Now let's go enter that command again to push up our code.
 
 ::
 
-   $ git push origin master
+   $ Git push origin master
    Counting objects: 9, done.
    Delta compression using up to 4 threads.
    Compressing objects: 100% (9/9), done.
    Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
    Total 9 (delta 8), reused 0 (delta 0)
    remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-   To git@github.com:player2/fireside-story.git
+   To Git@Github.com:player2/fireside-story.Git
       511239a..679de77  master -> master
 
 Anyone reading the HTML through GitHub's browser interface should now see the new second line.
@@ -236,12 +236,12 @@ Step 6: Pull Player 2's Line and Add Another Line
 
 ::
 
-   $ git pull origin master
+   $ Git pull origin master
    remote: Counting objects: 3, done.
    remote: Compressing objects: 100% (2/2), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), done.
-   From github.com:cherylschaefer/fireside-story
+   From Github.com:cherylschaefer/fireside-story
       e0de62d..e851b7e  master     -> origin/master
    Updating e0de62d..e851b7e
    Fast-forward
@@ -260,12 +260,12 @@ Step 7: Do It Again: Pull, Change, and Push!
 
 ::
 
-   $ git pull origin master
+   $ Git pull origin master
    remote: Counting objects: 3, done.
    remote: Compressing objects: 100% (2/2), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), done.
-   From github.com:cherylschaefer/fireside-story
+   From Github.com:cherylschaefer/fireside-story
       e851b7e..167684c  master     -> origin/master
    Updating e851b7e..167684c
    Fast-forward
@@ -287,7 +287,7 @@ This workflow is a common one in team development situations. You might wonder, 
 
 ::
 
-   $ git checkout -b darker
+   $ Git checkout -b darker
    Switched to a new branch 'darker'
 
 This command creates a new branch named ``darker``, and switches your local repository to use that branch.
@@ -319,11 +319,11 @@ Now stage and commit these changes.
 
 ::
 
-   $ git add .
-   $ git commit -m 'Added style.css'
-   $ git push origin darker
+   $ Git add .
+   $ Git commit -m 'Added style.css'
+   $ Git push origin darker
 
-Note that the last command is a bit different than what we've used before (`git push origin master`). The final piece of this command is the name of the branch that we want Git to push up to the origin repository (that is, to GitHub).
+Note that the last command is a bit different than what we've used before (`Git push origin master`). The final piece of this command is the name of the branch that we want Git to push up to the origin repository (that is, to GitHub).
 
 You should both now see a second branch present on the GitHub project page. To view branches on GitHub, select *Branches* from the navigation section just below the repository title.
 
@@ -335,7 +335,7 @@ In your terminal, you can type this command to see a list of the available branc
 
 ::
 
-   $ git branch
+   $ Git branch
    * darker
    master
 
@@ -376,22 +376,22 @@ Step 10: Make a Change in the New Branch
 
 ::
 
-   $ git branch
+   $ Git branch
    * master
 
 If you want to work with the branch before merging it in, you can do so by typing these commands:
 
 ::
 
-   $ git fetch origin darker
+   $ Git fetch origin darker
    ...
-   $ git branch
+   $ Git branch
    darker
    * master
 
 ::
 
-   $ git checkout darker
+   $ Git checkout darker
    Switched to branch 'darker'
    Your branch is up-to-date with 'origin/darker'.
 
@@ -401,7 +401,7 @@ Now switch back to the ```master``` branch:
 
 ::
 
-   $ git checkout master
+   $ Git checkout master
    Switched to branch 'master'
    Your branch is up-to-date with 'origin/master'.
 
@@ -438,8 +438,8 @@ The changes from ``darker`` are now in the ```master``` branch, but only in the 
 
 ::
 
-   $ git checkout master
-   $ git pull origin master
+   $ Git checkout master
+   $ Git pull origin master
 
 Git is able to merge these files on its own.
 
@@ -448,7 +448,7 @@ Step 12: Merge Conflicts!
 
 When collaborating on a project, things won't always go so smoothly. It's common for two people to make changes to the same line(s) of code, at roughly the same time, which will prevent Git from being able to merge the changes together.
 
-.. figure:: figures/git-merge.gif
+.. figure:: figures/Git-merge.gif
 
    Git Merge Conflicts
 
@@ -460,7 +460,7 @@ First, switch back to the ``master`` branch.
 
 ::
 
-   $ git checkout master
+   $ Git checkout master
 
 Let's change our font. To do so, add this link to your ``index.html`` file, right by the first stylesheet link:
 
@@ -521,16 +521,16 @@ Step 13: Resolving Merge Conflicts
 
 :: 
 
-   $ git push origin master
+   $ Git push origin master
 
-   To git@github.com:cherylschaefer/fireside-story.git
+   To Git@Github.com:cherylschaefer/fireside-story.Git
    ! [rejected]        master -> master (fetch first)
-   error: failed to push some refs to 'git@github.com:cherylschaefer/fireside-story.git'
+   error: failed to push some refs to 'Git@Github.com:cherylschaefer/fireside-story.Git'
    hint: Updates were rejected because the remote contains work that you do
    hint: not have locally. This is usually caused by another repository pushing
    hint: to the same ref. You may want to first integrate the remote changes
-   hint: (e.g., 'git pull ...') before pushing again.
-   hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+   hint: (e.g., 'Git pull ...') before pushing again.
+   hint: See the 'Note about fast-forwards' in 'Git push --help' for details.
 
 
 There's a lot of jargon in that message, including some terminology we haven't encountered. However, the core of the message is indeed understandable to us: "Updates were rejected because the remote contains work that you do not have locally." In other words, somebody (Player 2, in this case), pushed changes to the same branch, and you don't have those changes on your computer. Git will not let you push to a branch in another repository unless you have incorporated all of the work present in that branch.
@@ -539,12 +539,12 @@ Let's pull these outstanding changes into our branch and resolve the errors.
 
 :: 
 
-   $ git pull
+   $ Git pull
    remote: Counting objects: 4, done.
    remote: Compressing objects: 100% (3/3), done.
    remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
    Unpacking objects: 100% (4/4), done.
-   From github.com:cherylschaefer/fireside-story
+   From Github.com:cherylschaefer/fireside-story
       7d7e42e..0c21659  master     -> origin/master
    Auto-merging style.css
    CONFLICT (content): Merge conflict in style.css
@@ -599,26 +599,26 @@ You will need to do the same thing for the ``index.html`` file. You only need th
 Step 14: Pulling the Merged Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Player 2:** Meanwhile, Player 2 is sitting at home, minding their own business. A random ``git status`` seems reassuring:
+**Player 2:** Meanwhile, Player 2 is sitting at home, minding their own business. A random ``Git status`` seems reassuring:
 
 ::
 
-   $ git status
+   $ Git status
    On branch master
    Your branch is up-to-date with 'origin/master'.
    nothing to commit, working directory clean
 
 
-Your local git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We'd find this out by doing either a ``git fetch``, or if we just want the latest version of this branch, ``git pull``:
+Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We'd find this out by doing either a ``Git fetch``, or if we just want the latest version of this branch, ``Git pull``:
 
 ::
 
-   $ git pull
+   $ Git pull
    remote: Counting objects: 13, done.
    remote: Compressing objects: 100% (8/8), done.
    remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
    Unpacking objects: 100% (13/13), done.
-   From github.com:cherylschaefer/fireside-story
+   From Github.com:cherylschaefer/fireside-story
       0c21659..e0de62d  master     -> origin/master
    Updating 0c21659..e0de62d
    Fast-forward
@@ -653,6 +653,6 @@ Merge conflicts are a part of the process of team development. Resolve them care
 Resources
 ^^^^^^^^^
 
-* `Git Branching - Basic Branching and Merging <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`_
-* `Adding Another Person To Your Repository <https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/>`_
-* `Resolving Conflicts In the Command Line <https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_
+* `Git Branching - Basic Branching and Merging <https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`_
+* `Adding Another Person To Your Repository <https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/>`_
+* `Resolving Conflicts In the Command Line <https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_

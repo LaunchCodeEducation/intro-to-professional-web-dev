@@ -82,7 +82,7 @@
 <div class="section" id="getting-ready-code-together">
 <h2>13.6.1. Getting Ready: Code Together<a class="headerlink" href="#getting-ready-code-together" title="Permalink to this headline">¶</a></h2>
 <p>Coding together allows you to work as a team so you can build bigger projects, faster.</p>
-<p>In this studio, we will practice common git commands necessary when
+<p>In this studio, we will practice common Git commands necessary when
 multiple people are developing on the same code base. Today, you will
 start out coding in tag-team shifts, and by the end you should have
 a good idea of how to both be working on the same code at the same
@@ -104,7 +104,7 @@ time. You will learn how to:</p>
 </div>
 <div class="section" id="walkthrough">
 <h2>13.6.2. Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h2>
-<p>The instructor will discuss why GitHub is worth their study. You already know how to use a local git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.</p>
+<p>The instructor will discuss why GitHub is worth their study. You already know how to use a local Git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.</p>
 <p>Students <em>must</em> pair off for this exercise. If you have trouble finding a partner, ask your TA for help.</p>
 </div>
 <div class="section" id="studio">
@@ -115,18 +115,18 @@ time. You will learn how to:</p>
 <p>You and your partner will alternate tasks, so designate one of you as <strong>Player 1</strong> and the other as <strong>Player 2</strong>. Even when it is not your turn to complete a task, read and observe what your partner is doing to completed theirs. The steps here mimic how a real-world collaborative Git workflow can be used within a project.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">As you go through these steps, you’ll be working with branches, and it’s very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch. Read about how to do so in our Git Stash Tutorial.</p>
+<p class="last">As you go through these steps, you’ll be working with branches, and it’s very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch. Read about how to do so in our Git Stash Tutorial.</p>
 </div>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
-<p class="last">Migrate git stash tutorial</p>
+<p class="last">Migrate Git stash tutorial</p>
 </div>
 <div class="section" id="step-1-create-a-new-repository">
 <h3>13.6.3.1. Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 1</strong>: Navigate to your development folder. Follow these instructions to create a new project.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir fireside-story
 $ cd fireside-story
-$ git init
+$ Git init
 </pre></div>
 </div>
 <p>In that directory, open a new file <cite>index.html</cite> in the editor of your choice. Paste in this code:</p>
@@ -139,38 +139,38 @@ $ git init
 </div>
 <p>Let’s check that our html looks okay by opening it in a browser. You can do this by selecting File &gt; Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: <code class="docutils literal notranslate"><span class="pre">file:///Users/cheryl/Development/fireside-story/index.html</span></code>.</p>
 <p>Once you’ve seen this file in the browser, let’s stage and commit it.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git status
 On branch master
 
 Initial commit
 
 Untracked files:
-(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+(use &quot;Git add &lt;file&gt;...&quot; to include in what will be committed)
 
    index.html
 
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+nothing added to commit but untracked files present (use &quot;Git add&quot; to track)
 </pre></div>
 </div>
 <p>The file is not staged. Let’s add everything in this directory.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git add .
-$ git status
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git add .
+$ Git status
 On branch master
 
 Initial commit
 
 Changes to be committed:
-(use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+(use &quot;Git rm --cached &lt;file&gt;...&quot; to unstage)
 
    new file:   index.html
 </pre></div>
 </div>
 <p>We see that the file is staged. Let’s commmit.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git commit -m &#39;started story&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git commit -m &#39;started story&#39;
 [master (root-commit) e1c1719] started story
 1 file changed, 5 insertions(+)
 create mode 100644 index.html
-$ git log
+$ Git log
 commit 679de772612099c77891d2a3fab12af8db08b651
 Author: Cheryl &lt;cherylschaefer@gmail.com&gt;
 Date:   Wed Apr 5 10:55:56 2017 -0500
@@ -194,8 +194,8 @@ Date:   Wed Apr 5 10:55:56 2017 -0500
 <p class="caption"><span class="caption-text">Connecting to a repository in GitHub</span></p>
 </div>
 <p>Now go back to your terminal and follow the instructions shown on GitHub which should be very similar to this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com:cherylschaefer/fireside-story.git
-$ git push origin master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git remote add origin https://Github.com:cherylschaefer/fireside-story.Git
+$ Git push origin master
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -213,22 +213,22 @@ $ git push origin master
 <p><strong>Player 2:</strong> Go to Player 1’s GitHub profile and find the fireside-story repo. Click on the green <em>Clone or download</em> button. Please use HTTPS (not SSH). Copy the url to your clipboard.</p>
 <p>!`Cloning a repository in GitHub &lt;figures/CloneRepo2.png&gt;`_</p>
 <p>In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/cherylschaefer/fireside-story.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Git clone https://Github.com/cherylschaefer/fireside-story.Git
 </pre></div>
 </div>
 <p>Now you can add a line to the story! Open the <cite>index.html</cite> file in your editor and add the next line of the story. Be creative – the story can go anywhere! Just don’t talk about what to write with your partner. Then commit your change.</p>
 <dl class="docutils">
 <dt>::</dt>
-<dd>$ git status
+<dd>$ Git status
 On branch master
 Your branch is up-to-date with ‘origin/master’.
 nothing to commit, working directory clean
-$ git add index.html
-$ git commit -m ‘added second line of story’</dd>
+$ Git add index.html
+$ Git commit -m ‘added second line of story’</dd>
 </dl>
 <p>Now we need to push up your changes so Player 1 can use them as well.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin master
-ERROR: Permission to cherylschaefer/fireside-story.git denied to player2.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git push origin master
+ERROR: Permission to cherylschaefer/fireside-story.Git denied to player2.
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
@@ -257,14 +257,14 @@ and the repository exists.
 <p class="caption"><span class="caption-text">Invited to collaborate email in GitHub</span></p>
 </div>
 <p>Now let’s go enter that command again to push up our code.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git push origin master
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (9/9), done.
 Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
 Total 9 (delta 8), reused 0 (delta 0)
 remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-To git@github.com:player2/fireside-story.git
+To Git@Github.com:player2/fireside-story.Git
    511239a..679de77  master -&gt; master
 </pre></div>
 </div>
@@ -273,12 +273,12 @@ To git@github.com:player2/fireside-story.git
 <div class="section" id="step-6-pull-player-2-s-line-and-add-another-line">
 <h3>13.6.3.6. Step 6: Pull Player 2’s Line and Add Another Line<a class="headerlink" href="#step-6-pull-player-2-s-line-and-add-another-line" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 1:</strong> You might notice you don’t have the second line of code in your copy of the project on your computer. Let’s fix that. Go to the terminal and enter this command to pull down the updated code into your local Git repository.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git pull origin master
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From github.com:cherylschaefer/fireside-story
+From Github.com:cherylschaefer/fireside-story
    e0de62d..e851b7e  master     -&gt; origin/master
 Updating e0de62d..e851b7e
 Fast-forward
@@ -292,12 +292,12 @@ index.html | 1 +
 <div class="section" id="step-7-do-it-again-pull-change-and-push">
 <h3>13.6.3.7. Step 7: Do It Again: Pull, Change, and Push!<a class="headerlink" href="#step-7-do-it-again-pull-change-and-push" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 2:</strong> You might notice now <em>you</em> don’t have the third line on your computer. Go to the terminal and enter this command to pull in the changes that Player 1 just made.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git pull origin master
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From github.com:cherylschaefer/fireside-story
+From Github.com:cherylschaefer/fireside-story
    e851b7e..167684c  master     -&gt; origin/master
 Updating e851b7e..167684c
 Fast-forward
@@ -313,7 +313,7 @@ index.html | 1 +
 <h3>13.6.3.8. Step 8: Create a Branch In Git<a class="headerlink" href="#step-8-create-a-branch-in-git" title="Permalink to this headline">¶</a></h3>
 <p>This workflow is a common one in team development situations. You might wonder, however, if professional developers sit around waiting for their teammates to commit and push a change before embarking on additional work on their own. That would be a drag, and thankfully, there is a nice addition to this workflow that will allow for simultaneous work to be carried out in a reasonable way.</p>
 <p><strong>Player 2:</strong> While Player 1 is working on an addition to the story, let’s make another change simultaneously. In order to do that, we’ll create a new branch. Recall that a branch is a separate “copy” of the codebase that you can commit to without affecting code in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b darker
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git checkout -b darker
 Switched to a new branch &#39;darker&#39;
 </pre></div>
 </div>
@@ -338,19 +338,19 @@ Switched to a new branch &#39;darker&#39;
 </pre></div>
 </div>
 <p>Now stage and commit these changes.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git add .
-$ git commit -m &#39;Added style.css&#39;
-$ git push origin darker
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git add .
+$ Git commit -m &#39;Added style.css&#39;
+$ Git push origin darker
 </pre></div>
 </div>
-<p>Note that the last command is a bit different than what we’ve used before (<cite>git push origin master</cite>). The final piece of this command is the name of the branch that we want Git to push up to the origin repository (that is, to GitHub).</p>
+<p>Note that the last command is a bit different than what we’ve used before (<cite>Git push origin master</cite>). The final piece of this command is the name of the branch that we want Git to push up to the origin repository (that is, to GitHub).</p>
 <p>You should both now see a second branch present on the GitHub project page. To view branches on GitHub, select <em>Branches</em> from the navigation section just below the repository title.</p>
 <div class="figure" id="id6">
 <img alt="../../_images/BranchesButton.png" src="../../_images/BranchesButton.png" />
 <p class="caption"><span class="caption-text">Branches Button in GitHub</span></p>
 </div>
 <p>In your terminal, you can type this command to see a list of the available branches:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git branch
 * darker
 master
 </pre></div>
@@ -382,26 +382,26 @@ master
 <div class="section" id="step-10-make-a-change-in-the-new-branch">
 <h3>13.6.3.10. Step 10: Make a Change in the New Branch<a class="headerlink" href="#step-10-make-a-change-in-the-new-branch" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 1:</strong> You will notice that you do not see this new <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file locally. Type this command to see what branches are on your local computer:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git branch
 * master
 </pre></div>
 </div>
 <p>If you want to work with the branch before merging it in, you can do so by typing these commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git fetch origin darker
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git fetch origin darker
 ...
-$ git branch
+$ Git branch
 darker
 * master
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout darker
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git checkout darker
 Switched to branch &#39;darker&#39;
 Your branch is up-to-date with &#39;origin/darker&#39;.
 </pre></div>
 </div>
 <p>Make a change, commit, and push this branch–you will see that the pull request in GitHub is updated to reflect the changes you’ve added. The context in the description box is _not_ updated, however, so be sure to add comments to the pull request to explain what you did and why.</p>
 <p>Now switch back to the <code class="docutils literal notranslate"><span class="pre">`master`</span></code> branch:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git checkout master
 Switched to branch &#39;master&#39;
 Your branch is up-to-date with &#39;origin/master&#39;.
 </pre></div>
@@ -431,8 +431,8 @@ Your branch is up-to-date with &#39;origin/master&#39;.
 <p class="caption"><span class="caption-text">PR Merged in GitHub</span></p>
 </div>
 <p>The changes from <code class="docutils literal notranslate"><span class="pre">darker</span></code> are now in the <code class="docutils literal notranslate"><span class="pre">`master`</span></code> branch, but only in the remote repository on GitHub. You will need to pull the updates to your <code class="docutils literal notranslate"><span class="pre">`master`</span></code> for them to be present locally.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout master
-$ git pull origin master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git checkout master
+$ Git pull origin master
 </pre></div>
 </div>
 <p>Git is able to merge these files on its own.</p>
@@ -441,13 +441,13 @@ $ git pull origin master
 <h3>13.6.3.12. Step 12: Merge Conflicts!<a class="headerlink" href="#step-12-merge-conflicts" title="Permalink to this headline">¶</a></h3>
 <p>When collaborating on a project, things won’t always go so smoothly. It’s common for two people to make changes to the same line(s) of code, at roughly the same time, which will prevent Git from being able to merge the changes together.</p>
 <div class="figure" id="id13">
-<img alt="../../_images/git-merge.gif" src="../../_images/git-merge.gif" />
+<img alt="../../_images/Git-merge.gif" src="../../_images/Git-merge.gif" />
 <p class="caption"><span class="caption-text">Git Merge Conflicts</span></p>
 </div>
 <p>This isn’t such a big scary deal. In fact, it’s very common. To see how we can handle such a situation we’ll intentionally create a situation that involves a merge conflict, and then resolve it.</p>
 <p><strong>Player 2:</strong> Let’s change something about the style file. Our HTML is looking pretty plain, so let’s pick a nice font and add some margins.</p>
 <p>First, switch back to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git checkout master
 </pre></div>
 </div>
 <p>Let’s change our font. To do so, add this link to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file, right by the first stylesheet link:</p>
@@ -492,26 +492,26 @@ $ git pull origin master
 <div class="section" id="step-13-resolving-merge-conflicts">
 <h3>13.6.3.13. Step 13: Resolving Merge Conflicts<a class="headerlink" href="#step-13-resolving-merge-conflicts" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 1:</strong> and push it up to GitHub. You should get an error message. How exciting!</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git push origin master
 
-To git@github.com:cherylschaefer/fireside-story.git
+To Git@Github.com:cherylschaefer/fireside-story.Git
 ! [rejected]        master -&gt; master (fetch first)
-error: failed to push some refs to &#39;git@github.com:cherylschaefer/fireside-story.git&#39;
+error: failed to push some refs to &#39;Git@Github.com:cherylschaefer/fireside-story.Git&#39;
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., &#39;git pull ...&#39;) before pushing again.
-hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
+hint: (e.g., &#39;Git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;Git push --help&#39; for details.
 </pre></div>
 </div>
 <p>There’s a lot of jargon in that message, including some terminology we haven’t encountered. However, the core of the message is indeed understandable to us: “Updates were rejected because the remote contains work that you do not have locally.” In other words, somebody (Player 2, in this case), pushed changes to the same branch, and you don’t have those changes on your computer. Git will not let you push to a branch in another repository unless you have incorporated all of the work present in that branch.</p>
 <p>Let’s pull these outstanding changes into our branch and resolve the errors.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git pull
 remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
 Unpacking objects: 100% (4/4), done.
-From github.com:cherylschaefer/fireside-story
+From Github.com:cherylschaefer/fireside-story
    7d7e42e..0c21659  master     -&gt; origin/master
 Auto-merging style.css
 CONFLICT (content): Merge conflict in style.css
@@ -557,20 +557,20 @@ Automatic merge failed; fix conflicts and then commit the result.
 </div>
 <div class="section" id="step-14-pulling-the-merged-code">
 <h3>13.6.3.14. Step 14: Pulling the Merged Code<a class="headerlink" href="#step-14-pulling-the-merged-code" title="Permalink to this headline">¶</a></h3>
-<p><strong>Player 2:</strong> Meanwhile, Player 2 is sitting at home, minding their own business. A random <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> seems reassuring:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
+<p><strong>Player 2:</strong> Meanwhile, Player 2 is sitting at home, minding their own business. A random <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">status</span></code> seems reassuring:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git status
 On branch master
 Your branch is up-to-date with &#39;origin/master&#39;.
 nothing to commit, working directory clean
 </pre></div>
 </div>
-<p>Your local git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We’d find this out by doing either a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>, or if we just want the latest version of this branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull
+<p>Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We’d find this out by doing either a <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">fetch</span></code>, or if we just want the latest version of this branch, <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">pull</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git pull
 remote: Counting objects: 13, done.
 remote: Compressing objects: 100% (8/8), done.
 remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
 Unpacking objects: 100% (13/13), done.
-From github.com:cherylschaefer/fireside-story
+From Github.com:cherylschaefer/fireside-story
    0c21659..e0de62d  master     -&gt; origin/master
 Updating 0c21659..e0de62d
 Fast-forward
@@ -604,9 +604,9 @@ style.css  | 4 ++--
 <div class="section" id="resources">
 <h3>13.6.3.16. Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git Branching - Basic Branching and Merging</a></li>
-<li><a class="reference external" href="https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/">Adding Another Person To Your Repository</a></li>
-<li><a class="reference external" href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/">Resolving Conflicts In the Command Line</a></li>
+<li><a class="reference external" href="https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git Branching - Basic Branching and Merging</a></li>
+<li><a class="reference external" href="https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/">Adding Another Person To Your Repository</a></li>
+<li><a class="reference external" href="https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/">Resolving Conflicts In the Command Line</a></li>
 </ul>
 </div>
 </div>
