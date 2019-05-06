@@ -5,7 +5,7 @@ You have been using functions throughout your learning so far, without receiving
 
 .. index:: ! function, method
 
-A **function** is a reusable, callable piece of code. Like variables, functions often have names (though we will see in the next chapter that it is possible to create functions without names). 
+A **function** is a reusable, callable piece of code. Like variables, functions often have names (though the next chapter shows us that we can create functions without names). 
 
 Here are some functions that you have become familiar with:
 
@@ -13,13 +13,13 @@ Here are some functions that you have become familiar with:
 - The type conversion functions: ``Number``, ``String``, and ``Boolean``
 - String and array methods, such as ``indexOf``
 
-.. note:: When introducing string and array methods, we noted that a **method** is a function that "belongs to" an object. This distinction is important to keep in mind, and will be explored in depth in a later chapter. For now, note that a method is a special type of function.
+.. note:: When learning about strings and arrays, we noted that a **method** is a function that "belongs to" an object. This distinction is important to keep in mind, and will be explored in depth in a later chapter. For now, think of a method as a *special type* of function.
 
 Each of the functions we have used works in the same way. Using the function's name, followed by parentheses, we can *call* the function, resulting in some action being carried out. Sometimes, as with ``console.log``, we can provide input data within the parentheses, which the function will use to carry out its action. 
 
 .. admonition:: Example
 
-   The function ``console.log`` carries out the action of printing the provided value(s). In this case, ``"Hello, World!"`` is printed to the console.
+   The function ``console.log`` carries out the action of printing the provided value or values (the input data). 
 
    .. sourcecode:: js
 
@@ -31,7 +31,7 @@ Each of the functions we have used works in the same way. Using the function's n
 
       Hello, World!   
    
-In addition to providing input, we may also be given a value in return when calling a function. This is what happened when we have used the type conversion functions, for example. 
+This is an example of a function receving _input_. Functions may also provide _output_. For example, the type conversion functions give back the result on converting a value.
 
 .. admonition:: Example
 
@@ -66,9 +66,9 @@ In addition to providing input, we may also be given a value in return when call
 
 .. index:: encapsulation
 
-Functions are extremely powerful in that they allow us to repeat actions without writing out the full code needed to carry out that action each time. They also allow us to be removed from the details of what the function is actually doing. 
+Functions are extremely powerful. They allow us to repeat actions without repeating the step-by-step components of those actions. They allow us to be removed from the details of what the function is actually doing. 
 
-When we want to print a message to the console using ``console.log``, we do not need to be concerned with details such as what the console is, or how a string can be displayed on the console. This behavior is wrapped up within the function itself. We reap the benefits of ``console.log`` without needing to know how it works. This is an example of a broader programming concept known as **encapsulation**. Encapsulation is the process of packaging up code in a way that allows it to be resused, with the person or program using the encapsulated code not having to be concerned with the details of how it works.
+When we want to print a message to the console using ``console.log``, we don't have to know what the console is, or how a string can be displayed on it. The behavior is wrapped up within the function itself. This is an example of a broader programming concept known as **encapsulation**. Encapsulation is the process of packaging up code in a reusable way, with the programmer needing to be concerned with how it works.
 
 .. index::
    single: function; machine
