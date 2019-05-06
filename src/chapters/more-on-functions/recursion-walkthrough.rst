@@ -1,8 +1,8 @@
 Recursion Walkthrough: The Base Case
 =====================================
 
-The best way to ease into the concept of recursion is to start by taking baby
-steps through a loop task.
+The best way to ease into the concept of recursion is to start with a loop
+task.
 
 Let's revisit the array method ``join``, which combines the elements of an
 array into a single string. If we have ``arr = ['L', 'C', '1', '0', '1']``,
@@ -88,7 +88,7 @@ Next, build a function to accomplish the small steps: Let's call the function
 
 We want ``addEntry`` to repeat over and over again until the task is complete.
 
-Now let's consider how to accomplish this without using ``for`` or ``while``.
+Now let's accomplish this without using ``for`` or ``while``.
 
 .. index:: ! base case
 
@@ -116,7 +116,7 @@ We can check for the base case like this:
          //solve last step
          //end recursion
       } else {
-         //solve small step
+         //solve next small step
          //call addEntry again
       }
    }

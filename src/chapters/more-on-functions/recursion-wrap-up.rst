@@ -1,7 +1,7 @@
 Recursion Wrap-Up
 ==================
 
-In order to function (ba-dum chhhh), recursion must fulfill 4 conditions:
+In order to function (ba-dum chhhh), recursion must fulfill four conditions:
 
 #. A series of small, identical steps can be used to solve a larger problem.
 #. A base case must be defined.  When true, this simplest case halts the
