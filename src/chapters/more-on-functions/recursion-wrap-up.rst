@@ -3,7 +3,7 @@ Recursion Wrap-Up
 
 In order to function (ba-dum chhhh), recursion must fulfill four conditions:
 
-#. A series of small, identical steps can be used to solve a larger problem.
+#. A series of small, identical steps combine to solve a larger problem.
 #. A base case must be defined.  When true, this simplest case halts the
    recursion.
 #. A recursive function repeatedly calls itself.
@@ -42,7 +42,7 @@ frequently find x, while others only need to solve one or two equations a year.
 Still others do not see quadratics again until their own kids learn about them.
 
 Since their future jobs might not require it, why do teens need to learn how to
-solve quadratics? Because at some point in time, they will have to do it again
+solve quadratics? Because at some point in time they will have to do it again
 (if only to shock their kids), and they need to be ready when that happens.
 
 The same is true for recursion.  Learn it.  Love it.  Use it.

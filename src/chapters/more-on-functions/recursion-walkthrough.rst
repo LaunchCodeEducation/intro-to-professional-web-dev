@@ -1,14 +1,14 @@
 Recursion Walkthrough: The Base Case
 =====================================
 
-The best way to ease into the concept of recursion is to start with a loop
-task.
+To ease into the concept of recursion, let's start with a loop task.
 
-Let's revisit the array method ``join``, which combines the elements of an
-array into a single string. If we have ``arr = ['L', 'C', '1', '0', '1']``,
-then ``arr.join('')`` returns the string ``'LC101'``.
+In the Arrays chapter, we examined  the ``join`` method, which combines the
+elements of an array into a single string. If we have
+``arr = ['L', 'C', '1', '0', '1']``, then ``arr.join('')`` returns the string
+``'LC101'``.
 
-We could reproduce this action with either a ``for`` or a ``while`` loop.
+We can reproduce this action with either a ``for`` or a ``while`` loop.
 
 Joining Array Elements With a Loop
 -----------------------------------
@@ -64,7 +64,7 @@ stored in ``newString`` plus one element from the array. In the ``for`` loop,
 the element is the next item in the sequence of entries.  In the ``while``
 loop, the element is always the first entry from whatever remains in the array.
 
-OK, so the loops join the array elements together. Now let's see how to
+OK, the loops join the array elements together. Now let's see how to
 accomplish the same task without a ``for`` or ``while`` statement.
 
 Bring In Recursion Concepts
@@ -89,16 +89,16 @@ Third, build a function to accomplish the small steps: Let's call the function
 We want ``combineEntries`` to repeat over and over again until the task is
 complete.
 
-Now let's accomplish this without using ``for`` or ``while``.
+How do we make this happen without using ``for`` or ``while``?
 
 .. index:: ! base case
 
 Identifying the Base Case
 --------------------------
 
-``for`` and ``while`` loops end when a particular condition evaluates to
-``false``. In the examples above, these conditions are ``i < arr.length`` and
-``arr.length > 0``, respectively.
+| ``for`` and ``while`` loops end when a particular condition evaluates to
+   ``false``. In the examples above, these conditions are
+| ``i < arr.length`` and ``arr.length > 0``, respectively.
 
 With recursion, we do not know how many times ``combineEntries`` must be
 called. To make sure the code stops at the proper time, we need to identify a
@@ -108,7 +108,7 @@ represents the simplest possible task for our function.
 ``if`` the base case is ``true``, the recursion ends and the task is complete.
 ``if`` the base case is ``false``, the function calls itself again.
 
-We can check for the base case like this:
+We check for the base case like this:
 
 .. sourcecode:: js
 
@@ -122,9 +122,9 @@ We can check for the base case like this:
       }
    }
 
-For our joining task, the *base case* occurs when we pass in an array with only
-one element (e.g. ``[ 'L' ]``). With no other elements to join together, the
-function just needs to return ``'L'``.
+For the joining task, the *base case* occurs when we pass in a one-element
+array (e.g. ``[ 'L' ]``). With no other elements to join together, the function
+just needs to return ``'L'``.
 
 Let's update ``combineEntries`` to check if the array contains only one item.
 

@@ -81,12 +81,12 @@
     
   <div class="section" id="recursion-walkthrough-the-base-case">
 <h1>11.5. Recursion Walkthrough: The Base Case<a class="headerlink" href="#recursion-walkthrough-the-base-case" title="Permalink to this headline">¶</a></h1>
-<p>The best way to ease into the concept of recursion is to start with a loop
-task.</p>
-<p>Let’s revisit the array method <code class="docutils literal notranslate"><span class="pre">join</span></code>, which combines the elements of an
-array into a single string. If we have <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>,
-then <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code> returns the string <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code>.</p>
-<p>We could reproduce this action with either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<p>To ease into the concept of recursion, let’s start with a loop task.</p>
+<p>In the Arrays chapter, we examined  the <code class="docutils literal notranslate"><span class="pre">join</span></code> method, which combines the
+elements of an array into a single string. If we have
+<code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>, then <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code> returns the string
+<code class="docutils literal notranslate"><span class="pre">'LC101'</span></code>.</p>
+<p>We can reproduce this action with either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
 <div class="section" id="joining-array-elements-with-a-loop">
 <h2>11.5.1. Joining Array Elements With a Loop<a class="headerlink" href="#joining-array-elements-with-a-loop" title="Permalink to this headline">¶</a></h2>
 <p>Examine the code samples below:</p>
@@ -142,7 +142,7 @@ then <code class="docutils literal notranslate"><span class="pre">arr.join('')</
 stored in <code class="docutils literal notranslate"><span class="pre">newString</span></code> plus one element from the array. In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
 the element is the next item in the sequence of entries.  In the <code class="docutils literal notranslate"><span class="pre">while</span></code>
 loop, the element is always the first entry from whatever remains in the array.</p>
-<p>OK, so the loops join the array elements together. Now let’s see how to
+<p>OK, the loops join the array elements together. Now let’s see how to
 accomplish the same task without a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.</p>
 </div>
 <div class="section" id="bring-in-recursion-concepts">
@@ -161,20 +161,22 @@ and the next entry in the array.</p>
 </div>
 <p>We want <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> to repeat over and over again until the task is
 complete.</p>
-<p>Now let’s accomplish this without using <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>How do we make this happen without using <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>?</p>
 </div>
 <div class="section" id="index-0">
 <span id="identifying-the-base-case"></span><h2>11.5.3. Identifying the Base Case<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to
-<code class="docutils literal notranslate"><span class="pre">false</span></code>. In the examples above, these conditions are <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">arr.length</span></code> and
-<code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>. In the examples above, these conditions are</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">arr.length</span></code> and <code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.</div>
+</div>
 <p>With recursion, we do not know how many times <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> must be
 called. To make sure the code stops at the proper time, we need to identify a
 condition that ends the process. This is called the <strong>base case</strong>, and it
 represents the simplest possible task for our function.</p>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code> the base case is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the recursion ends and the task is complete.
 <code class="docutils literal notranslate"><span class="pre">if</span></code> the base case is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the function calls itself again.</p>
-<p>We can check for the base case like this:</p>
+<p>We check for the base case like this:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
    <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
       <span class="c1">//solve last step</span>
@@ -186,9 +188,9 @@ represents the simplest possible task for our function.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>For our joining task, the <em>base case</em> occurs when we pass in an array with only
-one element (e.g. <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'L'</span> <span class="pre">]</span></code>). With no other elements to join together, the
-function just needs to return <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
+<p>For the joining task, the <em>base case</em> occurs when we pass in a one-element
+array (e.g. <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'L'</span> <span class="pre">]</span></code>). With no other elements to join together, the function
+just needs to return <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
 <p>Let’s update <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> to check if the array contains only one item.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
    <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">){</span>

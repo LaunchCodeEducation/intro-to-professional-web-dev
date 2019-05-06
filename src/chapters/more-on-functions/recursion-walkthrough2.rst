@@ -84,12 +84,11 @@ adding new characters to the front:
 A Function Calls Itself
 ------------------------
 
-So how do we code the ``else`` statement in ``combineEntries``? Recall the
-requirements:
+So how do we code the ``else`` statement in ``combineEntries``? Recall what
+needs to happen each time the statement runs:
 
-a. Make ``combineEntries`` consider the first element,
-b. If the rest of the array has more than one entry, call ``combineEntries``
-   with a smaller array.
+a. Select the first element in the array,
+b. Call ``combineEntries`` again with a smaller array.
 
 Bracket notation takes care of part a: ``arrayName[0]``.
 
@@ -109,9 +108,9 @@ Let's add the bracket notation and the ``slice`` method to our function:
       }
    }
 
-Each time ``combineEntries`` is called, it extracts the first element in the
+Each time the ``else`` statement runs, it extracts the first element in the
 array with ``arrayName[0]``, then it calls itself with the remaining array
-elements (``arrayName.slice(1)``).
+elements (``arrayName.slice(1)``). For ``combineElements(['L', 'C', '1', '0', '1']);``:
 
 | a. First call: Combine ``'L'`` with ``combineEntries(['C', '1', '0', '1'])``.
 | b. Second call: Combine ``'C'``, with ``combineEntries(['1', '0', '1'])``.
@@ -119,7 +118,7 @@ elements (``arrayName.slice(1)``).
 | d. Fourth call: Combine ``'0'``, with ``combineEntries(['1'])``.
 | e. Fifth call: Base case returns ``'1'``.
 
-| Then proceed *up the chain*:
+| To get the final result, proceed *up the chain*:
 | e. Return ``'1'`` to the fourth call,
 | d. Return ``'01'`` to the third call,
 | c. Return ``'101'`` to the second call,
