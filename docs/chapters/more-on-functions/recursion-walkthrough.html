@@ -81,8 +81,8 @@
     
   <div class="section" id="recursion-walkthrough-the-base-case">
 <h1>11.5. Recursion Walkthrough: The Base Case<a class="headerlink" href="#recursion-walkthrough-the-base-case" title="Permalink to this headline">¶</a></h1>
-<p>The best way to ease into the concept of recursion is to start by taking baby
-steps through a loop task.</p>
+<p>The best way to ease into the concept of recursion is to start with a loop
+task.</p>
 <p>Let’s revisit the array method <code class="docutils literal notranslate"><span class="pre">join</span></code>, which combines the elements of an
 array into a single string. If we have <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>,
 then <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code> returns the string <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code>.</p>
@@ -160,7 +160,7 @@ and the next entry in the array.</p>
 </pre></div>
 </div>
 <p>We want <code class="docutils literal notranslate"><span class="pre">addEntry</span></code> to repeat over and over again until the task is complete.</p>
-<p>Now let’s consider how to accomplish this without using <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>Now let’s accomplish this without using <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
 <div class="section" id="index-0">
 <span id="identifying-the-base-case"></span><h3>11.5.2.1. Identifying the Base Case<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to
@@ -178,7 +178,7 @@ simplest possible task for our function.</p>
       <span class="c1">//solve last step</span>
       <span class="c1">//end recursion</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//solve small step</span>
+      <span class="c1">//solve next small step</span>
       <span class="c1">//call addEntry again</span>
    <span class="p">}</span>
 <span class="p">}</span>
