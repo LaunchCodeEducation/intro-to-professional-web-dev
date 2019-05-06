@@ -57,8 +57,8 @@ complicated tasks, one small function must call other functions.
 Of course, there is no need to write a function to add 5 to a value, but the
 example demonstrates calling a function from within another function.
 
-Next Step: What is 'Recursion'?
---------------------------------
+What is 'Recursion'?
+---------------------
 
 .. index:: ! recursion
 
@@ -69,8 +69,10 @@ Splitting a large task into small, identical pieces allows us to reuse a single
 function rather than coding several different functions.
 
 Solving the big problem involves completing and combining the smaller parts.
-We accomplish this either by setting up a loop to call one function lots of
-times or by using the strength of recursion.
+We accomplish this by either:
+
+a. Setting up a loop to call one function lots of times, OR
+b. Using the strength of recursion.
 
 Here is the clever idea behind recursion.  Instead of a loop, a function simply
 calls *itself* over and over again until the larger problem is solved.

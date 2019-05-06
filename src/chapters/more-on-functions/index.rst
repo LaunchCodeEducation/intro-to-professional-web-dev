@@ -10,5 +10,5 @@ More on Functions
    recursion
    recursion-walkthrough
    recursion-walkthrough2
-   recursion-rules
+   recursion-wrap-up
    exercises
