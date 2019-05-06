@@ -7,7 +7,7 @@ an instance. The **Document Object Model (DOM)** is a set of objects that repres
 document, and all the elements on the page. The DOM objects are instances of classes that model the
 structure of the browser, HTML document, HTML elements, element attributes, and CSS.
 
-TODO: figure about DOM?
+TODO: figure of the DOM as a tree (w3schools has an example of this)
 
 Global DOM Variables
 --------------------
@@ -18,8 +18,8 @@ To utilize the DOM in JavaScript, use the DOM global variables. **Global variabl
 usable in code without having to declare or import them. We will learn much more about these variables and their types soon,
 but fow now let's get used to the idea of using JavaScript to interact with the DOM.
 
-To start we are going to use the ``window`` and ``document`` global variables. ``window`` represents the browser
-window or tab if using a multi-tabbed browser. ``document`` represents the HTMl document inside of the window or tab.
+To start we are going to use the ``window`` and ``document`` global variables. The ``window`` represents the browser
+window, while ``document`` represents the HTMl document inside of the window.
 As mentioned above, we will go into more detail on these later.
 
 .. admonition:: Example
