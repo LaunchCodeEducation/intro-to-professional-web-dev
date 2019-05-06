@@ -6,6 +6,6 @@ The DOM and Events
 
    javascript-in-the-browser
    dom
+   more-dom
    events
    eventhandling
-   domtypes
