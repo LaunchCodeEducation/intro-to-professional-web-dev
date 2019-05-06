@@ -22,7 +22,7 @@ A **byte** is a set of 8 bits. Bytes look like 00101101 or 11110011, and they re
 
 Since each bit can have one of two values, each byte can have one of  2\ :sup:`8` = 256 different values. 
 
-It may not be obvious, but every decimal integer can be represented as a binary integer, and vice versa. There are 256 different values a byte may take, each of which can be used to represent an integer, from 0 to 255. 
+It may not be obvious, but every decimal integer can be represented as a binary integer, and vice versa. There are 256 different values a byte may take, each of which can be used to represent a decimal integer, from 0 to 255. 
 
 .. note:: We will not go into binary to decimal number conversion. If you are interested in learning more, there are `many <https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/>`_ `tutorials <https://www.youtube.com/watch?v=wPvI19DmWQw>`_ `online <https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary>`_ that can show you the way.
 
@@ -43,7 +43,7 @@ Unlike the natrual translation between binary and decimal numbers, there is no n
 
 .. index:: Unicode
 
-There are many different encodings, some of which continue to evolve as the way in which we use data evolves. For instance, the most recent versions of the Unicode standard include emoji characters, such as 🌮.
+There are many different encodings, some of which continue to evolve as our use of data evolves. For instance, the most recent versions of the Unicode character encoding include emoji characters, such as 🌮.
 
 The ASCII Encoding
 ^^^^^^^^^^^^^^^^^^

@@ -7,7 +7,7 @@ You have been using functions throughout your learning so far, without receiving
 
 A **function** is a reusable, callable piece of code. Like variables, functions often have names (though the next chapter shows us that we can create functions without names). 
 
-Here are some functions that you have become familiar with:
+You have already become familiar with several functions:
 
 - ``console.log``
 - The type conversion functions: ``Number``, ``String``, and ``Boolean``
@@ -15,11 +15,11 @@ Here are some functions that you have become familiar with:
 
 .. note:: When learning about strings and arrays, we noted that a **method** is a function that "belongs to" an object. This distinction is important to keep in mind, and will be explored in depth in a later chapter. For now, think of a method as a *special type* of function.
 
-Each of the functions we have used works in the same way. Using the function's name, followed by parentheses, we can *call* the function, resulting in some action being carried out. Sometimes, as with ``console.log``, we can provide input data within the parentheses, which the function will use to carry out its action. 
+Each of the functions we have used works in the same way. By typing the function's name, followed by parentheses, we can *call* the function, resulting in an action being carried out. Sometimes, as with ``console.log``, we can provide input data between the parentheses, which the function will use to carry out its action. 
 
 .. admonition:: Example
 
-   The function ``console.log`` carries out the action of printing the provided value or values (the input data). 
+   The function ``console.log`` prints the provided value or values (the input data). 
 
    .. sourcecode:: js
 
@@ -31,7 +31,7 @@ Each of the functions we have used works in the same way. Using the function's n
 
       Hello, World!   
    
-This is an example of a function receving _input_. Functions may also provide _output_. For example, the type conversion functions give back the result on converting a value.
+This is an example of a function receving *input*. Functions may also provide *output*. For example, the type conversion functions give back the result of converting a value.
 
 .. admonition:: Example
 
@@ -58,24 +58,24 @@ This is an example of a function receving _input_. Functions may also provide _o
       let values = commaSeparatedValues.split(',');
       console.log(values);
 
-      **Output**
+   **Output**
 
-      ::
+   ::
 
-         [ 'Smith', 'Jane', '100 Cherry Blossom Lane' ]
+      [ 'Smith', 'Jane', '100 Cherry Blossom Lane' ]
 
 .. index:: encapsulation
 
-Functions are extremely powerful. They allow us to repeat actions without repeating the step-by-step components of those actions. They allow us to be removed from the details of what the function is actually doing. 
+Functions are extremely powerful. They allow us to repeat actions without repeating each individual step of code that the actions are built from. By grouping actions together, functions allow us to be removed from the details of what they are actually doing. 
 
-When we want to print a message to the console using ``console.log``, we don't have to know what the console is, or how a string can be displayed on it. The behavior is wrapped up within the function itself. This is an example of a broader programming concept known as **encapsulation**. Encapsulation is the process of packaging up code in a reusable way, with the programmer needing to be concerned with how it works.
+When we want to print a message to the console using ``console.log``, we don't have to know what the console is, or how a string can be displayed on it. The behavior is wrapped up within the function itself. This is an example of a broader programming concept known as **encapsulation**. Encapsulation is the process of packaging up code in a reusable way, without the programmer needing to be concerned with how it works.
 
 .. index::
    single: function; machine
 
 .. _function-machine:
 
-A commonly-used analogy for describing the concept of a function is that of a machine that takes input, carries out some action, and gives back some result. This is known as the **function machine** analogy.
+A commonly-used analogy for describing the concept of a function is that of a machine that takes input, carries out an action, and gives back a result. This is known as the **function machine** analogy.
 
 .. figure:: figures/function-machine.png
    :alt: A "function machine," consisting of a box which takes inputs, and from which output emerges.
