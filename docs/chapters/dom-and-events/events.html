@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14.5. Event Handling" href="eventhandling.html" />
+    <link rel="next" title="14.5. Event Listeners" href="event-listeners.html" />
     <link rel="prev" title="14.3. More DOM Methods and Properties" href="more-dom.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -82,26 +82,79 @@
 <p id="index-0">Have you ever thought about how programs respond to interactions from users and other
 programs? Programming languages use events to represent these interactions. <strong>Events</strong>
 are code representations of interactions that need to be responded to.</p>
-<div class="section" id="triggering-vs-handling">
-<h2>14.4.1. Triggering vs Handling<a class="headerlink" href="#triggering-vs-handling" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>In programming, events are triggered and then handled.</div></blockquote>
 <p>Events in programming are sent and responded to. That can also be said as
-“Events in progarmming are triggered and handled”. <strong>Triggering</strong> an event is
+<em>Events in progarmming are triggered and handled</em>. <strong>Triggering</strong> an event is
 the act of causing an event to be sent. <strong>Hanlding</strong> an event is receiving the
-event and performing some action in response.</p>
-</div>
+event and performing an action in response.</p>
 <div class="section" id="javascript-and-events">
-<h2>14.4.2. JavaScript and Events<a class="headerlink" href="#javascript-and-events" title="Permalink to this headline">¶</a></h2>
+<h2>14.4.1. JavaScript and Events<a class="headerlink" href="#javascript-and-events" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">JavaScript is an event-driven progarmming language. <strong>Event-driven</strong> is a programming
 pattern where the flow of the program is determined by a series of events. JavaScript
 uses events to handle user interaction and make web pages dynamic. JavaScript also uses
 events to know when the state of the web page components change.</p>
 </div>
-<div class="section" id="dom-and-events">
-<h2>14.4.3. DOM and Events<a class="headerlink" href="#dom-and-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dom-events">
+<h2>14.4.2. DOM Events<a class="headerlink" href="#dom-events" title="Permalink to this headline">¶</a></h2>
 <p>Running JavaScript in the browser requires a specific set of events that relate to loading,
 styling, and displaying HTML elements. Objects in the DOM have event handling built right
-by default.</p>
-<p>TODO: example of onclick added via HTML</p>
+into them.</p>
+<p>Some elements, such as <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> have default functionality that handles certain events. An
+example of default event handling is when a user clicks on a <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>, the browser will
+navigate to the address in the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The DOM defines <em>numerous</em> events. Each element type does
+NOT support every event type. The events that each element supports relates to how the element
+is used.</p>
+</div>
+</div>
+<div class="section" id="handling-events">
+<h2>14.4.3. Handling Events<a class="headerlink" href="#handling-events" title="Permalink to this headline">¶</a></h2>
+<p>Feature rich web applications rely on more than the default event handling provided by the
+DOM. We can add custom interactivity with the users by attaching event handlers to HTML
+elements and then writing the event handler code.</p>
+<p>To write a handler, you need to tell the browswer what to do when a certain event happens.
+DOM elements use the <em>on event</em> naming convention when declaring event handlers. For example
+when defining what happens when a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked, the <code class="docutils literal notranslate"><span class="pre">onclick</span></code> attribute is used.
+This naming convention can be read as: <em>On click of the button, open an alert box.</em></p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Add a <em>click</em> handler to a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>. Define what happens when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Button click handler<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;console(&#39;you rang...&#39;);&quot;</span><span class="p">&gt;</span>Ring Bell<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Output</strong> (if button is clicked)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>you rang...
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Notice the use of single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> around <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">rang...'</span></code>. When declaring the value
+of an attribute to be a string, you must use single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> inside the double
+quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> elements represent a clickable entity. <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> elements have
+default <em>click</em> handling behavior related to <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> elements, that we will
+get into in a later chapter. For now we will be defining the <em>click</em> handler behavior.</p>
+</div>
+<p>TODO: TRY IT asking them to use alert instead of console</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>14.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO:…</p>
 </div>
 </div>
 
@@ -114,7 +167,7 @@ by default.</p>
         <li class="previous"><a href="more-dom.html"><span aria-hidden="true">&larr;</span> 14.3. More DOM Methods and Properties</a></li>
         
         
-        <li class="next"><a href="eventhandling.html">14.5. Event Handling <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="event-listeners.html">14.5. Event Listeners <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

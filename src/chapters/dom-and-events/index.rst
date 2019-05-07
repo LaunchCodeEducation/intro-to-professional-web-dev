@@ -8,4 +8,4 @@ The DOM and Events
    dom
    more-dom
    events
-   eventhandling
+   event-listeners
