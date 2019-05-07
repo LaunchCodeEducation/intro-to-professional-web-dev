@@ -1,64 +1,10 @@
 Exercises: Functions
 =====================
 
-Complete Reversal
-------------------
+Who Was That Masked Function?
+------------------------------
 
-The ``reverse`` method flips the order of the elements within an array.
-However, ``reverse`` does not affect the digits or characters within those
-elements.
 
-.. admonition:: Example
-
-   .. sourcecode:: js
-
-      let arr = ['hello', 'world', 123, 'orange'];
-
-      arr.reverse()
-      console.log(arr);
-
-   **Output**
-
-   ::
-
-      ['orange', 123, 'world', 'hello']
-
-What if we wanted the array to be ['egnaro', 321, 'dlrow', 'olleh']?
-
-Let's have some fun by creating a process that reverses BOTH the order of the
-entries in an array AND the order of characters within the individual elements.
-
-Remember that a function should perform only one task. To follow this best
-practice, we will solve the array reversal by defining two functions - one that
-reverses the characters in a string (or the digits in a number) and one that
-flips the order of entries in the array.
-
-1. Create a function with one parameter that represents a string or a number.
-   When passed a string, the function returns a string with all the characters
-   reversed (e.g. "Rutabaga" becomes "agabatuR"). When passed a number, the
-   function returns a number with all the digits reversed (e.g. 1234 converts
-   to 4321 and NOT the string ``"4321"``). *Be sure to print the result
-   returned by the function to verify that your code works*. Do this before
-   moving on to the next exercise.
-
-|
-
-2. Create a function with one parameter, which is the array we want to
-   completely reverse. The function loops through the old array and returns a
-   new array with all the elements reversed by order and by characters/digits.
-   Hint - You can always call your letter-revsersal function from within your
-   array-reversal function. *Be sure to print the results from each exercise in
-   order to verify your code*.
-
-.. admonition:: Sample arrays for testing
-
-   .. sourcecode:: js
-
-      ['apple', 'potato', 'Capitalized Words']
-      [123, 8897, 42, 1168, 8675309]
-      ['hello', 'world', 123, 'orange']
-
-[TODO: Add repl.it link.]
 
 Sort Numbers For Real
 ----------------------
