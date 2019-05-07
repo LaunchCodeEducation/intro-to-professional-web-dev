@@ -9,3 +9,5 @@ The DOM and Events
    events
    eventhandling
    domtypes
+   exercises
+   studio
