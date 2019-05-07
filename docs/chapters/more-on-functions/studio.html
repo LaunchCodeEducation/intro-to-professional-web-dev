@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>11.10. Studio: More Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12. HTML" href="../html/index.html" />
+    <link rel="prev" title="11.9. Exercises: More Functions" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">11. More on Functions</a></li>
+          <li class="active">11.10. Studio: More Functions</li>
+        </ol>
+      
+    
+  <div class="section" id="studio-more-functions">
+<h1>11.10. Studio: More Functions<a class="headerlink" href="#studio-more-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sort-numbers-for-real">
+<h2>11.10.1. Sort Numbers For Real<a class="headerlink" href="#sort-numbers-for-real" title="Permalink to this headline">¶</a></h2>
+<p>Recall that using the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on an array of numbers produced an
+unexpected result, since JavaScript converts the numbers to strings by default
+(TODO - add reference to the <code class="docutils literal notranslate"><span class="pre">sort</span></code> example page).  Let’s fix this!</p>
+<ol class="arabic simple" start="3">
+<li>Create a function with an array of numbers as its parameter. The function
+should iterate through the array and return the minimum value from the
+array. <em>Hint</em>: Use what you know about <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to identify and
+store the smallest value within the array.</li>
+</ol>
+<div class="admonition-sample-arrays-for-testing admonition">
+<p class="first admonition-title">Sample arrays for testing</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span> <span class="p">]</span>
+<span class="p">[</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">44</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+<span class="p">[</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Create another function with an array of numbers as its parameter.  Within
+this function:<ol class="loweralpha">
+<li>Define a new, empty array to hold the final sorted numbers.</li>
+<li>Use your function from the previous exercise to find the minimum value in
+the old array.</li>
+<li>Add the minimum value to the new array, and remove the minimum value from
+the old array.</li>
+<li>Repeat parts b &amp; c until the old array is empty.</li>
+<li>Return the new sorted array.</li>
+</ol>
+</li>
+</ol>
+<p><em>Hint</em>: Either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will work inside this function, but
+there IS a better choice.  Consider the task the function must accomplish as
+well as the characteristics of each type of loop. Which one best serves if the
+array has an unknown length?</p>
+<p><em>Be sure to print the results in order to verify your code</em>.</p>
+<p>[TODO: Add repl.it link.]</p>
+</div>
+<div class="section" id="more-on-sorting-numbers">
+<h2>11.10.2. More on Sorting Numbers<a class="headerlink" href="#more-on-sorting-numbers" title="Permalink to this headline">¶</a></h2>
+<p>The sorting approach used above is not the only way of accomplishing the task,
+nor is it the best. Details on why can be found <strong>here</strong> (TODO: link to
+appendix). Feel free to look up “bubble sort” to explore a different way to
+order numbers in an array.</p>
+<p>Fortunately, JavaScript has an elegant way to properly sort numbers.</p>
+<p>If you Google “JavaScript sort array of numbers” (or something similar), many
+options appear, and they all give pretty much the same result. The sites just
+differ in how much detail they provide when explaining the solution.</p>
+<p>One reference is here: <a class="reference external" href="https://www.w3schools.com/jsref/jsref_sort.asp">W3Schools</a>.</p>
+<p>End result - the JavaScript syntax for numerical sorting is
+<code class="docutils literal notranslate"><span class="pre">arrayName.sort(function(a,</span> <span class="pre">b){return</span> <span class="pre">a-b});</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title">Note</p>
+<p class="last">You do NOT need to understand HOW the sorting function works. You just need to
+be able to use it.</p>
+</div>
+</div>
+<div class="section" id="so-why-write-a-sorting-function">
+<h2>11.10.3. So Why Write A Sorting Function?<a class="headerlink" href="#so-why-write-a-sorting-function" title="Permalink to this headline">¶</a></h2>
+<p>Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
+sorting methods, so why did we ask you to build one?</p>
+<p>It’s kind of a programming right of passage - design an efficient sorting
+function. Also, sorting can help you land a job.</p>
+<p>As part of a tech interview, you will probably be asked to do some live-coding.
+One standard, go-to question is to sort an array WITHOUT relying on the built
+in methods. Knowing how to think though a sorting task, generate the code and
+then clearly explain your approach will significantly boost your appeal to an
+employer.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 11.9. Exercises: More Functions</a></li>
+        
+        
+        <li class="next"><a href="../html/index.html">12. HTML <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

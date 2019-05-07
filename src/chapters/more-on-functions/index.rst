@@ -13,3 +13,4 @@ More on Functions
    recursion-walkthrough2
    recursion-wrap-up
    exercises
+   studio
