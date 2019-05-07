@@ -68,9 +68,6 @@ to find, add, remove, and alter HTML elements inside on the web page.
    * - getElementById
      - ``document.getElementById("example-id")``
      - Returns a reference to the element that's ``id`` attribute matches the given string value.
-   * - title
-     - ``document.title``
-     - Read or set the title of the document.
    * - getElementsByTagName
      - ``document.getElementsByTagName("div")``
      - Returns a list of elements with the given tag name.
@@ -81,7 +78,7 @@ to find, add, remove, and alter HTML elements inside on the web page.
      - ``document.querySelector(".selector-pattern")``
      - Returns the first element that matches the given css selector.
    * - querySelectorAll
-     - ``document.querySelectorAll(.selector-pattern)``
+     - ``document.querySelectorAll(".selector-pattern")``
      - Returns a list of elements that match the given css selector.
 
 .. note::
@@ -101,21 +98,23 @@ TODO: another sentence about elements and the methods?
    * - Method or Property
      - Syntax
      - Description
-   * - 
-     - ``element.getAttribute()``
-     - 
-   * - 
-     - ``element.setAttribute()``
-     - 
-   * - 
-     - ``element.style``
-     -
+   * - getAttribute
+     - ``element.getAttribute("id")``
+     - Returns the value of attribute.
+   * - setAttribute
+     - ``element.setAttribute("id", "string-value")``
+     - Sets the attribute to the given value.
+   * - style
+     - ``element.style.color``
+     - Object that allows reading and setting css properties.
    * - innerHTML
      - ``element.innerHTML``
      - Reads or sets the HTML inside an element.
 
-Node
-----
+Examples
+--------
+TODO: more examples of using these. Maybe put an examples section under each section?
 
-node.appendChild()
-Currently hesitating on adding this because appendChild requires creating an element with document.ceateElement()
+Check Your Understanding
+------------------------
+TODO: more examples of using these
