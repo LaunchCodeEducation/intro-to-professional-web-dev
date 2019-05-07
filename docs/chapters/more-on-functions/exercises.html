@@ -7,12 +7,13 @@
     <title>11.9. Exercises: Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -58,7 +59,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -79,60 +81,8 @@
     
   <div class="section" id="exercises-functions">
 <h1>11.9. Exercises: Functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="complete-reversal">
-<h2>11.9.1. Complete Reversal<a class="headerlink" href="#complete-reversal" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method flips the order of the elements within an array.
-However, <code class="docutils literal notranslate"><span class="pre">reverse</span></code> does not affect the digits or characters within those
-elements.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">];</span>
-
-<span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;orange&#39;, 123, &#39;world&#39;, &#39;hello&#39;]
-</pre></div>
-</div>
-</div>
-<p>What if we wanted the array to be [‘egnaro’, 321, ‘dlrow’, ‘olleh’]?</p>
-<p>Let’s have some fun by creating a process that reverses BOTH the order of the
-entries in an array AND the order of characters within the individual elements.</p>
-<p>Remember that a function should perform only one task. To follow this best
-practice, we will solve the array reversal by defining two functions - one that
-reverses the characters in a string (or the digits in a number) and one that
-flips the order of entries in the array.</p>
-<ol class="arabic simple">
-<li>Create a function with one parameter that represents a string or a number.
-When passed a string, the function returns a string with all the characters
-reversed (e.g. “Rutabaga” becomes “agabatuR”). When passed a number, the
-function returns a number with all the digits reversed (e.g. 1234 converts
-to 4321 and NOT the string <code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code>). <em>Be sure to print the result
-returned by the function to verify that your code works</em>. Do this before
-moving on to the next exercise.</li>
-</ol>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ol class="arabic simple" start="2">
-<li>Create a function with one parameter, which is the array we want to
-completely reverse. The function loops through the old array and returns a
-new array with all the elements reversed by order and by characters/digits.
-Hint - You can always call your letter-revsersal function from within your
-array-reversal function. <em>Be sure to print the results from each exercise in
-order to verify your code</em>.</li>
-</ol>
-<div class="admonition-sample-arrays-for-testing admonition">
-<p class="first admonition-title">Sample arrays for testing</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;potato&#39;</span><span class="p">,</span> <span class="s1">&#39;Capitalized Words&#39;</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">8897</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">1168</span><span class="p">,</span> <span class="mi">8675309</span><span class="p">]</span>
-<span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<p>[TODO: Add repl.it link.]</p>
+<div class="section" id="who-was-that-masked-function">
+<h2>11.9.1. Who Was That Masked Function?<a class="headerlink" href="#who-was-that-masked-function" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="sort-numbers-for-real">
 <h2>11.9.2. Sort Numbers For Real<a class="headerlink" href="#sort-numbers-for-real" title="Permalink to this headline">¶</a></h2>

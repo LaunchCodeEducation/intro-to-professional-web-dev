@@ -146,4 +146,62 @@ stops. Otherwise, ``combineEntries`` gets called again.
 Check Your Understanding
 -------------------------
 
-Identify the base case when...
+.. admonition:: Question
+
+   We can use recursion to remove all of the 'i' entries from the array
+   ``['One', 'i', 'c', 'X', 'i', 'i', 54]``.
+
+   Consider the code sample below, which declares the ``removeI`` function.
+
+   .. sourcecode:: js
+
+      function removeI(arr) {
+         if (baseCase is true){
+            //return final array
+            //end recursion
+         } else {
+            //remove one 'i' entry from array
+            //call removeI function again
+         }
+      };
+
+   Which TWO of the following work as a base case for the function? Feel free to
+   test the options in the repl.it to check your thinking.
+
+   #. ``!arr.includes('i')``
+   #. ``arr.includes('i')``
+   #. ``arr.indexOf('i')===-1``
+   #. ``arr.indexOf('i') !== -1``
+
+   Try it `here <https://repl.it/@launchcode/BaseCaseCC01>`__.
+
+.. admonition:: Question
+
+   The **factorial** of a number (n!) is the product of a positive, whole number and
+   all the integers below it.
+
+   For example, four factorial is 4! = 4\*3\*2\*1 = 24, and 5! = 5\*4\*3\*2\*1 =
+   120.
+
+   Consider the code sample below, which declares the ``factorial`` function.
+
+   .. sourcecode:: js
+
+      function factorial(integer) {
+         if (baseCase is true){
+            //solve last step
+            //end recursion
+         } else {
+            //complete next small step
+            //call factorial function again
+         }
+      };
+
+   Which of the following should be used as base case for the function?
+
+   #. ``integer === 1``
+   #. ``integer < 1``
+   #. ``integer === 0``
+   #. ``integer < 0``
+
+   Try it `here <https://repl.it/@launchcode/BaseCaseCC02>`__.

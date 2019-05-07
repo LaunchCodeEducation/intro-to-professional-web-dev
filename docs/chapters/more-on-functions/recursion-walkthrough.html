@@ -7,12 +7,13 @@
     <title>11.6. Recursion Walkthrough: The Base Case &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -58,7 +59,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -206,7 +208,59 @@ stops. Otherwise, <code class="docutils literal notranslate"><span class="pre">c
 </div>
 <div class="section" id="check-your-understanding">
 <h2>11.6.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>Identify the base case when…</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>We can use recursion to remove all of the ‘i’ entries from the array
+<code class="docutils literal notranslate"><span class="pre">['One',</span> <span class="pre">'i',</span> <span class="pre">'c',</span> <span class="pre">'X',</span> <span class="pre">'i',</span> <span class="pre">'i',</span> <span class="pre">54]</span></code>.</p>
+<p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">removeI</span></code> function.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">removeI</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
+      <span class="c1">//return final array</span>
+      <span class="c1">//end recursion</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//remove one &#39;i&#39; entry from array</span>
+      <span class="c1">//call removeI function again</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Which TWO of the following work as a base case for the function? Feel free to
+test the options in the repl.it to check your thinking.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">!arr.includes('i')</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">arr.includes('i')</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></li>
+</ol>
+<p class="last">Try it <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01">here</a>.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>The <strong>factorial</strong> of a number (n!) is the product of a positive, whole number and
+all the integers below it.</p>
+<p>For example, four factorial is 4! = 4*3*2*1 = 24, and 5! = 5*4*3*2*1 =
+120.</p>
+<p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">factorial</span></code> function.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">integer</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
+      <span class="c1">//solve last step</span>
+      <span class="c1">//end recursion</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//complete next small step</span>
+      <span class="c1">//call factorial function again</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Which of the following should be used as base case for the function?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
+</ol>
+<p class="last">Try it <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">here</a>.</p>
+</div>
 </div>
 </div>
 

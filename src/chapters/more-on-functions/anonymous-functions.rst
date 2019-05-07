@@ -69,7 +69,7 @@ Check Your Understanding
    Convert the following named function to an anonymous function that is stored in a variable.
 
    .. sourcecode:: js
-   
+
       function reverse(str) {
          let lettersArray = str.split('');
          let reversedLettersArray = lettersArray.reverse();
@@ -85,8 +85,8 @@ Check Your Understanding
 
    .. sourcecode:: js
 
-      let f1 = function(str) { 
-         console.log(str + str); 
+      let f1 = function(str) {
+         console.log(str + str);
       };
 
       let f2 = f1;
