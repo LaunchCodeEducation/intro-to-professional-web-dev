@@ -81,7 +81,7 @@ Click here to `hack the code <https://repl.it/@launchcode/MoreFunctionsExercises
 |
 
 3. Finally, ye need to print a receipt for the accountant. Don't laugh! That
-   genius knows MATH and saves us more gold ye can imagine.
+   genius knows MATH and saves us more gold than ye can imagine.
 
    a. Define a function that takes yer fuel and cargo functions as
       parametarrrrrs.
