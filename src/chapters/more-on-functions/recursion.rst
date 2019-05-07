@@ -24,8 +24,8 @@ parameters.
       14
 
 When called, the parameter ``num`` is passed an argument, which in this case is
-the number 12. The function executes and returns the value 14, which is then
-printed by the ``console.log`` statement.
+the number ``12``. The function executes and returns the value ``14``, which
+the ``console.log`` statement prints.
 
 Functions Can Call Other Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

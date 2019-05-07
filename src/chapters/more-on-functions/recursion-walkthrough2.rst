@@ -1,44 +1,94 @@
 Making A Function Call Itself
 ==============================
 
-Congratulations! Identifying the base case is a very important part of setting
-up a recursive function.
+Congratulations! Identifying the base case is often the trickiest part of
+building a recursive function.
 
-We've made it this far with ``addEntry``:
+We've made it this far with ``combineEntries``:
 
 .. sourcecode:: js
 
-   function addEntry(arrayName){
+   function combineEntries(arrayName){
       if (arrayName.length === 1){
          return arrayName[0];
       } else {
          //solve next small step
-         //call addEntry again
+         //call combineEntries again
       }
    }
 
 Now we are ready to take the next step.
 
-Looping Without **for** or **while**
--------------------------------------
+A Visual Representation
+------------------------
 
-For arrays with more than one entry, we need to make ``addEntry`` consider the
-first element and then *check what is left in the array*. If the rest of the
-array contains more than one item, ``addEntry`` calls iteslf again and repeats
-the process with a smaller set of entries.
+For arrays with more than one entry, we need to make ``combineEntries``
+consider the first element and then *check what is left in the array*. If the
+rest of the array contains more than one item, ``combineEntries`` calls iteslf
+again and repeats the process with a smaller set of entries.
 
-We can visualize the process for ``['L', 'C', '1', '0', '1']`` as
-follows: (Yes, I know there is a mistake in the diagram.)
+To help visualize what's going on, let's start with the base case ``['L']``:
 
-.. figure:: figures/Qualitative-recursion.png
-   :alt: Visual representation of recursion process.
-   :scale: 90%
+.. figure:: figures/base-case-recursion.png
+   :alt: Visual representation for the base case.
 
-So how do we code this in ``addEntry``? Recall the requirements:
+Nothing complicated here.  ``combineEntries`` sees only one item in the array,
+so it returns ``'L'``.
 
-a. Make ``addEntry`` consider the first element,
-b. If the rest of the array has more than one entry, call ``addEntry`` with
-   a smaller array.
+Now consider an array with two elements ``['L', 'C']``:
+
+.. figure:: figures/second-case-recursion.png
+   :alt: Visual representation for the second-easiest case.
+
+In this case, ``combineEntries`` executes the ``else`` statement. We have no
+code for this yet, but we can still consider the logic:
+
+a. ``combineEntries`` returns ``'L'`` and calls itself again using what is left
+   inside the array (``['C']``).
+b. When passed ``['C']``, which is the base case, ``combineEntries`` returns
+   ``'C'``.
+c. The strings ``'L'`` and ``'C'`` get combined and returned as the final
+   result.
+
+Next, consider an array with three elements ``['L', 'C', '1']``:
+
+.. figure:: figures/third-case-recursion.png
+   :alt: Visual representation for the third-easiest case.
+
+As before, ``combineEntries`` executes the ``else`` statement, and we can
+follow the logic:
+
+a. ``combineEntries`` returns ``'L'`` and calls itself again using what is left
+   inside the array (``['C', '1']``).
+b. When passed ``['C', '1']``, ``combineEntries`` returns ``'C'`` and calls
+   itself again using what is left inside the array (``['1']``).
+c. When passed ``['1']``, which is the base case, ``combineEntries`` returns
+   ``'1'``.
+d. The strings ``'C'`` and ``'1'`` get combined and returned.
+e. The strings ``'L'`` and ``'C1'`` get combined and returned as the final
+   result.
+
+As we make the array longer, ``combineEntries`` calls itself more times. Each
+call evaluates a smaller and smaller section of the array until reaching the
+base case. This sets up a series of return events - each one selecting a
+single entry from the array. Rather than building ``'LC101'`` from left to
+right, recursion constructs the string starting with the base case and
+adding new characters to the front:
+
+| ``'1'``
+| ``'01'``
+| ``'101'``
+| ``'C101'``
+| ``'LC101'``
+
+A Function Calls Itself
+------------------------
+
+So how do we code the ``else`` statement in ``combineEntries``? Recall what
+needs to happen each time the statement runs:
+
+a. Select the first element in the array,
+b. Call ``combineEntries`` again with a smaller array.
 
 Bracket notation takes care of part a: ``arrayName[0]``.
 
@@ -50,26 +100,34 @@ Let's add the bracket notation and the ``slice`` method to our function:
 
 .. sourcecode:: js
 
-   function addEntry(arrayName){
+   function combineEntries(arrayName){
       if (arrayName.length === 1){
          return arrayName[0];
       } else {
-         return arrayName[0]+addLetter(arrayName.slice(1));
+         return arrayName[0]+combineEntries(arrayName.slice(1));
       }
    }
 
-See it in action **here** (TODO: Repl.it link).
+Each time the ``else`` statement runs, it extracts the first element in the
+array with ``arrayName[0]``, then it calls itself with the remaining array
+elements (``arrayName.slice(1)``). For ``combineElements(['L', 'C', '1', '0', '1']);``:
 
-A Visual Representation
-------------------------
+| a. First call: Combine ``'L'`` with ``combineEntries(['C', '1', '0', '1'])``.
+| b. Second call: Combine ``'C'``, with ``combineEntries(['1', '0', '1'])``.
+| c. Third call: Combine ``'1'``, with ``combineEntries(['0', '1'])``.
+| d. Fourth call: Combine ``'0'``, with ``combineEntries(['1'])``.
+| e. Fifth call: Base case returns ``'1'``.
 
-This is the first attempt at the figure. Not 80% happy with it yet.
-Suggestions?
+| To get the final result, proceed *up the chain*:
+| e. Return ``'1'`` to the fourth call,
+| d. Return ``'01'`` to the third call,
+| c. Return ``'101'`` to the second call,
+| b. Return ``'C101'`` to the first call,
+| a. Return ``'LC101`` as the final result.
 
-.. figure:: figures/Recursion-diagram.png
-   :alt: Visual representation of calling addEntry multiple times.
+See recursion in action `here <https://repl.it/@launchcode/RecursionExample01>`__.
 
-Concept Checks
----------------
+Check Your Understanding
+-------------------------
 
-Coming soon...
+ID the recursive statement when...
