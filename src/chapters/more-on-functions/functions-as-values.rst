@@ -1,24 +1,24 @@
 Functions as Values
 ===================
 
-We noted previously that functions are a powerful programming feature. This is particularly true in JavaScript, which allows functions to be used in flexible ways that are not possible in many other languages. This chapter introduces a bit more of the power of functions.
+As we have already noted, functions are a powerful programming feature. This is particularly true in JavaScript, which allows functions to be used in flexible ways that are not possible in many other languages. This chapter introduces a bit more of the power of functions.
 
 Functions Are Data
 ------------------
 
-We :ref:`previously defined a value <def-value>` as "a specific piece of data." The examples we gave were things like the number ``42`` or the string ``"Hello, World!"``. While functions appear to be very different from such values, JavaScript treats them the same in many respects. 
+We :ref:`defined a value <def-value>` as "a specific piece of data." Some examples are the number ``42``, the string ``"Hello, World!"``, and the array ``["MO", "FL", "DC"]``. While functions appear to be very different from such values, JavaScript treats them the same in many respects. 
 
 .. index:: data type
 
-In particular, functions have a data type, just like all other values. Recall that a **data type** is a group of values that share characteristics. All strings have a length, while numbers don't. Numbers can be manipulated in ways that strings can not be, via operations like division and subtraction.
+In particular, functions have a data type, just like all other values. Recall that a **data type** is a group of values that share characteristics. All strings have a length, while numbers don't. Numbers can be manipulated in ways that strings cannot be, via operations like division and subtraction. 
 
 .. admonition:: Example
 
-   The data type of ``console.log`` is ``function``. In fact, all functions are of type ``function``.
+   The data type of the type conversion function ``Number`` is ``function``. In fact, all functions are of type ``function``.
 
    .. sourcecode:: js
    
-      console.log(typeof console.log);   
+      console.log(typeof Number);   
 
    **Output**
 
