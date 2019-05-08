@@ -49,6 +49,8 @@ Another approach is to use the fact that there is a ``reverse`` method for array
 
 .. todo:: Add reference to array chapter where this is covered
 
+.. _reverse_func:
+
 .. sourcecode:: js
 
    function reverse(str) {
