@@ -79,25 +79,117 @@
     
   <div class="section" id="more-events">
 <h1>14.5. More Events<a class="headerlink" href="#more-events" title="Permalink to this headline">¶</a></h1>
-<p>attaching via html is rare. attach event handler with code</p>
-<div class="section" id="attach-event-handlers-in-javascript">
-<h2>14.5.1. Attach Event Handlers in JavaScript<a class="headerlink" href="#attach-event-handlers-in-javascript" title="Permalink to this headline">¶</a></h2>
-<p>Define what listener means
-Use addEventListener
-(Event Object)Use arguments provided to event handlers to access information about the triggering event
-Provide warning about jquery examples.</p>
+<p>Using inline event handling is a good way to get started handling events. A second way
+to handle events uses the DOM objects and methods. Remember the DOM is an object representation
+of the entire web page. The DOM will allow us to use only JavaScript to configure
+our event handlers. The event handling declaration and code will no longer in the HTML
+element attirbue, but will intead be in a``&lt;script&gt;`` or external JavaScript file.</p>
+<div class="section" id="add-event-handlers-in-javascript">
+<h2>14.5.1. Add Event Handlers in JavaScript<a class="headerlink" href="#add-event-handlers-in-javascript" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Before we add event handlers in JavaScript, we need to learn a new vocabulary term related to
+events in programming. A <strong>listener</strong> is another name for an event handler. The term
+listener refers to the code <em>listening</em> for the event to occur. If the code <em>hears</em> the event,
+then the event is handled.</p>
+<p><code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> is used to add an event handler, aka <em>listener</em>. <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code>
+is a method available on instances of Window, Document, and Element.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">anElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;eventName&quot;</span><span class="p">,</span> <span class="nx">aFunction</span><span class="p">);</span>
+</pre></div>
 </div>
-<div class="section" id="more-event-types">
-<h2>14.5.2. More Event Types<a class="headerlink" href="#more-event-types" title="Permalink to this headline">¶</a></h2>
-<p>Know these common DOM events: load, click, mouseover, focus, change</p>
+<p><code class="docutils literal notranslate"><span class="pre">anElement</span></code> is reference to a DOM element object. <code class="docutils literal notranslate"><span class="pre">&quot;eventName&quot;</span></code> is the name of an event that
+the variable <code class="docutils literal notranslate"><span class="pre">anElement</span></code> supports. <code class="docutils literal notranslate"><span class="pre">aFunction</span></code> is a reference to a function. To start we are
+going to use a <em>named function</em>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Set the named function <code class="docutils literal notranslate"><span class="pre">youRang</span></code> as the <em>click</em> handler for the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>. Notice that
+the value passed in as the event name is <code class="docutils literal notranslate"><span class="pre">&quot;click&quot;</span></code> insead of <code class="docutils literal notranslate"><span class="pre">&quot;onclick</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Use addEventListener<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main-text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;orange&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-weight: bold;&quot;</span><span class="p">&gt;</span>
+      a bunch of really valuable text...
+   <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ring-bell&quot;</span><span class="p">&gt;</span>Ring Bell<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+      <span class="kd">function</span> <span class="nx">youRang</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;main-text&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;you rang...&quot;</span><span class="p">;</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;you rang...&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="c1">// Obtain a reference to the button element</span>
+      <span class="kd">let</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ring-bell&quot;</span><span class="p">);</span>
+      <span class="c1">// Set named function youRang as the click event handler</span>
+      <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">youRang</span><span class="p">);</span>
+   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Result</strong> (if button is clicked)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>affect on page: adds &quot;you rang...&quot; to &lt;p&gt;
+output in console: you rang...
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to use the correct event name when declaring the event name. An error will NOT be thrown
+if an invalid event name is given.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last" id="index-1">This chapter uses DOM methods to add event handlers. When searching online you may find examples
+using jQuery to add event handlers, which look like <code class="docutils literal notranslate"><span class="pre">.on(&quot;click&quot;,</span> <span class="pre">...)</span></code> or <code class="docutils literal notranslate"><span class="pre">.click(...)</span></code>.
+<strong>jQuery</strong> is a JavaScript library designed to simplify working with the DOM. jQuery’s popularity
+has declined as the DOM itself has gained features and improved usablity.</p>
+</div>
+<p>The second parameter of <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> is a function. Remember there many ways to declare a
+function in JavaScript. So far we have passed in named functions as the event handler.
+<code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> will accept any valid function as the event handler. It’s possible and
+quite common to pass in an <em>anonymous function</em> as the event handler.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">anElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;eventName&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="c1">// function body of anonymous function</span>
+   <span class="c1">// this function will be executed when the event is triggered</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="event-details">
+<h2>14.5.2. Event Details<a class="headerlink" href="#event-details" title="Permalink to this headline">¶</a></h2>
+<p>A benefit of using <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> is that an <em>event</em> parameter is passed as parameter
+to the event handler function. This event is an object instance of the Event class, which
+defines methods and properties related to events.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">anElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;eventName&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;event type&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;event target&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">event.type</span></code> is a string name of the event. Example: <code class="docutils literal notranslate"><span class="pre">&quot;click&quot;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">event.target</span></code> is an element object that was the target of the event. Example:
+A reference to the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element that was clicked.</p>
+<p>TODO: TRY IT asking student to try out the above code</p>
 </div>
 <div class="section" id="event-bubbling">
 <h2>14.5.3. Event Bubbling<a class="headerlink" href="#event-bubbling" title="Permalink to this headline">¶</a></h2>
-<p>Understand event bubbling and how to stop it</p>
+<p>Understand event bubbling and how to stop it
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture</a></p>
+</div>
+<div class="section" id="on-load">
+<h2>14.5.4. On Load<a class="headerlink" href="#on-load" title="Permalink to this headline">¶</a></h2>
+<p>Move event handling to load event
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event">https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event</a>
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload</a></p>
+</div>
+<div class="section" id="more-event-types">
+<h2>14.5.5. More Event Types<a class="headerlink" href="#more-event-types" title="Permalink to this headline">¶</a></h2>
+<p>Know these common DOM events: mouseover, focus, change</p>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>14.5.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>TODO:…</p>
+<h2>14.5.6. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO:…
+use anonymous function as the function parameter in addEventListener</p>
 </div>
 </div>
 

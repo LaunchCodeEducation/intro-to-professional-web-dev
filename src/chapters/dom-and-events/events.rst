@@ -108,7 +108,7 @@ to occur when an event is handled.
          <script>
                function youRang() {
                   document.getElementById("main-text").innerHTML += "you rang...";
-                  console.log('you rang...');
+                  console.log("you rang...");
                }
          </script>
       </head>
