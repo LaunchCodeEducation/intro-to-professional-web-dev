@@ -50,7 +50,10 @@ The variable ``helloFunc`` can be thought of as an *alias* for the function ``he
 
 We are used to this behavior when a variable holds a number or a string. When a variable holds a function, the variable "points at" or "refers to" the function. When we use the variable name, it is as if we are using the specific value that the variable refers to.
 
-.. todo:: insert named function reference diagram
+.. figure:: figures/function-var.png
+   :alt: The variable helloFunc on the left "points at" or "refers to" the function hello on the right
+
+   A variable that refers to a function.
 
 Again, *functions are values*. They can be used just like general values. Here are a few examples:
 

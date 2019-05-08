@@ -57,7 +57,11 @@ The variable ``add`` refers to the anonymous function created on lines 1 through
 
 The visual analogy here is the same as that of a variable referring to a named function.
 
-.. todo:: insert anonymous function reference diagram
+.. figure:: figures/function-var-anonymous.png
+   :alt: The variable add on the left refers to an anonymous function on the right
+
+   A variable that refers to an anonymous function.
+
 
 .. warning:: Like other variable declarations, an assignment statement using an anonymous function should be terminated by a semi-colon, ``;``. This is easy to overlook, since named functions do *not* end with a semi-colon.
 
