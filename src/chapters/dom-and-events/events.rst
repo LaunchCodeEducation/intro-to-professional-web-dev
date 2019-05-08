@@ -54,6 +54,9 @@ DOM elements use the *on event* naming convention when declaring event handlers.
 when defining what happens when a ``<button>`` is clicked, the ``onclick`` attribute is used.
 This naming convention can be read as: *On click of the button, print a message to the console.*
 
+The first way we will handle events is to decalre the event handler in HTML, this is often
+referred to as an **inline event handler**.
+
 .. admonition:: Example
 
    Add a *click* handler to a ``<button>``. Define what happens when the ``<button>`` is clicked.
@@ -118,7 +121,7 @@ to occur when an event is handled.
       </body>
       </html>
 
-   **Output** (if button is clicked)
+   **Result** (if button is clicked)
 
    ::
 
