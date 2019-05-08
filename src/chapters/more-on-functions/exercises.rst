@@ -1,86 +1,89 @@
-Exercises: Functions
-=====================
+Exercises: More Functions
+==========================
 
-Who Was That Masked Function?
-------------------------------
+Arrr! Welcome back, swabbie. Now that ye have more experience, yer ready ta
+join a boarding party.
 
+Ye may still be wonderin' *Why the blazes would I ever use an anonymous
+function?* Fer today's mission, o' course! We arrrr going to loot yonder
+shuttle, but since it's the 21st century, we need to do better than grappling
+hooks and rope.
 
+| Ye arrrr going to hack into the shuttle code and steal supplies. Since the
+   LaunchCode TAs keep a sharp eye on the goodies, ye can't just add new
+   functions like ``siphonFuel`` or ``lootCargo``. Ye need to be more sneaky.
+| Clever.
+| Invisible.
+| *Anonymous*.
 
-Sort Numbers For Real
-----------------------
+The first mate swiped a copy of the code ye need ta hack:
 
-Recall that using the ``sort`` method on an array of numbers produced an
-unexpected result, since JavaScript converts the numbers to strings by default
-(TODO - add reference to the ``sort`` example page).  Let's fix this!
+.. sourcecode:: js
 
-3. Create a function with an array of numbers as its parameter. The function
-   should iterate through the array and return the minimum value from the
-   array. *Hint*: Use what you know about ``if`` statements to identify and
-   store the smallest value within the array.
+   function checkFuel(level) {
+      if (level > 100000){
+         return 'green';
+      } else if (level > 50000){
+         return 'yellow';
+      } else {
+         return 'red';
+      }
+   }
 
-.. admonition:: Sample arrays for testing
+   function holdStatus(arr){
+      if (arr.length < 7) {
+         return `Spaces available: ${7 - arr.length}`;
+      } else if (arr.length > 7){
+         return `Over capacity by ${arr.length - 7} items.`
+      } else {
+         return "Full";
+      }
+   }
 
-   .. sourcecode:: js
+   let fuelLevel = 200000;
+   let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
-      [ 5, 10, 2, 42 ]
-      [ -2, 0, -10, -44, 5, 3, 0, 3 ]
-      [ 200, 5, 4, 10, 8, 5, -3.3, 4.4, 0 ]
+   console.log("Fuel level: "+ checkFuel(fuelLevel));
+   console.log("Hold status: "+ holdStatus(cargoHold));
 
-4. Create another function with an array of numbers as its parameter.  Within
-   this function:
+Click here to `hack the code <https://repl.it/@launchcode/MoreFunctionsExercises01>`__.
 
-   a. Define a new, empty array to hold the final sorted numbers.
-   b. Use your function from the previous exercise to find the minimum value in
-      the old array.
-   c. Add the minimum value to the new array, and remove the minimum value from
-      the old array.
-   d. Repeat parts b & c until the old array is empty.
-   e. Return the new sorted array.
+|
 
-*Hint*: Either a ``for`` or ``while`` loop will work inside this function, but
-there IS a better choice.  Consider the task the function must accomplish as
-well as the characteristics of each type of loop. Which one best serves if the
-array has an unknown length?
+1. First, steal some fuel from the shuttle:
 
-*Be sure to print the results in order to verify your code*.
+   a. Define an anonymous function and set it equal ter a variable with a normal,
+      non-suspicious name.  The function needs one parameter, which will be the
+      fuel level on the shuttle.
+   b. Ye must siphon off fuel without alerting the TAs.  Inside yer function, ye
+      want to reduce the fuel level as much as possible WITHOUT changing the
+      color returned by the ``checkFuel`` function.
+   c. Once ye figure out how much fuel ter pump out, return that value.
+   d. Decide where to best place yer function call to gather our new fuel.
+   e. Be sure to test yer function! Those bilge rat TAs will notice if they lose
+      too much fuel.
 
-[TODO: Add repl.it link.]
+|
 
-More on Sorting Numbers
-------------------------
+2. Next, liberate some of that glorious cargo.
 
-The sorting approach used above is not the only way of accomplishing the task,
-nor is it the best. Details on why can be found **here** (TODO: link to
-appendix). Feel free to look up "bubble sort" to explore a different way to
-order numbers in an array.
+   a. Define another anonymous function with an array as a parametarrrrr, and set
+      it equal to another innocent variable.
+   b. Ye need to swipe two items from the cargo hold.  Choose well. Stealing water
+      ain't gonna get us rich.  Put the swag into a new array and return it
+      from the function.
+   c. The cargo hold has better security than the fuel tanks.  It counts how many
+      things are in storage.  Ye need to replace what ye steal with something
+      worthless.  The count MUST stay the same, or ye'll get caught and thrown
+      into the LaunchCode brig.
+   d. Don't get hasty, swabbie! Remember to test yer function.
 
-Fortunately, JavaScript has an elegant way to properly sort numbers.
+|
 
-If you Google "JavaScript sort array of numbers" (or something similar), many
-options appear, and they all give pretty much the same result. The sites just
-differ in how much detail they provide when explaining the solution.
+3. Finally, ye need to print a receipt for the accountant. Don't laugh! That
+   genius knows MATH and saves us more gold than ye can imagine.
 
-One reference is here: `W3Schools <https://www.w3schools.com/jsref/jsref_sort.asp>`_.
-
-End result - the JavaScript syntax for numerical sorting is
-``arrayName.sort(function(a, b){return a-b});``.
-
-.. admonition:: Note
-
-   You do NOT need to understand HOW the sorting function works. You just need to
-   be able to use it.
-
-So Why Write A Sorting Function?
----------------------------------
-
-Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
-sorting methods, so why did we ask you to build one?
-
-It's kind of a programming right of passage - design an efficient sorting
-function. Also, sorting can help you land a job.
-
-As part of a tech interview, you will probably be asked to do some live-coding.
-One standard, go-to question is to sort an array WITHOUT relying on the built
-in methods. Knowing how to think though a sorting task, generate the code and
-then clearly explain your approach will significantly boost your appeal to an
-employer.
+   a. Define a function that takes yer fuel and cargo functions as
+      parametarrrrrs.
+   b. Use a template literal to print out, ``"Raided _____ kg of fuel from the
+      tanks, and stole ____ and ____ from the cargo hold."``
