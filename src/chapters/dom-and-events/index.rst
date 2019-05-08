@@ -9,3 +9,4 @@ The DOM and Events
    more-dom
    events
    event-listeners
+   more-event-types

@@ -189,18 +189,6 @@ TODO: TRY IT. add stopPropagation to the button click handler, then click button
    });
 
 
-On Load
--------
-Move event handling to load event
-https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
-https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
-
-
-More Event Types
-----------------
-Know these common DOM events: mouseover, focus, change
-
-
 Check Your Understanding
 ------------------------
 TODO:...
