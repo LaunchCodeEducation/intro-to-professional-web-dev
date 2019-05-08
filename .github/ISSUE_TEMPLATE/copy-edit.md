@@ -9,7 +9,7 @@ assignees: ''
 
 ## Permalink
 
-(Which page is the problem on? Copy the permalink to the closes subheading *above* the issue by clicking on the ¶ symbol next to that heading.)
+(Which page is the problem on? Copy the permalink to the closest subheading *above* the issue by clicking on the ¶ symbol next to that heading.)
 
 ## Issue
 
