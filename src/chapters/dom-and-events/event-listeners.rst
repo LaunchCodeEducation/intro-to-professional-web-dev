@@ -165,7 +165,7 @@ affected by the event.
       </body>
       </html>
 
-   **Results** (if button is clicked)
+   **Output** (if button is clicked)
 
    ::
 
@@ -176,7 +176,8 @@ affected by the event.
 TODO: TRY IT. what happens when you click in the green? what happens when you click the button?
 
 In rare cases you may want to stop events from bubbling up. Use ``event.stopPropagation()`` stop
-events from being sent to ancestor elements.
+events from being sent to ancestor elements. Handlers for parent elements will not be triggered if
+a child element calls ``event.stopPropagation()``.
 
 TODO: TRY IT. add stopPropagation to the button click handler, then click button to see what happens.
 

@@ -215,7 +215,7 @@ global variable.</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p><strong>Results</strong> (if button is clicked)</p>
+<p><strong>Output</strong> (if button is clicked)</p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>button clicked
 toolbar clicked
 document clicked
@@ -224,7 +224,8 @@ document clicked
 </div>
 <p>TODO: TRY IT. what happens when you click in the green? what happens when you click the button?</p>
 <p>In rare cases you may want to stop events from bubbling up. Use <code class="docutils literal notranslate"><span class="pre">event.stopPropagation()</span></code> stop
-events from being sent to ancestor elements.</p>
+events from being sent to ancestor elements. Handlers for parent elements will not be triggered if
+a child element calls <code class="docutils literal notranslate"><span class="pre">event.stopPropagation()</span></code>.</p>
 <p>TODO: TRY IT. add stopPropagation to the button click handler, then click button to see what happens.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;button clicked&quot;</span><span class="p">);</span>
