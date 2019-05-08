@@ -5,7 +5,7 @@ Anonymous Functions
    single: function, named
    single: function, anonymous
 
-The syntax :ref:`initially introduced <function-syntax>` for writing functions was this:
+You already know :ref:`one method for creating a function <function-syntax>`:
 
 .. sourcecode:: js
 
@@ -15,9 +15,9 @@ The syntax :ref:`initially introduced <function-syntax>` for writing functions w
 
    }
 
-A function defined in this way is a **named function**, so-called because it has a name (``myFunction`` in the example above).  
+A function defined in this way is a **named function**, so-called because it has a name (``myFunction``, in the example above).  
 
-Many programming languages, including JavaScript, also us to create **anonymous functions**, which *do not* have names. We can create an anonymous function by leaving off the function name when defining it:
+Many programming languages, including JavaScript, allow us to create **anonymous functions**, which *do not* have names. We can create an anonymous function by simply leaving off the function name when defining it:
 
 .. sourcecode:: js
 
@@ -53,13 +53,13 @@ Anonymous functions are often assigned to variables when they are created, which
 
       2
 
-The variable ``add`` refers to the anonymous function created on lines 1 through 3. We call the function using the variable name, followed by parentheses and arguments.
+The variable ``add`` refers to the anonymous function created on lines 1 through 3. We call the function using the *variable* name, since the function doesn't have a name.
 
 The visual analogy here is the same as that of a variable referring to a named function.
 
 .. todo:: insert anonymous function reference diagram
 
-.. note:: Like other variable declarations, an assignment statement using an anonymous function should be terminated by a semi-colon, ``;``. This is easy to overlook, since named functions do *not* end with a semi-colon.
+.. warning:: Like other variable declarations, an assignment statement using an anonymous function should be terminated by a semi-colon, ``;``. This is easy to overlook, since named functions do *not* end with a semi-colon.
 
 Check Your Understanding
 ------------------------
@@ -84,6 +84,7 @@ Check Your Understanding
    beginning on line 1.
 
    .. sourcecode:: js
+      :linenos:
 
       let f1 = function(str) {
          console.log(str + str);
@@ -114,3 +115,5 @@ Check Your Understanding
       if (userInput < 0) {
          ____________("Invalid input");
       }
+
+   `Finish the program at repl.it <https://repl.it/@launchcode/Check-Fill-in-the-Code>`_

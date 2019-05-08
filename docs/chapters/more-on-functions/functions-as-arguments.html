@@ -82,22 +82,22 @@
 <p>You now know that <em>functions are data</em>, and therefore can be passed around just like other values. In particular, this means a function can be <em>passed to another function</em> as an argument. This turns out to be extremely useful.</p>
 <div class="section" id="passing-functions-as-arguments">
 <h2>11.3.1. Passing Functions as Arguments<a class="headerlink" href="#passing-functions-as-arguments" title="Permalink to this headline">¶</a></h2>
-<p>Lots of JavaScript functions allow you pass a function as an argument. A function passed in this way can be called later, potentially multiple times. It allows the function being called to use the function argument to carry out its action.</p>
-<p>Examples best illustrate this technique.</p>
+<p>Lots of JavaScript functions allow you pass a function as an argument when calling them. A function passed in this way can be called later, potentially multiple times. It allows the <em>function being called</em> to use the <em>function argument</em> to carry out its action.</p>
+<p>Examples best illustrate this technique, so let’s look at a couple now.</p>
 <div class="section" id="example-settimeout">
 <h3>11.3.1.1. Example: <strong>setTimeout</strong><a class="headerlink" href="#example-settimeout" title="Permalink to this headline">¶</a></h3>
-<p id="index-0">The built-in function <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code> allows a programmer to specify that a function should be called a later point in time. Its basic syntax is:</p>
+<p id="index-0">The built-in function <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code> allows a programmer to pass a function, specify that it should be called a later point in time. Its basic syntax is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>setTimeout(func, delayInMilliseconds);
 </pre></div>
 </div>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>Suppose we want to log a message with a 5 second delay. Since five seconds is 5000 milliseconds (1 second = 1000 milliseconds), we can do so like this:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">message</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printMessage</span><span class="p">()</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The future is now!&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">printMessage</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
@@ -107,10 +107,10 @@
 </div>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
-<p class="last">Don’t just take our word for it, try this yourself. <a class="reference external" href="https://repl.it/&#64;launchcode/setTimeout-Example">Play with our example</a> to change the delay.</p>
+<p class="last">Is the call to <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> actually delayed? Don’t just take our word for it, try this yourself. <a class="reference external" href="https://repl.it/&#64;launchcode/setTimeout-Example">Play with our example</a> to change the delay.</p>
 </div>
-<p>The function <code class="docutils literal notranslate"><span class="pre">message</span></code> is <em>passed into</em> <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code> the same way any other argument is passed to a function.</p>
-<p>A common pattern used by JavaScript programmers is to use an anonymous function passing a function as an argument.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> is <em>passed to</em> <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code> the same way any other argument is passed to a function.</p>
+<p>A common twist often used by JavaScript programmers is to use an <em>anonymous</em> function when passing a function as an argument.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>This program has the same behavior as the one above. Instead of creating a named function and passing it to <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code>, it creates an anonymous function within <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code>’s argument list.</p>
@@ -120,15 +120,15 @@
 </pre></div>
 </div>
 </div>
-<p>Examples like this can look odd when first working with functions in this way. However, you will find that they become easier to read over time. Additionally, code that passes anonymous functions in this way is ubiquitous in JavaScript. You have probably already seen examples in documentation or on sites like Stack Overflow without recognizing them.</p>
+<p>Examples like this can look odd at first. However, they become easier to read over time. Additionally, code that passes anonymous functions in this way is ubiquitous in JavaScript. You have probably already seen examples in documentation or on sites like Stack Overflow without recognizing them, and soon you will be regularly reading and writing code like this.</p>
 </div>
 <div class="section" id="example-the-array-method-map">
 <h3>11.3.1.2. Example: The Array Method <strong>map</strong><a class="headerlink" href="#example-the-array-method-map" title="Permalink to this headline">¶</a></h3>
-<p>The array method <code class="docutils literal notranslate"><span class="pre">map</span></code> allows for every element in an array to be <em>mapped</em> or <em>translated</em>, using a given function. Here’s how to use it generally:</p>
+<p>The array method <code class="docutils literal notranslate"><span class="pre">map</span></code> allows for every element in an array to be <em>mapped</em> or <em>translated</em>, using a given function. Here’s how to use it:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let mappedArray = someArray.map(func);
 </pre></div>
 </div>
-<p>The argument <code class="docutils literal notranslate"><span class="pre">func</span></code> should take a single value from the array and return a new value. The returned array, <code class="docutils literal notranslate"><span class="pre">mappedArray</span></code>, contains each of the return values from the mapping function, <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p>
+<p>The argument <code class="docutils literal notranslate"><span class="pre">func</span></code> should take a single value from the array and return a new value. The returned array, <code class="docutils literal notranslate"><span class="pre">mappedArray</span></code>, contains each of the individual return values from the mapping function, <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">4811</span><span class="p">];</span>
@@ -147,7 +147,7 @@
 </pre></div>
 </div>
 </div>
-<p>When using <code class="docutils literal notranslate"><span class="pre">map</span></code>, many programmers will define the mapping function in the same statement as the call to <code class="docutils literal notranslate"><span class="pre">map</span></code>.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">map</span></code>, many programmers will define the mapping function in the same statement as the method call <code class="docutils literal notranslate"><span class="pre">map</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>This program has the same output as the one immediately above. The mapping function is defined anonymously within the call to <code class="docutils literal notranslate"><span class="pre">map</span></code>.</p>
@@ -169,7 +169,7 @@
 </div>
 <div class="section" id="using-parameters-as-functions">
 <h2>11.3.2. Using Parameters as Functions<a class="headerlink" href="#using-parameters-as-functions" title="Permalink to this headline">¶</a></h2>
-<p>The previous section illustrates how a function can be passed into another function. This section takes the opposite perspective to <em>write</em> functions that can take other functions as arguments. This technique allows a function’s action to be customized by the code that calls it.</p>
+<p>The previous section illustrates how a function can be passed to another function as an argument. This section takes the opposite perspective to <em>write</em> functions that can take other functions as arguments.</p>
 <div class="section" id="example-a-generic-input-validator">
 <h3>11.3.2.1. Example: A Generic Input validator<a class="headerlink" href="#example-a-generic-input-validator" title="Permalink to this headline">¶</a></h3>
 <p>Our first example will be a generic input validator. It will prompt a user for input, using a parameter to the function to do that actual work of validating the input.</p>
@@ -179,8 +179,10 @@
 
 <span class="kd">function</span> <span class="nx">getValidInput</span><span class="p">(</span><span class="nx">prompt</span><span class="p">,</span> <span class="nx">isValid</span><span class="p">)</span> <span class="p">{</span>
 
+   <span class="c1">// Prompt the user, using the prompt string that was passed</span>
    <span class="kd">let</span> <span class="nx">userInput</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="nx">prompt</span><span class="p">);</span>
 
+   <span class="c1">// Call the boolean function isValid to check the input</span>
    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">userInput</span><span class="p">))</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Invalid input. Try again.&quot;</span><span class="p">);</span>
       <span class="nx">userInput</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="nx">prompt</span><span class="p">);</span>
@@ -189,8 +191,9 @@
    <span class="k">return</span> <span class="nx">userInput</span><span class="p">;</span>
 <span class="p">}</span>
 
+<span class="c1">// A boolean function for validating input</span>
 <span class="kd">let</span> <span class="nx">isEven</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getValidInput</span><span class="p">(</span><span class="s1">&#39;Enter an even number:&#39;</span><span class="p">,</span> <span class="nx">isEven</span><span class="p">));</span>
@@ -207,14 +210,54 @@ Enter an even number: 4
 </div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> handles the work of interacting with the user, while allowing the validation logic to be customized. This separates the different concerns of validation and user interaction, sticking to the idea that <em>a function should do only one thing</em>. It also enables more reusable code. If we need to get different input from the user, we can simply call <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> with different arguments.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>This example uses the same <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> function defined above with a different prompt and validator function. In this case, we check that a potential password has at least 8 characters.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">getValidInput</span><span class="p">(</span><span class="nx">prompt</span><span class="p">,</span> <span class="nx">isValid</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="kd">let</span> <span class="nx">userInput</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="nx">prompt</span><span class="p">);</span>
+
+   <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">userInput</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Invalid input. Try again.&quot;</span><span class="p">);</span>
+      <span class="nx">userInput</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="nx">prompt</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="nx">userInput</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">isValidPassword</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="c1">// Passwords should have at least 8 characters</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">password</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getValidInput</span><span class="p">(</span><span class="s1">&#39;Create a password:&#39;</span><span class="p">,</span> <span class="nx">isValidPassword</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Sample Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Create a password: launch
+Invalid input. Try again.
+Create a password: code
+Invalid input. Try again.
+Create a password: launchcode
+launchcode
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="example-a-logger">
 <h3>11.3.2.2. Example: A Logger<a class="headerlink" href="#example-a-logger" title="Permalink to this headline">¶</a></h3>
-<p>Another common example in which a function uses another function to customize its behavior is that of logging. A real-world application is typically capable of logging messages such as errors, warnings, and statuses. Many such applications allow for log messages to be sent to one or more destinations, which can often be customized. For example, the application may log messages to both the console and to a file.</p>
+<p>Another common example of a function using another function to customize its behavior is that of logging. A real-world application is typically capable of logging messages such as errors, warnings, and statuses. Many such applications allow for log messages to be sent to one or more destinations. For example, the application may log messages to both the console and to a file.</p>
 <p>We can write a logging function that relies on a function parameter to determine the logging destination.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">logError</span></code> implemented here outputs a standardized error message to a location determined by the parameter <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">logError</span></code> function outputs a standardized error message to a location determined by the parameter <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</p>
 <div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">fileLogger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// Put the message in a file</span>
@@ -257,6 +300,8 @@ Enter an even number: 4
 </pre></div>
 </div>
 </div>
+<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know or care about the specfics of how each logging function does it’s job. It is concerned merely with creating the message string and passing it to each logger.</p>
+<p>When writing a function that uses one of its parameters as a function, things can go wrong since there is now way to <em>force</em> a programmer to pass a function.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
 <p>What happens if a function expects an argument to be a function, but it isn’t?</p>

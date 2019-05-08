@@ -1,7 +1,7 @@
 Why Use Anonymous Functions?
 ============================
 
-At this point, you may be asking yourself why you are learning anonymous functions. They seem strange at first, and their utility is not immediately obvious. While the opinions of programmers differ, we will discuss the two main reasons that *we* think anonymous functions are useful.
+At this point, you may be asking yourself why you are learning anonymous functions. They seem strange, and their utility may not be immediately obvious. While the opinions of programmers differ, we will discuss the two main reasons that *we* think anonymous functions are important to understand.
 
 Anonymous Functions Can Be Single-Use
 -------------------------------------
@@ -10,7 +10,7 @@ There are many situations in which you will need to create a function that will 
 
 .. admonition:: Example
 
-   Defining an anonymous function at the same time it is passed into another function prevents it from being used elsewhere in the program.
+   The anonymous function created in this example cannot be used outside of ``setTimeout``.
 
    .. sourcecode:: js
    
@@ -18,14 +18,16 @@ There are many situations in which you will need to create a function that will 
          console.log("The future is now!");
       }, 5000);
 
-In programs that use lots of functions---such as web applications, as you will soon learn---defining them anonymously and directy within a function call can reduce the number of names you need to come up with in your program. 
+Defining an anonymous function at the same time it is passed as an argument prevents it from being used elsewhere in the program.
+
+Additionally, in programs that use lots of functions---such as web applications, as you will soon learn---defining functions anonymously, and directy within a function call, can reduce the number of names you need to come up with. 
 
 Anonymous Functions Are Ubiquitous in JavaScript
 ------------------------------------------------
 
-Like it or not, JavaScript programmers use anonymous functions *a lot*. Many of them use anonymous functions with the same gusto that some people put ketchup or hot sauce on nearly everything they eat. For these programmers, just because an anonymous function isn't need to solve a problem doesn't mean that it *shouldn't* be used to solve the problem.
+JavaScript programmers use anonymous functions *a lot*. Many programmers use anonymous functions with the same gusto as that friend of yours that puts hot sauce on *everything*. For these programmers, just because an anonymous function isn't need to solve a problem doesn't mean that it *shouldn't* be used to solve the problem. Avoiding code that uses anonymous functions is impossible, since they are used so widely by so many JavaScript developers.
 
-Any programming problem in JavaScript can be solved *without* using anonymous functions, so the extent to which you use them in your own code is somewhat a matter of taste. We will take the middle road throughout the rest of this course, regularly using both anonymous and named functions.
+Any programming problem in JavaScript can be solved *without* using anonymous functions. Thus, the extent to which you use them in your own code is somewhat a matter of taste. We will take the middle road throughout the rest of this course, regularly using both anonymous and named functions.
 
 Check Your Understanding
 ------------------------
@@ -33,4 +35,4 @@ Check Your Understanding
 .. admonition:: Question
 
    Explain the difference between named and anonymous functions,
-   including an example of how an anonymous function might be used.
+   including an example of how an anonymous function can be used.

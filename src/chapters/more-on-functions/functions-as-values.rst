@@ -1,16 +1,18 @@
 Functions as Values
 ===================
 
-As we have already noted, functions are a powerful programming feature. This is particularly true in JavaScript, which allows functions to be used in flexible ways that are not possible in many other languages. This chapter introduces a bit more of the power of functions.
+.. index:: function; as a value
+
+As we have noted, functions are a powerful programming feature. JavaScript in particular allows functions to be used in flexible ways that are not possible in many other languages. This chapter introduces a bit more of the power of functions.
 
 Functions Are Data
 ------------------
 
-We :ref:`defined a value <def-value>` as "a specific piece of data." Some examples are the number ``42``, the string ``"Hello, World!"``, and the array ``["MO", "FL", "DC"]``. While functions appear to be very different from such values, JavaScript treats them the same in many respects. 
+We :ref:`defined a value <def-value>` as "a specific piece of data." Some examples are the number ``42``, the string ``"Hello, World!"``, and the array ``["MO", "FL", "DC"]``. *Functions are also values*, and while they appear to be very different from other values we have worked with, they share many core characteristics.
 
 .. index:: data type
 
-In particular, functions have a data type, just like all other values. Recall that a **data type** is a group of values that share characteristics. All strings have a length, while numbers don't. Numbers can be manipulated in ways that strings cannot be, via operations like division and subtraction. 
+In particular, functions have a data type, just like all other values. Recall that a **data type** is a group of values that share characteristics, such as strings and numbers. All strings have a length, while numbers don't. Numbers can be manipulated in ways that strings cannot be, via operations like division and subtraction. 
 
 .. admonition:: Example
 
@@ -46,11 +48,11 @@ When a variable refers to a function, we can call the function using the variabl
 
 The variable ``helloFunc`` can be thought of as an *alias* for the function ``hello``. When we use the name ``helloFunc``, JavaScript sees that it refers to the function ``hello`` and will use that *specific* function. 
 
-This is the same behavior we have become used to when a variable holds a number or a string. The variable "points at" or "refers to" the function. When we use the variable name, it is as if we are using the specific value that the variable refers to.
+We are used to this behavior when a variable holds a number or a string. When a variable holds a function, the variable "points at" or "refers to" the function. When we use the variable name, it is as if we are using the specific value that the variable refers to.
 
 .. todo:: insert named function reference diagram
 
-*Functions are values.* In fact, functions can be used in all of the ways that other values may be used. Here are a few examples:
+Again, *functions are values*. They can be used just like general values. Here are a few examples:
 
 - Functions may be assigned to variables.
 - Functions may be used in expressions, such as comparisons.
