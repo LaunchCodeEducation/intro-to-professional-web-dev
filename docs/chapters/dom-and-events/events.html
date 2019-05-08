@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14.5. Event Listeners" href="event-listeners.html" />
+    <link rel="next" title="14.5. More Events" href="event-listeners.html" />
     <link rel="prev" title="14.3. More DOM Methods and Properties" href="more-dom.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -118,7 +118,7 @@ elements and then writing the event handler code.</p>
 <p>To write a handler, you need to tell the browswer what to do when a certain event happens.
 DOM elements use the <em>on event</em> naming convention when declaring event handlers. For example
 when defining what happens when a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked, the <code class="docutils literal notranslate"><span class="pre">onclick</span></code> attribute is used.
-This naming convention can be read as: <em>On click of the button, open an alert box.</em></p>
+This naming convention can be read as: <em>On click of the button, print a message to the console.</em></p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>Add a <em>click</em> handler to a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>. Define what happens when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked.</p>
@@ -150,7 +150,46 @@ quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span
 default <em>click</em> handling behavior related to <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> elements, that we will
 get into in a later chapter. For now we will be defining the <em>click</em> handler behavior.</p>
 </div>
-<p>TODO: TRY IT asking them to use alert instead of console</p>
+<p>Any JavaScript function can be used as the event handler, that means user defined
+functions can be used. User defined functions as event handlers allow for more functionality
+to occur when an event is handled.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">youRang</span></code> function as the <em>click</em> handler for the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Button click handler<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+         <span class="kd">function</span> <span class="nx">youRang</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;main-text&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;you rang...&quot;</span><span class="p">;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;you rang...&#39;</span><span class="p">);</span>
+         <span class="p">}</span>
+   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>demo header<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main-text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;orange&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-weight: bold;&quot;</span><span class="p">&gt;</span>
+         a bunch of really valuable text...
+   <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;youRang();&quot;</span><span class="p">&gt;</span>Ring Bell<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Output</strong> (if button is clicked)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>affect on page: adds &quot;you rang...&quot; to &lt;p&gt;
+output in console: you rang...
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When defining handlers via HTML, be very careful to type the function name correctly.
+If the function name is incorrect, the event will not be handled. No warning is given,
+the event is silently ignored.</p>
+</div>
+<p>TODO: TRY IT asking user to add functionality to an event handler.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>14.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
@@ -167,7 +206,7 @@ get into in a later chapter. For now we will be defining the <em>click</em> hand
         <li class="previous"><a href="more-dom.html"><span aria-hidden="true">&larr;</span> 14.3. More DOM Methods and Properties</a></li>
         
         
-        <li class="next"><a href="event-listeners.html">14.5. Event Listeners <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="event-listeners.html">14.5. More Events <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

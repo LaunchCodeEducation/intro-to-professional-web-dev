@@ -52,7 +52,7 @@ elements and then writing the event handler code.
 To write a handler, you need to tell the browswer what to do when a certain event happens.
 DOM elements use the *on event* naming convention when declaring event handlers. For example
 when defining what happens when a ``<button>`` is clicked, the ``onclick`` attribute is used.
-This naming convention can be read as: *On click of the button, open an alert box.*
+This naming convention can be read as: *On click of the button, print a message to the console.*
 
 .. admonition:: Example
 
@@ -88,12 +88,52 @@ This naming convention can be read as: *On click of the button, open an alert bo
    default *click* handling behavior related to ``<form>`` elements, that we will
    get into in a later chapter. For now we will be defining the *click* handler behavior.
 
+Any JavaScript function can be used as the event handler, that means user defined
+functions can be used. User defined functions as event handlers allow for more functionality
+to occur when an event is handled.
 
-TODO: TRY IT asking them to use alert instead of console
+.. admonition:: Example
 
+   Set ``youRang`` function as the *click* handler for the ``<button>``.
+
+   .. sourcecode:: html
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+            <title>Button click handler</title>
+         <script>
+               function youRang() {
+                  document.getElementById("main-text").innerHTML += "you rang...";
+                  console.log('you rang...');
+               }
+         </script>
+      </head>
+      <body>
+         <h1>demo header</h1>
+         <p id="main-text" class="orange" style="font-weight: bold;">
+               a bunch of really valuable text...
+         </p>
+         <button onclick="youRang();">Ring Bell</button>
+      </body>
+      </html>
+
+   **Output** (if button is clicked)
+
+   ::
+
+      affect on page: adds "you rang..." to <p>
+      output in console: you rang...
+
+.. warning::
+
+   When defining handlers via HTML, be very careful to type the function name correctly.
+   If the function name is incorrect, the event will not be handled. No warning is given,
+   the event is silently ignored.
+
+TODO: TRY IT asking user to add functionality to an event handler.
 
 Check Your Understanding
 ------------------------
 
 TODO:...
-
