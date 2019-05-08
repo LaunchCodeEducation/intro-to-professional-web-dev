@@ -1,19 +1,18 @@
-.. _index-brief:
+.. _index-full:
 
 Introduction to Professional Web Development in JavaScript
 ==========================================================
 
-Contents in Brief
------------------
+Contents in Full
+----------------
 
-:ref:`View full contents <index-full>`
+:ref:`View abbreviated contents <index-brief>`
 
 Chapters
 ^^^^^^^^
 
 .. toctree::
-   :numbered:
-   :maxdepth: 1
+   :maxdepth: 2
    :name: chapterstoc
 
    chapters/introduction/index
@@ -71,4 +70,3 @@ Appendices
    :hidden:
 
    todos
-   index-full
