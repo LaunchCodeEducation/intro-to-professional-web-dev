@@ -4,11 +4,11 @@ Studio: More Functions
 Sort Numbers For Real
 ----------------------
 
-Recall that using the ``sort`` method on an array of numbers produced an
-unexpected result, since JavaScript converts the numbers to strings by default
-(TODO - add reference to the ``sort`` example page).  Let's fix this!
+Recall that using the ``sort`` method on an array of numbers
+:ref:`produced an unexpected result <sort-examples>`, since JavaScript converts
+the numbers to strings by default.  Let's fix this!
 
-3. Create a function with an array of numbers as its parameter. The function
+1. Create a function with an array of numbers as its parameter. The function
    should iterate through the array and return the minimum value from the
    array. *Hint*: Use what you know about ``if`` statements to identify and
    store the smallest value within the array.
@@ -21,7 +21,9 @@ unexpected result, since JavaScript converts the numbers to strings by default
       [ -2, 0, -10, -44, 5, 3, 0, 3 ]
       [ 200, 5, 4, 10, 8, 5, -3.3, 4.4, 0 ]
 
-4. Create another function with an array of numbers as its parameter.  Within
+   `Code studio part 1 here <https://repl.it/@launchcode/MoreFuncsStudio01>`__.
+
+2. Create another function with an array of numbers as its parameter.  Within
    this function:
 
    a. Define a new, empty array to hold the final sorted numbers.
@@ -31,25 +33,39 @@ unexpected result, since JavaScript converts the numbers to strings by default
       the old array.
    d. Repeat parts b & c until the old array is empty.
    e. Return the new sorted array.
+   f. *Be sure to print the results in order to verify your code*.
+   g. `Code studio part 2 here <https://repl.it/@launchcode/MoreFuncsStudio02>`__.
 
-*Hint*: Either a ``for`` or ``while`` loop will work inside this function, but
-there IS a better choice.  Consider the task the function must accomplish as
-well as the characteristics of each type of loop. Which one best serves if the
-array has an unknown length?
+.. tip:: *Which type of loop?*
 
-*Be sure to print the results in order to verify your code*.
-
-[TODO: Add repl.it link.]
+   Either a ``for`` or ``while`` loop will work inside this function, but one
+   IS a better choice. Consider what the function must accomplish vs. the
+   behavior of each type of loop. Which one best serves if the array has an
+   unknown length?
 
 More on Sorting Numbers
 ------------------------
 
-The sorting approach used above is not the only way of accomplishing the task,
-nor is it the best. Details on why can be found **here** (TODO: link to
-appendix). Feel free to look up "bubble sort" to explore a different way to
-order numbers in an array.
+The sorting approach used above is an example of a *selection sort*. The
+function repeatedly checks an array for the minimum value, then places that
+value into a new container.
+
+Selection sorting is NOT the most efficient way to accomplish the task, since
+it requires the function to pass through the array once for each item within
+the array. This takes way too much time for large arrays.
 
 Fortunately, JavaScript has an elegant way to properly sort numbers.
+
+.. tip::
+
+   Here is a nice, visual comparison of `different sorting methods <https://www.toptal.com/developers/sorting-algorithms>`__.
+
+   Feel free to Google "bubble sort JavaScript" to explore a different way to
+   order numbers in an array.
+
+
+Number Sorting With JavaScript
+-------------------------------
 
 If you Google "JavaScript sort array of numbers" (or something similar), many
 options appear, and they all give pretty much the same result. The sites just
@@ -64,6 +80,13 @@ End result - the JavaScript syntax for numerical sorting is
 
    You do NOT need to understand HOW the sorting function works. You just need to
    be able to use it.
+
+3. Using the sytax listed above:
+
+   a. Sort each sample array in increasing order.
+   b. Sort each sample array in decreasing order.
+   c. Does the function alter ``arrayName``?
+   d. `Code studio part 3 here <https://repl.it/@launchcode/MoreFuncsStudio03>`__.
 
 So Why Write A Sorting Function?
 ---------------------------------

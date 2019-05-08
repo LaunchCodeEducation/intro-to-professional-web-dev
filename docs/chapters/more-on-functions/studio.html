@@ -83,10 +83,10 @@
 <h1>11.10. Studio: More Functions<a class="headerlink" href="#studio-more-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sort-numbers-for-real">
 <h2>11.10.1. Sort Numbers For Real<a class="headerlink" href="#sort-numbers-for-real" title="Permalink to this headline">¶</a></h2>
-<p>Recall that using the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on an array of numbers produced an
-unexpected result, since JavaScript converts the numbers to strings by default
-(TODO - add reference to the <code class="docutils literal notranslate"><span class="pre">sort</span></code> example page).  Let’s fix this!</p>
-<ol class="arabic simple" start="3">
+<p>Recall that using the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on an array of numbers
+<a class="reference internal" href="../../appendices/array-method-examples/sort-examples.html#sort-examples"><span class="std std-ref">produced an unexpected result</span></a>, since JavaScript converts
+the numbers to strings by default.  Let’s fix this!</p>
+<ol class="arabic simple">
 <li>Create a function with an array of numbers as its parameter. The function
 should iterate through the array and return the minimum value from the
 array. <em>Hint</em>: Use what you know about <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to identify and
@@ -94,13 +94,14 @@ store the smallest value within the array.</li>
 </ol>
 <div class="admonition-sample-arrays-for-testing admonition">
 <p class="first admonition-title">Sample arrays for testing</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span> <span class="p">]</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span> <span class="p">]</span>
 <span class="p">[</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">44</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
 <span class="p">[</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
 </pre></div>
 </div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio01">Code studio part 1 here</a>.</p>
 </div>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="2">
 <li>Create another function with an array of numbers as its parameter.  Within
 this function:<ol class="loweralpha">
 <li>Define a new, empty array to hold the final sorted numbers.</li>
@@ -110,23 +111,38 @@ the old array.</li>
 the old array.</li>
 <li>Repeat parts b &amp; c until the old array is empty.</li>
 <li>Return the new sorted array.</li>
+<li><em>Be sure to print the results in order to verify your code</em>.</li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio02">Code studio part 2 here</a>.</li>
 </ol>
 </li>
 </ol>
-<p><em>Hint</em>: Either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will work inside this function, but
-there IS a better choice.  Consider the task the function must accomplish as
-well as the characteristics of each type of loop. Which one best serves if the
-array has an unknown length?</p>
-<p><em>Be sure to print the results in order to verify your code</em>.</p>
-<p>[TODO: Add repl.it link.]</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p><em>Which type of loop?</em></p>
+<p class="last">Either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will work inside this function, but one
+IS a better choice. Consider what the function must accomplish vs. the
+behavior of each type of loop. Which one best serves if the array has an
+unknown length?</p>
+</div>
 </div>
 <div class="section" id="more-on-sorting-numbers">
 <h2>11.10.2. More on Sorting Numbers<a class="headerlink" href="#more-on-sorting-numbers" title="Permalink to this headline">¶</a></h2>
-<p>The sorting approach used above is not the only way of accomplishing the task,
-nor is it the best. Details on why can be found <strong>here</strong> (TODO: link to
-appendix). Feel free to look up “bubble sort” to explore a different way to
-order numbers in an array.</p>
+<p>The sorting approach used above is an example of a <em>selection sort</em>. The
+function repeatedly checks an array for the minimum value, then places that
+value into a new container.</p>
+<p>Selection sorting is NOT the most efficient way to accomplish the task, since
+it requires the function to pass through the array once for each item within
+the array. This takes way too much time for large arrays.</p>
 <p>Fortunately, JavaScript has an elegant way to properly sort numbers.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Here is a nice, visual comparison of <a class="reference external" href="https://www.toptal.com/developers/sorting-algorithms">different sorting methods</a>.</p>
+<p class="last">Feel free to Google “bubble sort JavaScript” to explore a different way to
+order numbers in an array.</p>
+</div>
+</div>
+<div class="section" id="number-sorting-with-javascript">
+<h2>11.10.3. Number Sorting With JavaScript<a class="headerlink" href="#number-sorting-with-javascript" title="Permalink to this headline">¶</a></h2>
 <p>If you Google “JavaScript sort array of numbers” (or something similar), many
 options appear, and they all give pretty much the same result. The sites just
 differ in how much detail they provide when explaining the solution.</p>
@@ -138,9 +154,18 @@ differ in how much detail they provide when explaining the solution.</p>
 <p class="last">You do NOT need to understand HOW the sorting function works. You just need to
 be able to use it.</p>
 </div>
+<ol class="arabic simple" start="3">
+<li>Using the sytax listed above:<ol class="loweralpha">
+<li>Sort each sample array in increasing order.</li>
+<li>Sort each sample array in decreasing order.</li>
+<li>Does the function alter <code class="docutils literal notranslate"><span class="pre">arrayName</span></code>?</li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio03">Code studio part 3 here</a>.</li>
+</ol>
+</li>
+</ol>
 </div>
 <div class="section" id="so-why-write-a-sorting-function">
-<h2>11.10.3. So Why Write A Sorting Function?<a class="headerlink" href="#so-why-write-a-sorting-function" title="Permalink to this headline">¶</a></h2>
+<h2>11.10.4. So Why Write A Sorting Function?<a class="headerlink" href="#so-why-write-a-sorting-function" title="Permalink to this headline">¶</a></h2>
 <p>Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
 sorting methods, so why did we ask you to build one?</p>
 <p>It’s kind of a programming right of passage - design an efficient sorting
