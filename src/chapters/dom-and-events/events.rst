@@ -9,6 +9,10 @@ are code representations of interactions that need to be responded to.
 
    In programming, events are triggered and then handled.
 
+.. index::
+   single: event; handling
+   single: event; triggering
+
 Events in programming are sent and responded to. That can also be said as
 *Events in progarmming are triggered and handled*. **Triggering** an event is
 the act of causing an event to be sent. **Hanlding** an event is receiving the

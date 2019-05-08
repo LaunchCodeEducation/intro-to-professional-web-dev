@@ -3,9 +3,9 @@ More Events
 
 Using inline event handling is a good way to get started handling events. A second way
 to handle events uses the DOM objects and methods. Remember the DOM is an object representation
-of the entire web page. The DOM will allow us to use only JavaScript to configure
-our event handlers. The event handling declaration and code will no longer in the HTML
-element attirbue, but will intead be in a``<script>`` or external JavaScript file.
+of the entire web page. The DOM allows us to use only JavaScript to configure
+our event handlers. The event handling declaration will no longer be in the HTML
+element attirbue, but will instead be in a ``<script>`` or external JavaScript file.
 
 
 Add Event Handlers in JavaScript
@@ -45,14 +45,14 @@ going to use a *named function*.
          <p id="main-text" class="orange" style="font-weight: bold;">
             a bunch of really valuable text...
          </p>
-         <button id="ring-bell">Ring Bell</button>
+         <button id="ring-button">Ring Bell</button>
          <script>
             function youRang() {
                document.getElementById("main-text").innerHTML += "you rang...";
                console.log("you rang...");
             }
             // Obtain a reference to the button element
-            let button = document.getElementById("ring-bell");
+            let button = document.getElementById("ring-button");
             // Set named function youRang as the click event handler
             button.addEventListener("click", youRang);
          </script>
@@ -108,7 +108,7 @@ defines methods and properties related to events.
 
 ``event.type`` is a string name of the event. Example: ``"click"``.
 
-``event.target`` is an element object that was the target of the event. Example: 
+``event.target`` is an element object that was the target of the event. Example:
 A reference to the ``<button>`` element that was clicked.
 
 TODO: TRY IT asking student to try out the above code
@@ -116,8 +116,76 @@ TODO: TRY IT asking student to try out the above code
 
 Event Bubbling
 --------------
-Understand event bubbling and how to stop it
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture
+
+.. index:: ! bubbling
+   single: event; bubbling
+
+Remember that the DOM is a tree of elements with an ``<html>`` element at the root. The tree
+structure of an html page is made of elements inside of elements. That layering affect can cause
+some events, like *click*, to be triggered on a series of elements. **Bubbling**
+refers to an event being propogated to ancestor elements, when an event is triggered on an
+element that has parent elements. Events are triggered first on the element  that is most closely
+affected by the event.
+
+.. admonition:: Example
+
+   Add *click* handler to a ``<button>``, a ``<div>``, and the ``<html>`` element via the ``document``
+   global variable.
+
+   .. sourcecode:: html
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+         <title>Event Bubbling</title>
+         <style>
+            #toolbar {
+                padding: 20px;
+                border: 1px solid black;
+                background-color:darkcyan;
+            }
+        </style>
+      </head>
+      <body>
+         <div id="toolbar">
+            <button id="ring-button">Ring Bell</button>
+         </div>
+         <script>
+            let button = document.getElementById("ring-button");
+            button.addEventListener("click", function (event) {
+                console.log("button clicked");
+            });
+            document.getElementById("toolbar").addEventListener("click", function (event) {
+                console.log("toolbar clicked");
+            });
+            document.addEventListener("click", function (event) {
+                console.log("document clicked");
+            });
+         </script>
+      </body>
+      </html>
+
+   **Results** (if button is clicked)
+
+   ::
+
+      button clicked
+      toolbar clicked
+      document clicked
+
+TODO: TRY IT. what happens when you click in the green? what happens when you click the button?
+
+In rare cases you may want to stop events from bubbling up. Use ``event.stopPropagation()`` stop
+events from being sent to ancestor elements.
+
+TODO: TRY IT. add stopPropagation to the button click handler, then click button to see what happens.
+
+.. sourcecode:: js
+
+   button.addEventListener("click", function (event) {
+      console.log("button clicked");
+      event.stopPropagation();
+   });
 
 
 On Load
