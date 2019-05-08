@@ -81,7 +81,7 @@
     
   <div class="section" id="anonymous-functions">
 <h1>11.2. Anonymous Functions<a class="headerlink" href="#anonymous-functions" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">The syntax <a class="reference internal" href="../functions/creating-functions.html#function-syntax"><span class="std std-ref">initially introduced</span></a> for writing functions was this:</p>
+<p id="index-0">You already know <a class="reference internal" href="../functions/creating-functions.html#function-syntax"><span class="std std-ref">one method for creating a function</span></a>:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// function body</span>
@@ -89,8 +89,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>A function defined in this way is a <strong>named function</strong>, so-called because it has a name (<code class="docutils literal notranslate"><span class="pre">myFunction</span></code> in the example above).</p>
-<p>Many programming languages, including JavaScript, also us to create <strong>anonymous functions</strong>, which <em>do not</em> have names. We can create an anonymous function by leaving off the function name when defining it:</p>
+<p>A function defined in this way is a <strong>named function</strong>, so-called because it has a name (<code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, in the example above).</p>
+<p>Many programming languages, including JavaScript, allow us to create <strong>anonymous functions</strong>, which <em>do not</em> have names. We can create an anonymous function by simply leaving off the function name when defining it:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// function body</span>
@@ -121,14 +121,14 @@
 </pre></div>
 </div>
 </div>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">add</span></code> refers to the anonymous function created on lines 1 through 3. We call the function using the variable name, followed by parentheses and arguments.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">add</span></code> refers to the anonymous function created on lines 1 through 3. We call the function using the <em>variable</em> name, since the function doesn’t have a name.</p>
 <p>The visual analogy here is the same as that of a variable referring to a named function.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">insert anonymous function reference diagram</p>
+<div class="figure" id="id1">
+<img alt="The variable add on the left refers to an anonymous function on the right" src="../../_images/function-var-anonymous.png" />
+<p class="caption"><span class="caption-text">A variable that refers to an anonymous function.</span></p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
 <p class="last">Like other variable declarations, an assignment statement using an anonymous function should be terminated by a semi-colon, <code class="docutils literal notranslate"><span class="pre">;</span></code>. This is easy to overlook, since named functions do <em>not</em> end with a semi-colon.</p>
 </div>
 </div>
@@ -150,13 +150,17 @@
 <p class="first admonition-title">Question</p>
 <p>Consider the code sample below, which declares an anonymous function
 beginning on line 1.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">f1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">f1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span> <span class="o">+</span> <span class="nx">str</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kd">let</span> <span class="nx">f2</span> <span class="o">=</span> <span class="nx">f1</span><span class="p">;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Which of the following are valid ways of invoking the anonymous
 function with the argument <code class="docutils literal notranslate"><span class="pre">&quot;abcd&quot;</span></code>? (Choose all that apply.)</p>
 <ol class="last arabic simple">
@@ -171,7 +175,7 @@ doesn’t have a name.</li>
 <p class="first admonition-title">Question</p>
 <p>Complete the following code snippet so that it logs an error message
 if <code class="docutils literal notranslate"><span class="pre">userInput</span></code> is negative.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">logger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">errorMsg</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">logger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">errorMsg</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ERROR: &quot;</span> <span class="o">+</span> <span class="nx">errorMsg</span><span class="p">);</span>
 <span class="p">};</span>
 
@@ -180,6 +184,7 @@ if <code class="docutils literal notranslate"><span class="pre">userInput</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Check-Fill-in-the-Code">Finish the program at repl.it</a></p>
 </div>
 </div>
 </div>

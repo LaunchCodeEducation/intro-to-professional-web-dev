@@ -81,32 +81,33 @@
     
   <div class="section" id="why-use-anonymous-functions">
 <h1>11.4. Why Use Anonymous Functions?<a class="headerlink" href="#why-use-anonymous-functions" title="Permalink to this headline">¶</a></h1>
-<p>At this point, you may be asking yourself why you are learning anonymous functions. They seem strange at first, and their utility is not immediately obvious. While the opinions of programmers differ, we will discuss the two main reasons that <em>we</em> think anonymous functions are useful.</p>
+<p>At this point, you may be asking yourself why you are learning anonymous functions. They seem strange, and their utility may not be immediately obvious. While the opinions of programmers differ, we will discuss the two main reasons that <em>we</em> think anonymous functions are important to understand.</p>
 <div class="section" id="anonymous-functions-can-be-single-use">
 <h2>11.4.1. Anonymous Functions Can Be Single-Use<a class="headerlink" href="#anonymous-functions-can-be-single-use" title="Permalink to this headline">¶</a></h2>
 <p>There are many situations in which you will need to create a function that will only be used once. To see this, recall one of our earlier examples.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<p>Defining an anonymous function at the same time it is passed into another function prevents it from being used elsewhere in the program.</p>
+<p>The anonymous function created in this example cannot be used outside of <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code>.</p>
 <div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The future is now!&quot;</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<p>In programs that use lots of functions—such as web applications, as you will soon learn—defining them anonymously and directy within a function call can reduce the number of names you need to come up with in your program.</p>
+<p>Defining an anonymous function at the same time it is passed as an argument prevents it from being used elsewhere in the program.</p>
+<p>Additionally, in programs that use lots of functions—such as web applications, as you will soon learn—defining functions anonymously, and directy within a function call, can reduce the number of names you need to come up with.</p>
 </div>
 <div class="section" id="anonymous-functions-are-ubiquitous-in-javascript">
 <h2>11.4.2. Anonymous Functions Are Ubiquitous in JavaScript<a class="headerlink" href="#anonymous-functions-are-ubiquitous-in-javascript" title="Permalink to this headline">¶</a></h2>
-<p>Like it or not, JavaScript programmers use anonymous functions <em>a lot</em>. Many of them use anonymous functions with the same gusto that some people put ketchup or hot sauce on nearly everything they eat. For these programmers, just because an anonymous function isn’t need to solve a problem doesn’t mean that it <em>shouldn’t</em> be used to solve the problem.</p>
-<p>Any programming problem in JavaScript can be solved <em>without</em> using anonymous functions, so the extent to which you use them in your own code is somewhat a matter of taste. We will take the middle road throughout the rest of this course, regularly using both anonymous and named functions.</p>
+<p>JavaScript programmers use anonymous functions <em>a lot</em>. Many programmers use anonymous functions with the same gusto as that friend of yours that puts hot sauce on <em>everything</em>. For these programmers, just because an anonymous function isn’t need to solve a problem doesn’t mean that it <em>shouldn’t</em> be used to solve the problem. Avoiding code that uses anonymous functions is impossible, since they are used so widely by so many JavaScript developers.</p>
+<p>Any programming problem in JavaScript can be solved <em>without</em> using anonymous functions. Thus, the extent to which you use them in your own code is somewhat a matter of taste. We will take the middle road throughout the rest of this course, regularly using both anonymous and named functions.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>11.4.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p class="last">Explain the difference between named and anonymous functions,
-including an example of how an anonymous function might be used.</p>
+including an example of how an anonymous function can be used.</p>
 </div>
 </div>
 </div>
