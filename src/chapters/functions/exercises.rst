@@ -11,18 +11,17 @@ Fun Functions
    b. Return only the last character from strings with lengths of 3 or less.
    c. Return only the first 3 characters from strings with lengths larger than
       3.
-
-`Code it here <https://repl.it/@launchcode/FunctionsExercises01>`__
+   d. `Build your first function here <https://repl.it/@launchcode/FunctionsExercises01>`__.
 
 |
 
 1. (Continued) Now test your function:
 
-   d. Outside of the function, define the variable ``str`` and initialize it with
+   e. Outside of the function, define the variable ``str`` and initialize it with
       a string (e.g. ``'Functions rock!'``).
-   e. Define a second variable and initialize it with
+   f. Define a second variable and initialize it with
       ``someNameThatIChose = myFunctionName(str);``.
-   f. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
+   g. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
       with the values from ``someNameThatIChose`` and ``str``.
 
 |
@@ -37,14 +36,13 @@ Fun Functions
    d. Use a template literal to print, "The area is ____ cm^2."
    e. *Optional*: If only one argument is passed to the function, then the shape is
       a square. Modify your code to deal with this case.
+   f. `Code the area function here <https://repl.it/@launchcode/FunctionsExercises02>`__.
 
 .. admonition:: Test Cases and (Answers)
 
    | length = 2, width = 4 (area = 8)
    | length = 14, width = 7 (area = 98)
    | length = 20 (area = 400)
-
-`Code it here <https://repl.it/@launchcode/FunctionsExercises02>`__
 
 Complete Reversal
 ------------------
