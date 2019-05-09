@@ -14,3 +14,4 @@ Functions
    composing-functions
    why-create-functions
    exercises
+   studio
