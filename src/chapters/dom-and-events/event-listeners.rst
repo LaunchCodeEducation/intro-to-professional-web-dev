@@ -3,9 +3,9 @@ Event Listeners
 
 Using inline event handling is a good way to get started handling events. A second way
 to handle events uses the DOM objects and methods. Remember the DOM is an object representation
-of the entire web page. The DOM allows us to use only JavaScript to configure
+of the entire web page. The DOM allows us to use JavaScript to configure
 our event handlers. The event handling declaration will no longer be in the HTML
-element attribute, but will instead be in a ``<script>`` or external JavaScript file.
+element attribute, but will instead be inside ``<script>`` tags or in an external JavaScript file.
 
 
 Add Event Handlers in JavaScript
@@ -19,22 +19,23 @@ listener refers to the code *listening* for the event to occur. If the code *hea
 then the event is handled.
 
 ``addEventListener`` is used to add an event handler, aka *listener*. ``addEventListener``
-is a method available on instances of Window, Document, and Element.
+is a method available on instances of ``Window``, ``Document``, and ``Element`` classes.
 
 .. sourcecode:: js
 
    anElement.addEventListener("eventName", aFunction);
 
-``anElement`` is reference to a DOM element object. ``"eventName"`` is the name of an event that
-the variable ``anElement`` supports. ``aFunction`` is a reference to a function. To start we are
+``anElement`` is a reference to a DOM element object. ``"eventName"`` is the name of an event that
+the variable ``anElement`` supports. ``aFunction`` is a reference to a function. To start, we are
 going to use a *named function*.
 
 .. admonition:: Example
 
-   Set the named function ``youRang`` as the *click* handler for the ``<button>``. Notice that
+   We want to set the named function ``youRang`` as the *click* handler for the ``<button>``. Notice that
    the value passed in as the event name is ``"click"`` instead of ``"onclick"``.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
       <html>
@@ -80,7 +81,7 @@ going to use a *named function*.
    **jQuery** is a JavaScript library designed to simplify working with the DOM. jQuery's popularity
    has declined as the DOM itself has gained features and improved usablity.
 
-The second parameter of ``addEventListener`` is a function. Remember there many ways to declare a
+The second parameter of ``addEventListener`` is a function. Remember there are many ways to declare a
 function in JavaScript. So far we have passed in named functions as the event handler.
 ``addEventListener`` will accept any valid function as the event handler. It's possible and
 quite common to pass in an *anonymous function* as the event handler.
@@ -106,10 +107,9 @@ defines methods and properties related to events.
       console.log("event target", event.target);
    });
 
-``event.type`` is a string name of the event. Example: ``"click"``.
+``event.type`` is a string name of the event.
 
-``event.target`` is an element object that was the target of the event. Example:
-A reference to the ``<button>`` element that was clicked.
+``event.target`` is an element object that was the target of the event.
 
 TODO: TRY IT asking student to try out the above code
 
@@ -121,18 +121,19 @@ Event Bubbling
    single: event; bubbling
 
 Remember that the DOM is a tree of elements with an ``<html>`` element at the root. The tree
-structure of an html page is made of elements inside of elements. That layering affect can cause
+structure of an html page is made of elements inside of elements. That layering effect can cause
 some events, like *click*, to be triggered on a series of elements. **Bubbling**
 refers to an event being propagated to ancestor elements, when an event is triggered on an
-element that has parent elements. Events are triggered first on the element  that is most closely
+element that has parent elements. Events are triggered first on the element that is most closely
 affected by the event.
 
 .. admonition:: Example
 
-   Add *click* handler to a ``<button>``, a ``<div>``, and the ``<html>`` element via the ``document``
+   We can add a *click* handler to a ``<button>``, a ``<div>``, and the ``<html>`` element via the ``document``
    global variable.
 
    .. sourcecode:: html
+      :linenos: 
 
       <!DOCTYPE html>
       <html>
@@ -175,7 +176,7 @@ affected by the event.
 
 TODO: TRY IT. what happens when you click in the green? what happens when you click the button?
 
-In rare cases you may want to stop events from bubbling up. Use ``event.stopPropagation()`` stop
+In rare cases, you may want to stop events from bubbling up. We can use ``event.stopPropagation()`` to stop
 events from being sent to ancestor elements. Handlers for parent elements will not be triggered if
 a child element calls ``event.stopPropagation()``.
 
