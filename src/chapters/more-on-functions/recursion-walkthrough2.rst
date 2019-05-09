@@ -35,7 +35,7 @@ To help visualize what's going on, let's start with the base case ``['L']``:
 Nothing complicated here.  ``combineEntries`` sees only one item in the array,
 so it returns ``'L'``.
 
-Now consider an array with two elements ``['L', 'C']``:
+Now consider an array with two elements, ``['L', 'C']``:
 
 .. figure:: figures/second-case-recursion.png
    :alt: Visual representation for the second-easiest case.
@@ -92,9 +92,9 @@ b. Call ``combineEntries`` again with a smaller array.
 
 Bracket notation takes care of part a: ``arrayName[0]``.
 
-| For part b, remember that the :ref:`slice method <slice-examples>` returns
-   selected entries from an array. To return everything BUT the first entry in
-| ``arr = ['L', 'C', '1', '0', '1']``, use ``arr.slice(1)``.
+For part b, remember that the :ref:`slice method <slice-examples>` returns
+selected entries from an array. To return everything BUT the first entry in
+``arr = ['L', 'C', '1', '0', '1']``, use ``arr.slice(1)``.
 
 Let's add the bracket notation and the ``slice`` method to our function:
 

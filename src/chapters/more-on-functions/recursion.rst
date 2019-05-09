@@ -57,8 +57,8 @@ complicated tasks, one small function must call other functions.
 Of course, there is no need to write a function to add 5 to a value, but the
 example demonstrates calling a function from within another function.
 
-What is 'Recursion'?
----------------------
+What Is Recursion?
+-------------------
 
 .. index:: ! recursion
 
@@ -82,6 +82,17 @@ calls *itself* over and over again until the larger problem is solved.
    a. Split a big problem into small, identical pieces.
    b. Build a single function to solve those pieces.
    c. The function repeatedly calls itself until all the pieces are solved.
+
+Many new programmers (and even veteran ones) find recursion an abstract and
+tricky concept. One helpful way to approach the idea is to walk through an
+example.
+
+Recursion in a Nutshell
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+a. Split a big problem into small, identical pieces.
+b. Build a single function to solve those pieces.
+c. The function repeatedly calls itself until all the pieces are solved.
 
 Many new programmers (and even veteran ones) find recursion an abstract and
 tricky concept. One helpful way to approach the idea is to walk through an

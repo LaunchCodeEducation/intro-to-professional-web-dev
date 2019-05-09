@@ -107,7 +107,7 @@ again and repeats the process with a smaller set of entries.</p>
 </div>
 <p>Nothing complicated here.  <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> sees only one item in the array,
 so it returns <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
-<p>Now consider an array with two elements <code class="docutils literal notranslate"><span class="pre">['L',</span> <span class="pre">'C']</span></code>:</p>
+<p>Now consider an array with two elements, <code class="docutils literal notranslate"><span class="pre">['L',</span> <span class="pre">'C']</span></code>:</p>
 <div class="figure">
 <img alt="Visual representation for the second-easiest case." src="../../_images/second-case-recursion.png" />
 </div>
@@ -161,11 +161,9 @@ needs to happen each time the statement runs:</p>
 <li>Call <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> again with a smaller array.</li>
 </ol>
 <p>Bracket notation takes care of part a: <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span></code>.</p>
-<div class="line-block">
-<div class="line">For part b, remember that the <a class="reference internal" href="../../appendices/array-method-examples/slice-examples.html#slice-examples"><span class="std std-ref">slice method</span></a> returns
-selected entries from an array. To return everything BUT the first entry in</div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>, use <code class="docutils literal notranslate"><span class="pre">arr.slice(1)</span></code>.</div>
-</div>
+<p>For part b, remember that the <a class="reference internal" href="../../appendices/array-method-examples/slice-examples.html#slice-examples"><span class="std std-ref">slice method</span></a> returns
+selected entries from an array. To return everything BUT the first entry in
+<code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>, use <code class="docutils literal notranslate"><span class="pre">arr.slice(1)</span></code>.</p>
 <p>Let’s add the bracket notation and the <code class="docutils literal notranslate"><span class="pre">slice</span></code> method to our function:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
    <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">){</span>

@@ -82,8 +82,8 @@
   <div class="section" id="recursion-walkthrough-the-base-case">
 <h1>11.6. Recursion Walkthrough: The Base Case<a class="headerlink" href="#recursion-walkthrough-the-base-case" title="Permalink to this headline">¶</a></h1>
 <p>To ease into the concept of recursion, let’s start with a loop task.</p>
-<p>In the Arrays chapter, we examined  the <code class="docutils literal notranslate"><span class="pre">join</span></code> method, which combines the
-elements of an array into a single string. If we have
+<p>In the Arrays chapter, we examined  the <a class="reference internal" href="../../appendices/array-method-examples/join-examples.html#join-examples"><span class="std std-ref">join method</span></a>,
+which combines the elements of an array into a single string. If we have
 <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>, then <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code> returns the string
 <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code>.</p>
 <p>We can reproduce this action with either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
@@ -138,7 +138,7 @@ elements of an array into a single string. If we have
 </tr>
 </tbody>
 </table>
-<p>Inside each loop, the code simply adds two strings together - whatever is
+<p>Inside each loop, the code simply adds two strings together—whatever is
 stored in <code class="docutils literal notranslate"><span class="pre">newString</span></code> plus one element from the array. In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
 the element is the next item in the sequence of entries.  In the <code class="docutils literal notranslate"><span class="pre">while</span></code>
 loop, the element is always the first entry from whatever remains in the array.</p>
@@ -155,7 +155,7 @@ and the next entry in the array.</p>
 <p>Third, build a function to accomplish the small steps: Let’s call the function
 <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code>, and we will set an array as the parameter.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
-   <span class="c1">//some code here</span>
+   <span class="c1">//TODO: Add code here</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -179,10 +179,9 @@ represents the simplest possible task for our function.</p>
 <p>We check for the base case like this:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
    <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
-      <span class="c1">//solve last step</span>
+      <span class="c1">//solve last small step</span>
       <span class="c1">//end recursion</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//solve next small step</span>
       <span class="c1">//call combineEntries again</span>
    <span class="p">}</span>
 <span class="p">}</span>
@@ -206,8 +205,12 @@ just needs to return <code class="docutils literal notranslate"><span class="pre
 process. If it is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the single entry gets returned, and the function
 stops. Otherwise, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> gets called again.</p>
 </div>
+<div class="section" id="the-case-for-the-base">
+<h2>11.6.4. The Case for the Base<a class="headerlink" href="#the-case-for-the-base" title="Permalink to this headline">¶</a></h2>
+<p>Ugh, ugh.  Infinite loops bad. Base case stop. Good.</p>
+</div>
 <div class="section" id="check-your-understanding">
-<h2>11.6.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>11.6.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p>We can use recursion to remove all of the ‘i’ entries from the array
@@ -232,12 +235,12 @@ test the options in the repl.it to check your thinking.</p>
 <li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></li>
 </ol>
-<p class="last">Try it <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01">here</a>.</p>
+<p class="last">Try it at this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01">repl.it</a>.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p>The <strong>factorial</strong> of a number (n!) is the product of a positive, whole number and
-all the integers below it.</p>
+all the positive integers below it.</p>
 <p>For example, four factorial is 4! = 4*3*2*1 = 24, and 5! = 5*4*3*2*1 =
 120.</p>
 <p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">factorial</span></code> function.</p>
@@ -246,7 +249,6 @@ all the integers below it.</p>
       <span class="c1">//solve last step</span>
       <span class="c1">//end recursion</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//complete next small step</span>
       <span class="c1">//call factorial function again</span>
    <span class="p">}</span>
 <span class="p">};</span>
@@ -259,7 +261,7 @@ all the integers below it.</p>
 <li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
 </ol>
-<p class="last">Try it <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">here</a>.</p>
+<p class="last">Try it at this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">repl.it</a>.</p>
 </div>
 </div>
 </div>

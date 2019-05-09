@@ -3,8 +3,8 @@ Recursion Walkthrough: The Base Case
 
 To ease into the concept of recursion, let's start with a loop task.
 
-In the Arrays chapter, we examined  the ``join`` method, which combines the
-elements of an array into a single string. If we have
+In the Arrays chapter, we examined  the :ref:`join method <join-examples>`,
+which combines the elements of an array into a single string. If we have
 ``arr = ['L', 'C', '1', '0', '1']``, then ``arr.join('')`` returns the string
 ``'LC101'``.
 
@@ -59,7 +59,7 @@ Examine the code samples below:
          'LC101'
          [ ]
 
-Inside each loop, the code simply adds two strings together - whatever is
+Inside each loop, the code simply adds two strings together---whatever is
 stored in ``newString`` plus one element from the array. In the ``for`` loop,
 the element is the next item in the sequence of entries.  In the ``while``
 loop, the element is always the first entry from whatever remains in the array.
@@ -83,7 +83,7 @@ Third, build a function to accomplish the small steps: Let's call the function
 .. sourcecode:: js
 
    function combineEntries(arrayName){
-      //some code here
+      //TODO: Add code here
    }
 
 We want ``combineEntries`` to repeat over and over again until the task is
@@ -114,10 +114,9 @@ We check for the base case like this:
 
    function combineEntries(arrayName){
       if (baseCase is true){
-         //solve last step
+         //solve last small step
          //end recursion
       } else {
-         //solve next small step
          //call combineEntries again
       }
    }
@@ -142,6 +141,11 @@ Let's update ``combineEntries`` to check if the array contains only one item.
 ``arrayName.length === 1`` sets up the condition for ending the recursion
 process. If it is ``true``, the single entry gets returned, and the function
 stops. Otherwise, ``combineEntries`` gets called again.
+
+The Case for the Base
+----------------------
+
+Ugh, ugh.  Infinite loops bad. Base case stop. Good.
 
 Check Your Understanding
 -------------------------
@@ -173,12 +177,12 @@ Check Your Understanding
    #. ``arr.indexOf('i')===-1``
    #. ``arr.indexOf('i') !== -1``
 
-   Try it `here <https://repl.it/@launchcode/BaseCaseCC01>`__.
+   Try it at this `repl.it <https://repl.it/@launchcode/BaseCaseCC01>`__.
 
 .. admonition:: Question
 
    The **factorial** of a number (n!) is the product of a positive, whole number and
-   all the integers below it.
+   all the positive integers below it.
 
    For example, four factorial is 4! = 4\*3\*2\*1 = 24, and 5! = 5\*4\*3\*2\*1 =
    120.
@@ -192,7 +196,6 @@ Check Your Understanding
             //solve last step
             //end recursion
          } else {
-            //complete next small step
             //call factorial function again
          }
       };
@@ -204,4 +207,4 @@ Check Your Understanding
    #. ``integer === 0``
    #. ``integer < 0``
 
-   Try it `here <https://repl.it/@launchcode/BaseCaseCC02>`__.
+   Try it at this `repl.it <https://repl.it/@launchcode/BaseCaseCC02>`__.
