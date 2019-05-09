@@ -12,7 +12,6 @@ We've made it this far with ``combineEntries``:
       if (arrayName.length === 1){
          return arrayName[0];
       } else {
-         //solve next small step
          //call combineEntries again
       }
    }
@@ -22,12 +21,8 @@ Now we are ready to take the next step.
 A Visual Representation
 ------------------------
 
-For arrays with more than one entry, we need to make ``combineEntries``
-consider the first element and then *check what is left in the array*. If the
-rest of the array contains more than one item, ``combineEntries`` calls iteslf
-again and repeats the process with a smaller set of entries.
-
-To help visualize what's going on, let's start with the base case ``['L']``:
+To help visualize what happens during recursion, let's start with the base case
+``['L']``:
 
 .. figure:: figures/base-case-recursion.png
    :alt: Visual representation for the base case.
@@ -81,6 +76,11 @@ adding new characters to the front:
 | ``'C101'``
 | ``'LC101'``
 
+Recursive processes all follow this approach. Each call to the function reduces
+a problem into a slighly smaller piece. The reduction continues until reaching
+the simplest possible form---the base case. The base case is then solved, and
+this creates a starting point for completing all of the previous steps.
+
 A Function Calls Itself
 ------------------------
 
@@ -110,7 +110,7 @@ Let's add the bracket notation and the ``slice`` method to our function:
 
 Each time the ``else`` statement runs, it extracts the first element in the
 array with ``arrayName[0]``, then it calls itself with the remaining array
-elements (``arrayName.slice(1)``). For ``combineElements(['L', 'C', '1', '0', '1']);``:
+elements (``arrayName.slice(1)``). For ``combineEntries(['L', 'C', '1', '0', '1']);``:
 
 | a. First call: Combine ``'L'`` with ``combineEntries(['C', '1', '0', '1'])``.
 | b. Second call: Combine ``'C'``, with ``combineEntries(['1', '0', '1'])``.
@@ -125,7 +125,7 @@ elements (``arrayName.slice(1)``). For ``combineElements(['L', 'C', '1', '0', '1
 | b. Return ``'C101'`` to the first call,
 | a. Return ``'LC101`` as the final result.
 
-See recursion in action `here <https://repl.it/@launchcode/RecursionExample01>`__.
+`See this recursion in action <https://repl.it/@launchcode/RecursionExample01>`__.
 
 Check Your Understanding
 -------------------------

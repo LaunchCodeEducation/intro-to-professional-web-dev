@@ -113,8 +113,8 @@ which combines the elements of an array into a single string. If we have
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;LC101&#39;</span>
-<span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]</span>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
+[&#39;L&#39;, &#39;C&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;]
 </pre></div>
 </div>
 </td>
@@ -130,8 +130,8 @@ which combines the elements of an array into a single string. If we have
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;LC101&#39;</span>
-<span class="p">[</span> <span class="p">]</span>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
+[ ]
 </pre></div>
 </div>
 </td>
@@ -195,7 +195,6 @@ just needs to return <code class="docutils literal notranslate"><span class="pre
    <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">){</span>
       <span class="k">return</span> <span class="nx">arrayName</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//solve next small step</span>
       <span class="c1">//call combineEntries again</span>
    <span class="p">}</span>
 <span class="p">}</span>
@@ -207,7 +206,17 @@ stops. Otherwise, <code class="docutils literal notranslate"><span class="pre">c
 </div>
 <div class="section" id="the-case-for-the-base">
 <h2>11.6.4. The Case for the Base<a class="headerlink" href="#the-case-for-the-base" title="Permalink to this headline">¶</a></h2>
-<p>Ugh, ugh.  Infinite loops bad. Base case stop. Good.</p>
+<p>What if we accidentally typed <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">===</span> <span class="pre">2</span></code> as the condition for
+ending the recursion? If so, it evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> for the array
+<code class="docutils literal notranslate"><span class="pre">['0',</span> <span class="pre">'1']</span></code>, and the function returns <code class="docutils literal notranslate"><span class="pre">'0'</span></code>. However, this leaves the
+element <code class="docutils literal notranslate"><span class="pre">'1'</span></code> in the array instead of adding it to the string. By mistyping
+the condition, we ended the recursion process too soon.</p>
+<p>Similarly, if we used <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span> <span class="pre">===</span> <span class="pre">'Rutabaga'</span></code> as the condition, then
+any array that does NOT contain the string <code class="docutils literal notranslate"><span class="pre">'Rutabaga'</span></code> would never match the
+base case. In situations where the base case cannot be reached, the recusion
+process either throws an error, or it continues without end—an infinite loop.</p>
+<p>Correctly identifying and checking for the base case is <em>critical</em> to building
+a working recursive process.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>11.6.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
@@ -235,7 +244,7 @@ test the options in the repl.it to check your thinking.</p>
 <li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></li>
 </ol>
-<p class="last">Try it at this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01">repl.it</a>.</p>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01">repl.it</a>.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
@@ -261,7 +270,7 @@ all the positive integers below it.</p>
 <li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
 </ol>
-<p class="last">Try it at this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">repl.it</a>.</p>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">repl.it</a>.</p>
 </div>
 </div>
 </div>

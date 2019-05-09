@@ -20,6 +20,17 @@ Drawbacks of Recursion:
 a. More abstract than using loops,
 b. Code is "more readable" only if the reader understands recursion.
 
+Recursion in a Nutshell
+------------------------
+
+a. Build a single function to break a big problem into a slightly smaller version of
+   the *exact same problem*.
+b. The function repeatedly calls itself to reduce the problem into smaller and
+   smaller pieces.
+c. Eventually, the function reaches a simplest case (the *base*), which it
+   solves.
+d. Solving the base case sets up the solutions to all of the previous steps.
+
 Why Do I Need To Know Recursion?
 ---------------------------------
 
@@ -45,9 +56,6 @@ Since their future jobs might not require it, why do teens need to learn how to
 solve quadratics? Because at some point in time they will have to do it again
 (if only to shock their kids), and they need to be ready when that happens.
 
-The same is true for recursion.  Learn it.  Love it.  Use it.
+The same is true for recursion.
 
-Check Your Understanding
--------------------------
-
-Coming soon...
+   Learn it.  Love it.  Use it.

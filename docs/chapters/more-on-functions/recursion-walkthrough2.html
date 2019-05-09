@@ -88,7 +88,6 @@ building a recursive function.</p>
    <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">){</span>
       <span class="k">return</span> <span class="nx">arrayName</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//solve next small step</span>
       <span class="c1">//call combineEntries again</span>
    <span class="p">}</span>
 <span class="p">}</span>
@@ -97,11 +96,8 @@ building a recursive function.</p>
 <p>Now we are ready to take the next step.</p>
 <div class="section" id="a-visual-representation">
 <h2>11.7.1. A Visual Representation<a class="headerlink" href="#a-visual-representation" title="Permalink to this headline">¶</a></h2>
-<p>For arrays with more than one entry, we need to make <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code>
-consider the first element and then <em>check what is left in the array</em>. If the
-rest of the array contains more than one item, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> calls iteslf
-again and repeats the process with a smaller set of entries.</p>
-<p>To help visualize what’s going on, let’s start with the base case <code class="docutils literal notranslate"><span class="pre">['L']</span></code>:</p>
+<p>To help visualize what happens during recursion, let’s start with the base case
+<code class="docutils literal notranslate"><span class="pre">['L']</span></code>:</p>
 <div class="figure">
 <img alt="Visual representation for the base case." src="../../_images/base-case-recursion.png" />
 </div>
@@ -151,6 +147,10 @@ adding new characters to the front:</p>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">'C101'</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></div>
 </div>
+<p>Recursive processes all follow this approach. Each call to the function reduces
+a problem into a slighly smaller piece. The reduction continues until reaching
+the simplest possible form—the base case. The base case is then solved, and
+this creates a starting point for completing all of the previous steps.</p>
 </div>
 <div class="section" id="a-function-calls-itself">
 <h2>11.7.2. A Function Calls Itself<a class="headerlink" href="#a-function-calls-itself" title="Permalink to this headline">¶</a></h2>
@@ -176,7 +176,7 @@ selected entries from an array. To return everything BUT the first entry in
 </div>
 <p>Each time the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement runs, it extracts the first element in the
 array with <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span></code>, then it calls itself with the remaining array
-elements (<code class="docutils literal notranslate"><span class="pre">arrayName.slice(1)</span></code>). For <code class="docutils literal notranslate"><span class="pre">combineElements(['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']);</span></code>:</p>
+elements (<code class="docutils literal notranslate"><span class="pre">arrayName.slice(1)</span></code>). For <code class="docutils literal notranslate"><span class="pre">combineEntries(['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']);</span></code>:</p>
 <div class="line-block">
 <div class="line">a. First call: Combine <code class="docutils literal notranslate"><span class="pre">'L'</span></code> with <code class="docutils literal notranslate"><span class="pre">combineEntries(['C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</div>
 <div class="line">b. Second call: Combine <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</div>
@@ -192,7 +192,7 @@ elements (<code class="docutils literal notranslate"><span class="pre">arrayName
 <div class="line">b. Return <code class="docutils literal notranslate"><span class="pre">'C101'</span></code> to the first call,</div>
 <div class="line">a. Return <code class="docutils literal notranslate"><span class="pre">'LC101</span></code> as the final result.</div>
 </div>
-<p>See recursion in action <a class="reference external" href="https://repl.it/&#64;launchcode/RecursionExample01">here</a>.</p>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/RecursionExample01">See this recursion in action</a>.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>11.7.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>

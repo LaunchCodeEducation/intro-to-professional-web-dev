@@ -35,7 +35,7 @@ Examine the code samples below:
 
        **Output**
 
-       .. sourcecode:: js
+       ::
 
          'LC101'
          ['L', 'C', '1', '0', '1']
@@ -54,7 +54,7 @@ Examine the code samples below:
 
        **Output**
 
-       .. sourcecode:: js
+       ::
 
          'LC101'
          [ ]
@@ -133,7 +133,6 @@ Let's update ``combineEntries`` to check if the array contains only one item.
       if (arrayName.length === 1){
          return arrayName[0];
       } else {
-         //solve next small step
          //call combineEntries again
       }
    }
@@ -145,7 +144,19 @@ stops. Otherwise, ``combineEntries`` gets called again.
 The Case for the Base
 ----------------------
 
-Ugh, ugh.  Infinite loops bad. Base case stop. Good.
+What if we accidentally typed ``arrayName.length === 2`` as the condition for
+ending the recursion? If so, it evaluates to ``true`` for the array
+``['0', '1']``, and the function returns ``'0'``. However, this leaves the
+element ``'1'`` in the array instead of adding it to the string. By mistyping
+the condition, we ended the recursion process too soon.
+
+Similarly, if we used ``arrayName[0] === 'Rutabaga'`` as the condition, then
+any array that does NOT contain the string ``'Rutabaga'`` would never match the
+base case. In situations where the base case cannot be reached, the recusion
+process either throws an error, or it continues without end---an infinite loop.
+
+Correctly identifying and checking for the base case is *critical* to building
+a working recursive process.
 
 Check Your Understanding
 -------------------------
@@ -177,7 +188,7 @@ Check Your Understanding
    #. ``arr.indexOf('i')===-1``
    #. ``arr.indexOf('i') !== -1``
 
-   Try it at this `repl.it <https://repl.it/@launchcode/BaseCaseCC01>`__.
+   Experiment with this `repl.it <https://repl.it/@launchcode/BaseCaseCC01>`__.
 
 .. admonition:: Question
 
@@ -207,4 +218,4 @@ Check Your Understanding
    #. ``integer === 0``
    #. ``integer < 0``
 
-   Try it at this `repl.it <https://repl.it/@launchcode/BaseCaseCC02>`__.
+   Experiment with this `repl.it <https://repl.it/@launchcode/BaseCaseCC02>`__.

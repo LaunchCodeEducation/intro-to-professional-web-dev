@@ -57,42 +57,34 @@ complicated tasks, one small function must call other functions.
 Of course, there is no need to write a function to add 5 to a value, but the
 example demonstrates calling a function from within another function.
 
+.. index:: ! recursion
+
 What Is Recursion?
 -------------------
 
-.. index:: ! recursion
+In programming, the *divide and conquer* strategy solves a problem by breaking
+it down into smaller, simpler pieces. If these pieces *can all be solved in
+exactly the same way*, then we gain an additional advantage. Solving the big
+problem becomes a process of completing and combining the smaller parts.
 
-**Recursion** is the process of solving a larger problem by breaking it into
-small, easy steps that *can all be solved in exactly the same way*.
-
-Splitting a large task into small, identical pieces allows us to reuse a single
-function rather than coding several different functions.
-
-Solving the big problem involves completing and combining the smaller parts.
-We accomplish this by either:
+Splitting up a large task into smaller, identical pieces allows us to reuse a
+single function rather than coding several different functions. We accomplish
+this by either:
 
 a. Setting up a loop to call one function lots of times, OR
-b. Using the strength of recursion.
+b. Building a function that splits up the large problem for us, until a *simplest
+   case* is found and solved.
 
-Here is the clever idea behind recursion.  Instead of a loop, a function simply
-calls *itself* over and over again until the larger problem is solved.
+**Recursion** is the process of solving a larger problem by breaking it into
+smaller pieces that *can all be solved in exactly the same way*. The clever
+idea behind recursion is that instead of using a loop, a function simply
+calls *itself* over and over again, with each step reducing the size of the
+problem.
 
-.. admonition:: **Recursion in a nutshell:**
-
-   a. Split a big problem into small, identical pieces.
-   b. Build a single function to solve those pieces.
-   c. The function repeatedly calls itself until all the pieces are solved.
-
-Many new programmers (and even veteran ones) find recursion an abstract and
-tricky concept. One helpful way to approach the idea is to walk through an
-example.
-
-Recursion in a Nutshell
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-a. Split a big problem into small, identical pieces.
-b. Build a single function to solve those pieces.
-c. The function repeatedly calls itself until all the pieces are solved.
+Through recursion, a problem eventually gets reduced to a very simple task,
+which can be immediately solved. This small answer sets up the solution for the
+previous step, which in turn solves the next bigger step. Properly built, the
+function combines all of the small answers to solve the original problem.
 
 Many new programmers (and even veteran ones) find recursion an abstract and
 tricky concept. One helpful way to approach the idea is to walk through an
