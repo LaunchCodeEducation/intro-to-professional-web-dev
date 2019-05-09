@@ -22,6 +22,7 @@ Examine the code samples below:
      - Use a ``while`` loop to add the first element in the array to ``newString``, then remove that element from the array.
 
    * - .. sourcecode:: js
+         :linenos:
 
          let arr = ['L', 'C', '1', '0', '1'];
          let newString = '';
@@ -41,6 +42,7 @@ Examine the code samples below:
          ['L', 'C', '1', '0', '1']
 
      - .. sourcecode:: js
+         :linenos:
 
          let arr = ['L', 'C', '1', '0', '1'];
          let newString = '';
@@ -111,6 +113,7 @@ represents the simplest possible task for our function.
 We check for the base case like this:
 
 .. sourcecode:: js
+   :linenos:
 
    function combineEntries(arrayName){
       if (baseCase is true){
@@ -128,6 +131,7 @@ just needs to return ``'L'``.
 Let's update ``combineEntries`` to check if the array contains only one item.
 
 .. sourcecode:: js
+   :linenos:
 
    function combineEntries(arrayName){
       if (arrayName.length === 1){
@@ -169,6 +173,7 @@ Check Your Understanding
    Consider the code sample below, which declares the ``removeI`` function.
 
    .. sourcecode:: js
+      :linenos:
 
       function removeI(arr) {
          if (baseCase is true){
@@ -201,6 +206,7 @@ Check Your Understanding
    Consider the code sample below, which declares the ``factorial`` function.
 
    .. sourcecode:: js
+      :linenos:
 
       function factorial(integer) {
          if (baseCase is true){

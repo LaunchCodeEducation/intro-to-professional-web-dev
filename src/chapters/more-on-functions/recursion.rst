@@ -19,7 +19,7 @@ parameters.
 
    **Output**
 
-   .. sourcecode:: js
+   ::
 
       14
 
@@ -50,7 +50,7 @@ complicated tasks, one small function must call other functions.
 
    **Output**
 
-   .. sourcecode:: js
+   ::
 
       17
 

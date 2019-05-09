@@ -7,6 +7,7 @@ building a recursive function.
 We've made it this far with ``combineEntries``:
 
 .. sourcecode:: js
+   :linenos:
 
    function combineEntries(arrayName){
       if (arrayName.length === 1){
@@ -99,6 +100,7 @@ selected entries from an array. To return everything BUT the first entry in
 Let's add the bracket notation and the ``slice`` method to our function:
 
 .. sourcecode:: js
+   :linenos:
 
    function combineEntries(arrayName){
       if (arrayName.length === 1){
@@ -110,7 +112,8 @@ Let's add the bracket notation and the ``slice`` method to our function:
 
 Each time the ``else`` statement runs, it extracts the first element in the
 array with ``arrayName[0]``, then it calls itself with the remaining array
-elements (``arrayName.slice(1)``). For ``combineEntries(['L', 'C', '1', '0', '1']);``:
+elements (``arrayName.slice(1)``). For
+``combineEntries(['L', 'C', '1', '0', '1']);``:
 
 | a. First call: Combine ``'L'`` with ``combineEntries(['C', '1', '0', '1'])``.
 | b. Second call: Combine ``'C'``, with ``combineEntries(['1', '0', '1'])``.
