@@ -19,10 +19,10 @@ Having to constantly refresh the page would be a poor experience for the user an
    The counter of how many likes the post has received increases by one and the like button may change color to indicate to you that you liked the post.
    This is an example of how JavaScript could be used to create an application that dyanmically updates without the page having to be refreshed.
 
-We have been running all of our JavaScript homework in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages.
+We have been running all of our JavaScript code in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages.
 Node is an intepreter for JavaScript with access to lots of different JavaScript libraries. 
-When running JavaScript in the browser, each browser has an engine for running it and it remains client-side. 
-Firefox uses an engine called Spider Monkey to run client-side JavaScript in the browser. 
+When running JavaScript in the browser, each browser has an engine for running it. JavaScript run in the browser is called client-side JavaScript. 
+Firefox uses an engine called Spider Monkey to run client-side JavaScript. 
 
 The ``<script>`` Tag
 --------------------
@@ -56,16 +56,18 @@ Inline JavaScript
       </body>
       </html>
 
-   **Output**
+   **Console Output**
 
-   screen shot of firefox console? Codio? Repl.it?
+   ::
+
+      Hello from inside the web page
 
 External JavaScript
 ^^^^^^^^^^^^^^^^^^^
 
 However, some programmers have large amounts of JavaScript to add to an HTML document.
 Using an external JavaScript file can help in these cases.
-You can still use the ``<script>`` tag to connect the two while using the ``src`` attribute for the path to the JavaScript file.
+You can still use the ``<script>`` tag to include the JavaScript file with the HTML document while using the ``src`` attribute for the path to the JavaScript file.
 
 .. admonition:: Example
 
@@ -92,7 +94,16 @@ You can still use the ``<script>`` tag to connect the two while using the ``src`
       console.log("Hello from inside the web page");
 
 
-Also used to reference JavaScript files that are hosted on external servers.
-Some of the external will be files that you did not write yourself, but you want to include in your web site.
+.. note::
+
+   You can use the ``<script>``  tag to reference JavaScript files hosted on external servers.
+   Some of these JavaScript files will be files that you have not written yourself, but you will want to include in your application.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What is the difference between dynamic and static web pages?
 
 
