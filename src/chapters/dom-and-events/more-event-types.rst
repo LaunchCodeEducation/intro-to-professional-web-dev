@@ -29,7 +29,7 @@ a whole, we can know that all the elements are ready to be used.
 
 .. admonition:: Example
 
-   
+   ``<script>`` tag is in ``<header>`` and all DOM code is inside *load* event handler.
 
    .. sourcecode:: html
 
@@ -42,14 +42,14 @@ a whole, we can know that all the elements are ready to be used.
             window.addEventListener("load", function() {
                 // put DOM code here to ensure elements have been loaded
                 console.log('window loaded');
-                
+
                 let ring = document.getElementById("ring-button");
-                button.addEventListener("click", function (event) {
+                ring.addEventListener("click", function (event) {
                     console.log("ring ring");
                 });
 
                 let knock = document.getElementById("knock-button");
-                button.addEventListener("click", function (event) {
+                knock.addEventListener("click", function (event) {
                     console.log("knock knock");
                 });
             });
@@ -71,15 +71,57 @@ a whole, we can know that all the elements are ready to be used.
       knock knock
 
 
-
-
 Mouseover Event
 ---------------
-example of mouseover
 
-Do they know the elements that use these yet?
-focus?
-change?
+.. index::
+   single: event; mouseover
+
+There are many mouse related DOM events. We have already used the *click* event. Another example
+of a mouse event is the **mouseover** event, which is triggered when the mouse pointer enters
+an element.
+
+.. admonition:: Example
+
+   Use *mouseover* event to add a ``">"`` to the ``innerHTML`` of the element that the mouse pointer
+   has been moved over.
+
+   .. sourcecode:: html
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+         <title>Mouseover Event</title>
+         <script>
+               window.addEventListener("load", function() {
+                  let list = document.getElementById("lane-list");
+                  list.addEventListener("mouseover", function (event) {
+                     let element = event.target;
+                     element.innerHTML += ">";
+                     console.log("target", element);
+                  });
+               });
+         </script>
+      </head>
+      <body>
+         Mouseover Race
+         <ul id="lane-list">
+               <li>Lane 1</li>
+               <li>Lane 2</li>
+               <li>Lane 3</li>
+         </ul>
+      </body>
+      </html>
+
+   **Example HTML Output** (if the mouse is moved over elements in the list)
+
+   ::
+
+      Mouseover Race
+
+         Lane 1>>>>>>>
+         Lane 2>>>>>>>>>>>>
+         Lane 3>>>>>>>>
 
 
 Check Your Understanding

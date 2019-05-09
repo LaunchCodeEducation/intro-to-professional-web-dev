@@ -100,6 +100,7 @@ alternative to <code class="docutils literal notranslate"><span class="pre">&lt;
 a whole, we can know that all the elements are ready to be used.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag is in <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code> and all DOM code is inside <em>load</em> event handler.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -111,12 +112,12 @@ a whole, we can know that all the elements are ready to be used.</p>
           <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;window loaded&#39;</span><span class="p">);</span>
 
           <span class="kd">let</span> <span class="nx">ring</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ring-button&quot;</span><span class="p">);</span>
-          <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">ring</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
               <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ring ring&quot;</span><span class="p">);</span>
           <span class="p">});</span>
 
           <span class="kd">let</span> <span class="nx">knock</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;knock-button&quot;</span><span class="p">);</span>
-          <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">knock</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
               <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;knock knock&quot;</span><span class="p">);</span>
           <span class="p">});</span>
       <span class="p">});</span>
@@ -140,10 +141,48 @@ knock knock
 </div>
 <div class="section" id="mouseover-event">
 <h2>14.6.2. Mouseover Event<a class="headerlink" href="#mouseover-event" title="Permalink to this headline">¶</a></h2>
-<p>example of mouseover</p>
-<p>Do they know the elements that use these yet?
-focus?
-change?</p>
+<p id="index-1">There are many mouse related DOM events. We have already used the <em>click</em> event. Another example
+of a mouse event is the <strong>mouseover</strong> event, which is triggered when the mouse pointer enters
+an element.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Use <em>mouseover</em> event to add a <code class="docutils literal notranslate"><span class="pre">&quot;&gt;&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> of the element that the mouse pointer
+has been moved over.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mouseover Event<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;lane-list&quot;</span><span class="p">);</span>
+            <span class="nx">list</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+               <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+               <span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">;</span>
+               <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
+            <span class="p">});</span>
+         <span class="p">});</span>
+   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   Mouseover Race
+   <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lane-list&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lane 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lane 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lane 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example HTML Output</strong> (if the mouse is moved over elements in the list)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Mouseover Race
+
+   Lane 1&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+   Lane 2&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+   Lane 3&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>14.6.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
