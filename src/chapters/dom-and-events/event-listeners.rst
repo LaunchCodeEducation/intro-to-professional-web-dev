@@ -1,11 +1,11 @@
-More Events
-===========
+Event Listeners
+===============
 
 Using inline event handling is a good way to get started handling events. A second way
 to handle events uses the DOM objects and methods. Remember the DOM is an object representation
 of the entire web page. The DOM allows us to use only JavaScript to configure
 our event handlers. The event handling declaration will no longer be in the HTML
-element attirbue, but will instead be in a ``<script>`` or external JavaScript file.
+element attribute, but will instead be in a ``<script>`` or external JavaScript file.
 
 
 Add Event Handlers in JavaScript
@@ -32,7 +32,7 @@ going to use a *named function*.
 .. admonition:: Example
 
    Set the named function ``youRang`` as the *click* handler for the ``<button>``. Notice that
-   the value passed in as the event name is ``"click"`` insead of ``"onclick``.
+   the value passed in as the event name is ``"click"`` instead of ``"onclick"``.
 
    .. sourcecode:: html
 
@@ -123,7 +123,7 @@ Event Bubbling
 Remember that the DOM is a tree of elements with an ``<html>`` element at the root. The tree
 structure of an html page is made of elements inside of elements. That layering affect can cause
 some events, like *click*, to be triggered on a series of elements. **Bubbling**
-refers to an event being propogated to ancestor elements, when an event is triggered on an
+refers to an event being propagated to ancestor elements, when an event is triggered on an
 element that has parent elements. Events are triggered first on the element  that is most closely
 affected by the event.
 

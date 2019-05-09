@@ -5,11 +5,13 @@ The global variables that make up the DOM are instances of classes defined in Ja
 classes for every part of a web age, those classes contain methods and properties related to specific
 duties of those entities.
 
-The following sections are a summary of those classes, methods, and properties, to see a
-more complete list can be found here:
+The following sections are a summary of some DOM classes, methods, and properties, A
+more complete list can be found in the reference links below. Note, you do NOT need to memorize
+everything in the reference links, instead use them as a guide when you are ready to learn more about
+the DOM.
 
-1. `W3Schools <https://www.w3schools.com/js/js_htmldom_document.asp>`_
-2. `MDN <https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Important_Data_Types>`_
+1. `W3Schools DOM reference <https://www.w3schools.com/js/js_htmldom_document.asp>`_
+2. `MDN DOM reference <https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Important_Data_Types>`_
 
 
 Window
@@ -26,7 +28,7 @@ the JavaScript code is running.
      - Description
    * - alert
      - ``window.alert("String message")``
-     - Displays a dailog box with a message and a "ok" button to close the box.
+     - Displays a dialog box with a message and a "ok" button to close the box.
    * - confirm
      - ``window.confirm("String message")``
      - Displays a dialog box with a message and returns ``true`` if user clicks "ok" and ``false`` if user clicks "cancel".
