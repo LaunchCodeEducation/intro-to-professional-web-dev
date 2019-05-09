@@ -14,7 +14,7 @@ Having to constantly refresh the page would be a poor experience for the user an
 
 .. admonition:: Example 
 
-   When you are on social media, you may like someone's post.
+   When you are on social media web page, you may like someone's post.
    When you do like their post, you have noticed that several things happen.
    The counter of how many likes the post has received increases by one and the like button may change color to indicate to you that you liked the post.
    This is an example of how JavaScript could be used to create an application that dyanmically updates without the page having to be refreshed.
