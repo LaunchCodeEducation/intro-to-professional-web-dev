@@ -99,4 +99,15 @@ we will learn about another way to handle this.
 Check Your Understanding
 ------------------------
 
-TODO: ...
+.. admonition:: Question
+
+   What do the DOM objects represent?
+
+   1. Word documents you have downloaded
+   2. Directives of memory
+   3. The browser window, HTML document, and the elements
+
+.. admonition:: Question
+
+   What is the difference between the document and window variables?
+

@@ -106,4 +106,8 @@ Check Your Understanding
 
    What is the difference between dynamic and static web pages?
 
+.. admonition:: Question
+
+   Does Node.js run in the browser environment?
+
 

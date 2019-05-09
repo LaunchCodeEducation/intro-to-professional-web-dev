@@ -119,4 +119,32 @@ TODO: more examples of using these. Maybe put an examples section under each sec
 
 Check Your Understanding
 ------------------------
-TODO: more examples of using these
+
+.. admonition:: Question
+
+   What value will ``response`` have if the user clicks *Cancel*?
+
+   .. sourcecode:: js
+
+    let response = window.confirm("String message")
+
+.. admonition:: Question
+
+   Which of these are TRUE about selecting DOM elements?
+
+   a. You can select elements by *css class* name
+   b. You can select elements by *id attribute* value
+   c. You can select elements by *tag* name
+   d. All of the above
+
+.. admonition:: Question
+
+   What is the value of ``p.innerHTML``?
+
+   .. sourcecode:: html
+
+      <p id="demo-text">Hello friend</p>
+      <script>
+         let p = document.getElementById("demo-text");
+         console.log(p.innerHTML);
+      </script>
