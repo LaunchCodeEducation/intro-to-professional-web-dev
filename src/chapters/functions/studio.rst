@@ -136,8 +136,7 @@ Bonus Missions
 
    e. Outside of the function, define the variable ``str`` and initialize it with
       a string (e.g. ``'Functions rock!'``).
-   f. Define a second variable and initialize it with
-      ``someNameThatIChose = myFunctionName(str);``.
+   f. Define a second variable and initialize it with ``myFunctionName(str);``.
    g. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
       with the values from ``someNameThatIChose`` and ``str``.
 
