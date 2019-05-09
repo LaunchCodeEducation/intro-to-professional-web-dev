@@ -33,7 +33,7 @@ One approach uses the accumulator pattern:
 
    function reverse(str) {
       let reversed = '';
-      
+
       for (let i = 0; i < str.length; i++) {
          reversed = str[i] + reversed;
       }
@@ -44,6 +44,8 @@ One approach uses the accumulator pattern:
 .. todo:: add reference to the correct section of the string chapter
 
 This is the same algorithm that we used to reverse a string in a previous chapter.
+
+.. _reverse-a-string:
 
 Another approach is to use the fact that there is a ``reverse`` method for arrays, and that the methods ``split`` and ``join`` allow us to go from strings to arrays and back (this was covered in section X).
 

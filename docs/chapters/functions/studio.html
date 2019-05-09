@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>10.10. Studio: Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>10.11. Studio: Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="11. HTML" href="../html/index.html" />
-    <link rel="prev" title="10.9. Why Create Functions?" href="why-create-functions.html" />
+    <link rel="prev" title="10.10. Exercises: Functions" href="exercises.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -73,29 +73,25 @@
     <div class="col-md-10 col-md-offset-1 content ">
         <ol class="breadcrumb">
             <li><a href="index.html">10. Functions</a></li>
-          <li class="active">10.10. Studio: Functions</li>
+          <li class="active">10.11. Studio: Functions</li>
         </ol>
       
     
   <div class="section" id="studio-functions">
-<h1>10.10. Studio: Functions<a class="headerlink" href="#studio-functions" title="Permalink to this headline">¶</a></h1>
+<h1>10.11. Studio: Functions<a class="headerlink" href="#studio-functions" title="Permalink to this headline">¶</a></h1>
 <p>To become good at solving problems with code you need to be able to break large problems into small ones. Usually, these smaller problems will take the form of functions that are used to solve the larger problem. Therefore, to become good at solving problems you need to become good at writing functions. And to master functions, you need to write a <em>lot</em> of them.</p>
 <p>This studio will have you write lots of relatively small functions, which combine to form larger, more complicated functions.</p>
-<p>At the end, you will be able to create strings of shapes, like this nifty diamond:</p>
+<p>At the end, you will be able to create strings of shapes, like this nifty triangle:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
    ###
   #####
  #######
 #########
- #######
-  #####
-   ###
-    #
 </pre></div>
 </div>
 <p>There is no starter code for this studio, so create a new Node.js project at <a class="reference external" href="https://repl.it/student">repl.it</a> to get started.</p>
 <div class="section" id="rectangles">
-<h2>10.10.1. Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
+<h2>10.11.1. Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">line(size)</span></code> that returns a line with exactly <code class="docutils literal notranslate"><span class="pre">size</span></code>
 hashes.</p>
@@ -146,7 +142,7 @@ rectangle with the given width and height. Use your
 </ol>
 </div>
 <div class="section" id="triangles">
-<h2>10.10.2. Triangles<a class="headerlink" href="#triangles" title="Permalink to this headline">¶</a></h2>
+<h2>10.11.2. Triangles<a class="headerlink" href="#triangles" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">stairs(height)</span></code> that prints the staircase pattern shown below,
 with the given height. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
@@ -197,11 +193,13 @@ the given height.</p>
 </li>
 </ol>
 </div>
+<div class="section" id="bonus-missions">
+<h2>10.11.3. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="diamonds">
-<h2>10.10.3. Diamonds<a class="headerlink" href="#diamonds" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">diamond(height)</span></code> that returns a diamond where the
-triangle formed by the <em>top</em> portion has the given height.</p>
+<h3>10.11.3.1. Diamonds<a class="headerlink" href="#diamonds" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Write a function <code class="docutils literal notranslate"><span class="pre">diamond(height)</span></code> that returns a diamond where the</dt>
+<dd><p class="first">triangle formed by the <em>top</em> portion has the given height.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">diamond</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -218,19 +216,17 @@ triangle formed by the <em>top</em> portion has the given height.</p>
     #
 </pre></div>
 </div>
-<div class="admonition tip">
+<div class="last admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">Consider what happens if you create a triangle and reverse it using <a class="reference internal" href="composing-functions.html#reverse-func"><span class="std std-ref">our reverse function</span></a>.</p>
 </div>
-</li>
-</ol>
+</dd>
+</dl>
 </div>
-<div class="section" id="bonus-missions">
-<h2>10.10.4. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</li>
-<li>Make the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</li>
-</ol>
+<div class="section" id="other-characters">
+<h3>10.11.3.2. Other Characters<a class="headerlink" href="#other-characters" title="Permalink to this headline">¶</a></h3>
+<p>Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">'#'</span></code>. Make the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</p>
+</div>
 </div>
 </div>
 
@@ -240,7 +236,7 @@ triangle formed by the <em>top</em> portion has the given height.</p>
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="why-create-functions.html"><span aria-hidden="true">&larr;</span> 10.9. Why Create Functions?</a></li>
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 10.10. Exercises: Functions</a></li>
         
         
         <li class="next"><a href="../html/index.html">11. HTML <span aria-hidden="true">&rarr;</span></a></li>
