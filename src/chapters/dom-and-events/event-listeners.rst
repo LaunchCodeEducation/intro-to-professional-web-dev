@@ -191,5 +191,17 @@ TODO: TRY IT. add stopPropagation to the button click handler, then click button
 
 Check Your Understanding
 ------------------------
-TODO:...
-use anonymous function as the function parameter in addEventListener
+
+.. admonition:: Question
+
+   Do these code snippets have the same effect?
+   ``button.addEventListener("click", youRang)`` and ``<button onclick="youRang();">``
+
+
+.. admonition:: Question
+
+   Can *click* events be prevented from bubbling up to ancestor element(s)?
+
+.. admonition:: Question
+
+   What is passed as the *argument* to the event handler function?

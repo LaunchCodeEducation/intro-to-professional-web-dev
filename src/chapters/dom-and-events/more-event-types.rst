@@ -126,5 +126,16 @@ an element.
 
 Check Your Understanding
 ------------------------
-TODO:...
-use these and maybe more events
+
+.. admonition:: Question
+
+   What error happens when you try to access an element that has not been loaded into the DOM?
+
+
+.. admonition:: Question
+
+   What is *true* when the *load* event is triggered on ``window``?
+
+   a. The console is clear.
+   b. All elements and resources have been loaded by the browser.
+   c. Your files have finished uploading.

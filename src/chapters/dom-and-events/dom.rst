@@ -109,4 +109,3 @@ Check Your Understanding
 .. admonition:: Question
 
    What is the difference between the document and window variables?
-

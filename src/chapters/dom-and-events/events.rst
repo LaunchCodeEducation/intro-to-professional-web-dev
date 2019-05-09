@@ -143,4 +143,18 @@ TODO: TRY IT asking user to add functionality to an event handler.
 Check Your Understanding
 ------------------------
 
-TODO:...
+.. admonition:: Question
+
+   What does an *event* represent in the browser JavaScript environment?
+
+.. admonition:: Question
+
+   Why is JavaScript considered an *event-driven* language?
+
+.. admonition:: Question
+
+   Receiving an event and responding to it is known as?
+
+   a. Holding an event
+   b. Having an event
+   c. Handling an event
