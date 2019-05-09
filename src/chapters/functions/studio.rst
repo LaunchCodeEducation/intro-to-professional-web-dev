@@ -1,23 +1,19 @@
-Studio: Shapes
-==============
+Studio: Functions
+=================
 
 To become good at solving problems with code you need to be able to break large problems into small ones. Usually, these smaller problems will take the form of functions that are used to solve the larger problem. Therefore, to become good at solving problems you need to become good at writing functions. And to master functions, you need to write a *lot* of them.
 
 This studio will have you write lots of relatively small functions, which combine to form larger, more complicated functions.
 
-At the end, you will be able to create strings of shapes, like this nifty diamond:
+At the end, you will be able to create strings of shapes, like this nifty triangle:
 
 ::
 
-       #     
-      ###    
-     #####   
-    #######  
-   #########   
-    #######    
-     #####     
-      ###      
        #
+      ###
+     #####
+    #######
+   #########
 
 There is no starter code for this studio, so create a new Node.js project at `repl.it <https://repl.it/student>`_ to get started.
 
@@ -132,11 +128,13 @@ Triangles
 
    .. tip:: Consider the top line of the triangle to be level 0, the next to be line 1, and so on. Then line ``i`` is a space-line with ``height - i - 1`` spaces and ``2 * i + 1`` hashes.
 
+Bonus Missions
+--------------
+
 Diamonds
---------
+^^^^^^^^
 
-
-#. Write a function ``diamond(height)`` that returns a diamond where the
+Write a function ``diamond(height)`` that returns a diamond where the
    triangle formed by the *top* portion has the given height. 
    
    .. sourcecode:: js
@@ -161,9 +159,8 @@ Diamonds
    
    .. tip:: Consider what happens if you create a triangle and reverse it using :ref:`our reverse function <reverse_func>`.
 
+Other Characters
+^^^^^^^^^^^^^^^^
 
-Bonus Missions
---------------
+Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using ``'#'``. Make the new parameter optional, with default value ``'#'``.
 
-#. Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using ``'#'``.
-#. Make the new parameter optional, with default value ``'#'``.
