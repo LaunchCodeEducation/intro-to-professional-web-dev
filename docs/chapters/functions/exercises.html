@@ -7,12 +7,13 @@
     <title>10.10. Exercises: Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -58,7 +59,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -79,170 +81,168 @@
     
   <div class="section" id="exercises-functions">
 <h1>10.10. Exercises: Functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="fun-functions">
-<h2>10.10.1. Fun Functions<a class="headerlink" href="#fun-functions" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Define a function with one parameter, which will be a string. The function
-must do the following:<ol class="loweralpha">
-<li>Have a clear, descriptive name.</li>
-<li>Return only the last character from strings with lengths of 3 or less.</li>
-<li>Return only the first 3 characters from strings with lengths larger than
-3.</li>
-<li><a class="reference external" href="https://repl.it/&#64;launchcode/FunctionsExercises01">Build your first function here</a>.</li>
-</ol>
+<p>To become good at solving problems with code you need to be able to break large problems into small ones. Usually, these smaller problems will take the form of functions that are used to solve the larger problem. Therefore, to become good at solving problems you need to become good at writing functions. And to master functions, you need to write a <em>lot</em> of them.</p>
+<p>These exercises ask you to write lots of relatively small functions, which combine to form larger, more complicated ones.</p>
+<p>At the end, you will be able to create strings of shapes, like this nifty diamond:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+#########
+ #######
+  #####
+   ###
+    #
+</pre></div>
+</div>
+<p>There is no starter code for these exercises, so create a new Node.js project
+at <a class="reference external" href="https://repl.it/student">repl.it</a> to get started.</p>
+<div class="section" id="rectangles">
+<h2>10.10.1. Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">line(size)</span></code> that returns a line with exactly <code class="docutils literal notranslate"><span class="pre">size</span></code>
+hashes.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">line</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+</pre></div>
+</div>
 </li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic simple">
-<li>(Continued) Now test your function:<ol class="loweralpha" start="5">
-<li>Outside of the function, define the variable <code class="docutils literal notranslate"><span class="pre">str</span></code> and initialize it with
-a string (e.g. <code class="docutils literal notranslate"><span class="pre">'Functions</span> <span class="pre">rock!'</span></code>).</li>
-<li>Define a second variable and initialize it with
-<code class="docutils literal notranslate"><span class="pre">someNameThatIChose</span> <span class="pre">=</span> <span class="pre">myFunctionName(str);</span></code>.</li>
-<li>Use a template literal to print, <code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">put</span> <span class="pre">the</span> <span class="pre">'___'</span> <span class="pre">in</span> <span class="pre">'___'.</span></code> Fill in the blanks
-with the values from <code class="docutils literal notranslate"><span class="pre">someNameThatIChose</span></code> and <code class="docutils literal notranslate"><span class="pre">str</span></code>.</li>
+<ol class="arabic" start="2">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">square(size)</span></code> that returns an <code class="docutils literal notranslate"><span class="pre">size</span></code> by <code class="docutils literal notranslate"><span class="pre">size</span></code> square
+of hashes. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+#####
+#####
+#####
+#####
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The newline character, <code class="docutils literal notranslate"><span class="pre">\n</span></code>, will be helpful to you.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">For this and all other functions in this studio, make sure you do NOT have a newline character at the end of your string. Not only will <code class="docutils literal notranslate"><span class="pre">console.log</span></code> add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the studio.</p>
+</div>
+</li>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">rectangle(width,</span> <span class="pre">height)</span></code> that returns a
+rectangle with the given width and height. Use your
+<code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+#####
+#####
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now, go back and rewrite <code class="docutils literal notranslate"><span class="pre">square</span></code> to use <code class="docutils literal notranslate"><span class="pre">rectangle</span></code>.</p>
+</li>
 </ol>
+</div>
+<div class="section" id="triangles">
+<h2>10.10.2. Triangles<a class="headerlink" href="#triangles" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">stairs(height)</span></code> that prints the staircase pattern shown below,
+with the given height. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stairs</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#
+##
+###
+####
+#####
+</pre></div>
+</div>
 </li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic simple" start="2">
-<li>The area of a rectangle is equal to its <em>length x width</em>.<ol class="loweralpha">
-<li>Define a function and the required parameters to calculate the area of a
-rectangle.</li>
-<li>The function should <em>return</em> the area, NOT print it.</li>
-<li>Call your area function by passing in two arguments - the length and
-width.</li>
-<li>Use a template literal to print, “The area is ____ cm^2.”</li>
-<li><em>Optional</em>: If only one argument is passed to the function, then the shape is
-a square. Modify your code to deal with this case.</li>
-<li><a class="reference external" href="https://repl.it/&#64;launchcode/FunctionsExercises02">Code the area function here</a>.</li>
-</ol>
-</li>
-</ol>
-<div class="admonition-test-cases-and-answers admonition">
-<p class="first admonition-title">Test Cases and (Answers)</p>
-<div class="last line-block">
-<div class="line">length = 2, width = 4 (area = 8)</div>
-<div class="line">length = 14, width = 7 (area = 98)</div>
-<div class="line">length = 20 (area = 400)</div>
-</div>
-</div>
-</div>
-<div class="section" id="complete-reversal">
-<h2>10.10.2. Complete Reversal<a class="headerlink" href="#complete-reversal" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method flips the order of the elements within an array.
-However, <code class="docutils literal notranslate"><span class="pre">reverse</span></code> does not affect the digits or characters within those
-elements.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">];</span>
-
-<span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<ol class="arabic" start="2">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">spaceLine(numSpaces,</span> <span class="pre">numChars)</span></code> that returns a line
+with exactly the specified number of spaces, followed by the
+specified number of hashes, followed again by <code class="docutils literal notranslate"><span class="pre">numSpaces</span></code> more spaces.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">spaceLine</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;orange&#39;, 123, &#39;world&#39;, &#39;hello&#39;]
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>___#####___
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We have inserted underscores to represent spaces, so they are visible in the output. Don’t do this in your code.</p>
 </div>
-<p>What if we wanted the reversed array to be
-<code class="docutils literal notranslate"><span class="pre">['egnaro',</span> <span class="pre">321,</span> <span class="pre">'dlrow',</span> <span class="pre">'olleh']</span></code>?</p>
-<p>Let’s have some fun by creating a process that reverses BOTH the order of the
-entries in an array AND the order of characters within the individual elements.</p>
-<p>Remember that a function should perform only one task. To follow this best
-practice, we will solve the array reversal by defining two functions - one that
-reverses the characters in a string (or the digits in a number) and one that
-flips the order of entries in the array.</p>
-<ol class="arabic simple" start="3">
-<li>In the <em>composing functions</em> section, we examined a function that
-<a class="reference internal" href="composing-functions.html#reverse-a-string"><span class="std std-ref">reverses the characters in a string</span></a> using the
-<code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods. Let’s rebuild that function now.<ol class="loweralpha">
-<li>Define the function as <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code>. Give it one parameter, which will
-be the string to reverse.</li>
-<li>Within the function, <code class="docutils literal notranslate"><span class="pre">split</span></code> the string into an array, then reverse the
-array.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">join</span></code> to create the reversed string and <em>return</em> that string from the
-function.</li>
-<li>Below the function, define and initialize a variable to hold a string.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">console.log(reverseCharacters(myVariableName));</span></code> to call the function and verify
-that it correctly reverses the characters in the string.</li>
-<li><em>Optional</em>: Use method chaining to reduce the lines of code within the
-function.</li>
-</ol>
 </li>
-</ol>
-<p><a class="reference external" href="https://repl.it/&#64;launchcode/FunctionsExercises03-05">Code exercises 3 - 5 here</a></p>
-<div class="admonition-sample-strings-for-testing admonition">
-<p class="first admonition-title">Sample strings for testing</p>
-<div class="last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'apple'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'Capitalized</span> <span class="pre">Letters'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">love</span> <span class="pre">the</span> <span class="pre">smell</span> <span class="pre">of</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">morning.'</span></code></div>
-</div>
-</div>
-<ol class="arabic simple" start="4">
-<li>The <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> function works great on strings, but what if the
-argument passed to the function is a number? Using
-<code class="docutils literal notranslate"><span class="pre">console.log(reverseCharacters(1234));</span></code> results in an error, since
-<code class="docutils literal notranslate"><span class="pre">split</span></code> only works on strings (TRY IT). When passed a number, we want the
-function to return a number with all the digits reversed (e.g. 1234 converts
-to 4321 and NOT the string <code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code>).<ol class="loweralpha">
-<li>Add an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> to check the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> the
-parameter.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">typeof</span></code> is ‘string’, return the reversed string as before.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">typeof</span></code> is ‘number’, convert the parameter to a string, reverse the
-characters, then convert it back into a number.</li>
-<li>Return the reversed number.</li>
-<li>Be sure to print the result returned by the function to verify that your code
-works for <em>both strings and numbers</em>. Do this before moving on to the
-next exercise.</li>
-</ol>
-</li>
-</ol>
-<div class="admonition-samples-for-testing admonition">
-<p class="first admonition-title">Samples for testing</p>
-<div class="last line-block">
-<div class="line">1234</div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></div>
-<div class="line">8675309</div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'radar'</span></code></div>
-</div>
-</div>
-<ol class="arabic simple" start="5">
-<li>Now we are ready to finish our complete reversal process. Create a new
-function with one parameter, which is the array we want to change. The
-function should:<ol class="loweralpha">
-<li>Define and initialize an empty array.</li>
-<li>Loop through the old array.</li>
-<li>For each element in the old array, call <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> to flip the
-characters or digits.</li>
-<li>Add the reversed string (or number) to the array defined in part ‘a’.</li>
-<li>Return the final, reversed array.</li>
-<li><em>Be sure to print the results from each test case in order to verify your
-code</em>.</li>
-</ol>
-</li>
-</ol>
-<div class="admonition-sample-arrays-for-testing admonition">
-<p class="first admonition-title">Sample arrays for testing</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;potato&#39;</span><span class="p">,</span> <span class="s1">&#39;Capitalized Words&#39;</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">8897</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">1168</span><span class="p">,</span> <span class="mi">8675309</span><span class="p">]</span>
-<span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">triangle(height)</span></code> that returns a triangle of
+the given height.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">triangle</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><strong>Output</strong></p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;sdroW dezilatipaC&#39;</span><span class="p">,</span> <span class="s1">&#39;otatop&#39;</span><span class="p">,</span> <span class="s1">&#39;elppa&#39;</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">9035768</span><span class="p">,</span> <span class="mi">8611</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">7988</span><span class="p">,</span> <span class="mi">321</span><span class="p">]</span>
-<span class="p">[</span><span class="s1">&#39;egnaro&#39;</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="s1">&#39;dlrow&#39;</span><span class="p">,</span> <span class="s1">&#39;olleh&#39;</span><span class="p">]</span>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
 </pre></div>
 </div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Consider the top line of the triangle to be level 0, the next to be line 1, and so on. Then line <code class="docutils literal notranslate"><span class="pre">i</span></code> is a space-line with <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">-</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">1</span></code> spaces and <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> hashes.</p>
 </div>
+</li>
+</ol>
+</div>
+<div class="section" id="diamonds">
+<h2>10.10.3. Diamonds<a class="headerlink" href="#diamonds" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">diamond(height)</span></code> that returns a diamond where the
+triangle formed by the <em>top</em> portion has the given height.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">diamond</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+#########
+ #######
+  #####
+   ###
+    #
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Consider what happens if you create a triangle and reverse it using <a class="reference internal" href="composing-functions.html#reverse-func"><span class="std std-ref">our reverse function</span></a>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-mission">
+<h2>10.10.4. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">'#'</span></code>. Make the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</p>
 </div>
 </div>
 
