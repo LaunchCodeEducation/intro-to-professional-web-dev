@@ -1,19 +1,21 @@
-.. _index-full:
-
 Introduction to Professional Web Development in JavaScript
 ==========================================================
 
-Contents in Full
-----------------
+.. raw:: html
 
-:ref:`View abbreviated contents <index-brief>`
+   <nav>
+   <ul class="pagination pagination-sm">
+      <li><a href="index.html">Summary</a></li>
+      <li class="disabled"><a href="index-full.html">Expanded</a></li>
+   </ul>
+   </nav>
 
 Chapters
-^^^^^^^^
+--------
 
 .. toctree::
    :maxdepth: 2
-   :name: chapterstoc
+   :name: fulltoc
 
    chapters/introduction/index
    chapters/how-programs-work/index

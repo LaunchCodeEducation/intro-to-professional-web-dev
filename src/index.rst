@@ -1,15 +1,17 @@
-.. _index-brief:
-
 Introduction to Professional Web Development in JavaScript
 ==========================================================
 
-Contents in Brief
------------------
+.. raw:: html
 
-:ref:`View full contents <index-full>`
+   <nav>
+   <ul class="pagination pagination-sm">
+      <li class="disabled"><a href="index.html">Summary</a></li>
+      <li><a href="index-full.html">Expanded</a></li>
+   </ul>
+   </nav>
 
 Chapters
-^^^^^^^^
+--------
 
 .. toctree::
    :numbered:
