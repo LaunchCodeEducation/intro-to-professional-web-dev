@@ -7,14 +7,17 @@ Taking JavaScript on the Web
 ----------------------------
 
 So far, we have created web pages with HTML and CSS. These pages have been **static**, meaning that the page appears the same each time it loads. 
-However, many web pages are actually **dynamic**, meaning that the web page can appear different each time it loads.
+However, you may find that you want to create a web page that changes after its been loaded. In order to create such a page, you would use JavaScript.
+Web pages that can change after loading in the browser are called **dynamic**.
+This is useful to programmers and users alike because they can interact with an application without refreshing the page.
+Having to constantly refresh the page would be a poor experience for the user and JavaScript helps programmers alleviate this burden.
 
 .. admonition:: Example 
 
-   A bank's website is dynamic. Each account holder sees a different home page based on how many accounts they have and how much money they have in those accounts.
-   When the web page loads for the user, the information about their accounts is sent from the server to the browser for rendering.
-
-JavaScript can be used in the browser to make an HTML page dynamic. 
+   When you are on social media, you may like someone's post.
+   When you do like their post, you have noticed that several things happen.
+   The counter of how many likes the post has received increases by one and the like button may change color to indicate to you that you liked the post.
+   This is an example of how JavaScript could be used to create an application that dyanmically updates without the page having to be refreshed.
 
 We have been running all of our JavaScript homework in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages.
 Node is an intepreter for JavaScript with access to lots of different JavaScript libraries. 
