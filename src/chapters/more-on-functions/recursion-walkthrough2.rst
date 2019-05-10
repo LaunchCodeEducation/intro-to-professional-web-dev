@@ -198,11 +198,12 @@ Check Your Understanding
          }
       }
 
-   Which of the following should be used in the ``else`` statement to call ``decreasingSum`` again?
+   Which of the following should be used in the ``else`` statement to recursively call ``decreasingSum``
+   and eventually return the correct answer?
 
    #. ``return integer + (integer-1);``
    #. ``return integer + (decreasingSum(integer));``
    #. ``return integer + (decreasingSum(integer-1));``
    #. ``return decreasingSum(integer-1);``
 
-   Experiment with this `repl.it <https://repl.it/@launchcode/BaseCaseCC02>`__.
+   Experiment with this `repl.it <https://repl.it/@launchcode/RecursionCC01>`__.
