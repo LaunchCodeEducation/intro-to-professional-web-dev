@@ -6,8 +6,11 @@ While using the functions built into JavaScript is useful, the most powerful asp
 .. index::
    single: function; definition
    single: function; syntax
+   single: function; named
 
 There are several ways to define functions in JavaScript. We will introduce one technique in this chapter and a second technique in the next.
+
+.. _function-syntax:
 
 Function Syntax
 ---------------

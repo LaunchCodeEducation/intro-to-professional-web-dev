@@ -12,6 +12,8 @@ This chapter focuses primarily on the first of these two fundamental components,
 
 Data can be stored in a program in a variety of ways. The most basic unit of data is a value.
 
+.. _def-value:
+
 A **value** is a specific piece of data, such as a word or a number. Some examples are ``5``, ``5.2``, and ``"Hello, World!"``.
 
 .. index:: ! data type, ! number, ! string, ! type 

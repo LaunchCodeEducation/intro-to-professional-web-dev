@@ -36,6 +36,11 @@ code {
     background-color: #f9f1ef;
 }
 
+.pager code {
+	color: #fff;
+	font-weight: bold;
+}
+
 .navbar-brand {
     padding: 15px 15px;
     line-height: 30px;
@@ -65,19 +70,21 @@ code {
 }
 
 /* Aside Boxes and Admonitions  */
+.fas {
+	color: #FF4F33;
+}
+
 aside {
     padding: 2em;
     padding-top: 1em;
     border-radius: 2px;
     margin: 2em;
-    /*border: 1px solid #eee;*/
     box-shadow: 0 4px 10px 0 #eee;
 }
 
 aside::before {
     position: relative;
     left: -2em;
-    /*top: -1em;*/
     padding: 0.5em;
     padding-right: 1em;
     font-family: "Nexa Black";
@@ -150,51 +157,9 @@ div.admonition {
     display: inline-block;
 }
 
-.admonition .admonition-title::before {
-    margin-right: .25em;
+.admonition-title .fas {
+    margin-right: .5em;
 }
-
-/*
-.attention .admonition-title::before {
-    content: "📢";
-}
-
-.caution .admonition-title::before {
-    content: "⚠️";
-}
-
-.danger .admonition-title::before {
-    content: "🧨";
-}
-
-.error .admonition-title::before {
-    content: "🚨";
-}
-
-.hint .admonition-title::before {
-    content: "🔎";
-}
-
-.important .admonition-title::before {
-    content: "🔑";
-}
-
-.note .admonition-title::before {
-    content: "📘";
-}
-
-.tip .admonition-title::before {
-    content: "💡";
-}
-
-.warning .admonition-title::before {
-    content: "⚠️";
-}
-
-.admonition-generic .admonition-title::before {
-    content: "✱";
-}
-*/
 
 .content .admonition p.last {
     margin: 0;
@@ -240,7 +205,7 @@ div.highlight-html {
 }
 
 .highlighttable .linenos {
-    background-color: #eee;
+    background-color: #354a5f;
     border-radius: 4px 0 0 4px;
     width: 42px;
     text-align: right;
@@ -251,6 +216,9 @@ div.highlight-html {
     padding: 0;
     padding-right: 10px;
     color: #354a5f;
+    color: #fff;
+    border-right: 1px solid #fff;
+    border-radius: 0;
 }
 
 table.highlighttable {
@@ -264,6 +232,7 @@ table.highlighttable td {
 
 .highlighttable .code pre {
     border-radius: 0 4px 4px 0;
+    border-left: none;
 }
 
 blockquote {
