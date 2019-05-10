@@ -1,12 +1,12 @@
 Functions as Arguments
 ======================
 
-You now know that *functions are data*, and therefore can be passed around just like other values. In particular, this means a function can be *passed to another function* as an argument. This turns out to be extremely useful. 
+*Functions are data*, and therefore can be passed around just like other values. This means a function can be *passed to another function* as an argument. This turns out to be extremely useful. 
 
 Passing Functions as Arguments
 ------------------------------
 
-Lots of JavaScript functions allow you pass a function as an argument when calling them. A function passed in this way can be called later, potentially multiple times. It allows the *function being called* to use the *function argument* to carry out its action.
+JavaScript allows us to pass functions as arguments. This allows the *function being called* to use the *function argument* to carry out its action.
 
 Examples best illustrate this technique, so let's look at a couple now.
 
@@ -15,7 +15,7 @@ Example: **setTimeout**
 
 .. index:: ! setTimeout
 
-The built-in function ``setTimeout`` allows a programmer to pass a function, specify that it should be called a later point in time. Its basic syntax is:
+The built-in function ``setTimeout`` allows a programmer to pass a function, specify that it should be called at later point in time. Its basic syntax is:
 
 ::
 
@@ -43,9 +43,9 @@ The built-in function ``setTimeout`` allows a programmer to pass a function, spe
 
    Is the call to ``printMessage`` actually delayed? Don't just take our word for it, try this yourself. `Play with our example <https://repl.it/@launchcode/setTimeout-Example>`_ to change the delay.
 
-The function ``printMessage`` is *passed to* ``setTimeout`` the same way any other argument is passed to a function. 
+The function ``printMessage`` is *passed* to ``setTimeout`` the same way any other argument. 
 
-A common twist often used by JavaScript programmers is to use an *anonymous* function when passing a function as an argument.
+A common twist often used by JavaScript programmers is to use an *anonymous* function as an argument.
 
 .. admonition:: Example
 
@@ -57,7 +57,7 @@ A common twist often used by JavaScript programmers is to use an *anonymous* fun
          console.log("The future is now!");
       }, 5000);
 
-Examples like this can look odd at first. However, they become easier to read over time. Additionally, code that passes anonymous functions in this way is ubiquitous in JavaScript. You have probably already seen examples in documentation or on sites like Stack Overflow without recognizing them, and soon you will be regularly reading and writing code like this.
+Examples like this look odd at first. However, they become easier to read over time. Additionally, code that passes anonymous functions is ubiquitous in JavaScript. 
 
 Example: The Array Method **map**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -112,15 +112,15 @@ When using ``map``, many programmers will define the mapping function in the sam
 
       [ 6.28, 84, 9622 ]
 
-Using Parameters as Functions
------------------------------
+Functions That Take Function Arguments
+--------------------------------------
 
 The previous section illustrates how a function can be passed to another function as an argument. This section takes the opposite perspective to *write* functions that can take other functions as arguments.
 
-Example: A Generic Input validator
+Example: A Generic Input Validator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Our first example will be a generic input validator. It will prompt a user for input, using a parameter to the function to do that actual work of validating the input. 
+Our first example will be a generic input validator. It will prompt a user for input, using a parameter to the function to do the actual work of validating the input. 
 
 .. admonition:: Example
 
@@ -261,6 +261,9 @@ This example can be made even more powerful by enabling multiple loggers.
       logError('Something broke!', [fileLogger, consoleLogger]);
 
 As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call ``logError``. The code *inside* ``logError`` doesn't know or care about the specfics of how each logging function does it's job. It is concerned merely with creating the message string and passing it to each logger.
+
+A Word of Caution
+^^^^^^^^^^^^^^^^^
 
 When writing a function that uses one of its parameters as a function, things can go wrong since there is now way to *force* a programmer to pass a function.
 

@@ -15,7 +15,7 @@ You already know :ref:`one method for creating a function <function-syntax>`:
 
    }
 
-A function defined in this way is a **named function**, so-called because it has a name (``myFunction``, in the example above).  
+A function defined in this way is a **named function** (``myFunction``, in the example above).  
 
 Many programming languages, including JavaScript, allow us to create **anonymous functions**, which *do not* have names. We can create an anonymous function by simply leaving off the function name when defining it:
 
@@ -27,7 +27,7 @@ Many programming languages, including JavaScript, allow us to create **anonymous
 
    }
 
-You might be asking yourself, *How can I call such a function if it doesn't have a name?!* Good question. Let's address that now.
+You might be asking yourself, *How do I call a function if it doesn't have a name?!* Good question. Let's address that now.
 
 Anonymous Function Variables
 ----------------------------
@@ -91,7 +91,7 @@ Check Your Understanding
       :linenos:
 
       let f1 = function(str) {
-         console.log(str + str);
+         return str + str;
       };
 
       let f2 = f1;

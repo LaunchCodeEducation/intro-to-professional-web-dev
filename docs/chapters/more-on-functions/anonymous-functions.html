@@ -7,13 +7,12 @@
     <title>11.2. Anonymous Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -59,8 +58,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -89,7 +87,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>A function defined in this way is a <strong>named function</strong>, so-called because it has a name (<code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, in the example above).</p>
+<p>A function defined in this way is a <strong>named function</strong> (<code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, in the example above).</p>
 <p>Many programming languages, including JavaScript, allow us to create <strong>anonymous functions</strong>, which <em>do not</em> have names. We can create an anonymous function by simply leaving off the function name when defining it:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
 
@@ -98,7 +96,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>You might be asking yourself, <em>How can I call such a function if it doesn’t have a name?!</em> Good question. Let’s address that now.</p>
+<p>You might be asking yourself, <em>How do I call a function if it doesn’t have a name?!</em> Good question. Let’s address that now.</p>
 <div class="section" id="anonymous-function-variables">
 <h2>11.2.1. Anonymous Function Variables<a class="headerlink" href="#anonymous-function-variables" title="Permalink to this headline">¶</a></h2>
 <p>Anonymous functions are often assigned to variables when they are created, which allows them to be called using the variable’s name.</p>
@@ -155,7 +153,7 @@ beginning on line 1.</p>
 3
 4
 5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">f1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span> <span class="o">+</span> <span class="nx">str</span><span class="p">);</span>
+   <span class="k">return</span> <span class="nx">str</span> <span class="o">+</span> <span class="nx">str</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="kd">let</span> <span class="nx">f2</span> <span class="o">=</span> <span class="nx">f1</span><span class="p">;</span>
