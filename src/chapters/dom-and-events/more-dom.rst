@@ -29,12 +29,6 @@ the JavaScript code is running.
    * - location
      - ``window.location``
      - Object that represents and alters the web address of the window or tab.
-   * - open
-     - ``window.open()``
-     - Opens a new browser window or tab.
-   * - close
-     - ``window.close()``
-     - Closes the current window or tab. ``window.close()`` only closes windows opened with ``window.open()``.
    * - console
      - ``window.console``
      - Represents the debugging console. Most common and basic use is ``window.console.log()``.
