@@ -39,7 +39,7 @@ The built-in function ``setTimeout`` allows a programmer to pass a function, spe
 
    Is the call to ``printMessage`` actually delayed? Don't just take our word for it, try this yourself. `Play with our example <https://repl.it/@launchcode/setTimeout-Example>`_ to change the delay.
 
-The function ``printMessage`` is *passed* to ``setTimeout`` the same way any other argument. 
+The function ``printMessage`` is *passed* to ``setTimeout`` the same as any other argument. 
 
 A common twist often used by JavaScript programmers is to use an *anonymous* function as an argument.
 
@@ -80,13 +80,17 @@ The argument ``func`` should take a single value from the array and return a new
 
       let doubled = nums.map(timesTwo);
 
+      console.log(nums);
       console.log(doubled);
 
    **Output**
 
    ::
 
+      [3.14, 42, 4811]
       [ 6.28, 84, 9622 ]
+
+Notice that ``map`` does *not* alter the original array.
 
 When using ``map``, many programmers will define the mapping function anonymously in the same statement as the method call ``map``.
 
@@ -136,7 +140,7 @@ Check Your Understanding
 
    .. sourcecode:: js
 
-      let names = ["Chris", "Jim", "Sally", "Blake"];
+      let names = ["Chris", "Jim", "Sally", "Blake", "Paul"];
 
       // TODO: Write a mapping function
       // and pass it to .map()

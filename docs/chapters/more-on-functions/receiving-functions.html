@@ -318,7 +318,7 @@ launchcode
 </td></tr></table></div>
 </div>
 <p>The main change to the program is that <code class="docutils literal notranslate"><span class="pre">logError</span></code> now accepts an <em>array</em> of functions. It loops through the array, calling each logger with the message string.</p>
-<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know about how each logging function does it’s job. It is concerned merely with creating the message string and passing it to the logger(s).</p>
+<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know how each logging function does it’s job. It is concerned only with creating the message string and passing it to the logger(s).</p>
 </div>
 </div>
 <div class="section" id="a-word-of-caution">
