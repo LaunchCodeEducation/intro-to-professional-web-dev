@@ -19,6 +19,7 @@ In particular, functions have a data type, just like all other values. Recall th
    The data type of the type conversion function ``Number`` is ``function``. In fact, all functions are of type ``function``.
 
    .. sourcecode:: js
+      :linenos:
    
       console.log(typeof 42);
       console.log(typeof "LC101");
@@ -37,6 +38,7 @@ In particular, functions have a data type, just like all other values. Recall th
 Like other data types, functions may be assigned to variables. Suppose we define a function named ``hello``. We can assign it to a variable as follows:
 
 .. sourcecode:: js
+   :linenos:
 
    function hello() {
 
@@ -49,6 +51,7 @@ Like other data types, functions may be assigned to variables. Suppose we define
 When a variable refers to a function, we can call the function using the variable name:
 
 .. sourcecode:: js
+   :linenos:
 
    helloFunc();
 

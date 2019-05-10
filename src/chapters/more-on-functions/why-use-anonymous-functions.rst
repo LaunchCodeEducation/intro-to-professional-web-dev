@@ -13,6 +13,7 @@ There are many situations in which you will need to create a function that will 
    The anonymous function created in this example cannot be used outside of ``setTimeout``.
 
    .. sourcecode:: js
+      :linenos:
    
       setTimeout(function () {
          console.log("The future is now!");

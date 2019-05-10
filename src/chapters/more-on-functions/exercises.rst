@@ -19,6 +19,7 @@ hooks and rope.
 The first mate swiped a copy of the code ye need ta hack:
 
 .. sourcecode:: js
+   :linenos:
 
    function checkFuel(level) {
       if (level > 100000){

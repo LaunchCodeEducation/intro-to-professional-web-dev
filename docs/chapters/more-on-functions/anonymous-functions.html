@@ -80,22 +80,30 @@
   <div class="section" id="anonymous-functions">
 <h1>11.2. Anonymous Functions<a class="headerlink" href="#anonymous-functions" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">You already know <a class="reference internal" href="../functions/creating-functions.html#function-syntax"><span class="std std-ref">one method for creating a function</span></a>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// function body</span>
 
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>A function defined in this way is a <strong>named function</strong> (<code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, in the example above).</p>
 <p>Many programming languages, including JavaScript, allow us to create <strong>anonymous functions</strong>, which <em>do not</em> have names. We can create an anonymous function by simply leaving off the function name when defining it:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// function body</span>
 
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>You might be asking yourself, <em>How do I call a function if it doesn’t have a name?!</em> Good question. Let’s address that now.</p>
 <div class="section" id="anonymous-function-variables">
 <h2>11.2.1. Anonymous Function Variables<a class="headerlink" href="#anonymous-function-variables" title="Permalink to this headline">¶</a></h2>
@@ -135,13 +143,17 @@
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p>Convert the following named function to an anonymous function that is stored in a variable.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">lettersArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
    <span class="kd">let</span> <span class="nx">reversedLettersArray</span> <span class="o">=</span> <span class="nx">lettersArray</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
    <span class="k">return</span> <span class="nx">reversedLettersArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Refactor-to-make-anonymous">Refactor the program at repl.it</a></p>
 </div>
 <div class="admonition-question admonition">
@@ -173,7 +185,13 @@ doesn’t have a name.</li>
 <p class="first admonition-title">Question</p>
 <p>Complete the following code snippet so that it logs an error message
 if <code class="docutils literal notranslate"><span class="pre">userInput</span></code> is negative.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">logger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">errorMsg</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">logger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">errorMsg</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ERROR: &quot;</span> <span class="o">+</span> <span class="nx">errorMsg</span><span class="p">);</span>
 <span class="p">};</span>
 
@@ -181,7 +199,7 @@ if <code class="docutils literal notranslate"><span class="pre">userInput</span>
    <span class="nx">____________</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Check-Fill-in-the-Code">Finish the program at repl.it</a></p>
 </div>
 </div>

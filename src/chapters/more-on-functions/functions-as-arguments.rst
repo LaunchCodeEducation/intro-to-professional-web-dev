@@ -26,6 +26,7 @@ The built-in function ``setTimeout`` allows a programmer to pass a function, spe
    Suppose we want to log a message with a 5 second delay. Since five seconds is 5000 milliseconds (1 second = 1000 milliseconds), we can do so like this:
 
    .. sourcecode:: js
+      :linenos:
    
       function printMessage() {
          console.log("The future is now!");
@@ -52,6 +53,7 @@ A common twist often used by JavaScript programmers is to use an *anonymous* fun
    This program has the same behavior as the one above. Instead of creating a named function and passing it to ``setTimeout``, it creates an anonymous function within ``setTimeout``'s argument list.
 
    .. sourcecode:: js
+      :linenos:
    
       setTimeout(function () {
          console.log("The future is now!");
@@ -73,6 +75,7 @@ The argument ``func`` should take a single value from the array and return a new
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let nums = [3.14, 42, 4811];
 
@@ -97,6 +100,7 @@ When using ``map``, many programmers will define the mapping function in the sam
    This program has the same output as the one immediately above. The mapping function is defined anonymously within the call to ``map``.
 
    .. sourcecode:: js
+      :linenos:
       
       let nums = [3.14, 42, 4811];
 
@@ -125,6 +129,7 @@ Our first example will be a generic input validator. It will prompt a user for i
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       const input = require('readline-sync');
 
@@ -167,6 +172,7 @@ The function ``getValidInput`` handles the work of interacting with the user, wh
    This example uses the same ``getValidInput`` function defined above with a different prompt and validator function. In this case, we check that a potential password has at least 8 characters.
 
    .. sourcecode:: js
+      :linenos:
 
       const input = require('readline-sync');
 
@@ -217,6 +223,7 @@ We can write a logging function that relies on a function parameter to determine
    The ``logError`` function outputs a standardized error message to a location determined by the parameter ``logger``.
 
    .. sourcecode:: js
+      :linenos:
    
       let fileLogger = function(msg) {
 
@@ -237,6 +244,7 @@ This example can be made even more powerful by enabling multiple loggers.
    The call to ``logError`` will log the message to both the console and a file.
 
    .. sourcecode:: js
+      :linenos:
    
       let fileLogger = function(msg) {
 
@@ -272,6 +280,7 @@ When writing a function that uses one of its parameters as a function, things ca
    What happens if a function expects an argument to be a function, but it isn't?
 
    .. sourcecode:: js
+      :linenos:
    
       function callMe(func) {
          func();

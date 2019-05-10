@@ -8,6 +8,7 @@ Anonymous Functions
 You already know :ref:`one method for creating a function <function-syntax>`:
 
 .. sourcecode:: js
+   :linenos:
 
    function myFunction(parameter1, parameter2,..., parameterN) {
 
@@ -20,6 +21,7 @@ A function defined in this way is a **named function** (``myFunction``, in the e
 Many programming languages, including JavaScript, allow us to create **anonymous functions**, which *do not* have names. We can create an anonymous function by simply leaving off the function name when defining it:
 
 .. sourcecode:: js
+   :linenos:
 
    function (parameter1, parameter2,..., parameterN) {
 
@@ -73,6 +75,7 @@ Check Your Understanding
    Convert the following named function to an anonymous function that is stored in a variable.
 
    .. sourcecode:: js
+      :linenos:
 
       function reverse(str) {
          let lettersArray = str.split('');
@@ -111,6 +114,7 @@ Check Your Understanding
    if ``userInput`` is negative.
 
    .. sourcecode:: js
+      :linenos:
 
       let logger = function(errorMsg) {
          console.log("ERROR: " + errorMsg);
