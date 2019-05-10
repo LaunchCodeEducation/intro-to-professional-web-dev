@@ -22,7 +22,7 @@ One way to state the palindrome condition is to say that a palindrome is a strin
 
 To that end, it would be very useful to have a function that reversed a string, wouldn't it?
 
-The **reverse** Function
+The ``reverse`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's write a function that, given a string, returns its reverse.
@@ -72,7 +72,7 @@ Let's break down the steps carried out by this function:
 
 .. _palindrome-function:
 
-The **isPalindrome** Function
+The ``isPalindrome`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using our ``reverse`` function for strings, we can create our palindrome checker. Recall that our approach will be to take the string argument, reverse it, and then compare the reversed string to the original string.
