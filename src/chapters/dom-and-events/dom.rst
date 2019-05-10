@@ -1,6 +1,9 @@
 The DOM
 =======
-.. index:: ! DOM, ! Document Object Model
+.. index:: ! DOM
+
+.. index::
+   single: DOM; Document Object Model
 
 You may remember from earlier chapters that classes represent specific entities.
 The **Document Object Model (DOM)** is a set of objects that represent the browser and the documents that make up the web page.
