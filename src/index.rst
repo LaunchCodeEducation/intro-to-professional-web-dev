@@ -20,6 +20,7 @@ Chapters
    chapters/html/index
    chapters/css/index
    chapters/git/index
+   chapters/dom-and-events/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -35,11 +36,11 @@ Studios
    :name: studiostoc
 
    chapters/data-and-variables/studio
-   chapters/loops/studio
    chapters/arrays/studio
    chapters/loops/studio
    chapters/functions/studio
    chapters/more-on-functions/studio
+   chapters/dom-and-events/studio
 
 Assignments
 ^^^^^^^^^^^
@@ -57,10 +58,12 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
-   appendices/array-method-examples/index
-   appendices/style-guide
-   appendices/string-method-examples/index
    appendices/about-this-book
+   appendices/array-method-examples/index
+   appendices/dom-method-examples/index
+   appendices/string-method-examples/index
+   appendices/style-guide
+
 
 .. toctree::
    :hidden:
