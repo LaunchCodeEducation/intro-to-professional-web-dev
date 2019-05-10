@@ -55,4 +55,4 @@ The browser waits until the user clicks "ok" or "cancel".
 
    ::
 
-      Hopefully you will be surprised
+      Oh no! I hope tomorrow is a better day!
