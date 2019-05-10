@@ -1,7 +1,7 @@
 Why Use Anonymous Functions?
 ============================
 
-At this point, you may be asking yourself *Why am I learning anonymous functions?* They seem strange, and their utility may not be immediately obvious. While the opinions of programmers differ, we will discuss the two main reasons why *we* think anonymous functions are important to understand.
+At this point, you may be asking yourself *Why am I learning anonymous functions?* They seem strange, and their utility may not be immediately obvious. While the opinions of programmers differ, there are two main reasons why *we* think anonymous functions are important to understand.
 
 Anonymous Functions Can Be Single-Use
 -------------------------------------
