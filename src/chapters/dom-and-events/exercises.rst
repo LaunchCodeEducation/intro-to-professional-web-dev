@@ -4,6 +4,8 @@ Exercises: The DOM and Events
 Time to make a flight simulator for your fellow astronauts! The provided HTML and JavaScript files can be used for all of the exercises.
 For each exercise, the requirements and desired effect of the events is listed. 
 
+`Repl.it with starter code <https://repl.it/@launchcode/Exercises-DOM-and-Events>`_
+
 1. When the "Take off" button is clicked, the text "The shuttle is on the ground" changes to "Houston, we have lift off!".
    The "Take off" button has an ``id`` of "liftoff".
 

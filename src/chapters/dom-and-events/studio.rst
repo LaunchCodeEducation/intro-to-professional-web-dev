@@ -4,6 +4,8 @@ Studio: The DOM and Events
 Now that we can build a basic flight simulator, we want to add more controls for the staff at our space station.
 The HTML, CSS, and JavaScript files are provided. For each event, the requirements and desired effect is listed.
 
+`Repl.it with starter code <https://repl.it/@launchcode/Studio-DOM-and-Events>`_
+
 1. Use the window *load* event to ensure all elements have loaded before attaching event handlers.
 
 2. When the "Take off" button is clicked, the following should happen:
