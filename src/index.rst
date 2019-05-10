@@ -44,6 +44,7 @@ Studios
    chapters/loops/studio
    chapters/arrays/studio
    chapters/loops/studio
+   chapters/functions/studio
    chapters/more-on-functions/studio
 
 Assignments
