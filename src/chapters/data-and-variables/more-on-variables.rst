@@ -3,7 +3,7 @@ More On Variables
 
 The previous section covered creating, evaluating, and reassigning variables. This section will cover some additional, more nuanced topics related to variables.
 
-Creating Constants With **const**
+Creating Constants With ``const``
 ---------------------------------
 
 One of the key features of variables that we have discussed so far is their ability to change value. We can create a variable with one value, and then reassign it to another value.
