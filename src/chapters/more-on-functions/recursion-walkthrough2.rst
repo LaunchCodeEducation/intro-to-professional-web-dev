@@ -71,11 +71,26 @@ single entry from the array. Rather than building ``'LC101'`` from left to
 right, recursion constructs the string starting with the base case and
 adding new characters to the front:
 
-| ``'1'``
-| ``'01'``
-| ``'101'``
-| ``'C101'``
-| ``'LC101'``
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Value Returned
+     - Description
+   * - ``'1'``
+     - Base case. Returns the element from an array of length 1.
+
+   * - ``'01'``
+     - Combines the first element from an array of length 2 with the base case value.
+
+   * - ``'101'``
+     - Combines the first element from an array of length 3 with the two previous values.
+
+   * - ``'C101'``
+     - Combines the first element from an array of length 4 with the three previous values.
+
+   * - ``'LC101'``
+     - Combines the first element from an array of length 5 with the four previous values.
 
 Recursive processes all follow this approach. Each call to the function reduces
 a problem into a slighly smaller piece. The reduction continues until reaching
@@ -112,21 +127,53 @@ Let's add the bracket notation and the ``slice`` method to our function:
 
 Each time the ``else`` statement runs, it extracts the first element in the
 array with ``arrayName[0]``, then it calls itself with the remaining array
-elements (``arrayName.slice(1)``). For
-``combineEntries(['L', 'C', '1', '0', '1']);``:
+elements (``arrayName.slice(1)``).
 
-| a. First call: Combine ``'L'`` with ``combineEntries(['C', '1', '0', '1'])``.
-| b. Second call: Combine ``'C'``, with ``combineEntries(['1', '0', '1'])``.
-| c. Third call: Combine ``'1'``, with ``combineEntries(['0', '1'])``.
-| d. Fourth call: Combine ``'0'``, with ``combineEntries(['1'])``.
-| e. Fifth call: Base case returns ``'1'``.
+For ``combineEntries(['L', 'C', '1', '0', '1']);``, the sequence would be:
 
-| To get the final result, proceed *up the chain*:
-| e. Return ``'1'`` to the fourth call,
-| d. Return ``'01'`` to the third call,
-| c. Return ``'101'`` to the second call,
-| b. Return ``'C101'`` to the first call,
-| a. Return ``'LC101`` as the final result.
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Step
+     - Description
+   * - 1
+     - First call: Combine ``'L'`` with ``combineEntries(['C', '1', '0', '1'])``.
+
+   * - 2
+     - Second call: Combine ``'C'``, with ``combineEntries(['1', '0', '1'])``.
+
+   * - 3
+     - Third call: Combine ``'1'``, with ``combineEntries(['0', '1'])``.
+
+   * - 4
+     - Fourth call: Combine ``'0'``, with ``combineEntries(['1'])``.
+
+   * - 5
+     - Fifth call: Base case returns ``'1'``.
+
+To get the final result, proceed *up the chain*:
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Step
+     - Description
+   * - 5
+     - Return ``'1'`` to the fourth call.
+
+   * - 4
+     - Return ``'01'`` to the third call.
+
+   * - 3
+     - Return ``'101'`` to the second call.
+
+   * - 2
+     - Return ``'C101'`` to the first call.
+
+   * - 1
+     - Return ``'LC101`` as the final result.
 
 `See this recursion in action <https://repl.it/@launchcode/RecursionExample01>`__.
 
