@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>14.3. More DOM Methods and Properties &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14.4. Events" href="events.html" />
+    <link rel="prev" title="14.2. The DOM" href="dom.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">14. The DOM and Events</a></li>
+          <li class="active">14.3. More DOM Methods and Properties</li>
+        </ol>
+      
+    
+  <div class="section" id="more-dom-methods-and-properties">
+<h1>14.3. More DOM Methods and Properties<a class="headerlink" href="#more-dom-methods-and-properties" title="Permalink to this headline">¶</a></h1>
+<p>The following sections are a summary of some DOM classes, methods, and properties. A
+more complete list can be found in the reference links below. You do NOT need to memorize everything on these reference pages.
+We are providing them to you as a guide for your future studies of the DOM.</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.w3schools.com/js/js_htmldom_document.asp">W3Schools DOM reference</a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Important_Data_Types">MDN DOM reference</a></li>
+</ol>
+<div class="section" id="window">
+<h2>14.3.1. Window<a class="headerlink" href="#window" title="Permalink to this headline">¶</a></h2>
+<p>The global variable <code class="docutils literal notranslate"><span class="pre">window</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Window</span></code> class. The <code class="docutils literal notranslate"><span class="pre">Window</span></code> class represents the browser
+window. In the case of multi-tabbed browsers, the global <code class="docutils literal notranslate"><span class="pre">window</span></code> variable represents the specific tab in which
+the JavaScript code is running.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Window Properties and Methods</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method or Property</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>alert</td>
+<td><code class="docutils literal notranslate"><span class="pre">window.alert(&quot;String</span> <span class="pre">message&quot;)</span></code></td>
+<td>Displays a dialog box with a message and an “ok” button to close the box.</td>
+</tr>
+<tr class="row-odd"><td>confirm</td>
+<td><code class="docutils literal notranslate"><span class="pre">window.confirm(&quot;String</span> <span class="pre">message&quot;)</span></code></td>
+<td>Displays a dialog box with a message and returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if user clicks “ok” and <code class="docutils literal notranslate"><span class="pre">false</span></code> if user clicks “cancel”.</td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td><code class="docutils literal notranslate"><span class="pre">window.location</span></code></td>
+<td>Object that represents and alters the web address of the window or tab.</td>
+</tr>
+<tr class="row-odd"><td>open</td>
+<td><code class="docutils literal notranslate"><span class="pre">window.open()</span></code></td>
+<td>Opens a new browser window or tab.</td>
+</tr>
+<tr class="row-even"><td>close</td>
+<td><code class="docutils literal notranslate"><span class="pre">window.close()</span></code></td>
+<td>Closes the current window or tab. <code class="docutils literal notranslate"><span class="pre">window.close()</span></code> only closes windows opened with <code class="docutils literal notranslate"><span class="pre">window.open()</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>console</td>
+<td><code class="docutils literal notranslate"><span class="pre">window.console</span></code></td>
+<td>Represents the debugging console. Most common and basic use is <code class="docutils literal notranslate"><span class="pre">window.console.log()</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When using JavaScript in the browser environment, methods and properties defined on the <code class="docutils literal notranslate"><span class="pre">Window</span></code>
+class are exposed as global functions and variables. An example of this is <code class="docutils literal notranslate"><span class="pre">window.console.log()</span></code>
+is accessible by referencing <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> directly.</p>
+</div>
+</div>
+<div class="section" id="document">
+<h2>14.3.2. Document<a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h2>
+<p>The global <code class="docutils literal notranslate"><span class="pre">document</span></code> variable is an instance of the <code class="docutils literal notranslate"><span class="pre">Document</span></code> class. The <code class="docutils literal notranslate"><span class="pre">Document</span></code> class represents the
+HTML web page that is read and displayed by the browser. The <code class="docutils literal notranslate"><span class="pre">Document</span></code> class provides properties and methods
+to find, add, remove, and alter HTML elements inside on the web page.</p>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-text">Document Properties and Methods</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method or Property</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td><code class="docutils literal notranslate"><span class="pre">document.title</span></code></td>
+<td>Read or set the title of the document.</td>
+</tr>
+<tr class="row-odd"><td>getElementById</td>
+<td><code class="docutils literal notranslate"><span class="pre">document.getElementById(&quot;example-id&quot;)</span></code></td>
+<td>Returns a reference to the element that’s <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute matches the given string value.</td>
+</tr>
+<tr class="row-even"><td>getElementsByTagName</td>
+<td><code class="docutils literal notranslate"><span class="pre">document.getElementsByTagName(&quot;div&quot;)</span></code></td>
+<td>Returns a list of elements with the given tag name.</td>
+</tr>
+<tr class="row-odd"><td>getElementsByClassName</td>
+<td><code class="docutils literal notranslate"><span class="pre">document.getElementsByClassName(&quot;main-content&quot;)</span></code></td>
+<td>Returns a list of elements with the given CSS class name.</td>
+</tr>
+<tr class="row-even"><td>querySelector</td>
+<td><code class="docutils literal notranslate"><span class="pre">document.querySelector(&quot;.selector-pattern&quot;)</span></code></td>
+<td>Returns the first element that matches the given CSS selector.</td>
+</tr>
+<tr class="row-odd"><td>querySelectorAll</td>
+<td><code class="docutils literal notranslate"><span class="pre">document.querySelectorAll(&quot;.selector-pattern&quot;)</span></code></td>
+<td>Returns a list of elements that match the given CSS selector.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">querySelector</span></code> and <code class="docutils literal notranslate"><span class="pre">querySelectorAll</span></code> use the CSS selector pattern to find matching elements. The pattern
+passed in must be a valid CSS selector. Elements will be found and returned the same way that elements
+are selected to have CSS rules applied.</p>
+</div>
+</div>
+<div class="section" id="element">
+<h2>14.3.3. Element<a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h2>
+<p>HTML documents are made up of a tree of elements. The <code class="docutils literal notranslate"><span class="pre">Element</span></code> class represents an HTML element.</p>
+<table border="1" class="docutils" id="id3">
+<caption><span class="caption-text">Element Properties and Methods</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method or Property</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>getAttribute</td>
+<td><code class="docutils literal notranslate"><span class="pre">element.getAttribute(&quot;id&quot;)</span></code></td>
+<td>Returns the value of the attribute.</td>
+</tr>
+<tr class="row-odd"><td>setAttribute</td>
+<td><code class="docutils literal notranslate"><span class="pre">element.setAttribute(&quot;id&quot;,</span> <span class="pre">&quot;string-value&quot;)</span></code></td>
+<td>Sets the attribute to the given value.</td>
+</tr>
+<tr class="row-even"><td>style</td>
+<td><code class="docutils literal notranslate"><span class="pre">element.style.color</span></code></td>
+<td>Object that allows reading and setting CSS properties.</td>
+</tr>
+<tr class="row-odd"><td>innerHTML</td>
+<td><code class="docutils literal notranslate"><span class="pre">element.innerHTML</span></code></td>
+<td>Reads or sets the HTML inside an element.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>14.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What value will <code class="docutils literal notranslate"><span class="pre">response</span></code> have if the user clicks <em>Cancel</em>?</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;String message&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>Which of these are TRUE about selecting DOM elements?</p>
+<ol class="last loweralpha simple">
+<li>You can select elements by <em>CSS class</em> name</li>
+<li>You can select elements by <em>id attribute</em> value</li>
+<li>You can select elements by <em>tag</em> name</li>
+<li>All of the above</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What is the value of <code class="docutils literal notranslate"><span class="pre">p.innerHTML</span></code>?</p>
+<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo-text&quot;</span><span class="p">&gt;</span>Hello friend<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+   <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo-text&quot;</span><span class="p">);</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="dom.html"><span aria-hidden="true">&larr;</span> 14.2. The DOM</a></li>
+        
+        
+        <li class="next"><a href="events.html">14.4. Events <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
