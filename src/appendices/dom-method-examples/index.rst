@@ -5,3 +5,4 @@ DOM Method Examples
    :maxdepth: 3
 
    confirm-examples
+   getelementbyid-examples

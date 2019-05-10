@@ -54,15 +54,9 @@ to find, add, remove, and alter HTML elements inside on the web page.
    * - title
      - ``document.title``
      - Read or set the title of the document.
-   * - getElementById
+   * - :ref:`getElementById <dom-getElementById-examples>`
      - ``document.getElementById("example-id")``
      - Returns a reference to the element that's ``id`` attribute matches the given string value.
-   * - getElementsByTagName
-     - ``document.getElementsByTagName("div")``
-     - Returns a list of elements with the given tag name.
-   * - getElementsByClassName
-     - ``document.getElementsByClassName("main-content")``
-     - Returns a list of elements with the given CSS class name.
    * - querySelector
      - ``document.querySelector(".selector-pattern")``
      - Returns the first element that matches the given CSS selector.
@@ -75,6 +69,7 @@ to find, add, remove, and alter HTML elements inside on the web page.
    ``querySelector`` and ``querySelectorAll`` use the CSS selector pattern to find matching elements. The pattern
    passed in must be a valid CSS selector. Elements will be found and returned the same way that elements
    are selected to have CSS rules applied.
+
 
 Element
 -------
@@ -98,6 +93,7 @@ HTML documents are made up of a tree of elements. The ``Element`` class represen
    * - innerHTML
      - ``element.innerHTML``
      - Reads or sets the HTML inside an element.
+
 
 Check Your Understanding
 ------------------------
