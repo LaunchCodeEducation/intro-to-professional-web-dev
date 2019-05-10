@@ -8,6 +8,16 @@ Recall that using the ``sort`` method on an array of numbers
 :ref:`produced an unexpected result <sort-examples>`, since JavaScript converts
 the numbers to strings by default.  Let's fix this!
 
+Here is one approach to sorting an array:
+
+1) Find the minimum value in an array,
+2) Add that value to a new array,
+3) Remove the entry from the old array,
+4) Repeat steps 1 - 3 until the numbers are all in order.
+
+Part A: Find the Minimum Value
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 1. Create a function with an array of numbers as its parameter. The function
    should iterate through the array and return the minimum value from the
    array. *Hint*: Use what you know about ``if`` statements to identify and
@@ -21,7 +31,10 @@ the numbers to strings by default.  Let's fix this!
       [ -2, 0, -10, -44, 5, 3, 0, 3 ]
       [ 200, 5, 4, 10, 8, 5, -3.3, 4.4, 0 ]
 
-   `Code studio part 1 here <https://repl.it/@launchcode/MoreFuncsStudio01>`__.
+   `Code studio part A here <https://repl.it/@launchcode/MoreFuncsStudio01>`__.
+
+Part B: Create a New Sorted Array
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2. Create another function with an array of numbers as its parameter.  Within
    this function:
@@ -34,7 +47,7 @@ the numbers to strings by default.  Let's fix this!
    d. Repeat parts b & c until the old array is empty.
    e. Return the new sorted array.
    f. *Be sure to print the results in order to verify your code*.
-   g. `Code studio part 2 here <https://repl.it/@launchcode/MoreFuncsStudio02>`__.
+   g. `Code studio part B here <https://repl.it/@launchcode/MoreFuncsStudio02>`__.
 
 .. tip:: *Which type of loop?*
 
@@ -64,8 +77,8 @@ Fortunately, JavaScript has an elegant way to properly sort numbers.
    order numbers in an array.
 
 
-Number Sorting With JavaScript
--------------------------------
+Part C: Number Sorting the Easy Way
+------------------------------------
 
 If you Google "JavaScript sort array of numbers" (or something similar), many
 options appear, and they all give pretty much the same result. The sites just
@@ -76,17 +89,17 @@ One reference is here: `W3Schools <https://www.w3schools.com/jsref/jsref_sort.as
 End result - the JavaScript syntax for numerical sorting is
 ``arrayName.sort(function(a, b){return a-b});``.
 
-.. admonition:: Note
-
-   You do NOT need to understand HOW the sorting function works. You just need to
-   be able to use it.
+Here, the anonymous function determines which element is larger and swaps the
+positions if necessary. This is all that ``sort`` needs to order the entire
+array.
 
 3. Using the sytax listed above:
 
    a. Sort each sample array in increasing order.
    b. Sort each sample array in decreasing order.
    c. Does the function alter ``arrayName``?
-   d. `Code studio part 3 here <https://repl.it/@launchcode/MoreFuncsStudio03>`__.
+   d. Did your sorting function from part B alter ``arrayName``?
+   e. `Code studio part C here <https://repl.it/@launchcode/MoreFuncsStudio03>`__.
 
 So Why Write A Sorting Function?
 ---------------------------------
@@ -102,3 +115,8 @@ One standard, go-to question is to sort an array WITHOUT relying on the built
 in methods. Knowing how to think though a sorting task, generate the code and
 then clearly explain your approach will significantly boost your appeal to an
 employer.
+
+Bonus Mission
+--------------
+
+Refactor your sorting function from part B to use recursion.

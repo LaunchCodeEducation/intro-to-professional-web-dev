@@ -56,6 +56,8 @@ A common twist often used by JavaScript programmers is to use an *anonymous* fun
 
 Examples like this look odd at first. However, they become easier to read over time. Additionally, code that passes anonymous functions is ubiquitous in JavaScript. 
 
+.. _map-method:
+
 Example: The Array Method ``map``
 ---------------------------------
 
@@ -100,7 +102,7 @@ When using ``map``, many programmers will define the mapping function anonymousl
 
    .. sourcecode:: js
       :linenos:
-      
+
       let nums = [3.14, 42, 4811];
 
       let doubled = nums.map(function (n) {
@@ -123,7 +125,7 @@ Check Your Understanding
    Similar to the ``map`` example above, finish the program below to halve each number in an array.
 
    .. sourcecode:: js
-   
+
       let nums = [3.14, 42, 4811];
 
       // TODO: Write a mapping function
@@ -149,5 +151,3 @@ Check Your Understanding
       console.log(firstInitials);
 
    `Find the first letter of every string at repl.it <https://repl.it/@launchcode/Mapping-strings-check>`_
-   
-   

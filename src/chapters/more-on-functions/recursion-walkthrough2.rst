@@ -180,4 +180,30 @@ To get the final result, proceed *up the chain*:
 Check Your Understanding
 -------------------------
 
-ID the recursive statement when...
+.. admonition:: Question
+
+   What if we wanted to take a number (n) and add it to all of the positive integers below it?
+   For example, if n = 5, the function returns 5 + 4 + 3 + 2 + 1 = 15.
+
+   Consider the code sample below, which declares the ``decreasingSum`` function.
+
+   .. sourcecode:: js
+      :linenos:
+
+      function decreasingSum(integer) {
+         if (integer === 1){
+            return integer;
+         } else {
+            //call decreasingSum function again
+         }
+      }
+
+   Which of the following should be used in the ``else`` statement to recursively call ``decreasingSum``
+   and eventually return the correct answer?
+
+   #. ``return integer + (integer-1);``
+   #. ``return integer + (decreasingSum(integer));``
+   #. ``return integer + (decreasingSum(integer-1));``
+   #. ``return decreasingSum(integer-1);``
+
+   Experiment with this `repl.it <https://repl.it/@launchcode/RecursionCC01>`__.
