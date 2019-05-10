@@ -58,10 +58,10 @@ to find, add, remove, and alter HTML elements inside on the web page.
      - ``document.getElementById("example-id")``
      - Returns a reference to the element that's ``id`` attribute matches the given string value.
    * - :ref:`querySelector <dom-querySelector-examples>`
-     - ``document.querySelector(".selector-pattern")``
+     - ``document.querySelector("css selector")``
      - Returns the first element that matches the given CSS selector.
-   * - querySelectorAll
-     - ``document.querySelectorAll(".selector-pattern")``
+   * - :ref:`querySelectorAll <dom-querySelectorAll-examples>`
+     - ``document.querySelectorAll("css selector")``
      - Returns a list of elements that match the given CSS selector.
 
 .. note::
