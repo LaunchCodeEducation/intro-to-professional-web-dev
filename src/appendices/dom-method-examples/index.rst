@@ -7,3 +7,4 @@ DOM Method Examples
    confirm-examples
    getelementbyid-examples
    queryselector-examples
+   innerhtml-examples

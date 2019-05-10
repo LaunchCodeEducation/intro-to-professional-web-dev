@@ -90,7 +90,7 @@ HTML documents are made up of a tree of elements. The ``Element`` class represen
    * - style
      - ``element.style.color``
      - Object that allows reading and setting CSS properties.
-   * - innerHTML
+   * - :ref:`innerHTML <dom-innerHTML-examples>`
      - ``element.innerHTML``
      - Reads or sets the HTML inside an element.
 
