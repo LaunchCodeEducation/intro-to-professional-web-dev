@@ -70,21 +70,40 @@
 
 {%- block content %}
 {{ navBar() }}
+{% if pagename == "index" or pagename == "index-full" %}
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 content">
+                <h1>{{ project }}</h1>
+                <nav id='toc-toggle'>
+                    <ul class="pagination pagination-sm">
+                        <li class="{{'disabled' if pagename == 'index' }}"><a href="index.html">Summary</a></li>
+                        <li class="{{'disabled' if pagename == 'index-full' }}"><a href="index-full.html">Expanded</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 <div class="container">
   <div class="row">
     {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
     <div class="{{ bs_span_prefix }}{{ bs_content_width }} col-md-offset-1 content ">
       {%- if parents|length > 0 %}
         <ol class="breadcrumb">
+          <li><a href="{{ pathto(master_doc) }}">{{ project }}</a></li>
           {%- for parent in parents %}
             <li><a href="{{ parent.link|e }}">{{ parent.title }}</a></li>
           {%- endfor %}
           <li class="active">{{ title }}</li>
         </ol>
       {% endif %}
+
     {% block body %}{% endblock %}
 
-    {% if pathto(pagename) != pathto(master_doc) %}
+    {% if pagename != "index" and pagename != "index-full" %}
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         {% if prev %}
