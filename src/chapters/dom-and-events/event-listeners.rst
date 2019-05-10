@@ -111,7 +111,12 @@ defines methods and properties related to events.
 
 ``event.target`` is an element object that was the target of the event.
 
-TODO: TRY IT asking student to try out the above code
+.. admonition:: Try It!
+
+   Above, we saw how we could use addEventListener to add the function ``youRang()`` as the event handler for the ``Ring Bell`` button.
+   Using ``addEventListener``, could you add the function ``greetFriends()`` as the event handler for the ``Greet Friends`` button?
+   `TRY IT! <https://repl.it/@launchcode/Try-It-addEventListener/>`_
+
 
 
 Event Bubbling
@@ -174,13 +179,11 @@ affected by the event.
       toolbar clicked
       document clicked
 
-TODO: TRY IT. what happens when you click in the green? what happens when you click the button?
+
 
 In rare cases, you may want to stop events from bubbling up. We can use ``event.stopPropagation()`` to stop
 events from being sent to ancestor elements. Handlers for parent elements will not be triggered if
 a child element calls ``event.stopPropagation()``.
-
-TODO: TRY IT. add stopPropagation to the button click handler, then click button to see what happens.
 
 .. sourcecode:: js
 
@@ -189,6 +192,11 @@ TODO: TRY IT. add stopPropagation to the button click handler, then click button
       event.stopPropagation();
    });
 
+.. admonition:: Try It!
+
+   With the HTML above, what happens when you click in the green?
+   After you see the result, try adding ``stopPropagation()`` to the button click handler and seeing what happens when you click the button.
+   `TRY IT HERE! <https://repl.it/@launchcode/Try-It-Event-Bubbling/>`_
 
 Check Your Understanding
 ------------------------
