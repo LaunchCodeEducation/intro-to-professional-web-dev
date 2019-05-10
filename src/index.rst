@@ -22,6 +22,7 @@ Chapters
    chapters/arrays/index
    chapters/loops/index
    chapters/functions/index
+   chapters/more-on-functions/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
@@ -44,6 +45,7 @@ Studios
    chapters/arrays/studio
    chapters/loops/studio
    chapters/functions/studio
+   chapters/more-on-functions/studio
 
 Assignments
 ^^^^^^^^^^^
