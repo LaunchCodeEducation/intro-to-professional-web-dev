@@ -23,7 +23,7 @@ the JavaScript code is running.
    * - alert
      - ``window.alert("String message")``
      - Displays a dialog box with a message and an "ok" button to close the box.
-   * - confirm
+   * - :ref:`confirm <dom-confirm-examples>`
      - ``window.confirm("String message")``
      - Displays a dialog box with a message and returns ``true`` if user clicks "ok" and ``false`` if user clicks "cancel".
    * - location

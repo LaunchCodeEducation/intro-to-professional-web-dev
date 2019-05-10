@@ -133,7 +133,7 @@ affected by the event.
    global variable.
 
    .. sourcecode:: html
-      :linenos: 
+      :linenos:
 
       <!DOCTYPE html>
       <html>
