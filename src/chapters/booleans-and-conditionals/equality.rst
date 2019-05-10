@@ -3,7 +3,7 @@
 Equality
 ========
 
-Loose Equality With **==**
+Loose Equality With ``==``
 --------------------------
 
 .. index:: equality, ==
@@ -59,7 +59,7 @@ The == operator is **non-transitive**. We think of equality as being transitive;
 
 Since ``==`` does not follow rules that we typically associate with equality, unexpected results may occur if ``==`` is used in a program. Thankfully, JavaScript provides another operator that returns more predictable results.
 
-Strict Equality With **===**
+Strict Equality With ``===``
 ----------------------------
 
 .. index:: ! ===

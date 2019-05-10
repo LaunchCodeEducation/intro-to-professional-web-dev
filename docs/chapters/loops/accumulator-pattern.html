@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>9.5. The Accumulator Pattern &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9.6. while Loops" href="while-loops.html" />
+    <link rel="prev" title="9.4. Breaking Down the for Statement" href="for-statement-breakdown.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">9. Repeating With Loops</a></li>
+          <li class="active">9.5. The Accumulator Pattern</li>
+        </ol>
+      
+    
+  <div class="section" id="the-accumulator-pattern">
+<h1>9.5. The Accumulator Pattern<a class="headerlink" href="#the-accumulator-pattern" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">A <strong>pattern</strong> is a commonly-used approach to solve a group of similar programming problems.</p>
+<p>This section introduces your first pattern, which we will explore in-depth after looking at a motivating example.</p>
+<div class="section" id="adding-1-n">
+<h2>9.5.1. Adding 1…n<a class="headerlink" href="#adding-1-n" title="Permalink to this headline">¶</a></h2>
+<p>Let’s write a program that adds up the integers 1…n, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is an integer variable that we will create.</p>
+<p>If you were to do this with pen and paper, you would write out a single formula and compute the answer. For example, for n = 6 you would write:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 + 2 + 3 + 4 + 5 + 6
+</pre></div>
+</div>
+<p>To get the result, you would first add 1 and 2 to get 3. Then you would add 3 and 3 to get 6. Then you would add 6 and 4 to get 10, and so on. The final result is 21.</p>
+<p>We can carry out this same procedure in code using a loop.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">total</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">total</span></code> is initialized to 0. The loop executes once each for the values of <code class="docutils literal notranslate"><span class="pre">i</span></code> from 1 to 6. Each time the loop body executes, the next value of <code class="docutils literal notranslate"><span class="pre">i</span></code> is added to <code class="docutils literal notranslate"><span class="pre">total</span></code>.</p>
+<p>The loop carries out the same basic algorithm that we used to compute the sum <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">6</span></code> by hand. The only step that may seem different to you is the use of the variable <code class="docutils literal notranslate"><span class="pre">total</span></code> to keep track of the running total. When calculating the sum using pen and paper, we rarely write down this part, keeping track of the running total in our head. With programming, however, we must explicitely store such a value in a variable.</p>
+<span class="target" id="index-1"></span><p id="index-2">This pattern of initializing a variable to some basic, or empty value, and updating it within a loop is commonly referred to as the <strong>accumulator pattern</strong>. We refer to the variable as the <strong>accumulator</strong>. In the example above, <code class="docutils literal notranslate"><span class="pre">total</span></code> is the accumlator, and it “accumulates” the individual integers one by one.</p>
+<p>The accumulator pattern comes up regularly in programming. The key to using it successfully is to initialize the accumulator variable before you start the iteration. Once inside the loop, update the accumulator.</p>
+</div>
+<div class="section" id="reversing-a-string">
+<h2>9.5.2. Reversing a String<a class="headerlink" href="#reversing-a-string" title="Permalink to this headline">¶</a></h2>
+<p>While some programming languages have a string method that will reverse a given string, JavaScript does not. Let’s see how we can write our own program that reverses a string using the accumulator pattern.</p>
+<p>We’ll start by initializing two variables: the string we want to reverse, and a variable that will eventually store the reversed value of the given string.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;accumulator&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is our accumulator variable. Our approach to reversing the string will be to loop over <code class="docutils literal notranslate"><span class="pre">str</span></code>, adding each subsequent character to the <em>beginning</em> of <code class="docutils literal notranslate"><span class="pre">reversed</span></code>, so that the first character becomes the last, and the last character becomes the first.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">reversed</span> <span class="o">=</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">reversed</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reversed</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>eulb
+</pre></div>
+</div>
+</div>
+<p>Notice that we don’t use the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator within the loop, since <code class="docutils literal notranslate"><span class="pre">reversed</span> <span class="pre">+=</span> <span class="pre">str[i]</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">reversed</span> <span class="pre">=</span> <span class="pre">reversed</span> <span class="pre">+</span> <span class="pre">str[i]</span></code>.</p>
+<p>Let’s break this down step-by-step. This table shows the values of each of our variables <em>after</em> each loop iteration.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">The accumulator pattern, step by step</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Loop iteration</th>
+<th class="head"><code class="docutils literal notranslate"><span class="pre">i</span></code></th>
+<th class="head"><code class="docutils literal notranslate"><span class="pre">str[i]</span></code></th>
+<th class="head"><code class="docutils literal notranslate"><span class="pre">reversed</span></code></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>(before first iteration)</td>
+<td>not defined</td>
+<td>not defined</td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code></td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>1</td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;l&quot;</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;lb&quot;</span></code></td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>2</td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;u&quot;</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;ulb&quot;</span></code></td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>3</td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;e&quot;</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">&quot;eulb&quot;</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<p>What happens if you reverse the order of of the assignment statement within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, so that <code class="docutils literal notranslate"><span class="pre">reversed</span> <span class="pre">=</span> <span class="pre">reversed</span> <span class="pre">+</span> <span class="pre">str[i];</span></code>?</p>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Reversing-a-string">Try it at repl.it.</a></p>
+</div>
+</div>
+<div class="section" id="summing-an-array">
+<h2>9.5.3. Summing an Array<a class="headerlink" href="#summing-an-array" title="Permalink to this headline">¶</a></h2>
+<p>Another common use of the accumulator pattern is to compute some value using each of the elements of an array. This is similar to adding 1…n as we did above, with the difference being we will use the items in an array rather than 1…n.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">42</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">total</span> <span class="o">+=</span> <span class="nx">numbers</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="for-statement-breakdown.html"><span aria-hidden="true">&larr;</span> 9.4. Breaking Down the <code class="docutils literal notranslate"><span class="pre">for</span></code> Statement</a></li>
+        
+        
+        <li class="next"><a href="while-loops.html">9.6. <code class="docutils literal notranslate"><span class="pre">while</span></code> Loops <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

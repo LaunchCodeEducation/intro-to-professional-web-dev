@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>9.4. Breaking Down the for Statement &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9.5. The Accumulator Pattern" href="accumulator-pattern.html" />
+    <link rel="prev" title="9.3. Iterating Over Collections" href="iterating-over-collections.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">9. Repeating With Loops</a></li>
+          <li class="active">9.4. Breaking Down the <code class="docutils literal notranslate"><span class="pre">for</span></code> Statement</li>
+        </ol>
+      
+    
+  <div class="section" id="breaking-down-the-for-statement">
+<h1>9.4. Breaking Down the <code class="docutils literal notranslate"><span class="pre">for</span></code> Statement<a class="headerlink" href="#breaking-down-the-for-statement" title="Permalink to this headline">¶</a></h1>
+<p>Having seen several examples, we will now explore the syntax of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in more depth.</p>
+<p>Recall the first example of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that we looked at.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We broke down the flow of execution of this loop, noting that the loop executes once for each of the values of <code class="docutils literal notranslate"><span class="pre">i</span></code> from 0…50. The three components of the loop—loop variable, loop condition, and update expression—dictate exactly how this loop executes. So far, we have only seen <code class="docutils literal notranslate"><span class="pre">for</span></code> loops with this exact form:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">upperBound</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// loop body</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>However, the three components of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop statement can take different forms to create more complex looping behavior.</p>
+<div class="section" id="for-loop-anatomy">
+<h2>9.4.1. <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop Anatomy<a class="headerlink" href="#for-loop-anatomy" title="Permalink to this headline">¶</a></h2>
+<p>The general form of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for (initial expression; loop condition; update expression) {
+   loop body
+}
+</pre></div>
+</div>
+<p>Let’s look at each of the three components that affect how this loop iterates.</p>
+<div class="section" id="initial-expression">
+<h3>9.4.1.1. Initial Expression<a class="headerlink" href="#initial-expression" title="Permalink to this headline">¶</a></h3>
+<p id="index-0">The <strong>initial expression</strong> is executed once, before any iterations of the loop. It can be any expression, even the <strong>empty expression</strong> (which contains no code). However, it almost always declares and initializes a variable, known as the <strong>loop variable</strong>.</p>
+<p>The loop variable can be initialized to any value.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title">Examples</p>
+<p>This loop prints 3…9.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This loop prints each of the letters <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code>, and <code class="docutils literal notranslate"><span class="pre">e</span></code> on a separate line.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>To avoid confusion and bugs, you should give your loop variable a unique name, one that you have not used elsewhere in your program. In cases where the loop variable is serving as a “counter” for iterations of a loop, it is conventional to use <code class="docutils literal notranslate"><span class="pre">i</span></code> for the variable name. In the case of nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops (loops inside of loops), the variables <code class="docutils literal notranslate"><span class="pre">j</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code>, etc. are often used.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The loop variable is typically used by the loop body, but this is not required. The following example is a valid <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that prints <code class="docutils literal notranslate"><span class="pre">&quot;LaunchCode&quot;</span></code> 42 times.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">42</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="loop-condition">
+<h3>9.4.1.2. Loop Condition<a class="headerlink" href="#loop-condition" title="Permalink to this headline">¶</a></h3>
+<p id="index-1">The <strong>loop condition</strong> is executed before each loop iteration. It is <em>always</em> a boolean expression, evaluating to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. If the contion is true, the loop body executes. If the condition is false, loop execution stops and the program continues with the next line of code below the loop.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>This loop does not iterate at all, because its condition is false to start with.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>It is critical that the loop condition <em>eventually</em> becomes false. A loop for which the condition is never false is known as an <strong>infinite loop</strong>, because it never stops iterating. A program that contains an infinite loop will only stop after running out of memory or being manually stopped (for example, using control+c in a terminal).</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>This is an infinite loop, because its condition will always be true.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>You will accidentally write an infinite loop at some point; doing so is a right of passage for new programmers. When this happens, don’t panic. Stop your program and figure out why your loop condition never became false.</p>
+</div>
+<div class="section" id="update-expression">
+<h3>9.4.1.3. Update Expression<a class="headerlink" href="#update-expression" title="Permalink to this headline">¶</a></h3>
+<p id="index-2">The final component in a for loop definition is the <strong>update expression</strong>, which executes after <em>every</em> iteration of the loop. While this expression may be anything, it most often updates the value of the loop variable.</p>
+<p>In all of the examples we have seen so far, the update expression has been <code class="docutils literal notranslate"><span class="pre">i++</span></code>, incrementing the loop variable by 1. However, it can update the loop variable in other ways.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>This loop prints <em>even</em> integers from 0…50.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>A bad choice of update expression can also cause an infinite loop.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>This loop repeates indefinitely, since <code class="docutils literal notranslate"><span class="pre">i</span></code> becomes smaller with each iteration and thus is never greater than or equal to 51.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<p>How does each of these three components affect the behavior of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <a class="reference external" href="https://repl.it/&#64;launchcode/Loop-variable">Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression.</a>.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>9.4.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Consider the program:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">phrase</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&#39;s LC101&quot;</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">phrase</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">phrase</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>How many times does the loop body execute?</p>
+<ol class="last arabic simple">
+<li>0</li>
+<li>18</li>
+<li>16</li>
+<li>9</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>Which set of characters is printed by the loop? (We have placed characters for the choices below on the same line, but they would be on separate lines in the actual program output.)</p>
+<ol class="last arabic simple">
+<li>LaunchCode’s LC101</li>
+<li>LaunchCode’s LC1</li>
+<li>LucCd’ C</li>
+<li>LucCd’ C0</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="iterating-over-collections.html"><span aria-hidden="true">&larr;</span> 9.3. Iterating Over Collections</a></li>
+        
+        
+        <li class="next"><a href="accumulator-pattern.html">9.5. The Accumulator Pattern <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
