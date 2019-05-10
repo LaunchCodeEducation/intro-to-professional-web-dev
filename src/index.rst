@@ -43,6 +43,7 @@ Studios
    chapters/loops/studio
    chapters/arrays/studio
    chapters/loops/studio
+   chapters/functions/studio
 
 Assignments
 ^^^^^^^^^^^

@@ -108,7 +108,7 @@ Complete Reversal
    .. sourcecode:: js
 
       ['apple', 'potato', 'Capitalized Words']
-      [123, 8897, 42, 1168, 8675309]
+      [123, 8897, 42, 1138, 8675309]
       ['hello', 'world', 123, 'orange']
 
    **Output**
@@ -116,7 +116,7 @@ Complete Reversal
    .. sourcecode:: js
 
       ['sdroW dezilatipaC', 'otatop', 'elppa']
-      [9035768, 8611, 24, 7988, 321]
+      [9035768, 8311, 24, 7988, 321]
       ['egnaro', 321, 'dlrow', 'olleh']
 
 Bonus Missions
