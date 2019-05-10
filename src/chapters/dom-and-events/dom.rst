@@ -16,7 +16,6 @@ Global DOM Variables
    pair: variable; global
 
 To utilize the DOM in JavaScript, we need to use the DOM global variables.
-**Global variables** are variables that are usable in code without having to declare or import them.
 In the next section, we will learn more about the DOM global variables, including their type. 
 For now, let's get used to the idea of using JavaScript to interact with the DOM.
 
@@ -28,6 +27,7 @@ As mentioned above, we will go into more detail on these variables and what they
    Here the ``window`` and ``document`` variables are used to print information about the web page to the browser's console.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
       <html>
@@ -66,6 +66,7 @@ We will go into more detail on how this method works in the next section.
    We can use ``document.getElementById`` and ``element.append`` to add text to a ``<p>`` tag.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
       <html>

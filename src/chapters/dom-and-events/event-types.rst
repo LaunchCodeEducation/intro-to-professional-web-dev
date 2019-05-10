@@ -1,12 +1,8 @@
-More Event Types
-================
-Something about how there are numerous event types. Below are examples of a few more.
-Link to full list?
+Event Types
+===========
 
-The following sections are a summary of a few events,
-see the reference links below for a more complete list. Note, you do NOT need to memorize each
-event in the reference links, instead use them as a guide when you are ready to learn more about
-the DOM.
+DOM and JavaScript can handle numerous event types. We will discuss a few different types of events here.
+As you continue your studies of the DOM and events, you may find these two reference links helpful.
 
 1. `W3Schools Event reference  <https://www.w3schools.com/jsref/dom_obj_event.asp>`_
 2. `MDN Event reference <https://developer.mozilla.org/en-US/docs/Web/Events>`_
@@ -18,20 +14,21 @@ Load Event
 .. index::
    single: event; load
 
-The DOM includes the **load event** which is triggered when the window, elements, and resources have
+The DOM includes the **load event**, which is triggered when the window, elements, and resources have
 been *loaded* by the browser. Why is it important to know when things have loaded? Remember you can't
 interact with HTML elements in JavaScript unless they have been loaded into the DOM.
 
-Previously we were moving the ``<script>`` element *below* any HTML elements that we needed
+Previously, we were moving the ``<script>`` element *below* any HTML elements that we needed
 to reference in the DOM. Using the *load event* on the global variable ``window`` is an
 alternative to ``<script>`` placement. When the *load event* has triggered on the *window* as
 a whole, we can know that all the elements are ready to be used.
 
 .. admonition:: Example
 
-   ``<script>`` tag is in ``<header>`` and all DOM code is inside *load* event handler.
+   A ``<script>`` tag is in ``<header>`` and all DOM code is inside *load* event handler.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
       <html>
@@ -83,10 +80,11 @@ an element.
 
 .. admonition:: Example
 
-   Use *mouseover* event to add a ``">"`` to the ``innerHTML`` of the element that the mouse pointer
+   We can use *mouseover* event to add a ``">"`` to the ``innerHTML`` of the element that the mouse pointer
    has been moved over.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
       <html>

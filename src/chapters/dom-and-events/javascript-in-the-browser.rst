@@ -41,6 +41,7 @@ Inline JavaScript
    Notice the ``<script>`` tag below contains JavaScript code that will be executed by the browser.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
       <html>
@@ -74,6 +75,7 @@ You can still use the ``<script>`` tag to include the JavaScript file with the H
    This is how the HTML file for the web page might look if we wanted to link an external JavaScript file.
 
    .. sourcecode:: html
+      :linenos:
 
       <!DOCTYPE html>
          <html>
