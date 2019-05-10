@@ -16,7 +16,7 @@ Chapters
    chapters/how-programs-work/index
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
-   chapters/booleans-and-conditionals/index   
+   chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/arrays/index
@@ -42,6 +42,8 @@ Studios
    chapters/data-and-variables/studio
    chapters/loops/studio
    chapters/arrays/studio
+   chapters/loops/studio
+   chapters/functions/studio
 
 Assignments
 ^^^^^^^^^^^
