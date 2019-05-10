@@ -138,8 +138,6 @@ Because programmers can write functions to do whatever their hearts desire, defi
    If the function name is incorrect, the event will not be handled. No warning is given,
    the event is silently ignored.
 
-TODO: TRY IT asking user to add functionality to an event handler.
-
 Check Your Understanding
 ------------------------
 
