@@ -133,7 +133,7 @@ For ``combineEntries(['L', 'C', '1', '0', '1']);``, the sequence would be:
 
 .. list-table::
    :header-rows: 1
-   :widths: auto
+   :widths: 10 90
 
    * - Step
      - Description
@@ -156,7 +156,7 @@ To get the final result, proceed *up the chain*:
 
 .. list-table::
    :header-rows: 1
-   :widths: auto
+   :widths: 10 90
 
    * - Step
      - Description
