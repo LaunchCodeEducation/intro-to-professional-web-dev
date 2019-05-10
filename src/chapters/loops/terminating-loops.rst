@@ -1,4 +1,4 @@
-Terminating a Loop With **break**
+Terminating a Loop With ``break``
 ---------------------------------
 
 .. index:: 

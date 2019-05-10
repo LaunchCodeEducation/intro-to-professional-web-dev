@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>10.10. Exercises: Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.11. Studio: Functions" href="studio.html" />
+    <link rel="prev" title="10.9. Why Create Functions?" href="why-create-functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style type="text/css">
+#chapterstoc > ul > li {
+	margin-bottom: .25em;
+}
+</style>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">10. Functions</a></li>
+          <li class="active">10.10. Exercises: Functions</li>
+        </ol>
+      
+    
+  <div class="section" id="exercises-functions">
+<h1>10.10. Exercises: Functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h1>
+<p>To become good at solving problems with code you need to be able to break large problems into small ones. Usually, these smaller problems will take the form of functions that are used to solve the larger problem. Therefore, to become good at solving problems you need to become good at writing functions. And to master functions, you need to write a <em>lot</em> of them.</p>
+<p>These exercises ask you to write lots of relatively small functions, which combine to form larger, more complicated ones.</p>
+<p>At the end, you will be able to create strings of shapes, like this nifty diamond:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+#########
+ #######
+  #####
+   ###
+    #
+</pre></div>
+</div>
+<p>There is no starter code for these exercises, so create a new Node.js project
+at <a class="reference external" href="https://repl.it/student">repl.it</a> to get started.</p>
+<div class="section" id="rectangles">
+<h2>10.10.1. Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">line(size)</span></code> that returns a line with exactly <code class="docutils literal notranslate"><span class="pre">size</span></code>
+hashes.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">line</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">square(size)</span></code> that returns an <code class="docutils literal notranslate"><span class="pre">size</span></code> by <code class="docutils literal notranslate"><span class="pre">size</span></code> square
+of hashes. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+#####
+#####
+#####
+#####
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The newline character, <code class="docutils literal notranslate"><span class="pre">\n</span></code>, will be helpful to you.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">For this and all other functions in this studio, make sure you do NOT have a newline character at the end of your string. Not only will <code class="docutils literal notranslate"><span class="pre">console.log</span></code> add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the studio.</p>
+</div>
+</li>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">rectangle(width,</span> <span class="pre">height)</span></code> that returns a
+rectangle with the given width and height. Use your
+<code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+#####
+#####
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now, go back and rewrite <code class="docutils literal notranslate"><span class="pre">square</span></code> to use <code class="docutils literal notranslate"><span class="pre">rectangle</span></code>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="triangles">
+<h2>10.10.2. Triangles<a class="headerlink" href="#triangles" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">stairs(height)</span></code> that prints the staircase pattern shown below,
+with the given height. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stairs</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#
+##
+###
+####
+#####
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">spaceLine(numSpaces,</span> <span class="pre">numChars)</span></code> that returns a line
+with exactly the specified number of spaces, followed by the
+specified number of hashes, followed again by <code class="docutils literal notranslate"><span class="pre">numSpaces</span></code> more spaces.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">spaceLine</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>___#####___
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We have inserted underscores to represent spaces, so they are visible in the output. Don’t do this in your code.</p>
+</div>
+</li>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">triangle(height)</span></code> that returns a triangle of
+the given height.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">triangle</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Consider the top line of the triangle to be level 0, the next to be line 1, and so on. Then line <code class="docutils literal notranslate"><span class="pre">i</span></code> is a space-line with <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">-</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">1</span></code> spaces and <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> hashes.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="diamonds">
+<h2>10.10.3. Diamonds<a class="headerlink" href="#diamonds" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">diamond(height)</span></code> that returns a diamond where the
+triangle formed by the <em>top</em> portion has the given height.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">diamond</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+#########
+ #######
+  #####
+   ###
+    #
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Consider what happens if you create a triangle and reverse it using <a class="reference internal" href="composing-functions.html#reverse-func"><span class="std std-ref">our reverse function</span></a>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-mission">
+<h2>10.10.4. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">'#'</span></code>. Make the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="why-create-functions.html"><span aria-hidden="true">&larr;</span> 10.9. Why Create Functions?</a></li>
+        
+        
+        <li class="next"><a href="studio.html">10.11. Studio: Functions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

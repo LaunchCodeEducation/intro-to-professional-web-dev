@@ -1,4 +1,4 @@
-**for** Loops
+``for`` Loops
 =============
 
 .. index::
@@ -9,7 +9,7 @@
 
 The ``for`` loop is the first JavaScript tool for iteration that we will explore. A **for loop** is typically used for **definite iteration**. Definite iteration is the process of repeating a specific task with a specific data set. When a ``for`` loop begins it can usually be determined exactly how many times it will execute: once for each item in the data set.
 
-**for** Loop Syntax
+``for`` Loop Syntax
 -------------------
 
 .. index::
@@ -50,7 +50,7 @@ Notice that in the first line, within parentheses, the components **initial expr
 - The statement ``i++`` is the **update expression**. This expression is executed at the *end* of each loop iteration.
 - The block of code surrounded with brackets (``{ }``) is the **loop body**. The loop body is executed once for each iteration of the loop.
 
-Flow of Execution of the **for** Loop
+Flow of Execution of the ``for`` Loop
 -------------------------------------
 
 In just a few lines of code, a ``for`` loop contains a lot of detailed logic, so let's spend some time breaking down the flow of execution for the particular loop that we've been looking at.
