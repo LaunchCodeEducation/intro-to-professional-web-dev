@@ -61,6 +61,8 @@ A common twist often used by JavaScript programmers is to use an *anonymous* fun
 
 Examples like this look odd at first. However, they become easier to read over time. Additionally, code that passes anonymous functions is ubiquitous in JavaScript. 
 
+.. _map-method:
+
 Example: The Array Method **map**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

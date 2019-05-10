@@ -268,7 +268,35 @@ elements (<code class="docutils literal notranslate"><span class="pre">arrayName
 </div>
 <div class="section" id="check-your-understanding">
 <h2>11.7.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>ID the recursive statement when…</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>What if we wanted to take a number (n) and add it to all of the positive integers below it?
+For example, if n = 5, the function returns 5 + 4 + 3 + 2 + 1 = 15.</p>
+<p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">decreasingSum</span></code> function.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">decreasingSum</span><span class="p">(</span><span class="nx">integer</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">1</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">integer</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//call decreasingSum function again</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Which of the following should be used in the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement to call <code class="docutils literal notranslate"><span class="pre">decreasingSum</span></code> again?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(integer-1);</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(decreasingSum(integer));</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(decreasingSum(integer-1));</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">decreasingSum(integer-1);</span></code></li>
+</ol>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">repl.it</a>.</p>
+</div>
 </div>
 </div>
 

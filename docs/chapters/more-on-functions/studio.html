@@ -86,6 +86,15 @@
 <p>Recall that using the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on an array of numbers
 <a class="reference internal" href="../../appendices/array-method-examples/sort-examples.html#sort-examples"><span class="std std-ref">produced an unexpected result</span></a>, since JavaScript converts
 the numbers to strings by default.  Let’s fix this!</p>
+<p>Here is one approach to sorting an array:</p>
+<ol class="arabic simple">
+<li>Find the minimum value in an array,</li>
+<li>Add that value to a new array,</li>
+<li>Remove the entry from the old array,</li>
+<li>Repeat steps 1 - 3 until the numbers are all in order.</li>
+</ol>
+<div class="section" id="part-a-find-the-minimum-value">
+<h3>11.10.1.1. Part A: Find the Minimum Value<a class="headerlink" href="#part-a-find-the-minimum-value" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Create a function with an array of numbers as its parameter. The function
 should iterate through the array and return the minimum value from the
@@ -99,8 +108,11 @@ store the smallest value within the array.</li>
 <span class="p">[</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
 </pre></div>
 </div>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio01">Code studio part 1 here</a>.</p>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio01">Code studio part A here</a>.</p>
 </div>
+</div>
+<div class="section" id="part-b-create-a-new-sorted-array">
+<h3>11.10.1.2. Part B: Create a New Sorted Array<a class="headerlink" href="#part-b-create-a-new-sorted-array" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple" start="2">
 <li>Create another function with an array of numbers as its parameter.  Within
 this function:<ol class="loweralpha">
@@ -112,7 +124,7 @@ the old array.</li>
 <li>Repeat parts b &amp; c until the old array is empty.</li>
 <li>Return the new sorted array.</li>
 <li><em>Be sure to print the results in order to verify your code</em>.</li>
-<li><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio02">Code studio part 2 here</a>.</li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio02">Code studio part B here</a>.</li>
 </ol>
 </li>
 </ol>
@@ -123,6 +135,7 @@ the old array.</li>
 IS a better choice. Consider what the function must accomplish vs. the
 behavior of each type of loop. Which one best serves if the array has an
 unknown length?</p>
+</div>
 </div>
 </div>
 <div class="section" id="more-on-sorting-numbers">
@@ -141,25 +154,24 @@ the array. This takes way too much time for large arrays.</p>
 order numbers in an array.</p>
 </div>
 </div>
-<div class="section" id="number-sorting-with-javascript">
-<h2>11.10.3. Number Sorting With JavaScript<a class="headerlink" href="#number-sorting-with-javascript" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-c-number-sorting-the-easy-way">
+<h2>11.10.3. Part C: Number Sorting the Easy Way<a class="headerlink" href="#part-c-number-sorting-the-easy-way" title="Permalink to this headline">¶</a></h2>
 <p>If you Google “JavaScript sort array of numbers” (or something similar), many
 options appear, and they all give pretty much the same result. The sites just
 differ in how much detail they provide when explaining the solution.</p>
 <p>One reference is here: <a class="reference external" href="https://www.w3schools.com/jsref/jsref_sort.asp">W3Schools</a>.</p>
 <p>End result - the JavaScript syntax for numerical sorting is
 <code class="docutils literal notranslate"><span class="pre">arrayName.sort(function(a,</span> <span class="pre">b){return</span> <span class="pre">a-b});</span></code>.</p>
-<div class="admonition-note admonition">
-<p class="first admonition-title">Note</p>
-<p class="last">You do NOT need to understand HOW the sorting function works. You just need to
-be able to use it.</p>
-</div>
+<p>Here, the anonymous function determines which element is larger and swaps the
+positions if necessary. This is all that <code class="docutils literal notranslate"><span class="pre">sort</span></code> needs to order the entire
+array.</p>
 <ol class="arabic simple" start="3">
 <li>Using the sytax listed above:<ol class="loweralpha">
 <li>Sort each sample array in increasing order.</li>
 <li>Sort each sample array in decreasing order.</li>
 <li>Does the function alter <code class="docutils literal notranslate"><span class="pre">arrayName</span></code>?</li>
-<li><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio03">Code studio part 3 here</a>.</li>
+<li>Did your sorting function from part B alter <code class="docutils literal notranslate"><span class="pre">arrayName</span></code>?</li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/MoreFuncsStudio03">Code studio part C here</a>.</li>
 </ol>
 </li>
 </ol>
@@ -175,6 +187,10 @@ One standard, go-to question is to sort an array WITHOUT relying on the built
 in methods. Knowing how to think though a sorting task, generate the code and
 then clearly explain your approach will significantly boost your appeal to an
 employer.</p>
+</div>
+<div class="section" id="bonus-mission">
+<h2>11.10.5. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Refactor your sorting function from part B to use recursion.</p>
 </div>
 </div>
 

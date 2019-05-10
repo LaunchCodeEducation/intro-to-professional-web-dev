@@ -1,8 +1,40 @@
 Exercises: More Functions
 ==========================
 
-Arrr! Welcome back, swabbie. Now that ye have more experience, yer ready ta
-join a boarding party.
+Practice Yer Skills
+--------------------
+
+Arrr! Welcome back, swabbie. Ye be almost ready fer yer next task---earning
+gold fer yer cap'n.
+
+First, ye need to show what ye've learned.
+
+Complete the Map
+^^^^^^^^^^^^^^^^^
+
+Not THAT kinda map, ye rat! Fold that up and do the following:
+
+1. Create an anonymous fucntion and set it equal to a variable. Yer function
+   should:
+
+   a. If passed a number, return the tripled value.
+   b. If passed a string, return the string "ARRR!"
+   c. If NOT passed a number or string, return the data unchanged.
+   d. `Build yer function here <https://repl.it/@launchcode/MoreFunctionsExercises02>`__, and be sure to test it.
+
+|
+
+2. Add to yer code! Use yer fuction and the :ref:`map method <map-method>` to
+   change the array ``['Elocution', 21, 'Clean teeth', 100]`` as follows:
+
+   a. Triple all the numbers.
+   b. Replace the strings with "ARRR!"
+   c. Print the new array to confirm yer work.
+
+Raid Yonder Shuttle
+--------------------
+
+Shiver me timbers! Ye did well. Yer ready ta join a boarding party.
 
 Ye may still be wonderin' *Why the blazes would I ever use an anonymous
 function?* Fer today's mission, o' course! We arrrr going to loot yonder
