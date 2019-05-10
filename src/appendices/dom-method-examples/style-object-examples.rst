@@ -11,8 +11,8 @@ The general syntax for the ``style`` property:
 
 The ``style`` property is an object that allows you to *read* and *update* the
 INLINE style properties of the element. The ``style`` property does NOT *read*
-or *update* styles defined in a ``<style>``or an external CSS file linked with
-a ``<link>``.
+or *update* styles defined in a ``<style>`` tag or an external CSS file linked with
+a ``<link>`` tag.
 
 
 .. admonition:: Example
