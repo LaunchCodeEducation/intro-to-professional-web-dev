@@ -1,5 +1,5 @@
-Loop Studio
-============
+Studio: Loops
+=============
 
 Now that we've launched our shuttle, let's use loops (iteration) to
 automate some tasks.

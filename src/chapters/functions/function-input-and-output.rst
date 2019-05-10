@@ -53,7 +53,7 @@ Now that we have return statements in our coding toolbox, we will very rarely pr
 
    The function ``sumToN`` uses a pattern that we have seen previously. What is it called? 
 
-Using **return** is Optional
+Using ``return`` is Optional
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As we saw with our initial examples of function definitions, not every function explicitly returns a value. At its simplest, a function can even have an empty body.
@@ -81,7 +81,7 @@ This function is completely valid, if usefuless. While it doesn't have a return 
 
       undefined
 
-**return** Terminates Function Execution
+``return`` Terminates Function Execution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When a return statement executes, the function terminates, regardless of whether or not there is any code following the return statement. This means that you must be careful to use ``return`` only when the work of the function has been completed.
