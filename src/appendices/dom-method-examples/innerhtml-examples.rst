@@ -9,7 +9,7 @@ The general syntax for this method is:
 
    element.innerHTML
 
-The innerHTML property of elements *reads* and *update* the HTML and or text that is
+The innerHTML property of elements *reads* and *updates* the HTML and or text that is
 inside the element.
 
 .. note::
