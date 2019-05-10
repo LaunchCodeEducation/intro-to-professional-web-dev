@@ -43,7 +43,7 @@ As mentioned above, we will go into more detail on these variables and what they
       </body>
       </html>
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -83,7 +83,7 @@ We will go into more detail on how this method works in the next section.
       </body>
       </html>
 
-   **Output**
+   **Console Output**
 
    ::
 

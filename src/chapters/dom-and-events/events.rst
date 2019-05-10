@@ -76,7 +76,7 @@ This naming convention can be read as: *On click of the button, print a message 
       </body>
       </html>
 
-   **Output** (if button is clicked)
+   **Console Output** (if button is clicked)
 
    ::
 

@@ -60,7 +60,7 @@ a whole, we can know that all the elements are ready to be used.
       </body>
       </html>
 
-   **Output** (if "Knock on Door" button is clicked)
+   **Console Output** (if "Knock on Door" button is clicked)
 
    ::
 

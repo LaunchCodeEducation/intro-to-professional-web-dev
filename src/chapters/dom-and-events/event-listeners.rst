@@ -166,7 +166,7 @@ affected by the event.
       </body>
       </html>
 
-   **Output** (if button is clicked)
+   **Console Output** (if button is clicked)
 
    ::
 
