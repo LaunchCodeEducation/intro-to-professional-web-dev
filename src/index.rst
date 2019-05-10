@@ -40,6 +40,7 @@ Studios
    :name: studiostoc
 
    chapters/data-and-variables/studio
+   chapters/loops/studio
    chapters/arrays/studio
 
 Assignments

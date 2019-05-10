@@ -190,7 +190,7 @@ Attempting to use a keyword for anything other than it's intended use will resul
 We will not provide the full list of keywords at this time, but rather point them out as we learn about each of them. If you are curious, the `full list is available at MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Reserved_keywords_as_of_ECMAScript_2015>`_.
 
 Check Your Understanding
-========================
+------------------------
 
 .. admonition:: Question
 
