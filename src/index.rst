@@ -43,6 +43,7 @@ Studios
    chapters/data-and-variables/studio
    chapters/loops/studio
    chapters/arrays/studio
+   chapters/dom-and-events/studio
 
 Assignments
 ^^^^^^^^^^^
