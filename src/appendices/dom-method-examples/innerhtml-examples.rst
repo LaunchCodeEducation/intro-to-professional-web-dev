@@ -3,7 +3,7 @@
 **innerHTML** Examples
 ======================
 
-The general syntax for this method is:
+The general syntax for the ``innerHTML`` property is:
 
 .. sourcecode:: js
 

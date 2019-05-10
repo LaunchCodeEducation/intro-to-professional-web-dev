@@ -8,3 +8,4 @@ DOM Method Examples
    getelementbyid-examples
    queryselector-examples
    innerhtml-examples
+   style-object-examples
