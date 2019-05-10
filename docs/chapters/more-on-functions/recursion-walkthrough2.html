@@ -144,13 +144,30 @@ base case. This sets up a series of return events - each one selecting a
 single entry from the array. Rather than building <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code> from left to
 right, recursion constructs the string starting with the base case and
 adding new characters to the front:</p>
-<div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'1'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'01'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'101'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'C101'</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></div>
-</div>
+<table border="1" class="colwidths-auto docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value Returned</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">'1'</span></code></td>
+<td>Base case. Returns the element from an array of length 1.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">'01'</span></code></td>
+<td>Combines the first element from an array of length 2 with the base case value.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">'101'</span></code></td>
+<td>Combines the first element from an array of length 3 with the two previous values.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">'C101'</span></code></td>
+<td>Combines the first element from an array of length 4 with the three previous values.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></td>
+<td>Combines the first element from an array of length 5 with the four previous values.</td>
+</tr>
+</tbody>
+</table>
 <p>Recursive processes all follow this approach. Each call to the function reduces
 a problem into a slighly smaller piece. The reduction continues until reaching
 the simplest possible form—the base case. The base case is then solved, and
@@ -186,23 +203,65 @@ selected entries from an array. To return everything BUT the first entry in
 </td></tr></table></div>
 <p>Each time the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement runs, it extracts the first element in the
 array with <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span></code>, then it calls itself with the remaining array
-elements (<code class="docutils literal notranslate"><span class="pre">arrayName.slice(1)</span></code>). For
-<code class="docutils literal notranslate"><span class="pre">combineEntries(['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']);</span></code>:</p>
-<div class="line-block">
-<div class="line">a. First call: Combine <code class="docutils literal notranslate"><span class="pre">'L'</span></code> with <code class="docutils literal notranslate"><span class="pre">combineEntries(['C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</div>
-<div class="line">b. Second call: Combine <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</div>
-<div class="line">c. Third call: Combine <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['0',</span> <span class="pre">'1'])</span></code>.</div>
-<div class="line">d. Fourth call: Combine <code class="docutils literal notranslate"><span class="pre">'0'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1'])</span></code>.</div>
-<div class="line">e. Fifth call: Base case returns <code class="docutils literal notranslate"><span class="pre">'1'</span></code>.</div>
-</div>
-<div class="line-block">
-<div class="line">To get the final result, proceed <em>up the chain</em>:</div>
-<div class="line">e. Return <code class="docutils literal notranslate"><span class="pre">'1'</span></code> to the fourth call,</div>
-<div class="line">d. Return <code class="docutils literal notranslate"><span class="pre">'01'</span></code> to the third call,</div>
-<div class="line">c. Return <code class="docutils literal notranslate"><span class="pre">'101'</span></code> to the second call,</div>
-<div class="line">b. Return <code class="docutils literal notranslate"><span class="pre">'C101'</span></code> to the first call,</div>
-<div class="line">a. Return <code class="docutils literal notranslate"><span class="pre">'LC101</span></code> as the final result.</div>
-</div>
+elements (<code class="docutils literal notranslate"><span class="pre">arrayName.slice(1)</span></code>).</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">combineEntries(['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']);</span></code>, the sequence would be:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Step</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>First call: Combine <code class="docutils literal notranslate"><span class="pre">'L'</span></code> with <code class="docutils literal notranslate"><span class="pre">combineEntries(['C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Second call: Combine <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>Third call: Combine <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['0',</span> <span class="pre">'1'])</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Fourth call: Combine <code class="docutils literal notranslate"><span class="pre">'0'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1'])</span></code>.</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Fifth call: Base case returns <code class="docutils literal notranslate"><span class="pre">'1'</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>To get the final result, proceed <em>up the chain</em>:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Step</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>5</td>
+<td>Return <code class="docutils literal notranslate"><span class="pre">'1'</span></code> to the fourth call.</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Return <code class="docutils literal notranslate"><span class="pre">'01'</span></code> to the third call.</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>Return <code class="docutils literal notranslate"><span class="pre">'101'</span></code> to the second call.</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Return <code class="docutils literal notranslate"><span class="pre">'C101'</span></code> to the first call.</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>Return <code class="docutils literal notranslate"><span class="pre">'LC101</span></code> as the final result.</td>
+</tr>
+</tbody>
+</table>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/RecursionExample01">See this recursion in action</a>.</p>
 </div>
 <div class="section" id="check-your-understanding">
