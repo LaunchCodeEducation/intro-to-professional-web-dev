@@ -43,9 +43,9 @@ The browser waits until the user clicks "ok" or "cancel".
             <script>
                   let response = confirm("Are you excited?");
                   if (response) {
-                     console.log("Thanks for your support");
+                     console.log("Yay! Me too!");
                   } else {
-                     console.log("Hopefully you will be surprised");
+                     console.log("Oh no! I hope tomorrow is a better day!");
                   }
             </script>
          </body>
