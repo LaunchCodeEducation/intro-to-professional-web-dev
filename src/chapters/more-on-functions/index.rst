@@ -6,7 +6,8 @@ More on Functions
 
    functions-as-values
    anonymous-functions
-   functions-as-arguments
+   passing-functions
+   receiving-functions
    why-use-anonymous-functions
    recursion
    recursion-walkthrough
