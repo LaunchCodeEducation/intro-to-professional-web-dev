@@ -10,3 +10,5 @@ The DOM and Events
    events
    event-listeners
    event-types
+   exercises
+   studio

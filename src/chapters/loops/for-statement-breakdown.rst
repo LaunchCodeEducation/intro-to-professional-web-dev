@@ -1,4 +1,4 @@
-Breaking Down the **for** Statement
+Breaking Down the ``for`` Statement
 ===================================
 
 Having seen several examples, we will now explore the syntax of a ``for`` loop in more depth. 
@@ -21,7 +21,7 @@ We broke down the flow of execution of this loop, noting that the loop executes 
 
 However, the three components of a ``for`` loop statement can take different forms to create more complex looping behavior.
 
-**for** Loop Anatomy
+``for`` Loop Anatomy
 --------------------
 
 The general form of a ``for`` loop is:

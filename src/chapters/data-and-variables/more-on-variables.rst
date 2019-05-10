@@ -3,7 +3,7 @@ More On Variables
 
 The previous section covered creating, evaluating, and reassigning variables. This section will cover some additional, more nuanced topics related to variables.
 
-Creating Constants With **const**
+Creating Constants With ``const``
 ---------------------------------
 
 One of the key features of variables that we have discussed so far is their ability to change value. We can create a variable with one value, and then reassign it to another value.
@@ -190,7 +190,7 @@ Attempting to use a keyword for anything other than it's intended use will resul
 We will not provide the full list of keywords at this time, but rather point them out as we learn about each of them. If you are curious, the `full list is available at MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Reserved_keywords_as_of_ECMAScript_2015>`_.
 
 Check Your Understanding
-========================
+------------------------
 
 .. admonition:: Question
 
