@@ -1,15 +1,3 @@
-Introduction to Professional Web Development in JavaScript
-==========================================================
-
-.. raw:: html
-
-   <nav>
-   <ul class="pagination pagination-sm">
-      <li><a href="index.html">Summary</a></li>
-      <li class="disabled"><a href="index-full.html">Expanded</a></li>
-   </ul>
-   </nav>
-
 Chapters
 --------
 
