@@ -38,11 +38,11 @@ To see detailed examples for a particular method, control-click
 
    * - :ref:`max <max-and-min-examples>`
      - ``Math.max(x,y,z,...)``
-     - Returns the largest value from a set or array of numbers.
+     - Returns the largest value from a set of numbers.
 
    * - :ref:`min <min>`
      - ``Math.min(x,y,z,...)``
-     - Returns the smallest value from a set or array of numbers.
+     - Returns the smallest value from a set of numbers.
 
    * - :ref:`pow <pow-examples>`
      - ``Math.pow(x,y)``

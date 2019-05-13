@@ -86,6 +86,51 @@
     
   <div class="section" id="math-round-examples">
 <span id="round-examples"></span><h1><code class="docutils literal notranslate"><span class="pre">Math.round</span></code> Examples<a class="headerlink" href="#math-round-examples" title="Permalink to this headline">¶</a></h1>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.round(number)
+</pre></div>
+</div>
+<p>This method returns <code class="docutils literal notranslate"><span class="pre">number</span></code> rounded to the nearest integer value.</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1.33</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="o">-</span><span class="mf">28.7</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">8.5</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="s2">&quot;101.45&quot;</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>1
+-29
+9
+101
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Math.round</span></code> also works on arrays, but must be combined with the
+<a class="reference internal" href="../../chapters/more-on-functions/passing-functions.html#map-method"><span class="std std-ref">map array method</span></a>. The syntax for this is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arrayName.map(Math.round)
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.33</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.523</span><span class="p">,</span> <span class="mf">8.49</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1, 4, 9, -16, 8 ]
+</pre></div>
+</div>
+</div>
 </div>
 
 

@@ -86,6 +86,57 @@
     
   <div class="section" id="math-random-examples">
 <span id="random-examples"></span><h1><code class="docutils literal notranslate"><span class="pre">Math.random</span></code> Examples<a class="headerlink" href="#math-random-examples" title="Permalink to this headline">¶</a></h1>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.random()
+</pre></div>
+</div>
+<p>This method returns a random decimal value between 0 and 1, which can be stored
+in a variable or used in a calculation.</p>
+<p>Note that 0 is a possible selection, but 1 is NOT.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="kd">let</span> <span class="nx">randNum</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randNum</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>0.34992592600591066
+0.11861535165960668
+0.019710093901842862
+0.7751799992655235
+0.46782849511194136
+</pre></div>
+</div>
+</div>
+<p>If a random integer must be generated, the result of <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> can be
+manipulated with operators (<code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/</span></code>) and other <code class="docutils literal notranslate"><span class="pre">Math</span></code> methods.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="kd">let</span> <span class="nx">randNum</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">randNum</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="c1">//Creates a random number from 0 to 99.</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>76
+56
+24
+7
+37
+</pre></div>
+</div>
+</div>
 </div>
 
 

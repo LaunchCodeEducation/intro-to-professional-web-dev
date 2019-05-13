@@ -88,12 +88,149 @@
 <span id="ceilfloortrunc-examples"></span><h1><code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code> and <code class="docutils literal notranslate"><span class="pre">trunc</span></code> Examples<a class="headerlink" href="#math-ceil-floor-and-trunc-examples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="math-ceil">
 <h2><code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code><a class="headerlink" href="#math-ceil" title="Permalink to this headline">¶</a></h2>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.ceil(number)
+</pre></div>
+</div>
+<p>This method rounds a decimal value UP to the next integer (hence the
+<em>ceiling</em> reference in the name). Integer values remain the same.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ceil</span></code> also operates on arrays (<a class="reference internal" href="#cft-array"><span class="std std-ref">see below</span></a>).</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">8.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">8.1</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.9</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>9
+9
+-3
+5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="math-floor">
 <span id="floor"></span><h2><code class="docutils literal notranslate"><span class="pre">Math.floor</span></code><a class="headerlink" href="#math-floor" title="Permalink to this headline">¶</a></h2>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.floor(number)
+</pre></div>
+</div>
+<p>This method is the opposite of <code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code>. It rounds a decimal value DOWN to
+the previous integer. Integer values remain the same.</p>
+<p><code class="docutils literal notranslate"><span class="pre">floor</span></code> also operates on arrays (<a class="reference internal" href="#cft-array"><span class="std std-ref">see below</span></a>).</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">8.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">8.1</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.9</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+8
+-4
+5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="math-trunc">
 <span id="trunc"></span><h2><code class="docutils literal notranslate"><span class="pre">Math.trunc</span></code><a class="headerlink" href="#math-trunc" title="Permalink to this headline">¶</a></h2>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.trunc(number)
+</pre></div>
+</div>
+<p>This method removes any decimals and returns only the integer part of <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">trunc</span></code> also operates on arrays (<a class="reference internal" href="#cft-array"><span class="std std-ref">see below</span></a>).</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="mf">8.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="mf">10.000111</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+10
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>At first glance, <code class="docutils literal notranslate"><span class="pre">Math.floor</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.trunc</span></code> appear to do exactly the
+same thing. However, a closer look shows that the two methods treat negative numbers
+differently.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">15.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="o">-</span><span class="mf">15.88</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>-16
+-15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="combine-with-map">
+<span id="cft-array"></span><h2>Combine with <code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#combine-with-map" title="Permalink to this headline">¶</a></h2>
+<p>When combined with the <a class="reference internal" href="../../chapters/more-on-functions/passing-functions.html#map-method"><span class="std std-ref">map array method</span></a>, <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, and <code class="docutils literal notranslate"><span class="pre">trunc</span></code>
+will operate on each entry in an array. The syntax for this is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arrayName.map(Math.method)
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.33</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.44</span><span class="p">,</span> <span class="mf">8.88</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ -2, 4, -4, 9 ]
+[ -2, 3, -5, 8 ]
+[ -2, 3, -4, 8 ]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
