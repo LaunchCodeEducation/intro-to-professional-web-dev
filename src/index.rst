@@ -63,6 +63,7 @@ Appendices
    appendices/array-method-examples/index
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
+   appendices/math-method-examples/index
    appendices/style-guide
 
 
