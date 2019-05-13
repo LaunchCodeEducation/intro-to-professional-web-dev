@@ -17,11 +17,11 @@ Chapters
    chapters/loops/index
    chapters/functions/index
    chapters/more-on-functions/index
+   chapters/objects-and-math/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
    chapters/dom-and-events/index
-   chapters/objects-and-math/index
    chapters/booster-rockets/index
 
 .. toctree::

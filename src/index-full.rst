@@ -9,15 +9,18 @@ Chapters
    chapters/how-programs-work/index
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
-   chapters/booleans-and-conditionals/index   
+   chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/arrays/index
    chapters/loops/index
    chapters/functions/index
+   chapters/more-on-functions/index
+   chapters/objects-and-math/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
+   chapters/dom-and-events/index
    chapters/booster-rockets/index
 
 .. toctree::
