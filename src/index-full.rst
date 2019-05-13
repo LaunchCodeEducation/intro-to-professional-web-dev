@@ -18,6 +18,8 @@ Chapters
    chapters/html/index
    chapters/css/index
    chapters/git/index
+   chapters/http/index
+   chapters/forms/index
    chapters/booster-rockets/index
 
 .. toctree::
