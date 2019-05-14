@@ -129,7 +129,7 @@ added inside of it. Inputs will allows the user to enter data. Below we have add
    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
       <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -144,7 +144,7 @@ added inside of it. Inputs will allows the user to enter data. Below we have add
 <li><code class="docutils literal notranslate"><span class="pre">name</span></code> attribute is used to identify the input’s value when the data is submitted</li>
 <li><code class="docutils literal notranslate"><span class="pre">type</span></code> attribute defines which type of value of the input represents</li>
 </ul>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -170,8 +170,8 @@ which informs the user of the purpose of the field. The simplest usage of
    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -180,8 +180,18 @@ which informs the user of the purpose of the field. The simplest usage of
 <div class="figure">
 <img alt="HTML that includes a form tag with two input elements. Each element is inside of a label element." src="../../_images/label-example.png" />
 </div>
-<p>A second way to</p>
-<p>Clicking on a label will set the focus on the associated input.</p>
+<p>A second way to relate a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tag to an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> is to use the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute of
+<code class="docutils literal notranslate"><span class="pre">input</span></code> and the <code class="docutils literal notranslate"><span class="pre">for</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">label</span></code>. When <code class="docutils literal notranslate"><span class="pre">for</span></code> is used, the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code>
+does NOT have to inside of the``&lt;label&gt;``.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>What happens when a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> is clicked? The answer depends on what the <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> is
+associated to.</p>
+<p id="index-3">For <em>text</em> inputs, when the label is clicked, then the input gains <em>focus</em>. An element with
+<strong>focus</strong> is currently selected by the browser and ready to receive input.</p>
+<p>For <em>non-text</em> based inputs, when the label is clicked, a value is selected. This behavior
+can be seen with <code class="docutils literal notranslate"><span class="pre">radio</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> elements which we will learn more about soon.</p>
 </div>
 <div class="section" id="types-of-inputs">
 <h2>17.1.3. Types of Inputs<a class="headerlink" href="#types-of-inputs" title="Permalink to this headline">¶</a></h2>

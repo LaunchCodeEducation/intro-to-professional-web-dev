@@ -102,25 +102,15 @@
 <p class="last">We remarked previously that most forms use <code class="docutils literal notranslate"><span class="pre">POST</span></code> because they cause data to be changed on the server. A web search only <em>retrieves</em> data. It does not change data. Therefore it’s safe to use a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request for searches.</p>
 </div>
 <p>The fact that most search engines use the name <code class="docutils literal notranslate"><span class="pre">q</span></code> for their search boxes will allow us to easily create a form that is capable of sending a search request to several search engines.</p>
-<p>The process will look like this:</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">create form submission diagram</p>
-</div>
-<p>The form will send a request with query parameter <code class="docutils literal notranslate"><span class="pre">q</span></code> to the selected engine. Since this request looks essentially the same as requests coming from the search engine’s own form (for examle, at <a class="reference external" href="https://google.com">google.com</a>) it will give us back the results the same as if we had searched via their sites.</p>
+<p>The form will send a request with query parameter <code class="docutils literal notranslate"><span class="pre">q</span></code> to the selected engine. Since this request looks essentially the same as requests coming from the search engine’s own form (for examle, at <a class="reference external" href="https://google.com">google.com</a>) it will give us back the results the same as if we had searched via those sites.</p>
 </div>
 <div class="section" id="getting-started">
 <h2>17.3.2. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/Forms-Studio">starter code for this studio</a>, which contains some basic HTML to get you started.</p>
+<p>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/Forms-Studio">starter code for this studio</a>, which has some basic HTML to get you started.</p>
 </div>
 <div class="section" id="create-form-inputs">
 <h2>17.3.3. Create Form Inputs<a class="headerlink" href="#create-form-inputs" title="Permalink to this headline">¶</a></h2>
-<p>Let’s build out the form.</p>
-<ul class="simple">
-<li>Create a text input within the form and set its <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute to the value <code class="docutils literal notranslate"><span class="pre">q</span></code>.</li>
-<li>Create a radio group with one radio button for each of the search engines below. Recall that radio buttons with the same <code class="docutils literal notranslate"><span class="pre">name</span></code> are grouped, so use the same value for this attribute, <code class="docutils literal notranslate"><span class="pre">&quot;engine&quot;</span></code>, on each radio button.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">label</span></code> elements to add a label to each radio button.</li>
-</ul>
+<p>Let’s build out the form. We will need some data for the search engines we want to work with.</p>
 <table border="1" class="docutils" id="id2">
 <caption><span class="caption-text">Search Engine Options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -153,14 +143,19 @@
 </tr>
 </tbody>
 </table>
+<ul class="simple">
+<li>Create a text input within the form and set its <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute to the value <code class="docutils literal notranslate"><span class="pre">q</span></code>.</li>
+<li>Create a radio group with one radio button for each search engine. Recall that radio buttons with the same <code class="docutils literal notranslate"><span class="pre">name</span></code> are grouped, so use the same value for this attribute, <code class="docutils literal notranslate"><span class="pre">&quot;engine&quot;</span></code>, on each radio button.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">label</span></code> element for each radio button.</li>
+</ul>
 <p>Finally, add a submit button to the form and set it’s <code class="docutils literal notranslate"><span class="pre">value</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;Go!&quot;</span></code>.</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p class="last">How is the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of a submit button used?</p>
 </div>
 </div>
-<div class="section" id="form-submit-event-handler">
-<h2>17.3.4. Form Submit Event Handler<a class="headerlink" href="#form-submit-event-handler" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="submit-event-handler">
+<h2>17.3.4. Submit Event Handler<a class="headerlink" href="#submit-event-handler" title="Permalink to this headline">¶</a></h2>
 <p>Pop quiz:</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
