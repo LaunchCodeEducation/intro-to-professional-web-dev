@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Studio: HTTP and Forms &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-http-and-forms">
+<h1>Studio: HTTP and Forms<a class="headerlink" href="#studio-http-and-forms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>get vs. post</li>
+<li>forms submit http requests</li>
+<li>q parameter for most search engines</li>
+<li>what we’ll build</li>
+<li>diagram</li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/Forms-Studio">starter code for this studio</a>, which contains some basic HTML to get you started.</p>
+</div>
+<div class="section" id="create-form-inputs">
+<h2>Create Form Inputs<a class="headerlink" href="#create-form-inputs" title="Permalink to this headline">¶</a></h2>
+<p>Let’s build out the form.</p>
+<ul class="simple">
+<li>Create a text input within the form and set its <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute to the value <code class="docutils literal notranslate"><span class="pre">q</span></code>.</li>
+<li>Create a radio group with one radio button for each of the search engines below. Recall that radio buttons with the same <code class="docutils literal notranslate"><span class="pre">name</span></code> are grouped, so use the same value for this attribute, <code class="docutils literal notranslate"><span class="pre">&quot;engine&quot;</span></code>, on each radio button.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">label</span></code> elements to add a label to each radio button.</li>
+</ul>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Search Engine Options</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Value</th>
+<th class="head">Searh URL</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Google</td>
+<td><code class="docutils literal notranslate"><span class="pre">google</span></code></td>
+<td><a class="reference external" href="https://www.google.com/">https://www.google.com/</a></td>
+</tr>
+<tr class="row-odd"><td>DuckDuckGo</td>
+<td><code class="docutils literal notranslate"><span class="pre">duckDuckGo</span></code></td>
+<td><a class="reference external" href="https://duckduckgo.com/">https://duckduckgo.com/</a></td>
+</tr>
+<tr class="row-even"><td>Bing</td>
+<td><code class="docutils literal notranslate"><span class="pre">bing</span></code></td>
+<td><a class="reference external" href="https://www.bing.com/">https://www.bing.com/</a></td>
+</tr>
+<tr class="row-odd"><td>Ask</td>
+<td><code class="docutils literal notranslate"><span class="pre">ask</span></code></td>
+<td><a class="reference external" href="https://www.ask.com/">https://www.ask.com/</a></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, add a submit button to the form and set it’s <code class="docutils literal notranslate"><span class="pre">value</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;Go!&quot;</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">How is the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of a submit button used?</p>
+</div>
+</div>
+<div class="section" id="form-submit-event-handler">
+<h2>Form Submit Event Handler<a class="headerlink" href="#form-submit-event-handler" title="Permalink to this headline">¶</a></h2>
+<p>Pop quiz:</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What happens if you try to submit the form at this point? Why?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Which HTTP method will be used when submitting the form?</p>
+</div>
+<p>We now have a form with inputs that has nowhere to send its data. The <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute determines where a form submits data, but we can’t set the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute on the form in our HTML. Our form needs to submit data to a different site based on the selected search engine.</p>
+<p>To make this happen, we need to set the value of the form’s <code class="docutils literal notranslate"><span class="pre">action</span></code> <em>after</em> the user hits the submit button, but <em>before</em> the form request is sent. Forms trigger a <code class="docutils literal notranslate"><span class="pre">submit</span></code> event at precisely this moment. Therefore, we can create an event handler to solve this problem. Our handler will:</p>
+<ol class="arabic simple">
+<li>Retrieve the selected value from the radio group.</li>
+<li>Use this value to determine the <code class="docutils literal notranslate"><span class="pre">action</span></code> URL, based on the selected search engine.</li>
+<li>Set the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute of the form.</li>
+</ol>
+<div class="section" id="create-and-register-the-handler">
+<h3>Create and Register the Handler<a class="headerlink" href="#create-and-register-the-handler" title="Permalink to this headline">¶</a></h3>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> element near the top of the file, create a function named <code class="docutils literal notranslate"><span class="pre">setSearchEngine</span></code>. We will code this function later, so for now just add a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement so we can see when it runs.</p>
+<p>Near the bottom of the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> element is the stub:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+     <span class="c1">// TODO: register the handler</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Replace the TODO with code to add <code class="docutils literal notranslate"><span class="pre">setSearchEngine</span></code> as a handler to the form’s <code class="docutils literal notranslate"><span class="pre">submit</span></code> event. You will first need to get the form element using one of the DOM methods.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The event handler can be added only after the form has been built, so we do so by adding a <code class="docutils literal notranslate"><span class="pre">load</span></code> event handler to the <code class="docutils literal notranslate"><span class="pre">window</span></code>. This ensures that the event is registered <em>after</em> the page has loaded.</p>
+</div>
+<p>Before moving on, make sure the code you just wrote works. Submit the form and look for a message in the console to verify that <code class="docutils literal notranslate"><span class="pre">setSearchEngine</span></code> ran.</p>
+</div>
+<div class="section" id="set-the-action">
+<h3>Set the <code class="docutils literal notranslate"><span class="pre">action</span></code><a class="headerlink" href="#set-the-action" title="Permalink to this headline">¶</a></h3>
+<p>Our event handler now runs when the form is submitted, but it doesn’t do anything. We would like it to set the <code class="docutils literal notranslate"><span class="pre">action</span></code> on the form based on the user’s choice of search engine.</p>
+<p>Add code to <code class="docutils literal notranslate"><span class="pre">setSearchEngine</span></code> to get the selected radio button element, using <code class="docutils literal notranslate"><span class="pre">document.querySelector</span></code>. The selector you’ll need is a little complicated, so we’ll give it to you here:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[name=engine]:checked
+</pre></div>
+</div>
+<p>This compound CSS selector combines an <em>attribute</em> selector with a <em>pseudo selector</em>. The attribute selector <code class="docutils literal notranslate"><span class="pre">[name=engine]</span></code> matches all elements with the value of <code class="docutils literal notranslate"><span class="pre">name</span></code> equal to <code class="docutils literal notranslate"><span class="pre">&quot;engine&quot;</span></code>. The pseudo selector <code class="docutils literal notranslate"><span class="pre">:checked</span></code> specifies that we only want the selected element from that group of matches. Combined, the selector gives us the selected element in the radio group.</p>
+<p>Once you have the selected radio button, get it’s value using <code class="docutils literal notranslate"><span class="pre">.value</span></code>. The value tells us which search engine the user has chosen.</p>
+<p>At this stage, we could use a large <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code> statement to determine the URL for the selected search engine.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let actionURL;
+
+if (engine === &quot;google&quot;) {
+   actionURL = &quot;https://www.google.com/&quot;;
+} else if (engine === &quot;bing&quot;) {
+   actionURL = &quot;https://duckduckgo.com/&quot;;
+}
+
+// ... and so on ...
+</pre></div>
+</div>
+<p>This is ugly and inefficient. A better approach is to create an object to store the engine values and URLs as key/value pairs. For a single engine, the object would look like:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;google&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.google.com/&quot;</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>Add this to your code, and fill it out to include the other three engines.</p>
+<p>Now, you can get the action URL using <code class="docutils literal notranslate"><span class="pre">action</span></code>, bracket notation,  and the value of the selected radio button. Once you have the action URL, find the form element and set its action using <code class="docutils literal notranslate"><span class="pre">setAttribute</span></code>.</p>
+<p>If everything went well, your search engine selector page should now work! If not, that’s okay. Switch to debugging mode and figure out what needs fixing.</p>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add validation to your submit handler to make sure that the user has both selected a search engine and entered a (non-empty) search term.</li>
+<li>Add some CSS rules to your page to make it look nice.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
