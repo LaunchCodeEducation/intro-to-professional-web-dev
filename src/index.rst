@@ -43,6 +43,7 @@ Studios
    chapters/functions/studio
    chapters/more-on-functions/studio
    chapters/dom-and-events/studio
+   chapters/forms/studio
 
 Assignments
 ^^^^^^^^^^^

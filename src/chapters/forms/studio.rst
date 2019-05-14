@@ -4,11 +4,30 @@ Studio: HTTP and Forms
 Introduction
 ------------
 
-- get vs. post
-- forms submit http requests
-- q parameter for most search engines
-- what we'll build
-- diagram
+This chapter taught you that forms submit data in HTTP requests. This studio uses form and HTTP concepts to build a *search engine selector*, that is, a search form that allows a user to choose which search engine they would like to use. It will look like this:
+
+.. figure:: figures/search-engine-selector.png
+   :alt: A form with a text input and radio buttons corresponding to various search engines.
+
+   The search engine selector that we will build.
+
+Most search engines work the same way. The have a single text input, and they submit data using a ``GET`` request. Additionally, many of the most popular search engines also use the same name for the search parameter, ``q``. 
+
+.. admonition:: Try It!
+
+   Use 2-3 different search engines to search for the same term. On the results page, look at the URL. Did the search happen via ``GET`` or ``POST``? If a ``GET`` request was made, what is the name of the parameter containing your search term?
+
+   *Note:* You may have to copy/paste the URL into a text editor to find the search parameter. Some engines add other parameters to the URL, causing it to extend past the end of the browser's address bar.
+
+.. note:: We remarked previously that most forms use ``POST`` because they cause data to be changed on the server. A web search only *retrieves* data. It does not change data. Therefore it's safe to use a ``GET`` request for searches.
+
+The fact that most search engines use the name ``q`` for their search boxes will allow us to easily create a form that is capable of sending a search request to several search engines.
+
+The process will look like this:
+
+.. todo:: create form submission diagram
+
+The form will send a request with query parameter ``q`` to the selected engine. Since this request looks essentially the same as requests coming from the search engine's own form (for examle, at `google.com <https://google.com>`_) it will give us back the results the same as if we had searched via their sites. 
 
 Getting Started
 ---------------
@@ -32,16 +51,16 @@ Let's build out the form.
      - Searh URL
    * - Google
      - ``google``
-     - https://www.google.com/
+     - https://www.google.com/search
    * - DuckDuckGo
      - ``duckDuckGo``
      - https://duckduckgo.com/
    * - Bing
      - ``bing``
-     - https://www.bing.com/
+     - https://www.bing.com/search
    * - Ask
      - ``ask``
-     - https://www.ask.com/
+     - https://www.ask.com/web
 
 Finally, add a submit button to the form and set it's ``value`` to ``"Go!"``. 
 
