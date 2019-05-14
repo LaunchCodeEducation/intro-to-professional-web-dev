@@ -7,14 +7,13 @@
     <title>12.3. Coding With Objects &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -23,7 +22,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="12.4. The Math Object" href="math-object.html" />
-    <link rel="prev" title="12.2. Creating Objects" href="creatingobjects.html" />
+    <link rel="prev" title="12.2. Modifying Objects" href="creatingobjects.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -86,11 +84,80 @@
     
   <div class="section" id="coding-with-objects">
 <h1>12.3. Coding With Objects<a class="headerlink" href="#coding-with-objects" title="Permalink to this headline">¶</a></h1>
-<p>Use a for…in loop to iterate through the properties of an
-object
-Use the this keyword within a method to reference the object that
-the method belongs to
-Utilize objects as input parameters and return values of functions</p>
+<div class="section" id="booleans-and-objects">
+<h2>12.3.1. Booleans and Objects<a class="headerlink" href="#booleans-and-objects" title="Permalink to this headline">¶</a></h2>
+<p>Objects are not stored by their properties, but by reference. That can lead to some confusion when comparing objects.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Let’s see how this could effect our zoo! Surely, the zoo has more than one tortoise and the second tortoise is named Patricia!</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tortoiseTwo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span><span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Patricia&quot;</span><span class="p">,</span>
+    <span class="nx">weight</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">food</span><span class="o">:</span><span class="s2">&quot;veggies&quot;</span><span class="p">,</span>
+    <span class="nx">sign</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; is a &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">species</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">};</span>
+</pre></div>
+</div>
+<p>Because Pete and Patricia are members of the same species and have the same diet, you might notice that many of their points are equal and that some are not.
+Pete weighs more than Patricia and of course, they have different names!</p>
+<p>For this example, we will remove the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">weight</span></code> properties.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span><span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">food</span><span class="o">:</span><span class="s2">&quot;veggies&quot;</span><span class="p">,</span>
+    <span class="nx">sign</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; is a &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">species</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">};</span>
+
+ <span class="kd">var</span> <span class="nx">tortoiseTwo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span><span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">food</span><span class="o">:</span><span class="s2">&quot;veggies&quot;</span><span class="p">,</span>
+    <span class="nx">sign</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; is a &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">species</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">};</span>
+
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tortoiseOne</span> <span class="o">===</span> <span class="nx">tortoiseTwo</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<p class="last">So if the objects contain properties that have the same keys and equal values, why is the output false?</p>
+</div>
+<p>Objects are stored by reference in memory, which means that even though <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> and <code class="docutils literal notranslate"><span class="pre">tortoiseTwo</span></code> have the same keys and values, they are stored in separate locations in memory.
+This means that though you can compare the values inside individual keys in objects for inequality, you cannot compare the objects themselves for equality.</p>
+</div>
+<div class="section" id="iterating-through-objects">
+<h2>12.3.2. Iterating Through Objects<a class="headerlink" href="#iterating-through-objects" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, you find yourself wanting to iterate through all of the values in an object, much like you would do with an array.
+Like with an array, you can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to do just that! An easy way to do this is with a different <code class="docutils literal notranslate"><span class="pre">for</span></code> loop structure.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span> <span class="nx">value1</span><span class="p">,</span> <span class="nx">key2</span><span class="o">:</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">key3</span><span class="o">:</span><span class="nx">value3</span><span class="p">};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">a</span> <span class="k">in</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="nx">a</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>value1
+value2
+value3
+</pre></div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It</p>
+<p class="last">Can you write a <code class="docutils literal notranslate"><span class="pre">for..in</span></code> loop to print to the console the values in the <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> object?</p>
+</div>
+</div>
+<div class="section" id="objects-and-functions">
+<h2>12.3.3. Objects and Functions<a class="headerlink" href="#objects-and-functions" title="Permalink to this headline">¶</a></h2>
+<p>Objects can also be the input parameter for a function or the return value of the function.
+Objects will be passed by reference so any change to the object in the function will change the object itself.</p>
+</div>
 </div>
 
 
@@ -99,7 +166,7 @@ Utilize objects as input parameters and return values of functions</p>
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="creatingobjects.html"><span aria-hidden="true">&larr;</span> 12.2. Creating Objects</a></li>
+        <li class="previous"><a href="creatingobjects.html"><span aria-hidden="true">&larr;</span> 12.2. Modifying Objects</a></li>
         
         
         <li class="next"><a href="math-object.html">12.4. The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Object <span aria-hidden="true">&rarr;</span></a></li>
