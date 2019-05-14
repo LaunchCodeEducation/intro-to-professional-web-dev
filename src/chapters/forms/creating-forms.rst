@@ -65,8 +65,10 @@ The ``input`` element is used to add interactive fields, which allow the user to
 
    Your form will NOT submit a value for an ``<input>`` unless it has a ``name`` attribute.
 
+.. index:: ! label
+
 Forms normally contain more than one input. ``<label>`` tags are used provide a textual label,
-which informs the user of what data to enter into each field. The simplest usage of
+which informs the user of the purpose of the field. The simplest usage of
 ``<label>`` tags is to *wrap* them around ``<input>`` tags.
 
 .. sourcecode:: html
@@ -84,23 +86,72 @@ which informs the user of what data to enter into each field. The simplest usage
       </body>
    </html>
 
+.. figure:: figures/label-example.png
+   :alt: HTML that includes a form tag with two input elements. Each element is inside of a label element.
 
-Form Submission
----------------
-what causes a button to be submitted? submit button? hitting enter? button?
-Where is the Form submitted?
-what is submitted?
-action attribute
-method attribute
+A second way to 
+
+Clicking on a label will set the focus on the associated input.
 
 
 Types of Inputs
 ---------------
-textarea, password, check box, selectbox, radio buttons, email
-provide note about: date?, range?, number?
+As you know from using the web sites, it's possible to use more than simple text inputs. There
+are additional input *types* that each have a specific purpose. Many of the elements are
+``<input>`` tags with a different ``type`` value, however some have entirely different tag names.
+
+.. list-table:: Inputs
+   :header-rows: 1
+
+   * - Type
+     - Syntax
+     - Description
+   * - checkbox
+     - ``<input type="checkbox" name="fuelChecked"/>``
+     - A small box for marking form option as *checked*.
+   * - date
+     - ``<input type="date" name="flightDate"/>``
+     - A text input with validation provided by the browser that ensures the value is a valid date format.
+       Some browsers also provide a *date picker* for selecting the date.
+   * - email
+     - ``<input type="email" name="emailAddress"/>``
+     - A text input with validation provided by the browser that ensures the value is in the format
+       of a valid email address.
+   * - number
+     - ``<input type="number" name="fuelTemp"/>``
+     - A text input with validation provided by the browser that ensures the value is a number.
+   * - password
+     - ``<input type="password" name="passCode"/>``
+     - A text input that obscures the text typed by the user.
+   * - radio button
+     - ``<input type="radio" name="commChannel" value="105"/>``
+     - A small circle that allows selecting one of multiple values. Used in groups of two or more.
+   * - range
+     - ``<input type="range" name="volume"/>``
+     - A slider that allows the user to input a numeric value within the given range.
+   * - select
+     - ``<select name="weather"><option>clear</option><option>cloudy</option></select>``
+     - A *drop down* menu that allows selection of one option.
+   * - textarea
+     - ``<textarea name="missionDescription"/>``
+     - A larger, multi-line text box.
 
 
-Form Validation with JavaScript
--------------------------------
-submit event
-preventDefault or maybe stopPropagation?
+.. note::
+
+   Form inputs will NOT look exactly the same in all browsers.
+   However, the inputs *should* function the same way. Use `<https://caniuse.com>`_, if there is ever
+   a question of browser support for a certain feature,
+
+
+Examples
+--------
+textarea
+selectbox
+radio buttons
+multi checkbox
+
+
+Check Your Understanding
+------------------------
+TODO:...
