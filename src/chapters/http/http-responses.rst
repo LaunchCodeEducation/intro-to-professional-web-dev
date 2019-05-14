@@ -1,5 +1,5 @@
-HTTP Responses
-==============
+Responses
+=========
 
 - Structure
 - Response codes

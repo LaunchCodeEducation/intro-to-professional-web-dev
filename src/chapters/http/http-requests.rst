@@ -1,5 +1,5 @@
-HTTP Requests
-=============
+Requests
+========
 
 - Structure
 - Request Types

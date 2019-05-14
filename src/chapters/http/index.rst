@@ -1,5 +1,5 @@
-HTTP
-====
+HTTP: The Postal Service of the Internet
+========================================
 
 .. toctree::
    :maxdepth: 3
