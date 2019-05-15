@@ -53,6 +53,8 @@ function addTargetToExternalLinks() {
         || url.includes("localhost")
         || url.includes("file://"))) {
       link.setAttribute("target", "_blank");
+      const iconMarkup = `<i class="fas fa-external-link-alt" aria-hidden="true"></i>`
+      link.insertAdjacentHTML('beforeend', iconMarkup);
     }
   }
 }
