@@ -6,6 +6,7 @@ In the previous sections, we learned how to construct, modify, and use objects.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let turtle = {
          name = 'Bob',
