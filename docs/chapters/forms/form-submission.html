@@ -104,10 +104,24 @@ is the destination that the form submission request will be sent to.</p>
 is set to the address of the current page.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
-<p>Load this form on <a class="reference external" href="https://form-default--launchcode.repl.co/">repl.it</a>.
+<p>Open <a class="reference external" href="https://form-default--launchcode.repl.co/">this form</a> in a browser.
 Input values into the inputs, click the Submit button, then notice what happens to the
 address bar.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Form Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -123,7 +137,7 @@ address bar.</p>
    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Output</strong></p>
 <div class="figure">
 <img alt="todo..." src="../../_images/default-form.png" />
@@ -136,21 +150,73 @@ address bar.</p>
 </div>
 <p>Notice in the above example that the browser address has changed to
 <code class="docutils literal notranslate"><span class="pre">https://form-default--launchcode.repl.co/?username=salina&amp;teamName=Space+Coders</span></code>.
-Which includes a query parameter for each field on the form. This is because the
-default form submission type is GET.</p>
-<p>Something about wanting to use POST
-Example using POST
-<a class="reference external" href="https://www.w3schools.com/action_page.php">https://www.w3schools.com/action_page.php</a></p>
-<p>What is submitted?
-- key values</p>
+Which includes a query parameter for <em>every</em> field in the form.That is because the
+default form submission type is GET. Remember that GET requests do not have a body
+to contain the field values.</p>
+<div class="section" id="key-value-pairs">
+<h2>17.2.1. Key Value Pairs<a class="headerlink" href="#key-value-pairs" title="Permalink to this headline">¶</a></h2>
+<p>When a form is submitted
+a key value pair is submitted for each <em>named</em> input, with the key being the name and
+the value being the value of the input.</p>
+<p>Form with two named inputs:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Key value pairs when form is submitted:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>username=salina&amp;teamName=Space+Coders
+</pre></div>
+</div>
+<div class="section" id="form-submission-using-post">
+<h3>17.2.1.1. Form Submission using POST<a class="headerlink" href="#form-submission-using-post" title="Permalink to this headline">¶</a></h3>
+<p>Instead of using GET and query parameters to submit form data, we can use POST.
+To submit a form using a POST request, set the <code class="docutils literal notranslate"><span class="pre">method</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code>.
+Form data submitted via POST will be contained in the HTTP message body. Using POST is a
+more secure way to send form data.</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<ol class="arabic simple">
+<li>Open <a class="reference external" href="https://form-post--launchcode.repl.co/">this form using POST</a> in a browser.</li>
+<li>Open the network tab of the developer tools</li>
+<li>Check “Persist Logs” in the network tab</li>
+<li>Enter data into the inputs</li>
+<li>Click Submit button</li>
+</ol>
+<p>TODO:: replace post action page with something we control</p>
+<p><strong>Network Tab After Form Submitted</strong></p>
+<p class="last">TODO: screen shot of network tab and maybe the browser</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">POST form submissions are not really secure unless you are using <code class="docutils literal notranslate"><span class="pre">https</span></code>.</p>
+</div>
+</div>
 <div class="section" id="form-validation-with-javascript">
-<h2>17.2.1. Form Validation with JavaScript<a class="headerlink" href="#form-validation-with-javascript" title="Permalink to this headline">¶</a></h2>
+<h3>17.2.1.2. Form Validation with JavaScript<a class="headerlink" href="#form-validation-with-javascript" title="Permalink to this headline">¶</a></h3>
+<p>Validating form inputs <em>before</em> submitting the form can make the user experience much smoother.
+Some input types have built in browser validation for basic formats such as numbers and email addresses.
+We can use event handlers to perform more complex validation on form input values.</p>
+<p>TODO: example using code in this <a class="reference external" href="https://repl.it/&#64;launchcode/form-validation">https://repl.it/&#64;launchcode/form-validation</a></p>
+<p>TODO: try it  link?</p>
 <p>submit event
 preventDefault to stop form from submitting normally</p>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>17.2.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h3>17.2.1.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h3>
 <p>TODO:…</p>
+</div>
 </div>
 </div>
 
