@@ -1,4 +1,4 @@
-**while** Loops
+``while`` Loops
 ===============
 
 .. index::
@@ -6,7 +6,7 @@
 
 There is another JavaScript construct that can also be used for iteration, the ``while`` loop. The ``while`` loop provides a much more general mechanism for iterating. Like a ``for`` loop, it uses a condition to determine whether the loop body will continue to execute. Unlike a ``for`` loop, however, it does not have initial and update expressions.
 
-**while** Loop Syntax
+``while`` Loop Syntax
 ---------------------
 
 The general syntax of a ``while`` loop looks like this:
@@ -19,7 +19,7 @@ The general syntax of a ``while`` loop looks like this:
 
 A ``while`` loop will continue to repeat as long as its boolean expression evaluates to ``true``. The condition typically includes a value or variable that is updated within the loop, so that the expression eventualy becomes false.
 
-Flow of Execution of the **while** Loop
+Flow of Execution of the ``while`` Loop
 ---------------------------------------
 
 We can visualize the flow of execution of a ``while`` loop as follows.
@@ -35,7 +35,7 @@ Here is the flow of execution for a ``while`` loop:
 #. If the condition is ``false``, exit the ``while`` loop and continue execution at the next statement after the loop body.
 #. If the condition is ``true``, execute the loop body and then go back to step 1.
 
-**for** Loops Rewritten as **while** Loops
+``for`` Loops Rewritten as ``while`` Loops
 ------------------------------------------
 
 We can use the ``while`` loop to create any type of iteration we wish, including anything that we have previously done with a ``for`` loop. For example, consider our initial ``for`` loop example.
@@ -67,7 +67,7 @@ You can almost read the ``while`` statement as if it were in a natural language:
 
    `Try it at repl.it. <https://repl.it/@launchcode/While-loop-example>`_
 
-Beyond **for** Loops
+Beyond ``for`` Loops
 --------------------
 
 We stated earlier that ``while`` loops are more flexible than ``for`` loops. Now we will look at an example that illustrates this.

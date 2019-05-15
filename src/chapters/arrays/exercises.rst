@@ -33,7 +33,7 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/Ar
    c. Remove the first item from the array with ``shift``. Print the element removed
       and the updated array.
    d. Unlike ``pop`` and ``shift``, ``push`` and ``unshift`` require arguments
-      inside the ``()``. Add the items 1168 and '20 meters' to the the array -
+      inside the ``()``. Add the items 1138 and '20 meters' to the the array -
       the number at the start and the string at the end. Print the updated
       array to confirm the changes.
    e. Use a template literal to print the final array and its length.

@@ -17,7 +17,7 @@ a better result?  How about printing the phrase 100 times instead?
 
 Loops simplify repetitive tasks!
 
-**for** Practice
+``for`` Practice
 -----------------
 
 Control+click (or right-click) to: `Repl.it here <https://repl.it/@launchcode/ForLoopExercises>`__
