@@ -42,8 +42,8 @@ JavaScript provides several built-in objects, which can be called directly by
 the user. One of these is the ``Math`` object, and it allows us to go beyond
 the standard mathematical operations (``+, -, *, /``).
 
-``Math`` Properties (Constants)
---------------------------------
+``Math`` Properties Are Constants
+----------------------------------
 
 If you ever wondered, *I wish I had quick access to the square root of 1/2*,
 then JavaScript has your back.

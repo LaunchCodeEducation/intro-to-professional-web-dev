@@ -64,9 +64,9 @@ By changing the value that multiplies ``Math.round()`` we specify the range for
 the numbers we want to generate.
 
 #. ``Math.floor(Math.random()*maxValue)``  generates a number from
-   0 - (``maxValue``-1).
+   0 to (``maxValue``-1).
 #. ``Math.floor(Math.random()*maxValue) + 1``  generates a number from
-   1 - ``maxValue``.
+   1 to ``maxValue``.
 
 .. admonition:: Try It
 
@@ -162,7 +162,9 @@ it to our astronaut meal program.
    [ 'fish', 'corn', 'broccoli', 'soda', 'apple' ]
    [ 'chicken', 'quinoa', 'asparagus', 'tea', 'chocolate' ]
 
+Is a walkthrough of the code necessary?
+
 Check Your Understanding
 -------------------------
 
-Coming soon...
+   Suggestions?
