@@ -188,13 +188,13 @@ Clicky Thing Inputs
      - Description
      - Demo
    * - checkbox
-     - ``<input type="checkbox" name="fuelChecked"/>``
+     - ``<input type="checkbox" name="readyList" value="crew"/>``
      - A small box for marking form option as *checked*.
-     - :raw-html:`<input type="checkbox" name="fuelChecked"/>`
+     - :raw-html:`<label>crew<input type="checkbox" name="readyList" value="crew"/></label><label>shuttle<input type="checkbox" name="readyList" value="shuttle"/></label>`
    * - radio button
-     - ``<input type="radio" name="commChannel" value="105"/>``
-     - A small circle that allows selecting one of multiple values. Used in groups of two or more.
-     - :raw-html:`<input type="radio" name="commChannel" value="105"/>`
+     - ``<input type="radio" name="radioOn" value="yes"/>``
+     - A small circle that allows selecting *one* of multiple values. Used in groups of two or more.
+     - :raw-html:`<label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label>`
 
 Fancy Clicky Thing Inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
