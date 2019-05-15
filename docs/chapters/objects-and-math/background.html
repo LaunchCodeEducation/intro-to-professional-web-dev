@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="12.2. Modifying Objects" href="creatingobjects.html" />
+    <link rel="next" title="12.2. Working with Objects" href="modifyingobjects.html" />
     <link rel="prev" title="12. Objects and the Math Object" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -86,18 +86,33 @@
 <h1>12.1. Objects and Why They Matter<a class="headerlink" href="#objects-and-why-they-matter" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">So far we have learned a lot about arrays, which are data structures that can hold many values.
 <strong>Objects</strong> are also data structures that can hold many values.</p>
-<p>Unlike arrays, each value in objects has a name or key for reference purposes.
+<p>Unlike arrays, each value in an object has a name or <strong>key</strong> for reference purposes.
 The pairing between a key and its value is called a <strong>key/value pair</strong>.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Figure here with clarifying text!</p>
+</div>
 <div class="section" id="initializing-objects">
 <h2>12.1.1. Initializing Objects<a class="headerlink" href="#initializing-objects" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">An object initialization is called an <strong>object literal</strong>.
+<p id="index-2">When defining an object, we call the intialization an <strong>object literal</strong>.
 We will need three things to create an object: the name of the object, the keys, and their corresponding values.</p>
-<p>Once we have these three things, we can write an object literal like so:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span> <span class="nx">value1</span><span class="p">,</span> <span class="nx">key2</span><span class="o">:</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">key3</span><span class="o">:</span><span class="nx">value3</span><span class="p">,</span> <span class="p">....};</span>
-</pre></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Object literals use curly braces, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, to enclose the key/value pairs.</p>
 </div>
-<p>If the object is quite large, you can also put the key/value pairs on a separate line!</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span>
+<p>Once we have these three things, we can write an object literal like so:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">key2</span><span class="o">:</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">key3</span><span class="o">:</span><span class="nx">value3</span><span class="p">,</span> <span class="p">...</span> <span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>If we have a lot of key/value pairs in our object, we can also put each one on a separate line!</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">key1</span><span class="o">:</span> <span class="nx">value1</span><span class="p">,</span>
     <span class="nx">key2</span><span class="o">:</span> <span class="nx">value2</span><span class="p">,</span>
     <span class="nx">key3</span><span class="o">:</span> <span class="nx">value3</span><span class="p">,</span>
@@ -106,10 +121,11 @@ We will need three things to create an object: the name of the object, the keys,
     <span class="p">.</span>
 <span class="p">};</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">When putting the key/value pairs on a separate line, it is important to pay attention to spaces and tabs!</p>
+<p class="last">When putting the key/value pairs on a separate line, it is important to pay attention to spaces and tabs!
+Incorrect spacing or tab usage can result in a bug.</p>
 </div>
 <p>When defining an object, keep in mind that the keys can only be valid JavaScript strings.
 The values can be any of the data types that we have previously discussed.</p>
@@ -119,41 +135,58 @@ The values can be any of the data types that we have previously discussed.</p>
 We could create an object for storing the different data points about the animals in a zoo.
 We start with our first tortoise. His name is Pete! He is an 85 year old, 919 lb Galapagos Tortoise, who prefers a diet of veggies.
 Our object literal for all of this important data about Pete would be:</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">species</span><span class="o">:</span><span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Pete&quot;</span><span class="p">,</span>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span> <span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Pete&quot;</span><span class="p">,</span>
     <span class="nx">weight</span><span class="o">:</span> <span class="mi">919</span><span class="p">,</span>
     <span class="nx">age</span><span class="o">:</span> <span class="mi">85</span><span class="p">,</span>
-    <span class="nx">diet</span><span class="o">:</span><span class="s2">&quot;veggies&quot;</span>
+    <span class="nx">diet</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;pumpkins&quot;</span><span class="p">,</span> <span class="s2">&quot;lettuce&quot;</span><span class="p">,</span> <span class="s2">&quot;cabbage&quot;</span><span class="p">]</span>
 <span class="p">};</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="methods-and-properties">
 <h2>12.1.2. Methods and Properties<a class="headerlink" href="#methods-and-properties" title="Permalink to this headline">¶</a></h2>
-<p id="index-2">A <strong>property</strong> of an object is a key/value pair of an object.
-The property’s name is the key and the property’s value is the value assigned to that key.</p>
+<span class="target" id="index-3"></span><p id="index-4">A <strong>property</strong> of an object is a key/value pair of an object.
+The property’s name is the key and the property’s value is the data assigned to that key.</p>
 <p>A <strong>method</strong> performs an action on the object, because it is a property that stores a function.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>In the case of Pete, our zoo’s friendly Galapagos Tortoise, the object <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> has several properties for his species, name, weight, age, and diet.
 If we wanted to add a method to our object, we might add a function that returns a helpful statement for the general public.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">species</span><span class="o">:</span><span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Pete&quot;</span><span class="p">,</span>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span> <span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Pete&quot;</span><span class="p">,</span>
     <span class="nx">weight</span><span class="o">:</span> <span class="mi">919</span><span class="p">,</span>
     <span class="nx">age</span><span class="o">:</span> <span class="mi">85</span><span class="p">,</span>
-    <span class="nx">diet</span><span class="o">:</span><span class="s2">&quot;veggies&quot;</span><span class="p">,</span>
+    <span class="nx">diet</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;pumpkins&quot;</span><span class="p">,</span> <span class="s2">&quot;lettuce&quot;</span><span class="p">,</span> <span class="s2">&quot;cabbage&quot;</span><span class="p">],</span>
     <span class="nx">sign</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; is a &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">species</span><span class="p">;</span>
     <span class="p">}</span>
  <span class="p">};</span>
 </pre></div>
+</td></tr></table></div>
 </div>
-</div>
-<p>In the example above, we saw a new keyword that we haven’t seen before.
-<code class="docutils literal notranslate"><span class="pre">this</span></code> is a keyword that programmers use when they need to call upon a property in the object in a method for that same object.</p>
+<p>In the example above on line 8, we see a keyword which is new to us.
+Programmers use the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword when they are calling an object’s property from within the object itself.
+We could use the object’s name instead of <code class="docutils literal notranslate"><span class="pre">this</span></code>, but <code class="docutils literal notranslate"><span class="pre">this</span></code> is shorter and easier to read.
+We saw it in the method, <code class="docutils literal notranslate"><span class="pre">sign</span></code>, because we wanted to use the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">species</span></code> properties inside of the <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> object.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>12.1.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
@@ -172,7 +205,7 @@ If we wanted to add a method to our object, we might add a function that returns
 <p>Which keyword can be used to refer to an object within an object?</p>
 <ol class="last loweralpha simple">
 <li><code class="docutils literal notranslate"><span class="pre">Object</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">var</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">let</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">this</span></code></li>
 </ol>
 </div>
@@ -188,7 +221,7 @@ If we wanted to add a method to our object, we might add a function that returns
         <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 12. Objects and the Math Object</a></li>
         
         
-        <li class="next"><a href="creatingobjects.html">12.2. Modifying Objects <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="modifyingobjects.html">12.2. Working with Objects <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

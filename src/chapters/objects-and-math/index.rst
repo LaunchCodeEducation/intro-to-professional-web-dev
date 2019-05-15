@@ -5,7 +5,7 @@ Objects and the Math Object
    :maxdepth: 3
 
    background
-   creatingobjects
+   modifyingobjects
    codingwithobjects
    math-object
    math-methods
