@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="12.7. Math Wrap-Up" href="math-wrapup.html" />
+    <link rel="next" title="12.7. Exercises: Objects &amp; Math" href="exercises.html" />
     <link rel="prev" title="12.5. Math Methods" href="math-methods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -86,78 +86,19 @@
     
   <div class="section" id="combining-math-methods">
 <h1>12.6. Combining <code class="docutils literal notranslate"><span class="pre">Math</span></code> Methods<a class="headerlink" href="#combining-math-methods" title="Permalink to this headline">¶</a></h1>
-<p>Let’s revisit the <a class="reference internal" href="../loops/studio.html#loop-studio"><span class="std std-ref">loop studio</span></a>, where we assembled meals
-for the shuttle astronauts. In part A, you constructed a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to
-iterate through the arrays in order. Astronaut 0 got all of the items at index
-0, while astronaut 2 got all the kale, since that was stored at index 2.</p>
-<p>It would be better if we could construct meals by selecting a <em>random</em> item
-from each of the supply arrays. Let’s see how we can use the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object to
-accomplish this.</p>
-<div class="section" id="generate-a-random-integer">
-<span id="random-integer"></span><h2>12.6.1. Generate a Random Integer<a class="headerlink" href="#generate-a-random-integer" title="Permalink to this headline">¶</a></h2>
-<p>To select an item from an array, we must use an integer in the bracket
-notation. Unfortunately, <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> returns a decimal value between 0
-and 1, which will not work for index values.</p>
-<p>The trick to creating a random integer is to multiply <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> by a
-whole number and then round the result to remove the decimal portion. The
-choice of using the <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code> or <code class="docutils literal notranslate"><span class="pre">round</span></code> method affects the numbers
-generated.</p>
-<p>Explore the example below:</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-   <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`floor = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">, ceil = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">, round = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>floor = 0, ceil = 1, round = 0
-floor = 6, ceil = 7, round = 7
-floor = 2, ceil = 3, round = 3
-floor = 8, ceil = 9, round = 8
-floor = 9, ceil = 10, round = 10
-</pre></div>
-</div>
-</div>
-<p>After multiplying <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> by 10, applying the <code class="docutils literal notranslate"><span class="pre">floor</span></code> method gives
-numbers between 0 and 9. Using the <code class="docutils literal notranslate"><span class="pre">ceil</span></code> method shifts the range up one
-digit, generating values between 1 and 10. Using the <code class="docutils literal notranslate"><span class="pre">round</span></code> method gives the
-widest range, generating numbers between 0 and 10.</p>
-<p>Rather than trying to remember which method to use, one choice is to ALWAYS
-use <code class="docutils literal notranslate"><span class="pre">floor</span></code> to round to an integer:</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*10)</span></code> generates a number from 0 - 9.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*120)</span></code> generates a number from 0 - 119.</li>
-</ol>
-<p>To start our range at 1, just add 1 to the rounded value:</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*10)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from 1 - 10.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*120)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from 1 - 120.</li>
-</ol>
-<p>By changing the value that multiplies <code class="docutils literal notranslate"><span class="pre">Math.round()</span></code> we specify the range for
-the numbers we want to generate.</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*maxValue)</span></code>  generates a number from
-0 to (<code class="docutils literal notranslate"><span class="pre">maxValue</span></code>-1).</li>
-<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*maxValue)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from
-1 to <code class="docutils literal notranslate"><span class="pre">maxValue</span></code>.</li>
-</ol>
-<div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It</p>
-<p>Explore generating random numbers at this <a class="reference external" href="https://repl.it/&#64;launchcode/RandomNumberPractice">repl.it</a>.</p>
-<ol class="last arabic simple">
-<li>Generate random integers from 1 - 100.</li>
-<li>Generate random integers from -5 - 0, but NOT including 0.</li>
-<li><em>Challenge</em>: Generate random integers from 20 - 30.</li>
-</ol>
-</div>
-</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> methods provide useful actions, but each one is fairly specific in
+what it does (e.g. taking a square root). At first glance, this might seem to
+limit how often we need to call on <code class="docutils literal notranslate"><span class="pre">Math</span></code>. However, the methods can be
+manipulated or combined to produce some clever results.</p>
 <div class="section" id="random-selection-from-an-array">
-<h2>12.6.2. Random Selection From an Array<a class="headerlink" href="#random-selection-from-an-array" title="Permalink to this headline">¶</a></h2>
+<h2>12.6.1. Random Selection From an Array<a class="headerlink" href="#random-selection-from-an-array" title="Permalink to this headline">¶</a></h2>
 <p>To select a random item from the array <code class="docutils literal notranslate"><span class="pre">happiness</span> <span class="pre">=</span> <span class="pre">['Hope',</span> <span class="pre">'Joy',</span> <span class="pre">'Peace',</span>
-<span class="pre">'Love',</span> <span class="pre">'Kindness',</span> <span class="pre">'Puppies',</span> <span class="pre">'Kittens',</span> <span class="pre">'Tortoise']</span></code>, we need to make
-JavaScript randomly generate an index value from 0 to 7.</p>
+<span class="pre">'Love',</span> <span class="pre">'Kindness',</span> <span class="pre">'Puppies',</span> <span class="pre">'Kittens',</span> <span class="pre">'Tortoise']</span></code>, we need to randomly
+generate an index value from 0 to 7. Since <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> returns a
+decimal number between 0 and 1, the method on its own will not work.</p>
+<p>The <a class="reference internal" href="../../appendices/math-method-examples/random-examples.html#random-integers"><span class="std std-ref">Math.random</span></a> appendix page describes how to
+generate random integers by combining the <code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">floor</span></code> methods. We
+will use this functionality now.</p>
 <p>Let’s define a function that takes an array as a parameter. Since we might not
 know how many items are in the array, we cannot multiply <code class="docutils literal notranslate"><span class="pre">Math.round()</span></code> by a
 specific value.  Fortunately, we have the <code class="docutils literal notranslate"><span class="pre">length</span></code> property…</p>
@@ -202,66 +143,94 @@ Hope
 <code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*8)</span></code>, which generates an integer from 0 to 7.
 Line 3 then returns a random selection from the array.</p>
 </div>
-<div class="section" id="random-meal-assembly">
-<h2>12.6.3. Random Meal Assembly<a class="headerlink" href="#random-meal-assembly" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have a function to randomly select an item from an array, let’s add
-it to our astronaut meal program.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="kd">function</span> <span class="nx">randomSelection</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
-      <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-      <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
-   <span class="p">}</span>
-
-   <span class="kd">let</span> <span class="nx">protein</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chicken&#39;</span><span class="p">,</span> <span class="s1">&#39;pork&#39;</span><span class="p">,</span> <span class="s1">&#39;tofu&#39;</span><span class="p">,</span> <span class="s1">&#39;beef&#39;</span><span class="p">,</span> <span class="s1">&#39;fish&#39;</span><span class="p">,</span> <span class="s1">&#39;beans&#39;</span><span class="p">];</span>
-   <span class="kd">let</span> <span class="nx">grain</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rice&#39;</span><span class="p">,</span> <span class="s1">&#39;pasta&#39;</span><span class="p">,</span> <span class="s1">&#39;corn&#39;</span><span class="p">,</span> <span class="s1">&#39;potato&#39;</span><span class="p">,</span> <span class="s1">&#39;quinoa&#39;</span><span class="p">,</span> <span class="s1">&#39;crackers&#39;</span><span class="p">];</span>
-   <span class="kd">let</span> <span class="nx">veggies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;peas&#39;</span><span class="p">,</span> <span class="s1">&#39;green beans&#39;</span><span class="p">,</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;edamame&#39;</span><span class="p">,</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">,</span> <span class="s1">&#39;asparagus&#39;</span><span class="p">];</span>
-   <span class="kd">let</span> <span class="nx">drinks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;juice&#39;</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">,</span> <span class="s1">&#39;water&#39;</span><span class="p">,</span> <span class="s1">&#39;soy milk&#39;</span><span class="p">,</span> <span class="s1">&#39;soda&#39;</span><span class="p">,</span> <span class="s1">&#39;tea&#39;</span><span class="p">];</span>
-   <span class="kd">let</span> <span class="nx">dessert</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;more kale&#39;</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;chocolate&#39;</span><span class="p">,</span> <span class="s1">&#39;kiwi&#39;</span><span class="p">];</span>
-
-   <span class="kd">let</span> <span class="nx">pantry</span> <span class="o">=</span> <span class="p">[</span><span class="nx">protein</span><span class="p">,</span> <span class="nx">grain</span><span class="p">,</span> <span class="nx">veggies</span><span class="p">,</span> <span class="nx">drinks</span><span class="p">,</span> <span class="nx">dessert</span><span class="p">];</span> <span class="c1">//LOOK! A 2-dimensional array.</span>
-   <span class="kd">let</span> <span class="nx">numCrew</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
-
-   <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">numCrew</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">//create 1 meal for each crew member</span>
-      <span class="kd">let</span> <span class="nx">meal</span> <span class="o">=</span> <span class="p">[];</span>
-      <span class="k">for</span> <span class="p">(</span><span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">pantry</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span> <span class="c1">//make 1 selection from each food array</span>
-         <span class="nx">meal</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">randomSelection</span><span class="p">(</span><span class="nx">pantry</span><span class="p">[</span><span class="nx">j</span><span class="p">]));</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-<p><strong>Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;tofu&#39;, &#39;pasta&#39;, &#39;peas&#39;, &#39;juice&#39;, &#39;kiwi&#39; ]
-[ &#39;tofu&#39;, &#39;potato&#39;, &#39;green beans&#39;, &#39;soda&#39;, &#39;apple&#39; ]
-[ &#39;pork&#39;, &#39;pasta&#39;, &#39;kale&#39;, &#39;soda&#39;, &#39;ice cream&#39; ]
-[ &#39;beef&#39;, &#39;crackers&#39;, &#39;peas&#39;, &#39;water&#39;, &#39;kiwi&#39; ]
-[ &#39;fish&#39;, &#39;corn&#39;, &#39;broccoli&#39;, &#39;soda&#39;, &#39;apple&#39; ]
-[ &#39;chicken&#39;, &#39;quinoa&#39;, &#39;asparagus&#39;, &#39;tea&#39;, &#39;chocolate&#39; ]
-</pre></div>
-</div>
-<p>Is a walkthrough of the code necessary?</p>
+<div class="section" id="rounding-to-decimal-places">
+<h2>12.6.2. Rounding to Decimal Places<a class="headerlink" href="#rounding-to-decimal-places" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code> and <code class="docutils literal notranslate"><span class="pre">round</span></code> methods all take a decimal value and
+return an integer, but what if we wanted to round 5.56789123 to two decimal
+places? Let’s explore how to make this happen by starting with a simpler
+example.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Math.round(1.23)</span></code> returns 1, but what if we want to round to one decimal
+place (1.2)? We cannot alter what <code class="docutils literal notranslate"><span class="pre">round</span></code> does—it <em>always</em> returns an
+integer. However, we CAN change the number used as the argument.</p>
+<p>Let’s multiply 1.23 by 10 (1.23*10  = 12.3) and then apply the method.
+<code class="docutils literal notranslate"><span class="pre">Math.round(12.3)</span></code> returns 12. Why do this? Well, if we divide 12 by 10
+(12/10 = 1.2) we get the result of <em>rounding 1.23 to one decimal place</em>.</p>
+<p>Combining these steps gives us <code class="docutils literal notranslate"><span class="pre">Math.round(1.23*10)/10</span></code>, which returns the
+value 1.2.</p>
+<p>Let’s return to 5.56789123 and step through the logic for rounding to two
+decimal places:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Step</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Math.round(5.56789123*100)/100</span></code></td>
+<td>Evaluate the numbers in () first: 5.56789123*100 = 556.789123</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Math.round(556.789123)/100</span></code></td>
+<td>Apply the <code class="docutils literal notranslate"><span class="pre">round</span></code> method to 556.789123</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">557/100</span></code></td>
+<td>Perform the division 557/100 = 5.57</td>
+</tr>
+</tbody>
+</table>
+<p>The clever trick for rounding to decimal places is to multiply the original
+number by some factor of 10, <code class="docutils literal notranslate"><span class="pre">round</span></code> the result, then divide the integer by
+the same factor of 10. The number of digits we want after the decimal are
+shifted in front of the ‘.’ before rounding, then moved back into place by the
+division.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Rounding to Decimal Places</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Decimal Places In Answer</th>
+<th class="head">Multiply &amp; Divide By</th>
+<th class="head">Syntax</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>10</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.round(number*10)/10</span></code></td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>100</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.round(number*100)/100</span></code></td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>1000</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.round(number*1000)/1000</span></code></td>
+</tr>
+<tr class="row-odd"><td>etc.</td>
+<td>etc.</td>
+<td>etc.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>12.6.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>Suggestions?</div></blockquote>
+<h2>12.6.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>Which of the following correctly rounds 12.3456789 to 4 decimal places?</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789)*100/100</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789*100)/100</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789*10000)/10000</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789)*10000/10000</span></code></li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -274,7 +243,7 @@ it to our astronaut meal program.</p>
         <li class="previous"><a href="math-methods.html"><span aria-hidden="true">&larr;</span> 12.5. Math Methods</a></li>
         
         
-        <li class="next"><a href="math-wrapup.html">12.7. <code class="docutils literal notranslate"><span class="pre">Math</span></code> Wrap-Up <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="exercises.html">12.7. Exercises: Objects &amp; Math <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

@@ -10,6 +10,5 @@ Objects and the Math Object
    math-object
    math-methods
    math-applications
-   math-wrapup
    exercises
    studio

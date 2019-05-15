@@ -19,7 +19,8 @@ constants*, like the value for pi (π) or the square root of 2.
 
 Instead of defining a variable to hold as many digits of pi as we can remember,
 JavaScript stores the value for us. To use this value, we do NOT need to
-create a new object. By calling ``Math.PI``, we can access the value of pi.
+create a new object. By using dot notation and calling ``Math.PI``, we can
+access the value of pi.
 
 .. admonition:: Example
 

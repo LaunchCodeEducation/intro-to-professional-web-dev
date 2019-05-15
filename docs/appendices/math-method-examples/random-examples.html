@@ -113,32 +113,65 @@ in a variable or used in a calculation.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="generate-a-random-integer">
+<span id="random-integers"></span><h2>Generate a Random Integer<a class="headerlink" href="#generate-a-random-integer" title="Permalink to this headline">¶</a></h2>
 <p>If a random integer must be generated, the result of <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> can be
 manipulated with operators (<code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/</span></code>) and other <code class="docutils literal notranslate"><span class="pre">Math</span></code> methods.</p>
+<p>The trick to creating a random integer is to multiply <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> by a
+whole number and then round the result to remove the decimal portion. The
+choice of using the <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code> or <code class="docutils literal notranslate"><span class="pre">round</span></code> method affects the numbers
+generated.</p>
+<p>Explore the example below:</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-   <span class="kd">let</span> <span class="nx">randNum</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">randNum</span><span class="p">));</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`floor = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">, ceil = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">, round = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="c1">//Creates a random number from 0 to 99.</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>76
-56
-24
-7
-37
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>floor = 0, ceil = 1, round = 0
+floor = 6, ceil = 7, round = 7
+floor = 2, ceil = 3, round = 3
+floor = 8, ceil = 9, round = 8
+floor = 9, ceil = 10, round = 10
 </pre></div>
 </div>
 </div>
-<p>A more detailed discussion on how to <a class="reference internal" href="../../chapters/objects-and-math/math-applications.html#random-integer"><span class="std std-ref">generate random integers</span></a>
-can be found within the <em>Objects and Math</em> chapter.</p>
+<p>After multiplying <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> by 10, applying the <code class="docutils literal notranslate"><span class="pre">floor</span></code> method gives
+numbers between 0 and 9. Using the <code class="docutils literal notranslate"><span class="pre">ceil</span></code> method shifts the range up one
+digit, generating values between 1 and 10. Using the <code class="docutils literal notranslate"><span class="pre">round</span></code> method gives the
+widest range, generating numbers between 0 and 10.</p>
+<p>Rather than trying to remember which method to use, one choice is to ALWAYS
+use <code class="docutils literal notranslate"><span class="pre">floor</span></code> to round to an integer:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*10)</span></code> generates a number from 0 - 9.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*120)</span></code> generates a number from 0 - 119.</li>
+</ol>
+<p>To start our range at 1, just add 1 to the rounded value:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*10)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from 1 - 10.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*120)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from 1 - 120.</li>
+</ol>
+<p>By changing the value that multiplies <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> we specify the range
+for the numbers we want to generate.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*maxValue)</span></code>  generates a number from
+0 to (<code class="docutils literal notranslate"><span class="pre">maxValue</span></code>-1).</li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*maxValue)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from
+1 to <code class="docutils literal notranslate"><span class="pre">maxValue</span></code>.</li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It</p>
+<p>Explore generating random numbers at this <a class="reference external" href="https://repl.it/&#64;launchcode/RandomNumberPractice">repl.it</a>.</p>
+<ol class="last arabic simple">
+<li>Generate random integers from 1 - 100.</li>
+<li>Generate random integers from -5 - 0, but NOT including 0.</li>
+<li><em>Challenge</em>: Generate random integers from 20 - 30.</li>
+</ol>
+</div>
+</div>
 </div>
 
 
