@@ -7,14 +7,13 @@
     <title>12.2. Modifying Objects &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -91,8 +89,9 @@
 <p>When using objects, programmers oftentimes want to get the value of one of the properties or change that value.
 To access the value of a property, you need to use the key of that property.</p>
 <p>You can do so two ways: with bracket syntax or dot-notation.</p>
-<p>Using brackets, the code would be something like: <code class="docutils literal notranslate"><span class="pre">object[&quot;key&quot;]</span></code>.
-With dot notation, the code would be something like: <code class="docutils literal notranslate"><span class="pre">object.key</span></code>.</p>
+<p>Using brackets, the code would be something like: <code class="docutils literal notranslate"><span class="pre">object[&quot;key&quot;]</span></code>. The only restraint on naming a key was that it had to be a valid JavaScript string.
+Since a key could potentially have a space in it, bracket syntax would be the only way to access the value in that property because of the quotes.
+With dot notation, the code would be something like: <code class="docutils literal notranslate"><span class="pre">object.key</span></code>. Notice that the key is no longer surrounded by quotes. However, keys are still strings.</p>
 <p>Either way will return the same value, so the difference between the two is about readability and accessing the property.</p>
 </div>
 <div class="section" id="modifying-properties">
@@ -119,7 +118,30 @@ value3
 <p class="first admonition-title">Warning</p>
 <p class="last">Objects are mutable.
 You may remember from our discussion about strings and arrays, that mutability means that a data structure can be modified without making a copy.
-This is important to remember for objects, because when you change the value of a property, a copy of the object is not made, so proceed with caution!</p>
+This is important to remember for objects, because when you change the value of a property, a copy of the object is not made and the original is modified.
+So proceed with caution!</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>12.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>All of the questions below refer to an object called <code class="docutils literal notranslate"><span class="pre">giraffe</span></code>. Here is the object literal for <code class="docutils literal notranslate"><span class="pre">giraffe</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">giraffe</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">species</span><span class="o">:</span> <span class="s2">&quot;Reticulated Giraffe&quot;</span><span class="p">,</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Cynthia&quot;</span><span class="p">,</span>
+  <span class="nx">weight</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">1500</span><span class="p">,</span>
+  <span class="nx">diet</span><span class="o">:</span> <span class="s2">&quot;leaves&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>We want to add a method for easily increasing Cynthia’s age on her birthday. What is missing from our method?</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">birthday:</span> <span class="pre">function</span> <span class="pre">()</span> <span class="pre">{age</span> <span class="pre">=</span> <span class="pre">age</span> <span class="pre">+</span> <span class="pre">1;}</span></code></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Could we use bracket notation, dot notation or both to access the properties of <code class="docutils literal notranslate"><span class="pre">giraffe</span></code>?</p>
 </div>
 </div>
 </div>
