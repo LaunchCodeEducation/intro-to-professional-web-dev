@@ -4,7 +4,8 @@ Coding With Objects
 Booleans and Objects
 --------------------
 
-Objects are not stored by their properties, but by reference. That can lead to some confusion when comparing objects.
+Objects are not stored by their properties or by value, but by reference. Storing something by reference means that it is stored based on its location in memory.
+That can lead to some confusion when comparing objects.
 
 .. admonition:: Example
 
@@ -16,7 +17,8 @@ Objects are not stored by their properties, but by reference. That can lead to s
           species:"Galapagos Tortoise",
           name:"Patricia",
           weight: 800,
-          food:"veggies",
+          age: 85,
+          diet:"veggies",
           sign: function() {
               return this.name + " is a " + this.species;
           }
@@ -47,13 +49,15 @@ Objects are not stored by their properties, but by reference. That can lead to s
 
        console.log(tortoiseOne === tortoiseTwo);
 
+   Console Output
+
    ::
 
       False
 
    So if the objects contain properties that have the same keys and equal values, why is the output false?
 
-Objects are stored by reference in memory, which means that even though ``tortoiseOne`` and ``tortoiseTwo`` have the same keys and values, they are stored in separate locations in memory.
+Even though ``tortoiseOne`` and ``tortoiseTwo`` have the same keys and values, they are stored in separate locations in memory.
 This means that though you can compare the values inside individual keys in objects for inequality, you cannot compare the objects themselves for equality.
 
 Iterating Through Objects
@@ -61,6 +65,7 @@ Iterating Through Objects
 
 Sometimes, you find yourself wanting to iterate through all of the values in an object, much like you would do with an array.
 Like with an array, you can use a ``for`` loop to do just that! An easy way to do this is with a different ``for`` loop structure.
+``for..in`` loops are specifically designed to easily loop through the properties in an object.
 
 .. sourcecode:: js
 
@@ -90,4 +95,20 @@ Objects and Functions
 
 Objects can also be the input parameter for a function or the return value of the function.
 Objects will be passed by reference so any change to the object in the function will change the object itself.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What type of loop is designed for looping through the properties in an object?
+
+.. admonition:: Question
+
+   Which statement would return ``True``?
+
+   a. ``tortoiseOne == tortoiseTwo``
+   b. ``tortoiseOne === tortoiseTwo``
+   c. ``tortoiseOne.name == tortoiseTwo.name``
+   d. ``tortoiseOne.age == tortoiseTwo.age``
 
