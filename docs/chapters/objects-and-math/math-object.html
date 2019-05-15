@@ -86,72 +86,21 @@
     
   <div class="section" id="the-math-object">
 <h1>12.4. The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Object<a class="headerlink" href="#the-math-object" title="Permalink to this headline">¶</a></h1>
-<p>In the previous sections, we learned how to construct, modify, and use objects.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">turtle</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span>
-   <span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>
-   <span class="nx">hungry</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nx">eat</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="kc">false</span><span class="p">},</span>
-   <span class="nx">move</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="kc">true</span><span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">hungry</span><span class="p">){</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is hungry.`</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; eats.&quot;</span><span class="p">);</span>
-   <span class="nx">turtle</span><span class="p">.</span><span class="nx">hungry</span> <span class="o">=</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">eat</span><span class="p">();</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is happy and </span><span class="si">${</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">color</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is happy and </span><span class="si">${</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">color</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; moves.&quot;</span><span class="p">);</span>
-   <span class="nx">turtle</span><span class="p">.</span><span class="nx">hungry</span> <span class="o">=</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">move</span><span class="p">();</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is hungry.`</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-<p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Bob is hungry.
-Bob eats.
-Bob is happy and green.
-</pre></div>
-</div>
-</div>
-<p>Here, the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> object has the properties <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code> and
-<code class="docutils literal notranslate"><span class="pre">hungry</span></code>, each of which stores a value. The methods <code class="docutils literal notranslate"><span class="pre">eat</span></code> and <code class="docutils literal notranslate"><span class="pre">move</span></code> are
-functions, which perform specific actions when called.</p>
 <p>JavaScript provides several built-in objects, which can be called directly by
-the user. One of these is the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object, and it allows us to go beyond
-the standard mathematical operations (<code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/</span></code>).</p>
+the user. One of these is the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object, which contains more than the
+standard mathematical operations (<code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/</span></code>).</p>
+<p>In the previous sections, we learned how to construct, modify, and use objects
+such as <code class="docutils literal notranslate"><span class="pre">giraffe</span></code>. However, JavaScript built-in objects cannot be modified
+by the user.</p>
+<blockquote>
+<div>Unlike other objects, the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object is <em>immutable</em>.</div></blockquote>
 <div class="section" id="math-properties-are-constants">
 <h2>12.4.1. <code class="docutils literal notranslate"><span class="pre">Math</span></code> Properties Are Constants<a class="headerlink" href="#math-properties-are-constants" title="Permalink to this headline">¶</a></h2>
-<p>If you ever wondered, <em>I wish I had quick access to the square root of 1/2</em>,
-then JavaScript has your back.</p>
-<p>Just like <code class="docutils literal notranslate"><span class="pre">turtle</span></code> stores values for a name and color, the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object
-has 8 defined properties. These represent mathematical <em>constants</em>, like the
-value for pi (π) or the square root of 1/2.</p>
-<p>Instead of defining a variable in our programs to hold “3.14” (or however many
-digits of pi a programmer can remember), JavaScript stores the value for us.
-To use this value, we do NOT need to create a new object. We just apply dot
-notation on the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object name.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> object has 8 defined properties. These represent <em>mathematical
+constants</em>, like the value for pi (π) or the square root of 2.</p>
+<p>Instead of defining a variable to hold as many digits of pi as we can remember,
+JavaScript stores the value for us. To use this value, we do NOT need to
+create a new object. By calling <code class="docutils literal notranslate"><span class="pre">Math.PI</span></code>, we can access the value of pi.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
@@ -166,13 +115,8 @@ notation on the <code class="docutils literal notranslate"><span class="pre">Mat
 </pre></div>
 </div>
 </div>
-<p>By calling <code class="docutils literal notranslate"><span class="pre">Math.PI</span></code>, JavaScript fills in the value of pi automatically. To
-use one of the other constants stored in <code class="docutils literal notranslate"><span class="pre">Math</span></code>, we replace <code class="docutils literal notranslate"><span class="pre">PI</span></code> with the
-property name (e.g. <code class="docutils literal notranslate"><span class="pre">SQRT1_2</span></code> stores the value for the square root of 1/2).</p>
-<p>Recall that for <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, we can add, remove or change any of the properties
-or methods assigned to that object. Renaming <code class="docutils literal notranslate"><span class="pre">turtle</span></code> is as simple as
-<code class="docutils literal notranslate"><span class="pre">turtle.name</span> <span class="pre">=</span> <span class="pre">&quot;Frank&quot;;</span></code>.</p>
-<p>Unlike other objects, the constants defined for <code class="docutils literal notranslate"><span class="pre">Math</span></code> are <em>immutable</em>.</p>
+<p>As stated above, the properties within <code class="docutils literal notranslate"><span class="pre">Math</span></code> <em>cannot</em> be changed by the
+user.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
@@ -188,6 +132,8 @@ or methods assigned to that object. Renaming <code class="docutils literal notra
 </pre></div>
 </div>
 </div>
+<p>To use one of the other constants stored in <code class="docutils literal notranslate"><span class="pre">Math</span></code>, we replace <code class="docutils literal notranslate"><span class="pre">PI</span></code> with
+the property name (e.g. <code class="docutils literal notranslate"><span class="pre">SQRT2</span></code> stores the value for the square root of 2).</p>
 </div>
 <div class="section" id="other-math-properties">
 <h2>12.4.2. Other <code class="docutils literal notranslate"><span class="pre">Math</span></code> Properties<a class="headerlink" href="#other-math-properties" title="Permalink to this headline">¶</a></h2>

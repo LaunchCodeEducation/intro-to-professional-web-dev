@@ -5,7 +5,7 @@ Math Methods
 
 As with strings and arrays, JavaScript provides some built-in *methods* for the
 ``Math`` object. These allow us to perform calculations or tasks that are more
-involved than simple multiplication, division, addition or subtraction.
+involved than simple multiplication, division, addition, or subtraction.
 
 Common Math Methods
 --------------------

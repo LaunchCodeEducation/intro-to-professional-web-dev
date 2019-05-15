@@ -1,5 +1,5 @@
-``Math`` Applications
-======================
+Combining ``Math`` Methods
+===========================
 
 Let's revisit the :ref:`loop studio <loop-studio>`, where we assembled meals
 for the shuttle astronauts. In part A, you constructed a ``for`` loop to

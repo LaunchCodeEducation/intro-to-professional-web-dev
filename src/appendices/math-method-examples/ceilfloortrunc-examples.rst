@@ -1,7 +1,7 @@
 .. _ceilfloortrunc-examples:
 
-``Math.ceil``, ``floor`` and ``trunc`` Examples
-================================================
+``Math.ceil``, ``floor``, and ``trunc`` Examples
+=================================================
 
 ``Math.ceil``
 --------------
