@@ -49,7 +49,9 @@ function addTargetToExternalLinks() {
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
     const url = link["href"];
-    if (!(url.includes("launchcode.org") || url.includes("localhost"))) {
+    if (!(url.includes("launchcode.org") 
+        || url.includes("localhost")
+        || url.includes("file://"))) {
       link.setAttribute("target", "_blank");
     }
   }
