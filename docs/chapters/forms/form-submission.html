@@ -84,15 +84,69 @@
     
   <div class="section" id="form-submission">
 <h1>17.2. Form Submission<a class="headerlink" href="#form-submission" title="Permalink to this headline">¶</a></h1>
-<p>what causes a button to be submitted? submit button? hitting enter? button?
-Where is the Form submitted?
-what is submitted?
-action attribute
-method attribute</p>
+<p id="index-0">The purpose of a form is to collect data input by the user. As we learned in the previous
+chapter, the web is made up of a serious of HTTP requests and responses. A <strong>form submission</strong> is when the values in a
+form are sent in an HTTP request to a server.</p>
+<p>A form submission is triggered by clicking a button inside the form. The buttons can be
+<code class="docutils literal notranslate"><span class="pre">input</span></code> elements or <code class="docutils literal notranslate"><span class="pre">button</span></code> elements.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- clicking either of these will cause a form submission --&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Where do form submissions go when they are submitted?
+The answer is the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute on the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag. The <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute
+is the destination that the form submission request will be sent to.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute is not present or has the value empty string, then <code class="docutils literal notranslate"><span class="pre">action</span></code>
+is set to the address of the current page.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title">Try It!</p>
+<p>Load this form on <a class="reference external" href="https://form-default--launchcode.repl.co/">repl.it</a>.
+Input values into the inputs, click the Submit button, then notice what happens to the
+address bar.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Form Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+         <span class="nt">body</span> <span class="p">{</span> <span class="k">padding</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;}</span>
+      <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="figure">
+<img alt="todo..." src="../../_images/default-form.png" />
+</div>
+<p><strong>Output After Form Submitted</strong></p>
+<div class="figure">
+<img alt="todo..." src="../../_images/default-form-submitted.png" />
+</div>
+<p class="last">Edit code in this <a class="reference external" href="https://repl.it/&#64;launchcode/form-default">source code repl.it</a>.</p>
+</div>
+<p>Notice in the above example that the browser address has changed to
+<code class="docutils literal notranslate"><span class="pre">https://form-default--launchcode.repl.co/?username=salina&amp;teamName=Space+Coders</span></code>.
+Which includes a query parameter for each field on the form. This is because the
+default form submission type is GET.</p>
+<p>Something about wanting to use POST
+Example using POST
+<a class="reference external" href="https://www.w3schools.com/action_page.php">https://www.w3schools.com/action_page.php</a></p>
+<p>What is submitted?
+- key values</p>
 <div class="section" id="form-validation-with-javascript">
 <h2>17.2.1. Form Validation with JavaScript<a class="headerlink" href="#form-validation-with-javascript" title="Permalink to this headline">¶</a></h2>
 <p>submit event
-preventDefault or maybe stopPropagation?</p>
+preventDefault to stop form from submitting normally</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>17.2.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>

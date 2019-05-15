@@ -215,13 +215,6 @@ Fancy Clicky Thing Inputs
      - :raw-html:`<select name="weather"><option>clear</option><option>cloudy</option></select>`
 
 
-Examples
---------
-selectbox
-radio buttons
-multi checkbox
-
-
 Check Your Understanding
 ------------------------
 TODO:...
