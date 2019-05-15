@@ -9,7 +9,10 @@ So far we have learned a lot about arrays, which are data structures that can ho
 Unlike arrays, each value in an object has a name or **key** for reference purposes.
 The pairing between a key and its value is called a **key/value pair**. 
 
-.. TODO:: Figure here with clarifying text!
+To recap, objects store as many key/value pairs as needed and each value needs a key. Without a key, the value cannot be accessed or modified by the programmer.
+
+.. figure:: figures/object.png
+   :alt: Diagram showing that objects are a collection of key/value pairs.
 
 Initializing Objects
 --------------------

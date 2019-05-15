@@ -105,9 +105,8 @@ The loop stops once it has accessed every property.
 
 .. admonition:: Try It
 
-   Write a ``for..in`` loop to print to the console the values in the ``tortoiseOne`` object. TRY IT
+   Write a ``for..in`` loop to print to the console the values in the ``tortoiseOne`` object. `TRY IT! <https://repl.it/@launchcode/forinLoop/>`_
 
-.. TODO:: Add repl.it link
 
 Objects and Functions
 ---------------------
