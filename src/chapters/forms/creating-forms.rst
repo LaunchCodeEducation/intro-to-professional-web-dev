@@ -28,7 +28,7 @@ input from the user.
    </html>
 
 By default an empty ``<form></form>`` will not appear on a web page until inputs have been
-added inside of it. Inputs will allows the user to enter data. Below we have added one basic
+added inside of it. Below we have added one basic
 ``<input>`` tag.
 
 .. sourcecode:: html
@@ -116,53 +116,107 @@ As you know from using the web sites, it's possible to use more than simple text
 are additional input *types* that each have a specific purpose. Many of the elements are
 ``<input>`` tags with a different ``type`` value, however some have entirely different tag names.
 
-.. list-table:: Inputs
+Basic Text Inputs
+^^^^^^^^^^^^^^^^^
+Any values can be typed into these text fields, there are no restrictions enforced by the
+browser.
+
+.. role:: raw-html(raw)
+   :format: html
+
+.. list-table::
    :header-rows: 1
 
    * - Type
      - Syntax
      - Description
-   * - checkbox
-     - ``<input type="checkbox" name="fuelChecked"/>``
-     - A small box for marking form option as *checked*.
-   * - date
-     - ``<input type="date" name="flightDate"/>``
-     - A text input with validation provided by the browser that ensures the value is a valid date format.
-       Some browsers also provide a *date picker* for selecting the date.
-   * - email
-     - ``<input type="email" name="emailAddress"/>``
-     - A text input with validation provided by the browser that ensures the value is in the format
-       of a valid email address.
-   * - number
-     - ``<input type="number" name="fuelTemp"/>``
-     - A text input with validation provided by the browser that ensures the value is a number.
-   * - password
-     - ``<input type="password" name="passCode"/>``
-     - A text input that obscures the text typed by the user.
-   * - radio button
-     - ``<input type="radio" name="commChannel" value="105"/>``
-     - A small circle that allows selecting one of multiple values. Used in groups of two or more.
-   * - range
-     - ``<input type="range" name="volume"/>``
-     - A slider that allows the user to input a numeric value within the given range.
-   * - select
-     - ``<select name="weather"><option>clear</option><option>cloudy</option></select>``
-     - A *drop down* menu that allows selection of one option.
+     - Demo
+   * - text
+     - ``<input type="text" name="username">``
+     - A single line text field.
+     - :raw-html:`<input type="text" name="username"/>`
    * - textarea
      - ``<textarea name="missionDescription"/>``
      - A larger, multi-line text box.
-
+     - :raw-html:`<textarea name="missionDescription"></textarea>`
+   * - password
+     - ``<input type="password" name="passCode"/>``
+     - A text field that obscures the text typed by the user.
+     - :raw-html:`<input type="password" name="passCode"/>`
 
 .. note::
 
    Form inputs will NOT look exactly the same in all browsers.
-   However, the inputs *should* function the same way. Use `<https://caniuse.com>`_, if there is ever
-   a question of browser support for a certain feature,
+   However, the inputs *should* function the same way. Use `<https://caniuse.com>`_,
+   if there is ever a question of browser support for a certain feature.
+
+
+Specialized Text Inputs
+^^^^^^^^^^^^^^^^^^^^^^^
+For these text inputs the browser will validate and provide feedback to the user based on
+rules for the declared type.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Type
+     - Syntax
+     - Description
+     - Demo
+   * - date
+     - ``<input type="date" name="flightDate"/>``
+     - Browser validates the value is a valid date
+       format. Some browsers provide a *date picker*.
+     - :raw-html:`<input type="date" name="flightDate"/>`
+   * - email
+     - ``<input type="email" name="emailAddress"/>``
+     - Browser validates the value is a valid email address format.
+     - :raw-html:`<input type="email" name="emailAddress"/>`
+   * - number
+     - ``<input type="number" name="fuelTemp"/>``
+     - Browser validates the value is a valid number format.
+     - :raw-html:`<input type="number" name="fuelTemp"/>`
+
+
+Clicky Thing Inputs
+^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :header-rows: 1
+
+   * - Type
+     - Syntax
+     - Description
+     - Demo
+   * - checkbox
+     - ``<input type="checkbox" name="fuelChecked"/>``
+     - A small box for marking form option as *checked*.
+     - :raw-html:`<input type="checkbox" name="fuelChecked"/>`
+   * - radio button
+     - ``<input type="radio" name="commChannel" value="105"/>``
+     - A small circle that allows selecting one of multiple values. Used in groups of two or more.
+     - :raw-html:`<input type="radio" name="commChannel" value="105"/>`
+
+Fancy Clicky Thing Inputs
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :header-rows: 1
+
+   * - Type
+     - Syntax
+     - Description
+     - Demo
+   * - range
+     - ``<input type="range" name="volume"/>``
+     - A slider that allows the user to input a numeric value within the given range.
+     - :raw-html:`<input type="range" name="volume"/>`
+   * - select
+     - ``<select name="weather"><option>clear</option><option>cloudy</option></select>``
+     - A *drop down* menu that allows selection of one option. Requires options to be in ``<option>`` tags.
+     - :raw-html:`<select name="weather"><option>clear</option><option>cloudy</option></select>`
 
 
 Examples
 --------
-textarea
 selectbox
 radio buttons
 multi checkbox
