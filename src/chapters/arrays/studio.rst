@@ -1,5 +1,5 @@
-Studio: Strings & Arrays
-========================
+Studio: Strings and Arrays
+==========================
 
 Strings are **ordered collections** of *characters*, which are strings of
 length 1. The characters in a string can be accessed using
