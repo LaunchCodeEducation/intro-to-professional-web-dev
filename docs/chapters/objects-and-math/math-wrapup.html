@@ -86,18 +86,106 @@
     
   <div class="section" id="math-wrap-up">
 <h1>12.7. <code class="docutils literal notranslate"><span class="pre">Math</span></code> Wrap-Up<a class="headerlink" href="#math-wrap-up" title="Permalink to this headline">¶</a></h1>
-<p>Lorem ipsum…</p>
-<div class="section" id="math-redundancy">
-<h2>12.7.1. <code class="docutils literal notranslate"><span class="pre">Math</span></code> Redundancy<a class="headerlink" href="#math-redundancy" title="Permalink to this headline">¶</a></h2>
-<p>2**4 vs. Math.pow(2,4).</p>
-</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> methods provide useful actions, but each one is fairly specific in
+what it does (e.g. taking a square root). At first glance, this might seem to
+limit how often we need to call on <code class="docutils literal notranslate"><span class="pre">Math</span></code>. However, the methods can be
+manipulated to produce some clever results - as we saw when we selected random
+entries from an array.</p>
 <div class="section" id="another-clever-trick">
-<h2>12.7.2. Another Clever Trick<a class="headerlink" href="#another-clever-trick" title="Permalink to this headline">¶</a></h2>
-<p>Math.round(5.56789123*100)/100 = 5.57 vs. using <code class="docutils literal notranslate"><span class="pre">toFixed(2)</span></code>.</p>
+<h2>12.7.1. Another Clever Trick<a class="headerlink" href="#another-clever-trick" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code> and <code class="docutils literal notranslate"><span class="pre">round</span></code> methods all take a decimal value and
+return an integer, but what if we wanted to round 5.56789123 to two decimal
+places? Let’s explore how to make this happen by starting with a simpler
+example.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Math.round(1.23)</span></code> returns 1, but what if we want to round to one decimal
+place (1.2)? We cannot alter what <code class="docutils literal notranslate"><span class="pre">round</span></code> does—it <em>always</em> returns an
+integer. However, we CAN change the number used as the argument.</p>
+<p>Let’s multiply 1.23 by 10 (1.23*10  = 12.3) and then apply the method.
+<code class="docutils literal notranslate"><span class="pre">Math.round(12.3)</span></code> returns 12. Why do this? Well, if we divide 12 by 10
+(12/10 = 1.2) we get the result of <em>rounding 1.23 to one decimal place</em>.</p>
+<p>Combining these steps gives us <code class="docutils literal notranslate"><span class="pre">Math.round(1.23*10)/10</span></code>, which returns the
+value 1.2.</p>
+<p>Let’s return to 5.56789123 and step through the logic for rounding to two
+decimal places:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Step</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Math.round(5.56789123*100)/100</span></code></td>
+<td>Evaluate the numbers in () first: 5.56789123*100 = 556.789123</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Math.round(556.789123)/100</span></code></td>
+<td>Apply the <code class="docutils literal notranslate"><span class="pre">round</span></code> method to 556.789123</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">557/100</span></code></td>
+<td>Perform the division 557/100 = 5.57</td>
+</tr>
+</tbody>
+</table>
+<p>The clever trick for rounding to decimal places is to multiply the original
+number by some factor of 10, <code class="docutils literal notranslate"><span class="pre">round</span></code> the result, then divide the integer by
+the same factor of 10. The number of digits we want after the decimal are
+shifted in front of the ‘.’ before rounding, then moved back into place by the
+division.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Rounding to Decimal Places</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Decimal Places In Answer</th>
+<th class="head">Multiply &amp; Divide By</th>
+<th class="head">Syntax</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>10</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.round(number*10)/10</span></code></td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>100</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.round(number*100)/100</span></code></td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>1000</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.round(number*1000)/1000</span></code></td>
+</tr>
+<tr class="row-odd"><td>etc.</td>
+<td>etc.</td>
+<td>etc.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="math-redundancy">
+<h2>12.7.2. <code class="docutils literal notranslate"><span class="pre">Math</span></code> Redundancy<a class="headerlink" href="#math-redundancy" title="Permalink to this headline">¶</a></h2>
+<p>2**4 vs. Math.pow(2,4).</p>
+<p><code class="docutils literal notranslate"><span class="pre">Math.round()</span></code> to decimals vs. <code class="docutils literal notranslate"><span class="pre">toFixed</span></code>.</p>
+<blockquote>
+<div>Do we want to include these examples?</div></blockquote>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>12.7.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon…</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p>Which of the following correctly rounds 12.3456789 to 4 decimal places?</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789)*100/100</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789*100)/100</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789*10000)/10000</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.round(12.3456789)*10000/10000</span></code></li>
+</ol>
+</div>
 </div>
 </div>
 

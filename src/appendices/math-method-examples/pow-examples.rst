@@ -12,9 +12,9 @@ The general syntax for this method is:
 
    Math.pow(x, y)
 
-This method calculates and returns the value of x raised to the power of y (x :sup:`y`),
-and it is identical to the ``x**y`` operation. The *pow* name refers to the
-operation (*to the power of*).
+This method calculates and returns the value of x raised to the power of y
+(x :sup:`y`), and it is identical to the ``x**y`` operation. The *pow* name
+refers to the operation *to the power of*.
 
 .. admonition:: Example
 
@@ -23,7 +23,7 @@ operation (*to the power of*).
 
       console.log(3**4);
       console.log(Math.pow(3,4));
-      //3 raised to the 4th power = 3*3*3*3
+      //3 raised to the power of 4 = 3*3*3*3
 
    **Output**
    ::

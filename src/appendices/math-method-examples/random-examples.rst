@@ -55,3 +55,6 @@ manipulated with operators (``+, -, *, /``) and other ``Math`` methods.
       24
       7
       37
+
+A more detailed discussion on how to :ref:`generate random integers <random-integer>`
+can be found within the *Objects and Math* chapter.

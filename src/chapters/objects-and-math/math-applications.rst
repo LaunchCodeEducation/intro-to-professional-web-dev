@@ -10,6 +10,8 @@ It would be better if we could construct meals by selecting a *random* item
 from each of the supply arrays. Let's see how we can use the ``Math`` object to
 accomplish this.
 
+.. _random-integer:
+
 Generate a Random Integer
 --------------------------
 
@@ -60,6 +62,11 @@ To start our range at 1, just add 1 to the rounded value:
 
 By changing the value that multiplies ``Math.round()`` we specify the range for
 the numbers we want to generate.
+
+#. ``Math.floor(Math.random()*maxValue)``  generates a number from
+   0 - (``maxValue``-1).
+#. ``Math.floor(Math.random()*maxValue) + 1``  generates a number from
+   1 - ``maxValue``.
 
 .. admonition:: Try It
 

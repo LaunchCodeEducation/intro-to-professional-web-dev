@@ -4,19 +4,19 @@ Math Methods
 =============
 
 As with strings and arrays, JavaScript provides some built-in *methods* for the
-``Math`` object.
+``Math`` object. These allow us to perform calculations or tasks that are more
+involved than simple multiplication, division, addition or subtraction.
 
 Common Math Methods
 --------------------
 
-The ``Math`` object contains over 30 methods. Here is a sample of the most
-frequently used Math methods. More complete lists can be found here:
+The ``Math`` object contains over 30 methods. The table below provides a sample
+of the most frequently used options. More complete lists can be found here:
 
 #. `W3 Schools Math Reference <https://www.w3schools.com/jsref/jsref_obj_math.asp>`__
 #. `MDN Web Docs <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math>`__
 
-To see detailed examples for a particular method, control-click
-(or right-click) on its name.
+To see detailed examples for a particular method, click on its name.
 
 .. list-table:: Ten Common Math Methods
    :header-rows: 1
@@ -30,11 +30,11 @@ To see detailed examples for a particular method, control-click
 
    * - :ref:`ceil <ceilfloortrunc-examples>`
      - ``Math.ceil(number)``
-     - Rounds ``number`` UP to the closest integer value.
+     - Rounds the decimal ``number`` UP to the closest integer value.
 
    * - :ref:`floor <floor>`
      - ``Math.floor(number)``
-     - Rounds ``number`` DOWN to the closest integer value.
+     - Rounds the decimal ``number`` DOWN to the closest integer value.
 
    * - :ref:`max <max-and-min-examples>`
      - ``Math.max(x,y,z,...)``
@@ -46,7 +46,7 @@ To see detailed examples for a particular method, control-click
 
    * - :ref:`pow <pow-examples>`
      - ``Math.pow(x,y)``
-     - Returns the value of x raised to the power of y.
+     - Returns the value of x raised to the power of y (x :sup:`y`).
 
    * - :ref:`random <random-examples>`
      - ``Math.random()``

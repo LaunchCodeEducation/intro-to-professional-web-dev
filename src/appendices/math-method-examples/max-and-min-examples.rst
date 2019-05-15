@@ -15,6 +15,8 @@ The general syntax for this method is:
 This method finds and returns the largest value from a set of numbers (x, y, z,
 etc.).
 
+To find the maximum value in an array, :ref:`see below <max-min-array>`.
+
 .. admonition:: Example
 
    .. sourcecode:: js
@@ -38,8 +40,10 @@ The general syntax for this method is:
 
    Math.min(x, y, z,...)
 
-This method finds and returns the smallest value from a set of numbers (x, y, z,
-etc.).
+This method finds and returns the smallest value from a set of numbers
+(x, y, z, etc.).
+
+To find the minimum value in an array, :ref:`see below <max-min-array>`.
 
 .. admonition:: Example
 
@@ -53,6 +57,8 @@ etc.).
 
       -5.2
 
+.. _max-min-array:
+
 Max and Min of an Array
 ------------------------
 
@@ -61,8 +67,8 @@ numbers as an argument. Googling "JavaScript max value in array" returns
 numerous work-arounds, some that are well explained and others not.
 
 Here is ONE solution. It uses the sytax from :ref:`the sorting studio <js-sort-numbers>`
-to first order the array. The maximumm (or minimum) value can then be identified
-with bracket notation.
+to first order the array. The maximumm (or minimum) value can then be
+identified with bracket notation.
 
 .. admonition:: Example
 

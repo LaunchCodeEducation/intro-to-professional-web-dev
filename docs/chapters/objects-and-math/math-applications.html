@@ -94,7 +94,7 @@ iterate through the arrays in order. Astronaut 0 got all of the items at index
 from each of the supply arrays. Let’s see how we can use the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object to
 accomplish this.</p>
 <div class="section" id="generate-a-random-integer">
-<h2>12.6.1. Generate a Random Integer<a class="headerlink" href="#generate-a-random-integer" title="Permalink to this headline">¶</a></h2>
+<span id="random-integer"></span><h2>12.6.1. Generate a Random Integer<a class="headerlink" href="#generate-a-random-integer" title="Permalink to this headline">¶</a></h2>
 <p>To select an item from an array, we must use an integer in the bracket
 notation. Unfortunately, <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> returns a decimal value between 0
 and 1, which will not work for index values.</p>
@@ -137,6 +137,12 @@ use <code class="docutils literal notranslate"><span class="pre">floor</span></c
 </ol>
 <p>By changing the value that multiplies <code class="docutils literal notranslate"><span class="pre">Math.round()</span></code> we specify the range for
 the numbers we want to generate.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*maxValue)</span></code>  generates a number from
+0 - (<code class="docutils literal notranslate"><span class="pre">maxValue</span></code>-1).</li>
+<li><code class="docutils literal notranslate"><span class="pre">Math.floor(Math.random()*maxValue)</span> <span class="pre">+</span> <span class="pre">1</span></code>  generates a number from
+1 - <code class="docutils literal notranslate"><span class="pre">maxValue</span></code>.</li>
+</ol>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It</p>
 <p>Explore generating random numbers at this <a class="reference external" href="https://repl.it/&#64;launchcode/RandomNumberPractice">repl.it</a>.</p>
