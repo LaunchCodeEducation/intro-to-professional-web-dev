@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="17.2. Studio: HTTP and Forms" href="studio.html" />
+    <link rel="next" title="17.2. Form Submission" href="form-submission.html" />
     <link rel="prev" title="17. User Input with Forms" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -129,7 +129,7 @@ added inside of it. Inputs will allows the user to enter data. Below we have add
    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
       <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -144,15 +144,15 @@ added inside of it. Inputs will allows the user to enter data. Below we have add
 <li><code class="docutils literal notranslate"><span class="pre">name</span></code> attribute is used to identify the input’s value when the data is submitted</li>
 <li><code class="docutils literal notranslate"><span class="pre">type</span></code> attribute defines which type of value of the input represents</li>
 </ul>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Your form will NOT submit a value for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> unless it has a <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
 </div>
-<p>Forms normally contain more than one input. <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags are used provide a textual label,
-which informs the user of what data to enter into each field. The simplest usage of
+<p id="index-2">Forms normally contain more than one input. <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags are used provide a textual label,
+which informs the user of the purpose of the field. The simplest usage of
 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags is to <em>wrap</em> them around <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -170,31 +170,105 @@ which informs the user of what data to enter into each field. The simplest usage
    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;teamName&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
+<div class="figure">
+<img alt="HTML that includes a form tag with two input elements. Each element is inside of a label element." src="../../_images/label-example.png" />
 </div>
-<div class="section" id="form-submission">
-<h2>17.1.3. Form Submission<a class="headerlink" href="#form-submission" title="Permalink to this headline">¶</a></h2>
-<p>what causes a button to be submitted? submit button? hitting enter? button?
-Where is the Form submitted?
-what is submitted?
-action attribute
-method attribute</p>
+<p>A second way to relate a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tag to an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> is to use the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute of
+<code class="docutils literal notranslate"><span class="pre">input</span></code> and the <code class="docutils literal notranslate"><span class="pre">for</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">label</span></code>. When <code class="docutils literal notranslate"><span class="pre">for</span></code> is used, the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code>
+does NOT have to inside of the``&lt;label&gt;``.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>What happens when a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> is clicked? The answer depends on what the <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> is
+associated to.</p>
+<p id="index-3">For <em>text</em> inputs, when the label is clicked, then the input gains <em>focus</em>. An element with
+<strong>focus</strong> is currently selected by the browser and ready to receive input.</p>
+<p>For <em>non-text</em> based inputs, when the label is clicked, a value is selected. This behavior
+can be seen with <code class="docutils literal notranslate"><span class="pre">radio</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> elements which we will learn more about soon.</p>
 </div>
 <div class="section" id="types-of-inputs">
-<h2>17.1.4. Types of Inputs<a class="headerlink" href="#types-of-inputs" title="Permalink to this headline">¶</a></h2>
-<p>textarea, password, check box, selectbox, radio buttons, email
-provide note about: date?, range?, number?</p>
+<h2>17.1.3. Types of Inputs<a class="headerlink" href="#types-of-inputs" title="Permalink to this headline">¶</a></h2>
+<p>As you know from using the web sites, it’s possible to use more than simple text inputs. There
+are additional input <em>types</em> that each have a specific purpose. Many of the elements are
+<code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags with a different <code class="docutils literal notranslate"><span class="pre">type</span></code> value, however some have entirely different tag names.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Inputs</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>checkbox</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;checkbox&quot;</span> <span class="pre">name=&quot;fuelChecked&quot;/&gt;</span></code></td>
+<td>A small box for marking form option as <em>checked</em>.</td>
+</tr>
+<tr class="row-odd"><td>date</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;date&quot;</span> <span class="pre">name=&quot;flightDate&quot;/&gt;</span></code></td>
+<td>A text input with validation provided by the browser that ensures the value is a valid date format.
+Some browsers also provide a <em>date picker</em> for selecting the date.</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;email&quot;</span> <span class="pre">name=&quot;emailAddress&quot;/&gt;</span></code></td>
+<td>A text input with validation provided by the browser that ensures the value is in the format
+of a valid email address.</td>
+</tr>
+<tr class="row-odd"><td>number</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;number&quot;</span> <span class="pre">name=&quot;fuelTemp&quot;/&gt;</span></code></td>
+<td>A text input with validation provided by the browser that ensures the value is a number.</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;password&quot;</span> <span class="pre">name=&quot;passCode&quot;/&gt;</span></code></td>
+<td>A text input that obscures the text typed by the user.</td>
+</tr>
+<tr class="row-odd"><td>radio button</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;radio&quot;</span> <span class="pre">name=&quot;commChannel&quot;</span> <span class="pre">value=&quot;105&quot;/&gt;</span></code></td>
+<td>A small circle that allows selecting one of multiple values. Used in groups of two or more.</td>
+</tr>
+<tr class="row-even"><td>range</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;range&quot;</span> <span class="pre">name=&quot;volume&quot;/&gt;</span></code></td>
+<td>A slider that allows the user to input a numeric value within the given range.</td>
+</tr>
+<tr class="row-odd"><td>select</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;select</span> <span class="pre">name=&quot;weather&quot;&gt;&lt;option&gt;clear&lt;/option&gt;&lt;option&gt;cloudy&lt;/option&gt;&lt;/select&gt;</span></code></td>
+<td>A <em>drop down</em> menu that allows selection of one option.</td>
+</tr>
+<tr class="row-even"><td>textarea</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;textarea</span> <span class="pre">name=&quot;missionDescription&quot;/&gt;</span></code></td>
+<td>A larger, multi-line text box.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Form inputs will NOT look exactly the same in all browsers.
+However, the inputs <em>should</em> function the same way. Use <a class="reference external" href="https://caniuse.com">https://caniuse.com</a>, if there is ever
+a question of browser support for a certain feature,</p>
 </div>
-<div class="section" id="form-validation-with-javascript">
-<h2>17.1.5. Form Validation with JavaScript<a class="headerlink" href="#form-validation-with-javascript" title="Permalink to this headline">¶</a></h2>
-<p>submit event
-preventDefault or maybe stopPropagation?</p>
+</div>
+<div class="section" id="examples">
+<h2>17.1.4. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>textarea
+selectbox
+radio buttons
+multi checkbox</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>17.1.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO:…</p>
 </div>
 </div>
 
@@ -207,7 +281,7 @@ preventDefault or maybe stopPropagation?</p>
         <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 17. User Input with Forms</a></li>
         
         
-        <li class="next"><a href="studio.html">17.2. Studio: HTTP and Forms <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="form-submission.html">17.2. Form Submission <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
