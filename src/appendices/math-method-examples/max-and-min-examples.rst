@@ -20,7 +20,6 @@ To find the maximum value in an array, :ref:`see below <max-min-array>`.
 .. admonition:: Example
 
    .. sourcecode:: js
-      :linenos:
 
       console.log(Math.max(2, 3, 100.01, 0, -5.2, 100));
 
@@ -48,7 +47,6 @@ To find the minimum value in an array, :ref:`see below <max-min-array>`.
 .. admonition:: Example
 
    .. sourcecode:: js
-      :linenos:
 
       console.log(Math.min(2, 3, 100.01, 0, -5.2, 100));
 

@@ -25,6 +25,7 @@ access the value of pi.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(Math.PI);
       console.log(Math.PI*4);
@@ -43,6 +44,7 @@ user.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(Math.PI);
 

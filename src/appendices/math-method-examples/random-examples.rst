@@ -51,6 +51,7 @@ Explore the example below:
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       for (i=0; i < 5; i++){
          let num = Math.random()*10;
