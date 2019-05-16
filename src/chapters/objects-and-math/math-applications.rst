@@ -6,6 +6,8 @@ what it does (e.g. taking a square root). At first glance, this might seem to
 limit how often we need to call on ``Math``. However, the methods can be
 manipulated or combined to produce some clever results.
 
+.. _random-array-item:
+
 Random Selection From an Array
 -------------------------------
 
