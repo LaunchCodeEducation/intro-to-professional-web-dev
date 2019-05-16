@@ -81,7 +81,7 @@ which informs the user of the purpose of the field. The simplest usage of
       <body>
          <form>
             <label>Username <input type="text" name="username"/></label>
-            <label>Team Name <input type="text" name="teamName"/></label>
+            <label>Team Name <input type="text" name="team"/></label>
          </form>
       </body>
    </html>
