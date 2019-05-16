@@ -38,6 +38,8 @@ We will explore the details of this syntax shortly, but it's worth taking a mome
 
 .. note:: It may seem odd to you that this loop uses the integer 51, but only prints up to 50. Why this is the case will become clear in the next section.
 
+.. _dry-code:
+
 .. index:: ! DRY
 
 Learning about iteration using loops is also an opportunity to introduce one of the most widely-known mnemonic devices in programming: *Don't Repeat Yourself*, or **DRY**. A common piece of advice from instructors and experienced programmers is that you should "keep your code DRY." Let's learn how. 
