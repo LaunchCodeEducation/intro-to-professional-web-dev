@@ -23,7 +23,7 @@ To find the maximum value in an array, :ref:`see below <max-min-array>`.
 
       console.log(Math.max(2, 3, 100.01, 0, -5.2, 100));
 
-   **Output**
+   **Console Output**
    ::
 
       100.01
@@ -50,7 +50,7 @@ To find the minimum value in an array, :ref:`see below <max-min-array>`.
 
       console.log(Math.min(2, 3, 100.01, 0, -5.2, 100));
 
-   **Output**
+   **Console Output**
    ::
 
       -5.2
@@ -68,7 +68,7 @@ It uses the syntax from :ref:`the sorting studio <js-sort-numbers>`
 to first order the array. The maximum (or minimum) value can then be
 identified with bracket notation.
 
-.. admonition:: Example
+.. admonition:: Examples
 
    .. sourcecode:: js
       :linenos:
@@ -80,12 +80,12 @@ identified with bracket notation.
       console.log(sortedArray);
       console.log(`Min = ${sortedArray[0]}, Max = ${sortedArray[sortedArray.length-1]}`);
 
-   **Output**
+   **Console Output**
    ::
 
       [ -4.44, -2, 3.33, 8.88 ]
       Min = -4.44, Max = 8.88
-   
+
    Alternatively, we could put the array in decreasing order:
 
    .. sourcecode:: js
@@ -98,7 +98,7 @@ identified with bracket notation.
       console.log(sortedArray);
       console.log(`Max = ${sortedArray[0]}, Min = ${sortedArray[sortedArray.length-1]}`);
 
-   **Output**
+   **Console Output**
    ::
 
       [ 8.88, 3.33, -2, -4.44 ]

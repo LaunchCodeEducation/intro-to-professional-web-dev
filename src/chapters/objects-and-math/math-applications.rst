@@ -38,7 +38,7 @@ specific value.  Fortunately, we have the ``length`` property…
          console.log(randomSelection(happiness));
       }
 
-   **Output**
+   **Console Output**
    ::
 
       Tortoise

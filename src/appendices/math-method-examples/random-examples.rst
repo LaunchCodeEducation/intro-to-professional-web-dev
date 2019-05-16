@@ -24,7 +24,7 @@ Note that 0 is a possible selection, but 1 is NOT.
          console.log(randNum);
       }
 
-   **Output**
+   **Console Output**
    ::
 
       0.34992592600591066
@@ -58,7 +58,7 @@ Explore the example below:
          console.log(`floor = ${Math.floor(num)}, ceil = ${Math.ceil(num)}, round = ${Math.round(num)}`);
       }
 
-   **Output**
+   **Console Output**
    ::
 
       floor = 0, ceil = 1, round = 0

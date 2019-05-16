@@ -25,7 +25,7 @@ refers to the operation *to the power of*.
       console.log(Math.pow(3,4));
       //3 raised to the power of 4 = 3*3*3*3
 
-   **Output**
+   **Console Output**
    ::
 
       81
@@ -59,7 +59,7 @@ practice.
       console.log(Math.sqrt(111));
       console.log(Math.sqrt("36"));
 
-   **Output**
+   **Console Output**
    ::
 
       9
@@ -83,7 +83,7 @@ practice.
 
       console.log(numbers.map(Math.sqrt));
 
-   **Output**
+   **Console Output**
    ::
 
       [ 1.4142135623730951, 4, 10, 11 ]

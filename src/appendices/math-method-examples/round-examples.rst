@@ -24,7 +24,7 @@ practice.
       console.log(Math.round(8.5));
       console.log(Math.round("101.45"));
 
-   **Output**
+   **Console Output**
    ::
 
       1
@@ -48,7 +48,7 @@ practice.
 
       console.log(numbers.map(Math.round));
 
-   **Output**
+   **Console Output**
    ::
 
       [ 1, 4, 9, -16, 8 ]

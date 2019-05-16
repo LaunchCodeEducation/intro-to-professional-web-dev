@@ -31,7 +31,7 @@ access the value of pi.
       console.log(Math.PI*4);
       console.log(Math.PI + Math.PI);
 
-   **Output**
+   **Console Output**
    ::
 
       3.141592653589793
@@ -52,7 +52,7 @@ user.
 
       console.log(Math.PI);
 
-   **Output**
+   **Console Output**
    ::
 
       3.141592653589793

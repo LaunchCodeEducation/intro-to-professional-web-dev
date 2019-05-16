@@ -29,7 +29,7 @@ practice.
       console.log(Math.abs(24/-3));
       // 24/-3 = -8
 
-   **Output**
+   **Console Output**
    ::
 
       3
@@ -58,7 +58,7 @@ Note that ``Math.abs`` takes no argument when applied to an array.
 
       console.log(positiveArray);
 
-   **Output**
+   **Console Output**
    ::
 
       [2, 3, 4.44, 8.88]

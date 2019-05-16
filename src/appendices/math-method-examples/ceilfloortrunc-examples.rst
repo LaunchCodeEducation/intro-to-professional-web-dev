@@ -33,7 +33,7 @@ practice.
 
       console.log(Math.ceil(5));
 
-   **Output**
+   **Console Output**
    ::
 
       9
@@ -73,7 +73,7 @@ practice.
 
       console.log(Math.floor(5));
 
-   **Output**
+   **Console Output**
    ::
 
       8
@@ -108,7 +108,7 @@ practice.
 
       console.log(Math.trunc(10.000111));
 
-   **Output**
+   **Console Output**
    ::
 
       8
@@ -127,7 +127,7 @@ practice.
 
       console.log(Math.trunc(-15.88));
 
-   **Output**
+   **Console Output**
    ::
 
       -16
@@ -156,7 +156,7 @@ will operate on each entry in an array. The syntax for this is:
       console.log(numbers.map(Math.floor));
       console.log(numbers.map(Math.trunc));
 
-   **Output**
+   **Console Output**
    ::
 
       [ -2, 4, -4, 9 ]
