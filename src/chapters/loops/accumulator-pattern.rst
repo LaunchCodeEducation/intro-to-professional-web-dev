@@ -54,6 +54,8 @@ This pattern of initializing a variable to some basic, or empty value, and updat
 
 The accumulator pattern comes up regularly in programming. The key to using it successfully is to initialize the accumulator variable before you start the iteration. Once inside the loop, update the accumulator.
 
+.. _reverse-string:
+
 Reversing a String
 ------------------
 
