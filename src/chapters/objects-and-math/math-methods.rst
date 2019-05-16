@@ -67,7 +67,7 @@ To see detailed examples for a particular method, click on its name.
 Check Your Understanding
 ------------------------
 
-Follow the links in the table above for the ``floor``, ``random``, ``round``
+Follow the links in the table above for the ``floor``, ``random``, ``round``,
 and ``trunc`` methods. Review the content and then answer the following
 questions.
 

@@ -32,7 +32,7 @@ specific value.  Fortunately, we have the ``length`` property…
          return arr[index];
       }
 
-      let happiness = ['Hope', 'Joy', 'Peace', 'Love', 'Kindness', 'Puppies', 'Kittens', 'Tortoise'];
+      let happiness = ['Hope','Joy','Peace','Love','Kindness','Puppies','Kittens','Tortoise'];
 
       for (i=0; i < 8; i++){
          console.log(randomSelection(happiness));
@@ -60,7 +60,7 @@ Line 3 then returns a random selection from the array.
 Rounding to Decimal Places
 ---------------------------
 
-The ``ceil``, ``floor`` and ``round`` methods all take a decimal value and
+The ``ceil``, ``floor``, and ``round`` methods all take a decimal value and
 return an integer, but what if we wanted to round 5.56789123 to two decimal
 places? Let's explore how to make this happen by starting with a simpler
 example.

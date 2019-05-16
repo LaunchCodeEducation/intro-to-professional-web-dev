@@ -43,8 +43,8 @@ manipulated with operators (``+, -, *, /``) and other ``Math`` methods.
 
 The trick to creating a random integer is to multiply ``Math.random()`` by a
 whole number and then round the result to remove the decimal portion. The
-choice of using the ``ceil``, ``floor`` or ``round`` method affects the numbers
-generated.
+choice of using the ``ceil``, ``floor``, or ``round`` method affects the
+numbers generated.
 
 Explore the example below:
 
