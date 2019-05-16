@@ -5,14 +5,14 @@ Variables
 
 One of the most powerful features of a programming language is the ability to manipulate variables. A **variable** is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string. Variables allow us to store values for later use.
 
-A useful visual analogy for how a variable works is that of a label that "points to" a piece of data. 
+A useful visual analogy for how a variable works is that of a label that *points to* a piece of data. 
 
 .. figure:: figures/variable.png
    :alt: A label, programmingLanguages, pointing to a the string value "JavaScript"
 
    A variable can be visualized as a label pointing to a specific piece of data.
 
-In this figure, the name "programmingLanguage" points to the string value "JavaScript." This is more than an analogy, since it also is representative of how a variable and the associated value are stored in a computer's memory, as we will learn later.
+In this figure, the name ``programmingLanguage`` points to the string value ``"JavaScript"``. This is more than an analogy, since it also is representative of how a variable and its value are stored in a computer's memory, as we will learn later.
 
 With this analogy in mind, let's look at how we can formaly create variables in JavaScript.
 
@@ -75,9 +75,9 @@ It is possible to both declare and initialize a variable with a single line of c
 
       var programmingLanguage = "JavaScript";
 
-   While this is valid syntax, **use of** ``var`` **should be avoided**. It differs from ``let`` in some important ways that we will learn about later. If you see any examples online using ``var``, for now you should use ``let`` instead.
+   While this is valid syntax, *use of* ``var`` *should be avoided*. It differs from ``let`` in some important ways that we will learn about later. If you see any examples online using ``var``, for now you should use ``let`` instead.
 
-   **🚀 Bonus Mission:** Read about `the differences between var and let <https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let>`_.
+   If you're curious, read about `the differences between var and let <https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let>`_.
 
 To give a variable a value, we use the **assignment operator**, ``=``. This operator should not be confused with the concept of *equality*, which expresses whether two things are the "same" (we will see later that equality uses the ``===`` operator).  The assignment statement links a *name*, on the left-hand side of the operator, with a *value*, on the right-hand side. This is why you will get an error if you try to run:
 
@@ -119,16 +119,18 @@ Evaluating Variables
 
 After a variable has been created, it may be used later in a program in any place where a value may be used. For example, we know that ``console.log`` prints a value, so we can also give ``console.log`` a variable.
 
-.. sourcecode:: js
+.. admonition:: Example
 
-   console.log("Hello, World!");
+   These two examples have the exact same same output.
 
-.. sourcecode:: js
+   .. sourcecode:: js
 
-   let message = "Hello, World!";
-   console.log(message);
+      console.log("Hello, World!");
 
-These two examples have the exact same same output.
+   .. sourcecode:: js
+
+      let message = "Hello, World!";
+      console.log(message);
 
 When we refer to a variable name, we are **evaluating** the variable. The effect is just as if the value of the variable is substituted for the variable name in the code when executed.
 
@@ -189,14 +191,16 @@ To see this, read and then run the following program in a code editor. You'll no
 
     let day = "Thursday";
     console.log(day);
+
     day = "Friday";
     console.log(day);
+
     day = 21;
     console.log(day);
 
-A great deal of programming is about having the computer remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
+A great deal of programming involves asking the computer remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
 
-.. note:: We only use ``let`` when *declaring* a variable, that is, when we create it. We do not use ``let`` when reassigning the variable to a different value. In fact, doing so will result in an error.
+.. note:: We only use ``let`` when *declaring* a variable, that is, when we create it. We do NOT use ``let`` when reassigning the variable to a different value. In fact, doing so will result in an error.
 
 Check Your Understanding
 ------------------------
