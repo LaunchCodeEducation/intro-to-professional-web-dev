@@ -85,6 +85,7 @@ questions.
    What is printed by the following program?
 
    .. sourcecode:: js
+      :linenos:
 
       let num = Math.floor(Math.random()*10);
 
@@ -100,6 +101,7 @@ questions.
    What is printed by the following program?
 
    .. sourcecode:: js
+      :linenos:
 
       let num = Math.round(Math.random()*10);
 
