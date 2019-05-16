@@ -7,6 +7,8 @@ The purpose of a form is to collect data input by the user. As we learned in the
 chapter, the web is made up of a serious of HTTP requests and responses. A
 **form submission** is when the values in a form are sent in an HTTP request to a server.
 
+Trigger Form Submission
+-----------------------
 A form submission is triggered by clicking a button inside the form. The buttons can be
 ``input`` elements or ``button`` elements.
 
@@ -161,10 +163,10 @@ validation on form input values.
 
       <html>
          <head>
-            <title>Form Validaton</title>
+            <title>Form Validation</title>
             <style>
-                  label {display: block;}
-                  body {padding: 25px;}
+               label {display: block;}
+               body {padding: 25px;}
             </style>
          </head>
          <script>
@@ -184,16 +186,85 @@ validation on form input values.
          </body>
       </html>
 
-   Follow along by adding code to `this repl.it <https://repl.it/@launchcode/form-validation>`_
+**Follow Along as We Add Validation**
 
-How do we stop a form from submitting?
-preventDefault to stop form from submitting normally
+Use `this repl.it <https://repl.it/@launchcode/form-validation>`_ to add validation to
+the above example.
 
-How to get access to input values?
+To validate what the user has typed, we can get a reference to the ``input`` elements in
+the DOM and check ``input.value``. Let's change the *submit* event handler to alert
+the value of the username input. We are going to use
+``document.querySelector("input[name=username]")``, which uses an *attribute selector* to
+select the ``<input>`` that has ``name="username"``.
+
+.. sourcecode:: html
+   :linenos:
+
+   <script>
+      window.addEventListener("load", function() {
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(event) {
+            let usernameInput = document.querySelector("input[name=username]");
+            // alert the current value found in the username input
+            alert("username: " + usernameInput.value);
+         });
+      });
+   </script>
+
+Now that we know how to get the value of an input, we can add *conditional statements*.
+Let's add code that opens an alert box if *either* input values are *empty*.
+
+.. sourcecode:: html
+   :linenos:
+
+   <script>
+      window.addEventListener("load", function() {
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(event) {
+            let usernameInput = document.querySelector("input[name=username]");
+            let teamName = document.querySelector("input[name=team]");
+            if (usernameInput.value === "" || teamName.value === "") {
+               alert("All fields are required!");
+            }
+         });
+      });
+   </script>
+
+We are making progress. Now if you click *Submit* with one or both of the inputs empty,
+then an alert message appears telling you that both inputs are required.
+
+.. index:: ! preventDefault
+
+But we want to prevent the form submission from happening until all
+inputs have valid values. We can use the ``event`` parameter and
+``event.preventDefault()`` to stop the form submission. ``event.preventDefault()``
+prevents default browser functionality from happening, like form submission happening
+when ``<button>`` tags are clicked.
+
+.. sourcecode:: html
+   :linenos:
+
+   <script>
+      window.addEventListener("load", function() {
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(event) {
+            let usernameInput = document.querySelector("input[name=username]");
+            let teamName = document.querySelector("input[name=team]");
+            if (usernameInput.value === "" || teamName.value === "") {
+               alert("All fields are required!");
+               // stop the form submission
+               event.preventDefault();
+            }
+         });
+      });
+   </script>
 
 .. todo:: try it using this example app? https://repl.it/@launchcode/form-validation-breakfast-menu
+
+.. todo:: remove references to we3schools submission page
 
 
 Check Your Understanding
 ------------------------
-TODO:...
+
+.. todo:: do these

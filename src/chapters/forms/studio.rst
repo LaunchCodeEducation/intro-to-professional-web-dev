@@ -114,9 +114,9 @@ Add code to ``setSearchEngine`` to get the selected radio button element, using 
 
 ::
 
-   [name=engine]:checked
+   input[name=engine]:checked
 
-This compound CSS selector combines an *attribute* selector with a *pseudo selector*. The attribute selector ``[name=engine]`` matches all elements with the value of ``name`` equal to ``"engine"``. The pseudo selector ``:checked`` specifies that we only want the selected element from that group of matches. Combined, the selector gives us the selected element in the radio group.
+This compound CSS selector combines an *attribute* selector with a *pseudo selector*. The attribute selector ``input[name=engine]`` matches all ``input`` elements with the attribute ``name`` equal to ``"engine"``. The pseudo selector ``:checked`` specifies that we only want the selected element from that group of matches. Combined, the selector gives us the selected element in the radio group.
 
 Once you have the selected radio button, get it's value using ``.value``. The value tells us which search engine the user has chosen.
 
