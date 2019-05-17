@@ -7,8 +7,8 @@ set of candidates.
 
 You must create code to:
 
-A. Select the crew,
-B. Perform critical mission calculations,
+A. Select the crew.
+B. Perform critical mission calculations.
 C. Determine the fuel required for launch.
 
 Select the Crew
@@ -28,13 +28,13 @@ To access the code for exercise 1, open this `repl.it link <https://repl.it/@lau
    c. Use one or more loops to check which animals hold the lucky ID numbers. They
       will be going on the space mission! Store these animals in a ``crew``
       array.
-   d. Use a template literal to print, "____, ____, and ____ are going to space!"
+   d. Use a template literal to print, ``'____, ____, and ____ are going to space!'``
       Fill in the blanks with the names of the selected animals.
 
 .. tip::
 
    ``arrayName.includes(item)`` can be used to check if the array already contains
-   ``item``, and a ``while`` loop can keep the selection process going until the
+   ``item``. A ``while`` loop can keep the selection process going until the
    desired number of entires have been added to the array.
 
 Orbit Calculations
@@ -51,10 +51,8 @@ To access the code for exercises 2 - 4, open this `repl.it link <https://repl.it
    b. Given an orbital speed of 28000 km/hr, calculate how long will it take our
       animals to complete 5 orbits (time = distance/speed). Round the answer to
       2 decimal places.
-   c. Print, "The mission will travel ____ km around the planet, and it will
-      take ____ hours to complete."
-
-|
+   c. Print, ``'The mission will travel ____ km around the planet, and it will
+      take ____ hours to complete.'``
 
 3. Time for an excursion!
 
@@ -63,8 +61,8 @@ To access the code for exercises 2 - 4, open this `repl.it link <https://repl.it
       hours the spacewalk will take. Round the answer to 2 decimal places.
    c. Use the animal's ``rate`` method to calculate how much oxygen (O :sub:`2`)
       they consume during the spacewalk. Round the answer to 3 decimal places.
-   d. Print, "___ will perform the spacewalk, which will last ____ hours and
-      require ___ kg of oxygen." Fill in the blanks with the animal's name, the
+   d. Print, ``'___ will perform the spacewalk, which will last ____ hours and
+      require ___ kg of oxygen.'`` Fill in the blanks with the animal's name, the
       spacewalk time, and the amount of O :sub:`2` used.
 
 Bonus Missions
@@ -94,6 +92,6 @@ To access the code for exercise 5, open this `repl.it link <https://repl.it/@lau
    c. Our launch requires a safety margin for the fuel level, especially if the
       crew members are cute and fuzzy.  Add an extra 200 kg of fuel for each
       dog or cat on board, but only an extra 100 kg for the other species.
-   d. Round the final amount of fuel UP to the nearest integer, then print "The
-      mission has a launch mass of ____ kg and requires ____ kg of fuel." Fill
+   d. Round the final amount of fuel UP to the nearest integer, then print ``'The
+      mission has a launch mass of ____ kg and requires ____ kg of fuel.'`` Fill
       in the blanks with the calculated amounts.
