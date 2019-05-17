@@ -8,5 +8,8 @@ User Input with Forms
    form-submission
    form-submission-post
    input-types
+   checkbox-input
+   radio-input
+   defined-option-inputs
    validation-with-javascript
    studio

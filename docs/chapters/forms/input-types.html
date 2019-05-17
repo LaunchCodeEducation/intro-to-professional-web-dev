@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="17.5. Validation with JavaScript" href="validation-with-javascript.html" />
+    <link rel="next" title="17.5. Checkbox Input" href="checkbox-input.html" />
     <link rel="prev" title="17.3. POST Form Submission" href="form-submission-post.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -109,13 +109,13 @@ browser.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>text</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">name=&quot;username&quot;&gt;</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">name=&quot;username&quot;/&gt;</span></code></td>
 <td>A single line text field.</td>
 <td><span class="raw-html"><input type="text" name="username"/></span></td>
 </tr>
 <tr class="row-odd"><td>textarea</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;textarea</span> <span class="pre">name=&quot;missionDescription&quot;/&gt;</span></code></td>
-<td>A larger, multi-line text box.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;textarea</span> <span class="pre">name=&quot;missionDescription&quot;&gt;&lt;/textarea&gt;</span></code></td>
+<td>A larger, multi-line text box. Must have open and closing tags.</td>
 <td><span class="raw-html"><textarea name="missionDescription"></textarea></span></td>
 </tr>
 <tr class="row-even"><td>password</td>
@@ -132,8 +132,29 @@ However, the inputs <em>should</em> function the same way. Use <a class="referen
 if there is ever a question of browser support for a certain feature.</p>
 </div>
 </div>
+<div class="section" id="basic-examples">
+<h2>17.4.2. Basic Examples<a class="headerlink" href="#basic-examples" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Name<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeName&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Word<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeWord&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- textarea must have open and closing tags --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Mission Description<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Send Report<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure">
+<img alt="Form with Code Name, Code Word, and Description field. All fields have values." src="../../_images/basic-inputs-example.png" />
+</div>
+<p><strong>Submitted Values</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>codeName=Captain+Danvers&amp;codeWord=avengers!&amp;description=Test+flight.+Plane+maintenance.+Superhero+stuff.
+</pre></div>
+</div>
+<p class="last">Notice that the textarea value does NOT include new lines, even thought it was typed that way.</p>
+</div>
+</div>
 <div class="section" id="specialized-text-inputs">
-<h2>17.4.2. Specialized Text Inputs<a class="headerlink" href="#specialized-text-inputs" title="Permalink to this headline">¶</a></h2>
+<h2>17.4.3. Specialized Text Inputs<a class="headerlink" href="#specialized-text-inputs" title="Permalink to this headline">¶</a></h2>
 <p>For these text inputs the browser will validate and provide feedback to the user based on
 rules for the declared type.</p>
 <table border="1" class="docutils">
@@ -174,110 +195,10 @@ format. Some browsers provide a <em>date picker</em>.</td>
 <p class="last">can the validation be activated in the demo?</p>
 </div>
 </div>
-<div class="section" id="on-or-off-inputs">
-<h2>17.4.3. On or Off Inputs<a class="headerlink" href="#on-or-off-inputs" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>checkbox</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;checkbox&quot;</span> <span class="pre">name=&quot;signUp&quot;/&gt;</span></code></td>
-<td>A small box for marking form option as <em>checked</em>.</td>
-<td><span class="raw-html"><label>sign up<input type="checkbox" name="signUp"/></label></span></td>
-</tr>
-<tr class="row-odd"><td>radio</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;radio&quot;</span> <span class="pre">name=&quot;crewReady&quot;</span> <span class="pre">value=&quot;yes&quot;/&gt;</span></code></td>
-<td>A small circle that allows selecting <em>one</em> of multiple values. Used in groups of two or more.</td>
-<td><span class="raw-html"><label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label></span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Check Box Usage</strong></p>
-<p>Checkbox inputs are great for two scenarios:</p>
-<ol class="arabic simple">
-<li>A yes/no question</li>
-<li>A question with zero, one, or multiple answers</li>
-</ol>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>One checkbox. No <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute is set, so the default value of <code class="docutils literal notranslate"><span class="pre">on</span></code> is submitted.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>crew<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;crewReady&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p><strong>Submitted</strong> (if checked)</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>crewReady=on
-</pre></div>
-</div>
-</div>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>Multiple checkbox inputs. All with <em>different</em> <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Activities<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>cooking<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cooking&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>running<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;running&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>movies<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;movies&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p><strong>Submitted</strong> (if cooking and movies are checked)</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>cooking=on&amp;movies=on
-</pre></div>
-</div>
-</div>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<p>Multiple checkbox inputs with the SAME <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Ingredients<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Onion<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ingredient&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;onion&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Butter<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ingredient&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;butter&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Rice<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ingredient&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;rice&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p><strong>Submitted</strong> (if butter and rice are checked)</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>ingredient=butter&amp;ingredient=rice
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="defined-option-inputs">
-<h2>17.4.4. Defined Option Inputs<a class="headerlink" href="#defined-option-inputs" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>range</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;range&quot;</span> <span class="pre">name=&quot;volume&quot;/&gt;</span></code></td>
-<td>A slider that allows the user to input a numeric value within the given range.</td>
-<td><span class="raw-html"><input type="range" name="volume"/></span></td>
-</tr>
-<tr class="row-odd"><td>select</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;select</span> <span class="pre">name=&quot;weather&quot;&gt;&lt;option&gt;clear&lt;/option&gt;&lt;option&gt;cloudy&lt;/option&gt;&lt;/select&gt;</span></code></td>
-<td>A <em>drop down</em> menu that allows selection of one option. Requires options to be in <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags.</td>
-<td><span class="raw-html"><select name="weather"><option>clear</option><option>cloudy</option></select></span></td>
-</tr>
-</tbody>
-</table>
+<div class="section" id="specialized-examples">
+<h2>17.4.4. Specialized Examples<a class="headerlink" href="#specialized-examples" title="Permalink to this headline">¶</a></h2>
+<p>TODO… finish repl.it example <a class="reference external" href="https://repl.it/&#64;launchcode/specialized-inputs-example">https://repl.it/&#64;launchcode/specialized-inputs-example</a></p>
+<p>TODO… use that repl.it to create example admonition</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>17.4.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
@@ -294,7 +215,7 @@ format. Some browsers provide a <em>date picker</em>.</td>
         <li class="previous"><a href="form-submission-post.html"><span aria-hidden="true">&larr;</span> 17.3. POST Form Submission</a></li>
         
         
-        <li class="next"><a href="validation-with-javascript.html">17.5. Validation with JavaScript <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="checkbox-input.html">17.5. Checkbox Input <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

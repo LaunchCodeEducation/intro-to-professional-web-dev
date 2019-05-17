@@ -23,12 +23,12 @@ browser.
      - Description
      - Demo
    * - text
-     - ``<input type="text" name="username">``
+     - ``<input type="text" name="username"/>``
      - A single line text field.
      - :raw-html:`<input type="text" name="username"/>`
    * - textarea
-     - ``<textarea name="missionDescription"/>``
-     - A larger, multi-line text box.
+     - ``<textarea name="missionDescription"></textarea>``
+     - A larger, multi-line text box. Must have open and closing tags.
      - :raw-html:`<textarea name="missionDescription"></textarea>`
    * - password
      - ``<input type="password" name="passCode"/>``
@@ -40,6 +40,29 @@ browser.
    Form inputs will NOT look exactly the same in all browsers.
    However, the inputs *should* function the same way. Use `<https://caniuse.com>`_,
    if there is ever a question of browser support for a certain feature.
+
+Basic Examples
+--------------
+.. admonition:: Example
+
+    .. sourcecode:: html
+
+       <label>Code Name<input type="text" name="codeName"/></label>
+       <label>Code Word<input type="password" name="codeWord"/></label>
+       <!-- textarea must have open and closing tags -->
+       <label>Mission Description<textarea name="description" rows="5"></textarea></label>
+       <button>Send Report</button>
+
+    .. figure:: figures/basic-inputs-example.png
+       :alt: Form with Code Name, Code Word, and Description field. All fields have values.
+
+    **Submitted Values**
+
+    ::
+
+      codeName=Captain+Danvers&codeWord=avengers!&description=Test+flight.+Plane+maintenance.+Superhero+stuff.
+
+    Notice that the textarea value does NOT include new lines, even thought it was typed that way.
 
 
 Specialized Text Inputs
@@ -71,99 +94,11 @@ rules for the declared type.
 .. todo:: can the validation be activated in the demo?
 
 
-On or Off Inputs
-----------------
+Specialized Examples
+--------------------
+TODO... finish repl.it example https://repl.it/@launchcode/specialized-inputs-example
 
-.. list-table::
-   :header-rows: 1
-
-   * - Type
-     - Syntax
-     - Description
-     - Demo
-   * - checkbox
-     - ``<input type="checkbox" name="signUp"/>``
-     - A small box for marking form option as *checked*.
-     - :raw-html:`<label>sign up<input type="checkbox" name="signUp"/></label>`
-   * - radio
-     - ``<input type="radio" name="crewReady" value="yes"/>``
-     - A small circle that allows selecting *one* of multiple values. Used in groups of two or more.
-     - :raw-html:`<label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label>`
-
-**Check Box Usage**
-
-Checkbox inputs are great for two scenarios:
-
-1. A yes/no question
-2. A question with zero, one, or multiple answers
-
-.. admonition:: Example
-
-    One checkbox. No ``value`` attribute is set, so the default value of ``on`` is submitted.
-
-    .. sourcecode:: html
-
-       <label>crew<input type="checkbox" name="crewReady"/></label>
-
-    **Submitted** (if checked)
-
-    ::
-
-      crewReady=on
-
-.. admonition:: Example
-
-    Multiple checkbox inputs. All with *different* ``name`` attributes.
-
-    .. sourcecode:: html
-
-       <div>Activities</div>
-       <label>cooking<input type="checkbox" name="cooking"/></label>
-       <label>running<input type="checkbox" name="running"/></label>
-       <label>movies<input type="checkbox" name="movies"/></label>
-
-    **Submitted** (if cooking and movies are checked)
-
-    ::
-
-      cooking=on&movies=on
-
-
-.. admonition:: Example
-
-    Multiple checkbox inputs with the SAME ``name`` attribute.
-
-    .. sourcecode:: html
-
-       <div>Ingredients</div>
-       <label>Onion<input type="checkbox" name="ingredient" value="onion"/></label>
-       <label>Butter<input type="checkbox" name="ingredient" value="butter"/></label>
-       <label>Rice<input type="checkbox" name="ingredient" value="rice"/></label>
-
-    **Submitted** (if butter and rice are checked)
-
-    ::
-
-      ingredient=butter&ingredient=rice
-
-
-Defined Option Inputs
----------------------
-.. list-table::
-   :header-rows: 1
-
-   * - Type
-     - Syntax
-     - Description
-     - Demo
-   * - range
-     - ``<input type="range" name="volume"/>``
-     - A slider that allows the user to input a numeric value within the given range.
-     - :raw-html:`<input type="range" name="volume"/>`
-   * - select
-     - ``<select name="weather"><option>clear</option><option>cloudy</option></select>``
-     - A *drop down* menu that allows selection of one option. Requires options to be in ``<option>`` tags.
-     - :raw-html:`<select name="weather"><option>clear</option><option>cloudy</option></select>`
+TODO... use that repl.it to create example admonition
 
 
 Check Your Understanding
