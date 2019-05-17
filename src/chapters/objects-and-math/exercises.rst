@@ -2,7 +2,9 @@ Exercises: Objects & Math
 ==========================
 
 At our space base, it is a historic day! Five non-human animals are ready to run a space mission without our assistance!
-For the exercises, you will use the same five animal objects throughout. 
+For the exercises, you will use the same five animal objects throughout.
+
+`Starter Code <https://repl.it/@launchcode/ObjectsExercises/>`_
 
 1. Based on the two provided object literals and the following data about the remaining three animals, create the three remaining object literals needed for these exercises.
 
@@ -11,15 +13,15 @@ For the exercises, you will use the same five animal objects throughout.
 
 		+ - Name
 		  - Species
-		  - Weight (lbs)
+		  - Mass (kg)
 		  - Age (years)
 		+ - Brad
 		  - Chimpanzee
-		  - 24
+		  - 11
 		  - 6
 		+ - Leroy
 	 	  - Beagle
-		  - 30
+		  - 14
 		  - 5
 		+ - Almina
 		  - Tardigrade
@@ -32,11 +34,10 @@ For the exercises, you will use the same five animal objects throughout.
 3. Create an array to store all of the animal objects.
 
 4. For management at the space base, we need to print out all of the relevant information about the animal astronauts. 
-   For each animal, print to the console the following string: "Name is a species. They are ________ years old and _____ lb. Their ID is astronautID.".
+   For each animal, print to the console the following string: "BLANK-NAME is a BLANK-SPECIES. They are BLANK-AGE years old and BLANK-MASS kilograms. Their ID is BLANK-ASTRONAUTID.". Fill in the blanks with the appropriate values for each animal.
 
 5. Before these animal astronauts can get ready for launch, they need to take a physical fitness test. Add a ``move`` method to each animal object.
-   The ``move`` method will select a random number of steps for the animal to take.
-   Race two animals together to see which one moves 20 steps forward first.
-   Use this methodology to run a tournament and rank the animals from fastest to slowest.
-
-`Starter Code <https://repl.it/@launchcode/ObjectsExercises/>`_
+   The ``move`` method will select a random number of steps from 0 to 10 for the animal to take.
+   Race the five animals together. An animal is done with the race when they reach 20 steps or greater.
+   
+	`HINT`: There are a lot of different ways to approach this problem. One way that works well is to see how many iterations of the ``move`` method it will take for one animal to reach 20 steps. Once that has been done for every animal, you can compare the number of iterations to see which animal was the fastest.
