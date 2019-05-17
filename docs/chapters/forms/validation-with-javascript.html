@@ -94,7 +94,7 @@ validation on form input values.</p>
 <ol class="arabic simple">
 <li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">window</span></code> <em>load</em> event</li>
 <li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">form</span></code> <em>submit</em> event</li>
-<li>Check the input values<ol class="loweralpha">
+<li>Check the input values using conditional statements<ol class="loweralpha">
 <li>If the values are valid, allow the form submission</li>
 <li>If the values are NOT valid, inform the user and STOP form submission</li>
 </ol>
@@ -217,8 +217,9 @@ then an alert message appears telling you that both inputs are required.</p>
 <p id="index-0">But we want to prevent the form submission from happening until all
 inputs have valid values. We can use the <code class="docutils literal notranslate"><span class="pre">event</span></code> parameter and
 <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code> to stop the form submission. <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code>
-prevents default browser functionality from happening, like form submission happening
-when <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags are clicked.</p>
+prevents default browser functionality from happening, like form submission
+when <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags are clicked inside of a form. Remember that <em>event handler</em> functions
+are passed an <code class="docutils literal notranslate"><span class="pre">event</span></code> parameter which represents the occurring event.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -248,20 +249,16 @@ when <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">try it using this example app? <a class="reference external" href="https://repl.it/&#64;launchcode/form-validation-breakfast-menu">https://repl.it/&#64;launchcode/form-validation-breakfast-menu</a></p>
-</div>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">remove references to we3schools submission page</p>
-</div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>17.5.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-3">
-<p class="first admonition-title">Todo</p>
-<p class="last">do these</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What event should you listen to if you want to validate a form before it’s submitted?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What method on the <code class="docutils literal notranslate"><span class="pre">event</span></code> object can be used to stop a form submission?</p>
 </div>
 </div>
 </div>

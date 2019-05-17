@@ -12,7 +12,7 @@ Steps to Add Validation
 
 1. Add an event handler for the ``window`` *load* event
 2. Add an event handler for the ``form`` *submit* event
-3. Check the input values
+3. Check the input values using conditional statements
 
    a. If the values are valid, allow the form submission
    b. If the values are NOT valid, inform the user and STOP form submission
@@ -100,12 +100,14 @@ We are making progress. Now if you click *Submit* with one or both of the inputs
 then an alert message appears telling you that both inputs are required.
 
 .. index:: ! preventDefault
+   single: event; preventDefault
 
 But we want to prevent the form submission from happening until all
 inputs have valid values. We can use the ``event`` parameter and
 ``event.preventDefault()`` to stop the form submission. ``event.preventDefault()``
-prevents default browser functionality from happening, like form submission happening
-when ``<button>`` tags are clicked.
+prevents default browser functionality from happening, like form submission
+when ``<button>`` tags are clicked inside of a form. Remember that *event handler* functions
+are passed an ``event`` parameter which represents the occurring event.
 
 .. sourcecode:: html
    :linenos:
@@ -125,12 +127,14 @@ when ``<button>`` tags are clicked.
       });
    </script>
 
-.. todo:: try it using this example app? https://repl.it/@launchcode/form-validation-breakfast-menu
-
-.. todo:: remove references to we3schools submission page
-
 
 Check Your Understanding
 ------------------------
 
-.. todo:: do these
+.. admonition:: Question
+
+   What event should you listen to if you want to validate a form before it's submitted?
+
+.. admonition:: Question
+
+   What method on the ``event`` object can be used to stop a form submission?
