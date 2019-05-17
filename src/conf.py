@@ -39,7 +39,10 @@ extensions = [
     'sphinx.ext.todo',
     'external_links',
     'admonition_icons',
+    'replit',
 ]
+
+replit_user = 'launchcode'
 
 # numfig:
 numfig_number_figures = True

@@ -3,6 +3,16 @@
 Booleans
 ========
 
+.. replit:: js
+      :id: Boolean-Type-Conversion
+
+      console.log(Boolean("true"));
+      console.log(Boolean("TRUE"));
+      console.log(Boolean(0));
+      console.log(Boolean(1));
+      console.log(Boolean(''));
+      console.log(Boolean('LaunchCode'));
+
 .. index:: data type
 
 One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code *only if* a given condition is met. 
