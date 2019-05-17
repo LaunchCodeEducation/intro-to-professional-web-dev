@@ -41,15 +41,11 @@ One approach uses the accumulator pattern:
       return reversed;
    }
 
-.. todo:: add reference to the correct section of the string chapter
-
-This is the same algorithm that we used to reverse a string in a previous chapter.
+This is the same algorithm that we used previously to :ref:`reverse a string <reverse-string>`.
 
 .. _reverse-a-string:
 
-Another approach is to use the fact that there is a ``reverse`` method for arrays, and that the methods ``split`` and ``join`` allow us to go from strings to arrays and back (this was covered in section X).
-
-.. todo:: Add reference to array chapter where this is covered
+Another approach is to use the fact that there is a ``reverse`` method for arrays, and that the methods ``split`` and ``join`` allow us to go from strings to arrays and back (this was covered in :ref:`array-methods`).
 
 .. _reverse_func:
 
