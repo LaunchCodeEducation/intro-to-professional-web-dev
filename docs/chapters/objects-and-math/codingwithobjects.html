@@ -7,14 +7,13 @@
     <title>12.3. Coding With Objects &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -143,11 +141,11 @@ Pete weighs more than Patricia and of course, they have different names!</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>false
 </pre></div>
 </div>
 <p class="last">The objects contain properties that have the same keys and equal values.
-However, the output is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+However, the output is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 <p>Even though <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> and <code class="docutils literal notranslate"><span class="pre">tortoiseTwo</span></code> have the same keys and values, they are stored in separate locations in memory.
 This means that even though you can compare the properties in different objects for equality, you cannot compare the objects themselves for equality.</p>
@@ -155,9 +153,8 @@ This means that even though you can compare the properties in different objects 
 <div class="section" id="iterating-through-objects">
 <h2>12.3.2. Iterating Through Objects<a class="headerlink" href="#iterating-through-objects" title="Permalink to this headline">¶</a></h2>
 <p>We can iterate through all of the values in an object, much like we would do with an array.
-We will use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to do just that!</p>
-<p>For objects, we use a different <code class="docutils literal notranslate"><span class="pre">for</span></code> loop structure.
-<code class="docutils literal notranslate"><span class="pre">for..in</span></code> loops are specifically designed to easily loop through the properties in an object.
+We will use a for loop to do that, but with a slightly different structure.
+<code class="docutils literal notranslate"><span class="pre">for...in</span></code> loops are specifically designed to loop through the properties of an object.
 Each iteration of the loop accesses a key in the object.
 The loop stops once it has accessed every property.</p>
 <div class="admonition-example admonition">
@@ -181,7 +178,7 @@ The loop stops once it has accessed every property.</p>
 <span class="p">};</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="nx">item</span> <span class="k">in</span> <span class="nx">giraffe</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">giraffe</span><span class="p">[</span><span class="nx">item</span><span class="p">]);</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nx">giraffe</span><span class="p">[</span><span class="nx">item</span><span class="p">]);</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
@@ -206,7 +203,7 @@ diet, leaves
 </div>
 <div class="section" id="objects-and-functions">
 <h2>12.3.3. Objects and Functions<a class="headerlink" href="#objects-and-functions" title="Permalink to this headline">¶</a></h2>
-<p>Programmers can pass objects as in the input of a function or use an object as the return value of the function.
+<p>Programmers can pass an object as the input to a function, or use an object as the return value of the function.
 Any change to the object within the function will change the object itself.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
@@ -262,7 +259,7 @@ Any change to the object within the function will change the object itself.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
-<p>Which statement would return <code class="docutils literal notranslate"><span class="pre">True</span></code>?</p>
+<p>Which statement would return <code class="docutils literal notranslate"><span class="pre">true</span></code>?</p>
 <ol class="last loweralpha simple">
 <li><code class="docutils literal notranslate"><span class="pre">tortoiseOne</span> <span class="pre">==</span> <span class="pre">tortoiseTwo</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">tortoiseOne</span> <span class="pre">===</span> <span class="pre">tortoiseTwo</span></code></li>

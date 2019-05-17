@@ -7,14 +7,13 @@
     <title>12.2. Working with Objects &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -98,12 +96,16 @@ To access the value of a property, you will need the object’s name and the key
 </ol>
 <div class="section" id="bracket-syntax">
 <h3>12.2.1.1. Bracket Syntax<a class="headerlink" href="#bracket-syntax" title="Permalink to this headline">¶</a></h3>
-<p>Using brackets, the code would be something like: <code class="docutils literal notranslate"><span class="pre">object[&quot;key&quot;]</span></code>. The only restraint in naming a key is that it has to be a valid JavaScript string.
-Since a key could potentially have a space in it, bracket syntax would be the only way to access the value in that property because of the quotes.</p>
+<p>To access a property with bracket syntax, the code looks like: <code class="docutils literal notranslate"><span class="pre">object[&quot;key&quot;]</span></code>.</p>
 </div>
 <div class="section" id="dot-notation">
 <h3>12.2.1.2. Dot Notation<a class="headerlink" href="#dot-notation" title="Permalink to this headline">¶</a></h3>
-<p>With dot notation, the code would be something like: <code class="docutils literal notranslate"><span class="pre">object.key</span></code>. Notice that the key is no longer surrounded by quotes. However, keys are still strings.</p>
+<p>To access a property with dot notation, the code looks like: <code class="docutils literal notranslate"><span class="pre">object.key</span></code>. Notice that the key is no longer surrounded by quotes. However, keys are still strings.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Recall, the only restraint in naming a key is that it has to be a valid JavaScript string.
+Since a key could potentially have a space in it, bracket syntax would be the only way to access the value in that property because of the quotes.</p>
+</div>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -137,33 +139,7 @@ Pete
 </div>
 <div class="section" id="modifying-properties">
 <h2>12.2.2. Modifying Properties<a class="headerlink" href="#modifying-properties" title="Permalink to this headline">¶</a></h2>
-<p>A programmer can modify the value that a property holds by using either notation above.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">key1</span><span class="o">:</span> <span class="nx">value1</span><span class="p">,</span>
-    <span class="nx">key2</span><span class="o">:</span> <span class="nx">value2</span>
-<span class="p">};</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">key1</span><span class="p">);</span>
-
-<span class="nx">object</span><span class="p">.</span><span class="nx">key1</span> <span class="o">=</span> <span class="nx">value3</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">]);</span>
-</pre></div>
-</td></tr></table></div>
-<p>Console Output</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>value1
-value3
-</pre></div>
-</div>
+<p>A programmer can modify the value of a property by using either notation style.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Recall that mutability means that a data structure can be modified without making a copy of that structure.

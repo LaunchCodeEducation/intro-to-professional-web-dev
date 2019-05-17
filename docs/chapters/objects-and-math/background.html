@@ -7,14 +7,13 @@
     <title>12.1. Objects and Why They Matter &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -91,19 +89,19 @@
 <strong>Objects</strong> are also data structures that can hold many values.</p>
 <p>Unlike arrays, each value in an object has a name or <strong>key</strong> for reference purposes.
 The pairing between a key and its value is called a <strong>key/value pair</strong>.</p>
-<p>To recap, objects store as many key/value pairs as needed and each value needs a key. Without a key, the value cannot be accessed or modified by the programmer.</p>
+<p>Objects store as many key/value pairs as needed, and each value needs a key. Without a key, the value cannot be accessed or modified by the programmer.</p>
 <div class="figure">
 <img alt="Diagram showing that objects are a collection of key/value pairs." src="../../_images/object.png" />
 </div>
 <div class="section" id="initializing-objects">
 <h2>12.1.1. Initializing Objects<a class="headerlink" href="#initializing-objects" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">When defining an object, we call the intialization an <strong>object literal</strong>.
-We will need three things to create an object: the name of the object, the keys, and their corresponding values.</p>
+Objects require three things for the definition: a name, a set of keys, and their corresponding values.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Object literals use curly braces, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, to enclose the key/value pairs.</p>
 </div>
-<p>Once we have these three things, we can write an object literal like so:</p>
+<p>Once we have these three things, we write an object literal like so:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">key2</span><span class="o">:</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">key3</span><span class="o">:</span><span class="nx">value3</span><span class="p">,</span> <span class="p">...</span> <span class="p">};</span>
 </pre></div>
 </td></tr></table></div>
@@ -127,7 +125,7 @@ We will need three things to create an object: the name of the object, the keys,
 </td></tr></table></div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">When putting the key/value pairs on a separate line, it is important to pay attention to spaces and tabs!
+<p class="last">When putting the key/value pairs on separate lines, it is important to pay attention to spaces and tabs!
 Incorrect spacing or tab usage can result in a bug.</p>
 </div>
 <p>When defining an object, keep in mind that the keys can only be valid JavaScript strings.
@@ -186,8 +184,8 @@ If we wanted to add a method to our object, we might add a function that returns
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>In the example above on line 8, we see a keyword which is new to us.
-Programmers use the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword when they are calling an object’s property from within the object itself.
+<p>In the example above, on line 8, we see a keyword which is new to us.
+Programmers use the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword when they call an object’s property from within the object itself.
 We could use the object’s name instead of <code class="docutils literal notranslate"><span class="pre">this</span></code>, but <code class="docutils literal notranslate"><span class="pre">this</span></code> is shorter and easier to read.
 We saw it in the method, <code class="docutils literal notranslate"><span class="pre">sign</span></code>, because we wanted to use the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">species</span></code> properties inside of the <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> object.</p>
 </div>

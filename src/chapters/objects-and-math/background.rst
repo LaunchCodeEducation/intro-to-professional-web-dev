@@ -9,7 +9,7 @@ So far we have learned a lot about arrays, which are data structures that can ho
 Unlike arrays, each value in an object has a name or **key** for reference purposes.
 The pairing between a key and its value is called a **key/value pair**. 
 
-To recap, objects store as many key/value pairs as needed and each value needs a key. Without a key, the value cannot be accessed or modified by the programmer.
+Objects store as many key/value pairs as needed, and each value needs a key. Without a key, the value cannot be accessed or modified by the programmer.
 
 .. figure:: figures/object.png
    :alt: Diagram showing that objects are a collection of key/value pairs.
@@ -20,13 +20,13 @@ Initializing Objects
 .. index:: ! object literal
 
 When defining an object, we call the intialization an **object literal**.
-We will need three things to create an object: the name of the object, the keys, and their corresponding values.
+Objects require three things for the definition: a name, a set of keys, and their corresponding values.
 
 .. note::
 
    Object literals use curly braces, ``{}``, to enclose the key/value pairs.
 
-Once we have these three things, we can write an object literal like so:
+Once we have these three things, we write an object literal like so:
 
 .. sourcecode:: js
    :linenos:
@@ -49,7 +49,7 @@ If we have a lot of key/value pairs in our object, we can also put each one on a
 
 .. warning::
 
-   When putting the key/value pairs on a separate line, it is important to pay attention to spaces and tabs!
+   When putting the key/value pairs on separate lines, it is important to pay attention to spaces and tabs!
    Incorrect spacing or tab usage can result in a bug.
 
 When defining an object, keep in mind that the keys can only be valid JavaScript strings.
@@ -105,8 +105,8 @@ A **method** performs an action on the object, because it is a property that sto
           }
        };
 
-In the example above on line 8, we see a keyword which is new to us.
-Programmers use the ``this`` keyword when they are calling an object's property from within the object itself.
+In the example above, on line 8, we see a keyword which is new to us.
+Programmers use the ``this`` keyword when they call an object's property from within the object itself.
 We could use the object's name instead of ``this``, but ``this`` is shorter and easier to read.
 We saw it in the method, ``sign``, because we wanted to use the ``name`` and ``species`` properties inside of the ``tortoiseOne`` object.
 

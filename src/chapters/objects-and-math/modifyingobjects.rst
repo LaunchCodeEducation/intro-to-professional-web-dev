@@ -15,13 +15,17 @@ Programmers have two ways to access the value of property:
 Bracket Syntax
 ^^^^^^^^^^^^^^
 
-Using brackets, the code would be something like: ``object["key"]``. The only restraint in naming a key is that it has to be a valid JavaScript string.
-Since a key could potentially have a space in it, bracket syntax would be the only way to access the value in that property because of the quotes.
+To access a property with bracket syntax, the code looks like: ``object["key"]``.
 
 Dot Notation
 ^^^^^^^^^^^^
 
-With dot notation, the code would be something like: ``object.key``. Notice that the key is no longer surrounded by quotes. However, keys are still strings.
+To access a property with dot notation, the code looks like: ``object.key``. Notice that the key is no longer surrounded by quotes. However, keys are still strings.
+
+.. note::
+
+   Recall, the only restraint in naming a key is that it has to be a valid JavaScript string.
+   Since a key could potentially have a space in it, bracket syntax would be the only way to access the value in that property because of the quotes.
 
 .. admonition:: Example
 
@@ -49,29 +53,7 @@ With dot notation, the code would be something like: ``object.key``. Notice that
 Modifying Properties
 --------------------
 
-A programmer can modify the value that a property holds by using either notation above.
-
-.. sourcecode:: js
-   :linenos:
-
-   let object = {
-       key1: value1,
-       key2: value2
-   };
-   
-   console.log(object.key1);
-
-   object.key1 = value3;
-
-   console.log(object["key1"]);
-
-Console Output
-
-::
-
-  value1
-  value3
-
+A programmer can modify the value of a property by using either notation style.
 
 .. warning::
  

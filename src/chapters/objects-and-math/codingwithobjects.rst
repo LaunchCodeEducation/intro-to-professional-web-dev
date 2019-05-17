@@ -50,10 +50,10 @@ This can lead to some confusion when comparing objects.
 
    ::
 
-      False
+      false
 
    The objects contain properties that have the same keys and equal values.
-   However, the output is ``False``.
+   However, the output is ``false``.
 
 Even though ``tortoiseOne`` and ``tortoiseTwo`` have the same keys and values, they are stored in separate locations in memory.
 This means that even though you can compare the properties in different objects for equality, you cannot compare the objects themselves for equality.
@@ -62,10 +62,8 @@ Iterating Through Objects
 -------------------------
 
 We can iterate through all of the values in an object, much like we would do with an array.
-We will use a ``for`` loop to do just that!
-
-For objects, we use a different ``for`` loop structure.
-``for..in`` loops are specifically designed to easily loop through the properties in an object.
+We will use a for loop to do that, but with a slightly different structure.
+``for...in`` loops are specifically designed to loop through the properties of an object.
 Each iteration of the loop accesses a key in the object.
 The loop stops once it has accessed every property.
 
@@ -84,7 +82,7 @@ The loop stops once it has accessed every property.
       };
 
       for (item in giraffe) {
-         console.log(item, giraffe[item]);
+         console.log(item + ", " + giraffe[item]);
       }
 
    **Console Output**
@@ -111,7 +109,7 @@ The loop stops once it has accessed every property.
 Objects and Functions
 ---------------------
 
-Programmers can pass objects as in the input of a function or use an object as the return value of the function.
+Programmers can pass an object as the input to a function, or use an object as the return value of the function.
 Any change to the object within the function will change the object itself.
 
 .. admonition:: Example
@@ -154,7 +152,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which statement would return ``True``?
+   Which statement would return ``true``?
 
    a. ``tortoiseOne == tortoiseTwo``
    b. ``tortoiseOne === tortoiseTwo``
