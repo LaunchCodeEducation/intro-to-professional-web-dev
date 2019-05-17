@@ -33,7 +33,7 @@ For the exercises, you will use the same five animal objects throughout.
 
 3. Create an array to store all of the animal objects.
 
-4. For management at the space base, we need to print out all of the relevant information about the animal astronauts. 
+4. For upper management at the space base, we need to print out all of the relevant information about the animal astronauts. 
    For each animal, print to the console the following string: ``'____ is a ____. They are ____ years old and ____ kilograms. Their ID is ____.'`` Fill in the blanks with the appropriate values for each animal.
 
 5. Before these animal astronauts can get ready for launch, they need to take a physical fitness test. Add a ``move`` method to each animal object.
