@@ -42,26 +42,8 @@ function insertAdmonitionIndicators() {
 
 }
 
-function addTargetToExternalLinks() {
-
-  const links = document.getElementsByTagName("a");
-
-  for (let i = 0; i < links.length; i++) {
-    const link = links[i];
-    const url = link["href"];
-    if (!(url.includes("launchcode.org") 
-        || url.includes("localhost")
-        || url.includes("file://"))) {
-      link.setAttribute("target", "_blank");
-      const iconMarkup = `<i class="fas fa-external-link-alt" aria-hidden="true"></i>`
-      link.insertAdjacentHTML('beforeend', iconMarkup);
-    }
-  }
-}
-
 function updatePageOnLoad() {
   insertAdmonitionIndicators();
-  addTargetToExternalLinks();
 }
 
 if (window.addEventListener) { // most browsers

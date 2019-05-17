@@ -1,5 +1,9 @@
+import sys
+import os
 import sphinx_bootstrap_theme
 from recommonmark.transform import AutoStructify
+
+sys.path.append(os.path.abspath('../exts'))
 
 # -- Curriculum Site Settings ------------------------------------------------
 
@@ -33,6 +37,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
+    'external_links',
 ]
 
 # numfig:
