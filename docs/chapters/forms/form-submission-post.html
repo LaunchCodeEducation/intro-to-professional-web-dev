@@ -91,15 +91,39 @@
 To submit a form using a POST request, set the <code class="docutils literal notranslate"><span class="pre">method</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code>.
 Form data submitted via POST will be contained in the HTTP message body. Using POST is a
 more secure way to send form data.</p>
-<blockquote>
-<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Form with <code class="docutils literal notranslate"><span class="pre">method=&quot;POST&quot;</span></code></p>
+<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
+</div>
+<div class="section" id="send-form-submission-to-a-server">
+<h2>17.3.2. Send Form Submission to a Server<a class="headerlink" href="#send-form-submission-to-a-server" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes allows us to choose where the form request will be
+sent and what type of request will be sent. How do we configure what happens in response to
+a form submission?</p>
+<p id="index-0"><strong>Form handlers</strong> are web servers that receive and respond to a form submission. Form
+handlers are usually separate web pages or applications that receive, inspect,
+do something with the form values, and then finally respond. For this unit we are
+going to use form handlers that have already been created for us.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>When submitted this form will send a POST request to a certain form handler defined by
+<code class="docutils literal notranslate"><span class="pre">action</span></code> attribute.</p>
+<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://www.w3schools.com/action_page.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
 <ol class="arabic simple">
@@ -109,23 +133,31 @@ more secure way to send form data.</p>
 <li>Enter data into the inputs</li>
 <li>Click Submit button</li>
 </ol>
-<p>TODO:: replace post action page with something we control</p>
 <p><strong>Network Tab After Form Submitted</strong></p>
-<p class="last">TODO: screen shot of network tab and maybe the browser</p>
+<p>TODO: screen shot of network tab and maybe the browser</p>
+<p class="last">TODO:: remove w3schools from example (requires we have something setup)</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">POST form submissions are not really secure unless you are using
-<a class="reference external" href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a>.
-Configuring HTTPS is beyond the scope of this class, but it’s important to
-know the protocol exists.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Using POST for form submissions adds a very low level of security.
+Using <a class="reference external" href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a> instead of HTTP
+adds a higher level of security. Configuring HTTPS is beyond the
+scope of this class.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>17.3.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">do these</p>
+<h2>17.3.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What attribute on <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> determines if the form is submitted with GET or POST?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What attribute on <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> determines <em>where</em> the request is sent?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What do <em>form handlers</em> do with form submissions?</p>
 </div>
 </div>
 </div>

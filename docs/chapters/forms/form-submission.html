@@ -87,11 +87,12 @@
 <h1>17.2. Form Submission<a class="headerlink" href="#form-submission" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The purpose of a form is to collect data input by the user. As we learned in the previous
 chapter, the web is made up of a serious of HTTP requests and responses. A
-<strong>form submission</strong> is when the values in a form are sent in an HTTP request to a server.</p>
+<strong>form submission</strong> is when an HTTP request is sent to the server containing the values
+in a form.</p>
 <div class="section" id="trigger-form-submission">
 <h2>17.2.1. Trigger Form Submission<a class="headerlink" href="#trigger-form-submission" title="Permalink to this headline">¶</a></h2>
-<p>A form submission is triggered by clicking a button inside the form. The buttons can be
-<code class="docutils literal notranslate"><span class="pre">input</span></code> elements or <code class="docutils literal notranslate"><span class="pre">button</span></code> elements.</p>
+<p>A form submission is triggered by clicking a button inside the form. The “submit buttons”
+can be <code class="docutils literal notranslate"><span class="pre">input</span></code> elements or <code class="docutils literal notranslate"><span class="pre">button</span></code> elements. Both button types are in the below example.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="c">&lt;!-- clicking either of these will cause a form submission --&gt;</span>
@@ -104,7 +105,8 @@ chapter, the web is made up of a serious of HTTP requests and responses. A
 The answer is the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute on the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag. The <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute
 is the destination that the form submission request will be sent to.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute is not present or has the value empty string, then <code class="docutils literal notranslate"><span class="pre">action</span></code>
-is set to the address of the current page.</p>
+is set to the address of the current page. In that case, the form values are submitted back
+to the current page.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
 <p>Open <a class="reference external" href="https://form-default--launchcode.repl.co/">this form</a> in a browser.
@@ -151,22 +153,24 @@ address bar.</p>
 </div>
 <p class="last">Edit code in this <a class="reference external" href="https://repl.it/&#64;launchcode/form-default">source code repl.it</a>.</p>
 </div>
-<p>Notice in the above example that the browser address has changed to
-<code class="docutils literal notranslate"><span class="pre">https://form-default--launchcode.repl.co/?username=salina&amp;team=Space+Coders</span></code>.
-Which includes a query parameter for <em>every</em> field in the form.That is because the
-default form submission type is GET. Remember that GET requests do not have a body
-to contain the field values.</p>
+<p>Notice in the above example that the browser address has changed to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://form-default--launchcode.repl.co/?username=salina&amp;team=Space+Coders
+</pre></div>
+</div>
+<p>The web address is the same as the form we loaded, but now includes a query parameter
+for <em>every</em> field in the form. These parameters are known as the queryString parameters.
+The form values are submitted via the queryString because the default submission type for
+forms is GET. Int he next section will soon learn how to submit form data via POST.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You may have noticed that the space character between <code class="docutils literal notranslate"><span class="pre">&quot;Space</span> <span class="pre">Coders&quot;</span></code> was turned
-into a <code class="docutils literal notranslate"><span class="pre">+</span></code>. That is because some characters can NOT allowed to be in a URL. The browser
+into a <code class="docutils literal notranslate"><span class="pre">+</span></code>. That is because some characters are NOT allowed in a URL. The browser
 automatically replaces those invalid characters.</p>
 </div>
 <div class="section" id="key-value-pairs">
 <h3>17.2.1.1. Key Value Pairs<a class="headerlink" href="#key-value-pairs" title="Permalink to this headline">¶</a></h3>
-<p>When a form is submitted
-a key value pair is submitted for each <em>named</em> input, with the key being the name and
-the value being the value of the input.</p>
+<p>When a form is submitted a key value pair is submitted for each <em>named</em> input, with the
+key being the name and the value being the value of the input.</p>
 <p>Form with two named inputs:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
@@ -183,9 +187,17 @@ the value being the value of the input.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>17.2.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">do these</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Where does a button have to be in order to trigger a form submission?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">By <em>default</em>, are HTTP forms submitted with GET or POST?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What makes up the “key value” pair for form inputs?</p>
 </div>
 </div>
 </div>

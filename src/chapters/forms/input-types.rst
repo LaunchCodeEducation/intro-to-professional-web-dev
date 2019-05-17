@@ -1,9 +1,11 @@
 Input Types
 ===========
 
-As you know from using the web sites, it's possible to use more than simple text inputs. There
-are additional input *types* that each have a specific purpose. Many of the elements are
-``<input>`` tags with a different ``type`` value, however some have entirely different tag names.
+As you know from interacting with web forms, it's possible to use more than simple text
+inputs. There are additional input *types*, each with different uses. Many of
+the elements are ``<input>`` tags with a different ``type`` value, however some have
+entirely different tag names.
+
 
 Basic Text Inputs
 -----------------
@@ -67,6 +69,7 @@ rules for the declared type.
      - :raw-html:`<input type="number" name="fuelTemp"/>`
 
 .. todo:: can the validation be activated in the demo?
+
 
 On or Off Inputs
 ----------------
