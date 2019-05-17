@@ -62,7 +62,7 @@ To access the code for exercises 2 - 4, open this `repl.it link <https://repl.it
    b. The spacewalk will last for three orbits around the earth. Calculate how many
       hours the spacewalk will take. Round the answer to 2 decimal places.
    c. Use the animal's ``rate`` method to calculate how much oxygen (O :sub:`2`)
-      they consume during the spacewalk. Round the answer to 1 decimal place.
+      they consume during the spacewalk. Round the answer to 3 decimal places.
    d. Print, "___ will perform the spacewalk, which will last ____ hours and
       require ___ kg of oxygen." Fill in the blanks with the animal's name, the
       spacewalk time, and the amount of O :sub:`2` used.
