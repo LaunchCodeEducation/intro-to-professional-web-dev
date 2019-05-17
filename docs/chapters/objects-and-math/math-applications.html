@@ -7,13 +7,14 @@
     <title>12.6. Combining Math Methods &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -60,7 +61,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -90,7 +92,7 @@ what it does (e.g. taking a square root). At first glance, this might seem to
 limit how often we need to call on <code class="docutils literal notranslate"><span class="pre">Math</span></code>. However, the methods can be
 manipulated or combined to produce some clever results.</p>
 <div class="section" id="random-selection-from-an-array">
-<h2>12.6.1. Random Selection From an Array<a class="headerlink" href="#random-selection-from-an-array" title="Permalink to this headline">¶</a></h2>
+<span id="random-array-item"></span><h2>12.6.1. Random Selection From an Array<a class="headerlink" href="#random-selection-from-an-array" title="Permalink to this headline">¶</a></h2>
 <p>To select a random item from the array <code class="docutils literal notranslate"><span class="pre">happiness</span> <span class="pre">=</span> <span class="pre">['Hope',</span> <span class="pre">'Joy',</span> <span class="pre">'Peace',</span>
 <span class="pre">'Love',</span> <span class="pre">'Kindness',</span> <span class="pre">'Puppies',</span> <span class="pre">'Kittens',</span> <span class="pre">'Tortoise']</span></code>, we need to randomly
 generate an index value from 0 to 7. Since <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> returns a
