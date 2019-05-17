@@ -40,6 +40,7 @@ extensions = [
     'external_links',
     'admonition_icons',
     'replit',
+    'ordered_toctree',
 ]
 
 replit_user = 'launchcode'

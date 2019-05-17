@@ -1,2 +1,2 @@
 #! /bin/sh
-sphinx-build -b html src docs
+sphinx-build -b html-a11y src docs
