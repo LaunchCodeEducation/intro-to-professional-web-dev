@@ -14,7 +14,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -102,13 +101,13 @@
 JavaScript allows us to create a compound boolean expression using the logical AND operator, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>.</p>
 <p>The operator takes two operands, and the resulting expression is <code class="docutils literal notranslate"><span class="pre">true</span></code> if <em>both</em> operands are <code class="docutils literal notranslate"><span class="pre">true</span></code> individually. If either operand is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the overall expression is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>In English, the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> operator mirrors the use of the word “and” (hence the name “logical AND”). A sentence like “Roses are red and violets are blue,” is true as a whole precisely because roses are actually red, and violets are actually blue.</p>
 <p class="last">On the other hand, the sentence “Roses are red and violets are green,” is false as a whole. While roses are indeed red, violets are not green.</p>
 </div>
 <p>Let’s see how this works in code.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">);</span>
@@ -131,7 +130,7 @@ false
 <h3>5.3.1.2. Logical OR<a class="headerlink" href="#logical-or" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="index-4"></span><p id="index-5">JavaScript’s logical OR operator, <code class="docutils literal notranslate"><span class="pre">||</span></code>, also creates compound boolean expressions. This operator takes two operands, and the resulting expression is <code class="docutils literal notranslate"><span class="pre">true</span></code> if <em>either</em> of the operands are <code class="docutils literal notranslate"><span class="pre">true</span></code> individually. If both operands are <code class="docutils literal notranslate"><span class="pre">false</span></code>, the overall expression is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>As with logical AND, logical OR mirrors our experience of English language truth values. The sentence “Pigs can fly or dogs can run,” is true as a whole. Joining the two clauses by “or” requires that only one of them is true in order for the full sentence to be true.</p>
 <p class="last">When both of the clauses joined by “or” are false, the statement as a whole is false. For example, “Pigs can fly or dogs can speak Spanish,” is a false statement.</p>
 </div>
@@ -150,17 +149,16 @@ false
 </pre></div>
 </div>
 <p>Lines 1 and 2 both return <code class="docutils literal notranslate"><span class="pre">true</span></code> because at least one of the comparison expressions joined by <code class="docutils literal notranslate"><span class="pre">||</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Line 3 returns <code class="docutils literal notranslate"><span class="pre">false</span></code> because both sub-expressions are <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>The single symbols <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are themselves valid JavaScript operators, so accidentally leaving off one of the symbols when typing <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">||</span></code> will not result in an error. The operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank">bitwise operators<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which are beyond the scope of this course, and most programmers rarely use them.</p>
-<p class="last">It is not important for you to understand bitwise operators at this point, but you should know that you should <em>never</em> use them in place of the binary operators <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">The single symbols <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are themselves valid JavaScript operators, so accidentally leaving off one of the symbols when typing <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">||</span></code> will not result in an error. The operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank">bitwise operators<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which are beyond the scope of this course, and most programmers rarely use them.</p>
 </div>
 </div>
 <div class="section" id="logical-not">
 <h3>5.3.1.3. Logical NOT<a class="headerlink" href="#logical-not" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="index-6"></span><p id="index-7">The logical NOT operator, <code class="docutils literal notranslate"><span class="pre">!</span></code>, takes only a single operand and reverses its boolean value.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span> <span class="kc">false</span><span class="p">);</span>
 </pre></div>
@@ -173,7 +171,7 @@ true
 </div>
 <p>The operator <code class="docutils literal notranslate"><span class="pre">!</span></code> (sometimes called “bang”) has the same semantic role as the word “not” in English.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span> <span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span> <span class="o">===</span> <span class="s1">&#39;cat&#39;</span><span class="p">)</span> <span class="p">);</span>
 </pre></div>
@@ -244,7 +242,7 @@ true
 <h2>5.3.3. Truth Tables<a class="headerlink" href="#truth-tables" title="Permalink to this headline">¶</a></h2>
 <p id="index-9"><strong>Truth tables</strong> help us understand how logical operators work by calculating all of the possible return values of a boolean expression. Let’s look at the truth table for <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, which assumes we have two boolean expressions, A and B, joined by <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <table border="1" class="colwidths-auto last docutils" id="id2">
 <caption><span class="caption-text">Truth Table for <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <thead valign="bottom">
@@ -278,7 +276,7 @@ true
 <div class="section" id="check-your-understanding">
 <h2>5.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Complete the table below.</p>
 <table border="1" class="colwidths-auto last docutils" id="id3">
 <caption><span class="caption-text">Truth Table for <code class="docutils literal notranslate"><span class="pre">||</span></code></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
@@ -309,7 +307,7 @@ true
 </table>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following properly expresses the order of operations (using parentheses) in the following expression?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">*</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">===</span> <span class="mi">11</span>
 </pre></div>
@@ -322,7 +320,7 @@ true
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is returned by the following boolean expression?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">||</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span>
 </pre></div>

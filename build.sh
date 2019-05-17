@@ -1,3 +1,2 @@
 #! /bin/sh
-rm -rf docs/*
-sphinx-build -a -b html src docs
+sphinx-build -b html src docs

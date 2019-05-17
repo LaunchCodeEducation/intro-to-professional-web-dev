@@ -14,7 +14,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -105,7 +104,7 @@ is a method available on instances of <code class="docutils literal notranslate"
 the variable <code class="docutils literal notranslate"><span class="pre">anElement</span></code> supports. <code class="docutils literal notranslate"><span class="pre">aFunction</span></code> is a reference to a function. To start, we are
 going to use a <em>named function</em>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We want to set the named function <code class="docutils literal notranslate"><span class="pre">youRang</span></code> as the <em>click</em> handler for the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>. Notice that
 the value passed in as the event name is <code class="docutils literal notranslate"><span class="pre">&quot;click&quot;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&quot;onclick&quot;</span></code>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -159,13 +158,13 @@ output in console: you rang...
 </pre></div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">Be sure to use the correct event name when declaring the event name. An error will NOT be thrown
 if an invalid event name is given.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last" id="index-1">This chapter uses DOM methods to add event handlers. When searching online you may find examples
 using jQuery to add event handlers, which look like <code class="docutils literal notranslate"><span class="pre">.on(&quot;click&quot;,</span> <span class="pre">...)</span></code> or <code class="docutils literal notranslate"><span class="pre">.click(...)</span></code>.
 <strong>jQuery</strong> is a JavaScript library designed to simplify working with the DOM. jQuery’s popularity
@@ -196,7 +195,7 @@ defines methods and properties related to events.</p>
 <p><code class="docutils literal notranslate"><span class="pre">event.type</span></code> is a string name of the event.</p>
 <p><code class="docutils literal notranslate"><span class="pre">event.target</span></code> is an element object that was the target of the event.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It!</p>
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p class="last">Above, we saw how we could use addEventListener to add the function <code class="docutils literal notranslate"><span class="pre">youRang()</span></code> as the event handler for the <code class="docutils literal notranslate"><span class="pre">Ring</span> <span class="pre">Bell</span></code> button.
 Using <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code>, could you add the function <code class="docutils literal notranslate"><span class="pre">greetFriends()</span></code> as the event handler for the <code class="docutils literal notranslate"><span class="pre">Greet</span> <span class="pre">Friends</span></code> button?
 <a class="reference external" href="https://repl.it/&#64;launchcode/Try-It-addEventListener/" target="_blank">TRY IT!<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
@@ -211,7 +210,7 @@ refers to an event being propagated to ancestor elements, when an event is trigg
 element that has parent elements. Events are triggered first on the element that is most closely
 affected by the event.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We can add a <em>click</em> handler to a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>, a <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, and the <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> element via the <code class="docutils literal notranslate"><span class="pre">document</span></code>
 global variable.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -292,7 +291,7 @@ a child element calls <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It!</p>
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p class="last">With the HTML above, what happens when you click in the green?
 After you see the result, try adding <code class="docutils literal notranslate"><span class="pre">stopPropagation()</span></code> to the button click handler and seeing what happens when you click the button.
 <a class="reference external" href="https://repl.it/&#64;launchcode/Try-It-Event-Bubbling/" target="_blank">TRY IT HERE!<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
@@ -301,16 +300,16 @@ After you see the result, try adding <code class="docutils literal notranslate">
 <div class="section" id="check-your-understanding">
 <h2>15.5.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">Do these code snippets have the same effect?
 <code class="docutils literal notranslate"><span class="pre">button.addEventListener(&quot;click&quot;,</span> <span class="pre">youRang)</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">onclick=&quot;youRang();&quot;&gt;</span></code></p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">Can <em>click</em> events be prevented from bubbling up to ancestor element(s)?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">What is passed as the <em>argument</em> to the event handler function?</p>
 </div>
 </div>
