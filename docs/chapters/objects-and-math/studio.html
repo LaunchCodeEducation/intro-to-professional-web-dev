@@ -96,21 +96,20 @@ set of candidates.</p>
 <li>Determine the fuel required for launch,</li>
 <li>Perform critical mission calculations.</li>
 </ol>
-<p>To access the code for the studio, open this <a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio01">repl.it link</a>.
-in a new tab or window.</p>
 <div class="section" id="select-the-crew">
 <h2>12.8.1. Select the Crew<a class="headerlink" href="#select-the-crew" title="Permalink to this headline">¶</a></h2>
+<p>To access the code for exercise 1, open this <a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio01">repl.it link</a>.</p>
 <ol class="arabic simple">
 <li>Each candidate was assigned a lottery number, which is stored in both the
-candidate’s data file and in the <code class="docutils literal notranslate"><span class="pre">tickets</span></code> array.<ol class="loweralpha">
-<li>Write a function to select a random entry from the <code class="docutils literal notranslate"><span class="pre">tickets</span></code> array.
+candidate’s data file and in the <code class="docutils literal notranslate"><span class="pre">lotteryTickets</span></code> array.<ol class="loweralpha">
+<li>Write a function to select a random entry from the <code class="docutils literal notranslate"><span class="pre">lotteryTickets</span></code> array.
 Review the <a class="reference internal" href="math-applications.html#random-array-item"><span class="std std-ref">Combining Math Methods</span></a> section if
 you need a reminder on how to do this.</li>
 <li>Use the function to select three ticket numbers.  Store these selections in
 a new array, making sure to avoid repeated numbers. No animal can be
 selected more than once!</li>
 <li>Use one or more loops to check which animals hold the lucky lottery numbers.
-They will be going on the space mission! Store these animals in a crew
+They will be going on the space mission! Store these animals in a <code class="docutils literal notranslate"><span class="pre">crew</span></code>
 array.</li>
 <li>Use a template literal to print, “____, ____ and ____ are going to space!”
 Fill in the blanks with the names of the selected animals.</li>
@@ -118,22 +117,63 @@ Fill in the blanks with the names of the selected animals.</li>
 </li>
 </ol>
 </div>
-<div class="section" id="fuel-required-for-launch">
-<h2>12.8.2. Fuel Required for Launch<a class="headerlink" href="#fuel-required-for-launch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="orbit-calculations">
+<h2>12.8.2. Orbit Calculations<a class="headerlink" href="#orbit-calculations" title="Permalink to this headline">¶</a></h2>
+<p>To access the code for exercises 2 and 3, open this <a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio02">repl.it link</a>.</p>
 <ol class="arabic simple" start="2">
+<li>Spacecraft orbits are not circular, but we will assume that our mission is
+special. The animals will achieve a circular orbit with an altitude of
+2000 km.<ol class="loweralpha">
+<li>Define a function that returns the circumference (C = 2πr) of the orbit.
+Round the circumference to an integer.</li>
+<li>Given an orbital speed of 28000 km/hr, calculate how long will it take our
+animals to complete 5 orbits (time = distance/speed). Round the answer to
+2 decimal places.</li>
+<li>Print, “The mission will travel ____ km around the planet, and it will
+take ____ hours to complete.”</li>
+</ol>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Time for an excursion!<ol class="loweralpha">
+<li>Randomly select one crew member to perform a spacewalk.</li>
+<li>The spacewalk will last for three orbits around the earth. Calculate how many
+hours the spacewalk will take. Round the answer to 2 decimal places.</li>
+<li>Use the animal’s <code class="docutils literal notranslate"><span class="pre">rate</span></code> method to calculate how much oxygen (O <sub>2</sub>)
+it consumes during the spacewalk. Round the answer to 1 decimal place.</li>
+<li>Print, “___ will perform the spacewalk, which will last ____ hours and
+require ___ kg of oxygen.” Fill in the blanks with the animal’s name, the
+spacewalk time, and the amount of O <sub>2</sub> used.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-missions">
+<h2>12.8.3. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conserve-o-2">
+<h3>12.8.3.1. Conserve O <sub>2</sub><a class="headerlink" href="#conserve-o-2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="4">
+<li>Instead of randomly selecting a crew member for the spacewalk, have your
+program select the animal with the smallest oxygen consumption rate.</li>
+</ol>
+</div>
+<div class="section" id="fuel-required-for-launch">
+<h3>12.8.3.2. Fuel Required for Launch<a class="headerlink" href="#fuel-required-for-launch" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="5">
 <li>A general rule of thumb states that it takes about 9 - 10 kg of rocket
 fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we
 will assume a value of 9.5 kg to calculate how much fuel we need to complete
 the mission.<ol class="loweralpha">
-<li>Write a function to help determine the total mass of the animal crew. The
-function itself will only return the mass of the object it is passed, so
-you will need a loop to find and store the total.</li>
+<li>Write a function that returns the total mass of the animal crew.</li>
 <li>The mass of the uncrewed rocket plus the food and other supplies is
 75,000 kg. Combine the rocket and crew masses, then calculate and store
 the amount of fuel required to reach LEO.</li>
 <li>Our launch requires a safety margin for the fuel level, especially if the
 crew members are cute and fuzzy.  Add an extra 100 kg of fuel for each
-mammal on board.</li>
+dog or cat on board.</li>
 <li>Round the final amount of fuel UP to the nearest integer, then print “The
 mission has a launch mass of ____ kg and requires ____ kg of fuel.” Fill
 in the blanks with the calculated amounts.</li>
@@ -141,40 +181,6 @@ in the blanks with the calculated amounts.</li>
 </li>
 </ol>
 </div>
-<div class="section" id="orbit-calculations">
-<h2>12.8.3. Orbit Calculations<a class="headerlink" href="#orbit-calculations" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple" start="3">
-<li>Spacecraft orbits are not circular, but we will assume that our mission is
-special. The animals will achieve a circular orbit with an altitude of
-2000 km.<ol class="loweralpha">
-<li>Calculate the circumference (C = 2πr) of the orbit. Round to an integer.</li>
-<li>Given an orbital speed of 28000 km/hr, calculate how long will it take our
-animals to complete 5 orbits. Round the answer to 2 decimal places.</li>
-<li>Print, “The orbital part of the mission will take ____ hours.”</li>
-</ol>
-</li>
-</ol>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ol class="arabic simple" start="4">
-<li>Time for an excursion!<ol class="loweralpha">
-<li>Randomly select one crew member to perform a spacewalk.</li>
-<li>The spacewalk will last for two orbits around earth. Calculate how much
-oxygen (O <sub>2</sub>) the animal consumes during its work outside of the
-shuttle. Round the answer to 1 decimal place.</li>
-<li>Print, “____ will perform the spacewalk, which will last ____ hours and
-require ___ kg of oxygen.”</li>
-</ol>
-</li>
-</ol>
-</div>
-<div class="section" id="bonus-mission">
-<h2>12.8.4. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple" start="5">
-<li>Instead of randomly selecting a crew member for the spacewalk, have your
-program select the animal with the smallest oxygen consumption rate.</li>
-</ol>
 </div>
 </div>
 

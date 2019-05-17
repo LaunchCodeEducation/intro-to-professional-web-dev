@@ -11,73 +11,82 @@ A. Select the crew,
 B. Determine the fuel required for launch,
 C. Perform critical mission calculations.
 
-To access the code for the studio, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio01>`__.
-in a new tab or window.
-
 Select the Crew
 ----------------
 
-1. Each candidate was assigned a lottery number, which is stored in both the
-   candidate's data file and in the ``tickets`` array.
+To access the code for exercise 1, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio01>`__.
 
-   a. Write a function to select a random entry from the ``tickets`` array.
+1. Each candidate was assigned a lottery number, which is stored in both the
+   candidate's data file and in the ``lotteryTickets`` array.
+
+   a. Write a function to select a random entry from the ``lotteryTickets`` array.
       Review the :ref:`Combining Math Methods <random-array-item>` section if
       you need a reminder on how to do this.
    b. Use the function to select three ticket numbers.  Store these selections in
       a new array, making sure to avoid repeated numbers. No animal can be
       selected more than once!
    c. Use one or more loops to check which animals hold the lucky lottery numbers.
-      They will be going on the space mission! Store these animals in a crew
+      They will be going on the space mission! Store these animals in a ``crew``
       array.
    d. Use a template literal to print, "____, ____ and ____ are going to space!"
       Fill in the blanks with the names of the selected animals.
 
-Fuel Required for Launch
--------------------------
+Orbit Calculations
+-------------------
 
-2. A general rule of thumb states that it takes about 9 - 10 kg of rocket
+To access the code for exercises 2 - 4, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio02>`__.
+
+2. Spacecraft orbits are not circular, but we will assume that our mission is
+   special. The animals will achieve a circular orbit with an altitude of
+   2000 km.
+
+   a. Define a function that returns the circumference (C = 2πr) of the orbit.
+      Round the circumference to an integer.
+   b. Given an orbital speed of 28000 km/hr, calculate how long will it take our
+      animals to complete 5 orbits (time = distance/speed). Round the answer to
+      2 decimal places.
+   c. Print, "The mission will travel ____ km around the planet, and it will
+      take ____ hours to complete."
+
+|
+
+3. Time for an excursion!
+
+   a. Randomly select one crew member to perform a spacewalk.
+   b. The spacewalk will last for three orbits around the earth. Calculate how many
+      hours the spacewalk will take. Round the answer to 2 decimal places.
+   c. Use the animal's ``rate`` method to calculate how much oxygen (O :sub:`2`)
+      it consumes during the spacewalk. Round the answer to 1 decimal place.
+   d. Print, "___ will perform the spacewalk, which will last ____ hours and
+      require ___ kg of oxygen." Fill in the blanks with the animal's name, the
+      spacewalk time, and the amount of O :sub:`2` used.
+
+Bonus Missions
+---------------
+
+Conserve O :sub:`2`
+^^^^^^^^^^^^^^^^^^^
+
+4. Instead of randomly selecting a crew member for the spacewalk, have your
+   program select the animal with the smallest oxygen consumption rate.
+
+Fuel Required for Launch
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To access the code for exercise 5, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio03>`__.
+
+5. A general rule of thumb states that it takes about 9 - 10 kg of rocket
    fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we
    will assume a value of 9.5 kg to calculate how much fuel we need to complete
    the mission.
 
-   a. Write a function to help determine the total mass of the animal crew. The
-      function itself will only return the mass of the object it is passed, so
-      you will need a loop to find and store the total.
+   a. Write a function that returns the total mass of the animal crew.
    b. The mass of the uncrewed rocket plus the food and other supplies is
       75,000 kg. Combine the rocket and crew masses, then calculate and store
       the amount of fuel required to reach LEO.
    c. Our launch requires a safety margin for the fuel level, especially if the
       crew members are cute and fuzzy.  Add an extra 100 kg of fuel for each
-      mammal on board.
+      dog or cat on board.
    d. Round the final amount of fuel UP to the nearest integer, then print "The
       mission has a launch mass of ____ kg and requires ____ kg of fuel." Fill
       in the blanks with the calculated amounts.
-
-Orbit Calculations
--------------------
-
-3. Spacecraft orbits are not circular, but we will assume that our mission is
-   special. The animals will achieve a circular orbit with an altitude of
-   2000 km.
-
-   a. Calculate the circumference (C = 2πr) of the orbit. Round to an integer.
-   b. Given an orbital speed of 28000 km/hr, calculate how long will it take our
-      animals to complete 5 orbits. Round the answer to 2 decimal places.
-   c. Print, "The orbital part of the mission will take ____ hours."
-
-|
-
-4. Time for an excursion!
-
-   a. Randomly select one crew member to perform a spacewalk.
-   b. The spacewalk will last for two orbits around earth. Calculate how much
-      oxygen (O :sub:`2`) the animal consumes during its work outside of the
-      shuttle. Round the answer to 1 decimal place.
-   c. Print, "____ will perform the spacewalk, which will last ____ hours and
-      require ___ kg of oxygen."
-
-Bonus Mission
---------------
-
-5. Instead of randomly selecting a crew member for the spacewalk, have your
-   program select the animal with the smallest oxygen consumption rate.
