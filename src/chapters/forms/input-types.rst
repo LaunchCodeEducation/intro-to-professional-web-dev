@@ -6,7 +6,7 @@ are additional input *types* that each have a specific purpose. Many of the elem
 ``<input>`` tags with a different ``type`` value, however some have entirely different tag names.
 
 Basic Text Inputs
-^^^^^^^^^^^^^^^^^
+-----------------
 Any values can be typed into these text fields, there are no restrictions enforced by the
 browser.
 
@@ -41,7 +41,7 @@ browser.
 
 
 Specialized Text Inputs
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 For these text inputs the browser will validate and provide feedback to the user based on
 rules for the declared type.
 
@@ -69,7 +69,7 @@ rules for the declared type.
 .. todo:: can the validation be activated in the demo?
 
 On or Off Inputs
-^^^^^^^^^^^^^^^^
+----------------
 
 .. list-table::
    :header-rows: 1
@@ -145,7 +145,7 @@ Checkbox inputs are great for two scenarios:
 
 
 Defined Option Inputs
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 .. list-table::
    :header-rows: 1
 

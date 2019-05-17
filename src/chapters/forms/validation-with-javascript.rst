@@ -6,7 +6,9 @@ smoother. Some input types have built in browser validation for basic formats su
 numbers and email addresses. We can use event handlers to perform more complex
 validation on form input values.
 
-**To add validation using JavaScript:**
+
+Steps to Add Validation
+-----------------------
 
 1. Add an event handler for the ``window`` *load* event
 2. Add an event handler for the ``form`` *submit* event
@@ -48,7 +50,9 @@ validation on form input values.
          </body>
       </html>
 
-**Follow Along as We Add Validation**
+
+Follow Along as We Add Validation
+---------------------------------
 
 Use `this repl.it <https://repl.it/@launchcode/form-validation>`_ to add validation to
 the above example.
