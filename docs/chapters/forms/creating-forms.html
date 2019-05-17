@@ -149,10 +149,10 @@ added inside of it. Below we have added one basic
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Your form will NOT submit a value for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> unless it has a <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
+<p class="last">Values are NOT submitted for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> unless it has a <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
 </div>
-<p id="index-2">Forms normally contain more than one input. <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags are used provide a textual label,
-which informs the user of the purpose of the field. The simplest usage of
+<p id="index-2">Forms normally contain more than one input. <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags are used to provide a textual
+label, which informs the user of the purpose of the field. The simplest usage of
 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags is to <em>wrap</em> them around <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -182,7 +182,7 @@ which informs the user of the purpose of the field. The simplest usage of
 </div>
 <p>A second way to relate a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tag to an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> is to use the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute of
 <code class="docutils literal notranslate"><span class="pre">input</span></code> and the <code class="docutils literal notranslate"><span class="pre">for</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">label</span></code>. When <code class="docutils literal notranslate"><span class="pre">for</span></code> is used, the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code>
-does NOT have to inside of the``&lt;label&gt;``.</p>
+does NOT have to be inside of the <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code>.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
@@ -193,156 +193,16 @@ associated to.</p>
 <p>For <em>non-text</em> based inputs, when the label is clicked, a value is selected. This behavior
 can be seen with <code class="docutils literal notranslate"><span class="pre">radio</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> elements which we will learn more about soon.</p>
 </div>
-<div class="section" id="types-of-inputs">
-<h2>17.1.3. Types of Inputs<a class="headerlink" href="#types-of-inputs" title="Permalink to this headline">¶</a></h2>
-<p>As you know from using the web sites, it’s possible to use more than simple text inputs. There
-are additional input <em>types</em> that each have a specific purpose. Many of the elements are
-<code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags with a different <code class="docutils literal notranslate"><span class="pre">type</span></code> value, however some have entirely different tag names.</p>
-<div class="section" id="basic-text-inputs">
-<h3>17.1.3.1. Basic Text Inputs<a class="headerlink" href="#basic-text-inputs" title="Permalink to this headline">¶</a></h3>
-<p>Any values can be typed into these text fields, there are no restrictions enforced by the
-browser.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>text</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">name=&quot;username&quot;&gt;</span></code></td>
-<td>A single line text field.</td>
-<td><span class="raw-html"><input type="text" name="username"/></span></td>
-</tr>
-<tr class="row-odd"><td>textarea</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;textarea</span> <span class="pre">name=&quot;missionDescription&quot;/&gt;</span></code></td>
-<td>A larger, multi-line text box.</td>
-<td><span class="raw-html"><textarea name="missionDescription"></textarea></span></td>
-</tr>
-<tr class="row-even"><td>password</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;password&quot;</span> <span class="pre">name=&quot;passCode&quot;/&gt;</span></code></td>
-<td>A text field that obscures the text typed by the user.</td>
-<td><span class="raw-html"><input type="password" name="passCode"/></span></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Form inputs will NOT look exactly the same in all browsers.
-However, the inputs <em>should</em> function the same way. Use <a class="reference external" href="https://caniuse.com">https://caniuse.com</a>,
-if there is ever a question of browser support for a certain feature.</p>
-</div>
-</div>
-<div class="section" id="specialized-text-inputs">
-<h3>17.1.3.2. Specialized Text Inputs<a class="headerlink" href="#specialized-text-inputs" title="Permalink to this headline">¶</a></h3>
-<p>For these text inputs the browser will validate and provide feedback to the user based on
-rules for the declared type.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>date</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;date&quot;</span> <span class="pre">name=&quot;flightDate&quot;/&gt;</span></code></td>
-<td>Browser validates the value is a valid date
-format. Some browsers provide a <em>date picker</em>.</td>
-<td><span class="raw-html"><input type="date" name="flightDate"/></span></td>
-</tr>
-<tr class="row-odd"><td>email</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;email&quot;</span> <span class="pre">name=&quot;emailAddress&quot;/&gt;</span></code></td>
-<td>Browser validates the value is a valid email address format.</td>
-<td><span class="raw-html"><input type="email" name="emailAddress"/></span></td>
-</tr>
-<tr class="row-even"><td>number</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;number&quot;</span> <span class="pre">name=&quot;fuelTemp&quot;/&gt;</span></code></td>
-<td>Browser validates the value is a valid number format.</td>
-<td><span class="raw-html"><input type="number" name="fuelTemp"/></span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="clicky-thing-inputs">
-<h3>17.1.3.3. Clicky Thing Inputs<a class="headerlink" href="#clicky-thing-inputs" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>checkbox</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;checkbox&quot;</span> <span class="pre">name=&quot;readyList&quot;</span> <span class="pre">value=&quot;crew&quot;/&gt;</span></code></td>
-<td>A small box for marking form option as <em>checked</em>.</td>
-<td><span class="raw-html"><label>crew<input type="checkbox" name="readyList" value="crew"/></label><label>shuttle<input type="checkbox" name="readyList" value="shuttle"/></label></span></td>
-</tr>
-<tr class="row-odd"><td>radio button</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;radio&quot;</span> <span class="pre">name=&quot;radioOn&quot;</span> <span class="pre">value=&quot;yes&quot;/&gt;</span></code></td>
-<td>A small circle that allows selecting <em>one</em> of multiple values. Used in groups of two or more.</td>
-<td><span class="raw-html"><label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label></span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="fancy-clicky-thing-inputs">
-<h3>17.1.3.4. Fancy Clicky Thing Inputs<a class="headerlink" href="#fancy-clicky-thing-inputs" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>range</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;range&quot;</span> <span class="pre">name=&quot;volume&quot;/&gt;</span></code></td>
-<td>A slider that allows the user to input a numeric value within the given range.</td>
-<td><span class="raw-html"><input type="range" name="volume"/></span></td>
-</tr>
-<tr class="row-odd"><td>select</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;select</span> <span class="pre">name=&quot;weather&quot;&gt;&lt;option&gt;clear&lt;/option&gt;&lt;option&gt;cloudy&lt;/option&gt;&lt;/select&gt;</span></code></td>
-<td>A <em>drop down</em> menu that allows selection of one option. Requires options to be in <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags.</td>
-<td><span class="raw-html"><select name="weather"><option>clear</option><option>cloudy</option></select></span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <div class="section" id="check-your-understanding">
-<h2>17.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>TODO:…</p>
+<h2>17.1.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Are <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags without <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes submitted?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">What does the <code class="docutils literal notranslate"><span class="pre">for</span></code> attribute relate to in <code class="docutils literal notranslate"><span class="pre">&lt;label</span> <span class="pre">for=&quot;emailAddress&quot;&gt;</span></code> tags?</p>
+</div>
 </div>
 </div>
 

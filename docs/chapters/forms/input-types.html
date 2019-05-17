@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>17.4. Input Types &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.5. Validation with JavaScript" href="validation-with-javascript.html" />
+    <link rel="prev" title="17.3. POST Form Submission" href="form-submission-post.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+        <ol class="breadcrumb">
+          <li><a href="../../index.html">Chapters</a></li>
+            <li><a href="index.html">17. User Input with Forms</a></li>
+          <li class="active">17.4. Input Types</li>
+        </ol>
+      
+
+    
+  <div class="section" id="input-types">
+<h1>17.4. Input Types<a class="headerlink" href="#input-types" title="Permalink to this headline">¶</a></h1>
+<p>As you know from using the web sites, it’s possible to use more than simple text inputs. There
+are additional input <em>types</em> that each have a specific purpose. Many of the elements are
+<code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags with a different <code class="docutils literal notranslate"><span class="pre">type</span></code> value, however some have entirely different tag names.</p>
+<div class="section" id="basic-text-inputs">
+<h2>17.4.1. Basic Text Inputs<a class="headerlink" href="#basic-text-inputs" title="Permalink to this headline">¶</a></h2>
+<p>Any values can be typed into these text fields, there are no restrictions enforced by the
+browser.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+<th class="head">Demo</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>text</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">name=&quot;username&quot;&gt;</span></code></td>
+<td>A single line text field.</td>
+<td><span class="raw-html"><input type="text" name="username"/></span></td>
+</tr>
+<tr class="row-odd"><td>textarea</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;textarea</span> <span class="pre">name=&quot;missionDescription&quot;/&gt;</span></code></td>
+<td>A larger, multi-line text box.</td>
+<td><span class="raw-html"><textarea name="missionDescription"></textarea></span></td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;password&quot;</span> <span class="pre">name=&quot;passCode&quot;/&gt;</span></code></td>
+<td>A text field that obscures the text typed by the user.</td>
+<td><span class="raw-html"><input type="password" name="passCode"/></span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Form inputs will NOT look exactly the same in all browsers.
+However, the inputs <em>should</em> function the same way. Use <a class="reference external" href="https://caniuse.com">https://caniuse.com</a>,
+if there is ever a question of browser support for a certain feature.</p>
+</div>
+</div>
+<div class="section" id="specialized-text-inputs">
+<h2>17.4.2. Specialized Text Inputs<a class="headerlink" href="#specialized-text-inputs" title="Permalink to this headline">¶</a></h2>
+<p>For these text inputs the browser will validate and provide feedback to the user based on
+rules for the declared type.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+<th class="head">Demo</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>date</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;date&quot;</span> <span class="pre">name=&quot;flightDate&quot;/&gt;</span></code></td>
+<td>Browser validates the value is a valid date
+format. Some browsers provide a <em>date picker</em>.</td>
+<td><span class="raw-html"><input type="date" name="flightDate"/></span></td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;email&quot;</span> <span class="pre">name=&quot;emailAddress&quot;/&gt;</span></code></td>
+<td>Browser validates the value is a valid email address format.</td>
+<td><span class="raw-html"><input type="email" name="emailAddress"/></span></td>
+</tr>
+<tr class="row-even"><td>number</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;number&quot;</span> <span class="pre">name=&quot;fuelTemp&quot;/&gt;</span></code></td>
+<td>Browser validates the value is a valid number format.</td>
+<td><span class="raw-html"><input type="number" name="fuelTemp"/></span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">can the validation be activated in the demo?</p>
+</div>
+</div>
+<div class="section" id="on-or-off-inputs">
+<h2>17.4.3. On or Off Inputs<a class="headerlink" href="#on-or-off-inputs" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+<th class="head">Demo</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>checkbox</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;checkbox&quot;</span> <span class="pre">name=&quot;signUp&quot;/&gt;</span></code></td>
+<td>A small box for marking form option as <em>checked</em>.</td>
+<td><span class="raw-html"><label>sign up<input type="checkbox" name="signUp"/></label></span></td>
+</tr>
+<tr class="row-odd"><td>radio</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;radio&quot;</span> <span class="pre">name=&quot;crewReady&quot;</span> <span class="pre">value=&quot;yes&quot;/&gt;</span></code></td>
+<td>A small circle that allows selecting <em>one</em> of multiple values. Used in groups of two or more.</td>
+<td><span class="raw-html"><label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label></span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Check Box Usage</strong></p>
+<p>Checkbox inputs are great for two scenarios:</p>
+<ol class="arabic simple">
+<li>A yes/no question</li>
+<li>A question with zero, one, or multiple answers</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>One checkbox. No <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute is set, so the default value of <code class="docutils literal notranslate"><span class="pre">on</span></code> is submitted.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>crew<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;crewReady&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Submitted</strong> (if checked)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>crewReady=on
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Multiple checkbox inputs. All with <em>different</em> <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Activities<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>cooking<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cooking&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>running<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;running&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>movies<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;movies&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Submitted</strong> (if cooking and movies are checked)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>cooking=on&amp;movies=on
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<p>Multiple checkbox inputs with the SAME <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Ingredients<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Onion<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ingredient&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;onion&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Butter<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ingredient&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;butter&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Rice<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ingredient&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;rice&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Submitted</strong> (if butter and rice are checked)</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>ingredient=butter&amp;ingredient=rice
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="defined-option-inputs">
+<h2>17.4.4. Defined Option Inputs<a class="headerlink" href="#defined-option-inputs" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+<th class="head">Demo</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>range</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;range&quot;</span> <span class="pre">name=&quot;volume&quot;/&gt;</span></code></td>
+<td>A slider that allows the user to input a numeric value within the given range.</td>
+<td><span class="raw-html"><input type="range" name="volume"/></span></td>
+</tr>
+<tr class="row-odd"><td>select</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;select</span> <span class="pre">name=&quot;weather&quot;&gt;&lt;option&gt;clear&lt;/option&gt;&lt;option&gt;cloudy&lt;/option&gt;&lt;/select&gt;</span></code></td>
+<td>A <em>drop down</em> menu that allows selection of one option. Requires options to be in <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags.</td>
+<td><span class="raw-html"><select name="weather"><option>clear</option><option>cloudy</option></select></span></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="check-your-understanding">
+<h3>17.4.4.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h3>
+<p>TODO…</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="form-submission-post.html"><span aria-hidden="true">&larr;</span> 17.3. POST Form Submission</a></li>
+        
+        
+        <li class="next"><a href="validation-with-javascript.html">17.5. Validation with JavaScript <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

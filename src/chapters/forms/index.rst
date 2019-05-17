@@ -6,4 +6,7 @@ User Input with Forms
 
    creating-forms
    form-submission
+   form-submission-post
+   input-types
+   validation-with-javascript
    studio

@@ -63,12 +63,12 @@ The ``input`` element is used to add interactive fields, which allow the user to
 
 .. warning::
 
-   Your form will NOT submit a value for an ``<input>`` unless it has a ``name`` attribute.
+   Values are NOT submitted for an ``<input>`` unless it has a ``name`` attribute.
 
 .. index:: ! label
 
-Forms normally contain more than one input. ``<label>`` tags are used provide a textual label,
-which informs the user of the purpose of the field. The simplest usage of
+Forms normally contain more than one input. ``<label>`` tags are used to provide a textual
+label, which informs the user of the purpose of the field. The simplest usage of
 ``<label>`` tags is to *wrap* them around ``<input>`` tags.
 
 .. sourcecode:: html
@@ -91,7 +91,7 @@ which informs the user of the purpose of the field. The simplest usage of
 
 A second way to relate a ``<label>`` tag to an ``<input>`` is to use the ``id`` attribute of
 ``input`` and the ``for`` attribute of ``label``. When ``for`` is used, the ``<input>``
-does NOT have to inside of the``<label>``.
+does NOT have to be inside of the ``<label>``.
 
 
 .. sourcecode:: html
@@ -110,111 +110,13 @@ For *non-text* based inputs, when the label is clicked, a value is selected. Thi
 can be seen with ``radio`` and ``checkbox`` elements which we will learn more about soon.
 
 
-Types of Inputs
----------------
-As you know from using the web sites, it's possible to use more than simple text inputs. There
-are additional input *types* that each have a specific purpose. Many of the elements are
-``<input>`` tags with a different ``type`` value, however some have entirely different tag names.
-
-Basic Text Inputs
-^^^^^^^^^^^^^^^^^
-Any values can be typed into these text fields, there are no restrictions enforced by the
-browser.
-
-.. role:: raw-html(raw)
-   :format: html
-
-.. list-table::
-   :header-rows: 1
-
-   * - Type
-     - Syntax
-     - Description
-     - Demo
-   * - text
-     - ``<input type="text" name="username">``
-     - A single line text field.
-     - :raw-html:`<input type="text" name="username"/>`
-   * - textarea
-     - ``<textarea name="missionDescription"/>``
-     - A larger, multi-line text box.
-     - :raw-html:`<textarea name="missionDescription"></textarea>`
-   * - password
-     - ``<input type="password" name="passCode"/>``
-     - A text field that obscures the text typed by the user.
-     - :raw-html:`<input type="password" name="passCode"/>`
-
-.. note::
-
-   Form inputs will NOT look exactly the same in all browsers.
-   However, the inputs *should* function the same way. Use `<https://caniuse.com>`_,
-   if there is ever a question of browser support for a certain feature.
-
-
-Specialized Text Inputs
-^^^^^^^^^^^^^^^^^^^^^^^
-For these text inputs the browser will validate and provide feedback to the user based on
-rules for the declared type.
-
-.. list-table::
-   :header-rows: 1
-
-   * - Type
-     - Syntax
-     - Description
-     - Demo
-   * - date
-     - ``<input type="date" name="flightDate"/>``
-     - Browser validates the value is a valid date
-       format. Some browsers provide a *date picker*.
-     - :raw-html:`<input type="date" name="flightDate"/>`
-   * - email
-     - ``<input type="email" name="emailAddress"/>``
-     - Browser validates the value is a valid email address format.
-     - :raw-html:`<input type="email" name="emailAddress"/>`
-   * - number
-     - ``<input type="number" name="fuelTemp"/>``
-     - Browser validates the value is a valid number format.
-     - :raw-html:`<input type="number" name="fuelTemp"/>`
-
-
-Clicky Thing Inputs
-^^^^^^^^^^^^^^^^^^^
-.. list-table::
-   :header-rows: 1
-
-   * - Type
-     - Syntax
-     - Description
-     - Demo
-   * - checkbox
-     - ``<input type="checkbox" name="readyList" value="crew"/>``
-     - A small box for marking form option as *checked*.
-     - :raw-html:`<label>crew<input type="checkbox" name="readyList" value="crew"/></label><label>shuttle<input type="checkbox" name="readyList" value="shuttle"/></label>`
-   * - radio button
-     - ``<input type="radio" name="radioOn" value="yes"/>``
-     - A small circle that allows selecting *one* of multiple values. Used in groups of two or more.
-     - :raw-html:`<label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label>`
-
-Fancy Clicky Thing Inputs
-^^^^^^^^^^^^^^^^^^^^^^^^^
-.. list-table::
-   :header-rows: 1
-
-   * - Type
-     - Syntax
-     - Description
-     - Demo
-   * - range
-     - ``<input type="range" name="volume"/>``
-     - A slider that allows the user to input a numeric value within the given range.
-     - :raw-html:`<input type="range" name="volume"/>`
-   * - select
-     - ``<select name="weather"><option>clear</option><option>cloudy</option></select>``
-     - A *drop down* menu that allows selection of one option. Requires options to be in ``<option>`` tags.
-     - :raw-html:`<select name="weather"><option>clear</option><option>cloudy</option></select>`
-
-
 Check Your Understanding
 ------------------------
-TODO:...
+
+.. admonition:: Question
+
+   Are ``<input>`` tags without ``name`` attributes submitted?
+
+.. admonition:: Question
+
+   What does the ``for`` attribute relate to in ``<label for="emailAddress">`` tags?
