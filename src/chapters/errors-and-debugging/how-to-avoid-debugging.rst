@@ -1,3 +1,5 @@
+.. _how-to-avoid-debugging:
+
 How to Avoid Debugging
 ======================
 

@@ -61,9 +61,9 @@ Step 3: Write the Body
 
 With the basic structure in place, go ahead and start writing the function body. Be sure to alternate between sub-tasks and running your code. *Do not wait until you have written the entire function body before testing your code!*
 
-We can't emphasize this enough. Going long stretches of time without running the program is a good way to end up frustrated. Recall in the chapter on debugging that we made the following recommendation to avoid bugs:
+We can't emphasize this enough. Going long stretches of time without running the program is a good way to end up frustrated. Recall :ref:`in the chapter on debugging <how-to-avoid-debugging>` that we made the following recommendation to avoid bugs:
 
-.. todo:: Pull quote from debugging chapter, with reference link
+.. pull-quote:: Get something working and keep it working.
 
 This applies *especially* to writing functions. Every good professional programmer works in this way: write a few lines of code, run it, debug any errors, repeat.
 
