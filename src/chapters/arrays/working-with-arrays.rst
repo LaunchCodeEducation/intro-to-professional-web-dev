@@ -15,6 +15,7 @@ Indexes are zero-based, going from ``0`` to ``array.length-1``.
    Use bracket notation and index to access items in an array.
 
    .. sourcecode:: js
+      :linenos:
 
       const programmingLanguages = [
          "JavaScript", // index 0
@@ -24,10 +25,11 @@ Indexes are zero-based, going from ``0`` to ``array.length-1``.
       ];
       console.log(programmingLanguages[0]);
       console.log(programmingLanguages[3]);
+
       // What will happen when index 4 is requested?
       console.log(programmingLanguages[4]);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -47,12 +49,13 @@ that the array does not contain.
    ``undefined`` will be returned for any index that is outside of the array's index range.
 
    .. sourcecode:: js
+      :linenos:
 
       const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
       console.log(programmingLanguages[-1]);
       console.log(programmingLanguages[100]);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -73,6 +76,7 @@ an array can be edited without a new array being created.
    Update an item in an array using bracket notation and index.
 
    .. sourcecode:: js
+      :linenos:
 
       const javaScriptFrameworks = ["React", "Angular", "Ember"];
       console.log(javaScriptFrameworks);
@@ -83,7 +87,7 @@ an array can be edited without a new array being created.
       // Notice the value at index 2 is now "Vue"
       console.log(javaScriptFrameworks);
 
-   **Output**
+   **Console Output**
 
    ::
 

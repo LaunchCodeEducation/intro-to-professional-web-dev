@@ -109,6 +109,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
    What is printed by the following code?
 
    .. sourcecode:: js
+      :linenos:
 
       let charles = ['coder', 'Tech', 47, 23, 350];
       charles.sort();
@@ -133,6 +134,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
    What is printed by the following program?
 
    .. sourcecode:: js
+      :linenos:
 
       let groceryBag = ['bananas', 'apples', 'edamame', 'chips', 'cucumbers', 'milk', 'cheese'];
       let selectedItems = [];

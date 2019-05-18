@@ -93,7 +93,17 @@ Indexes are zero-based, going from <code class="docutils literal notranslate"><s
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>Use bracket notation and index to access items in an array.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span>
    <span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="c1">// index 0</span>
    <span class="s2">&quot;Python&quot;</span><span class="p">,</span>     <span class="c1">// index 1</span>
    <span class="s2">&quot;Java&quot;</span><span class="p">,</span>       <span class="c1">// index 2</span>
@@ -101,11 +111,12 @@ Indexes are zero-based, going from <code class="docutils literal notranslate"><s
 <span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
 <span class="c1">// What will happen when index 4 is requested?</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>JavaScript
 C#
 undefined
@@ -121,12 +132,14 @@ that the array does not contain.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p><code class="docutils literal notranslate"><span class="pre">undefined</span></code> will be returned for any index that is outside of the array’s index range.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">100</span><span class="p">]);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>undefined
 undefined
 </pre></div>
@@ -141,7 +154,14 @@ an array can be edited without a new array being created.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>Update an item in an array using bracket notation and index.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span> <span class="s2">&quot;Ember&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span> <span class="s2">&quot;Ember&quot;</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">);</span>
 
 <span class="c1">// Set the value of index 2 to be &quot;Vue&quot;</span>
@@ -150,8 +170,8 @@ an array can be edited without a new array being created.</p>
 <span class="c1">// Notice the value at index 2 is now &quot;Vue&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;React&#39;, &#39;Angular&#39;, &#39;Ember&#39; ]
 [ &#39;React&#39;, &#39;Angular&#39;, &#39;Vue&#39; ]
 </pre></div>

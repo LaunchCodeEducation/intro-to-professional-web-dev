@@ -17,11 +17,10 @@ Declaring an Array
 .. index::
    single: array; literal
 
-Programmers use multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``.
-Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``.
-If there are no items inside the brackets, then the array is considered empty.
+Programmers use multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``. Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``. If there are no items inside the brackets, then the array is considered empty.
 
 .. sourcecode:: js
+   :linenos:
 
    const emptyArray = [];
 
@@ -30,6 +29,7 @@ If there are no items inside the brackets, then the array is considered empty.
 Array items can also be declared on multiple lines.
 
 .. sourcecode:: js
+   :linenos:
 
    const javaScriptFrameworks = [
       "React",
@@ -54,6 +54,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
    Print out the length of two arrays.
 
    .. sourcecode:: js
+      :linenos:
 
       const emptyArray = [];
       console.log(emptyArray.length);
@@ -61,7 +62,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
       const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
       console.log(programmingLanguages.length);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -70,6 +71,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
 
 Varying Data Types
 ------------------
+
 JavaScript arrays can hold a mixture of values of any type. For example, you can have an array that contains strings, numbers, and booleans.
 
 .. sourcecode:: js
@@ -92,6 +94,7 @@ Check Your Understanding
    *Hint: look closely at the quotes in the classes array.*
 
    .. sourcecode:: js
+      :linenos:
 
       const classes = ["science, computer, art"];
 
