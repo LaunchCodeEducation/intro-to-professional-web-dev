@@ -8,6 +8,7 @@ When repeating the same action over and over again, a human is likely to make a 
 To see this, let's consider an appropriate, if somewhat contrived, example. Suppose you want to print out the integers 0 through 50. With the tools you currently have at your disposal, your program would look like this:
 
 .. sourcecode:: js
+   :linenos:
 
    console.log(0);
    console.log(1);
@@ -29,6 +30,7 @@ Repeated execution of a sequence of statements is called **iteration**. This cha
 To give you a taste of what's to come, here is how we could write the program above using a ``for`` loop.
 
 .. sourcecode:: js
+   :linenos:
 
    for (let i = 0; i < 51; i++) {
       console.log(i);
