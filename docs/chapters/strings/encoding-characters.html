@@ -85,14 +85,17 @@
     
   <div class="section" id="encoding-characters">
 <h1>7.6. Encoding Characters<a class="headerlink" href="#encoding-characters" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">If you had microscope powerful enough to view the data stored on a computer’s hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and 1 is known as a <strong>bit</strong>. As we’ve seen, particularly in this chapter, we work with more complex data when we program, including numbers and strings. This section examines how such data is represented within a computer.</p>
+<p id="index-0">If you had microscope powerful enough to view the data stored on a computer’s hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and 1 is known as a <strong>bit</strong>. A bit is a unit of measurement, like a meter or a pound. Collections of computer data are measured in bits; every letter, image, and pixel you interact with on a computer is represented by bits. Your dog may weight 23 pounds, and a photo of her might be 3 me</p>
+<blockquote>
+<div>we work with more complex data when we program, including numbers and strings. This section examines how such data is represented within a computer.</div></blockquote>
 <div class="section" id="representing-numbers">
 <h2>7.6.1. Representing Numbers<a class="headerlink" href="#representing-numbers" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-1"></span><p id="index-2">A <strong>byte</strong> is a set of 8 bits. Since each bit can have one of two values, each byte can have 2<sup>8</sup> = 256 different values. These look like 00101101 or 11110011, and they represent a <strong>binary number</strong>, or a base-2 number. A binary number is a number representatation that uses only 0s and 1s. The numbers that you are used to using—which are built out of integers 0…9—are <strong>decimal numbers</strong>, or base-10 numbers.</p>
-<p>It may not be obvious, but every decimal integer can be represented as a binary integer, and vice versa. There are 256 different values a byte may take, each of which can be used to represent an integer, from 0 to 255.</p>
+<span class="target" id="index-1"></span><p id="index-2">A <strong>byte</strong> is a set of 8 bits. Bytes look like 00101101 or 11110011, and they represent a <strong>binary number</strong>, or a base-2 number. A binary number is a number representatation that uses only 0s and 1s. The numbers that you are used to, which are built out of the integers 0…9, are <strong>decimal numbers</strong>, or base-10 numbers.</p>
+<p>Since each bit can have one of two values, each byte can have one of  2<sup>8</sup> = 256 different values.</p>
+<p>It may not be obvious, but every decimal integer can be represented as a binary integer, and vice versa. There are 256 different values a byte may take, each of which can be used to represent a decimal integer, from 0 to 255.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">We will not discuss binary to decimal number conversion. If you are interested in learning more, there are <a class="reference external" href="https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/">many</a> <a class="reference external" href="https://www.youtube.com/watch?v=wPvI19DmWQw">tutorials</a> <a class="reference external" href="https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary">online</a>.</p>
+<p class="last">We will not go into binary to decimal number conversion. If you are interested in learning more, there are <a class="reference external" href="https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/">many</a> <a class="reference external" href="https://www.youtube.com/watch?v=wPvI19DmWQw">tutorials</a> <a class="reference external" href="https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary">online</a> that can show you the way.</p>
 </div>
 <p>In this way, the bits in a computer can be viewed as integers. If you want to represent values greater than 255, just use more bits!</p>
 </div>
@@ -102,7 +105,7 @@
 <div class="section" id="character-encodings">
 <h3>7.6.2.1. Character Encodings<a class="headerlink" href="#character-encodings" title="Permalink to this headline">¶</a></h3>
 <p id="index-3">Unlike the natrual translation between binary and decimal numbers, there is no natural translation between integers and characters. For example, you might create a pairing of 0 to <code class="docutils literal notranslate"><span class="pre">a</span></code>, 1 to <code class="docutils literal notranslate"><span class="pre">b</span></code>, and so on. But what integer should be paired with <code class="docutils literal notranslate"><span class="pre">$</span></code> or a tab? Since there is no natural way to translate between characters and integers, computer scientists have had to make such translations up. Such translations are called <strong>character encodings</strong>.</p>
-<p id="index-4">There are many different encodings, some of which continue to evolve as the way in which we use data evolves. For instance, the most recent versions of the Unicode standard include emoji characters, such as 🌮.</p>
+<p id="index-4">There are many different encodings, some of which continue to evolve as our use of data evolves. For instance, the most recent versions of the Unicode character encoding include emoji characters, such as 🌮.</p>
 </div>
 <div class="section" id="the-ascii-encoding">
 <h3>7.6.2.2. The ASCII Encoding<a class="headerlink" href="#the-ascii-encoding" title="Permalink to this headline">¶</a></h3>

@@ -86,8 +86,8 @@
   <div class="section" id="introduction">
 <h1>10.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>You have been using functions throughout your learning so far, without receiving a full explanation of how functions work. This chapter focuses explicitly on the details of how functions work, how they can be used, and how you can create functions of your own.</p>
-<p id="index-0">A <strong>function</strong> is a reusable, callable piece of code. Like variables, functions often have names (though we will see in the next chapter that it is possible to create functions without names).</p>
-<p>Here are some functions that you have become familiar with:</p>
+<p id="index-0">A <strong>function</strong> is a reusable, callable piece of code. Like variables, functions often have names (though the next chapter shows us that we can create functions without names).</p>
+<p>You have already become familiar with several functions:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">console.log</span></code></li>
 <li>The type conversion functions: <code class="docutils literal notranslate"><span class="pre">Number</span></code>, <code class="docutils literal notranslate"><span class="pre">String</span></code>, and <code class="docutils literal notranslate"><span class="pre">Boolean</span></code></li>
@@ -95,12 +95,12 @@
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">When introducing string and array methods, we noted that a <strong>method</strong> is a function that “belongs to” an object. This distinction is important to keep in mind, and will be explored in depth in a later chapter. For now, note that a method is a special type of function.</p>
+<p class="last">When learning about strings and arrays, we noted that a <strong>method</strong> is a function that “belongs to” an object. This distinction is important to keep in mind, and will be explored in depth in a later chapter. For now, think of a method as a <em>special type</em> of function.</p>
 </div>
-<p>Each of the functions we have used works in the same way. Using the function’s name, followed by parentheses, we can <em>call</em> the function, resulting in some action being carried out. Sometimes, as with <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we can provide input data within the parentheses, which the function will use to carry out its action.</p>
+<p>Each of the functions we have used works in the same way. By typing the function’s name, followed by parentheses, we can <em>call</em> the function, resulting in an action being carried out. Sometimes, as with <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we can provide input data between the parentheses, which the function will use to carry out its action.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<p>The function <code class="docutils literal notranslate"><span class="pre">console.log</span></code> carries out the action of printing the provided value(s). In this case, <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is printed to the console.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">console.log</span></code> prints the provided value or values (the input data).</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -109,7 +109,7 @@
 </pre></div>
 </div>
 </div>
-<p>In addition to providing input, we may also be given a value in return when calling a function. This is what happened when we have used the type conversion functions, for example.</p>
+<p>This is an example of a function receving <em>input</em>. Functions may also provide <em>output</em>. For example, the type conversion functions give back the result of converting a value.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>Type conversion functions <em>return</em> a value, that can be used by the calling code. Often, we store the return value of a function in a variable.</p>
@@ -125,21 +125,19 @@
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>Many array and string methods also return values. This program uses the string method <code class="docutils literal notranslate"><span class="pre">split</span></code> to break a string into separate components.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commaSeparatedValues</span> <span class="o">=</span> <span class="s2">&quot;Smith,Jane,100 Cherry Blossom Lane&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commaSeparatedValues</span> <span class="o">=</span> <span class="s2">&quot;Smith,Jane,100 Cherry Blossom Lane&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="nx">commaSeparatedValues</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span>
-
-<span class="o">**</span><span class="nx">Output</span><span class="o">**</span>
-
-<span class="o">::</span>
-
-   <span class="p">[</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;100 Cherry Blossom Lane&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;Smith&#39;, &#39;Jane&#39;, &#39;100 Cherry Blossom Lane&#39; ]
 </pre></div>
 </div>
 </div>
-<p id="index-1">Functions are extremely powerful in that they allow us to repeat actions without writing out the full code needed to carry out that action each time. They also allow us to be removed from the details of what the function is actually doing.</p>
-<p>When we want to print a message to the console using <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we do not need to be concerned with details such as what the console is, or how a string can be displayed on the console. This behavior is wrapped up within the function itself. We reap the benefits of <code class="docutils literal notranslate"><span class="pre">console.log</span></code> without needing to know how it works. This is an example of a broader programming concept known as <strong>encapsulation</strong>. Encapsulation is the process of packaging up code in a way that allows it to be resused, with the person or program using the encapsulated code not having to be concerned with the details of how it works.</p>
-<p id="function-machine"><span id="index-2"></span>A commonly-used analogy for describing the concept of a function is that of a machine that takes input, carries out some action, and gives back some result. This is known as the <strong>function machine</strong> analogy.</p>
+<p id="index-1">Functions are extremely powerful. They allow us to repeat actions without repeating each individual step of code that the actions are built from. By grouping actions together, functions allow us to be removed from the details of what they are actually doing.</p>
+<p>When we want to print a message to the console using <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we don’t have to know what the console is, or how a string can be displayed on it. The behavior is wrapped up within the function itself. This is an example of a broader programming concept known as <strong>encapsulation</strong>. Encapsulation is the process of packaging up code in a reusable way, without the programmer needing to be concerned with how it works.</p>
+<p id="function-machine"><span id="index-2"></span>A commonly-used analogy for describing the concept of a function is that of a machine that takes input, carries out an action, and gives back a result. This is known as the <strong>function machine</strong> analogy.</p>
 <div class="figure" id="id1">
 <img alt="A &quot;function machine,&quot; consisting of a box which takes inputs, and from which output emerges." src="../../_images/function-machine.png" />
 <p class="caption"><span class="caption-text">The function machine</span></p>
