@@ -66,7 +66,7 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
 
    Answer Yes or No
 
-   .. code-block:: javascript
+   .. sourcecode:: js
       :linenos:
 
       if (crewStatus && computerStatusCode === 200 && spaceSuitsOn) {
@@ -75,7 +75,7 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
          console.log("WARNING. Not ready");
       }
 
-   .. code-block:: javascript
+   .. sourcecode:: js
       :linenos:
 
       if (!crewStatus |computerStatusCode !== 200 |!spaceSuitsOn) {
