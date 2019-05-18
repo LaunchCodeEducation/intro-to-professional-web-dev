@@ -43,7 +43,7 @@ Array Length
 To check the length of an array, use the ``length`` property, just like with strings.
 JavaScript array length is NOT fixed, meaning you can add or remove items dynamically.
 
-.. admonition:: Note
+.. note::
 
    In other languages, such as Java and C#, arrays are of a static length requiring the
    length of the array to be declared upon creation.
@@ -78,7 +78,7 @@ JavaScript arrays can hold a mixture of values of any type. For example, you can
 
    const grabBag = ["A string value", true, 99, 105.5];
 
-.. admonition:: Note
+.. note::
    
    It’s rare that you would store data of multiple types in the same array, because grouped data is usually the same type. In other languages, such as Java and C#, all items in an array have to be of the same type.
 

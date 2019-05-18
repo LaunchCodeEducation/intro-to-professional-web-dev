@@ -42,7 +42,7 @@ So other than the title, what goes in the head of an HTML file?
 The head includes links to other files and other data about the document.
 Browsers do not display the content in the head.
 
-.. admonition:: Note
+.. note::
 
    The head can also include some styling to make the page beautiful.
    How to do that is covered in the next chapter on CSS.
@@ -63,7 +63,7 @@ To make HTML more readable to other programmers, programmers write comments in H
       <!-- This is an important comment -->
    </body>
 
-.. admonition:: Note
+.. note::
 
    Spacing and tabs helps many programmers read through theirs and their colleagues' code.
    Be aware that doing so in HTML can effect how the browser renders the page in rare instances.
