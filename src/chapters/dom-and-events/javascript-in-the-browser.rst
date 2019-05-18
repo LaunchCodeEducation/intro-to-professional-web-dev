@@ -91,6 +91,7 @@ You can still use the ``<script>`` tag to include the JavaScript file with the H
    Then the JavaScript file, ``myjs.js`` might look something like this.
 
    .. sourcecode:: js
+      :linenos:
 
       // JavaScript code goes here!
       console.log("Hello from inside the web page");

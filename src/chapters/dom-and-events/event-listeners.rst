@@ -87,6 +87,7 @@ function in JavaScript. So far we have passed in named functions as the event ha
 quite common to pass in an *anonymous function* as the event handler.
 
 .. sourcecode:: js
+   :linenos:
 
    anElement.addEventListener("eventName", function() {
       // function body of anonymous function
@@ -101,6 +102,7 @@ to the event handler function. This event is an object instance of the Event cla
 defines methods and properties related to events.
 
 .. sourcecode:: js
+   :linenos:
 
    anElement.addEventListener("eventName", function(event) {
       console.log("event type", event.type);
@@ -186,6 +188,7 @@ events from being sent to ancestor elements. Handlers for parent elements will n
 a child element calls ``event.stopPropagation()``.
 
 .. sourcecode:: js
+   :linenos:
 
    button.addEventListener("click", function (event) {
       console.log("button clicked");
