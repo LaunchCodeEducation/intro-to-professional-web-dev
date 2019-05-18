@@ -24,6 +24,7 @@ An expression of the form ``someString[i]`` gives the character at index ``i``.
    This program prints out the initials of the person's name.
 
    .. sourcecode:: js
+      :linenos:
    
       let jsCreator = "Brendan Eich";
       let firstInitial = jsCreator[0];
@@ -35,7 +36,7 @@ An expression of the form ``someString[i]`` gives the character at index ``i``.
 
       console.log(outputStr);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -86,6 +87,7 @@ Check Your Understanding
    What is printed by the following code?
 
    .. sourcecode:: js
+      :linenos:
 
       let phrase = "JavaScript rocks!";
       console.log(phrase[phrase.length - 8]);

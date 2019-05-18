@@ -12,13 +12,14 @@ We saw this behavior in the ``toLowerCase`` example.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let nonprofit = "LaunchCode";
 
       console.log(nonprofit.toLowerCase());
       console.log(nonprofit);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -76,6 +77,7 @@ Follow the links in the table above for the ``replace``, ``slice``, and ``trim``
    What is printed by the following code?
 
    .. sourcecode:: js
+      :linenos:
 
       let language = "JavaScript";
       language.replace('J', 'Q');
@@ -101,6 +103,7 @@ Follow the links in the table above for the ``replace``, ``slice``, and ``trim``
    What is the value of the string printed by the following program?
 
    .. sourcecode:: js
+      :linenos:
    
       let org = "  The LaunchCode Foundation ";
       let trimmed = org.trim();

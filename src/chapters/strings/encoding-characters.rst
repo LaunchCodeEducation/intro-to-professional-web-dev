@@ -3,11 +3,9 @@ Encoding Characters
 
 .. index:: ! bit, character encoding
 
-If you had microscope powerful enough to view the data stored on a computer's hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and 1 is known as a **bit**. A bit is a unit of measurement, like a meter or a pound. Collections of computer data are measured in bits; every letter, image, and pixel you interact with on a computer is represented by bits. Your dog may weight 23 pounds, and a photo of her might be 3 me
+If you had microscope powerful enough to view the data stored on a computer's hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and 1 is known as a **bit**. A bit is a unit of measurement, like a meter or a pound. Collections of computer data are measured in bits; every letter, image, and pixel you interact with on a computer is represented by bits.
 
-
-
- we work with more complex data when we program, including numbers and strings. This section examines how such data is represented within a computer.
+We work with more complex data when we program, including numbers and strings. This section examines how such data is represented within a computer.
 
 Representing Numbers
 --------------------
@@ -81,6 +79,7 @@ The string method ``charCodeAt`` takes an index and returns the ASCII code of th
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let nonprofit = "LaunchCode";
 
@@ -88,7 +87,7 @@ The string method ``charCodeAt`` takes an index and returns the ASCII code of th
          console.log(nonprofit.charCodeAt(i));
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -109,6 +108,7 @@ To convert from a character code to an actual character, use ``String.fromCharCo
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let codes = [76, 97, 117, 110, 99, 104, 67, 111, 100, 101];
       let characters = "";
@@ -119,7 +119,7 @@ To convert from a character code to an actual character, use ``String.fromCharCo
 
       console.log(characters);
 
-   **Output**
+   **Console Output**
 
    ::
 
