@@ -12,7 +12,8 @@ def setup(app):
 class ReplIt(CodeBlock):
 
     option_spec = {
-        'id': directives.unchanged
+        'linenos': directives.flag,
+        'slug': directives.unchanged
     }
 
     url_template = "https://repl.it/@%s/%s"
@@ -21,7 +22,7 @@ class ReplIt(CodeBlock):
         replit_user = self.state.document.settings.env.app.config['replit_user']
         code_node = super(ReplIt, self).run()[0]
         ref_node = nodes.reference('', '')
-        ref_node['refuri'] = self.url_template % (replit_user, self.options['id'])
+        ref_node['refuri'] = self.url_template % (replit_user, self.options['slug'])
         ref_node += nodes.Text('repl.it', 'repl.it')
         para_nodes = nodes.paragraph()
         para_nodes += ref_node
