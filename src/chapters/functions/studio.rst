@@ -57,13 +57,10 @@ Reverse Characters
 
    Use these sample strings for testing:
 
-   ``'apple'``
-
-   ``'LC101'``
-  
-   ``'Capitalized Letters'``
-
-   ``'I love the smell of code in the morning.'``
+   - ``'apple'``
+   - ``'LC101'``
+   - ``'Capitalized Letters'``
+   - ``'I love the smell of code in the morning.'``
 
 Reverse Digits
 ---------------
@@ -89,13 +86,10 @@ Reverse Digits
 
    Use these samples for testing:
 
-   ``1234``
-
-   ``'LC101'``
-   
-   ``8675309``
-
-   ``'radar'``
+   - ``1234``
+   - ``'LC101'``
+   - ``8675309``
+   - ``'radar'``
 
 Complete Reversal
 ------------------
