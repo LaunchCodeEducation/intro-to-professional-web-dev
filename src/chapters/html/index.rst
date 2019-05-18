@@ -6,3 +6,4 @@ HTML
    background
    structure
    tags
+   studio
