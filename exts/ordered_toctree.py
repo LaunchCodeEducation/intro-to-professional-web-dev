@@ -29,6 +29,10 @@ class AccessibleHTMLTranslator(HTMLTranslator):
             atts['class'] = 'simple'
         self.body.append(self.starttag(node, 'ol', **atts))
 
+    def depart_bullet_list(self, node):
+        self.compact_simple, self.compact_p = self.context.pop()
+        self.body.append('</ol>\n')
+
 
 def setup(app):
     app.add_builder(AccessibleHTMLBuilder)
