@@ -25,7 +25,7 @@ In particular, functions have a data type, just like all other values. Recall th
       console.log(typeof "LC101");
       console.log(typeof Number);   
 
-   **Output**
+   **Console Output**
 
    ::
 

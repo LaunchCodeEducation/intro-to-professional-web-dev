@@ -34,7 +34,7 @@ Examine the code samples below:
          console.log(newString);
          console.log(arr);
 
-       **Output**
+       **Console Output**
 
        ::
 
@@ -54,7 +54,7 @@ Examine the code samples below:
          console.log(newString);
          console.log(arr);
 
-       **Output**
+       **Console Output**
 
        ::
 

@@ -49,7 +49,7 @@ Anonymous functions are often assigned to variables when they are created, which
 
       console.log(add(1, 1));
 
-   **Output**
+   **Console Output**
 
    ::
 
