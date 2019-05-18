@@ -22,6 +22,7 @@ When it comes to laying out the overarching structure of an HTML file, a program
 Here is an example of the structure of an HTML page based off of these rules:
 
 .. sourcecode:: html
+   :linenos:
 
    <!DOCTYPE html>
    <html>
@@ -58,6 +59,7 @@ Content outside of the body will not appear on the page.
 To make HTML more readable to other programmers, programmers write comments in HTML. When adding a comment, the programmer uses ``<!--`` to indicate the start and ``-->`` to end the comment, like so:
 
 .. sourcecode:: html
+   :linenos:
 
    <body>
       <!-- This is an important comment -->
