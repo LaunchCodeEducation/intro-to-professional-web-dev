@@ -8,8 +8,6 @@ Exercises: Strings
    c. ``"Wonderful".length``
    d. ``"Do spaces count?".length``
 
-|
-
 2. The ``length`` method returns how many characters are in a string. However,
    the method will NOT give us the length of a number. If ``num = 1001``,
    ``num.length`` returns ``undefined`` rather than 4.
@@ -22,8 +20,6 @@ Exercises: Strings
       ``indexOf()`` or ``includes()`` string methods).
 
 Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/StringExercises02/>`__
-
-|
 
 3. Remember, strings are *immutable*. Consider a string that represents a
    strand of DNA: ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``.
@@ -41,8 +37,6 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/St
 
 `Code it here <https://repl.it/@launchcode/StringExercises03/>`__
 
-|
-
 4. Let's use string methods to do more work on the DNA strand:
 
    a. Replace the gene ``'GCT'`` with ``'AGG'``, and then print the altered
@@ -56,8 +50,6 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/St
       print, ``'taco cat'``.
 
 `Code it here <https://repl.it/@launchcode/DNA-strings/>`__
-
-|
 
 5. If we want to turn the string ``'JavaScript'`` into ``'JS'``, we might try
    ``.remove()``. Unfortunately, there is no such method in JavaScript.
@@ -73,8 +65,6 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/St
       result.
 
 `Code it here <https://repl.it/@launchcode/StringExercises05/>`__
-
-|
 
 6. Some programming languages (like Python) include a ``title()`` method to
    return a string with Every Word Capitalized (e.g. ``'title case'.title()``

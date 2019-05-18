@@ -39,8 +39,6 @@ Rectangles
 
       #####
 
-|
-
 2. Write a function ``square(size)`` that returns an ``size`` by ``size`` square
    of hashes. Use your ``line`` function to do this.
 
@@ -100,8 +98,6 @@ Triangles
       ###
       ####
       #####
-
-|
 
 2. Write a function ``spaceLine(numSpaces, numChars)`` that returns a line
    with exactly the specified number of spaces, followed by the

@@ -78,7 +78,7 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
    .. sourcecode:: js
       :linenos:
 
-      if (!crewStatus |computerStatusCode !== 200 |!spaceSuitsOn) {
+      if (!crewStatus | computerStatusCode !== 200 | !spaceSuitsOn) {
          console.log("WARNING. Not ready");        
       } else {
          console.log("all systems go");

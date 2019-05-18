@@ -7,12 +7,13 @@ automate some tasks.
 Part A (Put dinner together)
 ----------------------------
 #. First, initialize variables to store the following arrays.  Remember to use descriptive names.
-    | Protein options: ['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans']
-    | Grain options: ['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers']
-    | Vegetable options: ['peas', 'green beans', 'kale', 'edamame', 'broccoli',
+
+    - Protein options: ['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans']
+    - Grain options: ['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers']
+    - Vegetable options: ['peas', 'green beans', 'kale', 'edamame', 'broccoli',
         'asparagus']
-    | Beverage options: ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea']
-    | Dessert options: ['apple', 'banana', 'more kale', 'ice cream', 'chocolate',
+    - Beverage options: ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea']
+    - Dessert options: ['apple', 'banana', 'more kale', 'ice cream', 'chocolate',
         'kiwi']
 
     Control+click (or right-click) to: `Code here <https://repl.it/@launchcode/LoopstudiopartsAandC>`__
@@ -40,24 +41,25 @@ different code, after which the computer will 'zip' them together before
 overloading the engines.
 
 4. Construct a ``for`` loop that combines two strings together, alternating the characters from each source.
-    | *Examples:*
-    | a) If ``string = "1234"`` and ``otherString = "5678"``, then the
-        output will be "15263748".
-    | b) If ``code1 = "ABCDEF"`` and ``code2 = "notyet"``, then the output
-        will be "AnBoCtDyEeFt".
-    | c) If ``ka = "LoOt"`` and ``blam = "oku!"``, then the output will be
-        ``"LookOut!"``.
 
-    Control+click (or right-click) to: `Code here <https://repl.it/@launchcode/LoopstudiopartB>`__
+   .. admonition:: Examples
+    
+      #. If ``string = "1234"`` and ``otherString = "5678"``, then the output will be "15263748".
+      #. If ``code1 = "ABCDEF"`` and ``code2 = "notyet"``, then the output will be "AnBoCtDyEeFt".
+      #. If ``ka = "LoOt"`` and ``blam = "oku!"``, then the output will be ``"LookOut!"``.
+
+   Control+click (or right-click) to: `Code here <https://repl.it/@launchcode/LoopstudiopartB>`__
 
 Part C (Refinements)
 --------------------
 
 Update your code from part A to add user input and validation.
 
-5. Using a ``while`` loop, ask the user to select the number of meals to assemble.
-    Validate the input to make sure it is an integer from 1 - 6.
+5. Using a ``while`` loop, ask the user to select the number of meals to assemble. Validate the input to make sure it is an integer from 1 - 6.
 
-#. Optional: *Skill boost!* Modify your code to check each meal for kale.
-    a. If present, after the meal output add, "Don't worry, you can have
-    double chocolate tomorrow."
+Bonus Mission
+-------------
+
+Modify your code to check each meal for kale. 
+
+If present, after the meal output add, "Don't worry, you can have double chocolate tomorrow."

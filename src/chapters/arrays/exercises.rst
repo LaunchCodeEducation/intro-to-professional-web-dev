@@ -17,8 +17,6 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/Ar
 
 *Congratulations, rookie.  You can now add items to an array.*
 
-|
-
 2. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
    from the beginning/end of an array.  **Bracket notation** can be used to
    modify any element within an array.  Starting with the ``cargoHold`` array
@@ -44,8 +42,6 @@ Control+click (or right click) to: `Code it here <https://repl.it/@launchcode/Ar
 entries placed? Which methods REMOVE items, and where do the entries come from?
 Which methods require entries inside the ``()``?*
 
-|
-
 3. The ``splice`` method can be used to either add or remove items from an
    array.  It can also accomplish both tasks at the same time. *Refer back to
    the chapter if you need to review the proper ``splice`` syntax*. Use
@@ -66,8 +62,6 @@ Which methods require entries inside the ``()``?*
 We've got to keep our paperwork straight, so you need to know when your actions
 change the original records.*
 
-|
-
 4. Some methods - like ``splice`` and ``push`` - alter the original array,
    while others do not. Use the arrays ``holdCabinet1 ['duct tape', 'gum',
    3.14, false, 6.022e23]`` and ``holdCabinet2 ['orange drink', 'nerf toys',
@@ -86,8 +80,6 @@ change the original records.*
 `Code it here <https://repl.it/@launchcode/ArrayExercises04>`__
 
 *Good progress, cadet. Here are two more methods for you to examine.*
-
-|
 
 5. The ``split`` method converts a string into an array, while the ``join``
    method does the opposite.
@@ -109,8 +101,6 @@ change the original records.*
 `Code it here <https://repl.it/@launchcode/ArrayExercises05>`__
 
 *Nicely done, astronaut. Now it's time to bring you fully up to speed.*
-
-|
 
 6. Arrays can hold different data types, even other arrays!  A
    **multi-dimensional array** is one with entries that are themselves arrays.

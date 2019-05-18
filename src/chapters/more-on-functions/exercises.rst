@@ -22,8 +22,6 @@ Not THAT kinda map, ye rat! Fold that up and do the following:
    c. If NOT passed a number or string, return the data unchanged.
    d. `Build yer function here <https://repl.it/@launchcode/MoreFunctionsExercises02>`__, and be sure to test it.
 
-|
-
 2. Add to yer code! Use yer fuction and the :ref:`map method <map-method>` to
    change the array ``['Elocution', 21, 'Clean teeth', 100]`` as follows:
 
@@ -41,12 +39,13 @@ function?* Fer today's mission, o' course! We arrrr going to loot yonder
 shuttle, but since it's the 21st century, we need to do better than grappling
 hooks and rope.
 
-| Ye arrrr going to hack into the shuttle code and steal supplies. Since the
-   LaunchCode TAs keep a sharp eye on the goodies, ye can't just add new
-   functions like ``siphonFuel`` or ``lootCargo``. Ye need to be more sneaky.
-| Clever.
-| Invisible.
-| *Anonymous*.
+Ye arrrr going to hack into the shuttle code and steal supplies. Since the LaunchCode TAs keep a sharp eye on the goodies, ye can't just add new functions like ``siphonFuel`` or ``lootCargo``. Ye need to be more sneaky.
+
+Clever.
+
+Invisible.
+
+*Anonymous*.
 
 The first mate swiped a copy of the code ye need ta hack:
 
@@ -81,8 +80,6 @@ The first mate swiped a copy of the code ye need ta hack:
 
 Click here to `hack the code <https://repl.it/@launchcode/MoreFunctionsExercises01>`__.
 
-|
-
 1. First, steal some fuel from the shuttle:
 
    a. Define an anonymous function and set it equal ter a variable with a normal,
@@ -96,8 +93,6 @@ Click here to `hack the code <https://repl.it/@launchcode/MoreFunctionsExercises
    e. Be sure to test yer function! Those bilge rat TAs will notice if they lose
       too much fuel.
 
-|
-
 2. Next, liberate some of that glorious cargo.
 
    a. Define another anonymous function with an array as a parametarrrrr, and set
@@ -110,8 +105,6 @@ Click here to `hack the code <https://repl.it/@launchcode/MoreFunctionsExercises
       worthless.  The count MUST stay the same, or ye'll get caught and thrown
       into the LaunchCode brig.
    d. Don't get hasty, swabbie! Remember to test yer function.
-
-|
 
 3. Finally, ye need to print a receipt for the accountant. Don't laugh! That
    genius knows MATH and saves us more gold than ye can imagine.

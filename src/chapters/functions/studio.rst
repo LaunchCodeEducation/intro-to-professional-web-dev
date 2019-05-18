@@ -53,12 +53,17 @@ Reverse Characters
 
 `Code exercises 1 - 3 here <https://repl.it/@launchcode/FunctionsExercises03-05>`__
 
-.. admonition:: Sample strings for testing
+.. tip:: 
 
-   | ``'apple'``
-   | ``'LC101'``
-   | ``'Capitalized Letters'``
-   | ``'I love the smell of code in the morning.'``
+   Use these sample strings for testing:
+
+   ``'apple'``
+
+   ``'LC101'``
+  
+   ``'Capitalized Letters'``
+
+   ``'I love the smell of code in the morning.'``
 
 Reverse Digits
 ---------------
@@ -80,12 +85,17 @@ Reverse Digits
       works for *both strings and numbers*. Do this before moving on to the
       next exercise.
 
-.. admonition:: Samples for testing
+.. tip::
 
-   | 1234
-   | ``'LC101'``
-   | 8675309
-   | ``'radar'``
+   Use these samples for testing:
+
+   ``1234``
+
+   ``'LC101'``
+   
+   ``8675309``
+
+   ``'radar'``
 
 Complete Reversal
 ------------------
@@ -121,6 +131,7 @@ Complete Reversal
 
 Bonus Missions
 ---------------
+
 4. Define a function with one parameter, which will be a string. The function
    must do the following:
 
@@ -130,8 +141,6 @@ Bonus Missions
       3.
    d. `Build your function here <https://repl.it/@launchcode/FunctionsExercises01>`__.
 
-|
-
 4. (Continued) Now test your function:
 
    e. Outside of the function, define the variable ``str`` and initialize it with
@@ -139,8 +148,6 @@ Bonus Missions
    f. Define a second variable and initialize it with ``myFunctionName(str);``.
    g. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
       with the values from ``someNameThatIChose`` and ``str``.
-
-|
 
 5. The area of a rectangle is equal to its *length x width*.
 
@@ -156,6 +163,6 @@ Bonus Missions
 
 .. admonition:: Test Cases and (Answers)
 
-  | length = 2, width = 4 (area = 8)
-  | length = 14, width = 7 (area = 98)
-  | length = 20 (area = 400)
+  - length = 2, width = 4 (area = 8)
+  - length = 14, width = 7 (area = 98)
+  - length = 20 (area = 400)

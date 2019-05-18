@@ -121,8 +121,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
 
 .. admonition:: Question
 
-   | Which statement converts the string ``str = 'LaunchCode students rock!'`` into the array
-   | ``['LaunchCode', 'students', 'rock!']``?
+   Which statement converts the string ``str = 'LaunchCode students rock!'`` into the array ``['LaunchCode', 'students', 'rock!']``?
 
    a. ``str.join(" ");``
    b. ``str.split(" ");``

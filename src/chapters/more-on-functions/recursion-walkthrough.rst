@@ -98,9 +98,7 @@ How do we make this happen without using ``for`` or ``while``?
 Identifying the Base Case
 --------------------------
 
-| ``for`` and ``while`` loops end when a particular condition evaluates to
-   ``false``. In the examples above, these conditions are
-| ``i < arr.length`` and ``arr.length > 0``, respectively.
+``for`` and ``while`` loops end when a particular condition evaluates to ``false``. In the examples above, these conditions are ``i < arr.length`` and ``arr.length > 0``, respectively.
 
 With recursion, we do not know how many times ``combineEntries`` must be
 called. To make sure the code stops at the proper time, we need to identify a

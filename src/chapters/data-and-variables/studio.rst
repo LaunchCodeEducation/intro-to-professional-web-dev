@@ -4,8 +4,9 @@
 Studio: Booleans and Conditionals
 =================================
 
-| In this studio you are going to write code to display the *very important* **Launch Checklist LC04**. 
-| **LC04** displays information related to the space shuttle, astronauts, and rockets before launch.
+In this studio you are going to write code to display the *very important* **Launch Checklist LC04**. 
+
+**LC04** displays information related to the space shuttle, astronauts, and rockets before launch.
 
 Declare and Initialize Variables
 --------------------------------
