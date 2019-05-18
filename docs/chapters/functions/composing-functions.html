@@ -101,7 +101,15 @@
 <h3>10.8.1.1. The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> Function<a class="headerlink" href="#the-reverse-function" title="Permalink to this headline">¶</a></h3>
 <p>Let’s write a function that, given a string, returns its reverse.</p>
 <p>One approach uses the accumulator pattern:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 
    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -111,16 +119,20 @@
    <span class="k">return</span> <span class="nx">reversed</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>This is the same algorithm that we used previously to <a class="reference internal" href="../loops/accumulator-pattern.html#reverse-string"><span class="std std-ref">reverse a string</span></a>.</p>
 <p id="reverse-a-string">Another approach is to use the fact that there is a <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method for arrays, and that the methods <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> allow us to go from strings to arrays and back (this was covered in <a class="reference internal" href="../arrays/array-methods.html#array-methods"><span class="std std-ref">Array Methods</span></a>).</p>
-<div class="highlight-js notranslate" id="reverse-func"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate" id="reverse-func"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">lettersArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
    <span class="kd">let</span> <span class="nx">reversedLettersArray</span> <span class="o">=</span> <span class="nx">lettersArray</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
    <span class="k">return</span> <span class="nx">reversedLettersArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Let’s break down the steps carried out by this function:</p>
 <ol class="arabic simple">
 <li><strong>Turn the string into an array of characters.</strong> We call <code class="docutils literal notranslate"><span class="pre">str.split('')</span></code>, using the empty string as the splitting character, returns an array of the individual characters that make up the string.</li>
@@ -136,7 +148,13 @@
 <div class="section" id="the-ispalindrome-function">
 <span id="palindrome-function"></span><h3>10.8.1.2. The <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> Function<a class="headerlink" href="#the-ispalindrome-function" title="Permalink to this headline">¶</a></h3>
 <p>Using our <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function for strings, we can create our palindrome checker. Recall that our approach will be to take the string argument, reverse it, and then compare the reversed string to the original string.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -144,7 +162,7 @@
    <span class="k">return</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">===</span> <span class="nx">str</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> uses our <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function, this is an example of composition.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
@@ -156,16 +174,30 @@
 <h2>10.8.2. Functions Should Do Exactly One Thing<a class="headerlink" href="#functions-should-do-exactly-one-thing" title="Permalink to this headline">¶</a></h2>
 <p>An important consideration when writing a function is size. By “size” we mean that functions should be short and, more importantly, <em>do exactly one thing.</em></p>
 <p>This principle is easier to state than to put into practice. For example, what if we had written <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> without breaking out the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> code into a separate function?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
    <span class="k">return</span> <span class="nx">reversed</span> <span class="o">===</span> <span class="nx">str</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>This function is still short, which is good. But does it do one thing (check if a string is a palindrome) or multiple things (check the string, <em>and</em> reverse a string)? This is a bit subjective, and here the answer is certainly debatable.</p>
 <p>Some cases will be much more clear-cut, however. Consider the sandwich function, <code class="docutils literal notranslate"><span class="pre">makeSandwich</span></code>, from the section <a class="reference internal" href="process.html#sandwich-function"><span class="std std-ref">A Good Function-Writing Process</span></a>. Suppose we wanted to expand the capability of our program to not only make a sandwich, but to also pour a beverage (to go along with our lunch). It would be a bad idea to amend our function to do both, ending up with a function that has a name like <code class="docutils literal notranslate"><span class="pre">makeSandwichAndPourDrink</span></code>.</p>
 <p>A much better solution would look like this:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">makeSandwich</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">makeSandwich</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">)</span> <span class="p">{</span>
    <span class="c1">// make the sandwich</span>
 <span class="p">}</span>
 
@@ -178,7 +210,7 @@
    <span class="nx">pourDrink</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Why is this better? Smaller functions are easier to debug, for one thing. And by separating single responsibilities into individual functions, we also make our code easier to read and more reusable. In looking at the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function, it is very clear what is going on. First, it makes a sandwich, then it pours a drink.</p>
 <p>Were the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function to simply contain all of the code necessary to carry out <em>both</em> tasks, there would be no clear separation between one task and the other, and the only way we might describe the various sections of the larger function would be to use comments. And, <a class="reference internal" href="naming-functions.html#comments-lie"><span class="std std-ref">as we’ve discussed</span></a>, comments should be a secondary option for explaining your code.</p>
 </div>

@@ -25,7 +25,7 @@ Each of the functions we have used works in the same way. By typing the function
 
       console.log("Hello, World!");
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -38,11 +38,12 @@ This is an example of a function receving *input*. Functions may also provide *o
    Type conversion functions *return* a value, that can be used by the calling code. Often, we store the return value of a function in a variable.
 
    .. sourcecode:: js
+      :linenos:
    
       let num = Number("42");
       console.log("The variable num is of type", typeof num, "and has value", num);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -53,12 +54,13 @@ This is an example of a function receving *input*. Functions may also provide *o
    Many array and string methods also return values. This program uses the string method ``split`` to break a string into separate components.
 
    .. sourcecode:: js
+      :linenos:
    
       let commaSeparatedValues = "Smith,Jane,100 Cherry Blossom Lane";
       let values = commaSeparatedValues.split(',');
       console.log(values);
 
-   **Output**
+   **Console Output**
 
    ::
 

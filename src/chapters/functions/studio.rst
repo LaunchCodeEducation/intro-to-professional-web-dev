@@ -15,7 +15,7 @@ elements.
       arr.reverse()
       console.log(arr);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -51,7 +51,7 @@ Reverse Characters
    f. *Optional*: Use method chaining to reduce the lines of code within the
       function.
 
-`Code exercises 1 - 3 here <https://repl.it/@launchcode/FunctionsExercises03-05>`__
+`Code exercises 1 - 3 at repl.it <https://repl.it/@launchcode/FunctionsExercises03-05>`__
 
 .. tip:: 
 
@@ -107,21 +107,21 @@ Complete Reversal
    f. *Be sure to print the results from each test case in order to verify your
       code*.
 
-.. admonition:: Sample arrays for testing
+.. tip::
 
-   .. sourcecode:: js
+   Use this sample data for testing.
 
-      ['apple', 'potato', 'Capitalized Words']
-      [123, 8897, 42, 1138, 8675309]
-      ['hello', 'world', 123, 'orange']
+   .. list-table::
+      :header-rows: 1
 
-   **Output**
-
-   .. sourcecode:: js
-
-      ['sdroW dezilatipaC', 'otatop', 'elppa']
-      [9035768, 8311, 24, 7988, 321]
-      ['egnaro', 321, 'dlrow', 'olleh']
+      * - Input
+        - Output
+      * - ``['apple', 'potato', 'Capitalized Words']``
+        - ``['sdroW dezilatipaC', 'otatop', 'elppa']``
+      * - ``[123, 8897, 42, 1138, 8675309]``
+        - ``[9035768, 8311, 24, 7988, 321]``
+      * - ``['hello', 'world', 123, 'orange']``
+        - ``['egnaro', 321, 'dlrow', 'olleh']`` 
 
 Bonus Missions
 ---------------
@@ -133,9 +133,9 @@ Bonus Missions
    b. Return only the last character from strings with lengths of 3 or less.
    c. Return only the first 3 characters from strings with lengths larger than
       3.
-   d. `Build your function here <https://repl.it/@launchcode/FunctionsExercises01>`__.
+   d. `Build your function at repl.it <https://repl.it/@launchcode/FunctionsExercises01>`__.
 
-4. (Continued) Now test your function:
+#. Now test your function:
 
    e. Outside of the function, define the variable ``str`` and initialize it with
       a string (e.g. ``'Functions rock!'``).
@@ -143,7 +143,7 @@ Bonus Missions
    g. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
       with the values from ``someNameThatIChose`` and ``str``.
 
-5. The area of a rectangle is equal to its *length x width*.
+#. The area of a rectangle is equal to its *length x width*.
 
    a. Define a function and the required parameters to calculate the area of a
       rectangle.
@@ -153,9 +153,11 @@ Bonus Missions
    d. Use a template literal to print, "The area is ____ cm^2."
    e. *Optional*: If only one argument is passed to the function, then the shape is
       a square. Modify your code to deal with this case.
-   f. `Code the area function here <https://repl.it/@launchcode/FunctionsExercises02>`__.
+   f. `Code the area function at repl.it <https://repl.it/@launchcode/FunctionsExercises02>`__.
 
-.. admonition:: Test Cases and (Answers)
+.. tip::
+
+   Use these test cases.
 
   - length = 2, width = 4 (area = 8)
   - length = 14, width = 7 (area = 98)

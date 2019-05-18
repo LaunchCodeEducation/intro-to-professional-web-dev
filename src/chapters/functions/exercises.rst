@@ -33,7 +33,7 @@ Rectangles
 
       console.log(line(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -46,7 +46,7 @@ Rectangles
 
       console.log(square(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -69,7 +69,7 @@ Rectangles
 
       console.log(rectangle(5, 3));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -89,7 +89,7 @@ Triangles
 
       console.log(stairs(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -107,7 +107,7 @@ Triangles
 
       console.log(spaceLine(3, 5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -122,7 +122,7 @@ Triangles
 
       console.log(triangle(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -144,7 +144,7 @@ Diamonds
 
       console.log(diamond(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 

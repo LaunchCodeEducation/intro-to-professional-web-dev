@@ -90,13 +90,17 @@
 <div class="section" id="function-syntax">
 <span id="id1"></span><h2>10.3.1. Function Syntax<a class="headerlink" href="#function-syntax" title="Permalink to this headline">¶</a></h2>
 <p>To create a function, use the following syntax:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// function body</span>
 
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p id="index-1">Here, <code class="docutils literal notranslate"><span class="pre">function</span></code> is a keyword that instructs JavaScript to create a new function using the definition that follows. Since <code class="docutils literal notranslate"><span class="pre">function</span></code> is a keyword, it may not be used elsewhere, for example as the name of a variable.</p>
 <p id="index-2">Following <code class="docutils literal notranslate"><span class="pre">function</span></code> is the <strong>function name</strong>, which is <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> in the generic example above. The function name is determined by you, the programmer, and should therefore follow best practices. In particular, function names should use camel case and have descriptive names. We will have more to say about naming functions near the end of this chapter.</p>
 <p id="index-3">Following the function name, we define <strong>parameters</strong> within the parentheses. Think of parameters as variables that can be used only within the function itself. The number and names of the parameters are determined by the programmer, based on what they want the function to do. A function may be defined with several parameters, or no parameters at all.</p>
@@ -109,38 +113,53 @@
 <div class="section" id="an-example">
 <h3>10.3.1.1. An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
 <p>Let’s see function syntax in action. We first consider a program that prints an array of names.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lena&quot;</span><span class="p">,</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="s2">&quot;Julio&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lena&quot;</span><span class="p">,</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="s2">&quot;Julio&quot;</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Following this pattern, we can create a function that prints <em>any</em> array of names.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printNames</span><span class="p">(</span><span class="nx">names</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printNames</span><span class="p">(</span><span class="nx">names</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Breaking down the components of a function using our new terminology gives us:</p>
-<ul>
-<li><p class="first"><strong>Function name</strong>: <code class="docutils literal notranslate"><span class="pre">printNames</span></code></p>
-</li>
-<li><p class="first"><strong>Parameter(s)</strong>: <code class="docutils literal notranslate"><span class="pre">names</span></code></p>
-</li>
-<li><p class="first"><strong>Body</strong>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
- <span class="p">}</span>
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li><strong>Function name</strong>: <code class="docutils literal notranslate"><span class="pre">printNames</span></code></li>
+<li><strong>Parameter(s)</strong>: <code class="docutils literal notranslate"><span class="pre">names</span></code></li>
+<li><strong>Body</strong>:</li>
 </ul>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
 <p>Notice that there is nothing about this function that forces <code class="docutils literal notranslate"><span class="pre">names</span></code> to actually contain names, or even strings. The function will work the same for any array it is given. Therefore, a better name for this function would be <code class="docutils literal notranslate"><span class="pre">printArray</span></code>.</p>
 <p>Our function can be used the same way as each of the built-in functions, such as <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, by calling it. Remember that calling a function triggers its actions to be carried out.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printArray</span><span class="p">(</span><span class="nx">names</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printArray</span><span class="p">(</span><span class="nx">names</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
    <span class="p">}</span>
@@ -150,8 +169,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">);</span>
 <span class="nx">printArray</span><span class="p">([</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;pear&quot;</span><span class="p">]);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Lena
 James
 Julio
@@ -171,11 +190,13 @@ pear
 <div class="admonition-try-it admonition">
 <p class="first admonition-title">Try It!</p>
 <p>What happens if we define a function without calling it?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Function-Defnition">Run this program at repl.it</a>.</p>
 </div>
 <div class="admonition-question admonition">
@@ -185,14 +206,18 @@ pear
 <p>In order for a function to run, it must be explicitly <em>called</em>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">sayHello</span><span class="p">();</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
 </pre></div>
 </div>

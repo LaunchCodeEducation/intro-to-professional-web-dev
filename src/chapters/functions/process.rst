@@ -47,6 +47,7 @@ Now it is time to start coding. Using the design decisions you just made, write 
 Here's what an outline of our sandwich function would look like:
 
 .. sourcecode:: js
+   :linenos:
 
    function makeSandwich(breadType, fillingType, condiments) {
 
