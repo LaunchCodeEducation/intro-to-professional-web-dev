@@ -124,6 +124,7 @@ After a variable has been created, it may be used later in a program in any plac
    console.log("Hello, World!");
 
 .. sourcecode:: js
+   :linenos:
 
    let message = "Hello, World!";
    console.log(message);
@@ -135,6 +136,7 @@ When we refer to a variable name, we are **evaluating** the variable. The effect
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let message = "What's up, Doc?";
       let n = 17;
@@ -144,7 +146,7 @@ When we refer to a variable name, we are **evaluating** the variable. The effect
       console.log(n);
       console.log(pi);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -159,6 +161,7 @@ Like values, variables also have types. We determine the type of a variable the 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
       
       let message = "What's up, Doc?";
       let n = 17;
@@ -168,7 +171,7 @@ Like values, variables also have types. We determine the type of a variable the 
       console.log(typeof n);
       console.log(typeof pi);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -186,6 +189,7 @@ We use variables in a program to "remember" things, like the current score at th
 To see this, read and then run the following program in a code editor. You'll notice that we change the value of ``day`` three times, and on the third assignment we even give it a value that is of a different data type.
 
 .. sourcecode:: js
+   :linenos:
 
     let day = "Thursday";
     console.log(day);
@@ -206,6 +210,7 @@ Check Your Understanding
    What is printed when the following code executes?
 
    .. sourcecode:: js
+      :linenos:
 
        let day = "Thursday";
        day = 32.5;

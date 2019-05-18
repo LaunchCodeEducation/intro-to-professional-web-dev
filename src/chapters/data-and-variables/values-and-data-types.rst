@@ -29,12 +29,13 @@ If you are not sure what data type a value falls into, precede the value with ``
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(typeof "Hello, World!");
       console.log(typeof 17);
       console.log(typeof 3.14);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -70,6 +71,7 @@ Run the following code to find out.
 .. admonition:: Try It!
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(typeof "17");
       console.log(typeof "3.2");
@@ -86,11 +88,12 @@ quotes (``"``).
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(typeof 'This is a string');
       console.log(typeof "And so is this");
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -120,11 +123,12 @@ When you type a large integer value, you might be tempted to use commas between 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(42000);
       console.log(42,000);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -136,11 +140,12 @@ Well, that's not what we expected at all! Because of the comma, JavaScript chose
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(42, 17, 56, 34, 11, 4.35, 32);
       console.log(3.4, "hello", 45);
 
-   **Output**
+   **Console Output**
 
    ::
 

@@ -161,15 +161,22 @@
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>These two examples have the exact same same output.</p>
 <p>When we refer to a variable name, we are <strong>evaluating</strong> the variable. The effect is just as if the value of the variable is substituted for the variable name in the code when executed.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="p">;</span>
 
@@ -177,8 +184,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pi</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>What&#39;s up, Doc?
 17
 3.14159
@@ -189,7 +196,13 @@
 <p>Like values, variables also have types. We determine the type of a variable the same way we determine the type of a value, using <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="p">;</span>
 
@@ -197,8 +210,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">n</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">pi</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>string
 number
 number
@@ -211,14 +224,19 @@ number
 <h2>4.3.3. Reassigning Variables<a class="headerlink" href="#reassigning-variables" title="Permalink to this headline">¶</a></h2>
 <p>We use variables in a program to “remember” things, like the current score at the football game. As their name implies, variables can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.</p>
 <p>To see this, read and then run the following program in a code editor. You’ll notice that we change the value of <code class="docutils literal notranslate"><span class="pre">day</span></code> three times, and on the third assignment we even give it a value that is of a different data type.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
-<span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Friday&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
-<span class="nx">day</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+ <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Friday&quot;</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+ <span class="nx">day</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>A great deal of programming is about having the computer remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -230,12 +248,15 @@ number
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p>What is printed when the following code executes?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">;</span>
-<span class="nx">day</span> <span class="o">=</span> <span class="mf">32.5</span><span class="p">;</span>
-<span class="nx">day</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">;</span>
+ <span class="nx">day</span> <span class="o">=</span> <span class="mf">32.5</span><span class="p">;</span>
+ <span class="nx">day</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <ol class="last arabic simple">
 <li>Nothing is printed. A runtime error occurs.</li>
 <li><code class="docutils literal notranslate"><span class="pre">Thursday</span></code></li>

@@ -15,12 +15,13 @@ The ``Number`` function can take a string and turn it into an integer. Let us se
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(Number("2345"));
       console.log(typeof Number("2345"))
       console.log(Number(17));
 
-   **Output**
+   **Console Output**
 
    :: 
 
@@ -36,7 +37,7 @@ What happens if we attempt to convert a string to a number, and the string doesn
 
       console.log(Number("23bottles"));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -53,12 +54,13 @@ The type conversion function ``String`` turns its argument into a string. Rememb
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(String(17));
       console.log(String(123.45));
       console.log(typeof String(123.45));
 
-   **Output**
+   **Console Output**
 
    ::
 
