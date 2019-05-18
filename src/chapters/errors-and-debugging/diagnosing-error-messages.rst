@@ -77,6 +77,7 @@ JavaScript is telling us that in the area of ``"Hello, name);`` it encountered a
 Fixing this error gives us a program with correct syntax:
 
 .. sourcecode:: js
+   :linenos:
 
    let name = Julie;
    console.log("Hello", name);
