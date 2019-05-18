@@ -104,9 +104,7 @@ The programming concept of a function is very similar to the concept of a mathem
 
    The number 19 is the *output*.
 
-.. todo:: Link to loops chapter after merging
-
-Functions also allow us to keep our code DRY, a concept that you learned about when we introduced loops. If we want to do the same basic task 17 times across a program, we can reduce code repetition by writing one function and calling it 17 times.
+Functions also allow us to keep our code DRY, a concept that you learned about :ref:`when we introduced loops <dry-code>`. If we want to do the same basic task 17 times across a program, we can reduce code repetition by writing one function and calling it 17 times.
 
 Check Your Understanding
 ------------------------

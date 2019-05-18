@@ -28,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -70,29 +70,30 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Chapters</a></li>
+    <li><a href="index.html">12. HTML</a></li>
+    <li class="active">12.4. Studio: Making Headlines</li>
+</ol>
+
+
 
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-          <li><a href="../../index.html">Chapters</a></li>
-            <li><a href="index.html">12. HTML</a></li>
-          <li class="active">12.4. Studio: Making Headlines</li>
-        </ol>
-      
 
     
   <div class="section" id="studio-making-headlines">
 <h1>12.4. Studio: Making Headlines<a class="headerlink" href="#studio-making-headlines" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="getting-ready-developer-tools">
 <h2>12.4.1. Getting Ready: Developer Tools<a class="headerlink" href="#getting-ready-developer-tools" title="Permalink to this headline">¶</a></h2>
-<p>As you’ve learned, debugging code is an essential part of coding. When it comes to working with web pages, browser developer tools are indispensable.</p>
+<p>As you’ve learned, debugging is an essential part of coding. When it comes to debugging web pages, browser developer tools are indispensable.</p>
 <p>This studio requires you to use Firefox’s developer tools. In particular, you should be able to:</p>
 <ul class="simple">
-<li>Open dev tools</li>
+<li>Open Firebox’s dev tools</li>
 <li>Inspect an HTML element</li>
 <li>Modify an element’s HTML</li>
-<li>Explain the difference between the content displayed when using <em>View Source</em> and what’s in the <em>Inspector</em> tab</li>
+<li>Explain the difference between the content displayed when using <em>View Source</em> and what you see in the <em>Inspector</em> tab</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -102,33 +103,27 @@
 <div class="section" id="studio">
 <h2>12.4.2. Studio<a class="headerlink" href="#studio" title="Permalink to this headline">¶</a></h2>
 <p>Pick a news site (<a class="reference external" href="https://www.nytimes.com/">The New York Times</a>, for example), and use your browser’s developer tools to modify one of the main articles to use a picture and text of your choosing.</p>
-<p>Have fun with this (see our example below), but be respectful of others and avoid overtly critical political or social commentary.</p>
+<p>Have fun with this, but be respectful of others and avoid overtly critical political or social commentary.</p>
+<p>You might do something like this:</p>
 <div class="figure" id="id1">
 <img alt="A screenshot of the New York Times website, with a fake article announcing an astronaut apprenticeship program at LaunchCode." src="../../_images/making-headlines-sample.png" />
 <p class="caption"><span class="caption-text">A Sample Fake Article</span></p>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>When linking to an image, pay attention to the protocol, either <code class="docutils literal notranslate"><span class="pre">http</span></code> or <code class="docutils literal notranslate"><span class="pre">https</span></code>, of the site you are modifying, and of the image you are including. You can find the protocol at the beginning of the image URL.</p>
-<p class="last">If the site you are modifying was loaded over <code class="docutils literal notranslate"><span class="pre">https</span></code> and your image uses <code class="docutils literal notranslate"><span class="pre">http</span></code> then the image may not load properly. You should try to add <code class="docutils literal notranslate"><span class="pre">s</span></code> to the image protocol, and if that doesn’t work, look for another image or modify a site that uses <code class="docutils literal notranslate"><span class="pre">http</span></code>.</p>
-</div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="section" id="image-urls">
+<h3>12.4.2.1. Image URLs<a class="headerlink" href="#image-urls" title="Permalink to this headline">¶</a></h3>
+<p>When linking to an image, pay attention to the protocol of both the site you are modifying and of the image you are including. The protocol will be either <code class="docutils literal notranslate"><span class="pre">http</span></code> or <code class="docutils literal notranslate"><span class="pre">https</span></code>.</p>
+<p>If the site loads over <code class="docutils literal notranslate"><span class="pre">https</span></code> and your image uses <code class="docutils literal notranslate"><span class="pre">http</span></code> then the image may not load properly due to browser security restrictions. You should try to add <code class="docutils literal notranslate"><span class="pre">s</span></code> to the image protocol, and if that doesn’t work, look for another image.</p>
 <p>If you want to use an image of your own that is not already available via the internet, here’s how:</p>
-<ul class="last">
-<li><p class="first">Upload the photo to a Dropbox account</p>
-</li>
-<li><p class="first">View the photo on <a class="reference external" href="https://www.dropbox.com/">Dropbox</a> and select <em>Share</em>, then <em>Get link</em>, then <em>Go to link</em></p>
-</li>
-<li><p class="first">You should now be viewing the image within Dropbox. If the URL contains <code class="docutils literal notranslate"><span class="pre">?dl=0</span></code>, remove it. Add <code class="docutils literal notranslate"><span class="pre">?raw=1</span></code> to the end of the URL in the location bar of your browser and hit <em>Enter</em>. The URL should look something like this:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.dropbox.com/sc/qc3htnhv7fb3i2x/AAC5OzECOyBynstMDWawCZhxa?raw=1
+<ul class="simple">
+<li>Upload the photo to a <a class="reference external" href="https://www.dropbox.com/">Dropbox</a> account</li>
+<li>View the photo on Dropbox and select <em>Share</em>, then <em>Get link</em>, then <em>Go to link</em></li>
+<li>You should now be viewing the image on the Dropbox site. If the URL contains <code class="docutils literal notranslate"><span class="pre">?dl=0</span></code>, remove it. Add <code class="docutils literal notranslate"><span class="pre">?raw=1</span></code> to the end of the URL in the location bar of your browser and hit <em>Enter</em>. The URL should look something like this:</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.dropbox.com/sc/qc3htnhv7fb3i2x/AAC5OzECOyBynstMDWawCZhxa?raw=1
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p class="first">Copy the URL of the loaded image. You can use this URL within any HTML that you’re editing.</p>
-</li>
+<ul class="simple">
+<li>Copy the URL of the loaded image. You can use this URL within any HTML.</li>
 </ul>
 </div>
 </div>

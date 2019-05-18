@@ -1,7 +1,40 @@
-/* a, a:hover, a:focus {
-	color: #df552d;
-} */
+/* TODO - remove these font defs once custom.css has been deployed */
 
+@font-face {
+    font-family: 'Nexa';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/NexaRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: italic;
+    font-weight: 400;
+    src: url('fonts/Nexa-Regular-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/Nexa-XBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: italic;
+    font-weight: 700;
+    src: url('fonts/Nexa-XBold-Italic.otf') format('opentype');
+}
+
+/* END TODO */
+
+body {
+    font-size: 16px;
+    line-height: 1.8em;
+    font-family: "Nexa","Monsterrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 h1 {
     /* TODO: this should be in /repos/bootswatch/launchcode/variables.less after we learn how to alter the theme */
     color: #3c79b8;
@@ -31,11 +64,18 @@ h5 a:hover {
     text-decoration: none;
 }
 
+.fas.fa-external-link-alt {
+	color: inherit;
+	font-size: 10px;
+	padding-left: 4px;
+}
+
 code {
     background: none;
     color: #419f6a;
     padding: 0;
     font-weight: bold;
+    font-size: inherit;
 }
 
 .pager code {
@@ -159,6 +199,14 @@ div.admonition {
     display: inline-block;
 }
 
+.admonition-question > p, .admonition-question > ul {
+	margin-bottom: 10px;
+}
+
+.admonition-question ol {
+    list-style: lower-alpha;
+}
+
 .admonition-title .fas {
     margin-right: .5em;
 }
@@ -226,6 +274,7 @@ div.highlight-html {
 table.highlighttable {
     width: 100%;
     margin: 0;
+    table-layout: fixed;
 }
 
 table.highlighttable td {
