@@ -108,7 +108,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
 
    What is printed by the following code?
 
-   .. sourcecode:: javascript
+   .. sourcecode:: js
 
       let charles = ['coder', 'Tech', 47, 23, 350];
       charles.sort();

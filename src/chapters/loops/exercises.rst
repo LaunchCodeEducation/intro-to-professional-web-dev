@@ -9,7 +9,7 @@ Exercises: Loops
 WAIT!!!  Why type "Repetition is a good thing," four times when we can code
 a better result?  How about printing the phrase 100 times instead?
 
-.. sourcecode:: javascript
+.. sourcecode:: js
 
     for (i=0; i < 100; i++){
         console.log("Repetition is a good thing.")

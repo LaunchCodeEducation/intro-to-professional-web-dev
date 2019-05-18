@@ -75,7 +75,7 @@ Follow the links in the table above for the ``replace``, ``slice``, and ``trim``
 
    What is printed by the following code?
 
-   .. sourcecode:: javascript
+   .. sourcecode:: js
 
       let language = "JavaScript";
       language.replace('J', 'Q');

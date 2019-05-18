@@ -85,7 +85,7 @@ Check Your Understanding
 
    What is printed by the following code?
 
-   .. sourcecode:: javascript
+   .. sourcecode:: js
 
       let phrase = "JavaScript rocks!";
       console.log(phrase[phrase.length - 8]);

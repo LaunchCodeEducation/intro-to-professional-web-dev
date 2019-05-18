@@ -89,7 +89,7 @@ Effort = Outcome
 Now let's take a look at an imaginary student's attempt at solving this
 problem:
 
-.. sourcecode:: javascript
+.. sourcecode:: js
 
    1.
    2.
