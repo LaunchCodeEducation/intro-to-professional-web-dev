@@ -13,12 +13,13 @@ In the section :ref:`booleans`, we learned about the comparison operators ``==``
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(7 == "7");
       console.log(0 == false);
       console.log(0 == '');
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -39,12 +40,13 @@ For example, ``Number("7")`` returns ``7``, so it makes some sense that ``7 == "
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
     
       console.log('0' == 0);
       console.log(0 == '');
       console.log('0' == '');
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -69,12 +71,13 @@ The operator ``===`` compares two operands *without* converting their data types
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(7 === "7");
       console.log(0 === false);
       console.log(0 === '');
 
-   **Output**
+   **Console Output**
 
    ::
 

@@ -32,12 +32,13 @@ There are only two **boolean values**---``true`` and ``false``. JavaScript is ca
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(true);
       console.log(typeof true);
       console.log(typeof false);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -50,11 +51,12 @@ The values ``true`` and ``false`` are **not** strings. If you use quotes to surr
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(typeof true);
       console.log(typeof "true");
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -73,6 +75,7 @@ As with the number and string data types, the boolean type also has a conversion
    Explore how ``Boolean`` converts various non-boolean values.
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(Boolean("true"));
       console.log(Boolean("TRUE"));
@@ -109,11 +112,12 @@ A **boolean expression** is an expression that evaluates to either ``true`` or `
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(5 == 5);
       console.log(5 == 6);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -130,7 +134,7 @@ We can also use ``==`` to see that ``true`` and ``"true"`` are not equal.
 
       console.log(true == "true");
 
-   **Output**
+   **Console Output**
 
    ::
 

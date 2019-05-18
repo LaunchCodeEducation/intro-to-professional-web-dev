@@ -109,14 +109,18 @@
 <p>Here is an explicit example that mimics our banking program.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">billHasBeenPaid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">billHasBeenPaid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">billHasBeenPaid</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Your bill is due soon!&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Your bill is due soon!
 </pre></div>
 </div>
@@ -125,41 +129,57 @@
 <p>The condition in an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can be any boolean expression, such as <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">===</span> <span class="pre">'Jack'</span></code> or <code class="docutils literal notranslate"><span class="pre">points</span> <span class="pre">&gt;</span> <span class="pre">10</span></code> (here, <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">points</span></code> are variables). Additionally, the code block associated with a conditional can be of any size. This conditional has a code block with two lines of code:</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is even&quot;</span><span class="p">);</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is greater than 3&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <p>While not required, the code within a conditional code block is typically indented to make it more readable. Similarly, it is a common convention to place the opening <code class="docutils literal notranslate"><span class="pre">{</span></code> at the end of the first line, and the closing <code class="docutils literal notranslate"><span class="pre">}</span></code> on a line of its own following the last line of the code block.</p>
 <p>You should follow such conventions, even though ignoring them will not create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
 <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is even&quot;</span><span class="p">);</span>
  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is greater than 3&quot;</span><span class="p">);</span> <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Aside from being more aesthetically pleasing, the first version also makes it easier to visually identify the pair of matching curly brackets, which helps prevent syntax errors.</p>
-<div class="admonition note">
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p>convert this to a “worst practice”</p>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p>If the the code block associated with a conditional consists of only one line, then the enclosing curly brackets can be ommitted:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">billHasBeenPaid</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Your bill is due soon!&quot;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">billHasBeenPaid</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Your bill is due soon!&quot;</span><span class="p">);</span>
 </pre></div>
+</td></tr></table></div>
+<p class="last">We will use curly brackets for <em>all</em> conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.</p>
 </div>
-<p class="last">We will generally use curly brackets for all conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.</p>
 </div>
 </div>
 <div class="section" id="else-clauses">
 <h2>5.4.2. <code class="docutils literal notranslate"><span class="pre">else</span></code> Clauses<a class="headerlink" href="#else-clauses" title="Permalink to this headline">¶</a></h2>
-<p id="index-2">An <strong>else clause</strong> can be paired with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to specify code that should be executed when the condition is false.</p>
+<p id="index-3">An <strong>else clause</strong> can be paired with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to specify code that should be executed when the condition is false.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/if-else.png"><img alt="A conditional with an else clause" src="../../_images/if-else.png" style="height: 400px;" /></a>
 </div>
 <p>We can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause within our bank app to send a message if no bills are currently due.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">billHasBeenPaid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">billHasBeenPaid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">billHasBeenPaid</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Your bill is due soon!&quot;</span><span class="p">);</span>
@@ -167,8 +187,8 @@
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Your payments are up to date.&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Your payments are up to date.
 </pre></div>
 </div>
@@ -180,7 +200,7 @@
 </div>
 <div class="section" id="else-if-statements">
 <h2>5.4.3. <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> Statements<a class="headerlink" href="#else-if-statements" title="Permalink to this headline">¶</a></h2>
-<p id="index-3">If-else statements allow us to construct two alternative paths. A single condition determines which path will be followed. We can build more complex conditionals using an <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> clause. These allow us to add additional conditions and code blocks, which facilitate more complex branching.</p>
+<p id="index-4">If-else statements allow us to construct two alternative paths. A single condition determines which path will be followed. We can build more complex conditionals using an <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> clause. These allow us to add additional conditions and code blocks, which facilitate more complex branching.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -204,7 +224,7 @@
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>x is less than y
 </pre></div>
 </div>
@@ -243,7 +263,18 @@
 <p>Regardless of the complexity of a conditional, <em>no more than one</em> of the code blocks will be executed.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
@@ -256,8 +287,8 @@
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;x is even&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>x is less than y
 </pre></div>
 </div>
@@ -269,7 +300,14 @@
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p>What does the following code print?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Launch&quot;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
@@ -278,7 +316,7 @@
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <ol class="last arabic">
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">&quot;Launch&quot;</span></code></p>
 </li>
