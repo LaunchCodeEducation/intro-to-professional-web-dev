@@ -3,7 +3,7 @@ Best Practices: Learning To Code
 
 For years, the education community has debated the best approach for
 *homework*. Should it be scored or not? What is the proper amount? Should
-it be even be assigned? Many reports begin with "Studies have shown…", but
+it be even be assigned? Many reports begin with "Studies have shown…," but
 no universally accepted conclusion has emerged.
 
 We cannot possibly restate all the conclusions here, nor will we present any
@@ -92,7 +92,7 @@ Let's take a look at a sample coding task: *"Prompt the user to enter a number, 
 
 Now let's take a look at an imaginary student's attempt at solving this problem:
 
-.. sourcecode:: js
+::
 
    1.
    2.
@@ -102,12 +102,10 @@ Now let's take a look at an imaginary student's attempt at solving this problem:
 
 Hmmm. A blank answer space. What might be the reason?
 
-   a. The student did not understand how to solve the problem.
-   b. The student knew how to solve the problem and decided to skip the task.
-   c. The student tried to solve the problem, could not get the program to work,
-      so deleted the code.
-   d. The student ran out of time when trying to complete the prep work before
-      class.
+a. The student did not understand how to solve the problem.
+b. The student knew how to solve the problem and decided to skip the task.
+c. The student tried to solve the problem, could not get the program to work, so deleted the code.
+d. The student ran out of time when trying to complete the prep work before class.
 
 From a teacher's perspective, ANY of these reasons could be valid, and we have
 no way of determining which is true. This prevents us from knowing how to best
@@ -117,17 +115,10 @@ For the student, a blank response provides no benefit because the necessary
 practice was either ignored or incomplete. Students gain only as much as they
 put in. SO:
 
-a. Even if you have no clue how to approach a task, MAKE AN ATTEMPT ANYWAY,
-   then ask questions.
-b. If you know how to solve the problem, COMPLETE THE TASK ANYWAY, because
-   practice makes better. Also, you could use your code to help answer a
-   classmate's question.
-c. If you tried to solve the problem, but your code did not work, DO NOT DELETE
-   YOUR ATTEMPT. Ask a question. Showing your work to your teacher, TA or
-   classmates will give them a clear idea about your thought process.
-d. If you ran out of time, GO BACK AND FILL IN THE BLANKS LATER. Practice
-   makes better. If you neglect one set of skills, then the tasks that come
-   later and depend on those skills will be more difficult.
+a. Even if you have no clue how to approach a task, MAKE AN ATTEMPT ANYWAY, then ask questions.
+b. If you know how to solve the problem, COMPLETE THE TASK ANYWAY, because practice makes better. Also, you could use your code to help answer a classmate's question.
+c. If you tried to solve the problem, but your code did not work, DO NOT DELETE YOUR ATTEMPT. Ask a question. Showing your work to your teacher, TA or classmates will give them a clear idea about your thought process.
+d. If you ran out of time, GO BACK AND FILL IN THE BLANKS LATER. Practice makes better. If you neglect one set of skills, then the tasks that come later and depend on those skills will be more difficult.
 
 .. tip::
 
@@ -225,24 +216,25 @@ Best Practices
 ---------------
 
 *Whew!*  You made it to the bottom of the page. Good job. Here are some final bits of advice:
-   #. DO try every exercise, studio and practice problem.
-   #. Repeated practice helps master the basic syntax quirks for a given
-      programming language.
-   #. DO experiment. Once your code correctly solves the given task, feel
-      free to tweak it. Great fun can be had if you ask, "What if I try ____,"
-      and then go and do just that. For example, if a problem asks you to
-      sort a list alphabetically, can you order it from z to a instead?
-   #. ASK FOR HELP when you get stuck. We've all been there, and there is
-      no shame in seeking advice. Use your instructors, TAs, classmates,
-      Stack Overflow, and Google as the brilliant resources they are.
-   #. The only "dumb questions" are the ones that are not asked.
-   #. The rubber duck method works. Sometimes just describing a coding
-      problem out loud (to your screen, a co-worker, the wall, or a rubber
-      duck) sparks an idea about how to solve it.
-   #. DO NOT copy/paste answers. There are plenty of websites where you
-      can find complete code posted. A simple copy/paste into the assignment
-      box will give you a correct result, but you have completely skipped
-      your learning opportunity.
+
+#. DO try every exercise, studio and practice problem.
+#. Repeated practice helps master the basic syntax quirks for a given
+   programming language.
+#. DO experiment. Once your code correctly solves the given task, feel
+   free to tweak it. Great fun can be had if you ask, "What if I try ____,"
+   and then go and do just that. For example, if a problem asks you to
+   sort a list alphabetically, can you order it from z to a instead?
+#. ASK FOR HELP when you get stuck. We've all been there, and there is
+   no shame in seeking advice. Use your instructors, TAs, classmates,
+   Stack Overflow, and Google as the brilliant resources they are.
+#. The only "dumb questions" are the ones that are not asked.
+#. The rubber duck method works. Sometimes just describing a coding
+   problem out loud (to your screen, a co-worker, the wall, or a rubber
+   duck) sparks an idea about how to solve it.
+#. DO NOT copy/paste answers. There are plenty of websites where you
+   can find complete code posted. A simple copy/paste into the assignment
+   box will give you a correct result, but you have completely skipped
+   your learning opportunity.
 
 And don't forget:
 
