@@ -13,4 +13,5 @@ User Input with Forms
    radio-input
    select-input
    validation-with-javascript
+   exercises
    studio
