@@ -7,9 +7,6 @@ The ``value`` attribute of the chosen radio input
 will be submitted. Radio inputs are best used with ``<label>`` tags.
 
 
-Syntax/Description
-------------------
-
 .. role:: raw-html(raw)
    :format: html
 
