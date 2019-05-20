@@ -62,8 +62,8 @@ To access the code for exercises 2 - 4, open this `repl.it link <https://repl.it
    c. Use the animal's ``rate`` method to calculate how much oxygen (O :sub:`2`)
       they consume during the spacewalk. Round the answer to 3 decimal places.
    d. Print, ``'___ will perform the spacewalk, which will last ____ hours and
-      require ___ kg of oxygen.'`` Fill in the blanks with the animal's name, the
-      spacewalk time, and the amount of O :sub:`2` used.
+      require ___ kg of oxygen.'`` Fill in the blanks with the animal's name,
+      the spacewalk time, and the amount of O :sub:`2` used.
 
 Bonus Missions
 ---------------
@@ -93,5 +93,5 @@ To access the code for exercise 5, open this `repl.it link <https://repl.it/@lau
       crew members are cute and fuzzy.  Add an extra 200 kg of fuel for each
       dog or cat on board, but only an extra 100 kg for the other species.
    d. Round the final amount of fuel UP to the nearest integer, then print ``'The
-      mission has a launch mass of ____ kg and requires ____ kg of fuel.'`` Fill
-      in the blanks with the calculated amounts.
+      mission has a launch mass of ____ kg and requires ____ kg of fuel.'``
+      Fill in the blanks with the calculated amounts.
