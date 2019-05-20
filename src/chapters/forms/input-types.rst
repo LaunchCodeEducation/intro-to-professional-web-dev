@@ -64,6 +64,8 @@ Basic Examples
 
     Notice that the textarea value does NOT include new lines, even thought it was typed that way.
 
+    `Run it <https://repl.it/@launchcode/basic-inputs-example>`_
+
 
 Specialized Text Inputs
 -----------------------
@@ -91,16 +93,33 @@ rules for the declared type.
      - Browser validates the value is a valid number format.
      - :raw-html:`<input type="number" name="fuelTemp"/>`
 
-.. todo:: can the validation be activated in the demo?
-
 
 Specialized Examples
 --------------------
-TODO... finish repl.it example https://repl.it/@launchcode/specialized-inputs-example
+.. admonition:: Example
 
-TODO... use that repl.it to create example admonition
+    .. sourcecode:: html
+
+       <label>Email<input type="email" name="emailAddress"/></label>
+       <label>Report Date<input type="date" name="reportDate"/></label>
+       <label>Crew Count<input type="number" name="crewCount" min="1" max="10"/></label>
+       <button>Send Report</button>
+
+    .. figure:: figures/specialized-inputs-example.png
+       :alt: Form with Code Name, Code Word, and Description field. All fields have values.
+
+    **Submitted Values**
+
+    ::
+
+      emailAddress=c.danvers@us.af.mil&reportDate=2019-03-08&crewCount=8
+
+    `Run it <https://repl.it/@launchcode/specialized-inputs-example>`_
 
 
 Check Your Understanding
 ------------------------
-TODO...
+
+.. admonition:: Question
+
+   Which input type should be used if the user is going to enter a large amount of text?
