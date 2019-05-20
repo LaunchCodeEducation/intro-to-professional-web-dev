@@ -1,10 +1,12 @@
 Checkbox Input
 ==============
 
-TODO:.. A few classy words about checkbox
+A checkbox input represents a box to check. Checkbox inputs can be
+used by themselves or in groups. Checkbox inputs are best used with ``<label>`` tags.
 
-Checkbox
---------
+
+Description/Syntax
+------------------
 
 .. role:: raw-html(raw)
    :format: html
@@ -20,22 +22,10 @@ Checkbox
      - ``<input type="checkbox" name="signUp"/>``
      - A small box for marking form option as *checked*.
      - :raw-html:`<label>sign up<input type="checkbox" name="signUp"/></label>`
-   * - radio
-     - ``<input type="radio" name="crewReady" value="yes"/>``
-     - A small circle that allows selecting *one* of multiple values. Used in groups of two or more.
-     - :raw-html:`<label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label>`
-
-TODO:.. remove radio from this table
 
 
 Examples
 --------
-
-Checkbox inputs are great for two scenarios:
-
-1. A yes/no question
-2. A question with zero, one, or multiple answers
-
 .. admonition:: Example
 
     One checkbox. No ``value`` attribute is set, so the default value of ``on`` is submitted.
@@ -88,4 +78,6 @@ Checkbox inputs are great for two scenarios:
 
 Check Your Understanding
 ------------------------
-TODO...
+.. admonition:: Question
+
+   What is the default value submitted for a ``<checkbox>`` when checked?

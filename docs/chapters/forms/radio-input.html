@@ -85,7 +85,10 @@
     
   <div class="section" id="radio-input">
 <h1>17.6. Radio Input<a class="headerlink" href="#radio-input" title="Permalink to this headline">¶</a></h1>
-<p>TODO:.. A few classy words about radio button</p>
+<p>Radio inputs allow a user to pick one option out of a grouping of options.  Radio inputs with the
+same name are considered in a group. Only one radio input in a group can be chosen at a time.
+The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of the chosen radio input
+will be submitted. Radio inputs are best used with <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags.</p>
 <div class="section" id="syntax-description">
 <h2>17.6.1. Syntax/Description<a class="headerlink" href="#syntax-description" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -103,27 +106,40 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>checkbox</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;checkbox&quot;</span> <span class="pre">name=&quot;signUp&quot;/&gt;</span></code></td>
-<td>A small box for marking form option as <em>checked</em>.</td>
-<td><span class="raw-html"><label>sign up<input type="checkbox" name="signUp"/></label></span></td>
-</tr>
-<tr class="row-odd"><td>radio</td>
+<tr class="row-even"><td>radio</td>
 <td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;radio&quot;</span> <span class="pre">name=&quot;crewReady&quot;</span> <span class="pre">value=&quot;yes&quot;/&gt;</span></code></td>
 <td>A small circle that allows selecting <em>one</em> of multiple values. Used in groups of two or more.</td>
 <td><span class="raw-html"><label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label></span></td>
 </tr>
 </tbody>
 </table>
-<p>TODO:.. remove checkbox from this table</p>
 </div>
 <div class="section" id="examples">
 <h2>17.6.2. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>TODO: examples…</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title">Example</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Flight Rating:
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Rough<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;flightRating&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;rough&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Few Bumps<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;flightRating&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;fewBumps&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Smooth<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;flightRating&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;smooth&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure">
+<img alt="Form for flight rating, with a radio inputs for rough, few bumps, and smooth." src="../../_images/radio-inputs-example.png" />
+</div>
+<p><strong>Submitted Values</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>flightRating=smooth
+</pre></div>
+</div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/radio-inputs-example">Run it</a></p>
+</div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>17.6.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>TODO…</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Should a group of radio inputs have the same value for the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute?</p>
+</div>
 </div>
 </div>
 
