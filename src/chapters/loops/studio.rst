@@ -1,3 +1,5 @@
+.. _loop-studio:
+
 Studio: Loops
 =============
 
