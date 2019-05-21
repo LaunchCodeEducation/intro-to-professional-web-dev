@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="17.5. Checkbox Input" href="checkbox-input.html" />
+    <link rel="next" title="17.5. Specialized Text Inputs" href="specialized-text-inputs.html" />
     <link rel="prev" title="17.3. POST Form Submission" href="form-submission-post.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -72,7 +72,7 @@
   </div>
 
 <ol class="breadcrumb container">
-    <li><a href="../../index.html">Chapters</a></li>
+    <li><a href="../../index.html">Contents</a></li>
     <li><a href="index.html">17. User Input with Forms</a></li>
     <li class="active">17.4. Input Types</li>
 </ol>
@@ -90,8 +90,8 @@
 inputs. There are additional input <em>types</em>, each with different uses. Many of
 the elements are <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags with a different <code class="docutils literal notranslate"><span class="pre">type</span></code> value, however some have
 entirely different tag names.</p>
-<div class="section" id="basic-text-inputs">
-<h2>17.4.1. Basic Text Inputs<a class="headerlink" href="#basic-text-inputs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="text-inputs">
+<h2>17.4.1. Text Inputs<a class="headerlink" href="#text-inputs" title="Permalink to this headline">¶</a></h2>
 <p>Any values can be typed into these text fields, there are no restrictions enforced by the
 browser.</p>
 <table border="1" class="docutils">
@@ -133,8 +133,8 @@ However, the inputs <em>should</em> function the same way. Use <a class="referen
 if there is ever a question of browser support for a certain feature.</p>
 </div>
 </div>
-<div class="section" id="basic-examples">
-<h2>17.4.2. Basic Examples<a class="headerlink" href="#basic-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example">
+<h2>17.4.2. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Name<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeName&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
@@ -155,66 +155,8 @@ if there is ever a question of browser support for a certain feature.</p>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/basic-inputs-example">Run it</a></p>
 </div>
 </div>
-<div class="section" id="specialized-text-inputs">
-<h2>17.4.3. Specialized Text Inputs<a class="headerlink" href="#specialized-text-inputs" title="Permalink to this headline">¶</a></h2>
-<p>For these text inputs the browser will validate and provide feedback to the user based on
-rules for the declared type.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Syntax</th>
-<th class="head">Description</th>
-<th class="head">Demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>date</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;date&quot;</span> <span class="pre">name=&quot;flightDate&quot;/&gt;</span></code></td>
-<td>Browser validates the value is a valid date
-format. Some browsers provide a <em>date picker</em>.</td>
-<td><span class="raw-html"><input type="date" name="flightDate"/></span></td>
-</tr>
-<tr class="row-odd"><td>email</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;email&quot;</span> <span class="pre">name=&quot;emailAddress&quot;/&gt;</span></code></td>
-<td>Browser validates the value is a valid email address format.</td>
-<td><span class="raw-html"><input type="email" name="emailAddress"/></span></td>
-</tr>
-<tr class="row-even"><td>number</td>
-<td><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;number&quot;</span> <span class="pre">name=&quot;fuelTemp&quot;/&gt;</span></code></td>
-<td>Browser validates the value is a valid number format.</td>
-<td><span class="raw-html"><input type="number" name="fuelTemp"/></span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="specialized-examples">
-<h2>17.4.4. Specialized Examples<a class="headerlink" href="#specialized-examples" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Email<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;emailAddress&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Report Date<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;reportDate&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Crew Count<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;crewCount&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Send Report<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<div class="figure">
-<img alt="Form with Code Name, Code Word, and Description field. All fields have values." src="../../_images/specialized-inputs-example.png" />
-</div>
-<p><strong>Submitted Values</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>emailAddress=c.danvers@us.af.mil&amp;reportDate=2019-03-08&amp;crewCount=8
-</pre></div>
-</div>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/specialized-inputs-example">Run it</a></p>
-</div>
-</div>
 <div class="section" id="check-your-understanding">
-<h2>17.4.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>17.4.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
 <p class="last">Which input type should be used if the user is going to enter a large amount of text?</p>
@@ -231,7 +173,7 @@ format. Some browsers provide a <em>date picker</em>.</td>
         <li class="previous"><a href="form-submission-post.html"><span aria-hidden="true">&larr;</span> 17.3. POST Form Submission</a></li>
         
         
-        <li class="next"><a href="checkbox-input.html">17.5. Checkbox Input <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="specialized-text-inputs.html">17.5. Specialized Text Inputs <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

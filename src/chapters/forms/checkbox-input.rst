@@ -4,10 +4,6 @@ Checkbox Input
 A checkbox input represents a box to check. Checkbox inputs can be
 used by themselves or in groups. Checkbox inputs are best used with ``<label>`` tags.
 
-
-Description/Syntax
-------------------
-
 .. role:: raw-html(raw)
    :format: html
 
