@@ -7,13 +7,14 @@
     <title>16.1. How the Internet Works &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -85,16 +86,80 @@
     
   <div class="section" id="how-the-internet-works">
 <h1>16.1. How the Internet Works<a class="headerlink" href="#how-the-internet-works" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Servers and clients</li>
-<li>URL structure <a class="reference external" href="https://launchcode.org/lc101?city=miami#syllabus">https://launchcode.org/lc101?city=miami#syllabus</a></li>
-<li>Layers of protocols: HTTP / TCP/IP / DNS</li>
+<p>Most people use the Internet without fully understanding how it works. Without much trouble, they can open a browser, navigate to a site, and interact with it. They do not need to know precisely <em>how</em> the Internet works in order to use it.</p>
+<p>For web developers, however, fundamental understanding of the flow of information across the Internet is essential.</p>
+<div class="section" id="servers-and-clients">
+<h2>16.1.1. Servers and Clients<a class="headerlink" href="#servers-and-clients" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">The Internet uses the <strong>client-server model</strong>. A <strong>server</strong> is an application that provides resources—such as raw data, web pages, or images. A <strong>client</strong> is an application that requests resources from a server.</p>
+<p>When navigating the web, the client is the web browser on your computer or smartphone. When you click on a link or type in an address and hit <em>Enter</em>, the client/browser makes a request to a server that sits in a building somewhere out in the world. The server receives the request, and sends a response back to the client. The client then displays the content of the response.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">insert or create client/server diagram</p>
+</div>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title">Fun Fact</p>
+<p class="last">In the client-server model, the server may sometimes be on the same computer as the client. This is typically the case when a programmer is building a web application. Their development version of the application is on their laptop, as is their browser.</p>
+</div>
+</div>
+<div class="section" id="web-addresses">
+<h2>16.1.2. Web Addresses<a class="headerlink" href="#web-addresses" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">When a client requests a resource from a server, it does so using a <strong>uniform resource locator (URL)</strong>. URLs are also called <strong>web addresses</strong>.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title">Examples</p>
+<p>As a regular user of the Internet, you are already familiar with URLs like these:</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">https://launchcode.org</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">https://en.wikipedia.org/wiki/Client–server_model</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">https://duckduckgo.com/?q=javascript</span></code></li>
 </ul>
+</div>
+<p>A URL encodes a lot of information about the request, including <em>what</em> is being requested and <em>where</em> the request should be sent. They are made up of several components, each of which plays a role in enabling both client and server to understand what is being requested.</p>
+<p>We will generally work with URLs with this structure:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>protocol://domain:port/path?query_string
+</pre></div>
+</div>
+<p>The five components of this URL are:</p>
+<ul class="simple">
+<li>Protocol</li>
+<li>Domain</li>
+<li>Port</li>
+<li>Path</li>
+<li>Query String</li>
+</ul>
+<p>Let’s look at each of these in detail.</p>
+<div class="section" id="protocol">
+<h3>16.1.2.1. Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="domain">
+<h3>16.1.2.2. Domain<a class="headerlink" href="#domain" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="port">
+<h3>16.1.2.3. Port<a class="headerlink" href="#port" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="path">
+<h3>16.1.2.4. Path<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="query-string">
+<h3>16.1.2.5. Query String<a class="headerlink" href="#query-string" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="protocols">
+<h2>16.1.3. Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="http">
+<h3>16.1.3.1. HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="tcp-ip">
+<h3>16.1.3.2. TCP/IP<a class="headerlink" href="#tcp-ip" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="dns">
+<h3>16.1.3.3. DNS<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 <div class="section" id="check-your-understanding">
-<h2>16.1.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>16.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
-<p class="last">Which protocal is responsible for turning names like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> into server addresses?</p>
+<p class="last">Which protocal is responsible for turning a name like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> into a server address?</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title">Question</p>
