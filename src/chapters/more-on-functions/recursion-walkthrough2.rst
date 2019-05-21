@@ -10,7 +10,7 @@ We've made it this far with ``combineEntries``:
    :linenos:
 
    function combineEntries(arrayName){
-      if (arrayName.length === 1){
+      if (arrayName.length <= 1){
          return arrayName[0];
       } else {
          //call combineEntries again
@@ -118,7 +118,7 @@ Let's add the bracket notation and the ``slice`` method to our function:
    :linenos:
 
    function combineEntries(arrayName){
-      if (arrayName.length === 1){
+      if (arrayName.length <= 1){
          return arrayName[0];
       } else {
          return arrayName[0]+combineEntries(arrayName.slice(1));

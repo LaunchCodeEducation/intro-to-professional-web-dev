@@ -56,8 +56,8 @@ The generated report should look *EXACTLY* like the example below -- including s
 
 **Example:**
 
-.. sourcecode:: console
-   
+::
+
    -------------------------------------
    > LC04 - LAUNCH CHECKLIST
    -------------------------------------
