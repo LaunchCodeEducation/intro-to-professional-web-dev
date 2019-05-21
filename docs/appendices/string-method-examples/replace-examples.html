@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -92,12 +90,12 @@
 </pre></div>
 </div>
 <p>Given a search string <code class="docutils literal notranslate"><span class="pre">searchChar</span></code> and a replacement value <code class="docutils literal notranslate"><span class="pre">replacementChar</span></code>, this method returns a copy of <code class="docutils literal notranslate"><span class="pre">stringName</span></code> with the <em>first</em> occurence of <code class="docutils literal notranslate"><span class="pre">searchChar</span></code> replaced by <code class="docutils literal notranslate"><span class="pre">replacementChar</span></code>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">replace</span></code> method can be used in more powerful ways utilizing regular expressions. We will not cover those here, but you can <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">read more at MDN</a>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">replace</span></code> method can be used in more powerful ways utilizing regular expressions. We will not cover those here, but you can <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank">read more at MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;catrot&quot;</span>
 <span class="s2">&quot;carrot&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">);</span>
 
@@ -107,7 +105,7 @@
 </div>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Some email providers, including Gmail, allow users to put a <code class="docutils literal notranslate"><span class="pre">.</span></code> anywhere before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol. This means that <code class="docutils literal notranslate"><span class="pre">fake.email&#64;launchcode.org</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">fakeemail&#64;launchcode.org</span></code>.</p>
 <p>Remove the <code class="docutils literal notranslate"><span class="pre">.</span></code> before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol in an email address.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot; fake.email@launchcode.org &quot;</span><span class="p">;</span>
@@ -121,8 +119,8 @@
 </div>
 <p class="last">This example illustrates a common use case of <code class="docutils literal notranslate"><span class="pre">replace</span></code>, which is to <em>remove</em> a character by replacing it with the empty string.</p>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">Notice in the last example that if there is not a <code class="docutils literal notranslate"><span class="pre">.</span></code> before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol, the <code class="docutils literal notranslate"><span class="pre">.</span></code> that is part of the domain, <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> would be inadvertently removed. In a real application, we would want to isolate the portion in front of <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> using <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
 </div>
 </div>

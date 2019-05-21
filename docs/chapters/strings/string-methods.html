@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -91,7 +89,7 @@
 <p>As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, but instead will <em>return</em> a new string that is the result of the given operation.</p>
 <p>We saw this behavior in the <code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code> example.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nonprofit</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
@@ -108,10 +106,10 @@ LaunchCode
 <div class="section" id="common-string-methods">
 <h2>7.5.1. Common String Methods<a class="headerlink" href="#common-string-methods" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">Here we present the most commonly-used string methods. You can find documentation for other string methods at:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://www.w3schools.com/jsref/jsref_obj_string.asp">W3Schools</a></li>
-<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2">MDN</a></li>
-</ul>
+<ol class="simple">
+<li><a class="reference external" href="https://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2" target="_blank">MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
 <table border="1" class="docutils" id="id2">
 <caption><span class="caption-text">Common String Methods</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -152,16 +150,16 @@ LaunchCode
 </tr>
 </tbody>
 </table>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">String methods can be combined in a process called <strong>method chaining</strong>. Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'JavaScript';</span></code>, word.toUpperCase() returns <code class="docutils literal notranslate"><span class="pre">JAVASCRIPT</span></code>. What would <code class="docutils literal notranslate"><span class="pre">word.slice(4).toUpperCase()</span></code> return?  TRY IT!  (<a class="reference external" href="https://repl.it/&#64;launchcode/Intro-To-Method-Chaining">Repl.it</a>).</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">String methods can be combined in a process called <strong>method chaining</strong>. Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'JavaScript';</span></code>, word.toUpperCase() returns <code class="docutils literal notranslate"><span class="pre">JAVASCRIPT</span></code>. What would <code class="docutils literal notranslate"><span class="pre">word.slice(4).toUpperCase()</span></code> return?  TRY IT!  (<a class="reference external" href="https://repl.it/&#64;launchcode/Intro-To-Method-Chaining" target="_blank">Repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>).</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>7.5.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <p>Follow the links in the table above for the <code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">slice</span></code>, and <code class="docutils literal notranslate"><span class="pre">trim</span></code> methods. Review the content and then answer the following questions.</p>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is printed by the following code?</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">language</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
 <span class="nx">language</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">);</span>
@@ -177,7 +175,7 @@ LaunchCode
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Given <code class="docutils literal notranslate"><span class="pre">language</span> <span class="pre">=</span> <span class="pre">'JavaScript';</span></code>, what does <code class="docutils literal notranslate"><span class="pre">language.slice(1,6)</span></code> return?</p>
 <ol class="last arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">&quot;avaScr&quot;</span></code></li>
@@ -187,7 +185,7 @@ LaunchCode
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the value of the string printed by the following program?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">org</span> <span class="o">=</span> <span class="s2">&quot;  The LaunchCode Foundation &quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">trimmed</span> <span class="o">=</span> <span class="nx">org</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>

@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -92,9 +90,9 @@
 <h2>7.6.1. Representing Numbers<a class="headerlink" href="#representing-numbers" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="index-1"></span><p id="index-2">A <strong>byte</strong> is a set of 8 bits. Since each bit can have one of two values, each byte can have 2<sup>8</sup> = 256 different values. These look like 00101101 or 11110011, and they represent a <strong>binary number</strong>, or a base-2 number. A binary number is a number representatation that uses only 0s and 1s. The numbers that you are used to using—which are built out of integers 0…9—are <strong>decimal numbers</strong>, or base-10 numbers.</p>
 <p>It may not be obvious, but every decimal integer can be represented as a binary integer, and vice versa. There are 256 different values a byte may take, each of which can be used to represent an integer, from 0 to 255.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">We will not discuss binary to decimal number conversion. If you are interested in learning more, there are <a class="reference external" href="https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/">many</a> <a class="reference external" href="https://www.youtube.com/watch?v=wPvI19DmWQw">tutorials</a> <a class="reference external" href="https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary">online</a>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We will not discuss binary to decimal number conversion. If you are interested in learning more, there are <a class="reference external" href="https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/" target="_blank">many<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> <a class="reference external" href="https://www.youtube.com/watch?v=wPvI19DmWQw" target="_blank">tutorials<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> <a class="reference external" href="https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary" target="_blank">online<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 <p>In this way, the bits in a computer can be viewed as integers. If you want to represent values greater than 255, just use more bits!</p>
 </div>
@@ -109,12 +107,12 @@
 <div class="section" id="the-ascii-encoding">
 <h3>7.6.2.2. The ASCII Encoding<a class="headerlink" href="#the-ascii-encoding" title="Permalink to this headline">¶</a></h3>
 <p id="index-5">Most of the characters that you are used to using—including letters, numbers, whitespace, punctuation, and symbols—are part of the <strong>ASCII</strong> (pronounced <em>ASS-kee</em>) character encoding. This standard has changed very little since the 1960s, and it is the foundation of all other commonly-used encodings.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">ASCII stands for American Standard Code for Information Interchange, but most programmers never remember that, so you shouldn’t try to either.</p>
 </div>
 <p>ASCII provides a standard translation of the most commonly-used characters to one of the integers 0…127, which means each character can be stored in a computer using a single byte.</p>
-<p id="index-6">ASCII maps <code class="docutils literal notranslate"><span class="pre">a</span></code> to 97, <code class="docutils literal notranslate"><span class="pre">b</span></code> to 98, and so on for lowercase letters, with <code class="docutils literal notranslate"><span class="pre">z</span></code> mapping to 122. Uppercase letters map to the values 65 through 90. The other integers between 0 and 127 represent symbols, punctuation, and other assorted odd characters. This scheme is called the <strong>ASCII table</strong>, and rather than replicate it here, we refer you to an <a class="reference external" href="https://www.ascii-code.com/">excellent one online</a>.</p>
+<p id="index-6">ASCII maps <code class="docutils literal notranslate"><span class="pre">a</span></code> to 97, <code class="docutils literal notranslate"><span class="pre">b</span></code> to 98, and so on for lowercase letters, with <code class="docutils literal notranslate"><span class="pre">z</span></code> mapping to 122. Uppercase letters map to the values 65 through 90. The other integers between 0 and 127 represent symbols, punctuation, and other assorted odd characters. This scheme is called the <strong>ASCII table</strong>, and rather than replicate it here, we refer you to an <a class="reference external" href="https://www.ascii-code.com/" target="_blank">excellent one online<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>In summary, strings are stored in a computer using the following process:</p>
 <ol class="arabic simple">
 <li>Break a string into its individual characters.</li>
@@ -122,7 +120,7 @@
 <li>Convert each integer to a series of bits using decimal-to-binary integer conversion.</li>
 </ol>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title">Fun Fact</p>
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
 <p class="last">JavaScript uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about “ASCII codes” in JavaScript.</p>
 </div>
 </div>
@@ -132,7 +130,7 @@
 <p>JavaScript provides methods to convert from characters to ASCII codes and back.</p>
 <p>The string method <code class="docutils literal notranslate"><span class="pre">charCodeAt</span></code> takes an index and returns the ASCII code of the character at that index.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nonprofit</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">nonprofit</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -156,7 +154,7 @@
 </div>
 <p>To convert from a character code to an actual character, use <code class="docutils literal notranslate"><span class="pre">String.fromCharCode()</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">codes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">76</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">];</span>
 <span class="kd">let</span> <span class="nx">characters</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 

@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -91,12 +89,12 @@
 <h2>4.7.1. The String Operator <code class="docutils literal notranslate"><span class="pre">+</span></code><a class="headerlink" href="#the-string-operator" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">So far we have only seen operators that work on operands which are of type <code class="docutils literal notranslate"><span class="pre">number</span></code>, but there are operators that work on other data types as well. In particular, the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator can be used with <code class="docutils literal notranslate"><span class="pre">string</span></code> operands to <strong>concatenate</strong>, or join together two strings.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">&quot;Launch&quot;</span> <span class="pre">+</span> <span class="pre">&quot;Code&quot;</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">&quot;LaunchCode&quot;</span></code></p>
 </div>
 <p>Let’s compare <code class="docutils literal notranslate"><span class="pre">+</span></code> used with numbers to <code class="docutils literal notranslate"><span class="pre">+</span></code> used with strings.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1&quot;</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
@@ -109,10 +107,9 @@
 </div>
 </div>
 <p>This example demonstrates that <strong>the operator + behaves differently based on the data type of its operands.</strong></p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>So far we have only seen examples of operators working with data of like type. For the examples <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span> <span class="pre">+</span> <span class="pre">&quot;1&quot;</span></code>, both operands are of type <code class="docutils literal notranslate"><span class="pre">number</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span></code>, respectively.</p>
-<p>It is possible, however, to mix types with an expression such as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">&quot;1&quot;</span></code>. The results of doing so can be unexpected, and at this stage of your coding journey we strongly advise against creating such expressions.</p>
 <p class="last">We will explore such “mixed” operations in a later chapter.</p>
 </div>
 </div>
@@ -120,7 +117,7 @@
 <h2>4.7.2. Compound Assignment Operators<a class="headerlink" href="#compound-assignment-operators" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">A common programming task is to update the value of a variable in reference to itself.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -138,7 +135,7 @@
 <p>Line 2 may seem odd to you at first, since it uses the value of the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> to update <code class="docutils literal notranslate"><span class="pre">x</span></code> itself. This technique is not only legal in JavaScript (and programming in general) but is quite common. It essentially says, “update <code class="docutils literal notranslate"><span class="pre">x</span></code> to be one more than its current value.”</p>
 <p>This action is so common, in fact, that it has a shorthand opertor, <code class="docutils literal notranslate"><span class="pre">+=</span></code>. The following example has the same behavior as the one above.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3

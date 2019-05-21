@@ -1,5 +1,9 @@
+import sys
+import os
 import sphinx_bootstrap_theme
 from recommonmark.transform import AutoStructify
+
+sys.path.append(os.path.abspath('../exts'))
 
 # -- Curriculum Site Settings ------------------------------------------------
 
@@ -33,7 +37,13 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
+    'external_links',
+    'admonition_icons',
+    'replit',
+    'ordered_toctree',
 ]
+
+replit_user = 'launchcode'
 
 # numfig:
 numfig_number_figures = True
@@ -174,7 +184,6 @@ def setup(app):
     app.add_stylesheet('fa/css/all.css')
     app.add_stylesheet('css/launchcode.css')
     app.add_stylesheet('css/site.css')
-    app.add_javascript('js/launchcode.js')
     app.add_config_value('recommonmark_config', {
             'enable_eval_rst': True,
             }, True)
