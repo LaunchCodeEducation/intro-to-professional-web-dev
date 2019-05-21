@@ -37,6 +37,7 @@ Adding CSS to the HTML page about Space Plants is the logical next step in build
 The astronauts building the site used the ``body``, ``h1``, and ``p`` selectors to change some of the styling of those elements.
 
 .. sourcecode:: html
+   :linenos:
 
    <!DOCTYPE html>
    <html>

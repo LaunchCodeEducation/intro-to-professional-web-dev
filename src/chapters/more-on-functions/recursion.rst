@@ -17,7 +17,7 @@ parameters.
 
       console.log(addTwoToNumber(12));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -48,7 +48,7 @@ complicated tasks, one small function must call other functions.
 
       console.log(addFiveToNumber(12))
 
-   **Output**
+   **Console Output**
 
    ::
 

@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -88,26 +87,33 @@
 <h1>9.1. Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">When repeating the same action over and over again, a human is likely to make a mistake. Computers, however, possess the incredible ability to carry out repetitive tasks without making mistakes.</p>
 <p>To see this, let’s consider an appropriate, if somewhat contrived, example. Suppose you want to print out the integers 0 through 50. With the tools you currently have at your disposal, your program would look like this:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 <span class="c1">// and so on...</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Not only is this highly repetetive, but it is also error-prone. Even if utilizing copy-paste functionality, the sheer volume of code makes it somewhat likely that we will make a simple mistake, such as skipping an integer or misspelling <code class="docutils literal notranslate"><span class="pre">console</span></code>.</p>
 <p>This code is also hard to modify. If we want to make a conceptually simple change—such as printing all the way to 100, or only printing even numbers—then we are forced to update an immense amount of code. Programming languages provide tools that allow us to repeat a sequence of statements in a much simpler way.</p>
 <p id="index-1">Repeated execution of a sequence of statements is called <strong>iteration</strong>. This chapter explores two mechanisms that JavaScript provides to make iteration simple and flexible—the <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops.</p>
 <p>To give you a taste of what’s to come, here is how we could write the program above using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>We will explore the details of this syntax shortly, but it’s worth taking a moment to marvel at the simplicity of this program compared to the one above.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">It may seem odd to you that this loop uses the integer 51, but only prints up to 50. Why this is the case will become clear in the next section.</p>
 </div>
 <span class="target" id="dry-code"></span><p id="index-2">Learning about iteration using loops is also an opportunity to introduce one of the most widely-known mnemonic devices in programming: <em>Don’t Repeat Yourself</em>, or <strong>DRY</strong>. A common piece of advice from instructors and experienced programmers is that you should “keep your code DRY.” Let’s learn how.</p>

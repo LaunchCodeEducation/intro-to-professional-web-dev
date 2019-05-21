@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -113,21 +112,25 @@ The class name should be unique and have meaning like variable names.</p>
 Programmers can write CSS two different ways depending on where the CSS is in relation to the HTML document.
 We will go more in depth about the differences between CSS locations in the next section.</p>
 <p>Here is an example of how to write the declaration block for internal and external CSS:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">selector</span> <span class="p">{</span>
     <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
     <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
     <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>For inline CSS, the declaration block is inside one line of HTML like so:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">tag</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;property:value;property:value;property:value;&quot;</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">tag</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Every property in CSS has a default value. For example, <code class="docutils literal notranslate"><span class="pre">font-color</span></code> defaults to “black”.
 For that reason, programmers only need to declare the CSS properties they want to change from the default.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">HTML elements also have a default appearance.
 When creating web pages, we should be aware of which elements are inline elements and which elements are block elements.
 Inline elements will not start a new line (such as <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code>) and block display elements do (such as <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>).</p>
@@ -138,29 +141,35 @@ Inline elements will not start a new line (such as <code class="docutils literal
 <p>Here are three different examples of how we can use selectors to make the text in a paragraph pink.</p>
 <p><strong>Element Selector</strong></p>
 <p>Using the element selector to change the color of all <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> elements,</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">p</span> <span class="p">{</span>
    <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Using the element selector will make all paragraph elements on the page have pink text.</p>
 <p><strong>Class Selector</strong></p>
 <p>Now, if a few of the paragraphs on the page are given the class <code class="docutils literal notranslate"><span class="pre">pink-paragraph</span></code> on the HTML document, like so: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;pink-paragraph&quot;&gt;content&lt;/p&gt;</span></code>.
 To use the class selector in CSS, we would write something like:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">pink-paragraph</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">pink-paragraph</span> <span class="p">{</span>
    <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>In CSS, the class selector is preceded by <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
 <p><strong>Id Selector</strong></p>
 <p>If one paragraph is going to have pink text, the id selector on the HTML document would look like: <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">id=&quot;pinkParagraph&quot;&gt;content&lt;/p&gt;</span></code>.
 In CSS, we would use the id selector to make the paragraph pink:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">pinkParagraph</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">pinkParagraph</span> <span class="p">{</span>
    <span class="n">font-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>In CSS, the id selector is preceded by <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
 </div>
 </div>
@@ -170,12 +179,15 @@ In CSS, we would use the id selector to make the paragraph pink:</p>
 <p>There are three different places to add CSS in an HTML file as indicated above:</p>
 <ol class="arabic">
 <li><p class="first">External: The CSS is in a separate file linked to the HTML document in the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code>. External linking of CSS is great for when programmers have large quantities of CSS that apply to the whole page.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Web Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><code class="docutils literal notranslate"><span class="pre">link</span></code> is an HTML tag that tells the browser to connect what is inside the linked file to the web page content.
 <code class="docutils literal notranslate"><span class="pre">rel</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">href</span></code> are all HTML attributes that are required to properly link CSS and let the browser know that CSS is what is in the file and where the file is.
 <code class="docutils literal notranslate"><span class="pre">rel</span></code> should be set to “stylesheet”, because it designates how the link relates to the page. <code class="docutils literal notranslate"><span class="pre">type</span></code> will be set to “text/css” for all stylesheets.
@@ -210,7 +222,7 @@ Inline CSS is highest in precedence with internal CSS being next and then extern
 <div class="section" id="check-your-understanding">
 <h2>14.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the order of precedence in CSS?</p>
 <ol class="last arabic simple">
 <li>Internal &gt; External &gt; Inline</li>

@@ -23,7 +23,7 @@ If you ask JavaScript to print an expression using ``console.log``, the interpre
 
       console.log(1 + 1);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -41,7 +41,7 @@ Since evaluating an expression produces a value, expressions can appear on the r
       let sum = 1 + 2;
       console.log(sum);
 
-   **Output**
+   **Console Output**
 
    ::
 

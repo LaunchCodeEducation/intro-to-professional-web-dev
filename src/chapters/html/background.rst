@@ -19,7 +19,7 @@ When you visit a web page in a browser, three main steps happen:
 
 When the browser renders the page, HTML outlines the structure of the page's content.
 
-.. admonition:: Note
+.. note::
 
    In later chapters, request and response between browsers and servers will be covered in greater detail. 
 

@@ -41,6 +41,7 @@ Here is the flow of execution for a ``while`` loop:
 We can use the ``while`` loop to create any type of iteration we wish, including anything that we have previously done with a ``for`` loop. For example, consider our initial ``for`` loop example.
 
 .. sourcecode:: js
+   :linenos:
 
    for (let i = 0; i < 51; i++) {
       console.log(i);
@@ -49,6 +50,7 @@ We can use the ``while`` loop to create any type of iteration we wish, including
 This can be rewritten as a while loop:
 
 .. sourcecode:: js
+   :linenos:
 
    let i = 0;
 
@@ -75,6 +77,7 @@ We stated earlier that ``while`` loops are more flexible than ``for`` loops. Now
 This program is an example of **input validation**. It prompts the user to enter a positive number, converting the input string to the number data type. If the number is not positive, then the user is prompted again within the body of the loop. As long as the user continues to input non-positive numbers, the loop will continue to iterate.
 
 .. sourcecode:: js
+   :linenos:
 
    const input = require('readline-sync');
 
@@ -102,6 +105,7 @@ Infinite Loops, Revisited
 It is easier to create an infinite ``while`` loop than an infinite ``for`` loop. To see this, consider our first ``while`` loop example, but where we forget to update the loop variable.
 
 .. sourcecode:: js
+   :linenos:
 
    let i = 0;
 
@@ -126,6 +130,7 @@ Check Your Understanding
    The following code contains an infinite loop. Which is the best explanation for why the loop does not terminate?
 
    .. sourcecode:: js
+      :linenos:
 
       let n = 10;
       let answer = 1;

@@ -28,7 +28,7 @@ So when do they make a commit to their repository?
 
 If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process. 
 
-.. admonition:: Note
+.. note::
 
    Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
 

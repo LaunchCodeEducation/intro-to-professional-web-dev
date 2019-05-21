@@ -23,7 +23,7 @@ Let's compare ``+`` used with numbers to ``+`` used with strings.
       console.log(1 + 1);
       console.log("1" + "1");
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -55,7 +55,7 @@ A common programming task is to update the value of a variable in reference to i
 
       console.log(x);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -75,7 +75,7 @@ This action is so common, in fact, that it has a shorthand opertor, ``+=``. The 
 
       console.log(x);
 
-   **Output**
+   **Console Output**
 
    ::
 

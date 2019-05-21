@@ -17,11 +17,10 @@ Declaring an Array
 .. index::
    single: array; literal
 
-Programmers use multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``.
-Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``.
-If there are no items inside the brackets, then the array is considered empty.
+Programmers use multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``. Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``. If there are no items inside the brackets, then the array is considered empty.
 
 .. sourcecode:: js
+   :linenos:
 
    const emptyArray = [];
 
@@ -30,6 +29,7 @@ If there are no items inside the brackets, then the array is considered empty.
 Array items can also be declared on multiple lines.
 
 .. sourcecode:: js
+   :linenos:
 
    const javaScriptFrameworks = [
       "React",
@@ -43,7 +43,7 @@ Array Length
 To check the length of an array, use the ``length`` property, just like with strings.
 JavaScript array length is NOT fixed, meaning you can add or remove items dynamically.
 
-.. admonition:: Note
+.. note::
 
    In other languages, such as Java and C#, arrays are of a static length requiring the
    length of the array to be declared upon creation.
@@ -54,6 +54,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
    Print out the length of two arrays.
 
    .. sourcecode:: js
+      :linenos:
 
       const emptyArray = [];
       console.log(emptyArray.length);
@@ -61,7 +62,7 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
       const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
       console.log(programmingLanguages.length);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -70,13 +71,14 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
 
 Varying Data Types
 ------------------
+
 JavaScript arrays can hold a mixture of values of any type. For example, you can have an array that contains strings, numbers, and booleans.
 
 .. sourcecode:: js
 
    const grabBag = ["A string value", true, 99, 105.5];
 
-.. admonition:: Note
+.. note::
    
    It’s rare that you would store data of multiple types in the same array, because grouped data is usually the same type. In other languages, such as Java and C#, all items in an array have to be of the same type.
 
@@ -92,6 +94,7 @@ Check Your Understanding
    *Hint: look closely at the quotes in the classes array.*
 
    .. sourcecode:: js
+      :linenos:
 
       const classes = ["science, computer, art"];
 

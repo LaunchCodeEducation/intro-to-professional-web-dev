@@ -12,13 +12,14 @@ While normal strings are enclosed in single or double quotes (``'`` or ``"``), t
    Template literals allow for variables and other expressions to be directly included in strings.
 
    .. sourcecode:: js
+      :linenos:
    
       let name = "Jack";
       let currentAge = 9;
 
       console.log(`Next year, ${name} will be ${currentAge + 1}`);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -35,6 +36,7 @@ In addition to allowing us to include data in strings in a cleaner, more readabl
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let poem = `The mind chases happiness.
       The heart creates happiness.
@@ -46,7 +48,7 @@ In addition to allowing us to include data in strings in a cleaner, more readabl
 
       console.log(poem);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -68,7 +70,8 @@ Check Your Understanding
 
    Mad Libs are games where one player asks the group to supply random words (e.g. "Give me a verb," or, "I need a color"). The words are substituted into blanks within a story, which is then read for everyone's amusement. In elementary school classrooms, giggles and hilarity often ensue. TRY IT! Refactor the following code to replace the awkward string concatenation with template literals. Be sure to add your own choices for the variables. (`Repl.it <https://repl.it/@launchcode/String-Mad-Lib>`_)
 
-   .. sourcecode:: javascript
+   .. sourcecode:: js
+      :linenos:
 
       let pluralNoun = ;
       let name = ;

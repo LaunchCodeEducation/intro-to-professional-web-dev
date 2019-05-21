@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -91,7 +90,7 @@
 <p>However, the reality is that <em>all</em> programmers, no matter how experienced, regularly make simple mistakes. If you run your program and it produces an error message, your first reaction should be, “Great! My program has an error, but I have a helpful message to help me fix it.”</p>
 <p>Let’s consider a small program with a couple of syntax errors.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
 console.log(&quot;Hello, name);
 </pre></div>
@@ -137,19 +136,20 @@ SyntaxError: Invalid or unexpected token
 </div>
 <p id="index-0">JavaScript is telling us that in the area of <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name);</span></code> it encountered an invalid token. <strong>Token</strong> is a fancy word that means a symbol, variable, or other atomic element of a program. In this case, the invalid token is <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name);</span></code>. JavaScript sees the double-quote character and expects a string. However, the string does not have a closing <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, making it invalid.</p>
 <p>Fixing this error gives us a program with correct syntax:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">Julie</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">Julie</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/">repl.it</a> and Node.js on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
+</td></tr></table></div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and Node.js on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
 </div>
 </div>
 <div class="section" id="syntax-errors-and-code-highlighting">
 <h2>6.3.2. Syntax Errors and Code Highlighting<a class="headerlink" href="#syntax-errors-and-code-highlighting" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">Most code editors provide a feature known as <strong>syntax highlighting</strong>. Such editors highlight different types of tokens in different ways. For example, strings may be red, while variables may be green. This useful feature give you a quick, visual way to identify syntax errors.</p>
-<p>For example, here is a screenshot of our flawed code taken within an <a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Highlighting">editor at repl.it</a>.</p>
+<p>For example, here is a screenshot of our flawed code taken within an <a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Highlighting" target="_blank">editor at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <div class="figure" id="id1">
 <img alt="A screenshot with two lines of code. Syntax errors on each line cause highlighting to differ from what is expected. On line 1, the string &quot;Julie&quot; is green instead of red, because it is missing quotes. On line 2, the symbols ); are red instead of black, because the preceding string &quot;Hello, World&quot; doesn't have a closing double-quote." src="../../_images/syntax-highlighting.png" />
 <p class="caption"><span class="caption-text">Screenshot of a program with two syntax errors</span></p>
@@ -186,7 +186,7 @@ ReferenceError: Julie is not defined
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ReferenceError: Julie is not defined
 </pre></div>
 </div>
-<p>The type of error is <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>. If we search the web for “JS ReferenceError” then one of the first results is the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError">MDN documentation for ReferenceError</a>. No need to read the entire document, however. The first sentence on this page tells us what we need to know:</p>
+<p>The type of error is <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>. If we search the web for “JS ReferenceError” then one of the first results is the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError" target="_blank">MDN documentation for ReferenceError<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. No need to read the entire document, however. The first sentence on this page tells us what we need to know:</p>
 <blockquote class="pull-quote">
 <div>The <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> object represents an error when a non-existent variable is referenced.</div></blockquote>
 <p>This information, along with the rest of the message, “Julie is not defined,” makes it clear what JavaScript is complaining about. The error message is saying, <em>Hey, check your variables!</em></p>

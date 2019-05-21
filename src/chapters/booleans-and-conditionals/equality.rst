@@ -13,12 +13,13 @@ In the section :ref:`booleans`, we learned about the comparison operators ``==``
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(7 == "7");
       console.log(0 == false);
       console.log(0 == '');
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -39,12 +40,13 @@ For example, ``Number("7")`` returns ``7``, so it makes some sense that ``7 == "
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
     
       console.log('0' == 0);
       console.log(0 == '');
       console.log('0' == '');
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -55,7 +57,7 @@ For example, ``Number("7")`` returns ``7``, so it makes some sense that ``7 == "
 .. index::
    single: equality; non-transitive
 
-The == operator is **non-transitive**. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is *not* the case for the == operator.
+The ``==`` operator is **non-transitive**. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is *not* the case for the ``==`` operator.
 
 Since ``==`` does not follow rules that we typically associate with equality, unexpected results may occur if ``==`` is used in a program. Thankfully, JavaScript provides another operator that returns more predictable results.
 
@@ -69,12 +71,13 @@ The operator ``===`` compares two operands *without* converting their data types
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(7 === "7");
       console.log(0 === false);
       console.log(0 === '');
 
-   **Output**
+   **Console Output**
 
    ::
 

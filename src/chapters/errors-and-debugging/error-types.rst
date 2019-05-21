@@ -52,6 +52,7 @@ The following table describes all JavaScript error types. Some of these relate t
      - Occurs when a non-existent variable is used/referenced.
      - 
        .. sourcecode:: js
+         :linenos:
        
           let firstName = "Jack";
           console.log(firstname);

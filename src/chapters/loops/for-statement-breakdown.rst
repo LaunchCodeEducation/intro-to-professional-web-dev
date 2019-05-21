@@ -6,6 +6,7 @@ Having seen several examples, we will now explore the syntax of a ``for`` loop i
 Recall the first example of a ``for`` loop that we looked at.
 
 .. sourcecode:: js
+   :linenos:
 
    for (let i = 0; i < 51; i++) {
       console.log(i);
@@ -14,6 +15,7 @@ Recall the first example of a ``for`` loop that we looked at.
 We broke down the flow of execution of this loop, noting that the loop executes once for each of the values of ``i`` from 0...50. The three components of the loop---loop variable, loop condition, and update expression---dictate exactly how this loop executes. So far, we have only seen ``for`` loops with this exact form:
 
 .. sourcecode:: js
+   :linenos:
 
    for (let i = 0; i < upperBound; i++) {
       // loop body
@@ -50,6 +52,7 @@ The loop variable can be initialized to any value.
    This loop prints 3...9.
 
    .. sourcecode:: js
+      :linenos:
    
       for (let i = 3; i < 10; i++) {
          console.log(i);
@@ -58,6 +61,7 @@ The loop variable can be initialized to any value.
    This loop prints each of the letters ``C``, ``o``, ``d``, and ``e`` on a separate line.
 
    .. sourcecode:: js
+      :linenos:
    
       let name = "LaunchCode";
 
@@ -70,6 +74,7 @@ To avoid confusion and bugs, you should give your loop variable a unique name, o
 .. note:: The loop variable is typically used by the loop body, but this is not required. The following example is a valid ``for`` loop that prints ``"LaunchCode"`` 42 times.
 
    .. sourcecode:: js
+      :linenos:
    
       for (let i = 0; i < 42; i++) {
          console.log("LaunchCode");
@@ -88,6 +93,7 @@ The **loop condition** is executed before each loop iteration. It is *always* a 
    This loop does not iterate at all, because its condition is false to start with.
 
    .. sourcecode:: js
+      :linenos:
    
       for (let i = 0; i < -1; i++) {
          console.log("LaunchCode");
@@ -100,6 +106,7 @@ It is critical that the loop condition *eventually* becomes false. A loop for wh
    This is an infinite loop, because its condition will always be true.
 
    .. sourcecode:: js
+      :linenos:
    
       for (let i = 0; i > -1; i++) {
          console.log("LaunchCode");
@@ -122,6 +129,7 @@ In all of the examples we have seen so far, the update expression has been ``i++
    This loop prints *even* integers from 0...50.
 
    .. sourcecode:: js
+      :linenos:
    
       for (let i = 0; i < 51; i = i + 2) {
          console.log(i);
@@ -134,6 +142,7 @@ A bad choice of update expression can also cause an infinite loop.
    This loop repeates indefinitely, since ``i`` becomes smaller with each iteration and thus is never greater than or equal to 51.
 
    .. sourcecode:: js
+      :linenos:
 
       for (let i = 0; i < 51; i--) {
          console.log(i);
@@ -144,6 +153,7 @@ A bad choice of update expression can also cause an infinite loop.
    How does each of these three components affect the behavior of a ``for`` loop? `Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression. <https://repl.it/@launchcode/Loop-variable>`_.
 
    .. sourcecode:: js
+      :linenos:
    
       for (let i = 0; i < 51; i++) {
          console.log(i);
@@ -155,6 +165,7 @@ Check Your Understanding
 Consider the program:
 
 .. sourcecode:: js
+   :linenos:
 
    let phrase = "LaunchCode's LC101";
 
