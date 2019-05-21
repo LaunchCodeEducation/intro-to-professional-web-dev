@@ -7,13 +7,14 @@
     <title>11.1. Functions as Values &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/fa/css/all.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
@@ -89,7 +90,7 @@
 <div class="section" id="functions-are-data">
 <h2>11.1.1. Functions Are Data<a class="headerlink" href="#functions-are-data" title="Permalink to this headline">¶</a></h2>
 <p>We <a class="reference internal" href="../data-and-variables/values-and-data-types.html#def-value"><span class="std std-ref">defined a value</span></a> as “a specific piece of data.” Some examples are the number <code class="docutils literal notranslate"><span class="pre">42</span></code>, the string <code class="docutils literal notranslate"><span class="pre">&quot;LC101&quot;</span></code>, and the array <code class="docutils literal notranslate"><span class="pre">[&quot;MO&quot;,</span> <span class="pre">&quot;FL&quot;,</span> <span class="pre">&quot;DC&quot;]</span></code>. <em>Functions are also values</em>, and while they appear to be very different from other values we have worked with, they share many core characteristics.</p>
-<p id="index-1">In particular, functions have a data type, just like all other values. Recall that a <strong>data type</strong> is a group of values that share characteristics, such as strings and numbers. All strings have a length, while numbers don’t. Numbers can be manipulated in ways that strings cannot via operations like division and subtraction.</p>
+<p id="index-1">In particular, functions have a data type, just like all other values. Recall that a <strong>data type</strong> is a group of values that share characteristics, such as strings and numbers. Strings share the characteristice of having a length, while numbers don’t. Numbers can be manipulated in ways that strings cannot, via operations like division and subtraction.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
 <p>The data type of the type conversion function <code class="docutils literal notranslate"><span class="pre">Number</span></code> is <code class="docutils literal notranslate"><span class="pre">function</span></code>. In fact, all functions are of type <code class="docutils literal notranslate"><span class="pre">function</span></code>.</p>
@@ -103,12 +104,11 @@
 <p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>number
 string
-object
 function
 </pre></div>
 </div>
 </div>
-<p>Like other data types, functions may be assigned to variables. Suppose we define a function named <code class="docutils literal notranslate"><span class="pre">hello</span></code>. We can assign it to a variable as follows:</p>
+<p>Like other data types, functions may be assigned to variables. If we create a function named <code class="docutils literal notranslate"><span class="pre">hello</span></code> we can assign it to a variable with this syntax:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -124,17 +124,17 @@ function
 <span class="kd">let</span> <span class="nx">helloFunc</span> <span class="o">=</span> <span class="nx">hello</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
-<p>When a variable refers to a function, we can call the function using the variable name:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">helloFunc</span><span class="p">();</span>
+<p>When a variable refers to a function, we can use the variable name to <em>call</em> the function:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">helloFunc</span><span class="p">();</span>
 </pre></div>
-</td></tr></table></div>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">helloFunc</span></code> can be thought of as an <em>alias</em> for the function <code class="docutils literal notranslate"><span class="pre">hello</span></code>. When we use the name <code class="docutils literal notranslate"><span class="pre">helloFunc</span></code>, JavaScript sees that it refers to the function <code class="docutils literal notranslate"><span class="pre">hello</span></code> and will use that <em>specific</em> function.</p>
-<p>When a variable holds a function, it behaves the same way as when it holds a number or a string. When a variable holds a function, the variable <em>refers to</em> the function. When we use a variable name, we are really using its value. If <code class="docutils literal notranslate"><span class="pre">class</span></code> is set to the value <code class="docutils literal notranslate"><span class="pre">&quot;LC101&quot;</span></code>, then <code class="docutils literal notranslate"><span class="pre">console.log(class)</span></code> prints <code class="docutils literal notranslate"><span class="pre">&quot;LC101&quot;</span></code>. The same holds true for variables holding functions.</p>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">helloFunc</span></code> can be thought of as an <em>alias</em> for the function <code class="docutils literal notranslate"><span class="pre">hello</span></code>. When we call the function <code class="docutils literal notranslate"><span class="pre">helloFunc</span></code>, JavaScript sees that it refers to the function <code class="docutils literal notranslate"><span class="pre">hello</span></code> and calls that <em>specific</em> function.</p>
+<p>When we use a variable <em>name</em>, we are really using its <em>value</em>. If the variable <code class="docutils literal notranslate"><span class="pre">class</span></code> is assigned the value <code class="docutils literal notranslate"><span class="pre">&quot;LC101&quot;</span></code>, then <code class="docutils literal notranslate"><span class="pre">console.log(class)</span></code> prints <code class="docutils literal notranslate"><span class="pre">&quot;LC101&quot;</span></code>. When a variable holds a function, it behaves the same way as when it holds a number or a string. The variable <em>refers to</em> the function.</p>
 <div class="figure" id="id1">
 <img alt="The variable helloFunc on the left *referst to* the function hello on the right" src="../../_images/function-var.png" />
 <p class="caption"><span class="caption-text">A variable that refers to a function.</span></p>
 </div>
-<p>Again, <em>functions are values</em>. They can be used just like general values. Here are a few examples:</p>
+<p>Again, <em>functions are values</em>. They can be used just like general values. For example:</p>
 <ul class="simple">
 <li>Functions may be assigned to variables.</li>
 <li>Functions may be used in expressions, such as comparisons.</li>
@@ -143,7 +143,7 @@ function
 <li>Functions may be passed as arguments to other functions.</li>
 <li>Functions may be returned from other functions.</li>
 </ul>
-<p>A few of these are not very useful. You will likely never need to convert a function to a boolean, or ask whether a function is greater than 5. Other items in the list, like passing functions as arguments and assigning them to variables, turn out to be extremely useful, as you will soon learn.</p>
+<p>Some of these function behaviors do not prove to be useful. You will probably never need to convert a function to a boolean, or ask whether a function is greater than 5. However, other behaviors, like passing functions as arguments and assigning them to variables, turn out to be <em>extremely</em> useful.</p>
 </div>
 </div>
 
