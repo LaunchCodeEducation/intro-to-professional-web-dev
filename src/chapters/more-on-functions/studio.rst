@@ -82,6 +82,7 @@ Fortunately, JavaScript has an elegant way to properly sort numbers.
    Feel free to Google "bubble sort JavaScript" to explore a different way to
    order numbers in an array.
 
+.. _js-sort-numbers:
 
 Part C: Number Sorting the Easy Way
 ------------------------------------

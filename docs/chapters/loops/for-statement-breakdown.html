@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -118,7 +117,7 @@
 <p id="index-0">The <strong>initial expression</strong> is executed once, before any iterations of the loop. It can be any expression, even the <strong>empty expression</strong> (which contains no code). However, it almost always declares and initializes a variable, known as the <strong>loop variable</strong>.</p>
 <p>The loop variable can be initialized to any value.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title">Examples</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>This loop prints 3…9.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -141,23 +140,16 @@
 </td></tr></table></div>
 </div>
 <p>To avoid confusion and bugs, you should give your loop variable a unique name, one that you have not used elsewhere in your program. In cases where the loop variable is serving as a “counter” for iterations of a loop, it is conventional to use <code class="docutils literal notranslate"><span class="pre">i</span></code> for the variable name. In the case of nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops (loops inside of loops), the variables <code class="docutils literal notranslate"><span class="pre">j</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code>, etc. are often used.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>The loop variable is typically used by the loop body, but this is not required. The following example is a valid <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that prints <code class="docutils literal notranslate"><span class="pre">&quot;LaunchCode&quot;</span></code> 42 times.</p>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">42</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The loop variable is typically used by the loop body, but this is not required. The following example is a valid <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that prints <code class="docutils literal notranslate"><span class="pre">&quot;LaunchCode&quot;</span></code> 42 times.</p>
 </div>
 </div>
 <div class="section" id="loop-condition">
 <h3>9.4.1.2. Loop Condition<a class="headerlink" href="#loop-condition" title="Permalink to this headline">¶</a></h3>
 <p id="index-1">The <strong>loop condition</strong> is executed before each loop iteration. It is <em>always</em> a boolean expression, evaluating to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. If the contion is true, the loop body executes. If the condition is false, loop execution stops and the program continues with the next line of code below the loop.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This loop does not iterate at all, because its condition is false to start with.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -169,7 +161,7 @@
 </div>
 <p>It is critical that the loop condition <em>eventually</em> becomes false. A loop for which the condition is never false is known as an <strong>infinite loop</strong>, because it never stops iterating. A program that contains an infinite loop will only stop after running out of memory or being manually stopped (for example, using control+c in a terminal).</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This is an infinite loop, because its condition will always be true.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -186,7 +178,7 @@
 <p id="index-2">The final component in a for loop definition is the <strong>update expression</strong>, which executes after <em>every</em> iteration of the loop. While this expression may be anything, it most often updates the value of the loop variable.</p>
 <p>In all of the examples we have seen so far, the update expression has been <code class="docutils literal notranslate"><span class="pre">i++</span></code>, incrementing the loop variable by 1. However, it can update the loop variable in other ways.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This loop prints <em>even</em> integers from 0…50.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -198,7 +190,7 @@
 </div>
 <p>A bad choice of update expression can also cause an infinite loop.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This loop repeates indefinitely, since <code class="docutils literal notranslate"><span class="pre">i</span></code> becomes smaller with each iteration and thus is never greater than or equal to 51.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -209,8 +201,8 @@
 </td></tr></table></div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It!</p>
-<p>How does each of these three components affect the behavior of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <a class="reference external" href="https://repl.it/&#64;launchcode/Loop-variable">Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression.</a>.</p>
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>How does each of these three components affect the behavior of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <a class="reference external" href="https://repl.it/&#64;launchcode/Loop-variable" target="_blank">Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression.<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -236,7 +228,7 @@
 </pre></div>
 </td></tr></table></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>How many times does the loop body execute?</p>
 <ol class="last arabic simple">
 <li>0</li>
@@ -246,7 +238,7 @@
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which set of characters is printed by the loop? (We have placed characters for the choices below on the same line, but they would be on separate lines in the actual program output.)</p>
 <ol class="last arabic simple">
 <li>LaunchCode’s LC101</li>

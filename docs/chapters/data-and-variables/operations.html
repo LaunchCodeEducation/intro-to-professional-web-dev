@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -91,18 +90,18 @@
 <p>Now that we can store data in variables, let’s explore how we can generate new data from existing data.</p>
 <p id="index-0">An <strong>operator</strong> is one or more characters that represents a computation like addition, multiplication, or division. The values an operator works on are called <strong>operands</strong>.</p>
 <p>The following are all legal JavaScript expressions whose meaning is more or less clear:</p>
-<ul class="simple">
+<ol class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">+</span> <span class="pre">32</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">hour</span> <span class="pre">-</span> <span class="pre">1</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">hour</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">+</span> <span class="pre">minute</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">minute</span> <span class="pre">/</span> <span class="pre">60</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">**</span> <span class="pre">2</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">+</span> <span class="pre">9)</span> <span class="pre">*</span> <span class="pre">(15</span> <span class="pre">-</span> <span class="pre">7)</span></code></li>
-</ul>
+</ol>
 <p>For example, in the calculation <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">+</span> <span class="pre">32</span></code>, the operator is <code class="docutils literal notranslate"><span class="pre">+</span></code> and the operands are <code class="docutils literal notranslate"><span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">32</span></code>.</p>
 <p>The symbols <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>, and the use of parentheses for grouping, mean in JavaScript what they mean in mathematics. The asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) is the symbol for multiplication, and <code class="docutils literal notranslate"><span class="pre">**</span></code> is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -126,7 +125,7 @@
 <p>We use the same terminology as before, stating that <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> <strong>returns</strong> the value <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 <p>When a variable name appears in the place of an operand, it is replaced with the value that it refers to before the operation is performed. For example, suppose that we wanted to convert 645 minutes into hours. Division is denoted by the operator <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="mi">645</span><span class="p">;</span>
@@ -192,22 +191,22 @@
 <p>While the modulus operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) is common in programming, it is not used much outside of programming. Let’s explore how it works with a few examples.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">%</span></code> operator returns the <em>remainder</em> obtained by carrying out integer division of the first operand by the second operand. Therefore, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">3</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code> because 3 goes into 5 one whole time, with a remainder of 2 left over.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title">Examples</p>
-<ul class="last simple">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<ol class="last simple">
 <li>12 % 4 is 0, because 4 divides 12 evenly (that is, there is no remainder)</li>
 <li>13 % 7 is 6</li>
 <li>6 % 2 is 0</li>
 <li>7 % 2 is 1</li>
-</ul>
+</ol>
 </div>
 <p>The last two examples illustrate a general rule: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">The value returned by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> will always be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">If remainders and the modulus operator seem tricky to you, we recommend getting additional practice at <a class="reference external" href="https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic">Khan Academy</a>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">If remainders and the modulus operator seem tricky to you, we recommend getting additional practice at <a class="reference external" href="https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic" target="_blank">Khan Academy<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 <div class="section" id="order-of-operations">
@@ -219,41 +218,23 @@
 <li>Multiplication and both division operators have the same precedence, which is higher than addition and subtraction, which also have the same precedence. So <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">1</span></code> yields 5 rather than 4, and <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code> is 1, not 6.</li>
 <li>Operators with the <em>same</em> precedence are evaluated from left-to-right. So in the expression <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code>, the subtraction happens first, yielding 3. We then add 2 to get the result 5. If the operations had been evaluated from right to left, the result would have been <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">(3</span> <span class="pre">+</span> <span class="pre">2)</span></code>, which is 1.</li>
 </ol>
-<div class="admonition tip" id="index-3">
-<p class="first admonition-title">Tip</p>
+<div class="admonition" id="index-3">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>The acronymn PEMDAS can be used to remember order of operations:</p>
-<p><strong>P</strong> = parentheses</p>
 <p><strong>E</strong> = exponentiation</p>
-<p><strong>M</strong> = multiplication</p>
 <p><strong>D</strong> = division</p>
-<p><strong>A</strong> = addition</p>
 <p class="last"><strong>S</strong> = subtraction</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator <code class="docutils literal notranslate"><span class="pre">**</span></code>. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// the right-most ** operator is applied first</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="c1">// use parentheses to force the order you want</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-<p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>512
-64
-</pre></div>
-</div>
+<p class="last"><strong>Console Output</strong></p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>4.6.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the value of the following expression?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
@@ -266,14 +247,14 @@
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the output of the code below?</p>
 <div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the value of the following expression?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>

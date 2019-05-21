@@ -132,16 +132,22 @@ Let's update ``combineEntries`` to check if the array contains only one item.
    :linenos:
 
    function combineEntries(arrayName){
-      if (arrayName.length === 1){
+      if (arrayName.length <= 1){
          return arrayName[0];
       } else {
          //call combineEntries again
       }
    }
 
-``arrayName.length === 1`` sets up the condition for ending the recursion
+``arrayName.length <= 1`` sets up the condition for ending the recursion
 process. If it is ``true``, the single entry gets returned, and the function
 stops. Otherwise, ``combineEntries`` gets called again.
+
+.. note::
+
+   We define our base case as ``arrayName.length <= 1`` rather than
+   ``arrayName.length === 1`` just in case an empty array ``[]`` gets passed to
+   the function.
 
 The Case for the Base
 ----------------------
