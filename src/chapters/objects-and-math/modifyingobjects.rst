@@ -97,7 +97,7 @@ A programmer can modify the value of a property by using either notation style.
 Check Your Understanding
 ------------------------
 
-All of the questions below refer to an object called ``giraffe``. Here is the object literal for ``giraffe``.
+All of the questions below refer to an object called ``giraffe``.
 
 .. sourcecode:: js
    :linenos:
