@@ -111,7 +111,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Where does a button have to be in order to trigger a form submission?
+   What must be added to a form to enable submission?
 
 .. admonition:: Question
 
@@ -119,5 +119,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What makes up the "key value" pair for form inputs?
-   
+   When a form is submitted, where does the data for the key-value pairs come from?
