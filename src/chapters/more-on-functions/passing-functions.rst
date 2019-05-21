@@ -29,7 +29,7 @@ The built-in function ``setTimeout`` allows a programmer to pass a function, spe
 
       setTimeout(printMessage, 5000);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -85,7 +85,7 @@ The argument ``func`` should take a single value from the array and return a new
       console.log(nums);
       console.log(doubled);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -111,7 +111,7 @@ When using ``map``, many programmers will define the mapping function anonymousl
 
       console.log(doubled);
 
-   **Output**
+   **Console Output**
 
    ::
 

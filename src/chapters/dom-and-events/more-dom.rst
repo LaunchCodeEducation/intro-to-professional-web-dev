@@ -120,6 +120,7 @@ Check Your Understanding
    What is the value of ``p.innerHTML``?
 
    .. sourcecode:: html
+      :linenos:
 
       <p id="demo-text">Hello friend</p>
       <script>

@@ -39,6 +39,7 @@ Here is an explicit example that mimics our banking program.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let billHasBeenPaid = false;
 
@@ -46,7 +47,7 @@ Here is an explicit example that mimics our banking program.
          console.log("Your bill is due soon!");
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -59,6 +60,7 @@ The condition in an ``if`` statement can be any boolean expression, such as ``na
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       if (num % 2 === 0 && num > 3) {
          console.log(num, "is even");
@@ -70,6 +72,7 @@ While not required, the code within a conditional code block is typically indent
 You should follow such conventions, even though ignoring them will not create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.
 
 .. sourcecode:: js
+   :linenos:
 
    if (num % 2 === 0 && num > 3) 
    { console.log(num, "is even");
@@ -77,14 +80,18 @@ You should follow such conventions, even though ignoring them will not create an
 
 Aside from being more aesthetically pleasing, the first version also makes it easier to visually identify the pair of matching curly brackets, which helps prevent syntax errors.
 
-.. note:: If the the code block associated with a conditional consists of only one line, then the enclosing curly brackets can be ommitted:
 
-   .. sourcecode:: js
-   
-      if (!billHasBeenPaid)
-        console.log("Your bill is due soon!");
+.. todo:: convert this to a "worst practice"
 
-   We will generally use curly brackets for all conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.
+   .. note:: If the the code block associated with a conditional consists of only one line, then the enclosing curly brackets can be ommitted:
+
+      .. sourcecode:: js
+         :linenos:
+      
+         if (!billHasBeenPaid)
+         console.log("Your bill is due soon!");
+
+      We will use curly brackets for *all* conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.
 
 ``else`` Clauses
 ----------------
@@ -102,6 +109,7 @@ We can use an ``else`` clause within our bank app to send a message if no bills 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let billHasBeenPaid = true;
 
@@ -111,7 +119,7 @@ We can use an ``else`` clause within our bank app to send a message if no bills 
          console.log("Your payments are up to date.");
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -147,7 +155,7 @@ If-else statements allow us to construct two alternative paths. A single conditi
          "x and y are equal";
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -185,6 +193,7 @@ Regardless of the complexity of a conditional, *no more than one* of the code bl
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let x = 10;
       let y = 20;
@@ -199,7 +208,7 @@ Regardless of the complexity of a conditional, *no more than one* of the code bl
          console.log("x is even");
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -215,6 +224,7 @@ Check Your Understanding
    What does the following code print?
    
    .. sourcecode:: js
+      :linenos:
 
       let a = 7;
       if (a % 2 === 1) {

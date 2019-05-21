@@ -82,6 +82,7 @@ Check Your Understanding
    Which is the best name for the following function?
 
    .. sourcecode:: js
+      :linenos:
 
       function myFunc(radius) {
           let area = Math.PI * radius**2;

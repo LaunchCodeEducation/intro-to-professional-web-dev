@@ -91,7 +91,15 @@
 <p class="last">Write code that prints different messages based on the value of a number variable. If the number is odd, print nothing. If it is even, print “EVEN”. If it is also positive print “POSITIVE”.</p>
 </div>
 <p>Our first attempt at a solution might look like this:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;EVEN&quot;</span><span class="p">);</span>
@@ -101,13 +109,21 @@
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;POSITIVE&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>POSITIVE
 </pre></div>
 </div>
 <p>We find that the output is <code class="docutils literal notranslate"><span class="pre">POSITIVE</span></code>, even though 7 is odd and so nothing should be printed. This code doesn’t work as desired because we only want to test for positivity when we already know that the number is even. We can enable this behavior by putting the second conditional <em>inside</em> the first.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;EVEN&quot;</span><span class="p">);</span>
@@ -117,7 +133,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Positive-and-Even" target="_blank">Try this<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> with a several different values for <code class="docutils literal notranslate"><span class="pre">num</span></code> (even, odd, positive, negative) to ensure it works as desired. Nice, huh?</p>
@@ -128,7 +144,13 @@
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is printed when the following code runs?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -136,7 +158,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <ol class="last arabic simple">
 <li>The code won’t run due to invalid syntax</li>
 <li><code class="docutils literal notranslate"><span class="pre">odd</span></code></li>
@@ -147,13 +169,17 @@
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Considering the same conditional used in the previous question, which values of <code class="docutils literal notranslate"><span class="pre">num</span></code> would result in <code class="docutils literal notranslate"><span class="pre">&quot;odd&quot;</span></code> being printed?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;odd&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <ol class="last arabic simple">
 <li>Even values of <code class="docutils literal notranslate"><span class="pre">num</span></code>.</li>
 <li>Odd values of <code class="docutils literal notranslate"><span class="pre">num</span></code>.</li>

@@ -29,6 +29,7 @@ or the "column".
    Use a two dimensional array to contain three different lists of space shuttle crews.
 
    .. sourcecode:: js
+      :linenos:
 
       const shuttleCrews = [
          ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
@@ -40,7 +41,7 @@ or the "column".
       console.log(shuttleCrews[1][1]);
       console.log(shuttleCrews[2][1]);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -58,6 +59,7 @@ methods.
    Use array methods to add an additional crew array and alter existing arrays.
 
    .. sourcecode:: js
+      :linenos:
 
       const shuttleCrews = [
          ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
@@ -75,7 +77,7 @@ methods.
       shuttleCrews[1].reverse();
       console.log(shuttleCrews[1]);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -97,6 +99,7 @@ Check Your Understanding
    What are the two dimensional indexes for ``"Jones"``?
 
    .. sourcecode:: js
+      :linenos:
 
       const school = [
          ["science", "computer", "art"],

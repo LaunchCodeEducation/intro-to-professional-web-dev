@@ -43,6 +43,7 @@ We will go more in depth about the differences between CSS locations in the next
 Here is an example of how to write the declaration block for internal and external CSS:
 
 .. sourcecode:: css
+   :linenos:
 
    selector {
        property: value;
@@ -76,6 +77,7 @@ Here are three different examples of how we can use selectors to make the text i
 Using the element selector to change the color of all ``<p>`` elements,
 
 .. sourcecode:: css
+   :linenos:
 
    p {
       font-color: pink;
@@ -89,6 +91,7 @@ Now, if a few of the paragraphs on the page are given the class ``pink-paragraph
 To use the class selector in CSS, we would write something like:
 
 .. sourcecode:: css
+   :linenos:
 
    .pink-paragraph {
       font-color: pink;
@@ -102,6 +105,7 @@ If one paragraph is going to have pink text, the id selector on the HTML documen
 In CSS, we would use the id selector to make the paragraph pink:
 
 .. sourcecode:: css
+   :linenos:
 
    #pinkParagraph {
       font-color: pink;
@@ -119,6 +123,7 @@ There are three different places to add CSS in an HTML file as indicated above:
 1. External: The CSS is in a separate file linked to the HTML document in the ``<head>``. External linking of CSS is great for when programmers have large quantities of CSS that apply to the whole page.
 
    .. sourcecode:: html
+      :linenos:
 
       <head>
          <title>My Web Page</title>

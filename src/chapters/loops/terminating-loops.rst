@@ -12,6 +12,7 @@ JavaScript, like most programming languages, provides a mechanism for terminatin
    This loop executes 12 times, for values of ``i`` from 0 to 11. During the twelfth iteration, ``i`` is 11 and the condition ``i > 10`` evaluates to ``true`` for the first time and execution reaches the ``break`` statement. The loop is immediately terminated at that point.
 
    .. sourcecode:: js
+      :linenos:
 
       for (let i = 0; i < 42; i++) {
          
@@ -32,6 +33,7 @@ We can use a ``while`` loop to say, *while we have not reached the end of the ar
    A ``while`` loop can be used with ``break`` to search for an element in an array. 
 
    .. sourcecode:: js
+      :linenos:
 
       let numbers = [ /* some numbers */ ];
       let searchVal = 42;

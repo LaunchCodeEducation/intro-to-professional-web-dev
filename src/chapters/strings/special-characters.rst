@@ -16,7 +16,7 @@ The most commonly-used special characters are ``\n`` and ``\t``, which are the n
    
       console.log("A message\nbroken across lines,\n\tand indented");
 
-   **Output**
+   **Console Output**
    
    ::
 
@@ -34,7 +34,7 @@ We can also represent Unicode characters (most of which aren't on a normal keybo
    
       console.log("The interrobang character, \u203d, combines ? and !");
    
-   **Output**
+   **Console Output**
 
    ::
 
@@ -52,7 +52,7 @@ We can also use the backslash, ``\``, to include quotes within a string. This is
    
       console.log("\"The dog's favorite toy is a stuffed hedgehog,\" said Chris");
 
-   **Output**
+   **Console Output**
 
    ::
 

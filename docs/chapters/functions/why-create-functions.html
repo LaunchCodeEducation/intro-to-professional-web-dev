@@ -93,7 +93,16 @@
 <div class="section" id="functions-make-your-code-more-readable">
 <h2>10.9.2. Functions Make Your Code More Readable<a class="headerlink" href="#functions-make-your-code-more-readable" title="Permalink to this headline">¶</a></h2>
 <p>Placing a piece of functionality within a function allows us to put a name on that functionality. Consider our <a class="reference internal" href="composing-functions.html#palindrome-function"><span class="std std-ref">palindrome example</span></a>. One way to write that function is:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 
@@ -104,9 +113,20 @@
    <span class="k">return</span> <span class="nx">reversed</span> <span class="o">===</span> <span class="nx">str</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>While the variable name <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is descriptive, giving us a sense of what is going on with the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, the function becomes even more readable when we break out the reversing behavior into a separate function.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 
    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -119,7 +139,7 @@
    <span class="k">return</span> <span class="nx">reversed</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">===</span> <span class="nx">str</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Aside from following the principle that functions should do only one thing, the logic within <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> is more clear and self-descriptive. The function itself says, <em>a string is a palindrome if it is equal to its reverse</em>. To draw this same conclusion from the example above, without a <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function, we are required to analyze more of the program’s logic.</p>
 </div>
 <div class="section" id="functions-reduce-complexity">

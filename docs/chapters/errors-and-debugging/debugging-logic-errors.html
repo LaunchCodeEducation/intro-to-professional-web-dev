@@ -91,14 +91,19 @@
 <h2>6.5.1. Printing Values<a class="headerlink" href="#printing-values" title="Permalink to this headline">¶</a></h2>
 <p>When your code runs but doesn’t produce the expected results, it is important to check the values of the variables being used.</p>
 <p>Let’s look at a program that has a logical bug.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">degreesC</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s1">&#39;Temp in degrees C:&#39;</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">degreesK</span> <span class="o">=</span> <span class="nx">degreesC</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Degrees K:&#39;</span><span class="p">,</span> <span class="nx">degreesK</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/Degrees-C-to-K-Logic-Error" target="_blank">Run the code at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>This program asks the user for a temperature in degrees celsius and attempts to convert it to degrees Kelvin. Degrees Kelvin differs from degrees celsius by 273.15. So if we enter 100 (in celsius) we should see a converted value of 373.15 (in Kelvin). However, running the program as-is and entering 100 gives the message:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Temp in degrees C:  100
@@ -107,7 +112,13 @@ Degrees K: 100273.15
 </div>
 <p>This is clearly incorrect. But the program does not generate an error, so it is not immediately clear what the issue is. To figure it out, we’ll use <code class="docutils literal notranslate"><span class="pre">console.log</span></code> to see what the values of key variables are when the program runs.</p>
 <p>Let’s first make sure that the <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> variable looks like it should by adding a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement just after we create this variable.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">degreesC</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s1">&#39;Temp in degrees C: &#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">degreesC</span><span class="p">);</span>
@@ -115,7 +126,7 @@ Degrees K: 100273.15
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Degrees K:&#39;</span><span class="p">,</span> <span class="nx">degreesK</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Running this with an input of 100 gives the output:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Temp in degrees C:  100
 100
@@ -124,7 +135,13 @@ Degrees K: 100273.15
 </div>
 <p>The second line is the value of <code class="docutils literal notranslate"><span class="pre">degreesC</span></code>, which appears to be correct. But the final answer is still incorrect, so we need to keep digging for more information.</p>
 <p>Looking at the line in which we set <code class="docutils literal notranslate"><span class="pre">degreesK</span></code>, we see that we use <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> as a numeric value in our calculation. Let’s see what the data type of <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> is. In the end, we want it to be a number.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">degreesC</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s1">&#39;Temp in degrees C: &#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">degreesC</span><span class="p">);</span>
@@ -132,7 +149,7 @@ Degrees K: 100273.15
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Degrees K:&#39;</span><span class="p">,</span> <span class="nx">degreesK</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Running this with an input of 100 gives the output:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Temp in degrees C:  100
 string
@@ -141,7 +158,13 @@ Degrees K: 100273.15
 </div>
 <p>That’s it! The variable <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> has the value <code class="docutils literal notranslate"><span class="pre">100</span></code>, but it is a string rather than a number. So when we set <code class="docutils literal notranslate"><span class="pre">degreesK</span></code> with the formula <code class="docutils literal notranslate"><span class="pre">degreesC</span> <span class="pre">+</span> <span class="pre">273.15</span></code>, we are actually performing string concatenation instead of addition: <code class="docutils literal notranslate"><span class="pre">&quot;100&quot;</span> <span class="pre">+</span> <span class="pre">273.15</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;100273.15&quot;</span></code>.</p>
 <p>We can fix our program by converting the user’s input to the number data type.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">degreesC</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s1">&#39;Temp in degrees C: &#39;</span><span class="p">);</span>
 <span class="nx">degreesC</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">degreesC</span><span class="p">);</span>
@@ -149,7 +172,7 @@ Degrees K: 100273.15
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Degrees K:&#39;</span><span class="p">,</span> <span class="nx">degreesK</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Running this with an input of 100 gives the output:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Temp in degrees C:  100
 Degrees K: 373.15

@@ -18,6 +18,7 @@ The ``for`` loop is the first JavaScript tool for iteration that we will explore
 We have already seen the basic syntax of a ``for`` loop.
 
 .. sourcecode:: js
+   :linenos:
 
    for (let i = 0; i < 51; i++) {
       console.log(i);
@@ -56,6 +57,7 @@ Flow of Execution of the ``for`` Loop
 In just a few lines of code, a ``for`` loop contains a lot of detailed logic, so let's spend some time breaking down the flow of execution for the particular loop that we've been looking at.
 
 .. sourcecode:: js
+   :linenos:
 
    for (let i = 0; i < 51; i++) {
       console.log(i);

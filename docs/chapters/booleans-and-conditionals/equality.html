@@ -90,12 +90,14 @@
 <p id="index-0">In the section <a class="reference internal" href="booleans.html#booleans"><span class="std std-ref">Booleans</span></a>, we learned about the comparison operators <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code>, which test whether two values are equal or not equal, respectively. However, there are some quirks with using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator, which occur when we use <code class="docutils literal notranslate"><span class="pre">==</span></code> to compare different data types.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">==</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">==</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
 true
 true
@@ -107,19 +109,21 @@ true
 <p>For example, <code class="docutils literal notranslate"><span class="pre">Number(&quot;7&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">7</span></code>, so it makes some sense that <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">==</span> <span class="pre">&quot;7&quot;</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>. However, the following example leaves us scratching our heads.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
 true
 false
 </pre></div>
 </div>
 </div>
-<p id="index-2">The == operator is <strong>non-transitive</strong>. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is <em>not</em> the case for the == operator.</p>
+<p id="index-2">The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is <strong>non-transitive</strong>. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is <em>not</em> the case for the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator.</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">==</span></code> does not follow rules that we typically associate with equality, unexpected results may occur if <code class="docutils literal notranslate"><span class="pre">==</span></code> is used in a program. Thankfully, JavaScript provides another operator that returns more predictable results.</p>
 </div>
 <div class="section" id="strict-equality-with">
@@ -127,12 +131,14 @@ false
 <p id="index-3">The operator <code class="docutils literal notranslate"><span class="pre">===</span></code> compares two operands <em>without</em> converting their data types. In other words, if <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are of different data types (say, <code class="docutils literal notranslate"><span class="pre">a</span></code> is a string and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a number) then <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">===</span> <span class="pre">b</span></code> will always be false.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">===</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">===</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>false
 false
 false
