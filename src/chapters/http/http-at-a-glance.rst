@@ -38,7 +38,12 @@ HTTP can seem complicated, but it is actually very similar to a system that you 
 
 Suppose you want to mail a letter to your friend in Alaska, asking them their favorite cheese. To do so, you write your question on a piece of paper and enclose it in an envelope. On the envelope, you write your friend's address, along with your return address. Finally, to stick a stamp on the top-right corner. 
 
-.. todo:: include image of letter and addressed envelope
+.. figure:: figures/envelope.jpg
+   :alt: An addressed envelope
+   :height: 250px
+   
+
+   Image is in the public domain
 
 Each of these pieces of information is necessary for your letter to be delivered. When your letter enteres the postal system, it will travel from one post office to another, via land, air, and maybe even sea. As long as you follow their rules, the postal service will get your letter to its destination.
 

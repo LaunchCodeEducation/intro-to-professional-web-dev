@@ -108,3 +108,15 @@ Body
 The optional request body may contain any data whatsoever, though it often includes form data submitted via a ``POST`` request. For example, when signing into a web site, the request body will contain your username and password. We will later learn that it can contain other data formats such as XML and JSON.
 
 As mentioned above, ``GET`` requests generally do *not* have a body.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Which request type was used to load this page (the one you are currently reading)?
+
+   
+.. admonition:: Question
+
+   Visit `Wikipedia's article on HTTP request headers <https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields>`_. Which request header is used to set cookies? (Cookeis are small pieces of data related to your interaction with a web site.)

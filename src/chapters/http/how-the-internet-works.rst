@@ -42,7 +42,7 @@ A **protocol** is standard for communication between computers. Most web communi
      - Hypertext Transfer Protocol
      - High-level web communication for transferring files and information, including:
 
-       - HTML, CSS, and JS files
+       - HTML, CSS, and JavaScript files
        - images and other media
        - form submissions
 

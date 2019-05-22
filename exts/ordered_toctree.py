@@ -27,11 +27,17 @@ class AccessibleHTMLTranslator(HTMLTranslator):
         self.compact_simple = self.is_compactable(node)
         if self.compact_simple and not old_compact_simple:
             atts['class'] = 'simple'
-        self.body.append(self.starttag(node, 'ol', **atts))
+        if node[0].tagname == 'toctree':
+            self.body.append(self.starttag(node, 'ol', **atts))
+        else:
+            self.body.append(self.starttag(node, 'ul', **atts))
 
     def depart_bullet_list(self, node):
         self.compact_simple, self.compact_p = self.context.pop()
-        self.body.append('</ol>\n')
+        if node[0].tagname == 'toctree':
+            self.body.append('</ol>\n')
+        else:
+            self.body.append('</ul>\n')
 
 
 def setup(app):
