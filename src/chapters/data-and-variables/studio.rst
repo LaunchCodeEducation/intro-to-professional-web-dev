@@ -1,8 +1,8 @@
 
 .. _studio-launch-checklist-LC04:
 
-Studio: Booleans and Conditionals
-=================================
+Studio: Data and Variables
+===========================
 
 In this studio you are going to write code to display the *very important* **Launch Checklist LC04**. 
 

@@ -36,6 +36,7 @@ Studios
    :name: studiostoc
 
    chapters/data-and-variables/studio
+   chapters/booleans-and-conditionals/studio
    chapters/arrays/studio
    chapters/loops/studio
    chapters/functions/studio
