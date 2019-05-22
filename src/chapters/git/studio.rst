@@ -1,82 +1,101 @@
 Studio: Fireside Story
-======================
+=======================
 
 Getting Ready: Code Together
 ----------------------------
 
-Coding together allows you to work as a team so you can build bigger projects, faster.
+Coding together allows you to work as a team so you can build bigger projects
+faster.
 
-In this studio, we will practice common Git commands necessary when
-multiple people are developing on the same code base. Today, you will
-start out coding in tag-team shifts, and by the end you should have
-a good idea of how to both be working on the same code at the same
-time. You will learn how to:
+In this studio, we will practice the common Git commands used when
+multiple people work on the same code base.
 
-- Quickly add Code in Pull + Push Cycles *(Important! This is the fundamental process we'll be practicing!)*
-- Add a Collaborator to a GitHub Project
-- Sharing Repositories on GitHub
-- Create a Branch in Git
-- Create a Pull Request in GitHub
-- Resolve Merge Conflicts
+You and a partner will begin by coding in tag-team shifts. By the end of the
+task you should have a good idea about how to have two people work on the same
+code at the same time. You will learn how to:
+
+#. Quickly add code in pull + push cycles *(Important! This is the fundamental process!)*
+#. Add a collaborator to a GitHub Project
+#. Share *repositories* on GitHub
+#. Create a *branch* in Git
+#. Create a *pull request* in GitHub
+#. Resolve merge conflicts (which are not as scary as they sound)
 
 This lesson reinforces:
 
-- Creating Repositories
-- Cloning Repositories
-- Working with Git Concepts: Staging, Commits, and Status
+#. Creating repositories
+#. Cloning repositories
+#. Working with Git concepts: Staging, Commits, and Status
 
-Walkthrough
------------
+Overview
+---------
 
-The instructor will discuss why GitHub is worth their study. You already know how to use a local Git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.
+The instructor will discuss why GitHub is worth learning. You already know how
+to use a local Git repository with one branch, giving you the ability to move
+your code forward and backward in time. Working with branches on GitHub extends
+this ability by allowing multiple people to build different features at the
+same time, then combine their work. Pull requests act as checkpoints when code
+flows from branch to branch.
 
 Students *must* pair off for this exercise. If you have trouble finding a partner, ask your TA for help.
 
 Studio
 ------
 
-We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
+We are going to simulate a radio conversation between the shuttle pilot and
+mission control.
 
-First, find a new friend to play the game with.
+First, find a new friend to share the activity.
 
-Feel free to share your story in the `#showcase` channel on Slack, and see what others have created!
-
-You and your partner will alternate tasks, so designate one of you as **Player 1** and the other as **Player 2**. Even when it is not your turn to complete a task, read and observe what your partner is doing to completed theirs. The steps here mimic how a real-world collaborative Git workflow can be used within a project.
+You and your partner will alternate tasks, so designate one of you as **Pilot**
+and the other as **Control**. Even when it is not your turn to complete a task,
+read and observe what your partner is doing to complete theirs. The steps here
+mimic how a real-world collaborative Git workflow can be used within a project.
 
 .. warning:: 
 
-   As you go through these steps, you'll be working with branches, and it's very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use ``Git stash`` to cleanly move your changes to another branch. Read about how to do so in our Git Stash Tutorial.
+   As you go through these steps, you'll be working with branches. It's very
+   likely you will make changes to the code only to realize that you did so in the
+   wrong branch. When this happens (and it happens to all of us) you can use
+   ``Git stash`` to cleanly move your changes to another branch. Read about how
+   to do so in our Git Stash Tutorial.
 
 .. todo:: Migrate Git stash tutorial
 
 Step 1: Create a New Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Player 1**: Navigate to your development folder. Follow these instructions to create a new project.
+**Control**: Navigate to your development folder. Follow these instructions to
+create a new project.
 
 ::
 
-   $ mkdir fireside-story
-   $ cd fireside-story
-   $ Git init
+   $ mkdir communication-log
+   $ cd communication-log
+   $ git init
 
-In that directory, open a new file `index.html` in the editor of your choice. Paste in this code:
+In that directory, open a new file `index.html` in the editor of your choice.
+Paste in this code:
 
 .. sourcecode:: html
+   :linenos:
 
    <html>
    <body>
-      <p>It was a dark and stormy night...</p>
+      <p>Radio check. Pilot, please confirm.</p>
    </body>
    </html>
 
-Let's check that our html looks okay by opening it in a browser. You can do this by selecting File > Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: ``file:///Users/cheryl/Development/fireside-story/index.html``.
+Let's check that our html looks okay by opening it in a browser. Do this by
+selecting *File > Open File* in your web browser, and navigating to the
+location of your new HTML file. The URL will look something like this:
+``file:///Users/cheryl/Development/communication-log/index.html``.
 
 Once you've seen this file in the browser, let's stage and commit it.
 
 ::
 
-   $ Git status
+   $ git status
    On branch master
 
    Initial commit
@@ -86,20 +105,20 @@ Once you've seen this file in the browser, let's stage and commit it.
 
       index.html
 
-   nothing added to commit but untracked files present (use "Git add" to track)
+   nothing added to commit but untracked files present (use "git add" to track)
 
 The file is not staged. Let's add everything in this directory.
 
 ::
 
-   $ Git add .
-   $ Git status
+   $ git add .
+   $ git status
    On branch master
 
    Initial commit
 
    Changes to be committed:
-   (use "Git rm --cached <file>..." to unstage)
+   (use "git rm --cached <file>..." to unstage)
 
       new file:   index.html
 
@@ -107,49 +126,62 @@ We see that the file is staged. Let's commmit.
 
 ::
 
-   $ Git commit -m 'started story'
-   [master (root-commit) e1c1719] started story
+   $ git commit -m 'Started communication log.'
+   [master (root-commit) e1c1719] Started communication log.
    1 file changed, 5 insertions(+)
    create mode 100644 index.html
-   $ Git log
+   $ git log
    commit 679de772612099c77891d2a3fab12af8db08b651
    Author: Cheryl <cherylschaefer@gmail.com>
    Date:   Wed Apr 5 10:55:56 2017 -0500
 
-      started story
+      Started communication log.
 
 
-Great! We've got our project going locally, but we're going to need to make it accessible for Player 2 also. Let's push this project up to GitHub.
+Great! We've got our project going locally, but we're going to need to make it
+accessible for **Pilot** also. Let's push this project up to GitHub.
 
 Step 2: Share Your Repository On GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Player 1**: Go to your GitHub profile in a web browser. Click on the + button to add a new repository ('repo').
+**Control**: Go to your GitHub profile in a web browser. Click on the "+"
+button to add a new repository ('repo').
 
 .. figure:: figures/CreateAGithubRepo.png
 
    Create a new repository in GitHub
 
-Fill in the name and description. Uncheck the "initialize with README". Click *Create Repository*.
+Fill in the name and description. Uncheck the "initialize with README". Click
+*Create Repository*.
 
-<aside class="aside-warning" markdown="1">If you initialize with a README, in the next step Git will refuse to merge this repo with the local repo. There's ways around that, but it's faster and easier to just create an empty repo here. </aside>
+.. note::
+
+   If you initialize with a README, in the next step Git will refuse to merge
+   this repo with the local repo. There are ways around that, but it's faster
+   and easier to just create an empty repo here.
 
 .. figure:: figures/StartingARepo.png
 
    Connecting to a repository in GitHub
 
-Now go back to your terminal and follow the instructions shown on GitHub which should be very similar to this:
+Now go back to your terminal and follow the instructions shown on GitHub which
+should be very similar to this:
 
 ::
 
-   $ Git remote add origin https://Github.com:cherylschaefer/fireside-story.Git
-   $ Git push origin master
+   $ git remote add origin https://github.com:cherylschaefer/communication-log.git
+   $ git push origin master
 
 .. warning::
 
-   Unless you've set up an SSH key with GitHub, make sure you've selected the HTTPS clone URL. If you don't know whether or not you've done this, you almost certainly haven't.
+   Unless you've set up an SSH key with GitHub, make sure you've selected the
+   HTTPS clone URL. If you're not sure whether you have an SSH key, you
+   probably don't.
 
-Now you should be able to confirm that GitHub has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code through GitHub's web interface.
+Now you should be able to confirm that GitHub has the same version of the
+project you have locally. (File contents in browser match those in terminal).
+Click around and see what is there. You can read all your code through GitHub's
+web interface.
 
 .. figure:: figures/Repo1Commit.png
 
@@ -158,43 +190,55 @@ Now you should be able to confirm that GitHub has the same version of the projec
 Step 3: Clone a Project from GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Player 2:** Go to Player 1's GitHub profile and find the fireside-story repo. Click on the green *Clone or download* button. Please use HTTPS (not SSH). Copy the url to your clipboard.
+**Pilot**: Go to Control's GitHub profile and find the communication-log repo.
+Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
+url to your clipboard.
 
-!`Cloning a repository in GitHub <figures/CloneRepo2.png>`_
+.. figure:: figures/CloneRepo2.png
 
-In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
+   Cloning a repository in GitHub
+
+In your terminal, navigate to your development folder and clone down the repo.
+The command should look something like this.
 
 :: 
    
-   Git clone https://Github.com/cherylschaefer/fireside-story.Git
+   $ git clone https://github.com/cherylschaefer/communication-log.git
 
-Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
+Now you can respond to Control! Open the `index.html` file in your editor and
+add your response to mission control. Be creative---the communication can go
+anywhere! Just don't ask your partner what you should write. After you finish,
+commit your change.
 
 ::
-   $ Git status
+
+   $ git status
    On branch master
    Your branch is up-to-date with 'origin/master'.
    nothing to commit, working directory clean
-   $ Git add index.html
-   $ Git commit -m 'added second line of story'
+   $ git add index.html
+   $ git commit -m 'Added second line to log.'
 
-Now we need to push up your changes so Player 1 can use them as well.
+Now we need to push up your changes so Control can use them as well.
 
 ::
 
-   $ Git push origin master
-   ERROR: Permission to cherylschaefer/fireside-story.Git denied to player2.
+   $ git push origin master
+   ERROR: Permission to cherylschaefer/communication-log.git denied to pilot.
    fatal: Could not read from remote repository.
 
    Please make sure you have the correct access rights
    and the repository exists.
 
-Great error message! It let us know exactly what went wrong - Player 2 does not have security permissions to write to Player 1's repo. Let's go fix that.
+Great error message! It let us know exactly what went wrong - Pilot does not
+have security permissions to write to Control's repo. Let's fix that.
 
 Step 4: Add A Collaborator To A GitHub Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Player 1**: In your web browser, go to your `fireside-story` repo. Click the *Settings* button then click on *Collaborators*. Enter in Player 2's GitHub username and click *Add Collaborator*.
+**Control**: In your web browser, go to your `communication-log` repo. Click
+the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
+username and click *Add Collaborator*.
 
 .. figure:: figures/RepoSettingsAddCollaborator.png
 
@@ -203,7 +247,8 @@ Step 4: Add A Collaborator To A GitHub Project
 Step 5: Join the Project and Push
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Player 2**: You should receive an email invitation to join this repository. View and accept the invitation.
+**Piolot**: You should receive an email invitation to join this repository.
+View and accept the invitation.
 
 .. note:: 
 

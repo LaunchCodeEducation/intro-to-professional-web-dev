@@ -60,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -87,41 +88,54 @@
 <h1>15.6. Studio: Fireside Story<a class="headerlink" href="#studio-fireside-story" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="getting-ready-code-together">
 <h2>15.6.1. Getting Ready: Code Together<a class="headerlink" href="#getting-ready-code-together" title="Permalink to this headline">¶</a></h2>
-<p>Coding together allows you to work as a team so you can build bigger projects, faster.</p>
-<p>In this studio, we will practice common Git commands necessary when
-multiple people are developing on the same code base. Today, you will
-start out coding in tag-team shifts, and by the end you should have
-a good idea of how to both be working on the same code at the same
-time. You will learn how to:</p>
-<ol class="simple">
-<li>Quickly add Code in Pull + Push Cycles <em>(Important! This is the fundamental process we’ll be practicing!)</em></li>
-<li>Add a Collaborator to a GitHub Project</li>
-<li>Sharing Repositories on GitHub</li>
-<li>Create a Branch in Git</li>
-<li>Create a Pull Request in GitHub</li>
-<li>Resolve Merge Conflicts</li>
+<p>Coding together allows you to work as a team so you can build bigger projects
+faster.</p>
+<p>In this studio, we will practice the common Git commands used when
+multiple people work on the same code base.</p>
+<p>You and a partner will begin by coding in tag-team shifts. By the end of the
+task you should have a good idea about how to have two people work on the same
+code at the same time. You will learn how to:</p>
+<ol class="arabic simple">
+<li>Quickly add code in pull + push cycles <em>(Important! This is the fundamental process!)</em></li>
+<li>Add a collaborator to a GitHub Project</li>
+<li>Share <em>repositories</em> on GitHub</li>
+<li>Create a <em>branch</em> in Git</li>
+<li>Create a <em>pull request</em> in GitHub</li>
+<li>Resolve merge conflicts (which are not as scary as they sound)</li>
 </ol>
 <p>This lesson reinforces:</p>
-<ol class="simple">
-<li>Creating Repositories</li>
-<li>Cloning Repositories</li>
-<li>Working with Git Concepts: Staging, Commits, and Status</li>
+<ol class="arabic simple">
+<li>Creating repositories</li>
+<li>Cloning repositories</li>
+<li>Working with Git concepts: Staging, Commits, and Status</li>
 </ol>
 </div>
-<div class="section" id="walkthrough">
-<h2>15.6.2. Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h2>
-<p>The instructor will discuss why GitHub is worth their study. You already know how to use a local Git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.</p>
+<div class="section" id="overview">
+<h2>15.6.2. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The instructor will discuss why GitHub is worth learning. You already know how
+to use a local Git repository with one branch, giving you the ability to move
+your code forward and backward in time. Working with branches on GitHub extends
+this ability by allowing multiple people to build different features at the
+same time, then combine their work. Pull requests act as checkpoints when code
+flows from branch to branch.</p>
 <p>Students <em>must</em> pair off for this exercise. If you have trouble finding a partner, ask your TA for help.</p>
 </div>
 <div class="section" id="studio">
 <h2>15.6.3. Studio<a class="headerlink" href="#studio" title="Permalink to this headline">¶</a></h2>
-<p>We are going to play a game. We will play it just like you’d play around a campfire, but on a web page.</p>
-<p>First, find a new friend to play the game with.</p>
-<p>Feel free to share your story in the <cite>#showcase</cite> channel on Slack, and see what others have created!</p>
-<p>You and your partner will alternate tasks, so designate one of you as <strong>Player 1</strong> and the other as <strong>Player 2</strong>. Even when it is not your turn to complete a task, read and observe what your partner is doing to completed theirs. The steps here mimic how a real-world collaborative Git workflow can be used within a project.</p>
+<p>We are going to simulate a radio conversation between the shuttle pilot and
+mission control.</p>
+<p>First, find a new friend to share the activity.</p>
+<p>You and your partner will alternate tasks, so designate one of you as <strong>Pilot</strong>
+and the other as <strong>Control</strong>. Even when it is not your turn to complete a task,
+read and observe what your partner is doing to complete theirs. The steps here
+mimic how a real-world collaborative Git workflow can be used within a project.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">As you go through these steps, you’ll be working with branches, and it’s very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch. Read about how to do so in our Git Stash Tutorial.</p>
+<p class="last">As you go through these steps, you’ll be working with branches. It’s very
+likely you will make changes to the code only to realize that you did so in the
+wrong branch. When this happens (and it happens to all of us) you can use
+<code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch. Read about how
+to do so in our Git Stash Tutorial.</p>
 </div>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
@@ -129,23 +143,32 @@ time. You will learn how to:</p>
 </div>
 <div class="section" id="step-1-create-a-new-repository">
 <h3>15.6.3.1. Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h3>
-<p><strong>Player 1</strong>: Navigate to your development folder. Follow these instructions to create a new project.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir fireside-story
-$ cd fireside-story
-$ Git init
+<p><strong>Control</strong>: Navigate to your development folder. Follow these instructions to
+create a new project.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir communication-log
+$ cd communication-log
+$ git init
 </pre></div>
 </div>
-<p>In that directory, open a new file <cite>index.html</cite> in the editor of your choice. Paste in this code:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<p>In that directory, open a new file <cite>index.html</cite> in the editor of your choice.
+Paste in this code:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It was a dark and stormy night...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Radio check. Pilot, please confirm.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-<p>Let’s check that our html looks okay by opening it in a browser. You can do this by selecting File &gt; Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: <code class="docutils literal notranslate"><span class="pre">file:///Users/cheryl/Development/fireside-story/index.html</span></code>.</p>
+</td></tr></table></div>
+<p>Let’s check that our html looks okay by opening it in a browser. Do this by
+selecting <em>File &gt; Open File</em> in your web browser, and navigating to the
+location of your new HTML file. The URL will look something like this:
+<code class="docutils literal notranslate"><span class="pre">file:///Users/cheryl/Development/communication-log/index.html</span></code>.</p>
 <p>Once you’ve seen this file in the browser, let’s stage and commit it.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git status
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch master
 
 Initial commit
@@ -155,60 +178,74 @@ Untracked files:
 
    index.html
 
-nothing added to commit but untracked files present (use &quot;Git add&quot; to track)
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
 </pre></div>
 </div>
 <p>The file is not staged. Let’s add everything in this directory.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git add .
-$ Git status
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git status
 On branch master
 
 Initial commit
 
 Changes to be committed:
-(use &quot;Git rm --cached &lt;file&gt;...&quot; to unstage)
+(use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
 
    new file:   index.html
 </pre></div>
 </div>
 <p>We see that the file is staged. Let’s commmit.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git commit -m &#39;started story&#39;
-[master (root-commit) e1c1719] started story
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git commit -m &#39;Started communication log.&#39;
+[master (root-commit) e1c1719] Started communication log.
 1 file changed, 5 insertions(+)
 create mode 100644 index.html
-$ Git log
+$ git log
 commit 679de772612099c77891d2a3fab12af8db08b651
 Author: Cheryl &lt;cherylschaefer@gmail.com&gt;
 Date:   Wed Apr 5 10:55:56 2017 -0500
 
-   started story
+   Started communication log.
 </pre></div>
 </div>
-<p>Great! We’ve got our project going locally, but we’re going to need to make it accessible for Player 2 also. Let’s push this project up to GitHub.</p>
+<p>Great! We’ve got our project going locally, but we’re going to need to make it
+accessible for <strong>Pilot</strong> also. Let’s push this project up to GitHub.</p>
 </div>
 <div class="section" id="step-2-share-your-repository-on-github">
 <h3>15.6.3.2. Step 2: Share Your Repository On GitHub<a class="headerlink" href="#step-2-share-your-repository-on-github" title="Permalink to this headline">¶</a></h3>
-<p><strong>Player 1</strong>: Go to your GitHub profile in a web browser. Click on the + button to add a new repository (‘repo’).</p>
+<p><strong>Control</strong>: Go to your GitHub profile in a web browser. Click on the “+”
+button to add a new repository (‘repo’).</p>
 <div class="figure" id="id1">
 <img alt="../../_images/CreateAGithubRepo.png" src="../../_images/CreateAGithubRepo.png" />
 <p class="caption"><span class="caption-text">Create a new repository in GitHub</span></p>
 </div>
-<p>Fill in the name and description. Uncheck the “initialize with README”. Click <em>Create Repository</em>.</p>
-<p>&lt;aside class=”aside-warning” markdown=”1”&gt;If you initialize with a README, in the next step Git will refuse to merge this repo with the local repo. There’s ways around that, but it’s faster and easier to just create an empty repo here. &lt;/aside&gt;</p>
+<p>Fill in the name and description. Uncheck the “initialize with README”. Click
+<em>Create Repository</em>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you initialize with a README, in the next step Git will refuse to merge
+this repo with the local repo. There are ways around that, but it’s faster
+and easier to just create an empty repo here.</p>
+</div>
 <div class="figure" id="id2">
 <img alt="../../_images/StartingARepo.png" src="../../_images/StartingARepo.png" />
 <p class="caption"><span class="caption-text">Connecting to a repository in GitHub</span></p>
 </div>
-<p>Now go back to your terminal and follow the instructions shown on GitHub which should be very similar to this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git remote add origin https://Github.com:cherylschaefer/fireside-story.Git
-$ Git push origin master
+<p>Now go back to your terminal and follow the instructions shown on GitHub which
+should be very similar to this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com:cherylschaefer/communication-log.git
+$ git push origin master
 </pre></div>
 </div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the HTTPS clone URL. If you don’t know whether or not you’ve done this, you almost certainly haven’t.</p>
+<p class="last">Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
+HTTPS clone URL. If you’re not sure whether you have an SSH key, you
+probably don’t.</p>
 </div>
-<p>Now you should be able to confirm that GitHub has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code through GitHub’s web interface.</p>
+<p>Now you should be able to confirm that GitHub has the same version of the
+project you have locally. (File contents in browser match those in terminal).
+Click around and see what is there. You can read all your code through GitHub’s
+web interface.</p>
 <div class="figure" id="id3">
 <img alt="../../_images/Repo1Commit.png" src="../../_images/Repo1Commit.png" />
 <p class="caption"><span class="caption-text">A repository with one commit in GitHub</span></p>
@@ -216,37 +253,46 @@ $ Git push origin master
 </div>
 <div class="section" id="step-3-clone-a-project-from-github">
 <h3>15.6.3.3. Step 3: Clone a Project from GitHub<a class="headerlink" href="#step-3-clone-a-project-from-github" title="Permalink to this headline">¶</a></h3>
-<p><strong>Player 2:</strong> Go to Player 1’s GitHub profile and find the fireside-story repo. Click on the green <em>Clone or download</em> button. Please use HTTPS (not SSH). Copy the url to your clipboard.</p>
-<p>!`Cloning a repository in GitHub &lt;figures/CloneRepo2.png&gt;`_</p>
-<p>In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Git clone https://Github.com/cherylschaefer/fireside-story.Git
+<p><strong>Pilot</strong>: Go to Control’s GitHub profile and find the communication-log repo.
+Click on the green <em>Clone or download</em> button. Use HTTPS (not SSH). Copy the
+url to your clipboard.</p>
+<div class="figure" id="id4">
+<img alt="../../_images/CloneRepo2.png" src="../../_images/CloneRepo2.png" />
+<p class="caption"><span class="caption-text">Cloning a repository in GitHub</span></p>
+</div>
+<p>In your terminal, navigate to your development folder and clone down the repo.
+The command should look something like this.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/cherylschaefer/communication-log.git
 </pre></div>
 </div>
-<p>Now you can add a line to the story! Open the <cite>index.html</cite> file in your editor and add the next line of the story. Be creative – the story can go anywhere! Just don’t talk about what to write with your partner. Then commit your change.</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>$ Git status
+<p>Now you can respond to Control! Open the <cite>index.html</cite> file in your editor and
+add your response to mission control. Be creative—the communication can go
+anywhere! Just don’t ask your partner what you should write. After you finish,
+commit your change.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch master
-Your branch is up-to-date with ‘origin/master’.
+Your branch is up-to-date with &#39;origin/master&#39;.
 nothing to commit, working directory clean
-$ Git add index.html
-$ Git commit -m ‘added second line of story’</dd>
-</dl>
-<p>Now we need to push up your changes so Player 1 can use them as well.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ Git push origin master
-ERROR: Permission to cherylschaefer/fireside-story.Git denied to player2.
+$ git add index.html
+$ git commit -m &#39;Added second line to log.&#39;
+</pre></div>
+</div>
+<p>Now we need to push up your changes so Control can use them as well.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin master
+ERROR: Permission to cherylschaefer/communication-log.git denied to pilot.
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
 </pre></div>
 </div>
-<p>Great error message! It let us know exactly what went wrong - Player 2 does not have security permissions to write to Player 1’s repo. Let’s go fix that.</p>
+<p>Great error message! It let us know exactly what went wrong - Pilot does not
+have security permissions to write to Control’s repo. Let’s fix that.</p>
 </div>
 <div class="section" id="step-4-add-a-collaborator-to-a-github-project">
 <h3>15.6.3.4. Step 4: Add A Collaborator To A GitHub Project<a class="headerlink" href="#step-4-add-a-collaborator-to-a-github-project" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 1</strong>: In your web browser, go to your <cite>fireside-story</cite> repo. Click the <em>Settings</em> button then click on <em>Collaborators</em>. Enter in Player 2’s GitHub username and click <em>Add Collaborator</em>.</p>
-<div class="figure" id="id4">
+<div class="figure" id="id5">
 <img alt="../../_images/RepoSettingsAddCollaborator.png" src="../../_images/RepoSettingsAddCollaborator.png" />
 <p class="caption"><span class="caption-text">Add a collaborator to your repo in GitHub</span></p>
 </div>
@@ -258,7 +304,7 @@ and the repository exists.
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">If you don’t see an email (it may take a few minutes to arrive in your inbox), check your Spam folder. If you still don’t have an email, visit the repository page for the repo that Player 1 created (ask them for the link), and you’ll see a notification at the top of the page.</p>
 </div>
-<div class="figure" id="id5">
+<div class="figure" id="id6">
 <img alt="../../_images/InvitedToGithubRepo.png" src="../../_images/InvitedToGithubRepo.png" />
 <p class="caption"><span class="caption-text">Invited to collaborate email in GitHub</span></p>
 </div>
@@ -351,7 +397,7 @@ $ Git push origin darker
 </div>
 <p>Note that the last command is a bit different than what we’ve used before (<cite>Git push origin master</cite>). The final piece of this command is the name of the branch that we want Git to push up to the origin repository (that is, to GitHub).</p>
 <p>You should both now see a second branch present on the GitHub project page. To view branches on GitHub, select <em>Branches</em> from the navigation section just below the repository title.</p>
-<div class="figure" id="id6">
+<div class="figure" id="id7">
 <img alt="../../_images/BranchesButton.png" src="../../_images/BranchesButton.png" />
 <p class="caption"><span class="caption-text">Branches Button in GitHub</span></p>
 </div>
@@ -375,12 +421,12 @@ master
 <blockquote>
 <div>Branches Page in GitHub</div></blockquote>
 <p>Click <em>New Pull Request</em> to begin the process of requesting that your changes in the <code class="docutils literal notranslate"><span class="pre">darker</span></code> branch be incorporated into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. Add some text in the description box to let Player 1 know what you did and why. Note that the branch selected in the <cite>base</cite> dropdown is the branch that you want to merge _into_, and the selected in the <em>compare</em> dropdown is the branch you want to merge _from_.</p>
-<div class="figure" id="id7">
+<div class="figure" id="id8">
 <img alt="../../_images/pr-details.png" src="../../_images/pr-details.png" />
 <p class="caption"><span class="caption-text">Open a PR in GitHub</span></p>
 </div>
 <p>This is what an opened pull request looks like:</p>
-<div class="figure" id="id8">
+<div class="figure" id="id9">
 <img alt="../../_images/pr-created.png" src="../../_images/pr-created.png" />
 <p class="caption"><span class="caption-text">Create a PR in GitHub</span></p>
 </div>
@@ -417,22 +463,22 @@ Your branch is up-to-date with &#39;origin/master&#39;.
 <div class="section" id="step-11-merge-the-pull-request">
 <h3>15.6.3.11. Step 11: Merge the Pull Request<a class="headerlink" href="#step-11-merge-the-pull-request" title="Permalink to this headline">¶</a></h3>
 <p><strong>Player 1:</strong> Go to the repo in GitHub. Click on <em>Pull Requests</em>.</p>
-<div class="figure" id="id9">
+<div class="figure" id="id10">
 <img alt="../../_images/RepoPR1.png" src="../../_images/RepoPR1.png" />
 <p class="caption"><span class="caption-text">PR Open in GitHub</span></p>
 </div>
 <p>Explore this page to see all the information GitHub shows you about the pull request.</p>
-<div class="figure" id="id10">
+<div class="figure" id="id11">
 <img alt="../../_images/RepoMergePR.png" src="../../_images/RepoMergePR.png" />
 <p class="caption"><span class="caption-text">Merge a Pull Request in GitHub</span></p>
 </div>
 <p>When you’re happy with the changes, merge them in. Click <em>Merge Pull Request</em> then <em>Confirm Merge</em>.</p>
-<div class="figure" id="id11">
+<div class="figure" id="id12">
 <img alt="../../_images/PRConfirmMerge.png" src="../../_images/PRConfirmMerge.png" />
 <p class="caption"><span class="caption-text">Confirm PR Merge in GitHub</span></p>
 </div>
 <p>Upon a successful merge, you should see a screen similar to the following:</p>
-<div class="figure" id="id12">
+<div class="figure" id="id13">
 <img alt="../../_images/PRMerged.png" src="../../_images/PRMerged.png" />
 <p class="caption"><span class="caption-text">PR Merged in GitHub</span></p>
 </div>
@@ -446,7 +492,7 @@ $ Git pull origin master
 <div class="section" id="step-12-merge-conflicts">
 <h3>15.6.3.12. Step 12: Merge Conflicts!<a class="headerlink" href="#step-12-merge-conflicts" title="Permalink to this headline">¶</a></h3>
 <p>When collaborating on a project, things won’t always go so smoothly. It’s common for two people to make changes to the same line(s) of code, at roughly the same time, which will prevent Git from being able to merge the changes together.</p>
-<div class="figure" id="id13">
+<div class="figure" id="id14">
 <img alt="../../_images/Git-merge.gif" src="../../_images/Git-merge.gif" />
 <p class="caption"><span class="caption-text">Git Merge Conflicts</span></p>
 </div>
@@ -471,7 +517,7 @@ $ Git pull origin master
 </pre></div>
 </div>
 <p>The result:</p>
-<div class="figure" id="id14">
+<div class="figure" id="id15">
 <img alt="../../_images/AddSatisfyFont.png" src="../../_images/AddSatisfyFont.png" />
 <p class="caption"><span class="caption-text">Satisfying!</span></p>
 </div>
