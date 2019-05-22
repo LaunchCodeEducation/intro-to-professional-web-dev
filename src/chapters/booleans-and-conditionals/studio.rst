@@ -1,9 +1,12 @@
 Studio: Goal Setting and Getting into the Right Mindset
 =======================================================
 
+.. index:: ! growth mindset
+
 During this studio, we will ask you to think about your mindset when it comes to facing challenges.
 Do challenges deter you or delight you?
 If challenges are something you delight in, you might have a growth mindset.
+
 A **growth mindset** can be powered by one word, “yet”.
 The word “yet” allows us to acknowledge that we don’t know something AND that we are capable of learning it.
 With “yet”, the sentence “I don’t understand booleans” becomes “I don’t understand booleans `yet`.”
@@ -11,7 +14,7 @@ With “yet”, the sentence “I don’t understand booleans” becomes “I do
 Growth must occur over an entire career.
 As technology evolves, even the most senior developers have to learn new skills.
 Creating a framework for learning, which includes setting achievable goals, is important for being a developer.
-Technology will change and adapt and we should learn to do the same!
+Technology will change and adapt, and we should learn to do the same!
 
 When setting goals, those goals should be SMART. SMART stands for:
 
@@ -30,14 +33,14 @@ While you don't have to do any prior goal setting or preparation to make the mos
 
 .. note::
 
-   If there is a place where you would like to write down your goals and inspiration, such as a journal, feel free to bring it to class!
+   If you have a place where you like to write down your goals and inspiration, such as a journal, feel free to bring it to class!
 
 Activity
 --------
 After your TA reviews the relevant topics, we will have a discussion covering the following:
 
 1. Your goals for taking this class. 
-	You probably have many reasons why this class is something that you want to complete.
+	You probably have many reasons why this class is something you want to complete.
 	Please share 1 to 2 of your goals and keep them SMART!
 
 2. Your goals for your career.
@@ -45,7 +48,7 @@ After your TA reviews the relevant topics, we will have a discussion covering th
 	Please share 1 to 2 goals for your career.
 
 3. Your inspirational statements.
-	This can be anthing that motivates you from stories to quotes to ideas.
+	This can be anything that motivates you from stories to quotes to ideas.
 	Please share 1 to 2.
 
 After the studio, make sure to write your goals and inspirational statements somewhere where you will regularly see them! 
