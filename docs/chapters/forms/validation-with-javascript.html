@@ -94,6 +94,7 @@ validation on form input values.</p>
 <ol class="arabic simple">
 <li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">window</span></code> <em>load</em> event</li>
 <li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">form</span></code> <em>submit</em> event</li>
+<li>Retrieve input values that need to be validated from the DOM.</li>
 <li>Check the input values using conditional statements<ol class="loweralpha">
 <li>If the values are valid, allow the form submission</li>
 <li>If the values are NOT valid, inform the user and STOP form submission</li>
@@ -157,11 +158,11 @@ triggered.</p>
 </div>
 <div class="section" id="follow-along-as-we-add-validation">
 <h2>18.9.2. Follow Along as We Add Validation<a class="headerlink" href="#follow-along-as-we-add-validation" title="Permalink to this headline">¶</a></h2>
-<p>Use <a class="reference external" href="https://repl.it/&#64;launchcode/form-validation" target="_blank">this repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to add validation to
-the above example.</p>
+<p>Use <a class="reference external" href="https://repl.it/&#64;launchcode/form-validation" target="_blank">this repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and the following instructions
+to add validation to the above example.</p>
 <p>To validate what the user has typed, we can get a reference to the <code class="docutils literal notranslate"><span class="pre">input</span></code> elements in
-the DOM and check <code class="docutils literal notranslate"><span class="pre">input.value</span></code>. Let’s change the <em>submit</em> event handler to alert
-the value of the username input. We are going to use
+the DOM and check <code class="docutils literal notranslate"><span class="pre">input.value</span></code>. Let’s change the <em>submit</em> event handler to display the
+value of the username input in an <code class="docutils literal notranslate"><span class="pre">alert</span></code> box. To do that, we are going to use
 <code class="docutils literal notranslate"><span class="pre">document.querySelector(&quot;input[name=username]&quot;)</span></code>, which uses an <em>attribute selector</em> to
 select the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> that has <code class="docutils literal notranslate"><span class="pre">name=&quot;username&quot;</span></code>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -186,7 +187,7 @@ select the <code class="docutils literal notranslate"><span class="pre">&lt;inpu
 </pre></div>
 </td></tr></table></div>
 <p>Now that we know how to get the value of an input, we can add <em>conditional statements</em>.
-Let’s add code that opens an alert box if <em>either</em> input values are <em>empty</em>.</p>
+Let’s add code that opens an alert box if <em>either</em> input value is <em>empty</em>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -213,13 +214,14 @@ Let’s add code that opens an alert box if <em>either</em> input values are <em
 </pre></div>
 </td></tr></table></div>
 <p>We are making progress. Now if you click <em>Submit</em> with one or both of the inputs empty,
-then an alert message appears telling you that both inputs are required.</p>
-<p id="index-0">But we want to prevent the form submission from happening until all
+then an alert message appears telling you that both inputs are required. However, the form is
+still submitted even if the data is invalid.</p>
+<p id="index-0">We should prevent the form submission from happening until all
 inputs have valid values. We can use the <code class="docutils literal notranslate"><span class="pre">event</span></code> parameter and
 <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code> to stop the form submission. <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code>
 prevents default browser functionality from happening, like form submission
 when <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags are clicked inside of a form. Remember that <em>event handler</em> functions
-are passed an <code class="docutils literal notranslate"><span class="pre">event</span></code> parameter which represents the occurring event.</p>
+are passed an <code class="docutils literal notranslate"><span class="pre">event</span></code> argument which represents the event that the handler is responding to.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3

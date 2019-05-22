@@ -7,7 +7,7 @@ Form Submission Using POST
 Instead of using GET and query parameters to submit form data, we can use POST.
 To submit a form using a POST request, set the form's ``method`` attribute to ``"POST"``.
 Form data submitted via POST will be submitted in the body of the HTTP request.
-Data submitted by GET request is less secure than POST because GET request URLs
+Data submitted by GET requests is less secure than POST because GET request URLs
 and the query parameters are cached and logged, possibly leaking sensitive data.
 
 .. admonition:: Example
@@ -31,10 +31,9 @@ a form submission?
 
 .. index:: ! form handler
 
-**Form handlers** are web servers that receive and respond to a form submission. Form
-handlers are usually separate web pages or applications that receive, inspect,
-do something with the form values, and then finally respond. For this unit we are
-going to use form handlers that have already been created for us.
+**Form handlers** are web server actions that receive, inspect, and process requests.
+They then send a response to the client. For this unit we are going to use form handlers that have already
+been created for us.
 
 .. admonition:: Example
 
@@ -51,7 +50,7 @@ going to use form handlers that have already been created for us.
 
 .. admonition:: Try It!
 
-   #. Open `this form using POST <https://form-post--launchcode.repl.co/>`_ in a browser.
+   #. Open `example form that uses POST <https://form-post--launchcode.repl.co/>`_ in a browser.
    #. Open the network tab of the developer tools
    #. Check "Persist Logs" in the network tab
    #. Enter data into the inputs
