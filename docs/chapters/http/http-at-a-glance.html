@@ -85,10 +85,45 @@
     
   <div class="section" id="http-at-a-glance">
 <h1>17.2. HTTP at a Glance<a class="headerlink" href="#http-at-a-glance" title="Permalink to this headline">¶</a></h1>
+<p>While web developers can often get away with a minimal understanding of TCP/IP and DNS, they must understand HTTP much more deeply. Before diving into the details of HTTP, let’s gain a high-level understanding.</p>
+<div class="section" id="requests-and-responses">
+<h2>17.2.1. Requests and Responses<a class="headerlink" href="#requests-and-responses" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">The fundamental units of HTTP are <strong>requests</strong> and <strong>responses</strong>. A client (usually a web browser) makes a request to a web server. Based on the details of the request, the server formulates and sends a response. The response is parsed and displayed by the browser.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/http-request-response.png"><img alt="A client and a server exchanging HTTP requests and responses" src="../../_images/http-request-response.png" style="height: 400px;" /></a>
+</div>
+<p>As long as the server is available, <em>every</em> request receives a single response.</p>
+<p>Requests contain several types of data, including:</p>
 <ol class="simple">
-<li>requests and responses</li>
-<li>USPS analogy</li>
+<li>The URL being requested.</li>
+<li>The type of action the client is asking the browser to take.</li>
+<li>Metadata about the requst, such as the type of browser making the request and the type(s) of data the client can accept in return.</li>
+<li>Optionally, a request message.</li>
 </ol>
+<p>Responses include:</p>
+<ol class="simple">
+<li>The status of the response, including success or failure reasons.</li>
+<li>Metadata about the response, including the size and data format of the response message.</li>
+<li>Optionally, a response message.</li>
+</ol>
+</div>
+<div class="section" id="the-postal-service-of-the-internet">
+<h2>17.2.2. The Postal Service of the Internet<a class="headerlink" href="#the-postal-service-of-the-internet" title="Permalink to this headline">¶</a></h2>
+<p>HTTP can seem complicated, but it is actually very similar to a system that you are already familiar with: The United States Postal Service.</p>
+<p>Suppose you want to mail a letter to your friend in Alaska, asking them their favorite cheese. To do so, you write your question on a piece of paper and enclose it in an envelope. On the envelope, you write your friend’s address, along with your return address. Finally, to stick a stamp on the top-right corner.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">include image of letter and addressed envelope</p>
+</div>
+<p>Each of these pieces of information is necessary for your letter to be delivered. When your letter enteres the postal system, it will travel from one post office to another, via land, air, and maybe even sea. As long as you follow their rules, the postal service will get your letter to its destination.</p>
+<p>This is very similar to how an HTTP request works. The letter is like a request message. The envelope contains the location and metadata needed for the letter to be delivered, just like an HTTP request specifies a URL and other metadata necessary for the request to reach the server and be processed.</p>
+<p>When you drop the letter in your mailbox, you know it will be delivered since you followed the postal service’s rules. When we make HTTP requests, we don’t know <em>how</em> our request will get to the server, but as long as we properly structure a request, it <em>will</em> be delivered.</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../../_images/postal-network.png"><img alt="An image of a mail processing facility next to an image of network cables." src="../../_images/postal-network.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-text">Both the postal service and the Internet deliver messages, as long as you follow their formatting rules. Images used with permission. L: via <a class="reference external" href="https://www.af.mil/News/Article-Display/Article/1399724/deployed-airmen-volunteer-to-enhance-morale-downrange/" target="_blank">US Air Force<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, R: via Flickr user <a class="reference external" href="https://www.flickr.com/photos/verkeorg/24501780183" target="_blank">verkeorg<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></span></p>
+</div>
+<p>And just as your friend will respond with a letter telling you their favorite cheese (sharp white cheddar!), an HTTP request will result in a response from the server.</p>
+<p>As we wade into the details of HTTP, keep this analogy in mind. It will help simplify the concepts and make them more concrete.</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">In your own words, explain the role of HTTP in enabling communication over the Internet.</p>
@@ -97,9 +132,12 @@
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Answer true or false for each of the following statements.</p>
 <ol class="last arabic simple">
-<li>A web server can send multiple responses for a request.</li>
-<li>???</li>
+<li>A web server can send multiple responses for a single HTTP request.</li>
+<li>The postal service will deliver your HTTP requests, if you ask nicely.</li>
+<li>When creating an HTTP request, we must specify every network connection and server between our client and the server.</li>
+<li>The postal service is a good analogy for HTTP.</li>
 </ol>
+</div>
 </div>
 </div>
 
