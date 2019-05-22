@@ -3,12 +3,13 @@ More On Variables
 
 The previous section covered creating, evaluating, and reassigning variables. This section will cover some additional, more nuanced topics related to variables.
 
-Creating Constants With **const**
+Creating Constants With ``const``
 ---------------------------------
 
 One of the key features of variables that we have discussed so far is their ability to change value. We can create a variable with one value, and then reassign it to another value.
 
 .. sourcecode:: js
+   :linenos:
 
    let programmingLanguage = "JavaScript";
    programmingLanguage = "Python";
@@ -51,11 +52,12 @@ How does JavaScript prevent a programmer from changing the value of a constant? 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       const appName = "Get It Done";
       appName = "Best TODO application Ever!";
 
-   **Output**
+   **Console Output**
 
    :: 
 
@@ -77,7 +79,7 @@ As you may have discovered already, not just any sequence of characters is a val
 
       let application name;
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -104,6 +106,7 @@ Writing good code is about more than writing code that simply works and accompli
 One of the primary ways that code can be written poorly is by using bad variable names. For example, consider the following program. While we haven't introduced each of the components used here, you should be able to come to a general understanding of the new components. 
 
 .. sourcecode:: js
+   :linenos:
 
    let x = 5;
    const y = 3.14;
@@ -117,6 +120,7 @@ Understanding what this program is trying to do is not obvious, to say the least
 Let's look at an improved version this program.
 
 .. sourcecode:: js
+   :linenos:
 
    let radiusOfCircle = 5;
    const pi = 3.14;
@@ -176,7 +180,7 @@ Attempting to use a keyword for anything other than it's intended use will resul
 
       let const;
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -190,7 +194,7 @@ Attempting to use a keyword for anything other than it's intended use will resul
 We will not provide the full list of keywords at this time, but rather point them out as we learn about each of them. If you are curious, the `full list is available at MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Reserved_keywords_as_of_ECMAScript_2015>`_.
 
 Check Your Understanding
-========================
+------------------------
 
 .. admonition:: Question
 

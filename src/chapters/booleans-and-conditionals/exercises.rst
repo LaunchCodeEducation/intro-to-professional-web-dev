@@ -5,133 +5,131 @@ Attempt these exercises to test your understanding.
 Don't worry if you struggle while working on them. Struggling and recalling
 the material will help you remember it.
 
-| In class, be sure to ask about the topics you do not understand. You are NOT the only person who needs help.
-    
-.. note::
+In class, be sure to ask about the topics you do not understand. You are NOT the only person who needs help.
 
-   When the term **print** is used, it means to output a value to the ``console``.
+#. Declare and initialize the following variables for our space shuttle:
 
-Declare and initialize variables in the table
-----------------------------------------------
+   .. list-table::
+      :widths: auto
+      :header-rows: 1
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
+      * - Variable
+        - Value
+      * - ``engineIndicatorLight``
+        - ``"red blinking"``
+      * - ``spaceSuitsOn``
+        - ``true``
+      * - ``shuttleCabinReady``
+        - ``true``
+      * - ``crewStatus``
+        - ``spaceSuitsOn && shuttleCabinReady``
+      * - ``computerStatusCode``
+        - ``200``
+      * - ``shuttleSpeed``
+        - ``15000``
 
-   * - Variable
-     - Value
-   * - engineIndicatorLight
-     - red blinking
-   * - spaceSuitsOn
-     - true
-   * - shuttleCabinReady
-     - true
-   * - crewStatus
-     - spaceSuitsOn && shuttleCabinReady
-   * - computerStatusCode
-     - 200
-   * - shuttleSpeed
-     - 15000
+#. Examine the code below. What will be printed to the console?
 
-Examine the code below. What will be printed to the console?
-----------------------------------------------------------------------
-Use the value of ``engineIndicatorLight`` defined above to answer this question.
+   Use the value of ``engineIndicatorLight`` defined above to answer this question.
 
-.. code-block:: javascript
+   .. sourcecode:: js
+      :linenos:
 
-   if (engineIndicatorLight === "green") {
-      console.log("engines have started");
-   } else if (engineIndicatorLight === "green blinking") {
-      console.log("engines are preparing to start");
-   } else {
-      console.log("engines are off");
-   }
+      if (engineIndicatorLight === "green") {
+         console.log("engines have started");
+      } else if (engineIndicatorLight === "green blinking") {
+         console.log("engines are preparing to start");
+      } else {
+         console.log("engines are off");
+      }
 
-Write conditional expressions to satisfy the safety rules below
-----------------------------------------------------------------
-Using the variables defined from the table above.
+#. Write conditional expressions to satisfy the safety rules below, using the variables defined from the table above.
 
-#. ``crewStatus``
+   #. ``crewStatus``
 
-   - if crewStatus is ``true``, print ``"Crew Ready"``
-   - else print ``"Crew Not Ready"``
+      - If the value is ``true``, print ``"Crew Ready"``
+      - else print ``"Crew Not Ready"``
 
-#. ``computerStatusCode``
+   #. ``computerStatusCode``
 
-   - if value is ``200``, print ``"Please stand by. Computer is rebooting."``
-   - else if value is ``400``, print ``"Success! Computer online."``
-   - else print ``"ALERT: Computer offline!"``
+      - If the value is ``200``, print ``"Please stand by. Computer is rebooting."``
+      - Else if the value is ``400``, print ``"Success! Computer online."``
+      - Else print ``"ALERT: Computer offline!"``
 
-#. ``shuttleSpeed``
+   #. ``shuttleSpeed``
 
-   - if value is ``> 17,500``, print ``"ALERT: Escape velocity reached!"``
-   - else if value is ``< 8000``, print ``"ALERT: Cannot maintain orbit!"``
-   - else print ``"Stable speed"``
+      - If the value is ``> 17,500``, print ``"ALERT: Escape velocity reached!"``
+      - Else if the value is ``< 8000``, print ``"ALERT: Cannot maintain orbit!"``
+      - Else print ``"Stable speed"``
 
-Do these code blocks produce the same result?
----------------------------------------------
-Answer Yes or No
+#. Do these code blocks produce the same result?
 
-.. code-block:: javascript
+   Answer Yes or No
 
-    if (crewStatus && computerStatusCode === 200 && spaceSuitsOn) {
-        console.log("all systems go");
-    } else {
-        console.log("WARNING. Not ready");
-    }
+   .. sourcecode:: js
+      :linenos:
 
-.. code-block:: javascript
+      if (crewStatus && computerStatusCode === 200 && spaceSuitsOn) {
+         console.log("all systems go");
+      } else {
+         console.log("WARNING. Not ready");
+      }
 
-    if (!crewStatus || computerStatusCode !== 200 || !spaceSuitsOn) {
-        console.log("WARNING. Not ready");        
-    } else {
-        console.log("all systems go");
-    }
+   .. sourcecode:: js
+      :linenos:
 
-Monitor fuel status
---------------------
-**First, declare and initialize the following variables:**
+      if (!crewStatus | computerStatusCode !== 200 | !spaceSuitsOn) {
+         console.log("WARNING. Not ready");        
+      } else {
+         console.log("all systems go");
+      }
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
+#. The remaining exercises implement conditional code to monitor the shuttle's fuel status.
 
-   * - Variable
-     - Value
-   * - fuelLevel
-     - 21000
-   * - engineTemperature
-     - 1200
+   First, declare and initialize the following variables:
 
-**Next, implement the checks below using** ``if / else if / else`` **statements.**
+   .. list-table::
+      :widths: auto
+      :header-rows: 1
 
-a. | If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is below 2500,
-   | print ``"Full tank.  Engines good."``
-b. | If ``fuelLevel`` is above 10000 AND ``engineTemperature`` is below 2500,
-   | print ``"Fuel level above 50%.  Engines good."``
-c. | If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is below 2500,
-   | print ``"Fuel level above 25%.  Engines good."``
-d. | If ``fuelLevel`` is below 5000 OR ``engineTemperature`` is above 2500,
-   | print ``"Check fuel level.  Engines running hot."``
-e. | If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR ``engineIndicatorLight`` is red blinking
-   | print ``"ENGINE FAILURE IMMINENT!"``
+      * - Variable
+        - Value
+      * - ``fuelLevel``
+        - ``21000``
+      * - ``engineTemperature``
+        - ``1200``
 
-.. note::
-   Run your code several times with different values for ``fuelLevel``, ``engineTemperature`` and ``engineIndicatorLight``.
-   You must make sure your code prints the correct phrase for each set of conditions.
+#. Next, implement the checks below using ``if`` / ``else if`` / ``else`` statements.
 
-Final bit of fun!
---------------------
-| The shuttle should only launch if the fuel tank is full and the engine check is OK.  
-| *However*, let's establish an override command to ignore any warnings and send the shuttle into space anyway!
+   #. If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is below 2500,
+      print ``"Full tank.  Engines good."``
+   #. If ``fuelLevel`` is above 10000 AND ``engineTemperature`` is below 2500,
+      print ``"Fuel level above 50%.  Engines good."``
+   #. If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is below 2500,
+      print ``"Fuel level above 25%.  Engines good."``
+   #. If ``fuelLevel`` is below 5000 OR ``engineTemperature`` is above 2500,
+      print ``"Check fuel level.  Engines running hot."``
+   #. If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR ``engineIndicatorLight`` is red blinking
+      print ``"ENGINE FAILURE IMMINENT!"``
 
-**Create the variable** ``commandOverride`` **, and set it to be** ``true`` **or** ``false`` **.**
+   .. note::
 
-| If commandOverride is ``false``, then the shuttle should only lauch if the fuel and engine check are OK.
-| If commandOverride is ``true``, then the shuttle will launch regardless of the fuel and engine status.
+      Run your code several times with different values for ``fuelLevel``, ``engineTemperature`` and ``engineIndicatorLight``.
 
-**Code the following** ``if / else`` **check:**
+      You must make sure your code prints the correct phrase for each set of conditions.
 
-a. | If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT red blinking OR ``commandOverride`` is true
-   | print ``"Cleared to launch!"``
-b. Else print ``"Launch scrubbed!"``
+#. Final bit of fun!
+
+   The shuttle should only launch if the fuel tank is full and the engine check is OK.  
+   *However*, let's establish an override command to ignore any warnings and send the shuttle into space anyway!
+
+   #. Create the variable ``commandOverride``, and set it to be ``true`` *or* ``false``.
+
+      If commandOverride is ``false``, then the shuttle should only lauch if the fuel and engine check are OK.
+      
+      If commandOverride is ``true``, then the shuttle will launch regardless of the fuel and engine status.
+
+   #. Code the following ``if`` / ``else`` check:
+
+      a. If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT red blinking OR ``commandOverride`` is true print ``"Cleared to launch!"``
+      b. Else print ``"Launch scrubbed!"``

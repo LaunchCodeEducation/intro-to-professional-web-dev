@@ -22,7 +22,7 @@ One way to state the palindrome condition is to say that a palindrome is a strin
 
 To that end, it would be very useful to have a function that reversed a string, wouldn't it?
 
-The **reverse** Function
+The ``reverse`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's write a function that, given a string, returns its reverse.
@@ -30,10 +30,11 @@ Let's write a function that, given a string, returns its reverse.
 One approach uses the accumulator pattern:
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       let reversed = '';
-      
+
       for (let i = 0; i < str.length; i++) {
          reversed = str[i] + reversed;
       }
@@ -41,15 +42,16 @@ One approach uses the accumulator pattern:
       return reversed;
    }
 
-.. todo:: add reference to the correct section of the string chapter
+This is the same algorithm that we used previously to :ref:`reverse a string <reverse-string>`.
 
-This is the same algorithm that we used to reverse a string in a previous chapter.
+.. _reverse-a-string:
 
-Another approach is to use the fact that there is a ``reverse`` method for arrays, and that the methods ``split`` and ``join`` allow us to go from strings to arrays and back (this was covered in section X).
+Another approach is to use the fact that there is a ``reverse`` method for arrays, and that the methods ``split`` and ``join`` allow us to go from strings to arrays and back (this was covered in :ref:`array-methods`).
 
-.. todo:: Add reference to array chapter where this is covered
+.. _reverse_func:
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       let lettersArray = str.split('');
@@ -72,12 +74,13 @@ Let's break down the steps carried out by this function:
 
 .. _palindrome-function:
 
-The **isPalindrome** Function
+The ``isPalindrome`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using our ``reverse`` function for strings, we can create our palindrome checker. Recall that our approach will be to take the string argument, reverse it, and then compare the reversed string to the original string.
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       return str.split('').reverse().join('');
@@ -102,7 +105,7 @@ An important consideration when writing a function is size. By "size" we mean th
 This principle is easier to state than to put into practice. For example, what if we had written ``isPalindrome`` without breaking out the ``reverse`` code into a separate function?
 
 .. sourcecode:: js
-
+   :linenos:
 
    function isPalindrome(str) {
       let reversed = str.split('').reverse().join('');
@@ -116,6 +119,7 @@ Some cases will be much more clear-cut, however. Consider the sandwich function,
 A much better solution would look like this:
 
 .. sourcecode:: js
+   :linenos:
 
    function makeSandwich( /*parameters*/ ) {
       // make the sandwich

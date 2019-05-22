@@ -7,12 +7,14 @@
     <title>10.5. A Good Function-Writing Process &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -26,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,7 +39,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
         </a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -68,14 +70,18 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">10. Functions</a></li>
+    <li class="active">10.5. A Good Function-Writing Process</li>
+</ol>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-            <li><a href="index.html">10. Functions</a></li>
-          <li class="active">10.5. A Good Function-Writing Process</li>
-        </ol>
-      
+
     
   <div class="section" id="a-good-function-writing-process">
 <span id="sandwich-function"></span><h1>10.5. A Good Function-Writing Process<a class="headerlink" href="#a-good-function-writing-process" title="Permalink to this headline">¶</a></h1>
@@ -85,14 +91,14 @@
 <div class="section" id="step-1-design-your-function">
 <h2>10.5.1. Step 1: Design Your Function<a class="headerlink" href="#step-1-design-your-function" title="Permalink to this headline">¶</a></h2>
 <p>Before putting fingers to keyboard, it is important to have a clear idea of what you want your function to do. You should ask yourself the following questions:</p>
-<ul class="simple">
+<ol class="simple">
 <li>What data (that is, parameters) does my function need to do its job?</li>
 <li>Should my function return a value? (Hint: The answer is almost always “yes.”)</li>
 <li>What should be the data type of my function’s return value?</li>
 <li>What is a good, descriptive name for my function?</li>
 <li>What data types do we expect the parameters to be?</li>
 <li>What are good names for my parameters?</li>
-</ul>
+</ol>
 <p>For our sandwich function, the answers might look like this:</p>
 <table border="1" class="docutils" id="id1">
 <caption><span class="caption-text">Specification for a Sandwich Function</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -124,23 +130,25 @@
 <h2>10.5.2. Step 2: Create the Basic Structure<a class="headerlink" href="#step-2-create-the-basic-structure" title="Permalink to this headline">¶</a></h2>
 <p>Now it is time to start coding. Using the design decisions you just made, write the minimal syntax needed to create the function.</p>
 <p>Here’s what an outline of our sandwich function would look like:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">makeSandwich</span><span class="p">(</span><span class="nx">breadType</span><span class="p">,</span> <span class="nx">fillingType</span><span class="p">,</span> <span class="nx">condiments</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">makeSandwich</span><span class="p">(</span><span class="nx">breadType</span><span class="p">,</span> <span class="nx">fillingType</span><span class="p">,</span> <span class="nx">condiments</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="c1">// TODO: make a sandwich with the given ingredients</span>
 
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Doing this step before writing the body will prevent silly mistakes like leaving off a <code class="docutils literal notranslate"><span class="pre">}</span></code> or forgetting to define a parameter.</p>
 </div>
 <div class="section" id="step-3-write-the-body">
 <h2>10.5.3. Step 3: Write the Body<a class="headerlink" href="#step-3-write-the-body" title="Permalink to this headline">¶</a></h2>
 <p>With the basic structure in place, go ahead and start writing the function body. Be sure to alternate between sub-tasks and running your code. <em>Do not wait until you have written the entire function body before testing your code!</em></p>
-<p>We can’t emphasize this enough. Going long stretches of time without running the program is a good way to end up frustrated. Recall in the chapter on debugging that we made the following recommendation to avoid bugs:</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Pull quote from debugging chapter, with reference link</p>
-</div>
+<p>We can’t emphasize this enough. Going long stretches of time without running the program is a good way to end up frustrated. Recall <a class="reference internal" href="../errors-and-debugging/how-to-avoid-debugging.html#how-to-avoid-debugging"><span class="std std-ref">in the chapter on debugging</span></a> that we made the following recommendation to avoid bugs:</p>
+<blockquote class="pull-quote">
+<div>Get something working and keep it working.</div></blockquote>
 <p>This applies <em>especially</em> to writing functions. Every good professional programmer works in this way: write a few lines of code, run it, debug any errors, repeat.</p>
 <p>Following these steps won’t prevent you from making mistakes, but it will certainly reduce the number of bugs you create. This helps you more quickly produce solid, working code.</p>
 </div>

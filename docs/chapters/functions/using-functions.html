@@ -7,12 +7,14 @@
     <title>10.2. Using Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -26,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,7 +39,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
         </a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -68,14 +70,18 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">10. Functions</a></li>
+    <li class="active">10.2. Using Functions</li>
+</ol>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-            <li><a href="index.html">10. Functions</a></li>
-          <li class="active">10.2. Using Functions</li>
-        </ol>
-      
+
     
   <div class="section" id="using-functions">
 <h1>10.2. Using Functions<a class="headerlink" href="#using-functions" title="Permalink to this headline">¶</a></h1>
@@ -88,7 +94,7 @@
 </div>
 <p id="index-1">Every function provides a <strong>return value</strong>, which can be used by the calling program—for example, to store in a variable or print to the console.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>A return value may be stored in a variable.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">stringVal</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
 </pre></div>
@@ -97,31 +103,32 @@
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
 <p>If a function doesn’t provide an explicit return value, the special value <code class="docutils literal notranslate"><span class="pre">undefined</span></code> will be returned.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">returnVal</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">returnVal</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">returnVal</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>LaunchCode
 undefined
 </pre></div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">The special value <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is built into JavaScript. As with booleans, it is not a string, so <code class="docutils literal notranslate"><span class="pre">undefined</span> <span class="pre">===</span> <span class="pre">&quot;undefined&quot;</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 <p id="index-2">In some cases, calling a function results in an action that changes the state of a program outside of the function itself. Such a behavior is known as a <strong>side effect</strong>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p class="last">Calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code> results in output to the console, which is a side effect.</p>
 </div>
 </div>

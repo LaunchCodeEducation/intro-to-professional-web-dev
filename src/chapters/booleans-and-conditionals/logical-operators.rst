@@ -53,7 +53,7 @@ Let's see how this works in code.
       console.log(7 > 5 && 2 > 3);
       console.log(2 > 3 && 'dog' === 'cat');
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -92,7 +92,7 @@ Let's look at some examples in JavaScript.
    console.log(7 > 5 || 2 > 3);
    console.log(2 > 3 || 'dog' === 'cat');
 
-**Output**
+**Console Output**
 
 ::
 
@@ -104,9 +104,11 @@ Lines 1 and 2 both return ``true`` because at least one of the comparison expres
 
 .. warning:: 
    
-   The single symbols ``&`` and ``|`` are themselves valid JavaScript operators, so accidentally leaving off one of the symbols when typing ``&&`` or ``||`` will not result in an error. The operators ``&`` and ``|`` are `bitwise operators <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators>`_, which are beyond the scope of this course, and most programmers rarely use them. 
+   The single symbols ``&`` and ``|`` are themselves valid JavaScript operators, so accidentally leaving off one of the symbols when typing ``&&`` or ``||`` will not result in an error. 
+   
+   The operators ``&`` and ``|`` are `bitwise operators <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators>`_, which are beyond the scope of this course. 
 
-   It is not important for you to understand bitwise operators at this point, but you should know that you should *never* use them in place of the binary operators ``&&`` and ``||``.
+   Most programmers rarely use bitwise operators, and it is not important for you to understand them at this point. You should *never* use them in place of the binary operators ``&&`` and ``||``.
 
 Logical NOT
 ^^^^^^^^^^^
@@ -121,11 +123,12 @@ The logical NOT operator, ``!``, takes only a single operand and reverses its bo
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(! true);
       console.log(! false);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -137,11 +140,12 @@ The operator ``!`` (sometimes called "bang") has the same semantic role as the w
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log( !(5 > 7) );
       console.log( !('dog' === 'cat') );
 
-   **Output**
+   **Console Output**
 
    ::
 

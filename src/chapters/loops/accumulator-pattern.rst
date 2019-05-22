@@ -25,6 +25,7 @@ We can carry out this same procedure in code using a loop.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let n = 6;
       let total = 0;
@@ -35,7 +36,7 @@ We can carry out this same procedure in code using a loop.
 
       console.log(total);
    
-   **Output**
+   **Console Output**
 
    ::
 
@@ -54,6 +55,8 @@ This pattern of initializing a variable to some basic, or empty value, and updat
 
 The accumulator pattern comes up regularly in programming. The key to using it successfully is to initialize the accumulator variable before you start the iteration. Once inside the loop, update the accumulator.
 
+.. _reverse-string:
+
 Reversing a String
 ------------------
 
@@ -62,6 +65,7 @@ While some programming languages have a string method that will reverse a given 
 We'll start by initializing two variables: the string we want to reverse, and a variable that will eventually store the reversed value of the given string.
 
 .. sourcecode:: js
+   :linenos:
 
    let str = "accumulator";
    let reversed = "";
@@ -71,6 +75,7 @@ Here, ``reversed`` is our accumulator variable. Our approach to reversing the st
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let str = "blue";
       let reversed = "";
@@ -81,7 +86,7 @@ Here, ``reversed`` is our accumulator variable. Our approach to reversing the st
 
       console.log(reversed);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -133,6 +138,7 @@ Another common use of the accumulator pattern is to compute some value using eac
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let numbers = [2, -5, 13, 42];
       let total = 0;
@@ -141,7 +147,7 @@ Another common use of the accumulator pattern is to compute some value using eac
          total += numbers[i];
       }
 
-   **Output**
+   **Console Output**
 
    ::
 

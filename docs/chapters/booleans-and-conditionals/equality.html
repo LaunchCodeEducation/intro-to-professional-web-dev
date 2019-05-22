@@ -7,12 +7,14 @@
     <title>5.2. Equality &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -26,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,7 +39,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
         </a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -68,28 +70,34 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">5. Making Decisions With Conditionals</a></li>
+    <li class="active">5.2. Equality</li>
+</ol>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-            <li><a href="index.html">5. Making Decisions With Conditionals</a></li>
-          <li class="active">5.2. Equality</li>
-        </ol>
-      
+
     
   <div class="section" id="equality">
 <span id="id1"></span><h1>5.2. Equality<a class="headerlink" href="#equality" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="loose-equality-with">
-<h2>5.2.1. Loose Equality With <strong>==</strong><a class="headerlink" href="#loose-equality-with" title="Permalink to this headline">¶</a></h2>
+<h2>5.2.1. Loose Equality With <code class="docutils literal notranslate"><span class="pre">==</span></code><a class="headerlink" href="#loose-equality-with" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">In the section <a class="reference internal" href="booleans.html#booleans"><span class="std std-ref">Booleans</span></a>, we learned about the comparison operators <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code>, which test whether two values are equal or not equal, respectively. However, there are some quirks with using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator, which occur when we use <code class="docutils literal notranslate"><span class="pre">==</span></code> to compare different data types.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">==</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">==</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
 true
 true
@@ -97,36 +105,40 @@ true
 </div>
 </div>
 <p id="index-1">In order to properly make a comparison, the two operands must be the same type. If the two operands to <code class="docutils literal notranslate"><span class="pre">==</span></code> are of different data types, Javascript will implicitly convert the operands so that the values are of the same data types before comparing the two. For this reason, the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is often said to measure <strong>loose equality</strong>.</p>
-<p>Type conversions with <code class="docutils literal notranslate"><span class="pre">==</span></code> are carried out according to a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using">complex set of rules</a>, and while many of these conversions make some sense, others do not.</p>
+<p>Type conversions with <code class="docutils literal notranslate"><span class="pre">==</span></code> are carried out according to a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using" target="_blank">complex set of rules<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and while many of these conversions make some sense, others do not.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">Number(&quot;7&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">7</span></code>, so it makes some sense that <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">==</span> <span class="pre">&quot;7&quot;</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>. However, the following example leaves us scratching our heads.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
 true
 false
 </pre></div>
 </div>
 </div>
-<p id="index-2">The == operator is <strong>non-transitive</strong>. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is <em>not</em> the case for the == operator.</p>
+<p id="index-2">The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is <strong>non-transitive</strong>. We think of equality as being transitive; for example, if A and B are equal and B and C are equal, then A and C are also equal. However, the example above demonstrates that that is <em>not</em> the case for the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator.</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">==</span></code> does not follow rules that we typically associate with equality, unexpected results may occur if <code class="docutils literal notranslate"><span class="pre">==</span></code> is used in a program. Thankfully, JavaScript provides another operator that returns more predictable results.</p>
 </div>
 <div class="section" id="strict-equality-with">
-<h2>5.2.2. Strict Equality With <strong>===</strong><a class="headerlink" href="#strict-equality-with" title="Permalink to this headline">¶</a></h2>
+<h2>5.2.2. Strict Equality With <code class="docutils literal notranslate"><span class="pre">===</span></code><a class="headerlink" href="#strict-equality-with" title="Permalink to this headline">¶</a></h2>
 <p id="index-3">The operator <code class="docutils literal notranslate"><span class="pre">===</span></code> compares two operands <em>without</em> converting their data types. In other words, if <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are of different data types (say, <code class="docutils literal notranslate"><span class="pre">a</span></code> is a string and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a number) then <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">===</span> <span class="pre">b</span></code> will always be false.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">===</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">===</span> <span class="s2">&quot;7&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>false
 false
 false
@@ -135,15 +147,15 @@ false
 </div>
 <p id="index-4">For this reason, the <code class="docutils literal notranslate"><span class="pre">===</span></code> operator is often said to measure <strong>strict equality</strong>.</p>
 <p id="index-5">Just as equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code> has the inequality operator <code class="docutils literal notranslate"><span class="pre">!=</span></code>, there is also a strict inquality operator, <code class="docutils literal notranslate"><span class="pre">!==</span></code>. The boolean expression <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!==</span> <span class="pre">b</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> when the two operands are of different types, or if they are of the same type and have different values.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p class="last">USE <code class="docutils literal notranslate"><span class="pre">===</span></code> AND <code class="docutils literal notranslate"><span class="pre">!==</span></code> WHENEVER POSSIBLE. In this book we will use these strict operators over the loose operators from now on.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>5.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the result of the following boolean expression?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
 </pre></div>
@@ -156,7 +168,7 @@ false
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the difference between <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">===</span></code>?</p>
 <ol class="last arabic simple">
 <li>There is no difference. They work exactly the same.</li>

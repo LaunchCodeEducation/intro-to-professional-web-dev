@@ -19,6 +19,7 @@ In particular, *a variable defined using `let` within a function is not visible 
    This function takes a string and returns the result of removing all hyphens, ``-``, from the string.
 
    .. sourcecode:: js
+      :linenos:
    
       function removeHyphens(str) {
          let strWithoutHyphens = ''
@@ -34,7 +35,7 @@ In particular, *a variable defined using `let` within a function is not visible 
       console.log(removeHyphens(launchCodePhone));
       console.log(strWithoutHyphens);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -56,6 +57,7 @@ We just learned that variables and parameters defined within a function are not 
    In some cases, a variable defined outside of a function may be visible within the function.
 
    .. sourcecode:: js
+      :linenos:
    
       let message = "Hello, World!";
 
@@ -65,7 +67,7 @@ We just learned that variables and parameters defined within a function are not 
 
       printMessage();
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -84,6 +86,7 @@ Even though ``message`` is defined outside the function, it is still visible wit
    Once you have answered that question, try relocating the declaring ``message`` to other locations to see how it affects the program. For example, you might try placing it within or after ``printMessage``.
 
    .. sourcecode:: js
+      :linenos:
    
       let message = "Hello, World!";
 
@@ -115,7 +118,7 @@ An interesting thing happens when a function parameter has the same name as a va
 
       printMessage("Goodbye");
       
-   **Output**
+   **Console Output**
 
    ::
 
@@ -133,6 +136,7 @@ Check Your Understanding
    What does the following code output?
 
    .. sourcecode:: js
+      :linenos:
 
       let num = 42;
 

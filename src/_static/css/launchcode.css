@@ -1,10 +1,48 @@
-/* a, a:hover, a:focus {
-	color: #df552d;
-} */
+/* TODO - remove these font defs once custom.css has been deployed */
 
+@font-face {
+    font-family: 'Nexa';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/NexaRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: italic;
+    font-weight: 400;
+    src: url('fonts/Nexa-Regular-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/Nexa-XBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: italic;
+    font-weight: 700;
+    src: url('fonts/Nexa-XBold-Italic.otf') format('opentype');
+}
+
+/* END TODO */
+
+body {
+    font-size: 16px;
+    line-height: 1.8em;
+    font-family: "Nexa","Monsterrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 h1 {
     /* TODO: this should be in /repos/bootswatch/launchcode/variables.less after we learn how to alter the theme */
     color: #3c79b8;
+}
+
+
+h1, h2, h3, h4, h5 {
+    margin: 1em 0 .5em;
 }
 
 h1 a,
@@ -15,6 +53,14 @@ h5 a {
     color: inherit;
 }
 
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong {
+    color: #716b7a;
+}
+
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
@@ -23,9 +69,28 @@ h5 a:hover {
     text-decoration: none;
 }
 
+.toctree-wrapper ul,
+.toctree-wrapper ol  {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.toctree-wrapper > ul > li > a,
+.toctree-wrapper > ol > li > a {
+	font-size: 20px;
+}
+
 code {
-    /* color: #df552d;*/
-    background-color: #f9f1ef;
+    background: none;
+    color: #419f6a;
+    padding: 0;
+    font-weight: bold;
+    font-size: inherit;
+}
+
+.pager code {
+	color: #fff;
+	font-weight: bold;
 }
 
 .navbar-brand {
@@ -35,7 +100,7 @@ code {
 
 .navbar-brand img {
     margin-top: -10px;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 .searchLabel {
@@ -57,19 +122,21 @@ code {
 }
 
 /* Aside Boxes and Admonitions  */
+.fas {
+	color: #FF4F33;
+}
+
 aside {
     padding: 2em;
     padding-top: 1em;
     border-radius: 2px;
     margin: 2em;
-    /*border: 1px solid #eee;*/
     box-shadow: 0 4px 10px 0 #eee;
 }
 
 aside::before {
     position: relative;
     left: -2em;
-    /*top: -1em;*/
     padding: 0.5em;
     padding-right: 1em;
     font-family: "Nexa Black";
@@ -142,51 +209,22 @@ div.admonition {
     display: inline-block;
 }
 
-.admonition .admonition-title::before {
-    margin-right: .25em;
+.admonition-question > p, .admonition-question > ul {
+	margin-bottom: 10px;
 }
 
-/*
-.attention .admonition-title::before {
-    content: "📢";
+.admonition-question ol,
+div[id^="exercises-"] ol ol {
+    list-style-type: lower-alpha;
 }
 
-.caution .admonition-title::before {
-    content: "⚠️";
+div[id^="exercises-"] ol ol ol {
+    list-style-type: lower-roman;
 }
 
-.danger .admonition-title::before {
-    content: "🧨";
+.admonition-title .fas {
+    margin-right: .5em;
 }
-
-.error .admonition-title::before {
-    content: "🚨";
-}
-
-.hint .admonition-title::before {
-    content: "🔎";
-}
-
-.important .admonition-title::before {
-    content: "🔑";
-}
-
-.note .admonition-title::before {
-    content: "📘";
-}
-
-.tip .admonition-title::before {
-    content: "💡";
-}
-
-.warning .admonition-title::before {
-    content: "⚠️";
-}
-
-.admonition-generic .admonition-title::before {
-    content: "✱";
-}
-*/
 
 .content .admonition p.last {
     margin: 0;
@@ -195,21 +233,6 @@ div.admonition {
 
 .content .admonition p.first {
     margin-top: 2em;
-}
-
-/* Bonus Missions */
-
-#bonus-missions > h1 a:first-child::before,
-#bonus-mission > h1 a:first-child::before,
-#bonus-missions > h2 a:first-child::before,
-#bonus-mission > h2 a:first-child::before,
-#bonus-missions > h3 a:first-child::before,
-#bonus-mission > h3 a:first-child::before,
-#bonus-missions > h4 a:first-child::before,
-#bonus-mission > h4 a:first-child::before,
-#bonus-missions > h5 a:first-child::before,
-#bonus-mission > h5 a:first-child::before {
-    content: '🚀 ';
 }
 
 pre {
@@ -221,6 +244,53 @@ pre {
     border: 1px solid #777;
     border-radius: 4px;
     background-color: #354a5f;
+    margin: 0;
+}
+
+div.highlight-js,
+div.highlight-none,
+div.highlight-css,
+div.highlight-html {
+    margin: 1em 0;
+}
+
+div.highlight-js + p.repl-link,
+div.highlight-none + p.repl-link,
+div.highlight-css + p.repl-link,
+div.highlight-html + p.repl-link  {
+	margin-top: -1em;
+}
+
+.highlighttable .linenos {
+    background-color: #354a5f;
+    border-radius: 4px 0 0 4px;
+    width: 42px;
+    text-align: right;
+}
+
+.highlighttable .linenos pre {
+    font-size: 14px;
+    padding: 0;
+    padding-right: 10px;
+    color: #354a5f;
+    color: #fff;
+    border-right: 1px solid #fff;
+    border-radius: 0;
+}
+
+table.highlighttable {
+    width: 100%;
+    margin: 0;
+    table-layout: fixed;
+}
+
+table.highlighttable td {
+	padding: 0;
+}
+
+.highlighttable .code pre {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
 }
 
 blockquote {
@@ -263,15 +333,9 @@ div.topic {
 div.contents {
     background-color: #fff;
     font-family: "Nexa",sans-serif;
-    /*
-    border: 1px solid #cacacb;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-radius: 0;
-    */
 }
 
-.toctree-wrapper ul  {
+.toctree-wrapper ol  {
     list-style: none;
     padding-left: 20px;
 }
@@ -301,31 +365,44 @@ div.contents a:hover {
     margin: 2px 0;
 }
 
-.admonition .highlight {
-    padding-top: 10px;
+.admonition .highlight,
+.admonition .highlighttable {
+    margin: 10px 0;
 }
 
-.highlight .sa { color: #00d288 } /* Literal.String.Affix */
-.highlight .sb { color: #00d288 } /* Literal.String.Backtick */
-.highlight .sc { color: #00d288 } /* Literal.String.Char */
-.highlight .dl { color: #00d288 } /* Literal.String.Delimiter */
-.highlight .sd { color: #00d288 } /* Literal.String.Doc */
-.highlight .s2 { color: #00d288 } /* Literal.String.Double */
-.highlight .se { color: #00d288 } /* Literal.String.Escape */
-.highlight .sh { color: #00d288 } /* Literal.String.Heredoc */
-.highlight .si { color: #00d288 } /* Literal.String.Interpol */
-.highlight .sx { color: #00d288 } /* Literal.String.Other */
-.highlight .sr { color: #00d288 } /* Literal.String.Regex */
-.highlight .s1 { color: #00d288 } /* Literal.String.Single */
-.highlight .ss { color: #00d288 } /* Literal.String.Symbol */
+.admonition .highlighttable .highlight {
+    margin: 0;
+}
 
-.highlight .mb { color: #fb660a; font-weight: bold } /* Literal.Number.Bin */
-.highlight .mf { color: #fb660a; font-weight: bold } /* Literal.Number.Float */
-.highlight .mh { color: #fb660a; font-weight: bold } /* Literal.Number.Hex */
-.highlight .mi { color: #fb660a; font-weight: bold } /* Literal.Number.Integer */
-.highlight .mo { color: #fb660a; font-weight: bold } /* Literal.Number.Oct */
+.highlight .c { color: #E67F74; font-style: italic; background-color: #354a5f } /* Comment */
 
-.highlight .s { color: #00d288 } /* Literal.String */
+.highlight .sa { color: #61C08D } /* Literal.String.Affix */
+.highlight .sb { color: #61C08D } /* Literal.String.Backtick */
+.highlight .sc { color: #61C08D } /* Literal.String.Char */
+.highlight .dl { color: #61C08D } /* Literal.String.Delimiter */
+.highlight .sd { color: #61C08D } /* Literal.String.Doc */
+.highlight .s2 { color: #61C08D } /* Literal.String.Double */
+.highlight .se { color: #61C08D } /* Literal.String.Escape */
+.highlight .sh { color: #61C08D } /* Literal.String.Heredoc */
+.highlight .si { color: #61C08D } /* Literal.String.Interpol */
+.highlight .sx { color: #61C08D } /* Literal.String.Other */
+.highlight .sr { color: #61C08D } /* Literal.String.Regex */
+.highlight .s1 { color: #61C08D } /* Literal.String.Single */
+.highlight .ss { color: #61C08D } /* Literal.String.Symbol */
+
+.highlight .mb { color: #DF552D; font-weight: bold } /* Literal.Number.Bin */
+.highlight .mf { color: #DF552D; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #DF552D; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #DF552D; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #DF552D; font-weight: bold } /* Literal.Number.Oct */
+
+.highlight .s { color: #61C08D } /* Literal.String */
+
+.highlight .na { color: #FF98CE; font-weight: bold } /* Name.Attribute */
+.highlight .nf { color: #FF98CE; font-weight: bold } /* Name.Function */
+.highlight .fm { color: #FF98CE; font-weight: bold } /* Name.Function.Magic */
+
+.highlight .kt { color: #f1A640; font-weight: bold } /* Keyword.Type */
 
 /* TODO - Remove these after updating shared ed styles(custom.css?) */
 
@@ -337,4 +414,22 @@ h2, h3, h4, h5, h6 {
 
 .footer p {
     margin: 0 0 10.5px;
+}
+
+/* Tables */
+
+table caption {
+    color: #716b7a;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* END Tables */
+
+p[id]:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -60px;
+    height: 60px;
+    visibility: hidden; 
 }

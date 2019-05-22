@@ -7,12 +7,14 @@
     <title>9.2. for Loops &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -26,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,7 +39,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
         </a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -68,26 +70,32 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">9. Repeating With Loops</a></li>
+    <li class="active">9.2. <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</li>
+</ol>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-            <li><a href="index.html">9. Repeating With Loops</a></li>
-          <li class="active">9.2. <strong>for</strong> Loops</li>
-        </ol>
-      
+
     
   <div class="section" id="for-loops">
-<h1>9.2. <strong>for</strong> Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h1>
+<h1>9.2. <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="index-0"></span><p id="index-1">The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is the first JavaScript tool for iteration that we will explore. A <strong>for loop</strong> is typically used for <strong>definite iteration</strong>. Definite iteration is the process of repeating a specific task with a specific data set. When a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop begins it can usually be determined exactly how many times it will execute: once for each item in the data set.</p>
 <div class="section" id="for-loop-syntax">
-<h2>9.2.1. <strong>for</strong> Loop Syntax<a class="headerlink" href="#for-loop-syntax" title="Permalink to this headline">¶</a></h2>
+<h2>9.2.1. <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop Syntax<a class="headerlink" href="#for-loop-syntax" title="Permalink to this headline">¶</a></h2>
 <p id="index-2">We have already seen the basic syntax of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>This program prints the integers 0 through 50, one number per line. In the language of definite iteration, we say that the loop has a data set of 0-50, and its action is to print a value to the console.</p>
 <p>Let’s break down this syntax piece by piece, so we can begin to understand how <code class="docutils literal notranslate"><span class="pre">for</span></code> loops are structured.</p>
 <p id="index-3">A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop always contains the following components:</p>
@@ -97,29 +105,31 @@
 </pre></div>
 </div>
 <p>Notice that in the first line, within parentheses, the components <strong>initial expression</strong>, <strong>loop condition</strong>, and <strong>update expression</strong> are separated by semicolons. Let’s look at these components in detail.</p>
-<ul class="simple">
+<ol class="simple">
 <li>The statement <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code> is executed exactly once, at the <em>beginning</em> of loop execution. The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> is the <strong>loop variable</strong>.</li>
 <li><dl class="first docutils">
 <dt>The boolean expression <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> is the <strong>loop condition</strong>. This condition is evaluated before each loop iteration, or repetition.</dt>
-<dd><ul class="first last">
+<dd><ol class="first last">
 <li>If the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code> then the loop executes again.</li>
 <li>If the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code> then the loop ceases execution and the program continues to execute the code below the loop.</li>
-</ul>
+</ol>
 </dd>
 </dl>
 </li>
 <li>The statement <code class="docutils literal notranslate"><span class="pre">i++</span></code> is the <strong>update expression</strong>. This expression is executed at the <em>end</em> of each loop iteration.</li>
 <li>The block of code surrounded with brackets (<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>) is the <strong>loop body</strong>. The loop body is executed once for each iteration of the loop.</li>
-</ul>
+</ol>
 </div>
 <div class="section" id="flow-of-execution-of-the-for-loop">
-<h2>9.2.2. Flow of Execution of the <strong>for</strong> Loop<a class="headerlink" href="#flow-of-execution-of-the-for-loop" title="Permalink to this headline">¶</a></h2>
+<h2>9.2.2. Flow of Execution of the <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop<a class="headerlink" href="#flow-of-execution-of-the-for-loop" title="Permalink to this headline">¶</a></h2>
 <p>In just a few lines of code, a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop contains a lot of detailed logic, so let’s spend some time breaking down the flow of execution for the particular loop that we’ve been looking at.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Here is a step-by-step description of how this loop executes:</p>
 <ol class="arabic simple">
 <li>When the program reaches the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, the initial expression <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code> is executed, declaring the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> and initializing it to the value <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>

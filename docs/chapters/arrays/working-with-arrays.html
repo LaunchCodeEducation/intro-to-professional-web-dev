@@ -7,12 +7,14 @@
     <title>8.2. Working With Arrays &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -26,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,7 +39,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
         </a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -68,14 +70,18 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">8. Arrays</a></li>
+    <li class="active">8.2. Working With Arrays</li>
+</ol>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-            <li><a href="index.html">8. Arrays</a></li>
-          <li class="active">8.2. Working With Arrays</li>
-        </ol>
-      
+
     
   <div class="section" id="working-with-arrays">
 <h1>8.2. Working With Arrays<a class="headerlink" href="#working-with-arrays" title="Permalink to this headline">¶</a></h1>
@@ -85,9 +91,19 @@
 array is the number order given to items. Individual items can be accessed using bracket notation (<code class="docutils literal notranslate"><span class="pre">array[index]</span></code>).
 Indexes are zero-based, going from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">array.length-1</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Use bracket notation and index to access items in an array.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span>
    <span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="c1">// index 0</span>
    <span class="s2">&quot;Python&quot;</span><span class="p">,</span>     <span class="c1">// index 1</span>
    <span class="s2">&quot;Java&quot;</span><span class="p">,</span>       <span class="c1">// index 2</span>
@@ -95,11 +111,12 @@ Indexes are zero-based, going from <code class="docutils literal notranslate"><s
 <span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
 <span class="c1">// What will happen when index 4 is requested?</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>JavaScript
 C#
 undefined
@@ -108,19 +125,21 @@ undefined
 </div>
 <p>Notice above that <code class="docutils literal notranslate"><span class="pre">undefined</span></code> was printed out when index 4 was referenced. <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is returned when you request an index
 that the array does not contain.</p>
-<div class="admonition note" id="index-1">
-<p class="first admonition-title">Note</p>
+<div class="admonition" id="index-1">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last"><strong>undefined</strong> is a special value in JavaScript that means no value has been assigned. We will discuss <code class="docutils literal notranslate"><span class="pre">undefined</span></code> more later in the class.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p><code class="docutils literal notranslate"><span class="pre">undefined</span></code> will be returned for any index that is outside of the array’s index range.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">100</span><span class="p">]);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>undefined
 undefined
 </pre></div>
@@ -133,9 +152,16 @@ undefined
 to a string results in a new string being created. In contrast, arrays are <strong>mutable</strong>, meaning that individual items in
 an array can be edited without a new array being created.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Update an item in an array using bracket notation and index.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span> <span class="s2">&quot;Ember&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span> <span class="s2">&quot;Ember&quot;</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">);</span>
 
 <span class="c1">// Set the value of index 2 to be &quot;Vue&quot;</span>
@@ -144,8 +170,8 @@ an array can be edited without a new array being created.</p>
 <span class="c1">// Notice the value at index 2 is now &quot;Vue&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;React&#39;, &#39;Angular&#39;, &#39;Ember&#39; ]
 [ &#39;React&#39;, &#39;Angular&#39;, &#39;Vue&#39; ]
 </pre></div>

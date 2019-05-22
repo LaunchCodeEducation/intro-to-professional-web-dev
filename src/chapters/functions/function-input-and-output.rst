@@ -28,6 +28,7 @@ where ``someVal`` is any value.
    This function has a single parameter, ``n``, which is expected to be a positive integer. It returns the sum 1+2+...+n. 
 
    .. sourcecode:: js
+      :linenos:
    
       function sumToN(n) {
          let sum = 0;
@@ -39,7 +40,7 @@ where ``someVal`` is any value.
 
       console.log(sumToN(3));
 
-   **Output**
+   **Console Output**
    
    ::
 
@@ -53,7 +54,7 @@ Now that we have return statements in our coding toolbox, we will very rarely pr
 
    The function ``sumToN`` uses a pattern that we have seen previously. What is it called? 
 
-Using **return** is Optional
+Using ``return`` is Optional
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As we saw with our initial examples of function definitions, not every function explicitly returns a value. At its simplest, a function can even have an empty body.
@@ -69,19 +70,20 @@ This function is completely valid, if usefuless. While it doesn't have a return 
    A function without a return statement returns the special value ``undefined``.
 
    .. sourcecode:: js
+      :linenos:
    
       function doNothing() {}
 
       let returnVal = doNothing();
       console.log(returnVal);
 
-   **Output**
+   **Console Output**
 
    ::
 
       undefined
 
-**return** Terminates Function Execution
+``return`` Terminates Function Execution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When a return statement executes, the function terminates, regardless of whether or not there is any code following the return statement. This means that you must be careful to use ``return`` only when the work of the function has been completed.
@@ -91,6 +93,7 @@ When a return statement executes, the function terminates, regardless of whether
    This ``console.log`` statement in this function never executes, since the function returns before it is reached.
 
    .. sourcecode:: js
+      :linenos:
 
       function pastThePointOfReturn() {
          return "I'm done!";
@@ -99,7 +102,7 @@ When a return statement executes, the function terminates, regardless of whether
 
       console.log(pastThePointOfReturn());
    
-   **Output**
+   **Console Output**
 
    ::
 
@@ -112,6 +115,7 @@ We can use the fact that ``return`` stops the execution of a function intentiona
    This function prints out the integers 1...n using an infinite ``while`` loop, which nonetheless terminates when the ``return`` statement is executed.
 
    .. sourcecode:: js
+      :linenos:
    
       function countToN(n) {
          let count = 1;
@@ -136,6 +140,7 @@ A function that returns a boolean value is known as a **boolean function**. Perh
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       function isEven(n) {
          if (n % 2 === 0) {
@@ -148,7 +153,7 @@ A function that returns a boolean value is known as a **boolean function**. Perh
       console.log(isEven(4));
       console.log(isEven(7));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -162,6 +167,7 @@ Let's return to the ``isEven`` function above, to see how we can use the power o
 Since ``return`` terminates the function, we can leave out the ``else`` clause and have the same effect. This is because if ``n`` is even, the return statement in the ``if`` block will execute and the function will end. If ``n`` is odd, the ``if`` block will be skipped and the second return statement will execute.
 
 .. sourcecode:: js
+   :linenos:
 
    function isEven(n) {
       if (n % 2 === 0) {
@@ -175,6 +181,7 @@ This updated version works exactly the same as our initial function.
 Additionally, notice that the function returns ``true`` when ``n % 2 === 0`` returns ``true``, and it returns ``false`` when ``n % 2 === 0`` returns ``false``. In other words, the return value is *exactly the same* as the value of ``n % 2 === 0``. This means that we can simplify the function even further by returning the value of this expression.
 
 .. sourcecode:: js
+   :linenos:
 
    function isEven(n) {
       return n % 2 === 0;
@@ -208,7 +215,7 @@ The easiest way to talk about the difference between arguments and parameters is
 
       console.log(hello("Lamar"));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -229,6 +236,7 @@ A function may be defined with several parameters, or with no parameters at all.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       function hello(name) {
          return `Hello, ${name}!`;
@@ -236,7 +244,7 @@ A function may be defined with several parameters, or with no parameters at all.
 
       console.log(hello());
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -256,6 +264,7 @@ If your function will not work properly without one more more of its parameters 
    This example modifies the ``hello`` function to use a default value for ``name``. If ``name`` is not defined when ``hello`` is called, it will use the default value.
 
    .. sourcecode:: js
+      :linenos:
    
       function hello(name = "World") {
          return `Hello, ${name}!`;
@@ -264,7 +273,7 @@ If your function will not work properly without one more more of its parameters 
       console.log(hello());
       console.log(hello("Lamar"));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -278,6 +287,7 @@ While this may seem new, we have already seen a function that allows for some ar
    The string method ``slice`` allows the second argument to be left off. When this happens, the method behaves as if they value of the second argument is the length of the string.
 
    .. sourcecode:: js
+      :linenos:
    
       // returns "Launch"
       "LaunchCode".slice(0, 6);
@@ -295,6 +305,7 @@ Just as it is possible to call a function with *fewer* arguments than it has par
    This example calls ``hello`` with two arguments, even though it is defined with only one parameter.
 
    .. sourcecode:: js
+      :linenos:
    
       function hello(name = "World") {
          return `Hello, ${name}!`;
@@ -302,7 +313,7 @@ Just as it is possible to call a function with *fewer* arguments than it has par
 
       console.log(hello("Jim", "McKelvey"));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -320,6 +331,7 @@ Check Your Understanding
    What does the following code output?
 
    .. sourcecode:: js
+      :linenos:
 
       function plusTwo(num) {
           return num + 2;
@@ -338,6 +350,7 @@ Check Your Understanding
    What does the following function return?
 
    .. sourcecode:: js
+      :linenos:
 
       function repeater(str) {
           let repeated = str + str;
@@ -356,6 +369,7 @@ Check Your Understanding
    #. What does the following code *output*?
 
    .. sourcecode:: js
+      :linenos:
 
       function repeater(str) {
           let repeated = str + str;

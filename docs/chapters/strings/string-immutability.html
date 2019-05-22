@@ -7,12 +7,14 @@
     <title>7.4. String Immutability &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/site.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -26,7 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head><body>
+  </head><body class="body-bc">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,7 +39,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
         </a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -68,20 +70,24 @@
     </div>
   </div>
 
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">7. Strings</a></li>
+    <li class="active">7.4. String Immutability</li>
+</ol>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 content ">
-        <ol class="breadcrumb">
-            <li><a href="index.html">7. Strings</a></li>
-          <li class="active">7.4. String Immutability</li>
-        </ol>
-      
+
     
   <div class="section" id="string-immutability">
 <h1>7.4. String Immutability<a class="headerlink" href="#string-immutability" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">If an object cannot be changed, we say that it is <strong>immutable</strong>. Strings are immutable, which means we cannot change the invidual characters within a given string. While we can access individual characters using bracket notation, attempting to change individual characters simply does not work.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -93,7 +99,7 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Launchcode
 Launchcode
 </pre></div>
@@ -102,7 +108,7 @@ Launchcode
 <p>We attempted to change the value of the character at index 6 from <code class="docutils literal notranslate"><span class="pre">'c'</span></code> to <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, by using an assignment statement along with bracket notation on line 4 (perhaps to align with official LaunchCode branding guidelines). However, this change clearly did not take place. In many programming langauges strings are immutable, and while trying to change a string in some languages results in an error, JavaScript simply ignores our request to alter a string.</p>
 <p>It is important to notice that immutability applies to string <em>values</em> and not string variables.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We can set a variable containing a string to a different value.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -113,7 +119,7 @@ Launchcode
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>LaunchCode
 </pre></div>
 </div>
@@ -126,7 +132,7 @@ Launchcode
 <div class="section" id="check-your-understanding">
 <h2>7.4.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">Given <code class="docutils literal notranslate"><span class="pre">pet</span> <span class="pre">=</span> <span class="pre">'cat'</span></code>, why do the statements <code class="docutils literal notranslate"><span class="pre">console.log(pet</span> <span class="pre">+</span> <span class="pre">'s');</span></code> and <code class="docutils literal notranslate"><span class="pre">pet</span> <span class="pre">+=</span> <span class="pre">'s';</span></code> NOT violate the immutability of strings?</p>
 </div>
 </div>
