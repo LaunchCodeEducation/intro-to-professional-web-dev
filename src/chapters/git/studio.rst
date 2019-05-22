@@ -14,7 +14,8 @@ You and a partner will begin by coding in tag-team shifts. By the end of the
 task you should have a good idea about how to have two people work on the same
 code at the same time. You will learn how to:
 
-#. Quickly add code in pull + push cycles *(Important! This is the fundamental process!)*
+#. Quickly add code in pull + push cycles *(Important! This is the fundamental
+   process!)*
 #. Add a collaborator to a GitHub Project
 #. Share *repositories* on GitHub
 #. Create a *branch* in Git
@@ -37,7 +38,8 @@ this ability by allowing multiple people to build different features at the
 same time, then combine their work. Pull requests act as checkpoints when code
 flows from branch to branch.
 
-Students *must* pair off for this exercise. If you have trouble finding a partner, ask your TA for help.
+Students *must* pair off for this exercise. If you have trouble finding a
+partner, ask your TA for help.
 
 Studio
 ------
@@ -52,7 +54,7 @@ and the other as **Control**. Even when it is not your turn to complete a task,
 read and observe what your partner is doing to complete theirs. The steps here
 mimic how a real-world collaborative Git workflow can be used within a project.
 
-.. warning:: 
+.. warning::
 
    As you go through these steps, you'll be working with branches. It's very
    likely you will make changes to the code only to realize that you did so in the
@@ -203,8 +205,8 @@ url to your clipboard.
 In your terminal, navigate to your development folder and clone down the repo.
 The command should look something like this.
 
-:: 
-   
+::
+
    $ git clone https://github.com/cherylschaefer/communication-log.git
 
 Now you can respond to Control! Open the `index.html` file in your editor and
@@ -252,7 +254,7 @@ Step 5: Join the Project and Push
 **Piolt**: You should receive an email invitation to join this repository.
 View and accept the invitation.
 
-.. note:: 
+.. note::
 
    If you don't see an email (it may take a few minutes to arrive in your inbox),
    check your Spam folder. If you still don't have an email, visit the
@@ -261,7 +263,7 @@ View and accept the invitation.
 
 .. figure:: figures/InvitedToGithubRepo.png
 
-   Invited to collaborate email in GitHub 
+   Invited to collaborate email in GitHub
 
 Now let's go enter that command again to push up our code.
 
@@ -277,7 +279,8 @@ Now let's go enter that command again to push up our code.
    To git@github.com:pilot/communication-log.git
       511239a..679de77  master -> master
 
-Anyone reading the HTML through GitHub's browser interface should now see the new second line.
+Anyone reading the HTML through GitHub's browser interface should now see the
+new second line.
 
 Step 6: Pull Pilot's Line and Add Another Line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -443,7 +446,7 @@ merge *into*, while the selected branch in the *compare* dropdown is the one
 you want to merge *from*.
 
 .. figure:: figures/pr-details.png
-   
+
    Open a PR in GitHub
 
 This is what an opened pull request looks like:
@@ -524,7 +527,7 @@ Upon a successful merge, you should see a screen similar to the following:
 
 .. figure:: figures/PRMerged.png
 
-   PR Merged in GitHub 
+   PR Merged in GitHub
 
 The changes from ``open-mic`` are now in the ``master`` branch, but only in
 the remote repository on GitHub. You will need to pull the updates to your
@@ -565,7 +568,7 @@ Let's change our font. To do so, add this link to your ``index.html`` file,
 right after the first stylesheet link:
 
 .. sourcecode:: html
-     
+
    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
 
@@ -586,7 +589,7 @@ The result:
 
 .. figure:: figures/AddSatisfyFont.png
 
-   Satisfying! 
+   Satisfying!
 
 Stage and commit your changes and push them up to GitHub. If you don't remember
 how to do this, follow the instructions above. Make sure you're back in the
@@ -615,7 +618,7 @@ Don't forget to link the new font in your ``index.html`` file, after the other
 link:
 
 .. sourcecode:: html
-  
+
   <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
 Commit your changes to branch ``master``.
@@ -626,7 +629,7 @@ Step 13: Resolving Merge Conflicts
 **Control**: Try to push your changes up to GitHub. You should get an error
 message. How exciting!
 
-:: 
+::
 
    $ git push origin master
 
@@ -650,7 +653,7 @@ of the work present in that branch.
 
 Let's pull these outstanding changes into our branch and resolve the errors.
 
-:: 
+::
 
    $ git pull
    remote: Counting objects: 4, done.
