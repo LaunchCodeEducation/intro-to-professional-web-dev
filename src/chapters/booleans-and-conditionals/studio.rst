@@ -44,15 +44,16 @@ After your TA reviews the relevant topics, we will have a discussion covering th
 	How does this class assist you in your career and where do you want to go?
 	Please share 1 to 2 goals for your career.
 
-3. Your action statements.
+3. Your inspirational statements.
 	This can be anthing that motivates you from stories to quotes to ideas.
 	Please share 1 to 2.
 
-After the studio, make sure to write your goals and action statements somewhere where you will regularly see them! 
+After the studio, make sure to write your goals and inspirational statements somewhere where you will regularly see them! 
 
 Resources
 ---------
 
-1. Booster Rockets
-2. Carol Dweck
-3. Impact article
+1. :ref:`Best Practices: Learning to Code <best-practices>`
+2. `The Power of Believing that You can Improve <https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve/>`_
+3. `What Having a "Growth Mindset" Actually Means <https://hbr.org/2016/01/what-having-a-growth-mindset-actually-means/>`_
+4. `Golden Rules of Goal Setting <https://www.mindtools.com/pages/article/newHTE_90.htm>`_
