@@ -12,7 +12,8 @@ Steps to Add Validation
 
 1. Add an event handler for the ``window`` *load* event
 2. Add an event handler for the ``form`` *submit* event
-3. Check the input values using conditional statements
+3. Retrieve input values that need to be validated from the DOM.
+4. Check the input values using conditional statements
 
    a. If the values are valid, allow the form submission
    b. If the values are NOT valid, inform the user and STOP form submission
@@ -54,12 +55,12 @@ Steps to Add Validation
 Follow Along as We Add Validation
 ---------------------------------
 
-Use `this repl.it <https://repl.it/@launchcode/form-validation>`_ to add validation to
-the above example.
+Use `this repl.it <https://repl.it/@launchcode/form-validation>`_ and the following instructions
+to add validation to the above example.
 
 To validate what the user has typed, we can get a reference to the ``input`` elements in
-the DOM and check ``input.value``. Let's change the *submit* event handler to alert
-the value of the username input. We are going to use
+the DOM and check ``input.value``. Let's change the *submit* event handler to display the
+value of the username input in an ``alert`` box. To do that, we are going to use
 ``document.querySelector("input[name=username]")``, which uses an *attribute selector* to
 select the ``<input>`` that has ``name="username"``.
 
@@ -78,7 +79,7 @@ select the ``<input>`` that has ``name="username"``.
    </script>
 
 Now that we know how to get the value of an input, we can add *conditional statements*.
-Let's add code that opens an alert box if *either* input values are *empty*.
+Let's add code that opens an alert box if *either* input value is *empty*.
 
 .. sourcecode:: html
    :linenos:
@@ -97,17 +98,18 @@ Let's add code that opens an alert box if *either* input values are *empty*.
    </script>
 
 We are making progress. Now if you click *Submit* with one or both of the inputs empty,
-then an alert message appears telling you that both inputs are required.
+then an alert message appears telling you that both inputs are required. However, the form is
+still submitted even if the data is invalid.
 
 .. index:: ! preventDefault
    single: event; preventDefault
 
-But we want to prevent the form submission from happening until all
+We should prevent the form submission from happening until all
 inputs have valid values. We can use the ``event`` parameter and
 ``event.preventDefault()`` to stop the form submission. ``event.preventDefault()``
 prevents default browser functionality from happening, like form submission
 when ``<button>`` tags are clicked inside of a form. Remember that *event handler* functions
-are passed an ``event`` parameter which represents the occurring event.
+are passed an ``event`` argument which represents the event that the handler is responding to.
 
 .. sourcecode:: html
    :linenos:
