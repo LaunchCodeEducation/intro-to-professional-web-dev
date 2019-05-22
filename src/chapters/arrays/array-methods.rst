@@ -108,7 +108,8 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
 
    What is printed by the following code?
 
-   .. sourcecode:: javascript
+   .. sourcecode:: js
+      :linenos:
 
       let charles = ['coder', 'Tech', 47, 23, 350];
       charles.sort();
@@ -121,8 +122,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
 
 .. admonition:: Question
 
-   | Which statement converts the string ``str = 'LaunchCode students rock!'`` into the array
-   | ``['LaunchCode', 'students', 'rock!']``?
+   Which statement converts the string ``str = 'LaunchCode students rock!'`` into the array ``['LaunchCode', 'students', 'rock!']``?
 
    a. ``str.join(" ");``
    b. ``str.split(" ");``
@@ -134,6 +134,7 @@ Follow the links in the table above for the ``sort``, ``slice``, ``split`` and
    What is printed by the following program?
 
    .. sourcecode:: js
+      :linenos:
 
       let groceryBag = ['bananas', 'apples', 'edamame', 'chips', 'cucumbers', 'milk', 'cheese'];
       let selectedItems = [];

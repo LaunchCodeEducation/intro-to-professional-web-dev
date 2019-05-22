@@ -21,23 +21,24 @@ Boolean Values
 .. index::
    single: boolean; value
 
-The JavaScript data type for storing true and false values is called ``boolean``, named after the British mathematician, George Boole. 
+The JavaScript data type for storing true and false values is ``boolean``, named after the British mathematician George Boole. 
 
 .. admonition:: Fun Fact
 
    George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_, which is the basis of all modern computer arithmetic. 
 
-There are only two **boolean values**---``true`` and ``false``. JavaScript is case-sensitive, so ``True`` and ``False`` are not valid boolean values.
+There are only two **boolean values**---``true`` and ``false``. JavaScript is case-sensitive, so ``True`` and ``False`` are *not* valid boolean values.
 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(true);
       console.log(typeof true);
       console.log(typeof false);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -45,16 +46,17 @@ There are only two **boolean values**---``true`` and ``false``. JavaScript is ca
       boolean
       boolean
 
-The values ``true`` and ``false`` are **not** strings. If you use quotes to surround booleans (``"true"`` and ``"false"``), those values become strings.
+The values ``true`` and ``false`` are *not* strings. If you use quotes to surround booleans (``"true"`` and ``"false"``), those values become strings.
 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(typeof true);
       console.log(typeof "true");
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -73,6 +75,7 @@ As with the number and string data types, the boolean type also has a conversion
    Explore how ``Boolean`` converts various non-boolean values.
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(Boolean("true"));
       console.log(Boolean("TRUE"));
@@ -109,11 +112,12 @@ A **boolean expression** is an expression that evaluates to either ``true`` or `
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(5 == 5);
       console.log(5 == 6);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -130,7 +134,7 @@ We can also use ``==`` to see that ``true`` and ``"true"`` are not equal.
 
       console.log(true == "true");
 
-   **Output**
+   **Console Output**
 
    ::
 

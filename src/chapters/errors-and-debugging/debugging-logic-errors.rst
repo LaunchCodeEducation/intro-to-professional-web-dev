@@ -15,6 +15,7 @@ When your code runs but doesn't produce the expected results, it is important to
 Let's look at a program that has a logical bug.
 
 .. sourcecode:: js
+   :linenos:
 
    const input = require('readline-sync');
 
@@ -37,6 +38,7 @@ This is clearly incorrect. But the program does not generate an error, so it is 
 Let's first make sure that the ``degreesC`` variable looks like it should by adding a ``console.log`` statement just after we create this variable.
 
 .. sourcecode:: js
+   :linenos:
 
    const input = require('readline-sync');
 
@@ -59,6 +61,7 @@ The second line is the value of ``degreesC``, which appears to be correct. But t
 Looking at the line in which we set ``degreesK``, we see that we use ``degreesC`` as a numeric value in our calculation. Let's see what the data type of ``degreesC`` is. In the end, we want it to be a number.
 
 .. sourcecode:: js
+   :linenos:
 
    const input = require('readline-sync');
 
@@ -81,6 +84,7 @@ That's it! The variable ``degreesC`` has the value ``100``, but it is a string r
 We can fix our program by converting the user's input to the number data type.
 
 .. sourcecode:: js
+   :linenos:
 
    const input = require('readline-sync');
 

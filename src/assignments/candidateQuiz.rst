@@ -81,9 +81,7 @@ Part 1: Minimum Viable Quiz
 #. Provide basic feedback to the student. This should include their name and
    whether their answer was correct.
 
-.. note::
-   | If not already done, remove the extra ``console.log`` statements from steps 2 & 3.
-   | Make sure your small app works properly before moving on to part 2.
+.. note:: If not already done, remove the extra ``console.log`` statements from steps 2 & 3. Make sure your small app works properly before moving on to part 2.
 
 Part 2: Use Arrays
 ^^^^^^^^^^^^^^^^^^

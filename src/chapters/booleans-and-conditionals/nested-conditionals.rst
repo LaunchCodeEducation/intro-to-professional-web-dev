@@ -10,6 +10,7 @@ We can write code with more complex branching behavior by combining conditionals
 Our first attempt at a solution might look like this:
 
 .. sourcecode:: js
+   :linenos:
 
    let num = 7;
 
@@ -21,7 +22,7 @@ Our first attempt at a solution might look like this:
       console.log("POSITIVE");
    }
 
-**Output**
+**Console Output**
 
 ::
 
@@ -30,6 +31,7 @@ Our first attempt at a solution might look like this:
 We find that the output is ``POSITIVE``, even though 7 is odd and so nothing should be printed. This code doesn't work as desired because we only want to test for positivity when we already know that the number is even. We can enable this behavior by putting the second conditional *inside* the first.
 
 .. sourcecode:: js
+   :linenos:
 
    let num = 7;
 
@@ -55,6 +57,7 @@ Check Your Understanding
    What is printed when the following code runs?
 
    .. sourcecode:: js
+      :linenos:
 
       let num = 7;
 
@@ -75,6 +78,7 @@ Check Your Understanding
    Considering the same conditional used in the previous question, which values of ``num`` would result in ``"odd"`` being printed?
 
    .. sourcecode:: js
+      :linenos:
    
       if (num % 2 === 0) {
           if (num % 2 === 1) {

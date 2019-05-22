@@ -34,7 +34,7 @@ Examine the code samples below:
          console.log(newString);
          console.log(arr);
 
-       **Output**
+       **Console Output**
 
        ::
 
@@ -54,7 +54,7 @@ Examine the code samples below:
          console.log(newString);
          console.log(arr);
 
-       **Output**
+       **Console Output**
 
        ::
 
@@ -98,9 +98,7 @@ How do we make this happen without using ``for`` or ``while``?
 Identifying the Base Case
 --------------------------
 
-| ``for`` and ``while`` loops end when a particular condition evaluates to
-   ``false``. In the examples above, these conditions are
-| ``i < arr.length`` and ``arr.length > 0``, respectively.
+``for`` and ``while`` loops end when a particular condition evaluates to ``false``. In the examples above, these conditions are ``i < arr.length`` and ``arr.length > 0``, respectively.
 
 With recursion, we do not know how many times ``combineEntries`` must be
 called. To make sure the code stops at the proper time, we need to identify a
@@ -134,16 +132,22 @@ Let's update ``combineEntries`` to check if the array contains only one item.
    :linenos:
 
    function combineEntries(arrayName){
-      if (arrayName.length === 1){
+      if (arrayName.length <= 1){
          return arrayName[0];
       } else {
          //call combineEntries again
       }
    }
 
-``arrayName.length === 1`` sets up the condition for ending the recursion
+``arrayName.length <= 1`` sets up the condition for ending the recursion
 process. If it is ``true``, the single entry gets returned, and the function
 stops. Otherwise, ``combineEntries`` gets called again.
+
+.. note::
+
+   We define our base case as ``arrayName.length <= 1`` rather than
+   ``arrayName.length === 1`` just in case an empty array ``[]`` gets passed to
+   the function.
 
 The Case for the Base
 ----------------------

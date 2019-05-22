@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -86,16 +85,14 @@
     
   <div class="section" id="studio-booleans-and-conditionals">
 <span id="studio-launch-checklist-lc04"></span><h1>4.9. Studio: Booleans and Conditionals<a class="headerlink" href="#studio-booleans-and-conditionals" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line">In this studio you are going to write code to display the <em>very important</em> <strong>Launch Checklist LC04</strong>.</div>
-<div class="line"><strong>LC04</strong> displays information related to the space shuttle, astronauts, and rockets before launch.</div>
-</div>
+<p>In this studio you are going to write code to display the <em>very important</em> <strong>Launch Checklist LC04</strong>.</p>
+<p><strong>LC04</strong> displays information related to the space shuttle, astronauts, and rockets before launch.</p>
 <div class="section" id="declare-and-initialize-variables">
 <h2>4.9.1. Declare and Initialize Variables<a class="headerlink" href="#declare-and-initialize-variables" title="Permalink to this headline">¶</a></h2>
 <p>Declare and initialize a variable for every data point listed in the table below.
 Remember to account for the different data types.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">For now, use the <code class="docutils literal notranslate"><span class="pre">string</span></code> type for the <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span></code> values. Later in the class, we will learn other ways
 to work with date and time in JavaScript.</p>
 </div>
@@ -106,40 +103,40 @@ to work with date and time in JavaScript.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>date</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">date</span></code></td>
 <td>Monday 2019-03-18</td>
 </tr>
-<tr class="row-odd"><td>time</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">time</span></code></td>
 <td>10:05:34 AM</td>
 </tr>
-<tr class="row-even"><td>astronautCount</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">astronautCount</span></code></td>
 <td>7</td>
 </tr>
-<tr class="row-odd"><td>astronautStatus</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">astronautStatus</span></code></td>
 <td>ready</td>
 </tr>
-<tr class="row-even"><td>averageAstronautMassKg</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">averageAstronautMassKg</span></code></td>
 <td>80.7</td>
 </tr>
-<tr class="row-odd"><td>crewMassKg</td>
-<td>astronautCount * averageAstronautMassKg</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">crewMassKg</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">astronautCount</span></code> * <code class="docutils literal notranslate"><span class="pre">averageAstronautMassKg</span></code></td>
 </tr>
-<tr class="row-even"><td>fuelMassKg</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">fuelMassKg</span></code></td>
 <td>760,000</td>
 </tr>
-<tr class="row-odd"><td>shuttleMassKg</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">shuttleMassKg</span></code></td>
 <td>74842.31</td>
 </tr>
-<tr class="row-even"><td>totalMassKg</td>
-<td>crewMassKg + fuelMassKg + shuttleMassKg</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">totalMassKg</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">crewMassKg</span></code> + <code class="docutils literal notranslate"><span class="pre">fuelMassKg</span></code> + <code class="docutils literal notranslate"><span class="pre">shuttleMassKg</span></code></td>
 </tr>
-<tr class="row-odd"><td>fuelTempCelsius</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">fuelTempCelsius</span></code></td>
 <td>-225</td>
 </tr>
-<tr class="row-even"><td>fuelLevel</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code></td>
 <td>100%</td>
 </tr>
-<tr class="row-odd"><td>weatherStatus</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">weatherStatus</span></code></td>
 <td>clear</td>
 </tr>
 </tbody>
@@ -147,44 +144,44 @@ to work with date and time in JavaScript.</p>
 </div>
 <div class="section" id="generate-the-lc04-form">
 <h2>4.9.2. Generate the LC04 Form<a class="headerlink" href="#generate-the-lc04-form" title="Permalink to this headline">¶</a></h2>
-<p>Display <strong>LC04</strong> to the <code class="docutils literal notranslate"><span class="pre">console</span></code> using the variables you declared and initialized.</p>
-<p>The generated report should look <em>EXACTLY</em> like the example below – including spaces, dashes, &gt;, and *.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-------------------------------------</span>
-<span class="gp">&gt;</span> LC04 - LAUNCH CHECKLIST
-<span class="go">-------------------------------------</span>
-<span class="go">Date: Monday 2019-03-18</span>
-<span class="go">Time: 10:05:34 AM</span>
+<p>Display <strong>LC04</strong> to the console using the variables you declared and initialized.</p>
+<p>The generated report should look <em>exactly</em> like the example below—including spaces and symbols (-, &gt;, and *).</p>
+<p><strong>Example Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------
+&gt; LC04 - LAUNCH CHECKLIST
+-------------------------------------
+Date: Monday 2019-03-18
+Time: 10:05:34 AM
 
-<span class="go">-------------------------------------</span>
-<span class="gp">&gt;</span> ASTRONAUT INFO
-<span class="go">-------------------------------------</span>
-<span class="go">* count: 7</span>
-<span class="go">* status: ready</span>
+-------------------------------------
+&gt; ASTRONAUT INFO
+-------------------------------------
+* count: 7
+* status: ready
 
-<span class="go">-------------------------------------</span>
-<span class="gp">&gt;</span> FUEL DATA
-<span class="go">-------------------------------------</span>
-<span class="go">* Fuel temp celsius: -225 C</span>
-<span class="go">* Fuel level: 100%</span>
+-------------------------------------
+&gt; FUEL DATA
+-------------------------------------
+* Fuel temp celsius: -225 C
+* Fuel level: 100%
 
-<span class="go">-------------------------------------</span>
-<span class="gp">&gt;</span> WEIGHT DATA
-<span class="go">-------------------------------------</span>
-<span class="go">* Crew mass: 564.9 kg</span>
-<span class="go">* Fuel mass: 760000 kg</span>
-<span class="go">* Shuttle mass: 74842.31 kg</span>
-<span class="go">* Total mass: 835407.21 kg</span>
+-------------------------------------
+&gt; WEIGHT DATA
+-------------------------------------
+* Crew mass: 564.9 kg
+* Fuel mass: 760000 kg
+* Shuttle mass: 74842.31 kg
+* Total mass: 835407.21 kg
 
-<span class="go">-------------------------------------</span>
-<span class="gp">&gt;</span> FLIGHT PLAN
-<span class="go">-------------------------------------</span>
-<span class="go">* weather: clear</span>
+-------------------------------------
+&gt; FLIGHT PLAN
+-------------------------------------
+* weather: clear
 
-<span class="go">-------------------------------------</span>
-<span class="gp">&gt;</span> OVERALL STATUS
-<span class="go">-------------------------------------</span>
-<span class="go">* Clear for takeoff: YES</span>
+-------------------------------------
+&gt; OVERALL STATUS
+-------------------------------------
+* Clear for takeoff: YES
 </pre></div>
 </div>
 </div>

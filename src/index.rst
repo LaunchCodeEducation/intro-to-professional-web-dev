@@ -17,6 +17,7 @@ Chapters
    chapters/loops/index
    chapters/functions/index
    chapters/more-on-functions/index
+   chapters/objects-and-math/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
@@ -65,6 +66,7 @@ Appendices
    appendices/array-method-examples/index
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
+   appendices/math-method-examples/index
    appendices/style-guide
 
 

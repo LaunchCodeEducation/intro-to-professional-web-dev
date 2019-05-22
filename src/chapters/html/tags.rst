@@ -71,6 +71,7 @@ Tag Example
 Here is an example of a basic web page utilizing some of the tags above with the HTML used to make the site.
 
 .. sourcecode:: html
+   :linenos:
 
    <!DOCTYPE html>
    <html>
@@ -108,6 +109,7 @@ Attributes Example
 Here is an example of a basic web page utilizing some of the tags above and appropriate attributes with the HTML used to make the site.
 
 .. sourcecode:: html
+   :linenos:
 
    <!DOCTYPE html>
    <html>

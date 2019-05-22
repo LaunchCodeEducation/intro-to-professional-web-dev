@@ -17,7 +17,7 @@ If an object cannot be changed, we say that it is **immutable**. Strings are imm
       nonprofit[6] = "C";
       console.log(nonprofit);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -40,7 +40,7 @@ It is important to notice that immutability applies to string *values* and not s
 
       console.log(nonprofit);
 
-   **Output**
+   **Console Output**
 
    ::
 

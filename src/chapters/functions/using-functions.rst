@@ -39,7 +39,7 @@ Every function provides a **return value**, which can be used by the calling pro
    
       console.log(String(42));
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -51,11 +51,12 @@ If a function doesn't provide an explicit return value, the special value ``unde
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let returnVal = console.log("LaunchCode");
       console.log(returnVal);
 
-   **Output**
+   **Console Output**
 
    ::
 

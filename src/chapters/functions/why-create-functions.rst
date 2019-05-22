@@ -14,6 +14,7 @@ Functions Make Your Code More Readable
 Placing a piece of functionality within a function allows us to put a name on that functionality. Consider our :ref:`palindrome example <palindrome-function>`. One way to write that function is:
 
 .. sourcecode:: js
+   :linenos:
 
    function isPalindrome(str) {
       
@@ -29,6 +30,7 @@ Placing a piece of functionality within a function allows us to put a name on th
 While the variable name ``reversed`` is descriptive, giving us a sense of what is going on with the ``for`` loop, the function becomes even more readable when we break out the reversing behavior into a separate function.
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       let reversed = '';
