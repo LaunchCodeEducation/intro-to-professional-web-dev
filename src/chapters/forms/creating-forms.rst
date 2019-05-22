@@ -3,7 +3,7 @@ Forms
 
 .. index:: ! form
 
-Web pages are used to display and accept data, is not a provocative statement. In this chapter
+As a user of the web, you know that web pages both display and accept data. In this chapter
 we are going to learn more about how web pages handle data input using HTML forms.
 An HTML **form** is used to accept input from the user and send that data to the server.
 
@@ -11,7 +11,7 @@ An HTML **form** is used to accept input from the user and send that data to the
 Create a Form
 -------------
 To declare a form in HTML use the ``<form>`` tag with open and closing tags. This form element
-will service as container for various types of other elements that are designed to capture
+will serve as container for various types of other elements that are designed to capture
 input from the user.
 
 .. sourcecode:: html
@@ -27,7 +27,7 @@ input from the user.
       </body>
    </html>
 
-By default an empty ``<form></form>`` will not appear on a web page until inputs have been
+An empty ``<form></form>`` will not appear on a web page until inputs have been
 added inside of it. Below we have added one basic
 ``<input>`` tag.
 
@@ -52,10 +52,10 @@ Input Element
 .. index:: ! input
 
 The ``input`` element is used to add interactive fields, which allow the user to enter data.
-``input`` elements have two very important attributes: *name* and a *type*.
+``input`` elements have two very important attributes: *name* and *type*.
 
-- ``name`` attribute is used to identify the input's value when the data is submitted
-- ``type`` attribute defines which type of value of the input represents
+- The ``name`` attribute is used to identify the input's value when the data is submitted
+- The ``type`` attribute defines which type of value of the input represents
 
 .. sourcecode:: html
 

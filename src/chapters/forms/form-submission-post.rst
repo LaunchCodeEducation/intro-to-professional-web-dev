@@ -2,12 +2,13 @@ POST Form Submission
 ====================
 
 
-Form Submission using POST
+Form Submission Using POST
 --------------------------
 Instead of using GET and query parameters to submit form data, we can use POST.
-To submit a form using a POST request, set the ``method`` attribute to ``"POST"``.
-Form data submitted via POST will be contained in the HTTP message body. Using POST is a
-more secure way to send form data.
+To submit a form using a POST request, set the form's ``method`` attribute to ``"POST"``.
+Form data submitted via POST will be submitted in the body of the HTTP request.
+Data submitted by GET request is less secure than POST because GET request URLs
+and the query parameters are cached and logged, possibly leaking sensitive data.
 
 .. admonition:: Example
 

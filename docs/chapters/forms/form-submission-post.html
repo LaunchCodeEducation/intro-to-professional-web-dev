@@ -86,11 +86,12 @@
   <div class="section" id="post-form-submission">
 <h1>18.3. POST Form Submission<a class="headerlink" href="#post-form-submission" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="form-submission-using-post">
-<h2>18.3.1. Form Submission using POST<a class="headerlink" href="#form-submission-using-post" title="Permalink to this headline">¶</a></h2>
+<h2>18.3.1. Form Submission Using POST<a class="headerlink" href="#form-submission-using-post" title="Permalink to this headline">¶</a></h2>
 <p>Instead of using GET and query parameters to submit form data, we can use POST.
-To submit a form using a POST request, set the <code class="docutils literal notranslate"><span class="pre">method</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code>.
-Form data submitted via POST will be contained in the HTTP message body. Using POST is a
-more secure way to send form data.</p>
+To submit a form using a POST request, set the form’s <code class="docutils literal notranslate"><span class="pre">method</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code>.
+Form data submitted via POST will be submitted in the body of the HTTP request.
+Data submitted by GET request is less secure than POST because GET request URLs
+and the query parameters are cached and logged, possibly leaking sensitive data.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Form with <code class="docutils literal notranslate"><span class="pre">method=&quot;POST&quot;</span></code></p>
