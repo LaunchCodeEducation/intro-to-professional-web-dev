@@ -82,7 +82,7 @@ DNS
 
 .. index:: ! DNS, ! IP address
 
-**DNS** is the address book of the Internet. It enables use to use readable and memorable names for servers, such as ``www.launchcode.org`` or ``mail.google.com``, which are **domain names**.
+**DNS** is the address book of the Internet. It enables us to use readable and memorable names for servers, such as ``www.launchcode.org`` or ``mail.google.com``, which are **domain names**.
 
 Every server on the internet has a numberical address known as an **IP address**. When a message is addressed using a domain name, the corresponding IP address must be determined before it can be sent. 
 
@@ -181,7 +181,7 @@ Following the domain and optional port is the **path**, which consists of a seri
 
 .. admonition:: Example
 
-   A request to ``https://www.launchcode.org/blog/`` asks for the resource that lives at the path ``/blog/`` on the server ``www.launchcode.org``. This resources happens to be the LaunchCode blog.
+   A request to ``https://www.launchcode.org/blog/`` asks for the resource that lives at the path ``/blog/`` on the server ``www.launchcode.org``. This resource happens to be the LaunchCode blog.
 
    A request to the (very long) URL below asks for the LaunchCode logo, which lives at the path ``/assets/dabomb-2080d6e...57f.svg`` (truncated here for space).
 
