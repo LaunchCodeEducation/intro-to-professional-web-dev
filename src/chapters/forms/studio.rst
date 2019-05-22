@@ -30,6 +30,8 @@ Getting Started
 
 Fork the `starter code for this studio <https://repl.it/@launchcode/Forms-Studio>`_, which has some basic HTML to get you started. 
 
+.. todo:: change this to git instructions
+
 Create Form Inputs
 ------------------
 
