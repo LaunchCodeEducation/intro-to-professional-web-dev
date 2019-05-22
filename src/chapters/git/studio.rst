@@ -1,5 +1,5 @@
-Studio: Fireside Story
-=======================
+Studio: Communication Log
+==========================
 
 Getting Ready: Code Together
 ----------------------------
