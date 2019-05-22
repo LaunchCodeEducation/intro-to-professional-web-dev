@@ -40,6 +40,11 @@ h1 {
     color: #3c79b8;
 }
 
+
+h1, h2, h3, h4, h5 {
+    margin: 1em 0 .5em;
+}
+
 h1 a,
 h2 a,
 h3 a,
@@ -64,10 +69,15 @@ h5 a:hover {
     text-decoration: none;
 }
 
-.fas.fa-external-link-alt {
-	color: inherit;
-	font-size: 10px;
-	padding-left: 4px;
+.toctree-wrapper ul,
+.toctree-wrapper ol  {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.toctree-wrapper > ul > li > a,
+.toctree-wrapper > ol > li > a {
+	font-size: 20px;
 }
 
 code {
@@ -244,6 +254,13 @@ div.highlight-html {
     margin: 1em 0;
 }
 
+div.highlight-js + p.repl-link,
+div.highlight-none + p.repl-link,
+div.highlight-css + p.repl-link,
+div.highlight-html + p.repl-link  {
+	margin-top: -1em;
+}
+
 .highlighttable .linenos {
     background-color: #354a5f;
     border-radius: 4px 0 0 4px;
@@ -316,15 +333,9 @@ div.topic {
 div.contents {
     background-color: #fff;
     font-family: "Nexa",sans-serif;
-    /*
-    border: 1px solid #cacacb;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-radius: 0;
-    */
 }
 
-.toctree-wrapper ul  {
+.toctree-wrapper ol  {
     list-style: none;
     padding-left: 20px;
 }

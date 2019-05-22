@@ -4,8 +4,9 @@
 Studio: Booleans and Conditionals
 =================================
 
-| In this studio you are going to write code to display the *very important* **Launch Checklist LC04**. 
-| **LC04** displays information related to the space shuttle, astronauts, and rockets before launch.
+In this studio you are going to write code to display the *very important* **Launch Checklist LC04**. 
+
+**LC04** displays information related to the space shuttle, astronauts, and rockets before launch.
 
 Declare and Initialize Variables
 --------------------------------
@@ -23,40 +24,41 @@ Remember to account for the different data types.
 
    * - Variable
      - Value
-   * - date
+   * - ``date``
      - Monday 2019-03-18
-   * - time
+   * - ``time``
      - 10:05:34 AM
-   * - astronautCount
+   * - ``astronautCount``
      - 7
-   * - astronautStatus
+   * - ``astronautStatus``
      - ready
-   * - averageAstronautMassKg
+   * - ``averageAstronautMassKg``
      - 80.7
-   * - crewMassKg
-     - astronautCount * averageAstronautMassKg
-   * - fuelMassKg
+   * - ``crewMassKg``
+     - ``astronautCount`` * ``averageAstronautMassKg``
+   * - ``fuelMassKg``
      - 760,000
-   * - shuttleMassKg
+   * - ``shuttleMassKg``
      - 74842.31
-   * - totalMassKg
-     - crewMassKg + fuelMassKg + shuttleMassKg
-   * - fuelTempCelsius
+   * - ``totalMassKg``
+     - ``crewMassKg`` + ``fuelMassKg`` + ``shuttleMassKg``
+   * - ``fuelTempCelsius``
      - -225
-   * - fuelLevel
+   * - ``fuelLevel``
      - 100%
-   * - weatherStatus
+   * - ``weatherStatus``
      - clear
 
 Generate the LC04 Form
 ----------------------
-Display **LC04** to the ``console`` using the variables you declared and initialized.
 
-The generated report should look *EXACTLY* like the example below -- including spaces, dashes, >, and \*.
+Display **LC04** to the console using the variables you declared and initialized.
 
-**Example:**
+The generated report should look *exactly* like the example below---including spaces and symbols (-, >, and \*).
 
-.. sourcecode:: console
+**Example Output**
+
+::
    
    -------------------------------------
    > LC04 - LAUNCH CHECKLIST

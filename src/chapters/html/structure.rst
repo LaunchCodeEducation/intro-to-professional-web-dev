@@ -22,6 +22,7 @@ When it comes to laying out the overarching structure of an HTML file, a program
 Here is an example of the structure of an HTML page based off of these rules:
 
 .. sourcecode:: html
+   :linenos:
 
    <!DOCTYPE html>
    <html>
@@ -42,7 +43,7 @@ So other than the title, what goes in the head of an HTML file?
 The head includes links to other files and other data about the document.
 Browsers do not display the content in the head.
 
-.. admonition:: Note
+.. note::
 
    The head can also include some styling to make the page beautiful.
    How to do that is covered in the next chapter on CSS.
@@ -58,12 +59,13 @@ Content outside of the body will not appear on the page.
 To make HTML more readable to other programmers, programmers write comments in HTML. When adding a comment, the programmer uses ``<!--`` to indicate the start and ``-->`` to end the comment, like so:
 
 .. sourcecode:: html
+   :linenos:
 
    <body>
       <!-- This is an important comment -->
    </body>
 
-.. admonition:: Note
+.. note::
 
    Spacing and tabs helps many programmers read through theirs and their colleagues' code.
    Be aware that doing so in HTML can effect how the browser renders the page in rare instances.

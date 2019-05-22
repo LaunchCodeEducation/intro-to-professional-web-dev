@@ -51,6 +51,7 @@ During the first few weeks of your programming career, you will probably spend a
    Find the syntax errors in the program.
 
    .. sourcecode:: js
+      :linenos:
 
       let day = Wednesday;
       console.log(day;
@@ -84,7 +85,7 @@ A common runtime error occurs when we try to use a variable that has not been cr
       let firstName = "Jack";
       console.log(firstname);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -115,13 +116,14 @@ The characteristic of logic errors is that the program you wrote is not the prog
 .. admonition:: Example
    
    .. sourcecode:: js
+      :linenos:
 
       let weeklyPay = 600;
 
       let dailyEarnings = weeklyPay / 7;
       console.log(dailyEarnings);
 
-   **Output**
+   **Console Output**
 
    ::
 

@@ -26,6 +26,7 @@ The symbols ``+`` and ``-``, and the use of parentheses for grouping, mean in Ja
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       console.log(2 + 3);
       console.log(2 - 3);
@@ -33,7 +34,7 @@ The symbols ``+`` and ``-``, and the use of parentheses for grouping, mean in Ja
       console.log(2 ** 3);
       console.log(3 ** 2);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -50,12 +51,13 @@ When a variable name appears in the place of an operand, it is replaced with the
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let minutes = 645;
       let hours = minutes / 60;
       console.log(hours);
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -154,6 +156,7 @@ When more than one operator appears in an expression, the order of evaluation de
    Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator ``**``. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:
 
    .. sourcecode:: js
+      :linenos:
 
       // the right-most ** operator is applied first
       console.log(2 ** 3 ** 2)     
@@ -161,7 +164,7 @@ When more than one operator appears in an expression, the order of evaluation de
       // use parentheses to force the order you want
       console.log((2 ** 3) ** 2)   
 
-   **Output**
+   **Console Output**
 
    ::
 

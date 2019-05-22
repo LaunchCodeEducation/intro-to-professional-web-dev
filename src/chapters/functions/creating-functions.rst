@@ -18,6 +18,7 @@ Function Syntax
 To create a function, use the following syntax:
 
 .. sourcecode:: js
+   :linenos:
 
    function myFunction(parameter1, parameter2,..., parameterN) {
 
@@ -54,6 +55,7 @@ An Example
 Let's see function syntax in action. We first consider a program that prints an array of names.
 
 .. sourcecode:: js
+   :linenos:
 
    let names = ["Lena", "James", "Julio"];
 
@@ -64,6 +66,7 @@ Let's see function syntax in action. We first consider a program that prints an 
 Following this pattern, we can create a function that prints *any* array of names.
 
 .. sourcecode:: js
+   :linenos:
 
    function printNames(names) {
       for (let i = 0; i < names.length; i++) {
@@ -77,17 +80,19 @@ Breaking down the components of a function using our new terminology gives us:
 - **Parameter(s)**: ``names``
 - **Body**: 
 
-  .. sourcecode:: js
+.. sourcecode:: js
+   :linenos:
   
-     for (let i = 0; i < names.length; i++) {
-         console.log(names[i]);
-      }
+   for (let i = 0; i < names.length; i++) {
+      console.log(names[i]);
+   }
 
 Notice that there is nothing about this function that forces ``names`` to actually contain names, or even strings. The function will work the same for any array it is given. Therefore, a better name for this function would be ``printArray``.
 
 Our function can be used the same way as each of the built-in functions, such as ``console.log``, by calling it. Remember that calling a function triggers its actions to be carried out.
 
 .. sourcecode:: js
+   :linenos:
 
    function printArray(names) {
       for (let i = 0; i < names.length; i++) {
@@ -99,7 +104,7 @@ Our function can be used the same way as each of the built-in functions, such as
    console.log("---");
    printArray(["orange", "apple", "pear"]);
 
-**Output**
+**Console Output**
 
 ::
 
@@ -127,6 +132,7 @@ Let's see how this works explicitly.
    What happens if we define a function without calling it?
 
    .. sourcecode:: js
+      :linenos:
    
       function sayHello() {
          console.log("Hello, World!");
@@ -144,6 +150,7 @@ In order for a function to run, it must be explicitly *called*.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       function sayHello() {
          console.log("Hello, World!");
@@ -151,7 +158,7 @@ In order for a function to run, it must be explicitly *called*.
 
       sayHello();
 
-   **Output**
+   **Console Output**
 
    ::
 

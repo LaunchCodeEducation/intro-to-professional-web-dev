@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>15.4. Events &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>16.4. Events &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
@@ -15,15 +15,14 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.5. Event Listeners" href="event-listeners.html" />
-    <link rel="prev" title="15.3. More DOM Methods and Properties" href="more-dom.html" />
+    <link rel="next" title="16.5. Event Listeners" href="event-listeners.html" />
+    <link rel="prev" title="16.3. More DOM Methods and Properties" href="more-dom.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -61,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -73,8 +73,8 @@
 
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
-    <li><a href="index.html">15. The DOM and Events</a></li>
-    <li class="active">15.4. Events</li>
+    <li><a href="index.html">16. The DOM and Events</a></li>
+    <li class="active">16.4. Events</li>
 </ol>
 
 
@@ -85,7 +85,7 @@
 
     
   <div class="section" id="events">
-<h1>15.4. Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
+<h1>16.4. Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">Have you ever thought about how programs respond to interactions from users and other
 programs? <strong>Events</strong> are code representations of these interactions that need to be responded to.</p>
 <blockquote>
@@ -94,29 +94,29 @@ programs? <strong>Events</strong> are code representations of these interactions
 the act of causing an event to be sent. <strong>Handling</strong> an event is receiving the
 event and performing an action in response.</p>
 <div class="section" id="javascript-and-events">
-<h2>15.4.1. JavaScript and Events<a class="headerlink" href="#javascript-and-events" title="Permalink to this headline">¶</a></h2>
+<h2>16.4.1. JavaScript and Events<a class="headerlink" href="#javascript-and-events" title="Permalink to this headline">¶</a></h2>
 <p id="index-2">JavaScript is an event-driven programming language. <strong>Event-driven</strong> is a programming
 pattern where the flow of the program is determined by a series of events. JavaScript
 uses events to handle user interaction and make web pages dynamic. JavaScript also uses
 events to know when the state of the web page components change.</p>
 </div>
 <div class="section" id="dom-events">
-<h2>15.4.2. DOM Events<a class="headerlink" href="#dom-events" title="Permalink to this headline">¶</a></h2>
+<h2>16.4.2. DOM Events<a class="headerlink" href="#dom-events" title="Permalink to this headline">¶</a></h2>
 <p>Running JavaScript in the browser requires a specific set of events that relate to loading,
 styling, and displaying HTML elements. Objects in the DOM have event handling built right
 into them.</p>
 <p>Some elements, such as <code class="docutils literal notranslate"><span class="pre">a</span></code>, have default functionality that handles certain events. An
 example of default event handling is when a user clicks on an <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tag, the browser will
 navigate to the address in the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">The DOM defines <em>numerous</em> events. Each element type does
 NOT support every event type. The events that each element supports relates to how the element
 is used.</p>
 </div>
 </div>
 <div class="section" id="handling-events">
-<h2>15.4.3. Handling Events<a class="headerlink" href="#handling-events" title="Permalink to this headline">¶</a></h2>
+<h2>16.4.3. Handling Events<a class="headerlink" href="#handling-events" title="Permalink to this headline">¶</a></h2>
 <p id="index-3">Feature-rich web applications rely on more than the default event handling provided by the
 DOM. We can add custom interactivity with the users by attaching event handlers to HTML
 elements and then writing the event handler code.</p>
@@ -126,7 +126,7 @@ DOM elements use the <em>on event</em> naming convention when declaring event ha
 referred to as an <strong>inline event handler</strong>. For example, when defining what happens when a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked, the <code class="docutils literal notranslate"><span class="pre">onclick</span></code> attribute is used.
 This naming convention can be read as: <em>On click of the button, print a message to the console.</em></p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -151,14 +151,14 @@ This naming convention can be read as: <em>On click of the button, print a messa
 </pre></div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p class="last">Notice the use of single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> around <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">rang...'</span></code>. When declaring the value
 of an attribute to be a string, you must use single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> inside the double
 quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> elements represent a clickable entity. <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> elements have
 default <em>click</em> handling behavior related to <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> elements, that we will
 get into in a later chapter. For now, we will be defining the <em>click</em> handler behavior.</p>
@@ -167,7 +167,7 @@ get into in a later chapter. For now, we will be defining the <em>click</em> han
 functions can be used.
 Because programmers can write functions to do whatever their hearts desire, defined functions as event handlers allow for more functionality to occur when an event is handled.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>A function <code class="docutils literal notranslate"><span class="pre">youRang()</span></code> is defined and used as the event handler for when the button is clicked.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -214,25 +214,25 @@ output in console: you rang...
 </pre></div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">When defining handlers via HTML, be very careful to type the function name correctly.
 If the function name is incorrect, the event will not be handled. No warning is given,
 the event is silently ignored.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>15.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>16.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">What does an <em>event</em> represent in the browser JavaScript environment?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">Why is JavaScript considered an <em>event-driven</em> language?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Receiving an event and responding to it is known as?</p>
 <ol class="last loweralpha simple">
 <li>Holding an event</li>
@@ -249,10 +249,10 @@ the event is silently ignored.</p>
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="more-dom.html"><span aria-hidden="true">&larr;</span> 15.3. More DOM Methods and Properties</a></li>
+        <li class="previous"><a href="more-dom.html"><span aria-hidden="true">&larr;</span> 16.3. More DOM Methods and Properties</a></li>
         
         
-        <li class="next"><a href="event-listeners.html">15.5. Event Listeners <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="event-listeners.html">16.5. Event Listeners <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

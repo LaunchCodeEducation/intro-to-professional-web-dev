@@ -33,13 +33,11 @@ Rectangles
 
       console.log(line(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
       #####
-
-|
 
 2. Write a function ``square(size)`` that returns an ``size`` by ``size`` square
    of hashes. Use your ``line`` function to do this.
@@ -48,7 +46,7 @@ Rectangles
 
       console.log(square(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -71,7 +69,7 @@ Rectangles
 
       console.log(rectangle(5, 3));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -91,7 +89,7 @@ Triangles
 
       console.log(stairs(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -101,8 +99,6 @@ Triangles
       ####
       #####
 
-|
-
 2. Write a function ``spaceLine(numSpaces, numChars)`` that returns a line
    with exactly the specified number of spaces, followed by the
    specified number of hashes, followed again by ``numSpaces`` more spaces.
@@ -111,7 +107,7 @@ Triangles
 
       console.log(spaceLine(3, 5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -126,7 +122,7 @@ Triangles
 
       console.log(triangle(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 
@@ -148,7 +144,7 @@ Diamonds
 
       console.log(diamond(5));
 
-   **Output:**
+   **Console Output**
 
    ::
 

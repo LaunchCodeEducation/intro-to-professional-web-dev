@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -94,44 +94,53 @@ accessed via an ordered index. Unlike strings, arrays can store data of any type
 </div>
 <div class="section" id="declaring-an-array">
 <h2>8.1.1. Declaring an Array<a class="headerlink" href="#declaring-an-array" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">Programmers use multiple ways to declare a new array. The simplest way is to use <strong>array literal</strong> notation <code class="docutils literal notranslate"><span class="pre">[]</span></code>.
-Anything enclosed in the square brackets will be <em>items</em> in the array. Each item should be followed by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>.
-If there are no items inside the brackets, then the array is considered empty.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">emptyArray</span> <span class="o">=</span> <span class="p">[];</span>
+<p id="index-1">Programmers use multiple ways to declare a new array. The simplest way is to use <strong>array literal</strong> notation <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Anything enclosed in the square brackets will be <em>items</em> in the array. Each item should be followed by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. If there are no items inside the brackets, then the array is considered empty.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">emptyArray</span> <span class="o">=</span> <span class="p">[];</span>
 
 <span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Array items can also be declared on multiple lines.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span>
    <span class="s2">&quot;React&quot;</span><span class="p">,</span>
    <span class="s2">&quot;Angular&quot;</span><span class="p">,</span>
    <span class="s2">&quot;Ember&quot;</span><span class="p">,</span>
    <span class="s2">&quot;Vue&quot;</span>
 <span class="p">];</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="array-length">
 <h2>8.1.2. Array Length<a class="headerlink" href="#array-length" title="Permalink to this headline">¶</a></h2>
 <p>To check the length of an array, use the <code class="docutils literal notranslate"><span class="pre">length</span></code> property, just like with strings.
 JavaScript array length is NOT fixed, meaning you can add or remove items dynamically.</p>
-<div class="admonition-note admonition">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">In other languages, such as Java and C#, arrays are of a static length requiring the
 length of the array to be declared upon creation.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Print out the length of two arrays.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">emptyArray</span> <span class="o">=</span> <span class="p">[];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">emptyArray</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">emptyArray</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>0
 4
 </pre></div>
@@ -144,22 +153,24 @@ length of the array to be declared upon creation.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">grabBag</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A string value&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="admonition-note admonition">
-<p class="first admonition-title">Note</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">It’s rare that you would store data of multiple types in the same array, because grouped data is usually the same type. In other languages, such as Java and C#, all items in an array have to be of the same type.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>8.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the length of the two arrays?</p>
 <p><em>Hint: look closely at the quotes in the classes array.</em></p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;science, computer, art&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;science, computer, art&quot;</span><span class="p">];</span>
 
 <span class="kr">const</span> <span class="nx">teachers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="s2">&quot;Willoughby&quot;</span><span class="p">,</span> <span class="s2">&quot;Rhodes&quot;</span><span class="p">];</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p class="last">How can you change the <code class="docutils literal notranslate"><span class="pre">classes</span></code> array declaration to have the same number of items as the <code class="docutils literal notranslate"><span class="pre">teachers</span></code> array?</p>
 </div>
 </div>

@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -125,7 +125,7 @@ which combines the elements of an array into a single string. If we have
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
 [&#39;L&#39;, &#39;C&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;]
 </pre></div>
@@ -150,7 +150,7 @@ which combines the elements of an array into a single string. If we have
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
 [ ]
 </pre></div>
@@ -186,11 +186,7 @@ complete.</p>
 </div>
 <div class="section" id="index-0">
 <span id="identifying-the-base-case"></span><h2>11.7.3. Identifying the Base Case<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to
-<code class="docutils literal notranslate"><span class="pre">false</span></code>. In the examples above, these conditions are</div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">arr.length</span></code> and <code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.</div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>. In the examples above, these conditions are <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">arr.length</span></code> and <code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.</p>
 <p>With recursion, we do not know how many times <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> must be
 called. To make sure the code stops at the proper time, we need to identify a
 condition that ends the process. This is called the <strong>base case</strong>, and it
@@ -226,7 +222,7 @@ just needs to return <code class="docutils literal notranslate"><span class="pre
 5
 6
 7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">){</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">){</span>
       <span class="k">return</span> <span class="nx">arrayName</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="c1">//call combineEntries again</span>
@@ -234,9 +230,15 @@ just needs to return <code class="docutils literal notranslate"><span class="pre
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">===</span> <span class="pre">1</span></code> sets up the condition for ending the recursion
+<p><code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> sets up the condition for ending the recursion
 process. If it is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the single entry gets returned, and the function
 stops. Otherwise, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> gets called again.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We define our base case as <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> rather than
+<code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">===</span> <span class="pre">1</span></code> just in case an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code> gets passed to
+the function.</p>
+</div>
 </div>
 <div class="section" id="the-case-for-the-base">
 <h2>11.7.4. The Case for the Base<a class="headerlink" href="#the-case-for-the-base" title="Permalink to this headline">¶</a></h2>
@@ -255,7 +257,7 @@ a working recursive process.</p>
 <div class="section" id="check-your-understanding">
 <h2>11.7.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>We can use recursion to remove all of the ‘i’ entries from the array
 <code class="docutils literal notranslate"><span class="pre">['One',</span> <span class="pre">'i',</span> <span class="pre">'c',</span> <span class="pre">'X',</span> <span class="pre">'i',</span> <span class="pre">'i',</span> <span class="pre">54]</span></code>.</p>
 <p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">removeI</span></code> function.</p>
@@ -286,10 +288,10 @@ test the options in the repl.it to check your thinking.</p>
 <li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></li>
 </ol>
-<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01">repl.it</a>.</p>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>The <strong>factorial</strong> of a number (n!) is the product of a positive, whole number and
 all the positive integers below it.</p>
 <p>For example, four factorial is 4! = 4*3*2*1 = 24, and 5! = 5*4*3*2*1 =
@@ -319,7 +321,7 @@ all the positive integers below it.</p>
 <li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
 </ol>
-<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02">repl.it</a>.</p>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 </div>

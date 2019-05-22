@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -92,9 +92,21 @@
 <p id="index-0">The <strong>scope</strong> of a variable is the extent to which a variable is visible within a program. Scope consists of all locations within a program where a variable can be used or modified. Introducing functions gives us one of our first examples of limited variable scope—a situation in which a variable is not visible throughout an entire program.</p>
 <p>In particular, <em>a variable defined using `let` within a function is not visible outside of that function.</em></p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This function takes a string and returns the result of removing all hyphens, <code class="docutils literal notranslate"><span class="pre">-</span></code>, from the string.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">removeHyphens</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">removeHyphens</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">strWithoutHyphens</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -108,8 +120,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">removeHyphens</span><span class="p">(</span><span class="nx">launchCodePhone</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strWithoutHyphens</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>3142540107
 ReferenceError: strWithoutHyphens is not defined
 (rest of error message omitted)
@@ -123,9 +135,15 @@ ReferenceError: strWithoutHyphens is not defined
 <h2>10.6.2. Variable Shadowing<a class="headerlink" href="#variable-shadowing" title="Permalink to this headline">¶</a></h2>
 <p>We just learned that variables and parameters defined within a function are not visible outside of that function. The opposite scenario is more complicated; a variable defined outside a function <em>may</em> be visible within the function, in certain circumstances.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>In some cases, a variable defined outside of a function may be visible within the function.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">printMessage</span><span class="p">()</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
@@ -133,23 +151,30 @@ ReferenceError: strWithoutHyphens is not defined
 
 <span class="nx">printMessage</span><span class="p">();</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
 </pre></div>
 </div>
 </div>
 <p>Even though <code class="docutils literal notranslate"><span class="pre">message</span></code> is defined outside the function, it is still visible within the function. When <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> is called and <code class="docutils literal notranslate"><span class="pre">console.log(message);</span></code> executes, <code class="docutils literal notranslate"><span class="pre">message</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, so that value is printed to the console. This means that the scope of <code class="docutils literal notranslate"><span class="pre">message</span></code> extends to the function <code class="docutils literal notranslate"><span class="pre">printMessage</span></code>.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>It is NOT the case that all variables defined outside of a function are visible within <em>every</em> function. The reality is a bit more nuanced that this, and will be explored in depth in a later chapter.</p>
-<p class="last">There is, however, a specific type of variable that is visible to every function, known as a <strong>global variable</strong>. We <a class="reference internal" href="../data-and-variables/variables.html#global-var-intro"><span class="std std-ref">remarked earlier</span></a> that a global variable is created when initializing a variable without using <code class="docutils literal notranslate"><span class="pre">let</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span></code>, or <code class="docutils literal notranslate"><span class="pre">var</span></code>, and they should be used very rarely.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">It is NOT the case that all variables defined outside of a function are visible within <em>every</em> function. The reality is a bit more nuanced that this, and will be explored in depth in a later chapter.</p>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It!</p>
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>What is the output of the following program? Form a hypothesis for yourself before running it.</p>
 <p>Once you have answered that question, try relocating the declaring <code class="docutils literal notranslate"><span class="pre">message</span></code> to other locations to see how it affects the program. For example, you might try placing it within or after <code class="docutils literal notranslate"><span class="pre">printMessage</span></code>.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">printMessage</span><span class="p">()</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
@@ -159,12 +184,12 @@ ReferenceError: strWithoutHyphens is not defined
 <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Goodbye&quot;</span><span class="p">;</span>
 <span class="nx">printMessage</span><span class="p">();</span>
 </pre></div>
-</div>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Function-Scope">Run this program at repl.it</a></p>
+</td></tr></table></div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Function-Scope" target="_blank">Run this program at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p id="index-1">An interesting thing happens when a function parameter has the same name as a variable that is in-scope.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -180,7 +205,7 @@ ReferenceError: strWithoutHyphens is not defined
 <span class="nx">printMessage</span><span class="p">(</span><span class="s2">&quot;Goodbye&quot;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Goodbye
 </pre></div>
 </div>
@@ -191,9 +216,15 @@ ReferenceError: strWithoutHyphens is not defined
 <div class="section" id="check-your-understanding">
 <h2>10.6.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What does the following code output?</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">isEven</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">return</span> <span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
@@ -201,7 +232,7 @@ ReferenceError: strWithoutHyphens is not defined
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isEven</span><span class="p">(</span><span class="mi">43</span><span class="p">));</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 </div>

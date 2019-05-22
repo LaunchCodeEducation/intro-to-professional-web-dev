@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -88,40 +88,43 @@
 <span id="id1"></span><h1>5.1. Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code <em>only if</em> a given condition is met.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p class="last">Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but <em>only if</em> the bill has not already been paid.</p>
 </div>
 <p>The condition for the above example is: Send a notification of an upcoming bill only if the statement “the bill is unpaid” is true. In order to state something like this in JavaScript, we need to understand how programming languages represent true and false.</p>
 <div class="section" id="boolean-values">
 <h2>5.1.1. Boolean Values<a class="headerlink" href="#boolean-values" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-1"></span><p id="index-2">The JavaScript data type for storing true and false values is called <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, named after the British mathematician, George Boole.</p>
+<span class="target" id="index-1"></span><p id="index-2">The JavaScript data type for storing true and false values is <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, named after the British mathematician George Boole.</p>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title">Fun Fact</p>
-<p class="last">George Boole created <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean Algebra</a>, which is the basis of all modern computer arithmetic.</p>
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="last">George Boole created <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_algebra" target="_blank">Boolean Algebra<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which is the basis of all modern computer arithmetic.</p>
 </div>
-<p>There are only two <strong>boolean values</strong>—<code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. JavaScript is case-sensitive, so <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are not valid boolean values.</p>
+<p>There are only two <strong>boolean values</strong>—<code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. JavaScript is case-sensitive, so <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are <em>not</em> valid boolean values.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">false</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
 boolean
 boolean
 </pre></div>
 </div>
 </div>
-<p>The values <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> are <strong>not</strong> strings. If you use quotes to surround booleans (<code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code>), those values become strings.</p>
+<p>The values <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> are <em>not</em> strings. If you use quotes to surround booleans (<code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code>), those values become strings.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">true</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s2">&quot;true&quot;</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>boolean
 string
 </pre></div>
@@ -132,20 +135,25 @@ string
 <h2>5.1.2. Boolean Conversion<a class="headerlink" href="#boolean-conversion" title="Permalink to this headline">¶</a></h2>
 <p id="index-3">As with the number and string data types, the boolean type also has a conversion function, <code class="docutils literal notranslate"><span class="pre">Boolean</span></code>. It works similarly to the <code class="docutils literal notranslate"><span class="pre">Number</span></code> and <code class="docutils literal notranslate"><span class="pre">String</span></code> functions, attempting to convert a non-boolean value to a boolean.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It!</p>
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Explore how <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> converts various non-boolean values.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s2">&quot;true&quot;</span><span class="p">));</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s2">&quot;true&quot;</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s2">&quot;TRUE&quot;</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s1">&#39;LaunchCode&#39;</span><span class="p">));</span>
 </pre></div>
-</div>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Boolean-Type-Conversion">Run this program at repl.it</a></p>
+</td></tr></table></div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Boolean-Type-Conversion" target="_blank">Run this program at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Under which conditions does <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> convert a string to <code class="docutils literal notranslate"><span class="pre">true</span></code>?</p>
 <ol class="last arabic simple">
 <li>Only when the string is <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code>.</li>
@@ -159,12 +167,13 @@ string
 <h2>5.1.3. Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="index-4"></span><span class="target" id="index-5"></span><p id="index-6">A <strong>boolean expression</strong> is an expression that evaluates to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. The equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, compares two values and returns true or false depending on whether the values are equal.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span><span class="p">);</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">6</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
 false
 </pre></div>
@@ -173,11 +182,11 @@ false
 <p>In the first statement, the two operands are equal, so the expression evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>. In the second statement, 5 is not equal to 6, so we get <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">==</span></code> to see that <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code> are not equal.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>false
 </pre></div>
 </div>
@@ -257,14 +266,9 @@ false
 </table>
 <p>Although these operations are probably familiar, the JavaScript symbols are different from the mathematical symbols. A common error is to use a single equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) instead of a double equal sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>). Remember that <code class="docutils literal notranslate"><span class="pre">=</span></code> is an <em>assignment</em> operator and <code class="docutils literal notranslate"><span class="pre">==</span></code> is a <em>comparison</em> operator. Also note that <code class="docutils literal notranslate"><span class="pre">=&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code> are not recognized operators.</p>
 <p>An equality test is symmetric, meaning that we can swap the places of the operands and the result is the same.  For a variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, if <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">7</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> then <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">==</span> <span class="pre">a</span></code> is also <code class="docutils literal notranslate"><span class="pre">true</span></code>. However, an assignment statement is not symmetric: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">7</span></code> is legal while <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">=</span> <span class="pre">a</span></code> is not.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>If you explore the equality operator in more depth, you will find some suprises. For example, the following comparisons return <code class="docutils literal notranslate"><span class="pre">true</span></code>:</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">==</span> <span class="pre">&quot;7&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">==</span> <span class="pre">false</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">==</span> <span class="pre">''</span></code></li>
-</ul>
 <p class="last">We will explore the nuances of <code class="docutils literal notranslate"><span class="pre">==</span></code> in the upcoming section <a class="reference internal" href="equality.html#equality"><span class="std std-ref">Equality</span></a>, and introduce two new operators, <code class="docutils literal notranslate"><span class="pre">===</span></code> and <code class="docutils literal notranslate"><span class="pre">!==</span></code>, that will align more closely with our intuitive notion of equality.</p>
 </div>
 </div>
@@ -272,7 +276,7 @@ false
 <div class="section" id="check-your-understanding">
 <h2>5.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following is a Boolean expression? Select all that apply.</p>
 <ol class="last arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">==</span> <span class="pre">4</span></code></li>

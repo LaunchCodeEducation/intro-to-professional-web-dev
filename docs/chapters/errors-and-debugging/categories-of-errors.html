@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script type="text/javascript" src="../../_static/js/launchcode.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -61,7 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -105,7 +105,7 @@
 <p id="index-1">JavaScript can only execute a program if the program is syntactically correct. <strong>Syntax</strong> refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punchation.</p>
 <p id="index-2">A <strong>syntax error</strong> is a violation of the formal rules for a given language.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title">Examples</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>this sentence contains a syntax error.</p>
 <p class="last">So does this one</p>
 </div>
@@ -113,16 +113,17 @@
 <p>Programming languages are not so forgiving. If there is a single syntax error anywhere in your program, JavaScript will display an error message and quit immediately. Since syntax is validated during the parsing stage, syntax errors are the first we see when running a program.</p>
 <p>During the first few weeks of your programming career, you will probably spend a lot of time tracking down syntax errors. However, as you gain experience, you will make fewer errors, and you will find your errors faster.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title">Try It!</p>
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Find the syntax errors in the program.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">Wednesday</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">Wednesday</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">;</span>
 </pre></div>
-</div>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Errors">Run this program at repl.it</a></p>
+</td></tr></table></div>
+<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Errors" target="_blank">Run this program at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">What syntax errors did you find? What was the specific error message provided by JavaScript in each case?</p>
 </div>
 </div>
@@ -132,13 +133,13 @@
 <p>Runtime errors occur during the execution phase of a program, so we will only encounter them after the syntax of our program is completely correct.</p>
 <p>A common runtime error occurs when we try to use a variable that has not been created yet. This can happen if you misspell the name of a variable, as the following example shows.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>Output</strong></p>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>ReferenceError: firstname is not defined
    at evalmachine.&lt;anonymous&gt;:2:13
    at Script.runInContext (vm.js:107:20)
@@ -160,14 +161,17 @@
 <p id="index-5">The third type of error is the <strong>logic error</strong>. If there is a logic error in your program, it will run successfully and not generate any error messages. However, the program will not work as intended.</p>
 <p>The characteristic of logic errors is that the program you wrote is not the program you wanted. For example, say you want a program to calculate your daily earnings based on your weekly salary. You might try the following:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">weeklyPay</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">weeklyPay</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">dailyEarnings</span> <span class="o">=</span> <span class="nx">weeklyPay</span> <span class="o">/</span> <span class="mi">7</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dailyEarnings</span><span class="p">);</span>
 </pre></div>
-</div>
-<p><strong>Output</strong></p>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>85.71428571428571
 </pre></div>
 </div>
@@ -178,7 +182,7 @@
 <div class="section" id="check-your-understanding">
 <h2>6.2.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title">Question</p>
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Label each of the following as either a syntax, runtime, or logic error.</p>
 <ol class="last arabic simple">
 <li>Trying to use a variable that has not been defined.</li>

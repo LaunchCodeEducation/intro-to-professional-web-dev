@@ -30,6 +30,7 @@ Let's write a function that, given a string, returns its reverse.
 One approach uses the accumulator pattern:
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       let reversed = '';
@@ -50,6 +51,7 @@ Another approach is to use the fact that there is a ``reverse`` method for array
 .. _reverse_func:
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       let lettersArray = str.split('');
@@ -78,6 +80,7 @@ The ``isPalindrome`` Function
 Using our ``reverse`` function for strings, we can create our palindrome checker. Recall that our approach will be to take the string argument, reverse it, and then compare the reversed string to the original string.
 
 .. sourcecode:: js
+   :linenos:
 
    function reverse(str) {
       return str.split('').reverse().join('');
@@ -102,7 +105,7 @@ An important consideration when writing a function is size. By "size" we mean th
 This principle is easier to state than to put into practice. For example, what if we had written ``isPalindrome`` without breaking out the ``reverse`` code into a separate function?
 
 .. sourcecode:: js
-
+   :linenos:
 
    function isPalindrome(str) {
       let reversed = str.split('').reverse().join('');
@@ -116,6 +119,7 @@ Some cases will be much more clear-cut, however. Consider the sandwich function,
 A much better solution would look like this:
 
 .. sourcecode:: js
+   :linenos:
 
    function makeSandwich( /*parameters*/ ) {
       // make the sandwich

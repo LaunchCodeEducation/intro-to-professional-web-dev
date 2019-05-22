@@ -11,6 +11,7 @@ The following example prints each of the characters of the string ``"LaunchCode"
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let name = "LaunchCode";
 
@@ -18,7 +19,7 @@ The following example prints each of the characters of the string ``"LaunchCode"
          console.log(name[i]);
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -40,6 +41,7 @@ Since ``name.length`` is 10, the loop executes once each for the values of ``i``
    Write a program that prints each character of your name on a different line.
 
    .. sourcecode:: js
+      :linenos:
    
       // create a string variable containing your name
 
@@ -55,6 +57,7 @@ The following example prints each of the programming languages in the array ``la
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let languages = ["JS", "Java", "C#", "Python"];
 
@@ -62,7 +65,7 @@ The following example prints each of the programming languages in the array ``la
          console.log(languages[i]);
       }
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -78,6 +81,7 @@ Similar to the string example, this loop executes 4 times because ``launguages.l
    Write a program that prints the name of each member of your family on a different line.
 
    .. sourcecode:: js
+      :linenos:
    
       // create an array variable containing the names
 

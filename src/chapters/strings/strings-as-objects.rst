@@ -38,7 +38,7 @@ Referencing ``length`` or ``area`` by itself in code *does not* give you the val
 
       console.log(typeof console);
 
-   **Output**
+   **Console Output**
 
    ::
    
@@ -63,6 +63,7 @@ Every string that we work with will have the same properties and methods. The mo
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let firstName = "Grace";
       let lastName = "Hopper";
@@ -70,7 +71,7 @@ Every string that we work with will have the same properties and methods. The mo
       console.log(firstName, "has", firstName.length, "characters");
       console.log(lastName, "has", lastName.length, "characters");
 
-   **Output**
+   **Console Output**
 
    ::
 
@@ -86,13 +87,14 @@ The ``toLowerCase()`` string method returns the value of its string in all lower
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let nonprofit = "LaunchCode";
 
       console.log(nonprofit.toLowerCase());
       console.log(nonprofit);
 
-   **Output**
+   **Console Output**
 
    ::
 
