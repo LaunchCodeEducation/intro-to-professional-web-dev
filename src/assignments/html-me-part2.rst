@@ -1,4 +1,7 @@
-`< Back to Overview page <..>`__
+.. _html-me-part2:
+
+HTML Me Someting, Part 2
+=========================
 
 In Part 2, you’ll get comfortable with using CSS selectors and rules to
 dictate display, while keeping your styles separate from your content.

@@ -204,9 +204,9 @@ Getting to Work
 
 It’s time to build out your page! Dive into each of the two parts below:
 
-`Part 1: HTML <./part1-html/>`__
+#. `Part 1: HTML <html-me-part1.html>`__
 
-`Part 2: CSS <./part2-css/>`__
+#. `Part 2: CSS <html-me-part2.html>`__
 
 .. _submitting-your-work:
 
