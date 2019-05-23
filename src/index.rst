@@ -52,6 +52,7 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidateQuiz
+   assignments/html-me-somthing
 
 Appendices
 ^^^^^^^^^^
@@ -73,3 +74,5 @@ Appendices
 
    todos
    index-full
+   assignments/html-me-part1
+   assignments/html-me-part2
