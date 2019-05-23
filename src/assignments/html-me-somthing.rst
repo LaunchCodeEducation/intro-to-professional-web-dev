@@ -309,6 +309,9 @@ Here’s how:
    Refresh the browser window on your Github page, and notice that your HTML
    and CSS files have appeared!
 
+Turning In Your Work
+---------------------
+
 .. todo::
    Add "submit" instructions here or in assignments area.
 
