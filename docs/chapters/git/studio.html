@@ -137,11 +137,7 @@ mimic how a real-world collaborative Git workflow can be used within a project.<
 likely you will make changes to the code only to realize that you did so in the
 wrong branch. When this happens (and it happens to all of us) you can use
 <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch. Read about how
-to do so in our Git Stash Tutorial.</p>
-</div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Migrate Git stash tutorial</p>
+to do so in our <a class="reference internal" href="../../appendices/git/stash.html#git-stash"><span class="std std-ref">Git Stash</span></a> tutorial.</p>
 </div>
 <div class="section" id="step-1-create-a-new-repository">
 <h3>15.6.3.1. Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h3>
@@ -203,7 +199,7 @@ Changes to be committed:
 create mode 100644 index.html
 $ git log
 commit 679de772612099c77891d2a3fab12af8db08b651
-Author: Cheryl &lt;cherylschaefer@gmail.com&gt;
+Author: Cheryl &lt;chrisbay@gmail.com&gt;
 Date:   Wed Apr 5 10:55:56 2017 -0500
 
    Started communication log.
@@ -217,11 +213,18 @@ accessible for <strong>Pilot</strong> also. Let’s push this project up to GitH
 <p><strong>Control</strong>: Go to your GitHub profile in a web browser. Click on the “+”
 button to add a new repository (‘repo’).</p>
 <div class="figure" id="id1">
-<img alt="../../_images/CreateAGithubRepo.png" src="../../_images/CreateAGithubRepo.png" />
+<img alt="The New Repository link in the dropdown menu at top right on GitHub." src="../../_images/new-repo-button.png" />
+<p class="caption"><span class="caption-text">The <em>New Repository</em> link is in the dropdown menu at top right on GitHub.</span></p>
+</div>
+<p>To create a new repository:</p>
+<ol class="arabic simple">
+<li>Fill in the name and description.</li>
+<li>Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</li>
+</ol>
+<div class="figure" id="id2">
+<img alt="Creating a new repository in GitHub by filling out the form" src="../../_images/create-repo.png" />
 <p class="caption"><span class="caption-text">Create a new repository in GitHub</span></p>
 </div>
-<p>Fill in the name and description. Uncheck the “initialize with README”. Click
-<em>Create Repository</em>.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">If you initialize with a README, in the next step Git will refuse to merge
@@ -229,13 +232,13 @@ this repo with the local repo. There are ways around that, but it’s faster
 and easier to just create an empty repo here.</p>
 </div>
 <p>After clicking, you should see something similar to:</p>
-<div class="figure" id="id2">
-<img alt="../../_images/StartingARepo.png" src="../../_images/StartingARepo.png" />
+<div class="figure" id="id3">
+<img alt="The page you see after creating an empty repository, with several options." src="../../_images/new-repo-push.png" />
 <p class="caption"><span class="caption-text">Connecting to a repository in GitHub</span></p>
 </div>
 <p>Now go back to your terminal and cut and paste the commands shown in the
 instructions on GitHub. These should be very similar to:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com:cherylschaefer/communication-log.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com:chrisbay/communication-log.git
 $ git push origin master
 </pre></div>
 </div>
@@ -249,8 +252,8 @@ probably don’t.</p>
 local project. (File contents in browser match those in terminal). Click around
 and see what is there. You can read all your code through GitHub’s web
 interface.</p>
-<div class="figure" id="id3">
-<img alt="../../_images/Repo1Commit.png" src="../../_images/Repo1Commit.png" />
+<div class="figure" id="id4">
+<img alt="A repository with one commit in GitHub" src="../../_images/repo-first-commit.png" />
 <p class="caption"><span class="caption-text">A repository with one commit in GitHub</span></p>
 </div>
 </div>
@@ -259,13 +262,13 @@ interface.</p>
 <p><strong>Pilot</strong>: Go to Control’s GitHub profile and find the communication-log repo.
 Click on the green <em>Clone or download</em> button. Use HTTPS (not SSH). Copy the
 url to your clipboard.</p>
-<div class="figure" id="id4">
-<img alt="../../_images/CloneRepo2.png" src="../../_images/CloneRepo2.png" />
+<div class="figure" id="id5">
+<img alt="The clone button is on the right-hand side of a project's main page" src="../../_images/clone-button.png" />
 <p class="caption"><span class="caption-text">Cloning a repository in GitHub</span></p>
 </div>
 <p>In your terminal, navigate to your development folder and clone down the repo.
 The command should look something like this.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/cherylschaefer/communication-log.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/chrisbay/communication-log.git
 </pre></div>
 </div>
 <p>Now you can respond to Control! Open the <cite>index.html</cite> file in your editor and
@@ -282,14 +285,14 @@ $ git commit -m &#39;Added second line to log.&#39;
 </div>
 <p>Now we need to push up your changes so Control can use them as well.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin master
-ERROR: Permission to cherylschaefer/communication-log.git denied to pilot.
+ERROR: Permission to chrisbay/communication-log.git denied to pilot.
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
 </pre></div>
 </div>
-<p>Great error message! It let us know exactly what went wrong - Pilot does not
+<p>Great error message! It let us know exactly what went wrong: Pilot does not
 have security permissions to write to Control’s repo. Let’s fix that.</p>
 </div>
 <div class="section" id="step-4-add-a-collaborator-to-a-github-project">
@@ -297,8 +300,8 @@ have security permissions to write to Control’s repo. Let’s fix that.</p>
 <p><strong>Control</strong>: In your web browser, go to your <cite>communication-log</cite> repo. Click
 the <em>Settings</em> button then click on <em>Collaborators</em>. Enter in Pilot’s GitHub
 username and click <em>Add Collaborator</em>.</p>
-<div class="figure" id="id5">
-<img alt="../../_images/RepoSettingsAddCollaborator.png" src="../../_images/RepoSettingsAddCollaborator.png" />
+<div class="figure" id="id6">
+<img alt="Add a collaborator by typing their user name into the input on the Add Collaborator page." src="../../_images/add-collaborator.png" />
 <p class="caption"><span class="caption-text">Add a collaborator to your repo in GitHub</span></p>
 </div>
 </div>
@@ -313,8 +316,8 @@ check your Spam folder. If you still don’t have an email, visit the
 repository page for the repo that Control created (ask them for the link), and
 you’ll see a notification at the top of the page.</p>
 </div>
-<div class="figure" id="id6">
-<img alt="../../_images/InvitedToGithubRepo.png" src="../../_images/InvitedToGithubRepo.png" />
+<div class="figure" id="id7">
+<a class="reference internal image-reference" href="../../_images/repo-invite.png"><img alt="The email invite to join a GitHub repository" src="../../_images/repo-invite.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-text">Invited to collaborate email in GitHub</span></p>
 </div>
 <p>Now let’s go enter that command again to push up our code.</p>
@@ -325,7 +328,7 @@ Compressing objects: 100% (9/9), done.
 Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
 Total 9 (delta 8), reused 0 (delta 0)
 remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-To git@github.com:pilot/communication-log.git
+To git@github.com:chrisbay/communication-log.git
    511239a..679de77  master -&gt; master
 </pre></div>
 </div>
@@ -343,7 +346,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From github.com:cherylschaefer/communication-log
+From github.com:chrisbay/communication-log
    e0de62d..e851b7e  master     -&gt; origin/master
 Updating e0de62d..e851b7e
 Fast-forward
@@ -366,7 +369,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From github.com:cherylschaefer/communication-log
+From github.com:chrisbay/communication-log
    e851b7e..167684c  master     -&gt; origin/master
 Updating e851b7e..167684c
 Fast-forward
@@ -438,8 +441,8 @@ branch that we want to push to GitHub.</p>
 <p>You and your partner should both now see a second branch present on the GitHub
 project page. To view branches on GitHub, select <em>Branches</em> from the navigation
 section just below the repository title.</p>
-<div class="figure" id="id7">
-<img alt="../../_images/BranchesButton.png" src="../../_images/BranchesButton.png" />
+<div class="figure" id="id8">
+<img alt="../../_images/two-branches.png" src="../../_images/two-branches.png" />
 <p class="caption"><span class="caption-text">Branches Button in GitHub</span></p>
 </div>
 <p>In your terminal, you can type this command to see a list of the available
@@ -463,24 +466,24 @@ merge it in to the main branch.</p>
 <h3>15.6.3.9. Create a Pull Request In GitHub<a class="headerlink" href="#create-a-pull-request-in-github" title="Permalink to this headline">¶</a></h3>
 <p><strong>Pilot</strong>: If you haven’t already, in your browser, go to the GitHub project
 and click on <em>Branches</em> and make sure you see the new branch name, <em>open-mic</em>.</p>
-<div class="figure" id="id8">
-<img alt="../../_images/pr-new.png" src="../../_images/pr-new.png" />
+<div class="figure" id="id9">
+<a class="reference internal image-reference" href="../../_images/new-pr-button1.png"><img alt="The Branches page of a repo, with a button to open a new pull request to the right of each feature branch." src="../../_images/new-pr-button1.png" style="height: 300px;" /></a>
 <p class="caption"><span class="caption-text">Branches Page in GitHub</span></p>
 </div>
 <p>Click <em>New Pull Request</em> to begin the process of requesting that your changes
 in the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch be incorporated into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. Add some
 text in the description box to let Control know what you did and why.</p>
-<p>Note that the branch selected in the <cite>base</cite> dropdown is the one you want to
+<p>Note that the branch selected in the <em>base</em> dropdown is the one you want to
 merge <em>into</em>, while the selected branch in the <em>compare</em> dropdown is the one
 you want to merge <em>from</em>.</p>
-<div class="figure" id="id9">
-<img alt="../../_images/pr-details.png" src="../../_images/pr-details.png" />
+<div class="figure" id="id10">
+<a class="reference internal image-reference" href="../../_images/create-pr1.png"><img alt="The form for creating a new pull request." src="../../_images/create-pr1.png" style="height: 500px;" /></a>
 <p class="caption"><span class="caption-text">Open a PR in GitHub</span></p>
 </div>
 <p>This is what an opened pull request looks like:</p>
-<div class="figure" id="id10">
-<img alt="../../_images/pr-created.png" src="../../_images/pr-created.png" />
-<p class="caption"><span class="caption-text">Create a PR in GitHub</span></p>
+<div class="figure" id="id11">
+<a class="reference internal image-reference" href="../../_images/open-pr1.png"><img alt="An open pull request." src="../../_images/open-pr1.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-text">An open PR in GitHub</span></p>
 </div>
 </div>
 <div class="section" id="step-10-make-a-change-in-the-new-branch">
@@ -509,7 +512,7 @@ Your branch is up-to-date with &#39;origin/open-mic&#39;.
 in GitHub is updated to reflect the changes you added. The context in the
 description box is NOT updated, however, so be sure to add comments to the pull
 request to explain what you did and why.</p>
-<p>Now switch back to the <code class="docutils literal notranslate"><span class="pre">`master`</span></code> branch:</p>
+<p>Now switch back to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout master
 Switched to branch &#39;master&#39;
 Your branch is up-to-date with &#39;origin/master&#39;.
@@ -522,25 +525,25 @@ all the changes in the <code class="docutils literal notranslate"><span class="p
 <div class="section" id="step-11-merge-the-pull-request">
 <h3>15.6.3.11. Step 11: Merge the Pull Request<a class="headerlink" href="#step-11-merge-the-pull-request" title="Permalink to this headline">¶</a></h3>
 <p><strong>Control</strong>: Go to the repo in GitHub. Click on <em>Pull Requests</em>.</p>
-<div class="figure" id="id11">
-<img alt="../../_images/RepoPR1.png" src="../../_images/RepoPR1.png" />
+<div class="figure" id="id12">
+<img alt="../../_images/pr-link.png" src="../../_images/pr-link.png" />
 <p class="caption"><span class="caption-text">PR Open in GitHub</span></p>
 </div>
 <p>Explore this page to see all the information GitHub shows you about the pull
 request.</p>
-<div class="figure" id="id12">
-<img alt="../../_images/RepoMergePR.png" src="../../_images/RepoMergePR.png" />
+<div class="figure" id="id13">
+<a class="reference internal image-reference" href="../../_images/open-pr1.png"><img alt="A pull request ready to merge" src="../../_images/open-pr1.png" style="height: 500px;" /></a>
 <p class="caption"><span class="caption-text">Merge a Pull Request in GitHub</span></p>
 </div>
 <p>When you’re happy with the changes, merge them in. Click <em>Merge Pull Request</em>
 then <em>Confirm Merge</em>.</p>
-<div class="figure" id="id13">
-<img alt="../../_images/PRConfirmMerge.png" src="../../_images/PRConfirmMerge.png" />
+<div class="figure" id="id14">
+<a class="reference internal image-reference" href="../../_images/confirm-merge-pr.png"><img alt="Confirming a merge" src="../../_images/confirm-merge-pr.png" style="height: 500px;" /></a>
 <p class="caption"><span class="caption-text">Confirm PR Merge in GitHub</span></p>
 </div>
 <p>Upon a successful merge, you should see a screen similar to the following:</p>
-<div class="figure" id="id14">
-<img alt="../../_images/PRMerged.png" src="../../_images/PRMerged.png" />
+<div class="figure" id="id15">
+<a class="reference internal image-reference" href="../../_images/pr-merged1.png"><img alt="The screen displayed after a PR is merged" src="../../_images/pr-merged1.png" style="height: 500px;" /></a>
 <p class="caption"><span class="caption-text">PR Merged in GitHub</span></p>
 </div>
 <p>The changes from <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> are now in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, but only in
@@ -557,8 +560,8 @@ $ git pull origin master
 <p>When collaborating on a project, things won’t always go smoothly. It’s common
 for two people to make changes to the same line(s) of code, at roughly the same
 time, which will prevent Git from being able to merge the changes together.</p>
-<div class="figure" id="id15">
-<img alt="../../_images/Git-merge.gif" src="../../_images/Git-merge.gif" />
+<div class="figure" id="id16">
+<img alt="An animated GIF file showing two opposing armies colliding in a mess" src="../../_images/git-merge.gif" />
 <p class="caption"><span class="caption-text">Git Merge Conflicts</span></p>
 </div>
 <p>This isn’t such a big deal. In fact, it’s very common. To see how we can handle
@@ -592,8 +595,8 @@ right after the first stylesheet link:</p>
 </pre></div>
 </td></tr></table></div>
 <p>The result:</p>
-<div class="figure" id="id16">
-<img alt="../../_images/AddSatisfyFont.png" src="../../_images/AddSatisfyFont.png" />
+<div class="figure" id="id17">
+<img alt="Our HTML page with a fancy font" src="../../_images/fancy-text.png" />
 <p class="caption"><span class="caption-text">Satisfying!</span></p>
 </div>
 <p>Stage and commit your changes and push them up to GitHub. If you don’t remember
@@ -635,9 +638,9 @@ link:</p>
 message. How exciting!</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin master
 
-To git@github.com:cherylschaefer/communication-log.git
+To git@github.com:chrisbay/communication-log.git
 ! [rejected]        master -&gt; master (fetch first)
-error: failed to push some refs to &#39;git@github.com:cherylschaefer/communication-log.git&#39;
+error: failed to push some refs to &#39;git@github.com:chrisbay/communication-log.git&#39;
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -658,7 +661,7 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
 Unpacking objects: 100% (4/4), done.
-From github.com:cherylschaefer/communication-log
+From github.com:chrisbay/communication-log
    7d7e42e..0c21659  master     -&gt; origin/master
 Auto-merging style.css
 CONFLICT (content): Merge conflict in style.css
@@ -673,23 +676,9 @@ automatically merge the changes.</p>
 indicated by the lines that begin with <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code>. You will have to edit
 these files yourself to incorporate Pilot’s changes. Let’s start with
 <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>body {
-   color: white;
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-   background-color: black;
-   font-family: &#39;Sacramento&#39;, cursive;
-   font-size: 32px;
-   margin-top: 5%;
-   margin-left: 20%;
-   margin-right: 20%;
-=======
-   background-color: #333;
-   font-size: 150%;
-   font-family: &#39;Satisfy&#39;, cursive;
-   margin: 5em 25%;
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0c2165931f5f668959bad92d2f744efb402e049d
-}
-</pre></div>
+<div class="figure" id="id18">
+<img alt="VS Code shows merge conflicts in the editor window" src="../../_images/conflicts-css.png" />
+<p class="caption"><span class="caption-text">Merge conflicts in <code class="docutils literal notranslate"><span class="pre">style.css</span></code>, viewed in VS Code</span></p>
 </div>
 <p>At the top and bottom, there is some code that could be merged without issue.</p>
 <p>Between the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">=======</span></code> symbols is the version of the code
@@ -714,6 +703,10 @@ the Git markers so that only valid CSS remains in the file.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Like many other editors, VS Code provides fancy buttons to allow you to resolve individual merge conflicts with a single click. There’s nothing magic about these buttons; they do the same thing that you can do by directly editing the file.</p>
+</div>
 <p>You will need to do the same thing for the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file. You only need
 the link for the Sacramento font, not the Satisfy font. Then stage, commit, and
 push your changes; you should not see an error message this time.</p>
@@ -736,7 +729,7 @@ remote: Counting objects: 13, done.
 remote: Compressing objects: 100% (8/8), done.
 remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
 Unpacking objects: 100% (13/13), done.
-From Github.com:cherylschaefer/communication-log
+From Github.com:chrisbay/communication-log
    0c21659..e0de62d  master     -&gt; origin/master
 Updating 0c21659..e0de62d
 Fast-forward

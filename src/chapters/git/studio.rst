@@ -60,9 +60,7 @@ mimic how a real-world collaborative Git workflow can be used within a project.
    likely you will make changes to the code only to realize that you did so in the
    wrong branch. When this happens (and it happens to all of us) you can use
    ``Git stash`` to cleanly move your changes to another branch. Read about how
-   to do so in our Git Stash Tutorial.
-
-.. todo:: Migrate Git stash tutorial
+   to do so in our :ref:`git-stash` tutorial.
 
 Step 1: Create a New Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,7 +132,7 @@ We see that the file is staged. Let's commmit.
    create mode 100644 index.html
    $ git log
    commit 679de772612099c77891d2a3fab12af8db08b651
-   Author: Cheryl <cherylschaefer@gmail.com>
+   Author: Cheryl <chrisbay@gmail.com>
    Date:   Wed Apr 5 10:55:56 2017 -0500
 
       Started communication log.
@@ -149,12 +147,20 @@ Step 2: Share Your Repository On GitHub
 **Control**: Go to your GitHub profile in a web browser. Click on the "+"
 button to add a new repository ('repo').
 
-.. figure:: figures/CreateAGithubRepo.png
+.. figure:: figures/studio/new-repo-button.png
+   :alt: The New Repository link in the dropdown menu at top right on GitHub.
+
+   The *New Repository* link is in the dropdown menu at top right on GitHub.
+
+To create a new repository:
+
+#. Fill in the name and description. 
+#. Uncheck *Initialize this repository with a README* and click *Create Repository*.
+
+.. figure:: figures/studio/create-repo.png
+   :alt: Creating a new repository in GitHub by filling out the form
 
    Create a new repository in GitHub
-
-Fill in the name and description. Uncheck the "initialize with README". Click
-*Create Repository*.
 
 .. note::
 
@@ -164,7 +170,8 @@ Fill in the name and description. Uncheck the "initialize with README". Click
 
 After clicking, you should see something similar to:
 
-.. figure:: figures/StartingARepo.png
+.. figure:: figures/studio/new-repo-push.png
+   :alt: The page you see after creating an empty repository, with several options.
 
    Connecting to a repository in GitHub
 
@@ -173,7 +180,7 @@ instructions on GitHub. These should be very similar to:
 
 ::
 
-   $ git remote add origin https://github.com:cherylschaefer/communication-log.git
+   $ git remote add origin https://github.com:chrisbay/communication-log.git
    $ git push origin master
 
 .. warning::
@@ -187,7 +194,8 @@ local project. (File contents in browser match those in terminal). Click around
 and see what is there. You can read all your code through GitHub's web
 interface.
 
-.. figure:: figures/Repo1Commit.png
+.. figure:: figures/studio/repo-first-commit.png
+   :alt: A repository with one commit in GitHub
 
    A repository with one commit in GitHub
 
@@ -198,7 +206,8 @@ Step 3: Clone a Project from GitHub
 Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
 url to your clipboard.
 
-.. figure:: figures/CloneRepo2.png
+.. figure:: figures/studio/clone-button.png
+   :alt: The clone button is on the right-hand side of a project's main page
 
    Cloning a repository in GitHub
 
@@ -207,7 +216,7 @@ The command should look something like this.
 
 ::
 
-   $ git clone https://github.com/cherylschaefer/communication-log.git
+   $ git clone https://github.com/chrisbay/communication-log.git
 
 Now you can respond to Control! Open the `index.html` file in your editor and
 add your response to mission control. Be creative---the communication can go
@@ -228,13 +237,13 @@ Now we need to push up your changes so Control can use them as well.
 ::
 
    $ git push origin master
-   ERROR: Permission to cherylschaefer/communication-log.git denied to pilot.
+   ERROR: Permission to chrisbay/communication-log.git denied to pilot.
    fatal: Could not read from remote repository.
 
    Please make sure you have the correct access rights
    and the repository exists.
 
-Great error message! It let us know exactly what went wrong - Pilot does not
+Great error message! It let us know exactly what went wrong: Pilot does not
 have security permissions to write to Control's repo. Let's fix that.
 
 Step 4: Add A Collaborator To A GitHub Project
@@ -244,7 +253,8 @@ Step 4: Add A Collaborator To A GitHub Project
 the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
 username and click *Add Collaborator*.
 
-.. figure:: figures/RepoSettingsAddCollaborator.png
+.. figure:: figures/studio/add-collaborator.png
+   :alt: Add a collaborator by typing their user name into the input on the Add Collaborator page.
 
    Add a collaborator to your repo in GitHub
 
@@ -261,7 +271,9 @@ View and accept the invitation.
    repository page for the repo that Control created (ask them for the link), and
    you'll see a notification at the top of the page.
 
-.. figure:: figures/InvitedToGithubRepo.png
+.. figure:: figures/studio/repo-invite.png
+   :alt: The email invite to join a GitHub repository
+   :height: 400px
 
    Invited to collaborate email in GitHub
 
@@ -276,7 +288,7 @@ Now let's go enter that command again to push up our code.
    Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
    Total 9 (delta 8), reused 0 (delta 0)
    remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-   To git@github.com:pilot/communication-log.git
+   To git@github.com:chrisbay/communication-log.git
       511239a..679de77  master -> master
 
 Anyone reading the HTML through GitHub's browser interface should now see the
@@ -297,7 +309,7 @@ repository.
    remote: Compressing objects: 100% (2/2), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), done.
-   From github.com:cherylschaefer/communication-log
+   From github.com:chrisbay/communication-log
       e0de62d..e851b7e  master     -> origin/master
    Updating e0de62d..e851b7e
    Fast-forward
@@ -325,7 +337,7 @@ Control just made.
    remote: Compressing objects: 100% (2/2), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), done.
-   From github.com:cherylschaefer/communication-log
+   From github.com:chrisbay/communication-log
       e851b7e..167684c  master     -> origin/master
    Updating e851b7e..167684c
    Fast-forward
@@ -402,7 +414,7 @@ You and your partner should both now see a second branch present on the GitHub
 project page. To view branches on GitHub, select *Branches* from the navigation
 section just below the repository title.
 
-.. figure:: figures/BranchesButton.png
+.. figure:: figures/studio/two-branches.png
 
    Branches Button in GitHub
 
@@ -433,7 +445,9 @@ Create a Pull Request In GitHub
 **Pilot**: If you haven't already, in your browser, go to the GitHub project
 and click on *Branches* and make sure you see the new branch name, *open-mic*.
 
-.. figure:: figures/pr-new.png
+.. figure:: figures/studio/new-pr-button.png
+   :alt: The Branches page of a repo, with a button to open a new pull request to the right of each feature branch.
+   :height: 300px
 
    Branches Page in GitHub
 
@@ -441,19 +455,23 @@ Click *New Pull Request* to begin the process of requesting that your changes
 in the ``open-mic`` branch be incorporated into the ``master`` branch. Add some
 text in the description box to let Control know what you did and why.
 
-Note that the branch selected in the `base` dropdown is the one you want to
+Note that the branch selected in the *base* dropdown is the one you want to
 merge *into*, while the selected branch in the *compare* dropdown is the one
 you want to merge *from*.
 
-.. figure:: figures/pr-details.png
+.. figure:: figures/studio/create-pr.png
+   :alt: The form for creating a new pull request.
+   :height: 500px
 
    Open a PR in GitHub
 
 This is what an opened pull request looks like:
 
-.. figure:: figures/pr-created.png
+.. figure:: figures/studio/open-pr.png
+   :alt: An open pull request.
+   :height: 500px
 
-   Create a PR in GitHub
+   An open PR in GitHub
 
 Step 10: Make a Change in the New Branch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -505,27 +523,33 @@ Step 11: Merge the Pull Request
 
 **Control**: Go to the repo in GitHub. Click on *Pull Requests*.
 
-.. figure:: figures/RepoPR1.png
+.. figure:: figures/studio/pr-link.png
 
    PR Open in GitHub
 
 Explore this page to see all the information GitHub shows you about the pull
 request.
 
-.. figure:: figures/RepoMergePR.png
+.. figure:: figures/studio/open-pr.png
+   :alt: A pull request ready to merge
+   :height: 500px
 
    Merge a Pull Request in GitHub
 
 When you're happy with the changes, merge them in. Click *Merge Pull Request*
 then *Confirm Merge*.
 
-.. figure:: figures/PRConfirmMerge.png
+.. figure:: figures/studio/confirm-merge-pr.png
+   :alt: Confirming a merge
+   :height: 500px
 
    Confirm PR Merge in GitHub
 
 Upon a successful merge, you should see a screen similar to the following:
 
-.. figure:: figures/PRMerged.png
+.. figure:: figures/studio/pr-merged.png
+   :alt: The screen displayed after a PR is merged
+   :height: 500px
 
    PR Merged in GitHub
 
@@ -547,7 +571,8 @@ When collaborating on a project, things won't always go smoothly. It's common
 for two people to make changes to the same line(s) of code, at roughly the same
 time, which will prevent Git from being able to merge the changes together.
 
-.. figure:: figures/Git-merge.gif
+.. figure:: figures/studio/git-merge.gif
+   :alt: An animated GIF file showing two opposing armies colliding in a mess
 
    Git Merge Conflicts
 
@@ -587,7 +612,8 @@ And spice up your ``style.css`` file to look like this:
 
 The result:
 
-.. figure:: figures/AddSatisfyFont.png
+.. figure:: figures/studio/fancy-text.png
+   :alt: Our HTML page with a fancy font
 
    Satisfying!
 
@@ -633,9 +659,9 @@ message. How exciting!
 
    $ git push origin master
 
-   To git@github.com:cherylschaefer/communication-log.git
+   To git@github.com:chrisbay/communication-log.git
    ! [rejected]        master -> master (fetch first)
-   error: failed to push some refs to 'git@github.com:cherylschaefer/communication-log.git'
+   error: failed to push some refs to 'git@github.com:chrisbay/communication-log.git'
    hint: Updates were rejected because the remote contains work that you do
    hint: not have locally. This is usually caused by another repository pushing
    hint: to the same ref. You may want to first integrate the remote changes
@@ -660,7 +686,7 @@ Let's pull these outstanding changes into our branch and resolve the errors.
    remote: Compressing objects: 100% (3/3), done.
    remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
    Unpacking objects: 100% (4/4), done.
-   From github.com:cherylschaefer/communication-log
+   From github.com:chrisbay/communication-log
       7d7e42e..0c21659  master     -> origin/master
    Auto-merging style.css
    CONFLICT (content): Merge conflict in style.css
@@ -677,24 +703,10 @@ indicated by the lines that begin with ``CONFLICT``. You will have to edit
 these files yourself to incorporate Pilot's changes. Let's start with
 ``style.css``.
 
-::
+.. figure:: figures/studio/conflicts-css.png
+   :alt: VS Code shows merge conflicts in the editor window
 
-   body {
-      color: white;
-   <<<<<<< HEAD
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 32px;
-      margin-top: 5%;
-      margin-left: 20%;
-      margin-right: 20%;
-   =======
-      background-color: #333;
-      font-size: 150%;
-      font-family: 'Satisfy', cursive;
-      margin: 5em 25%;
-   >>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d
-   }
+   Merge conflicts in ``style.css``, viewed in VS Code
 
 At the top and bottom, there is some code that could be merged without issue.
 
@@ -718,6 +730,10 @@ the Git markers so that only valid CSS remains in the file.
       font-size: 150%;
       margin: 5em 25%;
    }
+
+.. tip:: Like many other editors, VS Code provides fancy buttons to allow you to resolve individual merge conflicts with a single click. There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
+
+   Feel free to use them, but beware that they will not always work. If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
 
 You will need to do the same thing for the ``index.html`` file. You only need
 the link for the Sacramento font, not the Satisfy font. Then stage, commit, and
@@ -748,7 +764,7 @@ if we just want the latest version of this branch, ``git pull``:
    remote: Compressing objects: 100% (8/8), done.
    remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
    Unpacking objects: 100% (13/13), done.
-   From Github.com:cherylschaefer/communication-log
+   From Github.com:chrisbay/communication-log
       0c21659..e0de62d  master     -> origin/master
    Updating 0c21659..e0de62d
    Fast-forward

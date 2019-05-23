@@ -61,11 +61,13 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book
+   appendices/style-guide
+   appendices/git/workflows
+   appendices/git/stash
    appendices/array-method-examples/index
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
    appendices/math-method-examples/index
-   appendices/style-guide
 
 .. toctree::
    :hidden:
