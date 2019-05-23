@@ -86,6 +86,124 @@
     
   <div class="section" id="exercises-unit-testing">
 <h1>13.1. Exercises: Unit Testing<a class="headerlink" href="#exercises-unit-testing" title="Permalink to this headline">¶</a></h1>
+<p>In many of your previous coding tasks, you had to verify that your code
+worked before moving to the next step. Usually, this required you to add
+<code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to your code to check the values stored in the
+varialbles or returned from a function.</p>
+<p>You probably also encountered a number of bugs in your code samples that
+required you to step through your programs to find syntax, reference, or logic
+errors. You applied <code class="docutils literal notranslate"><span class="pre">console.log</span></code> and other tricks to help fix the
+mistakes.</p>
+<p>The following exercises begin with a debugging review and continue with an
+introduction to automatic testing. The goal is to write code to test your code
+rather than throwing in <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to check your work.</p>
+<div class="section" id="manual-debugging">
+<h2>13.1.1. Manual Debugging<a class="headerlink" href="#manual-debugging" title="Permalink to this headline">¶</a></h2>
+<p>Assume that a team member wrote the following code:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">createLaunchOutput</span><span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+   <span class="nx">entry</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Crew ready for launch. Shuttle offline.&quot;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="o">%</span><span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Shuttle ready for launch. Crew asleep.&quot;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">entry</span><span class="o">%</span><span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Crew and shuttle ready. Cleared for launch!&quot;</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="nx">output</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="sb">`readline-sync`</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter an integer: &quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">createLaunchOutput</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p>The program must accomplish the following:</p>
+<ol class="arabic simple">
+<li>If the user enters a number divisible only by 2, print <code class="docutils literal notranslate"><span class="pre">'Crew</span> <span class="pre">ready</span> <span class="pre">for</span> <span class="pre">launch.</span> <span class="pre">Shuttle</span> <span class="pre">offline.'</span></code></li>
+<li>If the user enters a number divisible only by 3, print <code class="docutils literal notranslate"><span class="pre">'Shuttle</span> <span class="pre">ready</span> <span class="pre">for</span> <span class="pre">launch.</span> <span class="pre">Crew</span> <span class="pre">asleep.'</span></code></li>
+<li>If the user enters a number divisible by both 2 and 3, print <code class="docutils literal notranslate"><span class="pre">'Crew</span> <span class="pre">and</span> <span class="pre">shuttle</span> <span class="pre">ready.</span> <span class="pre">Cleared</span> <span class="pre">for</span> <span class="pre">launch!'</span></code></li>
+<li>If the user enters a number that is NOT divisible by 2 OR 3, print <code class="docutils literal notranslate"><span class="pre">'Crew</span> <span class="pre">and</span> <span class="pre">shuttle</span> <span class="pre">unresponsive.</span> <span class="pre">Launch</span> <span class="pre">aborted!'</span></code></li>
+<li>If the user enters a string, a decimal, or just hits return, print <code class="docutils literal notranslate"><span class="pre">'ARRR!</span> <span class="pre">Raid</span> <span class="pre">yonder</span> <span class="pre">shuttle!'</span></code></li>
+</ol>
+<div class="section" id="fix-the-errors">
+<h3>13.1.1.1. Fix the Errors<a class="headerlink" href="#fix-the-errors" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">createLaunchOutput</span></code> is flawed! It runs, so there are no syntax errors,
+but the program does not produce the correct output.</p>
+<ol class="loweralpha simple">
+<li>First, consider the following inputs: 22, 33, 6, 0, and 7. What output
+should the program produce in each case?</li>
+<li>Run the code as-is and test it with each of the inputs. Which values
+cause errors?</li>
+</ol>
+</li>
+<li><p class="first">Using the techniques you have already learned, fix the code so that any
+integer input results in the correct output.</p>
+</li>
+<li><p class="first">We have only used integers to test the code. What if the user types in
+something else?</p>
+<ol class="loweralpha">
+<li><p class="first">Add the following validation check to the <code class="docutils literal notranslate"><span class="pre">createLaunchOutput</span></code>
+function:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">createLaunchOutput</span><span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">entry</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">isNaN</span><span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="o">||</span> <span class="nx">entry</span> <span class="o">===</span> <span class="s1">&#39; &#39;</span><span class="p">){</span>
+      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Invalid input.&quot;</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">output</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="nx">entry</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+<span class="nx">etc</span><span class="p">...</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Run the updated program and test it with the inputs: 2.22, ‘H’, and ‘’.
+Which entries cause errors?</p>
+</li>
+<li><p class="first">Fix the code so that it always generates the correct output.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="automatic-debugging">
+<h2>13.1.2. Automatic Debugging<a class="headerlink" href="#automatic-debugging" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
