@@ -1,15 +1,17 @@
 Exercises: Forms
 ================
-Hello programmer, we need you to make a Rocket Simulation form. Below are the requirements. Good luck!
+Hello programmer, we need you to make a Rocket Simulation form. Please follow the steps below and good luck!
 
 Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocket-simulation>`_.
 
-**Submission Details**
+1. Create a ``<form>`` with these attributes.
 
-* Set the ``method`` to ``"POST"``
-* Set the ``action`` to ``"https://www.w3schools.com/action_page.php"``
+   * Set ``method`` to ``"POST"``
+   * Set ``action`` to ``"https://www.w3schools.com/action_page.php"``
 
-**Fields**
+2. Add a ``<label>`` and ``<input>`` for Test Name to the ``<form>``.
+
+   * ``<label>Test Name <input type="text" name="testName"/></label>``.
 
 .. list-table::
    :header-rows: 1
@@ -22,6 +24,27 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
      - text
      - ``testName``
      - No limitations
+
+3. Can you submit the form now? What is missing?
+
+4. Add a ``<button>Run Simulation</button>`` to the ``<form>``.
+
+5. Enter a value into the "testName" input and submit the form.
+
+   * Was the value properly submitted to the form handler?
+
+6. Next add these five ``inputs`` to the ``<form>``.
+
+   * Pay attention to the types and possible options.
+   * Also add a ``<label>`` for each input.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Display Name
+     - Input Type
+     - Input Name
+     - Possible Values
    * - Test Date
      - date
      - ``testDate``
@@ -37,13 +60,16 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
    * - Wind Rating
      - radio
      - ``windRating``
-     - No Wind: w/ value 0, Mild: w/ value 10, Strong: w/ value 20
+     - No Wind: with value 0, Mild: with value 10, Strong: with value 20
    * - Use production grade servers
      - checkbox
      - ``productionServers``
      - on or off
 
+
 .. admonition:: Example
+
+   What the form will look like *before* submission.
 
    .. figure:: figures/rocket-simulation-example.png
          :alt: Rocket simulation form with all input fields filled out.
@@ -59,5 +85,5 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
 Bonus Mission
 -------------
 
-Use an event handler and the *submit* event to validate that all inputs have values. Do not
+Use an event handler and the *submit* event to validate that all inputs have values. Do NOT
 let the form be submitted if inputs are empty.
