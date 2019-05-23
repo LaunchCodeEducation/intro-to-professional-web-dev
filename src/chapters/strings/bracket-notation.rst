@@ -46,14 +46,14 @@ What happens if we try to access an index that doesn't exist, for example -1 or 
 
 .. admonition:: Try It!
 
-   .. sourcecode:: js
+   .. replit:: js
+      :linenos:
+      :slug: Invalid-String-Indices
    
       let jsCreator = "Brendan Eich";
 
       console.log(jsCreator[-1]);
       console.log(jsCreator[42]);
-
-   `Run this program at repl.it <https://repl.it/@launchcode/Invalid-String-Indices>`_
 
 .. admonition:: Question
 

@@ -85,8 +85,9 @@ Even though ``message`` is defined outside the function, it is still visible wit
 
    Once you have answered that question, try relocating the declaring ``message`` to other locations to see how it affects the program. For example, you might try placing it within or after ``printMessage``.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Function-Scope
    
       let message = "Hello, World!";
 
@@ -97,8 +98,6 @@ Even though ``message`` is defined outside the function, it is still visible wit
       printMessage();
       message = "Goodbye";
       printMessage();
-
-   `Run this program at repl.it <https://repl.it/@launchcode/Function-Scope>`_
 
 .. index::
    single: variable; shadowing

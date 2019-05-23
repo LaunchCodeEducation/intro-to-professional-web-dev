@@ -74,16 +74,15 @@ Check Your Understanding
 
    Convert the following named function to an anonymous function that is stored in a variable.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Refactor-to-make-anonymous
 
       function reverse(str) {
          let lettersArray = str.split('');
          let reversedLettersArray = lettersArray.reverse();
          return reversedLettersArray.join('');
       }
-
-   `Refactor the program at repl.it <https://repl.it/@launchcode/Refactor-to-make-anonymous>`_
 
 .. admonition:: Question
 
@@ -113,8 +112,9 @@ Check Your Understanding
    Complete the following code snippet so that it logs an error message
    if ``userInput`` is negative.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Check-Fill-in-the-Code
 
       let logger = function(errorMsg) {
          console.log("ERROR: " + errorMsg);
@@ -123,5 +123,3 @@ Check Your Understanding
       if (userInput < 0) {
          ____________("Invalid input");
       }
-
-   `Finish the program at repl.it <https://repl.it/@launchcode/Check-Fill-in-the-Code>`_

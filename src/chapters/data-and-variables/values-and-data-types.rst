@@ -70,13 +70,13 @@ Run the following code to find out.
 
 .. admonition:: Try It!
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Data-Types
 
       console.log(typeof "17");
       console.log(typeof "3.2");
 
-   `Run this program at repl.it <https://repl.it/@launchcode/Data-Types>`_
 
 .. admonition:: Question
 
