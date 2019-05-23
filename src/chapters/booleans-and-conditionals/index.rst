@@ -10,4 +10,5 @@ Making Decisions With Conditionals
    conditionals
    nested-conditionals
    exercises
+   studio
    
