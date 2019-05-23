@@ -28,9 +28,10 @@ The form will send a request with query parameter ``q`` to the selected engine. 
 Getting Started
 ---------------
 
-Fork the `starter code for this studio <https://repl.it/@launchcode/Forms-Studio>`_, which has some basic HTML to get you started. 
-
-.. todo:: change this to git instructions
+- Create a new directory, ``forms-studio``
+- ``cd`` into this new directory
+- Create a file to use for the studio: ``touch index.html``
+- Copy/paste the `starter code <https://gist.github.com/chrisbay/f8842097f5c9424d87cf6e37f64d127d>`_ for the studio into ``index.html``
 
 Create Form Inputs
 ------------------
@@ -56,11 +57,10 @@ Let's build out the form. We will need some data for the search engines we want 
      - ``ask``
      - https://www.ask.com/web
 
-- Create a text input within the form and set its ``name`` attribute to the value ``q``.
+- Create a text input within the form and set its ``name`` attribute to the value ``"q"``.
 - Create a radio group with one radio button for each search engine. Recall that radio buttons with the same ``name`` are grouped, so use the same value for this attribute, ``"engine"``, on each radio button.
 - Create a ``label`` element for each radio button.
-
-Finally, add a submit button to the form and set it's ``value`` to ``"Go!"``. 
+- Finally, add a submit button to the form and set it's ``value`` to ``"Go!"``. 
 
 .. admonition:: Question
 

@@ -108,7 +108,8 @@ A **method** performs an action on the object, because it is a property that sto
 In the example above, on line 8, we see a keyword which is new to us.
 Programmers use the ``this`` keyword when they call an object's property from within the object itself.
 We could use the object's name instead of ``this``, but ``this`` is shorter and easier to read.
-We saw it in the method, ``sign``, because we wanted to use the ``name`` and ``species`` properties inside of the ``tortoiseOne`` object.
+For example, the method, ``sign``, could have a return statement of ``tortoiseOne.name + " is a " + tortoiseOne.species"``.
+However, that return statement is bulky and will get more difficult to read with more references to the ``tortoiseOne`` object.
 
 
 Check Your Understanding

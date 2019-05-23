@@ -4,7 +4,7 @@ Coding With Objects
 Booleans and Objects
 --------------------
 
-Objects are not stored by their properties or by value, but by reference.
+Objects are not stored by their properties or by value, but by `reference`.
 Storing something by reference means that it is stored based on its location in memory.
 This can lead to some confusion when comparing objects.
 
@@ -142,6 +142,8 @@ Any change to the object within the function will change the object itself.
 
       15
       16
+
+   On line 16, when the ``birthday`` function is called, ``giraffe`` is passed in as an argument and returned. After the function call, ``giraffe.age`` increases by 1. 
 
 Check Your Understanding
 ------------------------
