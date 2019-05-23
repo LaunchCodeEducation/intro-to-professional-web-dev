@@ -42,6 +42,8 @@ Studios
    chapters/loops/studio
    chapters/functions/studio
    chapters/more-on-functions/studio
+   chapters/objects-and-math/studio
+   chapters/unit-testing/studio
    chapters/git/studio
    chapters/dom-and-events/studio
 
