@@ -132,18 +132,26 @@ if there is ever a question of browser support for a certain feature.</p>
 <h2>18.4.1. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Name<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeName&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Word<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeWord&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- textarea must have open and closing tags --&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Mission Description<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Send Report<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Name<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeName&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Code Word<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;codeWord&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+   <span class="c">&lt;!-- textarea must have open and closing tags --&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Mission Description<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+       <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;75&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Send Report<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <div class="figure">
 <img alt="Form with Code Name, Code Word, and Description field. All fields have values." src="../../_images/basic-inputs-example.png" />
 </div>
 <p><strong>Submitted Values</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>codeName=Captain+Danvers&amp;codeWord=avengers!&amp;description=Test+flight.+Plane+maintenance.+Superhero+stuff.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>codeName=Captain+Danvers
+codeWord=avengers!
+description=Test+flight.+Plane+maintenance.+Superhero+stuff.
 </pre></div>
 </div>
 <p>Notice that the textarea value does NOT include new lines, even thought it was typed that way.</p>

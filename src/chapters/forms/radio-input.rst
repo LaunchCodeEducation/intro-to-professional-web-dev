@@ -23,16 +23,19 @@ will be submitted. Radio inputs are best used with ``<label>`` tags.
      - :raw-html:`<label>yes<input type="radio" name="crewReady" value="yes"/></label><label>no<input type="radio" name="crewReady" value="no"/></label>`
 
 
-Examples
---------
+Example
+-------
 .. admonition:: Example
 
     .. sourcecode:: html
 
-       Flight Rating:
-       <label>Rough<input type="radio" name="flightRating" value="rough"/></label>
-       <label>Few Bumps<input type="radio" name="flightRating" value="fewBumps"/></label>
-       <label>Smooth<input type="radio" name="flightRating" value="smooth"/></label>
+       <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+          Flight Rating:
+          <label>Rough<input type="radio" name="flightRating" value="rough"/></label>
+          <label>Few Bumps<input type="radio" name="flightRating" value="fewBumps"/></label>
+          <label>Smooth<input type="radio" name="flightRating" value="smooth"/></label> 
+          <button>Send Report</button>
+       </form>
 
     .. figure:: figures/radio-inputs-example.png
        :alt: Form for flight rating, with a radio inputs for rough, few bumps, and smooth.

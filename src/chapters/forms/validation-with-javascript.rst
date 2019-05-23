@@ -19,7 +19,8 @@ also assign a new value to ``input.value`` which will update the value shown in 
 
 .. admonition:: Example
 
-   This example will log the value of an input, update the input's value, and then log it again.
+   This example will log the value of an input, update the input's value, and then log it again
+   when the button is clicked.
 
    .. replit:: html
       :slug: dom-input-example
@@ -94,7 +95,7 @@ Each of these steps involves additional details, which we will now break down.
             });
          </script>
          <body>
-            <form method="POST" action="https://www.w3schools.com/action_page.php">
+            <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
                <label>Username <input type="text" name="username"></label>
                <label>Team Name <input type="text" name="team"></label>
                <button>Submit</button>

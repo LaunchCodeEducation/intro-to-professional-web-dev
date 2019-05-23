@@ -35,10 +35,13 @@ Example
 
     .. sourcecode:: html
 
-       <label>Email<input type="email" name="emailAddress"/></label>
-       <label>Report Date<input type="date" name="reportDate"/></label>
-       <label>Crew Count<input type="number" name="crewCount" min="1" max="10"/></label>
-       <button>Send Report</button>
+       <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+         <label>Email<input type="email" name="emailAddress"/></label>
+         <label>Report Date<input type="date" name="reportDate"/></label>
+         <label>Crew Count<input type="number"
+         name="crewCount" min="1" max="10"/></label>
+         <button>Send Report</button>
+       </form>
 
     .. figure:: figures/specialized-inputs-example.png
        :alt: Form with Code Name, Code Word, and Description field. All fields have values.
@@ -47,7 +50,9 @@ Example
 
     ::
 
-      emailAddress=c.danvers@us.af.mil&reportDate=2019-03-08&crewCount=8
+      emailAddress=c.danvers@us.af.mil
+      reportDate=2019-03-08
+      crewCount=8
 
     `Run it <https://repl.it/@launchcode/specialized-inputs-example>`_
 

@@ -114,15 +114,20 @@ They then send a response to the client. For this unit we are going to use form 
 been created for us.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>When submitted this form will send a POST request to a certain form handler defined by
+<p>When submitted this form will send a POST request to the form handler defined by the
 <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute.</p>
-<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://www.w3schools.com/action_page.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/form-post" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
@@ -130,12 +135,30 @@ been created for us.</p>
 <li>Open <a class="reference external" href="https://form-post--launchcode.repl.co/" target="_blank">example form that uses POST<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in a browser.</li>
 <li>Open the network tab of the developer tools</li>
 <li>Check “Persist Logs” in the network tab</li>
-<li>Enter data into the inputs</li>
+</ol>
+<div class="figure" id="id1">
+<img alt="Screen shot of firefox browser with form loaded and network tab open." src="../../_images/network-tab-before-submission.png" />
+<p class="caption"><span class="caption-text">Firefox browser with form loaded, network tab open, and Persist logs checked</span></p>
+</div>
+<ol class="arabic simple" start="4">
+<li>Enter data into the inputs<ul>
+<li>Type <code class="docutils literal notranslate"><span class="pre">tracking</span></code> into Username input</li>
+<li>Type <code class="docutils literal notranslate"><span class="pre">Requests</span></code> into Team Name input</li>
+</ul>
+</li>
 <li>Click Submit button</li>
 </ol>
-<p><strong>Network Tab After Form Submitted</strong></p>
-<p>TODO: screen shot of network tab and maybe the browser</p>
-<p class="last">TODO:: remove w3schools from example (requires we have something setup)</p>
+<div class="figure" id="id2">
+<img alt="Web page showing submitted values and the entries in network tab." src="../../_images/network-tab-after-submission.png" />
+<p class="caption"><span class="caption-text">Firefox browser with request handler loaded and network tab showing requests</span></p>
+</div>
+<ol class="arabic simple" start="6">
+<li>Inspect the data sent in the POST request</li>
+</ol>
+<div class="last figure" id="id3">
+<img alt="POST request highlighted with Params tab open showing Form data." src="../../_images/inspecting-post-request.png" />
+<p class="caption"><span class="caption-text">POST request highlighted with Params tab open showing Form data</span></p>
+</div>
 </div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>

@@ -37,12 +37,14 @@ been created for us.
 
 .. admonition:: Example
 
-   When submitted this form will send a POST request to a certain form handler defined by
+   When submitted this form will send a POST request to the form handler defined by the
    ``action`` attribute.
 
-   .. sourcecode:: html
+   .. replit:: html
+      :slug: form-post
+      :linenos:
 
-      <form action="https://www.w3schools.com/action_page.php" method="POST">
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
          <label>Username <input type="text" name="username"></label>
          <label>Team Name <input type="text" name="team"></label>
          <button>Submit</button>
@@ -50,17 +52,33 @@ been created for us.
 
 .. admonition:: Try It!
 
-   #. Open `example form that uses POST <https://form-post--launchcode.repl.co/>`_ in a browser.
-   #. Open the network tab of the developer tools
-   #. Check "Persist Logs" in the network tab
-   #. Enter data into the inputs
-   #. Click Submit button
+   1. Open `example form that uses POST <https://form-post--launchcode.repl.co/>`_ in a browser.
+   2. Open the network tab of the developer tools
+   3. Check "Persist Logs" in the network tab
 
-   **Network Tab After Form Submitted**
+   .. figure:: figures/network-tab-before-submission.png
+      :alt: Screen shot of firefox browser with form loaded and network tab open.
 
-   TODO: screen shot of network tab and maybe the browser
+      Firefox browser with form loaded, network tab open, and Persist logs checked
 
-   TODO:: remove w3schools from example (requires we have something setup)
+   4. Enter data into the inputs
+
+      * Type ``tracking`` into Username input
+      * Type ``Requests`` into Team Name input
+
+   5. Click Submit button
+
+   .. figure:: figures/network-tab-after-submission.png
+      :alt: Web page showing submitted values and the entries in network tab.
+
+      Firefox browser with request handler loaded and network tab showing requests
+
+   6. Inspect the data sent in the POST request
+
+   .. figure:: figures/inspecting-post-request.png
+      :alt: POST request highlighted with Params tab open showing Form data.
+   
+      POST request highlighted with Params tab open showing Form data
 
 .. warning::
 

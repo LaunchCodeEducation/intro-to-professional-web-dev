@@ -29,22 +29,26 @@ Example
 
     .. sourcecode:: html
 
-        <label>Operation Code:
-          <!-- includes empty value "Select One" option -->
-          <select name="operation">
-            <option value="">* Select One *</option>
-            <option value="1">Simulation</option>
-            <option value="2">Rocket Test</option>
-            <option value="3">Crew Related</option>
-          </select>
-        </label>
-        <label>Facility:
-          <select name="facility">
-            <option value="johnson">Johnson Space Center, TX</option>
-            <option value="kennedy">Kennedy Space Center, FL</option>
-            <option value="white-sands">White Sands Test Facility, NM</option>
-          </select>
-        </label>
+       <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+          <label>Operation Code:
+            <!-- includes empty value "Select One" option -->
+            <select name="operation">
+              <option value="">* Select One *</option>
+              <option value="1">Simulation</option>
+              <option value="2">Rocket Test</option>
+              <option value="3">Crew Related</option>
+            </select>
+          </label>
+
+          <label>Facility:
+            <select name="facility">
+              <option value="johnson">Johnson Space Center, TX</option>
+              <option value="kennedy">Kennedy Space Center, FL</option>
+              <option value="white-sands">White Sands Test Facility, NM</option>
+            </select>
+          </label>
+          <button>Send Report</button>
+       </form>
 
     Default Form Values
 
@@ -60,7 +64,8 @@ Example
 
     ::
 
-      operation=2&facility=white-sands 
+      operation=2
+      facility=white-sands 
 
     `Run it <https://repl.it/@launchcode/select-inputs-example>`_
 

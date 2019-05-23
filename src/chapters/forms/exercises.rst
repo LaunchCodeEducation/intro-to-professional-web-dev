@@ -7,7 +7,7 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
 1. Create a ``<form>`` with these attributes.
 
    * Set ``method`` to ``"POST"``
-   * Set ``action`` to ``"https://www.w3schools.com/action_page.php"``
+   * Set ``action`` to ``"http://handlers.education.launchcode.org/request-parrot"``
 
 2. Add a ``<label>`` and ``<input>`` for Test Name to the ``<form>``.
 
@@ -79,7 +79,12 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
 
    ::
 
-      testName=Moon+Shot&testDate=2020-07-16&rocketType=Lynx&boosterCount=3&windRating=10&productionServers=on
+      testName=Moon+Shot
+      testDate=2020-07-16
+      rocketType=Lynx
+      boosterCount=3
+      windRating=10
+      productionServers=on
 
 
 Bonus Mission

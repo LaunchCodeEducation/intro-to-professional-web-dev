@@ -43,11 +43,17 @@ Example
 
     .. sourcecode:: html
 
-       <label>Code Name<input type="text" name="codeName"/></label>
-       <label>Code Word<input type="password" name="codeWord"/></label>
-       <!-- textarea must have open and closing tags -->
-       <label>Mission Description<textarea name="description" rows="5"></textarea></label>
-       <button>Send Report</button>
+       <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+          <label>Code Name<input type="text" name="codeName"/></label>
+          <label>Code Word<input type="password" name="codeWord"/></label>
+
+          <!-- textarea must have open and closing tags -->
+          <label>Mission Description<br/>
+              <textarea name="description" rows="5" cols="75"></textarea>
+          </label>
+
+          <button>Send Report</button>
+       </form>
 
     .. figure:: figures/basic-inputs-example.png
        :alt: Form with Code Name, Code Word, and Description field. All fields have values.
@@ -56,7 +62,9 @@ Example
 
     ::
 
-      codeName=Captain+Danvers&codeWord=avengers!&description=Test+flight.+Plane+maintenance.+Superhero+stuff.
+      codeName=Captain+Danvers
+      codeWord=avengers!
+      description=Test+flight.+Plane+maintenance.+Superhero+stuff.
 
     Notice that the textarea value does NOT include new lines, even thought it was typed that way.
 
