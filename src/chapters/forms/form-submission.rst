@@ -11,11 +11,13 @@ in a form.
 
 Trigger Form Submission
 -----------------------
+
 A form submission is triggered by clicking a button inside the form. A submit button can be
 an ``input`` element with ``type=submit`` or a ``button`` element. Both button types are
 in the below example.
 
 .. sourcecode:: html
+   :linenos:
 
    <form>
       <label>Username <input type="text" name="username"></label>
@@ -84,6 +86,7 @@ forms is GET. In the next section will soon learn how to submit form data via PO
 
 Key-value Pairs
 ^^^^^^^^^^^^^^^
+
 When a form is submitted a key-value pair is created for each named input. The keys
 are the values of the ``name`` attributes, and they are paired with the content of the
 ``value`` attributes.

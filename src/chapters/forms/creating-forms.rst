@@ -65,7 +65,7 @@ The ``input`` element is used to add interactive fields, which allow the user to
 
 .. note::
 
-   Notice that ``<input type="text"/>`` tags are self closing. **Self closing** tags are *single* tags
+   Notice that ``<input type="text"/>`` tags are self closing. **Self-closing** tags are *single* tags
    with ``/>`` at the end.
 
 .. warning::
@@ -105,8 +105,10 @@ equal to the ``id`` of ``<input id="username">``, these two attributes must be E
 When ``for`` is used, the ``<input>`` does NOT have to be inside of the ``<label>``.
 
 .. sourcecode:: html
+   :linenos:
 
-   <label for="username">Username</label><input id="username" name="username" type="text"/>
+   <label for="username">Username</label>
+   <input id="username" name="username" type="text"/>
 
 What happens when a ``<label>`` is clicked? The answer depends on what the ``<label>`` is
 associated to.
@@ -118,26 +120,39 @@ For *text* inputs, when the label is clicked, then the input gains *focus*. An e
 
 .. admonition:: Example
 
+   Click on the label text to the associated text input element gain focus.
+
    .. raw:: html
 
       <div><label for="username">Username</label><input id="username" name="username" type="text"/></div>
 
    .. sourcecode:: html
+      :linenos:
 
-      <div><label for="username">Username</label><input id="username" name="username" type="text"/></div>
+      <div>
+         <label for="username">Username</label>
+         <input id="username" name="username" type="text"/>
+      </div>
 
-For *non-text* based inputs, when the label is clicked, a value is selected. This behavior
+For *non-text* inputs, when the label is clicked, a value is selected. This behavior
 can be seen with ``radio`` and ``checkbox`` elements which we will learn more about soon.
 
 .. admonition:: Example
 
+   Click on the label text to the associated checkbox input element gain focus.
+
    .. raw:: html
 
       <div><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></div>
 
    .. sourcecode:: html
+      :linenos:
 
-      <div><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></div>
+      <div>
+         <label>Subscribe to Newsletter
+            <input type="checkbox" name="newsletter"/>
+         </label>
+      </div>
 
 
 Value Attribute

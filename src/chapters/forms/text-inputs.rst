@@ -39,6 +39,7 @@ To start, here are three types of text inputs. These input types can contain tex
 
 Example
 -------
+
 .. admonition:: Example
 
     .. sourcecode:: html
