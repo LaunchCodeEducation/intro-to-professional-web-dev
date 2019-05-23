@@ -1,5 +1,9 @@
+import sys
+import os
 import sphinx_bootstrap_theme
 from recommonmark.transform import AutoStructify
+
+sys.path.append(os.path.abspath('../exts'))
 
 # -- Curriculum Site Settings ------------------------------------------------
 
@@ -179,7 +183,6 @@ todo_include_todos = False
 def setup(app):
     app.add_stylesheet('fa/css/all.css')
     app.add_stylesheet('css/launchcode.css')
-    app.add_javascript('js/launchcode.js')
     app.add_config_value('recommonmark_config', {
             'enable_eval_rst': True,
             }, True)
