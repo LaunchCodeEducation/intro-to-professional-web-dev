@@ -61,9 +61,19 @@ The ``input`` element is used to add interactive fields, which allow the user to
 
    <input type="text" name="username"/>
 
+.. index:: ! self-closing
+
+.. note::
+
+   Notice that ``<input type="text"/>`` tags are self closing. **Self closing** tags are *single* tags
+   with ``/>`` at the end.
+
 .. warning::
 
    Values are NOT submitted for an ``<input>`` unless it has a ``name`` attribute.
+
+Labels
+------
 
 .. index:: ! label
 
@@ -90,13 +100,13 @@ label, which informs the user of the purpose of the field. The simplest usage of
    :alt: HTML that includes a form tag with two input elements. Each element is inside of a label element.
 
 A second way to relate a ``<label>`` tag to an ``<input>`` is to use the ``id`` attribute of
-``input`` and the ``for`` attribute of ``label``. When ``for`` is used, the ``<input>``
-does NOT have to be inside of the ``<label>``.
-
+``input`` and the ``for`` attribute of ``label``. The two are related by setting ``for`` in ``<label for="username">``
+equal to the ``id`` of ``<input id="username">``, these two attributes must be EQUAL.
+When ``for`` is used, the ``<input>`` does NOT have to be inside of the ``<label>``.
 
 .. sourcecode:: html
 
-   <label for="username"/><input id="username" name="username" type="text"/>
+   <label for="username">Username</label><input id="username" name="username" type="text"/>
 
 What happens when a ``<label>`` is clicked? The answer depends on what the ``<label>`` is
 associated to.
@@ -106,8 +116,28 @@ associated to.
 For *text* inputs, when the label is clicked, then the input gains *focus*. An element with
 **focus** is currently selected by the browser and ready to receive input.
 
+.. admonition:: Example
+
+   .. raw:: html
+
+      <div><label for="username">Username</label><input id="username" name="username" type="text"/></div>
+
+   .. sourcecode:: html
+
+      <div><label for="username">Username</label><input id="username" name="username" type="text"/></div>
+
 For *non-text* based inputs, when the label is clicked, a value is selected. This behavior
 can be seen with ``radio`` and ``checkbox`` elements which we will learn more about soon.
+
+.. admonition:: Example
+
+   .. raw:: html
+
+      <div><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></div>
+
+   .. sourcecode:: html
+
+      <div><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></div>
 
 
 Check Your Understanding
@@ -115,7 +145,11 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Are ``<input>`` tags without ``name`` attributes submitted?
+   What is a self-closing tag?
+
+.. admonition:: Question
+
+   What is the purpose of the name attribute for input elements
 
 .. admonition:: Question
 

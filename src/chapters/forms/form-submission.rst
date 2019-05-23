@@ -1,17 +1,19 @@
 Form Submission
 ===============
 
-.. index:: ! form submission
+.. index::
+   single: form; submission
 
-The purpose of a form is to collect data input by the user. As we learned in the previous
-chapter, the web is made up of a serious of HTTP requests and responses. A
-**form submission** is when an HTTP request is sent to the server containing the values
+Forms collect data input by the user. As we learned in the previous
+chapter, communication on the web occurs via a series of HTTP requests and responses. A
+**form submission** is an HTTP request is sent to the server containing the values
 in a form.
 
 Trigger Form Submission
 -----------------------
-A form submission is triggered by clicking a button inside the form. The "submit buttons"
-can be ``input`` elements or ``button`` elements. Both button types are in the below example.
+A form submission is triggered by clicking a button inside the form. A submit button can be
+an ``input`` element with ``type=submit`` or a ``button`` element. Both button types are
+in the below example.
 
 .. sourcecode:: html
 
@@ -22,18 +24,16 @@ can be ``input`` elements or ``button`` elements. Both button types are in the b
       <button>Submit</button>
    </form>
 
-Where do form submissions go when they are submitted?
-The answer is the ``action`` attribute on the ``<form>`` tag. The ``action`` attribute
-is the destination that the form submission request will be sent to.
+When a form is submitted, an HTTP request is sent to the location set in the ``action``
+attribute of the ``<form>`` tag.
 
-If the ``action`` attribute is not present or has the value empty string, then ``action``
-is set to the address of the current page. In that case, the form values are submitted back
-to the current page.
+If the action attribute is not present or is empty, then the form will submit to the URL
+of the current page.
 
 .. admonition:: Try It!
 
    Open `this form <https://form-default--launchcode.repl.co/>`_ in a browser.
-   Input values into the inputs, click the Submit button, then notice what happens to the
+   Type values into the inputs, click the Submit button, and notice what happens to the
    address bar.
 
    .. sourcecode:: html
@@ -60,12 +60,12 @@ to the current page.
    .. figure:: figures/default-form.png
       :alt: Browser screen shot showing form with two text inputs and a submit button. Both inputs have text values.
 
-   **Output After Form Submitted**
+   **Output After Submitted**
 
    .. figure:: figures/default-form-submitted.png
       :alt: Browser screen shot showing form after it has been submitted. The URL has queryString showing.
 
-   Edit code in this `source code repl.it <https://repl.it/@launchcode/form-default>`_.
+   `Run it <https://repl.it/@launchcode/form-default>`_.
 
 Notice in the above example that the browser address has changed to:
 
@@ -74,20 +74,19 @@ Notice in the above example that the browser address has changed to:
    https://form-default--launchcode.repl.co/?username=salina&team=Space+Coders
 
 The web address is the same as the form we loaded, but now includes a query parameter
-for *every* field in the form. These parameters are known as the queryString parameters.
-The form values are submitted via the queryString because the default submission type for
-forms is GET. Int he next section will soon learn how to submit form data via POST.
+for *every* input, with a name, in the form. These parameters are known as the query string parameters.
+The form values are submitted via the query string because the default submission type for
+forms is GET. In the next section will soon learn how to submit form data via POST.
 
 .. note::
 
-   You may have noticed that the space character between ``"Space Coders"`` was turned
-   into a ``+``. That is because some characters are NOT allowed in a URL. The browser
-   automatically replaces those invalid characters.
+   Since spaces are not allowed in URLs, the browser replaces them with ``+``.
 
-Key Value Pairs
+Key-value Pairs
 ^^^^^^^^^^^^^^^
-When a form is submitted a key value pair is submitted for each *named* input, with the
-key being the name and the value being the value of the input.
+When a form is submitted a key-value pair is created for each named input. The keys
+are the values of the ``name`` attributes, and they are paired with the content of the
+``value`` attributes.
 
 Form with two named inputs:
 
@@ -99,7 +98,7 @@ Form with two named inputs:
       <button>Submit</button>
    </form>
 
-Key value pairs when form is submitted:
+When this form is submitted with the values from the previous example, the query string looks like this:
 
 ::
 
