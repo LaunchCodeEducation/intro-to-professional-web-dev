@@ -2,21 +2,72 @@ Validation with JavaScript
 ==========================
 
 Validating form inputs *before* submitting the form can make the user experience much
-smoother. Some input types have built in browser validation for basic formats such as
+smoother. Some input types have built-in browser validation for basic formats such as
 numbers and email addresses. We can use event handlers to perform more complex
 validation on form input values.
+
+
+Form Inputs and the DOM
+-----------------------
+Before we can validate what the user has typed we need to understand how to use
+form inputs with the DOM. Remember that the DOM is a JavaScript representation of
+the HTML document. ``<input>`` tags can be selected and referenced like any other
+HTML element.
+
+To read the value of an ``input``, we can check the ``value`` attribute. We can
+also assign a new value to ``input.value`` which will update the value shown in the input.
+
+.. admonition:: Example
+
+   This example will log the value of an input, update the input's value, and then log it again.
+
+   .. replit:: html
+      :slug: dom-input-example
+      :linenos:
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+            <title>Check input value with DOM</title>
+      </head>
+      <body>
+         <form>
+            <label>Language
+               <input type="text" name="language" id="language" value="JavaScript">
+            </label>
+         </form>
+         <button id="update">Update Input Value</button>
+         <script>
+            let button = document.getElementById("update");
+            // add event handler for when button clicked
+            button.addEventListener("click", function() {
+               let input = document.getElementById("language");
+               console.log(input.value);
+               // now update the value in the input
+               input.value = input.value + " rocks!";
+               console.log(input.value);
+            });
+         </script>
+      </body>
+      </html>
+
+.. admonition:: Question
+
+   What happens when you click the button multiple times?
 
 
 Steps to Add Validation
 -----------------------
 
 1. Add an event handler for the ``window`` *load* event
-2. Add an event handler for the ``form`` *submit* event
+2. Within the window's load handler, add an event handlerAdd an event handler for the ``form`` *submit* event
 3. Retrieve input values that need to be validated from the DOM.
-4. Check the input values using conditional statements
+4. Within the form's submit handler, check the ``input`` values using conditional statements
 
    a. If the values are valid, allow the form submission
    b. If the values are NOT valid, inform the user and STOP form submission
+
+Each of these steps involves additional details, which we will now break down.
 
 .. admonition:: Example
 
@@ -58,8 +109,10 @@ Follow Along as We Add Validation
 Use `this repl.it <https://repl.it/@launchcode/form-validation>`_ and the following instructions
 to add validation to the above example.
 
+**Get Reference to Inputs**
+
 To validate what the user has typed, we can get a reference to the ``input`` elements in
-the DOM and check ``input.value``. Let's change the *submit* event handler to display the
+the DOM and check the ``value`` property of each. Let's change the *submit* event handler to display the
 value of the username input in an ``alert`` box. To do that, we are going to use
 ``document.querySelector("input[name=username]")``, which uses an *attribute selector* to
 select the ``<input>`` that has ``name="username"``.
@@ -77,6 +130,8 @@ select the ``<input>`` that has ``name="username"``.
          });
       });
    </script>
+
+**Alert the Input Values When Submitted**
 
 Now that we know how to get the value of an input, we can add *conditional statements*.
 Let's add code that opens an alert box if *either* input value is *empty*.
@@ -100,6 +155,8 @@ Let's add code that opens an alert box if *either* input value is *empty*.
 We are making progress. Now if you click *Submit* with one or both of the inputs empty,
 then an alert message appears telling you that both inputs are required. However, the form is
 still submitted even if the data is invalid.
+
+**Prevent Form Submission**
 
 .. index:: ! preventDefault
    single: event; preventDefault

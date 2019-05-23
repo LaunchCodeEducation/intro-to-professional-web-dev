@@ -86,21 +86,91 @@
   <div class="section" id="validation-with-javascript">
 <h1>18.9. Validation with JavaScript<a class="headerlink" href="#validation-with-javascript" title="Permalink to this headline">¶</a></h1>
 <p>Validating form inputs <em>before</em> submitting the form can make the user experience much
-smoother. Some input types have built in browser validation for basic formats such as
+smoother. Some input types have built-in browser validation for basic formats such as
 numbers and email addresses. We can use event handlers to perform more complex
 validation on form input values.</p>
+<div class="section" id="form-inputs-and-the-dom">
+<h2>18.9.1. Form Inputs and the DOM<a class="headerlink" href="#form-inputs-and-the-dom" title="Permalink to this headline">¶</a></h2>
+<p>Before we can validate what the user has typed we need to understand how to use
+form inputs with the DOM. Remember that the DOM is a JavaScript representation of
+the HTML document. <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags can be selected and referenced like any other
+HTML element.</p>
+<p>To read the value of an <code class="docutils literal notranslate"><span class="pre">input</span></code>, we can check the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute. We can
+also assign a new value to <code class="docutils literal notranslate"><span class="pre">input.value</span></code> which will update the value shown in the input.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This example will log the value of an input, update the input’s value, and then log it again.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Check input value with DOM<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Language
+         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;language&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;language&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;update&quot;</span><span class="p">&gt;</span>Update Input Value<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+      <span class="kd">let</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;update&quot;</span><span class="p">);</span>
+      <span class="c1">// add event handler for when button clicked</span>
+      <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+         <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;language&quot;</span><span class="p">);</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+         <span class="c1">// now update the value in the input</span>
+         <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="s2">&quot; rocks!&quot;</span><span class="p">;</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+      <span class="p">});</span>
+   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/dom-input-example" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What happens when you click the button multiple times?</p>
+</div>
+</div>
 <div class="section" id="steps-to-add-validation">
-<h2>18.9.1. Steps to Add Validation<a class="headerlink" href="#steps-to-add-validation" title="Permalink to this headline">¶</a></h2>
+<h2>18.9.2. Steps to Add Validation<a class="headerlink" href="#steps-to-add-validation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">window</span></code> <em>load</em> event</li>
-<li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">form</span></code> <em>submit</em> event</li>
+<li>Within the window’s load handler, add an event handlerAdd an event handler for the <code class="docutils literal notranslate"><span class="pre">form</span></code> <em>submit</em> event</li>
 <li>Retrieve input values that need to be validated from the DOM.</li>
-<li>Check the input values using conditional statements<ol class="loweralpha">
+<li>Within the form’s submit handler, check the <code class="docutils literal notranslate"><span class="pre">input</span></code> values using conditional statements<ol class="loweralpha">
 <li>If the values are valid, allow the form submission</li>
 <li>If the values are NOT valid, inform the user and STOP form submission</li>
 </ol>
 </li>
 </ol>
+<p>Each of these steps involves additional details, which we will now break down.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s start this by showing an <code class="docutils literal notranslate"><span class="pre">alert</span></code> box when the form <em>submit</em> event is
@@ -157,11 +227,12 @@ triggered.</p>
 </div>
 </div>
 <div class="section" id="follow-along-as-we-add-validation">
-<h2>18.9.2. Follow Along as We Add Validation<a class="headerlink" href="#follow-along-as-we-add-validation" title="Permalink to this headline">¶</a></h2>
+<h2>18.9.3. Follow Along as We Add Validation<a class="headerlink" href="#follow-along-as-we-add-validation" title="Permalink to this headline">¶</a></h2>
 <p>Use <a class="reference external" href="https://repl.it/&#64;launchcode/form-validation" target="_blank">this repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and the following instructions
 to add validation to the above example.</p>
+<p><strong>Get Reference to Inputs</strong></p>
 <p>To validate what the user has typed, we can get a reference to the <code class="docutils literal notranslate"><span class="pre">input</span></code> elements in
-the DOM and check <code class="docutils literal notranslate"><span class="pre">input.value</span></code>. Let’s change the <em>submit</em> event handler to display the
+the DOM and check the <code class="docutils literal notranslate"><span class="pre">value</span></code> property of each. Let’s change the <em>submit</em> event handler to display the
 value of the username input in an <code class="docutils literal notranslate"><span class="pre">alert</span></code> box. To do that, we are going to use
 <code class="docutils literal notranslate"><span class="pre">document.querySelector(&quot;input[name=username]&quot;)</span></code>, which uses an <em>attribute selector</em> to
 select the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> that has <code class="docutils literal notranslate"><span class="pre">name=&quot;username&quot;</span></code>.</p>
@@ -186,6 +257,7 @@ select the <code class="docutils literal notranslate"><span class="pre">&lt;inpu
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
+<p><strong>Alert the Input Values When Submitted</strong></p>
 <p>Now that we know how to get the value of an input, we can add <em>conditional statements</em>.
 Let’s add code that opens an alert box if <em>either</em> input value is <em>empty</em>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -216,6 +288,7 @@ Let’s add code that opens an alert box if <em>either</em> input value is <em>e
 <p>We are making progress. Now if you click <em>Submit</em> with one or both of the inputs empty,
 then an alert message appears telling you that both inputs are required. However, the form is
 still submitted even if the data is invalid.</p>
+<p><strong>Prevent Form Submission</strong></p>
 <p id="index-0">We should prevent the form submission from happening until all
 inputs have valid values. We can use the <code class="docutils literal notranslate"><span class="pre">event</span></code> parameter and
 <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code> to stop the form submission. <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code>
@@ -253,7 +326,7 @@ are passed an <code class="docutils literal notranslate"><span class="pre">event
 </td></tr></table></div>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>18.9.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>18.9.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">What event should you listen to if you want to validate a form before it’s submitted?</p>

@@ -1,16 +1,12 @@
-Input Types
+Text Inputs
 ===========
 
 As you know from interacting with web forms, it's possible to use more than simple text
 inputs. There are additional input *types*, each with different uses. Many of
 the elements are ``<input>`` tags with a different ``type`` value, however some have
-entirely different tag names.
+entirely different tag names. The next few sections contain lists of input types.
 
-
-Text Inputs
------------
-Any values can be typed into these text fields, there are no restrictions enforced by the
-browser.
+To start, here are three types of text inputs. These input types can contain text of any value.
 
 .. role:: raw-html(raw)
    :format: html

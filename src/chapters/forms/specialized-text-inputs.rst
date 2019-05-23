@@ -57,4 +57,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which input type should be used if the user is going to enter a large amount of text?
+   What happens if you type in ``1234`` into ``<input type="email"/>``?

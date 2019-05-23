@@ -7,7 +7,7 @@ User Input with Forms
    creating-forms
    form-submission
    form-submission-post
-   input-types
+   text-inputs
    specialized-text-inputs
    checkbox-input
    radio-input

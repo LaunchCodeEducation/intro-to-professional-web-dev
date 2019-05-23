@@ -140,6 +140,25 @@ can be seen with ``radio`` and ``checkbox`` elements which we will learn more ab
       <div><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></div>
 
 
+Value Attribute
+---------------
+The ``value`` attribute of an ``<input>`` tag can be used to set the default value. If the
+``value`` attribute is declared, then the browser will show that value in the input. The user
+can choose to update the value by typing in the input box.
+
+.. admonition:: Example
+
+   Input with default value of JavaScript.
+
+   .. raw:: html
+
+      <div><label>Language<input name="language" type="text" value="JavaScript"/></label></div>
+
+   .. sourcecode:: html
+
+      <div><label>Language<input name="language" type="text" value="JavaScript"/></label></div>
+
+
 Check Your Understanding
 ------------------------
 
@@ -149,8 +168,8 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the purpose of the name attribute for input elements
+   What is the purpose of the ``name`` attribute for ``input`` elements?
 
 .. admonition:: Question
 
-   What does the ``for`` attribute relate to in ``<label for="emailAddress">`` tags?
+   Which ``input`` attribute sets the default value?

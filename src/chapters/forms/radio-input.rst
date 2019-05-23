@@ -1,8 +1,8 @@
 Radio Input
 ===========
 
-Radio inputs allow a user to pick one option out of a grouping of options.  Radio inputs with the
-same name are considered in a group. Only one radio input in a group can be chosen at a time.
+Radio inputs allow a user to pick one option out of a grouping of options.  Radio inputs with
+the same name are grouped. Only one radio input in a group can be chosen at a time.
 The ``value`` attribute of the chosen radio input
 will be submitted. Radio inputs are best used with ``<label>`` tags.
 

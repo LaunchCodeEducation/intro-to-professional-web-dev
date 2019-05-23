@@ -42,7 +42,7 @@ Example
           <select name="facility">
             <option value="johnson">Johnson Space Center, TX</option>
             <option value="kennedy">Kennedy Space Center, FL</option>
-            <option value="white-sands">White Shans Test Facility, NM</option>
+            <option value="white-sands">White Sands Test Facility, NM</option>
           </select>
         </label>
 
@@ -69,4 +69,4 @@ Check Your Understanding
 ------------------------
 .. admonition:: Question
 
-   For a select input, what value is submitted during form submission?
+   For a select input, what determines the value that is submitted during form submission?
