@@ -1,5 +1,5 @@
-CSS
-===
+Styling the Web With CSS
+========================
 
 .. toctree::
    
