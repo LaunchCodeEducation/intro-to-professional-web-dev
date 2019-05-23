@@ -488,7 +488,7 @@ in GitHub is updated to reflect the changes you added. The context in the
 description box is NOT updated, however, so be sure to add comments to the pull
 request to explain what you did and why.
 
-Now switch back to the ```master``` branch:
+Now switch back to the ``master`` branch:
 
 ::
 
