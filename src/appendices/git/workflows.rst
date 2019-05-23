@@ -6,7 +6,7 @@
 Git Workflows
 =============
 
-This cheatsheet covers basic workflows for working with local and remote Git repositories.
+This cheatsheet covers basic workflows for local and remote Git repositories.
 
 For details on the Git commands mentioned, or on creating and cloning repositories, revisit the chapter on :ref:`git-chapter`.
 
@@ -25,23 +25,6 @@ When working on a project by yourself, you will typically follow this workflow:
 #. Commit changes: ``git commit -m "Added feature X"``
 #. (If working with a remote repository) Push changes:
    ``git push origin master``
-
-.. _team-single:
-
-Team / Single Branch
---------------------
-
-The case of a team working on a project with a single branch is *very* uncommon. However, multiple developers working on the same branch happens quite a bit. This workflow, therefore, can be thought of as a sub-workflow of the :ref:`team-feature` workflow.
-
-This workflow is similar to the :ref:`single-dev-branch` workflow, only now you must be mindful to merge in changes made by others.
-
-#. Make changes to your code
-#. Check status: ``git status``
-#. Stage changes: ``git add .``
-#. Commit changes: ``git commit -m "Added feature X"``
-#. Pull changes made by other: ``git pull origin master``
-#. Merge changes as necessary
-#. Push changes: ``git push origin master``
 
 .. _single-feature:
 
@@ -62,12 +45,30 @@ As you become more comfortable with Git and begin to build larger projects on yo
 
    Some development teams will *only* work in feature branches. On these teams, developers are NOT allowed to make changes directly to the ``master`` branch. They must work in feature branches and create pull requests into ``master`` to add those changes to the main code base.
 
-In the workflow below, we use ``main`` to refer to the branch from which the feature branch is created (often ``master``) and ``feature`` to refer to the feature branch. Remember that you should use descriptive names for your branches.
+In the workflow below, we use ``main`` to refer to the branch from which the feature branch is created (often ``master``) and ``feature`` to refer to the feature branch. Remember to use descriptive names for your branches.
 
 #. Create a new branch. While in ``main`` create and move to the feature branch: ``git checkout -b feature``.
 #. Follow the :ref:`single-dev-branch` workflow until work on the feature is complete.
 #. After all changes in ``feature`` have been committed and pushed, move back to ``main``: ``git checkout main``.
 #. Merge your feature branch back into ``main``, resolving any conflicts: ``git merge feature``
+
+
+.. _team-single:
+
+Team / Single Branch
+--------------------
+
+The case of a team working on a project with a single branch is *very* uncommon. However, multiple developers working on the same branch happens quite a bit. This workflow, therefore, can be thought of as a sub-workflow of the :ref:`team-feature` workflow.
+
+This workflow is similar to the :ref:`single-dev-branch` workflow, only now you must be mindful to merge in changes made by others.
+
+#. Make changes to your code
+#. Check status: ``git status``
+#. Stage changes: ``git add .``
+#. Commit changes: ``git commit -m "Added feature X"``
+#. Pull changes made by other: ``git pull origin master``
+#. Merge changes as necessary
+#. Push changes: ``git push origin master``
 
 .. _team-feature:
 
@@ -76,13 +77,12 @@ Team / Feature Branches
 
 The workflow for a team of developers using feature branches combines the :ref:`team-single` and :ref:`single-feature` workflows. 
 
-In the workflow below, we use ``main`` to refer to the branch from which the feature branch is created (often ``master``) and ``feature`` to refer to the feature branch. Remember that you should use descriptive names for your branches.
+In the workflow below, we use ``main`` to refer to the branch from which the feature branch is created (often ``master``) and ``feature`` to refer to the feature branch. Remember to use descriptive names for your branches.
 
-#. Create a new branch. While in ``main`` create and move to the feature branch: ``git checkout -b feature``.
-#. OR if contributing to a branch made by a team member, fetch and checkout their existing branch: ``git fetch origin`` then ``git checkout feature``
+#. Create a new branch. While in ``main`` create and move to the feature branch: ``git checkout -b feature``. OR if contributing to a branch made by a team member, fetch and checkout their existing branch: ``git fetch origin`` then ``git checkout feature``
 #. Follow the :ref:`team-single` workflow until work on the feature is complete.
 #. After all changes in ``feature`` have been committed and pushed, move back to ``main``: ``git checkout main``.
-#. Merge your feature branch back into ``main``, resolving any conflicts: ``git merge feature``. Alternatively, :ref:`create a pull request <create-pr>` into ``main``.
+#. Merge your feature branch back into ``main``, resolving any conflicts: ``git merge feature``. Alternatively, create a pull request <create-pr> into ``main`` as described below.
 
 .. _create-pr:
 
@@ -91,7 +91,7 @@ Working With Pull Requests
 
 .. index:: ! pull request
 
-Pull requests is a powerful feature of GitHub that allows changes to be reviewed and discussed by team members. 
+The ability to create pull requests is a powerful feature of GitHub that allows changes to be reviewed and discussed by team members. 
 
 A **pull request** is a request via GitHub to merge one branch into another. Team members can comment on and review the changes in the request, suggesting or requiring changes. Once the code is ready, the pull request is merged and closed. The code from the feature branch is now part of the destination branch.
 
