@@ -38,6 +38,8 @@ extensions = [
     'ordered_toctree',
 ]
 
+replit_user = 'launchcode'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
