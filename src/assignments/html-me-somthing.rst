@@ -204,9 +204,9 @@ Getting to Work
 
 It’s time to build out your page! Dive into each of the two parts below:
 
-#. `Part 1: HTML <html-me-part1.html>`__
+#. :ref:`Part 1: HTML <html-me-part1>`
 
-#. `Part 2: CSS <html-me-part2.html>`__
+#. :ref:`Part 2: CSS <html-me-part2>`
 
 .. _submitting-your-work:
 

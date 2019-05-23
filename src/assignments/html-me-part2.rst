@@ -1,3 +1,5 @@
+.. _html-me-part2:
+
 HTML Me Someting, Part 2
 =========================
 
