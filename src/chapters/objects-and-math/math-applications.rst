@@ -26,8 +26,9 @@ specific value.  Fortunately, we have the ``length`` property…
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: KindnessSelection
 
       function randomSelection(arr){
          let index = Math.floor(Math.random()*arr.length);
@@ -51,8 +52,6 @@ specific value.  Fortunately, we have the ``length`` property…
       Kindness
       Love
       Hope
-
-   Explore the code with this `repl.it <https://repl.it/@launchcode/KindnessSelection>`__.
 
 The ``happiness`` array has a length of 8, so in line 2
 ``Math.floor(Math.random()*arr.length)`` evaluates as

@@ -1,3 +1,5 @@
+.. _git-chapter:
+
 Git
 ===
 
@@ -8,3 +10,4 @@ Git
    remote-repository
    branches
    merge
+   studio

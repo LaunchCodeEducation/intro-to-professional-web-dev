@@ -141,8 +141,9 @@ A bad choice of update expression can also cause an infinite loop.
 
    This loop repeates indefinitely, since ``i`` becomes smaller with each iteration and thus is never greater than or equal to 51.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Loop-variable
 
       for (let i = 0; i < 51; i--) {
          console.log(i);
@@ -150,7 +151,7 @@ A bad choice of update expression can also cause an infinite loop.
 
 .. admonition:: Try It!
 
-   How does each of these three components affect the behavior of a ``for`` loop? `Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression. <https://repl.it/@launchcode/Loop-variable>`_.
+   How does each of these three components affect the behavior of a ``for`` loop? Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression. 
 
    .. sourcecode:: js
       :linenos:

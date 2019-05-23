@@ -50,8 +50,9 @@ Another approach is to use the fact that there is a ``reverse`` method for array
 
 .. _reverse_func:
 
-.. sourcecode:: js
+.. replit:: js
    :linenos:
+   :slug: reverse-Function
 
    function reverse(str) {
       let lettersArray = str.split('');
@@ -67,9 +68,7 @@ Let's break down the steps carried out by this function:
 
 .. admonition:: Try It!
 
-   Use method chaining to reduce the ``reverse`` function to a single line.
-
-   `Try it at repl.it <https://repl.it/@launchcode/reverse-Function>`_
+   Use method chaining to reduce the ``reverse`` function to a single line. Open the link below the source code above to give it a shot.
 
 
 .. _palindrome-function:
@@ -79,8 +78,9 @@ The ``isPalindrome`` Function
 
 Using our ``reverse`` function for strings, we can create our palindrome checker. Recall that our approach will be to take the string argument, reverse it, and then compare the reversed string to the original string.
 
-.. sourcecode:: js
+.. replit:: js
    :linenos:
+   :slug: isPalindrome
 
    function reverse(str) {
       return str.split('').reverse().join('');
@@ -94,7 +94,7 @@ Since ``isPalindrome`` uses our ``reverse`` function, this is an example of comp
 
 .. admonition:: Try It!
 
-   Does our ``isPalindrome`` function work? `Try it for yourself at repl.it! <https://repl.it/@launchcode/isPalindrome>`_
+   Does our ``isPalindrome`` function work? Run it yourself to see!
 
 
 Functions Should Do Exactly One Thing
