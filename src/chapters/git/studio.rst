@@ -713,8 +713,8 @@ At the top and bottom, there is some code that could be merged without issue.
 Between the ``<<<<<<< HEAD`` and ``=======`` symbols is the version of the code
 that exists locally. These are *your* changes.
 
-Between ``=======`` and ``>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d``
-are the changes that Pilot made (the hash ``0c2165931f...`` will be unique to
+Between ``=======`` and ``>>>>>>> a48e8a75...`
+are the changes that Pilot made (the hash ``a48e8a75...`` will be unique to
 the commit, so you'll see something slightly different on your screen).
 
 Let's unify our code. Change the CSS to look like this, making sure to remove
