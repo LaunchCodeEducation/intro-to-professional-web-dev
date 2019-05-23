@@ -6,6 +6,10 @@ While we have covered all of the HTTP concepts you need to know at this point, i
 Viewing Requests and Response Using Developer Tools
 ---------------------------------------------------
 
+.. tip::
+
+   This section requires you to use Firefox's developer tools. If you need a refresher or just a reference, visit `MDN <https://developer.mozilla.org/en-US/docs/Tools>`_.
+
 Open a web browser and visit some web page, say, `our example from the HTML Me Something assignment <https://education.launchcode.org/html-me-something/submissions/chrisbay/index.html>`_. After the page loads, open your browser's developer tools and select the *Network* tab.
 
 You'll see something like this:
