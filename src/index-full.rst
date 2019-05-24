@@ -22,6 +22,8 @@ Chapters
    chapters/css/index
    chapters/git/index
    chapters/dom-and-events/index
+   chapters/http/index
+   chapters/forms/index
    chapters/booster-rockets/index
 
 .. toctree::

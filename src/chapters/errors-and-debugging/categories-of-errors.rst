@@ -50,13 +50,12 @@ During the first few weeks of your programming career, you will probably spend a
 
    Find the syntax errors in the program.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Syntax-Errors
 
       let day = Wednesday;
       console.log(day;
-
-   `Run this program at repl.it <https://repl.it/@launchcode/Syntax-Errors>`_
 
 
 .. admonition:: Question

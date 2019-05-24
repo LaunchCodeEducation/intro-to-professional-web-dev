@@ -49,8 +49,9 @@ We can use the ``while`` loop to create any type of iteration we wish, including
 
 This can be rewritten as a while loop:
 
-.. sourcecode:: js
+.. replit:: js
    :linenos:
+   :slug: While-loop-example
 
    let i = 0;
 
@@ -67,7 +68,6 @@ You can almost read the ``while`` statement as if it were in a natural language:
 
    What happens if you forget to include ``i++`` at the end of the ``while`` loop above?
 
-   `Try it at repl.it. <https://repl.it/@launchcode/While-loop-example>`_
 
 Beyond ``for`` Loops
 --------------------

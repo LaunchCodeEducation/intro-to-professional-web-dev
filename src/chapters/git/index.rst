@@ -1,7 +1,7 @@
 .. _git-chapter:
 
-Git
-===
+Git More Collaboration
+======================
 
 .. toctree::
    

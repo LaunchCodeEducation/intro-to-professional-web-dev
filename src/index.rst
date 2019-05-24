@@ -23,6 +23,8 @@ Chapters
    chapters/css/index
    chapters/git/index
    chapters/dom-and-events/index
+   chapters/http/index
+   chapters/forms/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -47,6 +49,7 @@ Studios
    chapters/unit-testing/studio
    chapters/git/studio
    chapters/dom-and-events/studio
+   chapters/forms/studio
 
 Assignments
 ^^^^^^^^^^^

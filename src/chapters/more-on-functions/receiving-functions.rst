@@ -193,16 +193,15 @@ What happens if a function expects an argument to be a function, but it isn't?
 
 .. admonition:: Try It!
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: TypeError-Example
    
       function callMe(func) {
          func();
       }
 
       callMe("Al");
-
-   `Run this program at repl.it <https://repl.it/@launchcode/TypeError-Example>`_
 
 .. admonition:: Question
 

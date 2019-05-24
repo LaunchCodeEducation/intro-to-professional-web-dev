@@ -74,8 +74,9 @@ As with the number and string data types, the boolean type also has a conversion
 
    Explore how ``Boolean`` converts various non-boolean values.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Boolean-Type-Conversion
 
       console.log(Boolean("true"));
       console.log(Boolean("TRUE"));
@@ -83,8 +84,6 @@ As with the number and string data types, the boolean type also has a conversion
       console.log(Boolean(1));
       console.log(Boolean(''));
       console.log(Boolean('LaunchCode'));
-
-   `Run this program at repl.it <https://repl.it/@launchcode/Boolean-Type-Conversion>`_
 
 .. admonition:: Question
 
