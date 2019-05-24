@@ -17,6 +17,7 @@ EOF
     sphinx-build -E -b "$builder" src docs
     ;;
     -w|--watch)
+    sphinx-build -b "$builder" src docs
     fswatch -o ./src/ | xargs -n1 -I{} sphinx-build -b "$builder" src docs
     ;;
     *)

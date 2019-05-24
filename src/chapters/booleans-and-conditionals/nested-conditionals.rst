@@ -30,8 +30,9 @@ Our first attempt at a solution might look like this:
 
 We find that the output is ``POSITIVE``, even though 7 is odd and so nothing should be printed. This code doesn't work as desired because we only want to test for positivity when we already know that the number is even. We can enable this behavior by putting the second conditional *inside* the first.
 
-.. sourcecode:: js
+.. replit:: js
    :linenos:
+   :slug: Positive-and-Even
 
    let num = 7;
 
@@ -45,7 +46,7 @@ We find that the output is ``POSITIVE``, even though 7 is odd and so nothing sho
 
 .. admonition:: Try It!
 
-   `Try this <https://repl.it/@launchcode/Positive-and-Even>`_ with a several different values for ``num`` (even, odd, positive, negative) to ensure it works as desired. Nice, huh?
+   Run the previous example with a several different values for ``num`` (even, odd, positive, negative) to ensure it works as desired. Nice, huh?
 
 Notice that when we put one conditional inside another, the body of the nested conditional is indented by two tabs rather than one. This convention provides an easy, visual way to determine which code is part of which conditional.
 

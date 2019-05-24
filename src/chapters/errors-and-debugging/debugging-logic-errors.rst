@@ -14,8 +14,9 @@ When your code runs but doesn't produce the expected results, it is important to
 
 Let's look at a program that has a logical bug.
 
-.. sourcecode:: js
+.. replit:: js
    :linenos:
+   :slug: Degrees-C-to-K-Logic-Error
 
    const input = require('readline-sync');
 
@@ -23,8 +24,6 @@ Let's look at a program that has a logical bug.
    let degreesK = degreesC + 273.15;
 
    console.log('Degrees K:', degreesK);
-
-`Run the code at repl.it <https://repl.it/@launchcode/Degrees-C-to-K-Logic-Error>`_.
 
 This program asks the user for a temperature in degrees celsius and attempts to convert it to degrees Kelvin. Degrees Kelvin differs from degrees celsius by 273.15. So if we enter 100 (in celsius) we should see a converted value of 373.15 (in Kelvin). However, running the program as-is and entering 100 gives the message:
 

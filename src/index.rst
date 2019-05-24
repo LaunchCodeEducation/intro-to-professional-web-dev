@@ -22,6 +22,8 @@ Chapters
    chapters/css/index
    chapters/git/index
    chapters/dom-and-events/index
+   chapters/http/index
+   chapters/forms/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -42,7 +44,9 @@ Studios
    chapters/loops/studio
    chapters/functions/studio
    chapters/more-on-functions/studio
+   chapters/git/studio
    chapters/dom-and-events/studio
+   chapters/forms/studio
 
 Assignments
 ^^^^^^^^^^^
@@ -62,11 +66,14 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book
+   appendices/style-guide
+   appendices/git/workflows
+   appendices/git/stash
    appendices/array-method-examples/index
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
    appendices/math-method-examples/index
-   appendices/style-guide
+   
 
 
 .. toctree::
