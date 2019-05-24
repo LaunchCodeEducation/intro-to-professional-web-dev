@@ -25,7 +25,7 @@ Assume that a team member wrote the following code:
 
    function createLaunchOutput(entry) {
       let output = "";
-      
+
       entry = Number(entry);
 
       if (entry%2 === 0){
@@ -46,11 +46,16 @@ Assume that a team member wrote the following code:
 
 The program must accomplish the following:
 
-#. If the user enters a number divisible only by 2, print ``'Crew ready for launch. Shuttle offline.'``
-#. If the user enters a number divisible only by 3, print ``'Shuttle ready for launch. Crew asleep.'``
-#. If the user enters a number divisible by both 2 and 3, print ``'Crew and shuttle ready. Cleared for launch!'``
-#. If the user enters a number that is NOT divisible by 2 OR 3, print ``'Crew and shuttle unresponsive. Launch aborted!'``
-#. If the user enters a string, a decimal, or just hits return, print ``'ARRR! Raid yonder shuttle!'``
+#. If the user enters a number divisible only by 2, print ``'Crew ready for
+   launch. Shuttle offline.'``
+#. If the user enters a number divisible only by 3, print ``'Shuttle ready for
+   launch. Crew asleep.'``
+#. If the user enters a number divisible by both 2 and 3, print ``'Crew and
+   shuttle ready. Cleared for launch!'``
+#. If the user enters a number that is NOT divisible by 2 OR 3, print ``'Crew
+   and shuttle unresponsive. Launch aborted!'``
+#. If the user enters a string, a decimal, or just hits return, print ``'ARRR!
+   Raid yonder shuttle!'``
 
 Fix the Errors
 ^^^^^^^^^^^^^^^
@@ -68,10 +73,10 @@ Fix the Errors
 
 #. We have only used integers to test the code. What if the user types in
    something else?
-   
+
    a. Add the following validation check to the ``createLaunchOutput``
       function:
-   
+
       .. sourcecode:: js
          :linenos:
 
@@ -82,7 +87,7 @@ Fix the Errors
                output = "Invalid input.";
                return output;
             }
-            
+
             entry = Number(entry);
          etc...
 
