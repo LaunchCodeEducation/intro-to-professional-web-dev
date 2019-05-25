@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13.1. Exercises: Unit Testing" href="exercises.html" />
+    <link rel="next" title="13.1. Why Test Your Code?" href="why-test.html" />
     <link rel="prev" title="12.8. Studio: Objects &amp; Math" href="../objects-and-math/studio.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -87,20 +87,52 @@
 <h1>13. Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ol>
-<li class="toctree-l1"><a class="reference internal" href="exercises.html">13.1. Exercises: Unit Testing</a><ol>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html#manual-testing">13.1.1. Manual Testing</a><ol>
-<li class="toctree-l3"><a class="reference internal" href="exercises.html#test-for-errors">13.1.1.1. Test for Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why-test.html">13.1. Why Test Your Code?</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="why-test.html#know-your-code-works">13.1.1. Know Your Code Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why-test.html#find-regressions">13.1.2. Find Regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why-test.html#defining-program-expectations">13.1.3. Defining Program Expectations</a></li>
 </ol>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html#automatic-testing">13.1.2. Automatic Testing</a><ol>
-<li class="toctree-l3"><a class="reference internal" href="exercises.html#start-small">13.1.2.1. Start Small</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercises.html#try-one-on-your-own">13.1.2.2. Try One on Your Own</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what-to-test.html">13.2. What to Test</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="what-to-test.html#positive-and-negative-cases">13.2.1. Positive and Negative Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="what-to-test.html#edge-cases">13.2.2. Edge Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="what-to-test.html#an-example-ispalindrome-expectations">13.2.3. An example: isPalindrome Expectations</a></li>
 </ol>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html#bonus-mission">13.1.3. Bonus Mission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jasmine.html">13.3. Testing With Jasmine</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="jasmine.html#using-jasmine">13.3.1. Using Jasmine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jasmine.html#hello-jasmine">13.3.2. Hello, Jasmine!</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="jasmine.html#index-js">13.3.2.1. <code class="docutils literal notranslate"><span class="pre">index.js</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jasmine.html#hello-js">13.3.2.2. <code class="docutils literal notranslate"><span class="pre">hello.js</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jasmine.html#spec-hello-spec-js">13.3.2.3. <code class="docutils literal notranslate"><span class="pre">spec/hello.spec.js</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jasmine.html#specifications-and-assertions">13.3.2.4. Specifications and Assertions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jasmine.html#test-reporting">13.3.2.5. Test Reporting</a></li>
 </ol>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="studio.html">13.2. Studio: Unit Testing</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jasmine-in-action.html">13.4. Jasmine in Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tdd.html">13.5. Test-Driven Development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="tdd.html#the-test-code-cycle">13.5.1. The Test/Code Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdd.html#red-green-refactor">13.5.2. Red, Green Refactor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdd.html#self-documenting-code">13.5.3. Self-Documenting Code</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tdd-example.html">13.6. TDD in Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">13.7. Exercises: Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#manual-testing">13.7.1. Manual Testing</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#test-for-errors">13.7.1.1. Test for Errors</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#automatic-testing">13.7.2. Automatic Testing</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#start-small">13.7.2.1. Start Small</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#try-one-on-your-own">13.7.2.2. Try One on Your Own</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#bonus-mission">13.7.3. Bonus Mission</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">13.8. Studio: Unit Testing</a></li>
 </ol>
 </div>
 </div>
@@ -114,7 +146,7 @@
         <li class="previous"><a href="../objects-and-math/studio.html"><span aria-hidden="true">&larr;</span> 12.8. Studio: Objects &amp; Math</a></li>
         
         
-        <li class="next"><a href="exercises.html">13.1. Exercises: Unit Testing <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="why-test.html">13.1. Why Test Your Code? <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
