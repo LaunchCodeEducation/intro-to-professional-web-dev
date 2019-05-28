@@ -86,6 +86,132 @@
     
   <div class="section" id="studio-unit-testing">
 <h1>13.8. Studio: Unit Testing<a class="headerlink" href="#studio-unit-testing" title="Permalink to this headline">¶</a></h1>
+<p>Let’s use Test Driven Development (TDD) to help us design a function that meets
+the following conditions:</p>
+<ol class="arabic simple">
+<li>When passed a number that is ONLY divisible by 2, return <code class="docutils literal notranslate"><span class="pre">'Launch!'</span></code></li>
+<li>When passed a number that is ONLY divisible by 3, return <code class="docutils literal notranslate"><span class="pre">'Code!'</span></code></li>
+<li>When passed a number that is ONLY divisible by 5, return <code class="docutils literal notranslate"><span class="pre">'Rocks!'</span></code></li>
+<li>When passed a number that is divisible by 2 AND 3, return <code class="docutils literal notranslate"><span class="pre">'LaunchCode!'</span></code></li>
+<li>When passed a number that is divisible by 3 AND 5, return <code class="docutils literal notranslate"><span class="pre">'Code</span> <span class="pre">Rocks!'</span></code></li>
+<li>When passed a number that is divisible by 2 AND 5, return
+<code class="docutils literal notranslate"><span class="pre">'Launch</span> <span class="pre">Rocks!'</span></code></li>
+<li>When passed a number that is divisible by 2, 3, AND 5, return <code class="docutils literal notranslate"><span class="pre">'LaunchCode</span>
+<span class="pre">Rocks!'</span></code></li>
+<li>When passed a number that is NOT divisible by 2, 3, or 5, return
+<code class="docutils literal notranslate"><span class="pre">'Rutabagas!</span> <span class="pre">That</span> <span class="pre">doesn't</span> <span class="pre">work.'</span></code></li>
+</ol>
+<p>Rather than complete the code and <em>then</em> test it, TDD flips the process:</p>
+<ol class="arabic simple">
+<li>Write a test first - one that checks the program for a specific outcome.</li>
+<li>Run the test to make sure it fails.</li>
+<li>Write a code snippet that passes the test.</li>
+<li>Repeat steps 1 - 3 for the remaining features of the program.</li>
+<li>Examine the code and test scripts, and refactor them to increase efficiency.
+Remember the DRY idea (Don’t Repeat Yourself).</li>
+</ol>
+<div class="section" id="source-code">
+<h2>13.8.1. Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>Open this repl.it <em>[TODO: Add link]</em> and note the expected files:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">index.js</span></code> holds the Jasmine script. DO NOT CHANGE THIS FILE.</li>
+<li><code class="docutils literal notranslate"><span class="pre">launchCodeRocks.js</span></code> holds the function we want to design, which we will
+call <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code> holds the testing script.</li>
+</ol>
+<p>Besides <code class="docutils literal notranslate"><span class="pre">index.js</span></code> the files are mostly empty.  Only a framework has been
+provided for you.</p>
+</div>
+<div class="section" id="write-the-first-test">
+<h2>13.8.2. Write the First Test<a class="headerlink" href="#write-the-first-test" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code>, complete the <code class="docutils literal notranslate"><span class="pre">describe</span></code> function by adding a
+test for condition #1:</p>
+<blockquote>
+<div>When passed a number that is ONLY divisible by 2, <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'Launch!'</span></code></div></blockquote>
+<p>Run the test. It should fail because there is no code inside <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code>
+yet!</p>
+</div>
+<div class="section" id="write-code-to-pass-the-first-test">
+<h2>13.8.3. Write Code to Pass the First Test<a class="headerlink" href="#write-code-to-pass-the-first-test" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.js</span></code>, use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement inside the <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code>
+function to check if the parameter is evenly divisible by 2, and then return an
+output. (<em>Hint: modulus</em>).</p>
+<p>Run the test script again to see if your code passes. If not, modify
+<code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> until it does.</p>
+</div>
+<div class="section" id="write-the-next-two-tests">
+<h2>13.8.4. Write the Next Two Tests<a class="headerlink" href="#write-the-next-two-tests" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code>, add tests for the conditions:</p>
+<ol class="arabic simple" start="2">
+<li>When passed a number that is ONLY divisible by 3, <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'Code!'</span></code></li>
+<li>When passed a number that is ONLY divisible by 5, <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'Rocks!'</span></code></li>
+</ol>
+<p>Run the tests (you have three now). The two new ones should fail, but the first
+should still pass. Modify the <code class="docutils literal notranslate"><span class="pre">it</span></code> statements as needed if you see a
+different result.</p>
+</div>
+<div class="section" id="write-code-to-pass-the-new-tests">
+<h2>13.8.5. Write Code to Pass the New Tests<a class="headerlink" href="#write-code-to-pass-the-new-tests" title="Permalink to this headline">¶</a></h2>
+<p>Add more code inside <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> to check if the parameter is evenly
+divisible by 2, 3, or 5, and then return an output based on the result.</p>
+<p>Run the test script again to see if your code passes all three tests. If not,
+modify <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> until it does.</p>
+</div>
+<div class="section" id="hmmm-tricky">
+<h2>13.8.6. Hmmm, Tricky<a class="headerlink" href="#hmmm-tricky" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code>, add a test for the condition:</p>
+<ol class="arabic simple" start="4">
+<li>When passed a number that is divisible by 2 AND 3, <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'LaunchCode!'</span></code> (not <code class="docutils literal notranslate"><span class="pre">'Launch!Code!'</span></code>).</li>
+</ol>
+<p>Run the tests. Only the new one should fail.</p>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> until the function passes all four of the tests.</p>
+</div>
+<div class="section" id="more-tests-and-code-snippets">
+<h2>13.8.7. More Tests and Code Snippets<a class="headerlink" href="#more-tests-and-code-snippets" title="Permalink to this headline">¶</a></h2>
+<p>Continue adding ONE test at a time for the remaining conditions. After you add
+EACH new test, run the script to make sure it FAILS, while the previous tests
+still pass.</p>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> until the function passes the new test and all of the
+old ones.</p>
+<p>Presto! By starting with the <em>testing</em> script, you constructed <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code>
+one segment at a time. The result is complete, valid code that has already
+been checked for accuracy.</p>
+</div>
+<div class="section" id="new-condition">
+<h2>13.8.8. New Condition<a class="headerlink" href="#new-condition" title="Permalink to this headline">¶</a></h2>
+<p>Now that your function passes all 8 tests, let’s change one of the conditions.
+For the case where a number is divisible by both 2 and 5, instead of returning
+<code class="docutils literal notranslate"><span class="pre">'Launch</span> <span class="pre">Rocks!'</span></code>, we want the function to return <code class="docutils literal notranslate"><span class="pre">'Launch</span> <span class="pre">Rocks!</span>
+<span class="pre">(CRASH!!!!)'</span></code>.</p>
+<p>Modify the testing and function code to deal with this new condition.</p>
+</div>
+<div class="section" id="bonus-missions">
+<h2>13.8.9. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="drying-the-code">
+<h3>13.8.9.1. DRYing the Code<a class="headerlink" href="#drying-the-code" title="Permalink to this headline">¶</a></h3>
+<p>Examine <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> and the <code class="docutils literal notranslate"><span class="pre">describe</span></code> functions. Notice that there is
+quite a bit of repetition in the code.</p>
+<p>Try adding arrays, objects and/or loops to refactor the code into a more
+efficient structure.</p>
+</div>
+<div class="section" id="what-if-we-already-have-code">
+<h3>13.8.9.2. What if We Already Have Code?<a class="headerlink" href="#what-if-we-already-have-code" title="Permalink to this headline">¶</a></h3>
+<p>A teammate tried to help you out by writing the <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code> code before
+class. Unfortunately, the code contains some errors.</p>
+<p>Open the flawed code here [<em>TODO: Add link</em>], and cut and paste your testing
+script into the <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code> file.</p>
+<p>Run the tests and see how many fail.  Use the <em>descriptive feedback</em> from your
+<code class="docutils literal notranslate"><span class="pre">it</span></code> statements to find and fix the errors in <code class="docutils literal notranslate"><span class="pre">launchOutput</span></code>.</p>
+<p>Note: You could just <em>cheat</em> and compare your correct code to the flawed
+sample, but the point of this mission is to give you more practice interpreting
+and using test results. To gain the most benefit, honor the spirit of this
+task.</p>
+</div>
+</div>
 </div>
 
 
