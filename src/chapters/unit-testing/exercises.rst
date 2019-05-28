@@ -86,7 +86,7 @@ Test for Errors
             let output = "";
 
             if (!entry.includes('.') || isNaN(entry) || entry === ' '){
-               output = "Invalid input.";
+               output = "ARRR! Raid yonder shuttle!";
                return output;
             }
 
@@ -95,8 +95,9 @@ Test for Errors
 
    b. Run the updated program and *test* it with the inputs: 2.22, 'H', and ''.
       Which entries produce incorrect output?
-   c. Fix the new code so that it correctly returns ``'Invalid input.'`` for
-      the empty string, decimal values, and non-numerical inputs.
+   c. Fix the new code so that it correctly returns ``'ARRR! Raid yonder
+      shuttle!'`` for the empty string, decimal values, and non-numerical
+      inputs.
 
 #. Once the code returns the correct output for all of the suggested input
    values, continue to *test* it with your own entries. Make sure your fixes
