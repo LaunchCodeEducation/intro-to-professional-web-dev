@@ -28,7 +28,8 @@ Rather than complete the code and *then* test it, TDD flips the process:
 Source Code
 ------------
 
-Open this repl.it *[TODO: Add link]* and note the expected files:
+Open `this repl.it <https://repl.it/@launchcode/UnitTestingStudio01>`__ and
+note the expected files:
 
 #. ``index.js`` holds the Jasmine script. DO NOT CHANGE THIS FILE.
 #. ``launchCodeRocks.js`` holds the function we want to design, which we will
@@ -137,8 +138,9 @@ What if We Already Have Code?
 A teammate tried to help you out by writing the ``launchOutput`` code before
 class. Unfortunately, the code contains some errors.
 
-Open the flawed code here [*TODO: Add link*], and cut and paste your testing
-script into the ``launchCodeRocks.spec.js`` file.
+Open the
+`flawed code here <https://repl.it/@launchcode/UnitTestingStudio02>`__, and cut
+and paste your testing script into the ``launchCodeRocks.spec.js`` file.
 
 Run the tests and see how many fail.  Use the *descriptive feedback* from your
 ``it`` statements to find and fix the errors in ``launchOutput``.
