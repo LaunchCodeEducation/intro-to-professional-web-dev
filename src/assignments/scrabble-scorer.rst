@@ -83,11 +83,11 @@ Example of new key storage
 * ``j`` is worth ``8``
 * ``k`` is worth ``10``
 
-The new data structure for storing point values is more efficient. Can you think of why?
-With the old data structure, to find the point value for a letter you would need to iterate
-over each point value and see if the letter is found in the array of letters that have
-that value. In the new data structure has the letters themselves as keys which makes it
-much faster to lookup the point value.
+With the old format, to find the point value for a letter, the program must iterate over each key in
+``oldScoreKey`` and check if the letter is inside the array paired with that key. This
+search within a search is inefficient.
+
+In the new data structure, the letters themselves are keys, so a single search will identify a point value.
 
 .. admonition:: Example
 

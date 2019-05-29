@@ -164,11 +164,10 @@ will be the Scrabble point value.</p>
 <li><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">k</span></code> is worth <code class="docutils literal notranslate"><span class="pre">10</span></code></li>
 </ul>
-<p>The new data structure for storing point values is more efficient. Can you think of why?
-With the old data structure, to find the point value for a letter you would need to iterate
-over each point value and see if the letter is found in the array of letters that have
-that value. In the new data structure has the letters themselves as keys which makes it
-much faster to lookup the point value.</p>
+<p>With the old format, to find the point value for a letter, the program must iterate over each key in
+<code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> and check if the letter is inside the array paired with that key. This
+search within a search is inefficient.</p>
+<p>In the new data structure, the letters themselves are keys, so a single search will identify a point value.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Example of <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object usage.</p>
