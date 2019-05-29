@@ -1,8 +1,9 @@
 Why Learn To Code?
 ==================
 
-Everyday, people try to stay on top of what the world and their respective industries need from them.
+As computers become ever prevalent, coding does as well. We ask computers to track our schedules and tell us the weather.
+We have computers recommend a new TV show to watch after we are done with the first computer-recommended TV show.
+Coding is how humans communicate with computers. With code, humans can ask the computer to complete specific tasks and store specific information.
 
-Coding is what runs the computers and computers are what runs us.
-
-Our world is becoming ever more dominated by computers.
+Think about how many times technology has changed in your lifetime.
+Because technology rapidly changes, people who work with technology are lifelong learners who find themselves constantly picking up the latest thing.
