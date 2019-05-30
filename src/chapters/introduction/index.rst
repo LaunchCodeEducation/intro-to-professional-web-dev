@@ -6,5 +6,5 @@ Introduction
 
    why-learn-to-code
    why-learn-js
-   about-lc101
+   about-this-class
    using-this-book
