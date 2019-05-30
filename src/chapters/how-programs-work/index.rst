@@ -9,6 +9,4 @@ How Programs Work
    algorithms
    programming-languages
    the-javascript-language
-   program-components
    hello-world
-   how-to-run-programs
