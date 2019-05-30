@@ -85,9 +85,130 @@
     
   <div class="section" id="tdd-in-action">
 <h1>13.6. TDD in Action<a class="headerlink" href="#tdd-in-action" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Roman numeral example</li>
+<p>Fork <a class="reference external" href="https://repl.it/&#64;launchcode/Transmission-processor-TDD-starter" target="_blank">this repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+and follow along as we implement a project using TDD.</p>
+<p>We need to write a Node module to process transmissions from the
+<a class="reference external" href="https://voyager.jpl.nasa.gov/mission/" target="_blank">Voyager1 probe<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Transmission</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;1410::&lt;932829840830053761&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Expected Result</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nx">id</span><span class="o">:</span> <span class="mi">1410</span><span class="p">,</span>
+   <span class="nx">rawData</span><span class="o">:</span> <span class="mi">932829840830053761</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>13.6.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>The features for this project have already been broken down into
+small testable units. Let’s review these and then we will
+take it slow and handle these one at a time.</p>
+<ol class="arabic simple">
+<li>Take in a transmission string and return an object <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</li>
+<li>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the transmission does NOT contain <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code>.</li>
+<li>Returned object should contain an <code class="docutils literal notranslate"><span class="pre">id</span></code> property<ul>
+<li>The <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
 </ul>
+</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">id</span></code> property should be of type <code class="docutils literal notranslate"><span class="pre">Number</span></code></li>
+<li>Returned object should contain a <code class="docutils literal notranslate"><span class="pre">rawData</span></code> property<ul>
+<li>The <code class="docutils literal notranslate"><span class="pre">rawData</span></code> is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
+</ul>
+</li>
+<li>Return -1 if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
+</ol>
+</div>
+<div class="section" id="let-s-get-started">
+<h2>13.6.2. Let’s Get Started!<a class="headerlink" href="#let-s-get-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Take in a transmission string and return an object <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</li>
+</ol>
+<p>We need to write our first test. Go to <code class="docutils literal notranslate"><span class="pre">processor.spec.js</span></code> and add a test method.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;data-processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now we can write code to verify the stated behavior. We need to take in
+a string and return an object. That is a clear and testable statement.
+Let’s write a test that uses a <code class="docutils literal notranslate"><span class="pre">process</span></code> function that takes a <code class="docutils literal notranslate"><span class="pre">string</span></code>
+and returns an <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// actual then expected</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;123&gt;&quot;</span><span class="p">),</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="try-these-on-your-own">
+<h2>13.6.3. Try These On Your Own<a class="headerlink" href="#try-these-on-your-own" title="Permalink to this headline">¶</a></h2>
+<p>Use TDD to add these features.</p>
+<ol class="arabic simple">
+<li>Trim leading and trailing whitespace from transmission.</li>
+<li>Return -1 if more than one <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code> found in transmission</li>
+<li>Return -1 for value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if anything besides numbers are present</li>
+<li>Allow for multiple <code class="docutils literal notranslate"><span class="pre">rawData</span></code> values<ul>
+<li><code class="docutils literal notranslate"><span class="pre">rawData</span></code> would be returned as an array of numbers</li>
+<li>Get the new test working and then fix any broken existing tests</li>
+<li>Example Transmission:  <code class="docutils literal notranslate"><span class="pre">&quot;9701::&lt;21212.232323.242424&gt;&quot;</span></code></li>
+<li>Result: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">id:</span> <span class="pre">9701,</span> <span class="pre">rawData:</span> <span class="pre">[21212,232323,242424]</span> <span class="pre">}</span></code></li>
+</ul>
+</li>
+</ol>
+</div>
 </div>
 
 
