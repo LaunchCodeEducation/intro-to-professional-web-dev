@@ -53,10 +53,17 @@ There are three important files:
 Hello, Jasmine!
 ---------------
 
-Let's build a "Hello, World!" Jasmine project, to get familiar with the basic components. Open and fork this project:
+Let's build a "Hello, World!" Jasmine project, to get familiar with the basic components. Open and fork `this repl.it project <https://repl.it/@launchcode/Hello-Jasmine-Starter-Code>`_
 
-.. replit:: js
-   :slug: Hello-Jasmine-Starter-Code
+We will walk you through the steps need to get a simple Jasmine project up and running. Code along with us throughout this section.
+
+
+``index.js``
+^^^^^^^^^^^^
+
+This is the main project file. Up until now, ``index.js`` is where you have been writing the code for a given exercise or assignment. Now that we are writing tests for our code, ``index.js`` will contain the Jasmine code to find and execute the tests. Our project-specific code will live in other files.
+
+.. sourcecode:: js
    :linenos:
 
    const Jasmine = require('jasmine');
@@ -70,14 +77,6 @@ Let's build a "Hello, World!" Jasmine project, to get familiar with the basic co
    });
 
    jasmine.execute();
-
-We will walk you through the steps need to get a simple Jasmine project up and running. Code along with us throughout this section.
-
-
-``index.js``
-^^^^^^^^^^^^
-
-This is the main project file. Up until now, ``index.js`` is where you have been writing the code for a given exercise or assignment. Now that we are writing tests for our code, ``index.js`` will contain the Jasmine code to find and execute the tests. Our project-specific code will live in other files.
 
 There are three main components of this program:
 
