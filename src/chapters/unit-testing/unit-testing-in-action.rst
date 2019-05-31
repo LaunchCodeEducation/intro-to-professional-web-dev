@@ -1,5 +1,5 @@
-Jasmine in Action
-=================
+Unit Testing in Action
+======================
 
 .. index:: test case
 

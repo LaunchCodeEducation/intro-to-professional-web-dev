@@ -6,7 +6,7 @@ Unit Testing
 
    why-test
    hello-jasmine
-   jasmine-in-action
+   unit-testing-in-action
    tdd
    tdd-example
    exercises
