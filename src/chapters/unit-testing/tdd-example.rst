@@ -42,7 +42,7 @@ take it slow and handle these one at a time.
 
    * The ``rawData`` is the part of the transmission *after* the ``"::"``
 
-#. Return -1 if the ``rawData`` part of the transmission does NOT start with ``<`` and end with ``>``
+#. Return -1 for the value ``rawData`` if the ``rawData`` part of the transmission does NOT start with ``<`` and end with ``>``
 
 
 Requirement #1
@@ -193,17 +193,21 @@ Requirement #2
 --------------
 **Requirement:** Return ``-1`` if the transmission does NOT contain ``"::"``.
 
-We will follow the same steps to write this test and eventually make it green
+Next we have a negative test requirement that tells us what should if the data is invalid.
+Before jumping into the code, let's review the steps we took to implement requirement #1.
 
-a. Create a blank test function.
-b. Give the test a name that describes that behavior the test verify.
-c. Think about then write code that fulfills the stated behavior.
-d. Run the test and see the it fail.
-e. Implement new code to make test pass.
-f. Run the test and see it pass.
-g. Do we need to refactor? Can the code be better?
+**Review of TDD process:**
 
-See lines **11 - 14** for the solution to steps a. to c.
+1. Create a blank test function.
+2. Give the test a name that describes that behavior the test verify.
+3. Come up with test data that will trigger the described behavior.
+4. Think about what is needed, then write code that fulfills the stated behavior.
+5. Run the test and see the it fail.
+6. Implement the new code or feature used in the test.
+7. Run the test and see it pass.
+8. Review to see if refactor needed.
+
+For requirement #2, the solution for **steps 1 - 4** can be seen on lines **11 - 14** below.
 
 .. sourcecode:: js
    :linenos:
@@ -225,8 +229,8 @@ See lines **11 - 14** for the solution to steps a. to c.
 
    });
 
-Error message displayed when you run the test. Notice that ``-1`` was
-the expected value, but the actual value was ``{}``.
+Now for **step 5**, run the test and see it fail. When you run the tests, you should see the below
+error message. Notice that ``-1`` was the expected value, but the actual value was ``{}``.
 ::
 
    Failures:
@@ -238,7 +242,7 @@ the expected value, but the actual value was ``{}``.
     - 'object'
     + -1
 
-Code the solution. Go to ``processor.js`` and update the ``processor`` function
+Next is **step 6**, write code that will make the test pass. Go to ``processor.js`` and update the ``processor`` function
 to check the ``transmission`` argument for the presence of ``'::'``.
 
 .. sourcecode:: js
@@ -254,12 +258,15 @@ to check the ``transmission`` argument for the presence of ``'::'``.
 
    module.exports = process;
 
-Run the tests again. They should both pass.
+Lucky **step 7** is to run the tests again. They should both pass.
 
 ::
 
    2 specs, 0 failures
    Finished in 0.035 seconds
+
+Finally **step 8** is to review the code to see if it needs to be refactored. As with the first requirement
+our code is quite simple and can not be improved at this time.
 
 
 Requirement #3
@@ -269,7 +276,11 @@ The ``id`` is the part of the transmission *before* the ``"::"``
 
 The same steps will be followed, even though they are not explicitly listed.
 
-See lines **16 - 19** to see the test added for this requirement.
+See lines **16 - 19** to see the test added for this requirement. To test
+this case ``notStrictEqual`` was used, which is checking if the two values
+are NOT equal. ``notStrictEqual`` is used to make sure that ``result.id``
+is NOT equal to ``undefined``. Remember that if you reference a property on an
+object that does NOT exist, ``undefined`` is returned.
 
 .. sourcecode:: js
    :linenos:
@@ -291,23 +302,21 @@ See lines **16 - 19** to see the test added for this requirement.
 
       it("returns id in object", function() {
         let result = processor("9701::<489584872710>");
-        assert.strictEqual(result.hasOwnProperty("id"), true);
+        assert.notStrictEqual(result.id, undefined);
       });
 
    });
 
-Fail Message
+The fail message looks a little different than what we have seen. The phrase
+"Identical input passed to notStrictEqual" lets us know that the two values
+were equal when we didn't expect them to be.
 
 ::
 
-  Failures:
-  1) transmission processor returns id in object
-  Message:
-  AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-  + expected - actual
-    
-  - false
-  + true
+   Failures:
+   1) transmission processor returns id in object
+   Message:
+      AssertionError [ERR_ASSERTION]: Identical input passed to notStrictEqual: undefined
 
 The object returned from ``processor`` doesn't have an id property. We need to
 split the transmission on ``'::'`` and then add that value to the object with
@@ -341,7 +350,62 @@ Requirement #4
 --------------
 **Requirement:** The ``id`` property should be of type ``Number``
 
-.. todo:: THIS
+Again the same steps are followed, though not listed.
+
+New test to be added to ``specs/processor.spec.js``
+
+.. sourcecode:: js
+   :linenos:
+
+   it("converts id to a number", function() {
+      let result = processor("9701::<489584872710>");
+      assert.strictEqual(result.id, 9701);
+   });
+
+Fail Message
+
+::
+
+   Failures:
+   1) transmission processor converts id to a number
+   Message:
+      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+      + expected - actual
+
+      - '9701'
+      + 9701
+
+
+Convert the id part of the string to be of type ``number``.
+
+.. sourcecode:: js
+   :linenos:
+
+   function process(transmission) {
+      if (transmission.indexOf("::") < 0) {
+         // Data is invalid
+         return -1;
+      }
+      let parts = transmission.split("::");
+      return {
+         id: Number.parseInt(parts[0])
+      };
+   }
+
+   module.exports = process;
+
+Now for the great feeling of a passing tests!
+
+::
+
+  4 specs, 0 failures
+  Finished in 0.061 seconds
+
+.. note::
+
+   You may be wondering what happens if that data is bad and the id can't be
+   turned into a number. That is a negative test case related to this feature
+   and is left for you to address in the final section.
 
 
 Requirement #5
@@ -349,25 +413,146 @@ Requirement #5
 **Requirement:** Returned object should contain a ``rawData`` property. The ``rawData``
 is the part of the transmission *after* the ``"::"``
 
-.. todo:: THIS
+New test to be added to ``specs/processor.spec.js``
+
+.. sourcecode:: js
+   :linenos:
+
+   it("returns rawData in object", function() {
+      let result = processor("9701::<487297403495720912>");
+      assert.notStrictEqual(result.rawData, undefined);
+   });
+
+Fail Message
+
+::
+
+   Failures:
+   1) transmission processor returns rawData in object
+   Message:
+      AssertionError [ERR_ASSERTION]: Identical input passed to notStrictEqual: undefined
+
+
+We need to extract the rawData from the second half of the transmission string after it's
+been split. Then return that in the object.
+
+.. sourcecode:: js
+   :linenos:
+
+   function process(transmission) {
+      if (transmission.indexOf("::") < 0) {
+         // Data is invalid
+         return -1;
+      }
+      let parts = transmission.split("::");
+      let rawData = parts[1];
+      return {
+         id: Number.parseInt(parts[0]),
+         rawData: rawData
+      };
+   }
+
+   module.exports = process;
+
+It's that time again, our tests pass!
+
+::
+
+  5 specs, 0 failures
+  Finished in 0.041 seconds
 
 
 Requirement #6
 --------------
-**Requirement:** Return -1 if the ``rawData`` part of the transmission does NOT
-start with ``<`` and end with ``>``
+**Requirement:** Return -1 for the value ``rawData`` if the ``rawData`` part of
+the transmission does NOT start with ``<`` and end with ``>``
 
-.. todo:: THIS
+Let's think about what test data to use for this requirement. What ways could the
+transmission data be invalid?
+
+1. It could be missing ``<`` at the beginning
+2. It could be missing ``>`` at the end
+3. It could be missing both ``<`` and ``>``
+4. Has ``<`` but is in the wrong place
+5. Has ``>`` but is in the wrong place
+
+All these cases need to be covered by a test. Let's start with #1, which
+is missing ``<`` at the beginning.
+
+New test to be added to ``specs/processor.spec.js``
+
+.. sourcecode:: js
+   :linenos:
+
+   it("returns -1 for rawData if missing < at position 0", function() {
+      let result = processor("9701::487297403495720912>");
+      assert.strictEqual(result.rawData, -1);
+   });
+
+Fail Message
+
+::
+
+   Failures:
+   1) transmission processor returns -1 for rawData if missing < at position 0
+   Message:
+      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+      + expected - actual
+      
+      - '487297403495720912>'
+      + -1
+
+New code added to ``processor.js`` to make tests pass. Note that we don't simply return
+``-1``, the requirement is to return the object and set the value of ``rawData`` to ``-1``.
+
+.. sourcecode:: js
+   :linenos:
+
+   function process(transmission) {
+      if (transmission.indexOf("::") < 0) {
+         // Data is invalid
+         return -1;
+      }
+      let parts = transmission.split("::");
+      let rawData = parts[1];
+      if (rawData[0] !== "<") {
+         rawData = -1;
+      }
+      return {
+         id: Number.parseInt(parts[0]),
+         rawData: rawData
+      };
+   }
+
+   module.exports = process;
+
+You know what's next, our tests pass!
+
+::
+
+  6 specs, 0 failures
+  Finished in 0.056 seconds
+
+.. admonition:: Try It!
+
+   The test data we used was missing ``<`` at the beginning. Add tests
+   to cover these cases. ``-1`` should be returned for all of these.
+
+   * ``"9701::8729740349572>0912"``
+   * ``9701::4872<97403495720912"``
+   * ``9701::487297403495720912"``
 
 
-Try These On Your Own
-----------------------
-Use TDD to add these features.
+Use TDD to Add These Features
+-----------------------------
+Use the steps demonstrated above to implement all or some of the below features.
+Take your time, you can do it!
 
-1. Trim leading and trailing whitespace from transmission.
-2. Return -1 if more than one ``"::"`` found in transmission
-3. Return -1 for value of ``rawData`` if anything besides numbers are present
-4. Allow for multiple ``rawData`` values
+#. Trim leading and trailing whitespace from transmission.
+#. Return -1 if the id part of the transmission can not be converted to a number.
+#. Return -1 if more than one ``"::"`` found in transmission
+#. Return -1 for value of ``rawData`` if anything besides numbers are present
+#. Allow for multiple ``rawData`` values
 
    * ``rawData`` would be returned as an array of numbers
    * Get the new test working and then fix any broken existing tests
