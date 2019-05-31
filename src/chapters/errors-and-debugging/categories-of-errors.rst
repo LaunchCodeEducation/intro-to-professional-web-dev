@@ -27,7 +27,7 @@ Syntax Errors
 
 .. index:: syntax
 
-JavaScript can only execute a program if the program is syntactically correct. **Syntax** refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punchation. 
+JavaScript can only execute a program if the program is syntactically correct. **Syntax** refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punctuation.
 
 .. index::
    single: error; syntax

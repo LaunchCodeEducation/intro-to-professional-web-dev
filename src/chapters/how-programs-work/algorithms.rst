@@ -78,7 +78,7 @@ Check Your Understanding
 
    a. Answering a math problem.
    b. Sorting numbers in decreasing order.
-   c. Predicting the weather tomorrow.
+   c. Making a peanut butter and jelly sandwich.
    d. Assigning guests to tables at a wedding reception.
    e. Creating a grocery list.
    f. Suggesting new music for a playlist.
