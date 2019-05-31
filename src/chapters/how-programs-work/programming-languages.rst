@@ -70,3 +70,6 @@ observe the results.
 In the example above, the *syntax* for printing ``Hello, World!`` varies
 between the Python, JavaScript, and Java languages, but the end result is the
 same.
+
+Check Your Understanding
+-------------------------

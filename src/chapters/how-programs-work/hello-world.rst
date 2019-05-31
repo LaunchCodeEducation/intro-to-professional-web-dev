@@ -14,11 +14,12 @@ single message is one of the simplest tasks a program can carry out.
 
    Throughout this book, you will need to access a code editor to complete
    practice problems, exercises, studios and assignments. If you have not
-   already done so, create a new account for Repl.it. The site provides a free
-   space to practice coding.  [TODO: Add link!]
+   already done so, create a new account for
+   `Repl.it <https://repl.it/login?goto=%2Frepls>`__. The site provides a free
+   space to practice coding.
 
-Follow this **Hello World link** [TODO: add link] to begin your journey. In the
-editor, type:
+Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
+begin your journey. In the editor, type:
 
    ``console.log('Hello, World!');``
 
@@ -43,7 +44,7 @@ code. Make a change, click "Run", and see what happens. Try to:
 #. Remove one or both quotation marks. Do we need to include both opening and
    closing quote marks? Is there a difference between using ``"`` and ``'``?
 #. Remove the semi-colon, ``;``.
-#. Print something other than a message.
+#. Print a number. (Bonus: Print two numbers added together).
 #. Print multiple messages one after the other.
 #. Print two messages on the same line.
 #. Print a message that contains quote marks, such as ``Quoth the Raven
@@ -57,3 +58,17 @@ good idea of how the ``console.log`` function in JavaScript works.
 
    On paper (or in a document on your computer), write one or two sentences about
    ``console.log``. You should provide more detail than, “It prints things.”
+
+Check Your Understanding
+-------------------------
+
+.. admonition:: Question
+
+   Which of the following correctly prints ``Coding Rocks``? There may be more
+   than one valid option.
+
+   a. ``console.log(Coding Rocks)``
+   b. ``console.log(Coding Rocks);``
+   c. ``console.log('Coding Rocks')``
+   d. ``console.log("Coding Rocks');``
+   e. ``console.log("Coding Rocks");``

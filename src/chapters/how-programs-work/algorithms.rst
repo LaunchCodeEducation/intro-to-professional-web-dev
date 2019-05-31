@@ -68,3 +68,6 @@ Alphabetizing is a process we can teach a computer to do, and the algorithm
 will complete the process much more rapidly than a human. However, unlike the
 alphabet song that many of us still sing in our heads when arranging a list of
 words, programmers must use a different method to train the computer.
+
+Check Your Understanding
+-------------------------

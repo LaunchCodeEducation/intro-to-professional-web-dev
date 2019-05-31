@@ -10,3 +10,4 @@ How Programs Work
    programming-languages
    the-javascript-language
    hello-world
+   exercises
