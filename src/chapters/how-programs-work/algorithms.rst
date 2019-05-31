@@ -71,3 +71,15 @@ words, programmers must use a different method to train the computer.
 
 Check Your Understanding
 -------------------------
+
+.. admonition:: Question
+
+   Select ALL of the following that can be solved by using an algorithm:
+
+   a. Answering a math problem.
+   b. Sorting numbers in decreasing order.
+   c. Predicting the weather tomorrow.
+   d. Assigning guests to tables at a wedding reception.
+   e. Creating a grocery list.
+   f. Suggesting new music for a playlist.
+   g. Making cars self-driving.

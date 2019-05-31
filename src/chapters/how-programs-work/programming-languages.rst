@@ -71,5 +71,26 @@ In the example above, the *syntax* for printing ``Hello, World!`` varies
 between the Python, JavaScript, and Java languages, but the end result is the
 same.
 
-Check Your Understanding
--------------------------
+How Many Programing Languages Are There?
+-----------------------------------------
+
+Ask Google, "How many programing languages are there?" and many results get
+returned. Even with all these options, there is no specific answer to the
+question.
+
+There are hundreds, if not thousands, of programing languages available.
+However, most are either obsolete, impractical, or too specialized to be widely
+used.
+
+Arguments occur whenever someone makes a top 10 list for programming languages,
+but regardless of the opionons, one fact remains. Once you learn one language,
+learning the next is much, much easier. Adding a third becomes child's play.
+
+The reason for this is that thinking like a coder does not change with the
+language. Your logic, reasoning, and problem solving skills apply just as well
+for JavaScript as they do for Python, Swift and C#. To display text on the
+screen in Python, we use ``print()``, for JavaScript we use ``console.log();``,
+for C# the command is ``Console.WriteLine();``. The *syntax* for each language
+varies, but the results are identical.
+
+So, let's begin...
