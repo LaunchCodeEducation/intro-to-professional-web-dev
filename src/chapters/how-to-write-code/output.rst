@@ -67,6 +67,8 @@ character with the special representation ``\n``.
 
 .. admonition:: Try It
 
+   Experiment with the newline character.
+
    .. replit:: js
       :slug: ConsoleLogExamples02
       :linenos:

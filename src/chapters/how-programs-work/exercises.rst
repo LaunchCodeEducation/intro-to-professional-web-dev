@@ -1,3 +1,0 @@
-Check Your Understanding
-=========================
-
