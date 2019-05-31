@@ -5,8 +5,7 @@ Unit Testing
    :maxdepth: 3
 
    why-test
-   what-to-test
-   jasmine
+   hello-jasmine
    jasmine-in-action
    tdd
    tdd-example

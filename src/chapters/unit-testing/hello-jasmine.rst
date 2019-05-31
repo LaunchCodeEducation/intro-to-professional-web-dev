@@ -1,5 +1,5 @@
-Testing With Jasmine
-====================
+Hello, Jasmine!
+===============
 
 .. index:: ! Jasmine
 
@@ -59,8 +59,8 @@ Let's build a "Hello, World!" Jasmine project, to get familiar with the basic co
    :slug: Hello-Jasmine-Starter-Code
    :linenos:
 
-   var Jasmine = require('jasmine');
-   var jasmine = new Jasmine();
+   const Jasmine = require('jasmine');
+   const jasmine = new Jasmine();
 
    jasmine.loadConfig({
       spec_dir: 'spec',
@@ -157,7 +157,7 @@ Within ``describe``'s function argument, place a test for case 1:
 .. sourcecode:: js
    
    it("should return custom message when name is specified", function(){
-      assert.equal(hello("Jasmine"), "Hello, Jasmine!");
+      assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
    });
    
 The ``it`` function is part of the Jasmine framework as well. Calling ``it`` creates a **specification**, or **spec**, which is a description of expected behavior. The first argument to ``it`` is a string describing the expected behavior. This string serves to document the test and is also used in reporting test results. Your expectation strings will usually begin with "should", followed by an expected action.
@@ -166,11 +166,15 @@ The second argument to ``it`` is yet another anonymouse function. This function 
 
 .. sourcecode:: js
    
-   assert.equal(hello("Jasmine"), "Hello, Jasmine!");
+   assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
 
-Calling ``assert.equal`` with two arguments declares that we expect the two arguments to be equal. As you get started with unit testing, nearly *all* of your tests will take this form. The first argument to ``assert.equal`` is a call to the function ``hello``. The second argument is the expected output from that function call. 
+Calling ``assert.strictEqual`` with two arguments declares that we expect the two arguments to be (strictly) equal. As you get started with unit testing, nearly *all* of your tests will take this form. The first argument to ``assert.strictEqual`` is a call to the function ``hello``. The second argument is the expected output from that function call. 
 
 If the two arguments are indeed equal, the test will pass. Otherwise, the test will fail. In this case, we are declaring that ``hello("Jasmine")`` should return the value ``"Hello, Jasmine!"``.
+
+.. note:: Jasmine also has a ``.equal`` comparison, which tests for *loose* equality. The difference between loose and strict equality with Jasmine is the same as that of :ref:`JavaScript in general <equality>`. 
+
+   For this reason, we prefer ``.strictEqual`` over ``.equal``.
 
 Your test file should now look like this:
 
@@ -183,7 +187,7 @@ Your test file should now look like this:
    describe("hello world test", function(){
 
       it("should return a custom message when name is specified", function(){
-         assert.equal(hello("Jasmine"), "Hello, Jasmine!");
+         assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
       });
 
    });
@@ -210,7 +214,7 @@ The most important line in the output is this one:
 
    1 spec, 0 failures
 
-It tells us that Jasmine found 1 test specification, and that 0 of the specs failed. In other words, *our test passed!*
+It tells us that Jasmine found 1 test specification, and that 0 of the specs failed. In other words, *our test passed!* The third line also contains useful information. It will contain one dot (``.``) for each successful test, and an ``F`` for each failed test. As our test suite grows, this becomes a nice visual indicator of the status of our tests.
 
 Let's see what a test failure looks like. Go back to ``hello.js`` and remove the ``"!"`` from the return statement:
 
@@ -267,7 +271,7 @@ Let's add a final spec to test our other case.
 .. sourcecode:: js
 
    it("should return a general greeting when name is not specified", function(){
-        assert.equal(hello(), "Hello, World!");
+        assert.strictEqual(hello(), "Hello, World!");
     });
 
 This spec declares that calling ``hello()`` should return ``"Hello, World!"``. Run the tests again and you'll see this output:
@@ -289,10 +293,10 @@ There are a lot of details in the setup of these tests, so take a few minutes to
 
 .. note:: 
 
-   There are many ways to structure test specifications. If you look at the official Jasmine documentation, you'll see specs with different code in place of ``assert.equal``:
+   There are many ways to structure test specifications. If you look at the official Jasmine documentation, you'll see specs with different code in place of ``assert.strictEqual``:
 
    .. sourcecode:: js
    
       expect(hello()).toBe("Hello, World!");
 
-   We have chosen to use ``assert.equal`` because its syntax is more similar to common testing frameworks in other languages like Java and C#. Learning to use ``assert.equal`` will make it easier for you to transition to one of those frameworks later in the class.
+   We have chosen to use ``assert.strictEqual`` because its syntax is more similar to common testing frameworks in other languages like Java and C#. Learning to use ``assert.strictEqual`` will make it easier for you to transition to one of those frameworks later in the class.
