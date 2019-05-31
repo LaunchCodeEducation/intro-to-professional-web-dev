@@ -14,7 +14,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -121,7 +120,7 @@ take it slow and handle these one at a time.</p>
 <li>The <code class="docutils literal notranslate"><span class="pre">rawData</span></code> is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
 </ul>
 </li>
-<li>Return -1 if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
+<li>Return -1 for the value <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
 </ol>
 </div>
 <div class="section" id="requirement-1">
@@ -286,17 +285,20 @@ review your code to make sure that it’s efficient and meets your team’s stan
 <div class="section" id="requirement-2">
 <h2>13.5.3. Requirement #2<a class="headerlink" href="#requirement-2" title="Permalink to this headline">¶</a></h2>
 <p><strong>Requirement:</strong> Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the transmission does NOT contain <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code>.</p>
-<p>We will follow the same steps to write this test and eventually make it green</p>
-<ol class="loweralpha simple">
+<p>Next we have a negative test requirement that tells us what should if the data is invalid.
+Before jumping into the code, let’s review the steps we took to implement requirement #1.</p>
+<p><strong>Review of TDD process:</strong></p>
+<ol class="arabic simple">
 <li>Create a blank test function.</li>
 <li>Give the test a name that describes that behavior the test verify.</li>
-<li>Think about then write code that fulfills the stated behavior.</li>
+<li>Come up with test data that will trigger the described behavior.</li>
+<li>Think about what is needed, then write code that fulfills the stated behavior.</li>
 <li>Run the test and see the it fail.</li>
-<li>Implement new code to make test pass.</li>
+<li>Implement the new code or feature used in the test.</li>
 <li>Run the test and see it pass.</li>
-<li>Do we need to refactor? Can the code be better?</li>
+<li>Review to see if refactor needed.</li>
 </ol>
-<p>See lines <strong>11 - 14</strong> for the solution to steps a. to c.</p>
+<p>For requirement #2, the solution for <strong>steps 1 - 4</strong> can be seen on lines <strong>11 - 14</strong> below.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -330,8 +332,8 @@ review your code to make sure that it’s efficient and meets your team’s stan
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
-<p>Error message displayed when you run the test. Notice that <code class="docutils literal notranslate"><span class="pre">-1</span></code> was
-the expected value, but the actual value was <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>Now for <strong>step 5</strong>, run the test and see it fail. When you run the tests, you should see the below
+error message. Notice that <code class="docutils literal notranslate"><span class="pre">-1</span></code> was the expected value, but the actual value was <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
 1) transmission processor returns -1 if &#39;::&#39; not found
 Message:
@@ -342,7 +344,7 @@ Message:
  + -1
 </pre></div>
 </div>
-<p>Code the solution. Go to <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> and update the <code class="docutils literal notranslate"><span class="pre">processor</span></code> function
+<p>Next is <strong>step 6</strong>, write code that will make the test pass. Go to <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> and update the <code class="docutils literal notranslate"><span class="pre">processor</span></code> function
 to check the <code class="docutils literal notranslate"><span class="pre">transmission</span></code> argument for the presence of <code class="docutils literal notranslate"><span class="pre">'::'</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -363,18 +365,24 @@ to check the <code class="docutils literal notranslate"><span class="pre">transm
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Run the tests again. They should both pass.</p>
+<p>Lucky <strong>step 7</strong> is to run the tests again. They should both pass.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2 specs, 0 failures
 Finished in 0.035 seconds
 </pre></div>
 </div>
+<p>Finally <strong>step 8</strong> is to review the code to see if it needs to be refactored. As with the first requirement
+our code is quite simple and can not be improved at this time.</p>
 </div>
 <div class="section" id="requirement-3">
 <h2>13.5.4. Requirement #3<a class="headerlink" href="#requirement-3" title="Permalink to this headline">¶</a></h2>
 <p><strong>Requirement:</strong> Returned object should contain an <code class="docutils literal notranslate"><span class="pre">id</span></code> property.
 The <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></p>
 <p>The same steps will be followed, even though they are not explicitly listed.</p>
-<p>See lines <strong>16 - 19</strong> to see the test added for this requirement.</p>
+<p>See lines <strong>16 - 19</strong> to see the test added for this requirement. To test
+this case <code class="docutils literal notranslate"><span class="pre">notStrictEqual</span></code> was used, which is checking if the two values
+are NOT equal. <code class="docutils literal notranslate"><span class="pre">notStrictEqual</span></code> is used to make sure that <code class="docutils literal notranslate"><span class="pre">result.id</span></code>
+is NOT equal to <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. Remember that if you reference a property on an
+object that does NOT exist, <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is returned.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -412,21 +420,19 @@ The <code class="docutils literal notranslate"><span class="pre">id</span></code
 
    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns id in object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
-     <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+     <span class="nx">assert</span><span class="p">.</span><span class="nx">notStrictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">);</span>
    <span class="p">});</span>
 
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
-<p>Fail Message</p>
+<p>The fail message looks a little different than what we have seen. The phrase
+“Identical input passed to notStrictEqual” lets us know that the two values
+were equal when we didn’t expect them to be.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
 1) transmission processor returns id in object
 Message:
-AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-+ expected - actual
-
-- false
-+ true
+   AssertionError [ERR_ASSERTION]: Identical input passed to notStrictEqual: undefined
 </pre></div>
 </div>
 <p>The object returned from <code class="docutils literal notranslate"><span class="pre">processor</span></code> doesn’t have an id property. We need to
@@ -466,34 +472,220 @@ Finished in 0.011 seconds
 <div class="section" id="requirement-4">
 <h2>13.5.5. Requirement #4<a class="headerlink" href="#requirement-4" title="Permalink to this headline">¶</a></h2>
 <p><strong>Requirement:</strong> The <code class="docutils literal notranslate"><span class="pre">id</span></code> property should be of type <code class="docutils literal notranslate"><span class="pre">Number</span></code></p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">THIS</p>
+<p>Again the same steps are followed, though not listed.</p>
+<p>New test to be added to <code class="docutils literal notranslate"><span class="pre">specs/processor.spec.js</span></code></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;converts id to a number&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+   <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="mi">9701</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fail Message</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
+1) transmission processor converts id to a number
+Message:
+   AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+   + expected - actual
+
+   - &#39;9701&#39;
+   + 9701
+</pre></div>
+</div>
+<p>Convert the id part of the string to be of type <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">transmission</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">transmission</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Data is invalid</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="nx">transmission</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">);</span>
+   <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nb">Number</span><span class="p">.</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+   <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now for the great feeling of a passing tests!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>4 specs, 0 failures
+Finished in 0.061 seconds
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">You may be wondering what happens if that data is bad and the id can’t be
+turned into a number. That is a negative test case related to this feature
+and is left for you to address in the final section.</p>
 </div>
 </div>
 <div class="section" id="requirement-5">
 <h2>13.5.6. Requirement #5<a class="headerlink" href="#requirement-5" title="Permalink to this headline">¶</a></h2>
 <p><strong>Requirement:</strong> Returned object should contain a <code class="docutils literal notranslate"><span class="pre">rawData</span></code> property. The <code class="docutils literal notranslate"><span class="pre">rawData</span></code>
 is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">THIS</p>
+<p>New test to be added to <code class="docutils literal notranslate"><span class="pre">specs/processor.spec.js</span></code></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns rawData in object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;487297403495720912&gt;&quot;</span><span class="p">);</span>
+   <span class="nx">assert</span><span class="p">.</span><span class="nx">notStrictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rawData</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fail Message</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
+1) transmission processor returns rawData in object
+Message:
+   AssertionError [ERR_ASSERTION]: Identical input passed to notStrictEqual: undefined
+</pre></div>
+</div>
+<p>We need to extract the rawData from the second half of the transmission string after it’s
+been split. Then return that in the object.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">transmission</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">transmission</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Data is invalid</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="nx">transmission</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">);</span>
+   <span class="kd">let</span> <span class="nx">rawData</span> <span class="o">=</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+   <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nb">Number</span><span class="p">.</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+      <span class="nx">rawData</span><span class="o">:</span> <span class="nx">rawData</span>
+   <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>It’s that time again, our tests pass!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>5 specs, 0 failures
+Finished in 0.041 seconds
+</pre></div>
 </div>
 </div>
 <div class="section" id="requirement-6">
 <h2>13.5.7. Requirement #6<a class="headerlink" href="#requirement-6" title="Permalink to this headline">¶</a></h2>
-<p><strong>Requirement:</strong> Return -1 if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT
-start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">THIS</p>
+<p><strong>Requirement:</strong> Return -1 for the value <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of
+the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p>
+<p>Let’s think about what test data to use for this requirement. What ways could the
+transmission data be invalid?</p>
+<ol class="arabic simple">
+<li>It could be missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning</li>
+<li>It could be missing <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> at the end</li>
+<li>It could be missing both <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
+<li>Has <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> but is in the wrong place</li>
+<li>Has <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> but is in the wrong place</li>
+</ol>
+<p>All these cases need to be covered by a test. Let’s start with #1, which
+is missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning.</p>
+<p>New test to be added to <code class="docutils literal notranslate"><span class="pre">specs/processor.spec.js</span></code></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns -1 for rawData if missing &lt; at position 0&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::487297403495720912&gt;&quot;</span><span class="p">);</span>
+   <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rawData</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fail Message</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
+1) transmission processor returns -1 for rawData if missing &lt; at position 0
+Message:
+   AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+   + expected - actual
+
+   - &#39;487297403495720912&gt;&#39;
+   + -1
+</pre></div>
+</div>
+<p>New code added to <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> to make tests pass. Note that we don’t simply return
+<code class="docutils literal notranslate"><span class="pre">-1</span></code>, the requirement is to return the object and set the value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> to <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">transmission</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">transmission</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Data is invalid</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="nx">transmission</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">);</span>
+   <span class="kd">let</span> <span class="nx">rawData</span> <span class="o">=</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">rawData</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!==</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">rawData</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nb">Number</span><span class="p">.</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+      <span class="nx">rawData</span><span class="o">:</span> <span class="nx">rawData</span>
+   <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>You know what’s next, our tests pass!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6 specs, 0 failures
+Finished in 0.056 seconds
+</pre></div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>The test data we used was missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning. Add tests
+to cover these cases. <code class="docutils literal notranslate"><span class="pre">-1</span></code> should be returned for all of these.</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::8729740349572&gt;0912&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">9701::4872&lt;97403495720912&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">9701::487297403495720912&quot;</span></code></li>
+</ul>
 </div>
 </div>
-<div class="section" id="try-these-on-your-own">
-<h2>13.5.8. Try These On Your Own<a class="headerlink" href="#try-these-on-your-own" title="Permalink to this headline">¶</a></h2>
-<p>Use TDD to add these features.</p>
+<div class="section" id="use-tdd-to-add-these-features">
+<h2>13.5.8. Use TDD to Add These Features<a class="headerlink" href="#use-tdd-to-add-these-features" title="Permalink to this headline">¶</a></h2>
+<p>Use the steps demonstrated above to implement all or some of the below features.
+Take your time, you can do it!</p>
 <ol class="arabic simple">
 <li>Trim leading and trailing whitespace from transmission.</li>
+<li>Return -1 if the id part of the transmission can not be converted to a number.</li>
 <li>Return -1 if more than one <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code> found in transmission</li>
 <li>Return -1 for value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if anything besides numbers are present</li>
 <li>Allow for multiple <code class="docutils literal notranslate"><span class="pre">rawData</span></code> values<ul>
