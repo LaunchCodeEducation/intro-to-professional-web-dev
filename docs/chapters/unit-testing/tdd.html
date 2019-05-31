@@ -86,17 +86,80 @@
     
   <div class="section" id="test-driven-development">
 <h1>13.4. Test-Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Write code that <em>works</em>!</li>
-</ul>
+<p>We all want to write code that <em>works</em>! How do you know if your code works? You can
+manually run your code and review a list of requirements to ensure all are covered.
+Or you could write a unit test for each requirement.</p>
+<span class="target" id="index-0"></span><span class="target" id="index-1"></span><p id="index-2"><strong>Test-driven development (TDD)</strong> is a software development process where every feature is
+proven to work by having a descriptive and passing unit test. This is enforced by focusing
+on the test first. The test process drives the progress of the code and feature.</p>
+<p>The TDD process requires a list of small features that are turned into unit tests.
+The focus on discrete aspects can lead to clean, clearly defined code.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Using the TDD process is not required when using unit tests. TDD is a process that some
+organizations choose to use.</p>
+</div>
 <div class="section" id="the-test-code-cycle">
 <h2>13.4.1. The Test/Code Cycle<a class="headerlink" href="#the-test-code-cycle" title="Permalink to this headline">¶</a></h2>
+<p>When adding a feature with the TDD process, you start by writing a unit test. As with any
+unit test, the test should describe a feature or behavior that the code supports.</p>
+<p>Because this test is for a feature that does NOT yet exist, we will have to think about
+how this feature will be implemented. Is a new parameter needed, maybe a entire new function?</p>
+<p>Next write the unit test as if the parameter or function you just imagined already exists.
+This may seem a bit odd, but the process of thinking through how new code will be used
+helps find bugs and design flaws earlier.</p>
+<p>Now run the test! The test should fail or possibly your code will not compile because you
+have referenced something that does not exist yet.</p>
+<p>Finally you write the code that will make the new test pass. Normally this is where you
+would have started, but with TDD the new working code is the last step.</p>
+<p>Coding this way builds confidence in your code. No matter how large your code base may
+get, you know that each part has a test to validate it’s functionality.</p>
 </div>
 <div class="section" id="red-green-refactor">
-<h2>13.4.2. Red, Green Refactor<a class="headerlink" href="#red-green-refactor" title="Permalink to this headline">¶</a></h2>
+<h2>13.4.2. Red, Green, Refactor<a class="headerlink" href="#red-green-refactor" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-3"></span><span class="target" id="index-4"></span><p id="index-5">While adding new features and making our code work is the main goal, we also want to write
+readable, efficient code that we are proud of. The red, green, refactor mantra
+describes the process of writing tests, seeing them pass, and then making the code better.
+This process is a cycle of three steps. The red and green colors refer to test results which
+are often styled with red for failing tests and green for passing tests.</p>
+<ol class="arabic">
+<li><p class="first">Red -&gt; Write a failing test.</p>
+</li>
+<li><p class="first">Green -&gt; Make it pass by implementing the code.</p>
+</li>
+<li><p class="first">Refactor -&gt; Make the code better.</p>
+<blockquote>
+<div><div class="figure" id="id1">
+<img alt="Graphic showing the cycle of phases from red the writing test, green making the test pass, and grey of refactoring code to be better which points back to red." src="../../_images/red-green-refactor-cycle.png" />
+<p class="caption"><span class="caption-text">Red, green, refactor cycle.</span></p>
 </div>
-<div class="section" id="self-documenting-code">
-<h2>13.4.3. Self-Documenting Code<a class="headerlink" href="#self-documenting-code" title="Permalink to this headline">¶</a></h2>
+</div></blockquote>
+</li>
+</ol>
+<p>Refactoring code means to keep the same overall feature, but change how that feature
+is implemented. Examples of this are using different data structures, reducing the
+number of times needed to loop through an array, or even moving duplicate logic into
+a function so it can be reused.</p>
+<p>The refactor will likely require that you change code used in the unit test. That’s ok,
+the refactor is also done in a TDD process. Decide what is the best way to implement the
+feature and then change the unit test to use this new idea. See the test fail, then
+implement the refactor idea. Finally see the tests pass with the refactored design.</p>
+<div class="admonition-todo admonition" id="index-6">
+<p class="first admonition-title">Todo</p>
+<p class="last">create our own version of this figure (I copied this from lynda site)</p>
+</div>
+</div>
+<div class="section" id="tests-as-documentation">
+<h2>13.4.3. Tests as Documentation<a class="headerlink" href="#tests-as-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Remembering what and why your code does may not seem hard at this time, however as the
+number of projects increase and size of the projects grow, so does the need for documentation.</p>
+<p>Documentation can be in the form of code comments or external text documents. These can
+be helpful, but have one major drawback which is that they can get out of date very
+quickly. Out dated, incorrect documentation is very frustrating for a user.</p>
+<p>Properly designed unit tests are runnable documentation for your project. Because unit
+tests are runnable code that declares and verifies features, they can NEVER get out of
+sync with the updated code. If feature is added or removed, the tests must be updated
+in order to make them pass.</p>
 </div>
 </div>
 
