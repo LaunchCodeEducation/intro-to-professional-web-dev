@@ -123,12 +123,15 @@ take it slow and handle these one at a time.</p>
 <li>Return -1 if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
 </ol>
 </div>
-<div class="section" id="let-s-get-started">
-<h2>13.6.2. Let’s Get Started!<a class="headerlink" href="#let-s-get-started" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Take in a transmission string and return an object <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</li>
+<div class="section" id="requirement-1">
+<h2>13.6.2. Requirement #1<a class="headerlink" href="#requirement-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirement:</strong> Take in a transmission string and return an object <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>To get started on this we need to:</p>
+<ol class="loweralpha simple">
+<li>Create a blank test function.</li>
+<li>Give the test a name that describes that behavior the test verify.</li>
 </ol>
-<p>We need to write our first test. Go to <code class="docutils literal notranslate"><span class="pre">processor.spec.js</span></code> and add a test method.</p>
+<p>Creating a blank test is easy, go to <code class="docutils literal notranslate"><span class="pre">processor.spec.js</span></code> and add an empty test method.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -148,10 +151,9 @@ take it slow and handle these one at a time.</p>
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
-<p>Now we can write code to verify the stated behavior. We need to take in
-a string and return an object. That is a clear and testable statement.
-Let’s write a test that uses a <code class="docutils literal notranslate"><span class="pre">process</span></code> function that takes a <code class="docutils literal notranslate"><span class="pre">string</span></code>
-and returns an <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>Now we need to give the test a name that is a clear, testable statement that
+describes the behavior of the feature we are testing. Give the test
+the name <code class="docutils literal notranslate"><span class="pre">&quot;takes</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object&quot;</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -164,13 +166,24 @@ and returns an <code class="docutils literal notranslate"><span class="pre">{}</
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
    <span class="p">});</span>
 
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
+<p>Now that we have a clear goal for this test, we can add logic and <code class="docutils literal notranslate"><span class="pre">assert</span></code>
+calls to verify the behavior we know should work. But wait, we haven’t added anything
+except <em>test</em> code at this point. There isn’t anything to verify!</p>
+<p>We are going to think about and visualize
+how this feature should in code. Then we will write out in the test how
+this new code will be used. Bear with it, this exercise is actually
+quite useful.</p>
+<p>We need think of something that will satisfy this statement
+<code class="docutils literal notranslate"><span class="pre">&quot;it(&quot;takes</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object&quot;,</span> <span class="pre">``.</span>
+<span class="pre">We</span> <span class="pre">have</span> <span class="pre">to</span> <span class="pre">determine</span> <span class="pre">what</span> <span class="pre">the</span> <span class="pre">``it</span></code> is. Let’s define <code class="docutils literal notranslate"><span class="pre">it</span></code> a function named
+<code class="docutils literal notranslate"><span class="pre">processor</span></code>, which is imported from a module named <code class="docutils literal notranslate"><span class="pre">processor</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -181,20 +194,302 @@ and returns an <code class="docutils literal notranslate"><span class="pre">{}</
  8
  9
 10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">processor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../processor.js&#39;</span><span class="p">);</span>
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="c1">// actual then expected</span>
-      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;123&gt;&quot;</span><span class="p">),</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
+
    <span class="p">});</span>
 
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
+<p>We have an idea for a function named <code class="docutils literal notranslate"><span class="pre">processor</span></code> and we have imported it.
+Keep in mind this function only exists as a concept and we are writing a test
+to see if this concept makes sense.</p>
+<p>Now the real meat of the test. We are going to use <code class="docutils literal notranslate"><span class="pre">assert.strictEqual</span></code> to
+verify that if we pass a string to <code class="docutils literal notranslate"><span class="pre">processor</span></code> that an <code class="docutils literal notranslate"><span class="pre">{}</span></code> is returned.
+Carefully review lines <strong>7</strong> and <strong>8</strong> shown below.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">processor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../processor.js&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">result</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="code-red">
+<h3>13.6.2.1. Code Red<a class="headerlink" href="#code-red" title="Permalink to this headline">¶</a></h3>
+<p>Let’s run the test! Click the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">&gt;</span></code> button in your repl.it.
+You should see an error about <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> not existing. And that makes sense
+we were using that module before we created it. We are officially in the Red
+phase of Red, Green, Refactor!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error: Cannot find module &#39;../processor.js&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="go-green">
+<h3>13.6.2.2. Go Green!<a class="headerlink" href="#go-green" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a failing test, we have only one choice. Make it pass.</p>
+<ol class="loweralpha simple">
+<li>Add a <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> file to your repl.it.</li>
+<li>Inside of the module declare a <code class="docutils literal notranslate"><span class="pre">processor</span></code> function that takes a parameter and returns <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</li>
+</ol>
+<p>Contents of new <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> file.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">transmission</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="p">{};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure" id="id1">
+<img alt="Screen shot showing processor.js file added to replit with function in it." src="../../_images/processor-module-added-to-replit.png" />
+<p class="caption"><span class="caption-text">processor.js file</span></p>
+</div>
+<p><strong>Run the test again.</strong></p>
+<p>We did it! <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">spec,</span> <span class="pre">0</span> <span class="pre">failures</span></code> means 1 passing
+test. In repl.it you have to imagine the satisfying green color of a passing test.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 spec, 0 failures
+Finished in 0.011 seconds
+</pre></div>
+</div>
+</div>
+<div class="section" id="refactor-if-needed">
+<h3>13.6.2.3. Refactor if Needed<a class="headerlink" href="#refactor-if-needed" title="Permalink to this headline">¶</a></h3>
+<p>This solution is very simple and does not need to be improved. The refactor step
+does not always lead to an actual changing of your code. The most important part is to
+review your code to make sure that it’s efficient and meets your team’s standards.</p>
+</div>
+</div>
+<div class="section" id="requirement-2">
+<h2>13.6.3. Requirement #2<a class="headerlink" href="#requirement-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirement:</strong> Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the transmission does NOT contain <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code>.</p>
+<p>We will follow the same steps to write this test and eventually make it green</p>
+<ol class="loweralpha simple">
+<li>Create a blank test function.</li>
+<li>Give the test a name that describes that behavior the test verify.</li>
+<li>Think about then write code that fulfills the stated behavior.</li>
+<li>Run the test and see the it fail.</li>
+<li>Implement new code to make test pass.</li>
+<li>Run the test and see it pass.</li>
+<li>Do we need to refactor? Can the code be better?</li>
+</ol>
+<p>See lines <strong>11 - 14</strong> for the solution to steps a. to c.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">processor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../processor.js&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">result</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
+   <span class="p">});</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns -1 if &#39;::&#39; not found&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Error message displayed when you run the test. Notice that <code class="docutils literal notranslate"><span class="pre">-1</span></code> was
+the expected value, but the actual value was <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
+1) transmission processor returns -1 if &#39;::&#39; not found
+Message:
+ AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+ + expected - actual
+
+ - &#39;object&#39;
+ + -1
+</pre></div>
+</div>
+<p>Code the solution. Go to <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> and update the <code class="docutils literal notranslate"><span class="pre">processor</span></code> function
+to check the <code class="docutils literal notranslate"><span class="pre">transmission</span></code> argument for the presence of <code class="docutils literal notranslate"><span class="pre">'::'</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">transmission</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">transmission</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Data is invalid</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="p">{};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Run the tests again. They should both pass.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2 specs, 0 failures
+Finished in 0.035 seconds
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirement-3">
+<h2>13.6.4. Requirement #3<a class="headerlink" href="#requirement-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirement:</strong> Returned object should contain an <code class="docutils literal notranslate"><span class="pre">id</span></code> property.
+The <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></p>
+<p>The same steps will be followed, even though they are not explicitly listed.</p>
+<p>See lines <strong>16 - 19</strong> to see the test added for this requirement.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">processor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../processor.js&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">result</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
+   <span class="p">});</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns -1 if &#39;::&#39; not found&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">});</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns id in object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
+     <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fail Message</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Failures:
+1) transmission processor returns id in object
+Message:
+AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
++ expected - actual
+
+- false
++ true
+</pre></div>
+</div>
+<p>The object returned from <code class="docutils literal notranslate"><span class="pre">processor</span></code> doesn’t have an id property. We need to
+split the transmission on <code class="docutils literal notranslate"><span class="pre">'::'</span></code> and then add that value to the object with
+the key <code class="docutils literal notranslate"><span class="pre">id</span></code>. See solution in <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> below.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">transmission</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">transmission</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Data is invalid</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="kd">let</span> <span class="nx">parts</span> <span class="o">=</span> <span class="nx">transmission</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;::&quot;</span><span class="p">);</span>
+   <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+   <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>That did it. The tests pass. :)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3 specs, 0 failures
+Finished in 0.011 seconds
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirement-4">
+<h2>13.6.5. Requirement #4<a class="headerlink" href="#requirement-4" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirement:</strong> The <code class="docutils literal notranslate"><span class="pre">id</span></code> property should be of type <code class="docutils literal notranslate"><span class="pre">Number</span></code></p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">THIS</p>
+</div>
+</div>
+<div class="section" id="requirement-5">
+<h2>13.6.6. Requirement #5<a class="headerlink" href="#requirement-5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirement:</strong> Returned object should contain a <code class="docutils literal notranslate"><span class="pre">rawData</span></code> property. The <code class="docutils literal notranslate"><span class="pre">rawData</span></code>
+is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">THIS</p>
+</div>
+</div>
+<div class="section" id="requirement-6">
+<h2>13.6.7. Requirement #6<a class="headerlink" href="#requirement-6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirement:</strong> Return -1 if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT
+start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">THIS</p>
+</div>
 </div>
 <div class="section" id="try-these-on-your-own">
-<h2>13.6.3. Try These On Your Own<a class="headerlink" href="#try-these-on-your-own" title="Permalink to this headline">¶</a></h2>
+<h2>13.6.8. Try These On Your Own<a class="headerlink" href="#try-these-on-your-own" title="Permalink to this headline">¶</a></h2>
 <p>Use TDD to add these features.</p>
 <ol class="arabic simple">
 <li>Trim leading and trailing whitespace from transmission.</li>
