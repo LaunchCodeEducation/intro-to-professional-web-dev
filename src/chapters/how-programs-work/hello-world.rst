@@ -1,3 +1,5 @@
+.. _hello-world:
+
 Your First Program
 ===================
 We haven’t learned how to code yet, but we can still write and run our first

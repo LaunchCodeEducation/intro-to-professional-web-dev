@@ -32,7 +32,7 @@ computer can understand the instructions.
 
 .. note::
 
-   Forutnately, we do not need to worry about binary or hexadecimal code to
+   Fortunately, we do not need to worry about binary or hexadecimal code to
    make our programs work!
 
 Languages
@@ -46,10 +46,10 @@ the binary or hexadecimal forms needed by machines.
 
 A **programming language** is a set of specific words and rules for teaching a
 computer how to perform a desired task. Examples of programming languages
-include Python, JavaScript, Basic, COBOL, C++, C#, Java and many others.
+include Python, JavaScript, Basic, COBOL, C++, C#, Java, and many others.
 
 These *high-level languages* can be written and understood by humans, and each
-one has its own characteristic vocabulary, style and syntax.
+one has its own characteristic vocabulary, style, and syntax.
 
 How Computers Run Programs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -83,7 +83,7 @@ However, most are either obsolete, impractical, or too specialized to be widely
 used.
 
 Arguments occur whenever someone makes a top 10 list for programming languages,
-but regardless of the opionons, one fact remains. Once you learn one language,
+but regardless of the opinions, one fact remains. Once you learn one language,
 learning the next is much, much easier. Adding a third becomes child's play.
 
 The reason for this is that thinking like a coder does not change with the
@@ -92,5 +92,3 @@ for JavaScript as they do for Python, Swift and C#. To display text on the
 screen in Python, we use ``print()``, for JavaScript we use ``console.log();``,
 for C# the command is ``Console.WriteLine();``. The *syntax* for each language
 varies, but the results are identical.
-
-So, let's begin...

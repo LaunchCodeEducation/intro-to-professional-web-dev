@@ -1,13 +1,10 @@
 Syntax Rules
 =============
 
-As we saw in chapter 2 [TODO: Add link], any programming language can display
-text on the screen. However, how each one accomplishes this varies.
-
 At their core, programming languages are collections of rules that allow us to
-tell a computer what to do. Actions like *Repeat ____ 25 times*, or *Prompt the
-user for a login name and password* can be done with any language. However,
-each one uses different methods to complete the tasks.
+tell a computer what to do. Actions like *Repeat ____ 25 times*, *Prompt the
+user for a password*, or *Display text on the screen* can be done with any
+language. However, each one uses different methods to complete the tasks.
 
 .. index:: ! syntax
 
@@ -31,12 +28,8 @@ examples include vanity license plates:
 
    * - Plate
      - Meaning
-   * - IM TIM
-     - I am Tim
    * - KC ROKS
      - Kansas City (or Casey?) Rocks
-   * - HIHOAG
-     - Hi, ho Silver!
    * - 4EVERL8
      - All parents who ever needed to get the kids to practice
 

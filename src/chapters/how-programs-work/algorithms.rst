@@ -12,7 +12,7 @@ about safely navigating a hyperspace jump. The computer does this by running a
 
 At the most basic level, a *program* is a set of instructions that tell a
 computer or other machine what to do. These instructions consist of a set of
-commands, calculations and manipulations that achieve a specific result.
+commands, calculations, and manipulations that achieve a specific result.
 However, the computer cannot solve the problem on its own. Someone---a
 programmer---had to figure out a series of steps for the computer to follow.
 Also, the programmer had to write these steps in a way the computer can
@@ -23,9 +23,8 @@ Algorithms
 
 Imagine following a recipe for baking a batch of cookies. After the list of
 ingredients comes a series of step-by-step instructions for producing the
-treats. If you want to make a cake instead (or a pie, or grilled cheese
-sandwiches, or parmesan chicken, etc.), then you follow a different set of
-steps using a different set of ingredients.
+treats. If you want to make something else, like a cake or a roast, you follow
+a different set of steps using a different set of ingredients.
 
 .. index:: ! algorithm
 

@@ -3,7 +3,7 @@ The JavaScript Language
 
 Each programming language has its own collection of advantages, drawbacks,
 conveniences, and annoying quirks. Certain tasks fit one particular language
-better than the others, but many tasks run equally well regarless of the
+better than the others, but many tasks run equally well regardless of the
 platform.
 
 .. index:: JavaScript

@@ -63,7 +63,7 @@ us to get data from the user.
 
 ``input =`` assigns all of these functions to ``input``.
 
-The meaning of ``const`` will be disucssed in the next chapter.
+The meaning of ``const`` will be discussed in the next chapter.
 
 How to Prompt the User
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,9 +130,8 @@ Run the new code several times, and try different responses to the input
 prompt. Note how the code stores the data inside ``name``, and then recalls
 that information by adding ``name`` to the ``console.log`` statement in line 5.
 
-Unlike ``console.log("Hello, " + input.question("Enter your name: "));``, by
-storing the user's name inside ``name``, we gain the ability to hold onto the
-data and use it when and where we see fit.
+By storing the user's name inside ``name``, we gain the ability to hold onto
+the data and use it when and where we see fit.
 
 Try adding another ``+ name`` term inside the ``()`` in line 5 and see what
 happens. Next, add code to line 4 to prompt the user for a second name. Store

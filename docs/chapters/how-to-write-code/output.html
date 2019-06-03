@@ -86,10 +86,11 @@
     
   <div class="section" id="output-with-console-log">
 <h1>3.4. Output With <code class="docutils literal notranslate"><span class="pre">console.log</span></code><a class="headerlink" href="#output-with-console-log" title="Permalink to this headline">¶</a></h1>
-<p>In the <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> section [LINK], you experimented with displaying text on
-the screen. Technically, you sent the words to the <strong>console</strong>, which is a
-simple window where the user can type commands or view output. We used a print
-function without explicitly talking about how it works. Let’s fix that now.</p>
+<p>In the <a class="reference internal" href="../how-programs-work/hello-world.html#hello-world"><span class="std std-ref">Hello World</span></a> section, you experimented with
+displaying text on the screen. Technically, you sent the words to the
+<strong>console</strong>, which is a simple window where the user can type commands or view
+output. We used a print function without explicitly talking about how it works.
+Let’s fix that now.</p>
 <p>We <em>call</em> the print function using the syntax <code class="docutils literal notranslate"><span class="pre">console.log()</span></code>. When the code
 runs, we want it to tell the computer, <em>Please display what is inside the () on
 the screen</em>. For us, the words are enough - we want to LOG the text to the
@@ -105,39 +106,28 @@ outputs:</p>
 3
 4
 5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello, JavaScript.&#39;</span><span class="p">);</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello, JavaScript.&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2001</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Spot&quot;</span><span class="p">,</span> <span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="s2">&quot;difference&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Spot&quot;</span><span class="p">,</span><span class="s2">&quot;the&quot;</span><span class="p">,</span><span class="s2">&quot;difference&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;This&#39;</span><span class="o">+</span><span class="s1">&#39;and&#39;</span><span class="o">+</span><span class="s1">&#39;That.&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Launch&#39;</span> <span class="o">+</span> <span class="s1">&#39;Code&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode was founded in&quot;</span><span class="p">,</span> <span class="mi">2013</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2 + 2 =&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Launch&quot;</span> <span class="o">+</span> <span class="s2">&quot;Code&quot;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/ConsoleLogExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>Observations line by line:</p>
 <ol class="arabic simple">
-<li>In the line 1, we print some text (formally called a string), which is
-surrounded by quotes.</li>
+<li>In the line 1, we print some text, which is surrounded by quotes.</li>
 <li>In the line 2, we print a number. Note the absence of quote marks.</li>
-<li>In line 3, we use three strings, separated by commas, all within the same
-set of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. When these print, they show up on the same line
-but separated by spaces.</li>
+<li>In line 3, we use three words, separated by commas, all within the same
+set of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. When these three words print, they show up on
+the same line but separated by spaces.</li>
 <li>The code in line 4 is just like line 3, only there are no spaces after the
 commas. How does this affect the output?</li>
-<li>Line 5 also prints three strings, but in this case the code uses <code class="docutils literal notranslate"><span class="pre">+</span></code>
-instead of commas. The result is to print the strings without spaces in
+<li>Line 5 also prints more words, but in this case the code uses <code class="docutils literal notranslate"><span class="pre">+</span></code>
+instead of a comma. The result is to print the words without spaces in
 between.</li>
-<li>Line 6 prints a string and a number with a space in between.</li>
-<li>Line 7 has a formula (2+2) in the second “slot” of the <code class="docutils literal notranslate"><span class="pre">console.log</span></code>
-statement. Note that the formula is evaluated before printing, so the
-output is the number 4.</li>
-<li>Line 8 is similar to line 5. The two words are printed with no space in
-between. Remember, separating strings with <code class="docutils literal notranslate"><span class="pre">,</span></code> adds a space between them
-on the screen, but using <code class="docutils literal notranslate"><span class="pre">+</span></code> eliminates the space.</li>
+<li>Line 6 prints text and a number with a space in between.</li>
 </ol>
 </div>
 <div class="section" id="two-special-characters">
@@ -154,9 +144,9 @@ character with the special representation <code class="docutils literal notransl
 <p>Experiment with the newline character.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;LaunchCode Hubs, Circa Fall 2016:&quot;</span><span class="p">);</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Some Programming Languages:&quot;</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;St. Louis\nMiami\nRhode Island\nKansas City&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Python\nJavaScript\nJava\nC#\nSwift&quot;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/ConsoleLogExamples02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
