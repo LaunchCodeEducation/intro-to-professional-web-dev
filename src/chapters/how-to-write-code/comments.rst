@@ -37,6 +37,5 @@ multiple lines, the text falls between the symbols ``/*   */``.
 
 Notice that when you run the program, it still prints the phrase ``Hello,
 World``, but none of the comments appear. Also notice the blank lines left in
-the code, which are also ignored by the interpreter. Comments
-and blank lines make your programs much easier for humans to understand. Use
-them frequently!
+the code, which are also ignored by the compiler. Comments and blank lines make
+your programs much easier for humans to understand. Use them frequently!
