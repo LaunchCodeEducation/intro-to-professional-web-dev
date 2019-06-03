@@ -1,20 +1,22 @@
 Introduction
 =============
 
-.. index:: ! program
-
-At the most basic level, a **program** is a set of instructions that tell a
-computer or other machine what to do. These instructions consist of a set of
-commands, calculations and manipulations that achieve a specific result.
-
    "It'll take a few moments to get the coordinates from the navicomputer."
    - Han Solo
 
+.. index:: ! program
+
 Given a set of inputs, Han's computer analyzes the data and returns information
-about safely navigating a hyperspace jump. However, the computer cannot solve
-the problem on its own. Someone---a programmer---had to figure out a series of
-steps for the computer to follow. Also, the programmer had to write these steps
-in a way the computer can understand.
+about safely navigating a hyperspace jump. The computer does this by running a
+**program**.
+
+At the most basic level, a *program* is a set of instructions that tell a
+computer or other machine what to do. These instructions consist of a set of
+commands, calculations and manipulations that achieve a specific result.
+However, the computer cannot solve the problem on its own. Someone---a
+programmer---had to figure out a series of steps for the computer to follow.
+Also, the programmer had to write these steps in a way the computer can
+understand.
 
 Algorithms
 ----------
@@ -28,12 +30,9 @@ steps using a different set of ingredients.
 .. index:: ! algorithm
 
 An **algorithm** is like a recipe. It is a systematic series of steps that,
-when followed, produce a specific result to help solve a problem.
-
-All big problems can be broken down into smaller, simpler pieces. Using this
-divide and conquer strategy, programmers design algorithms to solve the small
-pieces in a carefully planned way. The results then get combined to produce a
-final answer or action.
+when followed, produce a specific result to help solve a problem. Programmers
+design algorithms to solve these small steps in a carefully planned way. The
+results then get combined to produce a final answer or action.
 
 Let's take a look at an example of an algorithm---alphabetizing a list of
 words:

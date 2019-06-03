@@ -86,6 +86,153 @@
     
   <div class="section" id="input-with-readline-sync">
 <h1>3.5. Input with <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code><a class="headerlink" href="#input-with-readline-sync" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">console.log</span></code> works fine for printing static (unchanging) messages to the
+screen. If we wanted to print a phrase greeting a specific user, then
+<code class="docutils literal notranslate"><span class="pre">console.log(&quot;Hello,</span> <span class="pre">Dave.&quot;);</span></code> would be OK as long as Dave is the actual
+user.</p>
+<p>What if we want to greet someone else? We can change the text inside the <code class="docutils literal notranslate"><span class="pre">()</span></code>
+to be ‘Hello, Sarah,’ or ‘Hello, Elastigirl,’ or any other name we need.
+However, this is inefficient. Also, what if we do not know the name of the user
+beforehand? We need to make the code more general and able to respond to
+different conditions.</p>
+<span class="target" id="index-0"></span><p id="index-1">To do this, we can ask the user to enter a name, and then print that data using
+<code class="docutils literal notranslate"><span class="pre">console.log</span></code>. We have to get <strong>input</strong> from the user. This involves
+displaying a <strong>prompt</strong> on the screen (e.g. “Please enter a number: “), and
+then waiting for the user to respond. Whatever information the user enters gets
+stored for later use.</p>
+<p>As we saw earlier, each programming language has its own way of accomplishing
+the same task. For example, the Python syntax is <code class="docutils literal notranslate"><span class="pre">input(&quot;Please</span> <span class="pre">enter</span> <span class="pre">your</span>
+<span class="pre">name:</span> <span class="pre">&quot;)</span></code>, while C# uses <code class="docutils literal notranslate"><span class="pre">Console.ReadLine();</span></code>.</p>
+<p>JavaScript also has a built-in module for collecting data from the user, called
+<code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>. Unfortunately, using this module requires more than a single
+line of code.</p>
+<div class="section" id="syntax">
+<h2>3.5.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>Gathering input from the user requires the following setup:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="sb">`readline-sync`</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Question text... &quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>There is a lot going on here behind the scenes, but for now you should follow
+this bit of wisdom:</p>
+<blockquote>
+<div>I turn the key, and it goes.</div></blockquote>
+<p>Most of us do not need to know all the details about how cars, phones, or
+microwave ovens work. We just know enough to interact with them in our day to
+day lives. Similarly, we do not need to understand how <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> works
+at this time. We just need to know enough to collect information from a user.</p>
+<p>As you move through the course, you WILL learn about all of the pieces that fit
+together to make this process work. For now, here is a brief overview.</p>
+<div class="section" id="load-the-module">
+<h3>3.5.1.1. Load the Module<a class="headerlink" href="#load-the-module" title="Permalink to this headline">¶</a></h3>
+<p>In line 1 <code class="docutils literal notranslate"><span class="pre">require(`readline-sync`)</span></code> pulls in all the functions that allow
+us to get data from the user.</p>
+<p><code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">=</span></code> assigns all of these functions to <code class="docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<p>The meaning of <code class="docutils literal notranslate"><span class="pre">const</span></code> will be disucssed in the next chapter.</p>
+</div>
+<div class="section" id="how-to-prompt-the-user">
+<h3>3.5.1.2. How to Prompt the User<a class="headerlink" href="#how-to-prompt-the-user" title="Permalink to this headline">¶</a></h3>
+<p>To display a prompt and wait for a response, we use the following syntax:
+<code class="docutils literal notranslate"><span class="pre">input.question(&quot;Question</span> <span class="pre">text...</span> <span class="pre">&quot;);</span></code>.</p>
+<p>When JavaScript evaluates the expression, it follows the instructions:</p>
+<ol class="arabic simple">
+<li>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</li>
+<li>Wait for the user to respond.</li>
+</ol>
+<p>For our greeting program, we would code <code class="docutils literal notranslate"><span class="pre">input.question(&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span>
+<span class="pre">&quot;);</span></code>. The user enters a name and presses the Return or Enter key. When
+this happens, any text entered is collected by the input function.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Let’s play around with the <code class="docutils literal notranslate"><span class="pre">input</span></code> statement. Open the repl.it link below
+and click the “Run” button.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="sb">`readline-sync`</span><span class="p">);</span>
+
+<span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/InputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<p>Note that after entering a name, the program does not actually DO anything with
+the information. If we want to print the data as part of a message, we need to
+put it inside a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement. <code class="docutils literal notranslate"><span class="pre">input.question()</span></code> can be used
+just like any other sample of text.</p>
+<p>Change line 3 to
+<code class="docutils literal notranslate"><span class="pre">console.log(&quot;Hello,</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">input.question(&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">&quot;));</span></code>, then run the
+code several times, trying different responses to the input prompt. The program
+collects the user’s information first, and then prints the output.</p>
+</div>
+<div class="section" id="storing-the-data-for-later">
+<h3>3.5.1.3. Storing the Data for Later<a class="headerlink" href="#storing-the-data-for-later" title="Permalink to this headline">¶</a></h3>
+<p>As written, our code prompts the user for information just before that data
+gets used. What if we need to collect input but use it at a later time?</p>
+<p>JavaScript (and all other programming languages) allow us to store data inside
+a container called a <em>variable</em>. Do not worry about the nitty-gritty technical
+details here. In the next chapter we dive deep into the concepts behind data
+and variables.</p>
+<p>For now, let’s assign a container called <code class="docutils literal notranslate"><span class="pre">name</span></code> to store the name entered by
+the user. Modify your code as follows:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="sb">`readline-sync`</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Run the new code several times, and try different responses to the input
+prompt. Note how the code stores the data inside <code class="docutils literal notranslate"><span class="pre">name</span></code>, and then recalls
+that information by adding <code class="docutils literal notranslate"><span class="pre">name</span></code> to the <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement in line 5.</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">console.log(&quot;Hello,</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">input.question(&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">&quot;));</span></code>, by
+storing the user’s name inside <code class="docutils literal notranslate"><span class="pre">name</span></code>, we gain the ability to hold onto the
+data and use it when and where we see fit.</p>
+<p>Try adding another <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">name</span></code> term inside the <code class="docutils literal notranslate"><span class="pre">()</span></code> in line 5 and see what
+happens. Next, add code to line 4 to prompt the user for a second name. Store
+the response in <code class="docutils literal notranslate"><span class="pre">name2</span></code>, then print both names using the <code class="docutils literal notranslate"><span class="pre">console.log</span></code>
+statement.</p>
+</div>
+</div>
+<div class="section" id="last-input-detail">
+<h2>3.5.2. Last Input Detail<a class="headerlink" href="#last-input-detail" title="Permalink to this headline">¶</a></h2>
+<p>There is one very important quirk about the JavaScript input function that you
+need to understand. From an earlier example, we printed the sum of two numbers
+using <code class="docutils literal notranslate"><span class="pre">console.log(7</span> <span class="pre">+</span> <span class="pre">2);</span></code>. In this case, the output would be <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
+<p>Now explore the following code, which prompts the user for two numbers and then
+prints their sum:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="sb">`readline-sync`</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">num1</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">num2</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/InputExamples02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Run the program, enter your choice of numbers, and examine the output. Do you
+see what you expected?</p>
+<p>If we enter <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>, we expect an output of <code class="docutils literal notranslate"><span class="pre">9</span></code>.  We do NOT expect
+<code class="docutils literal notranslate"><span class="pre">72</span></code>, but that is the result printed. What gives?!?!?</p>
+<p>The quirk with the <code class="docutils literal notranslate"><span class="pre">input</span></code> function is that it <em>treats all entries as text</em>,
+so numbers get combined rather than added.  Just like “Hello, ” + “World”
+outputs as <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code>, “7” + “2” outputs as <code class="docutils literal notranslate"><span class="pre">72</span></code>.</p>
+<blockquote>
+<div>JavaScript treats input entries as text!</div></blockquote>
+<p>In the next chapter, we will learn how to make JavaScript treat a text input as
+a numerical value.</p>
+</div>
 </div>
 
 
