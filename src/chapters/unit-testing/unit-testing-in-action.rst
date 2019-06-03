@@ -211,7 +211,9 @@ You might think that another edge case is that of the longest possible palindrom
 Toward a Better Testing Workflow
 --------------------------------
 
-In this case, we had a well-written function to write tests for, so it was straightforward to create tests that pass. Most situations will not be this simple. You will often find yourself writing tests for code only to discover a bug, forcing you to go back and update your code. That's okay! This is precisely what tests are for.
+In this case, we had a well-written function to write tests for, so it was straightforward to create tests that
+pass. Most situations will not be this simple. Your tests will often uncover bugs, forcing you to go back and
+update your code. That's okay! This is precisely what tests are for.
 
 The workflow for this situation is:
 
@@ -219,9 +221,9 @@ The workflow for this situation is:
 #. Write tests
 #. Fix any bugs found while testing
 
-The rest of the chapter focuses on a programming technique that allows you to completly *eliminate* the third step, by reversing the order of the first two:
+The rest of the chapter focuses on a programming technique that allows you to completely *eliminate* the third step, by reversing the order of the first two:
 
 #. Write tests
 #. Write code
 
-As you will soon learn, writing your tests *before* writing your code is a great way to enhance your programming efficiency and quality.
+As you will soon learn, writing your tests *before* the code is a great way to enhance your programming efficiency and quality.

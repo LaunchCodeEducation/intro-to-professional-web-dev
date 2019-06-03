@@ -94,27 +94,26 @@ where the unit tests are written first. However that doesn’t tell the entire s
 Writing the tests first and intentionally thinking more about the code design leads to
 better code. The name comes from the idea of the tests <em>driving</em> the development process.</p>
 <p>Before we can start using TDD, we need a list of discrete features that can be turned into
-unit tests. This will help keep our tests and code easy to read and will build or confidence
-as we add functionality.</p>
+unit tests. This will help keep our tests focused on specific functionality which should
+lead to code that is easy to read. Along the way we will build confidence as we add features.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Using the TDD process is not required when using unit tests. TDD is a process that some
-organizations choose to use.</p>
+<p class="last">TDD is a process that some organizations choose to use. Using the TDD process is not required when using unit tests.</p>
 </div>
 <div class="section" id="the-test-code-cycle">
 <h2>13.4.1. The Test/Code Cycle<a class="headerlink" href="#the-test-code-cycle" title="Permalink to this headline">¶</a></h2>
 <p>With TDD you start with the unit test first. As with any unit test, the test should describe
 a feature or behavior that the code supports.</p>
-<p>Because this unit test is for a feature that does NOT yet exist, we will have to think about
-how this feature will be implemented. Is a new parameter needed, maybe a entire new function?</p>
-<p>Next write the unit test as if the parameter or function you just imagined already exists.
-This may seem a bit odd, but the process of thinking through how new code will be used
-helps avoid bugs and design flaws earlier.</p>
+<p>Because the test is for a feature that does NOT exist <em>yet</em>, we need to think about how the
+feature will be implemented. This is the time to ask questions like. Should we add a new
+parameter? What about an entirely new function? What will the function return?</p>
+<p>Next, write the unit test as if the parameter or function you imagined already exists.
+This may seem a bit odd, but considering how new code will be used helps find bugs and flaws earlier.</p>
 <p>Now run the test! The test should fail or possibly your code will not compile because you
 have referenced code that does not exist yet.</p>
 <p>Finally, write code to pass the new test. In the earlier chapters, this is where you started,
 but with TDD writing new code is the <em>last</em> step.</p>
-<p>Coding this way builds confidence in your code. No matter how large your code base may
+<p>Coding this way builds confidence in your work. No matter how large your code base may
 get, you know that each part has a test to validate it’s functionality.</p>
 </div>
 <div class="section" id="red-green-refactor">
@@ -122,8 +121,9 @@ get, you know that each part has a test to validate it’s functionality.</p>
 <span class="target" id="index-3"></span><span class="target" id="index-4"></span><span class="target" id="index-5"></span><p id="index-6">While adding new features and making our code work is the main goal, we also want to write
 readable, efficient code that makes us proud. The red, green, refactor mantra
 describes the process of writing tests, seeing them pass, and then making the code better.
-This process is a cycle of three steps. The red and green colors refer to test results which
-are often styled with red for failing tests and green for passing tests.</p>
+As the name suggests, the cycle consists of three steps. Red refers to test results that fail,
+while green represents tests that pass. The colors refer to test results
+which are often styled with red for failing tests and green for passing tests.</p>
 <ol class="arabic">
 <li><p class="first">Red -&gt; Write a failing test.</p>
 </li>

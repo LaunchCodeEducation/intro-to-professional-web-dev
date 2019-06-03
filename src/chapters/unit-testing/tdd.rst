@@ -19,13 +19,12 @@ Writing the tests first and intentionally thinking more about the code design le
 better code. The name comes from the idea of the tests *driving* the development process.
 
 Before we can start using TDD, we need a list of discrete features that can be turned into
-unit tests. This will help keep our tests and code easy to read and will build or confidence
-as we add functionality.
+unit tests. This will help keep our tests focused on specific functionality which should
+lead to code that is easy to read. Along the way we will build confidence as we add features.
 
 .. note::
 
-   Using the TDD process is not required when using unit tests. TDD is a process that some
-   organizations choose to use.
+   TDD is a process that some organizations choose to use. Using the TDD process is not required when using unit tests.
 
 
 The Test/Code Cycle
@@ -33,12 +32,12 @@ The Test/Code Cycle
 With TDD you start with the unit test first. As with any unit test, the test should describe
 a feature or behavior that the code supports.
 
-Because this unit test is for a feature that does NOT yet exist, we will have to think about
-how this feature will be implemented. Is a new parameter needed, maybe a entire new function?
+Because the test is for a feature that does NOT exist *yet*, we need to think about how the
+feature will be implemented. This is the time to ask questions like. Should we add a new
+parameter? What about an entirely new function? What will the function return?
 
-Next write the unit test as if the parameter or function you just imagined already exists.
-This may seem a bit odd, but the process of thinking through how new code will be used
-helps avoid bugs and design flaws earlier.
+Next, write the unit test as if the parameter or function you imagined already exists.
+This may seem a bit odd, but considering how new code will be used helps find bugs and flaws earlier.
 
 Now run the test! The test should fail or possibly your code will not compile because you
 have referenced code that does not exist yet.
@@ -46,7 +45,7 @@ have referenced code that does not exist yet.
 Finally, write code to pass the new test. In the earlier chapters, this is where you started,
 but with TDD writing new code is the *last* step.
 
-Coding this way builds confidence in your code. No matter how large your code base may
+Coding this way builds confidence in your work. No matter how large your code base may
 get, you know that each part has a test to validate it's functionality.
 
 
@@ -67,8 +66,9 @@ Red, Green, Refactor
 While adding new features and making our code work is the main goal, we also want to write
 readable, efficient code that makes us proud. The red, green, refactor mantra
 describes the process of writing tests, seeing them pass, and then making the code better.
-This process is a cycle of three steps. The red and green colors refer to test results which
-are often styled with red for failing tests and green for passing tests.
+As the name suggests, the cycle consists of three steps. Red refers to test results that fail,
+while green represents tests that pass. The colors refer to test results
+which are often styled with red for failing tests and green for passing tests.
 
 1. Red -> Write a failing test.
 2. Green -> Make it pass by implementing the code.

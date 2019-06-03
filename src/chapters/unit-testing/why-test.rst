@@ -38,19 +38,22 @@ What about this situation?
 
 .. pull-quote:: You write feature #1 for a program. You then move on to feature #2. After finishing feature #2, you realize that your changes broke feature #1.
 
-This is frustrating, right? With larger programs, it is common that adding can have unexpected consequences for other parts of a program, potentially breaking them. The introduction of such a bug is known as a **regression**. 
+This is frustrating, right? Especially with larger programs, adding new features often causes unexpected
+problems in other parts of the code, potentially breaking the entire program. The introduction of such a bug is
+known as a **regression**.
 
-If you have a collection of tests that can run quickly and consistently, you will know *right away* if a regression has been introduced to a program. This will allow you to identify and fix it more quickly.
+If you have a collection of tests that can run quickly and consistently, you will know *right away* when a
+regression appears in your program. This allows you to identify and fix it more quickly.
 
 Tests as Documentation
 ----------------------
 
 .. index:: ! self-documenting code
 
-One of the most power aspects of unit testing is that it allows us to clearly define program expectations.
-As you will soon see, a good collection of unit tests can function as a set of *statements* about *how*
+One of the most powerful aspects of unit testing is that it allows us to clearly define program expectations.
+A good collection of unit tests can function as a set of *statements* about *how*
 the program should behave. You and others can read the tests and quickly get an idea of the specifics of
-program behavior. 
+program behavior.
 
 .. admonition:: Example
 
@@ -58,8 +61,9 @@ program behavior.
 
 Code with a good, descriptive set of unit tests is sometimes called **self-documenting code**.
 
-Remembering what and why your code does may not seem hard at this time, however as the
-number of projects increase and size of the projects grow, so does the need for documentation.
+Remembering what your code does and why you structured it a certain way is easy for small programs.
+However, as the number of your projects increase and their size grows, the need for documentation
+becomes critical.
 
 Documentation can be in the form of code comments or external text documents. These can
 be helpful, but have one major drawback which is that they can get out of date very

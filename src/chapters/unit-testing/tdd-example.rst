@@ -31,7 +31,7 @@ The features for this project have already been broken down into
 small testable units. Let's review them and then we will
 take it slow, one step at a time.
 
-#. Take in a transmission string and return an object ``{}``.
+#. Take in a transmission string and return an object.
 #. Return ``-1`` if the transmission does NOT contain ``"::"``.
 #. Returned object should contain an ``id`` property
 
@@ -47,31 +47,32 @@ take it slow, one step at a time.
 
 Requirement #1
 --------------
-**Requirement:** Take in a transmission string and return an object ``{}``.
+*Requirement:* Take in a transmission string and return an object.
 
 To get started on this we need to:
 
 a. Create a blank test function.
-b. Give the test a name that describes that behavior the test verify.
+b. Give the test a name that is a clear, testable statement.
 
 Creating a blank test is easy, go to ``processor.spec.js`` and add an empty test method.
+Tests in Jasmine are declared with an ``it`` function.
+Remember that tests go inside of the ``describe`` function, which along with the string
+parameter describe the group of tests inside.
 
 .. sourcecode:: js
    :linenos:
 
    const assert = require('assert');
 
-   describe("data-processor", function() {
+   describe("transmission processor", function() {
 
       it("", function(){
-         
+
       });
 
    });
 
-Now we need to give the test a name that is a clear, testable statement that
-describes the behavior of the feature we are testing. Give the test
-the name ``"takes a string returns an object"``.
+Give the test the name ``"takes a string returns an object"``.
 
 .. sourcecode:: js
    :linenos:
@@ -86,18 +87,18 @@ the name ``"takes a string returns an object"``.
 
    });
 
-Now that we have a clear goal for this test, we can add logic and ``assert``
-calls to verify the behavior we know should work. But wait, we haven't added anything
-except *test* code at this point. There isn't anything to verify!
+Now that we identified a clear goal for the test, let's add logic and ``assert`` calls
+in the test to verify the desired behavior. *But wait...* we haven't added anything
+except an empty at this point. There isn't any actual code to verify. That's okay,
+this is part of the TDD process.
 
 We are going to think about and visualize
-how this feature should in code. Then we will write out in the test how
-this new code will be used. Bear with it, this exercise is actually
-quite useful.
+how this feature should be implemented in code. Then we will write out in the test how
+this new code will be used.
 
 We need think of something that will satisfy this statement
-``"it("takes a string returns an object", ``.
-We have to determine what the ``it`` is. Let's define ``it`` a function named
+``it("takes a string returns an object",``.
+We have to determine what the ``it`` is. Let's define ``it`` as a function named
 ``processor``, which is imported from a module named ``processor``.
 
 .. sourcecode:: js
@@ -118,9 +119,9 @@ We have an idea for a function named ``processor`` and we have imported it.
 Keep in mind this function only exists as a concept and we are writing a test
 to see if this concept makes sense.
 
-Now the real meat of the test. We are going to use ``assert.strictEqual`` to
-verify that if we pass a string to ``processor`` that an ``{}`` is returned.
-Carefully review lines **7** and **8** shown below.
+Now for the real heart of the test. We are going to use ``assert.strictEqual`` to
+verify that if we pass a string to ``processor`` that an object is returned.
+Carefully review lines 7 and 8 shown below.
 
 .. sourcecode:: js
    :linenos:
@@ -137,12 +138,17 @@ Carefully review lines **7** and **8** shown below.
 
    });
 
+On line 7 the ``processor`` function is called, with the value being stored in a ``result``
+variable. On line 8 the result of the expression ``typeof result`` is compared to the value
+``"object"``. Reminder that the :ref:`typeof operator <typeof>` returns a string representation
+of a type. If ``typeof result`` evaluates to the string ``"object"``, then we know that ``processor``
+returned an object.
+
 Code Red
 ^^^^^^^^
 Let's run the test! Click the ``run >`` button in your repl.it.
-You should see an error about ``processor.js`` not existing. And that makes sense
-we were using that module before we created it. We are officially in the Red
-phase of Red, Green, Refactor!
+You should see an error about ``processor.js`` not existing. This makes sense, because we have not
+created the file yet. We are officially in the Red phase of Red, Green, Refactor!
 
 ::
 
@@ -154,9 +160,9 @@ Go Green!
 Now that we have a failing test, we have only one choice. Make it pass.
 
 a. Add a ``processor.js`` file to your repl.it.
-b. Inside of the module declare a ``processor`` function that takes a parameter and returns ``{}``.
+b. Inside of the module declare a ``processor`` function that takes a parameter and returns an object.
 
-Contents of new ``processor.js`` file.
+Contents of the new ``processor.js`` file.
 
 .. sourcecode:: js
    :linenos:
@@ -173,7 +179,7 @@ Contents of new ``processor.js`` file.
 
        processor.js file
 
-**Run the test again.**
+*Run the test again.*
 
 We did it! ``1 spec, 0 failures`` means 1 passing
 test. In repl.it you have to imagine the satisfying green color of a passing test.
@@ -191,15 +197,15 @@ review your code to make sure that it's efficient and meets your team's standard
 
 Requirement #2
 --------------
-**Requirement:** Return ``-1`` if the transmission does NOT contain ``"::"``.
+*Requirement:* Return ``-1`` if the transmission does NOT contain ``"::"``.
 
-Next we have a negative test requirement that tells us what should if the data is invalid.
+Next we have a negative test requirement that tells us what should happen if the data is invalid.
 Before jumping into the code, let's review the steps we took to implement requirement #1.
 
-**Review of TDD process:**
+Review of TDD process:
 
 1. Create a blank test function.
-2. Give the test a name that describes that behavior the test verify.
+2. Give the test a name that is a clear, testable statement.
 3. Come up with test data that will trigger the described behavior.
 4. Think about what is needed, then write code that fulfills the stated behavior.
 5. Run the test and see the it fail.
@@ -207,7 +213,7 @@ Before jumping into the code, let's review the steps we took to implement requir
 7. Run the test and see it pass.
 8. Review to see if refactor needed.
 
-For requirement #2, the solution for **steps 1 - 4** can be seen on lines **11 - 14** below.
+For requirement #2, the solution for *steps 1 - 4* can be seen on lines *11 - 14* below.
 
 .. sourcecode:: js
    :linenos:
@@ -229,8 +235,8 @@ For requirement #2, the solution for **steps 1 - 4** can be seen on lines **11 -
 
    });
 
-Now for **step 5**, run the test and see it fail. When you run the tests, you should see the below
-error message. Notice that ``-1`` was the expected value, but the actual value was ``{}``.
+Now for *step 5*, run the test and see it fail. When you run the tests, you should see the below
+error message. Notice that ``-1`` was the expected value, but the actual value was ``'object'``.
 ::
 
    Failures:
@@ -242,7 +248,7 @@ error message. Notice that ``-1`` was the expected value, but the actual value w
     - 'object'
     + -1
 
-Next is **step 6**, write code that will make the test pass. Go to ``processor.js`` and update the ``processor`` function
+Next is *step 6*, write code that will make the test pass. Go to ``processor.js`` and update the ``processor`` function
 to check the ``transmission`` argument for the presence of ``'::'``.
 
 .. sourcecode:: js
@@ -258,25 +264,25 @@ to check the ``transmission`` argument for the presence of ``'::'``.
 
    module.exports = process;
 
-Lucky **step 7** is to run the tests again. They should both pass.
+Lucky *step 7* is to run the tests again. They should both pass.
 
 ::
 
    2 specs, 0 failures
    Finished in 0.035 seconds
 
-Finally **step 8** is to review the code to see if it needs to be refactored. As with the first requirement
+Finally *step 8* is to review the code to see if it needs to be refactored. As with the first requirement
 our code is quite simple and can not be improved at this time.
 
 
 Requirement #3
 --------------
-**Requirement:** Returned object should contain an ``id`` property.
+*Requirement:* Returned object should contain an ``id`` property.
 The ``id`` is the part of the transmission *before* the ``"::"``
 
 The same steps will be followed, even though they are not explicitly listed.
 
-See lines **16 - 19** to see the test added for this requirement. To test
+See lines *16 - 19* to see the test added for this requirement. To test
 this case ``notStrictEqual`` was used, which is checking if the two values
 are NOT equal. ``notStrictEqual`` is used to make sure that ``result.id``
 is NOT equal to ``undefined``. Remember that if you reference a property on an
@@ -348,7 +354,7 @@ That did it. The tests pass. :)
 
 Requirement #4
 --------------
-**Requirement:** The ``id`` property should be of type ``Number``
+*Requirement:* The ``id`` property should be of type ``Number``
 
 Again the same steps are followed, though not listed.
 
@@ -388,7 +394,7 @@ Convert the id part of the string to be of type ``number``.
       }
       let parts = transmission.split("::");
       return {
-         id: Number.parseInt(parts[0])
+         id: Number(parts[0])
       };
    }
 
@@ -410,7 +416,7 @@ Now for the great feeling of a passing tests!
 
 Requirement #5
 --------------
-**Requirement:** Returned object should contain a ``rawData`` property. The ``rawData``
+*Requirement:* Returned object should contain a ``rawData`` property. The ``rawData``
 is the part of the transmission *after* the ``"::"``
 
 New test to be added to ``specs/processor.spec.js``
@@ -447,7 +453,7 @@ been split. Then return that in the object.
       let parts = transmission.split("::");
       let rawData = parts[1];
       return {
-         id: Number.parseInt(parts[0]),
+         id: Number(parts[0]),
          rawData: rawData
       };
    }
@@ -464,7 +470,7 @@ It's that time again, our tests pass!
 
 Requirement #6
 --------------
-**Requirement:** Return -1 for the value ``rawData`` if the ``rawData`` part of
+*Requirement:* Return -1 for the value ``rawData`` if the ``rawData`` part of
 the transmission does NOT start with ``<`` and end with ``>``
 
 Let's think about what test data to use for this requirement. What ways could the
@@ -519,7 +525,7 @@ New code added to ``processor.js`` to make tests pass. Note that we don't simply
          rawData = -1;
       }
       return {
-         id: Number.parseInt(parts[0]),
+         id: Number(parts[0]),
          rawData: rawData
       };
    }
@@ -536,11 +542,13 @@ You know what's next, our tests pass!
 .. admonition:: Try It!
 
    The test data we used was missing ``<`` at the beginning. Add tests
-   to cover these cases. ``-1`` should be returned for all of these.
+   to cover these cases. ``-1`` should be returned as the value for
+   ``rawData`` for all of these.
 
    * ``"9701::8729740349572>0912"``
    * ``9701::4872<97403495720912"``
    * ``9701::487297403495720912"``
+   * ``9701::<487297403495<720912>"``
 
 
 Use TDD to Add These Features
@@ -548,9 +556,9 @@ Use TDD to Add These Features
 Use the steps demonstrated above to implement all or some of the below features.
 Take your time, you can do it!
 
-#. Trim leading and trailing whitespace from transmission.
-#. Return -1 if the id part of the transmission can not be converted to a number.
-#. Return -1 if more than one ``"::"`` found in transmission
+#. Trim leading and trailing whitespace from ``transmission``.
+#. Return -1 if the ``id`` part of the ``transmission`` can not be converted to a number.
+#. Return -1 if more than one ``"::"`` found in ``transmission``
 #. Return -1 for value of ``rawData`` if anything besides numbers are present
 #. Allow for multiple ``rawData`` values
 

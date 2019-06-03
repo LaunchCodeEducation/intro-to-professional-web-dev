@@ -196,7 +196,7 @@ Test Reporting
 
 This is a fully-functioning test file. Hit *run* to see for yourself. If all goes well, the output will look like this:
 
-.. sourcecode:: terminal
+.. sourcecode:: none
    :linenos:
 
    Randomized with seed 00798
@@ -224,7 +224,7 @@ Let's see what a test failure looks like. Go back to ``hello.js`` and remove the
 
 Run the tests again. This time, the output looks quite different:
 
-.. sourcecode:: terminal
+.. sourcecode:: none
    :linenos:
 
    Randomized with seed 98738
