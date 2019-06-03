@@ -22,7 +22,7 @@ Installing Jasmine with NPM is simple:
    + jasmine@3.4.0
    updated 3 packages in 0.425s
 
-The ``-g`` flag install Jasmine *globally*, as opposed to *locally* (for only the current project directory).
+The ``-g`` flag installs Jasmine *globally*, as opposed to *locally* (for only the current project directory).
 
 Using repl.it removes the need to install Jasmine, since it will do so automatically. 
 
@@ -55,7 +55,7 @@ Hello, Jasmine!
 
 Let's build a "Hello, World!" Jasmine project, to get familiar with the basic components. Open and fork `this repl.it project <https://repl.it/@launchcode/Hello-Jasmine-Starter-Code>`_
 
-We will walk you through the steps need to get a simple Jasmine project up and running. Code along with us throughout this section.
+We will walk you through the steps needed to get a simple Jasmine project up and running. Code along with us throughout this section.
 
 
 ``index.js``
@@ -196,7 +196,8 @@ Test Reporting
 
 This is a fully-functioning test file. Hit *run* to see for yourself. If all goes well, the output will look like this:
 
-::
+.. sourcecode:: terminal
+   :linenos:
 
    Randomized with seed 00798
    Started
@@ -221,47 +222,42 @@ Let's see what a test failure looks like. Go back to ``hello.js`` and remove the
 
    return "Hello, " + name;
 
-Run the tests again. This time, the output looks different:
+Run the tests again. This time, the output looks quite different:
 
-::
+.. sourcecode:: terminal
+   :linenos:
 
-   Randomized with seed 01378
+   Randomized with seed 98738
    Started
-   F
+   ..F..
 
    Failures:
-   1) hello should return a custom message when name is specified
+   1) hello world test should return a custom message when name is specified
    Message:
-      AssertionError [ERR_ASSERTION]: 'Hello, Jasmine' == 'Hello, Jasmine!'
+      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+      + expected - actual
+
+      - 'Hello, Jasmine'
+      + 'Hello, Jasmine!'
    Stack:
-      error properties: Object({ generatedMessage: true, code: 'ERR_ASSERTION', actual: 'Hello, Jasmine', expected: 'Hello, Jasmine!', operator: '==' })
+      error properties: Object({ generatedMessage: true, code: 'ERR_ASSERTION', actual: 'Hello, Jasmine', expected: 'Hello, Jasmine!', operator: 'strictEqual' })
          at <Jasmine>
-         at UserContext.<anonymous> (/home/runner/spec/hello.spec.js:7:16)
+         at UserContext.<anonymous> (/home/runner/spec/reverse.spec.js:23:14)
          at <Jasmine>
          at runCallback (timers.js:705:18)
          at tryOnImmediate (timers.js:676:5)
          at processImmediate (timers.js:658:5)
 
-   1 spec, 1 failure
-   Finished in 0.023 seconds
-   Randomized with seed 01378 (jasmine --random=true --seed=01378)
-   exit status 1
+   1 specs, 1 failure
+   Finished in 0.021 seconds
 
-The test report summary now includes:
+We intentionally made a test fail. The failing test appears in the ``Failures:`` section on line 5. This
+describes exactly what went wrong. The test expected the value ``'Hello, Jasmine!'`` but received ``'Hello, Jasmine'``.
+Notice that the failure description is the result of joining the two string arguments from ``describe`` and ``it``.
+This is why we intentionally defined those strings the way we did.
 
-::
-
-   1 spec, 1 failure
-
-Additionally, information about the failure is provided. The most useful part of this message is:
-
-::
-
-   1) hello should return custom a message when name is specified
-   Message:
-      AssertionError [ERR_ASSERTION]: 'Hello, Jasmine' == 'Hello, Jasmine!'
-
-This describes exactly what went wrong. The test expected ``'Hello, Jasmine!'`` but received ``'Hello, Jasmine'``. Notice that the failure description is the result of joining the two string arguments from ``describe`` and ``it``. This is why we intentionally defined those strings the way we did. 
+The ``Stack:`` section on line 13 can be mostly ignored for now.
+Line 22 has a key statistic showing how many tests, called specs, were run and how many failed ``1 specs, 1 failure``.
 
 Put ``hello.js`` back as it was and run the tests again to make sure it works.
 

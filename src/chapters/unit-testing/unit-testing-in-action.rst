@@ -55,11 +55,11 @@ Code along with us by forking `our repl.it starter code project <https://repl.it
 
 .. tip:: When creating a unit-tested project, *always* start by copying the Jasmine test runner code into ``index.js`` and putting the code you want to test in an appropriately named ``.js`` file.
 
-You have become used to testing your code by running it and printint output with ``console.log``. When writing unit-tested code, we no longer need to take this approach. 
+You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach. 
 
 .. tip:: If you find yourself tempted to add a ``console.log`` statement to your code, write a unit test instead! You would mostly likely remove that ``console.log`` after getting your code to work, while the test will remain for you and other developers to use in the future.
 
-Finally, create ``spec/`` and add a spec file, ``palindrome.spec.js``. This file should include imports and a describe block:
+Finally, create ``spec/`` folder and add a spec file, ``palindrome.spec.js``. This file should include imports and a describe block:
 
 .. sourcecode:: js
    :linenos:
@@ -88,7 +88,9 @@ We'll start with positive and negative tests. For ``isPalindrome``, some positiv
 - ``"aba"``
 - ``"racecar"``
 
-Calling ``isPalindrome`` with these inputs should return ``true`` in each case. Notice that these tests are a simple as possible. Keeping test inputs simple, while still covering your desired test cases, will make it easier to fix a but in the event that a unit test failes.
+Calling ``isPalindrome`` with these inputs should return ``true`` in each case. Notice that these tests are a
+simple as possible. Keeping test inputs simple, while still covering your desired test cases, will make it
+easier to fix a bug in the event that a unit test fails.
 
 Let's add tests for these inputs to ``spec/palindrome.spec.js``:
 
@@ -141,11 +143,18 @@ When writing our ``isPalindrome`` function initially, we made two important deci
 
 The definition of a palindrome differs sometimes on these two matters, so it's important to test them.
 
-Testing with input ``"abA"``` ensures that case is considered, since the lowercase version of this string, ``"aba"``, *is* a palindrome. Testing with ``"so many dynamos"`` ensures that whitespace is considered, since the version of this string with whitespace removed, ``"somanydynamos"``, *is* a palindrome.
+Testing with input ``"abA"``` ensures that case is considered, since the lowercase version of this string, ``"aba"``,
+*is* a palindrome. Testing with ``"so many dynamos"`` ensures that whitespace is considered, since the version of
+this string with whitespace removed, ``"somanydynamos"``, *is* a palindrome.
 
-.. note:: It's important to isolate your test cases. For example, ``"So Many Dynamos"`` is a poor choice of input for a negative test, since it contains *two* characteristics that are being tested for, case and the presence of whitespace. If a test with this input failed, it would NOT be clear why it failed.
+.. note::
 
-Including specific tests that demonstrate how *our* ``isPalindrome`` function behaves in these situations helps make our code *self-documenting*. Someone can read our tests and easily see that we *do* consider case and whitespace.
+   It's important to isolate your test cases. For example, ``"So Many Dynamos"`` is a poor choice of input
+   for a negative test, since it contains *two* characteristics that are being tested for - case and whitespace. If
+   a test with this input failed, it would NOT be clear why it failed.
+
+Including specific tests that demonstrate how *our* ``isPalindrome`` function behaves in these situations helps
+make our code *self-documenting*. Someone can read our tests and easily see that we *do* consider case and whitespace.
 
 Let's add some test for these negative cases. Add these within the ``describe`` call.
 
@@ -166,7 +175,7 @@ Let's add some test for these negative cases. Add these within the ``describe`` 
    it("should consider whitespace", function(){
       assert.strictEqual(isPalindrome("so many dynamos"), false);
    });
-   
+
 Now run the tests to make sure they pass. Your code now includes a set of tests that considers a wide variety of positive and negative cases.
 
 Edge Cases
@@ -182,7 +191,7 @@ Edge cases can look very different for different units of code. Most of the exam
 
 In the case of ``isPalindrome``, the most obvious edge case would be that of the empty string, ``""``. This is the smallest possible string that we can use when calling ``isPalindrome``. Not only is it the smallest, but it is essentially *different* from the next longest string, ``"a"``---one has characters and one doesn't. 
 
-Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is not right or wrong answer. In our case, we have decided to take a very literal definition of the term "palindrome" by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of ``""`` is also ``""``, it makes sense to consider the emtpy string a palindrome.
+Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is no right or wrong answer. In our case, we decided to take a very literal definition of the term "palindrome" by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of ``""`` is also ``""``, it makes sense to consider the emtpy string a palindrome.
 
 Let's add this test case to our spec:
 

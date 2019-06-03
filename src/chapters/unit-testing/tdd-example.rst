@@ -1,7 +1,7 @@
 TDD in Action
 =============
 
-Fork `this repl.it <https://repl.it/@launchcode/Transmission-processor-TDD-starter>`_
+`Fork our starter code repl.it <https://repl.it/@launchcode/Transmission-processor-TDD-starter>`_
 and follow along as we implement a project using TDD.
 
 We need to write a Node module to process transmissions from the
@@ -28,19 +28,19 @@ We need to write a Node module to process transmissions from the
 Requirements
 ------------
 The features for this project have already been broken down into
-small testable units. Let's review these and then we will
-take it slow and handle these one at a time.
+small testable units. Let's review them and then we will
+take it slow, one step at a time.
 
 #. Take in a transmission string and return an object ``{}``.
 #. Return ``-1`` if the transmission does NOT contain ``"::"``.
 #. Returned object should contain an ``id`` property
 
-   * The ``id`` is the part of the transmission *before* the ``"::"``
+   * The value of ``id`` is the part of the transmission *before* the ``"::"``
 
 #. The ``id`` property should be of type ``Number``
 #. Returned object should contain a ``rawData`` property
 
-   * The ``rawData`` is the part of the transmission *after* the ``"::"``
+   * The value of ``rawData`` is the part of the transmission *after* the ``"::"``
 
 #. Return -1 for the value ``rawData`` if the ``rawData`` part of the transmission does NOT start with ``<`` and end with ``>``
 

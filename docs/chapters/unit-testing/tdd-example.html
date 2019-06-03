@@ -85,7 +85,7 @@
     
   <div class="section" id="tdd-in-action">
 <h1>13.5. TDD in Action<a class="headerlink" href="#tdd-in-action" title="Permalink to this headline">¶</a></h1>
-<p>Fork <a class="reference external" href="https://repl.it/&#64;launchcode/Transmission-processor-TDD-starter" target="_blank">this repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/Transmission-processor-TDD-starter" target="_blank">Fork our starter code repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 and follow along as we implement a project using TDD.</p>
 <p>We need to write a Node module to process transmissions from the
 <a class="reference external" href="https://voyager.jpl.nasa.gov/mission/" target="_blank">Voyager1 probe<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
@@ -106,18 +106,18 @@ and follow along as we implement a project using TDD.</p>
 <div class="section" id="requirements">
 <h2>13.5.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>The features for this project have already been broken down into
-small testable units. Let’s review these and then we will
-take it slow and handle these one at a time.</p>
+small testable units. Let’s review them and then we will
+take it slow, one step at a time.</p>
 <ol class="arabic simple">
 <li>Take in a transmission string and return an object <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</li>
 <li>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the transmission does NOT contain <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code>.</li>
 <li>Returned object should contain an <code class="docutils literal notranslate"><span class="pre">id</span></code> property<ul>
-<li>The <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
+<li>The value of <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
 </ul>
 </li>
 <li>The <code class="docutils literal notranslate"><span class="pre">id</span></code> property should be of type <code class="docutils literal notranslate"><span class="pre">Number</span></code></li>
 <li>Returned object should contain a <code class="docutils literal notranslate"><span class="pre">rawData</span></code> property<ul>
-<li>The <code class="docutils literal notranslate"><span class="pre">rawData</span></code> is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
+<li>The value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
 </ul>
 </li>
 <li>Return -1 for the value <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>

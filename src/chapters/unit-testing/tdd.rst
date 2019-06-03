@@ -1,9 +1,5 @@
 Test-Driven Development
 =======================
-We all want to write code that *works*! How do you know if your code works? You can
-manually run your code and review a list of requirements to ensure all are covered.
-Or you could write a unit test for each requirement.
-
 .. index:: ! TDD
 
 .. index::
@@ -12,12 +8,19 @@ Or you could write a unit test for each requirement.
 .. index::
    single: unit testing; TDD
 
-**Test-driven development (TDD)** is a software development process where every feature is
-proven to work by having a descriptive and passing unit test. This is enforced by focusing
-on the test first. The test process drives the progress of the code and feature.
+Now that we know more about unit testing, we are going to learn a new way of using them.
+So far we have written tests to verify functionality of *existing* code. Next we are going
+to use tests to verify functionality of code that does NOT already exist. This may sound
+odd, but this process has many benefits as we will learn.
 
-The TDD process requires a list of small features that are turned into unit tests.
-The focus on discrete aspects can lead to clean, clearly defined code.
+As the name sounds **Test-driven development (TDD)** is a software development process
+where the unit tests are written first. However that doesn't tell the entire story.
+Writing the tests first and intentionally thinking more about the code design leads to
+better code. The name comes from the idea of the tests *driving* the development process.
+
+Before we can start using TDD, we need a list of discrete features that can be turned into
+unit tests. This will help keep our tests and code easy to read and will build or confidence
+as we add functionality.
 
 .. note::
 
@@ -27,21 +30,21 @@ The focus on discrete aspects can lead to clean, clearly defined code.
 
 The Test/Code Cycle
 -------------------
-When adding a feature with the TDD process, you start by writing a unit test. As with any
-unit test, the test should describe a feature or behavior that the code supports.
+With TDD you start with the unit test first. As with any unit test, the test should describe
+a feature or behavior that the code supports.
 
-Because this test is for a feature that does NOT yet exist, we will have to think about
+Because this unit test is for a feature that does NOT yet exist, we will have to think about
 how this feature will be implemented. Is a new parameter needed, maybe a entire new function?
 
 Next write the unit test as if the parameter or function you just imagined already exists.
 This may seem a bit odd, but the process of thinking through how new code will be used
-helps find bugs and design flaws earlier.
+helps avoid bugs and design flaws earlier.
 
 Now run the test! The test should fail or possibly your code will not compile because you
-have referenced something that does not exist yet.
+have referenced code that does not exist yet.
 
-Finally you write the code that will make the new test pass. Normally this is where you
-would have started, but with TDD the new working code is the last step.
+Finally, write code to pass the new test. In the earlier chapters, this is where you started,
+but with TDD writing new code is the *last* step.
 
 Coding this way builds confidence in your code. No matter how large your code base may
 get, you know that each part has a test to validate it's functionality.
@@ -56,10 +59,13 @@ Red, Green, Refactor
    single: TDD; red green refactor
 
 .. index::
+   single: TDD; red, green, refactor
+
+.. index::
    single: unit testing; red green refactor
 
 While adding new features and making our code work is the main goal, we also want to write
-readable, efficient code that we are proud of. The red, green, refactor mantra
+readable, efficient code that makes us proud. The red, green, refactor mantra
 describes the process of writing tests, seeing them pass, and then making the code better.
 This process is a cycle of three steps. The red and green colors refer to test results which
 are often styled with red for failing tests and green for passing tests.
@@ -75,28 +81,14 @@ are often styled with red for failing tests and green for passing tests.
        Red, green, refactor cycle.
 
 Refactoring code means to keep the same overall feature, but change how that feature
-is implemented. Examples of this are using different data structures, reducing the
+is implemented. Since we have a test to verify our code, we can change the code with
+confidence, knowing that any regression will be immediately identified by the test.
+Here are a few examples of refactoring using different data structures, reducing the
 number of times needed to loop through an array, or even moving duplicate logic into
 a function so it can be reused.
 
-The refactor will likely require that you change code used in the unit test. That's ok,
-the refactor is also done in a TDD process. Decide what is the best way to implement the
+The refactor is also done in a TDD process. Decide on what is the improved way of implementing the
 feature and then change the unit test to use this new idea. See the test fail, then
 implement the refactor idea. Finally see the tests pass with the refactored design.
 
 .. todo:: create our own version of this figure (I copied this from lynda site)
-
-
-Tests as Documentation
-----------------------
-Remembering what and why your code does may not seem hard at this time, however as the
-number of projects increase and size of the projects grow, so does the need for documentation.
-
-Documentation can be in the form of code comments or external text documents. These can
-be helpful, but have one major drawback which is that they can get out of date very
-quickly. Out dated, incorrect documentation is very frustrating for a user.
-
-Properly designed unit tests are runnable documentation for your project. Because unit
-tests are runnable code that declares and verifies features, they can NEVER get out of
-sync with the updated code. If feature is added or removed, the tests must be updated
-in order to make them pass.
