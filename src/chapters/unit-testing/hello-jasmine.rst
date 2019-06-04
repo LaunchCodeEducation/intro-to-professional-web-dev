@@ -10,7 +10,7 @@ We will use `Jasmine <https://jasmine.github.io/>`_, a popular JavaScript testin
 Using Jasmine
 -------------
 
-.. index:: 
+.. index::
    single: Jasmine; installing
 
 Installing Jasmine with NPM is simple:
@@ -29,7 +29,7 @@ Using repl.it removes the need to install Jasmine, since it will do so automatic
 .. admonition:: Try It!
 
    Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-With-Tests>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
-   
+
    Don't worry about understanding the code at this point, just hit *run* to execute the tests. How many total tests are there? How many passed? How many failed? 
 
 .. index::
@@ -56,7 +56,6 @@ Hello, Jasmine!
 Let's build a "Hello, World!" Jasmine project, to get familiar with the basic components. Open and fork `this repl.it project <https://repl.it/@launchcode/Hello-Jasmine-Starter-Code>`_
 
 We will walk you through the steps needed to get a simple Jasmine project up and running. Code along with us throughout this section.
-
 
 ``index.js``
 ^^^^^^^^^^^^
@@ -92,6 +91,8 @@ There are three main components of this program:
    - Jasmine searches for tests, finding none.
 
 Let's add some code to test.
+
+.. _hello.js:
 
 ``hello.js``
 ^^^^^^^^^^^^
@@ -137,6 +138,8 @@ Below that, call the function ``describe``, passing in the name of the function 
    describe("hello", function(){
 
    });
+
+.. _feedback:
 
 Specifications and Assertions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

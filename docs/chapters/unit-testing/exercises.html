@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -86,139 +87,16 @@
   <div class="section" id="exercises-unit-testing">
 <h1>13.6. Exercises: Unit Testing<a class="headerlink" href="#exercises-unit-testing" title="Permalink to this headline">¶</a></h1>
 <p>In many of your previous coding tasks, you had to verify that your code
-worked before moving to the next step. Many times, this required you to add
-<code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to your code to check the values stored in the
-varialbles or returned from a function.</p>
-<p>You probably also encountered a number of bugs in your code samples that
-required you to step through your programs to find syntax, reference, or logic
-errors. You applied <code class="docutils literal notranslate"><span class="pre">console.log</span></code> and other tricks to help fix the
-mistakes.</p>
-<p>The following exercises begin with a debugging review and continue with an
-introduction to automatic testing. The goal is to write code to test your code,
-rather than throwing in <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to check your work.</p>
-<div class="section" id="manual-testing">
-<h2>13.6.1. Manual Testing<a class="headerlink" href="#manual-testing" title="Permalink to this headline">¶</a></h2>
-<p>Assume that a team member wrote the following code:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">createLaunchOutput</span><span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-
-   <span class="nx">entry</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
-
-   <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
-      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Crew ready for launch. Shuttle offline.&quot;</span><span class="p">;</span>
-   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="o">%</span><span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
-      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Shuttle ready for launch. Crew asleep.&quot;</span><span class="p">;</span>
-   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">entry</span><span class="o">%</span><span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
-      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;Crew and shuttle ready. Cleared for launch!&quot;</span><span class="p">;</span>
-   <span class="p">}</span>
-
-   <span class="k">return</span> <span class="nx">output</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="sb">`readline-sync`</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter the launch code (must be an integer): &quot;</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">createLaunchOutput</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
-</pre></div>
-</td></tr></table></div>
-<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/UnitTestingExercises01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-<p>The program must accomplish the following:</p>
-<ol class="arabic simple">
-<li>If the user enters a number divisible only by 2, print <code class="docutils literal notranslate"><span class="pre">'Crew</span> <span class="pre">ready</span> <span class="pre">for</span>
-<span class="pre">launch.</span> <span class="pre">Shuttle</span> <span class="pre">offline.'</span></code></li>
-<li>If the user enters a number divisible only by 3, print <code class="docutils literal notranslate"><span class="pre">'Shuttle</span> <span class="pre">ready</span> <span class="pre">for</span>
-<span class="pre">launch.</span> <span class="pre">Crew</span> <span class="pre">asleep.'</span></code></li>
-<li>If the user enters a number divisible by both 2 and 3, print <code class="docutils literal notranslate"><span class="pre">'Crew</span> <span class="pre">and</span>
-<span class="pre">shuttle</span> <span class="pre">ready.</span> <span class="pre">Cleared</span> <span class="pre">for</span> <span class="pre">launch!'</span></code></li>
-<li>If the user enters a number that is NOT divisible by 2 OR 3, print <code class="docutils literal notranslate"><span class="pre">'Crew</span>
-<span class="pre">and</span> <span class="pre">shuttle</span> <span class="pre">unresponsive.</span> <span class="pre">Launch</span> <span class="pre">aborted!'</span></code></li>
-<li>If the user enters a string, a decimal, or just hits return, print <code class="docutils literal notranslate"><span class="pre">'ARRR!</span>
-<span class="pre">Raid</span> <span class="pre">yonder</span> <span class="pre">shuttle!'</span></code></li>
-</ol>
-<div class="section" id="test-for-errors">
-<h3>13.6.1.1. Test for Errors<a class="headerlink" href="#test-for-errors" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">createLaunchOutput</span></code> runs, so there are no syntax errors, but does the
-program produce the correct output?</p>
-<ol class="loweralpha simple">
-<li>Consider the following inputs: 22, 33, 6, 0, and 7. What output should
-the program produce in each case?</li>
-<li>Run the code as-is and <em>test</em> it with each of the inputs. Do any of the
-values produce incorrect output?</li>
-</ol>
-</li>
-<li><p class="first">Using the techniques you already learned, fix the code so that any integer
-input produces the correct output.</p>
-</li>
-<li><p class="first">We <em>tested</em> the code with integers. What if the user types in something
-else?</p>
-<ol class="loweralpha">
-<li><p class="first">Add the following validation check to the <code class="docutils literal notranslate"><span class="pre">createLaunchOutput</span></code>
-function:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">createLaunchOutput</span><span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-
-   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">entry</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">isNaN</span><span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="o">||</span> <span class="nx">entry</span> <span class="o">===</span> <span class="s1">&#39; &#39;</span><span class="p">){</span>
-      <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;ARRR! Raid yonder shuttle!&quot;</span><span class="p">;</span>
-      <span class="k">return</span> <span class="nx">output</span><span class="p">;</span>
-   <span class="p">}</span>
-
-   <span class="nx">entry</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
-<span class="nx">etc</span><span class="p">...</span>
-</pre></div>
-</td></tr></table></div>
-</li>
-<li><p class="first">Run the updated program and <em>test</em> it with the inputs: 2.22, ‘H’, and ‘’.
-Which entries produce incorrect output?</p>
-</li>
-<li><p class="first">Fix the new code so that it correctly returns <code class="docutils literal notranslate"><span class="pre">'ARRR!</span> <span class="pre">Raid</span> <span class="pre">yonder</span>
-<span class="pre">shuttle!'</span></code> for the empty string, decimal values, and non-numerical
-inputs.</p>
-</li>
-</ol>
-</li>
-<li><p class="first">Once the code returns the correct output for all of the suggested input
-values, continue to <em>test</em> it with your own entries. Make sure your fixes
-all work.</p>
-</li>
-</ol>
-<p>Good! You are now ready to <em>automate</em> the testing process.</p>
-</div>
-</div>
-<div class="section" id="automatic-testing">
-<h2>13.6.2. Automatic Testing<a class="headerlink" href="#automatic-testing" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="start-small">
-<h3>13.6.2.1. Start Small<a class="headerlink" href="#start-small" title="Permalink to this headline">¶</a></h3>
+worked before moving to the next step. This often required you to add
+<code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to your code to check the value stored in a variable
+or returned from a function. This approach finds and fixes syntax, reference,
+or logic errors AFTER you write your code.</p>
+<p>In this chapter, you learned how to use unit testing to solve coding errors.
+Even better, you learned how to PREVENT mistakes by writing test cases before
+completing the code. The exercises below offer practice with using tests to
+find bugs, and the studio asks you to implement TDD.</p>
+<div class="section" id="automatic-testing-to-find-errors">
+<h2>13.6.1. Automatic Testing to Find Errors<a class="headerlink" href="#automatic-testing-to-find-errors" title="Permalink to this headline">¶</a></h2>
 <p>Let’s begin with the following, simple code:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -247,8 +125,8 @@ all work.</p>
 </td></tr></table></div>
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/UnitTestingExercises02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>The function checks to see if a number is greater than, less than, or equal to
-5. We do not really need a function to do this, but it provides a good first
-practice.</p>
+5. We do not really need a function to do this, but it provides good practice
+for writing test cases.</p>
 <p>Note that the repl.it contains three files:</p>
 <ol class="loweralpha simple">
 <li><code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>, which holds the code for the function,</li>
@@ -260,7 +138,7 @@ practice.</p>
 <p class="last">Do NOT change the code in <code class="docutils literal notranslate"><span class="pre">index.js</span></code>. Messing with this file will disrupt
 the automatic testing.</p>
 </div>
-<ol class="arabic">
+<ol class="arabic" id="export-syntax">
 <li><p class="first">We need to add a few lines to <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code> and <code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> to
 get them to talk to each other.</p>
 <ol class="loweralpha">
@@ -268,41 +146,25 @@ get them to talk to each other.</p>
 to import the <code class="docutils literal notranslate"><span class="pre">assert</span></code> testing function. Add the following code to
 <code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code>:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">checkFive</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">test</span></code> variable will be used to call specific functions written
-inside <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> variable now calls the function written inside
+<code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>.</p>
 </li>
-<li><p class="first">To make the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function available to <code class="docutils literal notranslate"><span class="pre">test</span></code>, add the
+<li><p class="first">To make the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function available to the spec file, add the
 following code to the bottom of <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">checkFive</span><span class="o">:</span> <span class="nx">checkFive</span>
-<span class="p">};</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">checkFive</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Anything named within the <code class="docutils literal notranslate"><span class="pre">{}</span></code> can be called from other files using dot
-notation (e.g. <code class="docutils literal notranslate"><span class="pre">test.checkFive(num)</span></code>).</p>
 </li>
 </ol>
 </li>
-<li><p class="first">Write your first test for the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function.</p>
-<ol class="loweralpha">
-<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> file, add an empty <code class="docutils literal notranslate"><span class="pre">describe</span></code> function:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
-
-<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;checkFive&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-
-   <span class="c1">//testing code here...</span>
-
-<span class="p">});</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Now add an <code class="docutils literal notranslate"><span class="pre">it</span></code> clause.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
+<li><p class="first">Write your first test for the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function. In the
+<code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> file, add a <code class="docutils literal notranslate"><span class="pre">describe</span></code> function with one <code class="docutils literal notranslate"><span class="pre">it</span></code>
+clause:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">checkFive</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;checkFive&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
@@ -315,26 +177,23 @@ notation (e.g. <code class="docutils literal notranslate"><span class="pre">test
 </pre></div>
 </div>
 </li>
-</ol>
-</li>
-<li><p class="first">Let’s write a test to see if <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> produces the correct output when
+<li><p class="first">Now write a test to see if <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> produces the correct output when
 passed a number <em>less than 5</em>.</p>
 <ol class="loweralpha">
 <li><p class="first">First, replace <code class="docutils literal notranslate"><span class="pre">Descriptive</span> <span class="pre">feedback...</span></code> with a DETAILED message. This
 is the text that the user will see if the test <em>fails</em>. Do NOT skimp on
-this. Best practice suggests something like <code class="docutils literal notranslate"><span class="pre">'should</span> <span class="pre">[DO</span> <span class="pre">THIS]</span> <span class="pre">if</span> <span class="pre">[THIS</span>
-<span class="pre">HAPPENS]'</span></code>, where the text inside the <code class="docutils literal notranslate"><span class="pre">[]</span></code> describes what the function
-should do when passed a specific input.</p>
+this. Refer back to the <a class="reference internal" href="hello-jasmine.html#feedback"><span class="std std-ref">Specifications and Assertions</span></a>
+section to review best practices.</p>
 </li>
 <li><p class="first">Define the variable <code class="docutils literal notranslate"><span class="pre">output</span></code>, and initialize it by passing a value of
 <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">checkFive</span></code>.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">checkFive</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;checkFive&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 
    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Descriptive feedback...&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">test</span><span class="p">.</span><span class="nx">checkFive</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">checkFive</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
    <span class="p">});</span>
 
 <span class="p">});</span>
@@ -342,22 +201,22 @@ should do when passed a specific input.</p>
 </div>
 </li>
 <li><p class="first">Now use the <code class="docutils literal notranslate"><span class="pre">assert</span></code> function to check the result:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">checkFive</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;checkFive&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 
    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Descriptive feedback...&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">test</span><span class="p">.</span><span class="nx">checkFive</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-      <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span> <span class="s2">&quot;2 is less than 5.&quot;</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">checkFive</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span> <span class="s2">&quot;2 is less than 5.&quot;</span><span class="p">);</span>
    <span class="p">});</span>
 
 <span class="p">});</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Run the test script and examine the results. The test should have
-passed and prodced output similar to:</p>
+<li><p class="first">Run the test script and examine the results. The test should pass and
+produce output similar to:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Started
 .
 
@@ -372,9 +231,13 @@ the test. The output should look similar to :</p>
 F
 
 Failures:
-1) checkFive should return &#39;num is less than 5.&#39; if given a number less than 5
+1) checkFive should return &#39;num&#39; is less than 5 when passed a number smaller than 5.
 Message:
-   AssertionError [ERR_ASSERTION]: &#39;2 is greater than 5.&#39; == &#39;2 is less than 5.&#39;
+   AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+   + expected - actual
+
+   - &#39;2 is greater than 5.&#39;
+   + &#39;2 is less than 5.&#39;
 </pre></div>
 </div>
 </li>
@@ -387,13 +250,14 @@ Message:
 example is sufficient to check that part of the function.</p>
 </div>
 </li>
-<li><p class="first">Add two more <code class="docutils literal notranslate"><span class="pre">it</span></code> clauses inside <code class="docutils literal notranslate"><span class="pre">describe</span></code> to test what happens when
-<code class="docutils literal notranslate"><span class="pre">checkFive</span></code> is passed a value greater than 5 or equal to 5.</p>
+<li><p class="first">Add two more <code class="docutils literal notranslate"><span class="pre">it</span></code> clauses inside <code class="docutils literal notranslate"><span class="pre">describe</span></code>—one to test what happens
+when <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> is passed a value greater than 5, and the other to test
+when the value equals 5.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="try-one-on-your-own">
-<h3>13.6.2.2. Try One on Your Own<a class="headerlink" href="#try-one-on-your-own" title="Permalink to this headline">¶</a></h3>
+<h2>13.6.2. Try One on Your Own<a class="headerlink" href="#try-one-on-your-own" title="Permalink to this headline">¶</a></h2>
 <p>Time for Rock, Paper, Scissors! The function below takes the choices
 (<code class="docutils literal notranslate"><span class="pre">'rock'</span></code>, <code class="docutils literal notranslate"><span class="pre">'paper'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'scissors'</span></code>) of two players as its parameters.
 It then decides which player won the match and returns a string.</p>
@@ -440,12 +304,20 @@ It then decides which player won the match and returns a string.</p>
 </td></tr></table></div>
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/UnitTestingExercises03" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <ol class="arabic simple">
-<li>Set up the <code class="docutils literal notranslate"><span class="pre">RPS.js</span></code> and <code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code> files to talk to each other.</li>
-<li>Write at least two tests in <code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code> to check if <code class="docutils literal notranslate"><span class="pre">whoWon</span></code> behaves
-correctly. There is one mistake in the code. You might spot it on your own,
-but try to use automated testing to identify it.</li>
+<li>Set up the <code class="docutils literal notranslate"><span class="pre">RPS.js</span></code> and <code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code> files to talk to each other. If
+you need to review how to do this, re-read the
+<a class="reference internal" href="#export-syntax"><span class="std std-ref">previous exercise</span></a>, or check
+<a class="reference internal" href="hello-jasmine.html#hello-js"><span class="std std-ref">Hello Jasmine</span></a>.</li>
+<li>Write a test in <code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code> to check if <code class="docutils literal notranslate"><span class="pre">whoWon</span></code> behaves correctly
+when the players tie (both choose the same option). Click “Run” and examine
+the output. SPOILER ALERT: The code for checking ties is correct in
+<code class="docutils literal notranslate"><span class="pre">whoWon</span></code>, so the test should pass. If it does not, modify your <code class="docutils literal notranslate"><span class="pre">it</span></code>
+statement.</li>
+<li>Write tests (one at a time) for each of the remaining cases. Run the tests
+after each addition, and modify the code as needed. There is one mistake in
+<code class="docutils literal notranslate"><span class="pre">whoWon</span></code>. You might spot it on your own, but try to use automated
+testing to identify and fix it.</li>
 </ol>
-</div>
 </div>
 <div class="section" id="bonus-mission">
 <h2>13.6.3. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
