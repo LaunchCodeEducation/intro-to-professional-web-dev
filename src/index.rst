@@ -18,6 +18,8 @@ Chapters
    chapters/functions/index
    chapters/more-on-functions/index
    chapters/objects-and-math/index
+   chapters/scope/index
+   chapters/more-on-types/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
