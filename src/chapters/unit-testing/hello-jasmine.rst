@@ -3,9 +3,9 @@ Hello, Jasmine!
 
 .. index:: ! Jasmine
 
-In order to unit test our code, we need to use a module. Such a module of called a **unit-testing framework**, **test runner**, or **test harnesss**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_. 
+In order to unit test our code, we need to use a module. Such a module of called a **unit-testing framework**, **test runner**, or **test harnesss**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
 
-We will use `Jasmine <https://jasmine.github.io/>`_, a popular JavaScript testing framework. 
+We will use `Jasmine <https://jasmine.github.io/>`_, a popular JavaScript testing framework.
 
 Using Jasmine
 -------------
@@ -24,13 +24,13 @@ Installing Jasmine with NPM is simple:
 
 The ``-g`` flag installs Jasmine *globally*, as opposed to *locally* (for only the current project directory).
 
-Using repl.it removes the need to install Jasmine, since it will do so automatically. 
+Using repl.it removes the need to install Jasmine, since it will do so automatically.
 
 .. admonition:: Try It!
 
-   Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-With-Tests>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
+   Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-With-Tests>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`.
 
-   Don't worry about understanding the code at this point, just hit *run* to execute the tests. How many total tests are there? How many passed? How many failed? 
+   Don't worry about understanding the code at this point, just hit *run* to execute the tests. How many total tests are there? How many passed? How many failed?
 
 .. index::
    single: Jasmine; project structure
@@ -157,25 +157,26 @@ There are two cases we want to test:
 Within ``describe``'s function argument, place a test for case 1:
 
 .. sourcecode:: js
-   
+
    it("should return custom message when name is specified", function(){
       assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
    });
-   
+
 The ``it`` function is part of the Jasmine framework as well. Calling ``it`` creates a **specification**, or **spec**, which is a description of expected behavior. The first argument to ``it`` is a string describing the expected behavior. This string serves to document the test and is also used in reporting test results. Your expectation strings will usually begin with "should", followed by an expected action.
 
 The second argument to ``it`` is yet another anonymouse function. This function contains the test code itself, which takes the form of an **assertion**. An assertion is a declaration of expected behavior *in code*. Let's examing the contents of the anonymous function:
 
 .. sourcecode:: js
-   
+
    assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
 
 Calling ``assert.strictEqual`` with two arguments declares that we expect the two arguments to be (strictly) equal. As you get started with unit testing, nearly *all* of your tests will take this form. The first argument to ``assert.strictEqual`` is a call to the function ``hello``. The second argument is the expected output from that function call. 
 
 If the two arguments are indeed equal, the test will pass. Otherwise, the test will fail. In this case, we are declaring that ``hello("Jasmine")`` should return the value ``"Hello, Jasmine!"``.
 
-.. note:: Jasmine also has a ``.equal`` comparison, which tests for *loose* equality. The difference between loose and strict equality with Jasmine is the same as that of :ref:`JavaScript in general <equality>`. 
+.. note::
 
+   Jasmine also has a ``.equal`` comparison, which tests for *loose* equality. The difference between loose and strict equality with Jasmine is the same as that of :ref:`JavaScript in general <equality>`.
    For this reason, we prefer ``.strictEqual`` over ``.equal``.
 
 Your test file should now look like this:
@@ -289,12 +290,35 @@ Nice work! You just created your first program with a full test suite. You can v
 
 There are a lot of details in the setup of these tests, so take a few minutes to look over the code and describe to yourself what each component is doing.
 
-.. note:: 
+.. note::
 
    There are many ways to structure test specifications. If you look at the official Jasmine documentation, you'll see specs with different code in place of ``assert.strictEqual``:
 
    .. sourcecode:: js
-   
+
       expect(hello()).toBe("Hello, World!");
 
    We have chosen to use ``assert.strictEqual`` because its syntax is more similar to common testing frameworks in other languages like Java and C#. Learning to use ``assert.strictEqual`` will make it easier for you to transition to one of those frameworks later in the class.
+
+Check Your Understanding
+-------------------------
+
+.. admonition:: Question
+
+   Examine the function below, which checks if the user enters a correct
+   answer:
+
+   .. sourcecode:: js
+      :linenos:
+
+      function isAnswerCorrect(answer,correctAnswer){
+         return answer === correctAnswer;
+      }
+
+   Which of the following tests checks if the function properly handles
+   case-sensitive answers.
+
+   a. ``assert.strictEqual(isAnswerCorrect('Flower'), 'Flower');``
+   b. ``assert.strictEqual(isAnswerCorrect('Flower'), 'flower');``
+   c. ``assert.strictEqual(isAnswerCorrect('Flower'), 'Plant');``
+   d. ``assert.strictEqual(isAnswerCorrect('Flower'), '');``

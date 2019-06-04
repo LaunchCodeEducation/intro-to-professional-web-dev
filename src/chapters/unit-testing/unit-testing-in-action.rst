@@ -10,7 +10,7 @@ In particular, we focus on identifying good **test cases** by working through a 
 What to Test
 ------------
 
-When writing tests for your code, what should you test? You can't test *every* possible situation or input. But you also don't want to leave out important cases. A function or program that isn't well-tested might have bugs lurking beneath the surface. 
+When writing tests for your code, what should you test? You can't test *every* possible situation or input. But you also don't want to leave out important cases. A function or program that isn't well-tested might have bugs lurking beneath the surface.
 
 .. note:: Since we are focused on *unit* testing, in this chapter we will generally use the term "unit" to refer to the function or program under consideration.
 
@@ -18,13 +18,13 @@ Regardless of the situation, there are two types of test cases that you should c
 
 A **positive test** is a test case that gives the unit valid data, or, in the case of boolean functions, data that should result in a return value of ``true``. A **negative test** gives the unit *invalid* data, or data that should result in a return value of ``false``.
 
-An **edge case** is a test case that provides input at the extreme edge of what the unit should be able to handle. For example, if a function should work for input values between 0 and 100 then we should test not just values like 5, 50, and 75, but also 0 and 100. These values are at the literal *edge* of acceptable input values. Depending on the behavior function, we may also want to include a negative test with values -1 and 101. 
+An **edge case** is a test case that provides input at the extreme edge of what the unit should be able to handle. For example, if a function should work for input values between 0 and 100 then we should test not just values like 5, 50, and 75, but also 0 and 100. These values are at the literal *edge* of acceptable input values. Depending on the behavior function, we may also want to include a negative test with values -1 and 101.
 
 .. admonition:: Example
 
    Suppose a program has a collection of addresses for houses within a given city. It has a function, ``getNeighbors``, that will return the immediate neighbors of a given address (those addresses on either side adjacent to the given address).
 
-   Edge cases for this program would include houses on a corner, houses adjacent to a property with no address (for example, a park), and houses in the middle of a block with an alley on one side. 
+   Edge cases for this program would include houses on a corner, houses adjacent to a property with no address (for example, a park), and houses in the middle of a block with an alley on one side.
 
 Considering postive, negetive, and edge tests will go a long way toward helping you create well-tested code.
 
@@ -57,7 +57,7 @@ Code along with us by forking `our repl.it starter code project <https://repl.it
 
 .. tip:: When creating a unit-tested project, *always* start by copying the Jasmine test runner code into ``index.js`` and putting the code you want to test in an appropriately named ``.js`` file.
 
-You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach. 
+You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach.
 
 .. tip:: If you find yourself tempted to add a ``console.log`` statement to your code, write a unit test instead! You would mostly likely remove that ``console.log`` after getting your code to work, while the test will remain for you and other developers to use in the future.
 
@@ -231,3 +231,30 @@ The rest of the chapter focuses on a programming technique that allows you to co
 #. Write code
 
 As you will soon learn, writing your tests *before* the code is a great way to enhance your programming efficiency and quality.
+
+Check Your Understanding
+-------------------------
+
+Let's assume we updated ``isPalindrome`` to be case-insensitive (e.g.
+``isPalindrome('Radar')`` returns ``true``).
+
+.. admonition:: Question
+
+   Which of the following is an example of *positive* test case for checking if
+   ``isPalindrome`` is case-insensitive?
+
+   a. ``aa``
+   b. ``aBa``
+   c. ``Mom``
+   d. ``Taco Cat``
+   e. ``AbAb``
+
+.. admonition:: Question
+
+   Which of the *negative* test cases listed above are no longer valid for our
+   case-insensitive ``isPalindrome``?
+
+   a. ``ab``
+   b. ``launchcode``
+   c. ``abA``
+   d. ``so many dynamos``
