@@ -55,6 +55,8 @@ Here's the function we want to test:
       return reverse(str) === str;
    }
 
+.. _export-set-up:
+
 Code along with us by forking `our repl.it starter code project <https://repl.it/@launchcode/isPalindrome-With-Tests-Starter>`_, which includes the above code in ``palindrome.js`` and the Jasmine test runner code in ``index.js``. Note that we have removed the ``console.log`` statements from the original code and exported the ``isPalindrome`` function:
 
 .. sourcecode:: js
@@ -63,9 +65,11 @@ Code along with us by forking `our repl.it starter code project <https://repl.it
 
 .. tip:: When creating a unit-tested project, *always* start by copying the Jasmine test runner code into ``index.js`` and putting the code you want to test in an appropriately named ``.js`` file.
 
-You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach. 
+You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach.
 
 .. tip:: If you find yourself tempted to add a ``console.log`` statement to your code, write a unit test instead! You would mostly likely remove that ``console.log`` after getting your code to work, while the test will remain for you and other developers to use in the future.
+
+.. _set-up:
 
 Finally, create ``spec/`` folder and add a spec file, ``palindrome.spec.js``. This file should include imports and a describe block:
 
@@ -236,3 +240,30 @@ The rest of the chapter focuses on a programming technique that allows you to co
 #. Write code
 
 As you will soon learn, writing your tests *before* the code is a great way to enhance your programming efficiency and quality.
+
+Check Your Understanding
+-------------------------
+
+Let's assume we updated ``isPalindrome`` to be case-insensitive (e.g.
+``isPalindrome('Radar')`` returns ``true``).
+
+.. admonition:: Question
+
+   Which of the following is an example of *positive* test case for checking if
+   ``isPalindrome`` is case-insensitive?
+
+   a. ``aa``
+   b. ``aBa``
+   c. ``Mom``
+   d. ``Taco Cat``
+   e. ``AbAb``
+
+.. admonition:: Question
+
+   Which of the *negative* test cases listed above are no longer valid for our
+   case-insensitive ``isPalindrome``?
+
+   a. ``ab``
+   b. ``launchcode``
+   c. ``abA``
+   d. ``so many dynamos``

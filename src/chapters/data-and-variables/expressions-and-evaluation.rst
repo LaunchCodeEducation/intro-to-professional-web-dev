@@ -29,7 +29,7 @@ If you ask JavaScript to print an expression using ``console.log``, the interpre
 
       2
 
-This code prints not ``1 + 1`` but rather the *result* of calculating ``1 + 1`` mathemtically. In other words, ``console.log(1 + 1)`` prints the value ``2``. This is what we would expect.
+This code prints not ``1 + 1`` but rather the *result* of calculating ``1 + 1``. In other words, ``console.log(1 + 1)`` prints the value ``2``. This is what we would expect.
 
 Since evaluating an expression produces a value, expressions can appear on the right-hand side of assignment statements. 
 
