@@ -55,26 +55,15 @@ c. ``index.js`` which holds special code to make Jasmine work.
    get them to talk to each other.
 
    a. ``checkFive.spec.js`` needs to access ``checkFive.js``, and we also need
-      to import the ``assert`` testing function. Add the following code to
-      ``checkFive.spec.js``:
+      to import the ``assert`` testing function. Add two ``require`` statements
+      to accomplish this (review :ref:`Unit Testing in Action <set-up>` if
+      needed).
 
-      .. sourcecode:: js
-         :linenos:
+   b. Make the ``checkFive`` function available to the spec file, by using
+      ``module.exports`` (review :ref:`Unit Testing in Action <export-set-up>` if
+      needed).
 
-         const checkFive = require('../checkFive.js');
-         const assert = require('assert');
-
-      The ``checkFive`` variable now calls the function written inside
-      ``checkFive.js``.
-
-   b. To make the ``checkFive`` function available to the spec file, add the
-      following code to the bottom of ``checkFive.js``:
-
-      .. sourcecode:: js
-
-         module.exports = checkFive;
-
-#. Write your first test for the ``checkFive`` function. In the
+#. Set up your first test for the ``checkFive`` function. In the
    ``checkFive.spec.js`` file, add a ``describe`` function with one ``it``
    clause:
 

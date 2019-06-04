@@ -47,6 +47,8 @@ Here's the function we want to test:
       return reverse(str) === str;
    }
 
+.. _export-set-up:
+
 Code along with us by forking `our repl.it starter code project <https://repl.it/@launchcode/isPalindrome-With-Tests-Starter>`_, which includes the above code in ``palindrome.js`` and the Jasmine test runner code in ``index.js``. Note that we have removed the ``console.log`` statements from the original code and exported the ``isPalindrome`` function:
 
 .. sourcecode:: js
@@ -58,6 +60,8 @@ Code along with us by forking `our repl.it starter code project <https://repl.it
 You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach. 
 
 .. tip:: If you find yourself tempted to add a ``console.log`` statement to your code, write a unit test instead! You would mostly likely remove that ``console.log`` after getting your code to work, while the test will remain for you and other developers to use in the future.
+
+.. _set-up:
 
 Finally, create ``spec/`` folder and add a spec file, ``palindrome.spec.js``. This file should include imports and a describe block:
 

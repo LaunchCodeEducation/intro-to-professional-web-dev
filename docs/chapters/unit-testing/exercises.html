@@ -141,27 +141,17 @@ the automatic testing.</p>
 <ol class="arabic" id="export-syntax">
 <li><p class="first">We need to add a few lines to <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code> and <code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> to
 get them to talk to each other.</p>
-<ol class="loweralpha">
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> needs to access <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>, and we also need
-to import the <code class="docutils literal notranslate"><span class="pre">assert</span></code> testing function. Add the following code to
-<code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code>:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">checkFive</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> variable now calls the function written inside
-<code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>.</p>
-</li>
-<li><p class="first">To make the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function available to the spec file, add the
-following code to the bottom of <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">checkFive</span><span class="p">;</span>
-</pre></div>
-</div>
-</li>
+<ol class="loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> needs to access <code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>, and we also need
+to import the <code class="docutils literal notranslate"><span class="pre">assert</span></code> testing function. Add two <code class="docutils literal notranslate"><span class="pre">require</span></code> statements
+to accomplish this (review <a class="reference internal" href="unit-testing-in-action.html#set-up"><span class="std std-ref">Unit Testing in Action</span></a> if
+needed).</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function available to the spec file, by using
+<code class="docutils literal notranslate"><span class="pre">module.exports</span></code> (review <a class="reference internal" href="unit-testing-in-action.html#export-set-up"><span class="std std-ref">Unit Testing in Action</span></a> if
+needed).</li>
 </ol>
 </li>
-<li><p class="first">Write your first test for the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function. In the
+<li><p class="first">Set up your first test for the <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> function. In the
 <code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code> file, add a <code class="docutils literal notranslate"><span class="pre">describe</span></code> function with one <code class="docutils literal notranslate"><span class="pre">it</span></code>
 clause:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">checkFive</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
