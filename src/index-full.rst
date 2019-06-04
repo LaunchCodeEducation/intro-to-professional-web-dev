@@ -17,6 +17,7 @@ Chapters
    chapters/functions/index
    chapters/more-on-functions/index
    chapters/objects-and-math/index
+   chapters/modules/index
    chapters/unit-testing/index
    chapters/html/index
    chapters/css/index

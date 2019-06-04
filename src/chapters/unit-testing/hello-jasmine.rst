@@ -13,23 +13,14 @@ Using Jasmine
 .. index:: 
    single: Jasmine; installing
 
-Installing Jasmine with NPM is simple:
-
-::
-
-   $ npm install -g jasmine
-   /usr/local/bin/jasmine -> /usr/local/lib/node_modules/jasmine/bin/jasmine.js
-   + jasmine@3.4.0
-   updated 3 packages in 0.425s
-
-The ``-g`` flag installs Jasmine *globally*, as opposed to *locally* (for only the current project directory).
-
-Using repl.it removes the need to install Jasmine, since it will do so automatically. 
+Jasmine is an npm module that can be installed like any other npm module via ``npm install``. In this chapter we will continue to use
+repl.it which, automatically installs npm modules when the program is run. For a review of how to install npm modules on your computer
+see the :ref:`Modules chapter <modules-index>`.
 
 .. admonition:: Try It!
 
    Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-With-Tests>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
-   
+
    Don't worry about understanding the code at this point, just hit *run* to execute the tests. How many total tests are there? How many passed? How many failed? 
 
 .. index::
@@ -229,7 +220,7 @@ Run the tests again. This time, the output looks quite different:
 
    Randomized with seed 98738
    Started
-   ..F..
+   F
 
    Failures:
    1) hello world test should return a custom message when name is specified

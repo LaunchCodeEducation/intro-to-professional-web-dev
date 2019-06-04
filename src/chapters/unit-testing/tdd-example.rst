@@ -96,10 +96,10 @@ We are going to think about and visualize
 how this feature should be implemented in code. Then we will write out in the test how
 this new code will be used.
 
-We need think of something that will satisfy this statement
-``it("takes a string returns an object",``.
-We have to determine what the ``it`` is. Let's define ``it`` as a function named
-``processor``, which is imported from a module named ``processor``.
+We need to think of something that will satisfy the statement
+``it("takes a string returns an object"``.
+The ``it`` will be a function that is imported from a module. Below on line 2,
+a ``processor`` function is imported from the ``processor.js`` module.
 
 .. sourcecode:: js
    :linenos:
@@ -110,7 +110,7 @@ We have to determine what the ``it`` is. Let's define ``it`` as a function named
    describe("transmission processor", function() {
 
       it("takes a string returns an object", function(){
-         
+
       });
 
    });

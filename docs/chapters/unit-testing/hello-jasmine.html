@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>13.2. Hello, Jasmine! &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>14.2. Hello, Jasmine! &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
@@ -20,8 +20,8 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13.3. Unit Testing in Action" href="unit-testing-in-action.html" />
-    <link rel="prev" title="13.1. Why Test Your Code?" href="why-test.html" />
+    <link rel="next" title="14.3. Unit Testing in Action" href="unit-testing-in-action.html" />
+    <link rel="prev" title="14.1. Why Test Your Code?" href="why-test.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -72,8 +72,8 @@
 
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
-    <li><a href="index.html">13. Unit Testing</a></li>
-    <li class="active">13.2. Hello, Jasmine!</li>
+    <li><a href="index.html">14. Unit Testing</a></li>
+    <li class="active">14.2. Hello, Jasmine!</li>
 </ol>
 
 
@@ -84,20 +84,14 @@
 
     
   <div class="section" id="hello-jasmine">
-<h1>13.2. Hello, Jasmine!<a class="headerlink" href="#hello-jasmine" title="Permalink to this headline">¶</a></h1>
+<h1>14.2. Hello, Jasmine!<a class="headerlink" href="#hello-jasmine" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">In order to unit test our code, we need to use a module. Such a module of called a <strong>unit-testing framework</strong>, <strong>test runner</strong>, or <strong>test harnesss</strong>, and there are <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript" target="_blank">many to choose from<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>We will use <a class="reference external" href="https://jasmine.github.io/" target="_blank">Jasmine<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, a popular JavaScript testing framework.</p>
 <div class="section" id="using-jasmine">
-<h2>13.2.1. Using Jasmine<a class="headerlink" href="#using-jasmine" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">Installing Jasmine with NPM is simple:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ npm install -g jasmine
-/usr/local/bin/jasmine -&gt; /usr/local/lib/node_modules/jasmine/bin/jasmine.js
-+ jasmine@3.4.0
-updated 3 packages in 0.425s
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag installs Jasmine <em>globally</em>, as opposed to <em>locally</em> (for only the current project directory).</p>
-<p>Using repl.it removes the need to install Jasmine, since it will do so automatically.</p>
+<h2>14.2.1. Using Jasmine<a class="headerlink" href="#using-jasmine" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Jasmine is an npm module that can be installed like any other npm module via <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>. In this chapter we will continue to use
+repl.it which, automatically installs npm modules when the program is run. For a review of how to install npm modules on your computer
+see the <a class="reference internal" href="../modules/index.html#modules-index"><span class="std std-ref">Modules chapter</span></a>.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Run some <a class="reference external" href="https://repl.it/&#64;launchcode/reverse-Function-With-Tests" target="_blank">tests for the reverse function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. This is the same <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function that <a class="reference internal" href="../functions/composing-functions.html#reverse-func"><span class="std std-ref">we wrote previously</span></a>.</p>
@@ -120,11 +114,11 @@ updated 3 packages in 0.425s
 </div>
 </div>
 <div class="section" id="id1">
-<h2>13.2.2. Hello, Jasmine!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>14.2.2. Hello, Jasmine!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Let’s build a “Hello, World!” Jasmine project, to get familiar with the basic components. Open and fork <a class="reference external" href="https://repl.it/&#64;launchcode/Hello-Jasmine-Starter-Code" target="_blank">this repl.it project<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>We will walk you through the steps needed to get a simple Jasmine project up and running. Code along with us throughout this section.</p>
 <div class="section" id="index-js">
-<h3>13.2.2.1. <code class="docutils literal notranslate"><span class="pre">index.js</span></code><a class="headerlink" href="#index-js" title="Permalink to this headline">¶</a></h3>
+<h3>14.2.2.1. <code class="docutils literal notranslate"><span class="pre">index.js</span></code><a class="headerlink" href="#index-js" title="Permalink to this headline">¶</a></h3>
 <p>This is the main project file. Up until now, <code class="docutils literal notranslate"><span class="pre">index.js</span></code> is where you have been writing the code for a given exercise or assignment. Now that we are writing tests for our code, <code class="docutils literal notranslate"><span class="pre">index.js</span></code> will contain the Jasmine code to find and execute the tests. Our project-specific code will live in other files.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -166,7 +160,7 @@ updated 3 packages in 0.425s
 <p>Let’s add some code to test.</p>
 </div>
 <div class="section" id="hello-js">
-<h3>13.2.2.2. <code class="docutils literal notranslate"><span class="pre">hello.js</span></code><a class="headerlink" href="#hello-js" title="Permalink to this headline">¶</a></h3>
+<h3>14.2.2.2. <code class="docutils literal notranslate"><span class="pre">hello.js</span></code><a class="headerlink" href="#hello-js" title="Permalink to this headline">¶</a></h3>
 <p>Create a new file in your project, <code class="docutils literal notranslate"><span class="pre">hello.js</span></code>. Add this code to the file:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -188,7 +182,7 @@ updated 3 packages in 0.425s
 </td></tr></table></div>
 </div>
 <div class="section" id="spec-hello-spec-js">
-<h3>13.2.2.3. <code class="docutils literal notranslate"><span class="pre">spec/hello.spec.js</span></code><a class="headerlink" href="#spec-hello-spec-js" title="Permalink to this headline">¶</a></h3>
+<h3>14.2.2.3. <code class="docutils literal notranslate"><span class="pre">spec/hello.spec.js</span></code><a class="headerlink" href="#spec-hello-spec-js" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have a function to test, let’s write some test code. Add a folder named <code class="docutils literal notranslate"><span class="pre">spec</span></code> to the project. Within the folder, create the file <code class="docutils literal notranslate"><span class="pre">hello.spec.js</span></code>. It is conventional to put tests for <code class="docutils literal notranslate"><span class="pre">fileName.js</span></code> in <code class="docutils literal notranslate"><span class="pre">spec/fileName.spec.js</span></code>. This makes it easy to find the tests associated with a given file.</p>
 <p>At the top of this file, import your function from <code class="docutils literal notranslate"><span class="pre">hello.js</span></code>, along with the <code class="docutils literal notranslate"><span class="pre">assert</span></code> module:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -204,7 +198,7 @@ updated 3 packages in 0.425s
 </div>
 </div>
 <div class="section" id="specifications-and-assertions">
-<h3>13.2.2.4. Specifications and Assertions<a class="headerlink" href="#specifications-and-assertions" title="Permalink to this headline">¶</a></h3>
+<h3>14.2.2.4. Specifications and Assertions<a class="headerlink" href="#specifications-and-assertions" title="Permalink to this headline">¶</a></h3>
 <p id="index-3">There are two cases we want to test:</p>
 <ol class="arabic simple">
 <li>The function is called with a string argument. In this case, a customized greeting should be returned.</li>
@@ -251,7 +245,7 @@ updated 3 packages in 0.425s
 </td></tr></table></div>
 </div>
 <div class="section" id="test-reporting">
-<h3>13.2.2.5. Test Reporting<a class="headerlink" href="#test-reporting" title="Permalink to this headline">¶</a></h3>
+<h3>14.2.2.5. Test Reporting<a class="headerlink" href="#test-reporting" title="Permalink to this headline">¶</a></h3>
 <p>This is a fully-functioning test file. Hit <em>run</em> to see for yourself. If all goes well, the output will look like this:</p>
 <div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -304,7 +298,7 @@ Randomized with seed 00798 (jasmine --random=true --seed=00798)
 22
 23</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Randomized with seed 98738
 Started
-..F..
+F
 
 Failures:
 1) hello world test should return a custom message when name is specified
@@ -368,10 +362,10 @@ Randomized with seed 81081 (jasmine --random=true --seed=81081)
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="why-test.html"><span aria-hidden="true">&larr;</span> 13.1. Why Test Your Code?</a></li>
+        <li class="previous"><a href="why-test.html"><span aria-hidden="true">&larr;</span> 14.1. Why Test Your Code?</a></li>
         
         
-        <li class="next"><a href="unit-testing-in-action.html">13.3. Unit Testing in Action <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="unit-testing-in-action.html">14.3. Unit Testing in Action <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

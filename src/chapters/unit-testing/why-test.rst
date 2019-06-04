@@ -18,16 +18,23 @@ components (or *units*) of code. These are typically individual functions.
 
 Before we dive into the *how* of unit testing, let's discuss the *why*.
 
+
 Know Your Code *Really* Works
 -----------------------------
 
-Manual testing can lead you to a complete, error-free program. But unit testing does even more than that.
+Manual testing can eventually lead you to a complete, error-free program. Unit testing provides a better alternative.
 
 This might sound familiar:
 
-.. pull-quote:: You write a program and manually test it. Thinking it is complete, you turn it in only to find that it has a bug or use case that you didn't consider.
+.. pull-quote::
 
-Unit testing helps you avoid this. By writing automated tests for your code, you can be confident that your code *really* works.
+   You write a program and manually test it. Thinking it is complete, you turn it in only to find that it has a bug
+   or use case that you didn't consider.
+
+The unit testing process helps avoid this by starting with a list of specific, clearly stated
+behaviors that the program should satisfy. The behaviors are then converted into automated tests that demonstrate
+program behavior and provide a framework for writing code that *really* works.
+
 
 Find Regressions
 ----------------
@@ -44,6 +51,7 @@ known as a **regression**.
 
 If you have a collection of tests that can run quickly and consistently, you will know *right away* when a
 regression appears in your program. This allows you to identify and fix it more quickly.
+
 
 Tests as Documentation
 ----------------------

@@ -7,28 +7,36 @@ Testing is a bit of an art; there are no hard and fast rules about how to go abo
 
 In particular, we focus on identifying good **test cases** by working through a specific example. A test case is a single situation that is being tested.
 
+
 What to Test
 ------------
 
-When writing tests for your code, what should you test? You can't test *every* possible situation or input. But you also don't want to leave out important cases. A function or program that isn't well-tested might have bugs lurking beneath the surface. 
+When writing tests for your code, what should you test? You can't test *every* possible situation or input. But you also don't want to
+leave out important cases. A function or program that isn't well-tested might have bugs lurking beneath the surface.
 
-.. note:: Since we are focused on *unit* testing, in this chapter we will generally use the term "unit" to refer to the function or program under consideration.
+.. note::
 
-Regardless of the situation, there are two types of test cases that you should consider: positive/negative tests and edge cases.
+   Since we are focused on *unit* testing, in this chapter we will generally use the term "unit" to refer to the function
+   or program under consideration.
 
-A **positive test** is a test case that gives the unit valid data, or, in the case of boolean functions, data that should result in a return value of ``true``. A **negative test** gives the unit *invalid* data, or data that should result in a return value of ``false``.
+Regardless of the situation, there are three types of test cases that you should consider: positive, negative, and edge cases.
 
-An **edge case** is a test case that provides input at the extreme edge of what the unit should be able to handle. For example, if a function should work for input values between 0 and 100 then we should test not just values like 5, 50, and 75, but also 0 and 100. These values are at the literal *edge* of acceptable input values. Depending on the behavior function, we may also want to include a negative test with values -1 and 101. 
+#. A **positive test** verifies expected behavior with valid data.
+#. A **negative test** verifies expected behavior with *invalid* data.
+#. An **edge case** is a subset of positive tests, which checks the extreme edges of valid values.
 
 .. admonition:: Example
 
-   Suppose a program has a collection of addresses for houses within a given city. It has a function, ``getNeighbors``, that will return the immediate neighbors of a given address (those addresses on either side adjacent to the given address).
+   Imagine a function named ``setTemperature`` that accepts a number between ``50`` and ``100``.
 
-   Edge cases for this program would include houses on a corner, houses adjacent to a property with no address (for example, a park), and houses in the middle of a block with an alley on one side. 
+   #. Positive test values: ``56``, ``75``, ``80``
+   #. Negative test values: ``-1``, ``101``, ``"70"``
+   #. Edge case values: ``50``, ``100``
 
-Considering postive, negetive, and edge tests will go a long way toward helping you create well-tested code.
+Considering positive, negative, and edge tests will go a long way toward helping you create well-tested code.
 
 Let's see these in action, by writing tests for :ref:`our isPalindrome function <palindrome-function>`.
+
 
 Setting Up
 ----------
@@ -75,11 +83,12 @@ Finally, create ``spec/`` folder and add a spec file, ``palindrome.spec.js``. Th
 
 Okay, let's write some tests!
 
+
 Positive and Negative Test Cases
 --------------------------------
 
-Positve Test Cases
-^^^^^^^^^^^^^^^^^^
+Positive Test Cases
+^^^^^^^^^^^^^^^^^^^
 
 We'll start with positive and negative tests. For ``isPalindrome``, some positive tests have inputs:
 
