@@ -19,3 +19,10 @@ Then, we gained the ability to use our phones to send quick written messages to 
 The technical skills required to make the phones of 20 years ago are not the same skills required to make a phone today.
 A career as a technologist, specifically as a programmer, is one of lifelong learning. 
 
+Learning to code is not only valuable and challenging, it is also fun.
+Every "EUREKA!" moment is inspiration to keep going forward and to learn new things.
+You may find that some concepts are difficult to understand, but those are going to be the same concepts that you will be most proud of yourself for mastering.
+While the journey to learning to code is long and winding, it is also rewarding.
+
+From the moment that you write your first line of code, you are a programmer.
+We hope you enjoy the flight!
