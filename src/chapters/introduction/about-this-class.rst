@@ -5,12 +5,11 @@ About LaunchCode Programs
 Goals
 =====
 
-The goal of our programs is to build our problem solving skills and to learn how to learn.
-Whether you use the coding skills you learn in this program to get a job as a developer is up to you.
-No matter the path you take after this program, learning how to learn will help you continually adapt to the changing needs of your industry.
+We want our programs to help you build your problem solving skills and encourage you to learn how to learn.
+Whether you use the coding skills you gain in this program to get a job as a developer is up to you.
+However, no matter the path you take after this program, learning how to learn will help you continually adapt to the changing needs of your industry.
 
-A goal for us is that we teach you skills to prepare you for jobs in technology.
-We are here to teach you technologies that are prevalent throughout a wide variety of industries.
+To get you ready for a career in technology, our goal is to teach you the skills found in a wide variety of industries.
 
 Blended learning
 ================
@@ -34,12 +33,12 @@ Prep Work
 
 Prep Work is done before each class session and covers the topics that you will learn about that day. 
 In addition to reading, prep work includes small questions that can help you reinforce your understanding of what you have just read.
-We have found that covering the material for the day before class helps students make the most of their short in-class time.
+We have found that studying the material before class helps students make the most of their short in-class time.
 
 Exercises
 ---------
 
-Exercises are small coding problems that are a chance for you to implement what you have just learned.
+Exercises are small coding problems and are a chance for you to implement what you have just learned.
 While exercises do not count towards your final grade in the class, you will find it essential to practice coding concepts in a low pressure way.
 
 In-class Time
@@ -48,7 +47,7 @@ In-class Time
 Large Group Time
 ^^^^^^^^^^^^^^^^
 
-During the large group time, the whole class will listen to lecture and take time for Q&A.
+During the large group time, the whole class participates in the lesson and takes time for Q&A about the prep work.
 This is a time for us to review examples as a group and shore up concepts from the prep work.
 
 Small Group Time
@@ -61,7 +60,7 @@ This time is equally as important as large group time because it is time for ind
 Assignments
 -----------
 
-Assignments are larger projects where you can demonstrating what you have learned and challenge yourself.
-Assignments oftentimes will cover multiple lessons.
+Assignments are larger projects where you demonstrate what you have learned and challenge yourself.
+Assignments oftentimes cover multiple lessons.
 
 

@@ -9,21 +9,26 @@ Concept checks
 
 Many sections end with a "Check Your Understanding".
 This section is full of questions for you to double check that you understand the concepts in the reading.
-Your score does not count towards your final grade in the class
-You should be using your score for self-evaluation on concepts you may need help with in-class.
+Although your score does not count towards your final grade in the class, you should use it to help evaluate your understanding of the main concepts.
 
 Examples
 --------
 
-Examples are times when we tie a concept we have just learned to a potential real world application of the concept.
+Examples are times when we tie a concept we have just learned to a potential real world application.
 
-Oftentimes, an example is called a "Try It". These are examples with code you can modify, augment, and play around with.
-"Try It" examples are ways for you to quickly reinforce what you have just read.
+The label "Try It" signals an example that includes code you can modify and augment to quickly reinforce what you have just read.
+Play around with these!
 
 **put instructions on repl.it**
 
-JS in Context
--------------
+Supplemental Content
+--------------------
+
+Occasionally, you will find a link to "Booster Rocket".
+While not required reading, "Booster Rockets" can boost your learning.
+
+JavaScript in Context
+---------------------
 
 Our approach is different from other ways you can learn JavaScript.
 The book focuses on programming fundamentals.
