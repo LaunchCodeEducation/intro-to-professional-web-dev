@@ -18,6 +18,8 @@ Chapters
    chapters/functions/index
    chapters/more-on-functions/index
    chapters/objects-and-math/index
+   chapters/modules/index
+   chapters/unit-testing/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
@@ -44,6 +46,8 @@ Studios
    chapters/loops/studio
    chapters/functions/studio
    chapters/more-on-functions/studio
+   chapters/objects-and-math/studio
+   chapters/unit-testing/studio
    chapters/git/studio
    chapters/dom-and-events/studio
    chapters/forms/studio
