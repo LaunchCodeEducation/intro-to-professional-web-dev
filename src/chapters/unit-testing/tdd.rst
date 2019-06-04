@@ -30,14 +30,60 @@ lead to code that is easy to read. Along the way we will build confidence as we 
 The Test/Code Cycle
 -------------------
 With TDD you start with the unit test first. As with any unit test, the test should describe
-a feature or behavior that the code supports.
+a clearly described behavior that can be tested.
+
+.. admonition:: Example
+
+   Example test case for a data parsing project.
+
+   * Take in string of numbers delimited by a character and return an array.
+
 
 Because the test is for a feature that does NOT exist *yet*, we need to think about how the
 feature will be implemented. This is the time to ask questions like. Should we add a new
 parameter? What about an entirely new function? What will the function return?
 
+.. admonition:: Example
+
+   How could we implement our test case? Remember we aren't writing the code yet, only thinking
+   about the design.
+
+   * A function named ``parseData``
+   * ``parseData`` will
+
+     * have a ``data`` parameter will a string of data
+     * have a ``delimiter`` parameter will be used to split the array
+     * return an array
+
+   * ``parseData`` will be defined in a module
+
+
 Next, write the unit test as if the parameter or function you imagined already exists.
-This may seem a bit odd, but considering how new code will be used helps find bugs and flaws earlier.
+This may seem a bit odd, but considering how the new code will be used helps find bugs and flaws earlier.
+We also have to use test utilities such ``assert.strictEqual`` to will clearly demonstrate
+that the proposed new code functions properly.
+
+.. admonition:: Example
+
+   This is were the ideas are typed out into a test. In this example the test references
+   a module and a function that have not been created yet. The code follows the plan
+   we came up with earlier. Very importantly there is an ``assert.strictEqual``
+   that verifies an array is returned.   
+
+   .. sourcecode:: js
+      :linenos:
+
+      const assert = require('assert');
+      const parse = require('../parse-numbers');
+
+      describe("parse numbers", function(){
+
+         it("returns array when passed comma separated list of numbers", function(){
+            let items = parse("5,8,0,17,6,4,9,3", ",");
+            assert.strictEqual(Array.isArray(items), true);
+         });
+
+      });
 
 Now run the test! The test should fail or possibly your code will not compile because you
 have referenced code that does not exist yet.
@@ -45,9 +91,28 @@ have referenced code that does not exist yet.
 Finally, write code to pass the new test. In the earlier chapters, this is where you started,
 but with TDD writing new code is the *last* step.
 
+.. admonition:: Example
+
+   To make the above test pass a file would be created that exports a ``parseData`` function
+   with logic that satisfies the expected result.
+
+   .. sourcecode:: js
+      :linenos:
+
+      function parseData(text, delimiter) {
+         return text.split(delimiter);
+      }
+
+      module.exports = parseData;
+
 Coding this way builds confidence in your work. No matter how large your code base may
 get, you know that each part has a test to validate it's functionality.
 
+.. admonition:: Example
+
+   Now that we have one passing test for our data parser project, we could confidently
+   move on to writing tests and code for the remaining features.
+   
 
 Red, Green, Refactor
 --------------------
@@ -75,8 +140,8 @@ which are often styled with red for failing tests and green for passing tests.
 3. Refactor -> Make the code better.
 
 
-    .. figure:: figures/red-green-refactor-cycle.png
-       :alt: Graphic showing the cycle of phases from red the writing test, green making the test pass, and grey of refactoring code to be better which points back to red.
+    .. figure:: figures/red-green-refactor.png
+       :alt: Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red.
 
        Red, green, refactor cycle.
 
@@ -90,5 +155,3 @@ a function so it can be reused.
 The refactor is also done in a TDD process. Decide on what is the improved way of implementing the
 feature and then change the unit test to use this new idea. See the test fail, then
 implement the refactor idea. Finally see the tests pass with the refactored design.
-
-.. todo:: create our own version of this figure (I copied this from lynda site)

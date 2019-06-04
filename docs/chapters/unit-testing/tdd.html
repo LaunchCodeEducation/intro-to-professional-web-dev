@@ -104,18 +104,93 @@ lead to code that is easy to read. Along the way we will build confidence as we 
 <div class="section" id="the-test-code-cycle">
 <h2>13.4.1. The Test/Code Cycle<a class="headerlink" href="#the-test-code-cycle" title="Permalink to this headline">¶</a></h2>
 <p>With TDD you start with the unit test first. As with any unit test, the test should describe
-a feature or behavior that the code supports.</p>
+a clearly described behavior that can be tested.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Example test case for a data parsing project.</p>
+<ul class="last simple">
+<li>Take in string of numbers delimited by a character and return an array.</li>
+</ul>
+</div>
 <p>Because the test is for a feature that does NOT exist <em>yet</em>, we need to think about how the
 feature will be implemented. This is the time to ask questions like. Should we add a new
 parameter? What about an entirely new function? What will the function return?</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>How could we implement our test case? Remember we aren’t writing the code yet, only thinking
+about the design.</p>
+<ul class="last simple">
+<li>A function named <code class="docutils literal notranslate"><span class="pre">parseData</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">parseData</span></code> will<ul>
+<li>have a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter will a string of data</li>
+<li>have a <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> parameter will be used to split the array</li>
+<li>return an array</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">parseData</span></code> will be defined in a module</li>
+</ul>
+</div>
 <p>Next, write the unit test as if the parameter or function you imagined already exists.
-This may seem a bit odd, but considering how new code will be used helps find bugs and flaws earlier.</p>
+This may seem a bit odd, but considering how the new code will be used helps find bugs and flaws earlier.
+We also have to use test utilities such <code class="docutils literal notranslate"><span class="pre">assert.strictEqual</span></code> to will clearly demonstrate
+that the proposed new code functions properly.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This is were the ideas are typed out into a test. In this example the test references
+a module and a function that have not been created yet. The code follows the plan
+we came up with earlier. Very importantly there is an <code class="docutils literal notranslate"><span class="pre">assert.strictEqual</span></code>
+that verifies an array is returned.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">parse</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../parse-numbers&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;parse numbers&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns array when passed comma separated list of numbers&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="s2">&quot;5,8,0,17,6,4,9,3&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">items</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 <p>Now run the test! The test should fail or possibly your code will not compile because you
 have referenced code that does not exist yet.</p>
 <p>Finally, write code to pass the new test. In the earlier chapters, this is where you started,
 but with TDD writing new code is the <em>last</em> step.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>To make the above test pass a file would be created that exports a <code class="docutils literal notranslate"><span class="pre">parseData</span></code> function
+with logic that satisfies the expected result.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">parseData</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">delimiter</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">delimiter</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">parseData</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 <p>Coding this way builds confidence in your work. No matter how large your code base may
 get, you know that each part has a test to validate it’s functionality.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">Now that we have one passing test for our data parser project, we could confidently
+move on to writing tests and code for the remaining features.</p>
+</div>
 </div>
 <div class="section" id="red-green-refactor">
 <h2>13.4.2. Red, Green, Refactor<a class="headerlink" href="#red-green-refactor" title="Permalink to this headline">¶</a></h2>
@@ -133,7 +208,7 @@ which are often styled with red for failing tests and green for passing tests.</
 <li><p class="first">Refactor -&gt; Make the code better.</p>
 <blockquote>
 <div><div class="figure" id="id1">
-<img alt="Graphic showing the cycle of phases from red the writing test, green making the test pass, and grey of refactoring code to be better which points back to red." src="../../_images/red-green-refactor-cycle.png" />
+<img alt="Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red." src="../../_images/red-green-refactor.png" />
 <p class="caption"><span class="caption-text">Red, green, refactor cycle.</span></p>
 </div>
 </div></blockquote>
@@ -148,10 +223,6 @@ a function so it can be reused.</p>
 <p>The refactor is also done in a TDD process. Decide on what is the improved way of implementing the
 feature and then change the unit test to use this new idea. See the test fail, then
 implement the refactor idea. Finally see the tests pass with the refactored design.</p>
-<div class="admonition-todo admonition" id="index-7">
-<p class="first admonition-title">Todo</p>
-<p class="last">create our own version of this figure (I copied this from lynda site)</p>
-</div>
 </div>
 </div>
 
