@@ -1,7 +1,10 @@
 Why Test Your Code?
 ===================
 
-Testing your code is part of the development process. Have you ever written a program and then walked away thinking, *I'm done!*, without having run it? Of course not. You are already used to testing and debugging programs as you write them. In fact, we devoted an entire chapter to :ref:`debugging <errors-and-debugging>` early in the course. 
+Checking your code is part of the development process. Developers rarely write
+code without verifying it. You are used to debugging programs as you write
+them. In fact, we devoted an entire chapter to
+:ref:`debugging <errors-and-debugging>` early in the course.
 
 Your development process probably looks something like this:
 

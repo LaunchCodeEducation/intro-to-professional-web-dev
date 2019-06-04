@@ -244,7 +244,7 @@ error message. Notice that ``-1`` was the expected value, but the actual value w
    Message:
     AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
     + expected - actual
-    
+
     - 'object'
     + -1
 
@@ -344,7 +344,10 @@ the key ``id``. See solution in ``processor.js`` below.
 
    module.exports = process;
 
-That did it. The tests pass. :)
+Run the tests again. That did it. The tests pass! :-)
+
+Line 6 splits ``transmission`` into the ``parts`` array, and line 8 assigns
+the first entry in the array to the key ``id``.
 
 ::
 
