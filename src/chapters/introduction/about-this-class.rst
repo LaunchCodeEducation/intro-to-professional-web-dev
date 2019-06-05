@@ -26,8 +26,6 @@ We have spent a lot of time creating the course activities to make the most of y
 While there are a lot of different activities we will do in a day, it is important to actively engage with each activity.
 Skipping the prep work or falling behind on assignments can quickly lead to struggling in the class.
 
-**Include a step diagram, noting that skipping any of the components creates a larger gap to cross**
-
 Prep Work
 ---------
 
