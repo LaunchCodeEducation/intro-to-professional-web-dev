@@ -14,4 +14,4 @@ With JavaScript, you can work on your own web applications and support current a
 
 Another reason is that JavaScript is very much like other programming languages.
 Throughout the course and your career, you will hear that once you learn one programming language, it is easier to learn another.
-Programmers have found this to be true, especially if the new language closely matches the first language learned.
+Programmers have found this to be true, especially if the new language closely matches the first.

@@ -14,5 +14,3 @@ Some words of advice:
 #. Recognize that making mistakes is part of the learning process.
 
 We applaud your efforts, and we look forward to your success.
-
-`Gonna Fly Now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`__
