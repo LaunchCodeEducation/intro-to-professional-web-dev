@@ -6,6 +6,8 @@ Modules
 .. toctree::
    :maxdepth: 3
 
+   what-are-modules
+
 
 High Level Plan
 
@@ -28,7 +30,12 @@ High Level Plan
   - a module is also called a package. aka node package manager
   - npm registry and website
   - npm cli (can this be done in repl.it?)
-  - simple overview of package.json
 
+   - open terminal/shell in repl.it
+   - right click in code editor window
+   - click Command Palette
+   - type in shell in search box, choose Open Shell
+
+- simple overview of package.json
 - Understand difference between repl.it and local env
-  - compare local npm to repl.it npm
+- compare local npm to repl.it npm
