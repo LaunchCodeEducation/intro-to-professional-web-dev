@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Assignment #2: Scrabble Scorer &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="About This Book" href="../appendices/about-this-book.html" />
+    <link rel="prev" title="Assignment #1: Candidate Testing" href="candidateQuiz.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Assignment #2: Scrabble Scorer</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="assignment-2-scrabble-scorer">
+<h1>Assignment #2: Scrabble Scorer<a class="headerlink" href="#assignment-2-scrabble-scorer" title="Permalink to this headline">¶</a></h1>
+<p>To see how far your skills have come, we are going to give you a mission to update
+our <em>super</em> important Scrabble Scorer program. Did you think you were going
+to work on Mars rover code already?</p>
+<p>The current Scrabble Scorer, is a program that will take in a word and return the point value.
+The program needs to be rewritten for two reasons. First the data structure used to store
+the letter point values is inefficient. Second the program should have three scoring
+algorithms and allow the user to pick which algorithm to use. These new features will make
+the program more efficient and user friendly.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create an <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> object that contains the previous scoring system.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function which will return a <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object.</li>
+<li>Create <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array to hold three scoring objects, which include the scoring functions.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function that asks the user which scoring algorithm to use.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function to contain the starting point for your running program.</li>
+</ol>
+<div class="section" id="example-output">
+<h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator. Use ctrl+c to quit.
+
+Which scoring algorithm would you like to use?
+
+0 - Scrabble: The traditional scoring algorithm.
+1 - Simple Score: Each letter is worth 1 point.
+2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
+Enter 0,1,2: 0
+Using algorithm: Scrabble
+
+Enter a word to be scored:  LaunchCode
+Score for &#39;LaunchCode&#39;: 18
+
+Enter a word to be scored:  Rocket
+Score for &#39;Rocket&#39;: 12
+
+Enter a word to be scored:
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="detailed-requirements">
+<h2>Detailed Requirements<a class="headerlink" href="#detailed-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transform">
+<h3>Transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h3>
+<p>Currently the Scrabble Grader software uses the below data structure for the traditional
+Scrabble scoring algorithm. Take a few moments to review how <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> relates a
+letter to a point value.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">oldScoreKey</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="mi">1</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">],</span>
+   <span class="mi">2</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">],</span>
+   <span class="mi">3</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">],</span>
+   <span class="mi">4</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">],</span>
+   <span class="mi">5</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">],</span>
+   <span class="mi">8</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">],</span>
+   <span class="mi">10</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">]</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>The object keys of <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> are the Scrabble points and the values
+are arrays of letters. All letters in the array have the Scrabble
+point value equal to the key. Example <code class="docutils literal notranslate"><span class="pre">'A'</span></code> is worth 1 and <code class="docutils literal notranslate"><span class="pre">'J'</span></code> is worth 8.</p>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function that takes in as a parameter the <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code>
+object. <code class="docutils literal notranslate"><span class="pre">transform(oldScoreKey)</span></code> will return an object with the letters as keys. The keys
+in the <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object should be <em>lowercase</em> letters.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object will have 26 keys, one for each letter. The value associated to each key
+will be the Scrabble point value.</p>
+<p>Example of new key storage</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code> is worth <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">k</span></code> is worth <code class="docutils literal notranslate"><span class="pre">10</span></code></li>
+</ul>
+<p>With the old format, to find the point value for a letter, the program must iterate over each key in
+<code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> and check if the letter is inside the array paired with that key. This
+search within a search is inefficient.</p>
+<p>In the new data structure, the letters themselves are keys, so a single search will identify a point value.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object usage.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Scrabble scoring values for&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;letter a: &quot;</span><span class="p">,</span> <span class="nx">newScoreKey</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;letter j: &quot;</span><span class="p">,</span> <span class="nx">newScoreKey</span><span class="p">.</span><span class="nx">j</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;letter z: &quot;</span><span class="p">,</span> <span class="nx">newScoreKey</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Scrabble scoring values for
+letter a:  1
+letter j:  8
+letter z:  10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pick-scoring-algorithm">
+<h3>Pick Scoring Algorithm<a class="headerlink" href="#pick-scoring-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>The current Scrabble Scorer only uses one scoring algorithm. For the new version we
+want to let the user pick between three algorithms. Define a <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function
+that will introduce the program and then ask the user which scoring algorithm they want
+to use. See Example Output above and the next section for details on available options.</p>
+</div>
+<div class="section" id="scoring-algorithms">
+<h3>Scoring Algorithms<a class="headerlink" href="#scoring-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array that contains three scorer objects. Each scorer
+object should have these three members <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code> property for each scoring algorithm object should be a function.
+Each <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code> function will take one parameter named <code class="docutils literal notranslate"><span class="pre">word</span></code> and return
+the point value, using the logic listed below. The <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>
+functions can named or anonymous functions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Score Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Scrabble</td>
+<td>The traditional scoring algorithm.</td>
+<td>A function with a <code class="docutils literal notranslate"><span class="pre">word</span></code> parameter that returns a score.
+Uses <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object to determine score.</td>
+</tr>
+<tr class="row-odd"><td>Simple Score</td>
+<td>Each letter is worth 1 point.</td>
+<td>A function with a <code class="docutils literal notranslate"><span class="pre">word</span></code> parameter that returns a score.</td>
+</tr>
+<tr class="row-even"><td>Bonus Vowels</td>
+<td>Vowels are 3 pts, consonants are 1pt.</td>
+<td>A function with <code class="docutils literal notranslate"><span class="pre">word</span></code> parameter that returns a score.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scrabble scoring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;algorithm name: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;scoreFunction result: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">scoreFunction</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">));</span>
+<span class="c1">// Simple scoring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;algorithm name: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;scoreFunction result: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">scoreFunction</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">));</span>
+<span class="c1">// Bonus Vowel scoring</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;algorithm name: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;scoreFunction result: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">scoreFunction</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>algorithm name:  Scrabble
+scoreFunction result:  24
+algorithm name:  Simple Score
+scoreFunction result:  10
+algorithm name:  Bonus Vowels
+scoreFunction result:  16
+</pre></div>
+</div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">All three scoring algorithms are case <em>insensitive</em>, meaning that they should ignore case.</p>
+</div>
+</div>
+<div class="section" id="tie-it-all-together">
+<h3>Tie it All Together<a class="headerlink" href="#tie-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p>Define a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function that will:</p>
+<ol class="arabic simple">
+<li>Use <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> to pick the algorithm.</li>
+<li>Then prompt the user for a word to score.</li>
+<li>Use the picked algorithm to determine a word score.<ul>
+<li>If you user entered <code class="docutils literal notranslate"><span class="pre">0</span></code> then use the Scrabble Scoring <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code></li>
+</ul>
+</li>
+<li>Display the score for the word.</li>
+<li>Repeat steps 1 to 4 until program is stopped.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Handle scoring words that were spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object. The
+point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code> points.</p>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">DO THIS</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="candidateQuiz.html"><span aria-hidden="true">&larr;</span> Assignment #1: Candidate Testing</a></li>
+        
+        
+        <li class="next"><a href="../appendices/about-this-book.html">About This Book <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
