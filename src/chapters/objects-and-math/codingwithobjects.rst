@@ -101,9 +101,9 @@ The loop stops once it has accessed every property.
 
    Inside a ``for..in`` loop, we can only use bracket syntax to access the property values.
 
-.. admonition:: Try It
+.. admonition:: Try It!
 
-   Write a ``for..in`` loop to print to the console the values in the ``tortoiseOne`` object. `TRY IT! <https://repl.it/@launchcode/forinLoop/>`_
+   Write a ``for..in`` loop to print to the console the values in the ``tortoiseOne`` object. `Try it at repl.it <https://repl.it/@launchcode/forinLoop/>`_
 
 
 Objects and Functions

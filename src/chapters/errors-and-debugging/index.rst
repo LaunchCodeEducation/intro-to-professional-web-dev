@@ -1,3 +1,5 @@
+.. _errors-and-debugging:
+
 Errors and Debugging
 ====================
 

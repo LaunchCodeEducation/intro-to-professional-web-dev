@@ -1,5 +1,5 @@
-HTML
-====
+We Built the Internet on HTML
+=============================
 
 .. toctree::
    

@@ -20,8 +20,9 @@ The built-in function ``setTimeout`` allows a programmer to pass a function, spe
 
    Suppose we want to log a message with a 5 second delay. Since five seconds is 5000 milliseconds (1 second = 1000 milliseconds), we can do so like this:
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: setTimeout-Example
    
       function printMessage() {
          console.log("The future is now!");
@@ -37,7 +38,7 @@ The built-in function ``setTimeout`` allows a programmer to pass a function, spe
 
 .. admonition:: Try It!
 
-   Is the call to ``printMessage`` actually delayed? Don't just take our word for it, try this yourself. `Play with our example <https://repl.it/@launchcode/setTimeout-Example>`_ to change the delay.
+   Is the call to ``printMessage`` actually delayed? Don't just take our word for it, try this yourself. Play with our example to change the delay.
 
 The function ``printMessage`` is *passed* to ``setTimeout`` the same as any other argument. 
 
@@ -124,7 +125,9 @@ Check Your Understanding
 
    Similar to the ``map`` example above, finish the program below to halve each number in an array.
 
-   .. sourcecode:: js
+   .. replit:: js
+      :linenos:
+      :slug: Arraymap-check
 
       let nums = [3.14, 42, 4811];
 
@@ -134,13 +137,13 @@ Check Your Understanding
 
       console.log(halved);
 
-   `Halve the array at repl.it <https://repl.it/@launchcode/Arraymap-check>`_
-
 .. admonition:: Question
 
    Use the ``map`` method to map an array of strings. For each name in the array, map it to the first initial.
 
-   .. sourcecode:: js
+   .. replit:: js
+      :linenos:
+      :slug: Mapping-strings-check
 
       let names = ["Chris", "Jim", "Sally", "Blake", "Paul"];
 
@@ -149,5 +152,3 @@ Check Your Understanding
       let firstInitials = names.map();
 
       console.log(firstInitials);
-
-   `Find the first letter of every string at repl.it <https://repl.it/@launchcode/Mapping-strings-check>`_

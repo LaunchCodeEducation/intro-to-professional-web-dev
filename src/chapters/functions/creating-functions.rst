@@ -131,14 +131,13 @@ Let's see how this works explicitly.
 
    What happens if we define a function without calling it?
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Function-Defnition
    
       function sayHello() {
          console.log("Hello, World!");
       }
-      
-   `Run this program at repl.it <https://repl.it/@launchcode/Function-Defnition>`_.
 
 
 .. admonition:: Question

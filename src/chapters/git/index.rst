@@ -1,5 +1,7 @@
-Git
-===
+.. _git-chapter:
+
+Git More Collaboration
+======================
 
 .. toctree::
    
@@ -8,3 +10,4 @@ Git
    remote-repository
    branches
    merge
+   studio

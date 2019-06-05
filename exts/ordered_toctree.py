@@ -13,6 +13,14 @@ class AccessibleHTMLBuilder(StandaloneHTMLBuilder):
         return AccessibleHTMLTranslator
 
 
+def is_toctree_node(node):
+    if len(node.children) < 1:
+        return False
+    child_classes = node.children[0].attributes['classes']
+    toctree_classes = list(filter(lambda x: 'toctree' in x, child_classes))
+    return len(toctree_classes) > 0
+
+
 class AccessibleHTMLTranslator(HTMLTranslator):
 
     def visit_bullet_list(self, node):
@@ -27,11 +35,17 @@ class AccessibleHTMLTranslator(HTMLTranslator):
         self.compact_simple = self.is_compactable(node)
         if self.compact_simple and not old_compact_simple:
             atts['class'] = 'simple'
-        self.body.append(self.starttag(node, 'ol', **atts))
+        if is_toctree_node(node):
+            self.body.append(self.starttag(node, 'ol', **atts))
+        else:
+            self.body.append(self.starttag(node, 'ul', **atts))
 
     def depart_bullet_list(self, node):
         self.compact_simple, self.compact_p = self.context.pop()
-        self.body.append('</ol>\n')
+        if is_toctree_node(node):
+            self.body.append('</ol>\n')
+        else:
+            self.body.append('</ul>\n')
 
 
 def setup(app):
