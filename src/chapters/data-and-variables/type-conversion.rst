@@ -1,3 +1,5 @@
+.. _type-conversion:
+
 Type Conversion
 ===============
 
@@ -79,6 +81,3 @@ Check Your Understanding
    #. ``'three'``
    #. ``'3 3'``
    #. ``'33'``
-   
-
-   
