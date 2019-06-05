@@ -3,7 +3,7 @@ What is Code?
 
 Computers are dumb, understanding not an ounce of context or intended meaning.
 They react mechanically to the instructions we give them, and they cannot
-deviate from the steps we give them to follow.
+deviate from the steps we tell them to follow.
 
 If our instructions are even the slightest bit off, computers cannot consider
 the error and adjust accordingly. Instead, they come to a grinding halt.
