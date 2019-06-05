@@ -40,3 +40,15 @@ Front End vs. Back End Changes
 
 .. figure:: figures/Front-vs-back-end.png
    :alt: Difference between front and back end changes.
+
+
+Proposed Revision
+-----------------
+
+JavaScript is just one of many programming languages, which serve different purposes. Programmers mainly use JavaScript for web development. JavaScript is such a good language for web development because it can run inside a web browser. 
+
+When code runs inside a web browser, the code is run at the same time as your web page is loaded. This cool feature is why programmers use JavaScript to update your profile when you post a status or change the color of the “Submit” button when you have filled out a form. All of those changes to what you see on the web page are part of front end development.
+
+Back end development involves passing data to and from web pages to servers. JavaScript can be used for back end development, but other languages like Java and C# are industry standards for it. In the case of you filling out a form online, back end code transfers the information you submitted to the company storing your information. That information will then live on the company’s servers.
+
+The ins and outs of how the internet works will be covered throughout this book. While important to understand why we are learning JavaScript, we won’t quiz you on servers and front end development now!
