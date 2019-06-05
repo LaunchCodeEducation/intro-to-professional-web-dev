@@ -8,4 +8,3 @@ How To Write Code
    syntax-rules
    comments
    output
-   input
