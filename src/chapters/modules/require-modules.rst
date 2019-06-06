@@ -1,25 +1,34 @@
 Require Modules
 ===============
 
-Previous in this book we used the ``readline-sync`` module to get
-use input. Below you will see the require statement on line 1 which
-makes the ``readline-sync`` module accessible in your file.
+.. index:: ! require
+
+In order to take advantage of modules, we must *import* them with the
+**require** command. You have seen this before with ``readline-sync``.
 
 .. sourcecode:: js
    :linenos:
 
    const input = require('readline-sync');
 
-   const name = input.question("What is your name?");
-   console.log(`hello ${name}`);
+   let name = input.question("What is your name?");
+   console.log(`Hello, ${name}`);
 
-Modules are either objects or functions. If the module returns an object,
-you can use dot notation to call functions on it. If the module returns
-a single function you can use the variable reference to execute the function.
+Line 1 imports the ``readline-sync`` module and assigns its functions to the
+``input`` variable.
+
+Modules are either *single functions* or *objects that contain multiple
+functions*. If importing a module returns a single function, we use the
+variable name to call that function. If the module returns an object, we use
+dot notation to call the functions stored in the object. In line 3, we see an
+example of this. ``input.question`` calls the ``question`` function stored in
+the ``readline-sync`` module.
+
+Later, we will see examples of importing and using single function modules.
 
 .. admonition:: Example
 
-   What is the type of ``input`` from line ``const input = require(`readline-sync`);``?
+   Let's check the type of ``input`` after we import the ``readline-sync`` module.
 
    .. sourcecode:: js
 
@@ -27,174 +36,101 @@ a single function you can use the variable reference to execute the function.
 
       console.log(typeof input);
 
-      const name = input.question("What is your name?");
-      console.log(`hello ${name}`);
-
    **Console Output**
 
    ::
 
       object
 
-The string ``"object"`` is returned because the ``readline-sync`` module returns an object
-when required. If a module returns a function, then the result of ``typeof`` would have been
-``"function"``.
+The ``readline-sync`` module contains several key/value pairs, each of which
+matches a key (e.g. ``question``) with a specific function.
 
+Where Do We Find Modules?
+--------------------------
 
-Where Do Modules Come From?
----------------------------
-Modules can come from three places:
+Modules come from three places:
 
-1. Local file on your computer
+1. A local file on your computer
 2. Node itself, known as Core modules
-3. External registry such as NPM
+3. An external registry such as NPM
 
-How Does Node Know Which Place to Look?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Where Node looks for a module depends on the string value passed into ``require``.
+How Does Node Know Where to Look?
+----------------------------------
 
-1. For relative path values
+The string value passed into ``require`` tells Node where to look for a module.
 
-   * A relative path starts with ``./`` or ``../``
-   * ``const hello require("../hello");``
+User Created Modules
+^^^^^^^^^^^^^^^^^^^^^
 
-2. For non-relative paths
+If a module is stored on your computer, the string passed into ``require`` must
+provide a *path* and a *filename*. This path tells Node where to find the
+module, and it describes how to move up and down within the folders on your
+computer. Paths can be extremely detailed, but best practice suggests that you
+keep local modules either in the same folder as your project or only one level
+from your project. Simple paths are better!
 
-   a. Node looks for Core module with a matching name
-   b. Node looks to NPM for a matching name
+A **relative path** starts with ``./`` or ``../``.
 
-.. admonition:: Example
+#. ``./`` tells Node, *Search for the module in the current project folder*.
+#. ``../`` tells Node, *Search for the module in the folder one level UP from
+   the project*.
 
-   Where does ``readline-sync`` get imported from?
+Following best practice gives us three scenarios for importing one file into
+another. Let's assume we have a folder structure like:
 
-   .. sourcecode:: js
-      :linenos:
+.. figure:: ./figures/path-example.png
 
-      const input = require('readline-sync');
+#. Module in the same folder: If we want to import ``hello`` into ``index.js``,
+   then we use the syntax ``const hello = require('./hello.js');`` on line 1 of
+   ``index.js``.
+#. Module one level up: If we want to import ``hello`` into ``myCoolApp.js``,
+   then we use the syntax ``const hello = require('../hello.js');`` on line 1
+   of ``myCoolApp.js``.
+#. Module one level down: If we want to import ``myCoolApp`` into ``index.js``,
+   then we use the syntax
+   ``const coolApp = require('./Projects/myCoolApp.js');`` on line 1 of
+   ``index.js``. This tells Node to search for ``myCoolApp`` in the
+   ``Projects`` sub-folder, which is in the same folder as ``index.js``.
 
-   The value passed to ``require`` is NOT relative, so it must be a Core module or from
-   NPM. The answer is NPM, let's learn more about NPM and how we can check that.
+Other Modules
+^^^^^^^^^^^^^^
 
+If the filename passed to ``require`` does NOT start with ``./`` or ``../``,
+then Node checks two resources for the module requested.
 
-NPM
----
-.. index:: ! NPM
+#. Node looks for a Core module with a matching name.
+#. Node looks to NPM for a matching name.
 
-.. index::
-   single: TDD; node package manager
+Core modules are installed in Node itself, and as such do not require a path
+description. These modules are *local*, but Node knows where to find them.
+Core modules take precedence over ANY other modules with the same name.
 
-**NPM**, Node Package Manager, is a tool for finding and installing Node modules. NPM
-has three major parts, a registry of modules and command line tool to install modules.
+If Node does find the requested module after checking Core, it looks to the
+`NPM registry <https://docs.npmjs.com/about-npm/>`__, which contains hundreds
+of thousands of free code packages for developers.
+
+In the next section, we will learn more about NPM and how to check it.
 
 Package.json File
-^^^^^^^^^^^^^^^^^
-``package.json`` is a list of all the modules your project uses.
+------------------
+
+Node keeps track of all the modules you import into your project. This list of
+modules is stored inside a ``package.json`` file.
+
+For example, if we only import ``readline-sync``, the file looks something
+like:
+
+.. sourcecode:: json
+   :linenos:
+
+   {
+      "main": "index.js",
+      "dependencies": {
+         "readline-sync": "1.4.9"
+      }
+   }
 
 .. note::
 
-   You not have seen this yet because by default repl.it hides this file. We will talk
-   more about this later.
-
-NPM Registry
-^^^^^^^^^^^^
-The NPM registry is a listing of thousands of modules that are stored on a remote server,
-that can be required and downloaded to your project. The modules have been contributed
-by other developers just like you.
-
-There is an `online version of the registry <https://www.npmjs.com/>`_ that can be used to
-search for a module by name or desired functionality.
-
-.. admonition:: Example
-
-   Go to `online NPM registry <https://www.npmjs.com/>`_ and enter "readline-sync" into the
-   search packages input box.
-
-   .. figure:: ./figures/readline-sync-npm-results.png
-
-   A module that is an exact match appears as the first result. That is the ``readline-sync``
-   module that we required. If you click on the first result you will be taken to the
-   NPM page detailing the ``readline-sync`` module.
-
-   On the details page you will see:
-
-   * Usage statistics (how often the module is used)
-   * Instructions on how to use the module (example code)
-   * Version information
-   * The author(s)
-   * Sourcecode repository
-
-   .. figure:: ./figures/readline-sync-npm-page.png
-
-NPM Command Line Tool (CLI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The NPM command line tool, cli, is installed with Node. The NPM cli is used in a computer's terminal
-to install modules into a Node project. Before we can talk more about the NPM cli we need to discuss
-the repl.it and NPM.
-
-So far we have coded our Node projects inside of repl.it. Repl.it is great, it allows us to simulate
-a development environment WITHOUT having to install any software on our computers. Next we will detail
-how using the NPM CLI is different when using repl.it.
-
-NPM CLI With Local Development Environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You do not need to follow along. We are going to go over the steps so that you are familiar with
-how NPM works outside of repl.it.
-
-1. Install Node on your computer
-
-   * This will also install the NPM CLI tool
-
-2. Use the CLI tool in a terminal to install modules into your project
-
-   * This will add an entry into the ``package.json`` file indicating that your project depends
-   on the modules listed.
-
-3. Finally run ``npm install`` in the terminal to download the modules to your computer.
-
-
-NPM CLI With repl.it
-^^^^^^^^^^^^^^^^^^^^
-This you can follow along with because you are familiar with repl.it.
-
-.. admonition:: Example
-
-   Fork this `example repl.it <https://repl.it/@launchcode/npm-with-replit-starter>`_.
-
-   Because we are in repl.it we can not use the NPM CLI. We will have to use the repl.it
-   interface to add the modules we want.
-
-   1. Click on the Packages icon in the left menu
-   2. Then enter "readline-sync" in the search box
-   3. Click on the top matching result
-
-   .. figure:: ./figures/replit-search-for-module.png
-
-   4. Verify this is the module you want, then click on the plus icon.
-
-   .. figure:: ./figures/replit-add-module.png
-
-   Clicking the plus icon adds a ``package.json`` file that includes a dependency listing for
-   ``readline-sync``. Notice that the results tab shows console output indicating that
-   the module has been installed.
-
-   .. figure:: ./figures/replit-package-json-added.png
-
-   Even though we have added ``readline-sync`` to our package.json, our code still fails
-   because ``input`` is not defined. The final step of requiring ``readline-sync`` will
-   fix that.
-   
-   6. Add ``const input = require("readline-sync");`` to line 1.
-
-   .. sourcecode:: js
-      :linenos:
-
-      const input = require("readline-sync");
-
-      const name = input.question("What is your name?");
-      console.log(`hello ${name}`);
-
-.. note::
-
-   So far we have used repl.it without a ``package.json`` file. That was possible because
-   repl.it is trying to make the development experience as easy as possible. Coding in a
-   local development environment is not so kind.
+   You may not have seen ``package.json`` yet, because repl.it hides this file
+   by default. We will talk more about this later.

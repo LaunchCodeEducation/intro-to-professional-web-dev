@@ -14,13 +14,14 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14. Unit Testing" href="../unit-testing/index.html" />
+    <link rel="next" title="13.3. NPM" href="npm.html" />
     <link rel="prev" title="13.1. The Big Picture" href="what-are-modules.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -85,30 +86,32 @@
     
   <div class="section" id="require-modules">
 <h1>13.2. Require Modules<a class="headerlink" href="#require-modules" title="Permalink to this headline">¶</a></h1>
-<p>Previous in this book we used the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module to get
-use input. Below you will see the require statement on line 1 which
-makes the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module accessible in your file.</p>
+<p id="index-0">In order to take advantage of modules, we must <em>import</em> them with the
+<strong>require</strong> command. You have seen this before with <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>Modules are either objects or functions. If the module returns an object,
-you can use dot notation to call functions on it. If the module returns
-a single function you can use the variable reference to execute the function.</p>
+<p>Line 1 imports the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module and assigns its functions to the
+<code class="docutils literal notranslate"><span class="pre">input</span></code> variable.</p>
+<p>Modules are either <em>single functions</em> or <em>objects that contain multiple
+functions</em>. If importing a module returns a single function, we use the
+variable name to call that function. If the module returns an object, we use
+dot notation to call the functions stored in the object. In line 3, we see an
+example of this. <code class="docutils literal notranslate"><span class="pre">input.question</span></code> calls the <code class="docutils literal notranslate"><span class="pre">question</span></code> function stored in
+the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module.</p>
+<p>Later, we will see examples of importing and using single function modules.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>What is the type of <code class="docutils literal notranslate"><span class="pre">input</span></code> from line <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">input</span> <span class="pre">=</span> <span class="pre">require(`readline-sync`);</span></code>?</p>
+<p>Let’s check the type of <code class="docutils literal notranslate"><span class="pre">input</span></code> after we import the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">input</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -116,165 +119,93 @@ a single function you can use the variable reference to execute the function.</p
 </pre></div>
 </div>
 </div>
-<p>The string <code class="docutils literal notranslate"><span class="pre">&quot;object&quot;</span></code> is returned because the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module returns an object
-when required. If a module returns a function, then the result of <code class="docutils literal notranslate"><span class="pre">typeof</span></code> would have been
-<code class="docutils literal notranslate"><span class="pre">&quot;function&quot;</span></code>.</p>
-<div class="section" id="where-do-modules-come-from">
-<h2>13.2.1. Where Do Modules Come From?<a class="headerlink" href="#where-do-modules-come-from" title="Permalink to this headline">¶</a></h2>
-<p>Modules can come from three places:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module contains several key/value pairs, each of which
+matches a key (e.g. <code class="docutils literal notranslate"><span class="pre">question</span></code>) with a specific function.</p>
+<div class="section" id="where-do-we-find-modules">
+<h2>13.2.1. Where Do We Find Modules?<a class="headerlink" href="#where-do-we-find-modules" title="Permalink to this headline">¶</a></h2>
+<p>Modules come from three places:</p>
 <ol class="arabic simple">
-<li>Local file on your computer</li>
+<li>A local file on your computer</li>
 <li>Node itself, known as Core modules</li>
-<li>External registry such as NPM</li>
+<li>An external registry such as NPM</li>
 </ol>
-<div class="section" id="how-does-node-know-which-place-to-look">
-<h3>13.2.1.1. How Does Node Know Which Place to Look?<a class="headerlink" href="#how-does-node-know-which-place-to-look" title="Permalink to this headline">¶</a></h3>
-<p>Where Node looks for a module depends on the string value passed into <code class="docutils literal notranslate"><span class="pre">require</span></code>.</p>
+</div>
+<div class="section" id="how-does-node-know-where-to-look">
+<h2>13.2.2. How Does Node Know Where to Look?<a class="headerlink" href="#how-does-node-know-where-to-look" title="Permalink to this headline">¶</a></h2>
+<p>The string value passed into <code class="docutils literal notranslate"><span class="pre">require</span></code> tells Node where to look for a module.</p>
+<div class="section" id="user-created-modules">
+<h3>13.2.2.1. User Created Modules<a class="headerlink" href="#user-created-modules" title="Permalink to this headline">¶</a></h3>
+<p>If a module is stored on your computer, the string passed into <code class="docutils literal notranslate"><span class="pre">require</span></code> must
+provide a <em>path</em> and a <em>filename</em>. This path tells Node where to find the
+module, and it describes how to move up and down within the folders on your
+computer. Paths can be extremely detailed, but best practice suggests that you
+keep local modules either in the same folder as your project or only one level
+from your project. Simple paths are better!</p>
+<p>A <strong>relative path</strong> starts with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code>.</p>
 <ol class="arabic simple">
-<li>For relative path values<ul>
-<li>A relative path starts with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">require(&quot;../hello&quot;);</span></code></li>
-</ul>
-</li>
-<li>For non-relative paths<ol class="loweralpha">
-<li>Node looks for Core module with a matching name</li>
-<li>Node looks to NPM for a matching name</li>
+<li><code class="docutils literal notranslate"><span class="pre">./</span></code> tells Node, <em>Search for the module in the current project folder</em>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">../</span></code> tells Node, <em>Search for the module in the folder one level UP from
+the project</em>.</li>
 </ol>
-</li>
+<p>Following best practice gives us three scenarios for importing one file into
+another. Let’s assume we have a folder structure like:</p>
+<div class="figure">
+<img alt="../../_images/path-example.png" src="../../_images/path-example.png" />
+</div>
+<ol class="arabic simple">
+<li>Module in the same folder: If we want to import <code class="docutils literal notranslate"><span class="pre">hello</span></code> into <code class="docutils literal notranslate"><span class="pre">index.js</span></code>,
+then we use the syntax <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('./hello.js');</span></code> on line 1 of
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
+<li>Module one level up: If we want to import <code class="docutils literal notranslate"><span class="pre">hello</span></code> into <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>,
+then we use the syntax <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('../hello.js');</span></code> on line 1
+of <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>.</li>
+<li>Module one level down: If we want to import <code class="docutils literal notranslate"><span class="pre">myCoolApp</span></code> into <code class="docutils literal notranslate"><span class="pre">index.js</span></code>,
+then we use the syntax
+<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">coolApp</span> <span class="pre">=</span> <span class="pre">require('./Projects/myCoolApp.js');</span></code> on line 1 of
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>. This tells Node to search for <code class="docutils literal notranslate"><span class="pre">myCoolApp</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">Projects</span></code> sub-folder, which is in the same folder as <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
 </ol>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Where does <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> get imported from?</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-<p class="last">The value passed to <code class="docutils literal notranslate"><span class="pre">require</span></code> is NOT relative, so it must be a Core module or from
-NPM. The answer is NPM, let’s learn more about NPM and how we can check that.</p>
+</div>
+<div class="section" id="other-modules">
+<h3>13.2.2.2. Other Modules<a class="headerlink" href="#other-modules" title="Permalink to this headline">¶</a></h3>
+<p>If the filename passed to <code class="docutils literal notranslate"><span class="pre">require</span></code> does NOT start with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code>,
+then Node checks two resources for the module requested.</p>
+<ol class="arabic simple">
+<li>Node looks for a Core module with a matching name.</li>
+<li>Node looks to NPM for a matching name.</li>
+</ol>
+<p>Core modules are installed in Node itself, and as such do not require a path
+description. These modules are <em>local</em>, but Node knows where to find them.
+Core modules take precedence over ANY other modules with the same name.</p>
+<p>If Node does find the requested module after checking Core, it looks to the
+<a class="reference external" href="https://docs.npmjs.com/about-npm/" target="_blank">NPM registry<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which contains hundreds
+of thousands of free code packages for developers.</p>
+<p>In the next section, we will learn more about NPM and how to check it.</p>
 </div>
 </div>
-</div>
-<div class="section" id="npm">
-<h2>13.2.2. NPM<a class="headerlink" href="#npm" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-0"></span><p id="index-1"><strong>NPM</strong>, Node Package Manager, is a tool for finding and installing Node modules. NPM
-has three major parts, a registry of modules and command line tool to install modules.</p>
 <div class="section" id="package-json-file">
-<h3>13.2.2.1. Package.json File<a class="headerlink" href="#package-json-file" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">package.json</span></code> is a list of all the modules your project uses.</p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">You not have seen this yet because by default repl.it hides this file. We will talk
-more about this later.</p>
-</div>
-</div>
-<div class="section" id="npm-registry">
-<h3>13.2.2.2. NPM Registry<a class="headerlink" href="#npm-registry" title="Permalink to this headline">¶</a></h3>
-<p>The NPM registry is a listing of thousands of modules that are stored on a remote server,
-that can be required and downloaded to your project. The modules have been contributed
-by other developers just like you.</p>
-<p>There is an <a class="reference external" href="https://www.npmjs.com/" target="_blank">online version of the registry<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> that can be used to
-search for a module by name or desired functionality.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Go to <a class="reference external" href="https://www.npmjs.com/" target="_blank">online NPM registry<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and enter “readline-sync” into the
-search packages input box.</p>
-<div class="figure">
-<img alt="../../_images/readline-sync-npm-results.png" src="../../_images/readline-sync-npm-results.png" />
-</div>
-<p>A module that is an exact match appears as the first result. That is the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>
-module that we required. If you click on the first result you will be taken to the
-NPM page detailing the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module.</p>
-<p>On the details page you will see:</p>
-<ul class="simple">
-<li>Usage statistics (how often the module is used)</li>
-<li>Instructions on how to use the module (example code)</li>
-<li>Version information</li>
-<li>The author(s)</li>
-<li>Sourcecode repository</li>
-</ul>
-<div class="last figure">
-<img alt="../../_images/readline-sync-npm-page.png" src="../../_images/readline-sync-npm-page.png" />
-</div>
-</div>
-</div>
-<div class="section" id="npm-command-line-tool-cli">
-<h3>13.2.2.3. NPM Command Line Tool (CLI)<a class="headerlink" href="#npm-command-line-tool-cli" title="Permalink to this headline">¶</a></h3>
-<p>The NPM command line tool, cli, is installed with Node. The NPM cli is used in a computer’s terminal
-to install modules into a Node project. Before we can talk more about the NPM cli we need to discuss
-the repl.it and NPM.</p>
-<p>So far we have coded our Node projects inside of repl.it. Repl.it is great, it allows us to simulate
-a development environment WITHOUT having to install any software on our computers. Next we will detail
-how using the NPM CLI is different when using repl.it.</p>
-</div>
-<div class="section" id="npm-cli-with-local-development-environment">
-<h3>13.2.2.4. NPM CLI With Local Development Environment<a class="headerlink" href="#npm-cli-with-local-development-environment" title="Permalink to this headline">¶</a></h3>
-<p>You do not need to follow along. We are going to go over the steps so that you are familiar with
-how NPM works outside of repl.it.</p>
-<ol class="arabic">
-<li><p class="first">Install Node on your computer</p>
-<ul class="simple">
-<li>This will also install the NPM CLI tool</li>
-</ul>
-</li>
-<li><p class="first">Use the CLI tool in a terminal to install modules into your project</p>
-<ul class="simple">
-<li>This will add an entry into the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file indicating that your project depends</li>
-</ul>
-<p>on the modules listed.</p>
-</li>
-<li><p class="first">Finally run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> in the terminal to download the modules to your computer.</p>
-</li>
-</ol>
-</div>
-<div class="section" id="npm-cli-with-repl-it">
-<h3>13.2.2.5. NPM CLI With repl.it<a class="headerlink" href="#npm-cli-with-repl-it" title="Permalink to this headline">¶</a></h3>
-<p>This you can follow along with because you are familiar with repl.it.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Fork this <a class="reference external" href="https://repl.it/&#64;launchcode/npm-with-replit-starter" target="_blank">example repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-<p>Because we are in repl.it we can not use the NPM CLI. We will have to use the repl.it
-interface to add the modules we want.</p>
-<ol class="arabic simple">
-<li>Click on the Packages icon in the left menu</li>
-<li>Then enter “readline-sync” in the search box</li>
-<li>Click on the top matching result</li>
-</ol>
-<div class="figure">
-<img alt="../../_images/replit-search-for-module.png" src="../../_images/replit-search-for-module.png" />
-</div>
-<ol class="arabic simple" start="4">
-<li>Verify this is the module you want, then click on the plus icon.</li>
-</ol>
-<div class="figure">
-<img alt="../../_images/replit-add-module.png" src="../../_images/replit-add-module.png" />
-</div>
-<p>Clicking the plus icon adds a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file that includes a dependency listing for
-<code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>. Notice that the results tab shows console output indicating that
-the module has been installed.</p>
-<div class="figure">
-<img alt="../../_images/replit-package-json-added.png" src="../../_images/replit-package-json-added.png" />
-</div>
-<p>Even though we have added <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> to our package.json, our code still fails
-because <code class="docutils literal notranslate"><span class="pre">input</span></code> is not defined. The final step of requiring <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> will
-fix that.</p>
-<ol class="arabic simple" start="6">
-<li>Add <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">input</span> <span class="pre">=</span> <span class="pre">require(&quot;readline-sync&quot;);</span></code> to line 1.</li>
-</ol>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<h2>13.2.3. Package.json File<a class="headerlink" href="#package-json-file" title="Permalink to this headline">¶</a></h2>
+<p>Node keeps track of all the modules you import into your project. This list of
+modules is stored inside a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file.</p>
+<p>For example, if we only import <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>, the file looks something
+like:</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;readline-sync&quot;</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;readline-sync&quot;</span><span class="p">:</span> <span class="s2">&quot;1.4.9&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-</div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">So far we have used repl.it without a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file. That was possible because
-repl.it is trying to make the development experience as easy as possible. Coding in a
-local development environment is not so kind.</p>
-</div>
+<p class="last">You may not have seen <code class="docutils literal notranslate"><span class="pre">package.json</span></code> yet, because repl.it hides this file
+by default. We will talk more about this later.</p>
 </div>
 </div>
 </div>
@@ -288,7 +219,7 @@ local development environment is not so kind.</p>
         <li class="previous"><a href="what-are-modules.html"><span aria-hidden="true">&larr;</span> 13.1. The Big Picture</a></li>
         
         
-        <li class="next"><a href="../unit-testing/index.html">14. Unit Testing <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="npm.html">13.3. NPM <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

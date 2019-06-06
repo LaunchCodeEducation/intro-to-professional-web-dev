@@ -70,7 +70,7 @@ Some modules also provide us with useful shortcuts.
 :ref:`readline-sync <readline-sync>` allowed us to collect input from a user,
 and this module contains lots of other methods besides the ``.question`` we
 used in our examples. Rather than making every developer write their own code
-for interacting with the user through the console, someone created
-``readline-sync`` to make the process easier for all. We do not have to worry
-about HOW the module works. We just need to be able to pull it into our
-projects and use its functions.
+for interacting with the user through the console, ``readline-sync`` makes the
+process easier for all by providing a set of ready-to-use functions. We do not
+need to worry about HOW the module works. We just need to be able to pull it
+into our projects and use its functions.
