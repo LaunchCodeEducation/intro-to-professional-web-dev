@@ -141,3 +141,20 @@ like:
 
    You may not have seen ``package.json`` yet, because repl.it hides this file
    by default. We will talk more about this later.
+
+Check Your Understanding
+-------------------------
+
+.. admonition:: Question
+
+   Assume you have the following file structure:
+
+   .. figure:: ./figures/requireCC.png
+
+   Which statement allows you to import the ``rutabaga`` module into
+   ``project.js``?
+
+   a. ``const rutabaga = require('/rutabaga.js');``
+   b. ``const rutabaga = require('./rutabaga.js');``
+   c. ``const rutabaga = require('../rutabaga.js');``
+   d. ``const rutabaga = require('./Tubers/rutabaga.js');``

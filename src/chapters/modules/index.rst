@@ -10,3 +10,6 @@ Modules
    require-modules
    npm
    exporting
+   wrap-up
+   exercises
+   studio

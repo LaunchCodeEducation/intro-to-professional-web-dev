@@ -49,8 +49,9 @@ Let's start by exporting the ``isPalindrome`` function. At the bottom of the
 ``practiceExports.js`` code, add the line ``module.exports = isPalindrome;``.
 This makes the function available to other files.
 
-In ``index.js`` we import ``isPalindrome`` with a ``require`` statement. After
-this, we can call the function from within ``index.js``.
+In ``index.js`` we import ``practiceExports.js`` with a ``require`` statement.
+``isPalindrome`` gets pulled in and assigned to the new variable
+``palindromeCheck``, and we can now call the function from within ``index.js``.
 
 .. admonition:: Try It
 
@@ -87,9 +88,11 @@ There are several points to make about the code and output.
 Exporting Multiple Functions
 -----------------------------
 
-``practiceExports.js`` contains three functions, and we can export them by
-using a different syntax for ``module.exports``. Instead of setting up a single
+``practiceExports.js`` contains three functions, and to export all of them we
+use a different syntax for ``module.exports``. Instead of setting up a single
 function, we will create an *object*.
+
+.. _export-multiple-functions:
 
 To export multiple functions, the syntax is:
 
@@ -103,7 +106,7 @@ To export multiple functions, the syntax is:
 
 Within the ``{}``, we create a series of key:value pairs. The *keys* will be
 the names used in ``index.js`` to call the functions. The *values* are the
-functions themselves. 
+functions themselves.
 
 .. admonition:: Note
 
@@ -125,9 +128,9 @@ functions themselves.
 Try It
 ^^^^^^^
 
-Modify ``module.exports`` in ``practiceExports.js`` to include the three
-functions we want to export. We could include only one or two, but for this
-practice let's use all of them.
+Use the object syntax :ref:`as shown above <export-multiple-functions>` to
+modify ``module.exports`` in ``practiceExports.js``. We could include only one
+or two of the functions, but for this practice let's use all of them.
 
 Next, modify ``index.js`` as follows and click "Run":
 
@@ -140,11 +143,11 @@ Next, modify ``index.js`` as follows and click "Run":
    console.log(practice);
 
 ``typeof`` indicates that ``practice`` is an object, and printing ``practice``
-gives us a list of key/value pairs (e.g.
+gives us a list of its key/value pairs (e.g.
 ``isPalindrome: [Function: isPalindrome]``).
 
 All of the functions from ``practiceExports`` are included in the ``practice``
-object. To call then, we use dot notation---
+object. To call them, we use dot notation---
 ``practice.functionName(argument)``.
 
 Modify ``index.js`` again and click "Run":
@@ -177,7 +180,62 @@ Success! You exported your first module.
 What If
 --------
 
+You might be wondering, *If I have 20+ functions in a file, and I want to
+export them ALL, do I really need to type 20+ key/value pairs in
+module.exports?*
 
+The quick answer is, *Yes*. ``require`` only pulls in items identified in
+``module.exports``. The longer answer is, *Hmmm, you missed the point*.
+
+Just like functions, we want to keep modules small and specific. Each module
+should focus on a single idea and contain only a few related functions. With
+this in mind, we see that ``practiceExports`` falls short of the goal. Even
+though it is small in size, ``isPalindrome``, ``evenOrOdd``, and
+``randomArrayElement`` do not really compliment each other. They would be
+better placed in different modules.
+
+If you find yourself writing lots of functions in a single file, consider
+splitting them up into smaller, more detailed modules. Doing this also
+organizes your work. A module titled ``cleverLC101Work`` is not nearly as
+helpful as one called ``arraySortingMethods``.
 
 Check Your Understanding
 -------------------------
+
+.. admonition:: Question
+
+   Assume you have the following at the end of a ``circleStuff.js`` module:
+
+   .. sourcecode:: js
+
+      module.exports = {
+         areaOfCircle: areaOfCircle,
+         circumference: circumference,
+         findRadius: findRadius,
+         arcLength: arcLength
+      }
+
+   Inside your project, you import ``circleStuff``:
+
+   .. sourcecode:: js
+      :linenos:
+
+      const circleStuff = require('./circleStuff.js');
+
+   Which of the following is the correct way to find the circumference of a circle
+   from within your project?
+
+   a. ``circleStuff(argument)``
+   b. ``circleStuff.circumference(argument)``
+   c. ``circleStuff(circumference(argument))``
+   d. ``circumference(argument)``
+
+.. admonition:: Question
+
+   A module in Node.js is:
+
+   a. A file containing JavaScript code intended for use in other Node programs.
+   b. A separate block of code within a program.
+   c. One line of code in a program.
+   d. A function.
+   e. A file that contains documentation about functions in JavaScript.

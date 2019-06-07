@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14. Unit Testing" href="../unit-testing/index.html" />
+    <link rel="next" title="13.5. Wrap-up" href="wrap-up.html" />
     <link rel="prev" title="13.3. NPM" href="npm.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -140,8 +140,9 @@ import them into <code class="docutils literal notranslate"><span class="pre">in
 <p>Let’s start by exporting the <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> function. At the bottom of the
 <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> code, add the line <code class="docutils literal notranslate"><span class="pre">module.exports</span> <span class="pre">=</span> <span class="pre">isPalindrome;</span></code>.
 This makes the function available to other files.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code> we import <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> with a <code class="docutils literal notranslate"><span class="pre">require</span></code> statement. After
-this, we can call the function from within <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code> we import <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> with a <code class="docutils literal notranslate"><span class="pre">require</span></code> statement.
+<code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> gets pulled in and assigned to the new variable
+<code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code>, and we can now call the function from within <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Add the following code to <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then click “Run”.</p>
@@ -177,10 +178,10 @@ is not a palindrome.</li>
 </div>
 <div class="section" id="exporting-multiple-functions">
 <h2>13.4.3. Exporting Multiple Functions<a class="headerlink" href="#exporting-multiple-functions" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> contains three functions, and we can export them by
-using a different syntax for <code class="docutils literal notranslate"><span class="pre">module.exports</span></code>. Instead of setting up a single
+<p><code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> contains three functions, and to export all of them we
+use a different syntax for <code class="docutils literal notranslate"><span class="pre">module.exports</span></code>. Instead of setting up a single
 function, we will create an <em>object</em>.</p>
-<p>To export multiple functions, the syntax is:</p>
+<p id="export-multiple-functions">To export multiple functions, the syntax is:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
    <span class="nx">isPalindrome</span><span class="o">:</span> <span class="nx">isPalindrome</span><span class="p">,</span>
    <span class="nx">evenOrOdd</span><span class="o">:</span> <span class="nx">evenOrOdd</span><span class="p">,</span>
@@ -208,9 +209,9 @@ helps maintain consistency between files.</p>
 </div>
 <div class="section" id="try-it">
 <h3>13.4.3.1. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
-<p>Modify <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> in <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> to include the three
-functions we want to export. We could include only one or two, but for this
-practice let’s use all of them.</p>
+<p>Use the object syntax <a class="reference internal" href="#export-multiple-functions"><span class="std std-ref">as shown above</span></a> to
+modify <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> in <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code>. We could include only one
+or two of the functions, but for this practice let’s use all of them.</p>
 <p>Next, modify <code class="docutils literal notranslate"><span class="pre">index.js</span></code> as follows and click “Run”:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -222,10 +223,10 @@ practice let’s use all of them.</p>
 </pre></div>
 </td></tr></table></div>
 <p><code class="docutils literal notranslate"><span class="pre">typeof</span></code> indicates that <code class="docutils literal notranslate"><span class="pre">practice</span></code> is an object, and printing <code class="docutils literal notranslate"><span class="pre">practice</span></code>
-gives us a list of key/value pairs (e.g.
+gives us a list of its key/value pairs (e.g.
 <code class="docutils literal notranslate"><span class="pre">isPalindrome:</span> <span class="pre">[Function:</span> <span class="pre">isPalindrome]</span></code>).</p>
 <p>All of the functions from <code class="docutils literal notranslate"><span class="pre">practiceExports</span></code> are included in the <code class="docutils literal notranslate"><span class="pre">practice</span></code>
-object. To call then, we use dot notation—
+object. To call them, we use dot notation—
 <code class="docutils literal notranslate"><span class="pre">practice.functionName(argument)</span></code>.</p>
 <p>Modify <code class="docutils literal notranslate"><span class="pre">index.js</span></code> again and click “Run”:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -260,9 +261,59 @@ LC101
 </div>
 <div class="section" id="what-if">
 <h2>13.4.4. What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h2>
+<p>You might be wondering, <em>If I have 20+ functions in a file, and I want to
+export them ALL, do I really need to type 20+ key/value pairs in
+module.exports?</em></p>
+<p>The quick answer is, <em>Yes</em>. <code class="docutils literal notranslate"><span class="pre">require</span></code> only pulls in items identified in
+<code class="docutils literal notranslate"><span class="pre">module.exports</span></code>. The longer answer is, <em>Hmmm, you missed the point</em>.</p>
+<p>Just like functions, we want to keep modules small and specific. Each module
+should focus on a single idea and contain only a few related functions. With
+this in mind, we see that <code class="docutils literal notranslate"><span class="pre">practiceExports</span></code> falls short of the goal. Even
+though it is small in size, <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, <code class="docutils literal notranslate"><span class="pre">evenOrOdd</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">randomArrayElement</span></code> do not really compliment each other. They would be
+better placed in different modules.</p>
+<p>If you find yourself writing lots of functions in a single file, consider
+splitting them up into smaller, more detailed modules. Doing this also
+organizes your work. A module titled <code class="docutils literal notranslate"><span class="pre">cleverLC101Work</span></code> is not nearly as
+helpful as one called <code class="docutils literal notranslate"><span class="pre">arraySortingMethods</span></code>.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>13.4.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume you have the following at the end of a <code class="docutils literal notranslate"><span class="pre">circleStuff.js</span></code> module:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">areaOfCircle</span><span class="o">:</span> <span class="nx">areaOfCircle</span><span class="p">,</span>
+   <span class="nx">circumference</span><span class="o">:</span> <span class="nx">circumference</span><span class="p">,</span>
+   <span class="nx">findRadius</span><span class="o">:</span> <span class="nx">findRadius</span><span class="p">,</span>
+   <span class="nx">arcLength</span><span class="o">:</span> <span class="nx">arcLength</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Inside your project, you import <code class="docutils literal notranslate"><span class="pre">circleStuff</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">circleStuff</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./circleStuff.js&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Which of the following is the correct way to find the circumference of a circle
+from within your project?</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">circleStuff(argument)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">circleStuff.circumference(argument)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">circleStuff(circumference(argument))</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">circumference(argument)</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>A module in Node.js is:</p>
+<ol class="last loweralpha simple">
+<li>A file containing JavaScript code intended for use in other Node programs.</li>
+<li>A separate block of code within a program.</li>
+<li>One line of code in a program.</li>
+<li>A function.</li>
+<li>A file that contains documentation about functions in JavaScript.</li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -275,7 +326,7 @@ LC101
         <li class="previous"><a href="npm.html"><span aria-hidden="true">&larr;</span> 13.3. NPM</a></li>
         
         
-        <li class="next"><a href="../unit-testing/index.html">14. Unit Testing <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="wrap-up.html">13.5. Wrap-up <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
