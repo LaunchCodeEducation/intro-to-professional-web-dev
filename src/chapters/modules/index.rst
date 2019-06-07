@@ -9,3 +9,4 @@ Modules
    what-are-modules
    require-modules
    npm
+   exporting
