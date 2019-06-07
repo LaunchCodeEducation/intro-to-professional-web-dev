@@ -1,5 +1,5 @@
-Assignment #4: HTML Me Someting
-================================
+Assignment #4: HTML Me Something
+=================================
 
 You’ve learned a bit of HTML and some CSS, but you have likely only used
 it in bits and pieces so far, adding or modifying content in exercises
@@ -13,8 +13,12 @@ while CSS dictates the *visual style*.
 
 Best practices dictate that *content* and *style* should be kept as separate as
 possible. To that end, we will build the HTML portion of our page first,
-and afterwards we will add a few styles with CSS. This will help us avoid
-creating HTML elements simply to change the style of our page.
+and afterwards we will add a few styles with CSS. We do this to avoid using
+HTML tags to change the general appearance of our page. For example, what if we
+want all of our main headings to be *red*? We can either add this style one
+time in the CSS file, or we must include ``style="color:red"`` in EVERY h1 tag.
+Especially for large websites, CSS provides the best place to control the
+overall appearance of a page.
 
 Sections:
 ----------
@@ -28,8 +32,8 @@ Sections:
 Getting started
 ----------------
 
-First, follow the steps below to create a folder for your project and
-initialize it as a Git repository:
+Follow the steps below to create a folder for your project and initialize it as
+a Git repository:
 
 Setup the Project
 ^^^^^^^^^^^^^^^^^^
@@ -51,7 +55,7 @@ Setup the Project
    Your directory structure should now look like the below (or something
    similar):
 
-   :: 
+   ::
 
       lc101/
           |
@@ -59,10 +63,10 @@ Setup the Project
           |
           ... etc
 
-#. Within your new ``html-me-something/`` directory, create and save a
-   new file called ``index.html``:
+#. Within your new ``html-me-something/`` directory, use the ``touch`` command
+   to create and save a new file called ``index.html``:
 
-   :: 
+   ::
 
       $ touch index.html
 
@@ -79,7 +83,7 @@ Setup the Project
 
       <p>YOUR NAME</p>
 
-#. Save your file. 
+#. Save your file.
 
 #. Finally, open up the file in a web browser. You can do this by
    selecting *File > Open File* in your web browser and navigating to
@@ -92,7 +96,7 @@ Setup the Project
 
          $ pwd
          /FolderName/OtherFolderName/lc101/html-me-something
-   
+
    b. The output shows the path to your current directory. Follow this path
       after selecting *File > Open File* to locate and open ``index.html``.
    c. Once you open your file, you should see a blank white page with your name
@@ -109,7 +113,7 @@ Now let’s incorporate Git into the picture.
    folder, and then use the ``git init`` command to initialize that
    folder as a Git repository:
 
-   :: 
+   ::
 
       $ pwd
       /Users/adalovelace/lc101/html-me-something
@@ -136,7 +140,7 @@ Now let’s incorporate Git into the picture.
    Back in the terminal, use the ``git status`` command to check the status of
    your newly created repo:
 
-   :: 
+   ::
 
       $ git status
       On branch master
@@ -159,7 +163,7 @@ Now let’s incorporate Git into the picture.
    Use the ``git add`` command to track your ``index.html`` file so that
    it will be staged for your next commit:
 
-   :: 
+   ::
 
       $ git add index.html
 
@@ -168,7 +172,7 @@ Now let’s incorporate Git into the picture.
    You should see that your change (the creation of the new file) is staged to
    be committed:
 
-   :: 
+   ::
 
       $ git status
       On branch master
@@ -183,13 +187,13 @@ Now let’s incorporate Git into the picture.
 #. You are now ready to ``commit`` the changes you staged, along with an
    appropriate message describing what you changed:
 
-   :: 
+   ::
 
       $ git commit -m "Created index.html file"
 
    Check your status again. Your status should be *clean*:
 
-   :: 
+   ::
 
       $ git status
       On branch master
@@ -297,7 +301,7 @@ Here’s how:
    Use the ``git push`` command to send all your local changes up to the
    remote:
 
-   :: 
+   ::
 
       $ git push origin master
 
