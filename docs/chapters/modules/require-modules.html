@@ -125,9 +125,9 @@ matches a key (e.g. <code class="docutils literal notranslate"><span class="pre"
 <h2>13.2.1. Where Do We Find Modules?<a class="headerlink" href="#where-do-we-find-modules" title="Permalink to this headline">¶</a></h2>
 <p>Modules come from three places:</p>
 <ol class="arabic simple">
-<li>A local file on your computer</li>
-<li>Node itself, known as Core modules</li>
-<li>An external registry such as NPM</li>
+<li>A local file on your computer.</li>
+<li>Node itself, known as Core modules.</li>
+<li>An external registry such as NPM.</li>
 </ol>
 </div>
 <div class="section" id="how-does-node-know-where-to-look">
@@ -138,31 +138,32 @@ matches a key (e.g. <code class="docutils literal notranslate"><span class="pre"
 <p>If a module is stored on your computer, the string passed into <code class="docutils literal notranslate"><span class="pre">require</span></code> must
 provide a <em>path</em> and a <em>filename</em>. This path tells Node where to find the
 module, and it describes how to move up and down within the folders on your
-computer. Paths can be extremely detailed, but best practice suggests that you
-keep local modules either in the same folder as your project or only one level
-from your project. Simple paths are better!</p>
+computer. Paths can be extremely detailed, but best practice recommends that
+you keep local modules either in the same folder as your project or only one
+level from your project. Simple paths are better!</p>
 <p>A <strong>relative path</strong> starts with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code>.</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">./</span></code> tells Node, <em>Search for the module in the current project folder</em>.</li>
 <li><code class="docutils literal notranslate"><span class="pre">../</span></code> tells Node, <em>Search for the module in the folder one level UP from
 the project</em>.</li>
 </ol>
-<p>Following best practice gives us three scenarios for importing one file into
-another. Let’s assume we have a folder structure like:</p>
+<p>As an example, let’s assume we have a folder structure like:</p>
 <div class="figure">
 <img alt="../../_images/path-example.png" src="../../_images/path-example.png" />
 </div>
+<p>Following best practice gives us three scenarios for importing one file into
+another:</p>
 <ol class="arabic simple">
-<li>Module in the same folder: If we want to import <code class="docutils literal notranslate"><span class="pre">hello</span></code> into <code class="docutils literal notranslate"><span class="pre">index.js</span></code>,
-then we use the syntax <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('./hello.js');</span></code> on line 1 of
-<code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
-<li>Module one level up: If we want to import <code class="docutils literal notranslate"><span class="pre">hello</span></code> into <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>,
-then we use the syntax <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('../hello.js');</span></code> on line 1
-of <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>.</li>
-<li>Module one level down: If we want to import <code class="docutils literal notranslate"><span class="pre">myCoolApp</span></code> into <code class="docutils literal notranslate"><span class="pre">index.js</span></code>,
-then we use the syntax
+<li>The module is in the same folder: If we want to import <code class="docutils literal notranslate"><span class="pre">hello.js</span></code> into
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then we add <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('./hello.js');</span></code> on line 1
+of <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
+<li>The module is one level up: If we want to import <code class="docutils literal notranslate"><span class="pre">hello.js</span></code> into
+<code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>, then we add <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('../hello.js');</span></code>
+on line 1 of <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>.</li>
+<li>The module is one level down: If we want to import <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code> into
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then we add
 <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">coolApp</span> <span class="pre">=</span> <span class="pre">require('./Projects/myCoolApp.js');</span></code> on line 1 of
-<code class="docutils literal notranslate"><span class="pre">index.js</span></code>. This tells Node to search for <code class="docutils literal notranslate"><span class="pre">myCoolApp</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>. This tells Node to search for <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code> in the
 <code class="docutils literal notranslate"><span class="pre">Projects</span></code> sub-folder, which is in the same folder as <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
 </ol>
 </div>
@@ -172,15 +173,20 @@ then we use the syntax
 then Node checks two resources for the module requested.</p>
 <ol class="arabic simple">
 <li>Node looks for a Core module with a matching name.</li>
-<li>Node looks to NPM for a matching name.</li>
+<li>Node looks for a module installed from an external resource like NPM.</li>
 </ol>
 <p>Core modules are installed in Node itself, and as such do not require a path
 description. These modules are <em>local</em>, but Node knows where to find them.
 Core modules take precedence over ANY other modules with the same name.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><a class="reference external" href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank">W3 schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> provides a
+convenient list of the Core Node modules.</p>
+</div>
 <p>If Node does find the requested module after checking Core, it looks to the
 <a class="reference external" href="https://docs.npmjs.com/about-npm/" target="_blank">NPM registry<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which contains hundreds
 of thousands of free code packages for developers.</p>
-<p>In the next section, we will learn more about NPM and how to check it.</p>
+<p>In the next section, we will learn more about NPM and how to use it.</p>
 </div>
 </div>
 <div class="section" id="package-json-file">

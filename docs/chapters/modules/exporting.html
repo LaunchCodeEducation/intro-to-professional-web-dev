@@ -87,8 +87,8 @@
   <div class="section" id="exporting-modules">
 <h1>13.4. Exporting Modules<a class="headerlink" href="#exporting-modules" title="Permalink to this headline">¶</a></h1>
 <p>We learned how to pull in useful code in the form of <em>modules</em>, but what if
-we have written clever code that we want to share? Fortunately, Node allows
-us to make our code available for other programs.</p>
+we write clever code that we want to share? Fortunately, Node allows us to make
+our code available for use in other programs.</p>
 <p>First, some basic points:</p>
 <ol class="arabic simple">
 <li>Every Node.js file is treated as a module (also called a <em>package</em>).</li>
@@ -125,13 +125,144 @@ work—making it available to import as a module.</p>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">randomSelection</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+<span class="kd">function</span> <span class="nx">randomArrayElement</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
    <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
    <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/SomeName" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/ExportPractice01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>These functions are in the <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> file, and our goal is to
+import them into <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</p>
+</div>
+<div class="section" id="exporting-a-single-function">
+<h2>13.4.2. Exporting a Single Function<a class="headerlink" href="#exporting-a-single-function" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by exporting the <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> function. At the bottom of the
+<code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> code, add the line <code class="docutils literal notranslate"><span class="pre">module.exports</span> <span class="pre">=</span> <span class="pre">isPalindrome;</span></code>.
+This makes the function available to other files.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code> we import <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> with a <code class="docutils literal notranslate"><span class="pre">require</span></code> statement. After
+this, we can call the function from within <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Add the following code to <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then click “Run”.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">palindromeCheck</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./practiceExports.js&#39;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">palindromeCheck</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">palindromeCheck</span><span class="p">(</span><span class="s1">&#39;that&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">palindromeCheck</span><span class="p">(</span><span class="s1">&#39;radar&#39;</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>function
+false
+true
+</pre></div>
+</div>
+</div>
+<p>There are several points to make about the code and output.</p>
+<ol class="arabic simple">
+<li>By setting <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> equal to <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, we exported that
+single function.</li>
+<li>Even though we <code class="docutils literal notranslate"><span class="pre">require</span></code> the file <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code>, it only assigns
+<code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code>. Thus, <code class="docutils literal notranslate"><span class="pre">typeof</span>
+<span class="pre">palindromeCheck</span></code> returns <code class="docutils literal notranslate"><span class="pre">function</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code> now behaves in the same way as <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, so
+calling <code class="docutils literal notranslate"><span class="pre">palindromeCheck('that')</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, since <code class="docutils literal notranslate"><span class="pre">'that'</span></code>
+is not a palindrome.</li>
+</ol>
+</div>
+<div class="section" id="exporting-multiple-functions">
+<h2>13.4.3. Exporting Multiple Functions<a class="headerlink" href="#exporting-multiple-functions" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> contains three functions, and we can export them by
+using a different syntax for <code class="docutils literal notranslate"><span class="pre">module.exports</span></code>. Instead of setting up a single
+function, we will create an <em>object</em>.</p>
+<p>To export multiple functions, the syntax is:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">isPalindrome</span><span class="o">:</span> <span class="nx">isPalindrome</span><span class="p">,</span>
+   <span class="nx">evenOrOdd</span><span class="o">:</span> <span class="nx">evenOrOdd</span><span class="p">,</span>
+   <span class="nx">randomArrayElement</span><span class="o">:</span> <span class="nx">randomArrayElement</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">{}</span></code>, we create a series of key:value pairs. The <em>keys</em> will be
+the names used in <code class="docutils literal notranslate"><span class="pre">index.js</span></code> to call the functions. The <em>values</em> are the
+functions themselves.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We do not have to make the key match the name of the function, but doing so
+helps maintain consistency between files.</p>
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>You might be tempted to use three statements to export the three functions:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">isPalindrome</span><span class="p">;</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">evenOrOdd</span><span class="p">;</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">randomArrayElement</span><span class="p">;</span>
+</pre></div>
+</div>
+<p class="last">This will NOT work, because Node expects only ONE <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> statement in a file. No error will be thrown if you use more than one, but <code class="docutils literal notranslate"><span class="pre">require('./practiceExports.js')</span></code> will only pull in the information from the LAST statement.</p>
+</div>
+<div class="section" id="try-it">
+<h3>13.4.3.1. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> in <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code> to include the three
+functions we want to export. We could include only one or two, but for this
+practice let’s use all of them.</p>
+<p>Next, modify <code class="docutils literal notranslate"><span class="pre">index.js</span></code> as follows and click “Run”:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">practice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./practiceExports.js&#39;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">practice</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">practice</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">typeof</span></code> indicates that <code class="docutils literal notranslate"><span class="pre">practice</span></code> is an object, and printing <code class="docutils literal notranslate"><span class="pre">practice</span></code>
+gives us a list of key/value pairs (e.g.
+<code class="docutils literal notranslate"><span class="pre">isPalindrome:</span> <span class="pre">[Function:</span> <span class="pre">isPalindrome]</span></code>).</p>
+<p>All of the functions from <code class="docutils literal notranslate"><span class="pre">practiceExports</span></code> are included in the <code class="docutils literal notranslate"><span class="pre">practice</span></code>
+object. To call then, we use dot notation—
+<code class="docutils literal notranslate"><span class="pre">practice.functionName(argument)</span></code>.</p>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">index.js</span></code> again and click “Run”:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">practice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./practiceExports.js&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">987</span><span class="p">,</span> <span class="s1">&#39;LC101&#39;</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">practice</span><span class="p">.</span><span class="nx">isPalindrome</span><span class="p">(</span><span class="s1">&#39;mom&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">practice</span><span class="p">.</span><span class="nx">evenOrOdd</span><span class="p">(</span><span class="mi">9</span><span class="p">));</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">practice</span><span class="p">.</span><span class="nx">randomArrayElement</span><span class="p">(</span><span class="nx">arr</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>true
+Odd
+123
+World
+LC101
+</pre></div>
+</div>
+<p>Success! You exported your first module.</p>
+</div>
+</div>
+<div class="section" id="what-if">
+<h2>13.4.4. What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>13.4.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
