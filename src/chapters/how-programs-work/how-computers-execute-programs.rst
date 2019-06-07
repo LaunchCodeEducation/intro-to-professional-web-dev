@@ -1,2 +1,0 @@
-How Computers Execute Programs
-==============================

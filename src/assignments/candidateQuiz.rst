@@ -19,7 +19,7 @@ Requirements
    to pass)
 #. Display the results. Example output is listed below.
 
-Results Output
+Example Output
 ^^^^^^^^^^^^^^
 
 The results output should include the candidate's name, the candidate's
