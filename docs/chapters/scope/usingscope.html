@@ -86,18 +86,23 @@
     
   <div class="section" id="using-scope">
 <h1>13.2. Using Scope<a class="headerlink" href="#using-scope" title="Permalink to this headline">¶</a></h1>
-<p>Execution context is everything.
+<p>Scope allows programmers to control the flow of information through the variables in their program.
 Some variables you want to set as constants that can be accessed globally like pi.
 Others you want to keep secure to minimize the danger of accidental updates to the variable’s value.
 For example, a variable holding someone’s username should be kept secure.</p>
 <div class="section" id="shadowing">
 <h2>13.2.1. Shadowing<a class="headerlink" href="#shadowing" title="Permalink to this headline">¶</a></h2>
 <p id="index-0"><strong>Variable shadowing</strong> is where two variables in different scopes have the same name.
-The variables can then be access under different context, however, it can effect the variable visibility.</p>
+The variables can then be accessed under different contexts, however, shadowing can effect the variable’s visibility.</p>
+</div>
+<div class="section" id="variable-hoisting">
+<h2>13.2.2. Variable Hoisting<a class="headerlink" href="#variable-hoisting" title="Permalink to this headline">¶</a></h2>
+<p id="index-1"><strong>Variable hoisting</strong> is a behavior in JavaScript where variable declarations are “hoisted” to the top of the current scope.
+Hoisting occurs when the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword is used in the declaration, but does not occur when <code class="docutils literal notranslate"><span class="pre">let</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code> keywords are used in the declaration.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">Though we don’t use the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword in this book, you will see it a lot in other JavaScript resources.
-We do not use <code class="docutils literal notranslate"><span class="pre">var</span></code> because of <strong>variable hoisting</strong></p>
+Variable hoisting is an important concept to keep in mind as you work with JavaScript.</p>
 </div>
 </div>
 </div>
