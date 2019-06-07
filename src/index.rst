@@ -61,6 +61,7 @@ Assignments
 
    assignments/candidateQuiz
    assignments/scrabble-scorer
+   assignments/html-me-somthing
 
 Appendices
 ^^^^^^^^^^
@@ -77,11 +78,11 @@ Appendices
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
    appendices/math-method-examples/index
-   
-
 
 .. toctree::
    :hidden:
 
    todos
    index-full
+   assignments/html-me-part1
+   assignments/html-me-part2

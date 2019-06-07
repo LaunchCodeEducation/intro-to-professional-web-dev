@@ -59,6 +59,7 @@ Assignments
 
    assignments/candidateQuiz
    assignments/scrabble-scorer
+   assignments/html-me-somthing
 
 Appendices
 ^^^^^^^^^^
@@ -80,3 +81,5 @@ Appendices
    :hidden:
 
    todos
+   assignments/html-me-part1
+   assignments/html-me-part2
