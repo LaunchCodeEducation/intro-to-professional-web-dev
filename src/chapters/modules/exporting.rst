@@ -195,12 +195,23 @@ though it is small in size, ``isPalindrome``, ``evenOrOdd``, and
 better placed in different modules.
 
 If you find yourself writing lots of functions in a single file, consider
-splitting them up into smaller, more detailed modules. Doing this also
-organizes your work. A module titled ``cleverLC101Work`` is not nearly as
+splitting them up into smaller, more detailed modules. Doing this makes
+debugging easier, organizes your work, and helps you identify which modules to
+import into a new project. A module titled ``cleverLC101Work`` is not nearly as
 helpful as one called ``arraySortingMethods``.
 
 Check Your Understanding
 -------------------------
+
+.. admonition:: Question
+
+   A module in Node.js is:
+
+   a. A file containing JavaScript code intended for use in other Node programs.
+   b. A separate block of code within a program.
+   c. One line of code in a program.
+   d. A function.
+   e. A file that contains documentation about functions in JavaScript.
 
 .. admonition:: Question
 
@@ -229,13 +240,3 @@ Check Your Understanding
    b. ``circleStuff.circumference(argument)``
    c. ``circleStuff(circumference(argument))``
    d. ``circumference(argument)``
-
-.. admonition:: Question
-
-   A module in Node.js is:
-
-   a. A file containing JavaScript code intended for use in other Node programs.
-   b. A separate block of code within a program.
-   c. One line of code in a program.
-   d. A function.
-   e. A file that contains documentation about functions in JavaScript.

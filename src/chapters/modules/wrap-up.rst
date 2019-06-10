@@ -10,6 +10,6 @@ individual variables. There are also alternative syntaxes for
 ``module.exports`` - even one that exports as an object, but imports as a
 function (which means no dot notation). :-O
 
-The skills you practiced here provide a solid foundation for modules. Learning
-the alternatives becomes a matter of personal preference and the requirements
-for your job.
+The skills you practiced in this chapter provide a solid foundation for
+modules. Learning the alternatives becomes a matter of personal preference and
+the requirements for your job.
