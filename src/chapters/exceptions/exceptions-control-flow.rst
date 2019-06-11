@@ -2,8 +2,8 @@ In some instances we receive input from a user, and we can't always ensure they 
 
 JavaScript gives us some control flow tools to handle exceptions, by catching thrown exceptions.
 
-Try...Catch...Finally
-=====================
+Exceptions-Control-Flow
+=======================
 
 When we are anticipating an exception, and we want our program to continue running, and not experience the runtime error we can tell JavaScript to **try** to run a block of code, and if a specific exception is thrown to **catch** the exception and to run a different block of code.
 

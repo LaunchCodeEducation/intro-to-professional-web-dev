@@ -6,4 +6,4 @@ Exceptions
 
    introduction
    throw
-   try...catch...finally
+   exceptions-control-flow
