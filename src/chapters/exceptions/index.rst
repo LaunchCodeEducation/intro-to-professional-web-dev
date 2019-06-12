@@ -7,3 +7,4 @@ Exceptions
    introduction
    throw
    exceptions-control-flow
+   studio

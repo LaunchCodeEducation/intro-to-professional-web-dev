@@ -81,7 +81,7 @@ A **TypeError** is thrown when JavaScript expects something to be one type, but 
 
 Exceptions give us a way to provide more information on how something went wrong. JavaScript's built in Exceptions are regularly used in the debugging process.
 ReferenceError: x is not defined
-There are more built in Exceptions in Java, you can read more by referencing the `MDN Errors Documentation<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors>`_ or `W3Schools JavaScript Error <https://www.w3schools.com/js/js_errors.asp>`_ resource.
+There are more built in Exceptions in Java, you can read more by referencing the `MDN Errors Documentation <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors>`_ or `W3Schools JavaScript Error <https://www.w3schools.com/js/js_errors.asp>`_ resource.
 
 In the next section we will learn how to raise our own exceptions using the throw statement.
 
