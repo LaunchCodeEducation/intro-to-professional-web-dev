@@ -66,11 +66,13 @@ you with the general process.
 
 #. `Install Node on your computer <https://nodejs.org/en/download/>`__, which
    also installs the NPM CLI tool.
-#. Use the CLI tool in a terminal to install modules into your project. This
-   will add an entry into the ``package.json`` file indicating that your
-   project depends on the modules listed.
-#. Finally run ``npm install`` in the terminal to download the modules to your
-   computer.
+#. Use the CLI tool in a terminal to install modules into your local project.
+   The syntax is ``npm install <package_name>``, and running it downloads the
+   module to your computer and adds an entry into a ``package.json`` file.
+   This entry indicates that your project depends on the module called
+   ``package_name``.
+#. More detailed instructions can be found in the
+   `NPM documentation <https://docs.npmjs.com/downloading-and-installing-packages-locally>`__.
 
 NPM CLI With repl.it
 ---------------------

@@ -1,5 +1,18 @@
-The Big Picture
-=================
+What are Modules?
+==================
+
+Just like functions should be kept small and accomplish only one thing, we want
+to apply the same idea for the different parts of our program. **Modules**
+allow us to keep the features of our program in separate, smaller pieces. We
+code these smaller chunks and then connect the modules together to create the
+big project.
+
+Modules are like Legos. Each piece has its own distinct shape and function, and
+the same set of pieces can be combined in lots of different ways to create
+unique results.
+
+One Possible Scenario
+----------------------
 
 Imagine we want to create a program that quizzes students on their JavaScript
 skills.
@@ -31,20 +44,7 @@ We can picture our app as follows:
 
 The result is a mammoth program that contains thousands of lines of code. How
 would this impact debugging? How about keeping the code DRY? Do any of the
-features overlap? How easy is it to add new features?
-
-What are Modules
------------------
-
-Just like functions should be kept small and accomplish only one thing, we want
-to apply the same idea for the different parts of our program. **Modules**
-allow us to keep the features of our program in separate, smaller pieces. We
-code these smaller chunks and then connect the modules together to create the
-big project.
-
-Modules are like Legos. Each piece has its own distinct shape and function, and
-the same set of pieces can be combined in lots of different ways to create
-unique results.
+features overlap? How easy is it to add new features?\
 
 Why Use Modules
 ----------------
@@ -60,9 +60,9 @@ can use that same module in other programs.
 
 Even better, we can SHARE our modules with other programmers and use someone
 else's work (with permission) to enhance our own. Writing the imaginary
-quiz/tutorial/practice app from scratch would us many, many weeks. However,
-someone in the coding community might already have modules that we can
-immediately incorporate into our own project.
+quiz/tutorial/practice app from scratch would take us many, many weeks.
+However, someone in the coding community might already have modules that we can
+immediately incorporate into our own project---saving us time and effort.
 
    Modules keep us from reinventing the wheel.
 

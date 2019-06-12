@@ -7,10 +7,10 @@ accomplishments, and they fear that their success is the result of "faking it".
 People experiencing imposter syndrome ignore external evidence of their skills,
 and they attribute their success to luck.
 
-At this point in their learning journey, many LC101 students feel doubt about
-their prospects. However, they have PLENTY of company---supreme court justice
-Sonia Sotomayor, Serena Williams, Tom Hanks, and multiple CEOs have all
-questioned their success.
+At this point in their learning journey, many new coders feel doubt about their
+prospects. However, they have PLENTY of company---supreme court justice Sonia
+Sotomayor, Serena Williams, Tom Hanks, and multiple CEOs have all questioned
+their success.
 
 The struggle is real, and an open conversation often helps.
 
@@ -51,7 +51,7 @@ Take a few moments in the studio to consider, share, and discuss the following:
    you the praise? If so, why did you answer in that way?
 #. How do you feel in a test/quiz/studio when someone finishes much earlier
    than you?
-#. What are you most proud of from your time working in LC101?
+#. What are you most proud of from your time working with LaunchCode?
 #. What are your strengths?
 #. What gives you confidence?
 #. How can you use your effort and strengths to boost your confidence?
