@@ -47,14 +47,14 @@ We can picture our app as follows:
 
 The result is a mammoth program that contains thousands of lines of code. How
 would this impact debugging? How about keeping the code DRY? Do any of the
-features overlap? How easy is it to add new features?\
+features overlap? How easy is it to add new features?
 
 Why Use Modules
 ----------------
 
 Modules help us keep our project organized. If we find a bug in the quiz part
 of our program, then we can focus our attention on the quiz module rather than
-the entire collection of code.
+the entire codebase.
 
 Modules also save us effort in other projects - another example of the DRY
 concept. We have already practiced condensing repetitive tasks into loops or
