@@ -83,13 +83,15 @@
     <div class="col-md-10 col-md-offset-1 content ">
 
     
-  <p>In some instances we receive input from a user, and we can’t always ensure they will type in something that will run perfectly with our code.</p>
-<p>JavaScript gives us some control flow tools to handle exceptions, by catching thrown exceptions.</p>
-<div class="section" id="exceptions-control-flow">
+  <div class="section" id="exceptions-control-flow">
 <h1>15.3. Exceptions-Control-Flow<a class="headerlink" href="#exceptions-control-flow" title="Permalink to this headline">¶</a></h1>
+<p>In some instances we receive input from a user, and we can’t always ensure they will type in something that will run perfectly with our code.</p>
+<p>JavaScript gives us some control flow tools to handle exceptions, by catching thrown exceptions.</p>
 <p>When we are anticipating an exception, and we want our program to continue running, and not experience the runtime error we can tell JavaScript to <strong>try</strong> to run a block of code, and if a specific exception is thrown to <strong>catch</strong> the exception and to run a different block of code.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Code</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="p">}</span>
@@ -98,6 +100,14 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">We</span> <span class="nx">caught</span> <span class="nx">a</span> <span class="nx">ReferneceError</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">our</span> <span class="nx">program</span> <span class="nx">continues</span> <span class="nx">to</span> <span class="nx">run</span><span class="o">!</span>
+<span class="mi">0</span>
+</pre></div>
+</div>
 </div>
 <p class="last">In this example we attept to print out the first element of our variable x. We forgot to define x, but nested our code inside of a <em>try</em> statement, and specifically <strong>catch</strong> ReferenceErrors. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.</p>
 </div>
@@ -116,9 +126,32 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">We</span> <span class="nx">caught</span> <span class="nx">a</span> <span class="nx">ReferenceError</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">our</span> <span class="nx">program</span> <span class="nx">continues</span> <span class="nx">to</span> <span class="nx">run</span><span class="o">!</span>
+<span class="mi">0</span>
+<span class="nx">In</span> <span class="nx">the</span> <span class="k">finally</span> <span class="nx">statement</span><span class="o">!</span>
+</pre></div>
+</div>
+</div>
 <p class="last">This try, catch, block is identical to the example above, except this time we have a finally statement. The finally statement runs upon the conclusion of the try, catch statements. It is often used to remove hanging resources.</p>
 </div>
 <p>Errors are a normal part of coding. JavaScript defines the most common errors, and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging, or to handle expected issues in our code.</p>
+<div class="section" id="check-your-understanding">
+<h2>15.3.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What statement do we use if we want to attempt to run code, but think an exception might be raised?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">How do you handle an exception that is raised?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What statement do you use to ensure a code block is executed regardless if an exception was raised?</p>
+</div>
+</div>
 </div>
 
 

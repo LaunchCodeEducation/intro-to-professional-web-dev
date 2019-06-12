@@ -33,8 +33,14 @@ One of the most common errors in Javascript is a **SyntaxError** which is thrown
 .. admonition:: Example
 
    .. sourcecode:: js
+      :caption: Code
 
       console.log("This is" an example);
+
+   .. sourcecode:: js
+      :caption: Output
+
+      SyntaxError: missing ) after argument list
 
    We put our second quotation mark in incorrect place, and so JavaScript doesn't know what to do with the second half of our phrase, and so a SyntaxError is thrown with the message: "missing ) after argument list".
 
@@ -44,8 +50,14 @@ A **ReferenceError** is thrown when we try to use a variable that has not yet be
 .. admonition:: Example
 
    .. sourcecode:: js
+      :caption: Code
 
       console.log(x[0]);
+
+   .. sourcecode:: js
+      :caption: Output
+
+      ReferenceError: x is not defined
 
    We attempt to print out the first element in the variable x, but we never declare x. JavaScript throws a ReferenceError with the message: "x is not defined".
 
@@ -54,15 +66,32 @@ A **TypeError** is thrown when JavaScript expects something to be one type, but 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :caption: Code
 
       const a = "Launch";
       
       a = "Code";
 
+   .. sourcecode:: js
+      :caption: Output
+
+      TypeError: invalid assignment to const `a'
+
    In this case we declare a constant as the string "Launch", and then try to change the immutable variable to "Code". JavaScript throws a TypeError with the message: "invalid assignment to const `b`".
 
 Exceptions give us a way to provide more information on how something went wrong. JavaScript's built in Exceptions are regularly used in the debugging process.
-
-There are more built in Exceptions in Java, you can read more by referencing the `MDN Errors Documentation<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors>`_.
+ReferenceError: x is not defined
+There are more built in Exceptions in Java, you can read more by referencing the `MDN Errors Documentation<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors>`_ or `W3Schools JavaScript Error <https://www.w3schools.com/js/js_errors.asp>`_ resource.
 
 In the next section we will learn how to raise our own exceptions using the throw statement.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What is the difference between a runtime error, and a logic error?
+
+.. admonition:: Question
+
+   What are some of the common errors included in JavaScript?

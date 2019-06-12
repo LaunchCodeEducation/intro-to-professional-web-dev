@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.3. Try…Catch…Finally" href="exceptions-control-flow.html" />
+    <link rel="next" title="15.3. Exceptions-Control-Flow" href="exceptions-control-flow.html" />
     <link rel="prev" title="15.1. Introduction" href="introduction.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -83,18 +83,27 @@
     <div class="col-md-10 col-md-offset-1 content ">
 
     
-  <p>In most programming languages when the compiler, or interpreter encounters code it doesn’t know how to handle it has to notify the programmer that something has gone wrong. We call this act “throwing an exception”. This is where the term throw comes from.</p>
-<p>JavaScript gives us a throw statement to raise exceptions whenever we need to inform the programmer that something happened that the programming language doesn’t know how to handle.</p>
-<div class="section" id="throw">
+  <div class="section" id="throw">
 <h1>15.2. Throw<a class="headerlink" href="#throw" title="Permalink to this headline">¶</a></h1>
+<p>In most programming languages when the compiler, or interpreter encounters code it doesn’t know how to handle it has to notify the programmer that something has gone wrong. We call this act “throwing an exception”. This is where the term throw comes from.</p>
+<p>JavaScript gives us a throw statement to raise exceptions whenever we need to inform the programmer that something happened that the programming language doesn’t know how to handle.</p>
 <p>JavaScript gives us the ability to raise exceptions using the <strong>throw</strong> statement.</p>
 <div class="section" id="default-error">
 <h2>15.2.1. Default Error<a class="headerlink" href="#default-error" title="Permalink to this headline">¶</a></h2>
 <p>We can throw a default Error object by using the throw statement, and passing the message in as an argument.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Code</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="p">(</span><span class="s2">&quot;You cannot divide by zero!&quot;</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">Error</span><span class="o">:</span> <span class="nx">You</span> <span class="nx">cannot</span> <span class="nx">divide</span> <span class="nx">by</span> <span class="nx">zero</span><span class="o">!</span>
+</pre></div>
+</div>
 </div>
 <p class="last">We can throw a default Error and define the message.</p>
 </div>
@@ -104,8 +113,17 @@
 <p>JavaScript also gives us the power to throw a more specific type of error.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Code</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nx">SyntaxError</span><span class="p">(</span><span class="s2">&quot;That is the incorrect syntax&quot;</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">SyntaxError</span><span class="o">:</span> <span class="nx">That</span> <span class="nx">is</span> <span class="nx">the</span> <span class="nx">incorrect</span> <span class="nx">syntax</span>
+</pre></div>
+</div>
 </div>
 <p class="last">We can throw built in Exceptions, and change the message that is displayed.</p>
 </div>
@@ -114,6 +132,17 @@
 <div class="section" id="custom-error">
 <h2>15.2.3. Custom Error<a class="headerlink" href="#custom-error" title="Permalink to this headline">¶</a></h2>
 <p>JavaScript will also let you define new types of Errors, by creating a new Error, and defining it’s name, and message, however created our own errors goes beyond the scope of this class.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>15.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What statement do we use to raise an exception?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">How do we customize the message of an exception?</p>
+</div>
 </div>
 </div>
 
@@ -126,7 +155,7 @@
         <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> 15.1. Introduction</a></li>
         
         
-        <li class="next"><a href="exceptions-control-flow.html">15.3. Try…Catch…Finally <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="exceptions-control-flow.html">15.3. Exceptions-Control-Flow <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
