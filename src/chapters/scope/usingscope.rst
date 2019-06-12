@@ -12,7 +12,7 @@ Shadowing
 .. index:: ! variable shadowing, ! shadowing
 
 **Variable shadowing** is where two variables in different scopes have the same name.
-The variables can then be accessed under different contexts, however, shadowing can effect the variable's visibility.
+The variables can then be accessed under different contexts, however, shadowing can effect the variable's accessibility.
 This can be confusing for you and your computer!
 
 Variable Hoisting

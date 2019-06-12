@@ -50,11 +50,35 @@ Console Output
 
    null
 
-Examples
---------
+Example
+-------
 
-Initialize property to null for an object.
-User input is a good way to wait for a value.
+Let's say that we are still working for the zoo. We have objects created for animals like so:
+
+.. sourcecode:: js
+
+	let giraffe = {
+  		species: "Reticulated Giraffe",
+  		name: "Cynthia",
+  		weight: 1500,
+  		age: 15,
+  		diet: "leaves"
+	};
+
+Now, a new giraffe is coming to the zoo. We may want to initialize an object for the giraffe, but hold off on storing information in thhe ``weight`` property until the giraffe arrives.
+In this case, we could initialize the ``weight`` property like so:
+
+.. sourcecode:: js
+
+	let giraffeTwo = {
+		species: "Reticulated Giraffe",
+  		name: "Alicia",
+  		weight: null,
+  		age: 10,
+  		diet: "leaves"
+	};
+
+This way, our object is properly initialized with all of the information we would need and we can update the ``weight`` property later when we have accurate information.
 
 Check Your Understanding
 ------------------------

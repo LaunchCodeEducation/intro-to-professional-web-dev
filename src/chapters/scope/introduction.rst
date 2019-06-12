@@ -29,6 +29,22 @@ Those variables can only be referenced inside of the block or function.
 In the example above, ``b`` has local scope.
 Referencing or attempting to update these variables outside of the function can lead to a scoping error.
 
+.. admonition:: Try It!
+
+	The following code block has an error related to scope.
+	Try to fix it!
+
+	.. sourcecode:: js
+
+		function myFunction() {
+			let i = 10;
+			return 10 + i;
+		}
+
+		console.log(i);
+
+	`Check out the code at repl.it <https://repl.it/@launchcode/ScopeError/>`_
+
 Global Scope
 ------------
 
@@ -38,8 +54,6 @@ Global Scope
 These variables are accessible by any function within a file.
 In the example above, ``a`` has local scope.
 Global scope is the default scope in JavaScript.
-
-**TRY IT FOR BROKEN CODE**
 
 Execution Context
 -----------------
@@ -71,10 +85,36 @@ Let's consider this code:
 Now, let's consider the execution context for each step.
 
 1. First, the global execution context is entered as the compiler executes the code.
+
+	.. figure:: figures/globalexecutioncontext.png
+	   :alt: Figure showing global execution context at the bottom of the stack.
+
 2. Once coolFunction() is hit, the compiler creates and executes coolFunction() under the coolFunction() execution context.
+
+	.. figure:: figures/coolFunction.png
+		:alt: Figure showing coolFunction on top of global execution context.
+
 3. Upon completion, the compiler returns to the global execution context.
+
+	.. figure:: figures/globalexecutioncontext.png
+	   :alt: Figure showing global execution context at the bottom of the stack.
+
 4. The compiler stays at the global execution context until the creation and execution of coolerFunction().
+
+	.. figure:: figures/coolerFunction.png
+		:alt: Figure showing coolerFunction on top of the global execution context.
+
 5. Inside of coolerFunction() is a call to coolFunction(). The compiler will go up in execution context to coolFunction() before returning down to coolerFunction()'s execution context and upon completion of the function, down to the global execution context.
+
+	.. figure:: figures/coolandcoolerFunction.png
+		:alt: Figure showing coolFunction on top of coolerFunction on top of the global execution context.
+
+	.. figure:: figures/coolerFunction.png
+		:alt: Figure showing coolerFunction on top of the global execution context.
+
+	.. figure:: figures/globalexecutioncontext.png
+	   :alt: Figure showing global execution context at the bottom of the stack.
+
 
 Check Your Understanding
 ------------------------

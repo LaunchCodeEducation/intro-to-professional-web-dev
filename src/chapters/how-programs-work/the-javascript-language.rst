@@ -1,8 +1,5 @@
 The JavaScript Language
-<<<<<<< Updated upstream
 =======================
-=======
-========================
 
 Each programming language has its own collection of advantages, drawbacks,
 conveniences, and annoying quirks. Certain tasks fit one particular language
@@ -55,4 +52,3 @@ When code runs inside a web browser, the code is run at the same time as your we
 Back end development involves passing data to and from web pages to servers. JavaScript can be used for back end development, but other languages like Java and C# are industry standards for it. In the case of you filling out a form online, back end code transfers the information you submitted to the company storing your information. That information will then live on the company’s servers.
 
 The ins and outs of how the internet works will be covered throughout this book. While important to understand why we are learning JavaScript, we won’t quiz you on servers and front end development now!
->>>>>>> Stashed changes
