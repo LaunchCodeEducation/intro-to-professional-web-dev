@@ -7,4 +7,5 @@ Exceptions
    introduction
    throw
    exceptions-control-flow
+   exercises
    studio
