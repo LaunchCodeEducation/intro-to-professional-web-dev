@@ -40,7 +40,10 @@ languages.
 
 We can picture our app as follows:
 
-   TODO: Add image.
+.. figure:: ./figures/WhyModules.png
+   :alt: Visual of the parts of a project.
+
+   Imagine if the project included two or three additional programming languages!
 
 The result is a mammoth program that contains thousands of lines of code. How
 would this impact debugging? How about keeping the code DRY? Do any of the
