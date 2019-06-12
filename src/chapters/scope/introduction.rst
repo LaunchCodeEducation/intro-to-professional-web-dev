@@ -39,6 +39,8 @@ These variables are accessible by any function within a file.
 In the example above, ``a`` has local scope.
 Global scope is the default scope in JavaScript.
 
+**TRY IT FOR BROKEN CODE**
+
 Execution Context
 -----------------
 
@@ -66,8 +68,37 @@ Let's consider this code:
 		return c;
 	}
 
+Now, let's consider the execution context for each step.
+
 1. First, the global execution context is entered as the compiler executes the code.
 2. Once coolFunction() is hit, the compiler creates and executes coolFunction() under the coolFunction() execution context.
 3. Upon completion, the compiler returns to the global execution context.
 4. The compiler stays at the global execution context until the creation and execution of coolerFunction().
 5. Inside of coolerFunction() is a call to coolFunction(). The compiler will go up in execution context to coolFunction() before returning down to coolerFunction()'s execution context and upon completion of the function, down to the global execution context.
+
+Check Your Understanding
+------------------------
+
+Both of the concept checks refer to the following code block:
+
+.. sourcecode:: js
+
+	function myFunction(n) {
+		let a = 100;
+		return a + n;
+	}
+	
+	let x = 0;
+
+	x = myFunction(x);
+	
+.. admonition:: Question
+
+	What scope is variable ``x``?
+
+	a. Global
+	b. Local
+
+.. admonition:: Question
+
+	In what order will the compiler execute the code?

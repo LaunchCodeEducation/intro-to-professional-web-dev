@@ -49,3 +49,39 @@ Console Output
 .. sourcecode:: bash
 
    null
+
+Examples
+--------
+
+Initialize property to null for an object.
+User input is a good way to wait for a value.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+	Which of the following are primitive data types?
+
+	a. arrays
+	b. Strings
+	c. objects
+	d. ``null``
+
+.. admonition:: Question
+
+	Consider the following code block:
+
+	.. sourcecode:: js
+
+		let x;
+
+		console.log(x);
+
+	``x`` is of what data type?
+
+	a. ``null``
+	b. ``undefined``
+	c. ``NaN``
+	d. number
+
