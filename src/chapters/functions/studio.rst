@@ -53,14 +53,14 @@ Reverse Characters
 
 `Code exercises 1 - 3 at repl.it <https://repl.it/@launchcode/FunctionsExercises03-05>`__
 
-.. tip:: 
+.. admonition:: Tip
 
    Use these sample strings for testing:
 
-   - ``'apple'``
-   - ``'LC101'``
-   - ``'Capitalized Letters'``
-   - ``'I love the smell of code in the morning.'``
+   a. ``'apple'``
+   b. ``'LC101'``
+   c. ``'Capitalized Letters'``
+   d. ``'I love the smell of code in the morning.'``
 
 Reverse Digits
 ---------------
@@ -82,14 +82,14 @@ Reverse Digits
       works for *both strings and numbers*. Do this before moving on to the
       next exercise.
 
-.. tip::
+.. admonition:: Tip
 
    Use these samples for testing:
 
-   - ``1234``
-   - ``'LC101'``
-   - ``8675309``
-   - ``'radar'``
+   a. ``1234``
+   b. ``'LC101'``
+   c. ``8675309``
+   d. ``'radar'``
 
 Complete Reversal
 ------------------
@@ -107,7 +107,7 @@ Complete Reversal
    f. *Be sure to print the results from each test case in order to verify your
       code*.
 
-.. tip::
+.. admonition:: Tip
 
    Use this sample data for testing.
 
@@ -121,7 +121,7 @@ Complete Reversal
       * - ``[123, 8897, 42, 1138, 8675309]``
         - ``[9035768, 8311, 24, 7988, 321]``
       * - ``['hello', 'world', 123, 'orange']``
-        - ``['egnaro', 321, 'dlrow', 'olleh']`` 
+        - ``['egnaro', 321, 'dlrow', 'olleh']``
 
 Bonus Missions
 ---------------
@@ -155,10 +155,10 @@ Bonus Missions
       a square. Modify your code to deal with this case.
    f. `Code the area function at repl.it <https://repl.it/@launchcode/FunctionsExercises02>`__.
 
-.. tip::
+.. admonition:: Tip
 
    Use these test cases.
 
-  - length = 2, width = 4 (area = 8)
-  - length = 14, width = 7 (area = 98)
-  - length = 20 (area = 400)
+   a. length = 2, width = 4 (area = 8)
+   b. length = 14, width = 7 (area = 98)
+   c. length = 20 (area = 400)

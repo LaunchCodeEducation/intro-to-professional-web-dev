@@ -19,13 +19,16 @@ Examples are times when we tie a concept we have just learned to a potential rea
 The label "Try It" signals an example that includes code you can modify and augment to quickly reinforce what you have just read.
 Play around with these!
 
+.. index:: ! repl.it
+
 Repl.it
 ^^^^^^^
 
-Many examples have links to repl.it. This is a site where you write and run your own code.
-Repl.it accounts for free, so we encourage you to sign up for one.
-When you want to start putting your own spin on something, you click the "Fork" button and repl.it will make a copy of the code for you.
-This copy will be stored in your personal account.
+Many examples have links to repl.it. This is a site where you write and run
+your own code. Repl.it accounts are free, so we encourage you to
+`sign up for one <https://repl.it/>`__. When you want to start putting your
+own spin on something, you click the "Fork" button and repl.it will make a copy
+of the code for you. This copy will be stored in your personal account.
 
 Supplemental Content
 --------------------
