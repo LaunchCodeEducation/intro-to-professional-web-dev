@@ -4,7 +4,7 @@ Introduction
 .. index:: ! scope
 
 Where variables are declared and initialized in the code can effect whether or not they can be used.
-**Scope** refers to the ability to access and use the variable.
+**Scope** refers to the ability to access and use a variable.
 
 .. admonition:: Example 
 
@@ -24,7 +24,7 @@ Block/Local Scope
 
 .. index:: ! local scope
 
-**Local scope** refers to variables declared and initialized inside a function.
+**Local scope** refers to variables declared and initialized inside a function or block.
 Those variables can only be referenced inside of the block or function.
 In the example above, ``b`` has local scope.
 Referencing or attempting to update these variables outside of the function can lead to a scoping error.

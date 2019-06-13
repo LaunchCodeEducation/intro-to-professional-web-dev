@@ -15,8 +15,8 @@ Primitive data types include:
 1. Strings
 2. Numbers
 3. Booleans
-4. ``null``
-5. ``undefined``
+4. ``undefined``
+5. ``null``
 
 ``undefined``
 -------------
