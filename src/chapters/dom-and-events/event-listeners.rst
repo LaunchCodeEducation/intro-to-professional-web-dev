@@ -116,8 +116,10 @@ defines methods and properties related to events.
 .. admonition:: Try It!
 
    Above, we saw how we could use addEventListener to add the function ``youRang()`` as the event handler for the ``Ring Bell`` button.
+   
    Using ``addEventListener``, could you add the function ``greetFriends()`` as the event handler for the ``Greet Friends`` button?
-   `TRY IT! <https://repl.it/@launchcode/Try-It-addEventListener/>`_
+
+   `Try it at repl.it <https://repl.it/@launchcode/Try-It-addEventListener/>`__
 
 
 
@@ -198,8 +200,10 @@ a child element calls ``event.stopPropagation()``.
 .. admonition:: Try It!
 
    With the HTML above, what happens when you click in the green?
+
    After you see the result, try adding ``stopPropagation()`` to the button click handler and seeing what happens when you click the button.
-   `TRY IT HERE! <https://repl.it/@launchcode/Try-It-Event-Bubbling/>`_
+   
+   `Try it at repl.it <https://repl.it/@launchcode/Try-It-Event-Bubbling/>`__
 
 Check Your Understanding
 ------------------------

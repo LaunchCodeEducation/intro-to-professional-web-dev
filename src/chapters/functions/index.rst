@@ -1,5 +1,5 @@
-Functions
-=========
+Functions Are at Your Beck and Call
+===================================
 
 .. toctree::
    :maxdepth: 3

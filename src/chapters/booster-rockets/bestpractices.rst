@@ -1,6 +1,8 @@
 Best Practices: Learning To Code
 =================================
 
+.. _best-practices:
+
 For years, the education community has debated the best approach for
 *homework*. Should it be scored or not? What is the proper amount? Should
 it be even be assigned? Many reports begin with "Studies have shown…," but
@@ -172,7 +174,7 @@ Social Media
 wnt motivation n 140 caractRs r less? Try these (LOL):
 
 a. `#hardworkworks <https://twitter.com/hashtag/hardworkworks?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Ehashtag>`_
-b. Rocky (`Gonna Fly now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ ) because it's just that good.
+b. Rocky (`Gonna Fly Now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ ) because it's just that good.
 
 .. tip::
 

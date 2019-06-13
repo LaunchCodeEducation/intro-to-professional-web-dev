@@ -40,14 +40,13 @@ Since ``name.length`` is 10, the loop executes once each for the values of ``i``
 
    Write a program that prints each character of your name on a different line.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: for-Loop-Practice-With-Strings
    
       // create a string variable containing your name
 
       // write a for loop that prints each character in your name on a different line
-
-   `Practice looping over strings at repl.it <https://repl.it/@launchcode/for-Loop-Practice-With-Strings>`_
 
 Iterating Over Arrays
 ---------------------
@@ -80,11 +79,10 @@ Similar to the string example, this loop executes 4 times because ``launguages.l
 
    Write a program that prints the name of each member of your family on a different line.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: for-Loop-Practice-With-Arrays
    
       // create an array variable containing the names
 
       // write a for loop that prints each name on a different line
-
-   `Practice looping over arrays at repl.it <https://repl.it/@launchcode/for-Loop-Practice-With-Arrays>`_

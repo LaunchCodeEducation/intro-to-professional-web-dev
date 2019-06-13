@@ -40,7 +40,7 @@ To access the code for exercise 1, open this `repl.it link <https://repl.it/@lau
 Orbit Calculations
 -------------------
 
-To access the code for exercises 2 - 4, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio02>`__.
+To access the code for exercises 2 - 4, go to `repl.it <https://repl.it/@launchcode/ObjectsStudio02>`__.
 
 2. Spacecraft orbits are not circular, but we will assume that our mission is
    special. The animals will achieve a circular orbit with an altitude of
@@ -77,7 +77,7 @@ Conserve O :sub:`2`
 Fuel Required for Launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To access the code for exercise 5, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio03>`__.
+To access the code for exercise 5, go to `repl.it <https://repl.it/@launchcode/ObjectsStudio03>`__.
 
 5. A general rule of thumb states that it takes about 9 - 10 kg of rocket
    fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we

@@ -1,5 +1,5 @@
-Strings
-=======
+Stringing Characters Together
+=============================
 
 .. toctree::
    :maxdepth: 3

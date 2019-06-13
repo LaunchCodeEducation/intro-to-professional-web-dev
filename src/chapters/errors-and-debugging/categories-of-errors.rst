@@ -27,7 +27,7 @@ Syntax Errors
 
 .. index:: syntax
 
-JavaScript can only execute a program if the program is syntactically correct. **Syntax** refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punchation. 
+JavaScript can only execute a program if the program is syntactically correct. **Syntax** refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punctuation.
 
 .. index::
    single: error; syntax
@@ -50,13 +50,12 @@ During the first few weeks of your programming career, you will probably spend a
 
    Find the syntax errors in the program.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Syntax-Errors
 
       let day = Wednesday;
       console.log(day;
-
-   `Run this program at repl.it <https://repl.it/@launchcode/Syntax-Errors>`_
 
 
 .. admonition:: Question

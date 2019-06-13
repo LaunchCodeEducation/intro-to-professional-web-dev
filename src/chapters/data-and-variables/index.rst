@@ -13,5 +13,6 @@ Data and Variables
    expressions-and-evaluation
    operations
    other-operators
+   input
    exercises
    studio

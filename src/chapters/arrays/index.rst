@@ -1,6 +1,5 @@
-
-Arrays
-=======
+Arrays Keep Things in Order
+===========================
 
 .. toctree::
    :maxdepth: 3

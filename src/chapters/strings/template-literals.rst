@@ -68,10 +68,13 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Mad Libs are games where one player asks the group to supply random words (e.g. "Give me a verb," or, "I need a color"). The words are substituted into blanks within a story, which is then read for everyone's amusement. In elementary school classrooms, giggles and hilarity often ensue. TRY IT! Refactor the following code to replace the awkward string concatenation with template literals. Be sure to add your own choices for the variables. (`Repl.it <https://repl.it/@launchcode/String-Mad-Lib>`_)
+   Mad Libs are games where one player asks the group to supply random words (e.g. "Give me a verb," or, "I need a color"). The words are substituted into blanks within a story, which is then read for everyone's amusement. In elementary school classrooms, giggles and hilarity often ensue. TRY IT! 
+   
+   Refactor the following code to replace the awkward string concatenation with template literals. Be sure to add your own choices for the variables.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: String-Mad-Lib
 
       let pluralNoun = ;
       let name = ;
