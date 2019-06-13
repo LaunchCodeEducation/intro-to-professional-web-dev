@@ -1,3 +1,5 @@
+.. _readline-sync:
+
 Input with ``readline-sync``
 =============================
 
