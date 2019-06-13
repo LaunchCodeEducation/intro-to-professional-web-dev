@@ -41,4 +41,7 @@ which allows us to build the general structure for an object. We can then
 reuse that structure to build multiple objects. These objects will have the
 same set of *keys*, but the values assigned to each key will vary.
 
-   [TODO: Add a figure showing class & objects]
+.. figure:: ./figures/Classes-vs-objects.png
+   :alt: Visual of the relationship between classes and objects.
+
+   Classes allow us to create multiple, similar objects.
