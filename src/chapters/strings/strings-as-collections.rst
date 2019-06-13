@@ -24,7 +24,7 @@ A **character** is a string that contains exactly one element, such as ``'a'``, 
 We can think of strings as being built out of characters. In this way, strings can be broken down into smaller pieces.
 
 .. figure:: figures/strings-as-collections.png
-   :alt: The string "JavaScript" broken down into invididual letters.
+   :alt: The string "JavaScript" broken down into individual letters.
 
    A string is made up of characters, which are strings of length 1.
 
@@ -37,6 +37,6 @@ Ordered Collections
 .. index::
    single: collection; ordered
 
-We defined strings as *sequential* collections of characters. This means that the individual characters that make up the string are assumed to be in a particular order from left to right. The string ``"LaunchCode"`` is different from the string ``"CodeLaunch"``, even though they contain the exact same characters. 
+We defined strings as *sequential* collections of characters. This means that the individual characters that make up the string are assumed to be in a particular order from left to right. The string ``"LaunchCode"`` is different from the string ``"CodeLaunch"``, even though they contain the exact same characters.
 
 Collection types that allow their elements to be ordered are known as **ordered collections**, for reasons that will become clear to you very soon.

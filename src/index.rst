@@ -48,6 +48,7 @@ Studios
    chapters/functions/studio
    chapters/more-on-functions/studio
    chapters/objects-and-math/studio
+   chapters/modules/studio
    chapters/unit-testing/studio
    chapters/classes/studio
    chapters/git/studio
