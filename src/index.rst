@@ -20,6 +20,9 @@ Chapters
    chapters/objects-and-math/index
    chapters/modules/index
    chapters/unit-testing/index
+   chapters/scope/index
+   chapters/more-on-types/index
+   chapters/exceptions/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
