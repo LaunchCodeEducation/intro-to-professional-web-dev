@@ -85,23 +85,23 @@
     
   <div class="section" id="introduction">
 <h1>15.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">Errors are a part of coding. Occasionally we make mistakes as programmers. When we make mistakes we look for information to figure out where we went wrong.</p>
-<p>Earlier in this course we learned about two different types of errors: Runtime and Logic. A logic error is when your program executes without breaking, but doesn’t behave the way you thought it would. These logic errors usually require you to consider how you are going about solving the issue to resolve. Runtime errors are when your program does not run correctly, and an Exception is raised.</p>
-<p>An <strong>Exception</strong> is a runtime error in which a name, and message are displayed to provide more information about the error.</p>
+<p id="index-0">Errors are a part of coding. Occasionally, we make mistakes as programmers. However, we are always trying to fix those mistakes by reading different resources, the stacktrace, or asking for help.</p>
+<p>Earlier in this course, we learned about two different types of errors: runtime and logic. A logic error is when your program executes without breaking, but doesn’t behave the way you thought it would. These logic errors usually require you to consider how you are going about solving the issue to resolve. Runtime errors are when your program does not run correctly, and an exception is raised.</p>
+<p>An <strong>exception</strong> is a runtime error in which a name and message are displayed to provide more information about the error.</p>
 <div class="section" id="exceptions-and-errors">
 <h2>15.1.1. Exceptions and Errors<a class="headerlink" href="#exceptions-and-errors" title="Permalink to this headline">¶</a></h2>
-<p>In JavaScript a runtime error, and an exception are the same thing, and can be used interchangeably. This can cause confusion because a logic error is not an exception!</p>
+<p>In JavaScript a runtime error and an exception are the same thing and can be used interchangeably. This can cause confusion because a logic error is not an exception!</p>
 </div>
 <div class="section" id="error-object">
 <h2>15.1.2. Error Object<a class="headerlink" href="#error-object" title="Permalink to this headline">¶</a></h2>
-<p>When a runtime error, also known as an execption, is raised JavaScript returns an Error object. An Error Object has two properties: a name, and a message. The name refers to the type of error that occured, while the message gives the user information on why that exception occured.</p>
-<p>JavaScript has built in exceptions with pre-defined names, and messages, however JavaScript also gives you the ability to create your own error messages.</p>
+<p>When a runtime error, also known as an execption, is raised JavaScript returns an <code class="docutils literal notranslate"><span class="pre">Error</span></code> object. An Error Object has two properties: a name and a message. The name refers to the type of error that occured, while the message gives the user information on why that exception occured.</p>
+<p>JavaScript has built-in exceptions with pre-defined names and messages, however, JavaScript also gives you the ability to create your own error messages.</p>
 <p>You have undoutedly experienced various Exceptions already throughout this class. Let’s look at a few common Exceptions.</p>
 </div>
 <div class="section" id="common-exceptions">
 <h2>15.1.3. Common Exceptions<a class="headerlink" href="#common-exceptions" title="Permalink to this headline">¶</a></h2>
-<p>JavaScript has some built in Exceptions you may have already encountered in this class.</p>
-<p>One of the most common errors in Javascript is a <strong>SyntaxError</strong> which is thrown when we include a symbol JavaScript is not expecting.</p>
+<p>JavaScript has some built-in Exceptions you may have already encountered in this class.</p>
+<p>One of the most common errors in Javascript is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> which is thrown when we include a symbol JavaScript is not expecting.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -116,9 +116,9 @@
 </pre></div>
 </div>
 </div>
-<p class="last">We put our second quotation mark in incorrect place, and so JavaScript doesn’t know what to do with the second half of our phrase, and so a SyntaxError is thrown with the message: “missing ) after argument list”.</p>
+<p class="last">We put our second quotation mark in the incorrect place. JavaScript does not know what to do with the second half of our phrase and throws a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> with the message: <code class="docutils literal notranslate"><span class="pre">missing</span> <span class="pre">)</span> <span class="pre">after</span> <span class="pre">argument</span> <span class="pre">list</span></code>.</p>
 </div>
-<p>A <strong>ReferenceError</strong> is thrown when we try to use a variable that has not yet been defined.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> is thrown when we try to use a variable that has not yet been defined.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="literal-block-wrapper docutils container" id="id3">
@@ -133,9 +133,9 @@
 </pre></div>
 </div>
 </div>
-<p class="last">We attempt to print out the first element in the variable x, but we never declare x. JavaScript throws a ReferenceError with the message: “x is not defined”.</p>
+<p class="last">We attempt to print out the first element in the variable x, but we never declared x. JavaScript throws a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> with the message: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>.</p>
 </div>
-<p>A <strong>TypeError</strong> is thrown when JavaScript expects something to be one type, but the provided value is a different type.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is thrown when JavaScript expects something to be one type, but the provided value is a different type.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="literal-block-wrapper docutils container" id="id5">
@@ -148,16 +148,15 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">TypeError</span><span class="o">:</span> <span class="nx">invalid</span> <span class="nx">assignment</span> <span class="nx">to</span> <span class="kr">const</span> <span class="sb">`a&#39;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">TypeError</span><span class="o">:</span> <span class="nx">invalid</span> <span class="nx">assignment</span> <span class="nx">to</span> <span class="kr">const</span> <span class="s1">&#39;a&#39;</span>
 </pre></div>
 </div>
 </div>
-<p class="last">In this case we declare a constant as the string “Launch”, and then try to change the immutable variable to “Code”. JavaScript throws a TypeError with the message: “invalid assignment to const <cite>b</cite>”.</p>
+<p class="last">In this case, we declare a constant as the string “Launch”, and then try to change the immutable variable to “Code”. JavaScript throws a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> with the message: <code class="docutils literal notranslate"><span class="pre">invalid</span> <span class="pre">assignment</span> <span class="pre">to</span> <span class="pre">const</span> <span class="pre">'b'</span></code>.</p>
 </div>
-<p>Exceptions give us a way to provide more information on how something went wrong. JavaScript’s built in Exceptions are regularly used in the debugging process.
-ReferenceError: x is not defined
-There are more built in Exceptions in Java, you can read more by referencing the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors" target="_blank">MDN Errors Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://www.w3schools.com/js/js_errors.asp" target="_blank">W3Schools JavaScript Error<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> resource.</p>
-<p>In the next section we will learn how to raise our own exceptions using the throw statement.</p>
+<p>Exceptions give us a way to provide more information on how something went wrong. JavaScript’s built-in Exceptions are regularly used in the debugging process.</p>
+<p>There are more built-in Exceptions in Java, you can read more by referencing the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors" target="_blank">MDN Errors Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://www.w3schools.com/js/js_errors.asp" target="_blank">W3Schools JavaScript Error<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>In the next section we will learn how to raise our own exceptions using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>15.1.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>

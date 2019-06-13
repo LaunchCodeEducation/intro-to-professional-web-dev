@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.4. Strategic Debugging" href="studio.html" />
+    <link rel="next" title="15.4. Exercises" href="exercises.html" />
     <link rel="prev" title="15.2. Throw" href="throw.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -85,9 +85,9 @@
     
   <div class="section" id="exceptions-control-flow">
 <h1>15.3. Exceptions-Control-Flow<a class="headerlink" href="#exceptions-control-flow" title="Permalink to this headline">¶</a></h1>
-<p>In some instances we receive input from a user, and we can’t always ensure they will type in something that will run perfectly with our code.</p>
-<p>JavaScript gives us some control flow tools to handle exceptions, by catching thrown exceptions.</p>
-<p>When we are anticipating an exception, and we want our program to continue running, and not experience the runtime error we can tell JavaScript to <strong>try</strong> to run a block of code, and if a specific exception is thrown to <strong>catch</strong> the exception and to run a different block of code.</p>
+<p>In some instances, we receive input from a user and we cannot always ensure they will type in something that will run with our code.</p>
+<p>JavaScript gives us some control flow tools to handle exceptions by catching thrown exceptions.</p>
+<p>We may be anticipating an exception, but still want our program to continue running and not experience a runtime error. We can tell JavaScript to <strong>try</strong> to run a block of code and if an exception is thrown, to <strong>catch</strong> the exception and run a different block of code.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -104,14 +104,14 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">We</span> <span class="nx">caught</span> <span class="nx">a</span> <span class="nx">ReferneceError</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">our</span> <span class="nx">program</span> <span class="nx">continues</span> <span class="nx">to</span> <span class="nx">run</span><span class="o">!</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">We</span> <span class="nx">caught</span> <span class="nx">a</span> <span class="nx">ReferenceError</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">our</span> <span class="nx">program</span> <span class="nx">continues</span> <span class="nx">to</span> <span class="nx">run</span><span class="o">!</span>
 <span class="mi">0</span>
 </pre></div>
 </div>
 </div>
-<p class="last">In this example we attept to print out the first element of our variable x. We forgot to define x, but nested our code inside of a <em>try</em> statement, and specifically <strong>catch</strong> ReferenceErrors. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.</p>
+<p class="last">In this example we attept to print out the first element of our variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. We forgot to define x, but nested our code inside of a <code class="docutils literal notranslate"><span class="pre">try</span></code> statement and specifically <strong>catch</strong> <code class="docutils literal notranslate"><span class="pre">ReferenceErrors</span></code>. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.</p>
 </div>
-<p>JavaScript also provides us with a <strong>finally</strong> statement, a block of code that always runs every time regardless to if the try, or catch blocks run.</p>
+<p>JavaScript also provides us with a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement, a block of code that always runs every time regardless if the <code class="docutils literal notranslate"><span class="pre">try</span></code>, or <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks run.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
@@ -134,9 +134,9 @@
 </pre></div>
 </div>
 </div>
-<p class="last">This try, catch, block is identical to the example above, except this time we have a finally statement. The finally statement runs upon the conclusion of the try, catch statements. It is often used to remove hanging resources.</p>
+<p class="last">This try…catch block is identical to the example above, except this time we have a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement. The finally statement runs upon the conclusion of the try…catch statements. It is often used to remove hanging resources.</p>
 </div>
-<p>Errors are a normal part of coding. JavaScript defines the most common errors, and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging, or to handle expected issues in our code.</p>
+<p>Errors are a normal part of coding. JavaScript defines the most common errors and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging or to handle expected issues in our code.</p>
 <div class="section" id="check-your-understanding">
 <h2>15.3.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
@@ -163,7 +163,7 @@
         <li class="previous"><a href="throw.html"><span aria-hidden="true">&larr;</span> 15.2. Throw</a></li>
         
         
-        <li class="next"><a href="studio.html">15.4. Strategic Debugging <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="exercises.html">15.4. Exercises <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

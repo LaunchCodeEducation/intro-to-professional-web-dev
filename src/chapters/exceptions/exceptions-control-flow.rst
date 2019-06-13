@@ -1,11 +1,11 @@
 Exceptions-Control-Flow
 =======================
 
-In some instances we receive input from a user, and we can't always ensure they will type in something that will run perfectly with our code.
+In some instances, we receive input from a user and we cannot always ensure they will type in something that will run with our code.
 
-JavaScript gives us some control flow tools to handle exceptions, by catching thrown exceptions.
+JavaScript gives us some control flow tools to handle exceptions by catching thrown exceptions.
 
-When we are anticipating an exception, and we want our program to continue running, and not experience the runtime error we can tell JavaScript to **try** to run a block of code, and if a specific exception is thrown to **catch** the exception and to run a different block of code.
+We may be anticipating an exception, but still want our program to continue running and not experience a runtime error. We can tell JavaScript to **try** to run a block of code and if an exception is thrown, to **catch** the exception and run a different block of code.
 
 .. admonition:: Example
 
@@ -23,12 +23,12 @@ When we are anticipating an exception, and we want our program to continue runni
    .. sourcecode:: js
       :caption: Output
 
-      We caught a ReferneceError, but our program continues to run!
+      We caught a ReferenceError, but our program continues to run!
       0
 
-   In this example we attept to print out the first element of our variable x. We forgot to define x, but nested our code inside of a *try* statement, and specifically **catch** ReferenceErrors. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.
+   In this example we attept to print out the first element of our variable ``x``. We forgot to define x, but nested our code inside of a ``try`` statement and specifically **catch** ``ReferenceErrors``. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.
 
-JavaScript also provides us with a **finally** statement, a block of code that always runs every time regardless to if the try, or catch blocks run.
+JavaScript also provides us with a ``finally`` statement, a block of code that always runs every time regardless if the ``try``, or ``catch`` blocks run.
 
 .. admonition:: Example
 
@@ -52,9 +52,9 @@ JavaScript also provides us with a **finally** statement, a block of code that a
       0
       In the finally statement!
 
-   This try, catch, block is identical to the example above, except this time we have a finally statement. The finally statement runs upon the conclusion of the try, catch statements. It is often used to remove hanging resources.
+   This try...catch block is identical to the example above, except this time we have a ``finally`` statement. The finally statement runs upon the conclusion of the try...catch statements. It is often used to remove hanging resources.
      
-Errors are a normal part of coding. JavaScript defines the most common errors, and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging, or to handle expected issues in our code.
+Errors are a normal part of coding. JavaScript defines the most common errors and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging or to handle expected issues in our code.
 
 Check Your Understanding
 ------------------------
