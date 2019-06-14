@@ -1,3 +1,5 @@
+.. index:: ! class
+
 What Are Classes?
 ==================
 
@@ -26,9 +28,21 @@ object to hold an astronaut's data, it might look something like:
             phrase += ' Rocks';
          }
          return phrase;
+      }
    }
 
-The ``fox`` object now contains all the data for the astronaut named ``'Fox'``.
+   console.log(`${fox.name} is ${fox.age} years old and has a mass of ${fox.mass} kg.`);
+   console.log(`${fox.name} says, "${fox.catchPhrase(3)}."`);
+
+**Console Output**
+
+::
+
+   Fox is 7 years old and has a mass of 12 kg.
+   Fox says, "LaunchCode Rocks Rocks Rocks."
+
+The ``fox`` object contains all the data and functions for the astronaut named
+``'Fox'``.
 
 Of course, we have multiple astronauts on our team. To store data for each one,
 we would need to copy the structure for ``fox`` multiple times and then change

@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.2. Declaring a New Class" href="declaring-a-class.html" />
+    <link rel="next" title="15.2. Declaring and Calling a Class" href="declaring-a-class.html" />
     <link rel="prev" title="15. Classes" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -85,7 +85,7 @@
 
     
   <div class="section" id="what-are-classes">
-<h1>15.1. What Are Classes?<a class="headerlink" href="#what-are-classes" title="Permalink to this headline">¶</a></h1>
+<span id="index-0"></span><h1>15.1. What Are Classes?<a class="headerlink" href="#what-are-classes" title="Permalink to this headline">¶</a></h1>
 <p>Recall that <a class="reference internal" href="../objects-and-math/background.html#objects-intro"><span class="std std-ref">objects</span></a> are data structures that hold many
 values, which consist of <em>properties</em> and <em>methods</em>.</p>
 <p><strong>Classes</strong> extend this idea by providing a template for building multiple
@@ -104,7 +104,11 @@ object to hold an astronaut’s data, it might look something like:</p>
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="p">{</span>
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="p">{</span>
    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Fox&#39;</span><span class="p">,</span>
    <span class="nx">age</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
    <span class="nx">mass</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
@@ -114,10 +118,20 @@ object to hold an astronaut’s data, it might look something like:</p>
          <span class="nx">phrase</span> <span class="o">+=</span> <span class="s1">&#39; Rocks&#39;</span><span class="p">;</span>
       <span class="p">}</span>
       <span class="k">return</span> <span class="nx">phrase</span><span class="p">;</span>
+   <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> says, &quot;</span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">catchPhrase</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="sb">.&quot;`</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">fox</span></code> object now contains all the data for the astronaut named <code class="docutils literal notranslate"><span class="pre">'Fox'</span></code>.</p>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Fox is 7 years old and has a mass of 12 kg.
+Fox says, &quot;LaunchCode Rocks Rocks Rocks.&quot;
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">fox</span></code> object contains all the data and functions for the astronaut named
+<code class="docutils literal notranslate"><span class="pre">'Fox'</span></code>.</p>
 <p>Of course, we have multiple astronauts on our team. To store data for each one,
 we would need to copy the structure for <code class="docutils literal notranslate"><span class="pre">fox</span></code> multiple times and then change
 the values to suit each crew member. This is inefficient and repetitive. As
@@ -143,7 +157,7 @@ same set of <em>keys</em>, but the values assigned to each key will vary.</p>
         <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 15. Classes</a></li>
         
         
-        <li class="next"><a href="declaring-a-class.html">15.2. Declaring a New Class <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="declaring-a-class.html">15.2. Declaring and Calling a Class <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
