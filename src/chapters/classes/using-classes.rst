@@ -1,2 +1,0 @@
-Declaring a Class Object
-=========================

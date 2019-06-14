@@ -6,7 +6,7 @@ Classes
 
    introduction
    declaring-a-class
-   using-classes
+   class-methods
    inheritance
    exercises
    studio

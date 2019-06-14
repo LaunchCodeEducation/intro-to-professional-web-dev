@@ -65,8 +65,8 @@ arguments.
 .. admonition:: Note
 
    Each class requires one and only one ``constructor``. Including more than one
-   results in a syntax error. If ``constructor`` is left out of a class declaration,
-   JavaScript adds an empty one automatically---``constructor () {}``.
+   results in a syntax error. If one is left out of a class declaration,
+   JavaScript adds an empty ``constructor () {}`` automatically.
 
 Calling a New Class Object
 ---------------------------
