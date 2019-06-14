@@ -24,7 +24,7 @@ type. The general format for declaring a class is:
 
 .. index:: ! constructor
 
-Note how defining a class differs from defining a function:
+Note how declaring a class differs from declaring a function:
 
 #. The keyword ``constructor``. This is a special method for creating objects
    of the same type, and it assigns the key/value pairs.
@@ -65,8 +65,8 @@ arguments.
 .. admonition:: Note
 
    Each class requires one and only one ``constructor``. Including more than one
-   results in a syntax error. If one is left out of a class declaration,
-   JavaScript adds an empty ``constructor () {}`` automatically.
+   results in a syntax error. If ``constructor`` is left out of a class
+   declaration, JavaScript adds an empty ``constructor () {}`` automatically.
 
 Calling a New Class Object
 ---------------------------
@@ -89,7 +89,7 @@ class.
       :linenos:
 
       class Astronaut {
-         constructor(name,age,mass){
+         constructor(name, age, mass){
             this.name = name,
             this.age = age,
             this.mass = mass
@@ -112,7 +112,109 @@ class.
       Astronaut { name: 'Hippo', age: 25, mass: 1500 }
       Astronaut { name: 'Fox', age: 7, mass: 12 }
 
-Line 12 verifies that both ``fox`` and ``hippo`` are objects. The output from
-line 14 shows that ``fox`` and ``hippo`` are both the same type of object
-(``Astronaut``). The two share the same *keys*, but they have different
-values assigned to those keys.
+In lines 9 and 10, we call the ``Astronaut`` class twice and pass in different
+sets of arguments. This creates the objects ``fox`` and ``hippo``, which is
+confirmed by the output from line 12.
+
+The output from line 14 shows that ``fox`` and ``hippo`` are both the same
+*type* of object (``Astronaut``). The two share the same *keys*, but they have
+different values assigned to those keys.
+
+   Objects created with the same class are NOT the same. They share an overall
+   structure (keys), but the values differ.
+
+After creating an ``Astronaut`` object, we can modify it or add new key/value
+pairs as described in the :ref:`Objects and Math chapter <objects-chapter>`.
+
+.. admonition:: Try It
+
+   Play around with modifying and adding properties inside and outside of the
+   ``class`` declaration.
+
+   .. replit:: js
+      :slug: classExamples01
+      :linenos:
+
+      class Astronaut {
+         constructor(name, age, mass){
+            this.name = name,
+            this.age = age,
+            this.mass = mass
+         }
+      }
+
+      let fox = new Astronaut('Fox', 7, 12);
+
+      console.log(fox);
+      console.log(fox.age, fox.color);
+
+      fox.age = 9;
+      fox.color = 'red';
+
+      console.log(fox);
+      console.log(fox.age, fox.color);
+
+   **Console Output**
+
+   ::
+
+      Astronaut { name: 'Fox', age: 7, mass: 12 }
+      7 undefined
+      Astronaut { name: 'Fox', age: 9, mass: 12, color: 'red' }
+      9 'red'
+
+Attempting to print ``fox.color`` in line 12 returns ``undefined``, since that
+property is not included in the ``Astronaut`` class. Line 15 adds the ``color``
+property to the ``fox`` object, but this change will not affect any other
+objects created with ``Astronaut``.
+
+Setting Default Values
+^^^^^^^^^^^^^^^^^^^^^^^
+
+What happens if we create a new ``Astronaut`` without passing in all of the
+required arguments?
+
+.. admonition:: Try It!
+
+   .. replit:: js
+      :slug: classExamples02
+      :linenos:
+
+      class Astronaut {
+         constructor(name, age, mass){
+            this.name = name,
+            this.age = age,
+            this.mass = mass
+         }
+      }
+
+      let tortoise = new Astronaut('Speedy', 120);
+
+      console.log(tortoise.name, tortoise.age, tortoise.mass);
+
+To avoid issues with missing arguments, we can set a *default* value for a
+parameter as follows:
+
+.. sourcecode:: js
+   :linenos:
+
+   class Astronaut {
+      constructor(name, age, mass = 54){
+         this.name = name,
+         this.age = age,
+         this.mass = mass
+      }
+   }
+
+Now if we call ``Astronaut`` but do not specify a mass value, the constructor
+automatically assigns a value of ``54``. If an argument is included for
+``mass``, then the default value is ignored.
+
+TRY IT! Return to the repl.it in the example above and set default values for
+one or more of the parameters.
+
+Next Step
+----------
+
+This page explained how to assign properties within a ``class``. Next, we
+explore how to add *methods*.

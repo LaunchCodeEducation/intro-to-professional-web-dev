@@ -1,2 +1,2 @@
-Declaring Class Methods
+Assigning Class Methods
 ========================

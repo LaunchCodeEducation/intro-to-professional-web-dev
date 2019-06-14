@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.3. Declaring a Class Object" href="class-methods.html" />
+    <link rel="next" title="15.3. Assigning Class Methods" href="class-methods.html" />
     <link rel="prev" title="15.1. What Are Classes?" href="introduction.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -107,7 +107,7 @@ type. The general format for declaring a class is:</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p id="index-0">Note how defining a class differs from defining a function:</p>
+<p id="index-0">Note how declaring a class differs from declaring a function:</p>
 <ol class="arabic simple">
 <li>The keyword <code class="docutils literal notranslate"><span class="pre">constructor</span></code>. This is a special method for creating objects
 of the same type, and it assigns the key/value pairs.</li>
@@ -147,8 +147,8 @@ arguments.</p>
 <div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">Each class requires one and only one <code class="docutils literal notranslate"><span class="pre">constructor</span></code>. Including more than one
-results in a syntax error. If one is left out of a class declaration,
-JavaScript adds an empty <code class="docutils literal notranslate"><span class="pre">constructor</span> <span class="pre">()</span> <span class="pre">{}</span></code> automatically.</p>
+results in a syntax error. If <code class="docutils literal notranslate"><span class="pre">constructor</span></code> is left out of a class
+declaration, JavaScript adds an empty <code class="docutils literal notranslate"><span class="pre">constructor</span> <span class="pre">()</span> <span class="pre">{}</span></code> automatically.</p>
 </div>
 </div>
 </div>
@@ -178,7 +178,7 @@ class.</p>
 12
 13
 14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
-   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">mass</span><span class="p">){</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
@@ -201,10 +201,130 @@ Astronaut { name: &#39;Fox&#39;, age: 7, mass: 12 }
 </pre></div>
 </div>
 </div>
-<p>Line 12 verifies that both <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> are objects. The output from
-line 14 shows that <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> are both the same type of object
-(<code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>). The two share the same <em>keys</em>, but they have different
-values assigned to those keys.</p>
+<p>In lines 9 and 10, we call the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class twice and pass in different
+sets of arguments. This creates the objects <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code>, which is
+confirmed by the output from line 12.</p>
+<p>The output from line 14 shows that <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> are both the same
+<em>type</em> of object (<code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>). The two share the same <em>keys</em>, but they have
+different values assigned to those keys.</p>
+<blockquote>
+<div>Objects created with the same class are NOT the same. They share an overall
+structure (keys), but the values differ.</div></blockquote>
+<p>After creating an <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> object, we can modify it or add new key/value
+pairs as described in the <a class="reference internal" href="../objects-and-math/index.html#objects-chapter"><span class="std std-ref">Objects and Math chapter</span></a>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Play around with modifying and adding properties inside and outside of the
+<code class="docutils literal notranslate"><span class="pre">class</span></code> declaration.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span> <span class="nx">fox</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
+
+<span class="nx">fox</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="nx">fox</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span> <span class="nx">fox</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/classExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Astronaut { name: &#39;Fox&#39;, age: 7, mass: 12 }
+7 undefined
+Astronaut { name: &#39;Fox&#39;, age: 9, mass: 12, color: &#39;red&#39; }
+9 &#39;red&#39;
+</pre></div>
+</div>
+</div>
+<p>Attempting to print <code class="docutils literal notranslate"><span class="pre">fox.color</span></code> in line 12 returns <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, since that
+property is not included in the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class. Line 15 adds the <code class="docutils literal notranslate"><span class="pre">color</span></code>
+property to the <code class="docutils literal notranslate"><span class="pre">fox</span></code> object, but this change will not affect any other
+objects created with <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>.</p>
+<div class="section" id="setting-default-values">
+<h3>15.2.2.1. Setting Default Values<a class="headerlink" href="#setting-default-values" title="Permalink to this headline">¶</a></h3>
+<p>What happens if we create a new <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> without passing in all of the
+required arguments?</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tortoise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="s1">&#39;Speedy&#39;</span><span class="p">,</span> <span class="mi">120</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tortoise</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">tortoise</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span> <span class="nx">tortoise</span><span class="p">.</span><span class="nx">mass</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/classExamples02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<p>To avoid issues with missing arguments, we can set a <em>default</em> value for a
+parameter as follows:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span> <span class="o">=</span> <span class="mi">54</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now if we call <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> but do not specify a mass value, the constructor
+automatically assigns a value of <code class="docutils literal notranslate"><span class="pre">54</span></code>. If an argument is included for
+<code class="docutils literal notranslate"><span class="pre">mass</span></code>, then the default value is ignored.</p>
+<p>TRY IT! Return to the repl.it in the example above and set default values for
+one or more of the parameters.</p>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>15.2.3. Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>This page explained how to assign properties within a <code class="docutils literal notranslate"><span class="pre">class</span></code>. Next, we
+explore how to add <em>methods</em>.</p>
 </div>
 </div>
 
@@ -217,7 +337,7 @@ values assigned to those keys.</p>
         <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> 15.1. What Are Classes?</a></li>
         
         
-        <li class="next"><a href="class-methods.html">15.3. Declaring a Class Object <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="class-methods.html">15.3. Assigning Class Methods <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

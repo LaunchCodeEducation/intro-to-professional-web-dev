@@ -1,3 +1,5 @@
+.. _objects-chapter:
+
 Objects and the Math Object
 ===========================
 
