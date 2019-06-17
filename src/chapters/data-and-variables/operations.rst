@@ -137,21 +137,23 @@ When more than one operator appears in an expression, the order of evaluation de
 
 .. index:: PEMDAS
 
-.. tip:: The acronymn PEMDAS can be used to remember order of operations:
+.. admonition:: Tip
 
-    **P** = parentheses
+   The acronymn PEMDAS can be used to remember order of operations:
 
-    **E** = exponentiation
+   **P** = parentheses
 
-    **M** = multiplication
-    
-    **D** = division
-    
-    **A** = addition
+   **E** = exponentiation
 
-    **S** = subtraction
+   **M** = multiplication
 
-.. note::
+   **D** = division
+
+   **A** = addition
+
+   **S** = subtraction
+
+.. admonition:: Note
 
    Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator ``**``. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:
 
@@ -159,10 +161,10 @@ When more than one operator appears in an expression, the order of evaluation de
       :linenos:
 
       // the right-most ** operator is applied first
-      console.log(2 ** 3 ** 2)     
+      console.log(2 ** 3 ** 2)
 
       // use parentheses to force the order you want
-      console.log((2 ** 3) ** 2)   
+      console.log((2 ** 3) ** 2)
 
    **Console Output**
 
@@ -170,7 +172,6 @@ When more than one operator appears in an expression, the order of evaluation de
 
       512
       64
-
 
 Check Your Understanding
 ------------------------

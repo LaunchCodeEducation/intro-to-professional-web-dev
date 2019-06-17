@@ -123,8 +123,9 @@ different values assigned to those keys.
    Objects created with the same class are NOT the same. They share an overall
    structure (keys), but the values differ.
 
-After creating an ``Astronaut`` object, we can modify it or add new key/value
-pairs as described in the :ref:`Objects and Math chapter <objects-chapter>`.
+After creating an ``Astronaut`` object, we can access, modify, or add new
+key/value pairs as described in the
+:ref:`Objects and Math chapter <objects-chapter>`.
 
 .. admonition:: Try It
 
