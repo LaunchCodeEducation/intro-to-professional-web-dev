@@ -20,7 +20,7 @@ A **value** is a specific piece of data, such as a word or a number. Some exampl
 
 .. index:: ! data type, ! number, ! string, ! type 
 
-Each value belongs to a category called a **data type**. We will see many different data types throughout the course, the first two of which are the **number** and **string** types. Numeric values such as ``4`` and ``3.3`` are a numbers. Sequences of characters encolosed in quotes, such as ``"Hello, World!"``, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes. 
+Each value belongs to a category called a **data type**. We will see many different data types throughout the course, the first two of which are the **number** and **string** types. Numeric values such as ``4`` and ``3.3`` are a numbers. Sequences of characters enclosed in quotes, such as ``"Hello, World!"``, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes. 
 
 .. index:: ! integer, ! float
 
@@ -45,11 +45,11 @@ If you are not sure what data type a value falls into, precede the value with ``
       number
       number
 
-Not surprisingly, JavaScript reports that the data type of ``"Helo, World!"`` is ``string``, while the data type of both ``17`` and ``3.14`` is ``number``. Note that some JavaScript environments may print types names and strings with single quotes around them, as in ``'string'``, ``'number'``, and ``'hello'``.
+Not surprisingly, JavaScript reports that the data type of ``"Hello, World!"`` is ``string``, while the data type of both ``17`` and ``3.14`` is ``number``. Note that some JavaScript environments may print type names and strings with single quotes around them, as in ``'string'``, ``'number'``, and ``'hello'``.
 
 .. index:: expression, returns
 
-.. note:: Notice that ``console.log(typeof "Hello, World!");`` prints out ``"Hello, World!`` to the console. The ``typeof`` keyword is not printed to the console because the statement ``typeof "Hellow, World"!`` is an **expression**. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.
+.. note:: Notice that ``console.log(typeof "Hello, World!");`` prints out ``string`` to the console. The ``typeof`` keyword is not printed to the console because the statement ``typeof "Hello, World!"`` is an **expression**. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.
 
    We say that an expression **returns** a value. That is, ``typeof "Hello, World!"`` returns the value ``string``.
 
