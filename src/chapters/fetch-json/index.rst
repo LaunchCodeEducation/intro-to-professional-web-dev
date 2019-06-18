@@ -4,7 +4,8 @@ Fetch & JSON
 .. toctree::
    :maxdepth: 4
 
-   data-format-apis
-   json-rules
+   introduction
+   data-format
+   json
    fetch
    updating-the-webpage
