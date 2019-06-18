@@ -127,7 +127,7 @@ Let's look at an improved version this program.
    let areaOfCircle = pi * radiusOfCircle ** 2;
    console.log(areaOfCircle);
 
-With improved variable names, it now becomes clear that the program is calcuating the area of a circle of radius 5.
+With improved variable names, it now becomes clear that the program is calculating the area of a circle of radius 5.
 
 .. tip:: When considering program readability, think about whether or not your code will make sense to another programmer. It is not enough for code to be readable by only the programmer that originally wrote it.
 
