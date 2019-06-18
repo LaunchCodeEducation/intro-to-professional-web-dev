@@ -86,6 +86,46 @@
     
   <div class="section" id="inheritance">
 <h1>15.4. Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h1>
+<p id="index-0"><strong>Object-oriented programming</strong> is a type of software design where the codebase is organized around objects and classes.
+Objects contain the functions and central logic of a program.</p>
+<p>Object-oriented programming stands on top of four principles: abstraction, polymorphism, encapsulation, and inheritance.
+We will dive into inheritance now and work with the other three principles later in Unit Two of this class.</p>
+<p><strong>Inheritance</strong> refers to the ability of one class to inherit properties and methods from another.</p>
+<p>Think of it this way, in the animal kingdom, a species is a unique entity that inherits traits from its genus. The genus also has unique properties, but inherits traits from its family.
+For example, a tiger and a housecat are members of two different species, however, they share similar traits such as retractable claws.
+The similar traits they share, the two cats inherited from their shared family, <cite>felidae</cite>.</p>
+<p>Using inheritance in programming, we can create a structure of classes that inherit properties and methods from other classes.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>If we wanted to program classes for our tiger and housecat, we would create a felidae class for the family.
+We would then create two classes for the panthera genus and the felis genus. We would create classes for the tiger and house cat species as well.
+The species classes would inherit properties and methods from the genus classes and the genus classes would inherit properties and methods from the family class.</p>
+<p class="last">** Maybe add a figure **</p>
+</div>
+<p id="index-1">The classes inheriting properties and methods are <strong>child classes</strong> and the classes passing down properties and methods are <strong>parent classes</strong>.</p>
+<div class="section" id="extends">
+<h2>15.4.1. <code class="docutils literal notranslate"><span class="pre">extends</span></code><a class="headerlink" href="#extends" title="Permalink to this headline">¶</a></h2>
+<p>When designating a class as inheriting from another class in JavaScript, we use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword.
+By adding <code class="docutils literal notranslate"><span class="pre">extends</span></code> to the class declaration, we can designate that the class we are declaring is a child class of its parent.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">panthera</span> <span class="p">{</span>
+        <span class="nx">isBig</span><span class="o">:</span> <span class="nx">True</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">tiger</span> <span class="kr">extends</span> <span class="nx">panthera</span> <span class="p">{</span>
+        <span class="nx">hasStripes</span><span class="o">:</span> <span class="nx">True</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="last">When creating the classes for our tiger, we can use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword to set up <code class="docutils literal notranslate"><span class="pre">tiger</span></code> as the child class of <code class="docutils literal notranslate"><span class="pre">panthera</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">tiger</span></code> class then inherits the property, <code class="docutils literal notranslate"><span class="pre">isBig</span></code>, from the <code class="docutils literal notranslate"><span class="pre">panthera</span></code> class and has an additional property, <code class="docutils literal notranslate"><span class="pre">hasStripes</span></code>.</p>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword is not supported in Internet Explorer.</p>
+</div>
+</div>
 </div>
 
 
