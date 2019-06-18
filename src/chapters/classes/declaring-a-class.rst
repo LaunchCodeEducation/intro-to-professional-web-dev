@@ -217,10 +217,43 @@ one or more of the parameters.
 Next Step
 ----------
 
-This page explained how to assign properties within a ``class``. Next, we
-explore how to add *methods*.
+This page explained how to assign properties within a ``class``. In the next
+section, we explore how to add *methods*.
 
 Check Your Understanding
 -------------------------
 
-   TODO: Add concept checks.
+The questions below refer to a class called ``Car``.
+
+.. sourcecode:: js
+   :linenos:
+
+   class Car {
+      constructor(make, model, year, color, mpg){
+         this.make = make,
+         this.model = model,
+         this.year = year,
+         this.color = color,
+         this.mpg = mpg
+      }
+   }
+
+.. admonition:: Question
+
+   If we call the class with ``let myCar = new Car('Chevy', 'Astro', 1985,
+   'gray', 20)`` what is output by ``console.log(typeof myCar.year)``?
+
+   a. object
+   b. string
+   c. function
+   d. number
+   e. property
+
+.. admonition:: Question
+
+   If we call the class with ``let myCar = new Car('Tesla', 'Model S', 2019)``
+   what is output by ``console.log(myCar)``?
+
+   a. Car {make: 'Tesla', model: 'Model S', year: 2019, color: undefined, mpg: undefined }
+   b. Car {make: 'Tesla', model: 'Model S', year: 2019, color: '', mpg: '' }
+   c. Car {make: 'Tesla', model: 'Model S', year: 2019 }
