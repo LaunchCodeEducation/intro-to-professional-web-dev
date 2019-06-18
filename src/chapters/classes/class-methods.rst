@@ -30,8 +30,75 @@ the same phrase...
 Assigning Methods Outside ``constructor``
 -----------------------------------------
 
+Lead-in text to general syntax:
+
+.. sourcecode:: js
+   :linenos:
+
+   class ClassName {
+      constructor(parameters) {
+         //assign properties with this.key = value
+      }
+
+      methodName(parameters) {
+         //function code
+      }
+   }
+
+Example in ``Astronaut``:
+
+.. sourcecode:: js
+   :linenos:
+
+   class Astronaut {
+      constructor(name, age, mass){
+         this.name = name,
+         this.age = age,
+         this.mass = mass
+      }
+
+      reportStats() {
+         let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+         return stats;
+      }
+   }
+
+More explanation text here...
+
 Assigning Methods Inside ``constructor``
 -----------------------------------------
+
+Lead-in text to general syntax:
+
+.. sourcecode:: js
+   :linenos:
+
+   class ClassName {
+      constructor(parameters) {
+         this.methodName = function(parameters) {
+            //function code
+         }
+      }
+   }
+
+Example in ``Astronaut``:
+
+.. sourcecode:: js
+   :linenos:
+
+   class Astronaut {
+      constructor(name, age, mass){
+         this.name = name,
+         this.age = age,
+         this.mass = mass
+         this.reportStats = function() {
+            let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+            return stats;
+         }
+      }
+   }
+
+More explanation text here...
 
 Which Way is Preferred?
 ------------------------
@@ -50,3 +117,8 @@ concern with today's systems). Remember the DRY idea.
 If a method is the same for ALL objects of a class, then define that method
 OUTSIDE of the constructor. That way, each object need not carry a copy of
 identical code.
+
+Check Your Understanding
+-------------------------
+
+   TODO: Add concept checks.

@@ -219,3 +219,8 @@ Next Step
 
 This page explained how to assign properties within a ``class``. Next, we
 explore how to add *methods*.
+
+Check Your Understanding
+-------------------------
+
+   TODO: Add concept checks.

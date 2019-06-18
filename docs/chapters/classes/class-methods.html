@@ -118,9 +118,97 @@
 the same phrase…</p>
 <div class="section" id="assigning-methods-outside-constructor">
 <h2>15.3.1. Assigning Methods Outside <code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#assigning-methods-outside-constructor" title="Permalink to this headline">¶</a></h2>
+<p>Lead-in text to general syntax:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">ClassName</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//assign properties with this.key = value</span>
+   <span class="p">}</span>
+
+   <span class="nx">methodName</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//function code</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Example in <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+   <span class="p">}</span>
+
+   <span class="nx">reportStats</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">stats</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>More explanation text here…</p>
 </div>
 <div class="section" id="assigning-methods-inside-constructor">
 <h2>15.3.2. Assigning Methods Inside <code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#assigning-methods-inside-constructor" title="Permalink to this headline">¶</a></h2>
+<p>Lead-in text to general syntax:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">ClassName</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">methodName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
+         <span class="c1">//function code</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Example in <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">reportStats</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+         <span class="kd">let</span> <span class="nx">stats</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">;</span>
+         <span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>More explanation text here…</p>
 </div>
 <div class="section" id="which-way-is-preferred">
 <h2>15.3.3. Which Way is Preferred?<a class="headerlink" href="#which-way-is-preferred" title="Permalink to this headline">¶</a></h2>
@@ -134,6 +222,11 @@ concern with today’s systems). Remember the DRY idea.</p>
 <p>If a method is the same for ALL objects of a class, then define that method
 OUTSIDE of the constructor. That way, each object need not carry a copy of
 identical code.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>15.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>TODO: Add concept checks.</div></blockquote>
 </div>
 </div>
 
