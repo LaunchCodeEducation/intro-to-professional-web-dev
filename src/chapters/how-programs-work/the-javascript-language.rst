@@ -1,5 +1,5 @@
 The JavaScript Language
-========================
+=======================
 
 .. index:: JavaScript
 

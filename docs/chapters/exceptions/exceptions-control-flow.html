@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>18.3. Exceptions-Control-Flow &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.4. Exercises" href="exercises.html" />
+    <link rel="prev" title="18.2. Throw" href="throw.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">18. Exceptions</a></li>
+    <li class="active">18.3. Exceptions-Control-Flow</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="exceptions-control-flow">
+<h1>18.3. Exceptions-Control-Flow<a class="headerlink" href="#exceptions-control-flow" title="Permalink to this headline">¶</a></h1>
+<p>In some instances, we receive input from a user and we cannot always ensure they will type in something that will run with our code.</p>
+<p>JavaScript gives us some control flow tools to handle exceptions by catching thrown exceptions.</p>
+<p>We may be anticipating an exception, but still want our program to continue running and not experience a runtime error. We can tell JavaScript to <strong>try</strong> to run a block of code and if an exception is thrown, to <strong>catch</strong> the exception and run a different block of code.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Code</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;We caught a ReferenceError, but our program continues to run!&quot;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">We</span> <span class="nx">caught</span> <span class="nx">a</span> <span class="nx">ReferenceError</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">our</span> <span class="nx">program</span> <span class="nx">continues</span> <span class="nx">to</span> <span class="nx">run</span><span class="o">!</span>
+<span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p class="last">In this example we attept to print out the first element of our variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. We forgot to define x, but nested our code inside of a <code class="docutils literal notranslate"><span class="pre">try</span></code> statement and specifically <strong>catch</strong> <code class="docutils literal notranslate"><span class="pre">ReferenceErrors</span></code>. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.</p>
+</div>
+<p>JavaScript also provides us with a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement, a block of code that always runs every time regardless if the <code class="docutils literal notranslate"><span class="pre">try</span></code>, or <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks run.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;We caught a ReferenceError, but our program continues to run!&quot;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">finally</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;In the finally statement!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">We</span> <span class="nx">caught</span> <span class="nx">a</span> <span class="nx">ReferenceError</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">our</span> <span class="nx">program</span> <span class="nx">continues</span> <span class="nx">to</span> <span class="nx">run</span><span class="o">!</span>
+<span class="mi">0</span>
+<span class="nx">In</span> <span class="nx">the</span> <span class="k">finally</span> <span class="nx">statement</span><span class="o">!</span>
+</pre></div>
+</div>
+</div>
+<p class="last">This try…catch block is identical to the example above, except this time we have a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement. The finally statement runs upon the conclusion of the try…catch statements. It is often used to remove hanging resources.</p>
+</div>
+<p>Errors are a normal part of coding. JavaScript defines the most common errors and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging or to handle expected issues in our code.</p>
+<div class="section" id="check-your-understanding">
+<h2>18.3.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What statement do we use if we want to attempt to run code, but think an exception might be raised?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">How do you handle an exception that is raised?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What statement do you use to ensure a code block is executed regardless if an exception was raised?</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="throw.html"><span aria-hidden="true">&larr;</span> 18.2. Throw</a></li>
+        
+        
+        <li class="next"><a href="exercises.html">18.4. Exercises <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
