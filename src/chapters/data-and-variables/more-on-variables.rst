@@ -143,11 +143,11 @@ There is one more aspect of naming variables that you should be aware of, and th
 
 .. admonition:: Example
 
-   In the United States, it is common for two people to greet each other with a handshake. In other countries and cultures, such as some in east Asia, the convnetional greeting is to bow. 
+   In the United States, it is common for two people to greet each other with a handshake. In other countries and cultures, such as some in east Asia, the conventional greeting is to bow.
 
-   Failing to follow a social convention is not a violation of the law, but is considered inpolite nonetheless. It is a signal that you are not part of the group, or do not respect its norms.
+   Failing to follow a social convention is not a violation of the law, but is considered impolite nonetheless. It is a signal that you are not part of the group, or do not respect its norms.
 
-There are a variety of types of conventions used by different groups of programmers. One common type of convention is that programmers that specialize in a specific language will adopt certain variable naming practices. 
+There are a variety of types of conventions used by different groups of programmers. One common type of convention is that programmers that specialize in a specific language will adopt certain variable naming practices.
 
 In JavaScript, most programmers use the **camel case** style, which stipulates that variable names consist of names or phrases that:
 
@@ -155,9 +155,9 @@ In JavaScript, most programmers use the **camel case** style, which stipulates t
 - start with a lowercase letter, and
 - capitalize each internal word.
 
-In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called camel case becase the capitalization of internal words is reminiscent of a camel's humps. Another another common name for this convention is **lower camel case**, since names start with a lowercase letter.
+In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called camel case because the capitalization of internal words is reminiscent of a camel's humps. Another another common name for this convention is **lower camel case**, since names start with a lowercase letter.
 
-.. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``. 
+.. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``.
 
 We will use the lower came case convention throughout this course, and strongly encourage you to do so as well.
 
@@ -170,7 +170,7 @@ Our last note on naming variables has to do with a collection of words that are 
 
 Any word that is formally part of the JavaScript language syntax is a keyword. So far, we have seen only four keywords: ``let``, ``const``, ``var``, and ``typeof``.
 
-.. warning:: While ``console`` and ``console.log`` may seem like keywords, they are actually slightly differnt things. They are entities (an object and a function, respectively) that are available by default in most JavaScript environments.
+.. warning:: While ``console`` and ``console.log`` may seem like keywords, they are actually slightly different things. They are entities (an object and a function, respectively) that are available by default in most JavaScript environments.
 
 Attempting to use a keyword for anything other than it's intended use will result in an error. To see this, let's try to name a variable ``const``.
 
