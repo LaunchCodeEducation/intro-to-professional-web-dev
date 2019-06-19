@@ -1,3 +1,5 @@
+.. _adding-class-methods:
+
 Assigning Class Methods
 ========================
 

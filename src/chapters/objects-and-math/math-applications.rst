@@ -58,6 +58,8 @@ The ``happiness`` array has a length of 8, so in line 2
 ``Math.floor(Math.random()*8)``, which generates an integer from 0 to 7.
 Line 3 then returns a random selection from the array.
 
+.. _rounding-to-decimal-places:
+
 Rounding to Decimal Places
 ---------------------------
 
