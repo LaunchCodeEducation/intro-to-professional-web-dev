@@ -92,3 +92,6 @@ How many tests will it take to reach ``Reserve`` status? How many to reach
 
 Bonus Mission
 --------------
+
+   TODO: Determine if the content above is enough, or if more reinforcement is
+   needed for those who finish early.
