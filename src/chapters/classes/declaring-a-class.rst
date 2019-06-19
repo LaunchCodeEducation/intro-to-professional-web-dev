@@ -35,7 +35,7 @@ As an example, let's set up an ``Astronaut`` class to help us store data about
 our animal crew.
 
 Assigning Properties
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Each animal in our crew has a ``name``, ``age``, and ``mass``, and we assign
 these properties in ``constructor`` as follows:

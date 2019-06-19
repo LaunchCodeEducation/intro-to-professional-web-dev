@@ -3,36 +3,14 @@
 Assigning Class Methods
 ========================
 
-Some intro stuff here with the example:
-
-.. sourcecode:: js
-   :linenos:
-
-   class Astronaut {
-      constructor(name, age, mass){
-         this.name = name,
-         this.age = age,
-         this.mass = mass
-      }
-   }
-
-   let fox = new Astronaut('Fox', 7, 12);
-
-   console.log(`${fox.name} is ${fox.age} years old and has a mass of ${fox.mass} kg.`);
-
-**Console Output**
-
-::
-
-   Fox is 7 years old and has a mass of 12 kg.
-
-We could replace the template literal in line 11 with a function that returns
-the same phrase...
+Just as with objects, we may want to add methods to our classes in addition to properties. 
+Previously, we learned how to use constructors in class declarations to set the values of the properties.
+When working with assigning methods in classes, we can either create them `outside` or `inside` in the ``constructor``.
 
 Assigning Methods Outside ``constructor``
 -----------------------------------------
 
-Lead-in text to general syntax:
+When assigning methods outside of the ``constructor``, we simply declare our methods the same way that we would normally do for objects.
 
 .. sourcecode:: js
    :linenos:
@@ -47,30 +25,31 @@ Lead-in text to general syntax:
       }
    }
 
-Example in ``Astronaut``:
+.. admonition:: Example
 
-.. sourcecode:: js
-   :linenos:
+   .. sourcecode:: js
+      :linenos:
 
-   class Astronaut {
-      constructor(name, age, mass){
-         this.name = name,
-         this.age = age,
-         this.mass = mass
+      class Astronaut {
+         constructor(name, age, mass){
+            this.name = name,
+            this.age = age,
+            this.mass = mass
+         }
+
+         reportStats() {
+            let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+            return stats;
+         }
       }
 
-      reportStats() {
-         let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
-         return stats;
-      }
-   }
-
-More explanation text here...
+   We declared our method, ``reportStats()`` outside of the constructor.
+   When we declare a new instance of the ``Astronaut`` class, we can use the ``reportStats()`` method to return a concise string containing all of the info we would need about an astronaut.
 
 Assigning Methods Inside ``constructor``
 -----------------------------------------
 
-Lead-in text to general syntax:
+When declaring methods inside the ``constructor``, we need to make use of the ``this`` keyword, just as we would with our properties.
 
 .. sourcecode:: js
    :linenos:
@@ -83,44 +62,41 @@ Lead-in text to general syntax:
       }
    }
 
-Example in ``Astronaut``:
+.. admonition:: Example
 
-.. sourcecode:: js
-   :linenos:
+   Let's consider the ``Astronaut`` class that we have been working with. 
+   When assigning the method, ``reportStats()``, inside the ``constructor``, we would do so like this:
 
-   class Astronaut {
-      constructor(name, age, mass){
-         this.name = name,
-         this.age = age,
-         this.mass = mass
-         this.reportStats = function() {
-            let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
-            return stats;
+   .. sourcecode:: js
+      :linenos:
+
+      class Astronaut {
+         constructor(name, age, mass){
+            this.name = name,
+            this.age = age,
+            this.mass = mass,
+            this.reportStats = function() {
+               let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+               return stats;
+            }
          }
       }
-   }
 
-More explanation text here...
+   Initially, this may seem to produce the same result as assigning ``reportStats()`` outside of the constructor.
+   We will weigh the pros and cons of both methods below.
 
 Which Way is Preferred?
 ------------------------
 
-Compare outputs from placing ``reportStats()`` outside vs. inside
-``constructor``:
+When we try to compare the outputs of our classes in code, we notice that only when we assigned the method `inside` the ``constructor``, that ``reportStats()`` method was output.
+Try declaring the ``Astronaut`` class in Repl.it to see what we mean.
 
-Outside: Astronaut { name: 'Fox', age: 7, mass: 12 }
+In the case of assigning the method `inside` the constructor, each ``Astronaut`` objects carries around the code for ``reportStats()``.
+With today's computers, this is a relatively minor concern, however, each ``Astronaut`` has extra code that may not be needed in each case.
+This can consume memory, which is something you should be aware of as today's businesses will want efficient code that does not tax their systems.
 
-Inside: Astronaut { name: 'Fox', age: 7, mass: 12, reportStats: [Function] }
-
-In the latter case, each ``Astronaut`` objects carries around the code for
-``reportStats()``. Repetitive and memory consuming (though this is a minor
-concern with today's systems). Remember the DRY idea.
-
-If a method is the same for ALL objects of a class, then define that method
-OUTSIDE of the constructor. That way, each object need not carry a copy of
-identical code.
+Because of this, if a method is the same for ALL objects of a class, define that method `outside` of the constructor.
+Each object does not need a copy of identical code and declaring a method outside of the class will not consume as much memory.
 
 Check Your Understanding
 -------------------------
-
-   TODO: Add concept checks.

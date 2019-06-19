@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -86,39 +86,12 @@
     
   <div class="section" id="assigning-class-methods">
 <span id="adding-class-methods"></span><h1>15.3. Assigning Class Methods<a class="headerlink" href="#assigning-class-methods" title="Permalink to this headline">¶</a></h1>
-<p>Some intro stuff here with the example:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
-   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="nx">fox</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-<p><strong>Console Output</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Fox is 7 years old and has a mass of 12 kg.
-</pre></div>
-</div>
-<p>We could replace the template literal in line 11 with a function that returns
-the same phrase…</p>
+<p>Just as with objects, we may want to add methods to our classes in addition to properties.
+Previously, we learned how to use constructors in class declarations to set the values of the properties.
+When working with assigning methods in classes, we can either create them <cite>outside</cite> or <cite>inside</cite> in the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
 <div class="section" id="assigning-methods-outside-constructor">
 <h2>15.3.1. Assigning Methods Outside <code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#assigning-methods-outside-constructor" title="Permalink to this headline">¶</a></h2>
-<p>Lead-in text to general syntax:</p>
+<p>When assigning methods outside of the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, we simply declare our methods the same way that we would normally do for objects.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -138,7 +111,8 @@ the same phrase…</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Example in <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -164,11 +138,13 @@ the same phrase…</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>More explanation text here…</p>
+<p class="last">We declared our method, <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> outside of the constructor.
+When we declare a new instance of the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class, we can use the <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> method to return a concise string containing all of the info we would need about an astronaut.</p>
+</div>
 </div>
 <div class="section" id="assigning-methods-inside-constructor">
 <h2>15.3.2. Assigning Methods Inside <code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#assigning-methods-inside-constructor" title="Permalink to this headline">¶</a></h2>
-<p>Lead-in text to general syntax:</p>
+<p>When declaring methods inside the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, we need to make use of the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword, just as we would with our properties.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -184,7 +160,10 @@ the same phrase…</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Example in <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class that we have been working with.
+When assigning the method, <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>, inside the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, we would do so like this:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -199,7 +178,7 @@ the same phrase…</p>
    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span><span class="p">,</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">reportStats</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
          <span class="kd">let</span> <span class="nx">stats</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">;</span>
          <span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
@@ -208,25 +187,22 @@ the same phrase…</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>More explanation text here…</p>
+<p class="last">Initially, this may seem to produce the same result as assigning <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> outside of the constructor.
+We will weigh the pros and cons of both methods below.</p>
+</div>
 </div>
 <div class="section" id="which-way-is-preferred">
 <h2>15.3.3. Which Way is Preferred?<a class="headerlink" href="#which-way-is-preferred" title="Permalink to this headline">¶</a></h2>
-<p>Compare outputs from placing <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> outside vs. inside
-<code class="docutils literal notranslate"><span class="pre">constructor</span></code>:</p>
-<p>Outside: Astronaut { name: ‘Fox’, age: 7, mass: 12 }</p>
-<p>Inside: Astronaut { name: ‘Fox’, age: 7, mass: 12, reportStats: [Function] }</p>
-<p>In the latter case, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects carries around the code for
-<code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>. Repetitive and memory consuming (though this is a minor
-concern with today’s systems). Remember the DRY idea.</p>
-<p>If a method is the same for ALL objects of a class, then define that method
-OUTSIDE of the constructor. That way, each object need not carry a copy of
-identical code.</p>
+<p>When we try to compare the outputs of our classes in code, we notice that only when we assigned the method <cite>inside</cite> the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, that <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> method was output.
+Try declaring the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class in Repl.it to see what we mean.</p>
+<p>In the case of assigning the method <cite>inside</cite> the constructor, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>.
+With today’s computers, this is a relatively minor concern, however, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code that may not be needed in each case.
+This can consume memory, which is something you should be aware of as today’s businesses will want efficient code that does not tax their systems.</p>
+<p>Because of this, if a method is the same for ALL objects of a class, define that method <cite>outside</cite> of the constructor.
+Each object does not need a copy of identical code and declaring a method outside of the class will not consume as much memory.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>15.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>TODO: Add concept checks.</div></blockquote>
 </div>
 </div>
 

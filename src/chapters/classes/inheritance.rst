@@ -39,17 +39,24 @@ By adding ``extends`` to the class declaration, we can designate that the class 
 
 	.. sourcecode:: js
 
-		class panthera {
-			isBig: True;
+		class Panthera {
+			constructor {
+				this.roar = "loud"
+			}
 		}
 
-		class tiger extends panthera {
-			hasStripes: True;
+		class Tiger extends Panthera {
+			constructor {
+				this.hasStripes = True
+			}
 		}
 
-	When creating the classes for our tiger, we can use the ``extends`` keyword to set up ``tiger`` as the child class of ``panthera``.
-	The ``tiger`` class then inherits the property, ``isBig``, from the ``panthera`` class and has an additional property, ``hasStripes``.
+	When creating the classes for our tiger, we can use the ``extends`` keyword to set up ``Tiger`` as the child class of ``Panthera``.
+	The ``Tiger`` class then inherits the property, ``roar``, from the ``Panthera`` class and has an additional property, ``hasStripes``.
 
 .. note::
 
 	The ``extends`` keyword is not supported in Internet Explorer.
+
+Check Your Understanding
+------------------------
