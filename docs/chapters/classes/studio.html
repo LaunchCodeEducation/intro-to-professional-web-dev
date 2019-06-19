@@ -110,10 +110,10 @@ the key/value pairs.</p>
 <p>As our candidates complete more tests, we need to be able to add the new
 scores to their records.</p>
 <ol class="arabic simple">
-<li>Add an <code class="docutils literal notranslate"><span class="pre">addScore</span></code> function to <code class="docutils literal notranslate"><span class="pre">CrewCandidate</span></code>. The function must take
+<li>Create an <code class="docutils literal notranslate"><span class="pre">addScore</span></code> method in <code class="docutils literal notranslate"><span class="pre">CrewCandidate</span></code>. The function must take
 a new score as a parameter. Code this function OUTSIDE of <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.
 (If you need to review the syntax, revisit
-<a class="reference internal" href="class-methods.html#adding-class-methods"><span class="std std-ref">Assigning Class Methods</span></a>.</li>
+<a class="reference internal" href="class-methods.html#adding-class-methods"><span class="std std-ref">Assigning Class Methods</span></a>).</li>
 <li>When passed a score, the function adds the value to <code class="docutils literal notranslate"><span class="pre">this.scores</span></code> with the
 <a class="reference internal" href="../../appendices/array-method-examples/push-and-pop-examples.html#push-and-pop-examples"><span class="std std-ref">push array method</span></a>.</li>
 <li>Test out your new method by adding a score of <code class="docutils literal notranslate"><span class="pre">83</span></code> to Bubba’s record, then
@@ -122,10 +122,57 @@ print out the new score array with <code class="docutils literal notranslate"><s
 </div>
 <div class="section" id="part-3-add-more-methods">
 <h2>15.6.3. Part 3 - Add More Methods<a class="headerlink" href="#part-3-add-more-methods" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../objects-and-math/math-applications.html#rounding-to-decimal-places"><span class="std std-ref">round to 1 decimal place</span></a></p>
+<p>Now that we can add scores to our candidates’ records, we need to be able to
+evaluate their fitness for our astronaut program. Let’s add two more methods
+to <code class="docutils literal notranslate"><span class="pre">CrewCandidate</span></code>—one to average the test scores, and the other to
+indicate if the candidate should be admitted.</p>
+<div class="section" id="calculating-the-test-average">
+<h3>15.6.3.1. Calculating the Test Average<a class="headerlink" href="#calculating-the-test-average" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Add an <code class="docutils literal notranslate"><span class="pre">average()</span></code> method outside <code class="docutils literal notranslate"><span class="pre">constructor</span></code>. The function does NOT
+need a parameter.</li>
+<li>To find the average, add up the entries from <code class="docutils literal notranslate"><span class="pre">this.scores</span></code>, then divide
+the sum by the number of scores.</li>
+<li>To make the average easier to look at,
+<a class="reference internal" href="../objects-and-math/math-applications.html#rounding-to-decimal-places"><span class="std std-ref">round it to 1 decimal place</span></a>, then return
+the result from the function.</li>
+</ol>
+<p>Verify your code by evaluating and printing Malia’s average test score (92.7).</p>
 </div>
-<div class="section" id="part-4-bonus-mission">
-<h2>15.6.4. Part 4 - Bonus Mission<a class="headerlink" href="#part-4-bonus-mission" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="determining-candidate-status">
+<h3>15.6.3.2. Determining Candidate Status<a class="headerlink" href="#determining-candidate-status" title="Permalink to this headline">¶</a></h3>
+<p>Candidates with averages at or above 90% are automatically accepted to our
+training program. Reserve candidates average between 80 - 89%, while
+probationary candidates average between 70 - 79%. Averages below 70% lead to a
+rejection notice.</p>
+<ol class="arabic simple">
+<li>Add a <code class="docutils literal notranslate"><span class="pre">status()</span></code> method to <code class="docutils literal notranslate"><span class="pre">CrewCandidate</span></code>. The method returns a string
+(<code class="docutils literal notranslate"><span class="pre">Accepted</span></code>, <code class="docutils literal notranslate"><span class="pre">Reserve</span></code>, <code class="docutils literal notranslate"><span class="pre">Probationary</span></code>, or <code class="docutils literal notranslate"><span class="pre">Rejected</span></code>) depending on
+a candidate’s average.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">status</span></code> method requires the average test score, which can be called
+as a parameter OR from inside the function. That’s correct - methods can
+call other methods inside a class! Just remember to use the <code class="docutils literal notranslate"><span class="pre">this</span></code>
+keyword.</li>
+<li>Once <code class="docutils literal notranslate"><span class="pre">status</span></code> has a candidate’s average score, evaluate that score and
+return the appropriate string.</li>
+<li>Test the <code class="docutils literal notranslate"><span class="pre">status</span></code> method on each of the three candidates. Use a template
+literal to print out <code class="docutils literal notranslate"><span class="pre">'___</span> <span class="pre">earned</span> <span class="pre">an</span> <span class="pre">average</span> <span class="pre">test</span> <span class="pre">score</span> <span class="pre">of</span> <span class="pre">___%</span> <span class="pre">and</span> <span class="pre">has</span> <span class="pre">a</span>
+<span class="pre">status</span> <span class="pre">of</span> <span class="pre">___.'</span></code></li>
+</ol>
+</div>
+</div>
+<div class="section" id="part-4-play-a-bit">
+<h2>15.6.4. Part 4 - Play a Bit<a class="headerlink" href="#part-4-play-a-bit" title="Permalink to this headline">¶</a></h2>
+<p>Use the three methods to boost Glad Gator’s status to <code class="docutils literal notranslate"><span class="pre">Reserve</span></code> or higher.
+How many tests will it take to reach <code class="docutils literal notranslate"><span class="pre">Reserve</span></code> status? How many to reach
+<code class="docutils literal notranslate"><span class="pre">Accepted</span></code>? Remember, scores cannot exceed 100%.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Rather than adding one score at a time, could you use a loop?</p>
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<h2>15.6.5. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
