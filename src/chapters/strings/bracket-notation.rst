@@ -70,8 +70,6 @@ Check Your Understanding
    #. ``"d"``
    #. ``"for"``
    #. ``"fun"``
-    
-   **Answer**: ``"d"``
 
 .. admonition:: Question
 
