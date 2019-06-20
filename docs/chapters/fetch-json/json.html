@@ -14,13 +14,14 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="24.4. Using fetch" href="fetch.html" />
+    <link rel="next" title="24.4. Fetching Data" href="fetch.html" />
     <link rel="prev" title="24.2. Data Format" href="data-format.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -59,8 +60,7 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+  <input type="text" name="q" class="form-control" placeholder="Search" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -85,17 +85,63 @@
     
   <div class="section" id="json">
 <h1>24.3. JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h1>
-<p>JavaScript Object Notation (JSON) is one of the leading data formats used, especially on the web.</p>
+<p>JavaScript Object Notation (JSON) is one of the leading data formats used especially on the web.</p>
 <p>JSON is based on JavaScript object syntax, but has some differeneces.</p>
-<p>EXAMPLE
-.. sourcecode:: js</p>
-<blockquote>
-<div>{}</div></blockquote>
-<p>RULE BREAKDOWN</p>
-<p>EXAMPLE</p>
-<p>FINAL THOUGHTS</p>
+<p>Let’s consider an API that serves information about the books in a library. In this example we searched for “An Astronaut’s guide to life on Earth”.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;An Astronaut&#39;s guide to life on Earth&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;Chris Hadfield&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">9780316253017</span><span class="p">,</span>
+    <span class="s2">&quot;year_published&quot;</span><span class="o">:</span> <span class="mi">2013</span><span class="p">,</span>
+    <span class="s2">&quot;subject&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Hadfield, Chris&quot;</span><span class="p">,</span> <span class="s2">&quot;Astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Biography&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;available&quot;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The API returned a match for our search. The search provides us with information that may be useful to the user in the form of the title, author, ISBN, the year the book was published, the subjects of the book, and if the book is currently available for checkout.</p>
+<div class="section" id="json-rules">
+<h2>24.3.1. JSON Rules<a class="headerlink" href="#json-rules" title="Permalink to this headline">¶</a></h2>
+<p>JSON is a collection of key value pairs. In the example above “title” is a key, and it’s value is “An Astronaut’s guide to life on Earth”</p>
+<p>The key value pairs descirbe the data that is being transferred.</p>
+<p>A JSON key must always be a string, but the value may be a number, string, boolean, array, object, or null.</p>
+<p>In the example above the JSON describes one object, a book! All of the keys are strings, and the values are: string, string, number, number, array, and boolean respectively.</p>
+<p>JSON can also be used to describe a collection of objects at the same time. Consider we search for the word “Astronaut”.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;hits&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;book&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;An Astronaut&#39;s guide to life on Earth&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;Chris Hadfield&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">9780316253017</span><span class="p">,</span>
+             <span class="s2">&quot;year_published&quot;</span><span class="o">:</span> <span class="mi">2013</span><span class="p">,</span>
+             <span class="s2">&quot;subject&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Hadfield, Chris&quot;</span><span class="p">,</span> <span class="s2">&quot;Astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Biography&quot;</span><span class="p">],</span>
+             <span class="s2">&quot;available&quot;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Astronaut&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;Lucy M. George&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">9781609929411</span><span class="p">,</span>
+            <span class="s2">&quot;year_published&quot;</span><span class="o">:</span> <span class="mi">2016</span><span class="p">,</span>
+            <span class="s2">&quot;subject&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Juvenille Fiction&quot;</span><span class="p">,</span> <span class="s2">&quot;Space stations&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;available&quot;</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Astronaut Ellen Ochoa&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;Heather E. Schwartz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">9781512434491</span><span class="p">,</span>
+            <span class="s2">&quot;year_published&quot;</span><span class="o">:</span> <span class="mi">2018</span><span class="p">,</span>
+            <span class="s2">&quot;subject&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Ochoa Ellen&quot;</span><span class="p">,</span> <span class="s2">&quot;Women astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Biography&quot;</span><span class="p">,</span> <span class="s2">&quot;Women scientists&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic American women&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;available&quot;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This time our search term “Astronaut” returned multiple books, and so a collection of book objects was returned in JSON format.</p>
+<p>Each book object can be found in the array with the key “book”. Each book contain the keys title, author, ISBN, year_published, subject, and available.</p>
 <p>When we make a request to an API, the API formats the data we requested into JSON, and then responds to our request with the JSON representation of our request.</p>
 <p>JSON is one of the leading data formats used in web development, and is the data format we will use throughout this course. In the next section we will show you how to use the <code class="docutils literal notranslate"><span class="pre">fetch()</span></code> method to make a request to an API that will return a JSON representation of the data we requested.</p>
+</div>
 </div>
 
 
@@ -107,7 +153,7 @@
         <li class="previous"><a href="data-format.html"><span aria-hidden="true">&larr;</span> 24.2. Data Format</a></li>
         
         
-        <li class="next"><a href="fetch.html">24.4. Using <code class="docutils literal notranslate"><span class="pre">fetch</span></code> <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="fetch.html">24.4. Fetching Data <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
