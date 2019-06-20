@@ -87,7 +87,7 @@
 <h1>24.4. Fetching Data<a class="headerlink" href="#fetching-data" title="Permalink to this headline">¶</a></h1>
 <p>Now that we know what an API, let’s use one to update a web page. Let’s use a weather API
 to add weather data to a webpage. The URL for this special LaunchCode weather API is
-<code class="docutils literal notranslate"><span class="pre">https:://weather.education.launchcode.org</span></code>.</p>
+<a class="reference external" href="https://api.education.launchcode.org/weather" target="_blank">https://api.education.launchcode.org/weather<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>Example JSON returned from weather API.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;temp&quot;</span><span class="o">:</span> <span class="mi">67</span><span class="p">,</span>
@@ -101,10 +101,11 @@ to add weather data to a webpage. The URL for this special LaunchCode weather AP
 </pre></div>
 </div>
 <p>We can see that this API returns useful information like <code class="docutils literal notranslate"><span class="pre">temp</span></code> and <code class="docutils literal notranslate"><span class="pre">windSpeed</span></code>. Our goal is to
-add that data to a Launch Status website.</p>
+add that data to a Launch Status web page. Note this API is for instruction purposes and does not
+contain real time data.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Launch Status web page.</p>
+<p>Launch Status web page, which we will add weather data to.</p>
 <div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -129,13 +130,95 @@ add that data to a Launch Status website.</p>
 </pre></div>
 </td></tr></table></div>
 </div>
-<ul class="simple">
-<li>Show example usage of fetch</li>
-<li>Point out the important parts of the code</li>
-<li>Update the web page using data from a response</li>
-<li>In depth about Promises and asynchronous cycle of network requests</li>
-<li>Familiar with terms AJAX and XHR (where to do this?)</li>
+<div class="section" id="fetch-function">
+<h2>24.4.1. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> Function<a class="headerlink" href="#fetch-function" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">To request the weather data, we will use the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is a global
+function that requests, or fetches, resources such as data from an API.</p>
+<p>Two important parts of fetching data are:</p>
+<ol class="arabic simple">
+<li>The URL of where the data is located.<ul>
+<li>For this example it will be <code class="docutils literal notranslate"><span class="pre">'https://api.education.launchcode.org/weather'</span></code></li>
 </ul>
+</li>
+<li>A response handler function to utilize the data that is being fetched.</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Notice a string URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code>. Also notice the anonymous function that
+has a <code class="docutils literal notranslate"><span class="pre">response</span></code> parameter, that is the request handler function. The <code class="docutils literal notranslate"><span class="pre">then</span></code>
+function will be explained very soon.</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s break down how <code class="docutils literal notranslate"><span class="pre">fetch</span></code> works. A URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code> as a parameter, that causes
+an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
+response protocol. The response handler function, as the name implies, handles the response sent
+back from the API. Using the data in the response, the web page can be updated using DOM methods.</p>
+</div>
+<div class="section" id="fetch-example">
+<h2>24.4.2. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> Example<a class="headerlink" href="#fetch-example" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s add <code class="docutils literal notranslate"><span class="pre">fetch</span></code> in the Launch Status web page.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>On line 4 a <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag has been added that includes:</p>
+<ol class="arabic simple">
+<li>A <em>load</em> event handler on line 5</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and response handler function on line 6</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">console.log(response);</span></code> on line 7</li>
+</ol>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Launch Status<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;weather.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+            <span class="p">}</span> <span class="p">);</span>
+         <span class="p">});</span>
+      <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Launch Status<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Weather Conditions<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- TODO: dynamically add html about weather using data from API --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt1" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="last">Open the repl.it link. Then</p>
+</div>
+<p>Things left to discuss
+* Show example usage of fetch
+* Point out the important parts of the code
+* show example of network request in network tab?
+* Update the web page using data from a response
+* something about HTTP requests
+* NOTE about seeing many other ways to request data online (jQuery.get, XmlHttpRequest, …)
+* NOTE about fetch can also be used to sent POST and PUT requests. maybe link to MDN
+* WARNING that fetch does NOT work in IE, be sure to say that Edge is ok. Provide link to site that helps them pick a different browser.
+* In depth about Promises and asynchronous cycle of network requests
+* Familiar with terms AJAX and XHR (where to do this?)</p>
+</div>
 </div>
 
 
