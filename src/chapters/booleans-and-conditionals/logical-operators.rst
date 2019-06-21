@@ -102,13 +102,18 @@ Let's look at some examples in JavaScript.
 
 Lines 1 and 2 both return ``true`` because at least one of the comparison expressions joined by ``||`` is ``true``. Line 3 returns ``false`` because both sub-expressions are ``false``.
 
-.. warning:: 
-   
-   The single symbols ``&`` and ``|`` are themselves valid JavaScript operators, so accidentally leaving off one of the symbols when typing ``&&`` or ``||`` will not result in an error. 
-   
-   The operators ``&`` and ``|`` are `bitwise operators <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators>`_, which are beyond the scope of this course. 
+.. admonition:: Warning
 
-   Most programmers rarely use bitwise operators, and it is not important for you to understand them at this point. You should *never* use them in place of the binary operators ``&&`` and ``||``.
+   The single symbols ``&`` and ``|`` are themselves valid JavaScript operators,
+   so accidentally leaving off one symbols when typing ``&&`` or ``||`` will not
+   result in an error message.
+
+   The operators ``&`` and ``|`` are `bitwise operators <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators>`__,
+   which are beyond the scope of this course.
+
+   Most programmers rarely use ``&`` and ``|``, and it is not important for you
+   to understand them at this point. However, you should *never* use them in
+   place of ``&&`` and ``||``.
 
 Logical NOT
 ^^^^^^^^^^^
