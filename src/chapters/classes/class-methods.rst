@@ -44,16 +44,14 @@ When assigning methods outside of the ``constructor``, we simply declare our met
          }
       }
 
-		let fox = new Astronaut('Fox', 7, 12);
-		console.log(fox.reportStats());
+      let fox = new Astronaut('Fox', 7, 12);
+      console.log(fox.reportStats());
 
-	**Console Output**
+   **Console Output**
 
-	::
+   ::
 
-		Fox is 7 years old and has a mass of 12 kg.
-
-
+      Fox is 7 years old and has a mass of 12 kg.
 
    We declared our method, ``reportStats()`` outside of the constructor.
    When we declare a new instance of the ``Astronaut`` class, we can use the ``reportStats()`` method to return a concise string containing all of the info we would need about an astronaut.
@@ -76,7 +74,7 @@ When declaring methods inside the ``constructor``, we need to make use of the ``
 
 .. admonition:: Example
 
-   Let's consider the ``Astronaut`` class that we have been working with. 
+   Let's consider the ``Astronaut`` class that we have been working with.
    When assigning the method, ``reportStats()``, inside the ``constructor``, we would do so like this:
 
    .. sourcecode:: js
@@ -94,16 +92,16 @@ When declaring methods inside the ``constructor``, we need to make use of the ``
          }
       }
 
-		let fox = new Astronaut('Fox', 7, 12);
+      let fox = new Astronaut('Fox', 7, 12);
 
-		console.log(fox.reportStats());
+      console.log(fox.reportStats());
 
 
-	Console Output
+   **Console Output**
 
-	.. sourcecode::
+   ::
 
-		Fox is 7 years old and has a mass of 12 kg.
+      Fox is 7 years old and has a mass of 12 kg.
 
    Initially, this may seem to produce the same result as assigning ``reportStats()`` outside of the constructor.
    We will weigh the pros and cons of both methods below.
@@ -111,48 +109,48 @@ When declaring methods inside the ``constructor``, we need to make use of the ``
 Which Way is Preferred?
 ------------------------
 
-When we try to compare the outputs of our classes in code, we notice that only when we assigned the method `inside` the ``constructor``, that the ``reportStats()`` method was output.
+When we try to compare the outputs of our classes in code, we notice that only
+when we assigned the method `inside` the ``constructor``, that the
+``reportStats()`` method was output.
 
 .. admonition:: Try It!
 
-	.. replit:: js
-		:slug: ClassMethodsTryIt
-		:linenos:
+   .. replit:: js
+      :slug: ClassMethodsTryIt
+      :linenos:
 
-		// Here we assign the method inside the constructor
-		class AstronautI {
-   		constructor(name, age, mass){
-      		this.name = name,
-      		this.age = age,
-      		this.mass = mass,
-      		this.reportStats = function() {
-         		let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
-         		return stats;
-      		}
-   		}
-		}
+      // Here we assign the method inside the constructor
+      class AstronautI {
+         constructor(name, age, mass){
+            this.name = name,
+            this.age = age,
+            this.mass = mass,
+            this.reportStats = function() {
+               let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+               return stats;
+            }
+         }
+      }
 
-		// Here we assign the method outside fo the constructor
-		class AstronautO {
-   		constructor(name, age, mass){
-      		this.name = name,
-      		this.age = age,
-      		this.mass = mass
-   		}
+      // Here we assign the method outside fo the constructor
+      class AstronautO {
+         constructor(name, age, mass){
+            this.name = name,
+            this.age = age,
+            this.mass = mass
+         }
 
-   		reportStats() {
-      		let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
-      		return stats;
-   		}
-		}
+         reportStats() {
+            let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+            return stats;
+         }
+      }
 
-		let fox = new AstronautI('Fox', 7, 12);
-		let hippo = new AstronautO('Hippo', 25, 1000);
+      let fox = new AstronautI('Fox', 7, 12);
+      let hippo = new AstronautO('Hippo', 25, 1000);
 
-		console.log(fox);
-		console.log(hippo);   
-
-
+      console.log(fox);
+      console.log(hippo);
 
 In the case of assigning the method `inside` the constructor, each ``Astronaut`` objects carries around the code for ``reportStats()``.
 With today's computers, this is a relatively minor concern, however, each ``Astronaut`` has extra code that may not be needed.
@@ -167,18 +165,18 @@ Check Your Understanding
 
 .. admonition:: Question
 
-	What is the method assignment of this class missing?
+   What is the method assignment of this class missing?
 
-	.. sourcecode:: js
-		:linenos:
+   .. sourcecode:: js
+      :linenos:
 
-		class Plant {
-			constructor(type, height) {
-				this.type = type,
-				this.height = height
-			}
+      class Plant {
+         constructor(type, height) {
+            this.type = type,
+            this.height = height
+         }
 
-			grow  {
-				this.height = this.height + 1
-			}
-		}
+         grow  {
+            this.height = this.height + 1
+         }
+      }

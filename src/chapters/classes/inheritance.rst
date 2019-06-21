@@ -35,14 +35,14 @@ When designating a class as the child class of another in JavaScript, we use the
 We also must use the ``super()`` constructor to get the properties and methods needed from the parent class.
 
 .. sourcecode:: js
-	:linenos:
+   :linenos:
 
-	class ChildClass extends ParentClass {
-		constructor () {
-			super();
-			// properties
-		}
-	}
+   class ChildClass extends ParentClass {
+      constructor () {
+         super();
+         // properties
+      }
+   }
 
 In the case of a tiger, tigers have stripes, but they also have loud roars.
 Their ability to roar loudly is a trait they share with other members of the `panthera` genus. 
@@ -50,49 +50,49 @@ Tigers also got their retractable claws from the `felidae` family.
 
 .. admonition:: Example
 
-	.. replit:: js
-		:slug: InheritanceTryIt
-		:linenos:
+   .. replit:: js
+      :slug: InheritanceTryIt
+      :linenos:
 
-		class Felidae {
-			constructor() {
-				this.claws = "retractable";
-			}
-		}
+      class Felidae {
+         constructor() {
+            this.claws = "retractable";
+         }
+      }
 
-		class Panthera extends Felidae {
-			constructor() {
-    			super();
-				this.roar = "loud"
-			}
-		}
+      class Panthera extends Felidae {
+         constructor() {
+            super();
+            this.roar = "loud"
+         }
+      }
 
-		class Tiger extends Panthera {
-			constructor() {
-    			super();
-				this.hasStripes = "true";
-			}
-		}
+      class Tiger extends Panthera {
+         constructor() {
+            super();
+            this.hasStripes = "true";
+         }
+      }
 
-		let tigger = new Tiger();
+      let tigger = new Tiger();
 
-		console.log(tigger);
+      console.log(tigger);
 
-	When creating the classes for our tiger, we can use the ``extends`` keyword to set up ``Tiger`` as the child class of ``Panthera``.
-	The ``Tiger`` class then inherits the property, ``roar``, from the ``Panthera`` class and has an additional property, ``hasStripes``.
+   When creating the classes for our tiger, we can use the ``extends`` keyword to set up ``Tiger`` as the child class of ``Panthera``.
+   The ``Tiger`` class then inherits the property, ``roar``, from the ``Panthera`` class and has an additional property, ``hasStripes``.
 
 .. note::
 
-	The ``extends`` keyword is not supported in Internet Explorer.
+   The ``extends`` keyword is not supported in Internet Explorer.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-	If you had to create classes for a wolf, the canis genus, and the carnivora order, which statement is TRUE about the order of inheritance?
+   If you had to create classes for a wolf, the canis genus, and the carnivora order, which statement is TRUE about the order of inheritance?
 
-	a. ``Wolf`` and ``Canis`` are parent classes to ``Carnivora``.
-	b. ``Wolf`` is a child class of ``Canis`` and a parent class to ``Carnivora``.
-	c. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a child class of ``Carnivora``.
-	d. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a parent class of ``Carnivora``.
+   a. ``Wolf`` and ``Canis`` are parent classes to ``Carnivora``.
+   b. ``Wolf`` is a child class of ``Canis`` and a parent class to ``Carnivora``.
+   c. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a child class of ``Carnivora``.
+   d. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a parent class of ``Carnivora``.
