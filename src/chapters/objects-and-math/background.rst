@@ -1,3 +1,5 @@
+.. _objects-intro:
+
 Objects and Why They Matter
 ===========================
 

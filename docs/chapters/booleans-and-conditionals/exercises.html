@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -204,16 +204,17 @@ the material will help you remember it.</p>
 </li>
 <li><p class="first">Next, implement the checks below using <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code> statements.</p>
 <ol class="arabic simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is below 2500,
-print <code class="docutils literal notranslate"><span class="pre">&quot;Full</span> <span class="pre">tank.</span>&#160; <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 10000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is below 2500,
-print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">50%.</span>&#160; <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 5000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is below 2500,
-print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">25%.</span>&#160; <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is at or below
+2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Full</span> <span class="pre">tank.</span> <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 10000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is at or below
+2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">50%.</span>&#160; <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 5000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is at or below
+2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">25%.</span> <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
 <li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is below 5000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above 2500,
-print <code class="docutils literal notranslate"><span class="pre">&quot;Check</span> <span class="pre">fuel</span> <span class="pre">level.</span>&#160; <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.&quot;</span></code></li>
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is below 1000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above 3500 OR <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is red blinking
-print <code class="docutils literal notranslate"><span class="pre">&quot;ENGINE</span> <span class="pre">FAILURE</span> <span class="pre">IMMINENT!&quot;</span></code></li>
+print <code class="docutils literal notranslate"><span class="pre">&quot;Check</span> <span class="pre">fuel</span> <span class="pre">level.</span> <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.&quot;</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is below 1000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above 3500 OR
+<code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is red blinking print <code class="docutils literal notranslate"><span class="pre">&quot;ENGINE</span> <span class="pre">FAILURE</span>
+<span class="pre">IMMINENT!&quot;</span></code></li>
 </ol>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
@@ -225,12 +226,16 @@ print <code class="docutils literal notranslate"><span class="pre">&quot;ENGINE<
 <em>However</em>, let’s establish an override command to ignore any warnings and send the shuttle into space anyway!</p>
 <ol class="arabic">
 <li><p class="first">Create the variable <code class="docutils literal notranslate"><span class="pre">commandOverride</span></code>, and set it to be <code class="docutils literal notranslate"><span class="pre">true</span></code> <em>or</em> <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-<p>If commandOverride is <code class="docutils literal notranslate"><span class="pre">false</span></code>, then the shuttle should only lauch if the fuel and engine check are OK.</p>
-<p>If commandOverride is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then the shuttle will launch regardless of the fuel and engine status.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">commandOverride</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, then the shuttle should only launch if
+the fuel and engine check are OK.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">commandOverride</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then the shuttle will launch regardless
+of the fuel and engine status.</p>
 </li>
 <li><p class="first">Code the following <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code> check:</p>
 <ol class="loweralpha simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is NOT red blinking OR <code class="docutils literal notranslate"><span class="pre">commandOverride</span></code> is true print <code class="docutils literal notranslate"><span class="pre">&quot;Cleared</span> <span class="pre">to</span> <span class="pre">launch!&quot;</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is NOT
+red blinking OR <code class="docutils literal notranslate"><span class="pre">commandOverride</span></code> is true print <code class="docutils literal notranslate"><span class="pre">&quot;Cleared</span> <span class="pre">to</span>
+<span class="pre">launch!&quot;</span></code></li>
 <li>Else print <code class="docutils literal notranslate"><span class="pre">&quot;Launch</span> <span class="pre">scrubbed!&quot;</span></code></li>
 </ol>
 </li>

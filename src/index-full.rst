@@ -19,6 +19,10 @@ Chapters
    chapters/objects-and-math/index
    chapters/modules/index
    chapters/unit-testing/index
+   chapters/classes/index
+   chapters/scope/index
+   chapters/more-on-types/index
+   chapters/exceptions/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
@@ -48,6 +52,7 @@ Studios
    chapters/objects-and-math/studio
    chapters/modules/studio
    chapters/unit-testing/studio
+   chapters/classes/studio
    chapters/git/studio
    chapters/dom-and-events/studio
 

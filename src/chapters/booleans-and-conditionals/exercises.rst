@@ -101,16 +101,17 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
 
 #. Next, implement the checks below using ``if`` / ``else if`` / ``else`` statements.
 
-   #. If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is below 2500,
-      print ``"Full tank.  Engines good."``
-   #. If ``fuelLevel`` is above 10000 AND ``engineTemperature`` is below 2500,
-      print ``"Fuel level above 50%.  Engines good."``
-   #. If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is below 2500,
-      print ``"Fuel level above 25%.  Engines good."``
+   #. If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is at or below
+      2500, print ``"Full tank. Engines good."``
+   #. If ``fuelLevel`` is above 10000 AND ``engineTemperature`` is at or below
+      2500, print ``"Fuel level above 50%.  Engines good."``
+   #. If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is at or below
+      2500, print ``"Fuel level above 25%. Engines good."``
    #. If ``fuelLevel`` is below 5000 OR ``engineTemperature`` is above 2500,
-      print ``"Check fuel level.  Engines running hot."``
-   #. If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR ``engineIndicatorLight`` is red blinking
-      print ``"ENGINE FAILURE IMMINENT!"``
+      print ``"Check fuel level. Engines running hot."``
+   #. If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR
+      ``engineIndicatorLight`` is red blinking print ``"ENGINE FAILURE
+      IMMINENT!"``
 
    .. note::
 
@@ -120,16 +121,20 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
 
 #. Final bit of fun!
 
-   The shuttle should only launch if the fuel tank is full and the engine check is OK.  
+   The shuttle should only launch if the fuel tank is full and the engine check is OK.
    *However*, let's establish an override command to ignore any warnings and send the shuttle into space anyway!
 
    #. Create the variable ``commandOverride``, and set it to be ``true`` *or* ``false``.
 
-      If commandOverride is ``false``, then the shuttle should only lauch if the fuel and engine check are OK.
-      
-      If commandOverride is ``true``, then the shuttle will launch regardless of the fuel and engine status.
+      If ``commandOverride`` is ``false``, then the shuttle should only launch if
+      the fuel and engine check are OK.
+
+      If ``commandOverride`` is ``true``, then the shuttle will launch regardless
+      of the fuel and engine status.
 
    #. Code the following ``if`` / ``else`` check:
 
-      a. If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT red blinking OR ``commandOverride`` is true print ``"Cleared to launch!"``
+      a. If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT
+         red blinking OR ``commandOverride`` is true print ``"Cleared to
+         launch!"``
       b. Else print ``"Launch scrubbed!"``
