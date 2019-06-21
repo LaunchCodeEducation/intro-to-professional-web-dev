@@ -69,7 +69,7 @@ Creating a New Class Object
 
 To create an object from a class, we use the keyword ``new``. The syntax is:
 
-::
+.. sourcecode:: js
 
    let objectName = new ClassName(arguments);
 

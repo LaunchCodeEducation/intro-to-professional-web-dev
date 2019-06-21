@@ -42,7 +42,7 @@ Part 3 - Add More Methods
 
 Now that we can add scores to our candidates' records, we need to be able to
 evaluate their fitness for our astronaut program. Let's add two more methods
-to ``CrewCandidate``---one to average the test scores, and the other to
+to ``CrewCandidate``---one to average the test scores and the other to
 indicate if the candidate should be admitted.
 
 Calculating the Test Average
@@ -73,7 +73,7 @@ rejection notice.
    as a parameter OR from inside the function. That's correct - methods can
    call other methods inside a class! Just remember to use the ``this``
    keyword.
-#. Once ``status`` has a candidate's average score, evaluate that score and
+#. Once ``status`` has a candidate's average score, evaluate that score, and
    return the appropriate string.
 #. Test the ``status`` method on each of the three candidates. Use a template
    literal to print out ``'___ earned an average test score of ___% and has a
