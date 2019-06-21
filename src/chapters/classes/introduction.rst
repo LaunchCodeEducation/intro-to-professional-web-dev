@@ -7,13 +7,16 @@ Recall that :ref:`objects <objects-intro>` are data structures that hold many
 values, which consist of *properties* and *methods*.
 
 **Classes** extend this idea by providing a template for building multiple
-examples of a particular object.
+objects with the same properties and methods.
+
+Let's revisit the animal astronauts from earlier exercises to see how this
+works.
 
 An Astronaut Object
 --------------------
 
-Let's revisit the animal astronauts from previous exercises. If we create an
-object to hold an astronaut's data, it might look something like:
+When we create an object to hold an astronaut's data, it might look something
+like:
 
 .. sourcecode:: js
    :linenos:
@@ -57,5 +60,3 @@ same set of *keys*, but the values assigned to each key will vary.
 
 .. figure:: ./figures/Classes-vs-objects.png
    :alt: Visual of the relationship between classes and objects.
-
-   Classes allow us to create multiple, similar objects.

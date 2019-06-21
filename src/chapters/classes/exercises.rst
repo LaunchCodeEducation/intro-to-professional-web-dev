@@ -20,54 +20,54 @@ For a manual, the book must be thrown out if it is over 5 years old.
 For a novel, the book should be thrown out if it has been checked out over 100 times.
 
 1. Construct three classes that will hold the information needed from headquarters as properties and the two methods that update the book's property if the book needs to be discarded.
-	One class should be a ``book`` class and two child classes of the ``book`` class called ``manual`` and ``novel``.
+   One class should be a ``book`` class and two child classes of the ``book`` class called ``manual`` and ``novel``.
 
 	`Hint:` This means you need to read through the requirements for the problem and decide what should belong to ``book`` and what should belong to the ``novel`` and ``manual`` classes.
 
 2. Declare an object of the ``novel`` class for the following tome from the library:
 
-	.. list-table:: Novel
-		:widths: auto
-		:header-rows: 1
+.. list-table:: Novel
+   :widths: auto
+   :header-rows: 1
 
-		* - Variable
-		  - Value
-		* - Title
-		  - Pride and Prejudice
-		* - Author
-		  - Jane Austen
-		* - Copyright date
-		  - 1813
-		* - ISBN
-		  - 1111111111111
-		* - Number of pages
-		  - 432
-		* - Number of times the book has been checked out
-		  - 32
-		* - Whether the book has been discarded
-		  - No
+   * - Variable
+     - Value
+   * - Title
+     - Pride and Prejudice
+   * - Author
+     - Jane Austen
+   * - Copyright date
+     - 1813
+   * - ISBN
+     - 1111111111111
+   * - Number of pages
+     - 432
+   * - Number of times the book has been checked out
+     - 32
+   * - Whether the book has been discarded
+     - No
 
 3. Declare an object of the ``manual`` class for the following tome from the library:
 
-	.. list-table:: Manual
-		:widths: auto
-		:header-rows: 1
+.. list-table:: Manual
+   :widths: auto
+   :header-rows: 1
 
-		* - Variable
-		  - Value
-		* - Title
-		  - Top Secret Shuttle Building Manual
-		* - Author
-		  - Redacted
-		* - Copyright date
-		  - 2013
-		* - ISBN
-		  - 0000000000000
-		* - Number of pages
-		  - 1147
-		* - Number of times the book has been checked out
-		  - 1
-		* - Whether the book has been discarded
-		  - No
+   * - Variable
+     - Value
+   * - Title
+     - Top Secret Shuttle Building Manual
+   * - Author
+     - Redacted
+   * - Copyright date
+     - 2013
+   * - ISBN
+     - 0000000000000
+   * - Number of pages
+     - 1147
+   * - Number of times the book has been checked out
+     - 1
+   * - Whether the book has been discarded
+     - No
 
 4. One of the above books needs to be discarded. Update the property of that book to reflect that the crew is throwing it into empty space to become space debris.

@@ -31,14 +31,12 @@ Note how declaring a class differs from declaring a function:
 #. Parameters are passed into the ``constructor`` method rather than the
    ``class`` declaration.
 
-As an example, let's set up an ``Astronaut`` class to help us store data about
-our animal crew.
-
 Assigning Properties
 ^^^^^^^^^^^^^^^^^^^^
 
-Each animal in our crew has a ``name``, ``age``, and ``mass``, and we assign
-these properties in ``constructor`` as follows:
+Let's set up an ``Astronaut`` class to help us store data about our animal
+crew. Each animal has a ``name``, ``age``, and ``mass``, and we assign these
+properties in ``constructor`` as follows:
 
 .. sourcecode:: js
    :linenos:
@@ -64,9 +62,10 @@ arguments.
 
 .. admonition:: Note
 
-   Each class requires one and only one ``constructor``. Including more than one
-   results in a syntax error. If ``constructor`` is left out of a class
-   declaration, JavaScript adds an empty ``constructor () {}`` automatically.
+   Each class requires *one* ``constructor``. Including more than one
+   ``constructor`` results in a syntax error. If ``constructor`` is left out of
+   a class declaration, JavaScript adds an empty ``constructor () {}``
+   automatically.
 
 Calling a New Class Object
 ---------------------------
@@ -83,7 +82,7 @@ class.
 
 .. admonition:: Example
 
-   Let's create objects for two of our crew members - Fox and Hippo.
+   Let's create objects for two of our crew members: Fox and Hippo.
 
    .. sourcecode:: js
       :linenos:
