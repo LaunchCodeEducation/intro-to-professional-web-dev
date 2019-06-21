@@ -4,13 +4,14 @@ Assigning Class Methods
 ========================
 
 Just as with objects, we may want to add methods to our classes in addition to properties. 
-Previously, we learned how to use constructors in class declarations to set the values of the properties.
-When working with assigning methods in classes, we can either create them `outside` or `inside` in the ``constructor``.
+So far, we have learned how to set the values of the class's properties inside the ``constructor``.
+
+When assigning methods in classes, we can either create them `outside` or `inside` the ``constructor``.
 
 Assigning Methods Outside ``constructor``
 -----------------------------------------
 
-When assigning methods outside of the ``constructor``, we simply declare our methods the same way that we would normally do for objects.
+When assigning methods outside of the ``constructor``, we simply declare our methods the same way we would normally do for :ref:`objects <objects-intro>`.
 
 .. sourcecode:: js
    :linenos:
@@ -18,7 +19,7 @@ When assigning methods outside of the ``constructor``, we simply declare our met
    class ClassName {
       constructor(parameters) {
          //assign properties with this.key = value
-      }
+   	}
 
       methodName(parameters) {
          //function code
@@ -42,6 +43,17 @@ When assigning methods outside of the ``constructor``, we simply declare our met
             return stats;
          }
       }
+
+		let fox = new Astronaut('Fox', 7, 12);
+		console.log(fox.reportStats());
+
+	**Console Output**
+
+	::
+
+		Fox is 7 years old and has a mass of 12 kg.
+
+
 
    We declared our method, ``reportStats()`` outside of the constructor.
    When we declare a new instance of the ``Astronaut`` class, we can use the ``reportStats()`` method to return a concise string containing all of the info we would need about an astronaut.
@@ -82,21 +94,91 @@ When declaring methods inside the ``constructor``, we need to make use of the ``
          }
       }
 
+		let fox = new Astronaut('Fox', 7, 12);
+
+		console.log(fox.reportStats());
+
+
+	Console Output
+
+	.. sourcecode::
+
+		Fox is 7 years old and has a mass of 12 kg.
+
    Initially, this may seem to produce the same result as assigning ``reportStats()`` outside of the constructor.
    We will weigh the pros and cons of both methods below.
 
 Which Way is Preferred?
 ------------------------
 
-When we try to compare the outputs of our classes in code, we notice that only when we assigned the method `inside` the ``constructor``, that ``reportStats()`` method was output.
-Try declaring the ``Astronaut`` class in Repl.it to see what we mean.
+When we try to compare the outputs of our classes in code, we notice that only when we assigned the method `inside` the ``constructor``, that the ``reportStats()`` method was output.
+
+.. admonition:: Try It!
+
+	.. replit:: js
+		:slug: ClassMethodsTryIt
+		:linenos:
+
+		// Here we assign the method inside the constructor
+		class AstronautI {
+   		constructor(name, age, mass){
+      		this.name = name,
+      		this.age = age,
+      		this.mass = mass,
+      		this.reportStats = function() {
+         		let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+         		return stats;
+      		}
+   		}
+		}
+
+		// Here we assign the method outside fo the constructor
+		class AstronautO {
+   		constructor(name, age, mass){
+      		this.name = name,
+      		this.age = age,
+      		this.mass = mass
+   		}
+
+   		reportStats() {
+      		let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
+      		return stats;
+   		}
+		}
+
+		let fox = new AstronautI('Fox', 7, 12);
+		let hippo = new AstronautO('Hippo', 25, 1000);
+
+		console.log(fox);
+		console.log(hippo);   
+
+
 
 In the case of assigning the method `inside` the constructor, each ``Astronaut`` objects carries around the code for ``reportStats()``.
-With today's computers, this is a relatively minor concern, however, each ``Astronaut`` has extra code that may not be needed in each case.
-This can consume memory, which is something you should be aware of as today's businesses will want efficient code that does not tax their systems.
+With today's computers, this is a relatively minor concern, however, each ``Astronaut`` has extra code that may not be needed.
+This consumes memory, which you need to consider since today's businesses want efficient code that does not tax their systems.
 
 Because of this, if a method is the same for ALL objects of a class, define that method `outside` of the constructor.
-Each object does not need a copy of identical code and declaring a method outside of the class will not consume as much memory.
+Each object does not need a copy of identical code.
+Therefore, the declaration of a method outside of the constructor will not consume as much memory.
 
 Check Your Understanding
 -------------------------
+
+.. admonition:: Question
+
+	What is the method assignment of this class missing?
+
+	.. sourcecode:: js
+		:linenos:
+
+		class Plant {
+			constructor(type, height) {
+				this.type = type,
+				this.height = height
+			}
+
+			grow  {
+				this.height = this.height + 1
+			}
+		}

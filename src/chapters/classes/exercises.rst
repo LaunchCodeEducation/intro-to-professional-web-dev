@@ -15,16 +15,12 @@ Headquarters have asked that you store the following information about each book
 7. Whether the book has been discarded.
 
 Headquarters also needs you to track certain actions that you must perform when books get out of date.
+First, for a manual, the book must be thrown out if it is over 5 years old.
+Second, for a novel, the book should be thrown out if it has been checked out over 100 times.
 
-For a manual, the book must be thrown out if it is over 5 years old.
-For a novel, the book should be thrown out if it has been checked out over 100 times.
+1. Construct three classes that will hold the information needed from headquarters as properties and the two methods that update the book's property if the book needs to be discarded. One class should be a ``Book`` class and two child classes of the ``Book`` class called ``Manual`` and ``Novel``. `Hint:` This means you need to read through the requirements for the problem and decide what should belong to ``Book`` and what should belong to the ``Novel`` and ``Manual`` classes.
 
-1. Construct three classes that will hold the information needed from headquarters as properties and the two methods that update the book's property if the book needs to be discarded.
-   One class should be a ``book`` class and two child classes of the ``book`` class called ``manual`` and ``novel``.
-
-	`Hint:` This means you need to read through the requirements for the problem and decide what should belong to ``book`` and what should belong to the ``novel`` and ``manual`` classes.
-
-2. Declare an object of the ``novel`` class for the following tome from the library:
+2. Declare an object of the ``Novel`` class for the following tome from the library:
 
 .. list-table:: Novel
    :widths: auto
@@ -47,7 +43,7 @@ For a novel, the book should be thrown out if it has been checked out over 100 t
    * - Whether the book has been discarded
      - No
 
-3. Declare an object of the ``manual`` class for the following tome from the library:
+3. Declare an object of the ``Manual`` class for the following tome from the library:
 
 .. list-table:: Manual
    :widths: auto
@@ -70,4 +66,6 @@ For a novel, the book should be thrown out if it has been checked out over 100 t
    * - Whether the book has been discarded
      - No
 
-4. One of the above books needs to be discarded. Update the property of that book to reflect that the crew is throwing it into empty space to become space debris.
+4. One of the above books needs to be discarded. Call the appropriate method for that book to update the property. That way the crew can throw it into empty space to become debris.
+
+5. The other book has been checked out 5 times since you first created the object. Call the appropriate method to update the number of times the book has been checked out.

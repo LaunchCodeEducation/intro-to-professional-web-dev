@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -87,11 +87,11 @@
   <div class="section" id="assigning-class-methods">
 <span id="adding-class-methods"></span><h1>15.3. Assigning Class Methods<a class="headerlink" href="#assigning-class-methods" title="Permalink to this headline">¶</a></h1>
 <p>Just as with objects, we may want to add methods to our classes in addition to properties.
-Previously, we learned how to use constructors in class declarations to set the values of the properties.
-When working with assigning methods in classes, we can either create them <cite>outside</cite> or <cite>inside</cite> in the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
+So far, we have learned how to set the values of the class’s properties inside the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
+<p>When assigning methods in classes, we can either create them <cite>outside</cite> or <cite>inside</cite> the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
 <div class="section" id="assigning-methods-outside-constructor">
 <h2>15.3.1. Assigning Methods Outside <code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#assigning-methods-outside-constructor" title="Permalink to this headline">¶</a></h2>
-<p>When assigning methods outside of the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, we simply declare our methods the same way that we would normally do for objects.</p>
+<p>When assigning methods outside of the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, we simply declare our methods the same way we would normally do for <a class="reference internal" href="../objects-and-math/background.html#objects-intro"><span class="std std-ref">objects</span></a>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -103,7 +103,7 @@ When working with assigning methods in classes, we can either create them <cite>
 9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">ClassName</span> <span class="p">{</span>
    <span class="nx">constructor</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">//assign properties with this.key = value</span>
-   <span class="p">}</span>
+     <span class="p">}</span>
 
    <span class="nx">methodName</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">//function code</span>
@@ -124,7 +124,16 @@ When working with assigning methods in classes, we can either create them <cite>
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
@@ -136,6 +145,15 @@ When working with assigning methods in classes, we can either create them <cite>
       <span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
    <span class="p">}</span>
 <span class="p">}</span>
+
+          <span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">.</span><span class="nx">reportStats</span><span class="p">());</span>
+
+  <span class="o">**</span><span class="nx">Console</span> <span class="nx">Output</span><span class="o">**</span>
+
+  <span class="o">::</span>
+
+          <span class="nx">Fox</span> <span class="nx">is</span> <span class="mi">7</span> <span class="nx">years</span> <span class="nx">old</span> <span class="nx">and</span> <span class="nx">has</span> <span class="nx">a</span> <span class="nx">mass</span> <span class="k">of</span> <span class="mi">12</span> <span class="nx">kg</span><span class="p">.</span>
 </pre></div>
 </td></tr></table></div>
 <p class="last">We declared our method, <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> outside of the constructor.
@@ -174,7 +192,18 @@ When assigning the method, <code class="docutils literal notranslate"><span clas
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
@@ -185,6 +214,17 @@ When assigning the method, <code class="docutils literal notranslate"><span clas
       <span class="p">}</span>
    <span class="p">}</span>
 <span class="p">}</span>
+
+          <span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">.</span><span class="nx">reportStats</span><span class="p">());</span>
+
+
+  <span class="nx">Console</span> <span class="nx">Output</span>
+
+  <span class="p">..</span> <span class="nx">sourcecode</span><span class="o">::</span>
+
+          <span class="nx">Fox</span> <span class="nx">is</span> <span class="mi">7</span> <span class="nx">years</span> <span class="nx">old</span> <span class="nx">and</span> <span class="nx">has</span> <span class="nx">a</span> <span class="nx">mass</span> <span class="k">of</span> <span class="mi">12</span> <span class="nx">kg</span><span class="p">.</span>
 </pre></div>
 </td></tr></table></div>
 <p class="last">Initially, this may seem to produce the same result as assigning <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> outside of the constructor.
@@ -193,16 +233,110 @@ We will weigh the pros and cons of both methods below.</p>
 </div>
 <div class="section" id="which-way-is-preferred">
 <h2>15.3.3. Which Way is Preferred?<a class="headerlink" href="#which-way-is-preferred" title="Permalink to this headline">¶</a></h2>
-<p>When we try to compare the outputs of our classes in code, we notice that only when we assigned the method <cite>inside</cite> the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, that <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> method was output.
-Try declaring the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class in Repl.it to see what we mean.</p>
+<p>When we try to compare the outputs of our classes in code, we notice that only when we assigned the method <cite>inside</cite> the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, that the <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> method was output.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Here we assign the method inside the constructor</span>
+<span class="kr">class</span> <span class="nx">AstronautI</span> <span class="p">{</span>
+<span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span><span class="p">,</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">reportStats</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">stats</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Here we assign the method outside fo the constructor</span>
+<span class="kr">class</span> <span class="nx">AstronautO</span> <span class="p">{</span>
+<span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">mass</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">,</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">,</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="nx">mass</span>
+<span class="p">}</span>
+
+<span class="nx">reportStats</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">let</span> <span class="nx">stats</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">;</span>
+<span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AstronautI</span><span class="p">(</span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">hippo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AstronautO</span><span class="p">(</span><span class="s1">&#39;Hippo&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fox</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hippo</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/ClassMethodsTryIt" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
 <p>In the case of assigning the method <cite>inside</cite> the constructor, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>.
-With today’s computers, this is a relatively minor concern, however, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code that may not be needed in each case.
-This can consume memory, which is something you should be aware of as today’s businesses will want efficient code that does not tax their systems.</p>
+With today’s computers, this is a relatively minor concern, however, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code that may not be needed.
+This consumes memory, which you need to consider since today’s businesses want efficient code that does not tax their systems.</p>
 <p>Because of this, if a method is the same for ALL objects of a class, define that method <cite>outside</cite> of the constructor.
-Each object does not need a copy of identical code and declaring a method outside of the class will not consume as much memory.</p>
+Each object does not need a copy of identical code.
+Therefore, the declaration of a method outside of the constructor will not consume as much memory.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>15.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the method assignment of this class missing?</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Plant</span> <span class="p">{</span>
+        <span class="nx">constructor</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span><span class="p">,</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span>
+        <span class="p">}</span>
+
+        <span class="nx">grow</span>  <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 </div>
 </div>
 

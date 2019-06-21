@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -86,42 +86,92 @@
     
   <div class="section" id="inheritance">
 <h1>15.4. Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h1>
-<p id="index-0"><strong>Object-oriented programming</strong> is a type of software design where the codebase is organized around objects and classes.
+<p id="index-0"><strong>Object-oriented programming</strong> is a type of software design where the codebase is organized around <cite>objects</cite> and <cite>classes</cite>.
 Objects contain the functions and central logic of a program.</p>
 <p>Object-oriented programming stands on top of four principles: abstraction, polymorphism, encapsulation, and inheritance.
-We will dive into inheritance now and work with the other three principles later in Unit Two of this class.</p>
-<p><strong>Inheritance</strong> refers to the ability of one class to inherit properties and methods from another.</p>
-<p>Think of it this way, in the animal kingdom, a species is a unique entity that inherits traits from its genus. The genus also has unique properties, but inherits traits from its family.
+We will dive into inheritance now and work with the other three principles in Unit Two of this class.</p>
+<p><strong>Inheritance</strong> refers to the ability of one class to acquire properties and methods from another.</p>
+<p>Think of it this way, in the animal kingdom, a <cite>species</cite> is a unique entity that inherits traits from its <cite>genus</cite>. The <cite>genus</cite> also has unique properties, but inherits traits from its <cite>family</cite>.
 For example, a tiger and a housecat are members of two different species, however, they share similar traits such as retractable claws.
-The similar traits they share, the two cats inherited from their shared family, <cite>felidae</cite>.</p>
+The two cats inherited their similar traits from their shared family, <cite>felidae</cite>.</p>
 <p>Using inheritance in programming, we can create a structure of classes that inherit properties and methods from other classes.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>If we wanted to program classes for our tiger and housecat, we would create a felidae class for the family.
 We would then create two classes for the panthera genus and the felis genus. We would create classes for the tiger and house cat species as well.
 The species classes would inherit properties and methods from the genus classes and the genus classes would inherit properties and methods from the family class.</p>
-<p class="last">** Maybe add a figure **</p>
+<div class="figure">
+<img alt="Figure showing that panthera and felis inherit from felidae, tiger inherits from panthera, and housecat inherits from felis." src="../../_images/inheritance.png" />
 </div>
 <p id="index-1">The classes inheriting properties and methods are <strong>child classes</strong> and the classes passing down properties and methods are <strong>parent classes</strong>.</p>
 <div class="section" id="extends">
 <h2>15.4.1. <code class="docutils literal notranslate"><span class="pre">extends</span></code><a class="headerlink" href="#extends" title="Permalink to this headline">¶</a></h2>
-<p>When designating a class as inheriting from another class in JavaScript, we use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword.
-By adding <code class="docutils literal notranslate"><span class="pre">extends</span></code> to the class declaration, we can designate that the class we are declaring is a child class of its parent.</p>
+<p>When designating a class as the child class of another in JavaScript, we use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword.
+We also must use the <code class="docutils literal notranslate"><span class="pre">super()</span></code> constructor to get the properties and methods needed from the parent class.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">ChildClass</span> <span class="kr">extends</span> <span class="nx">ParentClass</span> <span class="p">{</span>
+        <span class="nx">constructor</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kr">super</span><span class="p">();</span>
+                <span class="c1">// properties</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>In the case of a tiger, tigers have stripes, but they also have loud roars.
+Their ability to roar loudly is a trait they share with other members of the <cite>panthera</cite> genus.
+Tigers also got their retractable claws from the <cite>felidae</cite> family.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Panthera</span> <span class="p">{</span>
-        <span class="nx">constructor</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Felidae</span> <span class="p">{</span>
+        <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">claws</span> <span class="o">=</span> <span class="s2">&quot;retractable&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Panthera</span> <span class="kr">extends</span> <span class="nx">Felidae</span> <span class="p">{</span>
+        <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">();</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">roar</span> <span class="o">=</span> <span class="s2">&quot;loud&quot;</span>
         <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kr">class</span> <span class="nx">Tiger</span> <span class="kr">extends</span> <span class="nx">Panthera</span> <span class="p">{</span>
-        <span class="nx">constructor</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">hasStripes</span> <span class="o">=</span> <span class="nx">True</span>
+        <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">();</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">hasStripes</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span><span class="p">;</span>
         <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tigger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tiger</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tigger</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/InheritanceTryIt" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p class="last">When creating the classes for our tiger, we can use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword to set up <code class="docutils literal notranslate"><span class="pre">Tiger</span></code> as the child class of <code class="docutils literal notranslate"><span class="pre">Panthera</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">Tiger</span></code> class then inherits the property, <code class="docutils literal notranslate"><span class="pre">roar</span></code>, from the <code class="docutils literal notranslate"><span class="pre">Panthera</span></code> class and has an additional property, <code class="docutils literal notranslate"><span class="pre">hasStripes</span></code>.</p>
 </div>
@@ -132,6 +182,16 @@ The <code class="docutils literal notranslate"><span class="pre">Tiger</span></c
 </div>
 <div class="section" id="check-your-understanding">
 <h2>15.4.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>If you had to create classes for a wolf, the canis genus, and the carnivora order, which statement is TRUE about the order of inheritance?</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">Wolf</span></code> and <code class="docutils literal notranslate"><span class="pre">Canis</span></code> are parent classes to <code class="docutils literal notranslate"><span class="pre">Carnivora</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Wolf</span></code> is a child class of <code class="docutils literal notranslate"><span class="pre">Canis</span></code> and a parent class to <code class="docutils literal notranslate"><span class="pre">Carnivora</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Wolf</span></code> is child class of <code class="docutils literal notranslate"><span class="pre">Canis</span></code> and <code class="docutils literal notranslate"><span class="pre">Canis</span></code> is a child class of <code class="docutils literal notranslate"><span class="pre">Carnivora</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Wolf</span></code> is child class of <code class="docutils literal notranslate"><span class="pre">Canis</span></code> and <code class="docutils literal notranslate"><span class="pre">Canis</span></code> is a parent class of <code class="docutils literal notranslate"><span class="pre">Carnivora</span></code>.</li>
+</ol>
+</div>
 </div>
 </div>
 
