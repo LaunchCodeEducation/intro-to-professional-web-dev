@@ -19,7 +19,7 @@ When assigning methods outside of the ``constructor``, we simply declare our met
    class ClassName {
       constructor(parameters) {
          //assign properties with this.key = value
-   	}
+      }
 
       methodName(parameters) {
          //function code
@@ -141,8 +141,8 @@ Which Way is Preferred?
          reportStats() {
             let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
             return stats;
-   		}
-	   }
+         }
+      }
 
       let fox = new AstronautI('Fox', 7, 12);
       let hippo = new AstronautO('Hippo', 25, 1000);
