@@ -61,7 +61,7 @@ Arrays can store other arrays!
 
 a. The cargo hold in our shuttle contains several smaller storage spaces. Use
    ``split`` to convert the following strings into four cabinet arrays.
-   Alphebitize the contents of each cabinet.
+   Alphabetize the contents of each cabinet.
 
    i. "water bottles, meal packs, snacks, chocolate"
    ii. "space suits, jet packs, tool belts, thermal detonators"

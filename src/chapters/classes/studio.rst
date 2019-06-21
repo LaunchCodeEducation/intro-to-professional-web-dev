@@ -16,7 +16,7 @@ Part 1 - Add Class Properties
 #. Create objects for the following candidates:
 
    a. Bubba Bear has a mass of 135 kg and test scores of 88, 85, and 90.
-   b. Malia Maltese has a mass of 1.5 kg and test scores of 93, 88, and 97.
+   b. Merry Maltese has a mass of 1.5 kg and test scores of 93, 88, and 97.
    c. Glad Gator has a mass of 225 kg and test scores of 75, 78, and 62.
 
 Use ``console.log`` for each object to verify that your class correctly assigns
@@ -56,7 +56,7 @@ Calculating the Test Average
    :ref:`round it to 1 decimal place <rounding-to-decimal-places>`, then return
    the result from the function.
 
-Verify your code by evaluating and printing Malia's average test score (92.7).
+Verify your code by evaluating and printing Merry's average test score (92.7).
 
 Determining Candidate Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,9 +89,3 @@ How many tests will it take to reach ``Reserve`` status? How many to reach
 .. admonition:: Tip
 
    Rather than adding one score at a time, could you use a loop?
-
-Bonus Mission
---------------
-
-   TODO: Determine if the content above is enough, or if more reinforcement is
-   needed for those who finish early.
