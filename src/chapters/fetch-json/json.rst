@@ -1,21 +1,73 @@
 JSON
 ====
 
-JavaScript Object Notation (JSON) is one of the leading data formats used, especially on the web.
+JavaScript Object Notation (JSON) is one of the leading data formats used especially on the web.
 
 JSON is based on JavaScript object syntax, but has some differeneces.
 
+Let's consider an API that serves information about the books in a library. In this example we searched for "An Astronaut's guide to life on Earth".
 
-EXAMPLE
 .. sourcecode:: js
 
-   {}
+   {
+       "title": "An Astronaut's guide to life on Earth",
+       "author": "Chris Hadfield",
+       "ISBN": 9780316253017,
+       "year_published": 2013,
+       "subject": ["Hadfield, Chris", "Astronauts", "Biography"],
+       "available": true
+   }
 
-RULE BREAKDOWN
+The API returned a match for our search. The search provides us with information that may be useful to the user in the form of the title, author, ISBN, the year the book was published, the subjects of the book, and if the book is currently available for checkout.
 
-EXAMPLE
+JSON Rules
+----------
 
-FINAL THOUGHTS
+JSON is a collection of key value pairs. In the example above "title" is a key, and it's value is "An Astronaut's guide to life on Earth"
+
+The key value pairs descirbe the data that is being transferred.
+
+A JSON key must always be a string, but the value may be a number, string, boolean, array, object, or null.
+
+In the example above the JSON describes one object, a book! All of the keys are strings, and the values are: string, string, number, number, array, and boolean respectively.
+
+JSON can also be used to describe a collection of objects at the same time. Consider we search for the word "Astronaut".
+
+.. sourcecode:: js
+
+   {
+       "hits": 3,
+       "book": [
+           {
+               "title": "An Astronaut's guide to life on Earth",
+                "author": "Chris Hadfield",
+                "ISBN": 9780316253017,
+                "year_published": 2013,
+                "subject": ["Hadfield, Chris", "Astronauts", "Biography"],
+                "available": true
+           },
+           {
+               "title": "Astronaut",
+               "author": "Lucy M. George",
+               "ISBN": 9781609929411,
+               "year_published": 2016,
+               "subject": ["Astronauts", "Juvenille Fiction", "Space stations"],
+               "available": false
+           },
+           {
+               "title": "Astronaut Ellen Ochoa",
+               "author": "Heather E. Schwartz",
+               "ISBN": 9781512434491,
+               "year_published": 2018,
+               "subject": ["Ochoa Ellen", "Women astronauts", "Astronauts", "Biography", "Women scientists", "Hispanic American women"],
+               "available": true
+           }
+       ]
+   }
+
+This time our search term "Astronaut" returned multiple books, and so a collection of book objects was returned in JSON format.
+
+Each book object can be found in the array with the key "book". Each book contain the keys title, author, ISBN, year_published, subject, and available.
 
 When we make a request to an API, the API formats the data we requested into JSON, and then responds to our request with the JSON representation of our request.
 
