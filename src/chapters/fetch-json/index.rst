@@ -5,8 +5,7 @@ Fetch & JSON
    :maxdepth: 4
 
    introduction
-   data-format
-   json
+   data-formats-json
    fetch
    asynchronous
    exercises
