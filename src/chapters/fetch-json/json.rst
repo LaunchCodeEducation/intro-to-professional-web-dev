@@ -72,3 +72,67 @@ Each book object can be found in the array with the key "book". Each book contai
 When we make a request to an API, the API formats the data we requested into JSON, and then responds to our request with the JSON representation of our request.
 
 JSON is one of the leading data formats used in web development, and is the data format we will use throughout this course. In the next section we will show you how to use the ``fetch()`` method to make a request to an API that will return a JSON representation of the data we requested.
+
+JSON & JavaScript Object Differences
+------------------------------------
+
+JSON is based on how JavaScript objects work. However, there are some key differences between the two.
+
+JSON keys **must** be in double quotes. When defining properties for a JavaScript object double quotes should not be used when declaring properties.
+
+.. sourcecode:: js
+   :caption: JSON
+
+   {
+       "title": "The Cat in the Hat"
+       "author": "Dr. Seuss"
+   }
+
+.. sourcecode:: js
+   :caption: JavaScript object
+
+   let newBook = {
+       title: "The Cat in the Hat",
+       author: "Dr. Seuss"
+   }
+
+To represent a string in JSON you must use double quotes. In JavaScript you can use double quotes, or single quotes.
+
+.. sourcecode:: js
+   :caption: JSON
+
+   {
+       "title": "The Last Astronaut",
+       "author": "David Wellington"
+   }
+
+.. sourcecode:: js
+   :caption: JavaScript object
+
+   let anotherBook = {
+       title: 'The Last Astronaut',
+       author: 'David Wellington'
+   }
+
+.. note::
+
+   JSON is based on JavaScript objects, but there are key differences. JSON syntax is a little more strict than JavaScript object syntax. Luckily JavaScript has built in tools to turn JSON into a JavaScript object with relative ease. These tools will be introduced later in the course.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What does API stand for?
+
+.. admonition:: Question
+
+   Why might you connect to an API?
+
+.. admonition:: Question
+
+   What is JSON?
+
+.. admonition:: Question
+
+   What purpose does JSON serve?

@@ -173,6 +173,7 @@ represents a Response and has methods to gaining access to the status and data o
 
    **Console Output**
    ::
+
       Object { temp: 67, windSpeed: 5, tempMin: 50, tempMax: 71, status: "Sunny", chanceOfPrecipitation: 20, zipcode: 63108 }
 
 Use the DOM and JSON Data to Update the Page

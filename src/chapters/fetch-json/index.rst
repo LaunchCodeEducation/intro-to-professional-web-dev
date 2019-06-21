@@ -9,3 +9,4 @@ Fetch & JSON
    json
    fetch
    updating-the-webpage
+   exercises

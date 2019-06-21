@@ -142,6 +142,71 @@
 <p>When we make a request to an API, the API formats the data we requested into JSON, and then responds to our request with the JSON representation of our request.</p>
 <p>JSON is one of the leading data formats used in web development, and is the data format we will use throughout this course. In the next section we will show you how to use the <code class="docutils literal notranslate"><span class="pre">fetch()</span></code> method to make a request to an API that will return a JSON representation of the data we requested.</p>
 </div>
+<div class="section" id="json-javascript-object-differences">
+<h2>24.3.2. JSON &amp; JavaScript Object Differences<a class="headerlink" href="#json-javascript-object-differences" title="Permalink to this headline">¶</a></h2>
+<p>JSON is based on how JavaScript objects work. However, there are some key differences between the two.</p>
+<p>JSON keys <strong>must</strong> be in double quotes. When defining properties for a JavaScript object double quotes should not be used when declaring properties.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">JSON</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;The Cat in the Hat&quot;</span>
+    <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;Dr. Seuss&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">JavaScript object</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">newBook</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;The Cat in the Hat&quot;</span><span class="p">,</span>
+    <span class="nx">author</span><span class="o">:</span> <span class="s2">&quot;Dr. Seuss&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>To represent a string in JSON you must use double quotes. In JavaScript you can use double quotes, or single quotes.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">JSON</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;The Last Astronaut&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;David Wellington&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">JavaScript object</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">anotherBook</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;The Last Astronaut&#39;</span><span class="p">,</span>
+    <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;David Wellington&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">JSON is based on JavaScript objects, but there are key differences. JSON syntax is a little more strict than JavaScript object syntax. Luckily JavaScript has built in tools to turn JSON into a JavaScript object with relative ease. These tools will be introduced later in the course.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>24.3.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What does API stand for?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">Why might you connect to an API?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What is JSON?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What purpose does JSON serve?</p>
+</div>
+</div>
 </div>
 
 
