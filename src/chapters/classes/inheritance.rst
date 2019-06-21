@@ -26,7 +26,7 @@ The species classes would inherit properties and methods from the genus classes 
 
 .. index:: ! parent class, ! child class
 
-The classes inheriting properties and methods are **child classes** and the classes passing down properties and methods are **parent classes**.
+The classes inheriting properties and methods are **child classes**, and the classes passing down properties and methods are **parent classes**.
 
 ``extends``
 -----------

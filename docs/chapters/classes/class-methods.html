@@ -215,11 +215,9 @@ We will weigh the pros and cons of both methods below.</p>
 </div>
 <div class="section" id="which-way-is-preferred">
 <h2>15.3.3. Which Way is Preferred?<a class="headerlink" href="#which-way-is-preferred" title="Permalink to this headline">¶</a></h2>
-<p>When we try to compare the outputs of our classes in code, we notice that only
-when we assigned the method <cite>inside</cite> the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, that the
-<code class="docutils literal notranslate"><span class="pre">reportStats()</span></code> method was output.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Try comparing the outputs of <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> to see the effect of assigning a method <cite>inside</cite> the constructor versus <cite>outside</cite> the constructor.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -275,8 +273,8 @@ when we assigned the method <cite>inside</cite> the <code class="docutils litera
    <span class="nx">reportStats</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">let</span> <span class="nx">stats</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old and has a mass of </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">;</span>
       <span class="k">return</span> <span class="nx">stats</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+          <span class="p">}</span>
+     <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">fox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AstronautI</span><span class="p">(</span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">hippo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AstronautO</span><span class="p">(</span><span class="s1">&#39;Hippo&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
@@ -288,7 +286,7 @@ when we assigned the method <cite>inside</cite> the <code class="docutils litera
 <p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/ClassMethodsTryIt" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p>In the case of assigning the method <cite>inside</cite> the constructor, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>.
-With today’s computers, this is a relatively minor concern, however, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code that may not be needed.
+With today’s computers, this is a relatively minor concern. However, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code that may not be needed.
 This consumes memory, which you need to consider since today’s businesses want efficient code that does not tax their systems.</p>
 <p>Because of this, if a method is the same for ALL objects of a class, define that method <cite>outside</cite> of the constructor.
 Each object does not need a copy of identical code.

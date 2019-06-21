@@ -109,11 +109,9 @@ When declaring methods inside the ``constructor``, we need to make use of the ``
 Which Way is Preferred?
 ------------------------
 
-When we try to compare the outputs of our classes in code, we notice that only
-when we assigned the method `inside` the ``constructor``, that the
-``reportStats()`` method was output.
-
 .. admonition:: Try It!
+
+   Try comparing the outputs of ``fox`` and ``hippo`` to see the effect of assigning a method `inside` the constructor versus `outside` the constructor.
 
    .. replit:: js
       :slug: ClassMethodsTryIt
@@ -143,8 +141,8 @@ when we assigned the method `inside` the ``constructor``, that the
          reportStats() {
             let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
             return stats;
-         }
-      }
+   		}
+	   }
 
       let fox = new AstronautI('Fox', 7, 12);
       let hippo = new AstronautO('Hippo', 25, 1000);
@@ -152,8 +150,9 @@ when we assigned the method `inside` the ``constructor``, that the
       console.log(fox);
       console.log(hippo);
 
+
 In the case of assigning the method `inside` the constructor, each ``Astronaut`` objects carries around the code for ``reportStats()``.
-With today's computers, this is a relatively minor concern, however, each ``Astronaut`` has extra code that may not be needed.
+With today's computers, this is a relatively minor concern. However, each ``Astronaut`` has extra code that may not be needed.
 This consumes memory, which you need to consider since today's businesses want efficient code that does not tax their systems.
 
 Because of this, if a method is the same for ALL objects of a class, define that method `outside` of the constructor.
