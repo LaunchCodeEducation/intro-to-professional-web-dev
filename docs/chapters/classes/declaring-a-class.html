@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -107,13 +107,9 @@ type. The general format for declaring a class is:</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p id="index-0">Note how declaring a class differs from declaring a function:</p>
-<ol class="arabic simple">
-<li>The keyword <code class="docutils literal notranslate"><span class="pre">constructor</span></code>. This is a special method for creating objects
-of the same type, and it assigns the key/value pairs.</li>
-<li>Parameters are passed into the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> method rather than the
-<code class="docutils literal notranslate"><span class="pre">class</span></code> declaration.</li>
-</ol>
+<p id="index-0">Note the keyword <code class="docutils literal notranslate"><span class="pre">constructor</span></code>. This is a special method for creating objects
+of the same type, and it assigns the key/value pairs. Parameters are passed
+into <code class="docutils literal notranslate"><span class="pre">constructor</span></code> rather than the <code class="docutils literal notranslate"><span class="pre">class</span></code> declaration.</p>
 <div class="section" id="assigning-properties">
 <h3>15.2.1.1. Assigning Properties<a class="headerlink" href="#assigning-properties" title="Permalink to this headline">¶</a></h3>
 <p>Let’s set up an <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class to help us store data about our animal
@@ -152,13 +148,13 @@ automatically.</p>
 </div>
 </div>
 </div>
-<div class="section" id="calling-a-new-class-object">
-<h2>15.2.2. Calling a New Class Object<a class="headerlink" href="#calling-a-new-class-object" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-new-class-object">
+<h2>15.2.2. Creating a New Class Object<a class="headerlink" href="#creating-a-new-class-object" title="Permalink to this headline">¶</a></h2>
 <p>To create an object from a class, we use the keyword <code class="docutils literal notranslate"><span class="pre">new</span></code>. The syntax is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let objectName = new ClassName(arguments).
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let objectName = new ClassName(arguments);
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">new</span></code> creates an <strong>instance</strong> (or example) of the class. Each object
+<p><code class="docutils literal notranslate"><span class="pre">new</span></code> creates an <strong>instance</strong> of the class, which means that the object
 generated shares the same set of keys as every other object made from the
 class.</p>
 <div class="admonition-example admonition">
@@ -202,9 +198,8 @@ Astronaut { name: &#39;Fox&#39;, age: 7, mass: 12 }
 </div>
 </div>
 <p>In lines 9 and 10, we call the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class twice and pass in different
-sets of arguments. This creates the objects <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code>, which is
-confirmed by the output from line 12.</p>
-<p>The output from line 14 shows that <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> are both the same
+sets of arguments, creating the <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> objects.</p>
+<p>The output of line 14 shows that <code class="docutils literal notranslate"><span class="pre">fox</span></code> and <code class="docutils literal notranslate"><span class="pre">hippo</span></code> are both the same
 <em>type</em> of object (<code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>). The two share the same <em>keys</em>, but they have
 different values assigned to those keys.</p>
 <blockquote>
@@ -322,13 +317,8 @@ automatically assigns a value of <code class="docutils literal notranslate"><spa
 one or more of the parameters.</p>
 </div>
 </div>
-<div class="section" id="next-step">
-<h2>15.2.3. Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>This page explained how to assign properties within a <code class="docutils literal notranslate"><span class="pre">class</span></code>. In the next
-section, we explore how to add <em>methods</em>.</p>
-</div>
 <div class="section" id="check-your-understanding">
-<h2>15.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>15.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <p>The questions below refer to a class called <code class="docutils literal notranslate"><span class="pre">Car</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -352,7 +342,7 @@ section, we explore how to add <em>methods</em>.</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>If we call the class with <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">myCar</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Car('Chevy',</span> <span class="pre">'Astro',</span> <span class="pre">1985,</span>
-<span class="pre">'gray',</span> <span class="pre">20)</span></code> what is output by <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">myCar.year)</span></code>?</p>
+<span class="pre">'gray',</span> <span class="pre">20)</span></code>, what is output by <code class="docutils literal notranslate"><span class="pre">console.log(typeof</span> <span class="pre">myCar.year)</span></code>?</p>
 <ol class="last loweralpha simple">
 <li>object</li>
 <li>string</li>
@@ -363,7 +353,7 @@ section, we explore how to add <em>methods</em>.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p>If we call the class with <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">myCar</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Car('Tesla',</span> <span class="pre">'Model</span> <span class="pre">S',</span> <span class="pre">2019)</span></code>
+<p>If we call the class with <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">myCar</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Car('Tesla',</span> <span class="pre">'Model</span> <span class="pre">S',</span> <span class="pre">2019)</span></code>,
 what is output by <code class="docutils literal notranslate"><span class="pre">console.log(myCar)</span></code>?</p>
 <ol class="last loweralpha simple">
 <li>Car {make: ‘Tesla’, model: ‘Model S’, year: 2019, color: undefined, mpg: undefined }</li>

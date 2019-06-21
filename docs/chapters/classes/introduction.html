@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -88,8 +88,11 @@
 <span id="index-0"></span><h1>15.1. What Are Classes?<a class="headerlink" href="#what-are-classes" title="Permalink to this headline">¶</a></h1>
 <p>Recall that <a class="reference internal" href="../objects-and-math/background.html#objects-intro"><span class="std std-ref">objects</span></a> are data structures that hold many
 values, which consist of <em>properties</em> and <em>methods</em>.</p>
-<p><strong>Classes</strong> extend this idea by providing a template for building multiple
-objects with the same properties and methods.</p>
+<p>We often need to create many objects of the same <em>type</em>. To do this in an
+efficient way, we define a <strong>class</strong>, which allows us to set up the general
+structure for an object. We can then reuse that structure to build multiple
+objects. These objects all have the same set of <em>keys</em>, but the <em>values</em>
+assigned to each key will vary.</p>
 <p>Let’s revisit the animal astronauts from earlier exercises to see how this
 works.</p>
 <div class="section" id="an-astronaut-object">
@@ -136,13 +139,9 @@ Fox says, &quot;LaunchCode Rocks Rocks Rocks.&quot;
 <code class="docutils literal notranslate"><span class="pre">'Fox'</span></code>.</p>
 <p>Of course, we have multiple astronauts on our team. To store data for each one,
 we would need to copy the structure for <code class="docutils literal notranslate"><span class="pre">fox</span></code> multiple times and then change
-the values to suit each crew member. This is inefficient and repetitive. As
-expected, JavaScript provides us a better way to create multiple, similar
-objects.</p>
-<p>To create many objects of the same type, we start by defining a <strong>class</strong>,
-which allows us to build the general structure for an object. We can then
-reuse that structure to build multiple objects. These objects will have the
-same set of <em>keys</em>, but the values assigned to each key will vary.</p>
+the values to suit each crew member. This is inefficient and repetitive.</p>
+<p>By letting us define our own <strong>classes</strong>, JavaScript provides a better way to
+create multiple, similar objects.</p>
 <div class="figure">
 <img alt="Visual of the relationship between classes and objects." src="../../_images/Classes-vs-objects.png" />
 </div>

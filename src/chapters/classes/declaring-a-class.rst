@@ -24,12 +24,9 @@ type. The general format for declaring a class is:
 
 .. index:: ! constructor
 
-Note how declaring a class differs from declaring a function:
-
-#. The keyword ``constructor``. This is a special method for creating objects
-   of the same type, and it assigns the key/value pairs.
-#. Parameters are passed into the ``constructor`` method rather than the
-   ``class`` declaration.
+Note the keyword ``constructor``. This is a special method for creating objects
+of the same type, and it assigns the key/value pairs. Parameters are passed
+into ``constructor`` rather than the ``class`` declaration.
 
 Assigning Properties
 ^^^^^^^^^^^^^^^^^^^^
@@ -67,16 +64,16 @@ arguments.
    a class declaration, JavaScript adds an empty ``constructor () {}``
    automatically.
 
-Calling a New Class Object
----------------------------
+Creating a New Class Object
+----------------------------
 
 To create an object from a class, we use the keyword ``new``. The syntax is:
 
 ::
 
-   let objectName = new ClassName(arguments).
+   let objectName = new ClassName(arguments);
 
-``new`` creates an **instance** (or example) of the class. Each object
+``new`` creates an **instance** of the class, which means that the object
 generated shares the same set of keys as every other object made from the
 class.
 
@@ -112,10 +109,9 @@ class.
       Astronaut { name: 'Fox', age: 7, mass: 12 }
 
 In lines 9 and 10, we call the ``Astronaut`` class twice and pass in different
-sets of arguments. This creates the objects ``fox`` and ``hippo``, which is
-confirmed by the output from line 12.
+sets of arguments, creating the ``fox`` and ``hippo`` objects.
 
-The output from line 14 shows that ``fox`` and ``hippo`` are both the same
+The output of line 14 shows that ``fox`` and ``hippo`` are both the same
 *type* of object (``Astronaut``). The two share the same *keys*, but they have
 different values assigned to those keys.
 
@@ -213,12 +209,6 @@ automatically assigns a value of ``54``. If an argument is included for
 TRY IT! Return to the repl.it in the example above and set default values for
 one or more of the parameters.
 
-Next Step
-----------
-
-This page explained how to assign properties within a ``class``. In the next
-section, we explore how to add *methods*.
-
 Check Your Understanding
 -------------------------
 
@@ -240,7 +230,7 @@ The questions below refer to a class called ``Car``.
 .. admonition:: Question
 
    If we call the class with ``let myCar = new Car('Chevy', 'Astro', 1985,
-   'gray', 20)`` what is output by ``console.log(typeof myCar.year)``?
+   'gray', 20)``, what is output by ``console.log(typeof myCar.year)``?
 
    a. object
    b. string
@@ -250,7 +240,7 @@ The questions below refer to a class called ``Car``.
 
 .. admonition:: Question
 
-   If we call the class with ``let myCar = new Car('Tesla', 'Model S', 2019)``
+   If we call the class with ``let myCar = new Car('Tesla', 'Model S', 2019)``,
    what is output by ``console.log(myCar)``?
 
    a. Car {make: 'Tesla', model: 'Model S', year: 2019, color: undefined, mpg: undefined }
