@@ -8,5 +8,5 @@ Fetch & JSON
    data-format
    json
    fetch
-   updating-the-webpage
+   asynchronous
    exercises
