@@ -38,7 +38,9 @@ contain real time data.
          <body>
             <h1>Launch Status</h1>
             <h3>Weather Conditions</h3>
-            <!-- TODO: dynamically add html about weather using data from API -->
+            <div id="weather-conditions">
+               <!-- TODO: dynamically add html about weather using data from API -->
+            </div>
          </body>
       </html>
 
@@ -63,7 +65,7 @@ Two important parts of fetching data are:
 
    Notice a string URL is passed to ``fetch``. Also notice the anonymous function that
    has a ``response`` parameter, that is the request handler function. The ``then``
-   function will be explained very soon.
+   function will be explained soon.
 
    .. sourcecode:: js
 
@@ -71,10 +73,6 @@ Two important parts of fetching data are:
          console.log(response);
       } );
 
-Let's break down how ``fetch`` works. A URL is passed to ``fetch`` as a parameter, that causes
-an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
-response protocol. The response handler function, as the name implies, handles the response sent
-back from the API. Using the data in the response, the web page can be updated using DOM methods.
 
 ``fetch`` Example
 -----------------
@@ -83,11 +81,11 @@ Now let's add ``fetch`` in the Launch Status web page.
 
 .. admonition:: Example
 
-   On line 4 a ``<script>`` tag has been added that includes:
+   A ``<script>`` tag has been added that includes:
 
    1. A *load* event handler on line 5
    2. A ``fetch`` and response handler function on line 6
-   3. A ``console.log(response);`` on line 7  
+   3. A ``console.log(response);`` on line 7 that prints out the response object
 
    .. replit:: html
       :linenos:
@@ -107,21 +105,126 @@ Now let's add ``fetch`` in the Launch Status web page.
          <body>
             <h1>Launch Status</h1>
             <h3>Weather Conditions</h3>
-            <!-- TODO: dynamically add html about weather using data from API -->
+            <div id="weather-conditions">
+               <!-- TODO: dynamically add html about weather using data from API -->
+            </div>
          </body>
       </html>
 
-   Open the repl.it link. Then 
+Let's break down how ``fetch`` works. A URL is passed to ``fetch`` as a parameter, that causes
+an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
+response protocol. The response handler function, as the name implies, handles the response sent
+back from the API. Using the data in the response, the web page can be updated using DOM methods.
+
+View the GET Request
+^^^^^^^^^^^^^^^^^^^^
+We can see evidence of the GET request by following these steps:
+
+1. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`_ in it's own tab.
+2. Open developer tools.
+3. Open the *Network* tab in developer tools.
+
+.. figure:: figures/weather-developer-tools.png
+       :alt: Screen shot showing developer tools open with the network call to the API highlighted.
+
+       The GET request to the Weather API highlighted in developer tools.
+
+In the above image you can see the web page has been rendered on the left. In the developer tools
+the GET request to the Weather API has been highlighted along with the response from that request.
+The response shows the JSON data that was sent. In the console output you can see the ``Response``
+object has been logged. We will use that object next.
+
+Response Object
+^^^^^^^^^^^^^^^
+The response to the GET request is contained in a ``response`` object that is an instance of the
+`Response class <https://developer.mozilla.org/en-US/docs/Web/API/Response>`_. The Response class
+represents a Response and has methods to gaining access to the status and data of a response.
+
+.. admonition:: Example
+
+   On line 10 the ``json()`` method is used to gain access to the JSON data contained in the response.
+   
+   Line 11 logs the JSON to the console. Explanation of ``then`` is coming very soon.
+
+   .. replit:: html
+      :linenos:
+      :slug: fetch-weather-pt2
+
+      <html>
+         <head>
+            <title>Launch Status</title>
+            <script>
+               window.addEventListener("load", function() {
+                  // Access the JSON in the response
+                  response.json().then( function(json) {
+                     console.log(json);
+                  });
+               });
+            </script>
+         </head>
+         <body>
+            <h1>Launch Status</h1>
+            <h3>Weather Conditions</h3>
+            <div id="weather-conditions">
+               <!-- TODO: dynamically add html about weather using data from API -->
+            </div>
+         </body>
+      </html>
+
+   **Console Output**
+   ::
+      Object { temp: 67, windSpeed: 5, tempMin: 50, tempMax: 71, status: "Sunny", chanceOfPrecipitation: 20, zipcode: 63108 }
+
+Use the DOM and JSON Data to Update the Page
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now that we have JSON weather data we can add HTML elements to the page to show the data.
+
+.. admonition:: Example
 
 
+
+   .. replit:: html
+      :linenos:
+      :slug: fetch-weather-pt3
+
+      <html>
+         <head>
+            <title>Launch Status</title>
+            <script>
+               window.addEventListener("load", function() {
+                  // Access the JSON in the response
+                  response.json().then( function(json) {
+                     const div = document.getElementById('weather-conditions');
+                     // Add HTML that includes the JSON data
+                     div.innerHTML = `
+                        <ul>
+                           <li>Temp ${json.temp}</li>
+                           <li>Wind Speed ${json.windSpeed}</li>
+                           <li>Status ${json.status}</li>
+                           <li>Chance of Precip ${json.chanceOfPrecipitation}</li>
+                        </ul>
+                     `;
+                  });
+               });
+            </script>
+         </head>
+         <body>
+            <h1>Launch Status</h1>
+            <h3>Weather Conditions</h3>
+            <div id="weather-conditions">
+               <!-- Weather data is added here dynamically. -->
+            </div>
+         </body>
+      </html>
+
+.. figure:: figures/weather-data-on-page.png
+   :alt: Screen shot of browser showing Launch Status web page with the weather data in HTML.
+
+   Weather data added to web page.
 
 
 Things left to discuss
-* Show example usage of fetch
-* Point out the important parts of the code
-* show example of network request in network tab?
-* Update the web page using data from a response
-* something about HTTP requests
+
 * NOTE about seeing many other ways to request data online (jQuery.get, XmlHttpRequest, ...)
 * NOTE about fetch can also be used to sent POST and PUT requests. maybe link to MDN
 * WARNING that fetch does NOT work in IE, be sure to say that Edge is ok. Provide link to site that helps them pick a different browser.
