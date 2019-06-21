@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -85,7 +86,7 @@
     
   <div class="section" id="fetching-data">
 <h1>24.4. Fetching Data<a class="headerlink" href="#fetching-data" title="Permalink to this headline">¶</a></h1>
-<p>Now that we know what an API, let’s use one to update a web page. Let’s use a weather API
+<p>Now that we know what an API is, let’s use one to update a web page. Let’s use a weather API
 to add weather data to a webpage. The URL for this special LaunchCode weather API is
 <a class="reference external" href="https://api.education.launchcode.org/weather" target="_blank">https://api.education.launchcode.org/weather<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>Example JSON returned from weather API.</p>
@@ -137,25 +138,29 @@ contain real time data.</p>
 <div class="section" id="fetch-function">
 <h2>24.4.1. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> Function<a class="headerlink" href="#fetch-function" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">To request the weather data, we will use the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is a global
-function that requests, or fetches, resources such as data from an API.</p>
-<p>Two important parts of fetching data are:</p>
+function that requests, or fetches resources such as data from an API.</p>
+<p>Take note of two necsseary aspects of the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function:</p>
 <ol class="arabic simple">
 <li>The URL of where the data is located.<ul>
 <li>For this example it will be <code class="docutils literal notranslate"><span class="pre">'https://api.education.launchcode.org/weather'</span></code></li>
 </ul>
 </li>
-<li>A response handler function to utilize the data that is being fetched.</li>
+<li>A response handler function to utilize the data that is being fetched.<ul>
+<li>For this example it will be <code class="docutils literal notranslate"><span class="pre">function(response){...};</span></code></li>
+</ul>
+</li>
 </ol>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Notice a string URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code>. Also notice the anonymous function that
 has a <code class="docutils literal notranslate"><span class="pre">response</span></code> parameter, that is the request handler function. The <code class="docutils literal notranslate"><span class="pre">then</span></code>
 function will be explained soon.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </div>
+<p class="last">In this example we are requesting data from <code class="docutils literal notranslate"><span class="pre">https://api/education.launchcode.org/weather</span></code> and our response handler (the function) simply logs the response to the console.</p>
 </div>
 </div>
 <div class="section" id="fetch-example">
@@ -238,8 +243,8 @@ object has been logged. We will use that object next.</p>
 represents a Response and has methods to gaining access to the status and data of a response.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>On line 10 the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method is used to gain access to the JSON data contained in the response.</p>
-<p>Line 11 logs the JSON to the console. Explanation of <code class="docutils literal notranslate"><span class="pre">then</span></code> is coming very soon.</p>
+<p>On line 7 the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method is used to gain access to the JSON data contained in the response.</p>
+<p>Line 8 logs the JSON to the console. Explanation of <code class="docutils literal notranslate"><span class="pre">then</span></code> is coming very soon.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -364,7 +369,7 @@ represents a Response and has methods to gaining access to the status and data o
 <li>NOTE about fetch can also be used to sent POST and PUT requests. maybe link to MDN</li>
 <li>WARNING that fetch does NOT work in IE, be sure to say that Edge is ok. Provide link to site that helps them pick a different browser.</li>
 <li>In depth about Promises and asynchronous cycle of network requests</li>
-<li>Familiar with terms AJAX and XHR (where to do this?)</li>
+<li>Mention and define AJAX and XHR (where to do this?) – a note after XmlHttpRequest, and jQuery</li>
 </ul>
 </div>
 </div>

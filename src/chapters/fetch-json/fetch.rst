@@ -1,7 +1,7 @@
 Fetching Data
 =============
 
-Now that we know what an API, let's use one to update a web page. Let's use a weather API
+Now that we know what an API is, let's use one to update a web page. Let's use a weather API
 to add weather data to a webpage. The URL for this special LaunchCode weather API is
 `<https://api.education.launchcode.org/weather>`_.
 
@@ -51,15 +51,17 @@ contain real time data.
 .. index:: !fetch
 
 To request the weather data, we will use the ``fetch`` function. ``fetch`` is a global
-function that requests, or fetches, resources such as data from an API.
+function that requests, or fetches resources such as data from an API.
 
-Two important parts of fetching data are:
+Take note of two necsseary aspects of the ``fetch`` function:
 
 1. The URL of where the data is located.
 
    * For this example it will be ``'https://api.education.launchcode.org/weather'``
 
 2. A response handler function to utilize the data that is being fetched.
+
+   * For this example it will be ``function(response){...};``
 
 .. admonition:: Example
 
@@ -73,6 +75,7 @@ Two important parts of fetching data are:
          console.log(response);
       } );
 
+   In this example we are requesting data from ``https://api/education.launchcode.org/weather`` and our response handler (the function) simply logs the response to the console.
 
 ``fetch`` Example
 -----------------
@@ -142,9 +145,9 @@ represents a Response and has methods to gaining access to the status and data o
 
 .. admonition:: Example
 
-   On line 10 the ``json()`` method is used to gain access to the JSON data contained in the response.
+   On line 7 the ``json()`` method is used to gain access to the JSON data contained in the response.
    
-   Line 11 logs the JSON to the console. Explanation of ``then`` is coming very soon.
+   Line 8 logs the JSON to the console. Explanation of ``then`` is coming very soon.
 
    .. replit:: html
       :linenos:
@@ -230,4 +233,4 @@ Things left to discuss
 * NOTE about fetch can also be used to sent POST and PUT requests. maybe link to MDN
 * WARNING that fetch does NOT work in IE, be sure to say that Edge is ok. Provide link to site that helps them pick a different browser.
 * In depth about Promises and asynchronous cycle of network requests
-* Familiar with terms AJAX and XHR (where to do this?)
+* Mention and define AJAX and XHR (where to do this?) -- a note after XmlHttpRequest, and jQuery
