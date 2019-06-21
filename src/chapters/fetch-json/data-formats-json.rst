@@ -158,8 +158,7 @@ JavaScript object
 .. note::
 
    JSON is based on JavaScript objects, but there are key differences. JSON syntax is a little more strict than JavaScript
-   object syntax. Luckily JavaScript has built in tools to turn JSON into a JavaScript object with relative ease. These tools
-   will be introduced later in the course.
+   object syntax.
 
 Check Your Understanding
 ------------------------
