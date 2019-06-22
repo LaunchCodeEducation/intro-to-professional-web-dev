@@ -18,7 +18,7 @@ a better result?  How about printing the phrase 100 times instead?
    :linenos:
 
     for (i=0; i < 100; i++){
-        console.log("Repetition is a good thing.")
+        console.log("Repetition is a good thing.");
     }
 
 Loops simplify repetitive tasks!
