@@ -9,3 +9,4 @@ Fetch & JSON
    fetch
    asynchronous
    exercises
+   studio

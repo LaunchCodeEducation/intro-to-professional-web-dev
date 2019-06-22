@@ -106,4 +106,5 @@ Finally on line 5 the JSON data can be logged.
 
 Asynchronous Example
 --------------------
-TODO: an example that shows a console.log statement happening before a response comes back
+TODO: an example that shows a console.log statement happening before a response comes back.
+Or is this not needed?
