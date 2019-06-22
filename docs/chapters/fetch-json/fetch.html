@@ -20,7 +20,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="24.4. HERE BE MAGIC" href="asynchronous.html" />
+    <link rel="next" title="24.4. Asynchronous" href="asynchronous.html" />
     <link rel="prev" title="24.2. Data Formats and JSON" href="data-formats-json.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -134,6 +134,11 @@ contain real time data.</p>
 </pre></div>
 </td></tr></table></div>
 </div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Before going through the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> examples, please know that <code class="docutils literal notranslate"><span class="pre">fetch</span></code> does NOT work in
+Internet Explorer. <a class="reference external" href="https://browsehappy.com/" target="_blank">List of alternative browsers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
 <div class="section" id="fetch-function">
 <h2>24.3.1. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> Function<a class="headerlink" href="#fetch-function" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">To request the weather data, we will use the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is a global
@@ -218,6 +223,11 @@ function will be explained soon.</p>
 an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
 response protocol. The response handler function, as the name implies, handles the response sent
 back from the API. Using the data in the response, the web page can be updated using DOM methods.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">In this section <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is used to make GET requests. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> can also be used to make
+other types of HTTP requests such as POST and PUT.</p>
+</div>
 <div class="section" id="view-the-get-request">
 <h3>24.3.2.1. View the GET Request<a class="headerlink" href="#view-the-get-request" title="Permalink to this headline">¶</a></h3>
 <p>We can see evidence of the GET request by following these steps:</p>
@@ -362,14 +372,13 @@ represents a Response and has methods to gaining access to the status and data o
 <img alt="Screen shot of browser showing Launch Status web page with the weather data in HTML." src="../../_images/weather-data-on-page.png" />
 <p class="caption"><span class="caption-text">Weather data added to web page.</span></p>
 </div>
-<p>Things left to discuss</p>
-<ul class="simple">
-<li>NOTE about seeing many other ways to request data online (jQuery.get, XmlHttpRequest, …)</li>
-<li>NOTE about fetch can also be used to sent POST and PUT requests. maybe link to MDN</li>
-<li>WARNING that fetch does NOT work in IE, be sure to say that Edge is ok. Provide link to site that helps them pick a different browser.</li>
-<li>In depth about Promises and asynchronous cycle of network requests</li>
-<li>Mention and define AJAX and XHR (where to do this?) – a note after XmlHttpRequest, and jQuery</li>
-</ul>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">fetch</span></code> was choose as the tool to request data because it’s supported in modern browsers by default
+and is simple to use. When viewing resources other than this book, you will see various other ways to
+request data in a web page with JavaScript. Other ways include but are not limited to
+<code class="docutils literal notranslate"><span class="pre">jQuery.get</span></code>, <code class="docutils literal notranslate"><span class="pre">jQuery.ajax</span></code>, and <code class="docutils literal notranslate"><span class="pre">XMLHttpRequest</span></code>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -383,7 +392,7 @@ represents a Response and has methods to gaining access to the status and data o
         <li class="previous"><a href="data-formats-json.html"><span aria-hidden="true">&larr;</span> 24.2. Data Formats and JSON</a></li>
         
         
-        <li class="next"><a href="asynchronous.html">24.4. HERE BE MAGIC <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="asynchronous.html">24.4. Asynchronous <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

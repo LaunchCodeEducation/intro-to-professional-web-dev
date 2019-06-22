@@ -44,6 +44,10 @@ contain real time data.
          </body>
       </html>
 
+.. warning::
+
+   Before going through the ``fetch`` examples, please know that ``fetch`` does NOT work in
+   Internet Explorer. `List of alternative browsers <https://browsehappy.com/>`_
 
 ``fetch`` Function
 ------------------
@@ -118,6 +122,11 @@ Let's break down how ``fetch`` works. A URL is passed to ``fetch`` as a paramete
 an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
 response protocol. The response handler function, as the name implies, handles the response sent
 back from the API. Using the data in the response, the web page can be updated using DOM methods.
+
+.. note::
+
+   In this section ``fetch`` is used to make GET requests. ``fetch`` can also be used to make
+   other types of HTTP requests such as POST and PUT.
 
 View the GET Request
 ^^^^^^^^^^^^^^^^^^^^
@@ -226,11 +235,9 @@ Now that we have JSON weather data we can add HTML elements to the page to show 
 
    Weather data added to web page.
 
+.. note::
 
-Things left to discuss
-
-* NOTE about seeing many other ways to request data online (jQuery.get, XmlHttpRequest, ...)
-* NOTE about fetch can also be used to sent POST and PUT requests. maybe link to MDN
-* WARNING that fetch does NOT work in IE, be sure to say that Edge is ok. Provide link to site that helps them pick a different browser.
-* In depth about Promises and asynchronous cycle of network requests
-* Mention and define AJAX and XHR (where to do this?) -- a note after XmlHttpRequest, and jQuery
+   ``fetch`` was choose as the tool to request data because it's supported in modern browsers by default
+   and is simple to use. When viewing resources other than this book, you will see various other ways to
+   request data in a web page with JavaScript. Other ways include but are not limited to
+   ``jQuery.get``, ``jQuery.ajax``, and ``XMLHttpRequest``.
