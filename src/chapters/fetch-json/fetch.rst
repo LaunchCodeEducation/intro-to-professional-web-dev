@@ -57,7 +57,7 @@ contain real time data.
 To request the weather data, we will use the ``fetch`` function. ``fetch`` is a global
 function that requests, or fetches resources such as data from an API.
 
-Take note of two necsseary aspects of the ``fetch`` function:
+Take note of two necessary aspects of the ``fetch`` function:
 
 1. The URL of where the data is located.
 
@@ -143,20 +143,20 @@ We can see evidence of the GET request by following these steps:
 
 In the above image you can see the web page has been rendered on the left. In the developer tools
 the GET request to the Weather API has been highlighted along with the response from that request.
-The response shows the JSON data that was sent. In the console output you can see the ``Response``
+The response shows the JSON data that was received. In the console output you can see the ``Response``
 object has been logged. We will use that object next.
 
 Response Object
 ^^^^^^^^^^^^^^^
 The response to the GET request is contained in a ``response`` object that is an instance of the
 `Response class <https://developer.mozilla.org/en-US/docs/Web/API/Response>`_. The Response class
-represents a Response and has methods to gaining access to the status and data of a response.
+represents an HTTP response and has methods that allow access to the status and data.
 
 .. admonition:: Example
 
-   On line 7 the ``json()`` method is used to gain access to the JSON data contained in the response.
-   
-   Line 8 logs the JSON to the console. Explanation of ``then`` is coming very soon.
+   On line 8 the ``json()`` method is used to gain access to the JSON data contained in the response.
+
+   Line 9 logs the JSON to the console. We'll discuss ``then`` later.
 
    .. replit:: html
       :linenos:
@@ -167,9 +167,11 @@ represents a Response and has methods to gaining access to the status and data o
             <title>Launch Status</title>
             <script>
                window.addEventListener("load", function() {
-                  // Access the JSON in the response
-                  response.json().then( function(json) {
-                     console.log(json);
+                  fetch("weather.json").then( function(response) {
+                     // Access the JSON in the response
+                     response.json().then( function(json) {
+                        console.log(json);
+                     });
                   });
                });
             </script>
@@ -194,7 +196,8 @@ Now that we have JSON weather data we can add HTML elements to the page to show 
 
 .. admonition:: Example
 
-
+   On line 10 ``innerHTML`` of the ``div`` variable is set to be HTML built using
+   JSON weather data.
 
    .. replit:: html
       :linenos:
@@ -205,18 +208,19 @@ Now that we have JSON weather data we can add HTML elements to the page to show 
             <title>Launch Status</title>
             <script>
                window.addEventListener("load", function() {
-                  // Access the JSON in the response
-                  response.json().then( function(json) {
-                     const div = document.getElementById('weather-conditions');
-                     // Add HTML that includes the JSON data
-                     div.innerHTML = `
-                        <ul>
-                           <li>Temp ${json.temp}</li>
-                           <li>Wind Speed ${json.windSpeed}</li>
-                           <li>Status ${json.status}</li>
-                           <li>Chance of Precip ${json.chanceOfPrecipitation}</li>
-                        </ul>
-                     `;
+                  fetch("weather.json").then( function(response) {
+                     response.json().then( function(json) {
+                        const div = document.getElementById('weather-conditions');
+                        // Add HTML that includes the JSON data
+                        div.innerHTML = `
+                           <ul>
+                              <li>Temp ${json.temp}</li>
+                              <li>Wind Speed ${json.windSpeed}</li>
+                              <li>Status ${json.status}</li>
+                              <li>Chance of Precip ${json.chanceOfPrecipitation}</li>
+                           </ul>
+                        `;
+                     });
                   });
                });
             </script>
@@ -237,7 +241,7 @@ Now that we have JSON weather data we can add HTML elements to the page to show 
 
 .. note::
 
-   ``fetch`` was choose as the tool to request data because it's supported in modern browsers by default
+   ``fetch`` was chosen as the tool to request data because it's supported in modern browsers by default
    and is simple to use. When viewing resources other than this book, you will see various other ways to
    request data in a web page with JavaScript. Other ways include but are not limited to
    ``jQuery.get``, ``jQuery.ajax``, and ``XMLHttpRequest``.
