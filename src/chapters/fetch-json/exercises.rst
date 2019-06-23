@@ -1,10 +1,10 @@
 Exercises
 =========
 
-Valid JSON
-----------
+JSON
+----
 
-Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
+1. Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
 
 .. sourcecode:: js
 
@@ -30,7 +30,7 @@ Which of the following three code snippets is correct JSON? Why are the other tw
        "age": 3
    }
 
-Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
+2. Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
 
 .. sourcecode:: js
 
@@ -80,3 +80,7 @@ Which of the following three code snippets is correct JSON? Why are the other tw
             "age": 2
         } 
     ]
+
+Fetch
+-----
+

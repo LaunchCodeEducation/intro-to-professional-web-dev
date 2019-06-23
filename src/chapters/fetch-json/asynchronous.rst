@@ -104,7 +104,20 @@ Finally on line 5 the JSON data can be logged.
    Promises can be a hard concept to understand. Focus on the examples and the theory will
    make sense in time.
 
-Asynchronous Example
---------------------
-TODO: an example that shows a console.log statement happening before a response comes back.
-Or is this not needed?
+
+Check Your Understanding
+-------------------------
+
+.. admonition:: Question
+
+   True or False, we know exactly when an asynchronous request will return?
+
+
+.. admonition:: Question
+
+   True or False, a Promise can represent any future event?
+
+.. admonition:: Question
+
+   True or False, ``then`` is a method of the ``Promise`` class that allows us to run code
+   after an event is completed?
