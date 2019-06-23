@@ -1,30 +1,126 @@
 Studio: Fetch & JSON
 ====================
 
-Requirements
+Your task is to build a website that shows astronauts fetched from an API.
+Requirements are below.
 
-* Make a request to astronauts API https://api.education.launchcode.org/astronauts
-* Use HTML template to add each astronaut to web page
+`Repl.it with starter code <https://repl.it/@launchcode/Studio-Starter-Fetch-and-JSON>`_
+
+Requirements
+------------
+
+1. Add code that runs on the ``window`` ``load`` event.
+
+   * This is done because we can't interact with the HTML elements until the page has loaded.
+
+2. Make a GET request using ``fetch`` to the astronauts API `https://api.education.launchcode.org/astronauts <https://api.education.launchcode.org/astronauts>`_
+
+   * Do this part inside the ``load`` event handler.
+
+3. Add each astronaut returned to the web page.
+
+   * Use this HTML template shown below.
+   * Be sure to use the exact HTML including the CSS classes. (starter code contains CSS definitions)
 
 
 Example JSON
+^^^^^^^^^^^^
+Notice that it's an array of objects, due to the outer ``[`` and ``]``. That means you will have to
+use a loop to access each object inside the JSON array.
 
 .. sourcecode:: js
    :linenos:
 
-   {
-        "id": 5,
-        "active": false,
-        "firstName": "Sally",
-        "lastName": "Ride",
-        "skills": [
-            "Physicist", "Astrophysics"
-        ],
-        "hoursInSpace": 343,
-        "picture": "sally-ride.jpg"
-    }
+   [
+      {
+         "id": 1,
+         "active": false,
+         "firstName": "Mae",
+         "lastName": "Jemison",
+         "skills": [
+               "Physician", "Chemical Engineer"
+         ],
+         "hoursInSpace": 190,
+         "picture": "mae-jemison.jpg"
+      },
+      {
+         "id": 2,
+         "active": false,
+         "firstName": "Frederick",
+         "lastName": "Gregory",
+         "skills": [
+               "Information Systems", "Shuttle Pilot", "Fighter Pilot", "Helicopter Pilot", "Colonel USAF"
+         ],
+         "hoursInSpace": 455,
+         "picture": "frederick-gregory.jpg"
+      },
+      {
+         "id": 3,
+         "active": false,
+         "firstName": "Ellen",
+         "lastName": "Ochoa",
+         "skills": [
+               "Physics", "Electrical Engineer"
+         ],
+         "hoursInSpace": 979,
+         "picture": "ellen-ochoa.jpg"
+      },
+      {
+         "id": 4,
+         "active": false,
+         "firstName": "Guion",
+         "lastName": "Bluford",
+         "skills": [
+               "Aerospace Engineer", "Philosophy", "Physics", "Colonel USAF",
+               "Fighter Pilot"
+         ],
+         "hoursInSpace": 686,
+         "picture": "guion-bluford.jpg"
+      },
+      {
+         "id": 5,
+         "active": false,
+         "firstName": "Sally",
+         "lastName": "Ride",
+         "skills": [
+               "Physicist", "Astrophysics"
+         ],
+         "hoursInSpace": 343,
+         "picture": "sally-ride.jpg"
+      },
+      {
+         "id": 6,
+         "active": true,
+         "firstName": "Kjell",
+         "lastName": "Lindgren",
+         "skills": [
+               "Physician", "Surgeon", "Emergency Medicine"
+         ],
+         "hoursInSpace": 15,
+         "picture": "kjell-lindgren.jpg"
+      },
+      {
+         "id": 7,
+         "active": true,
+         "firstName": "Jeanette",
+         "lastName": "Epps",
+         "skills": [
+               "Physicist", "Philosophy", "Aerospace Engineer"
+         ],
+         "hoursInSpace": 0,
+         "picture": "jeanette-epps.jpg"
+      }
+   ]
 
-Example HTML created for each astronaut. Notice the CSS classes used.
+
+HTML Template
+^^^^^^^^^^^^^
+Create HTML in this exact format for each astronaut, but include data about that specific astronaut.
+For example the below HTML is what should be created for astronaut Mae Jemison. All HTML created should
+be added to the ``<div id="container">`` tag.
+
+Do NOT copy and paste this into your HTML file. Use this
+as a template to build HTML dynamically for each astronaut returned from the API.
 
 .. sourcecode:: html
    :linenos:
@@ -33,15 +129,27 @@ Example HTML created for each astronaut. Notice the CSS classes used.
       <div class="bio">
          <h3>Mae Jemison</h3>
          <ul>
-         <li>Hours in space: 190</li>
-         <li>Active: false</li>
-         <li>Skills: Physician, Chemical Engineer</li>
+            <li>Hours in space: 190</li>
+            <li>Active: false</li>
+            <li>Skills: Physician, Chemical Engineer</li>
          </ul>
       </div>
       <img class="avatar" src="images/mae-jemison.jpg">
    </div>
 
+
+Expected Results
+^^^^^^^^^^^^^^^^
+What the web page should look like after your code loads the data and builds the HTML.
+
 .. figure:: figures/studio-example-page.png
        :alt: Screen shot showing what result of studio should look like.
 
        Example of what resulting page should look like.
+
+
+Bonus Missions
+--------------
+* Display the astronauts sorted from most to least time in space.
+* make the "Active: true" text green, for astronauts that are still active (active is true).
+* Add a count of astronauts to the page.
