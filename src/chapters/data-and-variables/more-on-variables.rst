@@ -1,12 +1,16 @@
 More On Variables
 =================
 
-The previous section covered creating, evaluating, and reassigning variables. This section will cover some additional, more nuanced topics related to variables.
+The previous section covered creating, evaluating, and reassigning variables.
+This section will cover some additional, more nuanced topics related to
+variables.
 
 Creating Constants With ``const``
 ---------------------------------
 
-One of the key features of variables that we have discussed so far is their ability to change value. We can create a variable with one value, and then reassign it to another value.
+One of the key features of variables that we have discussed so far is their
+ability to change value. We can create a variable with one value, and then
+reassign it to another value.
 
 .. sourcecode:: js
    :linenos:
@@ -14,40 +18,54 @@ One of the key features of variables that we have discussed so far is their abil
    let programmingLanguage = "JavaScript";
    programmingLanguage = "Python";
 
-In some situations, we want to create variables that cannot change value. Many programming languages, including JavaScript, provide mechanisms for programmers to make variables that are constant.
+In some situations, we want to create variables that cannot change value. Many
+programming languages, including JavaScript, provide mechanisms for programmers
+to make variables that are constant.
 
-For example, suppose that we are writing a to-do list web application, named "Get It Done!" The title of the application might appear in multiple places, such as the title bar and the main page header.
+For example, suppose that we are writing a to-do list web application, named
+"Get It Done!" The title of the application might appear in multiple places,
+such as the title bar and the main page header.
 
 .. figure:: figures/get-it-done.png
    :alt: A to-do list web application with application name in the title bar and main header.
    :height: 300px
-   
+
    An example to-do list web application
 
-We might store the name of our application in a variable so that it can be referenced anywhere we want to display the application name.
+We might store the name of our application in a variable so that it can be
+referenced anywhere we want to display the application name.
 
 .. sourcecode:: js
 
    let appName = "Get It Done!";
 
-This allows us to simply refer to the ``appName`` variable any time we want to use it throughout our application. If we change the name of the application, we only have to change one line of code, where the ``appName`` variable is initialized. 
+This allows us to simply refer to the ``appName`` variable any time we want to
+use it throughout our application. If we change the name of the application, we
+only have to change one line of code, where the ``appName`` variable is
+initialized.
 
-The downside of this approach is that an unwitting programmer might change the value of the variable at some point in the code after it is initialized, leading to inconsistent references to the application name. In other words, the title bar and main page header could reference different names.
+One problem with this approach is that an unwitting programmer might change the
+value of ``appName`` later in the code, leading to inconsistent references to
+the application name. In other words, the title bar and main page header could
+reference different names.
 
 .. index:: ! const, ! constant
 
 .. index::
    pair: variable; constant
 
-Using ``const`` rather than ``let`` to create a variable ensures that the value of the declared variable cannot be changed.
+Using ``const`` rather than ``let`` to create a variable ensures that the value
+of the declared variable cannot be changed.
 
 .. sourcecode:: js
 
    const appName = "Get It Done!";
 
-Such an unchangeable variable is known as a **constant**, since its value is just that.
+Such an unchangeable variable is known as a **constant**, since its value is
+just that.
 
-How does JavaScript prevent a programmer from changing the value of a constant? Let's find out. Try running the following code in an editor. What happens?
+How does JavaScript prevent a programmer from changing the value of a constant?
+Let's find out. Try running the following code in an editor. What happens?
 
 .. admonition:: Example
 
@@ -59,11 +77,13 @@ How does JavaScript prevent a programmer from changing the value of a constant? 
 
    **Console Output**
 
-   :: 
+   ::
 
       TypeError: Assignment to constant variable.
 
-As we've seen with other examples---such as trying to declare a variable twice, using incorrect syntax, or failing to enclose strings in quotes---JavaScripts prevents undesired code from executing by throwing an error.
+As we've seen with other examples---such as trying to declare a variable twice,
+using incorrect syntax, or failing to enclose strings in quotes---JavaScripts
+prevents undesired code from executing by throwing an error.
 
 Naming Variables
 ----------------
@@ -71,7 +91,9 @@ Naming Variables
 Valid Variable Names
 ^^^^^^^^^^^^^^^^^^^^
 
-As you may have discovered already, not just any sequence of characters is a valid variable name. For example, if we try to declare a variable with a name containing a space, JavaScript complains.
+As you may have discovered already, not just any sequence of characters is a
+valid variable name. For example, if we try to declare a variable with a name
+containing a space, JavaScript complains.
 
 .. admonition:: Example
 
@@ -85,25 +107,39 @@ As you may have discovered already, not just any sequence of characters is a val
 
       SyntaxError: Unexpected identifier
 
-In this case, "identifier" is another term for variable name, so the error message is saying that the variable name is not valid, or is "unexpected".
+In this case, "identifier" is another term for variable name, so the error
+message is saying that the variable name is not valid, or is "unexpected".
 
-JavaScript provides a broad set of rules for naming variables, but there is no reason to go beyond a few easy-to-remember guidelines:
+JavaScript provides a broad set of rules for naming variables, but there is no
+reason to go beyond a few easy-to-remember guidelines:
 
 .. index:: keywords
 
-- Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do not use special characters or whitespace (space, tab, and so on).
-- Do not start a variable name with a number.
-- Avoid starting a variable name with an underscore. Doing so is a convention used by some JavaScript developers to mean something very specific about the variable, and should be avoided.
-- Do not use **keywords**, which are words reserved by JavaScript for use by the language itself. We'll discuss these in detail in a moment.
+#. Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do
+   not use special characters or whitespace (space, tab, and so on).
+#. Do not start a variable name with a number.
+#. Avoid starting a variable name with an underscore. Doing so is a convention
+   used by some JavaScript developers to mean something very specific about the
+   variable, and should be avoided.
+#. Do not use **keywords**, which are words reserved by JavaScript for use by
+   the language itself. We'll discuss these in detail in a moment.
 
-Following these guidelines will prevent you from creating illegal variable names. While this is important, we should also strive to create good variable names.
+Following these guidelines will prevent you from creating illegal variable
+names. While this is important, we should also strive to create good variable
+names.
 
 Good Variable Names
 ^^^^^^^^^^^^^^^^^^^
 
-Writing good code is about more than writing code that simply works and accomplishes the task at-hand. It is also about writing code that can be read, updated, and maintained as easily as possible. How to write code that achieves these goals is a theme we will return to again and again.
+Writing good code is about more than writing code that simply works and
+accomplishes the task at-hand. It is also about writing code that can be read,
+updated, and maintained as easily as possible. How to write code that achieves
+these goals is a theme we will return to again and again.
 
-One of the primary ways that code can be written poorly is by using bad variable names. For example, consider the following program. While we haven't introduced each of the components used here, you should be able to come to a general understanding of the new components. 
+One of the primary ways that code can be written poorly is by using bad
+variable names. For example, consider the following program. While we haven't
+introduced each of the components used here, you should be able to come to a
+general understanding of the new components.
 
 .. sourcecode:: js
    :linenos:
@@ -113,7 +149,10 @@ One of the primary ways that code can be written poorly is by using bad variable
    let z = y * x ** 2;
    console.log(z);
 
-Understanding what this program is trying to do is not obvious, to say the least. The main problem is that the variable names ``x``, ``y``, and ``z`` are not descriptive. They don't tell us anything about what they represent, or how they will be used. 
+Understanding what this program is trying to do is not obvious, to say the
+least. The main problem is that the variable names ``x``, ``y``, and ``z`` are
+not descriptive. They don't tell us anything about what they represent, or how
+they will be used.
 
 .. pull-quote:: Variable names should be descriptive, providing context about the data they contain and how they will be used.
 
