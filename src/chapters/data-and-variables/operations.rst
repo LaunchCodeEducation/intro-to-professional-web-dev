@@ -117,11 +117,18 @@ The ``%`` operator returns the *remainder* obtained by carrying out integer divi
    - 6 % 2 is 0
    - 7 % 2 is 1
 
-The last two examples illustrate a general rule: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1.
+The last two examples illustrate a general rule: An integer x is even exactly
+when x % 2 is 0 and is odd exactly when x % 2 is 1.
 
-.. note:: The value returned by ``a % b`` will always be between ``0`` and ``b``.
+.. admonition:: Note
 
-.. tip:: If remainders and the modulus operator seem tricky to you, we recommend getting additional practice at `Khan Academy <https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic>`_.
+   The value returned by ``a % b`` will be in the range from ``0`` to ``b``
+   (not including ``b``).
+
+.. admonition:: Tip
+
+   If remainders and the modulus operator seem tricky to you, we recommend
+   getting additional practice at `Khan Academy <https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic>`_.
 
 Order of Operations
 -------------------
@@ -162,7 +169,7 @@ When more than one operator appears in an expression, the order of evaluation de
 
    **S** = subtraction
 
-.. note::
+.. admonition:: Note
 
    Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator ``**``. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:
 
