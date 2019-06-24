@@ -29,6 +29,7 @@ Chapters
    chapters/dom-and-events/index
    chapters/http/index
    chapters/forms/index
+   chapters/angular-wk1/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -55,6 +56,8 @@ Studios
    chapters/classes/studio
    chapters/git/studio
    chapters/dom-and-events/studio
+   chapters/forms/studio
+   chapters/angular-wk1/studio
 
 Assignments
 ^^^^^^^^^^^
