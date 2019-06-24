@@ -245,3 +245,14 @@ Now that we have JSON weather data we can add HTML elements to the page to show 
    and is simple to use. When viewing resources other than this book, you will see various other ways to
    request data in a web page with JavaScript. Other ways include but are not limited to
    ``jQuery.get``, ``jQuery.ajax``, and ``XMLHttpRequest``.
+
+
+Check Your Understanding
+-------------------------
+.. admonition:: Question
+
+   What is the correct syntax for ``fetch``?
+
+   a. ``fetch('GET', 'https://api.education.launchcode.org/weather').then(...);``
+   b. ``fetch('https://api.education.launchcode.org/weather').doStuff(...)``
+   c. ``fetch('https://api.education.launchcode.org/weather').then(...);``

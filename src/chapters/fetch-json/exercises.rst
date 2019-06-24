@@ -81,6 +81,8 @@ JSON
         } 
     ]
 
+
 Fetch
 -----
 
+.. todo:: add exercises for fetch
