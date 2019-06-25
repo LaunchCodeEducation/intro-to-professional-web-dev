@@ -6,5 +6,7 @@ Angular, Part 1
 .. toctree::
    :maxdepth: 3
 
+   introduction
+   templates
    exercises
    studio
