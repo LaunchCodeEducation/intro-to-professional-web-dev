@@ -95,20 +95,20 @@ Some of most commonly-used operators are the **arithmetic operators**, which car
      - Aka the remainder operator. Returns the integer remainder of dividing the two operands.
      - ``7 % 5`` returns ``2``
    * - Exponentiation (``**``)
-     - Calculates the base (first operand) to the exponent (second operand) power, that is, base\ :sup:`exponent` 
+     - Calculates the base (first operand) to the exponent (second operand) power, that is, base\ :sup:`exponent`
      - ``3 ** 2`` returns ``9``
-        
+
        ``5 ** -1`` returns ``0.2``
    * - Increment (``++``)
-     - Adds one to its operand. If used before the operand (``++x``), returns the value of its operand after adding one; if used after the operand (``x++``), returns the value of its operand before adding one. 	
+     - Adds one to its operand. If used before the operand (``++x``), returns the value of its operand after adding one; if used after the operand (``x++``), returns the value of its operand before adding one.
      - If ``x`` is ``2``, then ``++x`` sets ``x`` to ``3`` and returns ``3``, whereas ``x++`` returns ``2`` and, only then, sets ``x`` to ``3``
    * - Decrement (``--``)
      - Subtracts one from its operand. The return value is analogous to that for the increment operator.
      - If ``x`` is ``2``, then ``--x`` sets ``x`` to ``1`` and returns ``1``, whereas ``x--`` returns ``2`` and, only then, sets ``x`` to ``1``
-   
+
 While the modulus operator (``%``) is common in programming, it is not used much outside of programming. Let's explore how it works with a few examples.
 
-The ``%`` operator returns the *remainder* obtained by carrying out integer division of the first operand by the second operand. Therefore, ``5 % 3`` is ``2`` because 3 goes into 5 one whole time, with a remainder of 2 left over. 
+The ``%`` operator returns the *remainder* obtained by carrying out integer division of the first operand by the second operand. Therefore, ``5 % 3`` is ``2`` because 3 goes into 5 one whole time, with a remainder of 2 left over.
 
 .. admonition:: Examples
 
@@ -117,11 +117,18 @@ The ``%`` operator returns the *remainder* obtained by carrying out integer divi
    - 6 % 2 is 0
    - 7 % 2 is 1
 
-The last two examples illustrate a general rule: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1. 
+The last two examples illustrate a general rule: An integer x is even exactly
+when x % 2 is 0 and is odd exactly when x % 2 is 1.
 
-.. note:: The value returned by ``a % b`` will always be between ``0`` and ``b``.
+.. admonition:: Note
 
-.. tip:: If remainders and the modulus operator seem tricky to you, we recommend getting additional practice at `Khan Academy <https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic>`_.
+   The value returned by ``a % b`` will be in the range from ``0`` to ``b``
+   (not including ``b``).
+
+.. admonition:: Tip
+
+   If remainders and the modulus operator seem tricky to you, we recommend
+   getting additional practice at `Khan Academy <https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic>`_.
 
 Order of Operations
 -------------------
@@ -130,16 +137,25 @@ Order of Operations
 
 When more than one operator appears in an expression, the order of evaluation depends on the **rules of precedence**. JavaScript follows the same precedence rules for its arithmetic operators that mathematics does.
 
-#. Parentheses have the highest precedence and can be used to force an expression to evaluate in the order you want. Since expressions in parentheses are evaluated first, ``2 * (3 - 1)`` is 4, and ``(1 + 1) ** (5 - 2)`` is 8. You can also use parentheses to make an expression easier to read, as in ``(minute * 100) / 60``, even though it doesn't change the result.
-#. Exponentiation has the next highest precedence, so ``2 ** 1 + 1`` is 3 and not 4, and ``3 * 1 ** 3`` is 3 and not 27. Can you explain why?
-#. Multiplication and both division operators have the same precedence, which is higher than addition and subtraction, which also have the same precedence. So ``2 * 3 - 1`` yields 5 rather than 4, and ``5 - 2 * 2`` is 1, not 6.
-#. Operators with the *same* precedence are evaluated from left-to-right. So in the expression ``6 - 3 + 2``, the subtraction happens first, yielding 3. We then add 2 to get the result 5. If the operations had been evaluated from right to left, the result would have been ``6 - (3 + 2)``, which is 1.
+#. Parentheses have the highest precedence and can be used to force an
+   expression to evaluate in the order you want. Since expressions in
+   parentheses are evaluated first, ``2 * (3 - 1)`` is 4, and ``(1 + 1) ** (5 - 2)`` is 8. You can also use parentheses to make an expression easier to read, as in ``(minute * 100) / 60``, even though it doesn't change the result.
+#. Exponentiation has the next highest precedence, so ``2 ** 1 + 1`` is 3 and
+   not 4, and ``3 * 1 ** 3`` is 3 and not 27. Can you explain why?
+#. Multiplication, division, and modulus operators have the same precedence,
+   which is higher than addition and subtraction, which also have the same
+   precedence. So ``2 * 3 - 1`` yields 5 rather than 4, and ``5 - 2 * 2`` is 1,
+   not 6.
+#. Operators with the *same* precedence are evaluated from left-to-right. So in
+   the expression ``6 - 3 + 2``, the subtraction happens first, yielding 3. We
+   then add 2 to get the result 5. If the operations had been evaluated from
+   right to left, the result would have been ``6 - (3 + 2)``, which is 1.
 
 .. index:: PEMDAS
 
 .. admonition:: Tip
 
-   The acronymn PEMDAS can be used to remember order of operations:
+   The acronym PEMDAS can be used to remember order of operations:
 
    **P** = parentheses
 
@@ -188,7 +204,7 @@ Check Your Understanding
    #. 24
    #. 3
    #. 13.666666666666666
-   
+
 .. admonition:: Question
 
    What is the output of the code below?
@@ -210,4 +226,3 @@ Check Your Understanding
    #. 128
    #. 12
    #. 256
-
