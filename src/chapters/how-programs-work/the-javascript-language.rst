@@ -14,11 +14,11 @@ occur without having to refresh the page.
 
 .. index:: ! front end
 
-This cool feature allows immediate updates your profile when you post a status,
-change the color of the “Submit” button after you complete a form, generate
-a map when you request directions, or create a sparkly trail that follows the
-mouse pointer. All of the changes to what you see on the web page are part of
-**front end** development. They are present on your computer.
+This cool feature allows immediate updates to your profile when you post a
+status, change the color of the “Submit” button after you complete a form,
+generate a map when you request directions, or create a sparkly trail that
+follows the mouse pointer. All of the changes to what you see on the web page
+are part of **front end** development. They are present on your computer.
 
 .. index:: ! Back end
 
