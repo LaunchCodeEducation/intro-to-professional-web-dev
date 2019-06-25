@@ -87,21 +87,21 @@ To give a variable a value, use the **assignment operator**, ``=``. This operato
 
 An assignment statement must have the name on the left-hand side, and the value on the right-hand side.
 
-.. tip::
+.. admonition:: Tip
 
-   To avoid confusion when reading or writing code, say to yourself 
+   To avoid confusion when reading or writing code, say to yourself:
+
+   ``programmingLanguage`` is assigned ``'JavaScript'``
+
+   or
+
+   ``programmingLanguage`` gets the value ``'JavaScript'``.
+
+   Don't say: 
    
-        ``programmingLanguage`` is assigned ``'JavaScript'``
+   ``programmingLanguage`` equals ``'JavaScript'``.
 
-   or 
-    
-        ``programmingLanguage`` gets the value ``'JavaScript'``. 
-    
-   Don't say 
-    
-        ``programmingLanguage`` equals ``'JavaScript'``.
-
-.. index:: 
+.. index::
    pair: variable; global
 
 .. _global-var-intro:
@@ -113,7 +113,7 @@ An assignment statement must have the name on the left-hand side, and the value 
       programmingLanguage = "JavaScript";
 
    Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without ``let`` is valid syntax, but it results in very different behavior. Such a variable will be a **global variable**, which we will discuss later. 
-   
+
    The main point to keep in mind for now is that you should *always* use ``let`` unless you have a specific reason not to do so.
 
 Evaluating Variables
