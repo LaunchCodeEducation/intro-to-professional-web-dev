@@ -30,6 +30,7 @@ Chapters
    chapters/dom-and-events/index
    chapters/http/index
    chapters/forms/index
+   chapters/typescript/index
    chapters/booster-rockets/index
 
 .. toctree::
