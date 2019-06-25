@@ -189,7 +189,6 @@ When more than one operator appears in an expression, the order of evaluation de
       512
       64
 
-
 Check Your Understanding
 ------------------------
 
