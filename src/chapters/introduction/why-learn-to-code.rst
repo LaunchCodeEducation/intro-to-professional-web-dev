@@ -1,7 +1,7 @@
 Why Learn To Code?
 ==================
 
-How many times do you use a computer in a day?
+How many times do you use a computer in a day? What do you use it for?
 Maybe you use one to check email and social media, to watch TV, and to even set
 an alarm for the next day. Computers and technology are *everywhere* in our
 society.
