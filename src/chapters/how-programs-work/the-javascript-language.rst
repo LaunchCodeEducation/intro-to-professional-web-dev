@@ -4,17 +4,21 @@ The JavaScript Language
 .. index:: JavaScript
 
 **JavaScript** is one of many programming languages, each of which serves
-different purposes. Programmers mainly use JavaScript for web development.
-JavaScript is very good at this because it is the only language that runs
-inside a web browser. This means that the code loads at the same time as a web
-page.
+different purposes. Programmers mainly use JavaScript for web development,
+and it is currently the most popular language that runs inside a web browser.
+*Running inside the browser* means that the code loads at the same time as a
+web page and can modify the content. JavaScript can add or remove text, change
+colors, produce animations, and react to mouse and keyboard clicks. This makes
+the web page *dynamic*---it responds to user actions in real time, and changes
+occur without having to refresh the page.
 
 .. index:: ! front end
 
-This cool feature allows programmers to immediately update your profile when
-you post a status or change the color of the “Submit” button when you have
-filled out a form. All of the changes to what you see on the web page are
-part of **front end** development. They are present on your computer.
+This cool feature allows immediate updates to your profile when you post a
+status, change the color of the “Submit” button after you complete a form,
+generate a map when you request directions, or create a sparkly trail that
+follows the mouse pointer. All of the changes to what you see on the web page
+are part of **front end** development. They are present on your computer.
 
 .. index:: ! Back end
 
