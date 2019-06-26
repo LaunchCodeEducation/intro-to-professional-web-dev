@@ -30,29 +30,147 @@ Templates are Frameworks
 
 .. index:: ! template
 
-A **template** provides a general structure for a web page. It identifies where
-different elements get placed on the page, but it does NOT fill them with
+A **template** provides the general structure for a web page. It identifies
+where different elements get placed on the page, but it does NOT fill them with
 content. Think of a template like a skeleton, a blueprint, or an outline for
 what we want the page to look like.
 
-.. admonition:: Example
+Let's see how using a template makes our lives easier.
 
-   TODO: Compare...
+No Template
+^^^^^^^^^^^^
 
-   Show HTML code for simple layout - heading, main div, sub divs for ul and links.
-   Show template for same layout. "Blanks" can be updated and filled by changing the arguments sent into the framework.
+The code below builds a simple 3-column webpage. It defines the location for
+each heading, unordered list, and button. The CSS file (not shown) specifies
+the font, text size, colors, etc.
 
-Each section in the template contains one or more "blanks" where specific items
+.. replit:: html
+   :slug: NoTemplateExample
+   :linenos:
+
+   <body>
+      <h1>Hello, Screen!</h1>
+      <div class="row list">
+         <div class='movie'>
+            <h4>Movies</h4>
+            <ul>
+               <li>Hidden Figures</li>
+               <li>The Princess Bride</li>
+               <li>Ferris Bueller's Day Off</li>
+            </ul>
+            <button class='movie'>More</button>
+         </div>
+         <div class='school'>
+            <h4>Education</h4>
+            <ul>
+               <li>LaunchCode</li>
+               <li>Monsters University</li>
+               <li>My HS</li>
+            </ul>
+            <button class='school'>More</button>
+         </div>
+         <div class='hobby'>
+            <h4>Hobbies</h4>
+            <ul>
+               <li>Knitting</li>
+               <li>Cycling</li>
+               <li>Shark Rodeo</li>
+            </ul>
+            <button class='hobby'>More</button>
+         </div>
+      </div>
+      <hr>
+      <div class="links">
+         <h2>Links</h2>
+         <a href="https://www.launchcode.org/" target="_blank">LaunchCode</a> <br>
+         <a href="https://www.webelements.com/" target="_blank">WebElements</a>
+      </div>
+   </body>
+
+We could drastically improve the appearance and content of the page by playing
+around with the tags, classes, styles and text. However, any change we want to
+make needs to be coded directly into the HTML and CSS files.
+
+This quickly becomes inefficient, especially if changing the items needs to
+occur in multiple blocks of code.
+
+A Better Way
+^^^^^^^^^^^^^
+
+Each section in a template contains one or more "blanks" where specific items
 need to be added. Separate JavaScript code sends data to the template to fill
 in these blanks, and this data can change based on a user's actions.
 
-If you used a template to build your website, then changing the list of movies,
-schools, cities, or hobbies just involves altering something as simple as an
-array or object. After you change the data, the template does the tedious work
-of updating the HTML. For example, if your site lists your hobbies in three
-separate places, then all three will update automatically after you add
-"Shark Rodeo" to your ``hobbies`` array. You do not need to worry about
-re-doing any of the tags.
+.. sourcecode:: html
+   :linenos:
 
-   Question: Replace "Shark Rodeo" and ``hobbies`` with "Hidden Figures" and
-   ``favoriteMovies``?
+   <body>
+      <h1>{{mainHeading}}</h1>
+      <div class="row list">
+         <div class='movie'>
+            <h4>Movies</h4>
+            <ul>{{movieTitles}}</ul>
+            <button class='movie'>More</button>
+         </div>
+         <div class='school'>
+            <h4>Education</h4>
+            <ul>{{schoolNames}}</ul>
+            <button class='school'>More</button>
+         </div>
+         <div class='hobby'>
+            <h4>Hobbies</h4>
+            <ul>{{hobbies}}</ul>
+            <button class='hobby'>More</button>
+         </div>
+      </div>
+      <hr>
+      <div class="links">{{Heading + linkList}}</div>
+   </body>
+
+This HTML looks similar to the previous example, but saves about 16 lines. It
+provides the same ``<div></div>`` structure but replaces some of the specific
+text between the tags with *placeholders*.
+
+Each item listed inside ``{{}}`` refers to data that will be passed into the
+template and automatically formatted. For example, the template converts
+``{{movieTitles}}`` into a sequence of ``<li></li>`` tags.
+
+By defining our template in an even more general manner, we could replace the
+``h4``, ``ul`` and ``button`` structure with a single placeholder.
+
+.. sourcecode:: html
+   :linenos:
+
+   <body>
+      <h1>{{mainHeading}}</h1>
+      <div class="row list">
+         <div class='movie'>{{movieContent}}</div>
+         <div class='school'>{{schoolContent}}</div>
+         <div class='hobby'>{{hobbyContent}}</div>
+      </div>
+      <hr>
+      <div class="links">{{linkContent}}</div>
+   </body>
+
+By using a template to build the website, changing the list of movies, schools,
+or hobbies just involves altering something as simple as an array or object.
+After changing the data, the template does the tedious work of modifying the
+HTML. The list of movies would update automatically if we add "Up" to our
+``favoriteMovies`` array, which then gets passed into ``{{movieContent}}``. We
+do not need to worry about re-coding any of the tags.
+
+Templates Provide Structure, Not Content
+-----------------------------------------
+
+   TODO: Which approach is better - code path or diagram/qualitative path?
+
+Some text here to introduce the diagram...
+
+.. figure:: ./figures/AngularTemplateDiagram.png
+   :scale: 90%
+   :alt: Visual of a template structure.
+
+Check Your Understanding
+-------------------------
+
+   TODO: Add questions
