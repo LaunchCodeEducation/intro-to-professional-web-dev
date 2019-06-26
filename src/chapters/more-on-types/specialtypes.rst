@@ -65,7 +65,7 @@ Let's say that we are still working for the zoo. We have objects created for ani
   		diet: "leaves"
 	};
 
-Now, a new giraffe is coming to the zoo. We may want to initialize an object for the giraffe, but hold off on storing information in thhe ``weight`` property until the giraffe arrives.
+Now, a new giraffe is coming to the zoo. We may want to initialize an object for the giraffe, but hold off on storing information in the ``weight`` property until the giraffe arrives.
 In this case, we could initialize the ``weight`` property like so:
 
 .. sourcecode:: js

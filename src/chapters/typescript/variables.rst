@@ -1,12 +1,18 @@
 Declaring and Using Variables
 =============================
 
-TypeScript is strongly typed so you have to specify the type of variable when you declare it.
+Since TypeScript is statically typed, the type of value is added to the variable declaration. However, we will still use our ``let`` and ``const`` keywords where appropriate.
+
+The general format of a variable declaration is:
+
+.. sourcecode:: js
+
+   let variableName: type = value;
 
 ``number``
 ----------
 
-The ``number`` type is the same as it is in JavaScript, however, when declaring a variable of number type, you must specify that the type is the number type.
+When declaring a variable and using the ``number`` type, we add ``number`` to the variable declaration, like so:
 
 .. sourcecode:: js
 
@@ -15,7 +21,7 @@ The ``number`` type is the same as it is in JavaScript, however, when declaring 
 ``string``
 ----------
 
-The ``string`` type must also be specified.
+When declaring a ``string``, we want to use the ``string`` keyword.
 
 .. sourcecode:: js
 
@@ -24,14 +30,44 @@ The ``string`` type must also be specified.
 ``boolean``
 -----------
 
-The ``boolean`` type should be specified.
+The ``boolean`` keyword should be used when declaring a variable of the ``boolean`` type.
 
 .. sourcecode:: js
 
-    let variableName: boolean = True;
+    let variableName: boolean = true;
 
 ``null`` and ``undefined``
 --------------------------
 
 ``null`` and ``undefined`` are primitive data types in TypeScript, however, they are treated differently by TypeScript.
 If you are planning on using ``null`` to define a property of an object that is not known yet, use the TypeScript optional parameter, ``?``.
+
+Let's take a look at how that would look in TypeScript.
+
+In JavaScript, we might have an object that looks like so:
+
+.. sourcecode:: js
+   :linenos:
+
+   let giraffeTwo = {
+        species: "Reticulated Giraffe",
+        name: "Alicia",
+        weight: null,
+        age: 10,
+        diet: "leaves"
+   };
+
+This code may look familiar from the chapter on primitive data types.
+
+If we wanted to declare the same object in TypeScript, we would have to use the optional parameter for the ``weight`` property.
+
+.. sourcecode:: js
+   :linenos:
+
+   interface giraffeTwo = {
+        species: string;
+        name: string;
+        weight?: number;
+        age: number;
+        diet: string;
+   };

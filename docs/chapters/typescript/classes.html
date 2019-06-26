@@ -86,7 +86,65 @@
     
   <div class="section" id="classes-in-typescript">
 <h1>25.4. Classes in TypeScript<a class="headerlink" href="#classes-in-typescript" title="Permalink to this headline">¶</a></h1>
-<p>Classes in TypeScript can also use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword.</p>
+<p>Classes in TypeScript look some like this:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">firstName</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">Bob</span> <span class="o">=</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="s2">&quot;Smith&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>You may remember the <code class="docutils literal notranslate"><span class="pre">this</span></code> and <code class="docutils literal notranslate"><span class="pre">new</span></code> keywords from working with classes in JavaScript.
+Earlier in the chapter, we also noted that when declaring variables in TypeScript, we have to specify the type of value.
+The same applies to function parameters, as you can see in the constructor.</p>
+<p>Classes in TypeScript can also use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword to denote child and parent classes, as shown here:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Panthera</span> <span class="p">{</span>
+   <span class="nx">roar</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">currentRoar</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">roar</span> <span class="o">=</span> <span class="nx">currentRoar</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Tiger</span> <span class="kr">extends</span> <span class="nx">Panthera</span> <span class="p">{</span>
+   <span class="nx">stripes</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tigger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tiger</span><span class="p">(</span><span class="s2">&quot;loud&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tigger</span><span class="p">.</span><span class="nx">roar</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tigger</span><span class="p">.</span><span class="nx">stripes</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
 <p><code class="docutils literal notranslate"><span class="pre">export</span></code> is used to make the class available in the global scope.</p>
 </div>
 
