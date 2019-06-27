@@ -8,5 +8,6 @@ Angular, Part 1
 
    introduction
    templates
+   components
    exercises
    studio
