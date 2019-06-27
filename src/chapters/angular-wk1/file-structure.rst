@@ -36,7 +36,7 @@ specifically designed to create webpage templates.
 
 .. admonition:: Note
 
-   For the "HTML Me Something" studio, you created an account on
+   For the "HTML Me Something" assignment, you created an account on
    `GitHub <https://github.com>`__ . Since you will modify your Angular project
    over the next few lessons, you need access to GitHub to store your progress.
 
