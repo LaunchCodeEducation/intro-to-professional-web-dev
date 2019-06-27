@@ -45,7 +45,8 @@ Part A (Put dinner together)
 #. Construct a ``for`` loop that assembles a meal for each of 6 astronauts.
 
    a. The meals must include one item from each of the source arrays.
-   b. Print the meal information for each astronaut.
+   b. Each ingredient can only be used ONCE.
+   c. Print the meal information for each astronaut.
 
 #. Optional: *Skill boost!* To enhance your learning, modify your code to:
 
