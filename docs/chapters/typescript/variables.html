@@ -112,45 +112,6 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="null-and-undefined">
-<h2>25.2.4. <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code><a class="headerlink" href="#null-and-undefined" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are primitive data types in TypeScript, however, they are treated differently by TypeScript.
-If you are planning on using <code class="docutils literal notranslate"><span class="pre">null</span></code> to define a property of an object that is not known yet, use the TypeScript optional parameter, <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
-<p>Let’s take a look at how that would look in TypeScript.</p>
-<p>In JavaScript, we might have an object that looks like so:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">giraffeTwo</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="nx">species</span><span class="o">:</span> <span class="s2">&quot;Reticulated Giraffe&quot;</span><span class="p">,</span>
-     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Alicia&quot;</span><span class="p">,</span>
-     <span class="nx">weight</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nx">age</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-     <span class="nx">diet</span><span class="o">:</span> <span class="s2">&quot;leaves&quot;</span>
-<span class="p">};</span>
-</pre></div>
-</td></tr></table></div>
-<p>This code may look familiar from the chapter on primitive data types.</p>
-<p>If we wanted to declare the same object in TypeScript, we would have to use the optional parameter for the <code class="docutils literal notranslate"><span class="pre">weight</span></code> property.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">giraffeTwo</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="nx">species</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
-     <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
-     <span class="nx">weight</span><span class="o">?:</span> <span class="nx">number</span><span class="p">;</span>
-     <span class="nx">age</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
-     <span class="nx">diet</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></div>
-</td></tr></table></div>
-</div>
 </div>
 
 

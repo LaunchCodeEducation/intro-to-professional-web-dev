@@ -1,7 +1,7 @@
-Classes in TypeScript
----------------------
+Classes and Interfaces in TypeScript
+====================================
 
-Classes in TypeScript look some like this:
+Classes in TypeScript look something like this:
 
 .. sourcecode:: js
    :linenos:
@@ -45,3 +45,55 @@ Classes in TypeScript can also use the ``extends`` keyword to denote child and p
 
 
 ``export`` is used to make the class available in the global scope.
+
+Interfaces
+----------
+
+When we start working with Angular, you may see the ``interface`` keyword quite a bit. Interfaces in TypeScript name types that are created by the programmer.
+
+We may create an interface for a data type that contains all of the information we need about an astronaut and then use that information in a function.
+
+.. sourcecode:: js
+
+   interface Astronaut {
+      name: string;
+   }
+
+   function astronautName (astronaut: Astronaut) {
+      return astronaut.name;
+   }
+
+   let bob = {name: "Bob"};
+   console.log(astronautName(bob));
+
+
+``null`` and ``undefined`` are primitive data types in TypeScript, however, they are treated differently by TypeScript.
+If you are planning on using ``null`` to define a property of an interface that is not known yet, use the TypeScript optional parameter, ``?``.
+
+Let's take a look at how that would look in TypeScript.
+
+In JavaScript, we might have an object that looks like so:
+
+.. sourcecode:: js
+   :linenos:
+
+   let giraffeTwo = {
+        species: "Reticulated Giraffe",
+        name: "Alicia",
+        weight: null,
+        age: 10,
+        diet: "leaves"
+   };
+
+If we wanted to declare the same object as an interface in TypeScript, we would have to use the optional parameter for the ``weight`` property.
+
+.. sourcecode:: js
+   :linenos:
+
+   interface giraffeTwo = {
+        species: string;
+        name: string;
+        weight?: number;
+        age: number;
+        diet: string;
+   };
