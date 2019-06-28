@@ -14,7 +14,7 @@ A useful visual analogy for how a variable works is that of a label that *points
 
 In this figure, the name ``programmingLanguage`` points to the string value ``"JavaScript"``. This is more than an analogy, since it also is representative of how a variable and its value are stored in a computer's memory.
 
-With this analogy in mind, let's look at how we can formaly create variables in JavaScript.
+With this analogy in mind, let's look at how we can formally create variables in JavaScript.
 
 Declaring and Initializing Variables With ``let``
 -------------------------------------------------
@@ -46,9 +46,9 @@ Once a variable has been declared, it may be given a value using an **assignment
    let programmingLanguage;
    programmingLanguage = "JavaScript";
 
-The act of assigning a variable a value for the first time is called **initialization**. 
+The act of assigning a variable a value for the first time is called **initialization**.
 
-These two lines of code  The first line creates a variable that does not yet have a value. The variable is a label that does not point to any data.
+The first line creates a variable that does not yet have a value. The variable is a label that does not point to any data.
 
 .. figure:: figures/unassigned-variable.png
    :height: 250px
@@ -69,7 +69,9 @@ It is possible to declare *and* initialize a variable with a single line of code
 
    let programmingLanguage = "JavaScript";
 
-.. warning:: You will see some programmers use ``var`` to create a variable in JavaScript, like this:
+.. admonition:: Warning
+
+   You will see some programmers use ``var`` to create a variable in JavaScript, like this:
 
    .. sourcecode:: js
 
@@ -78,6 +80,7 @@ It is possible to declare *and* initialize a variable with a single line of code
    While this is valid syntax, you should NOT use ``var`` to declare a variable. Using ``var`` is old JavaScript syntax, and it differs from ``let`` in important ways that we will learn about later. When you see examples using ``var``, use ``let`` instead.
 
    If you're curious, read about `the differences between var and let <https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let>`_.
+
 
 To give a variable a value, use the **assignment operator**, ``=``. This operator should not be confused with the concept of *equality*, which expresses whether two things are the "same" (we will see later that equality uses the ``===`` operator).  The assignment statement links a *name*, on the left-hand side of the operator, with a *value*, on the right-hand side. This is why you will get an error if you try to run:
 
@@ -106,7 +109,9 @@ An assignment statement must have the name on the left-hand side, and the value 
 
 .. _global-var-intro:
 
-.. warning:: What if, by mistake, you leave off ``let`` when declaring a variable?
+.. admonition:: Warning
+
+   What if, by mistake, you leave off ``let`` when declaring a variable?
 
    .. sourcecode:: js
 
@@ -121,7 +126,7 @@ Evaluating Variables
 
 .. index:: variable; evaluation
 
-After a variable has been created, it may be used later in a program anywhere a value may be used. For example, ``console.log`` prints a value, so we can also give ``console.log`` a variable.
+After a variable has been created, it may be used later in a program anywhere a value may be used. For example, ``console.log`` prints a value, we can also give ``console.log`` a variable.
 
 .. admonition:: Example
 
@@ -206,7 +211,7 @@ To see this, read and then run the following program in a code editor. You'll no
     day = 21;
     console.log(day);
 
-A great deal of programming involves asking the computer remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
+A great deal of programming involves asking the computer to remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
 
 .. note:: We only use ``let`` when *declaring* a variable, that is, when we create it. We do NOT use ``let`` when reassigning the variable to a different value. In fact, doing so will result in an error.
 

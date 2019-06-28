@@ -200,28 +200,40 @@
 <li>7 % 2 is 1</li>
 </ul>
 </div>
-<p>The last two examples illustrate a general rule: A number x is even exactly when x % 2 is 0, and is odd exactly when x % 2 is 1.</p>
-<div class="admonition">
+<p>The last two examples illustrate a general rule: An integer x is even exactly
+when x % 2 is 0 and is odd exactly when x % 2 is 1.</p>
+<div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The value returned by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> will always be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p class="last">The value returned by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> will be in the range from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>
+(not including <code class="docutils literal notranslate"><span class="pre">b</span></code>).</p>
 </div>
-<div class="admonition">
+<div class="admonition-tip admonition">
 <p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">If remainders and the modulus operator seem tricky to you, we recommend getting additional practice at <a class="reference external" href="https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic" target="_blank">Khan Academy<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p class="last">If remainders and the modulus operator seem tricky to you, we recommend
+getting additional practice at <a class="reference external" href="https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic" target="_blank">Khan Academy<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 <div class="section" id="order-of-operations">
 <h2>4.6.3. Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h2>
 <p id="index-2">When more than one operator appears in an expression, the order of evaluation depends on the <strong>rules of precedence</strong>. JavaScript follows the same precedence rules for its arithmetic operators that mathematics does.</p>
 <ol class="arabic simple">
-<li>Parentheses have the highest precedence and can be used to force an expression to evaluate in the order you want. Since expressions in parentheses are evaluated first, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(3</span> <span class="pre">-</span> <span class="pre">1)</span></code> is 4, and <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">**</span> <span class="pre">(5</span> <span class="pre">-</span> <span class="pre">2)</span></code> is 8. You can also use parentheses to make an expression easier to read, as in <code class="docutils literal notranslate"><span class="pre">(minute</span> <span class="pre">*</span> <span class="pre">100)</span> <span class="pre">/</span> <span class="pre">60</span></code>, even though it doesn’t change the result.</li>
-<li>Exponentiation has the next highest precedence, so <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> is 3 and not 4, and <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">1</span> <span class="pre">**</span> <span class="pre">3</span></code> is 3 and not 27. Can you explain why?</li>
-<li>Multiplication and both division operators have the same precedence, which is higher than addition and subtraction, which also have the same precedence. So <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">1</span></code> yields 5 rather than 4, and <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code> is 1, not 6.</li>
-<li>Operators with the <em>same</em> precedence are evaluated from left-to-right. So in the expression <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code>, the subtraction happens first, yielding 3. We then add 2 to get the result 5. If the operations had been evaluated from right to left, the result would have been <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">(3</span> <span class="pre">+</span> <span class="pre">2)</span></code>, which is 1.</li>
+<li>Parentheses have the highest precedence and can be used to force an
+expression to evaluate in the order you want. Since expressions in
+parentheses are evaluated first, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(3</span> <span class="pre">-</span> <span class="pre">1)</span></code> is 4, and <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">**</span> <span class="pre">(5</span> <span class="pre">-</span> <span class="pre">2)</span></code> is 8. You can also use parentheses to make an expression easier to read, as in <code class="docutils literal notranslate"><span class="pre">(minute</span> <span class="pre">*</span> <span class="pre">100)</span> <span class="pre">/</span> <span class="pre">60</span></code>, even though it doesn’t change the result.</li>
+<li>Exponentiation has the next highest precedence, so <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> is 3 and
+not 4, and <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">1</span> <span class="pre">**</span> <span class="pre">3</span></code> is 3 and not 27. Can you explain why?</li>
+<li>Multiplication, division, and modulus operators have the same precedence,
+which is higher than addition and subtraction, which also have the same
+precedence. So <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">1</span></code> yields 5 rather than 4, and <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code> is 1,
+not 6.</li>
+<li>Operators with the <em>same</em> precedence are evaluated from left-to-right. So in
+the expression <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code>, the subtraction happens first, yielding 3. We
+then add 2 to get the result 5. If the operations had been evaluated from
+right to left, the result would have been <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">(3</span> <span class="pre">+</span> <span class="pre">2)</span></code>, which is 1.</li>
 </ol>
 <div class="admonition-tip admonition" id="index-3">
 <p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p>The acronymn PEMDAS can be used to remember order of operations:</p>
+<p>The acronym PEMDAS can be used to remember order of operations:</p>
 <p><strong>P</strong> = parentheses</p>
 <p><strong>E</strong> = exponentiation</p>
 <p><strong>M</strong> = multiplication</p>

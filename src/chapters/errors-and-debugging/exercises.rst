@@ -20,7 +20,9 @@ Yer directions are as follows:
 Debugging Practice
 ------------------
 
-#. Fix **syntax errors** first. Run the following code as-is and squint yer eyes at the error message. Fix the mistake, and then re-run the code to check it.
+#. Fix **syntax errors** first. Run the following code as-is and squint yer
+   eyes at the error message. Fix the mistake, and then re-run the code to
+   check it.
 
    .. sourcecode:: js
       :linenos:
@@ -43,7 +45,7 @@ Debugging Practice
    be flagged at a time. Fix that ONE problem, and then re-run the code to
    check yer work. Avoid trying to fix multiple issues at once.
 
-   ::      
+   ::
 
       let launchReady = false;
       let crewStatus = true;
@@ -234,7 +236,12 @@ Debugging Practice
 
       Given the values for ``fuelLevel``, ``crewStatus`` and ``computerStatus``, should ``launchReady`` be ``true`` or ``false``? Is the program behaving as expected?
 
-   #. Ahoy, Houston! We spied a problem! The value of ``launchReady`` assigned in the first ``if/else`` block got changed in the second ``if/else`` block. Dangerous waters, Matey. Since the issue is with ``launchReady``, ONE way to fix the logic error is to use a different variable to store the fuel check result. Refactor yer code to do this. Verify that yer change works by updating the ``console.log`` statements.
+   #. Ahoy, Houston! We spied a problem! The value of ``launchReady`` assigned
+      in the first ``if/else`` block got changed in the second ``if/else``
+      block. Dangerous waters, Matey. Since the issue is with ``launchReady``,
+      ONE way to fix the logic error is to use a different variable to store the
+      fuel check result. Update yer code to do this. Verify that yer change works
+      by updating the ``console.log`` statements.
 
       `Fix it at repl.it <https://repl.it/@launchcode/DebugLogicErrors5>`__
 

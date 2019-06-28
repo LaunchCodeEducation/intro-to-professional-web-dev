@@ -30,6 +30,7 @@ Chapters
    chapters/dom-and-events/index
    chapters/http/index
    chapters/forms/index
+   chapters/fetch-json/index
    chapters/angular-wk1/index
    chapters/booster-rockets/index
 
