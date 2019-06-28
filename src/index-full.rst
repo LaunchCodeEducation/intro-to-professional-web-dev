@@ -66,6 +66,7 @@ Assignments
 
    assignments/candidateQuiz
    assignments/scrabble-scorer
+   assignments/mars-rover
    assignments/html-me-somthing
 
 Appendices
