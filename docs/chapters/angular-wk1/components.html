@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>25.5. Components &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>25.5. Component Files &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="25.6. Exercises: Angular, Part 1" href="exercises.html" />
+    <link rel="next" title="25.8. Exercises: Angular, Part 1" href="exercises.html" />
     <link rel="prev" title="25.4. Angular First Steps" href="angular-1st-steps.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -74,7 +74,7 @@
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
     <li><a href="index.html">25. Angular, Part 1</a></li>
-    <li class="active">25.5. Components</li>
+    <li class="active">25.5. Component Files</li>
 </ol>
 
 
@@ -84,8 +84,57 @@
     <div class="col-md-10 col-md-offset-1 content ">
 
     
-  <div class="section" id="components">
-<h1>25.5. Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
+  <p>Components
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+———-</p>
+<p>Angular builds a web page by combining multiple components together. Splitting our page into individual components makes our application more organized, and increases our ability to focus on one section of our web application at a time.</p>
+<p>Everything in Angular is built on top of this component concept. So it is crucial to understand the individual pieces of a component, and how to get component to work together.</p>
+<div class="section" id="component-files">
+<h1>25.5. Component Files<a class="headerlink" href="#component-files" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>A component consists of 3 files:</dt>
+<dd><ul class="first last simple">
+<li>an HTML file (.html)</li>
+<li>a CSS file (.css)</li>
+<li>a typescript file (.ts)</li>
+</ul>
+</dd>
+</dl>
+<p>TODO: picture?</p>
+<p>All three of these files will be found in a folder named after the component. All three files will also be named after the component.</p>
+<dl class="docutils">
+<dt>As an example, if we create a new component named task-list our three files would be found in the task-list folder and would be called:</dt>
+<dd><ul class="first last simple">
+<li>task-list.html</li>
+<li>task-list.css</li>
+<li>task-list.ts</li>
+</ul>
+</dd>
+</dl>
+<p>In this example each file of our component will contain only the information necessary for this component. task-list.html will only contain the HTML required for the task-list, task-list.css will only contain the styling information required for this task-list, and task-list.ts will only contain the typescript required by this component.</p>
+</div>
+<div class="section" id="adding-a-component-to-the-main-component">
+<h1>25.6. Adding a Component to the Main Component<a class="headerlink" href="#adding-a-component-to-the-main-component" title="Permalink to this headline">¶</a></h1>
+<p>Each component is it’s a part of the entire web application. In important thing to understand is how new components are added to the main component. The main component is the base component that comes standard with all Angular applications. It’s the container that holds all of the components, and organizes them into the web application.</p>
+<p>Once we have created a new component we will need to make sure it is added to the main component.</p>
+<p>When you generate a new component using a tool like Stackblitz, or the Angular CLI it is automatically added to the main component, but let’s still look at how is added.</p>
+<p>TODO: picture</p>
+<dl class="docutils">
+<dt>Code is added in two places:</dt>
+<dd><ul class="first last simple">
+<li>main.html</li>
+<li>app.module</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="component-nesting">
+<h1>25.7. Component Nesting<a class="headerlink" href="#component-nesting" title="Permalink to this headline">¶</a></h1>
+<p>Components can be put inside of other components. In essence this is how the main component work. It is the component that holds all other components.</p>
+<p>However, in some instances you may want to nest a component inside of another component that isn’t the main component.</p>
+<p>In this case you follow the same steps to nest a component inside of the main component, but for the component that is holding the nested component.</p>
+<p>TODO: picture</p>
+<p>You also will have to make sure this new component isn’t also nested inside of the main component, or you may see the component has been duplicated.</p>
 </div>
 
 
@@ -97,7 +146,7 @@
         <li class="previous"><a href="angular-1st-steps.html"><span aria-hidden="true">&larr;</span> 25.4. Angular First Steps</a></li>
         
         
-        <li class="next"><a href="exercises.html">25.6. Exercises: Angular, Part 1 <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="exercises.html">25.8. Exercises: Angular, Part 1 <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
