@@ -122,7 +122,7 @@ content.</p>
 <p>Congratulations! You have a functioning webpage. Feel free to play around a
 little bit before continuing, and do not worry about breaking anything. If
 necessary, you can always start another new project.</p>
-<div class="admonition-try-it admonition">
+<div class="admonition-try-it admonition" id="try-it-stackblitz-intro">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic simple">
 <li>Add a nose to the emoticon.</li>
@@ -235,8 +235,8 @@ imported <code class="docutils literal notranslate"><span class="pre">AppCompone
 <p>Take a look at <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> again. We mentioned the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">name</span> <span class="pre">}}</span></code>
 placeholder earlier and said that it gets filled with data from a different
 file. Line 9 in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> supplies this data by assigning the value
-<code class="docutils literal notranslate"><span class="pre">'Angular'</span></code> to the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable.</p>
-<p>Changing <code class="docutils literal notranslate"><span class="pre">'Angular'</span></code> to a different value alters the webpage.</p>
+<code class="docutils literal notranslate"><span class="pre">'Angular'</span></code> to the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable. Changing <code class="docutils literal notranslate"><span class="pre">'Angular'</span></code> to a different
+value alters the webpage.</p>
 </div>
 <div class="section" id="app-module-ts-file">
 <h3>25.4.3.3. <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> File<a class="headerlink" href="#app-module-ts-file" title="Permalink to this headline">¶</a></h3>
@@ -271,10 +271,56 @@ file. Line 9 in <code class="docutils literal notranslate"><span class="pre">app
 </pre></div>
 </td></tr></table></div>
 </div>
+<p>Just like before, there is a lot going on within very few lines.</p>
+<ol class="arabic simple">
+<li>Lines 1 - 3 and line 9 import and assign the core modules that make Angular
+work. This is part of the automatic process, so do not play with these
+(yet).</li>
+<li>Lines 5, 6, and 10 import local files and declare them as necessary for the
+project. These lines are the reason why we cannot just delete the
+<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> file. Line 6 tries to import it, and line 10 says
+that the <code class="docutils literal notranslate"><span class="pre">HelloComponent</span></code> class defined in the file is needed.</li>
+<li>Line 13 exports the <code class="docutils literal notranslate"><span class="pre">AppModule</span></code> class and makes it available to other
+files.</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> does the main work of pulling in the core libraries and local
+files. As new parts are added to a project, the import statements, <code class="docutils literal notranslate"><span class="pre">imports</span></code>
+array, and <code class="docutils literal notranslate"><span class="pre">declarations</span></code> array update automatically. We do not have to worry
+about the details for adding this critical code ourselves.</p>
 </div>
 </div>
 <div class="section" id="change-the-content">
 <h2>25.4.4. Change The Content<a class="headerlink" href="#change-the-content" title="Permalink to this headline">¶</a></h2>
+<p>Enough detail. Let’s explore some more.</p>
+<p>If you did not complete all of the <a class="reference internal" href="#try-it-stackblitz-intro"><span class="std std-ref">Try It</span></a>
+tasks above, attempt them now. After that…</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic simple">
+<li>Replace line 1 in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;{{name}}'s</span> <span class="pre">First</span>
+<span class="pre">Angular</span> <span class="pre">Project&lt;/h1&gt;</span></code>.</li>
+<li>Define a variable in the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class to hold an array. Display
+the array items in an unordered list in the HTML file. Be sure to use
+placeholders.</li>
+<li>Define a rectangle object in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> that has keys of <code class="docutils literal notranslate"><span class="pre">length</span></code>,
+<code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">area</span></code>. Assign numbers to <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code>, and
+have <code class="docutils literal notranslate"><span class="pre">area</span></code> be a function that calculates and returns the area.</li>
+<li>Use a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag in the html file to display the sentence, “The
+rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
+cm^2.” Use placeholders in place of the blanks so the webpage displays
+the correct numbers.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="wrap-up">
+<h2>25.4.5. Wrap-Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>TODO: Finish this.</div></blockquote>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>25.4.6. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>TODO: Add questions.</div></blockquote>
 </div>
 </div>
 

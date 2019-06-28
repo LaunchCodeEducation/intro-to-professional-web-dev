@@ -198,22 +198,32 @@ Just like before, there is a lot going on within very few lines.
    files.
 
 ``app.module.ts`` does the main work of pulling in the core libraries and local
-files. As new parts are added to a project, ``app.module.ts`` updates the
-import statements, the ``imports`` array, and the ``declarations`` array
-automatically. We do not have to worry about the details for adding this
-critical code ourselves.
+files. As new parts are added to a project, the import statements, ``imports``
+array, and ``declarations`` array update automatically. We do not have to worry
+about the details for adding this critical code ourselves.
 
 Change The Content
 -------------------
 
-Now that we have taken a
+Enough detail. Let's explore some more.
 
 If you did not complete all of the :ref:`Try It <try-it-StackBlitz-intro>`
 tasks above, attempt them now. After that...
 
 .. admonition:: Try It!
 
-   Lorem ipsum...
+   #. Replace line 1 in ``app.component.html`` with ``<h1>{{name}}'s First
+      Angular Project</h1>``.
+   #. Define a variable in the ``AppComponent`` class to hold an array. Display
+      the array items in an unordered list in the HTML file. Be sure to use
+      placeholders.
+   #. Define a rectangle object in ``AppComponent`` that has keys of ``length``,
+      ``width`` and ``area``. Assign numbers to ``length`` and ``width``, and
+      have ``area`` be a function that calculates and returns the area.
+   #. Use a ``<p>`` tag in the html file to display the sentence, "The
+      rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
+      cm^2." Use placeholders in place of the blanks so the webpage displays
+      the correct numbers.
 
 Wrap-Up
 --------
