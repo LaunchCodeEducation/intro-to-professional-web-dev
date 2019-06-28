@@ -1,4 +1,5 @@
 Components
+<<<<<<< HEAD
 ----------
 
 Angular builds a web page by combining multiple components together. Splitting our page into individual components makes our application more organized, and increases our ability to focus on one section of our web application at a time.

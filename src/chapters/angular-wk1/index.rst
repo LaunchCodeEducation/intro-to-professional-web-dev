@@ -8,6 +8,8 @@ Angular, Part 1
 
    introduction
    templates
+   file-structure
+   angular-1st-steps
    components
    exercises
    studio

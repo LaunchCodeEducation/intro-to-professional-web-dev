@@ -1,3 +1,5 @@
+.. _html-me-something:
+
 Assignment #4: HTML Me Something
 =================================
 
