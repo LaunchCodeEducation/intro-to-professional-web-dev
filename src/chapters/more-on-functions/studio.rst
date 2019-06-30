@@ -77,7 +77,7 @@ the array. This takes way too much time for large arrays.
 
 Fortunately, JavaScript has an elegant way to properly sort numbers.
 
-.. tip::
+.. admonition:: Tip
 
    Here is a nice, visual comparison of `different sorting methods <https://www.toptal.com/developers/sorting-algorithms>`__.
 
@@ -102,7 +102,7 @@ Here, the anonymous function determines which element is larger and swaps the
 positions if necessary. This is all that ``sort`` needs to order the entire
 array.
 
-Using the sytax listed above:
+Using the syntax listed above:
 
 a. Sort each sample array in increasing order.
 b. Sort each sample array in decreasing order.
