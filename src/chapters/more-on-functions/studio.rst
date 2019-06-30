@@ -20,12 +20,12 @@ Part A: Find the Minimum Value
 
 Create a function with an array of numbers as its parameter. The function
 should iterate through the array and return the minimum value from the
-array. 
+array.
 
 *Hint*: Use what you know about ``if`` statements to identify and
 store the smallest value within the array.
 
-.. tip::
+.. admonition:: Tip
 
    Use this sample data for testing.
 
@@ -55,7 +55,9 @@ f. *Be sure to print the results in order to verify your code*.
 
 `Code studio part B at repl.it <https://repl.it/@launchcode/MoreFuncsStudio02>`__.
 
-.. tip:: *Which type of loop?*
+.. admonition:: Tip
+
+   *Which type of loop?*
 
    Either a ``for`` or ``while`` loop will work inside this function, but one
    IS a better choice. Consider what the function must accomplish vs. the
