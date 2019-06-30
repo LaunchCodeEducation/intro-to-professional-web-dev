@@ -94,45 +94,49 @@ by writing tests and classes for the Mars rover named Curiosity.</p>
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>Write a unit test for each item in the Test List shown below</li>
+<li>Write a unit test for each item in the Test List shown below<ul>
+<li>Some tests have been created for you as examples</li>
+</ul>
+</li>
 <li>Create or update these classes: <cite>Rover</cite>, <cite>Message</cite>, <cite>Command</cite><ul>
 <li>Details for each class are below</li>
 </ul>
 </li>
-<li>Use modules. Each class should be defined in it’s own file and exported and imported using modules.</li>
+<li>Use modules<ul>
+<li>Each class should be defined in it’s own file and exported and imported using modules.</li>
+</ul>
+</li>
 </ol>
 </div>
 <div class="section" id="detailed-requirements">
 <h2>Detailed Requirements<a class="headerlink" href="#detailed-requirements" title="Permalink to this headline">¶</a></h2>
-<p>Unit tests verify and document functionality. For this assignment your job is to implement the tests listed below.
-As an example, one test and the code that makes it pass has been provided in the starter project.</p>
-<p>Focus on one test at a time. Write the test and then the code to complete that test. There are some constraints on
+<p>Focus on one test at a time. Write the test and <em>then</em> the code to make it pass. Only write the minimum
+amount of code needed to make the test pass. There are some constraints on
 how you can implement these features. A list of required classes and methods is below.</p>
 <div class="section" id="test-list">
 <h3>Test List<a class="headerlink" href="#test-list" title="Permalink to this headline">¶</a></h3>
 <p>Use these exact phrases as the test description.</p>
-<p>Message Tests</p>
+<p>Message tests in <code class="docutils literal notranslate"><span class="pre">spec/message.spec.js</span></code></p>
 <ol class="arabic simple">
-<li>throws error if name no passed into constructor as first parameter</li>
-<li>should have a name if one passed into constructor</li>
-<li>should have array of commands if passed in as 2nd argument to constructor</li>
-</ol>
-<p>Command Tests</p>
-<ol class="arabic simple">
-<li>throws error if number is NOT passed into constructor as first parameter</li>
-</ol>
-<p>Rover Tests</p>
-<ol class="arabic simple">
-<li>throws error if name no passed into constructor as first parameter</li>
-<li>has name with default values for mode and generatorWatts when created by constructor<ul>
-<li>Default value for mode is NORMAL</li>
-<li>Default value for generatorWatts is 110</li>
+<li>throws error if name NOT passed into constructor as first parameter<ul>
+<li>This test is provided in the starter code. The code to make it pass is also included.</li>
 </ul>
 </li>
-<li>receiveMessage throws exception if first parameter is NOT a message object</li>
-<li>response returned by receiveMessage contains name of message response is for</li>
-<li>response returned by receiveMessage includes two results if two commands are sent in message</li>
+<li>constructor sets name</li>
+<li>contains commands passed into constructor as 2nd argument</li>
+</ol>
+<p>Command tests in <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code></p>
+<ol class="arabic simple" start="4">
+<li>throws error if type is NOT passed into constructor as first parameter</li>
+</ol>
+<p>Rover tests in <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code></p>
+<ol class="arabic simple" start="5">
+<li>constructor sets default values for mode and generatorWatts</li>
+<li>response returned by receiveMessage contains name of message</li>
+<li>response returned by receiveMessage includes two results, if two commands are sent in message</li>
 <li>receiveMessage responds correctly to status check</li>
+<li>status check shows correct mode after mode change</li>
+<li>TODO ADD MORE…</li>
 </ol>
 </div>
 <div class="section" id="required-classes-and-methods">
@@ -142,25 +146,28 @@ how you can implement these features. A list of required classes and methods is 
 <li><code class="docutils literal notranslate"><span class="pre">constructor(name,</span> <span class="pre">commands)</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">name</span></code> string name of message</li>
 <li><code class="docutils literal notranslate"><span class="pre">commands</span></code> is an array of <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects</li>
+<li>Example: <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">message</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Message('e1',</span> <span class="pre">commands);</span></code></li>
 </ul>
 </li>
 </ul>
 <p>Command Class</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">constructor(type,</span> <span class="pre">value)</span></code><ul>
-<li><code class="docutils literal notranslate"><span class="pre">type</span></code> is a number that represents the command (see table below)</li>
+<li><code class="docutils literal notranslate"><span class="pre">type</span></code> is a string that represents the command type (see table below for possible values)</li>
 <li><code class="docutils literal notranslate"><span class="pre">value</span></code> is a value related to the type of command. Example: the mode the rover should change to.</li>
+<li>Example: <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">command</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Command('MODE_CHANGE',</span> <span class="pre">'LOW_POWER');</span></code></li>
 </ul>
 </li>
 </ul>
 <p>Rover Class</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">constructor(name)</span></code><ul>
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code> string name of message</li>
-</ul>
-</li>
+<li><code class="docutils literal notranslate"><span class="pre">constructor()</span></code>
+* Sets <code class="docutils literal notranslate"><span class="pre">this.mode</span></code> to <code class="docutils literal notranslate"><span class="pre">'NORMAL'</span></code>
+* Default value for generatorWatts is 110
+* Example: <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Rover('Example</span> <span class="pre">Rover');</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">receiveMessage(message)</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">message</span></code> is a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</li>
+<li>Example: <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">response</span> <span class="pre">=</span> <span class="pre">rover.receiveMessage(message);</span></code></li>
 </ul>
 </li>
 </ul>
@@ -170,29 +177,24 @@ how you can implement these features. A list of required classes and methods is 
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Command</th>
-<th class="head">Number</th>
 <th class="head">Value(s) sent with command</th>
-<th class="head">Result returned</th>
+<th class="head">Result</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>MOVE</td>
-<td>1</td>
 <td>TBD</td>
 <td>TBD</td>
 </tr>
 <tr class="row-odd"><td>STATUS_CHECK</td>
-<td>2</td>
 <td>No values sent with this command.</td>
 <td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">mode:</span> <span class="pre">4,</span> <span class="pre">generatorWatts:</span> <span class="pre">110}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> will depend on current state of rover.</td>
 </tr>
 <tr class="row-even"><td>TAKE_SAMPLE</td>
-<td>3</td>
 <td>TBD</td>
 <td>TBD</td>
 </tr>
 <tr class="row-odd"><td>MODE_CHANGE</td>
-<td>4</td>
 <td>Number between 1-4 representing rover mode (see modes)</td>
 <td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
 </tr>
@@ -204,21 +206,17 @@ how you can implement these features. A list of required classes and methods is 
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Mode</th>
-<th class="head">Number</th>
 <th class="head">Restrictions</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>LOW_POWER</td>
-<td>1</td>
 <td>Can’t do anything in this mode.</td>
 </tr>
 <tr class="row-odd"><td>STATIONARY</td>
-<td>3</td>
 <td>Ready to take sample. Can’t be moved in this state.</td>
 </tr>
 <tr class="row-even"><td>NORMAL</td>
-<td>3</td>
 <td>None</td>
 </tr>
 </tbody>
