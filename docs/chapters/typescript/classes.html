@@ -113,7 +113,7 @@
 <p>You may remember the <code class="docutils literal notranslate"><span class="pre">this</span></code> and <code class="docutils literal notranslate"><span class="pre">new</span></code> keywords from working with classes in JavaScript.
 Earlier in the chapter, we also noted that when declaring variables in TypeScript, we have to specify the type of value.
 The same applies to function parameters, as you can see in the constructor.</p>
-<p>Classes in TypeScript can also use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword to denote child and parent classes, as shown here:</p>
+<p>When <a class="reference internal" href="../classes/inheritance.html#inheritance"><span class="std std-ref">using inheritance</span></a>, classes in TypeScript can also use the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword to denote child and parent classes, as shown here:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -148,7 +148,12 @@ The same applies to function parameters, as you can see in the constructor.</p>
 <p><code class="docutils literal notranslate"><span class="pre">export</span></code> is used to make the class available in the global scope.</p>
 <div class="section" id="interfaces">
 <h2>25.4.1. Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
-<p>When we start working with Angular, you may see the <code class="docutils literal notranslate"><span class="pre">interface</span></code> keyword quite a bit. Interfaces in TypeScript name types that are created by the programmer.</p>
+<p>When we start working with Angular, you may see the <code class="docutils literal notranslate"><span class="pre">interface</span></code> keyword quite a bit.
+Like classes, interfaces define properties and methods that a type will have.
+The difference is that interfaces do NOT include initialization of properties or implementations of methods.</p>
+<p>Interfaces define the contract that other classes or objects must comply with if implementing that interface.
+Multiple classes can implement one interface, and that flexibility allows different classes to share one type.
+This can be helpful when a function parameter needs to make use of certain behaviors.</p>
 <p>We may create an interface for a data type that contains all of the information we need about an astronaut and then use that information in a function.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
@@ -162,6 +167,8 @@ The same applies to function parameters, as you can see in the constructor.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">astronautName</span><span class="p">(</span><span class="nx">bob</span><span class="p">));</span>
 </pre></div>
 </div>
+<div class="section" id="optional-parameters">
+<h3>25.4.1.1. Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are primitive data types in TypeScript, however, they are treated differently by TypeScript.
 If you are planning on using <code class="docutils literal notranslate"><span class="pre">null</span></code> to define a property of an interface that is not known yet, use the TypeScript optional parameter, <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
 <p>Let’s take a look at how that would look in TypeScript.</p>
@@ -197,6 +204,14 @@ If you are planning on using <code class="docutils literal notranslate"><span cl
 <span class="p">};</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>25.4.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What is the difference between a class and an interface?</p>
+</div>
 </div>
 </div>
 
