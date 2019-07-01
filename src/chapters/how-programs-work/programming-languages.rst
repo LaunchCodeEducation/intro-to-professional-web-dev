@@ -71,14 +71,14 @@ In the example above, the *syntax* for printing ``Hello, World!`` varies
 between the Python, JavaScript, and Java languages, but the end result is the
 same.
 
-How Many Programing Languages Are There?
+How Many Programming Languages Are There?
 -----------------------------------------
 
-Ask Google, "How many programing languages are there?" and many results get
+Ask Google, "How many programming languages are there?" and many results get
 returned. Even with all these options, there is no specific answer to the
 question.
 
-There are hundreds, if not thousands, of programing languages available.
+There are hundreds, if not thousands, of programming languages available.
 However, most are either obsolete, impractical, or too specialized to be widely
 used.
 

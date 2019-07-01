@@ -42,10 +42,11 @@ Part A (Put dinner together)
 
 `Code it at replt.it <https://repl.it/@launchcode/LoopstudiopartsAandC>`__
 
-#. Construct a ``for`` loop that assembles a meal for each of 6 astronauts.
+#. Use a ``for`` loop to assemble 6 meals.
 
    a. The meals must include one item from each of the source arrays.
-   b. Print the meal information for each astronaut.
+   b. Each ingredient can only be used ONCE.
+   c. Print out each meal.
 
 #. Optional: *Skill boost!* To enhance your learning, modify your code to:
 

@@ -20,12 +20,12 @@ Part A: Find the Minimum Value
 
 Create a function with an array of numbers as its parameter. The function
 should iterate through the array and return the minimum value from the
-array. 
+array.
 
 *Hint*: Use what you know about ``if`` statements to identify and
 store the smallest value within the array.
 
-.. tip::
+.. admonition:: Tip
 
    Use this sample data for testing.
 
@@ -55,7 +55,9 @@ f. *Be sure to print the results in order to verify your code*.
 
 `Code studio part B at repl.it <https://repl.it/@launchcode/MoreFuncsStudio02>`__.
 
-.. tip:: *Which type of loop?*
+.. admonition:: Tip
+
+   *Which type of loop?*
 
    Either a ``for`` or ``while`` loop will work inside this function, but one
    IS a better choice. Consider what the function must accomplish vs. the
@@ -75,7 +77,7 @@ the array. This takes way too much time for large arrays.
 
 Fortunately, JavaScript has an elegant way to properly sort numbers.
 
-.. tip::
+.. admonition:: Tip
 
    Here is a nice, visual comparison of `different sorting methods <https://www.toptal.com/developers/sorting-algorithms>`__.
 
@@ -100,7 +102,7 @@ Here, the anonymous function determines which element is larger and swaps the
 positions if necessary. This is all that ``sort`` needs to order the entire
 array.
 
-Using the sytax listed above:
+Using the syntax listed above:
 
 a. Sort each sample array in increasing order.
 b. Sort each sample array in decreasing order.
