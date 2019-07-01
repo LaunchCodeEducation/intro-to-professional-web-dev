@@ -22,7 +22,7 @@ You may remember the ``this`` and ``new`` keywords from working with classes in 
 Earlier in the chapter, we also noted that when declaring variables in TypeScript, we have to specify the type of value.
 The same applies to function parameters, as you can see in the constructor.
 
-Classes in TypeScript can also use the ``extends`` keyword to denote child and parent classes, as shown here:
+When :ref:`using inheritance <inheritance>`, classes in TypeScript can also use the ``extends`` keyword to denote child and parent classes, as shown here:
 
 .. sourcecode:: js
    :linenos:
@@ -49,7 +49,13 @@ Classes in TypeScript can also use the ``extends`` keyword to denote child and p
 Interfaces
 ----------
 
-When we start working with Angular, you may see the ``interface`` keyword quite a bit. Interfaces in TypeScript name types that are created by the programmer.
+When we start working with Angular, you may see the ``interface`` keyword quite a bit.
+Like classes, interfaces define properties and methods that a type will have.
+The difference is that interfaces do NOT include initialization of properties or implementations of methods.
+
+Interfaces define the contract that other classes or objects must comply with if implementing that interface.
+Multiple classes can implement one interface, and that flexibility allows different classes to share one type.
+This can be helpful when a function parameter needs to make use of certain behaviors.
 
 We may create an interface for a data type that contains all of the information we need about an astronaut and then use that information in a function.
 
@@ -66,6 +72,8 @@ We may create an interface for a data type that contains all of the information 
    let bob = {name: "Bob"};
    console.log(astronautName(bob));
 
+Optional Parameters
+^^^^^^^^^^^^^^^^^^^
 
 ``null`` and ``undefined`` are primitive data types in TypeScript, however, they are treated differently by TypeScript.
 If you are planning on using ``null`` to define a property of an interface that is not known yet, use the TypeScript optional parameter, ``?``.
@@ -97,3 +105,10 @@ If we wanted to declare the same object as an interface in TypeScript, we would 
         age: number;
         diet: string;
    };
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What is the difference between a class and an interface?
