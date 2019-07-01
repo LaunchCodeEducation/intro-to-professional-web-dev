@@ -8,3 +8,5 @@ TypeScript
    variables
    arrays
    classes
+   exercises
+   studio
