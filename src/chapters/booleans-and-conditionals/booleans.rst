@@ -5,13 +5,20 @@ Booleans
 
 .. index:: data type
 
-One of the core features of any programming language is the ability to conditionally execute a segment of code. This means that a program will run a segment of code *only if* a given condition is met. 
+One of the core features of any programming language is the ability to
+conditionally execute a segment of code. This means that a program will run a
+segment of code *only if* a given condition is met.
 
 .. admonition:: Example
 
-   Consider a banking application that can remind you when a bill is due. The application will notify you that a bill is due soon, but *only if* the bill has not already been paid.
+   Consider a banking application that can remind you when a bill is due. The
+   application will notify you that a bill is due soon, but *only if* the bill
+   has not already been paid.
 
-The condition for the above example is: Send a notification of an upcoming bill only if the statement "the bill is unpaid" is true. In order to state something like this in JavaScript, we need to understand how programming languages represent true and false.
+The condition for the above example is: Send a notification of an upcoming bill
+only if the statement "the bill is unpaid" is true. In order to state something
+like this in JavaScript, we need to understand how programming languages
+represent true and false.
 
 Boolean Values
 --------------
@@ -21,13 +28,16 @@ Boolean Values
 .. index::
    single: boolean; value
 
-The JavaScript data type for storing true and false values is ``boolean``, named after the British mathematician George Boole. 
+The JavaScript data type for storing true and false values is ``boolean``,
+named after the British mathematician George Boole.
 
 .. admonition:: Fun Fact
 
-   George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_, which is the basis of all modern computer arithmetic. 
+   George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_,
+   which is the basis of all modern computer arithmetic.
 
-There are only two **boolean values**---``true`` and ``false``. JavaScript is case-sensitive, so ``True`` and ``False`` are *not* valid boolean values.
+There are only two **boolean values**---``true`` and ``false``. JavaScript is
+case-sensitive, so ``True`` and ``False`` are *not* valid boolean values.
 
 .. admonition:: Example
 
@@ -46,7 +56,8 @@ There are only two **boolean values**---``true`` and ``false``. JavaScript is ca
       boolean
       boolean
 
-The values ``true`` and ``false`` are *not* strings. If you use quotes to surround booleans (``"true"`` and ``"false"``), those values become strings.
+The values ``true`` and ``false`` are *not* strings. If you use quotes to
+surround booleans (``"true"`` and ``"false"``), those values become strings.
 
 .. admonition:: Example
 
@@ -68,7 +79,9 @@ Boolean Conversion
 
 .. index:: ! Boolean(), type conversion
 
-As with the number and string data types, the boolean type also has a conversion function, ``Boolean``. It works similarly to the ``Number`` and ``String`` functions, attempting to convert a non-boolean value to a boolean.
+As with the number and string data types, the boolean type also has a
+conversion function, ``Boolean``. It works similarly to the ``Number`` and
+``String`` functions, attempting to convert a non-boolean value to a boolean.
 
 .. admonition:: Try It!
 
@@ -106,7 +119,9 @@ Boolean Expressions
 
 .. index:: ! ==
 
-A **boolean expression** is an expression that evaluates to either ``true`` or ``false``. The equality operator, ``==``, compares two values and returns true or false depending on whether the values are equal.
+A **boolean expression** is an expression that evaluates to either ``true`` or
+``false``. The equality operator, ``==``, compares two values and returns true
+or false depending on whether the values are equal.
 
 .. admonition:: Example
 
@@ -123,7 +138,8 @@ A **boolean expression** is an expression that evaluates to either ``true`` or `
       true
       false
 
-In the first statement, the two operands are equal, so the expression evaluates to ``true``. In the second statement, 5 is not equal to 6, so we get ``false``.
+In the first statement, the two operands are equal, so the expression evaluates
+to ``true``. In the second statement, 5 is not equal to 6, so we get ``false``.
 
 We can also use ``==`` to see that ``true`` and ``"true"`` are not equal.
 
@@ -196,7 +212,7 @@ The ``==`` operator is one of six common **comparison operators**.
        ``7 >= 7``
 
        ``'b' >= 'a'``
-       
+
        ``'b' >= 'b'``
      - ``5 >= 7``
 
@@ -215,17 +231,29 @@ The ``==`` operator is one of six common **comparison operators**.
        ``'b' <= 'a'``
 
 
-Although these operations are probably familiar, the JavaScript symbols are different from the mathematical symbols. A common error is to use a single equal sign (``=``) instead of a double equal sign (``==``). Remember that ``=`` is an *assignment* operator and ``==`` is a *comparison* operator. Also note that ``=<`` and ``=>`` are not recognized operators.
+Although these operations are probably familiar, the JavaScript symbols are
+different from the mathematical symbols. A common error is to use a single
+equal sign (``=``) instead of a double equal sign (``==``). Remember that ``=``
+is an *assignment* operator and ``==`` is a *comparison* operator. Also note
+that ``=<`` and ``=>`` are not recognized operators.
 
-An equality test is symmetric, meaning that we can swap the places of the operands and the result is the same.  For a variable ``a``, if ``a == 7`` is ``true`` then ``7 == a`` is also ``true``. However, an assignment statement is not symmetric: ``a = 7`` is legal while ``7 = a`` is not.
+An equality test is *symmetric*, meaning that we can swap the places of the
+operands and the result is the same.  For a variable ``a``, if ``a == 7`` is
+``true`` then ``7 == a`` is also ``true``. However, an assignment statement is
+not symmetric: ``a = 7`` is legal while ``7 = a`` is not.
 
-.. warning:: If you explore the equality operator in more depth, you will find some suprises. For example, the following comparisons return ``true``:
+.. admonition:: Warning
+
+   If you explore the equality operator in more depth, you will find some
+   surprises. For example, the following comparisons return ``true``:
 
    - ``7 == "7"``
    - ``0 == false``
    - ``0 == ''``
 
-   We will explore the nuances of ``==`` in the upcoming section :ref:`equality`, and introduce two new operators, ``===`` and ``!==``, that will align more closely with our intuitive notion of equality.
+   We will explore the nuances of ``==`` in the upcoming section
+   :ref:`equality`, and introduce two new operators, ``===`` and ``!==``, that
+   will align more closely with our intuitive notion of equality.
 
 Check Your Understanding
 ------------------------
