@@ -126,7 +126,10 @@
 </pre></div>
 </div>
 </div>
-<p>The message prints because <code class="docutils literal notranslate"><span class="pre">billHasBeenPaid</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, so <code class="docutils literal notranslate"><span class="pre">!billHasBeenPaid</span></code> evalutes to <code class="docutils literal notranslate"><span class="pre">true</span></code>. If we were to change the value of <code class="docutils literal notranslate"><span class="pre">billHasBeenPaid</span></code> to be <code class="docutils literal notranslate"><span class="pre">true</span></code>, then <code class="docutils literal notranslate"><span class="pre">!billHasBeenPaid</span></code> would evaluate to <code class="docutils literal notranslate"><span class="pre">false</span></code> and the code block would <em>not</em> execute.</p>
+<p>The message prints because <code class="docutils literal notranslate"><span class="pre">billHasBeenPaid</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, so
+<code class="docutils literal notranslate"><span class="pre">!billHasBeenPaid</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>. If we were to change the value of
+<code class="docutils literal notranslate"><span class="pre">billHasBeenPaid</span></code> to be <code class="docutils literal notranslate"><span class="pre">true</span></code>, then <code class="docutils literal notranslate"><span class="pre">!billHasBeenPaid</span></code> would evaluate to
+<code class="docutils literal notranslate"><span class="pre">false</span></code> and the code block would <em>not</em> execute.</p>
 <p>The condition in an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can be any boolean expression, such as <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">===</span> <span class="pre">'Jack'</span></code> or <code class="docutils literal notranslate"><span class="pre">points</span> <span class="pre">&gt;</span> <span class="pre">10</span></code> (here, <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">points</span></code> are variables). Additionally, the code block associated with a conditional can be of any size. This conditional has a code block with two lines of code:</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -149,20 +152,28 @@
  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s2">&quot;is greater than 3&quot;</span><span class="p">);</span> <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Aside from being more aesthetically pleasing, the first version also makes it easier to visually identify the pair of matching curly brackets, which helps prevent syntax errors.</p>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p>convert this to a “worst practice”</p>
-<div class="last admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p>If the the code block associated with a conditional consists of only one line, then the enclosing curly brackets can be ommitted:</p>
-<p class="last">We will use curly brackets for <em>all</em> conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.</p>
-</div>
+<p>Aside from being more aesthetically pleasing, the first version also makes it
+easier to visually identify the pair of matching curly brackets, which helps
+prevent syntax errors.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>If the the code block associated with a conditional consists of only one
+line, then the enclosing curly brackets can be omitted.</p>
+<p>However, this is NOT a best-practice, as it makes the logic harder to
+follow.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">billHasBeenPaid</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Your bill is due soon!&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">We will use curly brackets for ALL conditional code blocks, and encourage
+you to do so as well, at least until you become comfortable with reading and
+writing more complex JavaScript.</p>
 </div>
 </div>
 <div class="section" id="else-clauses">
 <h2>5.4.2. <code class="docutils literal notranslate"><span class="pre">else</span></code> Clauses<a class="headerlink" href="#else-clauses" title="Permalink to this headline">¶</a></h2>
-<p id="index-3">An <strong>else clause</strong> can be paired with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to specify code that should be executed when the condition is false.</p>
+<p id="index-2">An <strong>else clause</strong> can be paired with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to specify code that should be executed when the condition is false.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/if-else.png"><img alt="A conditional with an else clause" src="../../_images/if-else.png" style="height: 400px;" /></a>
 </div>
@@ -189,14 +200,17 @@
 </pre></div>
 </div>
 </div>
-<p>This structure is known as an <strong>if-else statement</strong>, and it provides a mechanism for <strong>branching</strong>. The flow of the program can take one of two paths when it reaches a condtional, depending on whether the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>This structure is known as an <strong>if-else statement</strong>, and it provides a
+mechanism for <strong>branching</strong>. The flow of the program can take one of two paths
+when it reaches a conditional, depending on whether the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>
+or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/conditional-flow.png"><img alt="A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement. If the condition is true, one code block executes. If the condition is false, a different code block executes." src="../../_images/conditional-flow.png" style="height: 500px;" /></a>
 </div>
 </div>
 <div class="section" id="else-if-statements">
 <h2>5.4.3. <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> Statements<a class="headerlink" href="#else-if-statements" title="Permalink to this headline">¶</a></h2>
-<p id="index-4">If-else statements allow us to construct two alternative paths. A single condition determines which path will be followed. We can build more complex conditionals using an <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> clause. These allow us to add additional conditions and code blocks, which facilitate more complex branching.</p>
+<p id="index-3">If-else statements allow us to construct two alternative paths. A single condition determines which path will be followed. We can build more complex conditionals using an <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> clause. These allow us to add additional conditions and code blocks, which facilitate more complex branching.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -216,7 +230,7 @@
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="s2">&quot;x and y are equal&quot;</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;x and y are equal&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>

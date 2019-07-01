@@ -30,7 +30,7 @@ The most basic form of a conditional is an **if statement**. Here's how to creat
 
 Let's look at each component of this new syntax.
 
-- The ``if`` statement consists of a header line and a body. The header line begins with the keyword ``if`` followed by a boolean expression enclosed in parentheses. 
+- The ``if`` statement consists of a header line and a body. The header line begins with the keyword ``if`` followed by a boolean expression enclosed in parentheses.
 - ``condition`` is a boolean expression (an expression that evaluates to either ``true`` or ``false``).
 - The statements that follow the condition, within ``{ }``, make up a **code block**. The code within the brackets ``{ }`` will be executed if the condition evaluates to true. If the condition evaluates to false, the code within the brackets is ignored.
 
@@ -53,7 +53,10 @@ Here is an explicit example that mimics our banking program.
 
       Your bill is due soon!
 
-The message prints because ``billHasBeenPaid`` is ``false``, so ``!billHasBeenPaid`` evalutes to ``true``. If we were to change the value of ``billHasBeenPaid`` to be ``true``, then ``!billHasBeenPaid`` would evaluate to ``false`` and the code block would *not* execute.
+The message prints because ``billHasBeenPaid`` is ``false``, so
+``!billHasBeenPaid`` evaluates to ``true``. If we were to change the value of
+``billHasBeenPaid`` to be ``true``, then ``!billHasBeenPaid`` would evaluate to
+``false`` and the code block would *not* execute.
 
 The condition in an ``if`` statement can be any boolean expression, such as ``name === 'Jack'`` or ``points > 10`` (here, ``name`` and ``points`` are variables). Additionally, the code block associated with a conditional can be of any size. This conditional has a code block with two lines of code:
 
@@ -67,31 +70,38 @@ The condition in an ``if`` statement can be any boolean expression, such as ``na
          console.log(num, "is greater than 3");
       }
 
-While not required, the code within a conditional code block is typically indented to make it more readable. Similarly, it is a common convention to place the opening ``{`` at the end of the first line, and the closing ``}`` on a line of its own following the last line of the code block. 
+While not required, the code within a conditional code block is typically indented to make it more readable. Similarly, it is a common convention to place the opening ``{`` at the end of the first line, and the closing ``}`` on a line of its own following the last line of the code block.
 
 You should follow such conventions, even though ignoring them will not create an error. To see why, compare the readability of this example, which is functionally equivalent to the one above.
 
 .. sourcecode:: js
    :linenos:
 
-   if (num % 2 === 0 && num > 3) 
+   if (num % 2 === 0 && num > 3)
    { console.log(num, "is even");
     console.log(num, "is greater than 3"); }
 
-Aside from being more aesthetically pleasing, the first version also makes it easier to visually identify the pair of matching curly brackets, which helps prevent syntax errors.
+Aside from being more aesthetically pleasing, the first version also makes it
+easier to visually identify the pair of matching curly brackets, which helps
+prevent syntax errors.
 
+.. admonition:: Warning
 
-.. todo:: convert this to a "worst practice"
+   If the the code block associated with a conditional consists of only one
+   line, then the enclosing curly brackets can be omitted.
 
-   .. note:: If the the code block associated with a conditional consists of only one line, then the enclosing curly brackets can be ommitted:
+   However, this is NOT a best-practice, as it makes the logic harder to
+   follow.
 
-      .. sourcecode:: js
-         :linenos:
-      
-         if (!billHasBeenPaid)
-         console.log("Your bill is due soon!");
+   .. sourcecode:: js
+      :linenos:
 
-      We will use curly brackets for *all* conditional code blocks, and encourage you to do so as well, at least until you become comfortable with reading and writing more complex JavaScript.
+      if (!billHasBeenPaid)
+      console.log("Your bill is due soon!");
+
+   We will use curly brackets for ALL conditional code blocks, and encourage
+   you to do so as well, at least until you become comfortable with reading and
+   writing more complex JavaScript.
 
 ``else`` Clauses
 ----------------
@@ -125,7 +135,10 @@ We can use an ``else`` clause within our bank app to send a message if no bills 
 
       Your payments are up to date.
 
-This structure is known as an **if-else statement**, and it provides a mechanism for **branching**. The flow of the program can take one of two paths when it reaches a condtional, depending on whether the condition is ``true`` or ``false``.
+This structure is known as an **if-else statement**, and it provides a
+mechanism for **branching**. The flow of the program can take one of two paths
+when it reaches a conditional, depending on whether the condition is ``true``
+or ``false``.
 
 .. figure:: figures/conditional-flow.png
    :height: 500px
@@ -152,7 +165,7 @@ If-else statements allow us to construct two alternative paths. A single conditi
       } else if (x < y) {
          console.log("x is less than y");
       } else {
-         "x and y are equal";
+         console.log("x and y are equal");
       }
 
    **Console Output**
@@ -222,7 +235,7 @@ Check Your Understanding
 .. admonition:: Question
 
    What does the following code print?
-   
+
    .. sourcecode:: js
       :linenos:
 
