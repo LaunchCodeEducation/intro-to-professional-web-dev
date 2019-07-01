@@ -23,7 +23,8 @@ content.
 
 Whew! Updating your website rapidly gets tedious, especially if it contains
 lots of information or consists of multiple pages. If only there was a way to
-automatically update the content and layout for your site...
+automatically update the content and quickly rearrange the layout for your
+site...
 
 Templates are Frameworks
 -------------------------
@@ -32,8 +33,8 @@ Templates are Frameworks
 
 A **template** provides the general structure for a web page. It identifies
 where different elements get placed on the page, but it does NOT fill them with
-content. Think of a template like a skeleton, a blueprint, or an outline for
-what we want the page to look like.
+content. Think of a template as an outline for what we want the page to look
+like. No details yet, just defined spaces where information needs to be added.
 
 Let's see how using a template makes our lives easier.
 
@@ -159,12 +160,31 @@ HTML. The list of movies would update automatically if we add "Up" to our
 ``favoriteMovies`` array, which then gets passed into ``{{movieContent}}``. We
 do not need to worry about re-coding any of the tags.
 
+Templates SUpport Dynamic Content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If we add a search box to our website, a user could enter *Nasa images*,
+*giraffe gif*, *move trailers*, or something else. We cannot know ahead of time
+what a user will request, but we want our website to be able to display any
+relevant results.
+
+Besides making it easier to organize and display content, templates also allow
+us to create a *dynamic* page. This means that its appearance changes to fit
+new information. For example, we can define a grid for displaying photos in
+rows of 4 across the page. Whether the images are of giraffes, tractors, or
+balloons does not matter. The template sets the layout, and the code feeds in
+the data. If more photos are found, extra rows are produced on the page, but
+each row shows 4 images.
+
+Templates must be used anytime we create a webpage that responds to a changing
+set of data, especially if that data is unknown to us.
+
 Templates Provide Structure, Not Content
 -----------------------------------------
 
-   TODO: Which approach is better - code path or diagram/qualitative path?
-
-Some text here to introduce the diagram...
+Templates allow us to decide where we want to display data on our webpage, even
+if we do not know beforehand what that data will be. Information pulled from
+forms, APIs, or user input will be formatted to fit within our design.
 
 .. figure:: ./figures/AngularTemplateDiagram.png
    :scale: 90%

@@ -105,14 +105,15 @@ you need to consider any formatting changes that result from adding or removing
 content.</p>
 <p>Whew! Updating your website rapidly gets tedious, especially if it contains
 lots of information or consists of multiple pages. If only there was a way to
-automatically update the content and layout for your site…</p>
+automatically update the content and quickly rearrange the layout for your
+site…</p>
 </div>
 <div class="section" id="templates-are-frameworks">
 <h2>26.2.2. Templates are Frameworks<a class="headerlink" href="#templates-are-frameworks" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">A <strong>template</strong> provides the general structure for a web page. It identifies
 where different elements get placed on the page, but it does NOT fill them with
-content. Think of a template like a skeleton, a blueprint, or an outline for
-what we want the page to look like.</p>
+content. Think of a template as an outline for what we want the page to look
+like. No details yet, just defined spaces where information needs to be added.</p>
 <p>Let’s see how using a template makes our lives easier.</p>
 <div class="section" id="no-template">
 <h3>26.2.2.1. No Template<a class="headerlink" href="#no-template" title="Permalink to this headline">¶</a></h3>
@@ -289,12 +290,28 @@ HTML. The list of movies would update automatically if we add “Up” to our
 <code class="docutils literal notranslate"><span class="pre">favoriteMovies</span></code> array, which then gets passed into <code class="docutils literal notranslate"><span class="pre">{{movieContent}}</span></code>. We
 do not need to worry about re-coding any of the tags.</p>
 </div>
+<div class="section" id="templates-support-dynamic-content">
+<h3>26.2.2.3. Templates SUpport Dynamic Content<a class="headerlink" href="#templates-support-dynamic-content" title="Permalink to this headline">¶</a></h3>
+<p>If we add a search box to our website, a user could enter <em>Nasa images</em>,
+<em>giraffe gif</em>, <em>move trailers</em>, or something else. We cannot know ahead of time
+what a user will request, but we want our website to be able to display any
+relevant results.</p>
+<p>Besides making it easier to organize and display content, templates also allow
+us to create a <em>dynamic</em> page. This means that its appearance changes to fit
+new information. For example, we can define a grid for displaying photos in
+rows of 4 across the page. Whether the images are of giraffes, tractors, or
+balloons does not matter. The template sets the layout, and the code feeds in
+the data. If more photos are found, extra rows are produced on the page, but
+each row shows 4 images.</p>
+<p>Templates must be used anytime we create a webpage that responds to a changing
+set of data, especially if that data is unknown to us.</p>
+</div>
 </div>
 <div class="section" id="templates-provide-structure-not-content">
 <h2>26.2.3. Templates Provide Structure, Not Content<a class="headerlink" href="#templates-provide-structure-not-content" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>TODO: Which approach is better - code path or diagram/qualitative path?</div></blockquote>
-<p>Some text here to introduce the diagram…</p>
+<p>Templates allow us to decide where we want to display data on our webpage, even
+if we do not know beforehand what that data will be. Information pulled from
+forms, APIs, or user input will be formatted to fit within our design.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/AngularTemplateDiagram.png"><img alt="Visual of a template structure." src="../../_images/AngularTemplateDiagram.png" style="width: 673.2px; height: 422.1px;" /></a>
 </div>

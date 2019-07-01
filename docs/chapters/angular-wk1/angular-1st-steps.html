@@ -91,25 +91,29 @@ a jumping off point for your later exercises and studios, so be sure you are
 logged into your GitHub account.</p>
 <div class="section" id="starting-a-new-project">
 <h2>26.4.1. Starting a New Project<a class="headerlink" href="#starting-a-new-project" title="Permalink to this headline">¶</a></h2>
-<p>Navigate to the <a class="reference external" href="https://stackblitz.com" target="_blank">StackBlitz homepage<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. Click “Start
-New App”, then select the “Angular (TypeScript)” option.</p>
+<p>First, navigate to the <a class="reference external" href="https://stackblitz.com" target="_blank">StackBlitz homepage<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Next, click “Start New App”, then select the “Angular (TypeScript)” option.</p>
 <div class="figure">
 <img alt="StackBlitz homepage selections." src="../../_images/StackBlitzHome.png" />
 </div>
-<p>Examine the files created:</p>
+<div class="section" id="examine-the-files-created">
+<h3>26.4.1.1. Examine the Files Created<a class="headerlink" href="#examine-the-files-created" title="Permalink to this headline">¶</a></h3>
 <div class="figure">
 <img alt="File tree for new StackBlitz Angular project." src="../../_images/NewProjectFiles.png" />
 </div>
 <ol class="arabic simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">src</span></code> folder holds all the files needed to make the template function.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">app</span></code> folder holds the instructions for displaying the smaller pieces
-of a webpage. We will modify these files soon.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">src</span></code> folder holds the files and source code needed for the project.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">app</span></code> folder holds the content for the webpage. Although the page is
+treated as a single entity, it actually consists of multiple pieces. <code class="docutils literal notranslate"><span class="pre">app</span></code>
+holds these different parts and establishes links between them. We will
+modify some of these files soon.</li>
 <li><code class="docutils literal notranslate"><span class="pre">index.html</span></code> is the highest level for displaying content. Anything added
 to this HTML file will appear on every page within a website.</li>
 <li><code class="docutils literal notranslate"><span class="pre">main.ts</span></code> imports the core methods required to make everything work. It
 also imports the content from the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</li>
 <li><code class="docutils literal notranslate"><span class="pre">styles.css</span></code> holds the global style settings for the entire website.</li>
 </ol>
+</div>
 </div>
 <div class="section" id="yay-a-webpage">
 <h2>26.4.2. Yay! A Webpage!<a class="headerlink" href="#yay-a-webpage" title="Permalink to this headline">¶</a></h2>
@@ -144,8 +148,7 @@ we will ignore the file.</p>
 <p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">Do NOT delete <code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> yet. There are some lines of code in
 <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> that depend on this file. For now, leave
-<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> in place. Later, we will see how to remove it from a
-new project.</p>
+<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> in place.</p>
 </div>
 <p>StackBlitz simplifies project creation by hiding many of the support files, and
 Angular itself automatically sets up the code to make the different parts of a
@@ -186,12 +189,15 @@ subfolder.</p>
 Angular allows us to define our own tags, which are also used as placeholders
 in an HTML file. In this case, <code class="docutils literal notranslate"><span class="pre">&lt;hello&gt;</span></code> reserves space on the webpage for
 information supplied by the <code class="docutils literal notranslate"><span class="pre">hello.components.ts</span></code> file.</p>
-<p>As we add more and more pieces to our template, we will define specific tags to
-help us arrange the different items on the screen. This makes it easier for us
-to keep track of our content. We can think, <em>OK, put the movie list here, the
-grocery list there, and the kids’ photos on the next page</em>, and then define
-<code class="docutils literal notranslate"><span class="pre">&lt;movies&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;grocery-list&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;kids-photos&gt;</span></code> tags to pull in the
-data and clearly place it where we want.</p>
+<p>As we add more pieces to our template, we will define specific tags to help us
+arrange the different items on the screen. This makes it easier for us to keep
+track of our content. For example, if we want to build a webpage that contains
+a shopping list, a movies to watch list, and family photos, we can define the
+tags <code class="docutils literal notranslate"><span class="pre">&lt;movies&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;grocery-list&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;family-photos&gt;</span></code>. With these
+tags, we can reference specific content whenever we want and clearly place it
+on a page. The tags also make it easy to play with new styles and formats for
+our grocery list without changing much code or altering the appearance of the
+movie list or photos.</p>
 </div>
 <div class="section" id="app-component-ts-file">
 <h3>26.4.3.2. <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> File<a class="headerlink" href="#app-component-ts-file" title="Permalink to this headline">¶</a></h3>
@@ -222,6 +228,8 @@ data and clearly place it where we want.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> performs several important functions with very few lines.</p>
 <ol class="arabic simple">
+<li>Line 4 defines the tag <code class="docutils literal notranslate"><span class="pre">&lt;my-app&gt;</span></code>, which we can use in files that have
+imported <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code>.</li>
 <li>Line 5 imports <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, which we examined above.</li>
 <li>Line 6 imports <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code>, which applies styling to the HTML
 file. (For those of you who changed the color of the <em>Start editing…</em>
@@ -229,8 +237,6 @@ sentence in the Try It challenge above, this is why changing the css file
 worked).</li>
 <li>Line 8 makes the styled <code class="docutils literal notranslate"><span class="pre">.html</span></code> file and anything defined in the
 <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class available to other files.</li>
-<li>Line 4 defines the tag <code class="docutils literal notranslate"><span class="pre">&lt;my-app&gt;</span></code>, which we can use in files that have
-imported <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code>.</li>
 </ol>
 <p>Take a look at <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> again. We mentioned the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">name</span> <span class="pre">}}</span></code>
 placeholder earlier and said that it gets filled with data from a different
@@ -276,10 +282,11 @@ value alters the webpage.</p>
 <li>Lines 1 - 3 and line 9 import and assign the core modules that make Angular
 work. This is part of the automatic process, so do not play with these
 (yet).</li>
-<li>Lines 5, 6, and 10 import local files and declare them as necessary for the
-project. These lines are the reason why we cannot just delete the
-<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> file. Line 6 tries to import it, and line 10 says
-that the <code class="docutils literal notranslate"><span class="pre">HelloComponent</span></code> class defined in the file is needed.</li>
+<li>Lines 5 and 6 import the classes <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> and <code class="docutils literal notranslate"><span class="pre">HelloComponent</span></code>
+from two local files, <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> and <code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code>.</li>
+<li>Lines 5 and 6 also pull in references to any other files linked to
+<code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> and <code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code>.</li>
+<li>Line 10 declares the imported local files as necessary for the project.</li>
 <li>Line 13 exports the <code class="docutils literal notranslate"><span class="pre">AppModule</span></code> class and makes it available to other
 files.</li>
 </ol>
@@ -287,6 +294,12 @@ files.</li>
 files. As new parts are added to a project, the import statements, <code class="docutils literal notranslate"><span class="pre">imports</span></code>
 array, and <code class="docutils literal notranslate"><span class="pre">declarations</span></code> array update automatically. We do not have to worry
 about the details for adding this critical code ourselves.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Lines 6 and 10 are the reason why we cannot just delete the
+<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> file. Line 6 tries to import it, and line 10 says
+that the <code class="docutils literal notranslate"><span class="pre">HelloComponent</span></code> class defined in the file is needed.</p>
+</div>
 </div>
 </div>
 <div class="section" id="change-the-content">

@@ -17,9 +17,10 @@ support files.
    These will be generated automatically, and they take care of the routine
    technical details for making your project run smoothly.
 
-``src`` contains the ``app`` folder and four important files: index.html,
-main.ts, style.css, and polyfills.ts. We will explore these files in more
-detail later [TODO: Rephrase].
+``src`` contains the ``app`` folder and four important files: ``index.html``,
+``main.ts``, ``style.css``, and ``polyfills.ts``. We will explore these files
+in more detail on the next page. For now, recognize that they control how the
+Angular project operates.
 
 The ``app`` folder contains the files and subfolders needed to control the
 nitty-gritty details of displaying a webpage. For your projects, most of your
@@ -37,8 +38,8 @@ specifically designed to create webpage templates.
 .. admonition:: Note
 
    For the "HTML Me Something" assignment, you created an account on
-   `GitHub <https://github.com>`__ . Since you will modify your Angular project
-   over the next few lessons, you need access to GitHub to store your progress.
+   `GitHub <https://github.com>`__ . Since you will modify an Angular project
+   over the next few studios, you need access to GitHub to store your progress.
 
    Follow the link and make sure you remember your login information, or enroll
    if you have not yet created an account.
@@ -47,16 +48,21 @@ StackBlitz Workspace Layout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before we dive into the project, we need to become familiar with the StackBlitz
-layout. The workspace consists of 3 main panels and several menu functions.
+layout, which is based on the popular editor
+`Visual Studio Code <https://code.visualstudio.com/>`__.
+
+The workspace consists of 3 main panels and several menu functions.
 
 Features to note:
 
 #. Use your GitHub account to store your projects. Click the GitHub button (1)
    to save your progress.
-#. If you have a link and are viewing someone else's project, you can *fork*
-   the content (2). This stores a copy of the project in your account, allowing
-   you to edit the files without changing the originals. This lets you use
-   other programmers' work (with permission) to enhance your own.
+#. If you are viewing someone else's project, you can *fork* the content (2)
+   and store a copy of that project in your GitHub account. This allows you to
+   edit the files without changing the originals, and it lets you use other
+   programmers' work (with permission) to enhance your own. As we learn more
+   about Angular, you will need to fork sample code for the exercises and
+   studios.
 
 .. figure:: ./figures/StackBlitzWorkspace.png
    :alt: StackBlitz workspace layout.

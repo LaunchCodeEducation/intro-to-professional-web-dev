@@ -8,20 +8,24 @@ logged into your GitHub account.
 Starting a New Project
 -----------------------
 
-Navigate to the `StackBlitz homepage <https://stackblitz.com>`__. Click "Start
-New App", then select the "Angular (TypeScript)" option.
+First, navigate to the `StackBlitz homepage <https://stackblitz.com>`__.
+
+Next, click "Start New App", then select the "Angular (TypeScript)" option.
 
 .. figure:: ./figures/StackBlitzHome.png
    :alt: StackBlitz homepage selections.
 
-Examine the files created:
+Examine the Files Created
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ./figures/NewProjectFiles.png
    :alt: File tree for new StackBlitz Angular project.
 
-#. The ``src`` folder holds all the files needed to make the template function.
-#. The ``app`` folder holds the instructions for displaying the smaller pieces
-   of a webpage. We will modify these files soon.
+#. The ``src`` folder holds the files and source code needed for the project.
+#. The ``app`` folder holds the content for the webpage. Although the page is
+   treated as a single entity, it actually consists of multiple pieces. ``app``
+   holds these different parts and establishes links between them. We will
+   modify some of these files soon.
 #. ``index.html`` is the highest level for displaying content. Anything added
    to this HTML file will appear on every page within a website.
 #. ``main.ts`` imports the core methods required to make everything work. It
@@ -68,8 +72,7 @@ we will ignore the file.
 
    Do NOT delete ``hello.component.ts`` yet. There are some lines of code in
    ``app.module.ts`` that depend on this file. For now, leave
-   ``hello.component.ts`` in place. Later, we will see how to remove it from a
-   new project.
+   ``hello.component.ts`` in place.
 
 StackBlitz simplifies project creation by hiding many of the support files, and
 Angular itself automatically sets up the code to make the different parts of a
@@ -115,12 +118,15 @@ Angular allows us to define our own tags, which are also used as placeholders
 in an HTML file. In this case, ``<hello>`` reserves space on the webpage for
 information supplied by the ``hello.components.ts`` file.
 
-As we add more and more pieces to our template, we will define specific tags to
-help us arrange the different items on the screen. This makes it easier for us
-to keep track of our content. We can think, *OK, put the movie list here, the
-grocery list there, and the kids' photos on the next page*, and then define
-``<movies>``, ``<grocery-list>``, and ``<kids-photos>`` tags to pull in the
-data and clearly place it where we want.
+As we add more pieces to our template, we will define specific tags to help us
+arrange the different items on the screen. This makes it easier for us to keep
+track of our content. For example, if we want to build a webpage that contains
+a shopping list, a movies to watch list, and family photos, we can define the
+tags ``<movies>``, ``<grocery-list>``, and ``<family-photos>``. With these
+tags, we can reference specific content whenever we want and clearly place it
+on a page. The tags also make it easy to play with new styles and formats for
+our grocery list without changing much code or altering the appearance of the
+movie list or photos.
 
 ``app.component.ts`` File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,6 +151,8 @@ data and clearly place it where we want.
 
 ``app.component.ts`` performs several important functions with very few lines.
 
+#. Line 4 defines the tag ``<my-app>``, which we can use in files that have
+   imported ``AppComponent``.
 #. Line 5 imports ``app.component.html``, which we examined above.
 #. Line 6 imports ``app.component.css``, which applies styling to the HTML
    file. (For those of you who changed the color of the *Start editing...*
@@ -152,8 +160,6 @@ data and clearly place it where we want.
    worked).
 #. Line 8 makes the styled ``.html`` file and anything defined in the
    ``AppComponent`` class available to other files.
-#. Line 4 defines the tag ``<my-app>``, which we can use in files that have
-   imported ``AppComponent``.
 
 Take a look at ``app.component.html`` again. We mentioned the ``{{ name }}``
 placeholder earlier and said that it gets filled with data from a different
@@ -190,10 +196,11 @@ Just like before, there is a lot going on within very few lines.
 #. Lines 1 - 3 and line 9 import and assign the core modules that make Angular
    work. This is part of the automatic process, so do not play with these
    (yet).
-#. Lines 5, 6, and 10 import local files and declare them as necessary for the
-   project. These lines are the reason why we cannot just delete the
-   ``hello.component.ts`` file. Line 6 tries to import it, and line 10 says
-   that the ``HelloComponent`` class defined in the file is needed.
+#. Lines 5 and 6 import the classes ``AppComponent`` and ``HelloComponent``
+   from two local files, ``app.component.ts`` and ``hello.component.ts``.
+#. Lines 5 and 6 also pull in references to any other files linked to
+   ``app.component.ts`` and ``hello.component.ts``.
+#. Line 10 declares the imported local files as necessary for the project.
 #. Line 13 exports the ``AppModule`` class and makes it available to other
    files.
 
@@ -201,6 +208,12 @@ Just like before, there is a lot going on within very few lines.
 files. As new parts are added to a project, the import statements, ``imports``
 array, and ``declarations`` array update automatically. We do not have to worry
 about the details for adding this critical code ourselves.
+
+.. admonition:: Note
+
+   Lines 6 and 10 are the reason why we cannot just delete the
+   ``hello.component.ts`` file. Line 6 tries to import it, and line 10 says
+   that the ``HelloComponent`` class defined in the file is needed.
 
 Change The Content
 -------------------
