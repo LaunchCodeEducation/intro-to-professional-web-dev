@@ -87,18 +87,14 @@
 <h1>26.3. Arrays in TypeScript<a class="headerlink" href="#arrays-in-typescript" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">Arrays in TypeScript must contain values of the same type.
 When declaring an array, the type needs to be declared.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arrayName</span> <span class="o">=</span> <span class="nx">number</span> <span class="p">[];</span>
-
-<span class="nx">arrayName</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arrayName</span><span class="o">:</span> <span class="nx">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">];</span>
 </pre></div>
 </td></tr></table></div>
 <p>What if the array needs to hold values of different types?</p>
 <p>Now, we need a <strong>tuple</strong>. A tuple is a special structure in TypeScript that can hold as many values as needed of different types.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tupleName</span> <span class="o">=</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tupleName</span><span class="o">:</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
 
 <span class="nx">tupleName</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
 </pre></div>
@@ -110,8 +106,7 @@ When declaring an array, the type needs to be declared.</p>
 </pre></div>
 </div>
 <p>In TypeScript, we would declare the same <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array a little differently:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">cargoHold</span> <span class="o">=</span> <span class="nx">string</span> <span class="p">[];</span>
-<span class="nx">cargoHold</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oxygen tanks&#39;</span><span class="p">,</span> <span class="s1">&#39;space suits&#39;</span><span class="p">,</span> <span class="s1">&#39;parrot&#39;</span><span class="p">,</span> <span class="s1">&#39;instruction manual&#39;</span><span class="p">,</span> <span class="s1">&#39;meal packs&#39;</span><span class="p">,</span> <span class="s1">&#39;slinky&#39;</span><span class="p">,</span> <span class="s1">&#39;security blanket&#39;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">cargoHold</span><span class="o">:</span> <span class="nx">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oxygen tanks&#39;</span><span class="p">,</span> <span class="s1">&#39;space suits&#39;</span><span class="p">,</span> <span class="s1">&#39;parrot&#39;</span><span class="p">,</span> <span class="s1">&#39;instruction manual&#39;</span><span class="p">,</span> <span class="s1">&#39;meal packs&#39;</span><span class="p">,</span> <span class="s1">&#39;slinky&#39;</span><span class="p">,</span> <span class="s1">&#39;security blanket&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>What about declaring arrays for elements on the Periodic Table? In JavaScript, that is a relatively simple task:</p>
@@ -130,13 +125,13 @@ When declaring an array, the type needs to be declared.</p>
 5
 6
 7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">element1</span> <span class="o">=</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">element1</span><span class="o">:</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
 <span class="nx">element1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hydrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mf">1.008</span><span class="p">];</span>
 
-<span class="kd">let</span> <span class="nx">element2</span> <span class="o">=</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">element2</span><span class="o">:</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
 <span class="nx">element2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;helium&#39;</span><span class="p">,</span> <span class="s1">&#39;He&#39;</span><span class="p">,</span> <span class="mf">4.003</span><span class="p">];</span>
 
-<span class="kd">let</span> <span class="nx">element26</span> <span class="o">=</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">element26</span><span class="o">:</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">];</span>
 <span class="nx">element26</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iron&#39;</span><span class="p">,</span> <span class="s1">&#39;Fe&#39;</span><span class="p">,</span> <span class="mf">55.85</span><span class="p">];</span>
 </pre></div>
 </td></tr></table></div>

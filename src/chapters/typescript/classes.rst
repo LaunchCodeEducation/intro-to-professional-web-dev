@@ -1,6 +1,9 @@
 Classes and Interfaces in TypeScript
 ====================================
 
+Classes
+-------
+
 Classes in TypeScript look something like this:
 
 .. sourcecode:: js
@@ -43,9 +46,6 @@ When :ref:`using inheritance <inheritance>`, classes in TypeScript can also use 
    console.log(tigger.roar);
    console.log(tigger.stripes);
 
-
-``export`` is used to make the class available in the global scope.
-
 Interfaces
 ----------
 
@@ -53,13 +53,10 @@ When we start working with Angular, you may see the ``interface`` keyword quite 
 Like classes, interfaces define properties and methods that a type will have.
 The difference is that interfaces do NOT include initialization of properties or implementations of methods.
 
-Interfaces define the contract that other classes or objects must comply with if implementing that interface.
-Multiple classes can implement one interface, and that flexibility allows different classes to share one type.
-This can be helpful when a function parameter needs to make use of certain behaviors.
-
 We may create an interface for a data type that contains all of the information we need about an astronaut and then use that information in a function.
 
 .. sourcecode:: js
+   :linenos:
 
    interface Astronaut {
       name: string;
@@ -71,6 +68,23 @@ We may create an interface for a data type that contains all of the information 
 
    let bob = {name: "Bob"};
    console.log(astronautName(bob));
+
+Interfaces define the contract that other classes or objects must comply with if implementing that interface.
+Multiple classes can implement one interface, and that flexibility allows different classes to share one type.
+This can be helpful when a function parameter needs to make use of certain behaviors.
+
+.. sourcecode:: js
+   :linenos:
+
+   interface interfaceName {
+      someProperty: number;
+   }
+
+   class className implements interfaceName {
+      constructor(x: number) {
+         this.someProperty = x;
+      }
+   }
 
 Optional Parameters
 ^^^^^^^^^^^^^^^^^^^
@@ -105,6 +119,34 @@ If we wanted to declare the same object as an interface in TypeScript, we would 
         age: number;
         diet: string;
    };
+
+``export``
+----------
+
+In TypeScript, you can use the ``export`` keyword to make classes and interfaces available for import in other files.
+This will look familiar to you as you saw something similar with :ref:`modules <exporting-modules>`.
+
+Using the ``export`` keyword looks something like this:
+
+.. sourcecode:: js
+   :linenos:
+
+   export class className {
+      // properties and methods
+   }
+
+``import``
+----------
+
+In TypeScript, you can use the ``import`` keyword to use classes and interfaces declared in other files available for use in the file you are working on.
+This is a similar idea to :ref:`importing modules <require-modules>`, however, the syntax is different in TypeScript:
+
+.. sourcecode:: js
+   :linenos:
+
+   import { className } from 'relativefilepath';
+
+   let newClass = new className;
 
 Check Your Understanding
 ------------------------
