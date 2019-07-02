@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -116,26 +116,91 @@ to accomplish the following:<ol class="arabic">
 </li>
 </ol>
 </div>
-<div class="section" id="part-2-add-two-more-components">
-<h2>26.6.3. Part 2: Add Two More Components<a class="headerlink" href="#part-2-add-two-more-components" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-2-add-more-components">
+<h2>26.6.3. Part 2: Add More Components<a class="headerlink" href="#part-2-add-more-components" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">You will be adding and modifying HTML elements for this project. If you need
+to review this topic, look back at the <a class="reference internal" href="../html/tags.html#html-tags"><span class="std std-ref">HTML Tags</span></a> page, or
+try <a class="reference external" href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
 <ol class="arabic simple" start="3">
-<li>Lorem ipsum…</li>
-<li>Lorem ipsum…</li>
+<li>The page needs a title.<ol class="arabic">
+<li>Right-click the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder in the files pane and select <em>Angular
+Generator/Component</em>. Name the new component <code class="docutils literal notranslate"><span class="pre">page-title</span></code>.</li>
+<li>Examine <code class="docutils literal notranslate"><span class="pre">page-title.component.ts</span></code> and note that the <code class="docutils literal notranslate"><span class="pre">app-page-title</span></code>
+tag has been defined next to <code class="docutils literal notranslate"><span class="pre">selector</span></code>. Shorten the tag name to
+just <code class="docutils literal notranslate"><span class="pre">page-title</span></code>.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">PageTitleComponent</span></code> class, define a <code class="docutils literal notranslate"><span class="pre">title</span></code> variable and
+assign it a string.</li>
+<li>Add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> to the <code class="docutils literal notranslate"><span class="pre">page-title.component.html</span></code> file. Use
+<code class="docutils literal notranslate"><span class="pre">{{title}}</span></code> as a placeholder for the title you defined. Style the text
+to be underlined.</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;page-title&gt;&lt;/page-title&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
+the preview page to see your new content.</li>
 </ol>
+</li>
+<li>The page needs a set of links to favorite websites.<ol class="arabic">
+<li>Repeat steps 3a and b to generate a <code class="docutils literal notranslate"><span class="pre">fav-links</span></code> component.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">FavLinksComponent</span></code> class, define a variable and assign it an
+array that contains two or more URLs.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders to create an
+unordered list for the web links.</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;fav-links&gt;&lt;/fav-links&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
+the preview page to make sure the content displays on the page.</li>
+</ol>
+</li>
+<li>The page needs some images.<ol class="arabic">
+<li>Repeat steps 3a and b to generate a <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, define variables to hold several
+URLs for images. These can be from the web or personal pics.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders and <code class="docutils literal notranslate"><span class="pre">img</span></code>
+tags to display the images. Style the photos to all be the same size on
+the page.</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;fav-photos&gt;&lt;/fav-photos&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
+the preview page to make sure the content displays on the page.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Opening the <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> file shows that the components for the movies,
+chores, title, links, and photos have all been automatically imported and
+declared.</p>
+<p class="last">Whether or not we use StackBlitz, Angular automatically takes care of
+updating <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> when new components are generated. However,
+<em>deleting</em> a component does NOT remove the references from the file.</p>
+</div>
 </div>
 <div class="section" id="part-3-rearrange-the-components">
 <h2>26.6.4. Part 3: Rearrange the Components<a class="headerlink" href="#part-3-rearrange-the-components" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple" start="5">
-<li>Lorem ipsum…</li>
+<p>The content on the page might appear a bit jumbled, since we gave you no
+guidance on where to add the custom tags in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.
+Fortunately, templates allow us to easily move items around the framework.</p>
+<ol class="arabic simple" start="6">
+<li>Rearrange the tags <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code>, <code class="docutils literal notranslate"><span class="pre">fav-links</span></code>, <code class="docutils literal notranslate"><span class="pre">page-title</span></code>, etc. to
+create a specific page layout.<ol class="arabic">
+<li><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> has <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags to set up a three-column row.
+Use this to arrange the movie list, images, and chore list.</li>
+<li>Center the title at the top of the page.</li>
+<li>Add a horizontal line below the three lists with the <code class="docutils literal notranslate"><span class="pre">&lt;hr&gt;</span></code> tag.</li>
+<li>Center the links below the horizontal line.</li>
 </ol>
+</li>
+</ol>
+<p>Your final page should have this format (the dashed lines are optional):</p>
+<div class="figure">
+<img alt="Angular Lesson 1 Exercises project." src="../../_images/AngularLesson1Layout.png" />
+</div>
 </div>
 <div class="section" id="part-4-final-touches">
 <h2>26.6.5. Part 4: Final Touches<a class="headerlink" href="#part-4-final-touches" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple" start="6">
+<ol class="arabic simple" start="7">
 <li>Complete one or more of the following:<ol class="arabic">
 <li>Change the background to a decent color, image or pattern.</li>
-<li>Add a border around 1 or more of the components on the page.</li>
-<li>Add fun, coding related images, figures, or gifs to the page.</li>
+<li>Add a border around one or more of the components on the page.</li>
+<li>Add a fun, coding related gif to the page.</li>
+<li>Make one component change when the user clicks on it.</li>
 </ol>
 </li>
 </ol>

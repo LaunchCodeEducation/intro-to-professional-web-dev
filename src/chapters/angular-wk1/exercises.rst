@@ -32,23 +32,88 @@ appear pretty bland. Let's change that.
    #. The chores in the list should be italicized.
    #. The font size should be large enough to easily read.
 
-Part 2: Add Two More Components
----------------------------------
+Part 2: Add More Components
+----------------------------
 
-3. Lorem ipsum...
+.. admonition:: Note
 
-#. Lorem ipsum...
+   You will be adding and modifying HTML elements for this project. If you need
+   to review this topic, look back at the :ref:`HTML Tags <html-tags>` page, or
+   try `W3Schools <https://www.w3schools.com/html/default.asp>`__.
+
+3. The page needs a title.
+
+   #. Right-click the ``app`` folder in the files pane and select *Angular
+      Generator/Component*. Name the new component ``page-title``.
+   #. Examine ``page-title.component.ts`` and note that the ``app-page-title``
+      tag has been defined next to ``selector``. Shorten the tag name to
+      just ``page-title``.
+   #. In the ``PageTitleComponent`` class, define a ``title`` variable and
+      assign it a string.
+   #. Add an ``h1`` to the ``page-title.component.html`` file. Use
+      ``{{title}}`` as a placeholder for the title you defined. Style the text
+      to be underlined.
+   #. Add ``<page-title></page-title>`` to ``app.component.html`` and refresh
+      the preview page to see your new content.
+
+#. The page needs a set of links to favorite websites.
+
+   #. Repeat steps 3a and b to generate a ``fav-links`` component.
+   #. In the ``FavLinksComponent`` class, define a variable and assign it an
+      array that contains two or more URLs.
+   #. In the ``.html`` file for this component, use placeholders to create an
+      unordered list for the web links.
+   #. Add ``<fav-links></fav-links>`` to ``app.component.html`` and refresh
+      the preview page to make sure the content displays on the page.
+
+#. The page needs some images.
+
+   #. Repeat steps 3a and b to generate a ``fav-photos`` component.
+   #. In the ``FavPhotosComponent`` class, define variables to hold several
+      URLs for images. These can be from the web or personal pics.
+   #. In the ``.html`` file for this component, use placeholders and ``img``
+      tags to display the images. Style the photos to all be the same size on
+      the page.
+   #. Add ``<fav-photos></fav-photos>`` to ``app.component.html`` and refresh
+      the preview page to make sure the content displays on the page.
+
+.. admonition:: Note
+
+   Opening the ``app.module.ts`` file shows that the components for the movies,
+   chores, title, links, and photos have all been automatically imported and
+   declared.
+
+   Whether or not we use StackBlitz, Angular automatically takes care of
+   updating ``app.module.ts`` when new components are generated. However,
+   *deleting* a component does NOT remove the references from the file.
 
 Part 3: Rearrange the Components
 ---------------------------------
 
-5. Lorem ipsum...
+The content on the page might appear a bit jumbled, since we gave you no
+guidance on where to add the custom tags in ``app.component.html``.
+Fortunately, templates allow us to easily move items around the framework.
+
+6. Rearrange the tags ``fav-photos``, ``fav-links``, ``page-title``, etc. to
+   create a specific page layout.
+
+   #. ``app.component.html`` has ``<div>`` tags to set up a three-column row.
+      Use this to arrange the movie list, images, and chore list.
+   #. Center the title at the top of the page.
+   #. Add a horizontal line below the three lists with the ``<hr>`` tag.
+   #. Center the links below the horizontal line.
+
+Your final page should have this format (the dashed lines are optional):
+
+.. figure:: ./figures/AngularLesson1Layout.png
+   :alt: Angular Lesson 1 Exercises project.
 
 Part 4: Final Touches
 -----------------------
 
-6. Complete one or more of the following:
+7. Complete one or more of the following:
 
    #. Change the background to a decent color, image or pattern.
-   #. Add a border around 1 or more of the components on the page.
-   #. Add fun, coding related images, figures, or gifs to the page.
+   #. Add a border around one or more of the components on the page.
+   #. Add a fun, coding related gif to the page.
+   #. Make one component change when the user clicks on it.
