@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -59,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -85,6 +86,8 @@
     
   <div class="section" id="classes-and-interfaces-in-typescript">
 <h1>26.4. Classes and Interfaces in TypeScript<a class="headerlink" href="#classes-and-interfaces-in-typescript" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>26.4.1. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <p>Classes in TypeScript look something like this:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -144,17 +147,23 @@ The same applies to function parameters, as you can see in the constructor.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tigger</span><span class="p">.</span><span class="nx">stripes</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">export</span></code> is used to make the class available in the global scope.</p>
+</div>
 <div class="section" id="interfaces">
-<h2>26.4.1. Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
+<h2>26.4.2. Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
 <p>When we start working with Angular, you may see the <code class="docutils literal notranslate"><span class="pre">interface</span></code> keyword quite a bit.
 Like classes, interfaces define properties and methods that a type will have.
 The difference is that interfaces do NOT include initialization of properties or implementations of methods.</p>
-<p>Interfaces define the contract that other classes or objects must comply with if implementing that interface.
-Multiple classes can implement one interface, and that flexibility allows different classes to share one type.
-This can be helpful when a function parameter needs to make use of certain behaviors.</p>
 <p>We may create an interface for a data type that contains all of the information we need about an astronaut and then use that information in a function.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -165,9 +174,31 @@ This can be helpful when a function parameter needs to make use of certain behav
 <span class="kd">let</span> <span class="nx">bob</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">};</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">astronautName</span><span class="p">(</span><span class="nx">bob</span><span class="p">));</span>
 </pre></div>
-</div>
+</td></tr></table></div>
+<p>Interfaces define the contract that other classes or objects must comply with if implementing that interface.
+Multiple classes can implement one interface, and that flexibility allows different classes to share one type.
+This can be helpful when a function parameter needs to make use of certain behaviors.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">interfaceName</span> <span class="p">{</span>
+   <span class="nx">someProperty</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">className</span> <span class="kr">implements</span> <span class="nx">interfaceName</span> <span class="p">{</span>
+   <span class="nx">constructor</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">someProperty</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
 <div class="section" id="optional-parameters">
-<h3>26.4.1.1. Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>26.4.2.1. Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are primitive data types in TypeScript, however, they are treated differently by TypeScript.
 If you are planning on using <code class="docutils literal notranslate"><span class="pre">null</span></code> to define a property of an interface that is not known yet, use the TypeScript optional parameter, <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
 <p>Let’s take a look at how that would look in TypeScript.</p>
@@ -205,8 +236,21 @@ If you are planning on using <code class="docutils literal notranslate"><span cl
 </td></tr></table></div>
 </div>
 </div>
+<div class="section" id="export">
+<h2>26.4.3. <code class="docutils literal notranslate"><span class="pre">export</span></code><a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h2>
+<p>In TypeScript, you can use the <code class="docutils literal notranslate"><span class="pre">export</span></code> keyword to make classes and interfaces available for import in other files.
+This will look familiar to you as you saw something similar with <a class="reference internal" href="../modules/exporting.html#exporting-modules"><span class="std std-ref">modules</span></a>.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">export</span></code> keyword looks something like this:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">className</span> <span class="p">{</span>
+   <span class="c1">// properties and methods</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 <div class="section" id="check-your-understanding">
-<h2>26.4.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>26.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p class="last">What is the difference between a class and an interface?</p>
