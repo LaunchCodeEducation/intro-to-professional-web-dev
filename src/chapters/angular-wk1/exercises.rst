@@ -4,8 +4,9 @@ Exercises: Angular, Lesson 1
 Starter Code
 -------------
 
-For this set of exercises, fork this StackBlitz project [LINK].
-``hello.component.ts`` has already been removed, and two other components have
+For this set of exercises, fork this
+`StackBlitz project <https://stackblitz.com/edit/angular-qrgayr>`__ to your
+GitHub account. ``hello.component.ts`` has already been removed, and two other components have
 been added.
 
 Open the preview in a new window and examine the content of the webpage.
