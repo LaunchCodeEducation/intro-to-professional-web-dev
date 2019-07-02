@@ -135,6 +135,19 @@ Using the ``export`` keyword looks something like this:
       // properties and methods
    }
 
+``import``
+----------
+
+In TypeScript, you can use the ``import`` keyword to use classes and interfaces declared in other files available for use in the file you are working on.
+This is a similar idea to :ref:`importing modules <require-modules>`, however, the syntax is different in TypeScript:
+
+.. sourcecode:: js
+   :linenos:
+
+   import { className } from 'relativefilepath';
+
+   let newClass = new className;
+
 Check Your Understanding
 ------------------------
 
