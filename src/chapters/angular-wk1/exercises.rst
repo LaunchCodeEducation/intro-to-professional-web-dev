@@ -4,12 +4,23 @@ Exercises: Angular, Lesson 1
 Starter Code
 -------------
 
-For this set of exercises, fork this
-`StackBlitz project <https://stackblitz.com/edit/angular-qrgayr>`__ to your
-GitHub account. ``hello.component.ts`` has already been removed, and two other components have
-been added.
+For this set of exercises, follow the link to this
+`StackBlitz project <https://stackblitz.com/edit/angular-qrgayr>`__ and click
+the *Fork* button. This allows you to edit the file.
+
+``hello.component.ts`` has been removed from the project, and two other
+components have been added.
 
 Open the preview in a new window and examine the content of the webpage.
+
+.. admonition:: Note
+
+   There are some issues with running StackBlitz in the Firefox browser. The
+   preview page may only be visible in a separate tab, and some menu items may
+   not be visible if you are logged into the site.
+
+   If you choose not to use Safari or Chrome as alternates, follow the
+   instructions for :ref:`saving your work <angular-lesson1-save>` carefully.
 
 Part 1: Modify the CSS
 -----------------------
@@ -22,16 +33,18 @@ appear pretty bland. Let's change that.
 
    #. The text can be any color EXCEPT black.
    #. The movie list should have a centered heading.
-   #. There should be at least 4 movie titles in an ordered list.
+   #. There should be at least 4 movie titles in an ordered list. Find the
+      ``movies`` array in ``MovieListComponent`` and add more titles, then
+      modify ``movies.component.html`` to display all the array entries.
    #. The font size should be large enough to easily read.
 
 #. Change the chore list text by adjusting the code in ``chores.component.css``
    to accomplish the following:
 
+   #. Use a different font, with a size large enough to easily read.
    #. The text color should be different from the movie list, and not black.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
-   #. The font size should be large enough to easily read.
 
 Part 2: Add More Components
 ----------------------------
@@ -118,3 +131,10 @@ Part 4: Final Touches
    #. Add a border around one or more of the components on the page.
    #. Add a fun, coding related gif to the page.
    #. Make one component change when the user clicks on it.
+
+.. _angular-lesson1-save:
+
+Saving Your Work
+-----------------
+
+Lorem ipsum...
