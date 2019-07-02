@@ -85,27 +85,30 @@
     
   <div class="section" id="studio-typescript">
 <h1>26.6. Studio: TypeScript<a class="headerlink" href="#studio-typescript" title="Permalink to this headline">¶</a></h1>
-<p>Let’s practice TypeScript by creating classes for Rocket cargo calculations.</p>
+<p>Let’s practice TypeScript by creating classes for rocket cargo calculations.</p>
 <div class="section" id="requirements">
 <h2>26.6.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Fork <a class="reference external" href="https://repl.it/&#64;launchcode/rocket-studio-starter" target="_blank">the starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>Create classes for Astronaut, Cargo, and, Rocket  (Details below)<ul>
+<li>Create classes for Astronaut, Cargo, and, Rocket.  (Details below)<ul>
 <li>All classes should be defined in their own files</li>
 </ul>
 </li>
-<li>Use new classes to run a simulation in <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file</li>
+<li>Use new classes to run a simulation in <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</li>
 </ol>
-<p>In the starter you will notice that an <code class="docutils literal notranslate"><span class="pre">interface</span></code> named <code class="docutils literal notranslate"><span class="pre">Payload</span></code> has been declared.
-This interface insures that any class that implements it will have a <code class="docutils literal notranslate"><span class="pre">weightKg</span></code> property.
-Weight is a key property in this studio.</p>
+<p>In the starter code, you will notice that an interface named <code class="docutils literal notranslate"><span class="pre">Payload</span></code> has been declared.
+This interface ensures that any class that implements it will have a <code class="docutils literal notranslate"><span class="pre">weightKg</span></code> property.</p>
 </div>
 <div class="section" id="classes">
 <h2>26.6.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<p>Define each of these classes in a separate files. Each class should be exported using <code class="docutils literal notranslate"><span class="pre">export</span></code>.
-Example <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">class</span> <span class="pre">Astronaut</span> <span class="pre">{...</span></code>.</p>
-<p>As needed the classes can be imported using <code class="docutils literal notranslate"><span class="pre">import</span></code>.
-Example <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">{</span> <span class="pre">Astronaut</span> <span class="pre">}</span> <span class="pre">from</span> <span class="pre">'./Astronaut';</span></code>;</p>
+<p>Define each of these classes in a separate files. Each class should be exported using <code class="docutils literal notranslate"><span class="pre">export</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>As needed, the classes can be imported using <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Astronaut</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Astronaut&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
 <div class="section" id="astronaut-class">
 <h3>26.6.2.1. Astronaut Class<a class="headerlink" href="#astronaut-class" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -209,25 +212,25 @@ Example <code class="docutils literal notranslate"><span class="pre">import</spa
 <span class="kd">let</span> <span class="nx">falcon9</span><span class="o">:</span> <span class="nx">Rocket</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rocket</span><span class="p">(</span><span class="s1">&#39;Falcon 9&#39;</span><span class="p">,</span> <span class="mi">7500</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">astronauts</span><span class="o">:</span> <span class="nx">Astronaut</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
-<span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Mae&#39;</span><span class="p">),</span>
-<span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">81</span><span class="p">,</span> <span class="s1">&#39;Sally&#39;</span><span class="p">),</span>
-<span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">)</span>
+   <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Mae&#39;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">81</span><span class="p">,</span> <span class="s1">&#39;Sally&#39;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">)</span>
 <span class="p">];</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">astronauts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="kd">let</span> <span class="nx">astronaut</span> <span class="o">=</span> <span class="nx">astronauts</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addAstronaut</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">));</span>
+   <span class="kd">let</span> <span class="nx">astronaut</span> <span class="o">=</span> <span class="nx">astronauts</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addAstronaut</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">cargo</span><span class="o">:</span> <span class="nx">Cargo</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
-<span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">3107.39</span><span class="p">,</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">),</span>
-<span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">1000.39</span><span class="p">,</span> <span class="s2">&quot;Space Probe&quot;</span><span class="p">),</span>
-<span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mi">753</span><span class="p">,</span> <span class="s2">&quot;Water&quot;</span><span class="p">),</span>
-<span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mi">541</span><span class="p">,</span> <span class="s2">&quot;Food&quot;</span><span class="p">),</span>
-<span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">2107.39</span><span class="p">,</span> <span class="s2">&quot;Tesla Roadster&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">3107.39</span><span class="p">,</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">1000.39</span><span class="p">,</span> <span class="s2">&quot;Space Probe&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mi">753</span><span class="p">,</span> <span class="s2">&quot;Water&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mi">541</span><span class="p">,</span> <span class="s2">&quot;Food&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">2107.39</span><span class="p">,</span> <span class="s2">&quot;Tesla Roadster&quot;</span><span class="p">),</span>
 <span class="p">];</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cargo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">cargo</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">material</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addCargo</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span>
+   <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">cargo</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">material</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addCargo</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;final cargo and astronaut weight:&#39;</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">currentWeightKg</span><span class="p">());</span>

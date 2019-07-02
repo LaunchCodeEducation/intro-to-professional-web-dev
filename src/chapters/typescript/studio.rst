@@ -1,28 +1,35 @@
 Studio: TypeScript
 ==================
 
-Let's practice TypeScript by creating classes for Rocket cargo calculations.
+Let's practice TypeScript by creating classes for rocket cargo calculations.
+
 
 Requirements
 ------------
 #. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_
-#. Create classes for Astronaut, Cargo, and, Rocket  (Details below)
+#. Create classes for Astronaut, Cargo, and, Rocket.  (Details below)
 
    * All classes should be defined in their own files
 
-#. Use new classes to run a simulation in ``index.ts`` file
+#. Use new classes to run a simulation in ``index.ts`` file.
 
-In the starter you will notice that an ``interface`` named ``Payload`` has been declared.
-This interface insures that any class that implements it will have a ``weightKg`` property.
-Weight is a key property in this studio.
+In the starter code, you will notice that an interface named ``Payload`` has been declared.
+This interface ensures that any class that implements it will have a ``weightKg`` property.
+
 
 Classes
 -------
 Define each of these classes in a separate files. Each class should be exported using ``export``.
-Example ``export class Astronaut {...``.
 
-As needed the classes can be imported using ``import``.
-Example ``import { Astronaut } from './Astronaut';``;
+.. sourcecode:: js
+
+   export class Astronaut {
+
+As needed, the classes can be imported using ``import``.
+
+.. sourcecode:: js
+
+   import { Astronaut } from './Astronaut';
 
 Astronaut Class
 ^^^^^^^^^^^^^^^
@@ -40,7 +47,6 @@ Astronaut Class
   * parameter ``name`` that is string
   * sets value of ``this.weightKg`` and ``this.name``
 
-
 Cargo Class
 ^^^^^^^^^^^
 
@@ -56,7 +62,6 @@ Cargo Class
   * parameter ``weightKg`` that is a number
   * parameter ``material`` that is string
   * sets value of ``this.weightKg`` and ``this.material``
-
 
 Rocket Class
 ^^^^^^^^^^^^
@@ -89,7 +94,7 @@ Rocket Class
   * ``currentWeightKg(): number``
     
     * Uses ``this.sumWeight`` to return the combined weight of ``this.astronauts`` and ``this.cargoItems``
-  
+
 
   * ``canAdd(item: Payload): boolean``
 
@@ -98,14 +103,14 @@ Rocket Class
   * ``addCargo(cargo: Cargo)``
 
     * Uses ``this.canAdd(item: Payload)`` to see if it can be added
-    
+
       * If ``true``, adds ``cargo`` to ``this.cargoItems`` and returns ``true``
       * If ``false``, returns ``false``
 
   * ``addAstronaut(astronaut: Astronaut)``
 
     * Uses ``this.canAdd(item: Payload)`` to see if it can be added
-    
+
       * If ``true``, adds ``astronaut`` to ``this.astronauts`` and returns ``true``
       * If ``false``, returns ``false``
 
@@ -123,25 +128,25 @@ Paste this code into ``index.ts``
    let falcon9: Rocket = new Rocket('Falcon 9', 7500);
 
    let astronauts: Astronaut[] = [
-   new Astronaut(75, 'Mae'),
-   new Astronaut(81, 'Sally'),
-   new Astronaut(99, 'Charles')
+      new Astronaut(75, 'Mae'),
+      new Astronaut(81, 'Sally'),
+      new Astronaut(99, 'Charles')
    ];
    for (let i =0; i < astronauts.length; i++) {
-   let astronaut = astronauts[i];
-   console.log(astronaut.name, falcon9.addAstronaut(astronaut));
+      let astronaut = astronauts[i];
+      console.log(astronaut.name, falcon9.addAstronaut(astronaut));
    }
 
    let cargo: Cargo[] = [
-   new Cargo(3107.39, "Satellite"),
-   new Cargo(1000.39, "Space Probe"),
-   new Cargo(753, "Water"),
-   new Cargo(541, "Food"),
-   new Cargo(2107.39, "Tesla Roadster"),
+      new Cargo(3107.39, "Satellite"),
+      new Cargo(1000.39, "Space Probe"),
+      new Cargo(753, "Water"),
+      new Cargo(541, "Food"),
+      new Cargo(2107.39, "Tesla Roadster"),
    ];
    for (let i =0; i < cargo.length; i++) {
-   let c = cargo[i];
-   console.log(c.material, falcon9.addCargo(c));
+      let c = cargo[i];
+      console.log(c.material, falcon9.addCargo(c));
    }
 
    console.log('final cargo and astronaut weight:', falcon9.currentWeightKg());
@@ -162,9 +167,11 @@ Expected Console Output
    Tesla Roadster false
    final cargo and astronaut weight: 5656.78
 
+
 Bonus Mission
 -------------
 .. todo:: do these
+
 
 Turn In Instructions
 --------------------
