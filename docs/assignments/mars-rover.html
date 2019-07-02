@@ -188,14 +188,14 @@ how you can implement these features. A list of required classes and methods is 
 </tr>
 <tr class="row-odd"><td>STATUS_CHECK</td>
 <td>No values sent with this command.</td>
-<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">mode:</span> <span class="pre">4,</span> <span class="pre">generatorWatts:</span> <span class="pre">110}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> will depend on current state of rover.</td>
+<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">mode:</span> <span class="pre">NORMAL,</span> <span class="pre">generatorWatts:</span> <span class="pre">110}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> will depend on current state of rover.</td>
 </tr>
 <tr class="row-even"><td>TAKE_SAMPLE</td>
 <td>TBD</td>
 <td>TBD</td>
 </tr>
 <tr class="row-odd"><td>MODE_CHANGE</td>
-<td>Number between 1-4 representing rover mode (see modes)</td>
+<td>String representing rover mode (see modes)</td>
 <td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
 </tr>
 </tbody>
@@ -218,6 +218,9 @@ how you can implement these features. A list of required classes and methods is 
 </tr>
 <tr class="row-even"><td>NORMAL</td>
 <td>None</td>
+</tr>
+<tr class="row-odd"><td>MOVE_READY</td>
+<td>Can’t take sample.</td>
 </tr>
 </tbody>
 </table>

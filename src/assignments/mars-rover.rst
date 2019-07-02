@@ -102,12 +102,12 @@ Rover Commands
      - TBD
    * - STATUS_CHECK
      - No values sent with this command.
-     - ``{completed: true, mode: 4, generatorWatts: 110}`` Values for ``mode`` and ``generatorWatts`` will depend on current state of rover.
+     - ``{completed: true, mode: NORMAL, generatorWatts: 110}`` Values for ``mode`` and ``generatorWatts`` will depend on current state of rover.
    * - TAKE_SAMPLE
      - TBD
      - TBD
    * - MODE_CHANGE
-     - Number between 1-4 representing rover mode (see modes)
+     - String representing rover mode (see modes)
      - ``{completed: true}``
 
 Rover Modes
@@ -124,6 +124,8 @@ Rover Modes
      - Ready to take sample. Can't be moved in this state.
    * - NORMAL
      - None
+   * - MOVE_READY
+     - Can't take sample.
 
 
 Bonus Missions
