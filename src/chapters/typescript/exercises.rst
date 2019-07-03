@@ -4,7 +4,7 @@ Exercises: TypeScript
 Part 1 - Declare Variables With Type
 ------------------------------------
 
-#. Fork the `part 1 repl.it <https://repl.it/@launchcode/ts-exercises-part-1-and-2>`_
+#. Fork the `part 1 repl.it <https://repl.it/@launchcode/ts-exercises-part-1-and-2>`_.
 #. Declare and assign a variable for each in the below table.
 
 .. list-table::
@@ -38,9 +38,9 @@ In the *same* repl.it you completed Part 1, do the following.
 #. Declare and assign these variables.
 
    * Remember: variable declarations in TypeScript include the type!
-   * ``milesToMars`` is a number with the value of ``kilometersToMars * milesPerKilometer``
-   * ``hoursToMars`` is a number with the value of  ``milesToMars / speedMph``
-   * ``daysToMars`` is a number with the value of ``hoursToMars / 24``
+   * ``milesToMars`` is a number with the value of ``kilometersToMars * milesPerKilometer``.
+   * ``hoursToMars`` is a number with the value of  ``milesToMars / speedMph``.
+   * ``daysToMars`` is a number with the value of ``hoursToMars / 24``.
 
 #. Write a ``console.log`` statement that prints out the days to Mars.
 
@@ -61,9 +61,9 @@ Part 3 - Create a Function
    * Function name ``getDaysToLocation``
    * Parameters
 
-     *   ``kilometersAway`` that must be number
+     *   ``kilometersAway`` must be a number.
 
-   * returns the number of days to Mars
+   * Returns the number of days to Mars.
 
      * Use the same calculations as in Part 2.1.
      * Inside the function, make the variables name generic. Use ``milesAway`` and ``hours`` instead of ``milesToMars`` and ``hoursToMars``.
@@ -100,9 +100,9 @@ Organize the function and variables previously defined into a class named ``Spac
 
    * Constructor
 
-     * ``name`` is the first parameter and it MUST be a string
-     * ``speedMph`` is the second parameter and it MUST be a number
-     * Sets the class properties using ``this.name`` and ``this.speedMph``
+     * ``name`` is the first parameter and it MUST be a string.
+     * ``speedMph`` is the second parameter and it MUST be a number.
+     * Sets the class properties using ``this.name`` and ``this.speedMph``.
 
 #. Move the function ``getDaysToLocation``, defined in Part 3, into the ``Spacecraft`` class.
 

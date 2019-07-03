@@ -7,7 +7,7 @@ Let's practice TypeScript by creating classes for rocket cargo calculations.
 Requirements
 ------------
 #. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_.
-#. Create classes for ``Astronaut``, ``Cargo``, and, ``Rocket``.  (Details below)
+#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``.  (Details below)
 
    * All classes should be defined in their own files.
 
@@ -40,14 +40,14 @@ Astronaut Class
 * Implements the ``Payload`` interface
 * Properties
 
-  * ``weightKg`` which is a number
-  * ``name`` which is string
+  * ``weightKg`` should be a number.
+  * ``name`` should be a string.
 
 * Constructor
 
-  * parameter ``weightKg`` that is a number
-  * parameter ``name`` that is string
-  * sets value of ``this.weightKg`` and ``this.name``
+  * Parameter ``weightKg`` should be a number.
+  * Parameter ``name`` should be string.
+  * Sets value of ``this.weightKg`` and ``this.name``.
 
 Cargo Class
 ^^^^^^^^^^^
@@ -56,14 +56,14 @@ Cargo Class
 * Implements the ``Payload`` interface
 * Properties
 
-  * ``weightKg`` which is a number
-  * ``material`` which is string
+  * ``weightKg`` should be a number.
+  * ``material`` should be a string.
 
 * Constructor
 
-  * parameter ``weightKg`` that is a number
-  * parameter ``material`` that is string
-  * sets value of ``this.weightKg`` and ``this.material``
+  * Parameter ``weightKg`` should be a number.
+  * Parameter ``material`` should be a string.
+  * Sets value of ``this.weightKg`` and ``this.material``
 
 Rocket Class
 ^^^^^^^^^^^^
@@ -71,36 +71,35 @@ Rocket Class
 * Defined in ``Rocket.ts``
 * Properties
 
-  * ``name`` which is a string
-  * ``totalCapacityKg`` which is a number
-  * ``cargoItems`` which is an array of Cargo objects
+  * ``name`` should be a string.
+  * ``totalCapacityKg`` should be a number.
+  * ``cargoItems`` should be an array of ``Cargo`` objects.
 
     * Should be initialized to an empty array ``[]``
 
-  * ``astronauts`` which is an array of Astronaut objects
+  * ``astronauts`` should be an array of ``Astronaut`` objects.
 
     * Should be initialized to an empty array ``[]``
 
 * Constructor
 
-  * parameter ``name`` that is a string
-  * parameter ``totalCapcityKg`` that is a number
-  * sets value of ``this.name`` and ``this.totalCapcityKg``
+  * Parameter ``name`` should be a string.
+  * Parameter ``totalCapacityKg`` should be a number.
+  * Sets value of ``this.name`` and ``this.totalCapacityKg``
 
 * Methods
 
-  * ``sumWeight(items: Payload[]): number``
+  * ``sumWeight( items: Payload[] ): number``
 
-    * returns the sum of all items using ``item.weightKg``
+    * Returns the sum of all ``items`` using each item's ``weightKg`` property
 
   * ``currentWeightKg(): number``
-    
-    * Uses ``this.sumWeight`` to return the combined weight of ``this.astronauts`` and ``this.cargoItems``
 
+    * Uses ``this.sumWeight`` to return the combined weight of ``this.astronauts`` and ``this.cargoItems``
 
   * ``canAdd(item: Payload): boolean``
 
-    * returns ``true`` if ``this.currentWeightKg() + item.weightKg <= this.totalCapacityKg``
+    * Returns ``true`` if ``this.currentWeightKg() + item.weightKg <= this.totalCapacityKg``
 
   * ``addCargo(cargo: Cargo)``
 
@@ -119,7 +118,7 @@ Rocket Class
 
 Simulation in ``index.ts``
 --------------------------
-Paste this code into ``index.ts``
+Paste the below code into ``index.ts``.
 
 .. sourcecode:: js
    :linenos:
@@ -172,6 +171,7 @@ Expected Console Output
    Tesla Roadster false
    final cargo and astronaut weight: 5656.78
 
-Turn In Instructions
+
+Submitting Your Work
 --------------------
 .. todo:: do these
