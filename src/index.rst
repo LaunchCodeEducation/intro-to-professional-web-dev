@@ -31,6 +31,7 @@ Chapters
    chapters/http/index
    chapters/forms/index
    chapters/fetch-json/index
+   chapters/typescript/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -55,9 +56,12 @@ Studios
    chapters/modules/studio
    chapters/unit-testing/studio
    chapters/classes/studio
+   chapters/exceptions/studio
    chapters/git/studio
    chapters/dom-and-events/studio
    chapters/forms/studio
+   chapters/fetch-json/studio
+   chapters/typescript/studio
 
 Assignments
 ^^^^^^^^^^^
