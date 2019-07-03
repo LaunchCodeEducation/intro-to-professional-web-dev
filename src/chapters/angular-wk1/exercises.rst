@@ -16,11 +16,13 @@ Open the preview in a new window and examine the content of the webpage.
 .. admonition:: Note
 
    There are some issues with running StackBlitz in the Firefox browser. The
-   preview page may only be visible in a separate tab, and some menu items may
-   not be visible if you are logged into the site.
+   preview page may only be visible in a separate tab, some menu items may not
+   be visible when logged into the site, and saving your progress becomes
+   quirky.
 
-   If you choose not to use Safari or Chrome as alternates, follow the
-   instructions for :ref:`saving your work <angular-lesson1-save>` carefully.
+   For these exercises, we recommend using Safari or Chrome as alternates. If
+   you insist on using Firefox, follow the instructions for
+   :ref:`saving your work <angular-lesson1-save>` carefully.
 
 Part 1: Modify the CSS
 -----------------------
@@ -46,7 +48,9 @@ appear pretty bland. Let's change that.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
 
-Before moving on, :ref:`save and commit your work <angular-lesson1-save>`.
+Before moving on, click the GitHub login button. Save your work and rename the
+project (something like "angular-lesson-1-exercises"). Click the blue "Commit"
+button just above the files panel to store your project.
 
 Part 2: Add More Components
 ----------------------------
@@ -139,19 +143,21 @@ Part 4: Final Touches
 Saving Your Work
 -----------------
 
-For web browsers OTHER than Firefox and Internet Explorer:
+To save your work using Firefox:
 
-#. Click the GitHub login button and enter your password.
-#. Allow StackBlitz to access your GitHub account.
-#. When logged in, a blue "Commit" button appears above the files panel.
-#. After you make changes to the starter code, you will want to preserve your
-   work. Saving alone will not be sufficient. Instead, you must save and then
-   COMMIT the work to GitHub.
+#. Once you open the starter code, immediately click the *Fork* button. Do NOT
+   login to StackBlitz yet.
+#. Make the edits described in the exercises, saving your work as you go.
+#. Once ALL of the exercises are complete, click the login button and enter
+   your GitHub password.
+#. Rename the file by clicking the pencil icon near its name.
 
-For Firefox:
+To modify your saved project using Firefox:
 
-#. Lorem ipsum...
-
-For Internet Explorer:
-
-#. Just stop. Use any other browser.
+#. Click on the login icon and enter your GitHub password.
+#. Click on your username button to see a list of saved projects.
+#. Copy the URL for your project (stackblitz.com/edit/myProjectName).
+#. *Log out* of StackBlitz.
+#. Paste the URL into the address bar and fork the project again.
+#. Once you finish your new edits, log back in to StackBlitz and rename the
+   file.
