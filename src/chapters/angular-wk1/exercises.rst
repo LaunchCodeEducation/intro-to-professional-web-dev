@@ -46,6 +46,8 @@ appear pretty bland. Let's change that.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
 
+Before moving on, :ref:`save and commit your work <angular-lesson1-save>`.
+
 Part 2: Add More Components
 ----------------------------
 
@@ -64,7 +66,7 @@ Part 2: Add More Components
       just ``page-title``.
    #. In the ``PageTitleComponent`` class, define a ``title`` variable and
       assign it a string.
-   #. Add an ``h1`` to the ``page-title.component.html`` file. Use
+   #. Add an ``<h1>`` to the ``page-title.component.html`` file. Use
       ``{{title}}`` as a placeholder for the title you defined. Style the text
       to be underlined.
    #. Add ``<page-title></page-title>`` to ``app.component.html`` and refresh
@@ -78,7 +80,7 @@ Part 2: Add More Components
    #. In the ``.html`` file for this component, use placeholders to create an
       unordered list for the web links.
    #. Add ``<fav-links></fav-links>`` to ``app.component.html`` and refresh
-      the preview page to make sure the content displays on the page.
+      the preview page to see the new content.
 
 #. The page needs some images.
 
@@ -89,7 +91,7 @@ Part 2: Add More Components
       tags to display the images. Style the photos to all be the same size on
       the page.
    #. Add ``<fav-photos></fav-photos>`` to ``app.component.html`` and refresh
-      the preview page to make sure the content displays on the page.
+      the preview page to see the new content.
 
 .. admonition:: Note
 
@@ -137,4 +139,19 @@ Part 4: Final Touches
 Saving Your Work
 -----------------
 
-Lorem ipsum...
+For web browsers OTHER than Firefox and Internet Explorer:
+
+#. Click the GitHub login button and enter your password.
+#. Allow StackBlitz to access your GitHub account.
+#. When logged in, a blue "Commit" button appears above the files panel.
+#. After you make changes to the starter code, you will want to preserve your
+   work. Saving alone will not be sufficient. Instead, you must save and then
+   COMMIT the work to GitHub.
+
+For Firefox:
+
+#. Lorem ipsum...
+
+For Internet Explorer:
+
+#. Just stop. Use any other browser.
