@@ -5,8 +5,8 @@ Starter Code
 -------------
 
 For this set of exercises, follow the link to this
-`StackBlitz project <https://stackblitz.com/edit/angular-qrgayr>`__ and click
-the *Fork* button. This allows you to edit the file.
+`StackBlitz project <https://stackblitz.com/edit/angular-lesson1-starter-code>`__
+and click the *Fork* button. This allows you to edit the file.
 
 ``hello.component.ts`` has been removed from the project, and two other
 components have been added.
@@ -27,11 +27,11 @@ Open the preview in a new window and examine the content of the webpage.
 Part 1: Modify the CSS
 -----------------------
 
-The ``movies`` and ``chores`` components have been created, but so far they
-appear pretty bland. Let's change that.
+The ``movie-list`` and ``chores-list`` components have been created, but so far
+they appear pretty bland. Let's change that.
 
-#. Change the movie list text by adjusting the code in ``movies.component.css``
-   to accomplish the following:
+#. Change the movie list text by adjusting the code in
+   ``movie-list.component.css`` to accomplish the following:
 
    #. The text can be any color EXCEPT black.
    #. The movie list should have a centered heading.
@@ -40,13 +40,30 @@ appear pretty bland. Let's change that.
       modify ``movies.component.html`` to display all the array entries.
    #. The font size should be large enough to easily read.
 
-#. Change the chore list text by adjusting the code in ``chores.component.css``
-   to accomplish the following:
+#. Change the chore list text by adjusting the code in
+   ``chores-list.component.css`` to accomplish the following:
 
    #. Use a different font, with a size large enough to easily read.
    #. The text color should be different from the movie list, and not black.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
+
+Complete the ``fav-photos`` Component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+3. The ``fav-photos`` component has been generated, but it is incomplete. The
+   page needs more images, which also need to be smaller in size.
+
+   #. In the ``FavPhotosComponent`` class, assign a better section heading to
+      ``photosTitle``.
+   #. The ``image`` variables should hold URLs for images, but only one is
+      is filled in. Complete at least one more, which can be from the web or
+      personal pictures.
+   #. In the ``.html`` file for this component, use placeholders and ``img``
+      tags to display one image per line.
+   #. Use the ``.css`` file for this component to make the images all be the
+      same size on the page.
+   #. Refresh the preview page to see the updated content.
 
 Before moving on, click the *Sign in* button. Save your work and rename the
 project (something like "angular-lesson-1-exercises"). This will allow you to
@@ -61,7 +78,7 @@ Part 2: Add More Components
    to review this topic, look back at the :ref:`HTML Tags <html-tags>` page, or
    try `W3Schools <https://www.w3schools.com/html/default.asp>`__.
 
-3. The page needs a title.
+4. The page needs a title.
 
    #. Right-click the ``app`` folder in the files pane and select *Angular
       Generator/Component*. Name the new component ``page-title``.
@@ -78,23 +95,12 @@ Part 2: Add More Components
 
 #. The page needs a set of links to favorite websites.
 
-   #. Repeat steps 3a and b to generate a ``fav-links`` component.
+   #. Repeat steps 4a and b to generate a ``fav-links`` component.
    #. In the ``FavLinksComponent`` class, define a variable and assign it an
       array that contains two or more URLs.
    #. In the ``.html`` file for this component, use placeholders in a set of
       ``<a>`` tags for the web links. Each link should be on its own line.
    #. Add ``<fav-links></fav-links>`` to ``app.component.html`` and refresh
-      the preview page to see the new content.
-
-#. The page needs some images.
-
-   #. Repeat steps 3a and b to generate a ``fav-photos`` component.
-   #. In the ``FavPhotosComponent`` class, define variables to hold several
-      URLs for images. These can be from the web or personal pics.
-   #. In the ``.html`` file for this component, use placeholders and ``img``
-      tags to display the images. Style the photos to all be the same size on
-      the page.
-   #. Add ``<fav-photos></fav-photos>`` to ``app.component.html`` and refresh
       the preview page to see the new content.
 
 .. admonition:: Note
@@ -151,15 +157,15 @@ To save your work using Firefox:
 #. Once you open the starter code, immediately click the *Fork* button. Do NOT
    login to StackBlitz yet.
 #. Make the edits described in the exercises, saving your work as you go.
-#. Once ALL of the exercises are complete, click the login button and enter
-   your GitHub password.
+#. Once ALL of the exercises are complete, click the *Sign in* button and enter
+   your password.
 #. Rename the file by clicking the pencil icon near its name.
 
 To modify your saved project using Firefox:
 
-#. Click on the login icon and enter your GitHub password.
+#. Click on the *Sign in* icon and enter your password.
 #. Click on your username button to see a list of saved projects.
-#. Copy the URL for your project (stackblitz.com/edit/myProjectName).
+#. Copy the URL for your project (stackblitz.com/edit/my-project-name).
 #. *Log out* of StackBlitz.
 #. Paste the URL into the address bar and fork the project again.
 #. Once you finish your new edits, log back in to StackBlitz and rename the

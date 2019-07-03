@@ -89,8 +89,8 @@
 <div class="section" id="starter-code">
 <h2>26.6.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
 <p>For this set of exercises, follow the link to this
-<a class="reference external" href="https://stackblitz.com/edit/angular-qrgayr" target="_blank">StackBlitz project<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and click
-the <em>Fork</em> button. This allows you to edit the file.</p>
+<a class="reference external" href="https://stackblitz.com/edit/angular-lesson1-starter-code" target="_blank">StackBlitz project<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+and click the <em>Fork</em> button. This allows you to edit the file.</p>
 <p><code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> has been removed from the project, and two other
 components have been added.</p>
 <p>Open the preview in a new window and examine the content of the webpage.</p>
@@ -107,11 +107,11 @@ you insist on using Firefox, follow the instructions for
 </div>
 <div class="section" id="part-1-modify-the-css">
 <h2>26.6.2. Part 1: Modify the CSS<a class="headerlink" href="#part-1-modify-the-css" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">movies</span></code> and <code class="docutils literal notranslate"><span class="pre">chores</span></code> components have been created, but so far they
-appear pretty bland. Let’s change that.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">movie-list</span></code> and <code class="docutils literal notranslate"><span class="pre">chores-list</span></code> components have been created, but so far
+they appear pretty bland. Let’s change that.</p>
 <ol class="arabic simple">
-<li>Change the movie list text by adjusting the code in <code class="docutils literal notranslate"><span class="pre">movies.component.css</span></code>
-to accomplish the following:<ol class="arabic">
+<li>Change the movie list text by adjusting the code in
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.css</span></code> to accomplish the following:<ol class="arabic">
 <li>The text can be any color EXCEPT black.</li>
 <li>The movie list should have a centered heading.</li>
 <li>There should be at least 4 movie titles in an ordered list. Find the
@@ -120,8 +120,8 @@ modify <code class="docutils literal notranslate"><span class="pre">movies.compo
 <li>The font size should be large enough to easily read.</li>
 </ol>
 </li>
-<li>Change the chore list text by adjusting the code in <code class="docutils literal notranslate"><span class="pre">chores.component.css</span></code>
-to accomplish the following:<ol class="arabic">
+<li>Change the chore list text by adjusting the code in
+<code class="docutils literal notranslate"><span class="pre">chores-list.component.css</span></code> to accomplish the following:<ol class="arabic">
 <li>Use a different font, with a size large enough to easily read.</li>
 <li>The text color should be different from the movie list, and not black.</li>
 <li>The chores list should have an underlined heading.</li>
@@ -129,9 +129,28 @@ to accomplish the following:<ol class="arabic">
 </ol>
 </li>
 </ol>
+<div class="section" id="complete-the-fav-photos-component">
+<h3>26.6.2.1. Complete the <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> Component<a class="headerlink" href="#complete-the-fav-photos-component" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="3">
+<li>The <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component has been generated, but it is incomplete. The
+page needs more images, which also need to be smaller in size.<ol class="arabic">
+<li>In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, assign a better section heading to
+<code class="docutils literal notranslate"><span class="pre">photosTitle</span></code>.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">image</span></code> variables should hold URLs for images, but only one is
+is filled in. Complete at least one more, which can be from the web or
+personal pictures.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders and <code class="docutils literal notranslate"><span class="pre">img</span></code>
+tags to display one image per line.</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">.css</span></code> file for this component to make the images all be the
+same size on the page.</li>
+<li>Refresh the preview page to see the updated content.</li>
+</ol>
+</li>
+</ol>
 <p>Before moving on, click the <em>Sign in</em> button. Save your work and rename the
 project (something like “angular-lesson-1-exercises”). This will allow you to
 store your progress and return to it later, if necessary.</p>
+</div>
 </div>
 <div class="section" id="part-2-add-more-components">
 <h2>26.6.3. Part 2: Add More Components<a class="headerlink" href="#part-2-add-more-components" title="Permalink to this headline">¶</a></h2>
@@ -141,7 +160,7 @@ store your progress and return to it later, if necessary.</p>
 to review this topic, look back at the <a class="reference internal" href="../html/tags.html#html-tags"><span class="std std-ref">HTML Tags</span></a> page, or
 try <a class="reference external" href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
-<ol class="arabic simple" start="3">
+<ol class="arabic simple" start="4">
 <li>The page needs a title.<ol class="arabic">
 <li>Right-click the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder in the files pane and select <em>Angular
 Generator/Component</em>. Name the new component <code class="docutils literal notranslate"><span class="pre">page-title</span></code>.</li>
@@ -158,23 +177,12 @@ the preview page to see your new content.</li>
 </ol>
 </li>
 <li>The page needs a set of links to favorite websites.<ol class="arabic">
-<li>Repeat steps 3a and b to generate a <code class="docutils literal notranslate"><span class="pre">fav-links</span></code> component.</li>
+<li>Repeat steps 4a and b to generate a <code class="docutils literal notranslate"><span class="pre">fav-links</span></code> component.</li>
 <li>In the <code class="docutils literal notranslate"><span class="pre">FavLinksComponent</span></code> class, define a variable and assign it an
 array that contains two or more URLs.</li>
 <li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders in a set of
 <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tags for the web links. Each link should be on its own line.</li>
 <li>Add <code class="docutils literal notranslate"><span class="pre">&lt;fav-links&gt;&lt;/fav-links&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
-the preview page to see the new content.</li>
-</ol>
-</li>
-<li>The page needs some images.<ol class="arabic">
-<li>Repeat steps 3a and b to generate a <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, define variables to hold several
-URLs for images. These can be from the web or personal pics.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders and <code class="docutils literal notranslate"><span class="pre">img</span></code>
-tags to display the images. Style the photos to all be the same size on
-the page.</li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;fav-photos&gt;&lt;/fav-photos&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
 the preview page to see the new content.</li>
 </ol>
 </li>
@@ -231,15 +239,15 @@ The following instructions apply ONLY if you run StackBlitz in Firefox.</p>
 <li>Once you open the starter code, immediately click the <em>Fork</em> button. Do NOT
 login to StackBlitz yet.</li>
 <li>Make the edits described in the exercises, saving your work as you go.</li>
-<li>Once ALL of the exercises are complete, click the login button and enter
-your GitHub password.</li>
+<li>Once ALL of the exercises are complete, click the <em>Sign in</em> button and enter
+your password.</li>
 <li>Rename the file by clicking the pencil icon near its name.</li>
 </ol>
 <p>To modify your saved project using Firefox:</p>
 <ol class="arabic simple">
-<li>Click on the login icon and enter your GitHub password.</li>
+<li>Click on the <em>Sign in</em> icon and enter your password.</li>
 <li>Click on your username button to see a list of saved projects.</li>
-<li>Copy the URL for your project (stackblitz.com/edit/myProjectName).</li>
+<li>Copy the URL for your project (stackblitz.com/edit/my-project-name).</li>
 <li><em>Log out</em> of StackBlitz.</li>
 <li>Paste the URL into the address bar and fork the project again.</li>
 <li>Once you finish your new edits, log back in to StackBlitz and rename the
