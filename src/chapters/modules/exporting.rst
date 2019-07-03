@@ -1,3 +1,5 @@
+.. _exporting-modules:
+
 Exporting Modules
 ==================
 
