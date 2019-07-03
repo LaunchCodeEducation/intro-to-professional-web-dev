@@ -30,6 +30,7 @@ Chapters
    chapters/http/index
    chapters/forms/index
    chapters/fetch-json/index
+   chapters/typescript/index
    chapters/angular-wk1/index
    chapters/booster-rockets/index
 
@@ -55,10 +56,14 @@ Studios
    chapters/modules/studio
    chapters/unit-testing/studio
    chapters/classes/studio
+   chapters/exceptions/studio
    chapters/git/studio
    chapters/dom-and-events/studio
    chapters/forms/studio
+   chapters/fetch-json/studio
    chapters/angular-wk1/studio
+   chapters/typescript/studio
+
 
 Assignments
 ^^^^^^^^^^^
@@ -69,7 +74,8 @@ Assignments
 
    assignments/candidateQuiz
    assignments/scrabble-scorer
-   assignments/html-me-somthing
+   assignments/mars-rover
+   assignments/html-me-something
 
 Appendices
 ^^^^^^^^^^
