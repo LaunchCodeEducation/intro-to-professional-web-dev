@@ -6,10 +6,10 @@ Let's practice TypeScript by creating classes for rocket cargo calculations.
 
 Requirements
 ------------
-#. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_
-#. Create classes for Astronaut, Cargo, and, Rocket.  (Details below)
+#. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_.
+#. Create classes for ``Astronaut``, ``Cargo``, and, ``Rocket``.  (Details below)
 
-   * All classes should be defined in their own files
+   * All classes should be defined in their own files.
 
 #. Use new classes to run a simulation in ``index.ts`` file.
 
@@ -24,6 +24,8 @@ Define each of these classes in a separate files. Each class should be exported 
 .. sourcecode:: js
 
    export class Astronaut {
+      // properties and methods
+   }
 
 As needed, the classes can be imported using ``import``.
 
@@ -120,6 +122,7 @@ Simulation in ``index.ts``
 Paste this code into ``index.ts``
 
 .. sourcecode:: js
+   :linenos:
 
    import { Astronaut } from './Astronaut';
    import { Cargo } from './Cargo';
@@ -132,6 +135,7 @@ Paste this code into ``index.ts``
       new Astronaut(81, 'Sally'),
       new Astronaut(99, 'Charles')
    ];
+
    for (let i =0; i < astronauts.length; i++) {
       let astronaut = astronauts[i];
       console.log(astronaut.name, falcon9.addAstronaut(astronaut));
@@ -144,6 +148,7 @@ Paste this code into ``index.ts``
       new Cargo(541, "Food"),
       new Cargo(2107.39, "Tesla Roadster"),
    ];
+
    for (let i =0; i < cargo.length; i++) {
       let c = cargo[i];
       console.log(c.material, falcon9.addCargo(c));
@@ -166,12 +171,6 @@ Expected Console Output
    Food true
    Tesla Roadster false
    final cargo and astronaut weight: 5656.78
-
-
-Bonus Mission
--------------
-.. todo:: do these
-
 
 Turn In Instructions
 --------------------
