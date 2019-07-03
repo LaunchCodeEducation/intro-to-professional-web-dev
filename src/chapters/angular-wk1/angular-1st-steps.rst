@@ -50,12 +50,15 @@ necessary, you can always start another new project.
 
 .. admonition:: Try It!
 
+   Examine the files within the ``app`` folder. Modify the code to accomplish
+   the following:
+
    #. Add a nose to the emoticon.
    #. Find where "Angular" is assigned to the heading, and then replace it
       with your name.
    #. Change the color for the *Start editing...* sentence.
 
-   You will need to refresh the preview page after each attempt to see if any
+   You may need to refresh the preview page after each attempt to see if any
    changes occur.
 
 Now let's take a look at the different project files.
@@ -238,12 +241,45 @@ tasks above, attempt them now. After that...
       cm^2." Use placeholders in place of the blanks so the webpage displays
       the correct numbers.
 
-Wrap-Up
---------
+Filename pattern
+-----------------
 
-   TODO: Finish this.
+Many of the files we examined on this page contain the word ``component`` in
+the name. This results from the fundamental idea behind Angular. Each
+*template* for a webpage is constructed from smaller pieces, and these pieces
+are the *components*.
+
+Our next step is to take a closer look at these building blocks within a
+template.
 
 Check Your Understanding
 -------------------------
 
-   TODO: Add questions.
+.. admonition:: Question
+
+   Where would be the BEST place to modify the code if we want a different font
+   for ``<p>`` text within the template?
+
+   #. ``app.component.ts``
+   #. ``app.component.html``
+   #. ``app.component.css``
+   #. ``app.module.ts``
+
+.. admonition:: Question
+
+   Where would be the BEST place to modify the code if we want to add a heading
+   and an unordered list to the template?
+
+   #. ``app.component.ts``
+   #. ``app.component.html``
+   #. ``app.component.css``
+   #. ``app.module.ts``
+
+.. admonition:: Question
+
+   Where do we define a new HTML tag?
+
+   #. ``app.component.ts``
+   #. ``app.component.html``
+   #. ``app.component.css``
+   #. ``app.module.ts``

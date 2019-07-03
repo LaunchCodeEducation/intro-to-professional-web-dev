@@ -11,17 +11,17 @@ Your Own Website
 Imagine building your own website with a smaller set of features. You could
 include favorite movies or sports teams, cities where you have lived, schools
 attended, hobbies, etc. Using your :ref:`HTML <html-index>` and
-:ref:`CSS <css-index>` knowledge, you could construct an appealing layout using
+:ref:`CSS <css-index>` knowledge, you could construct an appealing layout with
 carefully selected and arranged tags (``<div>, <button>, <img>``, etc.).
 
 Now imagine you have to change one or more items on the page. Maybe you move
 and your school or team loyalty shifts. Updating the city, school logo, etc.
 means adjusting those items in the HTML, and if that information appears in
-other areas of your website, then you need to update that code as well. Also,
+other areas of your website, then you need to modify that code as well. Also,
 you need to consider any formatting changes that result from adding or removing
 content.
 
-Whew! Updating your website rapidly gets tedious, especially if it contains
+Whew! Refreshing your website rapidly gets tedious, especially if it contains
 lots of information or consists of multiple pages. If only there was a way to
 automatically update the content and quickly rearrange the layout for your
 site...
@@ -92,13 +92,13 @@ We could drastically improve the appearance and content of the page by playing
 around with the tags, classes, styles and text. However, any change we want to
 make needs to be coded directly into the HTML and CSS files.
 
-This quickly becomes inefficient, especially if changing the items needs to
-occur in multiple blocks of code.
+This quickly becomes inefficient, especially if changing the items involves
+multiple blocks of code.
 
 A Better Way
 ^^^^^^^^^^^^^
 
-Each section in a template contains one or more "blanks" where specific items
+Each section in a template contains one or more *blanks* where specific items
 need to be added. Separate JavaScript code sends data to the template to fill
 in these blanks, and this data can change based on a user's actions.
 
@@ -125,7 +125,7 @@ in these blanks, and this data can change based on a user's actions.
          </div>
       </div>
       <hr>
-      <div class="links">{{Heading + linkList}}</div>
+      <div class="links">{{headingAndLinkList}}</div>
    </body>
 
 This HTML looks similar to the previous example, but saves about 16 lines. It
@@ -154,16 +154,16 @@ By defining our template in an even more general manner, we could replace the
    </body>
 
 By using a template to build the website, changing the list of movies, schools,
-or hobbies just involves altering something as simple as an array or object.
-After changing the data, the template does the tedious work of modifying the
-HTML. The list of movies would update automatically if we add "Up" to our
+or hobbies involves altering something as simple as an array or object. After
+changing that data, the template does the tedious work of modifying the HTML.
+The list of movies would update automatically if we add "Up" to our
 ``favoriteMovies`` array, which then gets passed into ``{{movieContent}}``. We
 do not need to worry about re-coding any of the tags.
 
-Templates SUpport Dynamic Content
+Templates Support Dynamic Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If we add a search box to our website, a user could enter *Nasa images*,
+If we add a search box to our website, a user could enter *NASA images*,
 *giraffe gif*, *move trailers*, or something else. We cannot know ahead of time
 what a user will request, but we want our website to be able to display any
 relevant results.
@@ -190,7 +190,34 @@ forms, APIs, or user input will be formatted to fit within our design.
    :scale: 90%
    :alt: Visual of a template structure.
 
+In the figure, the black outlines represent different structures defined by the
+template. Each structure governs a specific portion of the screen. As data gets
+fed into the template, the appearance of the page changes.
+
+If no data is sent to a particular structure, that part of the screen remains
+empty because the space is still reserved. Other components of the page will
+work around that space.
+
 Check Your Understanding
 -------------------------
 
-   TODO: Add questions
+.. admonition:: Question
+
+   Why should we use a template to design a webpage rather than just coding
+   the entire site with HTML and CSS?
+
+.. admonition:: Question
+
+   PREDICT: Do you think that changing the CSS for the *template* affects all
+   of the smaller parts within that template?
+
+   #. Yes
+   #. No
+
+.. admonition:: Question
+
+   PREDICT: Do you think that changing the CSS for one *component* in a
+   template affects all of the other parts within that template?
+
+   #. Yes
+   #. No

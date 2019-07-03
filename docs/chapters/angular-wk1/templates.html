@@ -95,15 +95,15 @@ arranged.</p>
 <p>Imagine building your own website with a smaller set of features. You could
 include favorite movies or sports teams, cities where you have lived, schools
 attended, hobbies, etc. Using your <a class="reference internal" href="../html/index.html#html-index"><span class="std std-ref">HTML</span></a> and
-<a class="reference internal" href="../css/index.html#css-index"><span class="std std-ref">CSS</span></a> knowledge, you could construct an appealing layout using
+<a class="reference internal" href="../css/index.html#css-index"><span class="std std-ref">CSS</span></a> knowledge, you could construct an appealing layout with
 carefully selected and arranged tags (<code class="docutils literal notranslate"><span class="pre">&lt;div&gt;,</span> <span class="pre">&lt;button&gt;,</span> <span class="pre">&lt;img&gt;</span></code>, etc.).</p>
 <p>Now imagine you have to change one or more items on the page. Maybe you move
 and your school or team loyalty shifts. Updating the city, school logo, etc.
 means adjusting those items in the HTML, and if that information appears in
-other areas of your website, then you need to update that code as well. Also,
+other areas of your website, then you need to modify that code as well. Also,
 you need to consider any formatting changes that result from adding or removing
 content.</p>
-<p>Whew! Updating your website rapidly gets tedious, especially if it contains
+<p>Whew! Refreshing your website rapidly gets tedious, especially if it contains
 lots of information or consists of multiple pages. If only there was a way to
 automatically update the content and quickly rearrange the layout for your
 site…</p>
@@ -201,12 +201,12 @@ the font, text size, colors, etc.</p>
 <p>We could drastically improve the appearance and content of the page by playing
 around with the tags, classes, styles and text. However, any change we want to
 make needs to be coded directly into the HTML and CSS files.</p>
-<p>This quickly becomes inefficient, especially if changing the items needs to
-occur in multiple blocks of code.</p>
+<p>This quickly becomes inefficient, especially if changing the items involves
+multiple blocks of code.</p>
 </div>
 <div class="section" id="a-better-way">
 <h3>26.2.2.2. A Better Way<a class="headerlink" href="#a-better-way" title="Permalink to this headline">¶</a></h3>
-<p>Each section in a template contains one or more “blanks” where specific items
+<p>Each section in a template contains one or more <em>blanks</em> where specific items
 need to be added. Separate JavaScript code sends data to the template to fill
 in these blanks, and this data can change based on a user’s actions.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -250,7 +250,7 @@ in these blanks, and this data can change based on a user’s actions.</p>
       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;links&quot;</span><span class="p">&gt;</span>{{Heading + linkList}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;links&quot;</span><span class="p">&gt;</span>{{headingAndLinkList}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
@@ -284,15 +284,15 @@ template and automatically formatted. For example, the template converts
 </pre></div>
 </td></tr></table></div>
 <p>By using a template to build the website, changing the list of movies, schools,
-or hobbies just involves altering something as simple as an array or object.
-After changing the data, the template does the tedious work of modifying the
-HTML. The list of movies would update automatically if we add “Up” to our
+or hobbies involves altering something as simple as an array or object. After
+changing that data, the template does the tedious work of modifying the HTML.
+The list of movies would update automatically if we add “Up” to our
 <code class="docutils literal notranslate"><span class="pre">favoriteMovies</span></code> array, which then gets passed into <code class="docutils literal notranslate"><span class="pre">{{movieContent}}</span></code>. We
 do not need to worry about re-coding any of the tags.</p>
 </div>
 <div class="section" id="templates-support-dynamic-content">
-<h3>26.2.2.3. Templates SUpport Dynamic Content<a class="headerlink" href="#templates-support-dynamic-content" title="Permalink to this headline">¶</a></h3>
-<p>If we add a search box to our website, a user could enter <em>Nasa images</em>,
+<h3>26.2.2.3. Templates Support Dynamic Content<a class="headerlink" href="#templates-support-dynamic-content" title="Permalink to this headline">¶</a></h3>
+<p>If we add a search box to our website, a user could enter <em>NASA images</em>,
 <em>giraffe gif</em>, <em>move trailers</em>, or something else. We cannot know ahead of time
 what a user will request, but we want our website to be able to display any
 relevant results.</p>
@@ -315,11 +315,38 @@ forms, APIs, or user input will be formatted to fit within our design.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/AngularTemplateDiagram.png"><img alt="Visual of a template structure." src="../../_images/AngularTemplateDiagram.png" style="width: 673.2px; height: 422.1px;" /></a>
 </div>
+<p>In the figure, the black outlines represent different structures defined by the
+template. Each structure governs a specific portion of the screen. As data gets
+fed into the template, the appearance of the page changes.</p>
+<p>If no data is sent to a particular structure, that part of the screen remains
+empty because the space is still reserved. Other components of the page will
+work around that space.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>26.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>TODO: Add questions</div></blockquote>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">Why should we use a template to design a webpage rather than just coding
+the entire site with HTML and CSS?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>PREDICT: Do you think that changing the CSS for the <em>template</em> affects all
+of the smaller parts within that template?</p>
+<ol class="last arabic simple">
+<li>Yes</li>
+<li>No</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>PREDICT: Do you think that changing the CSS for one <em>component</em> in a
+template affects all of the other parts within that template?</p>
+<ol class="last arabic simple">
+<li>Yes</li>
+<li>No</li>
+</ol>
+</div>
 </div>
 </div>
 
