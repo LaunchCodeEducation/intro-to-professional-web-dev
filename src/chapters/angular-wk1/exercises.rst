@@ -48,9 +48,9 @@ appear pretty bland. Let's change that.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
 
-Before moving on, click the GitHub login button. Save your work and rename the
-project (something like "angular-lesson-1-exercises"). Click the blue "Commit"
-button just above the files panel to store your project.
+Before moving on, click the *Sign in* button. Save your work and rename the
+project (something like "angular-lesson-1-exercises"). This will allow you to
+store your progress and return to it later, if necessary.
 
 Part 2: Add More Components
 ----------------------------
@@ -72,7 +72,7 @@ Part 2: Add More Components
       assign it a string.
    #. Add an ``<h1>`` to the ``page-title.component.html`` file. Use
       ``{{title}}`` as a placeholder for the title you defined. Style the text
-      to be underlined.
+      to be underlined and centered on the screen.
    #. Add ``<page-title></page-title>`` to ``app.component.html`` and refresh
       the preview page to see your new content.
 
@@ -81,8 +81,8 @@ Part 2: Add More Components
    #. Repeat steps 3a and b to generate a ``fav-links`` component.
    #. In the ``FavLinksComponent`` class, define a variable and assign it an
       array that contains two or more URLs.
-   #. In the ``.html`` file for this component, use placeholders to create an
-      unordered list for the web links.
+   #. In the ``.html`` file for this component, use placeholders in a set of
+      ``<a>`` tags for the web links. Each link should be on its own line.
    #. Add ``<fav-links></fav-links>`` to ``app.component.html`` and refresh
       the preview page to see the new content.
 
@@ -128,10 +128,10 @@ Your final page should have this format (the dashed lines are optional):
 .. figure:: ./figures/AngularLesson1Layout.png
    :alt: Angular Lesson 1 Exercises project.
 
-Part 4: Final Touches
------------------------
+Optional Final Touches
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-7. Complete one or more of the following:
+7. To boost your practice, complete one or more of the following:
 
    #. Change the background to a decent color, image or pattern.
    #. Add a border around one or more of the components on the page.
@@ -142,6 +142,9 @@ Part 4: Final Touches
 
 Saving Your Work
 -----------------
+
+As mentioned above, we recommend using Safari or Chrome for these exercises.
+The following instructions apply ONLY if you run StackBlitz in Firefox.
 
 To save your work using Firefox:
 
