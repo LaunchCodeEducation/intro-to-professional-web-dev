@@ -13,12 +13,12 @@ We can throw a default Error object by using the ``throw`` statement and passing
 .. admonition:: Example
 
    .. sourcecode:: js
-      :caption: Code
 
       throw ("You cannot divide by zero!");
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       Error: You cannot divide by zero!
 
@@ -30,16 +30,16 @@ JavaScript also gives us the power to throw a more specific type of error.
 .. admonition:: Example
 
    .. sourcecode:: js
-      :caption: Code
 
       throw SyntaxError("That is the incorrect syntax");
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       SyntaxError: That is the incorrect syntax
 
-   JavaScript gives us flexibiltiy by allowing us to raise standard library errors and to define our own errors. We can use exceptions to allow our program to break and provide useful information as to why something went wrong.
+   JavaScript gives us flexibility by allowing us to raise standard library errors and to define our own errors. We can use exceptions to allow our program to break and provide useful information as to why something went wrong.
 
 
 Custom Error

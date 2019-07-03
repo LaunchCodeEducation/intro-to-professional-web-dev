@@ -10,7 +10,6 @@ We may be anticipating an exception, but still want our program to continue runn
 .. admonition:: Example
 
    .. sourcecode:: js
-      :caption: Code
 
       try {
           console.log(x[0]);
@@ -20,20 +19,21 @@ We may be anticipating an exception, but still want our program to continue runn
           console.log("0");
       }
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       We caught a ReferenceError, but our program continues to run!
       0
 
-   In this example we attept to print out the first element of our variable ``x``. We forgot to define x, but nested our code inside of a ``try`` statement and specifically **catch** ``ReferenceErrors``. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.
+   In this example we attempt to print out the first element of our variable ``x``. We forgot to define x, but nested our code inside of a ``try`` statement and specifically **catch** ``ReferenceErrors``. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.
 
 JavaScript also provides us with a ``finally`` statement, a block of code that always runs every time regardless if the ``try``, or ``catch`` blocks run.
 
 .. admonition:: Example
 
    .. sourcecode:: js
-      
+
       try {
           console.log(x[0]);
       }
@@ -45,8 +45,9 @@ JavaScript also provides us with a ``finally`` statement, a block of code that a
           console.log("In the finally statement!");
       }
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       We caught a ReferenceError, but our program continues to run!
       0
