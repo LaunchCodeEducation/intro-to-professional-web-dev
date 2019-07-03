@@ -88,18 +88,18 @@
 by writing tests and classes for the Mars rover named Curiosity.</p>
 <div class="figure" id="id1">
 <img alt="Image of Curiosity rover taken by the rover on Mars." src="../_images/curiosity-rover-selfie.jpg" />
-<p class="caption"><span class="caption-text">Selfie of the Curiosity on Mars.</span></p>
+<p class="caption"><span class="caption-text">Selfie of Curiosity on Mars.</span></p>
 </div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>Write a unit test for each item in the Test List shown below<ul>
-<li>Some tests have been created for you as examples</li>
+<li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li>Write a unit test for each item in the Test List shown below.<ul>
+<li>Some tests have been created for you as examples.</li>
 </ul>
 </li>
-<li>Create or update these classes: <cite>Rover</cite>, <cite>Message</cite>, <cite>Command</cite><ul>
-<li>Details for each class are below</li>
+<li>Create or update these classes: <cite>Rover</cite>, <cite>Message</cite>, <cite>Command</cite>.<ul>
+<li>Details for each class are below.</li>
 </ul>
 </li>
 <li>Use modules<ul>
@@ -108,15 +108,15 @@ by writing tests and classes for the Mars rover named Curiosity.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="detailed-requirements">
-<h2>Detailed Requirements<a class="headerlink" href="#detailed-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="test-list">
+<h2>Test List<a class="headerlink" href="#test-list" title="Permalink to this headline">¶</a></h2>
 <p>Focus on one test at a time. Write the test and <em>then</em> the code to make it pass. Only write the minimum
 amount of code needed to make the test pass. There are some constraints on
 how you can implement these features. A list of required classes and methods is below.</p>
-<div class="section" id="test-list">
-<h3>Test List<a class="headerlink" href="#test-list" title="Permalink to this headline">¶</a></h3>
 <p>Use these exact phrases as the test description.</p>
-<p>Message tests in <code class="docutils literal notranslate"><span class="pre">spec/message.spec.js</span></code></p>
+<div class="section" id="message-tests">
+<h3>Message Tests<a class="headerlink" href="#message-tests" title="Permalink to this headline">¶</a></h3>
+<p>To be written in <code class="docutils literal notranslate"><span class="pre">spec/message.spec.js</span></code>.</p>
 <ol class="arabic simple">
 <li>throws error if name NOT passed into constructor as first parameter<ul>
 <li>This test is provided in the starter code. The code to make it pass is also included.</li>
@@ -125,23 +125,32 @@ how you can implement these features. A list of required classes and methods is 
 <li>constructor sets name</li>
 <li>contains commands passed into constructor as 2nd argument</li>
 </ol>
-<p>Command tests in <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code></p>
+</div>
+<div class="section" id="command-tests">
+<h3>Command Tests<a class="headerlink" href="#command-tests" title="Permalink to this headline">¶</a></h3>
+<p>To be written in <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code>.</p>
 <ol class="arabic simple" start="4">
 <li>throws error if type is NOT passed into constructor as first parameter</li>
 </ol>
-<p>Rover tests in <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code></p>
+</div>
+<div class="section" id="rover-tests">
+<h3>Rover Tests<a class="headerlink" href="#rover-tests" title="Permalink to this headline">¶</a></h3>
+<p>To be written in <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code>.</p>
 <ol class="arabic simple" start="5">
-<li>constructor sets default values for mode and generatorWatts</li>
+<li>constructor sets position and default values for mode and generatorWatts</li>
 <li>response returned by receiveMessage contains name of message</li>
 <li>response returned by receiveMessage includes two results, if two commands are sent in message</li>
-<li>receiveMessage responds correctly to status check</li>
-<li>status check shows correct mode after mode change</li>
-<li>TODO ADD MORE…</li>
+<li>responds correctly to status check</li>
+<li>responds with correct status after MODE_CHANGE</li>
+<li>responds with false completed value, if attempt to move while in LOW_POWER mode</li>
+<li>responds with position for move command</li>
 </ol>
 </div>
+</div>
 <div class="section" id="required-classes-and-methods">
-<h3>Required Classes and Methods<a class="headerlink" href="#required-classes-and-methods" title="Permalink to this headline">¶</a></h3>
-<p>Message Class</p>
+<h2>Required Classes and Methods<a class="headerlink" href="#required-classes-and-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="message-class">
+<h3>Message Class<a class="headerlink" href="#message-class" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">constructor(name,</span> <span class="pre">commands)</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">name</span></code> string name of message</li>
@@ -150,7 +159,9 @@ how you can implement these features. A list of required classes and methods is 
 </ul>
 </li>
 </ul>
-<p>Command Class</p>
+</div>
+<div class="section" id="command-class">
+<h3>Command Class<a class="headerlink" href="#command-class" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">constructor(type,</span> <span class="pre">value)</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">type</span></code> is a string that represents the command type (see table below for possible values)</li>
@@ -159,9 +170,12 @@ how you can implement these features. A list of required classes and methods is 
 </ul>
 </li>
 </ul>
-<p>Rover Class</p>
+</div>
+<div class="section" id="rover-class">
+<h3>Rover Class<a class="headerlink" href="#rover-class" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">constructor()</span></code>
+<li><code class="docutils literal notranslate"><span class="pre">constructor(position)</span></code>
+* Sets <code class="docutils literal notranslate"><span class="pre">this.position</span></code> to <code class="docutils literal notranslate"><span class="pre">position</span></code>
 * Sets <code class="docutils literal notranslate"><span class="pre">this.mode</span></code> to <code class="docutils literal notranslate"><span class="pre">'NORMAL'</span></code>
 * Default value for generatorWatts is 110
 * Example: <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Rover('Example</span> <span class="pre">Rover');</span></code></li>
@@ -172,8 +186,9 @@ how you can implement these features. A list of required classes and methods is 
 </li>
 </ul>
 </div>
+</div>
 <div class="section" id="rover-commands">
-<h3>Rover Commands<a class="headerlink" href="#rover-commands" title="Permalink to this headline">¶</a></h3>
+<h2>Rover Commands<a class="headerlink" href="#rover-commands" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Command</th>
@@ -183,26 +198,26 @@ how you can implement these features. A list of required classes and methods is 
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>MOVE</td>
-<td>TBD</td>
-<td>TBD</td>
+<td>Number representing the position the rover should move to.</td>
+<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">position:</span> <span class="pre">88929237}</span></code></td>
 </tr>
 <tr class="row-odd"><td>STATUS_CHECK</td>
 <td>No values sent with this command.</td>
-<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">mode:</span> <span class="pre">NORMAL,</span> <span class="pre">generatorWatts:</span> <span class="pre">110}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> will depend on current state of rover.</td>
+<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">mode:</span> <span class="pre">'NORMAL',</span> <span class="pre">generatorWatts:</span> <span class="pre">110,</span> <span class="pre">position:</span> <span class="pre">87382098}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code> will depend on current state of rover.</td>
 </tr>
-<tr class="row-even"><td>TAKE_SAMPLE</td>
-<td>TBD</td>
-<td>TBD</td>
-</tr>
-<tr class="row-odd"><td>MODE_CHANGE</td>
+<tr class="row-even"><td>MODE_CHANGE</td>
 <td>String representing rover mode (see modes)</td>
 <td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The response value for <code class="docutils literal notranslate"><span class="pre">completed</span></code> will be <code class="docutils literal notranslate"><span class="pre">false</span></code> if the command could NOT be completed.</p>
+</div>
 </div>
 <div class="section" id="rover-modes">
-<h3>Rover Modes<a class="headerlink" href="#rover-modes" title="Permalink to this headline">¶</a></h3>
+<h2>Rover Modes<a class="headerlink" href="#rover-modes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Mode</th>
@@ -211,24 +226,20 @@ how you can implement these features. A list of required classes and methods is 
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>LOW_POWER</td>
-<td>Can’t do anything in this mode.</td>
+<td>Can’t be moved in this state.</td>
 </tr>
-<tr class="row-odd"><td>STATIONARY</td>
-<td>Ready to take sample. Can’t be moved in this state.</td>
-</tr>
-<tr class="row-even"><td>NORMAL</td>
+<tr class="row-odd"><td>NORMAL</td>
 <td>None</td>
-</tr>
-<tr class="row-odd"><td>MOVE_READY</td>
-<td>Can’t take sample.</td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="bonus-missions">
-<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
-<p>Some wild and fun stuff…</p>
+<div class="section" id="bonus-mission">
+<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Add this test to <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code>.</p>
+<ol class="arabic simple" start="12">
+<li>respond with completed false and message for unknown command</li>
+</ol>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
