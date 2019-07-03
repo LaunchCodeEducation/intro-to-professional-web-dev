@@ -21,7 +21,7 @@ When a runtime error, also known as an execption, is raised JavaScript returns a
 
 JavaScript has built-in exceptions with pre-defined names and messages, however, JavaScript also gives you the ability to create your own error messages.
 
-You have undoutedly experienced various Exceptions already throughout this class. Let's look at a few common Exceptions.
+You have undoubtedly experienced various Exceptions already throughout this class. Let's look at a few common Exceptions.
 
 Common Exceptions
 -----------------
@@ -33,12 +33,12 @@ One of the most common errors in Javascript is a ``SyntaxError`` which is thrown
 .. admonition:: Example
 
    .. sourcecode:: js
-      :caption: Code
 
       console.log("This is" an example);
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       SyntaxError: missing ) after argument list
 
@@ -50,12 +50,12 @@ A ``ReferenceError`` is thrown when we try to use a variable that has not yet be
 .. admonition:: Example
 
    .. sourcecode:: js
-      :caption: Code
 
       console.log(x[0]);
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       ReferenceError: x is not defined
 
@@ -66,18 +66,18 @@ A ``TypeError`` is thrown when JavaScript expects something to be one type, but 
 .. admonition:: Example
 
    .. sourcecode:: js
-      :caption: Code
 
       const a = "Launch";
       
       a = "Code";
 
-   .. sourcecode:: js
-      :caption: Output
+   **Console Output**
+
+   ::
 
       TypeError: invalid assignment to const 'a'
 
-   In this case, we declare a constant as the string "Launch", and then try to change the immutable variable to "Code". JavaScript throws a ``TypeError`` with the message: ``invalid assignment to const 'b'``.
+In this case, we declare a constant as the string "Launch", and then try to change the immutable variable to "Code". JavaScript throws a ``TypeError`` with the message: ``invalid assignment to const 'b'``.
 
 Exceptions give us a way to provide more information on how something went wrong. JavaScript's built-in Exceptions are regularly used in the debugging process.
 
