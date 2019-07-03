@@ -86,6 +86,47 @@ This can be helpful when a function parameter needs to make use of certain behav
       }
    }
 
+.. admonition:: Example
+
+   .. sourcecode:: js
+      :linenos:
+
+      interface Panthera {
+         roar: string;
+      }
+
+      class Tiger implements Panthera {
+         roar: string;
+
+         constructor() {
+            this.roar = 'rooooaaaarrrr';
+         }
+      }
+
+      class Lion implements Panthera {
+         roar: string;
+
+         constructor() {
+            this.roar = 'ROOOOAAAAARRRRRR';
+         }
+      }
+
+      function pantheraSounds(panthera: Panthera) {
+         console.log(`Panthera says ${panthera.roar}`);
+      }
+
+      let tiger = new Tiger();
+      let lion = new Lion();
+
+      pantheraSounds(tiger);
+      pantheraSounds(lion);
+
+   In this example, the ``Panthera`` interface defines the ``roar`` property. ``Tiger`` and ``Lion`` implement the ``Panthera`` interface,
+   which means ``Tiger`` and ``Lion`` must have a ``roar`` property.
+
+   The function ``pantheraSounds`` has one parameter of type ``Panthera``. The variables ``tiger`` and ``lion`` can be passed into ``pantheraSounds``
+   because they are instances of classes that implement the ``Panthera`` type.
+
 Optional Parameters
 ^^^^^^^^^^^^^^^^^^^
 
