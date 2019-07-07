@@ -20,6 +20,18 @@ single message is one of the simplest tasks a program can carry out.
    `Repl.it <https://repl.it/login?goto=%2Frepls>`__. The site provides a free
    space to practice coding.
 
+How to Use Repl.it
+-------------------
+
+The following screenshot provides an outline for the online code editor that we
+will use for many of our examples in this course.
+
+.. figure:: figures/replit-overview.png
+   :alt: Repl.it code editor layout
+
+#. File panel: Click to add, delete, or select different files.
+#. Editor panel: Your code goes here. 
+
 Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
 begin your journey. In the editor, type:
 
@@ -27,7 +39,7 @@ begin your journey. In the editor, type:
 
 When you finish typing, click the green "Run" button and observe the output.
 
-.. warning::
+.. admonition:: Warning
 
    Do NOT just copy/paste the code. You will learn best by typing, trying,
    changing, and fixing.
