@@ -23,14 +23,32 @@ single message is one of the simplest tasks a program can carry out.
 How to Use Repl.it
 -------------------
 
-The following screenshot provides an outline for the online code editor that we
-will use for many of our examples in this course.
+Before you dive in, let's take a look at how to use Repl.it. The workspace
+consists of three main panels and several menu functions.
 
 .. figure:: figures/replit-overview.png
    :alt: Repl.it code editor layout
 
-#. File panel: Click to add, delete, or select different files.
-#. Editor panel: Your code goes here. 
+Features to note:
+
+#. File panel and menus (1). Allows you to add extensions, update settings, and
+   add, open, or delete files.
+#. Editor panel (2). Your code goes here. Click on a file to open it the
+   editor. For most new projects, an ``index`` file will be created and opened
+   by default.
+#. Console panel (3). Any output produced by the code in the editor will appear
+   in this panel. The console also displays error messages, test results, and
+   other information.
+#. If you are viewing someone else's project, you can *fork* the content (4)
+   and store a copy of that project to your own account. This allows you to
+   edit the files without changing the originals, and it lets you use other
+   programmers' work (with permission) to enhance your own.
+#. Clicking *Run* (5) executes any code written in the ``index`` file.
+#. Managing projects (6): When logged into Repl.it, you can create a new
+   project, view saved projects, or share your projects.
+
+Begin Your Journey
+-------------------
 
 Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
 begin your journey. In the editor, type:
