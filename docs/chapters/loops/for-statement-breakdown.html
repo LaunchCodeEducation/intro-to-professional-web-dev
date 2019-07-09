@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -85,7 +86,8 @@
     
   <div class="section" id="breaking-down-the-for-statement">
 <h1>9.4. Breaking Down the <code class="docutils literal notranslate"><span class="pre">for</span></code> Statement<a class="headerlink" href="#breaking-down-the-for-statement" title="Permalink to this headline">¶</a></h1>
-<p>Having seen several examples, we will now explore the syntax of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in more depth.</p>
+<p>Having seen several examples, we will now explore the syntax of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop
+in more depth.</p>
 <p>Recall the first example of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that we looked at.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -147,7 +149,10 @@
 </div>
 <div class="section" id="loop-condition">
 <h3>9.4.1.2. Loop Condition<a class="headerlink" href="#loop-condition" title="Permalink to this headline">¶</a></h3>
-<p id="index-1">The <strong>loop condition</strong> is executed before each loop iteration. It is <em>always</em> a boolean expression, evaluating to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. If the contion is true, the loop body executes. If the condition is false, loop execution stops and the program continues with the next line of code below the loop.</p>
+<p id="index-1">The <strong>loop condition</strong> is executed before each loop iteration. It is <em>always</em> a
+boolean expression, evaluating to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. If the condition is
+true, the loop body executes. If the condition is false, loop execution stops
+and the program continues with the next line of code below the loop.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This loop does not iterate at all, because its condition is false to start with.</p>
@@ -159,7 +164,11 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>It is critical that the loop condition <em>eventually</em> becomes false. A loop for which the condition is never false is known as an <strong>infinite loop</strong>, because it never stops iterating. A program that contains an infinite loop will only stop after running out of memory or being manually stopped (for example, using control+c in a terminal).</p>
+<p>It is critical that the loop condition <em>eventually</em> becomes false. A loop for
+which the condition is never false is known as an <strong>infinite loop</strong>, because it
+never stops iterating. A program that contains an infinite loop will only stop
+after running out of memory or being manually stopped (for example, using
+control+c in a terminal).</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This is an infinite loop, because its condition will always be true.</p>
@@ -171,11 +180,15 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>You will accidentally write an infinite loop at some point; doing so is a right of passage for new programmers. When this happens, don’t panic. Stop your program and figure out why your loop condition never became false.</p>
+<p>You will accidentally write an infinite loop at some point; doing so is a right
+of passage for new programmers. When this happens, don’t panic. Stop your
+program and figure out why your loop condition never became false.</p>
 </div>
 <div class="section" id="update-expression">
 <h3>9.4.1.3. Update Expression<a class="headerlink" href="#update-expression" title="Permalink to this headline">¶</a></h3>
-<p id="index-2">The final component in a for loop definition is the <strong>update expression</strong>, which executes after <em>every</em> iteration of the loop. While this expression may be anything, it most often updates the value of the loop variable.</p>
+<p id="index-2">The final component in a for loop definition is the <strong>update expression</strong>,
+which executes after <em>every</em> iteration of the loop. While this expression may
+be anything, it most often updates the value of the loop variable.</p>
 <p>In all of the examples we have seen so far, the update expression has been <code class="docutils literal notranslate"><span class="pre">i++</span></code>, incrementing the loop variable by 1. However, it can update the loop variable in other ways.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -191,7 +204,8 @@
 <p>A bad choice of update expression can also cause an infinite loop.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>This loop repeates indefinitely, since <code class="docutils literal notranslate"><span class="pre">i</span></code> becomes smaller with each iteration and thus is never greater than or equal to 51.</p>
+<p>This loop repeats indefinitely, since <code class="docutils literal notranslate"><span class="pre">i</span></code> becomes smaller with each
+iteration and thus is never greater than or equal to 51.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
@@ -203,7 +217,9 @@
 </div>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p>How does each of these three components affect the behavior of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression.</p>
+<p>How does each of these three components affect the behavior of a <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop? Experiment by modifying each of them in our example: the variable
+initialization, the boolean condition, and the update expression.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -223,7 +239,7 @@
 4
 5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">phrase</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&#39;s LC101&quot;</span><span class="p">;</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">phrase</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">phrase</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">phrase</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
 <span class="p">}</span>
 </pre></div>
@@ -232,20 +248,20 @@
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>How many times does the loop body execute?</p>
 <ol class="last arabic simple">
-<li>0</li>
+<li>5</li>
+<li>6</li>
+<li>17</li>
 <li>18</li>
-<li>16</li>
-<li>9</li>
 </ol>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which set of characters is printed by the loop? (We have placed characters for the choices below on the same line, but they would be on separate lines in the actual program output.)</p>
 <ol class="last arabic simple">
-<li>LaunchCode’s LC101</li>
-<li>LaunchCode’s LC1</li>
-<li>LucCd’ C</li>
-<li>LucCd’ C0</li>
+<li><code class="docutils literal notranslate"><span class="pre">'LaunchCode's</span> <span class="pre">LC101'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LaunchCode's</span> <span class="pre">LC10'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LnCe</span> <span class="pre">1'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LnCe</span> <span class="pre">'</span></code></li>
 </ol>
 </div>
 </div>

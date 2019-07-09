@@ -21,15 +21,16 @@ To return a value from functions that *we* create, we can use a **return stateme
 
    return someVal;
 
-where ``someVal`` is any value. 
+where ``someVal`` is any value.
 
 .. admonition:: Example
 
-   This function has a single parameter, ``n``, which is expected to be a positive integer. It returns the sum 1+2+...+n. 
+   This function has a single parameter, ``n``, which is expected to be a
+   positive integer. It returns the sum 1+2+...+n.
 
    .. sourcecode:: js
       :linenos:
-   
+
       function sumToN(n) {
          let sum = 0;
          for (let i = 0; i <= n; i++) {
@@ -41,18 +42,23 @@ where ``someVal`` is any value.
       console.log(sumToN(3));
 
    **Console Output**
-   
+
    ::
 
       6
 
-Notice that ``sumToN`` does not print anything; the output comes from the final line of the program, which prints the value *returned by* the function call ``sumToN(3)``. 
+Notice that ``sumToN`` does not print anything; the output comes from the final
+line of the program, which prints the value *returned by* the function call
+``sumToN(3)``.
 
-Now that we have return statements in our coding toolbox, we will very rarely print anything *within* a function. If we want to see the value returned by a function then we must print it *after* calling the function. 
+Now that we have return statements in our coding toolbox, we will very rarely
+print anything *within* a function. If we want to see the value returned by a
+function then we must print it *after* calling the function.
 
 .. admonition:: Question
 
-   The function ``sumToN`` uses a pattern that we have seen previously. What is it called? 
+   The function ``sumToN`` uses a pattern that we have seen previously. What is
+   it called?
 
 Using ``return`` is Optional
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,7 +69,7 @@ As we saw with our initial examples of function definitions, not every function 
 
    function doNothing() {}
 
-This function is completely valid, if usefuless. While it doesn't have a return statement, a value is still implicitly returned by JavaScript.
+This function is completely valid, if useless. While it doesn't have a return statement, a value is still implicitly returned by JavaScript.
 
 .. admonition:: Example
 
@@ -71,7 +77,7 @@ This function is completely valid, if usefuless. While it doesn't have a return 
 
    .. sourcecode:: js
       :linenos:
-   
+
       function doNothing() {}
 
       let returnVal = doNothing();
@@ -101,7 +107,7 @@ When a return statement executes, the function terminates, regardless of whether
       }
 
       console.log(pastThePointOfReturn());
-   
+
    **Console Output**
 
    ::
@@ -116,7 +122,7 @@ We can use the fact that ``return`` stops the execution of a function intentiona
 
    .. sourcecode:: js
       :linenos:
-   
+
       function countToN(n) {
          let count = 1;
          while (true) {
@@ -127,7 +133,6 @@ We can use the fact that ``return`` stops the execution of a function intentiona
             count++;
          }
       }
-   
 
 Boolean Functions
 ^^^^^^^^^^^^^^^^^
@@ -191,8 +196,8 @@ This version of ``isEven`` is better than the first two, not because it is short
 
 Most boolean functions can be written so that they return the value of a boolean expression, rather than explicitly returning ``true`` or ``false``. 
 
-Parmeters and Arguments
------------------------
+Parameters and Arguments
+-------------------------
 
 .. index::
    single: function; argument
@@ -237,7 +242,7 @@ A function may be defined with several parameters, or with no parameters at all.
 
    .. sourcecode:: js
       :linenos:
-   
+
       function hello(name) {
          return `Hello, ${name}!`;
       }
@@ -252,7 +257,9 @@ A function may be defined with several parameters, or with no parameters at all.
 
 We defined ``hello`` to have one parameter, ``name``. When calling it, however, we did not provide any arguments. Regardless, the program ran without error.
 
-*Arguments are optional* when calling a function. When a function is called without specifiying a full set of arguments, any parameters that are left without values will have the value ``undefined``.
+*Arguments are optional* when calling a function. When a function is called
+without specifying a full set of arguments, any parameters that are left
+without values will have the value ``undefined``.
 
 .. index::
    single: function; default parameter
@@ -265,7 +272,7 @@ If your function will not work properly without one more more of its parameters 
 
    .. sourcecode:: js
       :linenos:
-   
+
       function hello(name = "World") {
          return `Hello, ${name}!`;
       }
@@ -288,7 +295,7 @@ While this may seem new, we have already seen a function that allows for some ar
 
    .. sourcecode:: js
       :linenos:
-   
+
       // returns "Launch"
       "LaunchCode".slice(0, 6);
 
@@ -306,7 +313,7 @@ Just as it is possible to call a function with *fewer* arguments than it has par
 
    .. sourcecode:: js
       :linenos:
-   
+
       function hello(name = "World") {
          return `Hello, ${name}!`;
       }
@@ -382,4 +389,3 @@ Check Your Understanding
    #. Nothing (no output)
    #. ``undefined``
    #. The value of ``Bob``
-

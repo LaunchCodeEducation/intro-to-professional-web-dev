@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -85,7 +86,9 @@
     
   <div class="section" id="nested-conditionals">
 <h1>5.5. Nested Conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this headline">¶</a></h1>
-<p>We can write code with more complex branching behavior by combining conditionals, and in particular by nesting conditionals. Let’s see how this works by tackling the following problem.</p>
+<p>We can write code with more complex branching behavior by combining
+conditionals, and in particular by nesting conditionals. Let’s see how this
+works by tackling the following problem.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p class="last">Write code that prints different messages based on the value of a number variable. If the number is odd, print nothing. If it is even, print “EVEN”. If it is also positive print “POSITIVE”.</p>
@@ -114,7 +117,10 @@
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>POSITIVE
 </pre></div>
 </div>
-<p>We find that the output is <code class="docutils literal notranslate"><span class="pre">POSITIVE</span></code>, even though 7 is odd and so nothing should be printed. This code doesn’t work as desired because we only want to test for positivity when we already know that the number is even. We can enable this behavior by putting the second conditional <em>inside</em> the first.</p>
+<p>We find that the output is <code class="docutils literal notranslate"><span class="pre">POSITIVE</span></code>, even though 7 is odd and so nothing
+should be printed. This code doesn’t work as desired because we only want to
+test for positivity when we already know that the number is even. We can
+enable this behavior by putting the second conditional <em>inside</em> the first.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -137,9 +143,12 @@
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/Positive-and-Even" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p class="last">Run the previous example with a several different values for <code class="docutils literal notranslate"><span class="pre">num</span></code> (even, odd, positive, negative) to ensure it works as desired. Nice, huh?</p>
+<p class="last">Run the previous example with several different values for <code class="docutils literal notranslate"><span class="pre">num</span></code> (even,
+odd, positive, negative) to ensure it works as desired. Nice, huh?</p>
 </div>
-<p>Notice that when we put one conditional inside another, the body of the nested conditional is indented by two tabs rather than one. This convention provides an easy, visual way to determine which code is part of which conditional.</p>
+<p>Notice that when we put one conditional inside another, the body of the nested
+conditional is indented by two tabs rather than one. This convention provides
+an easy, visual way to determine which code is part of which conditional.</p>
 <div class="section" id="check-your-understanding">
 <h2>5.5.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">

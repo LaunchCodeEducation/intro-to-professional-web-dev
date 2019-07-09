@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -98,7 +99,8 @@
 <p>where <code class="docutils literal notranslate"><span class="pre">someVal</span></code> is any value.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>This function has a single parameter, <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is expected to be a positive integer. It returns the sum 1+2+…+n.</p>
+<p>This function has a single parameter, <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is expected to be a
+positive integer. It returns the sum 1+2+…+n.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -123,11 +125,16 @@
 </pre></div>
 </div>
 </div>
-<p>Notice that <code class="docutils literal notranslate"><span class="pre">sumToN</span></code> does not print anything; the output comes from the final line of the program, which prints the value <em>returned by</em> the function call <code class="docutils literal notranslate"><span class="pre">sumToN(3)</span></code>.</p>
-<p>Now that we have return statements in our coding toolbox, we will very rarely print anything <em>within</em> a function. If we want to see the value returned by a function then we must print it <em>after</em> calling the function.</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">sumToN</span></code> does not print anything; the output comes from the final
+line of the program, which prints the value <em>returned by</em> the function call
+<code class="docutils literal notranslate"><span class="pre">sumToN(3)</span></code>.</p>
+<p>Now that we have return statements in our coding toolbox, we will very rarely
+print anything <em>within</em> a function. If we want to see the value returned by a
+function then we must print it <em>after</em> calling the function.</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">The function <code class="docutils literal notranslate"><span class="pre">sumToN</span></code> uses a pattern that we have seen previously. What is it called?</p>
+<p class="last">The function <code class="docutils literal notranslate"><span class="pre">sumToN</span></code> uses a pattern that we have seen previously. What is
+it called?</p>
 </div>
 </div>
 <div class="section" id="using-return-is-optional">
@@ -136,7 +143,7 @@
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">doNothing</span><span class="p">()</span> <span class="p">{}</span>
 </pre></div>
 </div>
-<p>This function is completely valid, if usefuless. While it doesn’t have a return statement, a value is still implicitly returned by JavaScript.</p>
+<p>This function is completely valid, if useless. While it doesn’t have a return statement, a value is still implicitly returned by JavaScript.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>A function without a return statement returns the special value <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
@@ -267,8 +274,8 @@ false
 <p>Most boolean functions can be written so that they return the value of a boolean expression, rather than explicitly returning <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 </div>
-<div class="section" id="parmeters-and-arguments">
-<h2>10.4.2. Parmeters and Arguments<a class="headerlink" href="#parmeters-and-arguments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameters-and-arguments">
+<h2>10.4.2. Parameters and Arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">¶</a></h2>
 <p id="index-2">Over the past few sections, we introduced two function-related concepts that are very similar, and are often confusing to distinguish: <em>arguments</em> and <em>parameters</em>. The difference between the two is subtle, so we will attempt to clear that up now.</p>
 <p>The easiest way to talk about the difference between arguments and parameters is by referring to an example.</p>
 <div class="admonition-example admonition">
@@ -316,7 +323,9 @@ false
 </div>
 </div>
 <p>We defined <code class="docutils literal notranslate"><span class="pre">hello</span></code> to have one parameter, <code class="docutils literal notranslate"><span class="pre">name</span></code>. When calling it, however, we did not provide any arguments. Regardless, the program ran without error.</p>
-<p><em>Arguments are optional</em> when calling a function. When a function is called without specifiying a full set of arguments, any parameters that are left without values will have the value <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<p><em>Arguments are optional</em> when calling a function. When a function is called
+without specifying a full set of arguments, any parameters that are left
+without values will have the value <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
 <p id="index-3">If your function will not work properly without one more more of its parameters defined, then you should define a <strong>default value</strong> for these parameters. The default value can be provided next to the parameter name, after <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>

@@ -1,7 +1,9 @@
 Nested Conditionals
 ===================
 
-We can write code with more complex branching behavior by combining conditionals, and in particular by nesting conditionals. Let's see how this works by tackling the following problem.
+We can write code with more complex branching behavior by combining
+conditionals, and in particular by nesting conditionals. Let's see how this
+works by tackling the following problem.
 
 .. admonition:: Example
 
@@ -28,7 +30,10 @@ Our first attempt at a solution might look like this:
 
    POSITIVE
 
-We find that the output is ``POSITIVE``, even though 7 is odd and so nothing should be printed. This code doesn't work as desired because we only want to test for positivity when we already know that the number is even. We can enable this behavior by putting the second conditional *inside* the first.
+We find that the output is ``POSITIVE``, even though 7 is odd and so nothing
+should be printed. This code doesn't work as desired because we only want to
+test for positivity when we already know that the number is even. We can
+enable this behavior by putting the second conditional *inside* the first.
 
 .. replit:: js
    :linenos:
@@ -46,9 +51,12 @@ We find that the output is ``POSITIVE``, even though 7 is odd and so nothing sho
 
 .. admonition:: Try It!
 
-   Run the previous example with a several different values for ``num`` (even, odd, positive, negative) to ensure it works as desired. Nice, huh?
+   Run the previous example with several different values for ``num`` (even,
+   odd, positive, negative) to ensure it works as desired. Nice, huh?
 
-Notice that when we put one conditional inside another, the body of the nested conditional is indented by two tabs rather than one. This convention provides an easy, visual way to determine which code is part of which conditional.
+Notice that when we put one conditional inside another, the body of the nested
+conditional is indented by two tabs rather than one. This convention provides
+an easy, visual way to determine which code is part of which conditional.
 
 Check Your Understanding
 ------------------------
@@ -80,7 +88,7 @@ Check Your Understanding
 
    .. sourcecode:: js
       :linenos:
-   
+
       if (num % 2 === 0) {
           if (num % 2 === 1) {
               console.log("odd");

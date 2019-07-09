@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -85,9 +86,17 @@
     
   <div class="section" id="diagnosing-error-messages">
 <h1>6.3. Diagnosing Error Messages<a class="headerlink" href="#diagnosing-error-messages" title="Permalink to this headline">¶</a></h1>
-<p>Syntax and runtime errors <em>always</em> produce error messages. Reading and understanding error messages is a crucial first step in fixing these types of bugs.</p>
-<p><strong>Error messages are your friends.</strong> This idea can seem foreign to new programmers, because an error message is a signal that your program is broken. When we are working with a broken program, we might feel frustrated, like we do not fully understand the concepts at hand.</p>
-<p>However, the reality is that <em>all</em> programmers, no matter how experienced, regularly make simple mistakes. If you run your program and it produces an error message, your first reaction should be, “Great! My program has an error, but I have a helpful message to help me fix it.”</p>
+<p>Syntax and runtime errors <em>always</em> produce error messages. Reading and
+understanding error messages is a crucial first step in fixing these types of
+bugs.</p>
+<p><strong>Error messages are your friends.</strong> This idea can seem foreign to new
+programmers, because an error message is a signal that your program is broken.
+When we are working with a broken program, we might feel frustrated, like we do
+not fully understand the concepts at hand.</p>
+<p>However, the reality is that <em>all</em> programmers, no matter how experienced,
+regularly make simple mistakes. If you run your program and it produces an
+error message, your first reaction should be, “Great! My program has an error,
+but I have a helpful message to help me fix it.”</p>
 <p>Let’s consider a small program with a couple of syntax errors.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -96,7 +105,8 @@ console.log(&quot;Hello, name);
 </pre></div>
 </div>
 </div>
-<p>While you can spot one or more errors just by looking at the code, let’s examine the error messages produced.</p>
+<p>While you can spot one or more errors just by looking at the code, let’s
+examine the error messages produced.</p>
 <div class="section" id="a-syntax-error">
 <span id="syntax-error"></span><h2>6.3.1. A Syntax Error<a class="headerlink" href="#a-syntax-error" title="Permalink to this headline">¶</a></h2>
 <p>Running the program at this stage results in the message:</p>
@@ -117,24 +127,36 @@ SyntaxError: Invalid or unexpected token
    at internal/main/run_main_module.js:21:11
 </pre></div>
 </div>
-<p>While there is a lot of text in this message, the first few lines tell us everything we need to know.</p>
+<p>While there is a lot of text in this message, the first few lines tell us
+everything we need to know.</p>
 <p>The first portion identifies where in our code the error exists:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>console.log(&quot;Hello, name);
             ^^^^^^^^^^^^^^
 </pre></div>
 </div>
-<p>For many simple syntax errors, we will quickly be able to spot the mistake once JavaScript points out its location to us.</p>
-<p>If knowing the location of the error isn’t enough, then next line provides more information:</p>
+<p>For many simple syntax errors, we will quickly be able to spot the mistake once
+JavaScript points out its location to us.</p>
+<p>If knowing the location of the error isn’t enough, then next line provides more
+information:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SyntaxError: Invalid or unexpected token
 </pre></div>
 </div>
-<p>This line identifies that actual issue that JavaScript found. It makes it clear that we are dealing with a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, and it provides a message that describes the issue.</p>
-<p>If you are scratching your head at the message, “Invalid or unexpected token,” don’t worry. Programming languages often report errors in ways that are not always easy to decipher at first glance. However, a second look at the line in question helps us make sense of this message.</p>
+<p>This line identifies that actual issue that JavaScript found. It makes it clear
+that we are dealing with a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, and it provides a message that
+describes the issue.</p>
+<p>If you are scratching your head at the message, “Invalid or unexpected token,”
+don’t worry. Programming languages often report errors in ways that are not
+always easy to decipher at first glance. However, a second look at the line in
+question helps us make sense of this message.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>console.log(&quot;Hello, name);
             ^^^^^^^^^^^^^^
 </pre></div>
 </div>
-<p id="index-0">JavaScript is telling us that in the area of <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name);</span></code> it encountered an invalid token. <strong>Token</strong> is a fancy word that means a symbol, variable, or other atomic element of a program. In this case, the invalid token is <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name);</span></code>. JavaScript sees the double-quote character and expects a string. However, the string does not have a closing <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, making it invalid.</p>
+<p id="index-0">JavaScript is telling us that in the area of <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name);</span></code> it encountered
+an invalid token. <strong>Token</strong> is a fancy word that means a symbol, variable, or
+other atomic element of a program. In this case, the invalid token is <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span>
+<span class="pre">name);</span></code>. JavaScript sees the double-quote character and expects a string.
+However, the string does not have a closing <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, making it invalid.</p>
 <p>Fixing this error gives us a program with correct syntax:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">Julie</span><span class="p">;</span>
@@ -148,13 +170,21 @@ SyntaxError: Invalid or unexpected token
 </div>
 <div class="section" id="syntax-errors-and-code-highlighting">
 <h2>6.3.2. Syntax Errors and Code Highlighting<a class="headerlink" href="#syntax-errors-and-code-highlighting" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">Most code editors provide a feature known as <strong>syntax highlighting</strong>. Such editors highlight different types of tokens in different ways. For example, strings may be red, while variables may be green. This useful feature give you a quick, visual way to identify syntax errors.</p>
+<p id="index-1">Most code editors provide a feature known as <strong>syntax highlighting</strong>. Such
+editors highlight different types of tokens in different ways. For example,
+strings may be red, while variables may be green. This useful feature gives you
+a quick, visual way to identify syntax errors.</p>
 <p>For example, here is a screenshot of our flawed code taken within an <a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Highlighting" target="_blank">editor at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <div class="figure" id="id1">
 <img alt="A screenshot with two lines of code. Syntax errors on each line cause highlighting to differ from what is expected. On line 1, the string &quot;Julie&quot; is green instead of red, because it is missing quotes. On line 2, the symbols ); are red instead of black, because the preceding string &quot;Hello, World&quot; doesn't have a closing double-quote." src="../../_images/syntax-highlighting.png" />
 <p class="caption"><span class="caption-text">Screenshot of a program with two syntax errors</span></p>
 </div>
-<p>Notice that the string <code class="docutils literal notranslate"><span class="pre">Hello</span></code> is colored red, while <em>most</em> of the symbols (<code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">(</span></code>) are colored black. At the end of line 1, however, the final <code class="docutils literal notranslate"><span class="pre">)</span></code> and <code class="docutils literal notranslate"><span class="pre">;</span></code> are both red rather than black. Since we haven’t closed the string, the editor assumes that these two symbols are <em>part of</em> the string. Since we expect <code class="docutils literal notranslate"><span class="pre">);</span></code> to be black in this editor, the difference in color is a clue that something is wrong with our syntax.</p>
+<p>Notice that the string <code class="docutils literal notranslate"><span class="pre">Hello</span></code> is colored red, while <em>most</em> of the symbols
+(<code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">(</span></code>) are colored black. At the end of line 2,
+however, the final <code class="docutils literal notranslate"><span class="pre">)</span></code> and <code class="docutils literal notranslate"><span class="pre">;</span></code> are both red rather than black. Since we
+haven’t closed the string, the editor assumes that these two symbols are <em>part
+of</em> the string. Since we expect <code class="docutils literal notranslate"><span class="pre">);</span></code> to be black in this editor, the
+difference in color is a clue that something is wrong with our syntax.</p>
 </div>
 <div class="section" id="a-runtime-error">
 <h2>6.3.3. A Runtime Error<a class="headerlink" href="#a-runtime-error" title="Permalink to this headline">¶</a></h2>
