@@ -9,10 +9,12 @@ The general syntax for this method is:
 
    stringName.toLowerCase();
 
-This method returns a copy of ``stringName`` with all uppercase letters replaced by their lowercase counterparts. It leaves non-alphabetic characters unchanged.
+This method returns a copy of ``stringName`` with all uppercase letters
+replaced by their lowercase counterparts. It leaves non-alphabetic characters
+unchanged.
 
 .. sourcecode:: js
-         
+
    // returns "launchcode"
    "LaunchCode".toLowerCase();
 
@@ -24,7 +26,7 @@ This method returns a copy of ``stringName`` with all uppercase letters replaced
    This program standardizes an email address by converting it to all lowercase characters.
 
    .. sourcecode:: js
-   
+
       let input = "fake.email@LAUNCHCODE.ORG";
       let email = input.toLowerCase();
       console.log(email);
@@ -35,4 +37,9 @@ This method returns a copy of ``stringName`` with all uppercase letters replaced
 
       fake.email@launchcode.org
 
-.. warning:: This example is a bit crude, since the portion of an email address *before* the ``@`` symbol is allowed to be case-sensitive. If standardizing the case of an email in a real application, we would want to be more precise and only convert the domain portion to lowercase characters.
+.. admonition:: Warning
+
+   This example is a bit crude, since the portion of an email address *before*
+   the ``@`` symbol is allowed to be case-sensitive. When standardizing the
+   case of an email in a real application, we would want to be more precise
+   and only convert the domain portion to lowercase characters.

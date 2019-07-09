@@ -48,7 +48,7 @@ Here we present the most commonly-used string methods. You can find documentatio
      - Description
    * - :ref:`indexOf <string-indexof-examples>`
      - ``stringName.indexOf(substr)``
-     - Returns the index of the first occurence of the substring in the string, and returns -1 if the substring is not found.
+     - Returns the index of the first occurrence of the substring in the string, and returns -1 if the substring is not found.
    * - :ref:`toLowerCase <string-tolowercase-examples>`
      - ``stringName.toLowerCase()``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.
@@ -60,7 +60,7 @@ Here we present the most commonly-used string methods. You can find documentatio
      - Returns a copy of the given string with the leading and trailing whitespace removed.
    * - :ref:`replace <string-replace-examples>`
      - ``stringName.replace(searchChar, replacementChar)``
-     - Returns a copy of ``stringName``, with the first occurence of ``searchChar`` replaced by ``replacementChar``.
+     - Returns a copy of ``stringName``, with the first occurrence of ``searchChar`` replaced by ``replacementChar``.
    * - :ref:`slice <string-slice-examples>`
      - ``stringName.slice(i, j)``
      - Return the substring consisting of characters from index ``i`` through index ``j-1``.
@@ -104,7 +104,7 @@ Follow the links in the table above for the ``replace``, ``slice``, and ``trim``
 
    .. sourcecode:: js
       :linenos:
-   
+
       let org = "  The LaunchCode Foundation ";
       let trimmed = org.trim();
 
