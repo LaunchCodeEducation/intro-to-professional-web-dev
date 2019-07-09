@@ -42,51 +42,51 @@ The following table describes all JavaScript error types. Some of these relate t
      - Example description
    * - ``SyntaxError``
      - Occurs when trying to parse syntactically invalid code.
-     - 
+     -
        .. sourcecode:: js
-       
+
           console.log("hello";
 
      - The call to ``console.log`` does not have a required close parenthesis.
    * - ``ReferenceError``
      - Occurs when a non-existent variable is used/referenced.
-     - 
+     -
        .. sourcecode:: js
          :linenos:
-       
+
           let firstName = "Jack";
           console.log(firstname);
 
      - The variable ``firstname`` does not exist; it is a misspelling of ``firstName``.
    * - ``TypeError``
      - Occurs when trying to use a value in an invalid way.
-     - 
+     -
        .. sourcecode:: js
-       
+
           1();
 
      - The numeric value ``1`` is not a function, so trying to use it as one results in ``TypeError: 1 is not a function``.
    * - ``RangeError``
      - Occurs when passing an invalid value to a function.
-     - 
+     -
        .. sourcecode:: js
-       
+
           let nums = Array(-1);
 
      - The constructor function ``Array(n)`` creates an empty array of length ``n``. It is not possible to create an array with negative length, so the code results in ``RangeError: Invalid array length``.
    * - ``URIError``
-     - Occurs when improperly using a global URI-handling function.
-     - 
+     - Occurs when improperly using a global URI-handling function. ('URI' = Uniform Resource Identifier)
+     -
        .. sourcecode:: js
-       
+
           decodeURI('%');
 
      - The ``%`` character is used to encode characters not otherwise allowed in URIs, such as spaces (``%20``). If an invalid character encoding is given, a ``URIError`` results.
    * - ``Error``
      - The type from which all other errors are built. It can be used to generate programmer-triggered and programmer-defined errors.
-     - 
+     -
        .. sourcecode:: js
-       
+
           throw Error("Something bad happened!");
 
      - Manually triggers an error with the given message.

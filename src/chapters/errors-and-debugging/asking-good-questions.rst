@@ -10,7 +10,7 @@ Not only will these questions help others assist you more directly, but they may
 What is the problem with your code?
 -----------------------------------
 
-You should be able to state in general terms the error you are experiencing.
+Describe the error you are experiencing with as much detail as possible.
 
 **Bad:** "My program is broken."
 
