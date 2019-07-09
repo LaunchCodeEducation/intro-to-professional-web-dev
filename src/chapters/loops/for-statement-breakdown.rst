@@ -1,7 +1,8 @@
 Breaking Down the ``for`` Statement
 ===================================
 
-Having seen several examples, we will now explore the syntax of a ``for`` loop in more depth. 
+Having seen several examples, we will now explore the syntax of a ``for`` loop
+in more depth.
 
 Recall the first example of a ``for`` loop that we looked at.
 
@@ -19,7 +20,7 @@ We broke down the flow of execution of this loop, noting that the loop executes 
 
    for (let i = 0; i < upperBound; i++) {
       // loop body
-   }   
+   }
 
 However, the three components of a ``for`` loop statement can take different forms to create more complex looping behavior.
 
@@ -53,7 +54,7 @@ The loop variable can be initialized to any value.
 
    .. sourcecode:: js
       :linenos:
-   
+
       for (let i = 3; i < 10; i++) {
          console.log(i);
       }
@@ -62,7 +63,7 @@ The loop variable can be initialized to any value.
 
    .. sourcecode:: js
       :linenos:
-   
+
       let name = "LaunchCode";
 
       for (let i = 6; i < name.length; i++) {
@@ -75,7 +76,7 @@ To avoid confusion and bugs, you should give your loop variable a unique name, o
 
    .. sourcecode:: js
       :linenos:
-   
+
       for (let i = 0; i < 42; i++) {
          console.log("LaunchCode");
       }
@@ -86,7 +87,10 @@ Loop Condition
 .. index::
    single: for loop; condition
 
-The **loop condition** is executed before each loop iteration. It is *always* a boolean expression, evaluating to ``true`` or ``false``. If the contion is true, the loop body executes. If the condition is false, loop execution stops and the program continues with the next line of code below the loop.
+The **loop condition** is executed before each loop iteration. It is *always* a
+boolean expression, evaluating to ``true`` or ``false``. If the condition is
+true, the loop body executes. If the condition is false, loop execution stops
+and the program continues with the next line of code below the loop.
 
 .. admonition:: Example
 
@@ -94,12 +98,16 @@ The **loop condition** is executed before each loop iteration. It is *always* a 
 
    .. sourcecode:: js
       :linenos:
-   
+
       for (let i = 0; i < -1; i++) {
          console.log("LaunchCode");
       }
 
-It is critical that the loop condition *eventually* becomes false. A loop for which the condition is never false is known as an **infinite loop**, because it never stops iterating. A program that contains an infinite loop will only stop after running out of memory or being manually stopped (for example, using control+c in a terminal). 
+It is critical that the loop condition *eventually* becomes false. A loop for
+which the condition is never false is known as an **infinite loop**, because it
+never stops iterating. A program that contains an infinite loop will only stop
+after running out of memory or being manually stopped (for example, using
+control+c in a terminal).
 
 .. admonition:: Example
 
@@ -107,12 +115,14 @@ It is critical that the loop condition *eventually* becomes false. A loop for wh
 
    .. sourcecode:: js
       :linenos:
-   
+
       for (let i = 0; i > -1; i++) {
          console.log("LaunchCode");
       }
 
-You will accidentally write an infinite loop at some point; doing so is a right of passage for new programmers. When this happens, don't panic. Stop your program and figure out why your loop condition never became false. 
+You will accidentally write an infinite loop at some point; doing so is a right
+of passage for new programmers. When this happens, don't panic. Stop your
+program and figure out why your loop condition never became false.
 
 Update Expression
 ^^^^^^^^^^^^^^^^^
@@ -120,7 +130,9 @@ Update Expression
 .. index::
    single: for loop; update expression
 
-The final component in a for loop definition is the **update expression**, which executes after *every* iteration of the loop. While this expression may be anything, it most often updates the value of the loop variable. 
+The final component in a for loop definition is the **update expression**,
+which executes after *every* iteration of the loop. While this expression may
+be anything, it most often updates the value of the loop variable.
 
 In all of the examples we have seen so far, the update expression has been ``i++``, incrementing the loop variable by 1. However, it can update the loop variable in other ways.
 
@@ -130,7 +142,7 @@ In all of the examples we have seen so far, the update expression has been ``i++
 
    .. sourcecode:: js
       :linenos:
-   
+
       for (let i = 0; i < 51; i = i + 2) {
          console.log(i);
       }
@@ -139,7 +151,8 @@ A bad choice of update expression can also cause an infinite loop.
 
 .. admonition:: Example
 
-   This loop repeates indefinitely, since ``i`` becomes smaller with each iteration and thus is never greater than or equal to 51.
+   This loop repeats indefinitely, since ``i`` becomes smaller with each
+   iteration and thus is never greater than or equal to 51.
 
    .. replit:: js
       :linenos:
@@ -151,11 +164,13 @@ A bad choice of update expression can also cause an infinite loop.
 
 .. admonition:: Try It!
 
-   How does each of these three components affect the behavior of a ``for`` loop? Experiment by modifying each of them in our example: the variable initialization, the boolean condition, and the update expression. 
+   How does each of these three components affect the behavior of a ``for``
+   loop? Experiment by modifying each of them in our example: the variable
+   initialization, the boolean condition, and the update expression.
 
    .. sourcecode:: js
       :linenos:
-   
+
       for (let i = 0; i < 51; i++) {
          console.log(i);
       }
@@ -170,7 +185,7 @@ Consider the program:
 
    let phrase = "LaunchCode's LC101";
 
-   for (let i = 0; i < phrase.length - 3; i = i + 3) {
+   for (let i = 0; i < phrase.length - 1; i = i + 3) {
       console.log(phrase[i]);
    }
 
@@ -178,16 +193,16 @@ Consider the program:
 
    How many times does the loop body execute?
 
-   #. 0
+   #. 5
+   #. 6
+   #. 17
    #. 18
-   #. 16
-   #. 9
 
 .. admonition:: Question
 
    Which set of characters is printed by the loop? (We have placed characters for the choices below on the same line, but they would be on separate lines in the actual program output.)
 
-   #. LaunchCode's LC101
-   #. LaunchCode's LC1
-   #. LucCd' C
-   #. LucCd' C0
+   #. ``'LaunchCode's LC101'``
+   #. ``'LaunchCode's LC10'``
+   #. ``'LnCe 1'``
+   #. ``'LnCe '``
