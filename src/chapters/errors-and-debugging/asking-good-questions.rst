@@ -36,7 +36,7 @@ Where have you looked for an answer?
 
 **Bad:** "I Googled 'js range error' and didn't see anything."
 
-**Good:** "I Googled 'js range error boolean expression' and found a question on Stack Overflow that seemed relevant. I tried the the recommended solution, but it didn't fix my problem."
+**Good:** "I Googled 'js range error boolean expression' and found a question on Stack Overflow that seemed relevant. I tried the recommended solution, but it didn't fix my problem."
 
 
 
