@@ -8,7 +8,11 @@ While debugging is an unavoidable part of programming, you can reduce the number
 Start Small
 -----------
 
-This is probably the best piece of advice for programmers at every level. It can be tempting to sit down and write an entire program all at once. However, this leaves a large number of possibilities when the program does not work. The errors could be hiding anywhere in the code The more code, the more possibilities exist. Where to start? How to figure out what went wrong? 
+This is probably the best piece of advice for programmers at every level. It
+can be tempting to sit down and write an entire program all at once. However,
+this leaves a large number of possibilities when the program does not work.
+The errors could be hiding anywhere in the code. The more code, the more
+possibilities exist. Where to start? How to figure out what went wrong?
 
 When you start work on a large program, break the process down into smaller steps. Begin coding one very small part---even if that's just 2 lines of code. Then make sure the program runs properly before adding the next small part.
 
