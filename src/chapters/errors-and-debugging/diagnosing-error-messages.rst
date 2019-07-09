@@ -1,22 +1,31 @@
 Diagnosing Error Messages
 =========================
 
-Syntax and runtime errors *always* produce error messages. Reading and understanding error messages is a crucial first step in fixing these types of bugs.
+Syntax and runtime errors *always* produce error messages. Reading and
+understanding error messages is a crucial first step in fixing these types of
+bugs.
 
-**Error messages are your friends.** This idea can seem foreign to new programmers, because an error message is a signal that your program is broken. When we are working with a broken program, we might feel frustrated, like we do not fully understand the concepts at hand. 
+**Error messages are your friends.** This idea can seem foreign to new
+programmers, because an error message is a signal that your program is broken.
+When we are working with a broken program, we might feel frustrated, like we do
+not fully understand the concepts at hand.
 
-However, the reality is that *all* programmers, no matter how experienced, regularly make simple mistakes. If you run your program and it produces an error message, your first reaction should be, "Great! My program has an error, but I have a helpful message to help me fix it."
+However, the reality is that *all* programmers, no matter how experienced,
+regularly make simple mistakes. If you run your program and it produces an
+error message, your first reaction should be, "Great! My program has an error,
+but I have a helpful message to help me fix it."
 
 Let's consider a small program with a couple of syntax errors.
 
 .. admonition:: Example
 
    ::
-   
+
       let name = Julie;
       console.log("Hello, name);
 
-While you can spot one or more errors just by looking at the code, let's examine the error messages produced.
+While you can spot one or more errors just by looking at the code, let's
+examine the error messages produced.
 
 .. _syntax-error:
 
@@ -44,7 +53,8 @@ Running the program at this stage results in the message:
       at internal/main/run_main_module.js:21:11
 
 
-While there is a lot of text in this message, the first few lines tell us everything we need to know.
+While there is a lot of text in this message, the first few lines tell us
+everything we need to know.
 
 The first portion identifies where in our code the error exists:
 
@@ -53,17 +63,24 @@ The first portion identifies where in our code the error exists:
    console.log("Hello, name);
                ^^^^^^^^^^^^^^
 
-For many simple syntax errors, we will quickly be able to spot the mistake once JavaScript points out its location to us.
+For many simple syntax errors, we will quickly be able to spot the mistake once
+JavaScript points out its location to us.
 
-If knowing the location of the error isn't enough, then next line provides more information:
+If knowing the location of the error isn't enough, then next line provides more
+information:
 
 ::
 
    SyntaxError: Invalid or unexpected token
 
-This line identifies that actual issue that JavaScript found. It makes it clear that we are dealing with a ``SyntaxError``, and it provides a message that describes the issue.
+This line identifies that actual issue that JavaScript found. It makes it clear
+that we are dealing with a ``SyntaxError``, and it provides a message that
+describes the issue.
 
-If you are scratching your head at the message, "Invalid or unexpected token," don't worry. Programming languages often report errors in ways that are not always easy to decipher at first glance. However, a second look at the line in question helps us make sense of this message.
+If you are scratching your head at the message, "Invalid or unexpected token,"
+don't worry. Programming languages often report errors in ways that are not
+always easy to decipher at first glance. However, a second look at the line in
+question helps us make sense of this message.
 
 ::
 
@@ -72,7 +89,11 @@ If you are scratching your head at the message, "Invalid or unexpected token," d
 
 .. index:: ! token
 
-JavaScript is telling us that in the area of ``"Hello, name);`` it encountered an invalid token. **Token** is a fancy word that means a symbol, variable, or other atomic element of a program. In this case, the invalid token is ``"Hello, name);``. JavaScript sees the double-quote character and expects a string. However, the string does not have a closing ``"``, making it invalid.
+JavaScript is telling us that in the area of ``"Hello, name);`` it encountered
+an invalid token. **Token** is a fancy word that means a symbol, variable, or
+other atomic element of a program. In this case, the invalid token is ``"Hello,
+name);``. JavaScript sees the double-quote character and expects a string.
+However, the string does not have a closing ``"``, making it invalid.
 
 Fixing this error gives us a program with correct syntax:
 
@@ -91,16 +112,28 @@ Syntax Errors and Code Highlighting
 .. index::
    single: syntax; highlighting
 
-Most code editors provide a feature known as **syntax highlighting**. Such editors highlight different types of tokens in different ways. For example, strings may be red, while variables may be green. This useful feature give you a quick, visual way to identify syntax errors.
+Most code editors provide a feature known as **syntax highlighting**. Such
+editors highlight different types of tokens in different ways. For example,
+strings may be red, while variables may be green. This useful feature gives you
+a quick, visual way to identify syntax errors.
 
 For example, here is a screenshot of our flawed code taken within an `editor at repl.it <https://repl.it/@launchcode/Syntax-Highlighting>`_.
 
 .. figure:: figures/syntax-highlighting.png
-   :alt: A screenshot with two lines of code. Syntax errors on each line cause highlighting to differ from what is expected. On line 1, the string "Julie" is green instead of red, because it is missing quotes. On line 2, the symbols ); are red instead of black, because the preceding string "Hello, World" doesn't have a closing double-quote. 
-   
+   :alt: A screenshot with two lines of code. Syntax errors on each line cause
+      highlighting to differ from what is expected. On line 1, the string "Julie"
+      is green instead of red, because it is missing quotes. On line 2, the
+      symbols ); are red instead of black, because the preceding string "Hello,
+      World" doesn't have a closing double-quote.
+
    Screenshot of a program with two syntax errors
 
-Notice that the string ``Hello`` is colored red, while *most* of the symbols (``=``, ``;``, ``.``, and ``(``) are colored black. At the end of line 1, however, the final ``)`` and ``;`` are both red rather than black. Since we haven't closed the string, the editor assumes that these two symbols are *part of* the string. Since we expect ``);`` to be black in this editor, the difference in color is a clue that something is wrong with our syntax.
+Notice that the string ``Hello`` is colored red, while *most* of the symbols
+(``=``, ``;``, ``.``, and ``(``) are colored black. At the end of line 2,
+however, the final ``)`` and ``;`` are both red rather than black. Since we
+haven't closed the string, the editor assumes that these two symbols are *part
+of* the string. Since we expect ``);`` to be black in this editor, the
+difference in color is a clue that something is wrong with our syntax.
 
 
 A Runtime Error

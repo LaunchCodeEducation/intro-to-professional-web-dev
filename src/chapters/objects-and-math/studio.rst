@@ -35,7 +35,7 @@ To access the code for exercise 1, open this `repl.it link <https://repl.it/@lau
 
    ``arrayName.includes(item)`` can be used to check if the array already contains
    ``item``. A ``while`` loop can keep the selection process going until the
-   desired number of entires have been added to the array.
+   desired number of entries have been added to the array.
 
 Orbit Calculations
 -------------------
