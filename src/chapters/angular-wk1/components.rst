@@ -1,53 +1,69 @@
 Components
 ===========
 
-Angular builds a web page by combining multiple components together. Splitting our page into individual components makes our application more organized, and increases our ability to focus on one section of our web application at a time.
+.. index:: ! angular-component
 
-Everything in Angular is built on top of this component concept. So it is crucial to understand the individual pieces of a component, and how to get component to work together.
+In Angular a **component** controls a patch of screen called a view.
+
+Angular builds a web page by combining multiple **components** together. Splitting our page into individual components makes our application more organized, and increases our ability to focus on one section of our web application at a time.
+
+Everything in Angular centers on the idea of building a webpage from separate, smaller pieces. We must understand how to get these pieces to work together, and that begins by exploring what makes up each individual component.t. So it is crucial to understand the individual pieces of a component, and how to get component to work together.
 
 Component Files
 ---------------
 
-A component consists of 3 files:
-    - an HTML file (.html)
-    - a CSS file (.css)
-    - a typescript file (.ts)
+A component consists of 4 files:
+    
+    #. an HTML file (.html)
+    #. a CSS file (.css)
+    #. a typescript file (.ts)
+    #. a test file (.spec.ts)
 
-TODO: picture?
+.. figure:: ./figures/ComponentPieces.png
+   :alt: Visual of the files associated with a Component.
 
-All three of these files will be found in a folder named after the component. All three files will also be named after the component.
+Looking at the file tree, we see that all four files contain the name of the component. Also, the files are located in a folder named after the component. In the example above the component was named header.
 
-As an example, if we create a new component named task-list our three files would be found in the task-list folder and would be called:
-    - task-list.html
-    - task-list.css
-    - task-list.ts
+As an example, if we create a new component named task-list our four files would be found in the task-list folder and would be called:
+    #. task-list.html
+    #. task-list.css
+    #. task-list.ts
+    #. task-list.spec.ts
 
-In this example each file of our component will contain only the information necessary for this component. task-list.html will only contain the HTML required for the task-list, task-list.css will only contain the styling information required for this task-list, and task-list.ts will only contain the typescript required by this component.
+Each file contains the information necessary for ONLY that component. ``task-list.html`` holds the HTML required for the task-list and no other component. ``task-list.css`` only styles task-list, the typescript code in ``task-list.ts`` only applies to this component, and all the tests for this component will be found in ``task-list.spec.ts``.
 
-Adding a Component to the Main Component
-----------------------------------------
+Adding a New Component
+----------------------
 
-Each component is it's a part of the entire web application. In important thing to understand is how new components are added to the main component. The main component is the base component that comes standard with all Angular applications. It's the container that holds all of the components, and organizes them into the web application.
+Each component is a smaller part of an overall web application. The main component serves as a base structure, and it comes standard with all Angular applications. It's the container that holds all of the other components, and it organizes them into the web application.
 
-Once we have created a new component we will need to make sure it is added to the main component.
+An important thing to understand is how new components are created and then added to the main component.
 
-When you generate a new component using a tool like Stackblitz, or the Angular CLI it is automatically added to the main component, but let's still look at how is added.
+When you generate a new component using a tool like Stackblitz or the Angular CLI, it is automatically added to the main component. Let's explore how this process works.
 
-TODO: picture
+With the Angular CLI we generate a new component with the ``ng generate component`` command from the terminal.
 
-Code is added in two places:
-    - main.html
-    - app.module
+.. figure:: ./figures/GenerateComponent.png
+   :alt: Visual of the terminal command to create a new Component.
+
+From the output of the command we can see it creates four new files in the appropriate folder, and updates our ``app.module.ts`` file. Which results in the following file structure.
+
+.. figure:: ./figures/GenerateComponentResult.png
+   :alt: Visual of the results of generate Component.
 
 Component Nesting
 -----------------
 
-Components can be put inside of other components. In essence this is how the main component work. It is the component that holds all other components.
+Components can be put inside of other components. In essence this is how the main component works. It is the component that holds all other components.
 
-However, in some instances you may want to nest a component inside of another component that isn't the main component.
+However, sometimes you may want to nest a new component inside of another one rather than in main.
 
-In this case you follow the same steps to nest a component inside of the main component, but for the component that is holding the nested component.
+In this case we will need to change into the task-list directory from our terminal, and then we will need to run the ``ng generate component`` command.
 
-TODO: picture
+.. figure:: ./figures/GenerateNestedComponent.png
+   :alt: Visual of the terminal command(s) to create a nested component.
 
-You also will have to make sure this new component isn't also nested inside of the main component, or you may see the component has been duplicated.
+Upon running this command it nests our new folder inside of the task-list folder, and contains the four files we would expect.
+
+.. figure:: ./figures/GenerateNestedComponentResult.png
+   :alt: Visual of the result of the running the commands to create a nested component.
