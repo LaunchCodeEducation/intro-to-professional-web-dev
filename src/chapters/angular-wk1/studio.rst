@@ -55,6 +55,8 @@ Data you will need for this project:
     - Equipment: Command Module, Lunar Module, 3 flight suits, 2 moon suits, 30 meals, 100 litres of water
     - Countries: United States
 
+If you need a reminder on how to create components and organize them using the app component work through the :ref: `` again.
+
 Bonus Mission
 -------------
 
