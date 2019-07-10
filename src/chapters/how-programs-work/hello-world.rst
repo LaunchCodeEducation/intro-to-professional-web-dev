@@ -64,6 +64,12 @@ Features to note:
 #. Managing projects (6): When logged into Repl.it, you can create a new
    project, view saved projects, or share your projects.
 
+.. admonition:: Note
+
+   The workspace shown above uses the "dark" theme (light text on a black
+   background). If you prefer the reverse (dark text on a white background),
+   click the gear icon and select the "light" theme.
+
 Begin Your Coding Journey
 --------------------------
 

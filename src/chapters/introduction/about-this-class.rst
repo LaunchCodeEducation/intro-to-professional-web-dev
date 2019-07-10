@@ -86,6 +86,8 @@ Assignments
 Assignments are larger projects where you demonstrate what you have learned and
 challenge yourself. Assignments oftentimes cover multiple lessons.
 
+.. index:: ! Canvas
+
 Canvas
 =======
 
