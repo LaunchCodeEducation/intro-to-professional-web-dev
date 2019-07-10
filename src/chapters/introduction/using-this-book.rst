@@ -28,11 +28,15 @@ augment to quickly reinforce what you have just read. Play around with these!
 Repl.it
 ^^^^^^^
 
-Many examples have links to repl.it. This is a site where you write and run
-your own code. Repl.it accounts are free, so we encourage you to
-`sign up for one <https://repl.it/signup>`__. When you want to start putting your
-own spin on something, you click the "Fork" button and repl.it will make a copy
-of the code for you. This copy will be stored in your personal account.
+Many examples have links to **Repl.it**. This website allows you to write and
+run practice code. Repl.it accounts are free, so we encourage you to
+`sign up for one <https://repl.it/signup>`__. More details for using Repl.it
+will be provided when you :ref:`write your first program <hello-world>`.
+
+As you explore the prepared examples in this book, feel free to make changes to
+the code. If you want to save your edits, click the *Fork* button at the top of
+the workspace, and Repl.it will store a copy of the code in your personal
+account.
 
 Supplemental Content
 --------------------
