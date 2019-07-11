@@ -2,11 +2,21 @@ Exercises: Data and Variables
 =============================
 
 Exercises appear regularly in the book. Just like the concept checks, these
-exercises will check your understanding of the topics in this chapter and are a
-way for you to practice the skills that are covered in each chapter.
+exercises will check your understanding of the topics in this chapter. They
+also provide good practice for the new skills.
 
-For the following exercises, you will use the information given below about
-your space shuttle.
+Unlike the concept checks, you will need a code editor to complete the
+exercises. Fortunately, you :ref:`created a free account <hello-world>` on
+Repl.it as part of the prep work.
+
+`Open this link <https://repl.it/@launchcode/Exercises-Data-and-Variables>`__
+to the repl.it file prepared for this task, then follow the instructions below.
+
+The Assignment
+---------------
+
+Use the information given below about your space shuttle to complete the
+exercises:
 
 .. list-table::
    :widths: auto
