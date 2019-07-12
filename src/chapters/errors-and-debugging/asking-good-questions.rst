@@ -10,7 +10,7 @@ Not only will these questions help others assist you more directly, but they may
 What is the problem with your code?
 -----------------------------------
 
-You should be able to state in general terms the error you are experiencing.
+Describe the error you are experiencing with as much detail as possible.
 
 **Bad:** "My program is broken."
 
@@ -36,7 +36,7 @@ Where have you looked for an answer?
 
 **Bad:** "I Googled 'js range error' and didn't see anything."
 
-**Good:** "I Googled 'js range error boolean expression' and found a question on Stack Overflow that seemed relevant. I tried the the recommended solution, but it didn't fix my problem."
+**Good:** "I Googled 'js range error boolean expression' and found a question on Stack Overflow that seemed relevant. I tried the recommended solution, but it didn't fix my problem."
 
 
 

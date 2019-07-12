@@ -1,11 +1,14 @@
 Exercises: Booleans and Conditionals
 ====================================
 
-Attempt these exercises to test your understanding. 
-Don't worry if you struggle while working on them. Struggling and recalling
-the material will help you remember it.
+Attempt these exercises to test your understanding. Don't worry if you struggle
+while working on them. Struggling and then reviewing the material will help you
+remember it.
 
-In class, be sure to ask about the topics you do not understand. You are NOT the only person who needs help.
+In class, be sure to ask about the topics you do not understand. You are NOT
+the only person who needs help.
+
+`Code exercises 1 & 2 here <https://repl.it/@launchcode/ConditionalsExercises01>`__.
 
 #. Declare and initialize the following variables for our space shuttle:
 
@@ -30,7 +33,8 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
 
 #. Examine the code below. What will be printed to the console?
 
-   Use the value of ``engineIndicatorLight`` defined above to answer this question.
+   Use the value of ``engineIndicatorLight`` defined above to answer this
+   question.
 
    .. sourcecode:: js
       :linenos:
@@ -43,7 +47,9 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
          console.log("engines are off");
       }
 
-#. Write conditional expressions to satisfy the safety rules below, using the variables defined from the table above.
+#. Write conditional expressions to satisfy the safety rules below, using the
+   variables defined from the table above.
+   `Code exercises 3 & 4 here <https://repl.it/@launchcode/ConditionalsExercises02>`__.
 
    #. ``crewStatus``
 
@@ -52,19 +58,22 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
 
    #. ``computerStatusCode``
 
-      - If the value is ``200``, print ``"Please stand by. Computer is rebooting."``
+      - If the value is ``200``, print
+        ``"Please stand by. Computer is rebooting."``
       - Else if the value is ``400``, print ``"Success! Computer online."``
       - Else print ``"ALERT: Computer offline!"``
 
    #. ``shuttleSpeed``
 
-      - If the value is ``> 17,500``, print ``"ALERT: Escape velocity reached!"``
-      - Else if the value is ``< 8000``, print ``"ALERT: Cannot maintain orbit!"``
+      - If the value is ``> 17,500``, print
+        ``"ALERT: Escape velocity reached!"``
+      - Else if the value is ``< 8000``, print
+        ``"ALERT: Cannot maintain orbit!"``
       - Else print ``"Stable speed"``
 
-#. Do these code blocks produce the same result?
+#. PREDICT:
 
-   Answer Yes or No
+   Do these code blocks produce the same result? Answer Yes or No.
 
    .. sourcecode:: js
       :linenos:
@@ -79,12 +88,13 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
       :linenos:
 
       if (!crewStatus | computerStatusCode !== 200 | !spaceSuitsOn) {
-         console.log("WARNING. Not ready");        
+         console.log("WARNING. Not ready");
       } else {
          console.log("all systems go");
       }
 
-#. The remaining exercises implement conditional code to monitor the shuttle's fuel status.
+#. The remaining exercises implement conditional code to monitor the shuttle's
+   fuel status. `Code exercises 5 - 7 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
 
    First, declare and initialize the following variables:
 
@@ -99,7 +109,8 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
       * - ``engineTemperature``
         - ``1200``
 
-#. Next, implement the checks below using ``if`` / ``else if`` / ``else`` statements.
+#. Next, implement the checks below using ``if`` / ``else if`` / ``else``
+   statements.
 
    #. If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is at or below
       2500, print ``"Full tank. Engines good."``
@@ -107,34 +118,70 @@ In class, be sure to ask about the topics you do not understand. You are NOT the
       2500, print ``"Fuel level above 50%.  Engines good."``
    #. If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is at or below
       2500, print ``"Fuel level above 25%. Engines good."``
-   #. If ``fuelLevel`` is below 5000 OR ``engineTemperature`` is above 2500,
-      print ``"Check fuel level. Engines running hot."``
+   #. If ``fuelLevel`` is at or below 5000 OR ``engineTemperature`` is above
+      2500, print ``"Check fuel level. Engines running hot."``
    #. If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR
       ``engineIndicatorLight`` is red blinking print ``"ENGINE FAILURE
       IMMINENT!"``
+   #. Otherwise, print ``"Fuel and engine status pending..."``
 
-   .. note::
+.. admonition:: Try It
 
-      Run your code several times with different values for ``fuelLevel``, ``engineTemperature`` and ``engineIndicatorLight``.
+   Run your code several times to make sure it prints the correct phrase for
+   each set of conditions.
 
-      You must make sure your code prints the correct phrase for each set of conditions.
+   .. list-table::
+      :widths: auto
+      :header-rows: 1
 
-#. Final bit of fun!
+      * - **fuelLevel**
+        - **engineTemperature**
+        - **engineIndicatorLight**
+        - **Result**
+      * - Any
+        - Any
+        - ``red blinking``
+        - ``ENGINE FAILURE IMMINENT!``
+      * - 21000
+        - 1200
+        - NOT ``red blinking``
+        - ``Full tank. Engines good.``
+      * - 900
+        - Any
+        - Any
+        - ``ENGINE FAILURE IMMINENT!``
+      * - 5000
+        - 1200
+        - NOT ``red blinking``
+        - ``Check fuel level. Engines running hot.``
+      * - 12000
+        - 2600
+        - NOT ``red blinking``
+        - ``Check fuel level. Engines running hot.``
+      * - 18000
+        - 2500
+        - NOT ``red blinking``
+        - ``Fuel level above 50%. Engines good.``
 
-   The shuttle should only launch if the fuel tank is full and the engine check is OK.
-   *However*, let's establish an override command to ignore any warnings and send the shuttle into space anyway!
+7. Final bit of fun!
 
-   #. Create the variable ``commandOverride``, and set it to be ``true`` *or* ``false``.
+   The shuttle should only launch if the fuel tank is full and the engine check
+   is OK. *However*, let's establish an override command to ignore any warnings
+   and send the shuttle into space anyway!
 
-      If ``commandOverride`` is ``false``, then the shuttle should only launch if
-      the fuel and engine check are OK.
+   #. Create the variable ``commandOverride``, and set it to be ``true`` *or*
+      ``false``.
 
-      If ``commandOverride`` is ``true``, then the shuttle will launch regardless
-      of the fuel and engine status.
+      If ``commandOverride`` is ``false``, then the shuttle should only launch
+      if the fuel and engine check are OK.
+
+      If ``commandOverride`` is ``true``, then the shuttle will launch
+      regardless of the fuel and engine status.
 
    #. Code the following ``if`` / ``else`` check:
 
-      a. If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT
-         red blinking OR ``commandOverride`` is true print ``"Cleared to
-         launch!"``
-      b. Else print ``"Launch scrubbed!"``
+      If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT
+      red blinking OR ``commandOverride`` is true print ``"Cleared to
+      launch!"``
+
+      Else print ``"Launch scrubbed!"``

@@ -48,7 +48,7 @@ Loops simplify repetitive tasks!
    b. Loop over the numbers and put them into the correct array based of their even/odd status.
    c. Print the arrays to confirm the results, print ``evens`` first. Example: ``console.log(evens);``
 
-**while** Practice
+``while`` Practice
 -------------------
 
 `Code it at repl.it <https://repl.it/@launchcode/WhileLoopExercises>`__

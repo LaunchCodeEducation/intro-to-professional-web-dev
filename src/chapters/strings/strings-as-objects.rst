@@ -41,19 +41,21 @@ Referencing ``length`` or ``area`` by itself in code *does not* give you the val
    **Console Output**
 
    ::
-   
+
       object
 
    JavaScript reports that the type of ``console`` is indeed ``object``.
 
    When calling ``console.log``, we are calling the ``log`` method of the ``console`` object.
 
-We will learn quite a bit more about objects in this course, including how to use objects to create your own custom data types. This powerful JavaScript features allows us to bundle up data and functionality in useful, modular ways.
+We will learn quite a bit more about objects in this course, including how to
+use objects to create your own custom data types. This powerful JavaScript
+feature allows us to bundle up data and functionality in useful, modular ways.
 
 Strings Are Objects
 -------------------
 
-The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on. 
+The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on.
 
 .. index::
    single: string; length
@@ -64,7 +66,7 @@ Every string that we work with will have the same properties and methods. The mo
 
    .. sourcecode:: js
       :linenos:
-   
+
       let firstName = "Grace";
       let lastName = "Hopper";
 
@@ -88,7 +90,7 @@ The ``toLowerCase()`` string method returns the value of its string in all lower
 
    .. sourcecode:: js
       :linenos:
-   
+
       let nonprofit = "LaunchCode";
 
       console.log(nonprofit.toLowerCase());
