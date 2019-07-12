@@ -118,19 +118,52 @@ the only person who needs help.
       2500, print ``"Fuel level above 50%.  Engines good."``
    #. If ``fuelLevel`` is above 5000 AND ``engineTemperature`` is at or below
       2500, print ``"Fuel level above 25%. Engines good."``
-   #. If ``fuelLevel`` is below 5000 OR ``engineTemperature`` is above 2500,
-      print ``"Check fuel level. Engines running hot."``
+   #. If ``fuelLevel`` is at or below 5000 OR ``engineTemperature`` is above
+      2500, print ``"Check fuel level. Engines running hot."``
    #. If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR
       ``engineIndicatorLight`` is red blinking print ``"ENGINE FAILURE
       IMMINENT!"``
+   #. Otherwise, print ``"Fuel and engine status pending..."``
 
-   .. note::
+.. admonition:: Try It
 
-      Run your code several times with different values for ``fuelLevel``, ``engineTemperature`` and ``engineIndicatorLight``.
+   Run your code several times to make sure it prints the correct phrase for
+   each set of conditions.
 
-      You must make sure your code prints the correct phrase for each set of conditions.
+   .. list-table::
+      :widths: auto
+      :header-rows: 1
 
-#. Final bit of fun!
+      * - **fuelLevel**
+        - **engineTemperature**
+        - **engineIndicatorLight**
+        - **Result**
+      * - Any
+        - Any
+        - ``red blinking``
+        - ``ENGINE FAILURE IMMINENT!``
+      * - 21000
+        - 1200
+        - NOT ``red blinking``
+        - ``Full tank. Engines good.``
+      * - 900
+        - Any
+        - Any
+        - ``ENGINE FAILURE IMMINENT!``
+      * - 5000
+        - 1200
+        - NOT ``red blinking``
+        - ``Check fuel level. Engines running hot.``
+      * - 12000
+        - 2600
+        - NOT ``red blinking``
+        - ``Check fuel level. Engines running hot.``
+      * - 18000
+        - 2500
+        - NOT ``red blinking``
+        - ``Fuel level above 50%. Engines good.``
+
+7. Final bit of fun!
 
    The shuttle should only launch if the fuel tank is full and the engine check
    is OK. *However*, let's establish an override command to ignore any warnings
@@ -147,7 +180,8 @@ the only person who needs help.
 
    #. Code the following ``if`` / ``else`` check:
 
-      a. If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT
-         red blinking OR ``commandOverride`` is true print ``"Cleared to
-         launch!"``
-      b. Else print ``"Launch scrubbed!"``
+      If ``fuelLevel`` is above 20000 AND ``engineIndicatorLight`` is NOT
+      red blinking OR ``commandOverride`` is true print ``"Cleared to
+      launch!"``
+
+      Else print ``"Launch scrubbed!"``

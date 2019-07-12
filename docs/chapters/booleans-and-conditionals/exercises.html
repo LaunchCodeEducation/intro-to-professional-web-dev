@@ -220,17 +220,62 @@ statements.</p>
 2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">50%.</span>&#160; <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
 <li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 5000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is at or below
 2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">25%.</span> <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is below 5000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above 2500,
-print <code class="docutils literal notranslate"><span class="pre">&quot;Check</span> <span class="pre">fuel</span> <span class="pre">level.</span> <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.&quot;</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is at or below 5000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above
+2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Check</span> <span class="pre">fuel</span> <span class="pre">level.</span> <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.&quot;</span></code></li>
 <li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is below 1000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above 3500 OR
 <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is red blinking print <code class="docutils literal notranslate"><span class="pre">&quot;ENGINE</span> <span class="pre">FAILURE</span>
 <span class="pre">IMMINENT!&quot;</span></code></li>
+<li>Otherwise, print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">and</span> <span class="pre">engine</span> <span class="pre">status</span> <span class="pre">pending...&quot;</span></code></li>
 </ol>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Run your code several times with different values for <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code>, <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> and <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code>.</p>
-</div>
 </li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Run your code several times to make sure it prints the correct phrase for
+each set of conditions.</p>
+<table border="1" class="colwidths-auto last docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>fuelLevel</strong></th>
+<th class="head"><strong>engineTemperature</strong></th>
+<th class="head"><strong>engineIndicatorLight</strong></th>
+<th class="head"><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Any</td>
+<td>Any</td>
+<td><code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">blinking</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ENGINE</span> <span class="pre">FAILURE</span> <span class="pre">IMMINENT!</span></code></td>
+</tr>
+<tr class="row-odd"><td>21000</td>
+<td>1200</td>
+<td>NOT <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">blinking</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">Full</span> <span class="pre">tank.</span> <span class="pre">Engines</span> <span class="pre">good.</span></code></td>
+</tr>
+<tr class="row-even"><td>900</td>
+<td>Any</td>
+<td>Any</td>
+<td><code class="docutils literal notranslate"><span class="pre">ENGINE</span> <span class="pre">FAILURE</span> <span class="pre">IMMINENT!</span></code></td>
+</tr>
+<tr class="row-odd"><td>5000</td>
+<td>1200</td>
+<td>NOT <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">blinking</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">Check</span> <span class="pre">fuel</span> <span class="pre">level.</span> <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.</span></code></td>
+</tr>
+<tr class="row-even"><td>12000</td>
+<td>2600</td>
+<td>NOT <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">blinking</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">Check</span> <span class="pre">fuel</span> <span class="pre">level.</span> <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.</span></code></td>
+</tr>
+<tr class="row-odd"><td>18000</td>
+<td>2500</td>
+<td>NOT <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">blinking</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">Fuel</span> <span class="pre">level</span> <span class="pre">above</span> <span class="pre">50%.</span> <span class="pre">Engines</span> <span class="pre">good.</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic" start="7">
 <li><p class="first">Final bit of fun!</p>
 <p>The shuttle should only launch if the fuel tank is full and the engine check
 is OK. <em>However</em>, let’s establish an override command to ignore any warnings
@@ -244,12 +289,10 @@ if the fuel and engine check are OK.</p>
 regardless of the fuel and engine status.</p>
 </li>
 <li><p class="first">Code the following <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code> check:</p>
-<ol class="loweralpha simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is NOT
+<p>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is NOT
 red blinking OR <code class="docutils literal notranslate"><span class="pre">commandOverride</span></code> is true print <code class="docutils literal notranslate"><span class="pre">&quot;Cleared</span> <span class="pre">to</span>
-<span class="pre">launch!&quot;</span></code></li>
-<li>Else print <code class="docutils literal notranslate"><span class="pre">&quot;Launch</span> <span class="pre">scrubbed!&quot;</span></code></li>
-</ol>
+<span class="pre">launch!&quot;</span></code></p>
+<p>Else print <code class="docutils literal notranslate"><span class="pre">&quot;Launch</span> <span class="pre">scrubbed!&quot;</span></code></p>
 </li>
 </ol>
 </li>
