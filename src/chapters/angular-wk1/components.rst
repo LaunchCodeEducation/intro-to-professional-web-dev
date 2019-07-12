@@ -67,3 +67,5 @@ Upon running this command it nests our new folder inside of the task-list folder
 
 .. figure:: ./figures/GenerateNestedComponentResult.png
    :alt: Visual of the result of the running the commands to create a nested component.
+
+When you nest a component inside of another component, you still have all the files for the nested component at your disposal. Any CSS, HTML, or JavaScript you write will still only affect the nested component, and will not affect the parent component.
