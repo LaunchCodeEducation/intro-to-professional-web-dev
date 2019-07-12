@@ -109,11 +109,21 @@ values into the ``console.log`` statements. Use your variable names instead.
    -------------------------------------
    * Clear for takeoff: YES
 
-Wrap Up
---------
+Show Off Your Code
+-------------------
 
 When finished, show your code to your TA so they can verify your work.
 
 If you do not finish before the end of class, login to Repl.it and save your
 work. Complete the studio at home, then copy the URL for your project and
 submit it to your TA.
+
+Bonus Mission
+--------------
+
+Use ``readline-sync`` to prompt the user to enter the value for
+``astronautCount``.
+
+The values printed for ``count``, ``Crew mass``, and ``Total mass`` should
+change based on the number of astronauts on the shuttle. (Don't forget to
+convert the input value from a string to a number).

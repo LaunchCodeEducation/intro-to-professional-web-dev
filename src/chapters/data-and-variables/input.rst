@@ -46,7 +46,7 @@ Gathering input from the user requires the following setup:
 .. sourcecode:: js
    :linenos:
 
-   const input = require(`readline-sync`);
+   const input = require('readline-sync');
 
    let info = input.question("Question text... ");
 
@@ -66,7 +66,7 @@ together to make this process work. For now, here is a brief overview.
 Load the Module
 ^^^^^^^^^^^^^^^^
 
-In line 1 ``const input = require(`readline-sync`)`` pulls in all the functions
+In line 1 ``const input = require('readline-sync')`` pulls in all the functions
 that allow us to get data from the user and assigns them to the variable
 ``input``.
 
@@ -98,7 +98,7 @@ collected by the input function and stored in ``name``.
       :slug: InputExamples01
       :linenos:
 
-      const input = require(`readline-sync`);
+      const input = require('readline-sync');
 
       let name = input.question("Enter your name: ");
 
@@ -140,7 +140,7 @@ prints their sum:
    :slug: InputExamples02
    :linenos:
 
-   const input = require(`readline-sync`);
+   const input = require('readline-sync');
 
    let num1 = input.question("Enter a number: ");
    let num2 = input.question("Enter another number: ");
@@ -183,7 +183,7 @@ Check Your Understanding
    .. sourcecode:: js
       :linenos:
 
-      const input = require(`readline-sync`);
+      const input = require('readline-sync');
 
       let info = input.question("Please enter your age: ");
       //The user enters 25.

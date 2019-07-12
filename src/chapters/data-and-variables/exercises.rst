@@ -12,8 +12,8 @@ Repl.it as part of the prep work.
 `Open this link <https://repl.it/@launchcode/Exercises-Data-and-Variables>`__
 to the repl.it file prepared for this task, then follow the instructions below.
 
-The Assignment
----------------
+Practice
+---------
 
 Use the information given below about your space shuttle to complete the
 exercises:
@@ -65,10 +65,12 @@ exercises:
 #. **Print out the results of your calculations**
 
      Using the variable from part 3c above, print to the screen a sentence that
-     says ``"Determination will take ___ days to reach Mars."``.
+     says ``"_____ will take ___ days to reach Mars."``
+
+   Fill in the blanks with the shuttle name and the calculated time.
 
 #. **Now calculate a trip to the Moon**
 
    Repeat the calculations, but this time determine the number of days it would
    take to travel to the Moon and print to the screen a sentence that says
-   ``"Determination will take ___ days to reach the moon."``.
+   ``"_____ will take ___ days to reach the moon."``.
