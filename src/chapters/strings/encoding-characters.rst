@@ -3,9 +3,14 @@ Encoding Characters
 
 .. index:: ! bit, character encoding
 
-If you had microscope powerful enough to view the data stored on a computer's hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and 1 is known as a **bit**. A bit is a unit of measurement, like a meter or a pound. Collections of computer data are measured in bits; every letter, image, and pixel you interact with on a computer is represented by bits.
+If you had microscope powerful enough to view the data stored on a computer's
+hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and
+1 is known as a **bit**. A bit is a unit of measurement, like a meter or a
+pound. Collections of computer data are measured in bits; every letter, image,
+and pixel you interact with on a computer is represented by bits.
 
-We work with more complex data when we program, including numbers and strings. This section examines how such data is represented within a computer.
+We work with more complex data when we program, including numbers and strings.
+This section examines how such data is represented within a computer.
 
 Representing Numbers
 --------------------
@@ -16,20 +21,33 @@ Representing Numbers
    pair: number; binary
    pair: number; decimal
 
-A **byte** is a set of 8 bits. Bytes look like 00101101 or 11110011, and they represent a **binary number**, or a base-2 number. A binary number is a number representatation that uses only 0s and 1s. The numbers that you are used to, which are built out of the integers 0...9, are **decimal numbers**, or base-10 numbers.
+A **byte** is a set of 8 bits. Bytes look like 00101101 or 11110011, and they
+represent a **binary number**, or a base-2 number. A binary number is a number
+representation that uses only 0s and 1s. The numbers that you are used to,
+which are built out of the integers 0...9, are **decimal numbers**, or base-10
+numbers.
 
-Since each bit can have one of two values, each byte can have one of  2\ :sup:`8` = 256 different values. 
+Since each bit can have one of two values, each byte can have one of
+2\ :sup:`8` = 256 different values.
 
-It may not be obvious, but every decimal integer can be represented as a binary integer, and vice versa. There are 256 different values a byte may take, each of which can be used to represent a decimal integer, from 0 to 255. 
+It may not be obvious, but every decimal integer can be represented as a binary
+integer, and vice versa. There are 256 different values a byte may take, each
+of which can be used to represent a decimal integer, from 0 to 255.
 
-.. note:: We will not go into binary to decimal number conversion. If you are interested in learning more, there are `many <https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/>`_ `tutorials <https://www.youtube.com/watch?v=wPvI19DmWQw>`_ `online <https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary>`_ that can show you the way.
+.. admonition:: Note
 
-In this way, the bits in a computer can be viewed as integers. If you want to represent values greater than 255, just use more bits! 
+   We will not go into binary to decimal number conversion. If you are
+   interested in learning more, there are `many <https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/>`_ `tutorials <https://www.youtube.com/watch?v=wPvI19DmWQw>`_ `online <https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary>`_ that can show you the way.
+
+In this way, the bits in a computer can be viewed as integers. If you want to
+represent values greater than 255, just use more bits!
 
 Representing Strings
 --------------------
 
-Strings are collections of characters, so if we can represent each character as a number, then we'll have a way to go from a string to a collection of bits, and back again.
+Strings are collections of characters, so if we can represent each character
+as a number, then we'll have a way to go from a string to a collection of bits,
+and back again.
 
 Character Encodings
 ^^^^^^^^^^^^^^^^^^^
@@ -37,22 +55,37 @@ Character Encodings
 .. index::
    pair: character; encoding
 
-Unlike the natrual translation between binary and decimal numbers, there is no natural translation between integers and characters. For example, you might create a pairing of 0 to ``a``, 1 to ``b``, and so on. But what integer should be paired with ``$`` or a tab? Since there is no natural way to translate between characters and integers, computer scientists have had to make such translations up. Such translations are called **character encodings**.
+Unlike the natural translation between binary and decimal numbers, there is no
+natural translation between integers and characters. For example, you might
+create a pairing of 0 to ``a``, 1 to ``b``, and so on. But what integer should
+be paired with ``$`` or a tab? Since there is no natural way to translate
+between characters and integers, computer scientists have had to make such
+translations up. Such translations are called **character encodings**.
 
 .. index:: Unicode
 
-There are many different encodings, some of which continue to evolve as our use of data evolves. For instance, the most recent versions of the Unicode character encoding include emoji characters, such as 🌮.
+There are many different encodings, some of which continue to evolve as our use
+of data evolves. For instance, the most recent versions of the Unicode
+character encoding include emoji characters, such as 🌮.
 
 The ASCII Encoding
 ^^^^^^^^^^^^^^^^^^
 
 .. index:: ASCII
 
-Most of the characters that you are used to using---including letters, numbers, whitespace, punctuation, and symbols---are part of the **ASCII** (pronounced *ASS-kee*) character encoding. This standard has changed very little since the 1960s, and it is the foundation of all other commonly-used encodings.
+Most of the characters that you are used to using---including letters, numbers,
+whitespace, punctuation, and symbols---are part of the **ASCII** (pronounced
+*ask-ee*) character encoding. This standard has changed very little since the
+1960s, and it is the foundation of all other commonly-used encodings.
 
-.. note:: ASCII stands for American Standard Code for Information Interchange, but most programmers never remember that, so you shouldn't try to either.
+.. admonition:: Note
 
-ASCII provides a standard translation of the most commonly-used characters to one of the integers 0...127, which means each character can be stored in a computer using a single byte. 
+   ASCII stands for American Standard Code for Information Interchange, but
+   most programmers never remember that, so you shouldn't try to either.
+
+ASCII provides a standard translation of the most commonly-used characters to
+one of the integers 0...127, which means each character can be stored in a
+computer using a single byte.
 
 .. index::
    single: ASCII; table
@@ -62,8 +95,10 @@ ASCII maps ``a`` to 97, ``b`` to 98, and so on for lowercase letters, with ``z``
 In summary, strings are stored in a computer using the following process:
 
 #. Break a string into its individual characters.
-#. Use a character encoding, such as ASCII, to convert each of the characters to an integer.
-#. Convert each integer to a series of bits using decimal-to-binary integer conversion.
+#. Use a character encoding, such as ASCII, to convert each of the characters
+   to an integer.
+#. Convert each integer to a series of bits using decimal-to-binary integer
+   conversion.
 
 .. admonition:: Fun Fact
 
@@ -74,13 +109,14 @@ Character Encodings in JavaScript
 
 JavaScript provides methods to convert from characters to ASCII codes and back.
 
-The string method ``charCodeAt`` takes an index and returns the ASCII code of the character at that index.
+The string method ``charCodeAt`` takes an index and returns the ASCII code of
+the character at that index.
 
 .. admonition:: Example
 
    .. sourcecode:: js
       :linenos:
-   
+
       let nonprofit = "LaunchCode";
 
       for (let i = 0; i < nonprofit.length; i++) {
@@ -103,13 +139,14 @@ The string method ``charCodeAt`` takes an index and returns the ASCII code of th
       101
 
 
-To convert from a character code to an actual character, use ``String.fromCharCode()``.
+To convert from a character code to an actual character, use
+``String.fromCharCode()``.
 
 .. admonition:: Example
 
    .. sourcecode:: js
       :linenos:
-   
+
       let codes = [76, 97, 117, 110, 99, 104, 67, 111, 100, 101];
       let characters = "";
 
@@ -124,4 +161,3 @@ To convert from a character code to an actual character, use ``String.fromCharCo
    ::
 
       LaunchCode
-      
