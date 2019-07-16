@@ -12,9 +12,14 @@ information, but it does not hold the actual course content. Instead, it links
 to the lessons you need, and it keeps a record of your completed assignments
 and scores.
 
-Now that you are enrolled, you can access the course content
-at `<https://learn.launchcode.org/>`__.
+Login to Canvas
+---------------
+Access canvas and the course assignments at `<https://learn.launchcode.org/>`_.
+To login use your launchcode.org username and password. That is the same username
+and password that you used to apply for this class.
 
+Canvas Dashboard
+----------------
 After logging in, you will arrive at your *dashboard*, which displays the
 LaunchCode courses you can access, upcoming due dates, and several menu items.
 
@@ -67,18 +72,18 @@ submitting files for the larger assignments should only be done through Canvas.
 
 Repl.it
 =======
-`Repl.it <https://repl.it>`_ is an online code editor. For this class Repl.it will serve two purposes.
+`Repl.it <https://repl.it>`_ is an online code editor. For this class repl.it will serve two purposes.
 
 Repl.it Account Creation
 ------------------------
 Creating a repl.it account is covered in :ref:`Chapter 2 <create-replit-account>`. Students will register
-for the Repl.it Classroom as part of an assignment in Canvas.
+for the repl.it Classroom as part of an assignment in canvas.
 
 Standard Repl.it
 ----------------
 Standard repl.it is an online code editor for various languages. Coders collaborate by sharing repl.it URLs.
 
-Standard Repl.it is used for:
+Standard repl.it is used for:
 
 * Publicly sharing code examples and starter code
 * A place to practice new concepts by writing and running code
@@ -92,7 +97,12 @@ Repl.it Classroom is used for:
 
 * Completing then submitting exercises and getting feedback
 * Completing then submitting studios and assignments for a grade
-* Keeping student submissions visible to ONLY teachers in the Repl.it classroom
+* Keeping student submissions visible to ONLY teachers in the repl.it classroom
+
+.. tip::
+
+   You **never** have to click save when using standard repl.it or repl.it classroom. Repl.it automatically saves your code on their servers.
+   Keep in mind that when using repl.it classroom you do have to click submit to submit your work.
 
 Repl.it Classroom Workspace
 ---------------------------
@@ -132,7 +142,7 @@ Features to note:
 
    * After running code by clicking the run button (2), output and errors will show up here
 
-.. tip::
+.. note::
 
-   You **never** have to click save when using standard repl.it or repl.it classroom. Repl.it automatically saves your code on their servers.
-   Keep in mind that when using Repl.it classroom you do have to click submit to submit your work.
+   Results from work submitted in repl.it classroom, appear in canvas after being verified.
+   Remember that Canvas is the source of assignments and grade status.
