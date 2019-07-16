@@ -1,5 +1,7 @@
 .. _hello-world:
 
+.. _create-replit-account:
+
 Your First Program
 ===================
 We haven’t learned how to code yet, but we can still write and run our first
@@ -29,6 +31,13 @@ empty.
 
 .. figure:: figures/replit-dashboard.png
    :alt: Repl.it dashboard
+
+.. warning::
+
+   These examples are for standard repl.it use.
+   See :ref:`repl.it classroom instructions <replit-classroom>` for instructions on
+   using repl.it when working on repl.it classroom assignments.
+
 
 Click on *new repl* to begin a new project. Scroll through the options and
 select "Node.js". Next, name your project and click "Create Repl".
