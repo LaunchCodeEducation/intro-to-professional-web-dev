@@ -154,6 +154,6 @@ Submitting Your Work
    * Example URL ``https://repl.it/@your-username/candidate-tester``
 
 2. Go to the Canvas assignment page and click Submit Assignment
-3. Paste in the URL into the Website URL input
+3. Paste the URL into the Website URL input
 4. Click Submit Assignment again
 5. Notify your TA that your assignment is ready to be graded
