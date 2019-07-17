@@ -107,7 +107,8 @@ In summary, strings are stored in a computer using the following process:
 Character Encodings in JavaScript
 ---------------------------------
 
-JavaScript provides methods to convert from characters to ASCII codes and back.
+JavaScript provides methods to convert any character into its ASCII code and
+back.
 
 The string method ``charCodeAt`` takes an index and returns the ASCII code of
 the character at that index.
@@ -139,8 +140,7 @@ the character at that index.
       101
 
 
-To convert from a character code to an actual character, use
-``String.fromCharCode()``.
+To convert an ASCII code to an actual character, use ``String.fromCharCode()``.
 
 .. admonition:: Example
 

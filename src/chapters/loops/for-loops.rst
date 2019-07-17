@@ -44,10 +44,10 @@ A ``for`` loop always contains the following components:
 
 Notice that in the first line, within parentheses, the components **initial expression**, **loop condition**, and **update expression** are separated by semicolons. Let's look at these components in detail.
 
-- The statement ``let i = 0`` is executed exactly once, at the *beginning* of loop execution. The variable ``i`` is the **loop variable**. 
-- The boolean expression ``i < 51`` is the **loop condition**. This condition is evaluated before each loop iteration, or repetition. 
-   - If the condition is ``true`` then the loop executes again. 
-   - If the condition is ``false`` then the loop ceases execution and the program continues to execute the code below the loop. 
+- The statement ``let i = 0`` is executed exactly once, at the *beginning* of loop execution. The variable ``i`` is the **loop variable**.
+- The boolean expression ``i < 51`` is the **loop condition**. This condition is evaluated before each loop iteration, or repetition.
+   - If the condition is ``true`` then the loop executes again.
+   - If the condition is ``false`` then the loop ceases execution and the program continues to execute the code below the loop.
 - The statement ``i++`` is the **update expression**. This expression is executed at the *end* of each loop iteration.
 - The block of code surrounded with brackets (``{ }``) is the **loop body**. The loop body is executed once for each iteration of the loop.
 
@@ -66,7 +66,8 @@ In just a few lines of code, a ``for`` loop contains a lot of detailed logic, so
 Here is a step-by-step description of how this loop executes:
 
 #. When the program reaches the ``for`` loop, the initial expression ``let i = 0`` is executed, declaring the variable ``i`` and initializing it to the value ``0``.
-#. The loop condition ``i < 51`` is evaluated, returning ``true`` becuase 0 is less than 51. 
+#. The loop condition ``i < 51`` is evaluated, returning ``true`` because 0 is
+   less than 51.
 #. Since the condition is ``true``, the loop body executes, printing 0.
 #. After the execution of the loop body, the update expression ``i++`` is executed, setting ``i`` to 1. This completes the first iteration of the loop.
 #. Steps 2 through 4 are repeated, using the new value of ``i``. This continues until the loop condition evaluates to ``false`` in step 2, ending the loop. In this example, this occurs when ``i < 51`` is ``false`` for the first time. Since our update expression adds 1 after each iteration, this occurs when ``i`` is 51 (so ``51 < 51`` is ``false``). At that point, the loop body will have executed exactly 51 times, with ``i`` having the values 0...50.
@@ -75,7 +76,7 @@ In general, we can visualize the flow of execution of a ``for`` loop as a flowch
 
 .. figure:: figures/for-loop-flow.png
    :height: 700px
-   
+
    Flow of execution of a ``for`` loop
 
 .. todo:: Add "worst practice" on optional brackets for single-line loops
