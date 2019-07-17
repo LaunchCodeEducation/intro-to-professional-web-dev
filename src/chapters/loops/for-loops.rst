@@ -44,12 +44,16 @@ A ``for`` loop always contains the following components:
 
 Notice that in the first line, within parentheses, the components **initial expression**, **loop condition**, and **update expression** are separated by semicolons. Let's look at these components in detail.
 
-- The statement ``let i = 0`` is executed exactly once, at the *beginning* of loop execution. The variable ``i`` is the **loop variable**.
-- The boolean expression ``i < 51`` is the **loop condition**. This condition is evaluated before each loop iteration, or repetition.
-   - If the condition is ``true`` then the loop executes again.
-   - If the condition is ``false`` then the loop ceases execution and the program continues to execute the code below the loop.
-- The statement ``i++`` is the **update expression**. This expression is executed at the *end* of each loop iteration.
-- The block of code surrounded with brackets (``{ }``) is the **loop body**. The loop body is executed once for each iteration of the loop.
+#. The statement ``let i = 0`` is executed exactly once, at the *beginning* of loop execution. The variable ``i`` is the **loop variable**.
+#. The boolean expression ``i < 51`` is the **loop condition**. This condition is evaluated before each loop iteration, or repetition.
+
+   a. If the condition is ``true`` then the loop executes again.
+   b. If the condition is ``false`` then the loop ceases execution, and the
+      program moves on to the code below the loop.
+
+#. The statement ``i++`` is the **update expression**. This expression is executed at the *end* of each loop iteration.
+#. The block of code surrounded with brackets (``{ }``) is the **loop body**.
+   The body is executed once for each iteration of the loop.
 
 Flow of Execution of the ``for`` Loop
 -------------------------------------
