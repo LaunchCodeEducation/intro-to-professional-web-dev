@@ -65,6 +65,10 @@ this assignment, but it provides a framework for thinking through the project.
 
 Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Fork the `starter repl.it <https://repl.it/@launchcode/candidate-tester>`_
+
+   a. Make sure you are logged into repl.it
+   b. Remember that repl.it auto saves your work
 
 #. Define variables for:
 
@@ -145,5 +149,11 @@ d. Correctly accepts or rejects a candidate based on their percentage.
 
 Submitting Your Work
 ---------------------
+1. Copy the URL of the repl.it that contains your solution.
 
-Lorem ipsum...
+   * Example URL ``https://repl.it/@your-username/candidate-tester``
+
+2. Go to the Canvas assignment page and click Submit Assignment
+3. Paste in the URL into the Website URL input
+4. Click Submit Assignment again
+5. Notify your TA that your assignment is ready to be graded
