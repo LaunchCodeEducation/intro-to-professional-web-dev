@@ -1,10 +1,12 @@
 ===============
 Class Platforms
 ===============
-Beyond this book, this class uses additional platforms for enrollment, assignments, and grading.
+
+Besides this book, this class uses additional platforms for enrollment,
+assignments, and grading.
 
 Canvas
-======
+=======
 
 LaunchCode monitors your progress in this class through a management system
 called *Canvas*. It provides a central location to manage the flow of
@@ -13,13 +15,15 @@ to the lessons you need, and it keeps a record of your completed assignments
 and scores.
 
 Login to Canvas
----------------
-Access canvas and the course assignments at `<https://learn.launchcode.org/>`_.
-To login use your launchcode.org username and password. That is the same username
-and password that you used to apply for this class.
+----------------
+
+Access Canvas and the course assignments at `<https://learn.launchcode.org/>`__.
+To login, use your launchcode.org username and password, which are the same
+ones you used to apply for this class.
 
 Canvas Dashboard
-----------------
+-----------------
+
 After logging in, you will arrive at your *dashboard*, which displays the
 LaunchCode courses you can access, upcoming due dates, and several menu items.
 
@@ -38,7 +42,7 @@ Syllabus Page
 
 The syllabus page provides general information such as a description of the
 class, the timeline for the course, a calendar, and a To Do list. Scrolling
-down on the page shows the "Course Summary", which holds links to individual
+down on the page shows the *Course Summary*, which holds links to individual
 tasks (reading, quizzes, assignments, etc.).
 
 This page is a good place to answer the questions *What do I need to do next*,
@@ -71,78 +75,95 @@ submitting files for the larger assignments should only be done through Canvas.
 .. _replit-classroom:
 
 Repl.it
-=======
-`Repl.it <https://repl.it>`_ is an online code editor. For this class repl.it will serve two purposes.
+========
+
+`Repl.it <https://repl.it>`__ is a free online code editor, and it provides a
+practice space to boost your programming skills.
+
+For this class, repl.it serves two purposes:
+
+#. To provide opportunities to respond to prompts, questions, and "Try It"
+   exercises embedded within the reading. These tasks are neither tracked nor
+   scored.
+#. To hold larger exercises and studios that will be checked for accuracy and
+   tracked for completion.
 
 Repl.it Account Creation
-------------------------
-Creating a repl.it account is covered in :ref:`Chapter 2 <create-replit-account>`. Students will register
-for the repl.it Classroom as part of an assignment in canvas.
+-------------------------
+
+Creating a standard repl.it account is covered in
+:ref:`Chapter 2 <create-replit-account>`, and logging in allows students to
+complete the general practice tasks.
+
+To access the tracked and scored tasks, students must also enroll in a repl.it
+*classroom*. A link to join the classroom will be provided as part of an early
+Canvas assignment.
 
 Standard Repl.it
-----------------
-Standard repl.it is an online code editor for various languages. Coders collaborate by sharing repl.it URLs.
+-----------------
+
+Standard repl.it is an online code editor for various languages. Coders
+collaborate by sharing repl.it URLs.
 
 Standard repl.it is used for:
 
-* Publicly sharing code examples and starter code
-* A place to practice new concepts by writing and running code
+#. Publicly sharing code examples and starter code
+#. A place to practice new concepts by writing and running code
 
 Repl.it Classroom
------------------
-Repl.it **Classroom** provides classroom features along with online code editing and submission. Repl.it Classroom allows
-code assignments and grades to be kept private from people that are not in the class.
+------------------
+
+Repl.it *Classroom* provides online code editing and submission, but it also
+allows teachers to post instructions and establish automatic code evaluation.
+
+Assignments in a classroom can kept private from people who are not enrolled,
+and grades can only be viewed by designated instructors.
 
 Repl.it Classroom is used for:
 
-* Completing then submitting exercises and getting feedback
-* Completing then submitting studios and assignments for a grade
-* Keeping student submissions visible to ONLY teachers in the repl.it classroom
+#. Completing then submitting exercises and getting feedback
+#. Completing then submitting studios and assignments for a grade
+#. Keeping student submissions visible ONLY to the teachers in the repl.it
+   classroom
 
-.. tip::
+.. admonition:: Tip
 
-   You **never** have to click save when using standard repl.it or repl.it classroom. Repl.it automatically saves your code on their servers.
-   Keep in mind that when using repl.it classroom you do have to click submit to submit your work.
+   You NEVER have to click save when using standard repl.it or repl.it
+   classroom. Repl.it automatically saves your code on their servers.
+
+   However, for repl.it classroom you DO have to click "Submit" to turn in your
+   work.
 
 Repl.it Classroom Workspace
----------------------------
+----------------------------
 
 .. figure:: figures/replit-classroom-features.png
 
 Features to note:
 
-1. Settings menu
+#. **Settings menu**: Allows you to change editor settings like theme and font
+   size.
+#. **Run button**: Runs code in the editor panel (7).
+#. **Name of assignment**
+#. **Repl.it user menu**: Allows you to change account details and change
+   password.
+#. **Submit button**:
 
-   * Allows you to change editor settings like theme and font size
+   a. Submits your work.
+   b. If the assignment has been setup to be auto graded, you will received
+      instant feedback.
+   c. If the assignment is NOT auto graded, your TA will need to review and
+      provide feedback.
 
-2. Run button
+#. **Instructions**: This describes what you need to code. READ CAREFULLY!
+#. **Editor panel**: This is where you write your code.
+#. **Console output**: After clicking the run button (2), output and errors
+   will show up here.
 
-   * Runs code in the editor panel (7)
+.. admonition:: Note
 
-3. Name of assignment
-4. Repl.it user menu
- 
-   * Allows you to change account details and change password
+   Results from work submitted in repl.it classroom, appear in Canvas after
+   being verified.
 
-5. Submit button
-
-   * Submits your work
-   * If the assignment has been setup to be auto graded, you will received instant feedback
-   * If the assignment is NOT auto graded, your TA will need to review and provide feedback
-
-6. Instructions
-
-   * This will be instructions for what you need to code. READ THEM CAREFULLY
-
-7. Editor panel
-
-   * This is where you write code
-
-8. Console output
-
-   * After running code by clicking the run button (2), output and errors will show up here
-
-.. note::
-
-   Results from work submitted in repl.it classroom, appear in canvas after being verified.
-   Remember that Canvas is the source of assignments and grade status.
+   Remember, Canvas holds student grades and quizzes but NOT the course content.
+   Instead, it provides *links* to the reading and other assignments.
