@@ -11,44 +11,44 @@ Part A (Put dinner together)
 #. First, initialize variables to store the following arrays.  Remember to use descriptive names.
 
    - Protein options:
-     
+
      ::
 
         ['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans']
 
    - Grain options:
-     
+
      ::
 
         ['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers']
 
    - Vegetable options:
-     
+
      ::
 
         ['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus']
 
    - Beverage options:
-     
+
      ::
 
         ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea']
 
    - Dessert options
-     
+
      ::
 
         ['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi']
 
 `Code it at replt.it <https://repl.it/@launchcode/LoopstudiopartsAandC>`__
 
-#. Use a ``for`` loop to assemble 6 meals.
+2. Use a ``for`` loop to assemble 6 meals.
 
    a. The meals must include one item from each of the source arrays.
    b. Each ingredient can only be used ONCE.
    c. Print out each meal.
 
-#. Optional: *Skill boost!* To enhance your learning, modify your code to:
+#. *Skill boost!* (Optional): To enhance your learning, modify your code to:
 
    a. Use string formatting to print something more interesting than "['chicken', 'rice', 'peas', 'juice', 'apple']" for the meal outputs.
    b. Use an "array of arrays" to store the food options in a 'pantry'.
@@ -70,7 +70,7 @@ overloading the engines.
 4. Construct a ``for`` loop that combines two strings together, alternating the characters from each source.
 
    .. admonition:: Examples
-    
+
       #. If ``string = "1234"`` and ``otherString = "5678"``, then the output will be "15263748".
       #. If ``code1 = "ABCDEF"`` and ``code2 = "notyet"``, then the output will be "AnBoCtDyEeFt".
       #. If ``ka = "LoOt"`` and ``blam = "oku!"``, then the output will be ``"LookOut!"``.

@@ -1,6 +1,6 @@
 .. _html-me-part2:
 
-HTML Me Someting, Part 2
+HTML Me Something, Part 2
 =========================
 
 In Part 2, you’ll get comfortable with using CSS selectors and rules to dictate
@@ -13,8 +13,8 @@ Getting Started
    directory.
 
 #. *Optional*: Add a normalization stylesheet (follow any of the links in the
-   :ref:`Normalization <normalization>` section below). You can either put these
-   normalization rules at the top of your ``styles.css``, or you can add
+   :ref:`Normalization <normalization>` section below). You can either put
+   these normalization rules at the top of your ``styles.css``, or you can add
    another file in the same directory and link to it in your HTML doc. This
    will reset some of your browser’s built-in styles so that you start with a
    cleaner slate when you add your own.
@@ -31,18 +31,18 @@ Your CSS must:
 
 #. Use `margin <http://www.w3schools.com/css/css_margin.asp>`__ and
    `padding <http://www.w3schools.com/css/css_padding.asp>`__ to space your
-   elements in a visually pleasing way. 
+   elements in a visually pleasing way.
 #. Use at least one of each of the following types of selectors:
 
    a. `element <http://www.w3schools.com/cssref/sel_element.asp>`__,
    b. `class <http://www.w3schools.com/cssref/sel_class.asp>`__,
    c. `id <http://www.w3schools.com/cssref/sel_id.asp>`__.
 
-#. Follow these rules: 
+#. Follow these rules:
 
-   a. Avoid adding HTML elements in order to achieve a specific visual effect. 
+   a. Avoid adding HTML elements in order to achieve a specific visual effect.
    b. Use document-level and inline styles sparingly, and only when absolutely
-      necessary. 
+      necessary.
    c. Be creative! Make your page look great, and don’t just settle for
       checking off the items above. Have a look at `CSS Zen Garden
       <http://www.csszengarden.com>`__ for inspiration (use your browser’s
@@ -140,8 +140,6 @@ changes.
 Done!
 ------
 
-You are ready to submit! Go back to the *Assignment Page* and follow the
-submission instructions there.
-
-.. todo::
-   Add link to the *Assignments Page* text above.
+You are ready to submit! Go back to the
+:ref:`Assignment Page <submitting-your-work>` and follow the submission
+instructions there.

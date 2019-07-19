@@ -1,7 +1,9 @@
 Why Create Functions?
 =====================
 
-After wading through all of the new syntax necessary to create a function, you might be asking yourself, "Why would I ever want to do this?" Good question! We have a few answers.
+After wading through all of the new syntax necessary to create a function, you
+might be asking yourself, *Why would I ever want to do this?* Good question! We
+have a few answers.
 
 Functions Reduce Repetition
 ---------------------------
@@ -17,9 +19,9 @@ Placing a piece of functionality within a function allows us to put a name on th
    :linenos:
 
    function isPalindrome(str) {
-      
+
       let reversed = '';
-      
+
       for (let i = 0; i < str.length; i++) {
          reversed = str[i] + reversed;
       }
@@ -34,7 +36,7 @@ While the variable name ``reversed`` is descriptive, giving us a sense of what i
 
    function reverse(str) {
       let reversed = '';
-      
+
       for (let i = 0; i < str.length; i++) {
          reversed = str[i] + reversed;
       }
@@ -57,9 +59,12 @@ The complexity of this situation becomes much less when a car is made up of lots
 Functions Enable Code Sharing
 -----------------------------
 
-.. todo:: add reference to modules chapter
+Encapsulating behavior within a function makes it easy to reuse that code
+within a program, but is also allows you to share that behavior across files
+and even different projects. This becomes critically important when you start
+working on bigger programs that consist of a large number of files.
 
-As you will soon learn, encapsulating behavior within a function makes it easy for you to share that behavior across files and even projects. This becomes a critically important feature when working on large programs that consist of large numbers of files, as all professional developers do regularly. 
+You will explore this idea in the :ref:`Modules chapter <modules-index>`.
 
 Functions Save Millions of Lives Every Day
 ------------------------------------------
