@@ -354,7 +354,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What does the following function return?
+   What does the following function *return*?
 
    .. sourcecode:: js
       :linenos:
@@ -373,7 +373,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   #. What does the following code *output*?
+   What does the following code *output*?
 
    .. sourcecode:: js
       :linenos:
