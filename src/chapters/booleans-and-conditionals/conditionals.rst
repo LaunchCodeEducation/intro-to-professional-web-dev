@@ -97,7 +97,7 @@ prevent syntax errors.
       :linenos:
 
       if (!billHasBeenPaid)
-      console.log("Your bill is due soon!");
+         console.log("Your bill is due soon!");
 
    We will use curly brackets for ALL conditional code blocks, and encourage
    you to do so as well, at least until you become comfortable with reading and

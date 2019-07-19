@@ -316,8 +316,11 @@ Here’s how:
 Turning In Your Work
 ---------------------
 
-.. todo::
-   Add "submit" instructions here or in assignments area.
+In Canvas, open the HTML Me Something assignment and click the "Submit" button.
+An input box will appear.
+
+Copy the URL for your GitHub repo and paste it into the box, then click
+"Submit" again.
 
 Bonus Mission
 --------------

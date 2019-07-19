@@ -77,7 +77,7 @@ Message Class
 
    .. sourcecode:: js
 
-      let commands = [new Comamnd('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
+      let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
       let message = new Message('e1', commands);
 
 Command Class
@@ -120,7 +120,7 @@ Rover Class
 
    .. sourcecode:: js
 
-      let commands = [new Comamnd('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
+      let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
       let message = new Message('e1', commands);
       let rover = new Rover(98382);
       let response = rover.receiveMessage(message);
@@ -174,4 +174,8 @@ Add the following test that checks for unknown commands in ``spec/rover.spec.js`
 Submitting Your Work
 --------------------
 
-.. todo:: DO THIS
+In Canvas, open the Mars Rover assignment and click the "Submit" button.
+An input box will appear.
+
+Copy the URL for your repl.it project and paste it into the box, then click
+"Submit" again.

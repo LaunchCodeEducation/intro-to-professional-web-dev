@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -128,7 +128,13 @@ ReferenceError: strWithoutHyphens is not defined
 </pre></div>
 </div>
 </div>
-<p>The last line of this program tries to print the variable <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> to the console, resulting in an error. The previous line calls <code class="docutils literal notranslate"><span class="pre">removeHyphens</span></code>, at the end of which <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;3142540107&quot;</span></code>. However, once the function finishes execution all variables and paremeters within the function are destroyed. This is why the last line results in a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>; there is no variable named <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> in existence when that line executes.</p>
+<p>The last line of this program tries to print the variable <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code>
+to the console, resulting in an error. The previous line calls
+<code class="docutils literal notranslate"><span class="pre">removeHyphens</span></code>, at the end of which <code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> has the value
+<code class="docutils literal notranslate"><span class="pre">&quot;3142540107&quot;</span></code>. However, once the function finishes execution all variables
+and parameters within the function are destroyed. This is why the last line
+results in a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>; there is no variable named
+<code class="docutils literal notranslate"><span class="pre">strWithoutHyphens</span></code> in existence when that line executes.</p>
 <p>This is what we mean when we refer to scope. A variable is not necessarily usable throughout an entire program. Where it can be used depends on the context in which it is defined. For variables <em>and</em> parameters within a function, their scope is known as <strong>function scope</strong>. This means that they are only visible within the function in which they are defined.</p>
 </div>
 <div class="section" id="variable-shadowing">

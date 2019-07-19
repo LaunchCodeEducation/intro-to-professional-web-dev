@@ -174,4 +174,9 @@ Expected Console Output
 
 Submitting Your Work
 --------------------
-.. todo:: do these
+
+In Canvas, open the TypeScript studio and click the "Submit" button. An input
+box will appear.
+
+Copy the URL for your repl.it project and paste it into the box, then click
+"Submit" again.

@@ -43,7 +43,13 @@ In particular, *a variable defined using `let` within a function is not visible 
       ReferenceError: strWithoutHyphens is not defined
       (rest of error message omitted)
 
-The last line of this program tries to print the variable ``strWithoutHyphens`` to the console, resulting in an error. The previous line calls ``removeHyphens``, at the end of which ``strWithoutHyphens`` has the value ``"3142540107"``. However, once the function finishes execution all variables and paremeters within the function are destroyed. This is why the last line results in a ``ReferenceError``; there is no variable named ``strWithoutHyphens`` in existence when that line executes.
+The last line of this program tries to print the variable ``strWithoutHyphens``
+to the console, resulting in an error. The previous line calls
+``removeHyphens``, at the end of which ``strWithoutHyphens`` has the value
+``"3142540107"``. However, once the function finishes execution all variables
+and parameters within the function are destroyed. This is why the last line
+results in a ``ReferenceError``; there is no variable named
+``strWithoutHyphens`` in existence when that line executes.
 
 This is what we mean when we refer to scope. A variable is not necessarily usable throughout an entire program. Where it can be used depends on the context in which it is defined. For variables *and* parameters within a function, their scope is known as **function scope**. This means that they are only visible within the function in which they are defined.
 
