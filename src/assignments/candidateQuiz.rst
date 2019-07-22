@@ -161,7 +161,7 @@ Submitting Your Work
 
       repl.it account URL: ``https://repl.it/@your-username/candidate-tester``
 
-      repl.it classroom URL: ``https://repl.it/student/assignments/9999999``
+      repl.it classroom URL: ``https://repl.it/student/submissions/9999999``
 
 #. Go to the Canvas assignment page and click Submit Assignment.
 #. Paste the URL into the Website URL input.
