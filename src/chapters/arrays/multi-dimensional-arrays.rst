@@ -31,7 +31,7 @@ or the "column".
    .. sourcecode:: js
       :linenos:
 
-      const shuttleCrews = [
+      let shuttleCrews = [
          ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
          ['Kent Rominger', 'Ellen Ochoa', 'Bernard Harris'],
          ['Eilen Collins', 'Winston Scott',  'Catherin Coleman']
@@ -61,13 +61,13 @@ methods.
    .. sourcecode:: js
       :linenos:
 
-      const shuttleCrews = [
+      let shuttleCrews = [
          ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
          ['Kent Rominger', 'Ellen Ochoa', 'Bernard Harris'],
          ['Eilen Collins', 'Winston Scott',  'Catherin Coleman']
       ];
 
-      const newCrew = ['Mark Polansky', 'Robert Curbeam', 'Joan Higginbotham'];
+      let newCrew = ['Mark Polansky', 'Robert Curbeam', 'Joan Higginbotham'];
 
       // Add a new crew array to the end of shuttleCrews
       shuttleCrews.push(newCrew);
@@ -101,7 +101,7 @@ Check Your Understanding
    .. sourcecode:: js
       :linenos:
 
-      const school = [
+      let school = [
          ["science", "computer", "art"],
          ["Jones", "Willoughby", "Rhodes"]
       ];
