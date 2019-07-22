@@ -2,8 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>16.1. Introduction &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -153,41 +152,41 @@ As the compiler processes the code, it may run into a function, in which case it
 <ol class="arabic">
 <li><p class="first">First, the global execution context is entered as the compiler executes the code.</p>
 <blockquote>
-<div><div class="figure">
+<div><div class="figure align-default">
 <img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Once coolFunction() is hit, the compiler creates and executes coolFunction() under the coolFunction() execution context.</p>
 <blockquote>
-<div><div class="figure">
+<div><div class="figure align-default">
 <img alt="Figure showing coolFunction on top of global execution context." src="../../_images/coolFunction.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Upon completion, the compiler returns to the global execution context.</p>
 <blockquote>
-<div><div class="figure">
+<div><div class="figure align-default">
 <img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">The compiler stays at the global execution context until the creation and execution of coolerFunction().</p>
 <blockquote>
-<div><div class="figure">
+<div><div class="figure align-default">
 <img alt="Figure showing coolerFunction on top of the global execution context." src="../../_images/coolerFunction.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Inside of coolerFunction() is a call to coolFunction(). The compiler will go up in execution context to coolFunction() before returning down to coolerFunction()’s execution context and upon completion of the function, down to the global execution context.</p>
 <blockquote>
-<div><div class="figure">
+<div><div class="figure align-default">
 <img alt="Figure showing coolFunction on top of coolerFunction on top of the global execution context." src="../../_images/coolandcoolerFunction.png" />
 </div>
-<div class="figure">
+<div class="figure align-default">
 <img alt="Figure showing coolerFunction on top of the global execution context." src="../../_images/coolerFunction.png" />
 </div>
-<div class="figure">
+<div class="figure align-default">
 <img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" />
 </div>
 </div></blockquote>

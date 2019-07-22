@@ -2,8 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>23.2. HTTP at a Glance &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -90,7 +89,7 @@
 <div class="section" id="requests-and-responses">
 <h2>23.2.1. Requests and Responses<a class="headerlink" href="#requests-and-responses" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">The fundamental units of HTTP are <strong>requests</strong> and <strong>responses</strong>. A client (usually a web browser) makes a request to a web server. Based on the details of the request, the server formulates and sends a response. The response is parsed and displayed by the browser.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/http-request-response.png"><img alt="A client and a server exchanging HTTP requests and responses" src="../../_images/http-request-response.png" style="height: 400px;" /></a>
 </div>
 <p>As long as the server is available, <em>every</em> request receives a single response.</p>
@@ -112,16 +111,16 @@
 <h2>23.2.2. The Postal Service of the Internet<a class="headerlink" href="#the-postal-service-of-the-internet" title="Permalink to this headline">¶</a></h2>
 <p>HTTP can seem complicated, but it is actually very similar to a system that you are already familiar with: The United States Postal Service.</p>
 <p>Suppose you want to mail a letter to your friend in Alaska, asking them their favorite cheese. To do so, you write your question on a piece of paper and enclose it in an envelope. On the envelope, you write your friend’s address, along with your return address. Finally, to stick a stamp on the top-right corner.</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/envelope.jpg"><img alt="An addressed envelope" src="../../_images/envelope.jpg" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-text">Image is in the public domain</span></p>
+<p class="caption"><span class="caption-text">Image is in the public domain</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Each of these pieces of information is necessary for your letter to be delivered. When your letter enteres the postal system, it will travel from one post office to another, via land, air, and maybe even sea. As long as you follow their rules, the postal service will get your letter to its destination.</p>
 <p>This is very similar to how an HTTP request works. The letter is like a request message. The envelope contains the location and metadata needed for the letter to be delivered, just like an HTTP request specifies a URL and other metadata necessary for the request to reach the server and be processed.</p>
 <p>When you drop the letter in your mailbox, you know it will be delivered since you followed the postal service’s rules. When we make HTTP requests, we don’t know <em>how</em> our request will get to the server, but as long as we properly structure a request, it <em>will</em> be delivered.</p>
-<div class="figure" id="id2">
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/postal-network.png"><img alt="An image of a mail processing facility next to an image of network cables." src="../../_images/postal-network.png" style="height: 500px;" /></a>
-<p class="caption"><span class="caption-text">Both the postal service and the Internet deliver messages, as long as you follow their formatting rules. Images used with permission. L: via <a class="reference external" href="https://www.af.mil/News/Article-Display/Article/1399724/deployed-airmen-volunteer-to-enhance-morale-downrange/" target="_blank">US Air Force<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, R: via Flickr user <a class="reference external" href="https://www.flickr.com/photos/verkeorg/24501780183" target="_blank">verkeorg<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></span></p>
+<p class="caption"><span class="caption-text">Both the postal service and the Internet deliver messages, as long as you follow their formatting rules. Images used with permission. L: via <a class="reference external" href="https://www.af.mil/News/Article-Display/Article/1399724/deployed-airmen-volunteer-to-enhance-morale-downrange/" target="_blank">US Air Force<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, R: via Flickr user <a class="reference external" href="https://www.flickr.com/photos/verkeorg/24501780183" target="_blank">verkeorg<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>And just as your friend will respond with a letter telling you their favorite cheese (sharp white cheddar!), an HTTP request will result in a response from the server.</p>
 <p>As we wade into the details of HTTP, keep this analogy in mind. It will help simplify the concepts and make them more concrete.</p>
