@@ -63,12 +63,16 @@ testable parts. The goal is to get simple parts working first and then expand
 the code in a systematic way. The following is NOT the only way to complete
 this assignment, but it provides a framework for thinking through the project.
 
+Login to repl.it
+^^^^^^^^^^^^^^^^^
+
+If you are enrolled in a repl.it classroom for this course, login to that
+classroom and open the starter code for the *Candidate Testing* assignment. If
+you are NOT enrolled in a repl.it classroom, fork this 
+`starter repl.it <https://repl.it/@launchcode/candidate-tester>`__.
+
 Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Fork the `starter repl.it <https://repl.it/@launchcode/candidate-tester>`_
-
-   a. Make sure you are logged into repl.it
-   b. Remember that repl.it auto saves your work
 
 #. Define variables for:
 
@@ -142,18 +146,24 @@ Sanity Checks
 
 Before submitting your solution, make sure your program:
 
-a. Does not consider case when checking answers.
-b. Includes at least one loop and one conditional.
-c. Uses at least one template literal.
-d. Correctly accepts or rejects a candidate based on their percentage.
+#. Does NOT consider case when checking answers.
+#. Includes at least one loop and one conditional.
+#. Uses at least one template literal.
+#. Correctly accepts or rejects a candidate based on their percentage.
 
 Submitting Your Work
 ---------------------
-1. Copy the URL of the repl.it that contains your solution.
 
-   * Example URL ``https://repl.it/@your-username/candidate-tester``
+#. From the address bar at the top of the browser window, copy the URL of the
+   repl.it that contains your solution.
 
-2. Go to the Canvas assignment page and click Submit Assignment
-3. Paste the URL into the Website URL input
-4. Click Submit Assignment again
-5. Notify your TA that your assignment is ready to be graded
+   .. admonition:: Examples
+
+      repl.it account URL: ``https://repl.it/@your-username/candidate-tester``
+
+      repl.it classroom URL: ``https://repl.it/student/assignments/9999999``
+
+#. Go to the Canvas assignment page and click Submit Assignment.
+#. Paste the URL into the Website URL input.
+#. Click Submit Assignment again.
+#. Notify your TA that your assignment is ready to be graded.
