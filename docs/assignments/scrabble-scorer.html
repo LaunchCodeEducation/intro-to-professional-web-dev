@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -94,22 +94,22 @@ data structure used to store the letter point values is inefficient. Second the
 program should have three scoring algorithms and allow the user to pick which
 algorithm to use. These new features will make the program more efficient and
 user friendly.</p>
-<p>Fork the starter code at this
-<a class="reference external" href="https://repl.it/&#64;launchcode/scrabble-scorer" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>If you are NOT enrolled in a repl.it classroom for this course, fork the
+starter code at this <a class="reference external" href="https://repl.it/&#64;launchcode/scrabble-scorer" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Create an <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> object that contains the previous scoring system.</li>
 <li>Create a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function which will return a <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object.</li>
-<li>Create <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array to hold three scoring objects, which
-include the scoring functions.</li>
 <li>Create an <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function that asks the user which scoring
 algorithm to use.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function to contain the starting point for your
-running program.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array to hold three scoring objects, which
+include different scoring functions.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function to serve as the starting point for your
+program.</li>
 </ol>
 <div class="section" id="example-output">
-<h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator. Click &#39;Stop&#39; to quit.
 
 Which scoring algorithm would you like to use?
@@ -199,10 +199,9 @@ keys. The keys in the <code class="docutils literal notranslate"><span class="pr
 <ol class="arabic simple">
 <li>Recall that <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loops iterate over the keys within an object.</li>
 <li>To access the letter arrays within <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code>, use bracket notation
-(e.g. <code class="docutils literal notranslate"><span class="pre">oldScoreKey['key']</span></code>).</li>
+(<code class="docutils literal notranslate"><span class="pre">oldScoreKey['key']</span></code>).</li>
 <li>To access a particular element within a letter array, add a second set of
-brackets (e.g. <code class="docutils literal notranslate"><span class="pre">oldScoreKey['key'][index]</span></code>), or assign the array to a
-variable.</li>
+brackets (<code class="docutils literal notranslate"><span class="pre">oldScoreKey['key'][index]</span></code>), or assign the array to a variable.</li>
 </ol>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -230,18 +229,19 @@ Letters with score &#39;8&#39;: [ &#39;J&#39;, &#39;X&#39; ]
 </div>
 </div>
 </div>
-<div class="section" id="pick-scoring-algorithm">
-<h3>Pick Scoring Algorithm<a class="headerlink" href="#pick-scoring-algorithm" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="user-prompts">
+<h3>User Prompts<a class="headerlink" href="#user-prompts" title="Permalink to this headline">¶</a></h3>
 <p>The current Scrabble Scorer only uses one scoring algorithm. For the new
 version we want to let the user pick between three algorithms. Define an
 <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function that will introduce the program and then ask the
-user which scoring algorithm they want to use. See Example Output above and the
-next section for details on available options.</p>
+user which scoring algorithm they want to use. See
+<a class="reference internal" href="#example-output"><span class="std std-ref">Example Output</span></a> above and the next section for details
+on available options.</p>
 </div>
 <div class="section" id="scoring-algorithms">
 <h3>Scoring Algorithms<a class="headerlink" href="#scoring-algorithms" title="Permalink to this headline">¶</a></h3>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array that contains three scorer objects. Each
-scorer object should have these three keys: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and
+object should contain three keys: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code> for each object should be a function that takes in one
 parameter named <code class="docutils literal notranslate"><span class="pre">word</span></code> and returns a point value based on the logic listed
@@ -306,18 +306,18 @@ scoreFunction result:  16
 <h3>Tie it All Together<a class="headerlink" href="#tie-it-all-together" title="Permalink to this headline">¶</a></h3>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function that will:</p>
 <ol class="arabic simple">
-<li>Take <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> as a parameter.</li>
+<li>Accept the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array as an argument.</li>
 <li>Use <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> to pick the algorithm.</li>
 <li>Prompt the user for a word to score.</li>
-<li>Use the picked algorithm to determine a word score.<ol class="loweralpha">
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">0</span></code> or an invalid option, then use the Scrabble
-<code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code></li>
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">1</span></code> then use the Simple Score <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code></li>
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">2</span></code> then use the Bonus Vowels <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code></li>
+<li>Use the selected algorithm to determine the score for the word:<ol class="loweralpha">
+<li>If the user entered <code class="docutils literal notranslate"><span class="pre">0</span></code> or an invalid option, use the Scrabble
+<code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
+<li>If the user entered <code class="docutils literal notranslate"><span class="pre">1</span></code>, use the Simple Score <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
+<li>If the user entered <code class="docutils literal notranslate"><span class="pre">2</span></code>, use the Bonus Vowels <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
 </ol>
 </li>
 <li>Display the score for the word.</li>
-<li>Repeat steps 3 to 5 until program is stopped.</li>
+<li>Repeat steps 3 to 5 until the program is stopped.</li>
 </ol>
 </div>
 </div>
@@ -325,35 +325,34 @@ scoreFunction result:  16
 <h2>Test Words<a class="headerlink" href="#test-words" title="Permalink to this headline">¶</a></h2>
 <p>Here are some words you can use to test your code:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> = 24 points using Scrabble, 10 using Simple, and 16 using
+<li><code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> = 24 points using Scrabble, 10 using Simple Score, and 16
+using Bonus Vowels.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Scrabble</span></code> = 14 points using Scrabble, 8 using Simple Score, and 12 using
 Bonus Vowels.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Scrabble</span></code> = 14 points using Scrabble, 8 using Simple, and 12 using
-Bonus Vowels.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple, and 5 using Bonus
+<li><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
 Vowels.</li>
 </ol>
 </div>
 <div class="section" id="bonus-mission">
 <h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
-<p>Handle scoring words that were spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to
-the <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code> points.</p>
+<p>Score words spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code>
+object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code> points.</p>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">From the address bar at the top of the browser window, copy the URL of the
 repl.it that contains your solution.</p>
-<div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
-<p>repl.it account URL: <code class="docutils literal notranslate"><span class="pre">https://repl.it/&#64;your-username/candidate-tester</span></code></p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p class="last">repl.it classroom URL: <code class="docutils literal notranslate"><span class="pre">https://repl.it/student/submissions/9999999</span></code></p>
 </div>
 </li>
-<li><p class="first">Go to the Canvas assignment page and click Submit Assignment.</p>
+<li><p class="first">Go to the Graded Assignment #2 page in Canvas and click <em>Submit Assignment</em>.</p>
 </li>
 <li><p class="first">Paste the URL into the Website URL input.</p>
 </li>
-<li><p class="first">Click Submit Assignment again.</p>
+<li><p class="first">Click <em>Submit Assignment</em> again.</p>
 </li>
 <li><p class="first">Notify your TA that your assignment is ready to be graded.</p>
 </li>
