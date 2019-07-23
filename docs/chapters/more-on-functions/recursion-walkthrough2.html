@@ -2,7 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>11.8. Making A Function Call Itself &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -108,13 +109,13 @@ building a recursive function.</p>
 <h2>11.8.1. A Visual Representation<a class="headerlink" href="#a-visual-representation" title="Permalink to this headline">¶</a></h2>
 <p>To help visualize what happens during recursion, let’s start with the base case
 <code class="docutils literal notranslate"><span class="pre">['L']</span></code>:</p>
-<div class="figure align-default">
+<div class="figure">
 <img alt="Visual representation for the base case." src="../../_images/base-case-recursion.png" />
 </div>
 <p>Nothing complicated here.  <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> sees only one item in the array,
 so it returns <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
 <p>Now consider an array with two elements, <code class="docutils literal notranslate"><span class="pre">['L',</span> <span class="pre">'C']</span></code>:</p>
-<div class="figure align-default">
+<div class="figure">
 <img alt="Visual representation for the second-easiest case." src="../../_images/second-case-recursion.png" />
 </div>
 <p>In this case, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> executes the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement. We have no
@@ -128,7 +129,7 @@ inside the array (<code class="docutils literal notranslate"><span class="pre">[
 result.</li>
 </ol>
 <p>Next, consider an array with three elements <code class="docutils literal notranslate"><span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1']</span></code>:</p>
-<div class="figure align-default">
+<div class="figure">
 <img alt="Visual representation for the third-easiest case." src="../../_images/third-case-recursion.png" />
 </div>
 <p>As before, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> executes the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement, and we can
@@ -150,7 +151,7 @@ base case. This sets up a series of return events - each one selecting a
 single entry from the array. Rather than building <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code> from left to
 right, recursion constructs the string starting with the base case and
 adding new characters to the front:</p>
-<table border="1" class="colwidths-auto docutils align-default">
+<table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Value Returned</th>
 <th class="head">Description</th>
@@ -211,7 +212,7 @@ selected entries from an array. To return everything BUT the first entry in
 array with <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span></code>, then it calls itself with the remaining array
 elements (<code class="docutils literal notranslate"><span class="pre">arrayName.slice(1)</span></code>).</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">combineEntries(['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']);</span></code>, the sequence would be:</p>
-<table border="1" class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -240,7 +241,7 @@ elements (<code class="docutils literal notranslate"><span class="pre">arrayName
 </tbody>
 </table>
 <p>To get the final result, proceed <em>up the chain</em>:</p>
-<table border="1" class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
