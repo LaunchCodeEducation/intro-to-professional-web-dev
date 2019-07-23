@@ -8,7 +8,7 @@
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.push(item1, item2, ...)
 
@@ -20,14 +20,20 @@ The new items may be of any data type.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = ['a', 'b', 'c'];
 
-      arr.push('d', 'f', 42);
-      //returns 6
+      console.log(arr.push('d', 'f', 42));
 
       console.log(arr);
-      //prints ['a', 'b', 'c', 'd', 'f', 42]
+
+   **Output**
+
+   ::
+
+      6
+      ['a', 'b', 'c', 'd', 'f', 42]
 
 .. _pop:
 
@@ -36,7 +42,7 @@ The new items may be of any data type.
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.pop()
 
@@ -47,11 +53,17 @@ No arguments are placed inside the parentheses ``()``.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = ['a', 'b', 'c', 'd', 'e'];
 
       arr.pop();
-      //returns 'e'
 
       console.log(arr);
-      //prints ['a', 'b', 'c', 'd']
+
+   **Output**
+
+   ::
+
+      e
+      ['a', 'b', 'c', 'd']

@@ -87,7 +87,7 @@
   <div class="section" id="split-examples">
 <span id="id1"></span><h1><strong>split</strong> Examples<a class="headerlink" href="#split-examples" title="Permalink to this headline">¶</a></h1>
 <p>The general syntax for this method is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>stringName.split(&#39;delimiter&#39;)
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">stringName</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;delimiter&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">split</span></code> is actually a string method, but it complements the array method
@@ -96,22 +96,37 @@
 array. The <strong>delimiter</strong> argument determines how the string is broken apart.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="s2">&quot;1,2,3,4&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="s2">&quot;1,2,3,4&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">word</span> <span class="o">=</span> <span class="s2">&quot;Rutabaga&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">phrase</span> <span class="o">=</span> <span class="s2">&quot;Bookkeeper of balloons.&quot;</span>
 <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
 
 <span class="nx">arr</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>  <span class="c1">//split the string at each comma.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]  Note that the numbers are strings.</span>
 
 <span class="nx">arr</span> <span class="o">=</span> <span class="nx">phrase</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>   <span class="c1">//split the string at each space.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [&#39;Bookkeeper&#39;, &#39;of&#39;, &#39;balloons&#39;]</span>
 
 <span class="nx">arr</span> <span class="o">=</span> <span class="nx">word</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>      <span class="c1">//split the string at each character.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [&#39;R&#39;, &#39;u&#39;, &#39;t&#39;, &#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;g&#39;, &#39;a&#39;]</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+[&#39;Bookkeeper&#39;, &#39;of&#39;, &#39;balloons&#39;]
+[&#39;R&#39;, &#39;u&#39;, &#39;t&#39;, &#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;g&#39;, &#39;a&#39;]
 </pre></div>
 </div>
 </div>

@@ -5,7 +5,7 @@
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.indexOf(item)
 
@@ -15,12 +15,18 @@ If the item is not in the array, -1 is returned.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let charles = [1, 7, 5, 9, 5];
       let otherArray = ['hello', 'world!'];
 
-      charles.indexOf(5);
-      //returns 2
+      console.log(charles.indexOf(5));
 
-      otherArray.indexOf('hi');
-      //returns -1
+      console.log(otherArray.indexOf('hi'));
+
+   **Output**
+
+   ::
+
+      2
+      -1

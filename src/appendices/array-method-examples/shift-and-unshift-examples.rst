@@ -8,7 +8,7 @@
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.shift()
 
@@ -19,14 +19,20 @@ No arguments are placed inside the parentheses ``()``.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = ['a', 'b', 'c', 'd', 'e'];
 
       arr.shift();
-      //returns 'a'
 
       console.log(arr);
-      //prints ['b', 'c', 'd', 'e']
+
+   **Output**
+
+   ::
+
+      'a'
+      ['b', 'c', 'd', 'e']
 
 .. _unshift:
 
@@ -35,7 +41,7 @@ No arguments are placed inside the parentheses ``()``.
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.unshift(item1, item2, ...)
 
@@ -47,11 +53,17 @@ The new items may be of any data type.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = ['a', 'b', 'c'];
 
       arr.unshift('hello', 121);
-      //returns 5
 
       console.log(arr);
-      //prints ['hello', 121, 'a', 'b', 'c']
+
+   **Output**
+
+   ::
+
+      5
+      ['hello', 121, 'a', 'b', 'c']

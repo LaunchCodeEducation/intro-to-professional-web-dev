@@ -5,7 +5,7 @@
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.slice(starting index, ending index)
 
@@ -22,14 +22,21 @@ index up to, but NOT including the ending index.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = ['a', 'b', 'c', 'd', 'e'];
 
       arr.slice(2);
-      //returns [ 'c', 'd', 'e' ]
 
       arr.slice(1,4);
-      //returns [ 'b', 'c', 'd' ]
 
       console.log(arr);
-      //prints ['a', 'b', 'c', 'd', 'e']
+
+   **Output**
+
+   ::
+
+      [ 'c', 'd', 'e' ]
+      [ 'b', 'c', 'd' ]
+      ['a', 'b', 'c', 'd', 'e']
+

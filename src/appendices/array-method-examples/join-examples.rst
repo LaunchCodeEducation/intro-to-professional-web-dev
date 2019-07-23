@@ -5,7 +5,7 @@
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.join('connecter')
 
@@ -15,6 +15,7 @@ determines the string that "glues" the array elements together.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = [1, 2, 3, 4];
       let words = ['hello', 'world', '!'];
@@ -22,12 +23,17 @@ determines the string that "glues" the array elements together.
 
       newString = arr.join("+");
       console.log(newString);
-      //prints '1+2+3+4'
 
       newString = words.join("");
       console.log(newString);
-      //prints 'helloworld!'
 
       newString = words.join("_");
       console.log(newString);
-      //prints 'hello_world_!'
+
+   **Output**
+
+   ::
+
+      1+2+3+4
+      helloworld!
+      hello_world_!

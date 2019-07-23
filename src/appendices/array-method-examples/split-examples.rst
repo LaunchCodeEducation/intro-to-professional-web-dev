@@ -5,7 +5,7 @@
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    stringName.split('delimiter')
 
@@ -21,6 +21,7 @@ array. The **delimiter** argument determines how the string is broken apart.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let numbers = "1,2,3,4";
       let word = "Rutabaga";
@@ -29,12 +30,17 @@ array. The **delimiter** argument determines how the string is broken apart.
 
       arr = numbers.split(',');  //split the string at each comma.
       console.log(arr);
-      //prints ['1', '2', '3', '4']  Note that the numbers are strings.
 
       arr = phrase.split(' ');   //split the string at each space.
       console.log(arr);
-      //prints ['Bookkeeper', 'of', 'balloons']
 
       arr = word.split('');      //split the string at each character.
       console.log(arr);
-      //prints ['R', 'u', 't', 'a', 'b', 'a', 'g', 'a']
+
+   **Output**
+
+   ::
+
+      ['1', '2', '3', '4']
+      ['Bookkeeper', 'of', 'balloons']
+      ['R', 'u', 't', 'a', 'b', 'a', 'g', 'a']

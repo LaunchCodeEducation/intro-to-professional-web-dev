@@ -87,7 +87,7 @@
   <div class="section" id="splice-examples">
 <span id="id1"></span><h1><strong>splice</strong> Examples<a class="headerlink" href="#splice-examples" title="Permalink to this headline">¶</a></h1>
 <p>The general syntax for this method is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arrayName.splice(index, number of elements to change, item1, item2, ...)
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">number</span> <span class="k">of</span> <span class="nx">elements</span> <span class="nx">to</span> <span class="nx">change</span><span class="p">,</span> <span class="nx">item1</span><span class="p">,</span> <span class="nx">item2</span><span class="p">,</span> <span class="p">...)</span>
 </pre></div>
 </div>
 <p>Inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>, only the first argument is required.</p>
@@ -98,11 +98,17 @@ Entries can be added, removed or changed. This method requires practice.</p>
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Given only one argument, <code class="docutils literal notranslate"><span class="pre">splice(index)</span></code> removes every entry from <code class="docutils literal notranslate"><span class="pre">index</span></code>
 to the end of the array.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>    <span class="c1">//Everything from index 2 and beyond is removed.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39; ]</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;]
 </pre></div>
 </div>
 </div>
@@ -110,15 +116,24 @@ to the end of the array.</p>
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>With two arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">items)</span></code> starts at <code class="docutils literal notranslate"><span class="pre">index</span></code>
 and removes the number of items.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>    <span class="c1">//Start at index 2 and remove 3 total entries.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39;, &#39;f&#39; ]</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">//Start at index 1 and remove 1 entry.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;a&#39;, &#39;f&#39; ]</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;f&#39; ]
+[ &#39;a&#39;, &#39;f&#39; ]
 </pre></div>
 </div>
 </div>
@@ -126,11 +141,17 @@ and removes the number of items.</p>
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Given three or more arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">0,</span> <span class="pre">new</span> <span class="pre">item)</span></code> starts at
 <code class="docutils literal notranslate"><span class="pre">index</span></code> and <em>ADDS</em> the new items.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>     <span class="c1">//Start at index 2, remove 0 entries, and add &#39;hello&#39;.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
 </pre></div>
 </div>
 </div>
@@ -138,11 +159,17 @@ and removes the number of items.</p>
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Given three or more arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">items,</span> <span class="pre">new</span> <span class="pre">items)</span></code>
 starts at <code class="docutils literal notranslate"><span class="pre">index</span></code> and <em>REPLACES</em> the number of items with the new ones.</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>    <span class="c1">//Start at index 2, replace 3 entries with &#39;hello&#39; and 9.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-<span class="c1">//prints [ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, 9, &#39;f&#39; ]</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, 9, &#39;f&#39; ]
 </pre></div>
 </div>
 </div>
