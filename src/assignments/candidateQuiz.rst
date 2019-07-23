@@ -53,7 +53,9 @@ You are expected to match this format.
    >>> Overall Grade: 40% (2 of 5 responses correct) <<<
    >>> Status: FAILED <<<
 
-.. note:: The output will vary slightly based on the candidate's answers to each question.
+.. admonition:: Note
+
+   The output will vary slightly based on the candidate's answers to each question.
 
 Take It Step by Step
 --------------------
@@ -68,7 +70,7 @@ Login to repl.it
 
 If you are enrolled in a repl.it classroom for this course, login to that
 classroom and open the starter code for the *Candidate Testing* assignment. If
-you are NOT enrolled in a repl.it classroom, fork this 
+you are NOT enrolled in a repl.it classroom, fork this
 `starter repl.it <https://repl.it/@launchcode/candidate-tester>`__.
 
 Part 1: Minimum Viable Quiz
@@ -89,7 +91,9 @@ Part 1: Minimum Viable Quiz
 #. Provide basic feedback to the student. This should include their name and
    whether their answer was correct.
 
-.. note:: If not already done, remove the extra ``console.log`` statements from steps 2 & 3. Make sure your small app works properly before moving on to part 2.
+.. admonition:: Note
+
+   If not already done, remove the extra ``console.log`` statements from steps 2 & 3. Make sure your small app works properly before moving on to part 2.
 
 Part 2: Use Arrays
 ^^^^^^^^^^^^^^^^^^
@@ -104,7 +108,9 @@ Now that your small app is working, expand it to deal with multiple questions.
 #. Compare the candidate's response to the proper entry in the answers array.
 #. Replace the basic feedback with a template literal.
 
-.. note:: Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
+.. admonition:: Note
+
+   Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
 
 .. list-table::
    :header-rows: 1
@@ -157,9 +163,7 @@ Submitting Your Work
 #. From the address bar at the top of the browser window, copy the URL of the
    repl.it that contains your solution.
 
-   .. admonition:: Examples
-
-      repl.it account URL: ``https://repl.it/@your-username/candidate-tester``
+   .. admonition:: Example
 
       repl.it classroom URL: ``https://repl.it/student/submissions/9999999``
 
