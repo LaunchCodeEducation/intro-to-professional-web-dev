@@ -370,22 +370,29 @@ Randomized with seed 81081 (jasmine --random=true --seed=81081)
 <h2>14.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p>Examine the function below, which checks if the user enters a correct
-answer:</p>
+<p>Examine the function below, which checks if two strings match:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isAnswerCorrect</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span><span class="nx">correctAnswer</span><span class="p">){</span>
-   <span class="k">return</span> <span class="nx">answer</span> <span class="o">===</span> <span class="nx">correctAnswer</span><span class="p">;</span>
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">doStringsMatch</span><span class="p">(</span><span class="nx">string1</span><span class="p">,</span> <span class="nx">string2</span><span class="p">){</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">string1</span> <span class="o">===</span> <span class="nx">string2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">&#39;Strings match!&#39;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">&#39;No match!&#39;</span><span class="p">;</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Which of the following tests checks if the function properly handles
-case-sensitive answers.</p>
+case-<em>sensitive</em> answers.</p>
 <ol class="last loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(isAnswerCorrect('Flower'),</span> <span class="pre">'Flower');</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(isAnswerCorrect('Flower'),</span> <span class="pre">'flower');</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(isAnswerCorrect('Flower'),</span> <span class="pre">'Plant');</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(isAnswerCorrect('Flower'),</span> <span class="pre">'');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(doStringsMatch('Flower',</span> <span class="pre">'Flower'),</span> <span class="pre">'Strings</span> <span class="pre">match!');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(doStringsMatch('Flower',</span> <span class="pre">'flower'),</span> <span class="pre">'No</span> <span class="pre">match!');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(doStringsMatch('Flower',</span> <span class="pre">'plant'),</span> <span class="pre">'No</span> <span class="pre">match!');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">assert.strictEqual(doStringsMatch('Flower',</span> <span class="pre">''),</span> <span class="pre">'No</span> <span class="pre">match!');</span></code></li>
 </ol>
 </div>
 </div>

@@ -308,20 +308,23 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Examine the function below, which checks if the user enters a correct
-   answer:
+   Examine the function below, which checks if two strings match:
 
    .. sourcecode:: js
       :linenos:
 
-      function isAnswerCorrect(answer,correctAnswer){
-         return answer === correctAnswer;
+      function doStringsMatch(string1, string2){
+         if (string1 === string2) {
+            return 'Strings match!';
+         } else {
+            return 'No match!';
+         }
       }
 
    Which of the following tests checks if the function properly handles
-   case-sensitive answers.
+   case-*sensitive* answers.
 
-   a. ``assert.strictEqual(isAnswerCorrect('Flower'), 'Flower');``
-   b. ``assert.strictEqual(isAnswerCorrect('Flower'), 'flower');``
-   c. ``assert.strictEqual(isAnswerCorrect('Flower'), 'Plant');``
-   d. ``assert.strictEqual(isAnswerCorrect('Flower'), '');``
+   a. ``assert.strictEqual(doStringsMatch('Flower', 'Flower'), 'Strings match!');``
+   b. ``assert.strictEqual(doStringsMatch('Flower', 'flower'), 'No match!');``
+   c. ``assert.strictEqual(doStringsMatch('Flower', 'plant'), 'No match!');``
+   d. ``assert.strictEqual(doStringsMatch('Flower', ''), 'No match!');``
