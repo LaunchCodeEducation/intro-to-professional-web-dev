@@ -1,7 +1,7 @@
 .. _splice-examples:
 
-**splice** Examples
-====================
+``splice`` Examples
+===================
 
 The general syntax for this method is:
 

@@ -1,9 +1,9 @@
 .. _shift-and-unshift-examples:
 
-**shift** And **unshift** Examples
-===================================
+``shift`` And ``unshift`` Examples
+==================================
 
-**shift**
+``shift``
 ---------
 
 The general syntax for this method is:
@@ -36,7 +36,7 @@ No arguments are placed inside the parentheses ``()``.
 
 .. _unshift:
 
-**unshift**
+``unshift``
 -----------
 
 The general syntax for this method is:

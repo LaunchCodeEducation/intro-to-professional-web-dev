@@ -1,6 +1,6 @@
 .. _concat-examples:
 
-**concat** Examples
+``concat`` Examples
 ====================
 
 The general syntax for this method is:

@@ -1,7 +1,7 @@
 .. _split-examples:
 
-**split** Examples
-===================
+``split`` Examples
+==================
 
 The general syntax for this method is:
 

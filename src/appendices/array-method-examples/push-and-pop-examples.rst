@@ -1,10 +1,10 @@
 .. _push-and-pop-examples:
 
-**push** And **pop** Examples
-==============================
+``push`` And ``pop`` Examples
+=============================
 
-**push**
----------
+``push``
+--------
 
 The general syntax for this method is:
 
@@ -37,8 +37,8 @@ The new items may be of any data type.
 
 .. _pop:
 
-**pop**
---------
+``pop``
+-------
 
 The general syntax for this method is:
 

@@ -1,6 +1,6 @@
 .. _indexOf-examples:
 
-**indexOf** Examples
+``indexOf`` Examples
 =====================
 
 The general syntax for this method is:

@@ -1,6 +1,6 @@
 .. _includes-examples:
 
-**includes** Examples
+``includes`` Examples
 =====================
 
 The general syntax for this method is:

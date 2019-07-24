@@ -1,6 +1,6 @@
 .. _join-examples:
 
-**join** Examples
+``join`` Examples
 ==================
 
 The general syntax for this method is:

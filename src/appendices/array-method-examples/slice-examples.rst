@@ -1,7 +1,7 @@
 .. _slice-examples:
 
-**slice** Examples
-===================
+``slice`` Examples
+==================
 
 The general syntax for this method is:
 

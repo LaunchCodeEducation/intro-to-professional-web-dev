@@ -1,6 +1,6 @@
 .. _string-tolowercase-examples:
 
-**toLowerCase** Examples
+``toLowerCase`` Examples
 ========================
 
 The general syntax for this method is:

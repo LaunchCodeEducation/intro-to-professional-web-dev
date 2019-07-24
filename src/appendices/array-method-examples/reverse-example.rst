@@ -1,7 +1,7 @@
 .. _reverse-example:
 
-**reverse** Example
-====================
+``reverse`` Example
+===================
 
 The general syntax for this method is:
 

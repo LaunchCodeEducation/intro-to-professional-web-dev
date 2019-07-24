@@ -1,7 +1,7 @@
 .. _sort-examples:
 
-**sort** Examples
-==================
+``sort`` Examples
+=================
 
 The general syntax for this method is:
 

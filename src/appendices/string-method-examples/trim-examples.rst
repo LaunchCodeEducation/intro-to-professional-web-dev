@@ -1,6 +1,6 @@
 .. _string-trim-examples:
 
-**trim** Examples
+``trim`` Examples
 =================
 
 The general syntax for this method is:

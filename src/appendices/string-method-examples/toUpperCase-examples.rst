@@ -1,6 +1,6 @@
 .. _string-touppercase-examples:
 
-**toUpperCase** Examples
+``toUpperCase`` Examples
 ========================
 
 The general syntax for this method is:

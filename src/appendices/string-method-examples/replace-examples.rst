@@ -1,6 +1,6 @@
 .. _string-replace-examples:
 
-**replace** Examples
+``replace`` Examples
 ====================
 
 The general syntax for this method is:
