@@ -17,7 +17,7 @@ Indexes are zero-based, going from ``0`` to ``array.length-1``.
    .. sourcecode:: js
       :linenos:
 
-      const programmingLanguages = [
+      let programmingLanguages = [
          "JavaScript", // index 0
          "Python",     // index 1
          "Java",       // index 2
@@ -51,7 +51,7 @@ that the array does not contain.
    .. sourcecode:: js
       :linenos:
 
-      const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
+      let programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
       console.log(programmingLanguages[-1]);
       console.log(programmingLanguages[100]);
 
@@ -78,7 +78,7 @@ an array can be edited without a new array being created.
    .. sourcecode:: js
       :linenos:
 
-      const javaScriptFrameworks = ["React", "Angular", "Ember"];
+      let javaScriptFrameworks = ["React", "Angular", "Ember"];
       console.log(javaScriptFrameworks);
 
       // Set the value of index 2 to be "Vue"
