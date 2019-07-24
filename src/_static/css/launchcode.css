@@ -30,6 +30,41 @@
 
 /* END TODO */
 
+@font-face {
+    font-family: 'Nexa';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/NexaRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: italic;
+    font-weight: 400;
+    src: url('fonts/Nexa-Regular-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/Nexa-XBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    font-style: italic;
+    font-weight: 700;
+    src: url('fonts/Nexa-XBold-Italic.otf') format('opentype');
+}
+
+/* END TODO */
+
+body {
+    font-size: 16px;
+    line-height: 1.8em;
+    font-family: "Nexa","Monsterrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 h1 {
     /* TODO: this should be in /repos/bootswatch/launchcode/variables.less after we learn how to alter the theme */
     color: #3c79b8;
@@ -79,6 +114,7 @@ code {
     color: #419f6a;
     padding: 0;
     font-weight: bold;
+    font-size: inherit;
 }
 
 .pager code {
@@ -209,6 +245,19 @@ div.admonition {
     display: inline-block;
 }
 
+.admonition-question > p, .admonition-question > ul {
+	margin-bottom: 10px;
+}
+
+.admonition-question ol,
+div[id^="exercises-"] ol ol {
+    list-style-type: lower-alpha;
+}
+
+div[id^="exercises-"] ol ol ol {
+    list-style-type: lower-roman;
+}
+
 .admonition-title .fas {
     margin-right: .5em;
 }
@@ -239,6 +288,13 @@ div.highlight-none,
 div.highlight-css,
 div.highlight-html {
     margin: 1em 0;
+}
+
+div.highlight-js + p.repl-link,
+div.highlight-none + p.repl-link,
+div.highlight-css + p.repl-link,
+div.highlight-html + p.repl-link  {
+	margin-top: -1em;
 }
 
 .highlighttable .linenos {
@@ -315,9 +371,9 @@ div.contents {
     font-family: "Nexa",sans-serif;
 }
 
-div.contents ul  {
+.toctree-wrapper ol  {
     list-style: none;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 div.contents a:hover {
