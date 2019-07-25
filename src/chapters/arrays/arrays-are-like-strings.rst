@@ -22,16 +22,16 @@ Programmers use multiple ways to declare a new array. The simplest way is to use
 .. sourcecode:: js
    :linenos:
 
-   const emptyArray = [];
+   let emptyArray = [];
 
-   const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
+   let programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
 
 Array items can also be declared on multiple lines.
 
 .. sourcecode:: js
    :linenos:
 
-   const javaScriptFrameworks = [
+   let javaScriptFrameworks = [
       "React",
       "Angular",
       "Ember",
@@ -56,10 +56,10 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
    .. sourcecode:: js
       :linenos:
 
-      const emptyArray = [];
+      let emptyArray = [];
       console.log(emptyArray.length);
 
-      const programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
+      let programmingLanguages = ["JavaScript", "Python", "Java", "C#"];
       console.log(programmingLanguages.length);
 
    **Console Output**
@@ -76,7 +76,7 @@ JavaScript arrays can hold a mixture of values of any type. For example, you can
 
 .. sourcecode:: js
 
-   const grabBag = ["A string value", true, 99, 105.5];
+   let grabBag = ["A string value", true, 99, 105.5];
 
 .. note::
    
@@ -96,8 +96,8 @@ Check Your Understanding
    .. sourcecode:: js
       :linenos:
 
-      const classes = ["science, computer, art"];
+      let classes = ["science, computer, art"];
 
-      const teachers = ["Jones", "Willoughby", "Rhodes"];
+      let teachers = ["Jones", "Willoughby", "Rhodes"];
 
    How can you change the ``classes`` array declaration to have the same number of items as the ``teachers`` array?
