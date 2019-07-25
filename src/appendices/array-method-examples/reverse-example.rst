@@ -1,11 +1,11 @@
 .. _reverse-example:
 
-**reverse** Example
-====================
+``reverse`` Example
+===================
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.reverse()
 
@@ -17,9 +17,15 @@ No arguments are placed inside the parentheses ``()``.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let arr = ['At', 'banana', 'orange', 'apple', 'zoo'];
 
-         arr.reverse();
-         console.log(arr);
-         //prints [ 'zoo', 'apple', 'orange', 'banana', 'At' ]
+      arr.reverse();
+      console.log(arr);
+         
+   **Output**
+
+   ::
+
+      [ 'zoo', 'apple', 'orange', 'banana', 'At' ]

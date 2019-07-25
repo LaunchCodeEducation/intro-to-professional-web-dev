@@ -1,6 +1,6 @@
 .. _string-tolowercase-examples:
 
-**toLowerCase** Examples
+``toLowerCase`` Examples
 ========================
 
 The general syntax for this method is:
@@ -15,13 +15,17 @@ unchanged.
 
 .. sourcecode:: js
 
-   // returns "launchcode"
    "LaunchCode".toLowerCase();
+
+**Output**
+
+.. sourcecode:: bash
+
+   launchcode
 
 .. admonition:: Example
 
    The domain portion of an email address (the portion after the ``@`` symbol) is case-insensitive. Emails with domain ``launchcode.org`` are the same as those with domain ``LAUNCHCODE.ORG``. By convention, the all-lowercase version is typically used by an application.
-
 
    This program standardizes an email address by converting it to all lowercase characters.
 
@@ -33,7 +37,7 @@ unchanged.
 
    **Output**
 
-   ::
+   .. sourcecode:: bash
 
       fake.email@launchcode.org
 

@@ -1,11 +1,11 @@
 .. _includes-examples:
 
-**includes** Examples
+``includes`` Examples
 =====================
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
    arrayName.includes(item)
 
@@ -15,12 +15,18 @@ parentheses ``()``, and returns ``true`` or ``false``.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let charles = [1, 7, 5, 9, 5];
       let otherArr = ['hello', 'world!'];
 
-      charles.includes(5);
-      //returns true
+      console.log(charles.includes(5));
 
-      otherArr.includes('hi');
-      //returns false
+      console.log(otherArr.includes('hi'));
+
+   **Output**
+
+   .. sourcecode:: bash
+
+      true
+      false
