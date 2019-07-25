@@ -37,7 +37,7 @@ A **syntax error** is a violation of the formal rules for a given language.
 .. admonition:: Examples
 
    this sentence contains a syntax error. 
-   
+
    So does this one
 
 For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more more syntax errors.

@@ -1,7 +1,7 @@
 Introduction
 ============
 
-.. index:: ! scope
+.. index:: ! exception
 
 Errors are a part of coding. Occasionally, we make mistakes as programmers. However, we are always trying to fix those mistakes by reading different resources, the stacktrace, or asking for help.
 

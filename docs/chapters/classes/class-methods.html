@@ -285,9 +285,11 @@ We will weigh the pros and cons of both methods below.</p>
 </td></tr></table></div>
 <p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/ClassMethodsTryIt" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
-<p>In the case of assigning the method <cite>inside</cite> the constructor, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>.
-With today’s computers, this is a relatively minor concern. However, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code that may not be needed.
-This consumes memory, which you need to consider since today’s businesses want efficient code that does not tax their systems.</p>
+<p>In the case of assigning the method <cite>inside</cite> the constructor, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>
+object carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>. With today’s computers,
+this is a relatively minor concern. However, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code
+that may not be needed. This consumes memory, which you need to consider since
+today’s businesses want efficient code that does not tax their systems.</p>
 <p>Because of this, if a method is the same for ALL objects of a class, define that method <cite>outside</cite> of the constructor.
 Each object does not need a copy of identical code.
 Therefore, the declaration of a method outside of the constructor will not consume as much memory.</p>
@@ -296,7 +298,7 @@ Therefore, the declaration of a method outside of the constructor will not consu
 <h2>18.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p>What is the method assignment of this class missing?</p>
+<p>What is the assignment for the <code class="docutils literal notranslate"><span class="pre">grow</span></code> method missing?</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -313,7 +315,7 @@ Therefore, the declaration of a method outside of the constructor will not consu
    <span class="p">}</span>
 
    <span class="nx">grow</span>  <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

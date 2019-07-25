@@ -92,9 +92,10 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   If you had to create classes for a wolf, the canis genus, and the carnivora order, which statement is TRUE about the order of inheritance?
+   If you had to create classes for a *wolf*, the *canis* genus, and the
+   *carnivora* order, which statement is TRUE about the order of inheritance?
 
    a. ``Wolf`` and ``Canis`` are parent classes to ``Carnivora``.
    b. ``Wolf`` is a child class of ``Canis`` and a parent class to ``Carnivora``.
-   c. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a child class of ``Carnivora``.
-   d. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a parent class of ``Carnivora``.
+   c. ``Wolf`` is child class of ``Canis``, and ``Canis`` is a child class of ``Carnivora``.
+   d. ``Wolf`` is child class of ``Canis``, and ``Canis`` is a parent class of ``Carnivora``.
