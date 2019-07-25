@@ -1,6 +1,6 @@
 .. _dom-confirm-examples:
 
-**confirm** Examples
+``confirm`` Examples
 ====================
 
 The general syntax for this method is:
