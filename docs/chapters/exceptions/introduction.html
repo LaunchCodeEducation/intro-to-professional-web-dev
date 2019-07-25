@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -94,7 +95,10 @@
 </div>
 <div class="section" id="error-object">
 <h2>17.1.2. Error Object<a class="headerlink" href="#error-object" title="Permalink to this headline">¶</a></h2>
-<p>When a runtime error, also known as an execption, is raised JavaScript returns an <code class="docutils literal notranslate"><span class="pre">Error</span></code> object. An Error Object has two properties: a name and a message. The name refers to the type of error that occured, while the message gives the user information on why that exception occured.</p>
+<p>When a runtime error, also known as an exception, is raised JavaScript returns
+an <code class="docutils literal notranslate"><span class="pre">Error</span></code> object. An Error Object has two properties: a name and a message.
+The name refers to the type of error that occurred, while the message gives the
+user information on why that exception occurred.</p>
 <p>JavaScript has built-in exceptions with pre-defined names and messages, however, JavaScript also gives you the ability to create your own error messages.</p>
 <p>You have undoubtedly experienced various Exceptions already throughout this class. Let’s look at a few common Exceptions.</p>
 </div>
@@ -128,11 +132,13 @@
 <p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is thrown when JavaScript expects something to be one type, but the provided value is a different type.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;Launch&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;Launch&quot;</span><span class="p">;</span>
 
 <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;Code&quot;</span><span class="p">;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Console Output</strong></p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>TypeError: invalid assignment to const &#39;a&#39;
 </pre></div>
@@ -140,7 +146,10 @@
 </div>
 <p>In this case, we declare a constant as the string “Launch”, and then try to change the immutable variable to “Code”. JavaScript throws a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> with the message: <code class="docutils literal notranslate"><span class="pre">invalid</span> <span class="pre">assignment</span> <span class="pre">to</span> <span class="pre">const</span> <span class="pre">'b'</span></code>.</p>
 <p>Exceptions give us a way to provide more information on how something went wrong. JavaScript’s built-in Exceptions are regularly used in the debugging process.</p>
-<p>There are more built-in Exceptions in Java, you can read more by referencing the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors" target="_blank">MDN Errors Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://www.w3schools.com/js/js_errors.asp" target="_blank">W3Schools JavaScript Error<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>There are more built-in Exceptions in Java, you can read more by referencing
+the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors" target="_blank">MDN Errors Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or
+<a class="reference external" href="https://www.w3schools.com/js/js_errors.asp" target="_blank">W3Schools JavaScript Error<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> (scroll
+down to the Error Object section).</p>
 <p>In the next section we will learn how to raise our own exceptions using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement.</p>
 </div>
 <div class="section" id="check-your-understanding">

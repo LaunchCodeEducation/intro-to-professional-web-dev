@@ -3,117 +3,129 @@ Introduction
 
 .. index:: ! scope
 
-Where variables are declared and initialized in the code can effect whether or not they can be used.
-**Scope** refers to the ability to access and use a variable.
+Where variables are declared and initialized in the code can effect whether or
+not they can be used. **Scope** refers to the ability to access and use a
+variable.
 
-.. admonition:: Example 
+.. admonition:: Example
 
-	.. sourcecode:: js
+   .. sourcecode:: js
+      :linenos:
 
-		let a = 0;
+      let a = 0;
 
-		function coolFunction() {
-			let b = 0;
-		}
+      function coolFunction() {
+         let b = 0;
+      }
 
-	``a`` is accessible *inside* and *outside* of ``coolFunction()``. 
-	``b`` is only accessible *inside* of ``coolFunction()``.
+   ``a`` is accessible *inside* and *outside* of ``coolFunction()``.
+   ``b`` is only accessible *inside* of ``coolFunction()``.
 
 Block/Local Scope
 -----------------
 
 .. index:: ! local scope
 
-**Local scope** refers to variables declared and initialized inside a function or block.
-Those variables can only be referenced inside of the block or function.
-In the example above, ``b`` has local scope.
-Referencing or attempting to update these variables outside of the function can lead to a scoping error.
+**Local scope** refers to variables declared and initialized inside a function
+or block. Those variables can only be referenced inside of the block or
+function. In the example above, ``b`` has local scope. Referencing or
+attempting to update these variables outside of the function can lead to a
+scoping error.
 
 .. admonition:: Try It!
 
-	The following code block has an error related to scope.
-	Try to fix it!
+   The following code block has an error related to scope.
+   Try to fix it!
 
-	.. sourcecode:: js
+   .. replit:: js
+      :slug: ScopeError
+      :linenos:
 
-		function myFunction() {
-			let i = 10;
-			return 10 + i;
-		}
+      function myFunction() {
+         let i = 10;
+         return 10 + i;
+      }
 
-		console.log(i);
-
-	`Check out the code at repl.it <https://repl.it/@launchcode/ScopeError/>`_
+      console.log(i);
 
 Global Scope
 ------------
 
 .. index:: ! global scope
 
-**Global scope** refers to variables declared and initialized outside of a function and in the main body of the file.
-These variables are accessible by any function within a file.
-In the example above, ``a`` has local scope.
-Global scope is the default scope in JavaScript.
+**Global scope** refers to variables declared and initialized outside of a
+function and in the main body of the file. These variables are accessible by
+any function within a file. In the example above, ``a`` has local scope. Global
+scope is the default scope in JavaScript.
 
 Execution Context
 -----------------
 
 .. index:: ! execution context
 
-**Execution context** refers to the conditions under which a variable is executed or its scope.
-Scoping can affect the variable's behavior at runtime.
-When the code is run in the browser, everything is first run at a global context.
-As the compiler processes the code, it may run into a function, in which case it moves through the function context before returning to global execution context.
+**Execution context** refers to the conditions under which a variable is
+executed or its scope. Scoping can affect the variable's behavior at runtime.
+When the code is run in the browser, everything is first run at a global
+context. As the compiler processes the code, it may run into a function, in
+which case it moves through the function context before returning to global
+execution context.
 
 Let's consider this code:
 
 .. sourcecode:: js
+   :linenos:
 
-	let a = 0;
+   let a = 0;
 
-	function coolFunction() {
-		let b = 0;
-		return a + b;
-	}
+   function coolFunction() {
+      let b = 0;
+      return a + b;
+   }
 
-	function coolerFunction() {
-		let c = 0;
-		c = coolFunction();
-		return c;
-	}
+   function coolerFunction() {
+      let c = 0;
+      c = coolFunction();
+      return c;
+   }
 
 Now, let's consider the execution context for each step.
 
-1. First, the global execution context is entered as the compiler executes the code.
+#. First, the global execution context is entered as the compiler executes the
+   code.
 
-	.. figure:: figures/globalexecutioncontext.png
-	   :alt: Figure showing global execution context at the bottom of the stack.
+   .. figure:: figures/globalexecutioncontext.png
+      :alt: Figure showing global execution context at the bottom of the stack.
 
-2. Once coolFunction() is hit, the compiler creates and executes coolFunction() under the coolFunction() execution context.
+#. Once ``coolFunction()`` is hit, the compiler creates and executes
+   ``coolFunction()`` under the ``coolFunction()`` execution context.
 
-	.. figure:: figures/coolFunction.png
-		:alt: Figure showing coolFunction on top of global execution context.
+   .. figure:: figures/coolFunction.png
+      :alt: Figure showing coolFunction on top of global execution context.
 
-3. Upon completion, the compiler returns to the global execution context.
+#. Upon completion, the compiler returns to the global execution context.
 
-	.. figure:: figures/globalexecutioncontext.png
-	   :alt: Figure showing global execution context at the bottom of the stack.
+   .. figure:: figures/globalexecutioncontext.png
+      :alt: Figure showing global execution context at the bottom of the stack.
 
-4. The compiler stays at the global execution context until the creation and execution of coolerFunction().
+#. The compiler stays at the global execution context until the creation and
+   execution of ``coolerFunction()``.
 
-	.. figure:: figures/coolerFunction.png
-		:alt: Figure showing coolerFunction on top of the global execution context.
+   .. figure:: figures/coolerFunction.png
+      :alt: Figure showing coolerFunction on top of the global execution context.
 
-5. Inside of coolerFunction() is a call to coolFunction(). The compiler will go up in execution context to coolFunction() before returning down to coolerFunction()'s execution context and upon completion of the function, down to the global execution context.
+#. Inside of ``coolerFunction()`` is a call to ``coolFunction()``. The compiler
+   will go up in execution context to ``coolFunction()`` before returning down
+   to ``coolerFunction()``'s execution context and upon completion of the
+   function, down to the global execution context.
 
-	.. figure:: figures/coolandcoolerFunction.png
-		:alt: Figure showing coolFunction on top of coolerFunction on top of the global execution context.
+   .. figure:: figures/coolandcoolerFunction.png
+      :alt: Figure showing coolFunction on top of coolerFunction on top of the global execution context.
 
-	.. figure:: figures/coolerFunction.png
-		:alt: Figure showing coolerFunction on top of the global execution context.
+   .. figure:: figures/coolerFunction.png
+      :alt: Figure showing coolerFunction on top of the global execution context.
 
-	.. figure:: figures/globalexecutioncontext.png
-	   :alt: Figure showing global execution context at the bottom of the stack.
+   .. figure:: figures/globalexecutioncontext.png
+      :alt: Figure showing global execution context at the bottom of the stack.
 
 
 Check Your Understanding
@@ -122,23 +134,24 @@ Check Your Understanding
 Both of the concept checks refer to the following code block:
 
 .. sourcecode:: js
+   :linenos:
 
-	function myFunction(n) {
-		let a = 100;
-		return a + n;
-	}
-	
-	let x = 0;
+   function myFunction(n) {
+      let a = 100;
+      return a + n;
+   }
 
-	x = myFunction(x);
-	
-.. admonition:: Question
+   let x = 0;
 
-	What scope is variable ``x``?
-
-	a. Global
-	b. Local
+   x = myFunction(x);
 
 .. admonition:: Question
 
-	In what order will the compiler execute the code?
+   What scope is variable ``x``?
+
+   a. Global
+   b. Local
+
+.. admonition:: Question
+
+   In what order will the compiler execute the code?

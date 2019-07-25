@@ -10,6 +10,7 @@ We may be anticipating an exception, but still want our program to continue runn
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       try {
           console.log(x[0]);
@@ -33,6 +34,7 @@ JavaScript also provides us with a ``finally`` statement, a block of code that a
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       try {
           console.log(x[0]);
@@ -62,12 +64,29 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What statement do we use if we want to attempt to run code, but think an exception might be raised?
+   What statement do we use if we want to attempt to run code, but think an
+   exception might be raised?
+
+   #. ``throw``
+   #. ``catch``
+   #. ``try``
+   #. ``finally``
 
 .. admonition:: Question
 
    How do you handle an exception that is raised?
 
+   #. With code placed within the ``try`` block.
+   #. With code placed within the ``catch`` block.
+   #. With code placed within a ``throw`` statement.
+   #. With code placed within the ``finally`` block.
+
 .. admonition:: Question
 
-   What statement do you use to ensure a code block is executed regardless if an exception was raised?   
+   What statement do you use to ensure a code block is executed regardless if
+   an exception was raised?
+
+   #. ``throw``
+   #. ``catch``
+   #. ``try``
+   #. ``finally``

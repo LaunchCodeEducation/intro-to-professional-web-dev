@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -90,7 +91,13 @@
 <p>We may be anticipating an exception, but still want our program to continue running and not experience a runtime error. We can tell JavaScript to <strong>try</strong> to run a block of code and if an exception is thrown, to <strong>catch</strong> the exception and run a different block of code.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="p">}</span>
 <span class="k">catch</span><span class="p">(</span><span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
@@ -98,7 +105,7 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Console Output</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>We caught a ReferenceError, but our program continues to run!
 0
@@ -109,7 +116,16 @@
 <p>JavaScript also provides us with a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement, a block of code that always runs every time regardless if the <code class="docutils literal notranslate"><span class="pre">try</span></code>, or <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks run.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="p">}</span>
 <span class="k">catch</span><span class="p">(</span><span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
@@ -120,7 +136,7 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;In the finally statement!&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Console Output</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>We caught a ReferenceError, but our program continues to run!
 0
@@ -134,15 +150,35 @@ In the finally statement!
 <h2>17.3.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What statement do we use if we want to attempt to run code, but think an exception might be raised?</p>
+<p>What statement do we use if we want to attempt to run code, but think an
+exception might be raised?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">throw</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">catch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">try</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">finally</span></code></li>
+</ol>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">How do you handle an exception that is raised?</p>
+<p>How do you handle an exception that is raised?</p>
+<ol class="last arabic simple">
+<li>With code placed within the <code class="docutils literal notranslate"><span class="pre">try</span></code> block.</li>
+<li>With code placed within the <code class="docutils literal notranslate"><span class="pre">catch</span></code> block.</li>
+<li>With code placed within a <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement.</li>
+<li>With code placed within the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block.</li>
+</ol>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What statement do you use to ensure a code block is executed regardless if an exception was raised?</p>
+<p>What statement do you use to ensure a code block is executed regardless if
+an exception was raised?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">throw</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">catch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">try</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">finally</span></code></li>
+</ol>
 </div>
 </div>
 </div>

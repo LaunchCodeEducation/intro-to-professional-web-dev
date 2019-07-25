@@ -23,38 +23,39 @@ Variable Hoisting
 **Variable hoisting** is a behavior in JavaScript where variable declarations are "hoisted" to the top of the current scope.
 Hoisting occurs when the ``var`` keyword is used in the declaration, but does not occur when ``let`` and ``const`` keywords are used in the declaration.
 
-.. note::
+.. admonition:: Note
 
-	Though we don't use the ``var`` keyword in this book, you will see it a lot in other JavaScript resources.
-	Variable hoisting is an important concept to keep in mind as you work with JavaScript.
+   Though we don't use the ``var`` keyword in this book, you will see it a lot in other JavaScript resources.
+   Variable hoisting is an important concept to keep in mind as you work with JavaScript.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-	What keyword allows a variable to be hoisted?
+   What keyword allows a variable to be hoisted?
 
-	a. ``let``
-	b. ``var``
-	c. ``const``
+   a. ``let``
+   b. ``var``
+   c. ``const``
 
 .. admonition:: Question
 
-	Consider this code:
+   Consider this code:
 
-	.. sourcecode:: js
+   .. sourcecode:: js
+      :linenos:
 
-		let a = 0;
+      let a = 0;
 
-		function myFunction() {
-			let a = 10;
-			return a;
-		}
+      function myFunction() {
+         let a = 10;
+         return a;
+      }
 
-	Because there are two separate variables with the name, ``a``, under the two different scopes, ``a`` is being shadowed.
+   Because there are two separate variables with the name, ``a``, under the two different scopes, ``a`` is being shadowed.
 
-	a. True
-	b. False
+   a. True
+   b. False
 
 
