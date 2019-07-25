@@ -86,24 +86,77 @@
     
   <div class="section" id="using-scope">
 <h1>15.2. Using Scope<a class="headerlink" href="#using-scope" title="Permalink to this headline">¶</a></h1>
-<p>Scope allows programmers to control the flow of information through the variables in their program.
-Some variables you want to set as constants that can be accessed globally like pi.
-Others you want to keep secure to minimize the danger of accidental updates to the variable’s value.
-For example, a variable holding someone’s username should be kept secure.</p>
+<p>Scope allows programmers to control the flow of information through the
+variables in their program. Some variables you want to set as constants (like
+pi), which can be accessed globally. Others you want to keep secure to minimize
+the danger of accidental updates. For example, a variable holding someone’s
+username should be kept secure.</p>
 <div class="section" id="shadowing">
 <h2>15.2.1. Shadowing<a class="headerlink" href="#shadowing" title="Permalink to this headline">¶</a></h2>
-<p id="index-0"><strong>Variable shadowing</strong> is where two variables in different scopes have the same name.
-The variables can then be accessed under different contexts, however, shadowing can effect the variable’s accessibility.
-This can be confusing for you and your computer!</p>
+<p id="index-0"><strong>Variable shadowing</strong> is where two variables in different scopes have the same
+name. The variables can then be accessed under different contexts. However,
+shadowing can affect the variable’s accessibility, and it also causes confusion
+for anyone reviewing the code.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+   <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Ruth&#39;</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nx">doubleName</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">doubleName</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="o">+</span><span class="nx">name</span><span class="p">);</span>
+   <span class="k">return</span> <span class="nx">name</span><span class="o">+</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Please enter your name: &quot;</span><span class="p">);</span>
+
+<span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">doubleName</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">So, what is the value of <code class="docutils literal notranslate"><span class="pre">name</span></code> in line 4, 10, 16, 17, and 18?</p>
+</div>
+<p>Yikes! This is why shadowing is NOT a best practice in coding. Whenever
+possible, use different global and local variable names.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">If you are curious about the <code class="docutils literal notranslate"><span class="pre">name</span></code> values in the example, feel free to
+run the code <a class="reference external" href="https://repl.it/&#64;launchcode/ShadowingExample" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
 </div>
 <div class="section" id="variable-hoisting">
 <h2>15.2.2. Variable Hoisting<a class="headerlink" href="#variable-hoisting" title="Permalink to this headline">¶</a></h2>
-<p id="index-1"><strong>Variable hoisting</strong> is a behavior in JavaScript where variable declarations are “hoisted” to the top of the current scope.
-Hoisting occurs when the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword is used in the declaration, but does not occur when <code class="docutils literal notranslate"><span class="pre">let</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code> keywords are used in the declaration.</p>
+<p id="index-1"><strong>Variable hoisting</strong> is a behavior in JavaScript where variable declarations
+are “hoisted” to the top of the current scope. Hoisting occurs when the <code class="docutils literal notranslate"><span class="pre">var</span></code>
+keyword is used in the declaration, but it does NOT occur when <code class="docutils literal notranslate"><span class="pre">let</span></code> and
+<code class="docutils literal notranslate"><span class="pre">const</span></code> are used in the declaration.</p>
 <div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Though we don’t use the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword in this book, you will see it a lot in other JavaScript resources.
-Variable hoisting is an important concept to keep in mind as you work with JavaScript.</p>
+<p class="last">Although we don’t use the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword in this book, you will see it a
+lot in other JavaScript resources. Variable hoisting is an important concept
+to keep in mind as you work with JavaScript.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">

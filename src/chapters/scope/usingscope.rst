@@ -1,32 +1,71 @@
 Using Scope
 ===========
 
-Scope allows programmers to control the flow of information through the variables in their program.
-Some variables you want to set as constants that can be accessed globally like pi.
-Others you want to keep secure to minimize the danger of accidental updates to the variable's value.
-For example, a variable holding someone's username should be kept secure.
+Scope allows programmers to control the flow of information through the
+variables in their program. Some variables you want to set as constants (like
+pi), which can be accessed globally. Others you want to keep secure to minimize
+the danger of accidental updates. For example, a variable holding someone's
+username should be kept secure.
 
 Shadowing
 ---------
 
 .. index:: ! variable shadowing, ! shadowing
 
-**Variable shadowing** is where two variables in different scopes have the same name.
-The variables can then be accessed under different contexts, however, shadowing can effect the variable's accessibility.
-This can be confusing for you and your computer!
+**Variable shadowing** is where two variables in different scopes have the same
+name. The variables can then be accessed under different contexts. However,
+shadowing can affect the variable's accessibility, and it also causes confusion
+for anyone reviewing the code.
+
+.. admonition:: Example
+
+   .. sourcecode:: JavaScript
+      :linenos:
+
+      const input = require('readline-sync');
+
+      function hello(name) {
+         console.log('Hello,', name);
+         name = 'Ruth';
+         return doubleName(name);
+      }
+
+      function doubleName(name){
+         console.log(name+name);
+         return name+name;
+      }
+
+      let name = input.question("Please enter your name: ");
+
+      hello(name);
+      doubleName(name);
+      console.log(name);
+
+   So, what is the value of ``name`` in line 4, 10, 16, 17, and 18?
+
+Yikes! This is why shadowing is NOT a best practice in coding. Whenever
+possible, use different global and local variable names.
+
+.. admonition:: Try It!
+
+   If you are curious about the ``name`` values in the example, feel free to
+   run the code `here <https://repl.it/@launchcode/ShadowingExample>`__.
 
 Variable Hoisting
 -----------------
 
 .. index:: ! variable hoisting
 
-**Variable hoisting** is a behavior in JavaScript where variable declarations are "hoisted" to the top of the current scope.
-Hoisting occurs when the ``var`` keyword is used in the declaration, but does not occur when ``let`` and ``const`` keywords are used in the declaration.
+**Variable hoisting** is a behavior in JavaScript where variable declarations
+are "hoisted" to the top of the current scope. Hoisting occurs when the ``var``
+keyword is used in the declaration, but it does NOT occur when ``let`` and
+``const`` are used in the declaration.
 
 .. admonition:: Note
 
-   Though we don't use the ``var`` keyword in this book, you will see it a lot in other JavaScript resources.
-   Variable hoisting is an important concept to keep in mind as you work with JavaScript.
+   Although we don't use the ``var`` keyword in this book, you will see it a
+   lot in other JavaScript resources. Variable hoisting is an important concept
+   to keep in mind as you work with JavaScript.
 
 Check Your Understanding
 ------------------------
