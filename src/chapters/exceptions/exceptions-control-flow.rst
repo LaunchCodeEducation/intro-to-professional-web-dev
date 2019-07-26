@@ -124,20 +124,35 @@ What is special about ``finally`` is that ``finally`` is ALWAYS ran, even if an 
       You tried to access an animal at index: 1
       the code goes on...
 
-   This try...catch block is identical to the example above, except this time we have a ``finally`` statement. The finally statement runs upon the conclusion of the try...catch statements. It is often used to remove hanging resources.
-
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   What statement do we use if we want to attempt to run code, but think an exception might be raised?
+   What statement do we use if we want to attempt to run code, but think an
+   exception might be thrown?
+
+   #. ``throw``
+   #. ``catch``
+   #. ``try``
+   #. ``finally``
 
 .. admonition:: Question
 
-   How do you handle an exception that is raised?
+   How do you handle an exception that is thrown?
+
+   #. With code placed within the ``try`` block.
+   #. With code placed within the ``catch`` block.
+   #. With code placed within a ``throw`` statement.
+   #. With code placed within the ``finally`` block.
 
 .. admonition:: Question
 
-   What statement do you use to ensure a code block is executed regardless if an exception was raised?
+   What statement do you use to ensure a code block is executed regardless if
+   an exception was thrown?
+
+   #. ``throw``
+   #. ``catch``
+   #. ``try``
+   #. ``finally``

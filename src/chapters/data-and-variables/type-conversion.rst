@@ -3,7 +3,7 @@
 Type Conversion
 ===============
 
-.. index:: ! Number(), ! String(), function, returns
+.. index:: ! Number(), ! String(), returns
 
 .. index::
    pair: type; conversion

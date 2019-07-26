@@ -3,7 +3,7 @@
 Assigning Class Methods
 ========================
 
-Just as with objects, we may want to add methods to our classes in addition to properties. 
+Just as with objects, we may want to add methods to our classes in addition to properties.
 So far, we have learned how to set the values of the class's properties inside the ``constructor``.
 
 When assigning methods in classes, we can either create them `outside` or `inside` the ``constructor``.
@@ -151,9 +151,11 @@ Which Way is Preferred?
       console.log(hippo);
 
 
-In the case of assigning the method `inside` the constructor, each ``Astronaut`` objects carries around the code for ``reportStats()``.
-With today's computers, this is a relatively minor concern. However, each ``Astronaut`` has extra code that may not be needed.
-This consumes memory, which you need to consider since today's businesses want efficient code that does not tax their systems.
+In the case of assigning the method `inside` the constructor, each ``Astronaut``
+object carries around the code for ``reportStats()``. With today's computers,
+this is a relatively minor concern. However, each ``Astronaut`` has extra code
+that may not be needed. This consumes memory, which you need to consider since
+today's businesses want efficient code that does not tax their systems.
 
 Because of this, if a method is the same for ALL objects of a class, define that method `outside` of the constructor.
 Each object does not need a copy of identical code.
@@ -164,7 +166,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the method assignment of this class missing?
+   What is the assignment for the ``grow`` method missing?
 
    .. sourcecode:: js
       :linenos:
@@ -176,6 +178,6 @@ Check Your Understanding
          }
 
          grow  {
-            this.height = this.height + 1
+            this.height = this.height + 1;
          }
       }

@@ -16,14 +16,14 @@ This can lead to some confusion when comparing objects.
       :linenos:
 
       let tortoiseTwo = {
-          species: "Galapagos Tortoise",
-          name: "Patricia",
-          weight: 800,
-          age: 85,
-          diet: ["pumpkins", "lettuce", "cabbage"],
-          sign: function() {
-              return this.name + " is a " + this.species;
-          }
+         species: "Galapagos Tortoise",
+         name: "Patricia",
+         weight: 800,
+         age: 85,
+         diet: ["pumpkins", "lettuce", "cabbage"],
+         sign: function() {
+            return this.name + " is a " + this.species;
+         }
        };
 
    Because Pete and Patricia are members of the same species, are the same age, and have the same diet, you might notice that many of their properties are equal, but some are not.
@@ -35,16 +35,16 @@ This can lead to some confusion when comparing objects.
       :linenos:
 
       let tortoiseOne = {
-          species: "Galapagos Tortoise",
-          diet: ["pumpkins", "lettuce", "cabbage"]
-       };
+         species: "Galapagos Tortoise",
+         diet: ["pumpkins", "lettuce", "cabbage"]
+      };
 
-       let tortoiseTwo = {
-          species: "Galapagos Tortoise",
-          diet: ["pumpkins", "lettuce", "cabbage"],
-       };
+      let tortoiseTwo = {
+         species: "Galapagos Tortoise",
+         diet: ["pumpkins", "lettuce", "cabbage"]
+      };
 
-       console.log(tortoiseOne === tortoiseTwo);
+      console.log(tortoiseOne === tortoiseTwo);
 
    **Console Output**
 
@@ -97,7 +97,7 @@ The loop stops once it has accessed every property.
 
    In this example, ``item`` is a variable that holds the string for each key. It is updated with each iteration of the loop.
 
-.. note::
+.. admonition:: Note
 
    Inside a ``for..in`` loop, we can only use bracket syntax to access the property values.
 
@@ -154,10 +154,23 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which statement would return ``true``?
+   Given the following object definitions, which statement returns ``true``?
+
+   .. sourcecode:: js
+      :linenos:
+
+      let tortoiseOne = {
+         age: 150,
+         species: "Galapagos Tortoise",
+         diet: ["pumpkins", "lettuce", "cabbage"]
+      };
+
+      let tortoiseTwo = {
+         age: 150,
+         species: "Galapagos Tortoise",
+         diet: ["pumpkins", "lettuce", "cabbage"]
+      };
 
    a. ``tortoiseOne == tortoiseTwo``
    b. ``tortoiseOne === tortoiseTwo``
-   c. ``tortoiseOne.name == tortoiseTwo.name``
-   d. ``tortoiseOne.age == tortoiseTwo.age``
-
+   c. ``tortoiseOne.age === tortoiseTwo.age``

@@ -10,8 +10,8 @@ Part 1 - Add Class Properties
 ------------------------------
 
 #. Declare a class called ``CrewCandidate`` with a ``constructor`` that takes
-   three parameters---name, mass, and scores. Note that ``scores`` will be an
-   array of test results.
+   three parameters---``name``, ``mass``, and ``scores``. Note that ``scores``
+   will be an array of test results.
 
 #. Create objects for the following candidates:
 

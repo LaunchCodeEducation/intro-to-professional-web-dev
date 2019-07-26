@@ -24,7 +24,7 @@ We would then create two classes for the panthera genus and the felis genus. We 
 The species classes would inherit properties and methods from the genus classes and the genus classes would inherit properties and methods from the family class.
 
 .. figure:: figures/inheritance.png
-	:alt: Figure showing that panthera and felis inherit from felidae, tiger inherits from panthera, and housecat inherits from felis.
+   :alt: Figure showing that panthera and felis inherit from felidae, tiger inherits from panthera, and housecat inherits from felis.
 
 .. index:: ! parent class, ! child class
 
@@ -47,7 +47,7 @@ We also must use the ``super()`` constructor to get the properties and methods n
    }
 
 In the case of a tiger, tigers have stripes, but they also have loud roars.
-Their ability to roar loudly is a trait they share with other members of the `panthera` genus. 
+Their ability to roar loudly is a trait they share with other members of the `panthera` genus.
 Tigers also got their retractable claws from the `felidae` family.
 
 .. admonition:: Example
@@ -92,9 +92,10 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   If you had to create classes for a wolf, the canis genus, and the carnivora order, which statement is TRUE about the order of inheritance?
+   If you had to create classes for a *wolf*, the *canis* genus, and the
+   *carnivora* order, which statement is TRUE about the order of inheritance?
 
    a. ``Wolf`` and ``Canis`` are parent classes to ``Carnivora``.
    b. ``Wolf`` is a child class of ``Canis`` and a parent class to ``Carnivora``.
-   c. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a child class of ``Carnivora``.
-   d. ``Wolf`` is child class of ``Canis`` and ``Canis`` is a parent class of ``Carnivora``.
+   c. ``Wolf`` is child class of ``Canis``, and ``Canis`` is a child class of ``Carnivora``.
+   d. ``Wolf`` is child class of ``Canis``, and ``Canis`` is a parent class of ``Carnivora``.
