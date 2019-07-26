@@ -1,26 +1,41 @@
 Throw
 =====
+.. index:: ! throws
 
-In most programming languages, when the compiler or interpreter encounters code it doesn't know how to handle, it throws an exception. This is how the compiler notifies the programmer that something has gone wrong.
+In most programming languages, when the compiler or interpreter encounters code it doesn't know how to handle, it
+**throws** an exception. This is how the compiler notifies the programmer that something has gone wrong. Throwing
+an exception is also know as *raising* an exception.
 
-JavaScript gives us the ability to raise exceptions using the ``throw`` statement.
+JavaScript gives us the ability to raise exceptions using the ``throw`` statement. You would want to throw an
+exception if your code is being used in an unexpected way.
 
 Default Error
 -------------
 
-We can throw a default Error object by using the ``throw`` statement and passing the message in as an argument.
+We can throw a default Error object by using the ``throw`` statement and passing the message in as an argument to the ``Error`` function.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. replit:: js
+      :slug: throw-example
+      :linenos:
 
-      throw ("You cannot divide by zero!");
+      throw Error("You cannot divide by zero!");
 
    **Console Output**
 
    ::
 
       Error: You cannot divide by zero!
+      at evalmachine.<anonymous>:1:7
+      at Script.runInContext (vm.js:133:20)
+      at Object.runInContext (vm.js:311:6)
+      at evaluate (/run_dir/repl.js:133:14)
+
+   The error text that is displayed the error name, contains details about where the error was thrown.
+   The text ``at evalmachine.<anonymous>:1:7`` indicates that the error as thrown from line 1, which we know is
+   true because our example only has one line of code.
+
 
 Pre-existing Error
 ------------------

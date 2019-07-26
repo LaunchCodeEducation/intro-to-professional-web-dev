@@ -1,61 +1,131 @@
-Exceptions-Control-Flow
-=======================
+Exceptions as Control Flow
+==========================
+Runtime errors occur as the program runs. Runtime errors are also know as exceptions. Exceptions
+are caused by referencing undeclared variables and invalid or unexpected data.
 
-In some instances, we receive input from a user and we cannot always ensure they will type in something that will run with our code.
 
-JavaScript gives us some control flow tools to handle exceptions by catching thrown exceptions.
+Control Flow
+------------
+.. index:: ! control flow
 
-We may be anticipating an exception, but still want our program to continue running and not experience a runtime error. We can tell JavaScript to **try** to run a block of code and if an exception is thrown, to **catch** the exception and run a different block of code.
+**Control flow** of a program is the order in which the statements are executed. Normal control flow
+runs from top to bottom of a file. An exception breaks the normal flow and stops the program. A stopped
+program can no longer interact with the user. Luckily JavaScript provides a way to anticipate and
+handle exceptions.
 
-.. admonition:: Example
 
-   .. sourcecode:: js
+Catching an Exception
+---------------------
+.. index:: ! try catch
 
-      try {
-          console.log(x[0]);
-      }
-      catch(ReferenceError) {
-          console.log("We caught a ReferenceError, but our program continues to run!");
-          console.log("0");
-      }
+JavaScript provides ``try`` and ``catch`` statements that allow us to keep our programs running even if there
+is an exception. We can tell JavaScript to *try* to run a block of code and if an exception is thrown, to *catch* the
+exception and run a different block of code. Anticipating and catching the exception makes the exception now part of
+the control flow.
 
-   **Console Output**
-
-   ::
-
-      We caught a ReferenceError, but our program continues to run!
-      0
-
-   In this example we attempt to print out the first element of our variable ``x``. We forgot to define x, but nested our code inside of a ``try`` statement and specifically **catch** ``ReferenceErrors``. It should be noted that only ReferenceErrors will be caught by the catch statement. However, we can define as many catch statements as we want.
-
-JavaScript also provides us with a ``finally`` statement, a block of code that always runs every time regardless if the ``try``, or ``catch`` blocks run.
+.. note:: Catching an exception is also known as *handling* an exception.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   In this example there is an array of animals. The user is asked to enter the index for the animal they want to see.
+   If the user enters an index that does NOT contain an animal, the code will try throw an ``TypeError`` when ``name``
+   is referenced on an undefined value.
+
+   There is a ``try`` block around the code that will throw the ``TypeError``. There is a ``catch`` block that catches the error
+   and contains code to inform the user that they entered an invalid index.
+
+   .. replit:: js
+      :slug: control-flow-type-error
+      :linenos:
+
+      const input = require('readline-sync');
+
+      let animals = [{name: 'cat'}, {name: 'dog'}];
+      let index = Number(input.question("Enter index of animal:"));
 
       try {
-          console.log(x[0]);
+         console.log('animal at index:', animals[index].name);
+      } catch(TypeError) {
+         console.log("We caught a TypeError, but our program continues to run!");
+         console.log("You tried to access an animal at index:", index);
       }
-      catch(ReferenceError) {
-          console.log("We caught a ReferenceError, but our program continues to run!");
-          console.log("0");
-      }
-      finally {
-          console.log("In the finally statement!");
-      }
+
+      console.log("the code goes on...");
 
    **Console Output**
 
+   If the user enters ``9``:
    ::
 
-      We caught a ReferenceError, but our program continues to run!
-      0
-      In the finally statement!
+      Enter index of animal: 9
+      We caught a TypeError, but our program continues to run!
+      You tried to access an animal at index: 9
+      the code goes on...
+
+   If the user enters ``0``:
+   ::
+
+      Enter index of animal: 0
+      animal at index: cat
+      the code goes on...
+
+.. tip:: ``catch`` blocks only execute if an exception is thrown
+
+
+Finally
+-------
+.. index:: ! finally
+
+.. index::
+   single: try catch; finally
+
+JavaScript also provides a ``finally`` block which must be used with ``try`` and ``catch`` blocks.  A ``finally`` block code runs after the ``try`` and ``catch``.
+What is special about ``finally`` is that ``finally`` is ALWAYS ran, even if an exception is NOT thrown.
+
+.. admonition:: Example
+
+   Let's update the above example to print out the index the user entered. Importantly we want this message to be printed EVERY time the code runs.
+   Notice the ``console.log`` statement on line 11.
+
+   .. replit:: js
+      :slug: control-flow-type-error-finally
+      :linenos:
+
+      const input = require('readline-sync');
+
+      let animals = [{name: 'cat'}, {name: 'dog'}];
+      let index = Number(input.question("Enter index of animal:"));
+
+      try {
+         console.log('animal at index:', animals[index].name);
+      } catch(TypeError) {
+         console.log("We caught a TypeError, but our program continues to run!");
+      } finally {
+         console.log("You tried to access an animal at index:", index);
+      }
+
+      console.log("the code goes on...");
+
+   **Console Output**
+
+   If the user enters ``7``:
+   ::
+
+      Enter index of animal: 7
+      We caught a TypeError, but our program continues to run!
+      You tried to access an animal at index: 7
+      the code goes on...
+
+   If the user enters ``1``:
+   ::
+
+      Enter index of animal: 1
+      animal at index: dog
+      You tried to access an animal at index: 1
+      the code goes on...
 
    This try...catch block is identical to the example above, except this time we have a ``finally`` statement. The finally statement runs upon the conclusion of the try...catch statements. It is often used to remove hanging resources.
-     
-Errors are a normal part of coding. JavaScript defines the most common errors and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging or to handle expected issues in our code.
+
 
 Check Your Understanding
 ------------------------
@@ -70,4 +140,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What statement do you use to ensure a code block is executed regardless if an exception was raised?   
+   What statement do you use to ensure a code block is executed regardless if an exception was raised?

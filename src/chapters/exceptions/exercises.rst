@@ -10,9 +10,9 @@ Your function should return the result of numerator / denominator.
 
 However, if the denominator is zero you should throw an error informing the user they attempted to divide by zero.
 
-.. hint::
+.. tip::
 
-   You should use an if and throw statement to complete this exercise.
+   You should use an ``if`` and ``throw`` statement to complete this exercise.
 
 Catch Undefined Grades
 ----------------------
