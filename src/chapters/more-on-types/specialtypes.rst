@@ -24,6 +24,7 @@ Primitive data types include:
 ``undefined`` is a primitive data type in JavaScript which is assigned to declared variables, which have *not* been initialized.
 
 .. sourcecode:: js
+   :linenos:
 
    let x;
    console.log(x)
@@ -56,27 +57,29 @@ Example
 Let's say that we are still working for the zoo. We have objects created for animals like so:
 
 .. sourcecode:: js
+   :linenos:
 
-	let giraffe = {
-  		species: "Reticulated Giraffe",
-  		name: "Cynthia",
-  		weight: 1500,
-  		age: 15,
-  		diet: "leaves"
-	};
+   let giraffe = {
+      species: "Reticulated Giraffe",
+      name: "Cynthia",
+      weight: 1500,
+      age: 15,
+      diet: "leaves"
+   };
 
 Now, a new giraffe is coming to the zoo. We may want to initialize an object for the giraffe, but hold off on storing information in the ``weight`` property until the giraffe arrives.
 In this case, we could initialize the ``weight`` property like so:
 
 .. sourcecode:: js
+   :linenos:
 
-	let giraffeTwo = {
-		species: "Reticulated Giraffe",
-  		name: "Alicia",
-  		weight: null,
-  		age: 10,
-  		diet: "leaves"
-	};
+   let giraffeTwo = {
+      species: "Reticulated Giraffe",
+      name: "Alicia",
+      weight: null,
+      age: 10,
+      diet: "leaves"
+   };
 
 This way, our object is properly initialized with all of the information we would need and we can update the ``weight`` property later when we have accurate information.
 
@@ -85,27 +88,28 @@ Check Your Understanding
 
 .. admonition:: Question
 
-	Which of the following are primitive data types?
+   Which of the following are primitive data types? Mark ALL that apply.
 
-	a. arrays
-	b. Strings
-	c. objects
-	d. ``null``
+   a. arrays
+   b. Strings
+   c. objects
+   d. ``null``
 
 .. admonition:: Question
 
-	Consider the following code block:
+   Consider the following code block:
 
-	.. sourcecode:: js
+   .. sourcecode:: js
+      :linenos:
 
-		let x;
+      let x;
 
-		console.log(x);
+      console.log(x);
 
-	``x`` is of what data type?
+   ``x`` is of what data type?
 
-	a. ``null``
-	b. ``undefined``
-	c. ``NaN``
-	d. number
+   a. ``null``
+   b. ``undefined``
+   c. ``NaN``
+   d. number
 

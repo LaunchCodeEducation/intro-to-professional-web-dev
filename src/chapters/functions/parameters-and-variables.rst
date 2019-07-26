@@ -3,14 +3,21 @@ Parameters and Variables
 
 Earlier, we said that a parameter "behaves like a variable that exists only within the function." While this is true, the relationship between variables and parameters is a bit more complicated.
 
+.. _function-scope:
+
 Function Scope
 --------------
 
-.. index:: 
-   single: function; scope
-   single: scope
+.. index:: scope
 
-The **scope** of a variable is the extent to which a variable is visible within a program. Scope consists of all locations within a program where a variable can be used or modified. Introducing functions gives us one of our first examples of limited variable scope---a situation in which a variable is not visible throughout an entire program.
+.. index::
+   single: function; scope
+
+The **scope** of a variable is the extent to which a variable is visible within
+a program. Scope consists of all locations within a program where a variable
+can be used or modified. Introducing functions gives us one of our first
+examples of limited variable scope---a situation in which a variable is not
+visible throughout an entire program.
 
 In particular, *a variable defined using `let` within a function is not visible outside of that function.*
 
@@ -20,7 +27,7 @@ In particular, *a variable defined using `let` within a function is not visible 
 
    .. sourcecode:: js
       :linenos:
-   
+
       function removeHyphens(str) {
          let strWithoutHyphens = ''
 

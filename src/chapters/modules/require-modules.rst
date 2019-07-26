@@ -84,13 +84,13 @@ As an example, let's assume we have a folder structure like:
 Following best practice gives us three scenarios for importing one file into
 another:
 
-#. The module is in the same folder: If we want to import ``hello.js`` into
+#. **The module is in the same folder:** If we want to import ``hello.js`` into
    ``index.js``, then we add ``const hello = require('./hello.js');`` on line 1
    of ``index.js``.
-#. The module is one level up: If we want to import ``hello.js`` into
+#. **The module is one level up:** If we want to import ``hello.js`` into
    ``myCoolApp.js``, then we add ``const hello = require('../hello.js');``
    on line 1 of ``myCoolApp.js``.
-#. The module is one level down: If we want to import ``myCoolApp.js`` into
+#. **The module is one level down:** If we want to import ``myCoolApp.js`` into
    ``index.js``, then we add
    ``const coolApp = require('./Projects/myCoolApp.js');`` on line 1 of
    ``index.js``. This tells Node to search for ``myCoolApp.js`` in the

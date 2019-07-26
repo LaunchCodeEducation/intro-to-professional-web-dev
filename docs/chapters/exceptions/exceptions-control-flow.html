@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>18.3. Exceptions-Control-Flow &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>17.3. Exceptions-Control-Flow &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
@@ -21,8 +21,8 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="18.4. Exercises" href="exercises.html" />
-    <link rel="prev" title="18.2. Throw" href="throw.html" />
+    <link rel="next" title="17.4. Exercises" href="exercises.html" />
+    <link rel="prev" title="17.2. Throw" href="throw.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -73,8 +73,8 @@
 
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
-    <li><a href="index.html">18. Exceptions</a></li>
-    <li class="active">18.3. Exceptions-Control-Flow</li>
+    <li><a href="index.html">17. Exceptions</a></li>
+    <li class="active">17.3. Exceptions-Control-Flow</li>
 </ol>
 
 
@@ -85,13 +85,19 @@
 
     
   <div class="section" id="exceptions-control-flow">
-<h1>18.3. Exceptions-Control-Flow<a class="headerlink" href="#exceptions-control-flow" title="Permalink to this headline">¶</a></h1>
+<h1>17.3. Exceptions-Control-Flow<a class="headerlink" href="#exceptions-control-flow" title="Permalink to this headline">¶</a></h1>
 <p>In some instances, we receive input from a user and we cannot always ensure they will type in something that will run with our code.</p>
 <p>JavaScript gives us some control flow tools to handle exceptions by catching thrown exceptions.</p>
 <p>We may be anticipating an exception, but still want our program to continue running and not experience a runtime error. We can tell JavaScript to <strong>try</strong> to run a block of code and if an exception is thrown, to <strong>catch</strong> the exception and run a different block of code.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="p">}</span>
 <span class="k">catch</span><span class="p">(</span><span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
@@ -99,7 +105,7 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Console Output</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>We caught a ReferenceError, but our program continues to run!
 0
@@ -110,7 +116,16 @@
 <p>JavaScript also provides us with a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement, a block of code that always runs every time regardless if the <code class="docutils literal notranslate"><span class="pre">try</span></code>, or <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks run.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="p">}</span>
 <span class="k">catch</span><span class="p">(</span><span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
@@ -121,7 +136,7 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;In the finally statement!&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Console Output</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>We caught a ReferenceError, but our program continues to run!
 0
@@ -132,18 +147,38 @@ In the finally statement!
 </div>
 <p>Errors are a normal part of coding. JavaScript defines the most common errors and provides messages to help us debug. We can extend the functionality around exceptions to further assist us in debugging or to handle expected issues in our code.</p>
 <div class="section" id="check-your-understanding">
-<h2>18.3.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>17.3.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What statement do we use if we want to attempt to run code, but think an exception might be raised?</p>
+<p>What statement do we use if we want to attempt to run code, but think an
+exception might be raised?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">throw</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">catch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">try</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">finally</span></code></li>
+</ol>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">How do you handle an exception that is raised?</p>
+<p>How do you handle an exception that is raised?</p>
+<ol class="last arabic simple">
+<li>With code placed within the <code class="docutils literal notranslate"><span class="pre">try</span></code> block.</li>
+<li>With code placed within the <code class="docutils literal notranslate"><span class="pre">catch</span></code> block.</li>
+<li>With code placed within a <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement.</li>
+<li>With code placed within the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block.</li>
+</ol>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What statement do you use to ensure a code block is executed regardless if an exception was raised?</p>
+<p>What statement do you use to ensure a code block is executed regardless if
+an exception was raised?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">throw</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">catch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">try</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">finally</span></code></li>
+</ol>
 </div>
 </div>
 </div>
@@ -154,10 +189,10 @@ In the finally statement!
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="throw.html"><span aria-hidden="true">&larr;</span> 18.2. Throw</a></li>
+        <li class="previous"><a href="throw.html"><span aria-hidden="true">&larr;</span> 17.2. Throw</a></li>
         
         
-        <li class="next"><a href="exercises.html">18.4. Exercises <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="exercises.html">17.4. Exercises <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

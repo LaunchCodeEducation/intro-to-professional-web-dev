@@ -26,7 +26,7 @@ We can visualize the flow of execution of a ``while`` loop as follows.
 
 .. figure:: figures/while-loop-flow.png
    :height: 500px
-   
+
    Flow of execution of a ``while`` loop
 
 Here is the flow of execution for a ``while`` loop:
@@ -62,7 +62,7 @@ This can be rewritten as a while loop:
 
 Instead of relying on the the initial and update expressions, as we do in a ``for`` loop, we must manage the state of our loop manually. To do this, *before* entering the ``while`` loop, we will create the variable ``i`` and initialize it to 0, the first number we want to print. This variable plays the same role as the loop variable in a ``for`` loop. Every iteration will print ``i`` and then increment ``i`` to the next value, until all it reaches the value 51. The loop continues to iterate until the condition ``i < 51`` evaluates to ``false``.
 
-You can almost read the ``while`` statement as if it were in a natural language: *while ``i`` is less than or equal to ``51``, continue executing the body of the loop*.
+You can almost read the ``while`` statement as if it were in a natural language: *while ``i`` is less than ``51``, continue executing the body of the loop*.
 
 .. admonition:: Try It!
 
@@ -102,7 +102,9 @@ Infinite Loops, Revisited
 .. index::
    single: loop; infinite
 
-It is easier to create an infinite ``while`` loop than an infinite ``for`` loop. To see this, consider our first ``while`` loop example, but where we forget to update the loop variable.
+It is easier to create an infinite ``while`` loop than an infinite ``for``
+loop. To see this, consider what happens to our first ``while`` loop example
+if we forget to update the loop variable.
 
 .. sourcecode:: js
    :linenos:
@@ -113,7 +115,9 @@ It is easier to create an infinite ``while`` loop than an infinite ``for`` loop.
       console.log(i);
    }
 
-This is an infinite loop. The variable ``i`` is initialized to 0 never updated, so the condition ``i < 51`` will always be true.
+This is an infinite loop. The variable ``i`` is initialized to 0 never updated,
+so the condition ``i < 51`` will always be true. If you ran this program, you
+would see an ever-increasing list of numbers.
 
 Check Your Understanding
 ------------------------

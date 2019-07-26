@@ -37,7 +37,7 @@ A **syntax error** is a violation of the formal rules for a given language.
 .. admonition:: Examples
 
    this sentence contains a syntax error. 
-   
+
    So does this one
 
 For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more more syntax errors.
@@ -80,7 +80,7 @@ A common runtime error occurs when we try to use a variable that has not been cr
 
    .. sourcecode:: js
       :linenos:
-   
+
       let firstName = "Jack";
       console.log(firstname);
 
@@ -113,7 +113,7 @@ The third type of error is the **logic error**. If there is a logic error in you
 The characteristic of logic errors is that the program you wrote is not the program you wanted. For example, say you want a program to calculate your daily earnings based on your weekly salary. You might try the following:
 
 .. admonition:: Example
-   
+
    .. sourcecode:: js
       :linenos:
 
