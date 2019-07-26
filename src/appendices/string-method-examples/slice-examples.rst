@@ -1,6 +1,6 @@
 .. _string-slice-examples:
 
-**slice** Examples
+``slice`` Examples
 ==================
 
 The general syntax for this method is:
@@ -13,17 +13,23 @@ Given a starting index ``i`` and an optional ending index ``j``, return the subs
 
 .. sourcecode:: js
 
-   // returns "Launch"
    "LaunchCode".slice(0, 6);
 
-   // returns "Code"
    "LaunchCode".slice(6);
+
+**Output**
+
+.. sourcecode:: bash
+
+   Launch
+   Code
 
 On some websites, the portion of an email address before the ``@`` symbol is used as a username. We can extract this portion of an email address using ``slice`` in conjunction with ``indexOf``.
 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
    
       let input = "fake.email@launchcode.org";
       let atIndex = input.indexOf("@");
@@ -32,6 +38,6 @@ On some websites, the portion of an email address before the ``@`` symbol is use
 
    **Output**
 
-   ::
+   .. sourcecode:: bash
 
       fake.email

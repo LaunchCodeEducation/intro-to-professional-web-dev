@@ -1,9 +1,9 @@
-**querySelector** and **querySelectorAll** Examples
+``querySelector`` and ``querySelectorAll`` Examples
 ===================================================
 
 .. _dom-querySelector-examples:
 
-**querySelector**
+``querySelector``
 -----------------
 
 The general syntax for this method is:
@@ -74,7 +74,7 @@ CSS Selector Examples
 
 .. _dom-querySelectorAll-examples:
 
-**querySelectorAll**
+``querySelectorAll``
 --------------------
 
 The general syntax for this method is:

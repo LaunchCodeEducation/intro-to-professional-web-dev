@@ -1,11 +1,11 @@
 .. _sort-examples:
 
-**sort** Examples
-==================
+``sort`` Examples
+=================
 
 The general syntax for this method is:
 
-::
+.. sourcecode:: js
 
   arrayName.sort()
 
@@ -18,13 +18,19 @@ what we expect.
    Alphabetical order?
 
    .. sourcecode:: js
+      :linenos:
 
       let letters = ['f', 'c', 'B', 'X', 'a'];
 
       letters.sort();
       console.log(letters);
-      //prints [ 'B', 'X', 'a', 'c', 'f' ]
 
+   **Output**
+
+   ::
+
+      [ 'B', 'X', 'a', 'c', 'f' ]
+         
    From the alphabet song, we know that 'a' comes before 'B' (and certainly before
    'X'), but JavaScript treats capital and lowercase letters differently.  The
    default sort order places capital letters before lowercase.
@@ -32,12 +38,18 @@ what we expect.
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       let mixed = ['a', 'A', 20, 40];
 
       mixed.sort();
       console.log(mixed);
-      //prints [ 20, 40, 'A', 'a' ]
+
+   **Output**
+
+   ::
+
+      [ 20, 40, 'A', 'a' ]
 
    When numbers and strings are sorted, the default order places numbers before
    all letters.
@@ -47,12 +59,18 @@ what we expect.
    Numerical sorting.
 
    .. sourcecode:: js
+      :linenos:
 
       let numbers = [2, 8, 10, 400, 30];
 
       numbers.sort();
       console.log(numbers);
-      //prints [ 10, 2, 30, 400, 8 ]
+
+   **Output**
+
+   ::
+
+      [ 10, 2, 30, 400, 8 ]
 
    Here JavaScript gets truly bizarre. How is 8 larger than 400?
 
