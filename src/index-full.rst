@@ -32,6 +32,7 @@ Chapters
    chapters/fetch-json/index
    chapters/typescript/index
    chapters/angular-wk1/index
+   chapters/angular-lsn2/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -62,6 +63,7 @@ Studios
    chapters/forms/studio
    chapters/fetch-json/studio
    chapters/angular-wk1/studio
+   chapters/angular-lsn2/studio
    chapters/typescript/studio
 
 
