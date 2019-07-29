@@ -14,8 +14,8 @@ Shadowing
 
 **Variable shadowing** is where two variables in different scopes have the same
 name. The variables can then be accessed under different contexts. However,
-shadowing can affect the variable's accessibility, and it also causes confusion
-for anyone reviewing the code.
+shadowing can affect the variable's accessibility. Not to mention, it also 
+causes confusion for anyone reviewing the code.
 
 .. admonition:: Example
 
@@ -57,7 +57,8 @@ Variable Hoisting
 .. index:: ! variable hoisting
 
 **Variable hoisting** is a behavior in JavaScript where variable declarations
-are "hoisted" to the top of the current scope. Hoisting occurs when the ``var``
+are raised to the top of the current scope. This results in a program being able
+to use a variable before it has been declared. Hoisting occurs when the ``var``
 keyword is used in the declaration, but it does NOT occur when ``let`` and
 ``const`` are used in the declaration.
 

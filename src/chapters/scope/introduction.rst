@@ -67,10 +67,10 @@ Block/Local Scope
 .. index:: ! local scope
 
 **Local scope** refers to variables declared and initialized inside a function
-or block. Those variables can only be referenced inside of the block or
-function. In the example above, ``b`` has local scope. Referencing or
-attempting to update these variables outside of the function can lead to a
-scoping error.
+or block. A locally scoped variable can only be referenced inside of the block or
+function in which it is defined. In the example above, ``b`` has a local scope
+limited to the ``coolFunction()`` function. Referencing or attempting to update 
+``b`` outside of the function leads to a scoping error.
 
 .. admonition:: Try It!
 
@@ -94,7 +94,7 @@ Global Scope
 .. index:: ! global scope
 
 **Global scope** refers to variables declared and initialized outside of a
-function and in the main body of the file. These variables are accessible by
+function and in the main body of the file. These variables are accessible to
 any function within a file. In the first example above, ``a`` has global scope.
 
 Global scope is the default in JavaScript. If you assign a value to a variable
