@@ -12,8 +12,7 @@ is if your code is being used in an unexpected way.
 Throw Default Error
 -------------------
 
-We can throw a default Error by using the ``throw`` statement and passing the message in a string description
-as a parameter.
+We can throw a default Error by using the ``throw`` statement and passing in a string description as a argument.
 
 .. admonition:: Example
 

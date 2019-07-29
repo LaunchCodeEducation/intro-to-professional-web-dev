@@ -1,6 +1,6 @@
 Exceptions as Control Flow
 ==========================
-Runtime errors occur as the program runs. Runtime errors are also know as exceptions. Exceptions
+Runtime errors occur as the program runs, and they are also called exceptions. Exceptions
 are caused by referencing undeclared variables and invalid or unexpected data.
 
 
@@ -133,9 +133,9 @@ Check Your Understanding
    What statement do we use if we want to attempt to run code, but think an
    exception might be thrown?
 
-   #. ``throw``
    #. ``catch``
    #. ``try``
+   #. ``throw``
    #. ``finally``
 
 .. admonition:: Question
