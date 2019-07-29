@@ -91,53 +91,106 @@
 <code class="docutils literal notranslate"><span class="pre">denominator</span></code>.</p>
 <p>Your function should return the result of <code class="docutils literal notranslate"><span class="pre">numerator</span> <span class="pre">/</span> <span class="pre">denominator</span></code>.</p>
 <p>However, if the <code class="docutils literal notranslate"><span class="pre">denominator</span></code> is zero you should throw an error informing the
-user they attempted to divide by zero.</p>
+user they attempted to divide by zero. The error text should be <code class="docutils literal notranslate"><span class="pre">Attempted</span> <span class="pre">to</span> <span class="pre">divide</span> <span class="pre">by</span> <span class="pre">zero.</span></code></p>
 <div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">Hint: You can use an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">/</span> <span class="pre">throw</span></code> statement to complete this exercise.</p>
 </div>
 </div>
-<div class="section" id="catch-undefined-grades">
-<h2>17.4.2. Catch Undefined Grades<a class="headerlink" href="#catch-undefined-grades" title="Permalink to this headline">¶</a></h2>
-<p>A teacher is compiling their end of semester grades and wants to use JavaScript to help automate the process. The teacher has created the following function to convert an assignment grade to a percentage:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">convertGrade</span><span class="p">(</span><span class="nx">assignmentScore</span><span class="p">,</span> <span class="nx">assignmentTotal</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">((</span><span class="nx">assignmentScore</span><span class="p">)</span> <span class="o">/</span> <span class="nx">assignmentTotal</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="section" id="test-student-labs">
+<h2>17.4.2. Test Student Labs<a class="headerlink" href="#test-student-labs" title="Permalink to this headline">¶</a></h2>
+<p>A teacher has created a <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> function that verifies if student programming labs work.
+This function loops over an array of JavaScript objects that <em>should</em> contain a <code class="docutils literal notranslate"><span class="pre">student</span></code>
+property and <code class="docutils literal notranslate"><span class="pre">runLab</span></code> property.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">runLab</span></code> property is expected to be a function containing the student’s code. The <code class="docutils literal notranslate"><span class="pre">runLab</span></code>
+function is called and the result is compared to the expected result. If the result and expected
+result don’t match, then the lab is considered a failure.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">function</span> <span class="nx">gradeLabs</span><span class="p">(</span><span class="nx">labs</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">labs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">lab</span> <span class="o">=</span> <span class="nx">labs</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">lab</span><span class="p">.</span><span class="nx">runLab</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">lab</span><span class="p">.</span><span class="nx">student</span><span class="si">}</span><span class="sb"> code worked: </span><span class="si">${</span><span class="nx">result</span> <span class="o">===</span> <span class="mi">27</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">score</span> <span class="o">=</span> <span class="mi">22</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">studentLabs</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Carly&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Erica&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">];</span>
 
-<span class="nx">convertGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span> <span class="nx">total</span><span class="p">);</span>
+<span class="nx">gradeLabs</span><span class="p">(</span><span class="nx">studentLabs</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>This code works for the majority of the grades the teacher needs to convert. However, in some cases the student didn’t turn in the assignment and the teacher attempts this code:</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">convertGrade</span><span class="p">(</span><span class="nx">assignmentScore</span><span class="p">,</span> <span class="nx">assignmentTotal</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">((</span><span class="nx">assignmentScore</span><span class="p">)</span> <span class="o">/</span> <span class="nx">assignmentTotal</span><span class="p">);</span>
-<span class="p">}</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> function works for the majority of cases. However what happens if a student named their function incorrectly?
+Run <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> and pass it <code class="docutils literal notranslate"><span class="pre">studentLabs2</span></code> as defined below.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">studentLabs2</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Jim&#39;</span><span class="p">,</span>
+      <span class="nx">myCode</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Jessica&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">];</span>
 
-<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
-
-<span class="nx">convertGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span> <span class="nx">total</span><span class="p">);</span>
+<span class="nx">gradeLabs</span><span class="p">(</span><span class="nx">studentLabs2</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>Upon running this code the teacher gets a ReferenceError: score is not defined.
-The teacher has hundreds of students and changing all of the missing grades to
-zeroes would take a long time.</p>
-<p>We can help by using a try…catch statement. Add a try…catch statement for
-the ReferenceError and substitute a zero for any missing grades.</p>
+<p>Upon running the second example, the teacher gets a <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">lab.runLab</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">function</span></code>.</p>
+<p>Your task is to add a <code class="docutils literal notranslate"><span class="pre">try</span></code> <code class="docutils literal notranslate"><span class="pre">catch</span></code> block inside of <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> to catch an exception if the <code class="docutils literal notranslate"><span class="pre">runLab</span></code> function is not defined.</p>
 </div>
 </div>
 
