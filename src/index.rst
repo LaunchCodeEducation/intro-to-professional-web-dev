@@ -32,6 +32,7 @@ Chapters
    chapters/forms/index
    chapters/fetch-json/index
    chapters/typescript/index
+   chapters/angular-wk1/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -61,6 +62,7 @@ Studios
    chapters/dom-and-events/studio
    chapters/forms/studio
    chapters/fetch-json/studio
+   chapters/angular-wk1/studio
    chapters/typescript/studio
 
 Assignments
@@ -73,7 +75,7 @@ Assignments
    assignments/candidateQuiz
    assignments/scrabble-scorer
    assignments/mars-rover
-   assignments/html-me-somthing
+   assignments/html-me-something
 
 Appendices
 ^^^^^^^^^^
