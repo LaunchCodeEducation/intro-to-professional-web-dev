@@ -96,5 +96,3 @@ Check Your Understanding
 
    a. True
    b. False
-
-
