@@ -10,45 +10,74 @@ Write a function called divide that takes two parameters: a ``numerator`` and a
 Your function should return the result of ``numerator / denominator``.
 
 However, if the ``denominator`` is zero you should throw an error informing the
-user they attempted to divide by zero.
+user they attempted to divide by zero. The error text should be ``Attempted to divide by zero.``
 
 .. admonition:: Note
 
    Hint: You can use an ``if / throw`` statement to complete this exercise.
 
-Catch Undefined Grades
-----------------------
+Test Student Labs
+-----------------
 
-A teacher is compiling their end of semester grades and wants to use JavaScript to help automate the process. The teacher has created the following function to convert an assignment grade to a percentage:
+A teacher has created a ``gradeLabs`` function that verifies if student programming labs work.
+This function loops over an array of JavaScript objects that *should* contain a ``student``
+property and ``runLab`` property.
 
-.. sourcecode:: js
-   :linenos:
-
-   function convertGrade(assignmentScore, assignmentTotal) {
-       return ((assignmentScore) / assignmentTotal);
-   }
-
-   let score = 22;
-   let total = 25;
-
-   convertGrade(score, total);
-
-This code works for the majority of the grades the teacher needs to convert. However, in some cases the student didn't turn in the assignment and the teacher attempts this code:
+The ``runLab`` property is expected to be a function containing the student's code. The ``runLab``
+function is called and the result is compared to the expected result. If the result and expected
+result don't match, then the lab is considered a failure.
 
 .. sourcecode:: js
    :linenos:
 
-   function convertGrade(assignmentScore, assignmentTotal) {
-       return ((assignmentScore) / assignmentTotal);
-   }
+    function gradeLabs(labs) {
+      for (let i=0; i < labs.length; i++) {
+         let lab = labs[i];
+         let result = lab.runLab(3);
+         console.log(`${lab.student} code worked: ${result === 27}`);
+      }
+    }
 
-   let total = 25;
+   let studentLabs = [
+      {
+         student: 'Carly',
+         runLab: function (num) {
+            return Math.pow(num, num);
+         }
+      },
+      {
+         student: 'Erica',
+         runLab: function (num) {
+            return num * num;
+         }
+      }
+   ];
 
-   convertGrade(score, total);
+   gradeLabs(studentLabs);
 
-Upon running this code the teacher gets a ReferenceError: score is not defined.
-The teacher has hundreds of students and changing all of the missing grades to
-zeroes would take a long time.
+The ``gradeLabs`` function works for the majority of cases. However what happens if a student named their function incorrectly?
+Run ``gradeLabs`` and pass it ``studentLabs2`` as defined below.
 
-We can help by using a try...catch statement. Add a try...catch statement for
-the ReferenceError and substitute a zero for any missing grades.
+.. sourcecode:: js
+   :linenos:
+
+   let studentLabs2 = [
+      {
+         student: 'Jim',
+         myCode: function (num) {
+            return num + num;
+         }
+      },
+      {
+         student: 'Jessica',
+         runLab: function (num) {
+            return Math.pow(num, num);
+         }
+      }
+   ];
+
+   gradeLabs(studentLabs2);
+
+Upon running the second example, the teacher gets a ``TypeError: lab.runLab is not a function``.
+
+Your task is to add a ``try`` ``catch`` block inside of ``gradeLabs`` to catch an exception if the ``runLab`` property is not defined.
