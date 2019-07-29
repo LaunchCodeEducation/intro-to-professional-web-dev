@@ -158,10 +158,10 @@ outside of <code class="docutils literal notranslate"><span class="pre">coolFunc
 <div class="section" id="block-local-scope">
 <h2>15.1.1. Block/Local Scope<a class="headerlink" href="#block-local-scope" title="Permalink to this headline">¶</a></h2>
 <p id="index-1"><strong>Local scope</strong> refers to variables declared and initialized inside a function
-or block. Those variables can only be referenced inside of the block or
-function. In the example above, <code class="docutils literal notranslate"><span class="pre">b</span></code> has local scope. Referencing or
-attempting to update these variables outside of the function can lead to a
-scoping error.</p>
+or block. A <em>locally scoped</em> variable can only be referenced inside of the
+block or function where it is defined. In the example above, <code class="docutils literal notranslate"><span class="pre">b</span></code> has a local
+scope limited to <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code>. Referencing or attempting to update  <code class="docutils literal notranslate"><span class="pre">b</span></code>
+outside of the function leads to a scoping error.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>The following code block has an error related to scope.
@@ -185,7 +185,7 @@ Try to fix it!</p>
 <div class="section" id="global-scope">
 <h2>15.1.2. Global Scope<a class="headerlink" href="#global-scope" title="Permalink to this headline">¶</a></h2>
 <p id="index-2"><strong>Global scope</strong> refers to variables declared and initialized outside of a
-function and in the main body of the file. These variables are accessible by
+function and in the main body of the file. These variables are accessible to
 any function within a file. In the first example above, <code class="docutils literal notranslate"><span class="pre">a</span></code> has global scope.</p>
 <p>Global scope is the default in JavaScript. If you assign a value to a variable
 WITHOUT first declaring it with <code class="docutils literal notranslate"><span class="pre">let</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span></code>, then the variable
