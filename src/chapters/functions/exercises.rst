@@ -58,7 +58,7 @@ Rectangles
 
    .. tip:: The newline character, ``\n``, will be helpful to you.
 
-   .. warning:: For this and all other functions in this studio, make sure you do NOT have a newline character at the end of your string. Not only will ``console.log`` add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the studio.
+   .. warning:: For this and all other functions in these exercises, make sure you do NOT have a newline character at the end of your string. Not only will ``console.log`` add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the exercises.
 
 
 #. Write a function ``rectangle(width, height)`` that returns a
