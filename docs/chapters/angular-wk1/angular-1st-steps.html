@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>27.4. Angular First Steps &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="27.5. Components" href="components.html" />
+    <link rel="prev" title="27.3. Angular File Structure" href="file-structure.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">27. Angular, Part 1</a></li>
+    <li class="active">27.4. Angular First Steps</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="angular-first-steps">
+<h1>27.4. Angular First Steps<a class="headerlink" href="#angular-first-steps" title="Permalink to this headline">¶</a></h1>
+<p>The goal here is to create a minimum working webpage template. It will serve as
+a jumping off point for your later exercises and studios, so be sure you are
+logged into your GitHub account.</p>
+<div class="section" id="starting-a-new-project">
+<h2>27.4.1. Starting a New Project<a class="headerlink" href="#starting-a-new-project" title="Permalink to this headline">¶</a></h2>
+<p>First, navigate to the <a class="reference external" href="https://stackblitz.com" target="_blank">StackBlitz homepage<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Next, click “Start New App”, then select the “Angular (TypeScript)” option.</p>
+<div class="figure">
+<img alt="StackBlitz homepage selections." src="../../_images/StackBlitzHome.png" />
+</div>
+<div class="section" id="examine-the-files-created">
+<h3>27.4.1.1. Examine the Files Created<a class="headerlink" href="#examine-the-files-created" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<img alt="File tree for new StackBlitz Angular project." src="../../_images/NewProjectFiles.png" />
+</div>
+<ol class="arabic simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">src</span></code> folder holds the files and source code needed for the project.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">app</span></code> folder holds the content for the webpage. Although the page is
+treated as a single entity, it actually consists of multiple pieces. <code class="docutils literal notranslate"><span class="pre">app</span></code>
+holds these different parts and establishes links between them. We will
+modify some of these files soon.</li>
+<li><code class="docutils literal notranslate"><span class="pre">index.html</span></code> is the highest level for displaying content. Anything added
+to this HTML file will appear on every page within a website.</li>
+<li><code class="docutils literal notranslate"><span class="pre">main.ts</span></code> imports the core methods required to make everything work. It
+also imports the content from the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</li>
+<li><code class="docutils literal notranslate"><span class="pre">styles.css</span></code> holds the global style settings for the entire website.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="yay-a-webpage">
+<h2>27.4.2. Yay! A Webpage!<a class="headerlink" href="#yay-a-webpage" title="Permalink to this headline">¶</a></h2>
+<p>For a better view, go ahead and close the preview panel, then click the button
+to open that preview in a new browser window. You should see some simple
+content.</p>
+<div class="figure">
+<img alt="StackBlitz new app default page." src="../../_images/HelloAngular.png" />
+</div>
+<p>Congratulations! You have a functioning webpage. Feel free to play around a
+little bit before continuing, and do not worry about breaking anything. If
+necessary, you can always start another new project.</p>
+<div class="admonition-try-it admonition" id="try-it-stackblitz-intro">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Examine the files within the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder. Modify the code to accomplish
+the following:</p>
+<ol class="arabic simple">
+<li>Add a nose to the emoticon.</li>
+<li>Find where “Angular” is assigned to the heading, and then replace it
+with your name.</li>
+<li>Change the color for the <em>Start editing…</em> sentence.</li>
+</ol>
+<p class="last">You may need to refresh the preview page after each attempt to see if any
+changes occur.</p>
+</div>
+<p>Now let’s take a look at the different project files.</p>
+<div class="section" id="what-to-ignore">
+<h3>27.4.2.1. What To Ignore<a class="headerlink" href="#what-to-ignore" title="Permalink to this headline">¶</a></h3>
+<p>For every new project, StackBlitz includes the practice file
+<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code>. It plays a role in generating the “Hello Angular”
+heading, but it does not do anything other than that. For our discussion here,
+we will ignore the file.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Do NOT delete <code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> yet. There are some lines of code in
+<code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> that depend on this file. For now, leave
+<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> in place.</p>
+</div>
+<p>StackBlitz simplifies project creation by hiding many of the support files, and
+Angular itself automatically sets up the code to make the different parts of a
+project communicate with each other. <code class="docutils literal notranslate"><span class="pre">main.ts</span></code> and <code class="docutils literal notranslate"><span class="pre">polyfills.ts</span></code> are part
+of this automated process, so you should leave these files alone.</p>
+</div>
+</div>
+<div class="section" id="inside-the-app-folder">
+<h2>27.4.3. Inside the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder<a class="headerlink" href="#inside-the-app-folder" title="Permalink to this headline">¶</a></h2>
+<p>If we open <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code>, we see three lines of code that styles the
+<code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag. We can freely modify this file, but any CSS instructions only
+affect the HTML files within <code class="docutils literal notranslate"><span class="pre">app</span></code>. Also, the code in <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code>
+overrides the CSS found in the higher level <code class="docutils literal notranslate"><span class="pre">styles.css</span></code> file.</p>
+<p>This is a pattern for Angular. CSS instructions further down in the file tree
+have higher priority. If <code class="docutils literal notranslate"><span class="pre">app</span></code> contained a subfolder with its own <code class="docutils literal notranslate"><span class="pre">.css</span></code>
+file, then those instructions would be applied to the HTML files within that
+subfolder.</p>
+<p>Let’s examine the code contained in other three <code class="docutils literal notranslate"><span class="pre">app</span></code> files.</p>
+<div class="section" id="app-component-html-file">
+<h3>27.4.3.1. <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> File<a class="headerlink" href="#app-component-html-file" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></p>
+<div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">hello</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{{ name }}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">hello</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+   Start editing to see some magic happen :)
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> contains the structure and some of the text seen on the
+“Hello Angular!” page. Note that the file contains a placeholder,
+<code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">name</span> <span class="pre">}}</span></code>, that will be filled with data passed in from another file.</p>
+<p>The strange tag <code class="docutils literal notranslate"><span class="pre">&lt;hello&gt;</span></code> represents a key idea behind building templates.
+Angular allows us to define our own tags, which are also used as placeholders
+in an HTML file. In this case, <code class="docutils literal notranslate"><span class="pre">&lt;hello&gt;</span></code> reserves space on the webpage for
+information supplied by the <code class="docutils literal notranslate"><span class="pre">hello.components.ts</span></code> file.</p>
+<p>As we add more pieces to our template, we will define specific tags to help us
+arrange the different items on the screen. This makes it easier for us to keep
+track of our content. For example, if we want to build a webpage that contains
+a shopping list, a movies to watch list, and family photos, we can define the
+tags <code class="docutils literal notranslate"><span class="pre">&lt;movies&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;grocery-list&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;family-photos&gt;</span></code>. With these
+tags, we can reference specific content whenever we want and clearly place it
+on a page. The tags also make it easy to play with new styles and formats for
+our grocery list without changing much code or altering the appearance of the
+movie list or photos.</p>
+</div>
+<div class="section" id="app-component-ts-file">
+<h3>27.4.3.2. <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> File<a class="headerlink" href="#app-component-ts-file" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code></p>
+<div class="last highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;my-app&#39;</span><span class="p">,</span>
+   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;./app.component.css&#39;</span> <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span>  <span class="p">{</span>
+   <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Angular&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> performs several important functions with very few lines.</p>
+<ol class="arabic simple">
+<li>Line 4 defines the tag <code class="docutils literal notranslate"><span class="pre">&lt;my-app&gt;</span></code>, which we can use in files that have
+imported <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code>.</li>
+<li>Line 5 imports <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, which we examined above.</li>
+<li>Line 6 imports <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code>, which applies styling to the HTML
+file. (For those of you who changed the color of the <em>Start editing…</em>
+sentence in the Try It challenge above, this is why changing the css file
+worked).</li>
+<li>Line 8 makes the styled <code class="docutils literal notranslate"><span class="pre">.html</span></code> file and anything defined in the
+<code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class available to other files.</li>
+</ol>
+<p>Take a look at <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> again. We mentioned the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">name</span> <span class="pre">}}</span></code>
+placeholder earlier and said that it gets filled with data from a different
+file. Line 9 in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> supplies this data by assigning the value
+<code class="docutils literal notranslate"><span class="pre">'Angular'</span></code> to the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable. Changing <code class="docutils literal notranslate"><span class="pre">'Angular'</span></code> to a different
+value alters the webpage.</p>
+</div>
+<div class="section" id="app-module-ts-file">
+<h3>27.4.3.3. <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> File<a class="headerlink" href="#app-module-ts-file" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code></p>
+<div class="last highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HelloComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./hello.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+   <span class="nx">imports</span><span class="o">:</span>      <span class="p">[</span> <span class="nx">BrowserModule</span><span class="p">,</span> <span class="nx">FormsModule</span> <span class="p">],</span>
+   <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span> <span class="nx">AppComponent</span><span class="p">,</span> <span class="nx">HelloComponent</span> <span class="p">],</span>
+   <span class="nx">bootstrap</span><span class="o">:</span>    <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Just like before, there is a lot going on within very few lines.</p>
+<ol class="arabic simple">
+<li>Lines 1 - 3 and line 9 import and assign the core modules that make Angular
+work. This is part of the automatic process, so do not play with these
+(yet).</li>
+<li>Lines 5 and 6 import the classes <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> and <code class="docutils literal notranslate"><span class="pre">HelloComponent</span></code>
+from two local files, <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> and <code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code>.</li>
+<li>Lines 5 and 6 also pull in references to any other files linked to
+<code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> and <code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code>.</li>
+<li>Line 10 declares the imported local files as necessary for the project.</li>
+<li>Line 13 exports the <code class="docutils literal notranslate"><span class="pre">AppModule</span></code> class and makes it available to other
+files.</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> does the main work of pulling in the core libraries and local
+files. As new parts are added to a project, the import statements, <code class="docutils literal notranslate"><span class="pre">imports</span></code>
+array, and <code class="docutils literal notranslate"><span class="pre">declarations</span></code> array update automatically. We do not have to worry
+about the details for adding this critical code ourselves.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Lines 6 and 10 are the reason why we cannot just delete the
+<code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> file. Line 6 tries to import it, and line 10 says
+that the <code class="docutils literal notranslate"><span class="pre">HelloComponent</span></code> class defined in the file is needed.</p>
+</div>
+</div>
+</div>
+<div class="section" id="change-the-content">
+<h2>27.4.4. Change The Content<a class="headerlink" href="#change-the-content" title="Permalink to this headline">¶</a></h2>
+<p>Enough detail. Let’s explore some more.</p>
+<p>If you did not complete all of the <a class="reference internal" href="#try-it-stackblitz-intro"><span class="std std-ref">Try It</span></a>
+tasks above, attempt them now. After that…</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic simple">
+<li>Replace line 1 in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;{{name}}'s</span> <span class="pre">First</span>
+<span class="pre">Angular</span> <span class="pre">Project&lt;/h1&gt;</span></code>.</li>
+<li>Define a variable in the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class to hold an array. Display
+the array items in an unordered list in the HTML file. Be sure to use
+placeholders.</li>
+<li>Define a rectangle object in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> that has keys of <code class="docutils literal notranslate"><span class="pre">length</span></code>,
+<code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">area</span></code>. Assign numbers to <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code>, and
+have <code class="docutils literal notranslate"><span class="pre">area</span></code> be a function that calculates and returns the area.</li>
+<li>Use a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag in the html file to display the sentence, “The
+rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
+cm^2.” Use placeholders in place of the blanks so the webpage displays
+the correct numbers.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="filename-pattern">
+<h2>27.4.5. Filename pattern<a class="headerlink" href="#filename-pattern" title="Permalink to this headline">¶</a></h2>
+<p>Many of the files we examined on this page contain the word <code class="docutils literal notranslate"><span class="pre">component</span></code> in
+the name. This results from the fundamental idea behind Angular. Each
+<em>template</em> for a webpage is constructed from smaller pieces, and these pieces
+are the <em>components</em>.</p>
+<p>Our next step is to take a closer look at these building blocks within a
+template.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>27.4.6. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Where would be the BEST place to modify the code if we want a different font
+for <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> text within the template?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.component.css</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Where would be the BEST place to modify the code if we want to add a heading
+and an unordered list to the template?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.component.css</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Where do we define a new HTML tag?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.component.css</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="file-structure.html"><span aria-hidden="true">&larr;</span> 27.3. Angular File Structure</a></li>
+        
+        
+        <li class="next"><a href="components.html">27.5. Components <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

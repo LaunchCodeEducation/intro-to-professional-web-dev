@@ -5,7 +5,7 @@ If you still cannot find the bug in your code after using the strategies outline
 
 Whether you are asking your teaching assistant, another student, or a stranger in an online forum, you should first be able to answer the 3 questions outlined below.
 
-Not only will these questions help others assist you more directly, but they may just lead you to the answer yourself! 
+Not only will these questions help others assist you more directly, but they may just lead you to the answer yourself!
 
 What is the problem with your code?
 -----------------------------------
@@ -21,7 +21,7 @@ Describe the error you are experiencing with as much detail as possible.
 What have you done to try to address the problem?
 -------------------------------------------------
 
-Another programmer can glean a lot of information by hearing what you have already tried. 
+Another programmer can glean a lot of information by hearing what you have already tried.
 
 **Bad:** Asking for help immediately.
 
