@@ -15,6 +15,6 @@ assignees: ''
 
 (What's the problem? Be as specific as possible.)
 
-## (Optional) Screenshow
+## (Optional) Screenshot
 
 (If helpful, add a screenshot.)
