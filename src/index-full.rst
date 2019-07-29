@@ -92,6 +92,7 @@ Appendices
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
    appendices/math-method-examples/index
+   appendices/terminal-commands
 
 .. toctree::
    :hidden:
