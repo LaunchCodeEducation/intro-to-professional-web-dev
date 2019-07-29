@@ -20,10 +20,10 @@ Chapters
    chapters/objects-and-math/index
    chapters/modules/index
    chapters/unit-testing/index
-   chapters/classes/index
    chapters/scope/index
    chapters/more-on-types/index
    chapters/exceptions/index
+   chapters/classes/index
    chapters/html/index
    chapters/css/index
    chapters/git/index

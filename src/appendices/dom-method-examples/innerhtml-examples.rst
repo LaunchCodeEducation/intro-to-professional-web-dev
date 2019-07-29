@@ -1,6 +1,6 @@
 .. _dom-innerHTML-examples:
 
-**innerHTML** Examples
+``innerHTML`` Examples
 ======================
 
 The general syntax for the ``innerHTML`` property is:

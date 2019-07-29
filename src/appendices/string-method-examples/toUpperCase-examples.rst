@@ -1,6 +1,6 @@
 .. _string-touppercase-examples:
 
-**toUpperCase** Examples
+``toUpperCase`` Examples
 ========================
 
 The general syntax for this method is:
@@ -14,12 +14,16 @@ This method returns a copy of ``stringName`` with all lowercase letters replaced
 .. admonition:: Example
 
    .. sourcecode:: js
-         
-      // returns "LAUNCHCODE"
-      "LaunchCode".toUpperCase();
+      :linenos:
 
-      // returns "LAUNCHCODE"
-      "launchcode".toUpperCase();
+      console.log("LaunchCode".toUpperCase());
+      console.log("launchcode".toUpperCase());
+      console.log("LaunchCode's LC101".toUpperCase());
 
-      // returns "LAUNCHCODE'S LC101"
-      "LaunchCode's LC101".toUpperCase();
+   **Output**
+
+   ::
+
+      LAUNCHCODE
+      LAUNCHCODE
+      LAUNCHCODE'S LC101

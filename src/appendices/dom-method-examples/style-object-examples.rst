@@ -1,6 +1,6 @@
 .. _dom-style-object-examples:
 
-**style property** Examples
+``style property`` Examples
 ===========================
 
 The general syntax for the ``style`` property:

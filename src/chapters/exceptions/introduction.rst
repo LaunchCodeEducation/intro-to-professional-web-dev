@@ -1,7 +1,7 @@
 Introduction
 ============
 
-.. index:: ! scope
+.. index:: ! exception
 
 Errors are a part of coding. Occasionally, we make mistakes as programmers. However, we are always trying to fix those mistakes by reading different resources, the stacktrace, or asking for help.
 
@@ -17,7 +17,10 @@ In JavaScript a runtime error and an exception are the same thing and can be use
 Error Object
 ------------
 
-When a runtime error, also known as an execption, is raised JavaScript returns an ``Error`` object. An Error Object has two properties: a name and a message. The name refers to the type of error that occured, while the message gives the user information on why that exception occured. 
+When a runtime error, also known as an exception, is raised JavaScript returns
+an ``Error`` object. An Error Object has two properties: a name and a message.
+The name refers to the type of error that occurred, while the message gives the
+user information on why that exception occurred.
 
 JavaScript has built-in exceptions with pre-defined names and messages, however, JavaScript also gives you the ability to create your own error messages.
 
@@ -66,9 +69,10 @@ A ``TypeError`` is thrown when JavaScript expects something to be one type, but 
 .. admonition:: Example
 
    .. sourcecode:: js
+      :linenos:
 
       const a = "Launch";
-      
+
       a = "Code";
 
    **Console Output**
@@ -81,7 +85,10 @@ In this case, we declare a constant as the string "Launch", and then try to chan
 
 Exceptions give us a way to provide more information on how something went wrong. JavaScript's built-in Exceptions are regularly used in the debugging process.
 
-There are more built-in Exceptions in Java, you can read more by referencing the `MDN Errors Documentation <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors>`_ or `W3Schools JavaScript Error <https://www.w3schools.com/js/js_errors.asp>`_.
+There are more built-in Exceptions in Java, you can read more by referencing
+the `MDN Errors Documentation <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors>`__ or
+`W3Schools JavaScript Error <https://www.w3schools.com/js/js_errors.asp>`__ (scroll
+down to the Error Object section).
 
 In the next section we will learn how to raise our own exceptions using the ``throw`` statement.
 

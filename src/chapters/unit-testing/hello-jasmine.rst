@@ -3,7 +3,7 @@ Hello, Jasmine!
 
 .. index:: ! Jasmine
 
-In order to unit test our code, we need to use a module. Such a module of called a **unit-testing framework**, **test runner**, or **test harnesss**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
+In order to unit test our code, we need to use a module. Such a module of called a **unit-testing framework**, **test runner**, or **test harness**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
 
 We will use `Jasmine <https://jasmine.github.io/>`_, a popular JavaScript testing framework.
 
@@ -88,7 +88,15 @@ Let's add some code to test.
 ``hello.js``
 ^^^^^^^^^^^^
 
-Create a new file in your project, ``hello.js``. Add this code to the file:
+If you have not already done so, click *Fork* on the repl.it menu bar so you
+can edit the starter code.
+
+Create a new file in your project by clicking the icon in the menu bar.
+
+.. figure:: figures/replit-new-file-button.png
+   :alt: Repl.it menu button for creating new files
+
+Name the new file ``hello.js``, then add this code:
 
 .. sourcecode:: js
    :linenos:
@@ -105,7 +113,6 @@ The ``hello`` function takes a single argument representing a person's name and 
 To use this function outside ``hello.js`` we must export it. Add this statement at the bottom of the file.
 
 .. sourcecode:: js
-   :linenos:
 
    module.exports = hello;
 
@@ -114,7 +121,12 @@ To use this function outside ``hello.js`` we must export it. Add this statement 
 
 Now that we have a function to test, let's write some test code. Add a folder named ``spec`` to the project. Within the folder, create the file ``hello.spec.js``. It is conventional to put tests for ``fileName.js`` in ``spec/fileName.spec.js``. This makes it easy to find the tests associated with a given file.
 
-At the top of this file, import your function from ``hello.js``, along with the ``assert`` module:
+Your file tree should look something like this:
+
+.. figure:: figures/hello-test-file-tree.png
+   :alt: File tree for test project
+
+At the top of the ``hello.spec.js`` file, import your function from ``hello.js``, along with the ``assert`` module:
 
 .. sourcecode:: js
    :linenos:
@@ -155,7 +167,7 @@ Within ``describe``'s function argument, place a test for case 1:
 
 The ``it`` function is part of the Jasmine framework as well. Calling ``it`` creates a **specification**, or **spec**, which is a description of expected behavior. The first argument to ``it`` is a string describing the expected behavior. This string serves to document the test and is also used in reporting test results. Your expectation strings will usually begin with "should", followed by an expected action.
 
-The second argument to ``it`` is yet another anonymouse function. This function contains the test code itself, which takes the form of an **assertion**. An assertion is a declaration of expected behavior *in code*. Let's examing the contents of the anonymous function:
+The second argument to ``it`` is yet another anonymous function. This function contains the test code itself, which takes the form of an **assertion**. An assertion is a declaration of expected behavior *in code*. Let's examine the contents of the anonymous function:
 
 .. sourcecode:: js
 
@@ -296,20 +308,23 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Examine the function below, which checks if the user enters a correct
-   answer:
+   Examine the function below, which checks if two strings match:
 
    .. sourcecode:: js
       :linenos:
 
-      function isAnswerCorrect(answer,correctAnswer){
-         return answer === correctAnswer;
+      function doStringsMatch(string1, string2){
+         if (string1 === string2) {
+            return 'Strings match!';
+         } else {
+            return 'No match!';
+         }
       }
 
    Which of the following tests checks if the function properly handles
-   case-sensitive answers.
+   case-*sensitive* answers.
 
-   a. ``assert.strictEqual(isAnswerCorrect('Flower'), 'Flower');``
-   b. ``assert.strictEqual(isAnswerCorrect('Flower'), 'flower');``
-   c. ``assert.strictEqual(isAnswerCorrect('Flower'), 'Plant');``
-   d. ``assert.strictEqual(isAnswerCorrect('Flower'), '');``
+   a. ``assert.strictEqual(doStringsMatch('Flower', 'Flower'), 'Strings match!');``
+   b. ``assert.strictEqual(doStringsMatch('Flower', 'flower'), 'No match!');``
+   c. ``assert.strictEqual(doStringsMatch('Flower', 'plant'), 'No match!');``
+   d. ``assert.strictEqual(doStringsMatch('Flower', ''), 'No match!');``

@@ -1,6 +1,6 @@
 .. _string-trim-examples:
 
-**trim** Examples
+``trim`` Examples
 =================
 
 The general syntax for this method is:
@@ -17,17 +17,21 @@ This method returns a copy of the string with any leading or trailing whitespace
 
 .. admonition:: Example
 
-   
    .. sourcecode:: js
+      :linenos:
 
-      // returns "Saint Louis"
-      "Saint Louis ".trim();
+      console.log("Saint Louis ".trim());
+      console.log(" Saint Louis".trim());
+      console.log(" Saint Louis ".trim());
 
-      // returns "Saint Louis"
-      " Saint Louis".trim();
+   **Output**
 
-      // returns "Saint Louis"
-      " Saint Louis ".trim();
+   .. sourcecode:: bash
+
+      Saint Louis
+      Saint Louis
+      Saint Louis
+
 
 .. admonition:: Example
 
@@ -43,6 +47,6 @@ This method returns a copy of the string with any leading or trailing whitespace
 
    **Output**
 
-   ::
+   .. sourcecode:: bash
 
       fake.email@launchcode.org

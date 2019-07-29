@@ -13,7 +13,7 @@ We saw this behavior in the ``toLowerCase`` example.
 
    .. sourcecode:: js
       :linenos:
-   
+
       let nonprofit = "LaunchCode";
 
       console.log(nonprofit.toLowerCase());

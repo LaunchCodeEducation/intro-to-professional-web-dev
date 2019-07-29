@@ -1,6 +1,6 @@
 .. _dom-getelementbyid-examples:
 
-**getElementById** Examples
+``getElementById`` Examples
 ===========================
 
 The general syntax for this method is:

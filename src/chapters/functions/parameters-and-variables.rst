@@ -3,14 +3,21 @@ Parameters and Variables
 
 Earlier, we said that a parameter "behaves like a variable that exists only within the function." While this is true, the relationship between variables and parameters is a bit more complicated.
 
+.. _function-scope:
+
 Function Scope
 --------------
 
-.. index:: 
-   single: function; scope
-   single: scope
+.. index:: scope
 
-The **scope** of a variable is the extent to which a variable is visible within a program. Scope consists of all locations within a program where a variable can be used or modified. Introducing functions gives us one of our first examples of limited variable scope---a situation in which a variable is not visible throughout an entire program.
+.. index::
+   single: function; scope
+
+The **scope** of a variable is the extent to which a variable is visible within
+a program. Scope consists of all locations within a program where a variable
+can be used or modified. Introducing functions gives us one of our first
+examples of limited variable scope---a situation in which a variable is not
+visible throughout an entire program.
 
 In particular, *a variable defined using `let` within a function is not visible outside of that function.*
 
@@ -20,7 +27,7 @@ In particular, *a variable defined using `let` within a function is not visible 
 
    .. sourcecode:: js
       :linenos:
-   
+
       function removeHyphens(str) {
          let strWithoutHyphens = ''
 
@@ -43,7 +50,13 @@ In particular, *a variable defined using `let` within a function is not visible 
       ReferenceError: strWithoutHyphens is not defined
       (rest of error message omitted)
 
-The last line of this program tries to print the variable ``strWithoutHyphens`` to the console, resulting in an error. The previous line calls ``removeHyphens``, at the end of which ``strWithoutHyphens`` has the value ``"3142540107"``. However, once the function finishes execution all variables and paremeters within the function are destroyed. This is why the last line results in a ``ReferenceError``; there is no variable named ``strWithoutHyphens`` in existence when that line executes.
+The last line of this program tries to print the variable ``strWithoutHyphens``
+to the console, resulting in an error. The previous line calls
+``removeHyphens``, at the end of which ``strWithoutHyphens`` has the value
+``"3142540107"``. However, once the function finishes execution all variables
+and parameters within the function are destroyed. This is why the last line
+results in a ``ReferenceError``; there is no variable named
+``strWithoutHyphens`` in existence when that line executes.
 
 This is what we mean when we refer to scope. A variable is not necessarily usable throughout an entire program. Where it can be used depends on the context in which it is defined. For variables *and* parameters within a function, their scope is known as **function scope**. This means that they are only visible within the function in which they are defined.
 

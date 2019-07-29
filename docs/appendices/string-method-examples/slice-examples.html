@@ -74,7 +74,7 @@
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
     <li><a href="index.html">String Method Examples</a></li>
-    <li class="active"><strong>slice</strong> Examples</li>
+    <li class="active"><code class="docutils literal notranslate"><span class="pre">slice</span></code> Examples</li>
 </ol>
 
 
@@ -85,30 +85,36 @@
 
     
   <div class="section" id="slice-examples">
-<span id="string-slice-examples"></span><h1><strong>slice</strong> Examples<a class="headerlink" href="#slice-examples" title="Permalink to this headline">¶</a></h1>
+<span id="string-slice-examples"></span><h1><code class="docutils literal notranslate"><span class="pre">slice</span></code> Examples<a class="headerlink" href="#slice-examples" title="Permalink to this headline">¶</a></h1>
 <p>The general syntax for this method is:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">stringName</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Given a starting index <code class="docutils literal notranslate"><span class="pre">i</span></code> and an optional ending index <code class="docutils literal notranslate"><span class="pre">j</span></code>, return the substring consisting of characters from index <code class="docutils literal notranslate"><span class="pre">i</span></code> through index <code class="docutils literal notranslate"><span class="pre">j-1</span></code>. If the ending index is ommitted, the returned substring includes all characters from the starting index through the end of the string.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;Launch&quot;</span>
-<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
 
-<span class="c1">// returns &quot;Code&quot;</span>
 <span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Launch
+Code
 </pre></div>
 </div>
 <p>On some websites, the portion of an email address before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol is used as a username. We can extract this portion of an email address using <code class="docutils literal notranslate"><span class="pre">slice</span></code> in conjunction with <code class="docutils literal notranslate"><span class="pre">indexOf</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;fake.email@launchcode.org&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;fake.email@launchcode.org&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">atIndex</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">atIndex</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>fake.email
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>fake.email
 </pre></div>
 </div>
 </div>
@@ -120,7 +126,7 @@
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="replace-examples.html"><span aria-hidden="true">&larr;</span> <strong>replace</strong> Examples</a></li>
+        <li class="previous"><a href="replace-examples.html"><span aria-hidden="true">&larr;</span> <code class="docutils literal notranslate"><span class="pre">replace</span></code> Examples</a></li>
         
         
         <li class="next"><a href="../math-method-examples/index.html">Math Method Examples <span aria-hidden="true">&rarr;</span></a></li>

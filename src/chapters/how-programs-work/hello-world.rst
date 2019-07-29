@@ -1,5 +1,7 @@
 .. _hello-world:
 
+.. _create-replit-account:
+
 Your First Program
 ===================
 We haven’t learned how to code yet, but we can still write and run our first
@@ -30,6 +32,13 @@ empty.
 .. figure:: figures/replit-dashboard.png
    :alt: Repl.it dashboard
 
+.. warning::
+
+   These examples are for standard repl.it use.
+   See :ref:`repl.it classroom instructions <replit-classroom>` for instructions on
+   using repl.it when working on repl.it classroom assignments.
+
+
 Click on *new repl* to begin a new project. Scroll through the options and
 select "Node.js". Next, name your project and click "Create Repl".
 
@@ -48,20 +57,20 @@ functions.
 
 Features to note:
 
-#. File panel and menus (1). Allows you to add extensions, update settings, and
+#. **File panel and menus**: Allows you to add extensions, update settings, and
    add, open, or delete files.
-#. Editor panel (2). Your code goes here. Click on a file to open it the
+#. **Editor panel**: Your code goes here. Click on a file to open it the
    editor. For most new projects, an ``index`` file will be created and opened
    by default.
-#. Console panel (3). Any output produced by your code will appear in this
+#. **Console panel**: Any output produced by your code will appear in this
    panel. The console also displays error messages, test results, and other
    information.
-#. If you are viewing someone else's project, you can *fork* the content (4)
+#. **Fork button**: If you are viewing someone else's project, you can *fork* the content (4)
    and store a copy of that project to your own account. This allows you to
    edit the files without changing the originals, and it lets you use other
    programmers' work (with permission) to enhance your own.
-#. Clicking *Run* (5) executes any code written in the ``index`` file.
-#. Managing projects (6): When logged into Repl.it, you can create a new
+#. **Run button**: Executes any code written in the ``index`` file.
+#. **Managing projects**: When logged into Repl.it, you can create a new
    project, view saved projects, or share your projects.
 
 .. admonition:: Note
