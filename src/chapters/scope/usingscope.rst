@@ -14,8 +14,8 @@ Shadowing
 
 **Variable shadowing** is where two variables in different scopes have the same
 name. The variables can then be accessed under different contexts. However,
-shadowing can affect the variable's accessibility. Not to mention, it also 
-causes confusion for anyone reviewing the code.
+shadowing can affect the variable's accessibility. It also causes confusion for
+anyone reviewing the code.
 
 .. admonition:: Example
 

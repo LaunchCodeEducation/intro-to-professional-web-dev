@@ -67,10 +67,10 @@ Block/Local Scope
 .. index:: ! local scope
 
 **Local scope** refers to variables declared and initialized inside a function
-or block. A locally scoped variable can only be referenced inside of the block or
-function in which it is defined. In the example above, ``b`` has a local scope
-limited to the ``coolFunction()`` function. Referencing or attempting to update 
-``b`` outside of the function leads to a scoping error.
+or block. A *locally scoped* variable can only be referenced inside of the
+block or function where it is defined. In the example above, ``b`` has a local
+scope limited to ``coolFunction()``. Referencing or attempting to update  ``b``
+outside of the function leads to a scoping error.
 
 .. admonition:: Try It!
 
