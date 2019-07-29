@@ -4,15 +4,16 @@ Throw
 
 In most programming languages, when the compiler or interpreter encounters code it doesn't know how to handle, it
 **throws** an exception. This is how the compiler notifies the programmer that something has gone wrong. Throwing
-an exception is also know as *raising* an exception.
+an exception is also known as *raising* an exception.
 
-JavaScript gives us the ability to raise exceptions using the ``throw`` statement. You would want to throw an
-exception if your code is being used in an unexpected way.
+JavaScript gives us the ability to raise exceptions using the ``throw`` statement. One reason to throw an exception
+is if your code is being used in an unexpected way.
 
-Default Error
--------------
+Throw Default Error
+-------------------
 
-We can throw a default Error object by using the ``throw`` statement and passing the message in as an argument to the ``Error`` function.
+We can throw a default Error by using the ``throw`` statement and passing the message in a string description
+as a parameter.
 
 .. admonition:: Example
 
@@ -32,7 +33,7 @@ We can throw a default Error object by using the ``throw`` statement and passing
       at Object.runInContext (vm.js:311:6)
       at evaluate (/run_dir/repl.js:133:14)
 
-   The error text that is displayed the error name, contains details about where the error was thrown.
+   The error text displays the error name, and it contains details about where the error was thrown.
    The text ``at evalmachine.<anonymous>:1:7`` indicates that the error as thrown from line 1, which we know is
    true because our example only has one line of code.
 

@@ -89,7 +89,7 @@
 are caused by referencing undeclared variables and invalid or unexpected data.</p>
 <div class="section" id="control-flow">
 <h2>17.3.1. Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
-<p id="index-0"><strong>Control flow</strong> of a program is the order in which the statements are executed. Normal control flow
+<p id="index-0">The <strong>control flow</strong> of a program is the order in which the statements are executed. Normal control flow
 runs from top to bottom of a file. An exception breaks the normal flow and stops the program. A stopped
 program can no longer interact with the user. Luckily JavaScript provides a way to anticipate and
 handle exceptions.</p>
@@ -97,8 +97,8 @@ handle exceptions.</p>
 <div class="section" id="catching-an-exception">
 <h2>17.3.2. Catching an Exception<a class="headerlink" href="#catching-an-exception" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">JavaScript provides <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code> statements that allow us to keep our programs running even if there
-is an exception. We can tell JavaScript to <em>try</em> to run a block of code and if an exception is thrown, to <em>catch</em> the
-exception and run a different block of code. Anticipating and catching the exception makes the exception now part of
+is an exception. We can tell JavaScript to <em>try</em> to run a block of code, and if an exception is thrown, to <em>catch</em> the
+exception and run a specific block of code. Anticipating and catching the exception makes the exception now part of
 the control flow.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
@@ -107,7 +107,7 @@ the control flow.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>In this example there is an array of animals. The user is asked to enter the index for the animal they want to see.
-If the user enters an index that does NOT contain an animal, the code will try throw an <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> when <code class="docutils literal notranslate"><span class="pre">name</span></code>
+If the user enters an index that does NOT contain an animal, the code will throw an <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> when <code class="docutils literal notranslate"><span class="pre">name</span></code>
 is referenced on an undefined value.</p>
 <p>There is a <code class="docutils literal notranslate"><span class="pre">try</span></code> block around the code that will throw the <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. There is a <code class="docutils literal notranslate"><span class="pre">catch</span></code> block that catches the error
 and contains code to inform the user that they entered an invalid index.</p>
@@ -161,11 +161,11 @@ the code goes on...
 </div>
 <div class="section" id="finally">
 <h2>17.3.3. Finally<a class="headerlink" href="#finally" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-2"></span><p id="index-3">JavaScript also provides a <code class="docutils literal notranslate"><span class="pre">finally</span></code> block which must be used with <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks.  A <code class="docutils literal notranslate"><span class="pre">finally</span></code> block code runs after the <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code>.
-What is special about <code class="docutils literal notranslate"><span class="pre">finally</span></code> is that <code class="docutils literal notranslate"><span class="pre">finally</span></code> is ALWAYS ran, even if an exception is NOT thrown.</p>
+<span class="target" id="index-2"></span><p id="index-3">JavaScript also provides a <code class="docutils literal notranslate"><span class="pre">finally</span></code> block which can be used with <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks.  A <code class="docutils literal notranslate"><span class="pre">finally</span></code> block code runs after the <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code>.
+What is special about <code class="docutils literal notranslate"><span class="pre">finally</span></code> is that <code class="docutils literal notranslate"><span class="pre">finally</span></code> code block ALWAYS runs, even if an exception is NOT thrown.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Let’s update the above example to print out the index the user entered. Importantly we want this message to be printed EVERY time the code runs.
+<p>Let’s update the above example to print out the index the user entered. We want this message to be printed EVERY time the code runs.
 Notice the <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement on line 11.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2

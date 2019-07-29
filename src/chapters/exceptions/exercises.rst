@@ -80,4 +80,4 @@ Run ``gradeLabs`` and pass it ``studentLabs2`` as defined below.
 
 Upon running the second example, the teacher gets a ``TypeError: lab.runLab is not a function``.
 
-Your task is to add a ``try`` ``catch`` block inside of ``gradeLabs`` to catch an exception if the ``runLab`` function is not defined.
+Your task is to add a ``try`` ``catch`` block inside of ``gradeLabs`` to catch an exception if the ``runLab`` property is not defined.

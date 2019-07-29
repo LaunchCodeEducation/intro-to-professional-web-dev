@@ -87,12 +87,13 @@
 <h1>17.2. Throw<a class="headerlink" href="#throw" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">In most programming languages, when the compiler or interpreter encounters code it doesn’t know how to handle, it
 <strong>throws</strong> an exception. This is how the compiler notifies the programmer that something has gone wrong. Throwing
-an exception is also know as <em>raising</em> an exception.</p>
-<p>JavaScript gives us the ability to raise exceptions using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement. You would want to throw an
-exception if your code is being used in an unexpected way.</p>
-<div class="section" id="default-error">
-<h2>17.2.1. Default Error<a class="headerlink" href="#default-error" title="Permalink to this headline">¶</a></h2>
-<p>We can throw a default Error object by using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement and passing the message in as an argument to the <code class="docutils literal notranslate"><span class="pre">Error</span></code> function.</p>
+an exception is also known as <em>raising</em> an exception.</p>
+<p>JavaScript gives us the ability to raise exceptions using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement. One reason to throw an exception
+is if your code is being used in an unexpected way.</p>
+<div class="section" id="throw-default-error">
+<h2>17.2.1. Throw Default Error<a class="headerlink" href="#throw-default-error" title="Permalink to this headline">¶</a></h2>
+<p>We can throw a default Error by using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement and passing the message in a string description
+as a parameter.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;You cannot divide by zero!&quot;</span><span class="p">);</span>
@@ -107,7 +108,7 @@ at Object.runInContext (vm.js:311:6)
 at evaluate (/run_dir/repl.js:133:14)
 </pre></div>
 </div>
-<p class="last">The error text that is displayed the error name, contains details about where the error was thrown.
+<p class="last">The error text displays the error name, and it contains details about where the error was thrown.
 The text <code class="docutils literal notranslate"><span class="pre">at</span> <span class="pre">evalmachine.&lt;anonymous&gt;:1:7</span></code> indicates that the error as thrown from line 1, which we know is
 true because our example only has one line of code.</p>
 </div>

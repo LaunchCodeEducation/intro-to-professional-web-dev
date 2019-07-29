@@ -8,7 +8,7 @@ Control Flow
 ------------
 .. index:: ! control flow
 
-**Control flow** of a program is the order in which the statements are executed. Normal control flow
+The **control flow** of a program is the order in which the statements are executed. Normal control flow
 runs from top to bottom of a file. An exception breaks the normal flow and stops the program. A stopped
 program can no longer interact with the user. Luckily JavaScript provides a way to anticipate and
 handle exceptions.
@@ -19,8 +19,8 @@ Catching an Exception
 .. index:: ! try catch
 
 JavaScript provides ``try`` and ``catch`` statements that allow us to keep our programs running even if there
-is an exception. We can tell JavaScript to *try* to run a block of code and if an exception is thrown, to *catch* the
-exception and run a different block of code. Anticipating and catching the exception makes the exception now part of
+is an exception. We can tell JavaScript to *try* to run a block of code, and if an exception is thrown, to *catch* the
+exception and run a specific block of code. Anticipating and catching the exception makes the exception now part of
 the control flow.
 
 .. note:: Catching an exception is also known as *handling* an exception.
@@ -28,7 +28,7 @@ the control flow.
 .. admonition:: Example
 
    In this example there is an array of animals. The user is asked to enter the index for the animal they want to see.
-   If the user enters an index that does NOT contain an animal, the code will try throw an ``TypeError`` when ``name``
+   If the user enters an index that does NOT contain an animal, the code will throw an ``TypeError`` when ``name``
    is referenced on an undefined value.
 
    There is a ``try`` block around the code that will throw the ``TypeError``. There is a ``catch`` block that catches the error
@@ -79,12 +79,12 @@ Finally
 .. index::
    single: try catch; finally
 
-JavaScript also provides a ``finally`` block which must be used with ``try`` and ``catch`` blocks.  A ``finally`` block code runs after the ``try`` and ``catch``.
-What is special about ``finally`` is that ``finally`` is ALWAYS ran, even if an exception is NOT thrown.
+JavaScript also provides a ``finally`` block which can be used with ``try`` and ``catch`` blocks.  A ``finally`` block code runs after the ``try`` and ``catch``.
+What is special about ``finally`` is that ``finally`` code block ALWAYS runs, even if an exception is NOT thrown.
 
 .. admonition:: Example
 
-   Let's update the above example to print out the index the user entered. Importantly we want this message to be printed EVERY time the code runs.
+   Let's update the above example to print out the index the user entered. We want this message to be printed EVERY time the code runs.
    Notice the ``console.log`` statement on line 11.
 
    .. replit:: js
