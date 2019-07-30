@@ -23,6 +23,7 @@ Chapters
    chapters/more-on-types/index
    chapters/exceptions/index
    chapters/classes/index
+   chapters/terminal/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
