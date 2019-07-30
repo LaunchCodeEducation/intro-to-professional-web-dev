@@ -82,7 +82,7 @@ Let's find out. Try running the following code in an editor. What happens?
       TypeError: Assignment to constant variable.
 
 As we've seen with other examples---such as trying to declare a variable twice,
-using incorrect syntax, or failing to enclose strings in quotes---JavaScripts
+using incorrect syntax, or failing to enclose strings in quotes---JavaScript
 prevents undesired code from executing by throwing an error.
 
 Naming Variables
