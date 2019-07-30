@@ -198,7 +198,7 @@ In the example from the previous section, the descriptor "area of circle" became
 
 .. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``.
 
-We will use the lower came case convention throughout this course, and strongly encourage you to do so as well.
+We will use the lower camel case convention throughout this course, and strongly encourage you to do so as well.
 
 Keywords
 --------
