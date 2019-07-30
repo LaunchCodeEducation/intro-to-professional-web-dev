@@ -3,7 +3,10 @@ Introduction
 
 .. index:: ! exception
 
-Errors are a part of coding. Occasionally, we make mistakes as programmers. However, we are always trying to fix those mistakes by reading different resources, the stacktrace, or asking for help.
+Errors are a part of coding. Occasionally, we make mistakes as programmers.
+However, we are always trying to fix those mistakes by reading different
+resources, examining a list of error messages (also called the **stacktrace**),
+or asking for help.
 
 Earlier in this course, we learned about two different types of errors: runtime and logic. A logic error is when your program executes without breaking, but doesn't behave the way you thought it would. These logic errors usually require you to consider how you are going about solving the issue to resolve. Runtime errors are when your program does not run correctly, and an exception is raised.
 

@@ -1,3 +1,5 @@
+..
+
 Categories of Errors
 ====================
 
@@ -16,6 +18,7 @@ Parsing
 Before code can be run, it must first be parsed, or validated and prepared for execution. This is known as the **parsing stage**, and you can think of it like the pre-flight check for a plane or space craft. 
 
 A lot of detailed, low-level tasks are carried out during this process, but it is enough for us to understand that parsing verifies the syntax and structure of the code.
+.. _error-categories:
 
 Execution
 ^^^^^^^^^
