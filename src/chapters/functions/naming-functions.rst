@@ -85,8 +85,8 @@ Check Your Understanding
       :linenos:
 
       function myFunc(radius) {
-          let area = Math.PI * radius**2;
-          return area;
+        let area = Math.PI * radius**2;
+        return area;
       }
 
    #. ``area``
