@@ -1,3 +1,5 @@
+.. _angular-exercises-1:
+
 Exercises: Angular, Lesson 1
 =============================
 
