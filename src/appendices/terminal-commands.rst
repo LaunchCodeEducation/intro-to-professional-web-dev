@@ -4,15 +4,15 @@ Terminal Commands
 =================
 
 =========================================   ================================
+``.``                                       current directory
+``..``                                      move to parent directory
 ``pwd``                                     print working directory
 ``ls``                                      list items in current directory
-``cd <directory_path>``                     change directory  
-``mkdir <new_directory>``                   make new directory  
-``rm <thing_to_remove>``                    remove item from directory 
-``.``                                       current folder
-``..``                                      move to parent directory
-``cp <source_file> <target_file>``          copy item
-``mv <current_location> <destination>``     move item
+``cd <path_name>``                                change directory  
+``mkdir <new_directory_name>``              make new directory  
+``rm <item_to_remove>`` (``-r``)            remove item (remove directory)
+``cp <source_path> <target_path>``          copy item
+``mv <item_to_move> <target_path>``         move item
 ``touch <new_file_name>``                   make new file
-*Ctrl + c*                                  exit
+*ctrl + c*                                  exit running program
 =========================================   ================================  
