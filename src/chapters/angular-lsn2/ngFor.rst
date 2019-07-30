@@ -132,10 +132,11 @@ Properly done, your page should look something like:
 
 .. todo:: Add screenshot of lesson 2, example 1 results.
 
-``ngIf``
-----------
+Using ``ngFor`` With Conditions
+--------------------------------
 
-
+Sometimes we do not need to display every item in a collection, and for these
+cases Angular allows us to modify the loop.
 
 Check Your Understanding
 --------------------------
