@@ -1,11 +1,43 @@
 What is a terminal?
 ===================
 
-Most of the time when we interact with our computers, we do so through a 
-**graphical user interface**, or **GUI** for short. A GUI is a system designed
-with icons and visual representations of the machine's file systems. Programmers
-also frequently use another kind of interface called the **command line**. A **CLI**,
-or command line interface, uses text, rather than graphic manipulation, to give the
-computer instructions. The program responsible for running a CLI and interpreting the 
-instructions is often referred to as a **terminal**, or **shell**.
+GUIs and CLIs
+-------------
 
+Most of the time when we use our computers, we do so through a 
+**graphical user interface**, or **GUI** for short. A GUI is a system designed
+with icons and visual representations of the machine's file systems. 
+
+.. figure:: figures/GUI-example.png
+   :alt: Sample graphic user interface.
+
+   A GUI with file icons ands columns representing folder structure.
+
+
+Programmers often use another kind of interface, called the **command line**. A 
+**CLI**, or command line interface, uses textual commands, rather than graphic 
+manipulation, to give the computer instructions. 
+
+.. figure:: figures/CLI-example.png
+   :alt: Sample command line interface.
+
+   A CLI with navigating the same file paths as the GUI above.
+
+
+The application responsible for running a CLI is called a **terminal** and the 
+program interpreting the commands is called the **shell**.
+
+.. admonition:: Note
+
+   The terms "command line", "terminal", and "shell" are often used interchangeably.
+
+Why use the terminal?
+---------------------
+
+Both of the images above represent the same file structure. While the GUI may now 
+appear more user-friendly, as you grow more familiar with the commands available,
+you'll find there can be advantages to using the terminal. 
+
+Using the terminal, you will be able to quickly move throughout your computer's file 
+structure, make new files and directories, remove items from folders, open programs,
+install programs, and even run programs directly.
