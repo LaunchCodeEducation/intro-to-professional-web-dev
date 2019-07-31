@@ -47,10 +47,13 @@ manually add or remove ``li`` tags, or we could use the structural directive
 ``ngFor`` Syntax
 ^^^^^^^^^^^^^^^^^
 
-The example discussed below shows how use ``ngFor`` to iterate through the
-contents of an array. For a complete guide to using ``ngFor`` and all of its
-variations, refer to the
-`Angular documentation <https://angular.io/guide/template-syntax#ngFor>`__.
+The example below shows how to use ``ngFor`` to iterate through the contents of
+an array. It is the basic approach, and ``ngFor`` can be used in more complex
+ways. For a complete guide to using ``ngFor`` and all of its variations, refer
+to the following resources:
+
+#. `Angular documentation <https://angular.io/guide/template-syntax#ngFor>`__,
+#. `Malcoded website <https://malcoded.com/posts/angular-ngfor/>`__.
 
 Just like a ``for`` loop in JavaScript requires a specific syntax in order to
 operate, loops in Angular must follow a set of rules. Let's explore these rules
@@ -84,17 +87,28 @@ By placing the ``*ngFor`` statement inside the list tag, the loop generates
 multiple ``<li></li>`` pairs. Each iteration adds a new list item to the
 HTML code, one for each title in the ``movies`` array.
 
+.. admonition:: Warning
+
+   The ``*ngFor`` statement generates a new HTML tag for each item in the
+   array. *Be careful where you put the statement!* If we had added
+   ``*ngFor = "let movie of movies"`` to the ``<h3>`` tag, then the ``Movies
+   To Watch`` title would have been repeated multiple times.
+
 In general, the syntax for ``*ngFor`` is:
 
 ::
 
-   *ngFor = "let variableName of collection"
+   *ngFor = "let variableName of arrayName"
 
-Where ``variableName`` is the loop variable, and ``collection`` represents the
-string, array, or object to iterate through.
+Where ``variableName`` is the loop variable, and ``arrayName`` represents the
+array to iterate through.
+
+``*ngFor`` only operates over the contents of an array. If we want to iterate
+over the characters in a string or the key/value pairs in an object, then we
+must first convert them into arrays.
 
 Try It
-^^^^^^^
+-------
 
 Fork the Angular Lesson 2 starter code and open the project in VSCode. Use the
 terminal to switch to the ``ngFor-practice`` branch.
@@ -132,11 +146,13 @@ Properly done, your page should look something like:
 
 .. todo:: Add screenshot of lesson 2, example 1 results.
 
-Using ``ngFor`` With Conditions
---------------------------------
+What If
+^^^^^^^^
 
-Sometimes we do not need to display every item in a collection, and for these
-cases Angular allows us to modify the loop.
+What if you placed the ``*ngFor`` statement inside the ``<h3>`` tag instead of
+the ``<div>`` tag? Try it and see what happens!
+
+What if you placed the statement inside the ``<ul>`` tag instead? Try it!
 
 Check Your Understanding
 --------------------------
