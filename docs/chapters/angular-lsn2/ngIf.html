@@ -165,6 +165,121 @@ nothing gets added to the webpage.</p>
 in JavaScript.</p>
 </div>
 </div>
+<div class="section" id="what-about-if-else">
+<h3>28.2.1.2. What About <code class="docutils literal notranslate"><span class="pre">if/else</span></code>?<a class="headerlink" href="#what-about-if-else" title="Permalink to this headline">¶</a></h3>
+<p>With JavaScript, we know how to use an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block to decide which set of
+code to execute:</p>
+<div class="highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span>  <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">//Execute this code if num is greater than 5.</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="c1">//Execute this code if num is NOT greater than 5.</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>We can do the same thing in Angular to decide which set of HTML tags to
+generate. Unfortunately, setting this up with <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> is not as efficient.</p>
+<p>The general syntax for adding an <code class="docutils literal notranslate"><span class="pre">else</span></code> block in Angular is:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">someTag</span> <span class="p">*</span><span class="na">ngIf</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;condition; else variableName&quot;</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- HTML tags and content ---&gt;</span>
+<span class="p">&lt;/</span><span class="nt">someTag</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ng-template</span> <span class="p">#</span><span class="na">variableName</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- Alternate HTML tags and content ---&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">#</span></code> is required inside the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> tag.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s modify the movie list example to create an alternate set of HTML tags
+if <code class="docutils literal notranslate"><span class="pre">movies.length</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="last highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movies&#39;</span> <span class="p">*</span><span class="na">ngIf</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;movies.length &gt; 3; else needMoreMovies&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Movies to Watch<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;let movie of movies&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">movie</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ng-template</span> <span class="p">#</span><span class="na">needMoreMovies</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Movies to Watch<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>What? Only <span class="cp">{{</span><span class="nv">movies.length</span><span class="cp">}}</span> movies on your list?<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You need to purchase expensive popcorn more often.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>In line 1, the condition for <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> specifies what to do if
+<code class="docutils literal notranslate"><span class="pre">movies.length</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
+<ol class="arabic simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, Angular executes lines 2 - 5.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, Angular searches for alternate code labeled with the name
+<code class="docutils literal notranslate"><span class="pre">needMoreMovies</span></code>. In this case, Lines 9 - 11 hold the alternate HTML tags.</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;ng-template&gt;&lt;/ng-template&gt;</span></code> is a special Angular element. It contains
+content that <em>might</em> be required for a webpage. When the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement in
+line 1 executes, Angular searches for an <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> block labeled with the
+matching variable name. Angular then ignores the original content within the
+<code class="docutils literal notranslate"><span class="pre">div</span></code> tags and replaces it with the content in lines 9 - 11.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2>28.2.2. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>In VSCode, return to your Angular Lesson 2 project. Use the terminal panel to
+commit any changes, then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch to the
+<code class="docutils literal notranslate"><span class="pre">ngIf-practice</span></code> branch.</p>
+<p>The code inside <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> should look like this:</p>
+<blockquote>
+<div>CODE SNAPSHOT HERE.</div></blockquote>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> in the VSCode terminal to launch the project, then use
+<code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to do the following:</p>
+<ol class="arabic simple">
+<li>Display the text “Work harder!” after the <code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">Do</span></code> list if the length of
+the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is longer than the length of the <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code>
+array.</li>
+<li>Find the <code class="docutils literal notranslate"><span class="pre">chores</span></code> and <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> arrays in <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>
+and modify the number of items. Save your changes and reload the page to
+verify that your code works.</li>
+<li>If the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is empty OR the <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> array has at
+least 3 more items than the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array, display the trophy image under
+the <code class="docutils literal notranslate"><span class="pre">Awards</span></code> title. Otherwise, display the text, “No allowance yet.”</li>
+<li>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> and change the number of items in the
+arrays again. Check to make sure the webpage correctly responds to your
+changes.</li>
+<li>Finally, if the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is empty AND <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> contains
+4 or more items, display an <code class="docutils literal notranslate"><span class="pre">h1</span></code> underneath the lists with the text “Ice
+cream treat!”. Otherwise, display <code class="docutils literal notranslate"><span class="pre">h3</span></code> and <code class="docutils literal notranslate"><span class="pre">p</span></code> elements that describe
+how to earn ice cream.</li>
+</ol>
+<p>Properly done, your page should look something like:</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add screenshot of lesson 2, example 2 results.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>28.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Lorem ipsum…</p>
 </div>
 </div>
 
