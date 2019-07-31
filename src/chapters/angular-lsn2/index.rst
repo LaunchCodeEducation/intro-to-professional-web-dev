@@ -8,5 +8,8 @@ Angular, Part 2
 
    ngFor
    ngIf
+   events
+   user-input
+   click-handlers
    exercises
    studio
