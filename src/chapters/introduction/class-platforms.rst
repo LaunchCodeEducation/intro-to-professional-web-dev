@@ -72,8 +72,6 @@ best choice is to begin from within Canvas. That way your progress gets
 recorded, and your scores will update smoothly as you complete quizzes. Also,
 submitting files for the larger assignments should only be done through Canvas.
 
-.. _replit-classroom:
-
 Repl.it
 ========
 
@@ -109,6 +107,10 @@ Standard repl.it is used for:
 
 #. Publicly sharing code examples and starter code
 #. A place to practice new concepts by writing and running code
+
+
+.. _replit-classroom:
+
 
 Repl.it Classroom
 ------------------
