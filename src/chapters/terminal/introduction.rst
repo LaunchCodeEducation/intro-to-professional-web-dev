@@ -11,7 +11,7 @@ with icons and visual representations of the machine's file systems.
 .. figure:: figures/GUI-example.png
    :alt: Sample graphic user interface.
 
-   A GUI with file icons ands columns representing folder structure.
+   A GUI with file icons and columns representing folder structure.
 
 
 Programmers often use another kind of interface, called the **command line**. A 
@@ -21,7 +21,7 @@ manipulation, to give the computer instructions.
 .. figure:: figures/CLI-example.png
    :alt: Sample command line interface.
 
-   A CLI with navigating the same file paths as the GUI above.
+   A CLI with commands navigating the same file paths as the GUI above.
 
 
 The application responsible for running a CLI is called a **terminal** and the 
@@ -38,6 +38,11 @@ Both of the images above represent the same file structure. While the GUI may no
 appear more user-friendly, as you grow more familiar with the commands available,
 you'll find there can be advantages to using the terminal. 
 
-Using the terminal, you will be able to quickly move throughout your computer's file 
-structure, make new files and directories, remove items from folders, open programs,
-install programs, and even run programs directly.
+In the terminal, you will be able to:
+
+- quickly move throughout your computer's file structure 
+- make new files and directories 
+- remove items from folders 
+- install install software
+- open programs 
+- run programs directly
