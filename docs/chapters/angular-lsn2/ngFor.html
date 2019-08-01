@@ -197,7 +197,7 @@ terminal to switch to the <code class="docutils literal notranslate"><span class
 <p class="first admonition-title">Todo</p>
 <p class="last">Add link to Angular Lesson 2 starter code.</p>
 </div>
-<p>The starter code inside <code class="docutils literal notranslate"><span class="pre">chore-list.component.html</span></code> should match this:</p>
+<p>The starter code inside <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> should match this:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -206,7 +206,7 @@ terminal to switch to the <code class="docutils literal notranslate"><span class
 6
 7
 8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;chores&#39;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Chores To Do Today<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{chores[0]}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -219,26 +219,46 @@ terminal to switch to the <code class="docutils literal notranslate"><span class
 </td></tr></table></div>
 <p>Enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> in the VSCode terminal window to launch the project, then:</p>
 <ol class="arabic simple">
-<li>Modify <code class="docutils literal notranslate"><span class="pre">chore-list.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the items
+<li>Modify <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the items
 stored inside the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array.</li>
-<li>Open <code class="docutils literal notranslate"><span class="pre">chore-list.component.ts</span></code>. Add or remove items to the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
+<li>Open <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add or remove items to the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
 array, then save. Reload the webpage to make sure your changes appear.</li>
 <li>Use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> within the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag to loop over the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code>
 array. Replace “Chores To Do Today” with the elements of the array.</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">chore-list.component.ts</span></code>. Add or remove items to the
+<li>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add or remove items to the
 <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array, then save. Check to make sure your changes appear on
 the webpage.</li>
 </ol>
 <p>Properly done, your page should look something like:</p>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add screenshot of lesson 2, example 1 results.</p>
+<div class="figure">
+<img alt="*ngFor practice solution." src="../../_images/chore-list-solution.png" />
 </div>
 <div class="section" id="what-if">
 <h3>28.1.2.1. What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h3>
-<p>What if you placed the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag instead of
-the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag? Try it and see what happens!</p>
-<p>What if you placed the statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag instead? Try it!</p>
+<ol class="arabic simple">
+<li>What if you placed the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag instead
+of the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag? Try it and see what happens!</li>
+<li>What if you placed the statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag instead? Try it!</li>
+</ol>
+<div class="section" id="bonus-what-if">
+<h4>28.1.2.1.1. Bonus What If<a class="headerlink" href="#bonus-what-if" title="Permalink to this headline">¶</a></h4>
+<p>What if we want to have different chores listed for Yesterday, Today, and
+Tomorrow?</p>
+<div class="figure">
+<img alt="*ngFor bonus solution." src="../../_images/chore-bonus-solution.png" />
+</div>
+<p>Accomplishing this task is OPTIONAL. If you are curious about how to make the
+updates, switch to the <code class="docutils literal notranslate"><span class="pre">ngFor-bonus-solution</span></code> branch and explore how to use
+<code class="docutils literal notranslate"><span class="pre">index</span></code> in <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>.</p>
+<ol class="arabic simple">
+<li>Line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows the syntax for setting a variable
+equal to an index value from the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array.</li>
+<li>Line 4 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows the syntax for using the index
+variable to access the content within the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array.</li>
+<li>Line 9 in <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> shows the 2-dimensional array of the chore
+list items.</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="section" id="check-your-understanding">

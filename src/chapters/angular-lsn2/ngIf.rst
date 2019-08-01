@@ -27,13 +27,13 @@ is NOT generated, and the content stays off the webpage.
 
 .. admonition:: Note
 
-   ``*ngIf`` determines if content is displayed or REMOVED from a page. This is
-   different from determining if content should be displayed or HIDDEN.
+   ``*ngIf`` determines if content is *added or removed* from a page. This is
+   different from determining if content should be *displayed or hidden*.
 
    *Hidden* content still occupies space on a page and requires some amount of
    memory. *Removed* content is absent from the page---requiring neither space
    on the page nor memory. This is an important consideration when adding
-   images or videos to your website.
+   items like images or videos to your website.
 
 .. admonition:: Example
 
@@ -143,47 +143,74 @@ Note that the ``#`` is required inside the ``ng-template`` tag.
       </div>
 
       <ng-template #needMoreMovies>
-         <h3>Movies to Watch</h3>
-         <p>What? Only {{movies.length}} movies on your list?</p>
-         <p>You need to purchase expensive popcorn more often.</p>
+         <div class='movies'>
+            <h3>Not Enough Movies!</h3>
+            <p>You only have {{movies.length}} movies on your watch list!</p>
+            <p>What's up with that?</p>
+            <p>You need to purchase expensive popcorn more often.</p>
+         </div>
       </ng-template>
 
 In line 1, the condition for ``*ngIf`` specifies what to do if
 ``movies.length > 3`` returns ``true`` or ``false``:
 
-#. If ``true``, Angular executes lines 2 - 5.
+#. If ``true``, Angular executes lines 1 - 6.
 #. If ``false``, Angular searches for alternate code labeled with the name
-   ``needMoreMovies``. In this case, Lines 9 - 11 hold the alternate HTML tags.
+   ``needMoreMovies``. In this case, Lines 9 - 14 hold the alternate HTML tags.
 
 ``<ng-template></ng-template>`` is a special Angular element. It contains
 content that *might* be required for a webpage. When the ``else`` statement in
 line 1 executes, Angular searches for an ``ng-template`` block labeled with the
-matching variable name. Angular then ignores the original content within the
-``div`` tags and replaces it with the content in lines 9 - 11.
+matching variable name. Angular then ignores the original ``div`` tags and
+anything they contain, and it replaces that content with lines 9 - 14.
 
 Try It
 -------
 
 In VSCode, return to your Angular Lesson 2 project. Use the terminal panel to
-commit any changes, then use ``git checkout`` to switch to the
-``ngIf-practice`` branch.
+commit any changes to your ``*ngFor`` work, then switch to the
+``ngif-practice`` folder.
 
-The code inside ``chores.component.html`` should look like this:
+.. sourcecode:: bash
 
-   CODE SNAPSHOT HERE.
+   $ cd ..
+   $ ls
+      ngfor-practice  ngif-practice
+   $ cd ngif-practice
+
+In VSCode, ind the ``chores.component.html`` should look like this:
+
+.. sourcecode:: html+ng2
+   :linenos:
+
+   <div class="chores">
+      <h3>Chores</h3>
+      <ul>
+         <li *ngFor = 'let chore of chores'>{{chore}}</li>
+      </ul>
+   </div>
+   <hr>
+   <div class="doneChores">
+      <h3>Done Chores</h3>
+      <ul>
+         <li *ngFor = 'let done of finishedChores'>{{done}}</li>
+      </ul>
+   </div>
+   <hr>
 
 Enter ``ng serve`` in the VSCode terminal to launch the project, then use
 ``*ngIf`` to do the following:
 
-#. Display the text "Work harder!" after the ``To Do`` list if the length of
+#. Display the text "Work harder!" under the ``Chores`` list if the length of
    the ``chores`` array is longer than the length of the ``finishedChores``
-   array.
+   array. Use a ``p`` tag for the text and make the words a different color.
 #. Find the ``chores`` and ``finishedChores`` arrays in ``chores.component.ts``
    and modify the number of items. Save your changes and reload the page to
    verify that your code works.
 #. If the ``chores`` array is empty OR the ``finishedChores`` array has at
-   least 3 more items than the ``chores`` array, display the trophy image under
-   the ``Awards`` title. Otherwise, display the text, "No allowance yet."
+   least 3 more items than the ``chores`` array, display ``trophyImage`` under
+   the ``Done`` list. Otherwise, use a ``p`` tag to display the text, "No
+   allowance yet."
 #. Return to ``chores.component.ts`` and change the number of items in the
    arrays again. Check to make sure the webpage correctly responds to your
    changes.
@@ -194,7 +221,8 @@ Enter ``ng serve`` in the VSCode terminal to launch the project, then use
 
 Properly done, your page should look something like:
 
-.. todo:: Add screenshot of lesson 2, example 2 results.
+.. figure:: ./figures/ngif-solution.png
+   :alt: *ngIf practice solution.
 
 Check Your Understanding
 --------------------------

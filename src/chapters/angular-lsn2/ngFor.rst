@@ -115,12 +115,12 @@ terminal to switch to the ``ngFor-practice`` branch.
 
 .. todo:: Add link to Angular Lesson 2 starter code.
 
-The starter code inside ``chore-list.component.html`` should match this:
+The starter code inside ``chores.component.html`` should match this:
 
 .. sourcecode:: html
    :linenos:
 
-   <div>
+   <div class='chores'>
       <h3>Chores To Do Today</h3>
       <ul>
          <li>{{chores[0]}}</li>
@@ -132,27 +132,47 @@ The starter code inside ``chore-list.component.html`` should match this:
 
 Enter ``ng serve`` in the VSCode terminal window to launch the project, then:
 
-#. Modify ``chore-list.component.html`` with ``*ngFor`` to loop over the items
+#. Modify ``chores.component.html`` with ``*ngFor`` to loop over the items
    stored inside the ``chores`` array.
-#. Open ``chore-list.component.ts``. Add or remove items to the ``chores``
+#. Open ``chores.component.ts``. Add or remove items to the ``chores``
    array, then save. Reload the webpage to make sure your changes appear.
 #. Use ``*ngFor`` within the ``<div>`` tag to loop over the ``todoTitles``
    array. Replace "Chores To Do Today" with the elements of the array.
-#. Return to ``chore-list.component.ts``. Add or remove items to the
+#. Return to ``chores.component.ts``. Add or remove items to the
    ``todoTitles`` array, then save. Check to make sure your changes appear on
    the webpage.
 
 Properly done, your page should look something like:
 
-.. todo:: Add screenshot of lesson 2, example 1 results.
+.. figure:: ./figures/chore-list-solution.png
+   :alt: *ngFor practice solution.
 
 What If
 ^^^^^^^^
 
-What if you placed the ``*ngFor`` statement inside the ``<h3>`` tag instead of
-the ``<div>`` tag? Try it and see what happens!
+#. What if you placed the ``*ngFor`` statement inside the ``<h3>`` tag instead
+   of the ``<div>`` tag? Try it and see what happens!
+#. What if you placed the statement inside the ``<ul>`` tag instead? Try it!
 
-What if you placed the statement inside the ``<ul>`` tag instead? Try it!
+Bonus What If
+~~~~~~~~~~~~~~
+
+What if we want to have different chores listed for Yesterday, Today, and
+Tomorrow?
+
+.. figure:: ./figures/chore-bonus-solution.png
+   :alt: *ngFor bonus solution.
+
+Accomplishing this task is OPTIONAL. If you are curious about how to make the
+updates, switch to the ``ngFor-bonus-solution`` branch and explore how to use
+``index`` in ``*ngFor``.
+
+#. Line 1 in ``chores.component.html`` shows the syntax for setting a variable
+   equal to an index value from the ``todoTitles`` array.
+#. Line 4 in ``chores.component.html`` shows the syntax for using the index
+   variable to access the content within the ``chores`` array.
+#. Line 9 in ``chores.component.ts`` shows the 2-dimensional array of the chore
+   list items.
 
 Check Your Understanding
 --------------------------
