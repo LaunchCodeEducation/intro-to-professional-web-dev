@@ -5,6 +5,8 @@
 
 .. figure:: ./figures/initial.png
     :alt: Sample file tree
+    
+    Sample file tree
 
 
 ``cd <path_name>`` relocates you to the provided path. 

@@ -6,6 +6,8 @@
 .. figure:: ./figures/initial.png
     :alt: Sample file tree
 
+    Sample file tree
+
 
 Imagine you are inside of this file system. ``..`` is a reference 
 to your **parent directory**, aka the directory that CONTAINS your

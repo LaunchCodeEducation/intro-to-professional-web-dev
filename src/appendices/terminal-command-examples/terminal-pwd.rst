@@ -6,6 +6,8 @@
 .. figure:: ./figures/initial.png
     :alt: Sample file tree
 
+    Sample file tree
+
 
 Imagine you are inside of this file system. Starting at the top directory,
 *launchcode_courses*, entering the ``pwd`` command in your terminal 
