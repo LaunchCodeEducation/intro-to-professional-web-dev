@@ -178,7 +178,13 @@ commit any changes to your ``*ngFor`` work, then switch to the
       ngfor-practice  ngif-practice
    $ cd ngif-practice
 
-In VSCode, ind the ``chores.component.html`` should look like this:
+In VSCode, open the ``chores.component.html`` file from the ``ngif-practice``
+folder:
+
+.. figure:: ./figures/ngif-menu.png
+   :alt: Find the ngIf practice file in VSCode.
+
+The code should look like this:
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -198,8 +204,8 @@ In VSCode, ind the ``chores.component.html`` should look like this:
    </div>
    <hr>
 
-Enter ``ng serve`` in the VSCode terminal to launch the project, then use
-``*ngIf`` to do the following:
+Enter ``ng serve`` in the terminal to launch the project, then use ``*ngIf`` to
+do the following:
 
 #. Display the text "Work harder!" under the ``Chores`` list if the length of
    the ``chores`` array is longer than the length of the ``finishedChores``
