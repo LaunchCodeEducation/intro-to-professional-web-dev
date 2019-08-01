@@ -2,3 +2,16 @@
 
 ``.`` Details
 =============
+
+.. figure:: ./figures/initial.png
+      :alt: Sample file tree
+
+
+Imagine you are inside of this file system. ``.`` is a reference 
+to your current directory.
+
+Starting the top directory, *launchcode_courses*, ``.`` represents 
+your current location.
+
+If you move into *lc_101*, ``.`` then refers to that directory.
+
