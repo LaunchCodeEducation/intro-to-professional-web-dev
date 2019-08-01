@@ -1,0 +1,4 @@
+.. _terminal-parent-dir:
+
+``..``
+=====

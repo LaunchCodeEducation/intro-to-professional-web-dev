@@ -1,0 +1,4 @@
+.. _terminal-mkdir:
+
+``mkdir``
+=======

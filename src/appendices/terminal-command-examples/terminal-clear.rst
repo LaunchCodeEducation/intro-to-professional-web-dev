@@ -1,0 +1,4 @@
+.. _terminal-clear:
+
+``clear``
+=========

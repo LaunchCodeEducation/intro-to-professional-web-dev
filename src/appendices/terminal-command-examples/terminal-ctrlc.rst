@@ -1,0 +1,4 @@
+.. _terminal-ctrlc:
+
+``ctrlc``
+=======
