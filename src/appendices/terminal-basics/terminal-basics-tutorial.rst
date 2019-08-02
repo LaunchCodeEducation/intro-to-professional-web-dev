@@ -35,8 +35,8 @@ remainder of this tutorial.
 
 .. _terminal-current-dir:
 
-Current Directory, aka ``.``
-----------------------------
+Current Directory (``.``)
+-------------------------
 
 Imagining you are inside of this file system, ``.`` is a reference 
 to your location, or **current directory**.
@@ -109,19 +109,50 @@ Back in our map, we've done this:
 
 .. _terminal-parent-dir:
 
-Parent Directory, aka ``..``
-----------------------------
+Parent Directory (``..``)
+-------------------------
 
 ``..`` is a reference to your **parent directory**, aka the directory 
 that CONTAINS your current location.
 
-Starting at the top, *launchcode_courses* is the parent directory
-of both the *lc_101* and *data_analysis* directories.
+Remember the VSCode file tree? That containment structure is represented
+through indentation:
 
-If you move into *lc_101*, ``..`` then refers to *launchcode_courses*.
+.. figure:: ./figures/init_tree.png
+    :alt: File tree in VSCode
 
-Moving further down into *unit_1*, ``..`` would then refer to *lc101*. 
-``../..`` here refers to *launchcode_courses*.
+    *launchcode_courses* contains *data_analysis* and *lc_101*.
+
+
+By the end of the :ref:`terminal-current-dir`, we found ourselves inside 
+of *lc_101*.
+
+.. figure:: ./figures/lc101_current_dir.png
+    :alt: Current directory lc_101
+
+    We're still in *lc_101*
+
+*launchcode_courses* is the parent directory of both the *lc_101* and 
+*data_analysis* directories. While we're in *lc_101*, ``..`` refers to 
+*launchcode_courses*.
+
+Moving further down into *unit_1*, 
+
+.. figure:: ./figures/cd_unit1_terminal.png
+    :alt: lc_101 to unit_1
+
+    Moving into *unit_1*.
+
+.. figure:: ./figures/unit1_current_dir.png
+    :alt: unit_1 location
+
+    We're now in *unit_1*.
+
+``..`` now refers to *lc101*. ``../..`` here refers to 
+*launchcode_courses*.
+
+Like ``.``, ``..`` isn't a command itself, but rather a notation. We're
+now ready to tackle our first command!
 
 
 .. _terminal-pwd:
@@ -390,14 +421,14 @@ new option or two!
 
 Some other terminal stuff you should know when using the manual:
 
-- Some entries are very long! They will probably need to be scrolled
-through. You'll know there's more to read if you see ``:`` at the bottom
-of your terminal window. You can use your keyboard's arrow keys to
-navigate the entry. If you reach the bottom of the entry,
-you'll see a line that reads ``END``.
+- Some entries are very long! They will probably need to be scrolled 
+    through. You'll know there's more to read if you see ``:`` at the 
+    bottom of your terminal window. You can use your keyboard's arrow keys to
+    navigate the entry. If you reach the bottom of the entry,
+    you'll see a line that reads ``END``.
 
 - Once you're finished reading, you'll need to exit the manual page 
-using the :ref:`terminal-q` command. 
+    using the :ref:`terminal-q` command. 
 
 .. _terminal-q:
 
