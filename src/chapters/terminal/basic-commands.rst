@@ -5,6 +5,7 @@ Navigating the Terminal Window
 ------------------------------
 
 Moving from a GUI to a CLI can be difficult when we are so used to dragging our files from one folder to another.
+One of the difficulties is simply figuring out where we are in the filesystem!
 Here are some key indicators that the terminal gives us to show where we are:
 
 .. index:: ! prompt
@@ -64,3 +65,24 @@ Beyond these basic commands, there are some shortcuts if you don't want to type 
    + - ``..``
      - The parent directory of the current directory
 
+For an in-depth tutorial of how to use a CLI to move through your daily life, click **HERE**
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What line in a CLI indicates that the terminal is ready?
+
+   a. prompt
+   b. command
+   c. shell
+   d. There isn't a line that does that.
+
+.. admonition:: Question
+
+   Which shortcut takes you to the parent directory?
+
+   a. ``.``
+   b. ``~``
+   c. ``..``
