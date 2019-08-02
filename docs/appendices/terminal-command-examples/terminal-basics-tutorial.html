@@ -21,8 +21,6 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title=". Details" href="terminal-current-dir.html" />
-    <link rel="prev" title="Terminal Commands" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -73,7 +71,6 @@
 
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
-    <li><a href="index.html">Terminal Commands</a></li>
     <li class="active">Terminal Basics Tutorial</li>
 </ol>
 
@@ -85,7 +82,7 @@
 
     
   <div class="section" id="terminal-basics-tutorial">
-<span id="id1"></span><h1>Terminal Basics Tutorial<a class="headerlink" href="#terminal-basics-tutorial" title="Permalink to this headline">¶</a></h1>
+<span id="terminal-commands"></span><h1>Terminal Basics Tutorial<a class="headerlink" href="#terminal-basics-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>As mentioned in the terminal chapter, the essence of the command line is
 is text. Since this is quite different from how many may be used to using
 their computers, this tutorial is meant to help you picture how your
@@ -95,17 +92,229 @@ applications installed. But where do they all live? In folders. Aka,
 directories. The basics of terminal usage involve navigating these
 directories.</p>
 <p>Let’s take this sample file system below:</p>
-<div class="figure" id="id2">
+<div class="figure" id="id1">
 <img alt="Sample file tree" src="../../_images/initial.png" />
 <p class="caption"><span class="caption-text">Sample file tree</span></p>
 </div>
 <p>It can be helpful to consider the image above as a map and you are an
 explorer inside of it.</p>
-<p>Imagine you are inside of this file system. <code class="docutils literal notranslate"><span class="pre">.</span></code> is a reference
-to your current directory.</p>
+<div class="section" id="current-directory-aka">
+<span id="terminal-current-dir"></span><h2>Current Directory, aka <code class="docutils literal notranslate"><span class="pre">.</span></code><a class="headerlink" href="#current-directory-aka" title="Permalink to this headline">¶</a></h2>
+<p>Imagining you are inside of this file system, <code class="docutils literal notranslate"><span class="pre">.</span></code> is a reference
+to your location, or <strong>current directory</strong>.</p>
 <p>Starting at the top directory, <em>launchcode_courses</em>, <code class="docutils literal notranslate"><span class="pre">.</span></code> represents
 your current location.</p>
+<p>TODO: image w/ you are here</p>
 <p>If you move into <em>lc_101</em>, <code class="docutils literal notranslate"><span class="pre">.</span></code> then refers to that directory.</p>
+</div>
+<div class="section" id="parent-directory-aka">
+<span id="terminal-parent-dir"></span><h2>Parent Directory, aka <code class="docutils literal notranslate"><span class="pre">..</span></code><a class="headerlink" href="#parent-directory-aka" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a reference to your <strong>parent directory</strong>, aka the directory
+that CONTAINS your current location.</p>
+<p>Starting at the top, <em>launchcode_courses</em> is the parent directory
+of both the <em>lc_101</em> and <em>data_analysis</em> directories.</p>
+<p>If you move into <em>lc_101</em>, <code class="docutils literal notranslate"><span class="pre">..</span></code> then refers to <em>launchcode_courses</em>.</p>
+<p>Moving further down into <em>unit_1</em>, <code class="docutils literal notranslate"><span class="pre">..</span></code> would then refer to <em>lc101</em>.
+<code class="docutils literal notranslate"><span class="pre">../..</span></code> here refers to <em>launchcode_courses</em>.</p>
+</div>
+<div class="section" id="pwd-command">
+<span id="terminal-pwd"></span><h2><code class="docutils literal notranslate"><span class="pre">pwd</span></code> Command<a class="headerlink" href="#pwd-command" title="Permalink to this headline">¶</a></h2>
+<p>Entering the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command in your terminal returns your current
+location, aka your <strong>working directory</strong>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/launchcode_courses
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="ls-command">
+<span id="terminal-ls"></span><h2><code class="docutils literal notranslate"><span class="pre">ls</span></code> Command<a class="headerlink" href="#ls-command" title="Permalink to this headline">¶</a></h2>
+<p>Starting in <em>launchcode_courses</em>, entering the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command in your
+terminal returns the contents of your current directory.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ls
+data_analysis   lc_101
+</pre></div>
+</td></tr></table></div>
+<p>Moving into <em>data_analysis</em>, entering the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command returns the
+following:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ls
+cities.sql      final_project   lakes.json
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="cd-command">
+<span id="terminal-cd"></span><h2><code class="docutils literal notranslate"><span class="pre">cd</span></code> Command<a class="headerlink" href="#cd-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;path_name&gt;</span></code> relocates you to the provided path.</p>
+<p>Inside <em>launchcode_courses</em>, entering <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lc_101</span></code> puts you inside of
+the <em>lc_101</em> directory.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> lc_101/
+$
+</pre></div>
+</td></tr></table></div>
+<p>The computer does not return anything to you after this command and
+simply responds ready to accept another prompt.</p>
+<p>If you wanted to return back to your <em>launchcode_courses</em> directory,
+you can do so with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>.
+See <a class="reference internal" href="#terminal-parent-dir"><span class="std std-ref">Parent Directory, aka ..</span></a> for notes on how to reference a parent
+directory.</p>
+<p>Back inside of <em>launchcode_courses</em>, say you would like to move into
+<em>unit_1</em> in one step. You can do that!</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> lc_101/unit_1
+$
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="mkdir-command">
+<span id="terminal-mkdir"></span><h2><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> Command<a class="headerlink" href="#mkdir-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;new_directory_name&gt;</span></code> creates a new directory at your current
+location.</p>
+<p>We’re in the <em>lc_101</em> directory. Let’s create a directory for Unit 2
+materials.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ mkdir unit_2
+$
+</pre></div>
+</td></tr></table></div>
+<p>Again, the computer does not return anything to you after this command
+and simply responds ready to accept another prompt.
+But we can visualize the results:</p>
+<div class="figure" id="id2">
+<img alt="Sample file tree with a new directory" src="../../_images/mkdir.png" />
+<p class="caption"><span class="caption-text">mkdir creates a new directory</span></p>
+</div>
+</div>
+<div class="section" id="rm-command">
+<span id="terminal-rm"></span><h2><code class="docutils literal notranslate"><span class="pre">rm</span></code> Command<a class="headerlink" href="#rm-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">&lt;item_to_remove&gt;</span></code> removes a given item from the file tree.</p>
+<p>Let’s say we decide we no longer need our <em>cities.sql</em> data.
+We can remove it from the terminal:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ rm cities.sql
+$
+</pre></div>
+</td></tr></table></div>
+<p>Once again, the computer does not return anything to you after this
+command and simply responds ready to accept another prompt.
+But we can visualize the results:</p>
+<div class="figure" id="id3">
+<img alt="Sample file tree with a file removed" src="../../_images/rm.png" />
+<p class="caption"><span class="caption-text">rm removes an item</span></p>
+</div>
+<p>To remove a directory entry, rather than simply a file, requires an
+option on the command. A common method to remove a directory is to
+use the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, although there are other choices.</p>
+<p>Let’s say we’re back up top in <em>launchcode_courses</em> directory and we want
+to remove the entirety of the <em>data_analysis</em> directory. We can run:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ rm -r data_analysis/
+$
+</pre></div>
+</td></tr></table></div>
+<p>Which results in:</p>
+<div class="figure" id="id4">
+<img alt="Sample file tree with a directory removed" src="../../_images/rm-r.png" />
+<p class="caption"><span class="caption-text">rm -r removes a directory entry</span></p>
+</div>
+</div>
+<div class="section" id="cp-command">
+<span id="terminal-cp"></span><h2><code class="docutils literal notranslate"><span class="pre">cp</span></code> Command<a class="headerlink" href="#cp-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">&lt;source_path&gt;</span> <span class="pre">&lt;target_path&gt;</span></code> copies the item at the source and
+puts it in the target path.</p>
+<p>Take our sample file tree above. Say we’re in <em>data_analysis</em>
+and we want to copy <em>cities.sql</em> into <em>final_project</em>. We can do this
+with <code class="docutils literal notranslate"><span class="pre">cp</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ cp ./cities.sql ./final_project/
+$
+</pre></div>
+</td></tr></table></div>
+<p>Here’s what that gives us:</p>
+<div class="figure" id="id5">
+<img alt="Sample file tree with a file copied" src="../../_images/cp.png" />
+<p class="caption"><span class="caption-text">cp copies an item</span></p>
+</div>
+</div>
+<div class="section" id="mv-command">
+<span id="terminal-mv"></span><h2><code class="docutils literal notranslate"><span class="pre">mv</span></code> Command<a class="headerlink" href="#mv-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;item_to_move&gt;</span> <span class="pre">&lt;target_path&gt;</span></code> moves an item to the target path.</p>
+<p>Back in <em>data_analysis</em>, lets move <em>cities.sql</em> into <em>final_project</em>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ mv ./cities.sql ./final_project/
+$
+</pre></div>
+</td></tr></table></div>
+<p>Here’s what that gives us:</p>
+<div class="figure" id="id6">
+<img alt="Sample file tree with a file moved" src="../../_images/mv.png" />
+<p class="caption"><span class="caption-text">mv moves an item</span></p>
+</div>
+</div>
+<div class="section" id="touch-command">
+<span id="terminal-touch"></span><h2><code class="docutils literal notranslate"><span class="pre">touch</span></code> Command<a class="headerlink" href="#touch-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">&lt;new_file_name&gt;</span></code> creates a new file.</p>
+<p>Back in <em>data_analysis</em>, lets add a new file to our <em>final_project</em>
+directory.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ touch ./final_project/more_sql.sql
+$
+</pre></div>
+</td></tr></table></div>
+<p>Here’s what that gives us:</p>
+<div class="figure" id="id7">
+<img alt="Sample file tree with a new file" src="../../_images/touch.png" />
+<p class="caption"><span class="caption-text">touch adds a file</span></p>
+</div>
+</div>
+<div class="section" id="ctrl-c-details">
+<span id="terminal-ctrlc"></span><h2><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code> Details<a class="headerlink" href="#ctrl-c-details" title="Permalink to this headline">¶</a></h2>
+<p><em>ctrl + c</em> can be used to exit a running program.</p>
+<p>Some programs take different commands to exit. <em>ctrl + c</em>
+is sometimes used to prompt the running program for an
+exit command.</p>
+</div>
+<div class="section" id="clear-command">
+<span id="terminal-clear"></span><h2><code class="docutils literal notranslate"><span class="pre">clear</span></code> Command<a class="headerlink" href="#clear-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">clear</span></code> wipes your terminal window of any previously run commands
+and outputs in case you need a clean screen to think straight.</p>
+<p>You probably won’t encounter a scenario where you NEED to clear your
+terminal, but it can be a nice command to know if you’re a minimalist.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ clear
+$
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="man-command">
+<span id="terminal-man"></span><h2><code class="docutils literal notranslate"><span class="pre">man</span></code> Command<a class="headerlink" href="#man-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">man</span></code> is your best friend. Running <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">&lt;command&gt;</span></code> gives you a manual
+entry of what that command does, what options it takes, and more
+documentation than you could ever need. It’s so thorough, it makes this
+guide blush. Any command you think you may need but you’re not sure how
+to use it, or maybe you want to do something specific and are wondering if
+there’s a specialized option for it, use <code class="docutils literal notranslate"><span class="pre">man</span></code> to get more info!</p>
+<p>Practice looking up some of the commands you know; maybe you’ll learn a
+new option or two!</p>
+<p>Some other terminal stuff you should know when using the manual:</p>
+<ul class="simple">
+<li>Some entries are very long! They will probably need to be scrolled</li>
+</ul>
+<p>through. You’ll know there’s more to read if you see <code class="docutils literal notranslate"><span class="pre">:</span></code> at the bottom
+of your terminal window. You can use your keyboard’s arrow keys to
+navigate the entry. If you reach the bottom of the entry,
+you’ll see a line that reads <code class="docutils literal notranslate"><span class="pre">END</span></code>.</p>
+<ul class="simple">
+<li>Once you’re finished reading, you’ll need to exit the manual page</li>
+</ul>
+<p>using the <a class="reference internal" href="#terminal-q"><span class="std std-ref">q</span></a> command.</p>
+</div>
+<div class="section" id="q">
+<span id="terminal-q"></span><h2><code class="docutils literal notranslate"><span class="pre">q</span></code><a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">q</span></code> is another command for exiting a running program.</p>
+</div>
 </div>
 
 
@@ -114,10 +323,6 @@ your current location.</p>
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> Terminal Commands</a></li>
-        
-        
-        <li class="next"><a href="terminal-current-dir.html"><code class="docutils literal notranslate"><span class="pre">.</span></code> Details <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>
