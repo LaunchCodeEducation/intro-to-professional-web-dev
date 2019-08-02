@@ -1,4 +1,4 @@
-.. _terminal-commands:
+.. _terminal-basics-tutorial:
 
 Terminal Basics Tutorial
 ========================
@@ -13,16 +13,25 @@ applications installed. But where do they all live? In folders. Aka,
 directories. The basics of terminal usage involve navigating these
 directories.
 
-Let's take this sample file system below:
+Let's take a look at a given project opened in your VSCode editor:
 
-.. figure:: ./figures/initial.png
-    :alt: Sample file tree
+.. figure:: ./figures/init_tree.png
+    :alt: File tree in VSCode
 
-    Sample file tree
+    Sample file tree in VSCode
 
+When working in the terminal, it can be helpful to think of yourself as
+physically inside of the project's file system. File trees, like the one
+above, are common visualization tools. Here's another map-like option
+for imagining your file system:
 
-It can be helpful to consider the image above as a map and you are an
-explorer inside of it. 
+.. figure:: ./figures/init.png
+    :alt: Sample file system map
+
+    Sample file system map
+
+We'll navigate through and edit this sample project folder for the 
+remainder of this tutorial. 
 
 .. _terminal-current-dir:
 
@@ -35,9 +44,67 @@ to your location, or **current directory**.
 Starting at the top directory, *launchcode_courses*, ``.`` represents 
 your current location.
 
-TODO: image w/ you are here
+.. figure:: ./figures/locate_launchcode_courses.png
+    :alt: Inside top directory
 
-If you move into *lc_101*, ``.`` then refers to that directory.
+    Your current directory is *launchcode_courses*.
+
+Here, your terminal will look something like this:
+
+.. figure:: ./figures/init_terminal.png
+    :alt: Terminal view in launchcode_courses
+
+    Your current directory is *launchcode_courses*.
+
+Most of what you see to the left of the command prompt symbol, 
+**$** will be different on your machine. The basic structure here is 
+<machine_name>:<current_directory> <user_name>$
+   
+.. note::
+
+   Some users choose to alter what they see before the command prompt.
+
+
+``.`` itself isn't a command. If you type only ``.`` into the terminal,
+you're not really telling the machine to do anything just yet. 
+
+If you're curious, try it. 
+
+.. note::
+
+   Most commands require you to press *Enter* when you are ready to run.
+
+
+You'll probably see a somewhat cryptic message, like this:
+
+.. figure:: ./figures/current_dir_terminal.png
+    :alt: Current directory prompt response
+
+    Entering the symbol for your current directory only
+
+That's ok! Basically, we just entered an incomplete command. Our syntax
+wasn't quite right. Keep reading and we'll see how to properly use ``.``.
+
+If you move into *lc_101*, ``.`` then refers to that directory. We'll 
+cover how to move locations in detail down in :ref:`terminal-cd`.
+
+.. figure:: ./figures/change_current_dir_terminal.png
+    :alt: Change directory to lc_101
+
+    We're now in *lc_101*
+
+You may notice that the <current_directory> has updated but apart from 
+that, the computer doesn't give us much response. This is quite common
+and is a reason why our file system visuals come in handy to help remind 
+us what we're doing.
+
+Back in our map, we've done this:
+
+.. figure:: ./figures/lc101_current_dir.png
+    :alt: Current directory lc_101
+
+    We're now in *lc_101*
+
 
 
 .. _terminal-parent-dir:
