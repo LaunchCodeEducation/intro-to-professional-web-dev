@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>28.1. Angular Directives &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>28.2. ngFor &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
@@ -21,8 +21,8 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="28.2. ngIf" href="ngIf.html" />
-    <link rel="prev" title="28. Angular, Part 2" href="index.html" />
+    <link rel="next" title="28.3. ngIf" href="ngIf.html" />
+    <link rel="prev" title="28.1. Angular Directives" href="directives.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -74,7 +74,7 @@
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
     <li><a href="index.html">28. Angular, Part 2</a></li>
-    <li class="active">28.1. Angular Directives</li>
+    <li class="active">28.2. <code class="docutils literal notranslate"><span class="pre">ngFor</span></code></li>
 </ol>
 
 
@@ -84,23 +84,8 @@
     <div class="col-md-10 col-md-offset-1 content ">
 
     
-  <div class="section" id="angular-directives">
-<h1>28.1. Angular Directives<a class="headerlink" href="#angular-directives" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">Angular manages website content through the use of <em>directives</em>, and there
-are three types:</p>
-<ol class="arabic simple">
-<li><strong>Components</strong>: These control how a set of data gets displayed within a
-template.</li>
-<li><strong>Structural directives</strong>: These change the layout of the DOM by adding or
-removing elements (<code class="docutils literal notranslate"><span class="pre">div</span></code>, <code class="docutils literal notranslate"><span class="pre">ul</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">li</span></code>, etc.).</li>
-<li><strong>Attribute directives</strong>: These change the appearance of a specific element
-within the DOM.</li>
-</ol>
-<p>We learned how to generate and modify components in the
-<a class="reference internal" href="../angular-wk1/index.html#angular-1"><span class="std std-ref">last chapter</span></a>. In this lesson, we will focus on how to use
-structural directives to enhance our work.</p>
-<div class="section" id="ngfor">
-<h2>28.1.1. <code class="docutils literal notranslate"><span class="pre">ngFor</span></code><a class="headerlink" href="#ngfor" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="ngfor">
+<h1>28.2. <code class="docutils literal notranslate"><span class="pre">ngFor</span></code><a class="headerlink" href="#ngfor" title="Permalink to this headline">¶</a></h1>
 <p>In the <a class="reference internal" href="../angular-wk1/exercises.html#angular-exercises-1"><span class="std std-ref">Angular lesson 1 exercises</span></a>, you modified
 a <code class="docutils literal notranslate"><span class="pre">movie-list</span></code> component to display a series of titles. The final code
 within <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> probably looked something like:</p>
@@ -129,7 +114,7 @@ within <code class="docutils literal notranslate"><span class="pre">movie-list.c
 manually add or remove <code class="docutils literal notranslate"><span class="pre">li</span></code> tags, or we could use the structural directive
 <code class="docutils literal notranslate"><span class="pre">ngFor</span></code> to iterate through the movie options.</p>
 <div class="section" id="ngfor-syntax">
-<h3>28.1.1.1. <code class="docutils literal notranslate"><span class="pre">ngFor</span></code> Syntax<a class="headerlink" href="#ngfor-syntax" title="Permalink to this headline">¶</a></h3>
+<h2>28.2.1. <code class="docutils literal notranslate"><span class="pre">ngFor</span></code> Syntax<a class="headerlink" href="#ngfor-syntax" title="Permalink to this headline">¶</a></h2>
 <p>The example below shows how to use <code class="docutils literal notranslate"><span class="pre">ngFor</span></code> to iterate through the contents of
 an array. It is the basic approach, and <code class="docutils literal notranslate"><span class="pre">ngFor</span></code> can be used in more complex
 ways. For a complete guide to using <code class="docutils literal notranslate"><span class="pre">ngFor</span></code> and all of its variations, refer
@@ -168,7 +153,7 @@ in the array.</li>
 <li>The <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement is placed INSIDE the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag.</li>
 <li><code class="docutils literal notranslate"><span class="pre">{{movie}}</span></code> is the placeholder for the current value of <code class="docutils literal notranslate"><span class="pre">movie</span></code>.</li>
 </ol>
-<p>By placing the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the list tag, the loop generates
+<p>By placing the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the tag, the loop generates
 multiple <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> pairs. Each iteration adds a new list item to the
 HTML code, one for each title in the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array.</p>
 <div class="admonition-warning admonition">
@@ -188,16 +173,15 @@ array to iterate through.</p>
 over the characters in a string or the key/value pairs in an object, then we
 must first convert them into arrays.</p>
 </div>
-</div>
 <div class="section" id="try-it">
-<h2>28.1.2. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
-<p>Fork the Angular Lesson 2 starter code and open the project in VSCode. Use the
-terminal to switch to the <code class="docutils literal notranslate"><span class="pre">ngFor-practice</span></code> branch.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add link to Angular Lesson 2 starter code.</p>
+<h2>28.2.2. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>From the <code class="docutils literal notranslate"><span class="pre">lesson2</span></code> folder in VSCode, open the
+<code class="docutils literal notranslate"><span class="pre">examples/ngfor-practice/src/app/chores</span></code> folders and select the
+<code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> file.</p>
+<div class="figure">
+<img alt="Access ngFor practice in VSCode." src="../../_images/ngfor-menu.png" />
 </div>
-<p>The starter code inside <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> should match this:</p>
+<p>The starter code should match this:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -217,7 +201,18 @@ terminal to switch to the <code class="docutils literal notranslate"><span class
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> in the VSCode terminal window to launch the project, then:</p>
+<p>In the VSCode terminal window, navigate to the ngfor-practice folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+   angular-lc101-projects/lesson2
+$ ls
+   examples        exercises       studio
+$ <span class="nb">cd</span> examples
+$ ls
+   ngfor-practice  ngif-practice
+$ <span class="nb">cd</span> ngfor-practice
+</pre></div>
+</div>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to launch the project, then:</p>
 <ol class="arabic simple">
 <li>Modify <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the items
 stored inside the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array.</li>
@@ -234,25 +229,25 @@ the webpage.</li>
 <img alt="*ngFor practice solution." src="../../_images/chore-list-solution.png" />
 </div>
 <div class="section" id="what-if">
-<h3>28.1.2.1. What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h3>
+<h3>28.2.2.1. What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>What if you placed the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag instead
 of the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag? Try it and see what happens!</li>
 <li>What if you placed the statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag instead? Try it!</li>
 </ol>
 <div class="section" id="bonus-what-if">
-<h4>28.1.2.1.1. Bonus What If<a class="headerlink" href="#bonus-what-if" title="Permalink to this headline">¶</a></h4>
+<h4>28.2.2.1.1. Bonus What If<a class="headerlink" href="#bonus-what-if" title="Permalink to this headline">¶</a></h4>
 <p>What if we want to have different chores listed for Yesterday, Today, and
 Tomorrow?</p>
 <div class="figure">
 <img alt="*ngFor bonus solution." src="../../_images/chore-bonus-solution.png" />
 </div>
 <p>Accomplishing this task is OPTIONAL. If you are curious about how to make the
-updates, switch to the <code class="docutils literal notranslate"><span class="pre">ngFor-bonus-solution</span></code> branch and explore how to use
-<code class="docutils literal notranslate"><span class="pre">index</span></code> in <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>.</p>
+updates, switch to the <code class="docutils literal notranslate"><span class="pre">bonus-solutions</span></code> branch and check the code in the
+<code class="docutils literal notranslate"><span class="pre">ngfor-practice</span></code> folder. Explore how to use <code class="docutils literal notranslate"><span class="pre">index</span></code> in <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>.</p>
 <ol class="arabic simple">
-<li>Line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows the syntax for setting a variable
-equal to an index value from the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array.</li>
+<li>Line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows how to set a variable equal to an
+index value from the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array.</li>
 <li>Line 4 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows the syntax for using the index
 variable to access the content within the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array.</li>
 <li>Line 9 in <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> shows the 2-dimensional array of the chore
@@ -262,7 +257,7 @@ list items.</li>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
-<h2>28.1.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<h2>28.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <p>Lorem ipsum…</p>
 </div>
 </div>
@@ -273,10 +268,10 @@ list items.</li>
     <nav aria-label="Next and Previous Pages">
       <ul class="pager">
         
-        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 28. Angular, Part 2</a></li>
+        <li class="previous"><a href="directives.html"><span aria-hidden="true">&larr;</span> 28.1. Angular Directives</a></li>
         
         
-        <li class="next"><a href="ngIf.html">28.2. <code class="docutils literal notranslate"><span class="pre">ngIf</span></code> <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="ngIf.html">28.3. <code class="docutils literal notranslate"><span class="pre">ngIf</span></code> <span aria-hidden="true">&rarr;</span></a></li>
         
       </ul>
     </nav>

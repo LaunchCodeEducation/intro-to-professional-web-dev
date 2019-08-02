@@ -1,24 +1,5 @@
-Angular Directives
-===================
-
-.. index:: ! directive
-
-Angular manages website content through the use of *directives*, and there
-are three types:
-
-#. **Components**: These control how a set of data gets displayed within a
-   template.
-#. **Structural directives**: These change the layout of the DOM by adding or
-   removing elements (``div``, ``ul``, ``a``, ``li``, etc.).
-#. **Attribute directives**: These change the appearance of a specific element
-   within the DOM.
-
-We learned how to generate and modify components in the
-:ref:`last chapter <angular-1>`. In this lesson, we will focus on how to use
-structural directives to enhance our work.
-
 ``ngFor``
-----------
+==========
 
 In the :ref:`Angular lesson 1 exercises <angular-exercises-1>`, you modified
 a ``movie-list`` component to display a series of titles. The final code
@@ -45,7 +26,7 @@ manually add or remove ``li`` tags, or we could use the structural directive
 ``ngFor`` to iterate through the movie options.
 
 ``ngFor`` Syntax
-^^^^^^^^^^^^^^^^^
+-----------------
 
 The example below shows how to use ``ngFor`` to iterate through the contents of
 an array. It is the basic approach, and ``ngFor`` can be used in more complex
@@ -83,7 +64,7 @@ Some items to note:
 #. The ``*ngFor`` statement is placed INSIDE the ``<li>`` tag.
 #. ``{{movie}}`` is the placeholder for the current value of ``movie``.
 
-By placing the ``*ngFor`` statement inside the list tag, the loop generates
+By placing the ``*ngFor`` statement inside the tag, the loop generates
 multiple ``<li></li>`` pairs. Each iteration adds a new list item to the
 HTML code, one for each title in the ``movies`` array.
 
@@ -110,12 +91,14 @@ must first convert them into arrays.
 Try It
 -------
 
-Fork the Angular Lesson 2 starter code and open the project in VSCode. Use the
-terminal to switch to the ``ngFor-practice`` branch.
+From the ``lesson2`` folder in VSCode, open the
+``examples/ngfor-practice/src/app/chores`` folders and select the
+``chores.component.html`` file.
 
-.. todo:: Add link to Angular Lesson 2 starter code.
+.. figure:: ./figures/ngfor-menu.png
+   :alt: Access ngFor practice in VSCode.
 
-The starter code inside ``chores.component.html`` should match this:
+The starter code should match this:
 
 .. sourcecode:: html
    :linenos:
@@ -130,7 +113,20 @@ The starter code inside ``chores.component.html`` should match this:
       <hr>
    </div>
 
-Enter ``ng serve`` in the VSCode terminal window to launch the project, then:
+In the VSCode terminal window, navigate to the ngfor-practice folder.
+
+.. sourcecode:: bash
+
+   $ pwd
+      angular-lc101-projects/lesson2
+   $ ls
+      examples        exercises       studio
+   $ cd examples
+   $ ls
+      ngfor-practice  ngif-practice
+   $ cd ngfor-practice
+
+Enter ``ng serve`` to launch the project, then:
 
 #. Modify ``chores.component.html`` with ``*ngFor`` to loop over the items
    stored inside the ``chores`` array.
@@ -164,11 +160,11 @@ Tomorrow?
    :alt: *ngFor bonus solution.
 
 Accomplishing this task is OPTIONAL. If you are curious about how to make the
-updates, switch to the ``ngFor-bonus-solution`` branch and explore how to use
-``index`` in ``*ngFor``.
+updates, switch to the ``bonus-solutions`` branch and check the code in the
+``ngfor-practice`` folder. Explore how to use ``index`` in ``*ngFor``.
 
-#. Line 1 in ``chores.component.html`` shows the syntax for setting a variable
-   equal to an index value from the ``todoTitles`` array.
+#. Line 1 in ``chores.component.html`` shows how to set a variable equal to an
+   index value from the ``todoTitles`` array.
 #. Line 4 in ``chores.component.html`` shows the syntax for using the index
    variable to access the content within the ``chores`` array.
 #. Line 9 in ``chores.component.ts`` shows the 2-dimensional array of the chore

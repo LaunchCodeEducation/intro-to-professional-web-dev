@@ -6,6 +6,7 @@ Angular, Part 2
 .. toctree::
    :maxdepth: 3
 
+   directives
    ngFor
    ngIf
    events
