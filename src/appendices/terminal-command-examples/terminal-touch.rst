@@ -1,7 +1,7 @@
 .. _terminal-touch:
 
 ``touch``
-=======
+=========
 
 .. figure:: ./figures/initial.png
     :alt: Sample file tree

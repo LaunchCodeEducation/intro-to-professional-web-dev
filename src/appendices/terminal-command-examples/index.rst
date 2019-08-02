@@ -24,6 +24,7 @@ Terminal Commands
 .. toctree::
    :maxdepth: 3
 
+   terminal-basics-tutorial
    terminal-current-dir             
    terminal-parent-dir
    terminal-pwd

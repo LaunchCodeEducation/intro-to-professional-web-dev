@@ -21,6 +21,8 @@ of your terminal window. You can use your keyboard's arrow keys to
 navigate the entry. If you reach the bottom of the entry,
 you'll see a line that reads ``END``.
 
-- Once you're finished reading, you'll need to exit the manual page using
-the :ref:`terminal-q` command. 
+- Once you're finished reading, you'll need to exit the manual page 
+using the :ref:`terminal-q` command. 
+
+
 

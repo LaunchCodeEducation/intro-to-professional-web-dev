@@ -1,7 +1,7 @@
 .. _terminal-ctrlc:
 
 ``ctrl + c`` Details
-=================
+====================
 
 *ctrl + c* can be used to exit a running program.
 
