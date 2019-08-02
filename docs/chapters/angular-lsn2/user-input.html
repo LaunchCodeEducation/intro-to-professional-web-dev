@@ -86,6 +86,110 @@
     
   <div class="section" id="responding-to-user-input">
 <h1>28.5. Responding to User Input<a class="headerlink" href="#responding-to-user-input" title="Permalink to this headline">¶</a></h1>
+<p>So far, if we want to change the number of items in our movie and chore lists,
+we have to go into the code and alter the arrays. Obviously, it would be better
+if we could make the changes on the screen.</p>
+<div class="section" id="change-practice-folder">
+<h2>28.5.1. Change Practice Folder<a class="headerlink" href="#change-practice-folder" title="Permalink to this headline">¶</a></h2>
+<p>From the <code class="docutils literal notranslate"><span class="pre">lesson2</span></code> folder in VSCode, open the
+<code class="docutils literal notranslate"><span class="pre">examples/input-practice/src/app/movie-list</span></code> folders and select the
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> file.</p>
+<p>The starter code should match this:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movies col-4&#39;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Movies to Watch<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;let movie of movies&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">movie</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>In the terminal, navigate into the <code class="docutils literal notranslate"><span class="pre">input-practice</span></code> folder and enter
+<code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>. The webpage should look like this:</p>
+<div class="figure">
+<img alt="Starting setup for Angular input practice." src="../../_images/input-start.png" />
+</div>
+<p>Now let’s modify the code to accept user input. Be sure to code along with each
+step.</p>
+</div>
+<div class="section" id="setting-up-an-input-box">
+<h2>28.5.2. Setting Up an Input Box<a class="headerlink" href="#setting-up-an-input-box" title="Permalink to this headline">¶</a></h2>
+<p>Recall that the <a class="reference internal" href="../forms/creating-forms.html#input-tag"><span class="std std-ref">HTML input tag</span></a> creates a box where the user
+can enter data. This data is retrieved by referencing the input element’s
+<code class="docutils literal notranslate"><span class="pre">value</span></code> property.</p>
+<ol class="arabic simple">
+<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type='text'</span> <span class="pre">placeholder=&quot;Enter</span> <span class="pre">Movie</span> <span class="pre">Title</span> <span class="pre">Here&quot;/&gt;</span></code> to line 7,
+then reload the page.</li>
+</ol>
+<div class="figure">
+<img alt="Added an input box." src="../../_images/inputstep1.png" />
+</div>
+<p>Typing characters into the box does not do anything yet, since we have not
+included any instructions to deal with the data.</p>
+<ol class="arabic" start="2">
+<li><p class="first">Angular extends the <code class="docutils literal notranslate"><span class="pre">input</span></code> element by declaring a <em>reference variable</em>
+and also an <em>event</em> that triggers data collection. Modify the input element
+in line 7 by adding <code class="docutils literal notranslate"><span class="pre">#newMovie</span></code> inside the tag:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> </span><span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To store the typed characters into the <code class="docutils literal notranslate"><span class="pre">newMovie</span></code> variable, we need to
+wait for a particular event to occur. One of the simplest is to wait for a
+<code class="docutils literal notranslate"><span class="pre">keyup</span></code>. Modify line 7 one more time:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">(keyup)='true'</span></code> waits for the user to tap and release a key when the cursor
+is in the input box. When this happens, any characters in the box are stored in
+<code class="docutils literal notranslate"><span class="pre">newMovie</span></code>. However, we still need a place for the data to <em>go</em>.</p>
+<ol class="arabic" start="4">
+<li><p class="first">Add one more line to your code, then save and reload the page:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movies col-4&#39;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Movies to Watch<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;let movie of movies&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">movie</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">newMovie.value</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>When the <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event is triggered, data gets stored in the <code class="docutils literal notranslate"><span class="pre">newMovie</span></code>
+variable. The <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> placeholder on line 8 displays that data on
+the screen.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Save your work, reload the page, and then play! Type into the input box to
+verify your code works.</p>
+<div class="figure">
+<img alt="Keyup input practice." src="../../_images/input-keyup.png" />
+</div>
+<p class="last">As you add or remove characters from the input box, you should see a
+real-time update of the text on the screen.</p>
+</div>
+</div>
 </div>
 
 
