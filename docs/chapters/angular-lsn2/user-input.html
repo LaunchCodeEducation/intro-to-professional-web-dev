@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -87,8 +87,8 @@
   <div class="section" id="responding-to-user-input">
 <h1>28.5. Responding to User Input<a class="headerlink" href="#responding-to-user-input" title="Permalink to this headline">¶</a></h1>
 <p>So far, if we want to change the number of items in our movie and chore lists,
-we have to go into the code and alter the arrays. Obviously, it would be better
-if we could make the changes on the screen.</p>
+we have to go into the code and alter the arrays. This is inefficient. It would
+be better if we could make the changes on the screen.</p>
 <div class="section" id="change-practice-folder">
 <h2>28.5.1. Change Practice Folder<a class="headerlink" href="#change-practice-folder" title="Permalink to this headline">¶</a></h2>
 <p>From the <code class="docutils literal notranslate"><span class="pre">lesson2</span></code> folder in VSCode, open the
@@ -142,8 +142,8 @@ in line 7 by adding <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </li>
-<li><p class="first">To store the typed characters into the <code class="docutils literal notranslate"><span class="pre">newMovie</span></code> variable, we need to
-wait for a particular event to occur. One of the simplest is to wait for a
+<li><p class="first">To store the typed characters in the <code class="docutils literal notranslate"><span class="pre">newMovie</span></code> variable, we need to wait
+for a particular event to occur. One of the simplest is to wait for a
 <code class="docutils literal notranslate"><span class="pre">keyup</span></code>. Modify line 7 one more time:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
 </pre></div>
@@ -189,6 +189,94 @@ verify your code works.</p>
 <p class="last">As you add or remove characters from the input box, you should see a
 real-time update of the text on the screen.</p>
 </div>
+</div>
+<div class="section" id="changing-the-event">
+<h2>28.5.3. Changing the Event<a class="headerlink" href="#changing-the-event" title="Permalink to this headline">¶</a></h2>
+<p>In the example above, we used the <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event to trigger data collection.
+This choice stores data in <code class="docutils literal notranslate"><span class="pre">newMovie</span></code> every time a key is released. For
+adding a new movie title to our list, however, it would be better to wait for
+the user to finish typing.</p>
+<div class="section" id="modifying-keyup">
+<h3>28.5.3.1. Modifying <code class="docutils literal notranslate"><span class="pre">keyup</span></code><a class="headerlink" href="#modifying-keyup" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event waits for ANY key to be released, but Angular also allows
+us to modify the keyword to wait for a SPECIFIC key. If, for example, we want
+to record data when the ‘0’ key is released, then we would replace
+<code class="docutils literal notranslate"><span class="pre">(keyup)='true'</span></code> with <code class="docutils literal notranslate"><span class="pre">(keyup.0)='true'</span></code>.</p>
+<p>The general syntax for this modification is <code class="docutils literal notranslate"><span class="pre">keyup.key</span></code>, and <code class="docutils literal notranslate"><span class="pre">key</span></code> refers
+to any character on the keyboard—including <code class="docutils literal notranslate"><span class="pre">shift</span></code>, <code class="docutils literal notranslate"><span class="pre">enter</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">space</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Change the <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event in line 7 to:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code>,</li>
+<li><code class="docutils literal notranslate"><span class="pre">keyup.arrowup</span></code>,</li>
+<li><code class="docutils literal notranslate"><span class="pre">keyup.q</span></code></li>
+</ol>
+<p>Refresh the page after each change and explore how each one affects
+collecting user input.</p>
+<p class="last">Other key combinations are described at <a class="reference external" href="https://alligator.io/angular/binding-keyup-keydown-events/" target="_blank">alligator.io<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+<div class="section" id="waiting-for-a-click">
+<h3>28.5.3.2. Waiting for a Click<a class="headerlink" href="#waiting-for-a-click" title="Permalink to this headline">¶</a></h3>
+<p>Instead of waiting for a specific key to be pressed, let’s wait for the user to
+click. Replace the <code class="docutils literal notranslate"><span class="pre">(keyup)</span></code> event with <code class="docutils literal notranslate"><span class="pre">(click)</span></code> in line 7:</p>
+<blockquote>
+<div><div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Notice that the page changes only when the user clicks inside the input box.</p>
+<p>Since most of us are used to pressing the “Enter” key to submit our input,
+clicking inside the box might not be the best option. Fortunately, we know how
+to add a button to our HTML.</p>
+<ol class="arabic" start="5">
+<li><p class="first">Modify the movie-list code like this:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movies col-4&#39;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Movies to Watch<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;let movie of movies&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">movie</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup.enter</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">newMovie.value</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Refresh the page and type a title into the input box. Tapping “Enter” or
+clicking the “Add” button should display your text below the box.</p>
+<div class="figure">
+<img alt="Keyup input practice." src="../../_images/input-add-button.png" />
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="changing-the-movie-array">
+<h2>28.5.4. Changing the Movie Array<a class="headerlink" href="#changing-the-movie-array" title="Permalink to this headline">¶</a></h2>
+<p>We now have a way to collect and store user input. To make the new movie
+title appear in our list, we must update the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array in the
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> file.</p>
+</div>
+<div class="section" id="summary">
+<h2>28.5.5. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>To accept user input, Angular requires three items:</p>
+<ol class="arabic simple">
+<li>The HTML <code class="docutils literal notranslate"><span class="pre">input</span></code> tag,</li>
+<li>A variable to store the input, declared as <code class="docutils literal notranslate"><span class="pre">#variableName</span></code>,</li>
+<li>An event that triggers data collection.</li>
+</ol>
 </div>
 </div>
 
