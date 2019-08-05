@@ -176,8 +176,7 @@ command as like the 'You are here' star on our file maps.
 
     We're still in *unit_1*.
 
-You're basically just 
-telling the computer to give you your current location. 
+You're basically just telling the computer to give you your current location. 
 This may seem basic, but this one is essential. *You need to know your current 
 location when working in the terminal.* A lot of beginner programmers simply enter 
 commands into the terminal without mind to where they are. ``pwd`` is like a sanity
@@ -189,24 +188,30 @@ It's the file system counterpart to Git's ``git status``.
 ``ls`` Command
 --------------
 
-Starting in *launchcode_courses*, entering the ``ls`` command in your 
-terminal returns the contents of your current directory.
+Entering the ``ls`` command in your terminal returns the contents of your 
+current directory. Recall, we're in *unit_1*.
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/unit1_current_dir.png
+    :alt: unit_1 location
 
-   $ ls
-   data_analysis   lc_101
+    We're still in *unit_1*.
+    
+.. figure:: ./figures/ls_unit1_terminal.png
+    :alt: unit_1 contents
 
-Moving into *data_analysis*, entering the ``ls`` command returns the 
-following:
+    The innards of *unit_1*.
 
-.. sourcecode:: bash
-   :linenos:
+All of that looks to be in order. Let's move back out into *lc_101* and run ``ls``
+from there.
 
-   $ ls
-   cities.sql      final_project   lakes.json
+.. figure:: ./figures/ls_lc101_terminal.png
+    :alt: lc101 contents
 
+    *lc101* contains the *unit_1* directory.
+
+Notice that :ref:`terminal-pwd` after we moved. Also pay attention that ``ls`` 
+only gives us a view one level deep. Now let's talk about how we move between
+directories.
 
 .. _terminal-cd:
 
