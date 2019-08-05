@@ -148,10 +148,10 @@ Moving further down into *unit_1*,
 
     We're now in *unit_1*.
 
-``..`` now refers to *lc101*. ``../..`` here refers to 
-*launchcode_courses*.
+``..`` now refers to *lc101*. 
+``../..`` here refers to *launchcode_courses*.
 
-Like ``.``, ``..`` isn't a command itself, but rather a notation. We're
+Like ``.`` (:ref:`terminal-current-dir`), ``..`` isn't a command itself, but rather a notation. We're
 now ready to tackle our first command!
 
 
@@ -163,12 +163,26 @@ now ready to tackle our first command!
 Entering the ``pwd`` command in your terminal returns your current 
 location, aka your **working directory**.
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/pwd_unit1_terminal.png
+    :alt: pwd unit_1
 
-   $ pwd
-   /launchcode_courses
+    *unit_1* is the working directory.
 
+The working directory is another term for the current directory. Think of this 
+command as like the 'You are here' star on our file maps. 
+
+.. figure:: ./figures/unit1_current_dir.png
+    :alt: unit_1 location
+
+    We're still in *unit_1*.
+
+You're basically just 
+telling the computer to give you your current location. 
+This may seem basic, but this one is essential. *You need to know your current 
+location when working in the terminal.* A lot of beginner programmers simply enter 
+commands into the terminal without mind to where they are. ``pwd`` is like a sanity
+check -  a quick way to ensure that you know where you are and what you're doing.
+It's the file system counterpart to Git's ``git status``.
 
 .. _terminal-ls:
 
