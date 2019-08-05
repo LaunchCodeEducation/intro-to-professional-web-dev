@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -198,9 +198,9 @@ adding a new movie title to our list, however, it would be better to wait for
 the user to finish typing.</p>
 <div class="section" id="modifying-keyup">
 <h3>28.5.3.1. Modifying <code class="docutils literal notranslate"><span class="pre">keyup</span></code><a class="headerlink" href="#modifying-keyup" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event waits for ANY key to be released, but Angular also allows
-us to modify the keyword to wait for a SPECIFIC key. If, for example, we want
-to record data when the ‘0’ key is released, then we would replace
+<p>The <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event waits for ANY key to be released, but Angular allows us to
+modify the keyword to wait for a SPECIFIC key. If, for example, we want to
+record data when the ‘0’ key is released, then we would replace
 <code class="docutils literal notranslate"><span class="pre">(keyup)='true'</span></code> with <code class="docutils literal notranslate"><span class="pre">(keyup.0)='true'</span></code>.</p>
 <p>The general syntax for this modification is <code class="docutils literal notranslate"><span class="pre">keyup.key</span></code>, and <code class="docutils literal notranslate"><span class="pre">key</span></code> refers
 to any character on the keyboard—including <code class="docutils literal notranslate"><span class="pre">shift</span></code>, <code class="docutils literal notranslate"><span class="pre">enter</span></code>, and
@@ -218,21 +218,27 @@ collecting user input.</p>
 <p class="last">Other key combinations are described at <a class="reference external" href="https://alligator.io/angular/binding-keyup-keydown-events/" target="_blank">alligator.io<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
-<div class="section" id="waiting-for-a-click">
-<h3>28.5.3.2. Waiting for a Click<a class="headerlink" href="#waiting-for-a-click" title="Permalink to this headline">¶</a></h3>
-<p>Instead of waiting for a specific key to be pressed, let’s wait for the user to
-click. Replace the <code class="docutils literal notranslate"><span class="pre">(keyup)</span></code> event with <code class="docutils literal notranslate"><span class="pre">(click)</span></code> in line 7:</p>
-<blockquote>
-<div><div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+<div class="section" id="wait-for-a-click">
+<h3>28.5.3.2. Wait for a Click<a class="headerlink" href="#wait-for-a-click" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="5">
+<li><p class="first">Instead of waiting for a specific key to be pressed, let’s wait for the user
+to click. Replace the <code class="docutils literal notranslate"><span class="pre">(keyup)</span></code> event with <code class="docutils literal notranslate"><span class="pre">(click)</span></code> in line 7:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p>Notice that the page changes only when the user clicks inside the input box.</p>
+<p>Notice that the page now changes only when the user clicks inside the input
+box. This method is similar to <code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code> because it gives the user a
+specific action to perform that records the entry without changing the text.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="now-add-a-button">
+<h3>28.5.3.3. Now Add a Button<a class="headerlink" href="#now-add-a-button" title="Permalink to this headline">¶</a></h3>
 <p>Since most of us are used to pressing the “Enter” key to submit our input,
 clicking inside the box might not be the best option. Fortunately, we know how
 to add a button to our HTML.</p>
-<ol class="arabic" start="5">
-<li><p class="first">Modify the movie-list code like this:</p>
+<ol class="arabic" start="6">
+<li><p class="first">Modify your HTML code like this:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3

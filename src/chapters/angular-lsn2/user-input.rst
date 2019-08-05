@@ -112,9 +112,9 @@ the user to finish typing.
 Modifying ``keyup``
 ^^^^^^^^^^^^^^^^^^^^
 
-The ``keyup`` event waits for ANY key to be released, but Angular also allows
-us to modify the keyword to wait for a SPECIFIC key. If, for example, we want
-to record data when the '0' key is released, then we would replace
+The ``keyup`` event waits for ANY key to be released, but Angular allows us to
+modify the keyword to wait for a SPECIFIC key. If, for example, we want to
+record data when the '0' key is released, then we would replace
 ``(keyup)='true'`` with ``(keyup.0)='true'``.
 
 The general syntax for this modification is ``keyup.key``, and ``key`` refers
@@ -134,23 +134,28 @@ to any character on the keyboard---including ``shift``, ``enter``, and
 
    Other key combinations are described at `alligator.io <https://alligator.io/angular/binding-keyup-keydown-events/>`__.
 
-Waiting for a Click
-^^^^^^^^^^^^^^^^^^^^
+Wait for a Click
+^^^^^^^^^^^^^^^^^
 
-Instead of waiting for a specific key to be pressed, let's wait for the user to
-click. Replace the ``(keyup)`` event with ``(click)`` in line 7:
+5. Instead of waiting for a specific key to be pressed, let's wait for the user
+   to click. Replace the ``(keyup)`` event with ``(click)`` in line 7:
 
    .. sourcecode:: html+ng2
 
       <input #newMovie (click)='true' type='text' placeholder="Enter Movie Title Here"/>
 
-Notice that the page changes only when the user clicks inside the input box.
+   Notice that the page now changes only when the user clicks inside the input
+   box. This method is similar to ``keyup.enter`` because it gives the user a
+   specific action to perform that records the entry without changing the text.
+
+Now Add a Button
+^^^^^^^^^^^^^^^^^
 
 Since most of us are used to pressing the "Enter" key to submit our input,
 clicking inside the box might not be the best option. Fortunately, we know how
 to add a button to our HTML.
 
-5. Modify the movie-list code like this:
+6. Modify your HTML code like this:
 
    .. sourcecode:: html+ng2
       :linenos:
