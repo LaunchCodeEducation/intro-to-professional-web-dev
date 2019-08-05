@@ -11,6 +11,6 @@ Angular, Part 2
    ngIf
    events
    user-input
-   click-handlers
+   event-functions
    exercises
    studio

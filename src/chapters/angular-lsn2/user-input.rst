@@ -177,18 +177,22 @@ to add a button to our HTML.
    .. figure:: ./figures/input-add-button.png
       :alt: Keyup input practice.
 
-Changing the Movie Array
--------------------------
-
-We now have a way to collect and store user input. To make the new movie
-title appear in our list, we must update the ``movies`` array in the
-``movie-list.component.ts`` file.
-
 Summary
 --------
+
+We now have a way to collect user input and store it in a variable. We also
+learned how to access the data and display it on the webpage.
 
 To accept user input, Angular requires three items:
 
 #. The HTML ``input`` tag,
 #. A variable to store the input, declared as ``#variableName``,
 #. An event that triggers data collection.
+
+On the next page, we will learn how to make that input appear in our list of
+movies.
+
+Check Your Understanding
+-------------------------
+
+Lorem ipsum...
