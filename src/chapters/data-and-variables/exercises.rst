@@ -37,7 +37,7 @@ exercises:
 
 #. **Declare and assign variables**
 
-   For each row in the table above declare and assign variables.
+   For each row in the table above, declare and assign variables.
 
    *Hint*: When declaring and assigning your variables, remember that you will
    need to use that variable throughout the rest of the exercises. Make sure
@@ -52,7 +52,7 @@ exercises:
 
    We need to determine how many days it will take to reach Mars.
 
-   #. Create and assign a Miles to Mars variable. You can get the miles to Mars
+   #. Create and assign a miles to Mars variable. You can get the miles to Mars
       by multiplying the distance to Mars in kilometers by the miles per
       kilometer.
    #. Next, we need a variable to hold the hours it would take to get to Mars.
@@ -73,4 +73,4 @@ exercises:
 
    Repeat the calculations, but this time determine the number of days it would
    take to travel to the Moon and print to the screen a sentence that says
-   ``"_____ will take ___ days to reach the moon."``.
+   ``"_____ will take ___ days to reach the Moon."``.

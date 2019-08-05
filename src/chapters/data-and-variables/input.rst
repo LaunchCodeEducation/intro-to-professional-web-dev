@@ -66,7 +66,7 @@ together to make this process work. For now, here is a brief overview.
 Load the Module
 ^^^^^^^^^^^^^^^^
 
-In line 1 ``const input = require('readline-sync')`` pulls in all the functions
+In line 1, ``const input = require('readline-sync')`` pulls in all the functions
 that allow us to get data from the user and assigns them to the variable
 ``input``.
 
