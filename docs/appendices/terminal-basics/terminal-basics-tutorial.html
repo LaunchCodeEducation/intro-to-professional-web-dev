@@ -239,27 +239,70 @@ directories.</p>
 </div>
 <div class="section" id="cd-command">
 <span id="terminal-cd"></span><h2><code class="docutils literal notranslate"><span class="pre">cd</span></code> Command<a class="headerlink" href="#cd-command" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;path_name&gt;</span></code> relocates you to the provided path.</p>
-<p>Inside <em>launchcode_courses</em>, entering <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lc_101</span></code> puts you inside of
-the <em>lc_101</em> directory.</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> lc_101/
-$
-</pre></div>
-</td></tr></table></div>
-<p>The computer does not return anything to you after this command and
-simply responds ready to accept another prompt.</p>
-<p>If you wanted to return back to your <em>launchcode_courses</em> directory,
-you can do so with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>.
-See <a class="reference internal" href="#terminal-parent-dir"><span class="std std-ref">Parent Directory (..)</span></a> for notes on how to reference a parent
-directory.</p>
-<p>Back inside of <em>launchcode_courses</em>, say you would like to move into
-<em>unit_1</em> in one step. You can do that!</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> lc_101/unit_1
-$
-</pre></div>
-</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;path_name&gt;</span></code> relocates you to the provided path. We’ve seen it before, now
+let’s explore this command some more.</p>
+<p>Remember, we’re inside <em>lc_101</em>,</p>
+<div class="figure" id="id18">
+<img alt="lc101 location" src="../../_images/lc101_current_dir.png" />
+<p class="caption"><span class="caption-text">We’re in <em>lc_101</em>.</span></p>
+</div>
+<p>To change directories to our <a class="reference internal" href="#terminal-parent-dir"><span class="std std-ref">Parent Directory (..)</span></a>, we run the following:</p>
+<div class="figure" id="id19">
+<img alt="move to parent dir" src="../../_images/cd_lc101_to_parent_terminal.png" />
+<p class="caption"><span class="caption-text">We’re in <em>lc_101</em>.</span></p>
+</div>
+<p>It’s pretty self-explanatory, now we’re back in <em>launchcode_courses</em>.</p>
+<div class="figure" id="id20">
+<img alt="launchcode_courses location" src="../../_images/locate_launchcode_courses.png" />
+<p class="caption"><span class="caption-text">We’re back to <em>launchcode_courses</em>.</span></p>
+</div>
+<p>Not surprisingly, to go down into <em>data_analysis</em>, we run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">./data_analysis/</span></code></p>
+<div class="figure" id="id21">
+<img alt="move to data_analysis" src="../../_images/cd_data_analysis_terminal.png" />
+<p class="caption"><span class="caption-text">Moving down into <em>data_analysis</em>.</span></p>
+</div>
+<div class="figure" id="id22">
+<img alt="inside data_analysis" src="../../_images/locate_data_analysis.png" />
+<p class="caption"><span class="caption-text">We’ve made it to <em>data_analysis</em>.</span></p>
+</div>
+<p>Ok, so we know how to move one level above our current location (into our parent
+directory) and how to move one level below our working directory. But what if we
+wanted to get back to <em>lc_101</em> from where we are now, in <em>data_analysis</em>?</p>
+<p>In order to move to a directory that is contained within the same parent as our
+working directory, we need to first go back up into the parent.</p>
+<div class="figure" id="id23">
+<img alt="move to a peer directory" src="../../_images/cd_sibling_terminal.png" />
+<p class="caption"><span class="caption-text">Moving to a peer directory.</span></p>
+</div>
+<p>Do you see the faulty command? We tried running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lc_101</span></code> from inside
+<em>data_analysis</em> but the terminal did not recognize that path name from inside
+the <em>data_analysis</em> directory.</p>
+<p>We already know how to move to a parent directory, <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, above we see how we
+can move into a parent directory and down into one of its children all in one command,
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../lc_101/</span></code>.</p>
+<p>Here’s a visual of where we’ve just been</p>
+<div class="figure" id="id24">
+<img alt="path to a peer directory" src="../../_images/cd_sibling.png" />
+<p class="caption"><span class="caption-text">Path to move to a peer directory.</span></p>
+</div>
+<p>For practice, let’s go from our current spot in <em>lc_101</em>, down into <em>final_project</em>.</p>
+<div class="figure" id="id25">
+<img alt="path from lc_101 to final_project" src="../../_images/lc101_to_final_project.png" />
+<p class="caption"><span class="caption-text">Extended path to get to <em>final_project</em> from <em>lc_101</em>.</span></p>
+</div>
+<p>Above, we check our location as we navigate to make sure we know where we’re going.
+If we’re really confident though, we accomplish moving from <em>lc_101</em> to <em>final_project</em>
+all in one go. Let’s say we moved back to <em>lc_101</em> already.</p>
+<div class="figure" id="id26">
+<img alt="shorter path from lc_101 to final_project" src="../../_images/cd_shorter.png" />
+<p class="caption"><span class="caption-text">Quicker path to get to <em>final_project</em> from <em>lc_101</em>.</span></p>
+</div>
+<p>Are you starting to see how terminal navigation can get you places
+swiftly?</p>
+<p>Perhaps you noticed that the computer does not return anything to you after a
+successful <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. In the navigation samples above, we frequently rely on the
+<a class="reference internal" href="#terminal-pwd"><span class="std std-ref">pwd Command</span></a> and the <a class="reference internal" href="#terminal-ls"><span class="std std-ref">ls Command</span></a> to remind us where we are and what paths
+are available to us.</p>
 </div>
 <div class="section" id="mkdir-command">
 <span id="terminal-mkdir"></span><h2><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> Command<a class="headerlink" href="#mkdir-command" title="Permalink to this headline">¶</a></h2>
@@ -275,7 +318,7 @@ $
 <p>Again, the computer does not return anything to you after this command
 and simply responds ready to accept another prompt.
 But we can visualize the results:</p>
-<div class="figure" id="id18">
+<div class="figure" id="id27">
 <img alt="Sample file tree with a new directory" src="../../_images/mkdir.png" />
 <p class="caption"><span class="caption-text">mkdir creates a new directory</span></p>
 </div>
@@ -293,7 +336,7 @@ $
 <p>Once again, the computer does not return anything to you after this
 command and simply responds ready to accept another prompt.
 But we can visualize the results:</p>
-<div class="figure" id="id19">
+<div class="figure" id="id28">
 <img alt="Sample file tree with a file removed" src="../../_images/rm.png" />
 <p class="caption"><span class="caption-text">rm removes an item</span></p>
 </div>
@@ -308,7 +351,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Which results in:</p>
-<div class="figure" id="id20">
+<div class="figure" id="id29">
 <img alt="Sample file tree with a directory removed" src="../../_images/rm-r.png" />
 <p class="caption"><span class="caption-text">rm -r removes a directory entry</span></p>
 </div>
@@ -326,7 +369,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id21">
+<div class="figure" id="id30">
 <img alt="Sample file tree with a file copied" src="../../_images/cp.png" />
 <p class="caption"><span class="caption-text">cp copies an item</span></p>
 </div>
@@ -341,7 +384,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id22">
+<div class="figure" id="id31">
 <img alt="Sample file tree with a file moved" src="../../_images/mv.png" />
 <p class="caption"><span class="caption-text">mv moves an item</span></p>
 </div>
@@ -357,7 +400,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id23">
+<div class="figure" id="id32">
 <img alt="Sample file tree with a new file" src="../../_images/touch.png" />
 <p class="caption"><span class="caption-text">touch adds a file</span></p>
 </div>

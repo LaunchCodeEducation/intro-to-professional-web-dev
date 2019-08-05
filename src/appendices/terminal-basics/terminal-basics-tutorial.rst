@@ -218,34 +218,93 @@ directories.
 ``cd`` Command
 --------------
 
-``cd <path_name>`` relocates you to the provided path. 
+``cd <path_name>`` relocates you to the provided path. We've seen it before, now
+let's explore this command some more.
 
-Inside *launchcode_courses*, entering ``cd lc_101`` puts you inside of 
-the *lc_101* directory.
+Remember, we're inside *lc_101*, 
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/lc101_current_dir.png
+    :alt: lc101 location
 
-   $ cd lc_101/
-   $ 
+    We're in *lc_101*.
 
-The computer does not return anything to you after this command and 
-simply responds ready to accept another prompt.
 
-If you wanted to return back to your *launchcode_courses* directory,
-you can do so with ``cd ..``.
-See :ref:`terminal-parent-dir` for notes on how to reference a parent 
-directory.
+To change directories to our :ref:`terminal-parent-dir`, we run the following:
 
-Back inside of *launchcode_courses*, say you would like to move into
-*unit_1* in one step. You can do that!
+.. figure:: ./figures/cd_lc101_to_parent_terminal.png
+    :alt: move to parent dir
 
-.. sourcecode:: bash
-   :linenos:
+    We're in *lc_101*.
 
-   $ cd lc_101/unit_1
-   $
+It's pretty self-explanatory, now we're back in *launchcode_courses*.
 
+.. figure:: ./figures/locate_launchcode_courses.png
+    :alt: launchcode_courses location
+
+    We're back to *launchcode_courses*.
+
+Not surprisingly, to go down into *data_analysis*, we run ``cd ./data_analysis/``
+
+.. figure:: ./figures/cd_data_analysis_terminal.png
+    :alt: move to data_analysis
+
+    Moving down into *data_analysis*.
+
+.. figure:: ./figures/locate_data_analysis.png
+    :alt: inside data_analysis
+
+    We've made it to *data_analysis*.
+
+Ok, so we know how to move one level above our current location (into our parent 
+directory) and how to move one level below our working directory. But what if we 
+wanted to get back to *lc_101* from where we are now, in *data_analysis*?
+
+In order to move to a directory that is contained within the same parent as our 
+working directory, we need to first go back up into the parent. 
+
+.. figure:: ./figures/cd_sibling_terminal.png
+    :alt: move to a peer directory
+
+    Moving to a peer directory.
+
+Do you see the faulty command? We tried running ``cd lc_101`` from inside 
+*data_analysis* but the terminal did not recognize that path name from inside
+the *data_analysis* directory. 
+
+We already know how to move to a parent directory, ``cd ..``, above we see how we
+can move into a parent directory and down into one of its children all in one command,
+``cd ../lc_101/``. 
+
+Here's a visual of where we've just been
+
+.. figure:: ./figures/cd_sibling.png
+    :alt: path to a peer directory
+
+    Path to move to a peer directory.
+
+For practice, let's go from our current spot in *lc_101*, down into *final_project*.
+
+.. figure:: ./figures/lc101_to_final_project.png
+    :alt: path from lc_101 to final_project
+
+    Extended path to get to *final_project* from *lc_101*.
+
+Above, we check our location as we navigate to make sure we know where we're going. 
+If we're really confident though, we accomplish moving from *lc_101* to *final_project*
+all in one go. Let's say we moved back to *lc_101* already.
+
+.. figure:: ./figures/cd_shorter.png
+    :alt: shorter path from lc_101 to final_project
+
+    Quicker path to get to *final_project* from *lc_101*.
+
+Are you starting to see how terminal navigation can get you places
+swiftly?
+
+Perhaps you noticed that the computer does not return anything to you after a 
+successful ``cd`` command. In the navigation samples above, we frequently rely on the 
+:ref:`terminal-pwd` and the :ref:`terminal-ls` to remind us where we are and what paths
+are available to us.
 
 .. _terminal-mkdir:
 
