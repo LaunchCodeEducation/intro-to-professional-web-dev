@@ -343,34 +343,41 @@ appropriate file path.</p>
 <div class="section" id="rm-command">
 <span id="terminal-rm"></span><h2><code class="docutils literal notranslate"><span class="pre">rm</span></code> Command<a class="headerlink" href="#rm-command" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">&lt;item_to_remove&gt;</span></code> removes a given item from the file tree.</p>
-<p>Let’s say we decide we no longer need our <em>cities.sql</em> data.
-We can remove it from the terminal:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ rm cities.sql
-$
-</pre></div>
-</td></tr></table></div>
-<p>Once again, the computer does not return anything to you after this
-command and simply responds ready to accept another prompt.
-But we can visualize the results:</p>
+<p>Let’s say we decide we no longer need our <em>cities.sql</em> data. We can remove it!</p>
+<p>For fun - and practice! - let’s remove it while we’re still located in the <em>lc_101</em>
+directory.</p>
 <div class="figure" id="id31">
-<img alt="Sample file tree with a file removed" src="../../_images/rm.png" />
-<p class="caption"><span class="caption-text">rm removes an item</span></p>
+<img alt="Removing cities.sql" src="../../_images/rm_terminal.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">rm</span></code> removes a file</span></p>
+</div>
+<p>See what we did there? Instead of moving into the parent directory of <em>cities.sql</em>,
+we just used the longer file path relative to our location in <em>lc_101</em>. And to check
+that our <code class="docutils literal notranslate"><span class="pre">rm</span></code> command did what we expected? Well we also checked that right from
+our spot in <em>lc_101</em> with <code class="docutils literal notranslate"><span class="pre">ls</span></code> and a longer path.</p>
+<p>Here’s the map of what we’ve done:</p>
+<div class="figure" id="id32">
+<img alt="Removing cities.sql from the tree" src="../../_images/rm_cities.png" />
+<p class="caption"><span class="caption-text"><em>cities.sql</em> is gone!</span></p>
 </div>
 <p>To remove a directory entry, rather than simply a file, requires an
-option on the command. A common method to remove a directory is to
+<strong>option</strong> on the command. An option is an additional character, or
+set of characters, added on the the end of a text command to give the computer more
+instructions related to your command. Options are usually indicated with a <code class="docutils literal notranslate"><span class="pre">-</span></code>.
+We’ll talk more about the presence of options in <a class="reference internal" href="#terminal-man"><span class="std std-ref">man Command</span></a>.</p>
+<p>A common method to remove a directory is to
 use the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, although there are other choices.</p>
-<p>Let’s say we’re back up top in <em>launchcode_courses</em> directory and we want
-to remove the entirety of the <em>data_analysis</em> directory. We can run:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ rm -r data_analysis/
-$
-</pre></div>
-</td></tr></table></div>
-<p>Which results in:</p>
-<div class="figure" id="id32">
-<img alt="Sample file tree with a directory removed" src="../../_images/rm-r.png" />
-<p class="caption"><span class="caption-text">rm -r removes a directory entry</span></p>
+<p>Let’s say we no longer want our <em>unit_2</em> directory. We’re still in <em>lc_101</em>.</p>
+<div class="figure" id="id33">
+<img alt="using rm -r" src="../../_images/rm_unit2_terminal.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code> removes a directory entry</span></p>
+</div>
+<p>Notice, we try using simply <cite>rm</cite> but we get a response returned that the item we’ve
+asked to remove is a directory. But alas, with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code>, we are able to successfully
+remove the <em>unit_2</em> directory.</p>
+<p>Back in our map:</p>
+<div class="figure" id="id34">
+<img alt="Sample file tree with a directory removed" src="../../_images/rm_unit2.png" />
+<p class="caption"><span class="caption-text"><em>unit_2</em> is gone without a trace</span></p>
 </div>
 </div>
 <div class="section" id="cp-command">
@@ -386,7 +393,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id33">
+<div class="figure" id="id35">
 <img alt="Sample file tree with a file copied" src="../../_images/cp.png" />
 <p class="caption"><span class="caption-text">cp copies an item</span></p>
 </div>
@@ -401,7 +408,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id34">
+<div class="figure" id="id36">
 <img alt="Sample file tree with a file moved" src="../../_images/mv.png" />
 <p class="caption"><span class="caption-text">mv moves an item</span></p>
 </div>
@@ -417,7 +424,7 @@ $
 </pre></div>
 </td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id35">
+<div class="figure" id="id37">
 <img alt="Sample file tree with a new file" src="../../_images/touch.png" />
 <p class="caption"><span class="caption-text">touch adds a file</span></p>
 </div>

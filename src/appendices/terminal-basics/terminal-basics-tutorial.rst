@@ -362,43 +362,54 @@ And we can visualize our changes like this:
 
 ``rm <item_to_remove>`` removes a given item from the file tree. 
 
-Let's say we decide we no longer need our *cities.sql* data. 
-We can remove it from the terminal:
+Let's say we decide we no longer need our *cities.sql* data. We can remove it!
 
-.. sourcecode:: bash
-   :linenos:
+For fun - and practice! - let's remove it while we're still located in the *lc_101*
+directory.
 
-   $ rm cities.sql
-   $ 
+.. figure:: ./figures/rm_terminal.png
+    :alt: Removing cities.sql 
 
-Once again, the computer does not return anything to you after this 
-command and simply responds ready to accept another prompt. 
-But we can visualize the results:
+    ``rm`` removes a file
 
-.. figure:: ./figures/rm.png
-    :alt: Sample file tree with a file removed
+See what we did there? Instead of moving into the parent directory of *cities.sql*,
+we just used the longer file path relative to our location in *lc_101*. And to check
+that our ``rm`` command did what we expected? Well we also checked that right from 
+our spot in *lc_101* with ``ls`` and a longer path.
 
-    rm removes an item
+Here's the map of what we've done:
+
+.. figure:: ./figures/rm_cities.png
+    :alt: Removing cities.sql from the tree
+
+    *cities.sql* is gone!
 
 To remove a directory entry, rather than simply a file, requires an 
-option on the command. A common method to remove a directory is to 
+**option** on the command. An option is an additional character, or 
+set of characters, added on the the end of a text command to give the computer more
+instructions related to your command. Options are usually indicated with a ``-``.
+We'll talk more about the presence of options in :ref:`terminal-man`.
+
+A common method to remove a directory is to 
 use the ``-r`` option, although there are other choices.
 
-Let's say we're back up top in *launchcode_courses* directory and we want
-to remove the entirety of the *data_analysis* directory. We can run:
+Let's say we no longer want our *unit_2* directory. We're still in *lc_101*.
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/rm_unit2_terminal.png
+    :alt: using rm -r
 
-   $ rm -r data_analysis/
-   $ 
+    ``rm -r`` removes a directory entry
 
-Which results in:
+Notice, we try using simply `rm` but we get a response returned that the item we've
+asked to remove is a directory. But alas, with ``rm -r``, we are able to successfully
+remove the *unit_2* directory.
 
-.. figure:: ./figures/rm-r.png
+Back in our map:
+
+.. figure:: ./figures/rm_unit2.png
     :alt: Sample file tree with a directory removed
 
-    rm -r removes a directory entry
+    *unit_2* is gone without a trace
 
 
 .. _terminal-cp:
