@@ -323,7 +323,55 @@ how to earn ice cream.</li>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>28.3.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>Lorem ipsum…</p>
+<p>Examine the following code:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Prep Work<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;let task of prepWork&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">task</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ng-template</span> <span class="p">#</span><span class="na">noHW</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This space intentionally left blank.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume we have defined a <code class="docutils literal notranslate"><span class="pre">prepWork</span></code> array to hold the homework tasks for our
+next class. We want the webpage to always show the heading. Underneath that
+we want to add either the list of tasks or the paragraph text if the array is
+empty.</p>
+<p>Where should we place an <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> statement to make this happen?</p>
+<ol class="last arabic simple">
+<li>In the <code class="docutils literal notranslate"><span class="pre">div</span></code> tag</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">h3</span></code> tag</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">ul</span></code> tag</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">li</span></code> tag</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> tag</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">p</span></code> tag</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the same code sample, which of the following shows the correct syntax for
+the <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> statement?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
+</ol>
+</div>
 </div>
 </div>
 

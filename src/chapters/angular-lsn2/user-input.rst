@@ -191,8 +191,3 @@ To accept user input, Angular requires three items:
 
 On the next page, we will learn how to make that input appear in our list of
 movies.
-
-Check Your Understanding
--------------------------
-
-Lorem ipsum...

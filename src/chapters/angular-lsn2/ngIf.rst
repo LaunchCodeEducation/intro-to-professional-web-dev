@@ -233,4 +233,44 @@ Properly done, your page should look something like:
 Check Your Understanding
 --------------------------
 
-Lorem ipsum...
+Examine the following code:
+
+.. sourcecode:: html+ng2
+   :linenos:
+
+   <div>
+      <h3>Prep Work</h3>
+      <ul>
+         <li *ngFor = "let task of prepWork">{{task}}</li>
+      </ul>
+   </div>
+
+   <ng-template #noHW>
+      <p>This space intentionally left blank.</p>
+   </ng-template>
+
+.. admonition:: Question
+
+   Assume we have defined a ``prepWork`` array to hold the homework tasks for our
+   next class. We want the webpage to always show the heading. Underneath that
+   we want to add either the list of tasks or the paragraph text if the array is
+   empty.
+
+   Where should we place an ``*ngIf`` statement to make this happen?
+
+   #. In the ``div`` tag
+   #. In the ``h3`` tag
+   #. In the ``ul`` tag
+   #. In the ``li`` tag
+   #. In the ``ng-template`` tag
+   #. In the ``p`` tag
+
+.. admonition:: Question
+
+   For the same code sample, which of the following shows the correct syntax for
+   the ``*ngIf`` statement?
+
+   #. ``*ngIf = "prepWork.length == 0; else noHW"``
+   #. ``*ngIf = "prepWork.length !== 0; else noHW"``
+   #. ``*ngIf = "prepWork.length == 0; else #noHW"``
+   #. ``*ngIf = "prepWork.length !== 0; else #noHW"``

@@ -113,7 +113,7 @@ The starter code should match this:
       <hr>
    </div>
 
-In the VSCode terminal window, navigate to the ngfor-practice folder.
+In the VSCode terminal window, navigate to the ``ngfor-practice`` folder.
 
 .. sourcecode:: bash
 
@@ -173,4 +173,35 @@ updates, switch to the ``bonus-solutions`` branch and check the code in the
 Check Your Understanding
 --------------------------
 
-Lorem ipsum...
+The following questions refer to this code sample:
+
+.. sourcecode:: html
+   :linenos:
+
+   <div>
+      <h3>My Pets</h3>
+      <ul>
+         <li>{{pet}}</li>
+      </ul>
+   </div>
+
+Assume that we have defined a ``pets`` array that contains 4 animals.
+
+.. admonition:: Question
+
+   Adding ``*ngFor = 'let pet of pets'`` to the ``<li>`` tag produces:
+
+   #. 4 headings
+   #. 4 unordered lists
+   #. 4 list items
+   #. 4 headings each with 4 list items
+
+.. admonition:: Question
+
+   Moving ``*ngFor = 'let pet of pets'`` from the ``<li>`` tag to the ``<div>``
+   tag produces:
+
+   #. 1 heading and 4 unordered lists with 4 pets each
+   #. 4 headings and 4 unordered lists with 4 pets each
+   #. 1 heading and 4 unordered lists with 1 pet each
+   #. 4 headings and 4 unordered lists with 1 pet each

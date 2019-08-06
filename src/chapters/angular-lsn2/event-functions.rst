@@ -5,7 +5,7 @@ For the user input practice, we set the ``keyup`` and ``click`` events equal to
 ``true``. This just checks to see if these events occur. When they do, the
 input is stored in ``newMovie``, and the page refreshes.
 
-To perform more complicated actions in response to the user's actions, we can
+To perform more complicated tasks in response to the user's actions, we can
 call a function when an event occurs. The syntax for this is:
 
 ::
@@ -162,12 +162,12 @@ Clear the Input Box
 Check for Duplicates
 ^^^^^^^^^^^^^^^^^^^^^
 
-Even though we clear the input box, there is nothing preventing the user from
+Even though we clear the input box, there is nothing to prevent the user from
 entering the same movie multiple times. While some fans may want to watch a
 film twenty times in a row, let's have our code prevent repeats.
 
-Recall the :ref:`includes method <includes-examples>` checks if an array
-contains a particular element. We can use this several ways to check for a
+Recall that the :ref:`includes method <includes-examples>` checks if an array
+contains a particular element. The method gives us several ways to check for a
 repeated title. One possibility is:
 
 .. sourcecode:: TypeScript
@@ -189,7 +189,7 @@ method returns ``true``. The NOT operator (``!``) flips the result to
    If using the NOT operator bothers you, try:
 
    #. ``if(this.movies.includes(newMovie)===false)``,
-   #. Use ``if(this.movies.includes(newMovie))``, and update lines 3 and 5 to
+   #. Use ``if(this.movies.includes(newMovie))``, and update lines 3 - 5 to
       respond properly when the condition is ``true``.
 
 .. admonition:: Try It
@@ -205,3 +205,8 @@ To boost your skills, try these optional tasks to enhance your work:
 #. Use ``*ngIf`` to display an error message if the user does not enter a title
    or submits a title that is already on the list.
 #. Add CSS to change the color of the error message.
+
+Check Your Understanding
+-------------------------
+
+Lorem ipsum...
