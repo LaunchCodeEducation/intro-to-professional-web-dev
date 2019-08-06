@@ -301,6 +301,14 @@ all in one go. Let's say we moved back to *lc_101* already.
 Are you starting to see how terminal navigation can get you places
 swiftly?
 
+Let's do one more quick move for fun. To go back to *lc_101*, all we need to do is
+``cd ../../lc_101/``.
+
+.. figure:: ./figures/final_project_to_lc101.png
+    :alt: to lc_101 from final_project
+
+    Quickly getting back to *lc_101* from *final_project*.
+
 Perhaps you noticed that the computer does not return anything to you after a 
 successful ``cd`` command. In the navigation samples above, we frequently rely on the 
 :ref:`terminal-pwd` and the :ref:`terminal-ls` to remind us where we are and what paths
@@ -311,26 +319,40 @@ are available to us.
 ``mkdir`` Command
 -----------------
 
-``mkdir <new_directory_name>`` creates a new directory at your current 
+``mkdir <new_directory_name>`` creates a new directory *inside* your current 
 location. 
 
-We're in the *lc_101* directory. Let's create a directory for Unit 2
-materials.
+We're in the *lc_101* directory. 
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/lc101_current_dir.png
+    :alt: lc_101 location
 
-   $ mkdir unit_2
-   $ 
+    We're back in *lc_101*.
+
+Here, let's create a directory for Unit 2 materials.
+
+.. figure:: ./figures/mkdir_unit2_terminal.png
+    :alt: Making a new directory
+
+    *unit_2* is created!
 
 Again, the computer does not return anything to you after this command 
-and simply responds ready to accept another prompt. 
-But we can visualize the results:
+and simply responds ready to accept another prompt. But we can see from our helpful
+:ref:`terminal-ls` that a new directory has been created.
 
-.. figure:: ./figures/mkdir.png
+And we can visualize our changes like this:
+
+.. figure:: ./figures/new_unit2.png
     :alt: Sample file tree with a new directory
 
     mkdir creates a new directory
+
+.. note::
+
+   While ``mkdir`` creates a new directory, it does not place us into that directory.
+   Additionally, we don't need to be in the parent of the newly created directory.
+   We can run ``mkdir`` from anywhere within the file system, as long as we use the
+   appropriate file path.
 
 
 .. _terminal-rm:
