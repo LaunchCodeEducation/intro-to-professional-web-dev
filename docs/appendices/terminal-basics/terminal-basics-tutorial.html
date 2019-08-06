@@ -120,43 +120,50 @@ your current location.</p>
 <p class="caption"><span class="caption-text">Your current directory is <em>launchcode_courses</em>.</span></p>
 </div>
 <p>Here, your terminal will look something like this:</p>
-<div class="figure" id="id5">
-<img alt="Terminal view in launchcode_courses" src="../../_images/init_terminal.png" />
-<p class="caption"><span class="caption-text">Your current directory is <em>launchcode_courses</em>.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>computer:launchcode_courses user$
+</pre></div>
+</td></tr></table></div>
 <p>Most of what you see to the left of the command prompt symbol,
 <strong>$</strong> will be different on your machine. The basic structure here is
-&lt;machine_name&gt;:&lt;current_directory&gt; &lt;user_name&gt;$</p>
+<em>&lt;machine_name&gt;:&lt;current_directory&gt; &lt;user_name&gt;$</em>.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Some users choose to alter what they see before the command prompt.</p>
+<p class="last">Some users choose to alter what they see before the command prompt.
+For the purposes of this tutorial, we will simply use
+<code class="docutils literal notranslate"><span class="pre">&lt;current_directory&gt;</span> <span class="pre">$</span></code> as the prompt.</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">.</span></code> itself isn’t a command. If you type only <code class="docutils literal notranslate"><span class="pre">.</span></code> into the terminal,
+<p><code class="docutils literal notranslate"><span class="pre">.</span></code> itself is not a command. If you type only <code class="docutils literal notranslate"><span class="pre">.</span></code> into the terminal,
 you’re not really telling the machine to do anything just yet.</p>
 <p>If you’re curious, try it.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">Most commands require you to press <em>Enter</em> when you are ready to run.</p>
 </div>
-<p>You’ll probably see a somewhat cryptic message, like this:</p>
-<div class="figure" id="id6">
-<img alt="Current directory prompt response" src="../../_images/current_dir_terminal.png" />
-<p class="caption"><span class="caption-text">Entering the symbol for your current directory only</span></p>
-</div>
+<p>You will probably see a somewhat cryptic message, like this:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>launchcode_courses $ .
+bash: .: filename argument required
+.: usage: . filename <span class="o">[</span>arguments<span class="o">]</span>
+launchcode_courses $
+</pre></div>
+</td></tr></table></div>
 <p>That’s ok! Basically, we just entered an incomplete command. Our syntax
 wasn’t quite right. Keep reading and we’ll see how to properly use <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
 <p>If you move into <em>lc_101</em>, <code class="docutils literal notranslate"><span class="pre">.</span></code> then refers to that directory. We’ll
 cover how to move locations in detail down in <a class="reference internal" href="#terminal-cd"><span class="std std-ref">cd Command</span></a>.</p>
-<div class="figure" id="id7">
-<img alt="Change directory to lc_101" src="../../_images/change_current_dir_terminal.png" />
-<p class="caption"><span class="caption-text">We’re now in <em>lc_101</em></span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>launchcode_courses $ <span class="nb">cd</span> ./lc_101/
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>You may notice that the &lt;current_directory&gt; has updated but apart from
 that, the computer doesn’t give us much response. This is quite common
 and is a reason why our file system visuals come in handy to help remind
 us what we’re doing.</p>
 <p>Back in our map, we’ve done this:</p>
-<div class="figure" id="id8">
+<div class="figure" id="id5">
 <img alt="Current directory lc_101" src="../../_images/lc101_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re now in <em>lc_101</em></span></p>
 </div>
@@ -167,13 +174,13 @@ us what we’re doing.</p>
 that CONTAINS your current location.</p>
 <p>Remember the VSCode file tree? That containment structure is represented
 through indentation:</p>
-<div class="figure" id="id9">
+<div class="figure" id="id6">
 <img alt="File tree in VSCode" src="../../_images/init_tree.png" />
 <p class="caption"><span class="caption-text"><em>launchcode_courses</em> contains <em>data_analysis</em> and <em>lc_101</em>.</span></p>
 </div>
 <p>By the end of the <a class="reference internal" href="#terminal-current-dir"><span class="std std-ref">Current Directory (.)</span></a>, we found ourselves inside
 of <em>lc_101</em>.</p>
-<div class="figure" id="id10">
+<div class="figure" id="id7">
 <img alt="Current directory lc_101" src="../../_images/lc101_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re still in <em>lc_101</em></span></p>
 </div>
@@ -181,11 +188,12 @@ of <em>lc_101</em>.</p>
 <em>data_analysis</em> directories. While we’re in <em>lc_101</em>, <code class="docutils literal notranslate"><span class="pre">..</span></code> refers to
 <em>launchcode_courses</em>.</p>
 <p>Moving further down into <em>unit_1</em>,</p>
-<div class="figure" id="id11">
-<img alt="lc_101 to unit_1" src="../../_images/cd_unit1_terminal.png" />
-<p class="caption"><span class="caption-text">Moving into <em>unit_1</em>.</span></p>
-</div>
-<div class="figure" id="id12">
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">cd</span> ./unit_1/
+unit_1 $
+</pre></div>
+</td></tr></table></div>
+<div class="figure" id="id8">
 <img alt="unit_1 location" src="../../_images/unit1_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re now in <em>unit_1</em>.</span></p>
 </div>
@@ -198,13 +206,16 @@ now ready to tackle our first command!</p>
 <span id="terminal-pwd"></span><h2><code class="docutils literal notranslate"><span class="pre">pwd</span></code> Command<a class="headerlink" href="#pwd-command" title="Permalink to this headline">¶</a></h2>
 <p>Entering the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command in your terminal returns your current
 location, aka your <strong>working directory</strong>.</p>
-<div class="figure" id="id13">
-<img alt="pwd unit_1" src="../../_images/pwd_unit1_terminal.png" />
-<p class="caption"><span class="caption-text"><em>unit_1</em> is the working directory.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>unit_1 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101/unit_1
+unit_1 $
+</pre></div>
+</td></tr></table></div>
 <p>The working directory is another term for the current directory. Think of this
 command as like the ‘You are here’ star on our file maps.</p>
-<div class="figure" id="id14">
+<div class="figure" id="id9">
 <img alt="unit_1 location" src="../../_images/unit1_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re still in <em>unit_1</em>.</span></p>
 </div>
@@ -219,20 +230,42 @@ It’s the file system counterpart to Git’s <code class="docutils literal notr
 <span id="terminal-ls"></span><h2><code class="docutils literal notranslate"><span class="pre">ls</span></code> Command<a class="headerlink" href="#ls-command" title="Permalink to this headline">¶</a></h2>
 <p>Entering the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command in your terminal returns the contents of your
 current directory. Recall, we’re in <em>unit_1</em>.</p>
-<div class="figure" id="id15">
+<div class="figure" id="id10">
 <img alt="unit_1 location" src="../../_images/unit1_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re still in <em>unit_1</em>.</span></p>
 </div>
-<div class="figure" id="id16">
-<img alt="unit_1 contents" src="../../_images/ls_unit1_terminal.png" />
-<p class="caption"><span class="caption-text">The innards of <em>unit_1</em>.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>unit_1 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101/unit_1
+unit_1 $ ls
+about_me.html    hello_world.js  styles.css
+</pre></div>
+</td></tr></table></div>
 <p>All of that looks to be in order. Let’s move back out into <em>lc_101</em> and run <code class="docutils literal notranslate"><span class="pre">ls</span></code>
 from there.</p>
-<div class="figure" id="id17">
-<img alt="lc101 contents" src="../../_images/ls_lc101_terminal.png" />
-<p class="caption"><span class="caption-text"><em>lc101</em> contains the <em>unit_1</em> directory.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>unit_1 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101/unit_1
+unit_1 $ ls
+about_me.html    hello_world.js  styles.css
+unit_1 $ <span class="nb">cd</span> ..
+lc_101 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101
+lc_101 $ ls
+unit_1
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>Notice that <a class="reference internal" href="#terminal-pwd"><span class="std std-ref">pwd Command</span></a> after we moved. Also pay attention that <code class="docutils literal notranslate"><span class="pre">ls</span></code>
 only gives us a view one level deep. Now let’s talk about how we move between
 directories.</p>
@@ -242,26 +275,44 @@ directories.</p>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;path_name&gt;</span></code> relocates you to the provided path. We’ve seen it before, now
 let’s explore this command some more.</p>
 <p>Remember, we’re inside <em>lc_101</em>,</p>
-<div class="figure" id="id18">
+<div class="figure" id="id11">
 <img alt="lc101 location" src="../../_images/lc101_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re in <em>lc_101</em>.</span></p>
 </div>
 <p>To change directories to our <a class="reference internal" href="#terminal-parent-dir"><span class="std std-ref">Parent Directory (..)</span></a>, we run the following:</p>
-<div class="figure" id="id19">
-<img alt="move to parent dir" src="../../_images/cd_lc101_to_parent_terminal.png" />
-<p class="caption"><span class="caption-text">We’re in <em>lc_101</em>.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101
+lc_101 $ <span class="nb">cd</span> ..
+launchcode_courses $ <span class="nb">pwd</span>
+/launchcode_courses
+launchcode_courses $
+</pre></div>
+</td></tr></table></div>
 <p>It’s pretty self-explanatory, now we’re back in <em>launchcode_courses</em>.</p>
-<div class="figure" id="id20">
+<div class="figure" id="id12">
 <img alt="launchcode_courses location" src="../../_images/locate_launchcode_courses.png" />
 <p class="caption"><span class="caption-text">We’re back to <em>launchcode_courses</em>.</span></p>
 </div>
 <p>Not surprisingly, to go down into <em>data_analysis</em>, we run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">./data_analysis/</span></code></p>
-<div class="figure" id="id21">
-<img alt="move to data_analysis" src="../../_images/cd_data_analysis_terminal.png" />
-<p class="caption"><span class="caption-text">Moving down into <em>data_analysis</em>.</span></p>
-</div>
-<div class="figure" id="id22">
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>launchcode_courses $ <span class="nb">pwd</span>
+/launchcode_courses
+launchcode_courses $ <span class="nb">cd</span> ./data_analysis/
+data_analysis $ <span class="nb">pwd</span>
+/launchcode_courses/data_analysis
+data_analysis $
+</pre></div>
+</td></tr></table></div>
+<div class="figure" id="id13">
 <img alt="inside data_analysis" src="../../_images/locate_data_analysis.png" />
 <p class="caption"><span class="caption-text">We’ve made it to <em>data_analysis</em>.</span></p>
 </div>
@@ -270,10 +321,27 @@ directory) and how to move one level below our working directory. But what if we
 wanted to get back to <em>lc_101</em> from where we are now, in <em>data_analysis</em>?</p>
 <p>In order to move to a directory that is contained within the same parent as our
 working directory, we need to first go back up into the parent.</p>
-<div class="figure" id="id23">
-<img alt="move to a peer directory" src="../../_images/cd_sibling_terminal.png" />
-<p class="caption"><span class="caption-text">Moving to a peer directory.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>data_analysis $ <span class="nb">pwd</span>
+/launchcode_courses/data_analysis
+data_analysis $ <span class="nb">cd</span> lc_101
+bash: cd: lc_101: No such file or directory
+data_analysis $ <span class="nb">pwd</span>
+/launchcode_courses/data_analysis
+data_analysis $ <span class="nb">cd</span> ../lc_101/
+lc_101 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>Do you see the faulty command? We tried running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lc_101</span></code> from inside
 <em>data_analysis</em> but the terminal did not recognize that path name from inside
 the <em>data_analysis</em> directory.</p>
@@ -281,30 +349,73 @@ the <em>data_analysis</em> directory.</p>
 can move into a parent directory and down into one of its children all in one command,
 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../lc_101/</span></code>.</p>
 <p>Here’s a visual of where we’ve just been</p>
-<div class="figure" id="id24">
+<div class="figure" id="id14">
 <img alt="path to a peer directory" src="../../_images/cd_sibling.png" />
 <p class="caption"><span class="caption-text">Path to move to a peer directory.</span></p>
 </div>
 <p>For practice, let’s go from our current spot in <em>lc_101</em>, down into <em>final_project</em>.</p>
-<div class="figure" id="id25">
-<img alt="path from lc_101 to final_project" src="../../_images/lc101_to_final_project.png" />
-<p class="caption"><span class="caption-text">Extended path to get to <em>final_project</em> from <em>lc_101</em>.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101
+lc_101 $ <span class="nb">cd</span> ..
+launchcode_courses $ <span class="nb">pwd</span>
+/launchcode_courses
+launchcode_courses $ ls
+data_analysis    lc_101
+launchcode_courses $ <span class="nb">cd</span> data_analysis/
+data_analysis $ ls
+cities.sql   final_project   lakes.json
+data_analysis $ <span class="nb">cd</span> final_project/
+final_project $ <span class="nb">pwd</span>
+launchcode_courses/data_analysis/final_project
+final_project $
+</pre></div>
+</td></tr></table></div>
 <p>Above, we check our location as we navigate to make sure we know where we’re going.
-If we’re really confident though, we accomplish moving from <em>lc_101</em> to <em>final_project</em>
+If we’re really confident though, we can accomplish moving from <em>lc_101</em> to <em>final_project</em>
 all in one go. Let’s say we moved back to <em>lc_101</em> already.</p>
-<div class="figure" id="id26">
-<img alt="shorter path from lc_101 to final_project" src="../../_images/cd_shorter.png" />
-<p class="caption"><span class="caption-text">Quicker path to get to <em>final_project</em> from <em>lc_101</em>.</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">pwd</span>
+/launchcode_courses/lc_101
+lc_101 $ <span class="nb">cd</span> ../data_analysis/final_project/
+final_project $ <span class="nb">pwd</span>
+launchcode_courses/data_analysis/final_project
+final_project $
+</pre></div>
+</td></tr></table></div>
 <p>Are you starting to see how terminal navigation can get you places
 swiftly?</p>
-<p>Let’s do one more quick move for fun. To go back to <em>lc_101</em>, all we need to do is
-<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../lc_101/</span></code>.</p>
-<div class="figure" id="id27">
-<img alt="to lc_101 from final_project" src="../../_images/final_project_to_lc101.png" />
-<p class="caption"><span class="caption-text">Quickly getting back to <em>lc_101</em> from <em>final_project</em>.</span></p>
-</div>
+<p>Let’s do one more quick move for fun. To go back to <em>lc_101</em>,
+all we need to do is <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../lc_101/</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>final_project $ <span class="nb">pwd</span>
+launchcode_courses/data_analysis/final_project
+final_project $ <span class="nb">cd</span> ../../lc_101/
+lc_101 $ <span class="nb">pwd</span>
+launchcode_courses/lc_101
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>Perhaps you noticed that the computer does not return anything to you after a
 successful <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. In the navigation samples above, we frequently rely on the
 <a class="reference internal" href="#terminal-pwd"><span class="std std-ref">pwd Command</span></a> and the <a class="reference internal" href="#terminal-ls"><span class="std std-ref">ls Command</span></a> to remind us where we are and what paths
@@ -315,20 +426,33 @@ are available to us.</p>
 <p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;new_directory_name&gt;</span></code> creates a new directory <em>inside</em> your current
 location.</p>
 <p>We’re in the <em>lc_101</em> directory.</p>
-<div class="figure" id="id28">
+<div class="figure" id="id15">
 <img alt="lc_101 location" src="../../_images/lc101_current_dir.png" />
 <p class="caption"><span class="caption-text">We’re back in <em>lc_101</em>.</span></p>
 </div>
 <p>Here, let’s create a directory for Unit 2 materials.</p>
-<div class="figure" id="id29">
-<img alt="Making a new directory" src="../../_images/mkdir_unit2_terminal.png" />
-<p class="caption"><span class="caption-text"><em>unit_2</em> is created!</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">pwd</span>
+launchcode_courses/lc_101
+lc_101 $ ls
+unit_1
+lc_101 $ mkdir unit_2
+lc_101 $ ls
+unit_1   unit_2
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>Again, the computer does not return anything to you after this command
 and simply responds ready to accept another prompt. But we can see from our helpful
 <a class="reference internal" href="#terminal-ls"><span class="std std-ref">ls Command</span></a> that a new directory has been created.</p>
 <p>And we can visualize our changes like this:</p>
-<div class="figure" id="id30">
+<div class="figure" id="id16">
 <img alt="Sample file tree with a new directory" src="../../_images/new_unit2.png" />
 <p class="caption"><span class="caption-text">mkdir creates a new directory</span></p>
 </div>
@@ -346,16 +470,29 @@ appropriate file path.</p>
 <p>Let’s say we decide we no longer need our <em>cities.sql</em> data. We can remove it!</p>
 <p>For fun - and practice! - let’s remove it while we’re still located in the <em>lc_101</em>
 directory.</p>
-<div class="figure" id="id31">
-<img alt="Removing cities.sql" src="../../_images/rm_terminal.png" />
-<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">rm</span></code> removes a file</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">pwd</span>
+launchcode_courses/lc_101
+lc_101 $ rm ../data_analysis/cities.sql
+lc_101 $ <span class="nb">pwd</span>
+launchcode_courses/lc_101
+lc_101 $ ls ../data_analysis/
+final_project    lakes.json
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>See what we did there? Instead of moving into the parent directory of <em>cities.sql</em>,
 we just used the longer file path relative to our location in <em>lc_101</em>. And to check
 that our <code class="docutils literal notranslate"><span class="pre">rm</span></code> command did what we expected? Well we also checked that right from
 our spot in <em>lc_101</em> with <code class="docutils literal notranslate"><span class="pre">ls</span></code> and a longer path.</p>
 <p>Here’s the map of what we’ve done:</p>
-<div class="figure" id="id32">
+<div class="figure" id="id17">
 <img alt="Removing cities.sql from the tree" src="../../_images/rm_cities.png" />
 <p class="caption"><span class="caption-text"><em>cities.sql</em> is gone!</span></p>
 </div>
@@ -367,15 +504,32 @@ We’ll talk more about the presence of options in <a class="reference internal"
 <p>A common method to remove a directory is to
 use the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, although there are other choices.</p>
 <p>Let’s say we no longer want our <em>unit_2</em> directory. We’re still in <em>lc_101</em>.</p>
-<div class="figure" id="id33">
-<img alt="using rm -r" src="../../_images/rm_unit2_terminal.png" />
-<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code> removes a directory entry</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ ls
+unit_1   unit_2
+lc_101 $ rm unit_2
+rm: unit_2: is a directory
+lc_101 $ ls
+unit_1   unit_2
+lc_101 $ rm -r unit_2
+lc_101 $ ls
+unit_1
+lc_101 $
+</pre></div>
+</td></tr></table></div>
 <p>Notice, we try using simply <cite>rm</cite> but we get a response returned that the item we’ve
 asked to remove is a directory. But alas, with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code>, we are able to successfully
 remove the <em>unit_2</em> directory.</p>
 <p>Back in our map:</p>
-<div class="figure" id="id34">
+<div class="figure" id="id18">
 <img alt="Sample file tree with a directory removed" src="../../_images/rm_unit2.png" />
 <p class="caption"><span class="caption-text"><em>unit_2</em> is gone without a trace</span></p>
 </div>
@@ -386,16 +540,39 @@ remove the <em>unit_2</em> directory.</p>
 puts it in the target path.</p>
 <p>Take our sample file tree above. We’re still in <em>lc_101</em> and say we want to copy our
 <em>lakes.json</em> file and place that copy inside the <em>final_project</em> directory.</p>
-<div class="figure" id="id35">
-<img alt="Copying lakes.json" src="../../_images/cp_terminal.png" />
-<p class="caption"><span class="caption-text"><em>lakes.json</em> gets a copy</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span>lc_101 $ <span class="nb">pwd</span>
+launchcode_courses/lc_101
+lc_101 $ <span class="nb">cd</span> ../data_analysis/
+data_analysis $ <span class="nb">pwd</span>
+launchcode_courses/data_analysis
+data_analysis $ ls
+final_project    lakes.json
+data_analysis $ cp ./lakes.json ./final_project/
+data_analysis $ ls
+final_project    lakes.json
+data_analysis $ ls ./final_project/
+lakes.json
+data_analysis $
+</pre></div>
+</td></tr></table></div>
 <p>We didn’t need to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <em>data_analysis</em> but since we are dealing with a file
 contained within it, it made sense to do so. Once we ran our <code class="docutils literal notranslate"><span class="pre">cp</span></code> command, we
 checked the contents of both <em>data_analysis</em> and <em>data_analysis/final_project</em> to
 verify the copy was made.</p>
 <p>And of course, now there are two <em>lakes.json</em>.</p>
-<div class="figure" id="id36">
+<div class="figure" id="id19">
 <img alt="Copy of lakes.json" src="../../_images/cp_lakes.png" />
 <p class="caption"><span class="caption-text"><em>lakes.json</em> double take</span></p>
 </div>
@@ -404,12 +581,25 @@ verify the copy was made.</p>
 <span id="terminal-mv"></span><h2><code class="docutils literal notranslate"><span class="pre">mv</span></code> Command<a class="headerlink" href="#mv-command" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;item_to_move&gt;</span> <span class="pre">&lt;target_path&gt;</span></code> moves an item to the provided target path.</p>
 <p>Still in <em>data_analysis</em>, lets move <em>data_analysis/lakes.json</em> into <em>lc_101</em>.</p>
-<div class="figure" id="id37">
-<img alt="Move lakes.json" src="../../_images/mv_terminal.png" />
-<p class="caption"><span class="caption-text"><em>lakes.json</em> goes to <em>lc_101</em></span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>data_analysis $ mv ./lakes.json ../lc_101/
+data_analysis $ <span class="nb">pwd</span>
+launchcode_courses/data_analysis
+data_analysis $ ls
+final_project
+data_analysis $ ls ../lc_101/
+lakes.json   unit_1
+data_analysis $
+</pre></div>
+</td></tr></table></div>
 <p>As usual, we use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to verify our results. Now our map looks like the following:</p>
-<div class="figure" id="id38">
+<div class="figure" id="id20">
 <img alt="Moving lakes.json to lc101" src="../../_images/mv_lakes.png" />
 <p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">mv</span></code> moves one of the <em>lakes.json</em>.</span></p>
 </div>
@@ -418,12 +608,25 @@ verify the copy was made.</p>
 <span id="terminal-touch"></span><h2><code class="docutils literal notranslate"><span class="pre">touch</span></code> Command<a class="headerlink" href="#touch-command" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">&lt;new_file_name&gt;</span></code> creates a new file.</p>
 <p>Back in <em>data_analysis</em>, lets add a new <em>cafes.sql</em> file to our directory.</p>
-<div class="figure" id="id39">
-<img alt="New cafes.sql file" src="../../_images/touch_terminal.png" />
-<p class="caption"><span class="caption-text">a brand new <em>cafes.sql</em> file, courtesy of the command line</span></p>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>data_analysis $ <span class="nb">pwd</span>
+launchcode_courses/data_analysis
+data_analysis $ ls
+final_project
+data_analysis $ touch cafes.sql
+data_analysis $ ls
+cafes.sql    final_project
+data_analysis $
+</pre></div>
+</td></tr></table></div>
 <p>Here’s what that gives us:</p>
-<div class="figure" id="id40">
+<div class="figure" id="id21">
 <img alt="A new file" src="../../_images/touch_cafes.png" />
 <p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">touch</span></code> adds a file</span></p>
 </div>
@@ -435,11 +638,11 @@ and outputs in case you need a clean screen to think straight.</p>
 <p>You probably won’t encounter a scenario where you <em>need</em> to clear your
 terminal, but it can be a nice command to know if you’re a minimalist.</p>
 <p>There’s no change to our file map to show when this command is run. And in the
-terminal window, the command results in what looks like a new window.</p>
-<div class="figure" id="id41">
-<img alt="Clearing the terminal window" src="../../_images/clear_terminal.png" />
-<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">clear</span></code> gives you a clean slate.</span></p>
-</div>
+terminal window, as soon as enter is hit,
+the command results in what looks like a new window.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>data_analysis $
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="man-command">
 <span id="terminal-man"></span><h2><code class="docutils literal notranslate"><span class="pre">man</span></code> Command<a class="headerlink" href="#man-command" title="Permalink to this headline">¶</a></h2>

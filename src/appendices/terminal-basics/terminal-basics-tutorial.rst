@@ -51,21 +51,24 @@ your current location.
 
 Here, your terminal will look something like this:
 
-.. figure:: ./figures/init_terminal.png
-    :alt: Terminal view in launchcode_courses
+.. sourcecode:: bash
+   :linenos:
 
-    Your current directory is *launchcode_courses*.
+   computer:launchcode_courses user$
+
 
 Most of what you see to the left of the command prompt symbol, 
 **$** will be different on your machine. The basic structure here is 
-<machine_name>:<current_directory> <user_name>$
+*<machine_name>:<current_directory> <user_name>$*.
    
 .. note::
 
    Some users choose to alter what they see before the command prompt.
+   For the purposes of this tutorial, we will simply use 
+   ``<current_directory> $`` as the prompt.
 
 
-``.`` itself isn't a command. If you type only ``.`` into the terminal,
+``.`` itself is not a command. If you type only ``.`` into the terminal,
 you're not really telling the machine to do anything just yet. 
 
 If you're curious, try it. 
@@ -75,12 +78,15 @@ If you're curious, try it.
    Most commands require you to press *Enter* when you are ready to run.
 
 
-You'll probably see a somewhat cryptic message, like this:
+You will probably see a somewhat cryptic message, like this:
 
-.. figure:: ./figures/current_dir_terminal.png
-    :alt: Current directory prompt response
+.. sourcecode:: bash
+   :linenos:
 
-    Entering the symbol for your current directory only
+   launchcode_courses $ .
+   bash: .: filename argument required
+   .: usage: . filename [arguments]
+   launchcode_courses $
 
 That's ok! Basically, we just entered an incomplete command. Our syntax
 wasn't quite right. Keep reading and we'll see how to properly use ``.``.
@@ -88,10 +94,11 @@ wasn't quite right. Keep reading and we'll see how to properly use ``.``.
 If you move into *lc_101*, ``.`` then refers to that directory. We'll 
 cover how to move locations in detail down in :ref:`terminal-cd`.
 
-.. figure:: ./figures/change_current_dir_terminal.png
-    :alt: Change directory to lc_101
+.. sourcecode:: bash
+   :linenos:
 
-    We're now in *lc_101*
+   launchcode_courses $ cd ./lc_101/
+   lc_101 $
 
 You may notice that the <current_directory> has updated but apart from 
 that, the computer doesn't give us much response. This is quite common
@@ -104,8 +111,6 @@ Back in our map, we've done this:
     :alt: Current directory lc_101
 
     We're now in *lc_101*
-
-
 
 .. _terminal-parent-dir:
 
@@ -138,10 +143,11 @@ of *lc_101*.
 
 Moving further down into *unit_1*, 
 
-.. figure:: ./figures/cd_unit1_terminal.png
-    :alt: lc_101 to unit_1
+.. sourcecode:: bash
+   :linenos:
 
-    Moving into *unit_1*.
+   lc_101 $ cd ./unit_1/
+   unit_1 $
 
 .. figure:: ./figures/unit1_current_dir.png
     :alt: unit_1 location
@@ -163,10 +169,12 @@ now ready to tackle our first command!
 Entering the ``pwd`` command in your terminal returns your current 
 location, aka your **working directory**.
 
-.. figure:: ./figures/pwd_unit1_terminal.png
-    :alt: pwd unit_1
+.. sourcecode:: bash
+   :linenos:
 
-    *unit_1* is the working directory.
+   unit_1 $ pwd
+   /launchcode_courses/lc_101/unit_1
+   unit_1 $
 
 The working directory is another term for the current directory. Think of this 
 command as like the 'You are here' star on our file maps. 
@@ -195,19 +203,31 @@ current directory. Recall, we're in *unit_1*.
     :alt: unit_1 location
 
     We're still in *unit_1*.
-    
-.. figure:: ./figures/ls_unit1_terminal.png
-    :alt: unit_1 contents
 
-    The innards of *unit_1*.
+.. sourcecode:: bash
+   :linenos:
+
+   unit_1 $ pwd
+   /launchcode_courses/lc_101/unit_1
+   unit_1 $ ls
+   about_me.html    hello_world.js  styles.css
 
 All of that looks to be in order. Let's move back out into *lc_101* and run ``ls``
 from there.
 
-.. figure:: ./figures/ls_lc101_terminal.png
-    :alt: lc101 contents
+.. sourcecode:: bash
+   :linenos:
 
-    *lc101* contains the *unit_1* directory.
+   unit_1 $ pwd
+   /launchcode_courses/lc_101/unit_1
+   unit_1 $ ls
+   about_me.html    hello_world.js  styles.css
+   unit_1 $ cd ..
+   lc_101 $ pwd
+   /launchcode_courses/lc_101
+   lc_101 $ ls
+   unit_1
+   lc_101 $
 
 Notice that :ref:`terminal-pwd` after we moved. Also pay attention that ``ls`` 
 only gives us a view one level deep. Now let's talk about how we move between
@@ -231,10 +251,15 @@ Remember, we're inside *lc_101*,
 
 To change directories to our :ref:`terminal-parent-dir`, we run the following:
 
-.. figure:: ./figures/cd_lc101_to_parent_terminal.png
-    :alt: move to parent dir
+.. sourcecode:: bash
+   :linenos:
 
-    We're in *lc_101*.
+   lc_101 $ pwd
+   /launchcode_courses/lc_101
+   lc_101 $ cd ..
+   launchcode_courses $ pwd
+   /launchcode_courses
+   launchcode_courses $ 
 
 It's pretty self-explanatory, now we're back in *launchcode_courses*.
 
@@ -245,10 +270,15 @@ It's pretty self-explanatory, now we're back in *launchcode_courses*.
 
 Not surprisingly, to go down into *data_analysis*, we run ``cd ./data_analysis/``
 
-.. figure:: ./figures/cd_data_analysis_terminal.png
-    :alt: move to data_analysis
+.. sourcecode:: bash
+   :linenos:
 
-    Moving down into *data_analysis*.
+   launchcode_courses $ pwd
+   /launchcode_courses
+   launchcode_courses $ cd ./data_analysis/
+   data_analysis $ pwd
+   /launchcode_courses/data_analysis
+   data_analysis $
 
 .. figure:: ./figures/locate_data_analysis.png
     :alt: inside data_analysis
@@ -262,10 +292,19 @@ wanted to get back to *lc_101* from where we are now, in *data_analysis*?
 In order to move to a directory that is contained within the same parent as our 
 working directory, we need to first go back up into the parent. 
 
-.. figure:: ./figures/cd_sibling_terminal.png
-    :alt: move to a peer directory
+.. sourcecode:: bash
+   :linenos:
 
-    Moving to a peer directory.
+   data_analysis $ pwd
+   /launchcode_courses/data_analysis
+   data_analysis $ cd lc_101
+   bash: cd: lc_101: No such file or directory
+   data_analysis $ pwd
+   /launchcode_courses/data_analysis
+   data_analysis $ cd ../lc_101/
+   lc_101 $ pwd
+   /launchcode_courses/lc_101
+   lc_101 $ 
 
 Do you see the faulty command? We tried running ``cd lc_101`` from inside 
 *data_analysis* but the terminal did not recognize that path name from inside
@@ -284,30 +323,54 @@ Here's a visual of where we've just been
 
 For practice, let's go from our current spot in *lc_101*, down into *final_project*.
 
-.. figure:: ./figures/lc101_to_final_project.png
-    :alt: path from lc_101 to final_project
+.. sourcecode:: bash
+   :linenos:
 
-    Extended path to get to *final_project* from *lc_101*.
+   lc_101 $ pwd
+   /launchcode_courses/lc_101
+   lc_101 $ cd ..
+   launchcode_courses $ pwd
+   /launchcode_courses
+   launchcode_courses $ ls
+   data_analysis    lc_101
+   launchcode_courses $ cd data_analysis/
+   data_analysis $ ls
+   cities.sql   final_project   lakes.json
+   data_analysis $ cd final_project/
+   final_project $ pwd
+   launchcode_courses/data_analysis/final_project
+   final_project $
+
 
 Above, we check our location as we navigate to make sure we know where we're going. 
-If we're really confident though, we accomplish moving from *lc_101* to *final_project*
+If we're really confident though, we can accomplish moving from *lc_101* to *final_project*
 all in one go. Let's say we moved back to *lc_101* already.
 
-.. figure:: ./figures/cd_shorter.png
-    :alt: shorter path from lc_101 to final_project
+.. sourcecode:: bash
+   :linenos:
 
-    Quicker path to get to *final_project* from *lc_101*.
+   lc_101 $ pwd
+   /launchcode_courses/lc_101
+   lc_101 $ cd ../data_analysis/final_project/
+   final_project $ pwd
+   launchcode_courses/data_analysis/final_project
+   final_project $
 
 Are you starting to see how terminal navigation can get you places
 swiftly?
 
-Let's do one more quick move for fun. To go back to *lc_101*, all we need to do is
-``cd ../../lc_101/``.
+Let's do one more quick move for fun. To go back to *lc_101*, 
+all we need to do is ``cd ../../lc_101/``.
 
-.. figure:: ./figures/final_project_to_lc101.png
-    :alt: to lc_101 from final_project
+.. sourcecode:: bash
+   :linenos:
 
-    Quickly getting back to *lc_101* from *final_project*.
+   final_project $ pwd
+   launchcode_courses/data_analysis/final_project
+   final_project $ cd ../../lc_101/
+   lc_101 $ pwd
+   launchcode_courses/lc_101
+   lc_101 $
 
 Perhaps you noticed that the computer does not return anything to you after a 
 successful ``cd`` command. In the navigation samples above, we frequently rely on the 
@@ -331,10 +394,17 @@ We're in the *lc_101* directory.
 
 Here, let's create a directory for Unit 2 materials.
 
-.. figure:: ./figures/mkdir_unit2_terminal.png
-    :alt: Making a new directory
+.. sourcecode:: bash
+   :linenos:
 
-    *unit_2* is created!
+   lc_101 $ pwd
+   launchcode_courses/lc_101
+   lc_101 $ ls
+   unit_1
+   lc_101 $ mkdir unit_2
+   lc_101 $ ls
+   unit_1   unit_2
+   lc_101 $
 
 Again, the computer does not return anything to you after this command 
 and simply responds ready to accept another prompt. But we can see from our helpful
@@ -367,10 +437,17 @@ Let's say we decide we no longer need our *cities.sql* data. We can remove it!
 For fun - and practice! - let's remove it while we're still located in the *lc_101*
 directory.
 
-.. figure:: ./figures/rm_terminal.png
-    :alt: Removing cities.sql 
+.. sourcecode:: bash
+   :linenos:
 
-    ``rm`` removes a file
+   lc_101 $ pwd
+   launchcode_courses/lc_101
+   lc_101 $ rm ../data_analysis/cities.sql
+   lc_101 $ pwd
+   launchcode_courses/lc_101
+   lc_101 $ ls ../data_analysis/
+   final_project    lakes.json
+   lc_101 $ 
 
 See what we did there? Instead of moving into the parent directory of *cities.sql*,
 we just used the longer file path relative to our location in *lc_101*. And to check
@@ -395,10 +472,21 @@ use the ``-r`` option, although there are other choices.
 
 Let's say we no longer want our *unit_2* directory. We're still in *lc_101*.
 
-.. figure:: ./figures/rm_unit2_terminal.png
-    :alt: using rm -r
 
-    ``rm -r`` removes a directory entry
+.. sourcecode:: bash
+   :linenos:
+
+   lc_101 $ ls
+   unit_1   unit_2
+   lc_101 $ rm unit_2
+   rm: unit_2: is a directory
+   lc_101 $ ls
+   unit_1   unit_2
+   lc_101 $ rm -r unit_2
+   lc_101 $ ls
+   unit_1
+   lc_101 $
+
 
 Notice, we try using simply `rm` but we get a response returned that the item we've
 asked to remove is a directory. But alas, with ``rm -r``, we are able to successfully
@@ -423,10 +511,23 @@ puts it in the target path.
 Take our sample file tree above. We're still in *lc_101* and say we want to copy our
 *lakes.json* file and place that copy inside the *final_project* directory.
 
-.. figure:: ./figures/cp_terminal.png
-    :alt: Copying lakes.json
+.. sourcecode:: bash
+   :linenos:
 
-    *lakes.json* gets a copy
+   lc_101 $ pwd
+   launchcode_courses/lc_101
+   lc_101 $ cd ../data_analysis/
+   data_analysis $ pwd
+   launchcode_courses/data_analysis
+   data_analysis $ ls
+   final_project    lakes.json
+   data_analysis $ cp ./lakes.json ./final_project/
+   data_analysis $ ls
+   final_project    lakes.json
+   data_analysis $ ls ./final_project/
+   lakes.json
+   data_analysis $
+
 
 We didn't need to ``cd`` into *data_analysis* but since we are dealing with a file 
 contained within it, it made sense to do so. Once we ran our ``cp`` command, we 
@@ -450,10 +551,18 @@ And of course, now there are two *lakes.json*.
 
 Still in *data_analysis*, lets move *data_analysis/lakes.json* into *lc_101*. 
 
-.. figure:: ./figures/mv_terminal.png
-    :alt: Move lakes.json
 
-    *lakes.json* goes to *lc_101*
+.. sourcecode:: bash
+   :linenos:
+
+   data_analysis $ mv ./lakes.json ../lc_101/
+   data_analysis $ pwd
+   launchcode_courses/data_analysis
+   data_analysis $ ls
+   final_project
+   data_analysis $ ls ../lc_101/
+   lakes.json   unit_1
+   data_analysis $
 
 As usual, we use ``ls`` to verify our results. Now our map looks like the following:
 
@@ -472,10 +581,17 @@ As usual, we use ``ls`` to verify our results. Now our map looks like the follow
 
 Back in *data_analysis*, lets add a new *cafes.sql* file to our directory. 
 
-.. figure:: ./figures/touch_terminal.png
-    :alt: New cafes.sql file
+.. sourcecode:: bash
+   :linenos:
 
-    a brand new *cafes.sql* file, courtesy of the command line
+   data_analysis $ pwd
+   launchcode_courses/data_analysis
+   data_analysis $ ls
+   final_project
+   data_analysis $ touch cafes.sql
+   data_analysis $ ls
+   cafes.sql    final_project
+   data_analysis $
 
 Here's what that gives us:
 
@@ -497,12 +613,13 @@ You probably won't encounter a scenario where you *need* to clear your
 terminal, but it can be a nice command to know if you're a minimalist.
 
 There's no change to our file map to show when this command is run. And in the 
-terminal window, the command results in what looks like a new window.
+terminal window, as soon as enter is hit, 
+the command results in what looks like a new window.
 
-.. figure:: ./figures/clear_terminal.png
-    :alt: Clearing the terminal window
+.. sourcecode:: bash
+   :linenos:
 
-    ``clear`` gives you a clean slate.
+   data_analysis $ 
 
 
 .. _terminal-man:
