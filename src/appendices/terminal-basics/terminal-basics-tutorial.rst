@@ -420,22 +420,25 @@ Back in our map:
 ``cp <source_path> <target_path>`` copies the item at the source and
 puts it in the target path.
 
-Take our sample file tree above. Say we're in *data_analysis* 
-and we want to copy *cities.sql* into *final_project*. We can do this 
-with ``cp``.
+Take our sample file tree above. We're still in *lc_101* and say we want to copy our
+*lakes.json* file and place that copy inside the *final_project* directory.
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/cp_terminal.png
+    :alt: Copying lakes.json
 
-   $ cp ./cities.sql ./final_project/
-   $ 
+    *lakes.json* gets a copy
 
-Here's what that gives us:
+We didn't need to ``cd`` into *data_analysis* but since we are dealing with a file 
+contained within it, it made sense to do so. Once we ran our ``cp`` command, we 
+checked the contents of both *data_analysis* and *data_analysis/final_project* to
+verify the copy was made.
 
-.. figure:: ./figures/cp.png
-    :alt: Sample file tree with a file copied
+And of course, now there are two *lakes.json*.
 
-    cp copies an item
+.. figure:: ./figures/cp_lakes.png
+    :alt: Copy of lakes.json
+
+    *lakes.json* double take
 
 
 .. _terminal-mv:
