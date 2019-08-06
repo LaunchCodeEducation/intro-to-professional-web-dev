@@ -93,6 +93,7 @@ Appendices
    appendices/string-method-examples/index
    appendices/math-method-examples/index
    appendices/terminal-basics/index
+   appendices/installing-software/index
 
 .. toctree::
    :hidden:
