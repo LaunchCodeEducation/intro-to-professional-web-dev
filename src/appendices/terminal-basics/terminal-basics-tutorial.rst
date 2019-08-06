@@ -470,21 +470,19 @@ As usual, we use ``ls`` to verify our results. Now our map looks like the follow
 
 ``touch <new_file_name>`` creates a new file.
 
-Back in *data_analysis*, lets add a new file to our *final_project* 
-directory. 
+Back in *data_analysis*, lets add a new *cafes.sql* file to our directory. 
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/touch_terminal.png
+    :alt: New cafes.sql file
 
-   $ touch ./final_project/more_sql.sql
-   $ 
+    a brand new *cafes.sql* file, courtesy of the command line
 
 Here's what that gives us:
 
-.. figure:: ./figures/touch.png
-    :alt: Sample file tree with a new file
+.. figure:: ./figures/touch_cafes.png
+    :alt: A new file
 
-    touch adds a file
+    ``touch`` adds a file
 
 
 .. _terminal-ctrlc:
