@@ -485,18 +485,6 @@ Here's what that gives us:
     ``touch`` adds a file
 
 
-.. _terminal-ctrlc:
-
-``ctrl + c`` Details
---------------------
-
-*ctrl + c* can be used to exit a running program.
-
-Some programs take different commands to exit. *ctrl + c* 
-is sometimes used to prompt the running program for an 
-exit command.
-
-
 .. _terminal-clear:
 
 ``clear`` Command
@@ -505,14 +493,16 @@ exit command.
 ``clear`` wipes your terminal window of any previously run commands 
 and outputs in case you need a clean screen to think straight. 
 
-You probably won't encounter a scenario where you NEED to clear your
+You probably won't encounter a scenario where you *need* to clear your
 terminal, but it can be a nice command to know if you're a minimalist.
 
-.. sourcecode:: bash
-   :linenos:
+There's no change to our file map to show when this command is run. And in the 
+terminal window, the command results in what looks like a new window.
 
-   $ clear
-   $ 
+.. figure:: ./figures/clear_terminal.png
+    :alt: Clearing the terminal window
+
+    ``clear`` gives you a clean slate.
 
 
 .. _terminal-man:
@@ -540,6 +530,17 @@ Some other terminal stuff you should know when using the manual:
 
 - Once you're finished reading, you'll need to exit the manual page 
     using the :ref:`terminal-q` command. 
+
+.. _terminal-ctrlc:
+
+``ctrl + c`` Details
+--------------------
+
+*ctrl + c* can be used to exit a running program.
+
+Some programs take different commands to exit. *ctrl + c* 
+is sometimes used to prompt the running program for an 
+exit command.
 
 .. _terminal-q:
 
