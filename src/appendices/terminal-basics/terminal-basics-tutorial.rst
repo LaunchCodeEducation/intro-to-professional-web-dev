@@ -513,7 +513,7 @@ terminal window, the command results in what looks like a new window.
 ``man`` is your best friend. Running ``man <command>`` gives you a manual
 entry of what that command does, what options it takes, and more
 documentation than you could ever need. It's so thorough, it makes this
-guide blush. Any command you think you may need but you're not sure how 
+guide blush. Any command you think you may need, but you're not sure how 
 to use it, or maybe you want to do something specific and are wondering if
 there's a specialized option for it, use ``man`` to get more info!
 
@@ -522,29 +522,37 @@ new option or two!
 
 Some other terminal stuff you should know when using the manual:
 
-- Some entries are very long! They will probably need to be scrolled 
+- Scrolling
+    Some entries are very long! They will probably need to be scrolled 
     through. You'll know there's more to read if you see ``:`` at the 
     bottom of your terminal window. You can use your keyboard's arrow keys to
     navigate the entry. If you reach the bottom of the entry,
     you'll see a line that reads ``END``.
 
-- Once you're finished reading, you'll need to exit the manual page 
+- Exiting
+    Once you're finished reading, you'll need to exit the manual page 
     using the :ref:`terminal-q` command. 
+
+.. _terminal-exiting-programs:
+
+Exiting Programs
+----------------
 
 .. _terminal-ctrlc:
 
 ``ctrl + c`` Details
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 *ctrl + c* can be used to exit a running program.
 
 Some programs take different commands to exit. *ctrl + c* 
-is sometimes used to prompt the running program for an 
-exit command.
+is sometimes the command to quit a running program and othertimes used to prompt 
+the running program for an different exit command.
 
 .. _terminal-q:
 
 ``q``
------
+^^^^^
 
-``q`` is another command for exiting a running program.
+``q`` is another command for exiting a running program. Notably, it is needed 
+to exit the :ref:`terminal-man` pages.
