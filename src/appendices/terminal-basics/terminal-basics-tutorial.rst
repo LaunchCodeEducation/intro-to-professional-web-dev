@@ -446,22 +446,21 @@ And of course, now there are two *lakes.json*.
 ``mv`` Command
 --------------
 
-``mv <item_to_move> <target_path>`` moves an item to the target path.
+``mv <item_to_move> <target_path>`` moves an item to the provided target path.
 
-Back in *data_analysis*, lets move *cities.sql* into *final_project*. 
+Still in *data_analysis*, lets move *data_analysis/lakes.json* into *lc_101*. 
 
-.. sourcecode:: bash
-   :linenos:
+.. figure:: ./figures/mv_terminal.png
+    :alt: Move lakes.json
 
-   $ mv ./cities.sql ./final_project/
-   $ 
+    *lakes.json* goes to *lc_101*
 
-Here's what that gives us:
+As usual, we use ``ls`` to verify our results. Now our map looks like the following:
 
-.. figure:: ./figures/mv.png
-    :alt: Sample file tree with a file moved
+.. figure:: ./figures/mv_lakes.png
+    :alt: Moving lakes.json to lc101
 
-    mv moves an item
+    ``mv`` moves one of the *lakes.json*.
 
 
 .. _terminal-touch:
