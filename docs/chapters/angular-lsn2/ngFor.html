@@ -204,29 +204,56 @@ must first convert them into arrays.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
    angular-lc101-projects/lesson2
 $ ls
-   examples        exercises       studio
+   examples        exercises
 $ <span class="nb">cd</span> examples
 $ ls
-   ngfor-practice  ngif-practice
+   input-practice  ngfor-practice  ngif-practice
 $ <span class="nb">cd</span> ngfor-practice
 </pre></div>
 </div>
+<p>Once you are in the folder, enter <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> in the terminal. This will
+add all of the Angular modules needed to run the project.</p>
 <p>Enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to launch the project, then:</p>
-<ol class="arabic simple">
-<li>Modify <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the items
-stored inside the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array.</li>
-<li>Open <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add or remove items to the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
-array, then save. Reload the webpage to make sure your changes appear.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> within the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag to loop over the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code>
-array. Replace “Chores To Do Today” with the elements of the array.</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add or remove items to the
-<code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array, then save. Check to make sure your changes appear on
-the webpage.</li>
+<ol class="arabic">
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
+array:</p>
+<ol class="loweralpha simple">
+<li>Replace line 4 with
+<code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">*ngfor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">chore</span> <span class="pre">of</span> <span class="pre">chores&quot;&gt;{{chore}}&lt;/li&gt;</span></code>.</li>
+<li>Delete lines 5 and 6.</li>
+<li>Save your changes.</li>
+<li>Reload the webpage to verify that all the chores are displayed.</li>
 </ol>
-<p>Properly done, your page should look something like:</p>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add “Clean bathroom” to the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
+array, then save. Reload the webpage to make sure the new chore appears.
+Your output should look like this:</p>
+<div class="figure">
+<img alt="*ngFor first solution." src="../../_images/clean-bathroom-solution.png" />
+</div>
+</li>
+<li><p class="first">Remove two chores from the array. Reload the webpage to make sure these
+items disappear from the list.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> within the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag to loop over the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code>
+array:</p>
+<ol class="loweralpha simple">
+<li>Replace line 1 with
+<code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class='chores'</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">title</span> <span class="pre">of</span> <span class="pre">todoTitles&quot;&gt;</span></code>.</li>
+<li>Replace “Chores To Do Today” in line 2 with a placeholder for <code class="docutils literal notranslate"><span class="pre">title</span></code>.</li>
+<li>Save your changes, then reload the page. Properly done, your page should
+look something like:</li>
+</ol>
 <div class="figure">
 <img alt="*ngFor practice solution." src="../../_images/chore-list-solution.png" />
 </div>
+</li>
+<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add an item to the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array,
+then save. Check to make sure another list appears on the webpage. Next,
+remove two items from the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array. Save and make sure the page
+reflects the changes.</p>
+</li>
+</ol>
 <div class="section" id="what-if">
 <h3>28.2.2.1. What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">

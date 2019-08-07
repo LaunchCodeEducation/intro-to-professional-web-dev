@@ -47,7 +47,7 @@ solutions to some of the tasks are located in the ``example-solutions`` branch.
       lesson1 lesson2 lesson3
    $ cd lesson2
    $ ls
-      examples        exercises       studio
+      examples        exercises
    $ git branch
       example-solutions
       * master

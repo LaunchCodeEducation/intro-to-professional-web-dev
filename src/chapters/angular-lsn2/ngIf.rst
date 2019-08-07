@@ -55,6 +55,12 @@ condition ``movies.length > 3`` evaluates to ``true``, then the ``div``,
 ``h3``, ``ol``, and ``li`` tags all get generated. If the condition returns
 ``false``, then none of the tags are added to the HTML code.
 
+.. admonition:: Note
+
+   Only one structural directive can be assigned to an element. Since the ``li``
+   tag in the example above already contains ``*ngFor``, we cannot add an
+   ``*ngIf`` statement.
+
 Logical Operators With ``*ngIf``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

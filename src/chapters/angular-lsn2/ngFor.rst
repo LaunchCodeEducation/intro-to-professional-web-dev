@@ -119,28 +119,51 @@ In the VSCode terminal window, navigate to the ``ngfor-practice`` folder.
    $ pwd
       angular-lc101-projects/lesson2
    $ ls
-      examples        exercises       studio
+      examples        exercises
    $ cd examples
    $ ls
-      ngfor-practice  ngif-practice
+      input-practice  ngfor-practice  ngif-practice
    $ cd ngfor-practice
+
+Once you are in the folder, enter ``npm install`` in the terminal. This will
+add all of the Angular modules needed to run the project.
 
 Enter ``ng serve`` to launch the project, then:
 
-#. Modify ``chores.component.html`` with ``*ngFor`` to loop over the items
-   stored inside the ``chores`` array.
-#. Open ``chores.component.ts``. Add or remove items to the ``chores``
-   array, then save. Reload the webpage to make sure your changes appear.
+#. Modify ``chores.component.html`` with ``*ngFor`` to loop over the ``chores``
+   array:
+
+   a. Replace line 4 with
+      ``<li *ngfor = "let chore of chores">{{chore}}</li>``.
+   b. Delete lines 5 and 6.
+   c. Save your changes.
+   d. Reload the webpage to verify that all the chores are displayed.
+
+#. Open ``chores.component.ts``. Add "Clean bathroom" to the ``chores``
+   array, then save. Reload the webpage to make sure the new chore appears.
+   Your output should look like this:
+
+   .. figure:: ./figures/clean-bathroom-solution.png
+      :alt: *ngFor first solution.
+
+#. Remove two chores from the array. Reload the webpage to make sure these
+   items disappear from the list.
 #. Use ``*ngFor`` within the ``<div>`` tag to loop over the ``todoTitles``
-   array. Replace "Chores To Do Today" with the elements of the array.
-#. Return to ``chores.component.ts``. Add or remove items to the
-   ``todoTitles`` array, then save. Check to make sure your changes appear on
-   the webpage.
+   array:
 
-Properly done, your page should look something like:
+   a. Replace line 1 with
+      ``<div class='chores' *ngFor = "let title of todoTitles">``.
+   b. Replace "Chores To Do Today" in line 2 with a placeholder for ``title``.
+   c. Save your changes, then reload the page. Properly done, your page should
+      look something like:
 
-.. figure:: ./figures/chore-list-solution.png
-   :alt: *ngFor practice solution.
+   .. figure:: ./figures/chore-list-solution.png
+      :alt: *ngFor practice solution.
+
+#. Return to ``chores.component.ts``. Add an item to the ``todoTitles`` array,
+   then save. Check to make sure another list appears on the webpage. Next,
+   remove two items from the ``todoTitles`` array. Save and make sure the page
+   reflects the changes.
 
 What If
 ^^^^^^^^
