@@ -13,7 +13,11 @@ Recall the first example of a ``for`` loop that we looked at.
       console.log(i);
    }
 
-We broke down the flow of execution of this loop, noting that the loop executes once for each of the values of ``i`` from 0...50. The three components of the loop---loop variable, loop condition, and update expression---dictate exactly how this loop executes. So far, we have only seen ``for`` loops with this exact form:
+We broke down the flow of execution of this loop, noting that the loop executes
+once for each of the values of ``i`` from 0...50. The three components of the
+loop---loop variable, loop condition, and update expression---dictate exactly
+how this loop executes. So far, we have only seen ``for`` loops with this exact
+form:
 
 .. sourcecode:: js
    :linenos:
@@ -22,7 +26,8 @@ We broke down the flow of execution of this loop, noting that the loop executes 
       // loop body
    }
 
-However, the three components of a ``for`` loop statement can take different forms to create more complex looping behavior.
+However, the three components of a ``for`` loop statement can take different
+forms to create more complex looping behavior.
 
 ``for`` Loop Anatomy
 --------------------
@@ -44,7 +49,10 @@ Initial Expression
    single: for loop; initial expression
    single: for loop; variable
 
-The **initial expression** is executed once, before any iterations of the loop. It can be any expression, even the **empty expression** (which contains no code). However, it almost always declares and initializes a variable, known as the **loop variable**.
+The **initial expression** is executed once, before any iterations of the loop.
+It can be any expression, even the **empty expression** (which contains no
+code). However, it almost always declares and initializes a variable, known as
+the **loop variable**.
 
 The loop variable can be initialized to any value.
 
@@ -72,7 +80,11 @@ The loop variable can be initialized to any value.
 
 To avoid confusion and bugs, you should give your loop variable a unique name, one that you have not used elsewhere in your program. In cases where the loop variable is serving as a "counter" for iterations of a loop, it is conventional to use ``i`` for the variable name. In the case of nested ``for`` loops (loops inside of loops), the variables ``j``, ``k``, etc. are often used.
 
-.. note:: The loop variable is typically used by the loop body, but this is not required. The following example is a valid ``for`` loop that prints ``"LaunchCode"`` 42 times.
+.. admonition:: Note
+
+   The loop variable is typically used by the loop body, but this is not
+   required. The following example is a valid ``for`` loop that prints
+   ``"LaunchCode"`` 42 times.
 
    .. sourcecode:: js
       :linenos:

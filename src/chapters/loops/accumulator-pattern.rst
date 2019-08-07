@@ -3,7 +3,7 @@ The Accumulator Pattern
 
 .. index:: ! pattern
 
-A **pattern** is a commonly-used approach to solve a group of similar programming problems. 
+A **pattern** is a commonly-used approach to solve a group of similar programming problems.
 
 This section introduces your first pattern, which we will explore in-depth after looking at a motivating example.
 
@@ -35,7 +35,7 @@ We can carry out this same procedure in code using a loop.
       }
 
       console.log(total);
-   
+
    **Console Output**
 
    ::
@@ -44,14 +44,23 @@ We can carry out this same procedure in code using a loop.
 
 The variable ``total`` is initialized to 0. The loop executes once each for the values of ``i`` from 1 to 6. Each time the loop body executes, the next value of ``i`` is added to ``total``.
 
-The loop carries out the same basic algorithm that we used to compute the sum ``1 + 2 + 3 + 4 + 5 + 6`` by hand. The only step that may seem different to you is the use of the variable ``total`` to keep track of the running total. When calculating the sum using pen and paper, we rarely write down this part, keeping track of the running total in our head. With programming, however, we must explicitely store such a value in a variable.
+The loop carries out the same basic algorithm that we used to compute the sum
+``1 + 2 + 3 + 4 + 5 + 6`` by hand. The only step that may seem different to you
+is the use of the variable ``total`` to keep track of the running total. When
+calculating the sum using pen and paper, we rarely write down this part,
+keeping track of the running total in our head. With programming, however, we
+must explicitly store such a value in a variable.
 
 .. index:: ! accumulator, ! accumulator pattern
 
 .. index::
    single: pattern, accumulator
 
-This pattern of initializing a variable to some basic, or empty value, and updating it within a loop is commonly referred to as the **accumulator pattern**. We refer to the variable as the **accumulator**. In the example above, ``total`` is the accumlator, and it "accumulates" the individual integers one by one.
+This pattern of initializing a variable to some basic, or empty value, and
+updating it within a loop is commonly referred to as the
+**accumulator pattern**. We refer to the variable as the **accumulator**. In
+the example above, ``total`` is the accumulator, and it "accumulates" the
+individual integers one by one.
 
 The accumulator pattern comes up regularly in programming. The key to using it successfully is to initialize the accumulator variable before you start the iteration. Once inside the loop, update the accumulator.
 
@@ -126,7 +135,7 @@ Let's break this down step-by-step. This table shows the values of each of our v
 
 .. admonition:: Try It!
 
-   What happens if you reverse the order of of the assignment statement within the ``for`` loop, so that ``reversed = reversed + str[i];``? 
+   What happens if you reverse the order of of the assignment statement within the ``for`` loop, so that ``reversed = reversed + str[i];``?
 
    `Try it at repl.it. <https://repl.it/@launchcode/Reversing-a-string>`_
 
@@ -139,7 +148,7 @@ Another common use of the accumulator pattern is to compute some value using eac
 
    .. sourcecode:: js
       :linenos:
-   
+
       let numbers = [2, -5, 13, 42];
       let total = 0;
 
