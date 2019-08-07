@@ -28,10 +28,9 @@ manually add or remove ``li`` tags, or we could use the structural directive
 ``ngFor`` Syntax
 -----------------
 
-The example below shows how to use ``ngFor`` to iterate through the contents of
-an array. It is the basic approach, and ``ngFor`` can be used in more complex
-ways. For a complete guide to using ``ngFor`` and all of its variations, refer
-to the following resources:
+The example below shows the basic approach for using ``ngFor`` to iterate
+through the contents of an array. For a more detailed guide to using ``ngFor``
+and all of its variations, refer to the following resources:
 
 #. `Angular documentation <https://angular.io/guide/template-syntax#ngFor>`__,
 #. `Malcoded website <https://malcoded.com/posts/angular-ngfor/>`__.
@@ -65,7 +64,7 @@ Some items to note:
 #. ``{{movie}}`` is the placeholder for the current value of ``movie``.
 
 By placing the ``*ngFor`` statement inside the tag, the loop generates
-multiple ``<li></li>`` pairs. Each iteration adds a new list item to the
+multiple ``<li></li>`` elements. Each iteration adds a new list item to the
 HTML code, one for each title in the ``movies`` array.
 
 .. admonition:: Warning

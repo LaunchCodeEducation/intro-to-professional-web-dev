@@ -1,10 +1,18 @@
 Angular Directives
 ===================
 
+In the :ref:`DOM chapter <DOM-and-events>` you learned how to wait for *events*
+and then change the appearance of the webpage in response. You practiced these
+skills in the :ref:`DOM studio <DOM-studio>`. By waiting for the users to click
+specific buttons, your code launched, guided, and landed the LaunchCode rocket.
+
 .. index:: ! directive
 
-Angular manages website content through the use of *directives*, and there
-are three types:
+Angular helps us manage website content and manipulate the DOM through the use
+of *directives*. These simplify DOM changes by giving us alternatives to
+``getElementById``, ``addEventListener``, ``innerHTML``, etc.
+
+There are three types of Angular directives:
 
 #. **Components**: These control how a set of data gets displayed within a
    template.
@@ -20,7 +28,7 @@ structural directives to enhance our work.
 Open the Lesson 2 Folder
 -------------------------
 
-If you have not yet forked the Angular lessons repo, follow the directions for
+If you have not yet forked the Angular lessons repo, follow the directions
 given in :ref:`lesson 1 <angular-1>`.
 
 Open the ``angular-lc101-projects`` folder in VSCode and find ``lesson2`` in

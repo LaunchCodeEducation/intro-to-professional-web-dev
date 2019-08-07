@@ -1,3 +1,5 @@
+.. _DOM-studio:
+
 Studio: The DOM and Events
 ==========================
 
