@@ -45,6 +45,14 @@ There are many commands you can use in the terminal to move through the filesyst
      - Creates a file called ``new-file`` in the current directory.  
    + - ``rm <old-file>``
      - Removes ``old-file`` from the current directory. 
+   + - ``man <command>``
+     - Prints to the screen the manual pages for the command. This includes the proper syntax and a description of how that command works.
+   + - ``clear``
+     - Empties the terminal window of previous commands and output.
+   + - ``cp <existing-file>``
+     - Makes a copy of ``existing-file`` in the current directory. Can also be used to copy whole directories.
+   + - ``mv <existing-file> <existing-directory>``
+     - Moves ``existing-file`` from its current location to ``existing-directory``.
 
 .. note::
 

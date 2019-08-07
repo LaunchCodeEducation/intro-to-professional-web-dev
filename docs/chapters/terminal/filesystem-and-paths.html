@@ -86,6 +86,32 @@
     
   <div class="section" id="filesystem-and-paths">
 <h1>19.2. Filesystem and Paths<a class="headerlink" href="#filesystem-and-paths" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">A <strong>filesystem</strong> is a structure for the operating system to store the files and folders that make up the data of the operating system.</p>
+<p>Inside a filesystem, folders are referred to as <strong>directories</strong>.
+Your <strong>root directory</strong> is your Home folder or C drive.
+When you open a new terminal window to work in, it opens to your root directory.
+The root directory is the <strong>parent directory</strong> for the folders stored inside of it.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">Oftentimes, there is a <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder inside the root directory.
+If there is a folder on your Desktop called “LC101_Homework”, then the parent directory of <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code> is <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.
+The parent directory of <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> is <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code>.</p>
+</div>
+<p>A <strong>path</strong> for files and folders is the list of parent directories that the computer must go through to find that particular item.</p>
+<p>Computers have two different types of paths: absolute and relative.
+The <strong>absolute path</strong> is the path to a file from the root directory.
+The <strong>relative path</strong> is the path to a file from the current directory. When working with a relative path, you may find yourself wanting to go up into a parent directory to find a file in a different child directory.
+In order to do so, you can use <code class="docutils literal notranslate"><span class="pre">..</span></code> in the file path to tell the computer to go up to the parent directory.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We have a file inside our <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code> directory from the above example.
+We named that file <code class="docutils literal notranslate"><span class="pre">homework.js</span></code>.
+The absolute path for <code class="docutils literal notranslate"><span class="pre">homework.js</span></code> is <code class="docutils literal notranslate"><span class="pre">/Users/LaunchCodeStudent/Desktop/LC101_Homework</span></code> for Mac users and <code class="docutils literal notranslate"><span class="pre">C:\windows\Desktop\LC101_Homework</span></code> for Windows users.
+If the current directory is <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>, then the relative path for <code class="docutils literal notranslate"><span class="pre">homework.js</span></code> is <code class="docutils literal notranslate"><span class="pre">/LC101_Homework</span></code> for Mac users and <code class="docutils literal notranslate"><span class="pre">\LC101_Homework</span></code> for Windows users.</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">homework.js</span></code> was in a different directory called <code class="docutils literal notranslate"><span class="pre">CoderGirl_Homework</span></code>, which is inside the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory, and the current directory was <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code>, then we would use the <code class="docutils literal notranslate"><span class="pre">..</span></code> syntax in our relative path.
+The relative path would then be <code class="docutils literal notranslate"><span class="pre">/../CoderGirl_Homework</span></code> for Mac users and <code class="docutils literal notranslate"><span class="pre">\..\CoderGirl_Homework</span></code> for Windows users.</p>
+</div>
+<p>Many programmers use paths to navigate through the filesystem in the terminal. We will discuss the commands to do so in the next section.</p>
 </div>
 
 
