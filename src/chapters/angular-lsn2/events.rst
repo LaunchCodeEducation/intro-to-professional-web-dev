@@ -1,5 +1,5 @@
-Event Handling
-===============
+Events
+=======
 
 Recall that *events* are actions that allow users to interact with the
 content on a webpage. Events include clicks, key presses, typing into an input
@@ -69,7 +69,3 @@ could be a function call, a variable assignment, or just a value.
       .. sourcecode:: html+ng2
 
          <div (keydown) = "true">Press Any Key</div>
-
-After an Event Occurs
------------------------
-

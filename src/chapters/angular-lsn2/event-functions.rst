@@ -41,8 +41,9 @@ Let's change our code in ``movie-list.component.html`` to call the function
    Now when the user taps "Enter" or clicks the "Add" button after typing, the
    input ``newMovie.value`` gets sent to the function.
 
-#. Remove the ``<p>{{newMovie.value}}</p>`` from line 9, since the new title
-   should appear on the list instead of below the box.
+#. Since our plan is to use a function to add the new movie the array, we no
+   longer need the title to appear below the input box. Remove
+   ``<p>{{newMovie.value}}</p>`` from line 9.
 
 Define the Function
 --------------------
@@ -79,19 +80,19 @@ update this when the user supplies new information.
       export class MovieListComponent implements OnInit {
          movies = ['Toy Story', 'The Shining', 'Sleepless in Seattle', 'The Martian'];
 
-         addMovie (newTitle: string) {
-
-         }
-
          constructor() { }
 
          ngOnInit() {
+         }
+
+         addMovie (newTitle: string) {
+
          }
       }
 
    Notice that we have to declare the data type for the ``newTitle`` parameter.
 
-#. Now add code to add the new title to the ``movies`` array:
+#. Now add code to ``push`` the new title to the ``movies`` array:
 
    .. sourcecode:: TypeScript
       :linenos:
@@ -99,18 +100,23 @@ update this when the user supplies new information.
       export class MovieListComponent implements OnInit {
          movies = ['Toy Story', 'The Shining', 'Sleepless in Seattle', 'The Martian'];
 
-         addMovie (newTitle: string) {
-            this.movies.push(newTitle);
-            return;
-         }
-
          constructor() { }
 
          ngOnInit() {
          }
+
+         addMovie (newTitle: string) {
+            this.movies.push(newTitle);
+         }
       }
 
    The keyword ``this`` is required.
+
+.. admonition:: Note
+
+   It is a common practice to put ``constructor`` and functions like
+   ``ngOnInit`` AFTER the variable declarations but BEFORE any custom
+   functions.
 
 Save the changes and then refresh the page. Enter a new title to verify that it
 appears in the movie list. Your page should look something like:
@@ -133,15 +139,15 @@ Clear the Input Box
 ^^^^^^^^^^^^^^^^^^^^
 
 5. After the user submits a new title, we can clear the input box by setting its
-   value to be the empty string (``""``). Open ``movie-list.component.html``
+   value to be the empty string (``''``). Open ``movie-list.component.html``
    and modify the input statement as follows:
 
    .. sourcecode:: html+ng2
 
-      <input #newMovie (keyup.enter)='addMovie(newMovie.value); newMovie.value = ""' type='text' placeholder="Enter Movie Title Here"/>
+      <input #newMovie (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
 
    When ``keyup.enter`` occurs, the code calls ``addMovie``. Once control
-   returns from the function, ``newMovie.value`` is set equal to ``""``, which
+   returns from the function, ``newMovie.value`` is set equal to ``''``, which
    clears any text from the input box.
 
 #. Since the user can also click the "Add" button to submit a title, we need to
@@ -149,9 +155,9 @@ Clear the Input Box
 
    .. sourcecode:: html+ng2
 
-      <button (click)='addMovie(newMovie.value); newMovie.value = ""'>Add</button>
+      <button (click)="addMovie(newMovie.value); newMovie.value = ''">Add</button>
 
-   Now ``newMovie.value`` is set equal to ``""``, when "Enter" or "Add" are used
+   Now ``newMovie.value`` is set equal to ``''``, when "Enter" or "Add" are used
    to submit data.
 
 .. admonition:: Try It
@@ -174,23 +180,14 @@ repeated title. One possibility is:
    :linenos:
 
    addMovie (newTitle: string) {
-      if(!this.movies.includes(newMovie)){
-         this.movies.push(newMovie);
+      if(!this.movies.includes(newTitle)){
+         this.movies.push(newTitle);
       }
-      return;
    }
 
-If the ``movies`` array already contains ``newMovie``, then the ``includes``
+If the ``movies`` array already contains ``newTitle``, then the ``includes``
 method returns ``true``. The NOT operator (``!``) flips the result to
 ``false``, and line 3 is skipped.
-
-.. admonition:: Note
-
-   If using the NOT operator bothers you, try:
-
-   #. ``if(this.movies.includes(newMovie)===false)``,
-   #. Use ``if(this.movies.includes(newMovie))``, and update lines 3 - 5 to
-      respond properly when the condition is ``true``.
 
 .. admonition:: Try It
 
@@ -206,7 +203,34 @@ To boost your skills, try these optional tasks to enhance your work:
    or submits a title that is already on the list.
 #. Add CSS to change the color of the error message.
 
+The ``example-solutions`` branch of the Angular repo shows completed code for
+the bonus tasks.
+
 Check Your Understanding
 -------------------------
 
-Lorem ipsum...
+Assume that we have an Angular project that presents users with a list of
+potential pets:
+
+.. figure:: ./figures/pet-list.png
+   :alt: Potential pet list.
+
+.. admonition:: Question
+
+   Which of the following calls the ``addPet`` function when the user clicks
+   on one of the potential pets:
+
+   #. ``<li>{{pet}}</li>``
+   #. ``<li (click) = "true">{{pet}}</li>``
+   #. ``<li #addPet (click) = "true">{{pet}}</li>``
+   #. ``<li (click) = "addPet(pet)">{{pet}}</li>``
+
+.. admonition:: Question
+
+   When the user moves the mouse over an animal, we want to store its name in
+   the ``newFriend`` variable. Which of the following accomplishes this?
+
+   #. ``<li (mouseover) = "pet.name">{{pet}}</li>``
+   #. ``<li #newFriend (mouseover) = "pet.name">{{pet}}</li>``
+   #. ``<li (mouseover) = "newFriend = pet.name">{{pet}}</li>``
+   #. ``<li (mouseover) = "newFriend">{{pet}}</li>``
