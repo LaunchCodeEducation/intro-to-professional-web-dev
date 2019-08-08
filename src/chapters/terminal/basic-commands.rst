@@ -49,8 +49,8 @@ There are many commands you can use in the terminal to move through the filesyst
      - Prints to the screen the manual pages for the command. This includes the proper syntax and a description of how that command works.
    + - ``clear``
      - Empties the terminal window of previous commands and output.
-   + - ``cp <existing-file>``
-     - Makes a copy of ``existing-file`` in the current directory. Can also be used to copy whole directories.
+   + - ``cp <existing-file> <source-directory> <destination-directory>``
+     - Makes a copy of ``existing-file`` in the ``source-directory`` and puts it in the ``destination-directory``. Can also be used to copy whole directories.
    + - ``mv <existing-file> <existing-directory>``
      - Moves ``existing-file`` from its current location to ``existing-directory``.
 
@@ -73,7 +73,7 @@ Beyond these basic commands, there are some shortcuts if you don't want to type 
    + - ``..``
      - The parent directory of the current directory
 
-For an in-depth tutorial of how to use a CLI to move through your daily life, click **HERE**
+For an in-depth tutorial of how to use a CLI to move through your daily life, refer to the :ref:`terminal commands tutorial <terminal-basics-tutorial>`.
 
 Check Your Understanding
 ------------------------

@@ -3,7 +3,7 @@ Filesystem and Paths
 
 .. index:: ! filesystem
 
-A **filesystem** is a structure for the operating system to store the files and folders that make up the data of the operating system. 
+A **filesystem** is a structure for the computer to store the files and folders that make up the data of the operating system. 
 
 Inside a filesystem, folders are referred to as **directories**.
 Your **root directory** is your Home folder or C drive.
@@ -31,7 +31,7 @@ In order to do so, you can use ``..`` in the file path to tell the computer to g
    The absolute path for ``homework.js`` is ``/Users/LaunchCodeStudent/Desktop/LC101_Homework`` for Mac users and ``C:\windows\Desktop\LC101_Homework`` for Windows users.
    If the current directory is ``Desktop``, then the relative path for ``homework.js`` is ``/LC101_Homework`` for Mac users and ``\LC101_Homework`` for Windows users.
 
-   If ``homework.js`` was in a different directory called ``CoderGirl_Homework``, which is inside the ``Desktop`` directory, and the current directory was ``LC101_Homework``, then we would use the ``..`` syntax in our relative path.
+   If ``homework.js`` were in a different directory called ``CoderGirl_Homework``, which is inside the ``Desktop`` directory, and the current directory was ``LC101_Homework``, then we would use the ``..`` syntax in our relative path.
    The relative path would then be ``/../CoderGirl_Homework`` for Mac users and ``\..\CoderGirl_Homework`` for Windows users.
 
 Many programmers use paths to navigate through the filesystem in the terminal. We will discuss the commands to do so in the next section.
