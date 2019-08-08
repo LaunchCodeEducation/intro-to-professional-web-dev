@@ -41,13 +41,13 @@ Current Directory (``.``)
 Imagining you are inside of this file system, ``.`` is a reference 
 to your location, or **current directory**.
 
-Starting at the top directory, *launchcode_courses*, ``.`` represents 
+Starting at the top directory, ``launchcode_courses``, ``.`` represents 
 your current location.
 
 .. figure:: ./figures/locate_launchcode_courses.png
     :alt: Inside top directory
 
-    Your current directory is *launchcode_courses*.
+    Your current directory is ``launchcode_courses``.
 
 Here, your terminal will look something like this:
 
@@ -59,7 +59,7 @@ Here, your terminal will look something like this:
 
 Most of what you see to the left of the command prompt symbol, 
 **$** will be different on your machine. The basic structure here is 
-*<machine_name>:<current_directory> <user_name>$*.
+``<machine_name>:<current_directory> <user_name>$``.
    
 .. note::
 
@@ -91,7 +91,7 @@ You will probably see a somewhat cryptic message, like this:
 That's ok! Basically, we just entered an incomplete command. Our syntax
 wasn't quite right. Keep reading and we'll see how to properly use ``.``.
 
-If you move into *lc_101*, ``.`` then refers to that directory. We'll 
+If you move into ``lc_101``, ``.`` then refers to that directory. We'll 
 cover how to move locations in detail down in :ref:`terminal-cd`.
 
 .. sourcecode:: bash
@@ -110,7 +110,7 @@ Back in our map, we've done this:
 .. figure:: ./figures/lc101_current_dir.png
     :alt: Current directory lc_101
 
-    We're now in *lc_101*
+    We're now in ``lc_101``
 
 .. _terminal-parent-dir:
 
@@ -126,22 +126,22 @@ through indentation:
 .. figure:: ./figures/init_tree.png
     :alt: File tree in VSCode
 
-    *launchcode_courses* contains *data_analysis* and *lc_101*.
+    ``launchcode_courses`` contains ``data_analysis`` and ``lc_101``.
 
 
 By the end of the :ref:`terminal-current-dir`, we found ourselves inside 
-of *lc_101*.
+of ``lc_101``.
 
 .. figure:: ./figures/lc101_current_dir.png
     :alt: Current directory lc_101
 
-    We're still in *lc_101*
+    We're still in ``lc_101``.
 
-*launchcode_courses* is the parent directory of both the *lc_101* and 
-*data_analysis* directories. While we're in *lc_101*, ``..`` refers to 
-*launchcode_courses*.
+``launchcode_courses`` is the parent directory of both the ``lc_101`` and 
+``data_analysis`` directories. While we're in ``lc_101``, ``..`` refers to 
+``launchcode_courses``.
 
-Moving further down into *unit_1*, 
+Moving further down into ``unit_1``, 
 
 .. sourcecode:: bash
    :linenos:
@@ -152,10 +152,10 @@ Moving further down into *unit_1*,
 .. figure:: ./figures/unit1_current_dir.png
     :alt: unit_1 location
 
-    We're now in *unit_1*.
+    We're now in ``unit_1``.
 
-``..`` now refers to *lc101*. 
-``../..`` here refers to *launchcode_courses*.
+``..`` now refers to ``lc101``. 
+``../..`` here refers to ``launchcode_courses``.
 
 Like ``.`` (:ref:`terminal-current-dir`), ``..`` isn't a command itself, but rather a notation. We're
 now ready to tackle our first command!
@@ -182,7 +182,7 @@ command as like the 'You are here' star on our file maps.
 .. figure:: ./figures/unit1_current_dir.png
     :alt: unit_1 location
 
-    We're still in *unit_1*.
+    We're still in ``unit_1``.
 
 You're basically just telling the computer to give you your current location. 
 This may seem basic, but this one is essential. *You need to know your current 
@@ -197,12 +197,12 @@ It's the file system counterpart to Git's ``git status``.
 --------------
 
 Entering the ``ls`` command in your terminal returns the contents of your 
-current directory. Recall, we're in *unit_1*.
+current directory. Recall, we're in ``unit_1``.
 
 .. figure:: ./figures/unit1_current_dir.png
     :alt: unit_1 location
 
-    We're still in *unit_1*.
+    We're still in ``unit_1``.
 
 .. sourcecode:: bash
    :linenos:
@@ -212,7 +212,7 @@ current directory. Recall, we're in *unit_1*.
    unit_1 $ ls
    about_me.html    hello_world.js  styles.css
 
-All of that looks to be in order. Let's move back out into *lc_101* and run ``ls``
+All of that looks to be in order. Let's move back out into ``lc_101`` and run ``ls``
 from there.
 
 .. sourcecode:: bash
@@ -241,12 +241,12 @@ directories.
 ``cd <path_name>`` relocates you to the provided path. We've seen it before, now
 let's explore this command some more.
 
-Remember, we're inside *lc_101*, 
+Remember, we're inside ``lc_101``, 
 
 .. figure:: ./figures/lc101_current_dir.png
     :alt: lc101 location
 
-    We're in *lc_101*.
+    We're in ``lc_101``.
 
 
 To change directories to our :ref:`terminal-parent-dir`, we run the following:
@@ -261,14 +261,14 @@ To change directories to our :ref:`terminal-parent-dir`, we run the following:
    /launchcode_courses
    launchcode_courses $ 
 
-It's pretty self-explanatory, now we're back in *launchcode_courses*.
+It's pretty self-explanatory, now we're back in ``launchcode_courses``.
 
 .. figure:: ./figures/locate_launchcode_courses.png
     :alt: launchcode_courses location
 
-    We're back to *launchcode_courses*.
+    We're back to ``launchcode_courses``.
 
-Not surprisingly, to go down into *data_analysis*, we run ``cd ./data_analysis/``
+Not surprisingly, to go down into ``data_analysis``, we run ``cd ./data_analysis/``
 
 .. sourcecode:: bash
    :linenos:
@@ -283,11 +283,11 @@ Not surprisingly, to go down into *data_analysis*, we run ``cd ./data_analysis/`
 .. figure:: ./figures/locate_data_analysis.png
     :alt: inside data_analysis
 
-    We've made it to *data_analysis*.
+    We've made it to ``data_analysis``.
 
 Ok, so we know how to move one level above our current location (into our parent 
 directory) and how to move one level below our working directory. But what if we 
-wanted to get back to *lc_101* from where we are now, in *data_analysis*?
+wanted to get back to ``lc_101`` from where we are now, in ``data_analysis``?
 
 In order to move to a directory that is contained within the same parent as our 
 working directory, we need to first go back up into the parent. 
@@ -307,8 +307,8 @@ working directory, we need to first go back up into the parent.
    lc_101 $ 
 
 Do you see the faulty command? We tried running ``cd lc_101`` from inside 
-*data_analysis* but the terminal did not recognize that path name from inside
-the *data_analysis* directory. 
+``data_analysis`` but the terminal did not recognize that path name from inside
+the ``data_analysis`` directory. 
 
 We already know how to move to a parent directory, ``cd ..``, above we see how we
 can move into a parent directory and down into one of its children all in one command,
@@ -321,7 +321,7 @@ Here's a visual of where we've just been
 
     Path to move to a peer directory.
 
-For practice, let's go from our current spot in *lc_101*, down into *final_project*.
+For practice, let's go from our current spot in ``lc_101``, down into ``final_project``.
 
 .. sourcecode:: bash
    :linenos:
@@ -343,8 +343,8 @@ For practice, let's go from our current spot in *lc_101*, down into *final_proje
 
 
 Above, we check our location as we navigate to make sure we know where we're going. 
-If we're really confident though, we can accomplish moving from *lc_101* to *final_project*
-all in one go. Let's say we moved back to *lc_101* already.
+If we're really confident though, we can accomplish moving from ``lc_101`` to ``final_project``
+all in one go. Let's say we moved back to ``lc_101`` already.
 
 .. sourcecode:: bash
    :linenos:
@@ -359,7 +359,7 @@ all in one go. Let's say we moved back to *lc_101* already.
 Are you starting to see how terminal navigation can get you places
 swiftly?
 
-Let's do one more quick move for fun. To go back to *lc_101*, 
+Let's do one more quick move for fun. To go back to ``lc_101``, 
 all we need to do is ``cd ../../lc_101/``.
 
 .. sourcecode:: bash
@@ -385,12 +385,12 @@ are available to us.
 ``mkdir <new_directory_name>`` creates a new directory *inside* your current 
 location. 
 
-We're in the *lc_101* directory. 
+We're in the ``lc_101`` directory. 
 
 .. figure:: ./figures/lc101_current_dir.png
     :alt: lc_101 location
 
-    We're back in *lc_101*.
+    We're back in ``lc_101``.
 
 Here, let's create a directory for Unit 2 materials.
 
@@ -432,9 +432,9 @@ And we can visualize our changes like this:
 
 ``rm <item_to_remove>`` removes a given item from the file tree. 
 
-Let's say we decide we no longer need our *cities.sql* data. We can remove it!
+Let's say we decide we no longer need our ``cities.sql`` data. We can remove it!
 
-For fun - and practice! - let's remove it while we're still located in the *lc_101*
+For fun - and practice! - let's remove it while we're still located in the ``lc_101``
 directory.
 
 .. sourcecode:: bash
@@ -449,17 +449,17 @@ directory.
    final_project    lakes.json
    lc_101 $ 
 
-See what we did there? Instead of moving into the parent directory of *cities.sql*,
-we just used the longer file path relative to our location in *lc_101*. And to check
+See what we did there? Instead of moving into the parent directory of ``cities.sql``,
+we just used the longer file path relative to our location in ``lc_101``. And to check
 that our ``rm`` command did what we expected? Well we also checked that right from 
-our spot in *lc_101* with ``ls`` and a longer path.
+our spot in ``lc_101`` with ``ls`` and a longer path.
 
 Here's the map of what we've done:
 
 .. figure:: ./figures/rm_cities.png
     :alt: Removing cities.sql from the tree
 
-    *cities.sql* is gone!
+    ``cities.sql`` is gone!
 
 To remove a directory entry, rather than simply a file, requires an 
 **option** on the command. An option is an additional character, or 
@@ -470,7 +470,7 @@ We'll talk more about the presence of options in :ref:`terminal-man`.
 A common method to remove a directory is to 
 use the ``-r`` option, although there are other choices.
 
-Let's say we no longer want our *unit_2* directory. We're still in *lc_101*.
+Let's say we no longer want our ``unit_2`` directory. We're still in ``lc_101``.
 
 
 .. sourcecode:: bash
@@ -490,14 +490,14 @@ Let's say we no longer want our *unit_2* directory. We're still in *lc_101*.
 
 Notice, we try using simply `rm` but we get a response returned that the item we've
 asked to remove is a directory. But alas, with ``rm -r``, we are able to successfully
-remove the *unit_2* directory.
+remove the ``unit_2`` directory.
 
 Back in our map:
 
 .. figure:: ./figures/rm_unit2.png
     :alt: Sample file tree with a directory removed
 
-    *unit_2* is gone without a trace
+    ``unit_2`` is gone without a trace
 
 
 .. _terminal-cp:
@@ -508,8 +508,8 @@ Back in our map:
 ``cp <source_path> <target_path>`` copies the item at the source and
 puts it in the target path.
 
-Take our sample file tree above. We're still in *lc_101* and say we want to copy our
-*lakes.json* file and place that copy inside the *final_project* directory.
+Take our sample file tree above. We're still in ``lc_101`` and say we want to copy our
+``lakes.json`` file and place that copy inside the ``final_project`` directory.
 
 .. sourcecode:: bash
    :linenos:
@@ -529,17 +529,17 @@ Take our sample file tree above. We're still in *lc_101* and say we want to copy
    data_analysis $
 
 
-We didn't need to ``cd`` into *data_analysis* but since we are dealing with a file 
+We didn't need to ``cd`` into ``data_analysis`` but since we are dealing with a file 
 contained within it, it made sense to do so. Once we ran our ``cp`` command, we 
-checked the contents of both *data_analysis* and *data_analysis/final_project* to
+checked the contents of both ``data_analysis`` and ``data_analysis/final_project`` to
 verify the copy was made.
 
-And of course, now there are two *lakes.json*.
+And of course, now there are two ``lakes.json``.
 
 .. figure:: ./figures/cp_lakes.png
     :alt: Copy of lakes.json
 
-    *lakes.json* double take
+    ``lakes.json`` double take
 
 
 .. _terminal-mv:
@@ -549,7 +549,7 @@ And of course, now there are two *lakes.json*.
 
 ``mv <item_to_move> <target_path>`` moves an item to the provided target path.
 
-Still in *data_analysis*, lets move *data_analysis/lakes.json* into *lc_101*. 
+Still in ``data_analysis``, lets move ``data_analysis/lakes.json`` into ``lc_101``. 
 
 
 .. sourcecode:: bash
@@ -569,7 +569,7 @@ As usual, we use ``ls`` to verify our results. Now our map looks like the follow
 .. figure:: ./figures/mv_lakes.png
     :alt: Moving lakes.json to lc101
 
-    ``mv`` moves one of the *lakes.json*.
+    ``mv`` moves one of the ``lakes.json``.
 
 
 .. _terminal-touch:
@@ -579,7 +579,7 @@ As usual, we use ``ls`` to verify our results. Now our map looks like the follow
 
 ``touch <new_file_name>`` creates a new file.
 
-Back in *data_analysis*, lets add a new *cafes.sql* file to our directory. 
+Back in ``data_analysis``, lets add a new ``cafes.sql`` file to our directory. 
 
 .. sourcecode:: bash
    :linenos:
@@ -663,7 +663,7 @@ Exiting Programs
 *ctrl + c* can be used to exit a running program.
 
 Some programs take different commands to exit. *ctrl + c* 
-is sometimes the command to quit a running program and othertimes used to prompt 
+is sometimes the command to quit a running program and other times used to prompt 
 the running program for an different exit command.
 
 .. _terminal-q:
