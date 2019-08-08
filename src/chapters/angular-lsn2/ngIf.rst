@@ -91,14 +91,9 @@ Just like ``if`` statements, we can use the operators AND (``&&``), OR
 
    .. sourcecode:: html+ng2
 
-      <p *ngIf = "!arrayName.length == 0">Some text</p>
+      <p *ngIf = "arrayName.length !== 0">Some text</p>
 
-   ``Some text`` appears when ``arrayName.length == 0`` returns ``false``,
-   since the ``!`` operator flips the result. If the array is empty, then
-   nothing gets added to the webpage.
-
-   Note that the Angular syntax uses ``==`` rather than the ``===`` we prefer
-   in JavaScript.
+   ``Some text`` appears when ``arrayName.length`` is NOT equal to 0.
 
 What About ``if/else``?
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -276,7 +271,7 @@ Examine the following code:
    For the same code sample, which of the following shows the correct syntax for
    the ``*ngIf`` statement?
 
-   #. ``*ngIf = "prepWork.length == 0; else noHW"``
+   #. ``*ngIf = "prepWork.length === 0; else noHW"``
    #. ``*ngIf = "prepWork.length !== 0; else noHW"``
-   #. ``*ngIf = "prepWork.length == 0; else #noHW"``
+   #. ``*ngIf = "prepWork.length === 0; else #noHW"``
    #. ``*ngIf = "prepWork.length !== 0; else #noHW"``

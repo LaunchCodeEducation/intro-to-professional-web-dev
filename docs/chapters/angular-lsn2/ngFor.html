@@ -261,25 +261,46 @@ reflects the changes.</p>
 of the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag? Try it and see what happens!</li>
 <li>What if you placed the statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag instead? Try it!</li>
 </ol>
+</div>
 <div class="section" id="bonus-what-if">
-<h4>28.2.2.1.1. Bonus What If<a class="headerlink" href="#bonus-what-if" title="Permalink to this headline">¶</a></h4>
+<h3>28.2.2.2. Bonus What If<a class="headerlink" href="#bonus-what-if" title="Permalink to this headline">¶</a></h3>
 <p>What if we want to have different chores listed for Yesterday, Today, and
 Tomorrow?</p>
 <div class="figure">
 <img alt="*ngFor bonus solution." src="../../_images/chore-bonus-solution.png" />
 </div>
-<p>Accomplishing this task is OPTIONAL. If you are curious about how to make the
-updates, switch to the <code class="docutils literal notranslate"><span class="pre">bonus-solutions</span></code> branch and check the code in the
-<code class="docutils literal notranslate"><span class="pre">ngfor-practice</span></code> folder. Explore how to use <code class="docutils literal notranslate"><span class="pre">index</span></code> in <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>.</p>
-<ol class="arabic simple">
-<li>Line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows how to set a variable equal to an
-index value from the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array.</li>
-<li>Line 4 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> shows the syntax for using the index
-variable to access the content within the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array.</li>
-<li>Line 9 in <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> shows the 2-dimensional array of the chore
-list items.</li>
+<p>Accomplishing this task is OPTIONAL, but it boosts your skill level and makes
+your page look better.</p>
+<ol class="arabic">
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> file, replace the <code class="docutils literal notranslate"><span class="pre">chores</span></code> and
+<code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> arrays with the following array of <em>objects</em>:</p>
+<div class="highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">chores</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Yesterday&#39;s Chores&quot;</span><span class="p">,</span> <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Empty dishwasher&#39;</span><span class="p">,</span> <span class="s1">&#39;Start LaunchCode prep work&#39;</span><span class="p">,</span> <span class="s1">&#39;Buy groceries&#39;</span><span class="p">]},</span>
+   <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Today&#39;s Chores&quot;</span><span class="p">,</span> <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Load dishwasher&#39;</span><span class="p">,</span> <span class="s1">&#39;Finish LaunchCode prep work&#39;</span><span class="p">,</span> <span class="s1">&#39;Buy the groceries you forgot&#39;</span><span class="p">]},</span>
+   <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Tomorrow&#39;s Chores&quot;</span><span class="p">,</span> <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Empty dishwasher AGAIN&#39;</span><span class="p">,</span> <span class="s1">&#39;Play with LaunchCode practice code&#39;</span><span class="p">,</span> <span class="s1">&#39;Groceries AGAIN&#39;</span><span class="p">]},</span>
+<span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Update line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> to access each <em>object</em> in the
+<code class="docutils literal notranslate"><span class="pre">chores</span></code> array:</p>
+<ol class="loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class='chores'</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">chores'&gt;</span></code></li>
+<li>Each iteration, <code class="docutils literal notranslate"><span class="pre">list</span></code> will be assigned a new object with <code class="docutils literal notranslate"><span class="pre">title</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tasks</span></code> properties.</li>
 </ol>
-</div>
+</li>
+<li><p class="first">Update the placeholder in line 2 to access the <code class="docutils literal notranslate"><span class="pre">title</span></code> property of
+<code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+</li>
+<li><p class="first">Update line 4 to loop over the <code class="docutils literal notranslate"><span class="pre">tasks</span></code> array:
+<code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">chore</span> <span class="pre">of</span> <span class="pre">list.tasks'&gt;</span></code>.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">

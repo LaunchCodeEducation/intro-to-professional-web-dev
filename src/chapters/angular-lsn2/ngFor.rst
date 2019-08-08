@@ -173,7 +173,7 @@ What If
 #. What if you placed the statement inside the ``<ul>`` tag instead? Try it!
 
 Bonus What If
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 What if we want to have different chores listed for Yesterday, Today, and
 Tomorrow?
@@ -181,16 +181,32 @@ Tomorrow?
 .. figure:: ./figures/chore-bonus-solution.png
    :alt: *ngFor bonus solution.
 
-Accomplishing this task is OPTIONAL. If you are curious about how to make the
-updates, switch to the ``bonus-solutions`` branch and check the code in the
-``ngfor-practice`` folder. Explore how to use ``index`` in ``*ngFor``.
+Accomplishing this task is OPTIONAL, but it boosts your skill level and makes
+your page look better.
 
-#. Line 1 in ``chores.component.html`` shows how to set a variable equal to an
-   index value from the ``todoTitles`` array.
-#. Line 4 in ``chores.component.html`` shows the syntax for using the index
-   variable to access the content within the ``chores`` array.
-#. Line 9 in ``chores.component.ts`` shows the 2-dimensional array of the chore
-   list items.
+#. In the ``chores.component.ts`` file, replace the ``chores`` and
+   ``todoTitles`` arrays with the following array of *objects*:
+
+   .. sourcecode:: JavaScript
+      :linenos:
+
+      chores = [
+         {title: "Yesterday's Chores", tasks: ['Empty dishwasher', 'Start LaunchCode prep work', 'Buy groceries']},
+         {title: "Today's Chores", tasks: ['Load dishwasher', 'Finish LaunchCode prep work', 'Buy the groceries you forgot']},
+         {title: "Tomorrow's Chores", tasks: ['Empty dishwasher AGAIN', 'Play with LaunchCode practice code', 'Groceries AGAIN']},
+      ]
+
+#. Update line 1 in ``chores.component.html`` to access each *object* in the
+   ``chores`` array:
+
+   a. ``<div class='chores' *ngFor = 'let list of chores'>``
+   b. Each iteration, ``list`` will be assigned a new object with ``title``
+      and ``tasks`` properties.
+
+#. Update the placeholder in line 2 to access the ``title`` property of
+   ``list``.
+#. Update line 4 to loop over the ``tasks`` array:
+   ``<li *ngFor = 'let chore of list.tasks'>``.
 
 Check Your Understanding
 --------------------------
