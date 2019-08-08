@@ -15,8 +15,8 @@ with icons and visual representations of the machine's file systems.
 
 
 Programmers often use another kind of interface, called the **command line**. A 
-**CLI**, or command line interface, uses textual commands, rather than graphic 
-manipulation, to give the computer instructions. 
+**CLI**, or command line interface, uses textual commands, rather than dragging
+and dropping icons, to give the computer instructions. 
 
 .. figure:: figures/CLI-example.png
    :alt: Sample command line interface.
@@ -43,6 +43,6 @@ In the terminal, you will be able to:
 - quickly move throughout your computer's file structure 
 - make new files and directories 
 - remove items from folders 
-- install install software
+- install software
 - open programs 
 - run programs directly
