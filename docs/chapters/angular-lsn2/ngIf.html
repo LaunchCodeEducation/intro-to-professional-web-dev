@@ -161,14 +161,10 @@ tag in the example above already contains <code class="docutils literal notransl
 <p><code class="docutils literal notranslate"><span class="pre">Some</span> <span class="pre">text</span></code> appears on the page if either <code class="docutils literal notranslate"><span class="pre">conditionA</span></code> or <code class="docutils literal notranslate"><span class="pre">conditionB</span></code>
 return <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p>Logical NOT:</p>
-<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="p">*</span><span class="na">ngIf</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;!arrayName.length == 0&quot;</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="p">*</span><span class="na">ngIf</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;arrayName.length !== 0&quot;</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Some</span> <span class="pre">text</span></code> appears when <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">==</span> <span class="pre">0</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>,
-since the <code class="docutils literal notranslate"><span class="pre">!</span></code> operator flips the result. If the array is empty, then
-nothing gets added to the webpage.</p>
-<p class="last">Note that the Angular syntax uses <code class="docutils literal notranslate"><span class="pre">==</span></code> rather than the <code class="docutils literal notranslate"><span class="pre">===</span></code> we prefer
-in JavaScript.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">Some</span> <span class="pre">text</span></code> appears when <code class="docutils literal notranslate"><span class="pre">arrayName.length</span></code> is NOT equal to 0.</p>
 </div>
 </div>
 <div class="section" id="what-about-if-else">
@@ -372,9 +368,9 @@ empty.</p>
 <p>For the same code sample, which of the following shows the correct syntax for
 the <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> statement?</p>
 <ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">===</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">===</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
 </ol>
 </div>
