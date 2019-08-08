@@ -176,7 +176,7 @@ commit any changes to your ``*ngFor`` work, then switch to the
 
    $ cd ..
    $ ls
-      ngfor-practice  ngif-practice
+      input-practice  ngfor-practice  ngif-practice
    $ cd ngif-practice
 
 In VSCode, open the ``chores.component.html`` file from the ``ngif-practice``
@@ -205,8 +205,10 @@ The code should look like this:
    </div>
    <hr>
 
-Enter ``ng serve`` in the terminal to launch the project, then use ``*ngIf`` to
-do the following:
+Once again, you must install the necessary Angular modules. Run ``npm install``
+in the terminal, then enter ``ng serve`` to launch the project.
+
+Now use ``*ngIf`` to do the following:
 
 #. Display the text "Work harder!" under the ``Chores`` list if the length of
    the ``chores`` array is longer than the length of the ``finishedChores``
@@ -216,14 +218,14 @@ do the following:
    verify that your code works.
 #. If the ``chores`` array is empty OR the ``finishedChores`` array has at
    least 3 more items than the ``chores`` array, display ``trophyImage`` under
-   the ``Done`` list. Otherwise, use a ``p`` tag to display the text, "No
-   allowance yet."
+   the ``Done Chores`` list. Otherwise, use a ``p`` tag to display the text,
+   "No allowance yet."
 #. Return to ``chores.component.ts`` and change the number of items in the
    arrays again. Check to make sure the webpage correctly responds to your
    changes.
 #. Finally, if the ``chores`` array is empty AND ``finishedChores`` contains
    4 or more items, display an ``h1`` underneath the lists with the text "Ice
-   cream treat!". Otherwise, display ``h3`` and ``p`` elements that describe
+   cream treat!" Otherwise, display ``h3`` and ``p`` elements that describe
    how to earn ice cream.
 
 Properly done, your page should look something like:

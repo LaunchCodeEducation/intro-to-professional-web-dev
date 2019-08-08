@@ -26,8 +26,9 @@ The starter code should match this:
 
    </div>
 
-In the terminal, navigate into the ``input-practice`` folder and enter
-``ng serve``. The webpage should look like this:
+In the terminal, navigate into the ``input-practice`` folder. Enter
+``npm install`` to add the Angular modules, then run ``ng serve``. The webpage
+should look like this:
 
 .. figure:: ./figures/input-start.png
    :alt: Starting setup for Angular input practice.
@@ -67,11 +68,12 @@ included any instructions to deal with the data.
 
       <input #newMovie (keyup)='true' type='text' placeholder="Enter Movie Title Here"/>
 
-``(keyup)='true'`` waits for the user to tap and release a key when the cursor
-is in the input box. When this happens, any characters in the box are stored in
-``newMovie``. However, we still need a place for the data to *go*.
+   ``(keyup)='true'`` waits for the user to tap and release a key when the cursor
+   is in the input box. When this happens, any characters in the box are stored in
+   ``newMovie``. However, we still need a place for the data to *go*.
 
-4. Add one more line to your code, then save and reload the page:
+4. Add a ``<p>`` element to line 8 of your code, and include a placeholder for
+   the value of ``newMovie``. Save and reload the page:
 
    .. sourcecode:: html+ng2
       :linenos:
@@ -155,7 +157,8 @@ Since most of us are used to pressing the "Enter" key to submit our input,
 clicking inside the box might not be the best option. Fortunately, we know how
 to add a button to our HTML.
 
-6. Modify your HTML code like this:
+6. Add a ``<button>`` element with a ``click`` event to line 8. Also, change
+   the event in line 7 back to ``keyup.enter``:
 
    .. sourcecode:: html+ng2
       :linenos:

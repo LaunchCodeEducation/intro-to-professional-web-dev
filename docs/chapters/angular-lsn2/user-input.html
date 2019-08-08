@@ -112,8 +112,9 @@ be better if we could make the changes on the screen.</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>In the terminal, navigate into the <code class="docutils literal notranslate"><span class="pre">input-practice</span></code> folder and enter
-<code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>. The webpage should look like this:</p>
+<p>In the terminal, navigate into the <code class="docutils literal notranslate"><span class="pre">input-practice</span></code> folder. Enter
+<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to add the Angular modules, then run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>. The webpage
+should look like this:</p>
 <div class="figure">
 <img alt="Starting setup for Angular input practice." src="../../_images/input-start.png" />
 </div>
@@ -148,13 +149,14 @@ for a particular event to occur. One of the simplest is to wait for a
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
-</li>
-</ol>
 <p><code class="docutils literal notranslate"><span class="pre">(keyup)='true'</span></code> waits for the user to tap and release a key when the cursor
 is in the input box. When this happens, any characters in the box are stored in
 <code class="docutils literal notranslate"><span class="pre">newMovie</span></code>. However, we still need a place for the data to <em>go</em>.</p>
+</li>
+</ol>
 <ol class="arabic" start="4">
-<li><p class="first">Add one more line to your code, then save and reload the page:</p>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> element to line 8 of your code, and include a placeholder for
+the value of <code class="docutils literal notranslate"><span class="pre">newMovie</span></code>. Save and reload the page:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -238,7 +240,8 @@ specific action to perform that records the entry without changing the text.</p>
 clicking inside the box might not be the best option. Fortunately, we know how
 to add a button to our HTML.</p>
 <ol class="arabic" start="6">
-<li><p class="first">Modify your HTML code like this:</p>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element with a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to line 8. Also, change
+the event in line 7 back to <code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code>:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
