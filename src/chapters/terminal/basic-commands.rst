@@ -29,7 +29,6 @@ There are many commands you can use in the terminal to move through the filesyst
 
 .. list-table:: Basic Terminal Commands
    :header-rows: 1
-   :widths: auto
 
    + - Command
      - Result
@@ -49,10 +48,10 @@ There are many commands you can use in the terminal to move through the filesyst
      - Prints to the screen the manual pages for the command. This includes the proper syntax and a description of how that command works.
    + - ``clear``
      - Empties the terminal window of previous commands and output.
-   + - ``cp <existing-file> <source-directory> <destination-directory>``
-     - Makes a copy of ``existing-file`` in the ``source-directory`` and puts it in the ``destination-directory``. Can also be used to copy whole directories.
-   + - ``mv <existing-file> <existing-directory>``
-     - Moves ``existing-file`` from its current location to ``existing-directory``.
+   + - ``cp <source-path> <target-path>``
+     - Copies the file or directory at ``source-path`` and puts it in the ``target-path``.
+   + - ``mv <source-path> <target-path>``
+     - Moves the file or directory at ``source-path`` from its current location to ``target-path``.
 
 .. note::
 

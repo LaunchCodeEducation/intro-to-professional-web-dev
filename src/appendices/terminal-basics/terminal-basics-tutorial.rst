@@ -506,7 +506,8 @@ Back in our map:
 --------------
 
 ``cp <source_path> <target_path>`` copies the item at the source and
-puts it in the target path.
+puts it in the target path. The item can be a file or whole directory and is named
+within its own source path.
 
 Take our sample file tree above. We're still in ``lc_101`` and say we want to copy our
 ``lakes.json`` file and place that copy inside the ``final_project`` directory.
@@ -541,13 +542,18 @@ And of course, now there are two ``lakes.json``.
 
     ``lakes.json`` double take
 
+We can think of ``cp`` as basically copy *and* paste, since the target path is 
+included in the command.
+
 
 .. _terminal-mv:
 
 ``mv`` Command
 --------------
 
-``mv <item_to_move> <target_path>`` moves an item to the provided target path.
+``mv <item_to_move> <target_path>`` moves an item to the provided target path. The
+item being moved can be a single file or a whole directory. When referring to the item
+being moved, its source path is required, just like the :ref:`terminal-cp`.
 
 Still in ``data_analysis``, lets move ``data_analysis/lakes.json`` into ``lc_101``. 
 
