@@ -4,7 +4,7 @@ Exercises: Terminal
 
 #. If you haven't done so already, set up your command line environment with instructions from the :ref:`terminal-setupinstructions` appendix.
 
-#. Using your terminal, navigate to your Home directory using, `cd ~`.
+#. Using your terminal, navigate to your Home directory using ``cd ~``.
 
 #. Use ``ls`` to view the contents of your Home directory.
 
