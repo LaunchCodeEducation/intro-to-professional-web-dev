@@ -159,6 +159,66 @@ candidate.</li>
 <img alt="Sidekick image results." src="../../_images/lesson2-exercises-sidekicks.gif" />
 </div>
 </div>
+<div class="section" id="selected-crew-column">
+<h2>28.7.5. Selected Crew Column<a class="headerlink" href="#selected-crew-column" title="Permalink to this headline">¶</a></h2>
+<p>Once we select a candidate, we want an option to add them to the crew of the
+next space mission.</p>
+<ol class="arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code>, code an <code class="docutils literal notranslate"><span class="pre">addToCrew</span></code> function that takes an
+<em>object</em> as a parameter.</li>
+<li>If the candidate is NOT part of the crew, the function should push them into
+the <code class="docutils literal notranslate"><span class="pre">crew</span></code> array. Candidates who are already part of the crew should be
+ignored.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code>, add a “Send on Mission” button next to the
+“Clear Data &amp; Image” button.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to the button to call the <code class="docutils literal notranslate"><span class="pre">addToCrew</span></code> function. When
+clicked, pass the selected candidate as the argument.</li>
+<li>Under the “Selected Crew” section, use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the <code class="docutils literal notranslate"><span class="pre">crew</span></code>
+array and display each name.</li>
+</ol>
+<div class="section" id="clear-crew-list">
+<h3>28.7.5.1. Clear Crew List<a class="headerlink" href="#clear-crew-list" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Add a “Clear Crew List” button under the “Selected Crew” list.</li>
+<li>This button should only appear when the <code class="docutils literal notranslate"><span class="pre">crew</span></code> array contains data. Use
+<code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to make this happen.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event that clears the <code class="docutils literal notranslate"><span class="pre">crew</span></code> array.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Crew list results." src="../../_images/lesson2-exercises-crew.gif" />
+</div>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2>28.7.6. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fine-tune-the-buttons">
+<h3>28.7.6.1. Fine Tune the Buttons<a class="headerlink" href="#fine-tune-the-buttons" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Update the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">Mission</span></code> button to appear only if a candidate has been
+selected.</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">Mission</span></code> button disappear if the selected candidate is
+already part of the crew.</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">Mission</span></code> button disappear once three crew members have
+been assigned to the mission.</li>
+</ol>
+</div>
+<div class="section" id="change-the-mission-name">
+<h3>28.7.6.2. Change the Mission Name<a class="headerlink" href="#change-the-mission-name" title="Permalink to this headline">¶</a></h3>
+<p>We can make the Mission Name heading interactive. When clicked, we want to
+present the user with an input box to enter a new name.</p>
+<ol class="arabic simple">
+<li>Replace line 2 in <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code> with
+<code class="docutils literal notranslate"><span class="pre">&lt;h2</span> <span class="pre">class=&quot;centered&quot;</span> <span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;!editMissionName;</span> <span class="pre">else</span> <span class="pre">editMission&quot;</span> <span class="pre">(click)=&quot;editMissionName</span> <span class="pre">=</span> <span class="pre">true&quot;&gt;Mission</span> <span class="pre">Name:</span> <span class="pre">{{missionName}}&lt;/h2&gt;</span></code>.</li>
+<li>When clicked, the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> code executes. Update the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag
+with a <code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code> event. The event should call the
+<code class="docutils literal notranslate"><span class="pre">changeMissionName</span></code> function and pass the new name as an argument.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code>, code a <code class="docutils literal notranslate"><span class="pre">changeMissionName</span></code> function to
+update the name of the mission.</li>
+<li>After changing the mission name, set <code class="docutils literal notranslate"><span class="pre">editMissionName</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+</ol>
+</div>
+</div>
 </div>
 
 
