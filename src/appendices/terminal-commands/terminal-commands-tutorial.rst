@@ -1,7 +1,7 @@
-.. _terminal-basics-tutorial:
+.. _terminal-commands-tutorial:
 
-Terminal Basics Tutorial
-========================
+Terminal Commands Tutorial
+==========================
 
 As mentioned in the terminal chapter, the essence of the command line is 
 is text. Since this is quite different from how many may be used to using
