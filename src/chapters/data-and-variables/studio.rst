@@ -4,7 +4,7 @@
 Studio: Data and Variables
 ===========================
 
-In this studio you are going to write code to display the *very important*
+In this studio, you are going to write code to display the *very important*
 **Launch Checklist LC04**.
 
 **LC04** displays information related to the space shuttle, astronauts, and
@@ -124,6 +124,6 @@ Bonus Mission
 Use ``readline-sync`` to prompt the user to enter the value for
 ``astronautCount``.
 
-The values printed for ``count``, ``Crew mass``, and ``Total mass`` should
+The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg`` should
 change based on the number of astronauts on the shuttle. (Don't forget to
 convert the input value from a string to a number).

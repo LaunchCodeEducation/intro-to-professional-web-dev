@@ -2,7 +2,7 @@ Nested Conditionals
 ===================
 
 We can write code with more complex branching behavior by combining
-conditionals, and in particular by nesting conditionals. Let's see how this
+conditionals and, in particular, by nesting conditionals. Let's see how this
 works by tackling the following problem.
 
 .. admonition:: Example
