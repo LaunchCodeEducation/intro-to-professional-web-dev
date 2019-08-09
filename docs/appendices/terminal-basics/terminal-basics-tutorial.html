@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Terminal Basics Tutorial &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <title>Terminal Commands Tutorial &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
@@ -74,7 +74,7 @@
 <ol class="breadcrumb container">
     <li><a href="../../index.html">Contents</a></li>
     <li><a href="index.html">Terminal Basics</a></li>
-    <li class="active">Terminal Basics Tutorial</li>
+    <li class="active">Terminal Commands Tutorial</li>
 </ol>
 
 
@@ -84,8 +84,8 @@
     <div class="col-md-10 col-md-offset-1 content ">
 
     
-  <div class="section" id="terminal-basics-tutorial">
-<span id="id1"></span><h1>Terminal Basics Tutorial<a class="headerlink" href="#terminal-basics-tutorial" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="terminal-commands-tutorial">
+<span id="id1"></span><h1>Terminal Commands Tutorial<a class="headerlink" href="#terminal-commands-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>As mentioned in the terminal chapter, the essence of the command line is
 is text. Since this is quite different from how many may be used to using
 their computers, this tutorial is meant to help you picture how your
@@ -537,7 +537,8 @@ remove the <code class="docutils literal notranslate"><span class="pre">unit_2</
 <div class="section" id="cp-command">
 <span id="terminal-cp"></span><h2><code class="docutils literal notranslate"><span class="pre">cp</span></code> Command<a class="headerlink" href="#cp-command" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">&lt;source_path&gt;</span> <span class="pre">&lt;target_path&gt;</span></code> copies the item at the source and
-puts it in the target path.</p>
+puts it in the target path. The item can be a file or whole directory and is named
+within its own source path.</p>
 <p>Take our sample file tree above. We’re still in <code class="docutils literal notranslate"><span class="pre">lc_101</span></code> and say we want to copy our
 <code class="docutils literal notranslate"><span class="pre">lakes.json</span></code> file and place that copy inside the <code class="docutils literal notranslate"><span class="pre">final_project</span></code> directory.</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -576,10 +577,14 @@ verify the copy was made.</p>
 <img alt="Copy of lakes.json" src="../../_images/cp_lakes.png" />
 <p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">lakes.json</span></code> double take</span></p>
 </div>
+<p>We can think of <code class="docutils literal notranslate"><span class="pre">cp</span></code> as basically copy <em>and</em> paste, since the target path is
+included in the command.</p>
 </div>
 <div class="section" id="mv-command">
 <span id="terminal-mv"></span><h2><code class="docutils literal notranslate"><span class="pre">mv</span></code> Command<a class="headerlink" href="#mv-command" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;item_to_move&gt;</span> <span class="pre">&lt;target_path&gt;</span></code> moves an item to the provided target path.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;item_to_move&gt;</span> <span class="pre">&lt;target_path&gt;</span></code> moves an item to the provided target path. The
+item being moved can be a single file or a whole directory. When referring to the item
+being moved, its source path is required, just like the <a class="reference internal" href="#terminal-cp"><span class="std std-ref">cp Command</span></a>.</p>
 <p>Still in <code class="docutils literal notranslate"><span class="pre">data_analysis</span></code>, lets move <code class="docutils literal notranslate"><span class="pre">data_analysis/lakes.json</span></code> into <code class="docutils literal notranslate"><span class="pre">lc_101</span></code>.</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2

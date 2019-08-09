@@ -24,6 +24,7 @@ Chapters
    chapters/more-on-types/index
    chapters/exceptions/index
    chapters/classes/index
+   chapters/terminal/index
    chapters/html/index
    chapters/css/index
    chapters/git/index
@@ -92,7 +93,7 @@ Appendices
    appendices/dom-method-examples/index
    appendices/string-method-examples/index
    appendices/math-method-examples/index
-   appendices/terminal-basics/index
+   appendices/terminal-commands/index
    appendices/installing-software/index
 
 .. toctree::
