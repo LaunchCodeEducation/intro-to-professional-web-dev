@@ -1,4 +1,4 @@
-Studio: Mission Planner, Part 1
+Studio: Angular, Part 1
 ===============================
 
 Angular allows us to build webpages in small pieces, which keeps us organized
