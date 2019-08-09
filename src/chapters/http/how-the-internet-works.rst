@@ -30,7 +30,7 @@ Protocols
 .. index::
    single: url; protocol
 
-A **protocol** is standard for communication between computers. Most web communication uses *three* protocols, in fact.
+A **protocol** is a standard for communication between computers. Most web communication uses *three* protocols, in fact.
 
 .. list-table:: Common Web Protocols
    :header-rows: 1
