@@ -14,15 +14,12 @@ From the ``lesson2`` folder in VSCode, navigate into the
 .. figure:: ./figures/lesson2-exercises-menu.png
    :alt: Access lesson 2 exercises in VSCode.
 
-The code should look like:
-
-   Code sample here...
-
 In the terminal, navigate into the lesson 2 ``exercises`` folder. Enter
 ``npm install`` to add the Angular modules, then run ``ng serve``. The webpage
 should look like this:
 
-   Add lesson2-exercises-start.png...
+.. figure:: ./figures/lesson2-exercises-start.png
+   :alt: Starting setup for exercises.
 
 Candidates Column
 ------------------
