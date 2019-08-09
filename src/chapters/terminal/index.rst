@@ -8,3 +8,4 @@ Terminal
    filesystem-and-paths
    basic-commands
    running-programs
+   exercises
