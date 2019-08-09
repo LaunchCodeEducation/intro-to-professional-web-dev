@@ -72,7 +72,7 @@ Beyond these basic commands, there are some shortcuts if you don't want to type 
    + - ``..``
      - The parent directory of the current directory
 
-For an in-depth tutorial of how to use a CLI to move through your daily life, refer to the :ref:`terminal commands tutorial <terminal-basics-tutorial>`.
+For an in-depth tutorial of how to use a CLI to move through your daily life, refer to the :ref:`terminal commands tutorial <terminal-commands-tutorial>`.
 
 Check Your Understanding
 ------------------------
