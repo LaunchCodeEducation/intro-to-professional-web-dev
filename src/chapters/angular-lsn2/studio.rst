@@ -1,7 +1,6 @@
 Studio: Angular, Part 2
 =======================
-
-At the end of the first mission planner studio, multiple components display data about the mission. 
+At the end of the first mission planner studio, multiple components display data about the mission.
 Your job is to allow the user to update the mission plan by adding user interaction.
 
 
@@ -9,7 +8,7 @@ Getting Started
 ---------------
 This studio uses the same mission planner repository as Angular studio part 1.
 
-#. Open the `mission planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>` in VSCode
+#. Open the `mission planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`_ in VSCode
 #. Run ``git status`` to see if you have any uncommitted work, if you do resolve it
 #. Checkout the ``studio-2`` branch
 #. Run ``npm install`` to download dependencies
@@ -66,6 +65,8 @@ it means this is the first mission for that person.
 Requirements
 ------------
 
+.. note::  All of these features only temporarily alter the data. If you refresh the page, the original data will appear.
+
 Edit Rocket Name
 ^^^^^^^^^^^^^^^^
 The rocket name should be clickable and editable like the mission name. Alter ``src/app/header/header.component.html``
@@ -84,10 +85,10 @@ Add this code to ``src/app/crew/crew.component.html``.
 
 Display 1st Mission Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-If a crew member's ``firstMission`` property is ``true``, then display the text (1st mission) next to their name.
+If a crew member's ``firstMission`` property is ``true``, then display the text - 1st next to their name.
 
 .. figure:: figures/first-mission-example.png
-       :alt: Example of first mission status being shown.
+       :alt: Example of first mission status appearing next to crew member name.
 
        Example of first mission status being shown.
 
@@ -96,6 +97,11 @@ Add Crew Members
 ^^^^^^^^^^^^^^^^
 Allow crew members to be added to the list. To create a new crew member, two pieces of information need to be input first is a name and
 second is the first mission status. To capture that data an input and a checkbox need to be added to ``src/app/crew/crew.component.html``.
+
+.. figure:: figures/add-crew.gif
+       :alt: Animated gif of crew member being added to list after add button is clicked.
+
+       Example of crew member being added.
 
 Add this code to the *bottom* of ``src/app/crew/crew.component.html``.
 
@@ -118,16 +124,16 @@ Add the below ``add`` function to the crew component in file ``src/app/crew/crew
      this.crew.push({name: memberName, firstMission: isFirst});
    }
 
-.. figure:: figures/add-crew.gif
-       :alt: Animated gif of crew member being added.
-
-       Example of crew member being added.
-
 Remove Crew Members
 ^^^^^^^^^^^^^^^^^^^
 Allow removing of crew members by adding a remove button next to each person in the crew list.
 When the remove button is clicked a remove function in the crew component will be called which
 will remove that person from the crew array.
+
+.. figure:: figures/remove-crew.gif
+       :alt: Animated gif of crew member disappearing from the list after the remove button for that item is clicked.
+
+       Example of crew member being removed.
 
 Add line 3 to file ``src/app/crew/crew.component.ts``. Be sure to put it before the closing ``</li>``,
 so that the button appears next to each item in the crew list.
@@ -181,7 +187,6 @@ member that is currently being edited.
 
    memberBeingEdited: object = null;
 
-
 Next we need to add the below ``edit`` function to the crew component file ``src/app/crew/crew.component.ts``.
 This function will set a ``memberBeingEdited`` variable to be equal to the crew member that was clicked.
 
@@ -191,29 +196,60 @@ This function will set a ``memberBeingEdited`` variable to be equal to the crew 
       this.memberBeingEdited = member;
    }
 
-TELL THEM HOW TO ORGANIZE THE TEMPLATE IF/ELSE
+Now we need to add an ``*ngIf`` that will show the two versions of the member, the display state or the edit state.
+In the edit state an input box with a save button will appear, but for now the input and save won't have any functionality.
+Make your ``src/app/crew/crew.component.html`` file look like the below code.
 
 .. sourcecode:: html+ng2
    :linenos:
 
-   <li *ngFor="let member of crew">
-      <span *ngIf="memberBeingEdited !== member; else elseBlock">
+   <h3>Crew</h3>
+   <ul>
+      <li *ngFor="let member of crew">
 
-         <!-- <li> with *ngFor, span, and remove button -->
+         <span *ngIf="memberBeingEdited !== member; else elseBlock">
+            <!-- display state of member -->
+            <span (click)="edit(member)" class="editable-text">{{member.name}}</span>
+            <span *ngIf="member.firstMission">
+               - 1st
+            </span>
+            <button (click)="remove(member)">remove</button>
+         </span>
 
-      </span>
-      <ng-template #elseBlock>
-         edit state
-      </ng-template>
-   </li>
+         <ng-template #elseBlock>
+            <!-- edit state of member -->
+            <input />
+            <button>save</button>
+         </ng-template>
 
-TELL THEM HOW TO DO THE INPUT THING
+      </li>
+   </ul>
+   <input #name type="text"/>
+   <label>First mission<input #firstMission type="checkbox"/></label>
+   <button (click)="add(name.value, firstMission.checked)">Add</button>
+
+Finally we are going to make the edit state of the member update the member name when save is clicked.
+Update the ``<input>`` and ``<button>`` tags to look like the below.
 
 .. sourcecode:: html+ng2
    :linenos:
 
-   <input #updatedName (keyup.enter)="save(updatedName.value, member)" [value]="member.name"/>
-   <button (click)="save(updatedName.value, member)">save</button>
+   <ng-template #elseBlock>
+      <!-- edit state of member -->
+      <input #updatedName (keyup.enter)="save(updatedName.value, member)" [value]="member.name"/>
+      <button (click)="save(updatedName.value, member)">save</button>
+   </ng-template>
+
+The last step is to add the ``save`` function to the crew component. This function will be called
+when the ``<button>`` is clicked or when the enter keys is pressed when the ``<input>`` is focused.
+
+.. sourcecode:: TypeScript
+   :linenos:
+
+   save(name: string, member: object) {
+     member['name'] = name;
+     this.memberBeingEdited = null;
+   }
 
 
 Bonus Missions
