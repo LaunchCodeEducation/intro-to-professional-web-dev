@@ -83,9 +83,14 @@ In general, the syntax for ``*ngFor`` is:
 Where ``variableName`` is the loop variable, and ``arrayName`` represents the
 array to iterate through.
 
-``*ngFor`` only operates over the contents of an array. If we want to iterate
-over the characters in a string or the key/value pairs in an object, then we
-must first convert them into arrays.
+.. admonition:: Note
+
+   ``*ngFor`` only operates over the contents of an array. If we want to
+   iterate over the characters in a string, we must first convert it into an
+   array.
+
+   There is a technique for iterating over the key/value pairs of an object,
+   but that is a more advanced topic. We will not discuss that method here.
 
 Try It
 -------

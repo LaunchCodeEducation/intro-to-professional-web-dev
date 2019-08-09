@@ -86,14 +86,16 @@
     
   <div class="section" id="exercises-angular-lesson-2">
 <h1>28.7. Exercises: Angular, Lesson 2<a class="headerlink" href="#exercises-angular-lesson-2" title="Permalink to this headline">¶</a></h1>
-<p>Let’s update our movies/chores/photos webpage from the
-<a class="reference internal" href="../angular-lsn1/exercises.html#angular-exercises-1"><span class="std std-ref">Angular lesson 1 exercises</span></a> to be more interactive.</p>
+<p>Let’s build an interactive webpage that allows us to review data for our
+astronaut candidates and select crew members for a space mission.</p>
 <div class="section" id="starter-code">
 <h2>28.7.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
-<p>From the <code class="docutils literal notranslate"><span class="pre">lesson2</span></code> folder in VSCode, navigate into the <code class="docutils literal notranslate"><span class="pre">exercises</span></code> folder
-and select the <code class="docutils literal notranslate"><span class="pre">XYZ.component.html</span></code> file.</p>
-<blockquote>
-<div>Add lesson2-exercises-menu.png…</div></blockquote>
+<p>From the <code class="docutils literal notranslate"><span class="pre">lesson2</span></code> folder in VSCode, navigate into the
+<code class="docutils literal notranslate"><span class="pre">exercises/src/app/candidates</span></code> folder. Open the
+<code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code> file.</p>
+<div class="figure">
+<img alt="Access lesson 2 exercises in VSCode." src="../../_images/lesson2-exercises-menu.png" />
+</div>
 <p>The code should look like:</p>
 <blockquote>
 <div>Code sample here…</div></blockquote>
@@ -102,6 +104,60 @@ and select the <code class="docutils literal notranslate"><span class="pre">XYZ.
 should look like this:</p>
 <blockquote>
 <div>Add lesson2-exercises-start.png…</div></blockquote>
+</div>
+<div class="section" id="candidates-column">
+<h2>28.7.2. Candidates Column<a class="headerlink" href="#candidates-column" title="Permalink to this headline">¶</a></h2>
+<p>Examine the <code class="docutils literal notranslate"><span class="pre">candidates</span></code> array in <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code>. It contains
+one object for each animal astronaut. We want to start by listing the names of
+the animals in the “Candidates” column of the webpage.</p>
+<ol class="arabic simple">
+<li>Find the “Candidates” section in <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code>. Use
+<code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> in the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag to loop over the <code class="docutils literal notranslate"><span class="pre">candidates</span></code> array and
+display each name in an ordered list.</li>
+<li>We want each name to be interactive. Add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>
+tag. When a user clicks on a name, set the variable <code class="docutils literal notranslate"><span class="pre">selected</span></code> to be equal
+to the chosen candidate.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Candidate results." src="../../_images/lesson2-exercises-candidates.gif" />
+</div>
+</div>
+<div class="section" id="candidate-data-column">
+<h2>28.7.3. Candidate Data Column<a class="headerlink" href="#candidate-data-column" title="Permalink to this headline">¶</a></h2>
+<p>When we click on a candidate’s name, we want their information to appear in the
+“Candidate Data” column. If no candidate is selected, we want the space under
+the heading to remain blank.</p>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;&lt;/p&gt;</span></code> element underneath the “Candidate Data” heading, add
+labels for a candidate’s <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Mass</span></code>, and <code class="docutils literal notranslate"><span class="pre">Sidekick</span></code>.</li>
+<li>Add placeholders to display the candidate’s data next to each label.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> inside the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag to check if a candidate has been
+selected. If so, display the labels and the data.</li>
+<li>Next, create a way to clear the data. In the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tag for “Clear
+Data &amp; Image”, add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event that sets <code class="docutils literal notranslate"><span class="pre">selected</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Candidate Data results." src="../../_images/lesson2-exercises-candidate-data.gif" />
+</div>
+</div>
+<div class="section" id="sidekick-image-column">
+<h2>28.7.4. Sidekick Image Column<a class="headerlink" href="#sidekick-image-column" title="Permalink to this headline">¶</a></h2>
+<p>Every good hero needs a loyal sidekick, and our candidates are no exception!</p>
+<p>When we click on a candidate’s name, we want an image of their sidekick to
+appear under the “Sidekick” column. If no candidate is selected, we want this
+area to remain blank.</p>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag, use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to check if a candidate has been
+selected.</li>
+<li>Replace the generic <code class="docutils literal notranslate"><span class="pre">{{placeholder}}</span></code> with the <code class="docutils literal notranslate"><span class="pre">image</span></code> property of the
+candidate.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Sidekick image results." src="../../_images/lesson2-exercises-sidekicks.gif" />
+</div>
 </div>
 </div>
 
