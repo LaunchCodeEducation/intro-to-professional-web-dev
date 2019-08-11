@@ -8,4 +8,5 @@ We Built the Internet on HTML
    background
    structure
    tags
+   exercises
    studio

@@ -23,7 +23,7 @@ Boolean Operators
    single: operator; comparison
    single: operator; boolean
 
-In addition to logical operators, we learned about comparison operators like
+In addition to these operators, we learned about comparison operators like
 ``===``, ``<``, and others. These operators are part of a larger class known as
 **boolean operators**, so-called because they return a boolean value (``true``
 or ``false``).

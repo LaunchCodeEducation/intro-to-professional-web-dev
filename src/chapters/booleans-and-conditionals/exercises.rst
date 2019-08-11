@@ -54,7 +54,7 @@ the only person who needs help.
    #. ``crewStatus``
 
       - If the value is ``true``, print ``"Crew Ready"``
-      - else print ``"Crew Not Ready"``
+      - Else print ``"Crew Not Ready"``
 
    #. ``computerStatusCode``
 
