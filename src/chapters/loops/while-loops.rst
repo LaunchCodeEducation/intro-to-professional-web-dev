@@ -110,8 +110,6 @@ This program is an example of **input validation**. It prompts the user to enter
 
 This example illustrates the additional flexibility provided by ``while`` loops. While we use ``for`` loops to iterate over fixed collections (a string, an array, a collection of integers), the ``while`` loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.
 
-.. todo:: Add "worst practice" on writing a while loop as a for loop
-
 Infinite Loops, Revisited
 -------------------------
 
