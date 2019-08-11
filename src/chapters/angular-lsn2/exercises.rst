@@ -137,3 +137,12 @@ present the user with an input box to enter a new name.
 #. In ``candidates.component.ts``, code a ``changeMissionName`` function to
    update the name of the mission.
 #. After changing the mission name, set ``editMissionName`` to ``false``.
+
+Bonus Results
+--------------
+
+After finishing the bonus missions, your output should behave something like
+this:
+
+.. figure:: ./figures/lesson2-exercises-full-solution.gif
+   :alt: Bonus content behavior.
