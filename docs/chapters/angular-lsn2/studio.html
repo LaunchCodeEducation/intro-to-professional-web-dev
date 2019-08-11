@@ -95,11 +95,12 @@ Your job is to allow the user to update the mission plan by adding user interact
 <li>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see if you have any uncommitted work, if you do resolve it</li>
 <li>Checkout the <code class="docutils literal notranslate"><span class="pre">studio-2</span></code> branch</li>
 <li>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to download dependencies</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to build and serve the project</li>
 </ol>
 </div>
 <div class="section" id="review-the-starter-code">
 <h2>29.8.2. Review the Starter Code<a class="headerlink" href="#review-the-starter-code" title="Permalink to this headline">¶</a></h2>
-<p>The starter code for this studio is similar to the <em>solution</em> for first mission planner studio, with a few changes.</p>
+<p>The starter code for this studio is similar to the <em>solution</em> for the first mission planner studio, but with a few notable changes.</p>
 <div class="section" id="editable-mission-name">
 <h3>29.8.2.1. Editable Mission Name<a class="headerlink" href="#editable-mission-name" title="Permalink to this headline">¶</a></h3>
 <p>The mission name can now be edited by clicking on the text, changing the text in the input box, and then updated by clicking save
@@ -165,7 +166,7 @@ it means this is the first mission for that person.</p>
 <h2>29.8.3. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">All of these features only temporarily alter the data. If you refresh the page, the original data will appear.</p>
+<p class="last">All of these features only <em>temporarily</em> alter the data. If you refresh the page, the original data will reappear.</p>
 </div>
 <div class="section" id="edit-rocket-name">
 <h3>29.8.3.1. Edit Rocket Name<a class="headerlink" href="#edit-rocket-name" title="Permalink to this headline">¶</a></h3>
@@ -182,7 +183,7 @@ and <code class="docutils literal notranslate"><span class="pre">src/app/header/
 </div>
 <div class="section" id="display-1st-mission-status">
 <h3>29.8.3.3. Display 1st Mission Status<a class="headerlink" href="#display-1st-mission-status" title="Permalink to this headline">¶</a></h3>
-<p>If a crew member’s <code class="docutils literal notranslate"><span class="pre">firstMission</span></code> property is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then display the text - 1st next to their name.</p>
+<p>If a crew member’s <code class="docutils literal notranslate"><span class="pre">firstMission</span></code> property is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then display the text “- 1st” next to their name.</p>
 <div class="figure" id="id2">
 <img alt="Example of first mission status appearing next to crew member name." src="../../_images/first-mission-example.png" />
 <p class="caption"><span class="caption-text">Example of first mission status being shown.</span></p>
@@ -190,8 +191,12 @@ and <code class="docutils literal notranslate"><span class="pre">src/app/header/
 </div>
 <div class="section" id="add-crew-members">
 <h3>29.8.3.4. Add Crew Members<a class="headerlink" href="#add-crew-members" title="Permalink to this headline">¶</a></h3>
-<p>Allow crew members to be added to the list. To create a new crew member, two pieces of information need to be input first is a name and
-second is the first mission status. To capture that data an input and a checkbox need to be added to <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>.</p>
+<p>Allow crew members to be added to the list. To create a new crew member, two pieces of information are required:</p>
+<ol class="arabic simple">
+<li>crew member’s name</li>
+<li>the first mission status</li>
+</ol>
+<p>We will use an input box and a <em>checkbox</em> to collect the data.</p>
 <div class="figure" id="id3">
 <img alt="Animated gif of crew member being added to list after add button is clicked." src="../../_images/add-crew.gif" />
 <p class="caption"><span class="caption-text">Example of crew member being added.</span></p>
@@ -204,8 +209,9 @@ second is the first mission status. To capture that data an input and a checkbox
 <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;add(name.value, firstMission.checked)&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>On line 1 there is an input that declares a local variable named <code class="docutils literal notranslate"><span class="pre">#name</span></code>. On line 2 a checkbox is defined that declares a <code class="docutils literal notranslate"><span class="pre">#firstMission</span></code>
-variable. On line 3 there is a button that when clicked sends the value of the name input and checkbox value to a function defined in <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>.</p>
+<p>Line 1 creates an input that declares the local variable <code class="docutils literal notranslate"><span class="pre">name</span></code>. Line 2 defines a checkbox that
+declares the <code class="docutils literal notranslate"><span class="pre">firstMission</span></code> variable. Line 3 creates a button that, when clicked, sends the new
+<code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> value to the <code class="docutils literal notranslate"><span class="pre">addCrewMember</span></code> function.</p>
 <p>Add the below <code class="docutils literal notranslate"><span class="pre">add</span></code> function to the crew component in file <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>.</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -332,8 +338,8 @@ Make your <code class="docutils literal notranslate"><span class="pre">src/app/c
 <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;add(name.value, firstMission.checked)&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Finally we are going to make the edit state of the member update the member name when save is clicked.
-Update the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags to look like the below.</p>
+<p>Finally we are going to make the edit state update the member name when save is clicked.
+Update the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags to look like:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -346,7 +352,8 @@ Update the <code class="docutils literal notranslate"><span class="pre">&lt;inpu
 </pre></div>
 </td></tr></table></div>
 <p>The last step is to add the <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component. This function will be called
-when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked or when the enter keys is pressed when the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> is focused.</p>
+when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked or when the enter key is pressed and the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> has focus.
+Add the below <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component.</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3

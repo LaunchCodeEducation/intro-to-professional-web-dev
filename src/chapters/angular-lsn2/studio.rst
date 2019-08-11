@@ -12,11 +12,12 @@ This studio uses the same mission planner repository as Angular studio part 1.
 #. Run ``git status`` to see if you have any uncommitted work, if you do resolve it
 #. Checkout the ``studio-2`` branch
 #. Run ``npm install`` to download dependencies
+#. Run ``ng serve`` to build and serve the project
 
 
 Review the Starter Code
 -----------------------
-The starter code for this studio is similar to the *solution* for first mission planner studio, with a few changes.
+The starter code for this studio is similar to the *solution* for the first mission planner studio, but with a few notable changes.
 
 Editable Mission Name
 ^^^^^^^^^^^^^^^^^^^^^
@@ -65,7 +66,7 @@ it means this is the first mission for that person.
 Requirements
 ------------
 
-.. note::  All of these features only temporarily alter the data. If you refresh the page, the original data will appear.
+.. note::  All of these features only *temporarily* alter the data. If you refresh the page, the original data will reappear.
 
 Edit Rocket Name
 ^^^^^^^^^^^^^^^^
@@ -85,7 +86,7 @@ Add this code to ``src/app/crew/crew.component.html``.
 
 Display 1st Mission Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-If a crew member's ``firstMission`` property is ``true``, then display the text - 1st next to their name.
+If a crew member's ``firstMission`` property is ``true``, then display the text "- 1st" next to their name.
 
 .. figure:: figures/first-mission-example.png
        :alt: Example of first mission status appearing next to crew member name.
@@ -95,8 +96,12 @@ If a crew member's ``firstMission`` property is ``true``, then display the text 
 
 Add Crew Members
 ^^^^^^^^^^^^^^^^
-Allow crew members to be added to the list. To create a new crew member, two pieces of information need to be input first is a name and
-second is the first mission status. To capture that data an input and a checkbox need to be added to ``src/app/crew/crew.component.html``.
+Allow crew members to be added to the list. To create a new crew member, two pieces of information are required:
+
+#. crew member's name
+#. the first mission status
+
+We will use an input box and a *checkbox* to collect the data.
 
 .. figure:: figures/add-crew.gif
        :alt: Animated gif of crew member being added to list after add button is clicked.
@@ -112,8 +117,9 @@ Add this code to the *bottom* of ``src/app/crew/crew.component.html``.
    <label>First mission<input #firstMission type="checkbox"/></label>
    <button (click)="add(name.value, firstMission.checked)">Add</button>
 
-On line 1 there is an input that declares a local variable named ``#name``. On line 2 a checkbox is defined that declares a ``#firstMission``
-variable. On line 3 there is a button that when clicked sends the value of the name input and checkbox value to a function defined in ``src/app/crew/crew.component.ts``.
+Line 1 creates an input that declares the local variable ``name``. Line 2 defines a checkbox that
+declares the ``firstMission`` variable. Line 3 creates a button that, when clicked, sends the new
+``name`` and ``checkbox`` value to the ``addCrewMember`` function.
 
 Add the below ``add`` function to the crew component in file ``src/app/crew/crew.component.ts``.
 
@@ -228,8 +234,8 @@ Make your ``src/app/crew/crew.component.html`` file look like the below code.
    <label>First mission<input #firstMission type="checkbox"/></label>
    <button (click)="add(name.value, firstMission.checked)">Add</button>
 
-Finally we are going to make the edit state of the member update the member name when save is clicked.
-Update the ``<input>`` and ``<button>`` tags to look like the below.
+Finally we are going to make the edit state update the member name when save is clicked.
+Update the ``<input>`` and ``<button>`` tags to look like:
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -241,7 +247,8 @@ Update the ``<input>`` and ``<button>`` tags to look like the below.
    </ng-template>
 
 The last step is to add the ``save`` function to the crew component. This function will be called
-when the ``<button>`` is clicked or when the enter keys is pressed when the ``<input>`` is focused.
+when the ``<button>`` is clicked or when the enter key is pressed and the ``<input>`` has focus.
+Add the below ``save`` function to the crew component.
 
 .. sourcecode:: TypeScript
    :linenos:
