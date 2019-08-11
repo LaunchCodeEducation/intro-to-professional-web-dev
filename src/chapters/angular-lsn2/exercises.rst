@@ -7,6 +7,10 @@ astronaut candidates and select crew members for a space mission.
 Starter Code
 -------------
 
+The starter code for the exercises is in the same 
+`repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`_ used for the
+chapter examples. You have likely already cloned this repository while going through the chapter.
+
 From the ``lesson2`` folder in VSCode, navigate into the
 ``exercises/src/app/candidates`` folder. Open the
 ``candidates.component.html`` file.
