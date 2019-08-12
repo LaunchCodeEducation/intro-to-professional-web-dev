@@ -86,7 +86,11 @@
     
   <div class="section" id="while-loops">
 <h1>9.6. <code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">There is another JavaScript construct that can also be used for iteration, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop provides a much more general mechanism for iterating. Like a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, it uses a condition to determine whether the loop body will continue to execute. Unlike a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, however, it does not have initial and update expressions.</p>
+<p id="index-0">There is another JavaScript construct that can also be used for iteration, the
+<code class="docutils literal notranslate"><span class="pre">while</span></code> loop. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop provides a much more general mechanism for
+iterating. Like a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, it uses a condition to determine whether the
+loop body will continue to execute. Unlike a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, however, it does not
+have initial and update expressions.</p>
 <div class="section" id="while-loop-syntax">
 <h2>9.6.1. <code class="docutils literal notranslate"><span class="pre">while</span></code> Loop Syntax<a class="headerlink" href="#while-loop-syntax" title="Permalink to this headline">¶</a></h2>
 <p>The general syntax of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop looks like this:</p>
@@ -95,7 +99,10 @@
 }
 </pre></div>
 </div>
-<p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will continue to repeat as long as its boolean expression evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>. The condition typically includes a value or variable that is updated within the loop, so that the expression eventualy becomes false.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will continue to repeat as long as its boolean expression
+evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>. The condition typically includes a value or variable
+that is updated within the loop, so that the expression eventually becomes
+false.</p>
 </div>
 <div class="section" id="flow-of-execution-of-the-while-loop">
 <h2>9.6.2. Flow of Execution of the <code class="docutils literal notranslate"><span class="pre">while</span></code> Loop<a class="headerlink" href="#flow-of-execution-of-the-while-loop" title="Permalink to this headline">¶</a></h2>
@@ -136,8 +143,17 @@
 </pre></div>
 </td></tr></table></div>
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/While-loop-example" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-<p>Instead of relying on the the initial and update expressions, as we do in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, we must manage the state of our loop manually. To do this, <em>before</em> entering the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, we will create the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> and initialize it to 0, the first number we want to print. This variable plays the same role as the loop variable in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Every iteration will print <code class="docutils literal notranslate"><span class="pre">i</span></code> and then increment <code class="docutils literal notranslate"><span class="pre">i</span></code> to the next value, until all it reaches the value 51. The loop continues to iterate until the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-<p>You can almost read the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement as if it were in a natural language: <em>while ``i`` is less than ``51``, continue executing the body of the loop</em>.</p>
+<p>Instead of relying on the the initial and update expressions, as we do in a
+<code class="docutils literal notranslate"><span class="pre">for</span></code> loop, we must manage the state of our loop manually. To do this,
+<em>before</em> entering the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, we will create the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> and
+initialize it to 0, the first number we want to print. This variable plays the
+same role as the loop variable in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Every iteration will print
+<code class="docutils literal notranslate"><span class="pre">i</span></code> and then increment <code class="docutils literal notranslate"><span class="pre">i</span></code> to the next value, until it reaches the value
+51. The loop continues to iterate until the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> evaluates to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>You can almost read the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement as if it were in a natural
+language: <em>while ``i`` is less than ``51``, continue executing the body of the
+loop</em>.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p class="last">What happens if you forget to include <code class="docutils literal notranslate"><span class="pre">i++</span></code> at the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop above?</p>
@@ -167,14 +183,10 @@
 </pre></div>
 </td></tr></table></div>
 <p id="index-1">This example illustrates the additional flexibility provided by <code class="docutils literal notranslate"><span class="pre">while</span></code> loops. While we use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to iterate over fixed collections (a string, an array, a collection of integers), the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.</p>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add “worst practice” on writing a while loop as a for loop</p>
-</div>
 </div>
 <div class="section" id="infinite-loops-revisited">
 <h2>9.6.5. Infinite Loops, Revisited<a class="headerlink" href="#infinite-loops-revisited" title="Permalink to this headline">¶</a></h2>
-<p id="index-3">It is easier to create an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop than an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code>
+<p id="index-2">It is easier to create an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop than an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code>
 loop. To see this, consider what happens to our first <code class="docutils literal notranslate"><span class="pre">while</span></code> loop example
 if we forget to update the loop variable.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -188,9 +200,9 @@ if we forget to update the loop variable.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>This is an infinite loop. The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> is initialized to 0 never updated,
-so the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> will always be true. If you ran this program, you
-would see an ever-increasing list of numbers.</p>
+<p>This is an infinite loop. The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> is initialized to 0 and never
+updated, so the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> will always be true. If you ran this
+program, you would see an ever-increasing list of numbers.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>9.6.6. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>

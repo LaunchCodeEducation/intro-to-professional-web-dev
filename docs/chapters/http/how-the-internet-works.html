@@ -103,7 +103,7 @@
 </div>
 <div class="section" id="protocols">
 <h2>24.1.2. Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">A <strong>protocol</strong> is standard for communication between computers. Most web communication uses <em>three</em> protocols, in fact.</p>
+<p id="index-1">A <strong>protocol</strong> is a standard for communication between computers. Most web communication uses <em>three</em> protocols, in fact.</p>
 <table border="1" class="docutils" id="id3">
 <caption><span class="caption-text">Common Web Protocols</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -134,19 +134,19 @@
 </tr>
 <tr class="row-even"><td>DNS</td>
 <td>Domain Name Service</td>
-<td>Translate human-friendly names into server addresses</td>
+<td>Translates human-friendly names into server addresses</td>
 </tr>
 </tbody>
 </table>
 <p>A thorough understanding of each of these protocols is well beyond the scope of this class. However, as a web developer it is important you have a general understanding of their roles. Each protocol has a different and critical job in enabling web communication.</p>
 <div class="section" id="http">
 <h3>24.1.2.1. HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
-<p id="index-2"><strong>HTTP</strong> is the most important protocol for web developers to understand, which you may have guessed from the title of this chapter. It includes details on how requests for common web data—such as HTML files or images—should be structured, as well as responses to such requests. As you will learn in upcoming sections, the HTTP standard specifies in great detail how these messages are structured.</p>
-<p><strong>HTTPS</strong> refers to the HTTP protocol used with a secure connection. A secure connection encrypts data before and after being sent, so that it can’t be read while in-transit. How such connections are encrypted is beyond the scope of this course.</p>
+<p id="index-2"><strong>HTTP</strong> is the most important protocol for web developers to understand, which you may have guessed from the title of this chapter. It specifies how requests for common web data—such as HTML files or images—should be structured, as well as responses to such requests. The details of request and response message structure are the topic of the rest of this chapter.</p>
+<p><strong>HTTPS</strong> refers to the HTTP protocol used with a secure connection. A secure connection encrypts so that it can’t be read while in-transit. The data is encrypted by the server/client before being transmitted, and decrypted once it is received by the client/server. The precise details of how such encryption works is beyond the scope of this course.</p>
 </div>
 <div class="section" id="tcp-ip">
 <h3>24.1.2.2. TCP/IP<a class="headerlink" href="#tcp-ip" title="Permalink to this headline">¶</a></h3>
-<p id="index-3"><strong>TCP/IP</strong> is a low-level protocol that is quite complicated. For our purposes, it is important only to know that TCP/IP is the standard that allows data to get from one place to another on the Internet.</p>
+<p id="index-3"><strong>TCP/IP</strong> is a low-level protocol that is quite complicated. For our purposes, it is important only to know that TCP/IP is the standard that allows <em>raw data</em> to get from one place to another on the Internet.</p>
 <p>When a server sends a file back to a client, that file must pysically be sent across a series of network components, including cables, routers, and switches. Files are broken down into <em>packets</em>—small chunks of a standard size—that are individually sent from one location to the next, until arriving at their final destination and being reassembeld.</p>
 <div class="admonition-fun-fact admonition">
 <p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
@@ -155,7 +155,7 @@
 </div>
 <div class="section" id="dns">
 <h3>24.1.2.3. DNS<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h3>
-<p id="index-4"><strong>DNS</strong> is the address book of the Internet. It enables us to use readable and memorable names for servers, such as <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code> or <code class="docutils literal notranslate"><span class="pre">mail.google.com</span></code>, which are <strong>domain names</strong>.</p>
+<p id="index-4"><strong>DNS</strong> is the address book of the Internet. It enables us to use readable and memorable names for servers, such as <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code> or <code class="docutils literal notranslate"><span class="pre">mail.google.com</span></code>. Such names are called <strong>domain names</strong>, and they function as aliases for the actual server addresses.</p>
 <p>Every server on the internet has a numberical address known as an <strong>IP address</strong>. When a message is addressed using a domain name, the corresponding IP address must be determined before it can be sent.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -198,11 +198,11 @@
 <li>Path (optional)</li>
 <li>Query String (optional)</li>
 </ul>
-<p>A properly formed URL must have these components in the <em>exact</em> order shown here. Only scheme and host are required.</p>
+<p>A properly-formed URL must have these components in the <em>exact</em> order shown here. Only scheme and host are required.</p>
 <p>Let’s look at each of these in detail.</p>
 <div class="section" id="scheme">
 <h3>24.1.3.1. Scheme<a class="headerlink" href="#scheme" title="Permalink to this headline">¶</a></h3>
-<p id="index-6">The first portion of every URL specifies the <strong>scheme</strong>. Common schemes are <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, <code class="docutils literal notranslate"><span class="pre">ftp</span></code>, <code class="docutils literal notranslate"><span class="pre">mailto</span></code>, and <code class="docutils literal notranslate"><span class="pre">file</span></code>. Most often, the scheme specifies the <em>protocol</em> to be used in making a request. For us, this will always be <code class="docutils literal notranslate"><span class="pre">http</span></code> or <code class="docutils literal notranslate"><span class="pre">https</span></code>.</p>
+<p id="index-6">The first portion of every URL specifies the <strong>scheme</strong>. Common schemes are <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, <code class="docutils literal notranslate"><span class="pre">ftp</span></code>, <code class="docutils literal notranslate"><span class="pre">mailto</span></code>, and <code class="docutils literal notranslate"><span class="pre">file</span></code>. Most often, the scheme specifies the <em>protocol</em> to be used in making a request. For us, this will always be <code class="docutils literal notranslate"><span class="pre">http</span></code> or <code class="docutils literal notranslate"><span class="pre">https</span></code>. If left off, a web browser will insert the scheme http/s for you.</p>
 <p>The scheme is <em>always</em> followed by <code class="docutils literal notranslate"><span class="pre">://</span></code>.</p>
 </div>
 <div class="section" id="host">
@@ -221,10 +221,10 @@
 </div>
 <div class="section" id="path">
 <h3>24.1.3.4. Path<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h3>
-<p id="index-9">Following the domain and optional port is the <strong>path</strong>, which consists of a series of names separated by <code class="docutils literal notranslate"><span class="pre">/</span></code>. The path provides information that tells the server <em>what</em> the request is asking for. It can consist of a series of names, such as <code class="docutils literal notranslate"><span class="pre">/blog/entries/2018/</span></code>, or it can end with an explicit file name, such as <code class="docutils literal notranslate"><span class="pre">/blog/index.html</span></code>.</p>
+<p id="index-9">Following the domain and optional port is the <strong>path</strong>, which consists of a series of names separated by <code class="docutils literal notranslate"><span class="pre">/</span></code>. The path provides information that tells the server <em>what</em> is being requested. It can consist of a series of names, such as <code class="docutils literal notranslate"><span class="pre">/blog/entries/2018/</span></code>, or it can end with an explicit file name, such as <code class="docutils literal notranslate"><span class="pre">/blog/index.html</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>A request to <code class="docutils literal notranslate"><span class="pre">https://www.launchcode.org/blog/</span></code> asks for the resource that lives at the path <code class="docutils literal notranslate"><span class="pre">/blog/</span></code> on the server <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code>. This resource happens to be the LaunchCode blog.</p>
+<p>A request to <code class="docutils literal notranslate"><span class="pre">https://www.launchcode.org/blog/</span></code> asks for the resource that lives at the path <code class="docutils literal notranslate"><span class="pre">/blog/</span></code> on the server <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code>. This resource happens to be the homepage of the LaunchCode blog.</p>
 <p>A request to the (very long) URL below asks for the LaunchCode logo, which lives at the path <code class="docutils literal notranslate"><span class="pre">/assets/dabomb-2080d6e...57f.svg</span></code> (truncated here for space).</p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.launchcode.org/assets/dabomb-2080d6e23ef41463553f203daaa15991fd4c812676d0b098243b4941fcf4b57f.svg
 </pre></div>
@@ -261,7 +261,7 @@
 <h2>24.1.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">Which protocal is responsible for turning a name like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> into a server address?</p>
+<p class="last">Which protocol is responsible for turning a name like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> into a server address?</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>

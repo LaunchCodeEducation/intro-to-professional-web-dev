@@ -4,7 +4,11 @@
 .. index::
    single: loop; while
 
-There is another JavaScript construct that can also be used for iteration, the ``while`` loop. The ``while`` loop provides a much more general mechanism for iterating. Like a ``for`` loop, it uses a condition to determine whether the loop body will continue to execute. Unlike a ``for`` loop, however, it does not have initial and update expressions.
+There is another JavaScript construct that can also be used for iteration, the
+``while`` loop. The ``while`` loop provides a much more general mechanism for
+iterating. Like a ``for`` loop, it uses a condition to determine whether the
+loop body will continue to execute. Unlike a ``for`` loop, however, it does not
+have initial and update expressions.
 
 ``while`` Loop Syntax
 ---------------------
@@ -17,7 +21,10 @@ The general syntax of a ``while`` loop looks like this:
       body
    }
 
-A ``while`` loop will continue to repeat as long as its boolean expression evaluates to ``true``. The condition typically includes a value or variable that is updated within the loop, so that the expression eventualy becomes false.
+A ``while`` loop will continue to repeat as long as its boolean expression
+evaluates to ``true``. The condition typically includes a value or variable
+that is updated within the loop, so that the expression eventually becomes
+false.
 
 Flow of Execution of the ``while`` Loop
 ---------------------------------------
@@ -60,9 +67,18 @@ This can be rewritten as a while loop:
       i++;
    }
 
-Instead of relying on the the initial and update expressions, as we do in a ``for`` loop, we must manage the state of our loop manually. To do this, *before* entering the ``while`` loop, we will create the variable ``i`` and initialize it to 0, the first number we want to print. This variable plays the same role as the loop variable in a ``for`` loop. Every iteration will print ``i`` and then increment ``i`` to the next value, until all it reaches the value 51. The loop continues to iterate until the condition ``i < 51`` evaluates to ``false``.
+Instead of relying on the the initial and update expressions, as we do in a
+``for`` loop, we must manage the state of our loop manually. To do this,
+*before* entering the ``while`` loop, we will create the variable ``i`` and
+initialize it to 0, the first number we want to print. This variable plays the
+same role as the loop variable in a ``for`` loop. Every iteration will print
+``i`` and then increment ``i`` to the next value, until it reaches the value
+51. The loop continues to iterate until the condition ``i < 51`` evaluates to
+``false``.
 
-You can almost read the ``while`` statement as if it were in a natural language: *while ``i`` is less than ``51``, continue executing the body of the loop*.
+You can almost read the ``while`` statement as if it were in a natural
+language: *while ``i`` is less than ``51``, continue executing the body of the
+loop*.
 
 .. admonition:: Try It!
 
@@ -94,8 +110,6 @@ This program is an example of **input validation**. It prompts the user to enter
 
 This example illustrates the additional flexibility provided by ``while`` loops. While we use ``for`` loops to iterate over fixed collections (a string, an array, a collection of integers), the ``while`` loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.
 
-.. todo:: Add "worst practice" on writing a while loop as a for loop
-
 Infinite Loops, Revisited
 -------------------------
 
@@ -115,9 +129,9 @@ if we forget to update the loop variable.
       console.log(i);
    }
 
-This is an infinite loop. The variable ``i`` is initialized to 0 never updated,
-so the condition ``i < 51`` will always be true. If you ran this program, you
-would see an ever-increasing list of numbers.
+This is an infinite loop. The variable ``i`` is initialized to 0 and never
+updated, so the condition ``i < 51`` will always be true. If you ran this
+program, you would see an ever-increasing list of numbers.
 
 Check Your Understanding
 ------------------------
@@ -138,12 +152,12 @@ Check Your Understanding
 
       let n = 10;
       let answer = 1;
-      
+
       while (n > 0) {
          answer = answer + n;
          n = n + 1;
       }
-      
+
       console.log(answer);
 
    #. ``n`` starts at 10 and is incremented by 1 each time through the loop, so it will always be positive.
