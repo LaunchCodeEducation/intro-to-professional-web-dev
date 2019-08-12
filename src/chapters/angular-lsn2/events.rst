@@ -11,7 +11,7 @@ Structural directives like ``*ngFor`` and ``*ngIf`` can be combined with events
 in order to add or remove content in response to user input. The image below
 shows an example of this idea.
 
-.. figure:: ./figures/more-example.png
+.. figure:: ./figures/event-example.gif
    :alt: Click handler example.
 
 When the user clicks "More" the hidden part of the text will be displayed. The

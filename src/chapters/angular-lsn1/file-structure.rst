@@ -17,14 +17,19 @@ support files.
    These will be generated automatically, and they take care of the routine
    technical details for making your project run smoothly.
 
-``src`` contains the ``app`` folder and four important files: ``index.html``,
-``main.ts``, ``style.css``, and ``polyfills.ts``. We will explore these files
-in more detail on the next page. For now, recognize that they control how the
-Angular project operates.
+``src`` contains the ``app`` folder and five important files: ``index.html``,
+``main.ts``, ``style.css``, ``tests.ts`` and ``polyfills.ts``. We will explore
+these files in more detail on the next page. For now, recognize that they
+control how the Angular project operates.
 
 The ``app`` folder contains the files and subfolders needed to control the
 nitty-gritty details of displaying a webpage. For your projects, most of your
 time and effort will be spent modifying the contents within ``app``.
+
+Installing Angular
+-------------------
+
+
 
 StackBlitz
 -----------
