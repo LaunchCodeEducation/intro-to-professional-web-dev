@@ -83,4 +83,3 @@ In general, we can visualize the flow of execution of a ``for`` loop as a flowch
 
    Flow of execution of a ``for`` loop
 
-.. todo:: Add "worst practice" on optional brackets for single-line loops

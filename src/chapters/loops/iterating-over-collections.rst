@@ -12,7 +12,7 @@ The following example prints each of the characters of the string ``"LaunchCode"
 
    .. sourcecode:: js
       :linenos:
-   
+
       let name = "LaunchCode";
 
       for (let i = 0; i < name.length; i++) {
@@ -43,7 +43,7 @@ Since ``name.length`` is 10, the loop executes once each for the values of ``i``
    .. replit:: js
       :linenos:
       :slug: for-Loop-Practice-With-Strings
-   
+
       // create a string variable containing your name
 
       // write a for loop that prints each character in your name on a different line
@@ -57,7 +57,7 @@ The following example prints each of the programming languages in the array ``la
 
    .. sourcecode:: js
       :linenos:
-   
+
       let languages = ["JS", "Java", "C#", "Python"];
 
       for (let i = 0; i < languages.length; i++) {
@@ -73,7 +73,9 @@ The following example prints each of the programming languages in the array ``la
       C#
       Python
 
-Similar to the string example, this loop executes 4 times because ``launguages.length`` is 4. For each iteration, ``languages[i]`` is one of the items in the array and the given language is printed.
+Similar to the string example, this loop executes 4 times because
+``languages.length`` is 4. For each iteration, ``languages[i]`` is one of the
+items in the array and the given language is printed.
 
 .. admonition:: Try It!
 
@@ -82,7 +84,7 @@ Similar to the string example, this loop executes 4 times because ``launguages.l
    .. replit:: js
       :linenos:
       :slug: for-Loop-Practice-With-Arrays
-   
+
       // create an array variable containing the names
 
       // write a for loop that prints each name on a different line

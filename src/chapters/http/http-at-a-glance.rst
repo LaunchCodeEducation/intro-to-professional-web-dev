@@ -22,7 +22,7 @@ Requests contain several types of data, including:
 
 - The URL being requested.
 - The type of action the client is asking the browser to take.
-- Metadata about the requst, such as the type of browser making the request and the type(s) of data the client can accept in return.
+- Metadata about the request, such as the type of browser making the request and the type(s) of data the client can accept in return.
 - Optionally, a request message.
 
 Responses include:
@@ -36,7 +36,7 @@ The Postal Service of the Internet
 
 HTTP can seem complicated, but it is actually very similar to a system that you are already familiar with: The United States Postal Service.
 
-Suppose you want to mail a letter to your friend in Alaska, asking them their favorite cheese. To do so, you write your question on a piece of paper and enclose it in an envelope. On the envelope, you write your friend's address, along with your return address. Finally, to stick a stamp on the top-right corner. 
+Suppose you want to mail a letter to your friend in Alaska, asking them their favorite cheese. To do so, you write your question on a piece of paper and enclose it in an envelope. On the envelope, you write your friend's address, along with your return address. Finally, you affix a stamp to the top-right corner. 
 
 .. figure:: figures/envelope.jpg
    :alt: An addressed envelope
@@ -45,7 +45,7 @@ Suppose you want to mail a letter to your friend in Alaska, asking them their fa
 
    Image is in the public domain
 
-Each of these pieces of information is necessary for your letter to be delivered. When your letter enteres the postal system, it will travel from one post office to another, via land, air, and maybe even sea. As long as you follow their rules, the postal service will get your letter to its destination.
+Each of these pieces of information is necessary for your letter to be delivered. When your letter enters the postal system, it will travel from one post office to another, via land, air, and maybe even sea. As long as you follow their rules, the postal service will get your letter to its destination.
 
 This is very similar to how an HTTP request works. The letter is like a request message. The envelope contains the location and metadata needed for the letter to be delivered, just like an HTTP request specifies a URL and other metadata necessary for the request to reach the server and be processed.
 

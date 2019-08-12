@@ -1,6 +1,30 @@
 Template Literals
 =================
 
+Earlier, we used *concatenation* to combine strings and variables together in
+order to create specific output:
+
+.. admonition:: Example
+
+   .. sourcecode:: js
+      :linenos:
+
+      let name = Jack;
+      let currentAge = 9;
+
+      console.log("Next year, " + name + " will be " + (currentAge + 1) + ".");
+
+   **Console Output**
+
+   ::
+
+      Next year, Jack will be 10.
+
+Unfortunately, this process quickly gets tedious for any output that depends on
+multiple variables. Often, concatenation requires multiple test runs of the
+code in order to check for syntax errors and proper spacing within the output.
+Fortunately, JavaScript offers us a better way to accomplish this process.
+
 .. index:: ! template literal
 
 **Template literals** allow for the automatic insertion of expressions
@@ -13,7 +37,8 @@ the resulting value included in the string.
 
 .. admonition:: Example
 
-   Template literals allow for variables and other expressions to be directly included in strings.
+   Template literals allow for variables and other expressions to be directly
+   included in strings.
 
    .. sourcecode:: js
       :linenos:
@@ -21,23 +46,17 @@ the resulting value included in the string.
       let name = "Jack";
       let currentAge = 9;
 
-      console.log(`Next year, ${name} will be ${currentAge + 1}`);
+      console.log(`Next year, ${name} will be ${currentAge + 1}.`);
 
    **Console Output**
 
    ::
 
-      Next year, Jack will be 10
+      Next year, Jack will be 10.
 
-Using string concatenation to achieve the same output can get cumbersome:
-
-.. sourcecode:: js
-
-   console.log("Next year, " + name + " will be " + (currentAge + 1));
-
-In addition to allowing us to include data in strings in a cleaner, more
-readable way, template literals also allow us to easily create multi-line
-strings without using string concatenation or special characters.
+Besides allowing us to include data in strings in a cleaner, more readable way,
+template literals also allow us to easily create multi-line strings without
+using string concatenation or special characters.
 
 .. admonition:: Example
 
