@@ -45,6 +45,7 @@ added inside of it. Below we have added one basic
       </body>
    </html>
 
+.. _input-tag:
 
 Input Element
 -------------

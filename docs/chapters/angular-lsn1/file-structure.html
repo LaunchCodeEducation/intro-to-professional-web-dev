@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>28.3. Angular File Structure &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="28.4. Angular First Steps" href="angular-1st-steps.html" />
+    <link rel="prev" title="28.2. Templates" href="templates.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">28. Angular, Part 1</a></li>
+    <li class="active">28.3. Angular File Structure</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="angular-file-structure">
+<h1>28.3. Angular File Structure<a class="headerlink" href="#angular-file-structure" title="Permalink to this headline">¶</a></h1>
+<p>Each Angular project contains a standard file structure, which is shown in the
+figure below.</p>
+<div class="figure">
+<img alt="Visual of the standard Angular file structure." src="../../_images/AngularFileStructure.png" />
+</div>
+<p>All of the project files (and there will be LOTS) are stored in the single,
+top-level folder, <code class="docutils literal notranslate"><span class="pre">projectName</span></code>, which contains a <code class="docutils literal notranslate"><span class="pre">src</span></code> folder and a set of
+support files.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">When you start a new Angular project, do not worry about the support files.
+These will be generated automatically, and they take care of the routine
+technical details for making your project run smoothly.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">src</span></code> contains the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder and four important files: <code class="docutils literal notranslate"><span class="pre">index.html</span></code>,
+<code class="docutils literal notranslate"><span class="pre">main.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">style.css</span></code>, and <code class="docutils literal notranslate"><span class="pre">polyfills.ts</span></code>. We will explore these files
+in more detail on the next page. For now, recognize that they control how the
+Angular project operates.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">app</span></code> folder contains the files and subfolders needed to control the
+nitty-gritty details of displaying a webpage. For your projects, most of your
+time and effort will be spent modifying the contents within <code class="docutils literal notranslate"><span class="pre">app</span></code>.</p>
+<div class="section" id="stackblitz">
+<h2>28.3.1. StackBlitz<a class="headerlink" href="#stackblitz" title="Permalink to this headline">¶</a></h2>
+<p>Your first Angular project will be another “Hello, World” example, and we will
+use a different online tool to build this. The site is called
+<a class="reference external" href="https://stackblitz.com" target="_blank">StackBlitz<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and it is similar to Repl.it in that
+it allows us to play without risk. The main difference is that StackBlitz is
+specifically designed to create webpage templates.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>For the “HTML Me Something” assignment, you created an account on
+<a class="reference external" href="https://github.com" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> . Since you will modify an Angular project
+over the next few studios, you need access to GitHub to store your progress.</p>
+<p class="last">Follow the link and make sure you remember your login information, or enroll
+if you have not yet created an account.</p>
+</div>
+<div class="section" id="stackblitz-workspace-layout">
+<h3>28.3.1.1. StackBlitz Workspace Layout<a class="headerlink" href="#stackblitz-workspace-layout" title="Permalink to this headline">¶</a></h3>
+<p>Before we dive into the project, we need to become familiar with the StackBlitz
+layout, which is based on the popular editor
+<a class="reference external" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>The workspace consists of 3 main panels and several menu functions.</p>
+<p>Features to note:</p>
+<ol class="arabic simple">
+<li>Use your GitHub account to store your projects. Click the GitHub button (1)
+to save your progress.</li>
+<li>If you are viewing someone else’s project, you can <em>fork</em> the content (2)
+and store a copy of that project in your GitHub account. This allows you to
+edit the files without changing the originals, and it lets you use other
+programmers’ work (with permission) to enhance your own. As we learn more
+about Angular, you will need to fork sample code for the exercises and
+studios.</li>
+</ol>
+<div class="figure">
+<img alt="StackBlitz workspace layout." src="../../_images/StackBlitzWorkspace.png" />
+</div>
+<ol class="arabic simple" start="3">
+<li>File panel and menu (3). Allows you to search for an item, add extensions,
+update settings, and add, open, or delete files.</li>
+<li>Editor panel (4). Your code goes here. Click on a filename to open it in a
+tab in the editor.</li>
+<li>Preview panel (5). Provides a view of what the webpage looks like. This
+panel can be minimized to save space or opened into a new browser window
+(6).</li>
+</ol>
+<p>As with any new coding skill or tool, the best way to learn is to actively
+practice. Let’s begin building your first Angular project.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="templates.html"><span aria-hidden="true">&larr;</span> 28.2. Templates</a></li>
+        
+        
+        <li class="next"><a href="angular-1st-steps.html">28.4. Angular First Steps <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

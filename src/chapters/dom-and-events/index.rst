@@ -1,3 +1,5 @@
+.. _DOM-and-events:
+
 The DOM and Events
 ==================
 
