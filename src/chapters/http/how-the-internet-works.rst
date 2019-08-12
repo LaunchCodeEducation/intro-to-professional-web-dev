@@ -30,7 +30,7 @@ Protocols
 .. index::
    single: url; protocol
 
-A **protocol** is standard for communication between computers. Most web communication uses *three* protocols, in fact.
+A **protocol** is a standard for communication between computers. Most web communication uses *three* protocols, in fact.
 
 .. list-table:: Common Web Protocols
    :header-rows: 1
@@ -51,7 +51,7 @@ A **protocol** is standard for communication between computers. Most web communi
      - Low-level web communication for transferring small chunks of raw data known as *packets*
    * - DNS
      - Domain Name Service
-     - Translate human-friendly names into server addresses
+     - Translates human-friendly names into server addresses
 
 A thorough understanding of each of these protocols is well beyond the scope of this class. However, as a web developer it is important you have a general understanding of their roles. Each protocol has a different and critical job in enabling web communication.
 
@@ -60,16 +60,16 @@ HTTP
 
 .. index:: ! HTTP, ! HTTPS
 
-**HTTP** is the most important protocol for web developers to understand, which you may have guessed from the title of this chapter. It includes details on how requests for common web data---such as HTML files or images---should be structured, as well as responses to such requests. As you will learn in upcoming sections, the HTTP standard specifies in great detail how these messages are structured.
+**HTTP** is the most important protocol for web developers to understand, which you may have guessed from the title of this chapter. It specifies how requests for common web data---such as HTML files or images---should be structured, as well as responses to such requests. The details of request and response message structure are the topic of the rest of this chapter. 
 
-**HTTPS** refers to the HTTP protocol used with a secure connection. A secure connection encrypts data before and after being sent, so that it can't be read while in-transit. How such connections are encrypted is beyond the scope of this course. 
+**HTTPS** refers to the HTTP protocol used with a secure connection. A secure connection encrypts so that it can't be read while in-transit. The data is encrypted by the server/client before being transmitted, and decrypted once it is received by the client/server. The precise details of how such encryption works is beyond the scope of this course. 
 
 TCP/IP
 ^^^^^^
 
 .. index:: ! TCP/IP
 
-**TCP/IP** is a low-level protocol that is quite complicated. For our purposes, it is important only to know that TCP/IP is the standard that allows data to get from one place to another on the Internet. 
+**TCP/IP** is a low-level protocol that is quite complicated. For our purposes, it is important only to know that TCP/IP is the standard that allows *raw data* to get from one place to another on the Internet. 
 
 When a server sends a file back to a client, that file must pysically be sent across a series of network components, including cables, routers, and switches. Files are broken down into *packets*---small chunks of a standard size---that are individually sent from one location to the next, until arriving at their final destination and being reassembeld.
 
@@ -82,7 +82,7 @@ DNS
 
 .. index:: ! DNS, ! IP address
 
-**DNS** is the address book of the Internet. It enables us to use readable and memorable names for servers, such as ``www.launchcode.org`` or ``mail.google.com``, which are **domain names**.
+**DNS** is the address book of the Internet. It enables us to use readable and memorable names for servers, such as ``www.launchcode.org`` or ``mail.google.com``. Such names are called **domain names**, and they function as aliases for the actual server addresses.
 
 Every server on the internet has a numberical address known as an **IP address**. When a message is addressed using a domain name, the corresponding IP address must be determined before it can be sent. 
 
@@ -133,7 +133,7 @@ The five components of this URL are:
 - Path (optional)
 - Query String (optional)
 
-A properly formed URL must have these components in the *exact* order shown here. Only scheme and host are required.
+A properly-formed URL must have these components in the *exact* order shown here. Only scheme and host are required.
 
 Let's look at each of these in detail.
 
@@ -143,7 +143,7 @@ Scheme
 .. index::
    single: url; scheme
 
-The first portion of every URL specifies the **scheme**. Common schemes are ``http``, ``https``, ``ftp``, ``mailto``, and ``file``. Most often, the scheme specifies the *protocol* to be used in making a request. For us, this will always be ``http`` or ``https``.
+The first portion of every URL specifies the **scheme**. Common schemes are ``http``, ``https``, ``ftp``, ``mailto``, and ``file``. Most often, the scheme specifies the *protocol* to be used in making a request. For us, this will always be ``http`` or ``https``. If left off, a web browser will insert the scheme http/s for you. 
 
 The scheme is *always* followed by ``://``.
 
@@ -177,11 +177,11 @@ Path
 .. index::
    single: url; path
 
-Following the domain and optional port is the **path**, which consists of a series of names separated by ``/``. The path provides information that tells the server *what* the request is asking for. It can consist of a series of names, such as ``/blog/entries/2018/``, or it can end with an explicit file name, such as ``/blog/index.html``.
+Following the domain and optional port is the **path**, which consists of a series of names separated by ``/``. The path provides information that tells the server *what* is being requested. It can consist of a series of names, such as ``/blog/entries/2018/``, or it can end with an explicit file name, such as ``/blog/index.html``.
 
 .. admonition:: Example
 
-   A request to ``https://www.launchcode.org/blog/`` asks for the resource that lives at the path ``/blog/`` on the server ``www.launchcode.org``. This resource happens to be the LaunchCode blog.
+   A request to ``https://www.launchcode.org/blog/`` asks for the resource that lives at the path ``/blog/`` on the server ``www.launchcode.org``. This resource happens to be the homepage of the LaunchCode blog.
 
    A request to the (very long) URL below asks for the LaunchCode logo, which lives at the path ``/assets/dabomb-2080d6e...57f.svg`` (truncated here for space).
 
@@ -229,7 +229,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which protocal is responsible for turning a name like ``launchcode.org`` into a server address?
+   Which protocol is responsible for turning a name like ``launchcode.org`` into a server address?
 
 .. admonition:: Question
 

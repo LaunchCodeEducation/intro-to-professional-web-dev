@@ -14,7 +14,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -86,6 +85,28 @@
     
   <div class="section" id="template-literals">
 <h1>7.8. Template Literals<a class="headerlink" href="#template-literals" title="Permalink to this headline">¶</a></h1>
+<p>Earlier, we used <em>concatenation</em> to combine strings and variables together in
+order to create specific output:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">Jack</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">currentAge</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Next year, &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; will be &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Jack will be 10.
+</pre></div>
+</div>
+</div>
+<p>Unfortunately, this process quickly gets tedious for any output that depends on
+multiple variables. Often, concatenation requires multiple test runs of the
+code in order to check for syntax errors and proper spacing within the output.
+Fortunately, JavaScript offers us a better way to accomplish this process.</p>
 <p id="index-0"><strong>Template literals</strong> allow for the automatic insertion of expressions
 (including variables) into strings.</p>
 <p>While normal strings are enclosed in single or double quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>),
@@ -94,28 +115,25 @@ template literal, any expression surrounded by <code class="docutils literal not
 the resulting value included in the string.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Template literals allow for variables and other expressions to be directly included in strings.</p>
+<p>Template literals allow for variables and other expressions to be directly
+included in strings.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">currentAge</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Next year, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> will be </span><span class="si">${</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Next year, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> will be </span><span class="si">${</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Jack will be 10
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Jack will be 10.
 </pre></div>
 </div>
 </div>
-<p>Using string concatenation to achieve the same output can get cumbersome:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Next year, &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; will be &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>In addition to allowing us to include data in strings in a cleaner, more
-readable way, template literals also allow us to easily create multi-line
-strings without using string concatenation or special characters.</p>
+<p>Besides allowing us to include data in strings in a cleaner, more readable way,
+template literals also allow us to easily create multi-line strings without
+using string concatenation or special characters.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
