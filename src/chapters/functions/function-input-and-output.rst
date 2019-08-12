@@ -69,11 +69,14 @@ As we saw with our initial examples of function definitions, not every function 
 
    function doNothing() {}
 
-This function is completely valid, if useless. While it doesn't have a return statement, a value is still implicitly returned by JavaScript.
+As written, this function is completely valid, but useless. Although the
+function doesn't have a ``return`` statement, JavaScript still implicitly
+returns a value.
 
 .. admonition:: Example
 
-   A function without a return statement returns the special value ``undefined``.
+   A function without a ``return`` statement returns the special value
+   ``undefined``.
 
    .. sourcecode:: js
       :linenos:
