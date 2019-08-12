@@ -132,9 +132,9 @@ Add the below ``add`` function to the crew component in file ``src/app/crew/crew
 
 Remove Crew Members
 ^^^^^^^^^^^^^^^^^^^
-Allow removing of crew members by adding a remove button next to each person in the crew list.
-When the remove button is clicked a remove function in the crew component will be called which
-will remove that person from the crew array.
+Allow removing of crew members by adding a button next to each person in the crew list.
+When the remove button is clicked, the ``remove`` function in the crew component will be called which
+will delete that person from the crew array.
 
 .. figure:: figures/remove-crew.gif
        :alt: Animated gif of crew member disappearing from the list after the remove button for that item is clicked.
@@ -164,19 +164,21 @@ Add the below ``remove`` function to the crew component in file ``src/app/crew/c
 
 Edit Crew Members
 ^^^^^^^^^^^^^^^^^
-Finally we are going to allow the user to edit crew members that have already been added.
-If the crew member name is clicked, then the crew member name should be replaced with a text
-input and a save button. This means that the crew member name can be displayed in display state
-or in edit state. Only one crew member can be edited at once.
+Finally we are going to allow the user to edit crew members who have already been added.
+
+1. If the crew member name is clicked, then their name should be replaced with a text input and a save button.
+2. When save is clicked the input and save button are replaced by the text only version of the name.
+3. Only one crew member can be edited at a time.
 
 .. figure:: figures/edit-crew-name.gif
        :alt: Animated gif of crew member name being clicked, edited, and then saved.
 
        Example of crew member name being edited.
 
-We need to add a click event to the member name. To do that, put ``{{member.name}}`` inside of a
-``<span>`` that has a ``(click)`` handler. Make your ``<li>`` in ``src/app/crew/crew.component.html``
-look like the below code.
+We need to add a click event to the member name.
+
+4. Put ``{{member.name}}`` inside of a ``<span>`` that has a ``(click)`` handler.
+5. Make the ``<li>`` in ``src/app/crew/crew.component.html`` look like the code below.
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -186,15 +188,15 @@ look like the below code.
       <button (click)="remove(member)">remove</button>
    </li>
 
-Add this property to the crew component. ``memberBeingEdited`` represents the crew
-member that is currently being edited.
+We need a way of knowing which crew is being edited.
+
+6. Add this property to the crew component in file ``src/app/crew/crew.component.ts``. The property ``memberBeingEdited`` represents the crew member who is currently being edited.
 
 .. sourcecode:: TypeScript
 
    memberBeingEdited: object = null;
 
-Next we need to add the below ``edit`` function to the crew component file ``src/app/crew/crew.component.ts``.
-This function will set a ``memberBeingEdited`` variable to be equal to the crew member that was clicked.
+7. Next add a ``edit`` function to the crew component file ``src/app/crew/crew.component.ts``. This function will set a ``memberBeingEdited`` variable to be equal to the crew member who was clicked.
 
 .. sourcecode:: TypeScript
 
@@ -203,8 +205,8 @@ This function will set a ``memberBeingEdited`` variable to be equal to the crew 
    }
 
 Now we need to add an ``*ngIf`` that will show the two versions of the member, the display state or the edit state.
-In the edit state an input box with a save button will appear, but for now the input and save won't have any functionality.
-Make your ``src/app/crew/crew.component.html`` file look like the below code.
+
+8. In the edit state an input box with a save button will appear, but for now the input and save won't have any functionality. Make your ``src/app/crew/crew.component.html`` file look like the below code.
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -235,7 +237,8 @@ Make your ``src/app/crew/crew.component.html`` file look like the below code.
    <button (click)="add(name.value, firstMission.checked)">Add</button>
 
 Finally we are going to make the edit state update the member name when save is clicked.
-Update the ``<input>`` and ``<button>`` tags to look like:
+
+9. Update the ``<input>`` and ``<button>`` tags to look like:
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -248,7 +251,8 @@ Update the ``<input>`` and ``<button>`` tags to look like:
 
 The last step is to add the ``save`` function to the crew component. This function will be called
 when the ``<button>`` is clicked or when the enter key is pressed and the ``<input>`` has focus.
-Add the below ``save`` function to the crew component.
+
+10. Add the below ``save`` function to the crew component.
 
 .. sourcecode:: TypeScript
    :linenos:
