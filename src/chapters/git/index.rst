@@ -10,4 +10,5 @@ Git More Collaboration
    remote-repository
    branches
    merge
+   exercises
    studio
