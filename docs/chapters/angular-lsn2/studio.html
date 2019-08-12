@@ -223,9 +223,9 @@ declares the <code class="docutils literal notranslate"><span class="pre">firstM
 </div>
 <div class="section" id="remove-crew-members">
 <h3>29.8.3.5. Remove Crew Members<a class="headerlink" href="#remove-crew-members" title="Permalink to this headline">¶</a></h3>
-<p>Allow removing of crew members by adding a remove button next to each person in the crew list.
-When the remove button is clicked a remove function in the crew component will be called which
-will remove that person from the crew array.</p>
+<p>Allow removing of crew members by adding a button next to each person in the crew list.
+When the remove button is clicked, the <code class="docutils literal notranslate"><span class="pre">remove</span></code> function in the crew component will be called which
+will delete that person from the crew array.</p>
 <div class="figure" id="id4">
 <img alt="Animated gif of crew member disappearing from the list after the remove button for that item is clicked." src="../../_images/remove-crew.gif" />
 <p class="caption"><span class="caption-text">Example of crew member being removed.</span></p>
@@ -254,17 +254,21 @@ so that the button appears next to each item in the crew list.</p>
 </div>
 <div class="section" id="edit-crew-members">
 <h3>29.8.3.6. Edit Crew Members<a class="headerlink" href="#edit-crew-members" title="Permalink to this headline">¶</a></h3>
-<p>Finally we are going to allow the user to edit crew members that have already been added.
-If the crew member name is clicked, then the crew member name should be replaced with a text
-input and a save button. This means that the crew member name can be displayed in display state
-or in edit state. Only one crew member can be edited at once.</p>
+<p>Finally we are going to allow the user to edit crew members who have already been added.</p>
+<ol class="arabic simple">
+<li>If the crew member name is clicked, then their name should be replaced with a text input and a save button.</li>
+<li>When save is clicked the input and save button are replaced by the text only version of the name.</li>
+<li>Only one crew member can be edited at a time.</li>
+</ol>
 <div class="figure" id="id5">
 <img alt="Animated gif of crew member name being clicked, edited, and then saved." src="../../_images/edit-crew-name.gif" />
 <p class="caption"><span class="caption-text">Example of crew member name being edited.</span></p>
 </div>
-<p>We need to add a click event to the member name. To do that, put <code class="docutils literal notranslate"><span class="pre">{{member.name}}</span></code> inside of a
-<code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> that has a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> handler. Make your <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>
-look like the below code.</p>
+<p>We need to add a click event to the member name.</p>
+<ol class="arabic simple" start="4">
+<li>Put <code class="docutils literal notranslate"><span class="pre">{{member.name}}</span></code> inside of a <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> that has a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> handler.</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> look like the code below.</li>
+</ol>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -274,21 +278,25 @@ look like the below code.</p>
 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Add this property to the crew component. <code class="docutils literal notranslate"><span class="pre">memberBeingEdited</span></code> represents the crew
-member that is currently being edited.</p>
+<p>We need a way of knowing which crew is being edited.</p>
+<ol class="arabic simple" start="6">
+<li>Add this property to the crew component in file <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>. The property <code class="docutils literal notranslate"><span class="pre">memberBeingEdited</span></code> represents the crew member who is currently being edited.</li>
+</ol>
 <div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">memberBeingEdited</span>: <span class="kt">object</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Next we need to add the below <code class="docutils literal notranslate"><span class="pre">edit</span></code> function to the crew component file <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>.
-This function will set a <code class="docutils literal notranslate"><span class="pre">memberBeingEdited</span></code> variable to be equal to the crew member that was clicked.</p>
+<ol class="arabic simple" start="7">
+<li>Next add a <code class="docutils literal notranslate"><span class="pre">edit</span></code> function to the crew component file <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>. This function will set a <code class="docutils literal notranslate"><span class="pre">memberBeingEdited</span></code> variable to be equal to the crew member who was clicked.</li>
+</ol>
 <div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">edit</span><span class="p">(</span><span class="nx">member</span>: <span class="kt">object</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">this</span><span class="p">.</span><span class="nx">memberBeingEdited</span> <span class="o">=</span> <span class="nx">member</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now we need to add an <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> that will show the two versions of the member, the display state or the edit state.
-In the edit state an input box with a save button will appear, but for now the input and save won’t have any functionality.
-Make your <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> file look like the below code.</p>
+<p>Now we need to add an <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> that will show the two versions of the member, the display state or the edit state.</p>
+<ol class="arabic simple" start="8">
+<li>In the edit state an input box with a save button will appear, but for now the input and save won’t have any functionality. Make your <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> file look like the below code.</li>
+</ol>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -338,8 +346,10 @@ Make your <code class="docutils literal notranslate"><span class="pre">src/app/c
 <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;add(name.value, firstMission.checked)&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Finally we are going to make the edit state update the member name when save is clicked.
-Update the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags to look like:</p>
+<p>Finally we are going to make the edit state update the member name when save is clicked.</p>
+<ol class="arabic simple" start="9">
+<li>Update the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags to look like:</li>
+</ol>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -352,8 +362,10 @@ Update the <code class="docutils literal notranslate"><span class="pre">&lt;inpu
 </pre></div>
 </td></tr></table></div>
 <p>The last step is to add the <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component. This function will be called
-when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked or when the enter key is pressed and the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> has focus.
-Add the below <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component.</p>
+when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked or when the enter key is pressed and the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> has focus.</p>
+<ol class="arabic simple" start="10">
+<li>Add the below <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component.</li>
+</ol>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
