@@ -38,8 +38,8 @@ the sidebar.
    :alt: Access Angular lesson 2 in VSCode.
 
 Open the terminal panel and navigate to the lesson2 folder. You should find
-subfolders for the examples and exercises used in this chapter. Also, solutions
-to some of the tasks are located in the ``example-solutions`` branch.
+subfolders for the examples and exercises used in this chapter. Also, completed
+code to some of the tasks is located in the ``solutions`` branch.
 
 .. sourcecode:: bash
 
@@ -49,5 +49,5 @@ to some of the tasks are located in the ``example-solutions`` branch.
    $ ls
       examples        exercises
    $ git branch
-      example-solutions
+      solutions
       * master

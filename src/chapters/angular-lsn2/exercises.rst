@@ -7,20 +7,33 @@ astronaut candidates and select crew members for a space mission.
 Starter Code
 -------------
 
-The starter code for the exercises is in the same 
-`repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`_ used for the
-chapter examples. You have likely already cloned this repository while going through the chapter.
+The starter code for the exercises is in the same
+`repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`_ that you cloned
+for the chapter examples.
+
+.. admonition:: Note
+
+   Remember that the repository contains a ``master`` branch with all the
+   starter code as well as a ``solutions`` branch showing the completed
+   exercises.
+
+   The solutions provide a resource for you to check if you get stuck. However,
+   for best results you should make a *valiant* attempt at solving the tasks
+   before looking at "the answers".
+
+   Also, if your code works but is different from the solutions, that is OK.
+   There are usually multiple ways of solving the same problem.
 
 From the ``lesson2`` folder in VSCode, navigate into the
 ``exercises/src/app/candidates`` folder. Open the
-``candidates.component.html`` file.
+``candidates.component.html`` and ``candidates.component.ts`` files.
 
 .. figure:: ./figures/lesson2-exercises-menu.png
    :alt: Access lesson 2 exercises in VSCode.
 
 In the terminal, navigate into the lesson 2 ``exercises`` folder. Enter
-``npm install`` to add the Angular modules, then run ``ng serve``. The webpage
-should look like this:
+``npm install`` to add the Angular modules, then run ``ng serve``. When you
+open the webpage in your browser, it should look like this:
 
 .. figure:: ./figures/lesson2-exercises-start.png
    :alt: Starting setup for exercises.
