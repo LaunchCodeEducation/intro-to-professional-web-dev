@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -92,27 +92,29 @@ and talk about the terms <strong>asynchronous</strong> and <strong>synchronous</
 <div><p>Asynchronous: Not simultaneous or concurrent in time.</p>
 <p>Synchronous: Simultaneous or concurrent in time.</p>
 </div></blockquote>
-<p>When fetching data in JavaScript, the HTTP requests are asynchronous. In brief that means
-when an HTTP request is sent, we don’t know exactly when a response will be received by the browser.
-Remember that HTTP requests are sent to an address, then a response is sent. That process takes
-a variable amount of time depending on network speed, the address location, and response size.</p>
+<p>When fetching data in JavaScript, the HTTP requests are asynchronous. In brief, that
+means when an HTTP request is sent, we don’t know exactly when a response will be
+received by the browser. Remember that HTTP requests are sent to an address, then a
+response is sent. That process takes a variable amount of time depending on network
+speed, the address location, and response size.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">These requests are also called <strong>AJAX requests</strong> (Asynchronous JavaScript and XML). The XML
-part of AJAX refers to a data format that was popular before JSON.</p>
+<p class="last">These requests are also called <strong>AJAX requests</strong> (Asynchronous JavaScript and XML).
+The XML part of AJAX refers to a data format that was popular before JSON.</p>
 </div>
 <div class="section" id="response-handlers">
 <h2>26.4.1. Response Handlers<a class="headerlink" href="#response-handlers" title="Permalink to this headline">¶</a></h2>
-<p>Browsers can’t stop everything and wait for a response to an HTTP request. Browsers have
-to render HTML, interact with the user, and run JavaScript. To keep these processes running
-seamlessly, without any noticeable pauses, the browser relies on events.</p>
-<p>This is where <code class="docutils literal notranslate"><span class="pre">then</span></code> and the response handler function come in. The browser provides us
-with a way to handle the response whenever it is received.</p>
+<p>Browsers can’t stop everything and wait for a response to an HTTP request. Browsers
+have to render HTML, interact with the user, and run JavaScript. To keep these
+processes running seamlessly, without any noticeable pauses, the browser relies on
+events.</p>
+<p>This is where <code class="docutils literal notranslate"><span class="pre">.then()</span></code> and the response handler function come in. The browser
+provides us with a way to handle the response whenever it is received.</p>
 </div>
 <div class="section" id="promises-and-the-then-function">
 <h2>26.4.2. Promises and the <code class="docutils literal notranslate"><span class="pre">then</span></code> Function<a class="headerlink" href="#promises-and-the-then-function" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-3"></span><p id="index-4">Let’s look again at a simple <code class="docutils literal notranslate"><span class="pre">fetch</span></code> example. Notice on line 1 that <code class="docutils literal notranslate"><span class="pre">then</span></code> is called
-on the value returned from <code class="docutils literal notranslate"><span class="pre">fetch()</span></code>.</p>
+<span class="target" id="index-3"></span><p id="index-4">Let’s look again at a simple <code class="docutils literal notranslate"><span class="pre">fetch</span></code> example. Notice on line 1 that <code class="docutils literal notranslate"><span class="pre">then</span></code> is
+called on the value returned from <code class="docutils literal notranslate"><span class="pre">fetch</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -120,7 +122,8 @@ on the value returned from <code class="docutils literal notranslate"><span clas
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>To make it clearer, let’s capture the value returned by <code class="docutils literal notranslate"><span class="pre">fetch</span></code> in a variable named <code class="docutils literal notranslate"><span class="pre">promise</span></code>.</p>
+<p>To make it clearer, let’s capture the value returned by <code class="docutils literal notranslate"><span class="pre">fetch</span></code> in a variable
+named <code class="docutils literal notranslate"><span class="pre">promise</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -130,16 +133,17 @@ on the value returned from <code class="docutils literal notranslate"><span clas
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> returns an instance of the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class. The Promise class represents
+<p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> returns an instance of the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class. The <strong>Promise</strong> class represents
 a future event that will eventually occur. In the above example, <code class="docutils literal notranslate"><span class="pre">promise</span></code> represents
 the eventual response from the HTTP request to <code class="docutils literal notranslate"><span class="pre">https://api.education.launchcode.org/weather</span></code>.</p>
-<p>A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed to the
-response handler function. The <code class="docutils literal notranslate"><span class="pre">then</span></code> method of a promise defines what will happen when the
-promise is fulfilled. When a promise is rejected an error reason is provided.</p>
+<p>A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed
+to the response handler function. The <code class="docutils literal notranslate"><span class="pre">then</span></code> method of a promise defines what will
+happen when the promise is fulfilled. When a promise is rejected, an error reason is
+provided.</p>
 <p>The above example can be translated to these steps</p>
 <ol class="arabic simple">
 <li>Make an HTTP request to <code class="docutils literal notranslate"><span class="pre">https://api.education.launchcode.org/weather</span></code></li>
-<li>When the response is received THEN run the response handler function (passing in response data)</li>
+<li>When the response is received, THEN run the response handler function (passing in response data)</li>
 <li>In the response handler function, console log the <code class="docutils literal notranslate"><span class="pre">response</span></code> object</li>
 </ol>
 </div>
@@ -147,11 +151,12 @@ promise is fulfilled. When a promise is rejected an error reason is provided.</p
 <h2>26.4.3. More Promises<a class="headerlink" href="#more-promises" title="Permalink to this headline">¶</a></h2>
 <p>Promises are used for more than HTTP requests. A promise can represent any future event.
 The <code class="docutils literal notranslate"><span class="pre">response</span></code> object has a <code class="docutils literal notranslate"><span class="pre">json()</span></code> function that will return the JSON data in the
-response. The <code class="docutils literal notranslate"><span class="pre">json()</span></code> function returns a promise that represents the future work result
-of turned the response data into JSON.</p>
-<p>The below example involves two promises. One promise on line 1 that represents the fetch
-request and a second on line 3 that represents the response data being turned into JSON.</p>
-<p>Finally on line 5 the JSON data can be logged.</p>
+response. The <code class="docutils literal notranslate"><span class="pre">json()</span></code> function returns a promise that represents the future result
+of turning the response data into JSON.</p>
+<p>The below example involves two promises. One promise on line 1 that represents the
+fetch request and a second on line 3 that represents the response data being turned
+into JSON.</p>
+<p>Finally on line 5, the JSON data can be logged.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3

@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -89,7 +89,7 @@
 <p>Now that we know what an API is, let’s use one to update a web page. Let’s use a weather API
 to add weather data to a webpage. The URL for this special LaunchCode weather API is
 <a class="reference external" href="https://api.education.launchcode.org/weather" target="_blank">https://api.education.launchcode.org/weather<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-<p>Example JSON returned from weather API.</p>
+<p>Example JSON returned from our weather API.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;temp&quot;</span><span class="o">:</span> <span class="mi">67</span><span class="p">,</span>
    <span class="s2">&quot;windSpeed&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
@@ -102,7 +102,7 @@ to add weather data to a webpage. The URL for this special LaunchCode weather AP
 </pre></div>
 </div>
 <p>We can see that this API returns useful information like <code class="docutils literal notranslate"><span class="pre">temp</span></code> and <code class="docutils literal notranslate"><span class="pre">windSpeed</span></code>. Our goal is to
-add that data to a Launch Status web page. Note this API is for instruction purposes and does not
+add that data to a Launch Status web page. Note, this API is for instruction purposes and does not
 contain real time data.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -143,7 +143,7 @@ Internet Explorer. <a class="reference external" href="https://browsehappy.com/"
 <div class="section" id="fetch-function">
 <h2>26.3.1. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> Function<a class="headerlink" href="#fetch-function" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">To request the weather data, we will use the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is a global
-function that requests, or fetches resources such as data from an API.</p>
+function that requests, or fetches, resources such as data from an API.</p>
 <p>Take note of two necessary aspects of the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function:</p>
 <ol class="arabic simple">
 <li>The URL of where the data is located.<ul>
@@ -165,7 +165,7 @@ function will be explained soon.</p>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p class="last">In this example we are requesting data from <code class="docutils literal notranslate"><span class="pre">https://api/education.launchcode.org/weather</span></code> and our response handler (the function) simply logs the response to the console.</p>
+<p class="last">In this example, we are requesting data from <code class="docutils literal notranslate"><span class="pre">https://api/education.launchcode.org/weather</span></code> and our response handler (the function) simply logs the response to the console.</p>
 </div>
 </div>
 <div class="section" id="fetch-example">
@@ -220,13 +220,14 @@ function will be explained soon.</p>
 </td></tr></table></div>
 <p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt1" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
-<p>Let’s break down how <code class="docutils literal notranslate"><span class="pre">fetch</span></code> works. A URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code> as a parameter, that causes
-an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
-response protocol. The response handler function, as the name implies, handles the response sent
-back from the API. Using the data in the response, the web page can be updated using DOM methods.</p>
+<p>Let’s break down how <code class="docutils literal notranslate"><span class="pre">fetch</span></code> works. A URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code> as a parameter.
+That causes an HTTP GET request to be sent from the browser to the API. Remember that
+HTTP is a request then response protocol. The response handler function, as the name
+implies, handles the response sent back from the API. Using the data in the response,
+the web page can be updated using DOM methods.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">In this section <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is used to make GET requests. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> can also be used to make
+<p class="last">In this section, <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is used to make GET requests. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> can also be used to make
 other types of HTTP requests such as POST and PUT.</p>
 </div>
 <div class="section" id="view-the-get-request">
@@ -241,20 +242,23 @@ other types of HTTP requests such as POST and PUT.</p>
 <img alt="Screen shot showing developer tools open with the network call to the API highlighted." src="../../_images/weather-developer-tools.png" />
 <p class="caption"><span class="caption-text">The GET request to the Weather API highlighted in developer tools.</span></p>
 </div>
-<p>In the above image you can see the web page has been rendered on the left. In the developer tools
-the GET request to the Weather API has been highlighted along with the response from that request.
-The response shows the JSON data that was received. In the console output you can see the <code class="docutils literal notranslate"><span class="pre">Response</span></code>
-object has been logged. We will use that object next.</p>
+<p>In the above image, you can see the web page has been rendered on the left. In the
+developer tools, the GET request to the Weather API has been highlighted along with
+the response from that request. The response shows the JSON data that was received.
+In the console output, you can see the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object has been logged. We will
+use that object next.</p>
 </div>
 <div class="section" id="response-object">
 <h3>26.3.2.2. Response Object<a class="headerlink" href="#response-object" title="Permalink to this headline">¶</a></h3>
-<p>The response to the GET request is contained in a <code class="docutils literal notranslate"><span class="pre">response</span></code> object that is an instance of the
-<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">Response class<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. The Response class
-represents an HTTP response and has methods that allow access to the status and data.</p>
+<p>The response to the GET request is contained in a <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is an
+instance of the
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">Response class<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+The Response class represents an HTTP response and has methods that allow access to
+the status and data.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>On line 8 the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method is used to gain access to the JSON data contained in the response.</p>
-<p>Line 9 logs the JSON to the console. We’ll discuss <code class="docutils literal notranslate"><span class="pre">then</span></code> later.</p>
+<p>On line 8, the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method is used to gain access to the JSON data contained in the response.</p>
+<p>Line 9 logs the JSON to the console. We’ll discuss <code class="docutils literal notranslate"><span class="pre">.then()</span></code> later.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -309,10 +313,11 @@ represents an HTTP response and has methods that allow access to the status and 
 </div>
 <div class="section" id="use-the-dom-and-json-data-to-update-the-page">
 <h3>26.3.2.3. Use the DOM and JSON Data to Update the Page<a class="headerlink" href="#use-the-dom-and-json-data-to-update-the-page" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have JSON weather data we can add HTML elements to the page to show the data.</p>
+<p>Now that we have JSON weather data, we can add HTML elements to the page to show the
+data.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>On line 10 <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> of the <code class="docutils literal notranslate"><span class="pre">div</span></code> variable is set to be HTML built using
+<p>On line 10, <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> of the <code class="docutils literal notranslate"><span class="pre">div</span></code> variable is set to be HTML built using
 JSON weather data.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -385,8 +390,8 @@ JSON weather data.</p>
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">fetch</span></code> was chosen as the tool to request data because it’s supported in modern browsers by default
 and is simple to use. When viewing resources other than this book, you will see various other ways to
-request data in a web page with JavaScript. Other ways include but are not limited to
-<code class="docutils literal notranslate"><span class="pre">jQuery.get</span></code>, <code class="docutils literal notranslate"><span class="pre">jQuery.ajax</span></code>, and <code class="docutils literal notranslate"><span class="pre">XMLHttpRequest</span></code>.</p>
+request data in a web page with JavaScript. Other ways include, but are not
+limited to, <code class="docutils literal notranslate"><span class="pre">jQuery.get</span></code>, <code class="docutils literal notranslate"><span class="pre">jQuery.ajax</span></code>, and <code class="docutils literal notranslate"><span class="pre">XMLHttpRequest</span></code>.</p>
 </div>
 </div>
 </div>

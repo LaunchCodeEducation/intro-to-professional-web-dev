@@ -4,7 +4,7 @@ Exercises
 JSON
 ----
 
-1. Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
+1. Which of the following three code snippets is correct JSON syntax? Why are the other two options incorrect?
 
 .. sourcecode:: js
 
