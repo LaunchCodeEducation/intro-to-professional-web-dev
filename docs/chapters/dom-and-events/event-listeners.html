@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -87,7 +87,7 @@
   <div class="section" id="event-listeners">
 <span id="id1"></span><h1>23.5. Event Listeners<a class="headerlink" href="#event-listeners" title="Permalink to this headline">¶</a></h1>
 <p>Using inline event handling is a good way to get started handling events. A second way
-to handle events uses the DOM objects and methods. Remember the DOM is an object representation
+to handle events uses the DOM objects and methods. Remember, the DOM is an object representation
 of the entire web page. The DOM allows us to use JavaScript to configure
 our event handlers. The event handling declaration will no longer be in the HTML
 element attribute, but will instead be inside <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tags or in an external JavaScript file.</p>
@@ -107,8 +107,9 @@ the variable <code class="docutils literal notranslate"><span class="pre">anElem
 going to use a <em>named function</em>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>We want to set the named function <code class="docutils literal notranslate"><span class="pre">youRang</span></code> as the <em>click</em> handler for the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code>. Notice that
-the value passed in as the event name is <code class="docutils literal notranslate"><span class="pre">&quot;click&quot;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&quot;onclick&quot;</span></code>.</p>
+<p>We want to set the named function <code class="docutils literal notranslate"><span class="pre">youRang</span></code> as the <em>click</em> handler for the
+<code class="docutils literal notranslate"><span class="pre">button</span></code> element. Notice that the value passed in as the event name is
+<code class="docutils literal notranslate"><span class="pre">&quot;click&quot;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&quot;onclick&quot;</span></code>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -167,15 +168,15 @@ if an invalid event name is given.</p>
 </div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last" id="index-1">This chapter uses DOM methods to add event handlers. When searching online you may find examples
+<p class="last" id="index-1">This chapter uses DOM methods to add event handlers. When searching online, you may find examples
 using jQuery to add event handlers, which look like <code class="docutils literal notranslate"><span class="pre">.on(&quot;click&quot;,</span> <span class="pre">...)</span></code> or <code class="docutils literal notranslate"><span class="pre">.click(...)</span></code>.
 <strong>jQuery</strong> is a JavaScript library designed to simplify working with the DOM. jQuery’s popularity
 has declined as the DOM itself has gained features and improved usablity.</p>
 </div>
 <p>The second parameter of <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> is a function. Remember there are many ways to declare a
-function in JavaScript. So far we have passed in named functions as the event handler.
-<code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> will accept any valid function as the event handler. It’s possible and
-quite common to pass in an <em>anonymous function</em> as the event handler.</p>
+function in JavaScript. So far, we have passed in named functions as the event handler.
+<code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> will accept any valid function as the event handler. It’s possible,
+and quite common, to pass in an <em>anonymous function</em> as the event handler.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -188,9 +189,9 @@ quite common to pass in an <em>anonymous function</em> as the event handler.</p>
 </div>
 <div class="section" id="event-details">
 <h2>23.5.2. Event Details<a class="headerlink" href="#event-details" title="Permalink to this headline">¶</a></h2>
-<p>A benefit of using <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> is that an <em>event</em> parameter is passed as parameter
-to the event handler function. This event is an object instance of the Event class, which
-defines methods and properties related to events.</p>
+<p>A benefit of using <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> is that an <em>event</em> parameter is passed as the
+parameter to the event handler function. This event is an object instance of the Event
+class, which defines methods and properties related to events.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -204,7 +205,7 @@ defines methods and properties related to events.</p>
 <p><code class="docutils literal notranslate"><span class="pre">event.target</span></code> is an element object that was the target of the event.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p>Above, we saw how we could use addEventListener to add the function <code class="docutils literal notranslate"><span class="pre">youRang()</span></code> as the event handler for the <code class="docutils literal notranslate"><span class="pre">Ring</span> <span class="pre">Bell</span></code> button.</p>
+<p>Above, we saw how we could use <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> to add the function <code class="docutils literal notranslate"><span class="pre">youRang()</span></code> as the event handler for the <code class="docutils literal notranslate"><span class="pre">Ring</span> <span class="pre">Bell</span></code> button.</p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code>, could you add the function <code class="docutils literal notranslate"><span class="pre">greetFriends()</span></code> as the event handler for the <code class="docutils literal notranslate"><span class="pre">Greet</span> <span class="pre">Friends</span></code> button?</p>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Try-It-addEventListener/" target="_blank">Try it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
@@ -289,7 +290,7 @@ document clicked
 </pre></div>
 </div>
 </div>
-<p>In rare cases, you may want to stop events from bubbling up. We can use <code class="docutils literal notranslate"><span class="pre">event.stopPropagation()</span></code> to stop
+<p>In some cases, you may want to stop events from bubbling up. We can use <code class="docutils literal notranslate"><span class="pre">event.stopPropagation()</span></code> to stop
 events from being sent to ancestor elements. Handlers for parent elements will not be triggered if
 a child element calls <code class="docutils literal notranslate"><span class="pre">event.stopPropagation()</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1

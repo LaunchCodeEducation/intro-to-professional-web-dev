@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -89,30 +89,30 @@
 <div class="section" id="taking-javascript-on-the-web">
 <span id="index-0"></span><h2>23.1.1. Taking JavaScript on the Web<a class="headerlink" href="#taking-javascript-on-the-web" title="Permalink to this headline">¶</a></h2>
 <p>So far, we have created web pages with HTML and CSS. These pages have been <strong>static</strong>, meaning that the page appears the same each time it loads.
-However, you may find that you want to create a web page that changes after its been loaded. In order to create such a page, you would use JavaScript.
+However, you may find that you want to create a web page that changes after it’s been loaded. In order to create such a page, you would use JavaScript.
 Web pages that can change after loading in the browser are called <strong>dynamic</strong>.
 This is useful to programmers and users alike because they can interact with an application without refreshing the page.
 Having to constantly refresh the page would be a poor experience for the user and JavaScript helps programmers alleviate this burden.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p class="last">When you are on social media web page, you may like someone’s post.
-When you do like their post, you have noticed that several things happen.
+<p class="last">When you are on a social media page, you may like someone’s post.
+When you do like their post, you may notice that several things happen.
 The counter of how many likes the post has received increases by one and the like button may change color to indicate to you that you liked the post.
-This is an example of how JavaScript could be used to create an application that dyanmically updates without the page having to be refreshed.</p>
+This is an example of how JavaScript could be used to create an application that dynamically updates without the page having to be refreshed.</p>
 </div>
 <p>We have been running all of our JavaScript code in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages.
-Node is an intepreter for JavaScript with access to lots of different JavaScript libraries.
-When running JavaScript in the browser, each browser has an engine for running it. JavaScript run in the browser is called client-side JavaScript.
+Node.js, or just Node, is a JavaScript interpreter with access to lots of different JavaScript libraries.
+Each browser has their own engine for running JavaScript. JavaScript run in the browser is called client-side JavaScript.
 Firefox uses an engine called Spider Monkey to run client-side JavaScript.</p>
 </div>
 <div class="section" id="the-script-tag">
 <h2>23.1.2. The <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> Tag<a class="headerlink" href="#the-script-tag" title="Permalink to this headline">¶</a></h2>
-<p>In the HTML chapter we learned that an HTML page is made up of elements that are written as tags. Those
+<p>In the HTML chapter, we learned that an HTML page is made up of elements that are written as tags. Those
 elements have different purposes. The <code class="docutils literal notranslate"><span class="pre">script</span></code> element’s purpose is to include JavaScript into the
 web page. A <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag can contain JavaScript code inside of it or reference an external JavaScript file.</p>
 <div class="section" id="javascript-console">
 <h3>23.1.2.1. JavaScript Console<a class="headerlink" href="#javascript-console" title="Permalink to this headline">¶</a></h3>
-<p>Using the Developer Tools, you can access a JavaScript console. There you can mess around with fun JavaScript statements or you can use it to see the outputs of the client-side JavaScript you have written.</p>
+<p>Using the Developer Tools, you can access a JavaScript console. There, you can mess around with fun JavaScript statements or you can use it to see the outputs of the client-side JavaScript you have written.</p>
 </div>
 <div class="section" id="inline-javascript">
 <h3>23.1.2.2. Inline JavaScript<a class="headerlink" href="#inline-javascript" title="Permalink to this headline">¶</a></h3>
@@ -137,7 +137,7 @@ web page. A <code class="docutils literal notranslate"><span class="pre">&lt;scr
       <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Embedded JavaScript Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
          <span class="c1">// JavaScript code goes here!</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello from inside the web page&quot;</span><span class="p">);</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello from inside the web page!&quot;</span><span class="p">);</span>
       <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -147,16 +147,18 @@ web page. A <code class="docutils literal notranslate"><span class="pre">&lt;scr
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello from inside the web page
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello from inside the web page!
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="external-javascript">
 <h3>23.1.2.3. External JavaScript<a class="headerlink" href="#external-javascript" title="Permalink to this headline">¶</a></h3>
-<p>However, some programmers have large amounts of JavaScript to add to an HTML document.
+<p>Some programmers have large amounts of JavaScript to add to an HTML document.
 Using an external JavaScript file can help in these cases.
-You can still use the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag to include the JavaScript file with the HTML document while using the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute for the path to the JavaScript file.</p>
+You can still use the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag to include the JavaScript file within the
+HTML document. In this case, you’ll need to use the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute for the path
+to the JavaScript file.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This is how the HTML file for the web page might look if we wanted to link an external JavaScript file.</p>
@@ -191,7 +193,7 @@ You can still use the <code class="docutils literal notranslate"><span class="pr
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">You can use the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>  tag to reference JavaScript files hosted on external servers.
-Some of these JavaScript files will be files that you have not written yourself, but you will want to include in your application.</p>
+Some of these JavaScript files will be files that you have not written yourself but you will want to include in your application.</p>
 </div>
 </div>
 </div>
