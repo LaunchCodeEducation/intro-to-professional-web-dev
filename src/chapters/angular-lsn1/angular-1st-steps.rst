@@ -1,3 +1,5 @@
+.. _angular-first-steps:
+
 Angular First Steps
 ====================
 
@@ -12,7 +14,7 @@ First, use the terminal to create a folder for all of your Angular projects:
 
 .. sourcecode:: bash
 
-   $ mkdir folder_name
+   $ mkdir angular_practice
 
 Each new project you create will have its own folder inside this container.
 
@@ -30,7 +32,7 @@ Next, navigate into the new folder and create your first Angular project.
 
 .. sourcecode:: bash
 
-   $ cd folder_name
+   $ cd angular_practice
    $ ng new my-project-name
 
 This process will take some time, so be patient. You will also be prompted
@@ -105,7 +107,8 @@ folder, then enter the command ``ng serve``.
 
 Be prepared to wait... The compiler requires some time to build and deploy even
 small projects, and it may be a few moments before you see any action in the
-terminal. If no errors occur, a "Compiled successfully" message appears.
+terminal. If no errors occur, a "Compiled successfully" message eventually
+appears.
 
 The important part of this feedback is the ``localhost`` line, which provides
 a URL for viewing your work in a browser. Copy the URL and paste it into the
@@ -161,6 +164,7 @@ Un-launching Your Page
 -----------------------
 
 ``ng serve`` continues to run until you type "control+c" in the terminal. Go
-ahead and interrupt this process now.
+ahead and interrupt the process now. If you try refreshing your page, you will
+see an error.
 
 Now let's take a look at the different project files.

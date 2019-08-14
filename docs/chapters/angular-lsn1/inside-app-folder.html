@@ -86,8 +86,8 @@
     
   <div class="section" id="the-angular-framework">
 <h1>28.5. The Angular Framework<a class="headerlink" href="#the-angular-framework" title="Permalink to this headline">¶</a></h1>
-<p>In VSCode, navigate to the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder and open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file. You
-should see the following code:</p>
+<p>In VSCode, navigate to the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file, and
+examine the code:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -117,12 +117,12 @@ should see the following code:</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>You have seen most of the HTML tags, but line 12 shows something odd. The
-strange tag <code class="docutils literal notranslate"><span class="pre">&lt;app-root&gt;</span></code> represents a key idea behind building templates.
-Angular allows us to define our own tags, which are also used as placeholders
-in an HTML file. In this case, <code class="docutils literal notranslate"><span class="pre">&lt;app-root&gt;&lt;/app-root&gt;</span></code> reserves space on the
-webpage for information supplied by other files. Line 12 essentially says,
-“Display all the content from the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder here.”</p>
+<p>You have seen most of the HTML tags before, but line 12 shows something odd.
+The strange tag <code class="docutils literal notranslate"><span class="pre">&lt;app-root&gt;</span></code> represents a key idea behind building templates.
+Angular allows us to define our own tags, which are used as another type of
+placeholder in an HTML file. In this case, <code class="docutils literal notranslate"><span class="pre">&lt;app-root&gt;&lt;/app-root&gt;</span></code> reserves
+space on the webpage for information supplied by other files. Line 12
+essentially says, “Display all the content from the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder here.”</p>
 <p>As we add more pieces to our template, we will define specific tags to help us
 arrange the different items on the screen. This makes it easier for us to keep
 track of our content. For example, if we want to build a webpage that contains
@@ -132,6 +132,8 @@ tags, we can reference specific content whenever we want and clearly place it
 on a page. The tags also make it easy to play with new styles and formats for
 our grocery list without changing much code or altering the appearance of the
 movie list or photos.</p>
+<p>Most of our work with Angular will take place within the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder, so
+let’s take a closer look at some of the files there.</p>
 <div class="section" id="inside-the-app-folder">
 <h2>28.5.1. Inside the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder<a class="headerlink" href="#inside-the-app-folder" title="Permalink to this headline">¶</a></h2>
 <p>One way to change the color of the <em>Welcome to…</em> heading would be to open the
@@ -178,9 +180,10 @@ subfolder.</p>
 </pre></div>
 </td></tr></table></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> contains the structure and some of the text seen on the
-“Welcome to…” page. Note that line 3 contains the placeholder <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">title</span> <span class="pre">}}</span></code>
-that gets filled with data passed in from another file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> contains the structure and most of the text seen on the
+“Welcome to…” page. Note the placeholder <code class="docutils literal notranslate"><span class="pre">{{title}}</span></code> in line 3. This
+gets filled with data passed in from another file, and it allows us to modify
+the content on the page without revising the HTML.</p>
 <p><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> serves as the main template for your webpage. This file
 will usually NOT hold a lot of HTML code. Instead, it will contain many
 placeholders for content defined elsewhere in the project.</p>
@@ -226,7 +229,7 @@ Try It tasks, this is why changing the css file worked).</li>
 <li>Line 8 makes the styled <code class="docutils literal notranslate"><span class="pre">.html</span></code> file and anything defined in the
 <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class available to other files.</li>
 </ol>
-<p>Take a look at <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> again. We mentioned the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">title</span> <span class="pre">}}</span></code>
+<p>Take a look at <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> again. We mentioned the <code class="docutils literal notranslate"><span class="pre">{{title}}</span></code>
 placeholder earlier and said that it gets filled with data from a different
 file. Line 9 in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> supplies this data by assigning the string
 <code class="docutils literal notranslate"><span class="pre">'my-project-name'</span></code> to the <code class="docutils literal notranslate"><span class="pre">title</span></code> variable. Changing <code class="docutils literal notranslate"><span class="pre">'my-project-name'</span></code>
@@ -287,38 +290,83 @@ about the details for adding this critical code ourselves.</p>
 <p>Enough detail. Let’s explore some more.</p>
 <p>If you did not complete all of the <a class="reference internal" href="angular-1st-steps.html#try-it-angular-intro"><span class="std std-ref">Try It</span></a>
 tasks on the previous page, attempt them now. After that…</p>
-<div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic simple">
-<li>Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> in the terminal to launch your webpage again.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, declare and assign two variables in the
-<code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class—<code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">itemList</span></code>.<ol class="loweralpha">
+<div class="section" id="try-it">
+<h3>28.5.2.1. Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> in the terminal to launch your webpage again.</p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, declare and assign two variables in the
+<code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class—<code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">itemList</span></code>.</p>
+<ol class="loweralpha simple">
 <li><code class="docutils literal notranslate"><span class="pre">name</span></code> holds your name.</li>
 <li><code class="docutils literal notranslate"><span class="pre">itemList</span></code> is an array holding at least 4 items.</li>
 </ol>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;Barbara Liskov&#39;</span><span class="p">;</span>
+   <span class="nx">itemList</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">,</span> <span class="s1">&#39;item4&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Instead of using the strong TypeScript variable declarations in step 2, we
+could substitute a pattern more like JavaScript:</p>
+<div class="last highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Brendan Eich&#39;</span><span class="p">;</span>
+   <span class="nx">itemList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">,</span> <span class="s1">&#39;item4&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 </li>
-<li>Replace line 4 in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;{{name}}'s</span> <span class="pre">First</span>
+<li><p class="first">Replace line 4 in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;{{name}}'s</span> <span class="pre">First</span>
 <span class="pre">Angular</span> <span class="pre">Project&lt;/h1&gt;</span></code>. Save your work and then check to make sure the
-webpage shows the new heading.</li>
-<li>Modify the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> elements in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> to display the
+webpage shows the new heading.</p>
+</li>
+<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> elements in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> to display the
 elements from <code class="docutils literal notranslate"><span class="pre">itemList</span></code> in an unordered list. Be sure to use
-placeholders like <code class="docutils literal notranslate"><span class="pre">{{itemList[0]}}</span></code> between the tags.</li>
-<li>Define a <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> object in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> that has keys of <code class="docutils literal notranslate"><span class="pre">length</span></code>,
-<code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">area</span></code>. Assign numbers to <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code>, and
-have <code class="docutils literal notranslate"><span class="pre">area</span></code> be a function that calculates and returns the area.</li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> to display the sentence, “The
-rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
+placeholders like <code class="docutils literal notranslate"><span class="pre">{{itemList[0]}}</span></code> between the tags.</p>
+</li>
+<li><p class="first">Define a <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> object in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> that has keys of
+<code class="docutils literal notranslate"><span class="pre">length</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">area</span></code>. Assign numbers to <code class="docutils literal notranslate"><span class="pre">length</span></code> and
+<code class="docutils literal notranslate"><span class="pre">width</span></code>, and have <code class="docutils literal notranslate"><span class="pre">area</span></code> be a function that calculates and returns the
+area.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">rectangle</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">length</span>: <span class="kt">5</span><span class="p">,</span>
+   <span class="nx">width</span>: <span class="kt">6</span><span class="p">,</span>
+   <span class="nx">area</span>: <span class="kt">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;&lt;/p&gt;</span></code> element in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> to display the sentence,
+“The rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
 cm^2.” Use placeholders in place of the blanks so the webpage displays
-the correct numbers whenever the variables are changed.</li>
+the correct numbers whenever <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> are changed.</p>
+</li>
 </ol>
 </div>
 </div>
 <div class="section" id="filename-pattern">
 <h2>28.5.3. Filename Pattern<a class="headerlink" href="#filename-pattern" title="Permalink to this headline">¶</a></h2>
-<p>Many of the files we examined on this page contain the word <code class="docutils literal notranslate"><span class="pre">component</span></code> in
-the name. This results from the fundamental idea behind Angular. Each
-<em>template</em> for a webpage is constructed from smaller pieces, and these pieces
-are the <em>components</em>.</p>
+<p>Each of the files in the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder contain the word <code class="docutils literal notranslate"><span class="pre">component</span></code> in their
+name. This results from the fundamental idea behind Angular. Each <em>template</em>
+for a webpage is constructed from smaller pieces, and these pieces are the
+<em>components</em>.</p>
 <p>Our next step is to take a closer look at these building blocks within a
 template.</p>
 </div>
