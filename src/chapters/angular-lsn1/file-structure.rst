@@ -8,8 +8,8 @@ figure below.
    :alt: Visual of the standard Angular file structure.
 
 All of the project files (and there will be LOTS) are stored in the single,
-top-level folder, ``projectName``, which contains a ``src`` folder and a set of
-support files.
+top-level folder, ``project-name``, which contains a ``src`` folder and a set
+of support files.
 
 .. admonition:: Note
 
