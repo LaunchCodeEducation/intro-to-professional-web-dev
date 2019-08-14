@@ -105,8 +105,8 @@ Creating a ``task-list`` component looks something like this:
 .. figure:: ./figures/GenerateComponent.png
    :alt: Visual of the terminal command to create a new Component.
 
-From the output of the command we see that it creates four new files in the
-``src/app/task-list`` folder.
+From the output, we see that the ``ng generate`` command created four new files
+in the ``src/app/task-list`` folder.
 
 Try It
 ^^^^^^^
@@ -137,7 +137,8 @@ When done, your file structure in VSCode should look something like:
 
 In order to communicate with the new components, ``app.module.ts`` needs new
 ``input`` statements. Fortunately, ``ng generate`` updates the code
-automatically.
+automatically. We do not need to worry about taking care of this task
+ourselves.
 
 Before ``ng generate``:
 
@@ -181,6 +182,9 @@ After generating the ``header`` and ``task-list`` components:
    })
    export class AppModule { }
 
+Angular updates ``app.module.ts`` by adding new ``import`` statements on lines
+5 and 6 as well as expanding the ``declarations`` array on line 9.
+
 .. admonition:: Note
 
    Generating new components automatically updates ``app.module.ts``. However,
@@ -204,10 +208,16 @@ Modify ``app.component.html`` as follows:
    </div>
 
 Save your change and wait for the webpage to refresh. You should now see the
-text "header works!". This is another feature with Angular to let you know that
-you properly added a new component.
+text "header works!" at the top of the page.
 
-Why ``<app-header></app-header>``? Open ``header.component.ts`` in VSCode:
+.. figure:: ./figures/header-works.png
+   :alt: Confirmation that the header component works.
+
+This is another helpful feature with Angular---when you correctly implement a
+new component, confirmation text appears on the screen.
+
+How did ``<app-header></app-header>`` make this happen? Open
+``header.component.ts`` in VSCode:
 
 .. sourcecode:: typescript
    :linenos:
@@ -230,7 +240,11 @@ Why ``<app-header></app-header>``? Open ``header.component.ts`` in VSCode:
 Line 4 defines the HTML tag for the ``header`` component to be ``app-header``.
 If we try changing the string to ``'orange'``, we would see the "header
 works!" text disappear from the webpage. This is because the HTML tag
-``<app-header>`` can no longer find the component.
+``<app-header>`` is no longer linked to the component. The string assigned in
+line 4 MUST match the tags used in ``app.component.html``.
+
+Modify the Header Text
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Open ``header.component.html`` in VSCode:
 
@@ -239,28 +253,42 @@ Open ``header.component.html`` in VSCode:
 
    <p>header works!</p>
 
-Ah ha! The html file contains the text that appeared on our webpage. Anything
+Ah ha! The HTML file contains the text that appeared on our webpage. Anything
 added to this file will appear between the ``<app-header></app-header>`` tags
 in ``app.component.html``.
 
 .. admonition:: Try It
 
-   Replace line 1 in ``header.component.html`` with:
+   #. Replace line 1 in ``header.component.html`` with:
 
-   .. sourcecode:: html
-      :linenos:
+      .. sourcecode:: html
+         :linenos:
 
-      <h1>My header works!</h1>
-      <p>This is not a header, but I'm adding it anyway.</p>
-      <div style="text-align: center">
-         <h2>Look! A centered h2.</h2>
-         <p>More centered text.</p>
-      </div>
-      <p>Not centered text.</p>
+         <h1>My header works!</h1>
+         <p>This is not a header, but I'm adding it anyway.</p>
+         <div style="text-align: center">
+            <h2>Look! A centered h2.</h2>
+            <p>More centered text.</p>
+         </div>
+         <p>Not centered text.</p>
 
-Line 4 in ``header.component.ts`` defined the ``app-header`` tag, and
-``task-list.component.ts`` does something similar for the ``task-list``
-component.
+      Save your code and refresh the page. How does its appearance change?
+
+   #. What happens if we use TWO ``<app-header>`` elements? Try it to find out.
+
+      .. sourcecode:: html
+         :linenos:
+
+         <div>
+            <app-header></app-header>
+            <app-header></app-header>
+         </div>
+
+Bring in ``task-list``
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Line 4 in ``header.component.ts`` defined the ``app-header`` tag, and line 4 in
+``task-list.component.ts`` does something similar.
 
 Modify ``app.component.html`` as follows:
 
@@ -274,28 +302,51 @@ Modify ``app.component.html`` as follows:
 
 Your webpage should look similar to:
 
-   TODO: Add screenshot.
+.. figure:: ./figures/header-and-task-list.png
+   :alt: Two components added to the app template.
 
 .. admonition:: Try It
 
    Move ``<app-task-list></app-task-list>`` above ``<app-header></app-header>``
-   and see what on the webpage.
+   and see how the webpage changes.
+
+THIS IS WHY TEMPLATES ARE AWESOME!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Trying to correctly format and place content on a webpage can be difficult,
+especially if you need to present lots of data or mix different formatting
+styles for headings, lists, plain text, etc.
+
+Rather than deal with our header, task-list, and other content at the same
+time, creating components allows us to:
+
+#. Create a simple HTML file that serves as a framework.
+#. Format each piece of our content separately, without worrying about how that
+   formatting affects other parts of the webpage.
+#. Easily add content to the framework by using custom HTML tags.
+#. Quickly relocate the components on a page just by rearranging their custom
+   tags.
 
 Component Nesting
 -----------------
 
 Components can be put inside of other components. In essence, this is how the
-main component works. It is the component that holds all other components.
+``app`` component works. It is the component that holds all other components.
 
-However, sometimes you may want to nest a new component inside of another one
-rather than in main.
+However, sometimes you might want to nest a new component inside of another one
+rather than in ``app``.
 
 Let's assume we want to add a new component within our ``task-list`` folder. In
-this case we simply change into the ``task-list`` directory from our terminal
-and then run the ``ng generate component`` command.
+this case we navigate into the ``task-list`` directory and then run the
+``ng generate component`` command.
 
-.. figure:: ./figures/GenerateNestedComponent.png
-   :alt: Visual of the terminal command(s) to create a nested component.
+.. sourcecode:: bash
+
+   $ ls
+      app.component.css    app.component.spec.ts   app.module.ts   task-list
+      app.component.html   app.component.ts        header
+   $ cd task-list
+   $ ng generate component inside-task-list
 
 Running this command nests our new folder inside of the ``task-list`` folder,
 and it contains the four files we would expect.
@@ -303,11 +354,29 @@ and it contains the four files we would expect.
 .. figure:: ./figures/GenerateNestedComponentResult.png
    :alt: Visual of the result of the running the commands to create a nested component.
 
-When we nest a component inside of another, we still have all the files for
-the nested component at our disposal. Any CSS, HTML, or JavaScript we write
-will only affect the nested component and not the parent. However, the parent
-component DOES influence the nested one. For example, any CSS within
-``task-list.component.css`` will apply to both ``task-list.component.html`` and
-``inside-task-list.component.html``. If we want ``inside-task-list`` to have
-different styling, we need to add code to the ``inside-task-list`` CSS file to
-override the parent.
+When we place one component inside of another, we must pay attention to how the
+components interact. The nested component is called the *child*, while the
+original component is called the *parent*. In our example, ``task-list`` serves
+as the parent, while ``inner-task-list`` is the child.
+
+#. Any CSS, HTML, or JavaScript we write for the nested component (the child)
+   only affects that component. Changes to the child do NOT affect the parent.
+#. The parent component DOES influence the nested one. For example, any CSS
+   within ``task-list.component.css`` applies to both
+   ``task-list.component.html`` AND ``inside-task-list.component.html``.
+#. If we want ``inside-task-list`` to have different styling, we need to add
+   code to ``inside-task-list.component.css`` to override the parent.
+
+Check Your Understanding
+-------------------------
+
+If you have not already done so, use  ``ng generate`` to *nest* the
+``inner-task-list`` component inside the ``task-list component``.
+
+.. admonition:: Question
+
+   EXPERIMENT! Discover.
+
+   There are two ways to modify ``app.component.html`` and
+   ``task-list.component.html`` to make "inner-task-list works!" appear on the
+   screen. What are they?
