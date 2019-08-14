@@ -6,7 +6,15 @@ Studio: The DOM and Events
 Now that we can build a basic flight simulator, we want to add more controls for the staff at our space station.
 The HTML, CSS, and JavaScript files are provided. For each event, the requirements and desired effect is listed.
 
-`Repl.it with starter code <https://repl.it/@launchcode/Studio-DOM-and-Events>`_
+Getting Started
+---------------
+
+1. Fork the `studio repository <https://github.com/LaunchCodeEducation/DOM-and-Events-Studio/>`_ to your Github account.
+2. Clone the remote repository to your computer.
+3. Open the project with Visual Studio Code!
+
+The Requirements
+----------------
 
 1. Use the window *load* event to ensure all elements have loaded before attaching event handlers.
 
