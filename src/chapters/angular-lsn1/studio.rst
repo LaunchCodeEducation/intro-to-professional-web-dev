@@ -7,16 +7,15 @@ using your Angular skills.
 
 Mission Planning Dashboard
 --------------------------
-A useful and common front end application is a *dashboard*. It shows quick
-information about a topic, so individuals using the web app can be well
-informed and make good decisions.
+A useful and common front end application is a *dashboard*. It shows a summary of
+information about a topic, so individuals using the web app can be informed and make good decisions.
 
 You will create a Space Mission Planning Dashboard.
 
 
 Setup
 -----
-1. Fork the Angular Lesson 1 Studio repository.
+1. Fork the `Angular Lesson 1 Studio repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`_.
 2. Clone your fork to your computer.
 3. Verify that you are on branch ``studio-1``.
 
@@ -32,16 +31,16 @@ Create Angular Project
 
 ::
 
-   your-computer:angular-lc101-mission-planner $ ng new mission-dashboard
+   your-computer:angular-lc101-mission-planner $ ng new mission-planning-dashboard
    ? Would you like to add Angular routing? No
    ? Which stylesheet format would you like to use? CSS
 
-6. Navigate into the new folder by running ``cd mission-dashboard``
+6. Navigate into the new folder by running ``cd mission-planning-dashboard``
 7. Install dependencies by running ``npm install``
 8. Verify that the application will run by running ``ng serve``
 9. View the site in your browser at http://localhost:4200
 
-   * You should see a header that says "Welcome to mission-dashboard!"
+   * You should see a header that says "Welcome to mission-planning-dashboard!"
 
 10. Stage and commit the files before starting on the features.
 
@@ -52,10 +51,20 @@ The mission dashboard you are creating will eventually look like this.
 .. figure:: ./figures/example-mission-dashboard.png
    :alt: Screen shot showing the mission dashboard with mission name, rocket name, crew members, equipment, and experiments.
 
+Update Starter Page Content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The default stater page created by Angular contains default text, images, and links. Your job is to remove the default content.
+
+1. Clear out the contents of file ``mission-planning-dashboard/src/app/app.component.html``.
+2. Type in the text ``Add components here...`` into ``app.component.html``.
+3. View the app in your browser to verify the words "Add components here..." is the only thing that appears on the page.
+
 Header Component
 ^^^^^^^^^^^^^^^^
-1. Create a ``app-header`` component using ``ng g header``.
-2. In file ``/mission-dashboard/src/app/header/header.component.html`` add HTML:
+You need to create a component that shows the title, mission name, and carrier rocket.
+
+1. Create a header component using ``ng g component header``.
+2. In file ``/mission-planning-dashboard/src/app/header/header.component.html`` add HTML:
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -64,27 +73,125 @@ Header Component
    <h3>Mission Name: {{ missionName }}</h3>
    <h3>Carrier Rocket: {{ rocketName }}</h3>
 
-TOOD: add variables to component
+3. Add variables ``missionName`` and ``rocketName`` to the header component in ``mission-planning-dashboard/src/app/header/header.component.ts``
 
-#. A list that displays the names of the crew
-#. A list that displays crew member roles
-#. A list that displays required equipment
-#. A list that displays the countries represented by the crew
+.. sourcecode:: TypeScript
 
-Make the three lists align by adding this CSS to ``studios/angular-part1/src/app/app.component.css``.
+   export class HeaderComponent implements OnInit {
 
-Each section needs to be it's own component, and they all need to be placed
-within the ``app`` folder.
+       missionName: string = "Mars 2030";
+       rocketName: string = "Plasma Max";
 
-In the next two studios we will learn how to expand this project by using more
-Angular tools that will make the application more interactive. For the purposes
-of today's studio our web application will not be interactive, and will simply
-display static information.
+4. Add a reference to the header component in ``mission-planning-dashboard/src/app/app.component.html``.
+
+.. sourcecode:: html+ng2
+
+   <app-header></app-header>
+
+
+5. View the app in your browser to verify that the title, mission name, and rocket name are visible.
+
+.. figure:: ./figures/example-header-component.png
+   :alt: Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name, and a Carrier Rocket.
+
+Crew Component
+^^^^^^^^^^^^^^
+Next you need to make a component to show a list of crew members.
+
+1. Create the component by running ``ng g component crew``.
+2. Set the contents of to be:
+
+.. sourcecode:: html
+
+   <h3>Crew</h3>
+   <ul>
+      <li>Jessica Watkins</li>
+      <li>Raja Chari</li>
+      <li>Jasmin Moghbeli</li>
+   </ul>
+
+3. Add a reference to the header component in ``mission-planning-dashboard/src/app/app.component.html``.
+
+.. sourcecode:: html+ng2
+
+   <app-header></app-header>
+   <app-crew></app-crew>
+
+.. figure:: ./figures/example-crew-component.png
+   :alt: Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name,a Carrier Rocket, a Crew header, and a list of crew members in an unordered list.
+
+Equipment Component
+^^^^^^^^^^^^^^^^^^^
+Now you need to create a component to show a list of equipment.
+
+1. Create an equipment component named ``equipment``
+2. In the component display data:
+
+   * An ``<h3>`` that contains "Equipment"
+   * A ``<ul>`` that contains ``<li>`` for: Habitat dome, Drones, Food containers, Oxygen tanks
+
+2. Add the component to ``mission-planning-dashboard/src/app/app.component.html`` using the below HTML. Notice the ``<div>`` surrounding the crew and equipment components.
+
+.. sourcecode:: html+ng2
+   :linenos:
+
+   <app-header></app-header>
+   <div class="box">
+      <app-crew></app-crew>
+      <app-equipment></app-equipment>
+   </div>
+
+3. Add CSS to file ``mission-planning-dashboard/src/app/app.component.css`` that will align the crew and equipment lists. Without this CSS the crew list will appear above the equipment list.
+
+.. sourcecode:: css
+   :linenos:
+
+   .box {
+     display: flex;
+     padding: 10px;
+   }
+
+.. figure:: ./figures/example-equipment-component.png
+   :alt: Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name, a Carrier Rocket, a Crew header, a list of crew members, and a list of equipment.
+
+.. note::
+
+   A full explanation of ``display: flex;`` is beyond the scope of this book. For more information
+   see `MDN flex box docs <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox>`_
+   and `CSS Tricks flex box guide <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>`_.
+
+Experiments Component
+^^^^^^^^^^^^^^^^^^^^^
+1. Finally add an experiments component that contains the below HTML:
+
+.. sourcecode:: html
+
+   <h3>Experiments</h3>
+   <ul>
+      <li>Mars soil sample</li>
+      <li>Plant growth in habitat</li>
+      <li>Human bone density</li>
+   </ul>
+
+2. Make the list of equipment show up to the right of equipment.
+
+When done the dashboard should look like this:
+
+.. figure:: ./figures/example-mission-dashboard.png
+   :alt: Screen shot showing the mission dashboard with mission name, rocket name, crew members, equipment, and experiments.
+
+
+Commit Your Work
+----------------
+This repository will be used for the next two studios. Be sure to stage and commit your changes. The next studio will start with a different branch.
+
+#. Verify the branch and status of the files.
+#. Commit your changes.
+#. Push your commits to origin.
 
 
 Bonus Mission
 -------------
 
-#. Add CSS to change add different colors, fonts, borders, etc. to your
-dashboard.
-#.Be creative! Make your components look good.
+#. Add CSS to change add different colors, fonts, borders, etc. to your dashboard.
+#. Move the components around to see how that affects the display of the data.
