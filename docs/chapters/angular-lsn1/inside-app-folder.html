@@ -226,8 +226,7 @@ folder as well as how to arrange them in the HTML file.</p>
 <li>Line 6 imports <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code>, which applies styling to the HTML
 file. (If you set a different color for the <em>Welcome to…</em> sentence in the
 Try It tasks, this is why changing the css file worked).</li>
-<li>Line 8 makes the styled <code class="docutils literal notranslate"><span class="pre">.html</span></code> file and anything defined in the
-<code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class available to other files.</li>
+<li>Line 8 makes the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class available to other files.</li>
 </ol>
 <p>Take a look at <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> again. We mentioned the <code class="docutils literal notranslate"><span class="pre">{{title}}</span></code>
 placeholder earlier and said that it gets filled with data from a different
@@ -306,7 +305,7 @@ tasks on the previous page, attempt them now. After that…</p>
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
    <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;Barbara Liskov&#39;</span><span class="p">;</span>
-   <span class="nx">itemList</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">,</span> <span class="s1">&#39;item4&#39;</span><span class="p">];</span>
+   <span class="nx">itemList</span>: <span class="kt">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">,</span> <span class="s1">&#39;item4&#39;</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
@@ -347,7 +346,7 @@ area.</p>
    <span class="nx">length</span>: <span class="kt">5</span><span class="p">,</span>
    <span class="nx">width</span>: <span class="kt">6</span><span class="p">,</span>
    <span class="nx">area</span>: <span class="kt">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -355,8 +354,12 @@ area.</p>
 </li>
 <li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;&lt;/p&gt;</span></code> element in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> to display the sentence,
 “The rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
-cm^2.” Use placeholders in place of the blanks so the webpage displays
-the correct numbers whenever <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> are changed.</p>
+cm^2.” Replace the blanks with placeholders so the webpage displays the
+correct numbers whenever <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> are changed.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The rectangle has a length of {{rectangle.length}} cm, a width of {{rectangle.width}} cm,
+   and an area of {{rectangle.area()}} cm^2.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 </li>
 </ol>
 </div>

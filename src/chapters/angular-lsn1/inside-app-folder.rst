@@ -129,8 +129,7 @@ folder as well as how to arrange them in the HTML file.
 #. Line 6 imports ``app.component.css``, which applies styling to the HTML
    file. (If you set a different color for the *Welcome to...* sentence in the
    Try It tasks, this is why changing the css file worked).
-#. Line 8 makes the styled ``.html`` file and anything defined in the
-   ``AppComponent`` class available to other files.
+#. Line 8 makes the ``AppComponent`` class available to other files.
 
 Take a look at ``app.component.html`` again. We mentioned the ``{{title}}``
 placeholder earlier and said that it gets filled with data from a different
@@ -202,7 +201,7 @@ Try It!
 
       export class AppComponent {
          name: string = 'Barbara Liskov';
-         itemList: [string, string, string, string] = ['item1', 'item2', 'item3', 'item4'];
+         itemList: string[] = ['item1', 'item2', 'item3', 'item4'];
       }
 
    .. admonition:: Note
@@ -236,14 +235,19 @@ Try It!
          length: 5,
          width: 6,
          area: function() {
-            return this.length*this.width;
+            return this.length * this.width;
          }
       }
 
 #. Add a ``<p></p>`` element in ``app.component.html`` to display the sentence,
    "The rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
-   cm^2." Use placeholders in place of the blanks so the webpage displays
-   the correct numbers whenever ``length`` or ``width`` are changed.
+   cm^2." Replace the blanks with placeholders so the webpage displays the
+   correct numbers whenever ``length`` or ``width`` are changed.
+
+   .. sourcecode:: html
+
+      <p>The rectangle has a length of {{rectangle.length}} cm, a width of {{rectangle.width}} cm,
+         and an area of {{rectangle.area()}} cm^2.</p>
 
 Filename Pattern
 -----------------
