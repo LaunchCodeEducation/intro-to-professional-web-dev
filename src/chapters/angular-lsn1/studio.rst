@@ -31,7 +31,7 @@ Create Angular Project
 
 ::
 
-   your-computer:angular-lc101-mission-planner $ ng new mission-planning-dashboard
+   $ ng new mission-planning-dashboard
    ? Would you like to add Angular routing? No
    ? Which stylesheet format would you like to use? CSS
 
@@ -174,6 +174,7 @@ Experiments Component
 1. Finally, add an experiments component that contains the HTML below:
 
 .. sourcecode:: html
+   :linenos:
 
    <h3>Experiments</h3>
    <ul>

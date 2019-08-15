@@ -3,7 +3,7 @@ Components
 
 .. index:: ! angular-component
 
-In Angular a **component** controls a patch of screen called a *view*.
+In Angular a **component** controls one part of the page, called a *view*.
 
 Angular builds a web page by combining multiple components together.
 Splitting our page into individual components makes our application more
