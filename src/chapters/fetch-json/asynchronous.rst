@@ -14,25 +14,27 @@ and talk about the terms **asynchronous** and **synchronous**.
 
     Synchronous: Simultaneous or concurrent in time.
 
-When fetching data in JavaScript, the HTTP requests are asynchronous. In brief that means
-when an HTTP request is sent, we don't know exactly when a response will be received by the browser.
-Remember that HTTP requests are sent to an address, then a response is sent. That process takes
-a variable amount of time depending on network speed, the address location, and response size.
+When fetching data in JavaScript, the HTTP requests are asynchronous. In brief, that 
+means when an HTTP request is sent, we don't know exactly when a response will be 
+received by the browser. Remember that HTTP requests are sent to an address, then a 
+response is sent. That process takes a variable amount of time depending on network 
+speed, the address location, and response size.
 
 .. note::
 
-   These requests are also called **AJAX requests** (Asynchronous JavaScript and XML). The XML
-   part of AJAX refers to a data format that was popular before JSON.
+   These requests are also called **AJAX requests** (Asynchronous JavaScript and XML). 
+   The XML part of AJAX refers to a data format that was popular before JSON.
 
 
 Response Handlers
 -----------------
-Browsers can't stop everything and wait for a response to an HTTP request. Browsers have
-to render HTML, interact with the user, and run JavaScript. To keep these processes running
-seamlessly, without any noticeable pauses, the browser relies on events.
+Browsers can't stop everything and wait for a response to an HTTP request. Browsers 
+have to render HTML, interact with the user, and run JavaScript. To keep these 
+processes running seamlessly, without any noticeable pauses, the browser relies on 
+events.
 
-This is where ``then`` and the response handler function come in. The browser provides us
-with a way to handle the response whenever it is received.
+This is where ``.then()`` and the response handler function come in. The browser 
+provides us with a way to handle the response whenever it is received.
 
 
 Promises and the ``then`` Function
@@ -42,8 +44,8 @@ Promises and the ``then`` Function
 .. index::
    single: asynchronous; promise
 
-Let's look again at a simple ``fetch`` example. Notice on line 1 that ``then`` is called
-on the value returned from ``fetch()``.
+Let's look again at a simple ``fetch`` example. Notice on line 1 that ``then`` is 
+called on the value returned from ``fetch``.
 
 .. sourcecode:: js
    :linenos:
@@ -52,7 +54,8 @@ on the value returned from ``fetch()``.
       console.log(response);
    } );
 
-To make it clearer, let's capture the value returned by ``fetch`` in a variable named ``promise``.
+To make it clearer, let's capture the value returned by ``fetch`` in a variable 
+named ``promise``.
 
 .. sourcecode:: js
    :linenos:
@@ -62,31 +65,33 @@ To make it clearer, let's capture the value returned by ``fetch`` in a variable 
       console.log(response);
    } );
 
-``fetch`` returns an instance of the ``Promise`` class. The Promise class represents
+``fetch`` returns an instance of the ``Promise`` class. The **Promise** class represents
 a future event that will eventually occur. In the above example, ``promise`` represents
 the eventual response from the HTTP request to ``https://api.education.launchcode.org/weather``.
 
-A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed to the
-response handler function. The ``then`` method of a promise defines what will happen when the
-promise is fulfilled. When a promise is rejected an error reason is provided.
+A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed 
+to the response handler function. The ``then`` method of a promise defines what will 
+happen when the promise is fulfilled. When a promise is rejected, an error reason is 
+provided.
 
 The above example can be translated to these steps
 
-1. Make an HTTP request to ``https://api.education.launchcode.org/weather``
-2. When the response is received THEN run the response handler function (passing in response data)
-3. In the response handler function, console log the ``response`` object
+#. Make an HTTP request to ``https://api.education.launchcode.org/weather``
+#. When the response is received, THEN run the response handler function (passing in response data)
+#. In the response handler function, console log the ``response`` object
 
 More Promises
 -------------
 Promises are used for more than HTTP requests. A promise can represent any future event.
 The ``response`` object has a ``json()`` function that will return the JSON data in the
-response. The ``json()`` function returns a promise that represents the future work result
-of turned the response data into JSON.
+response. The ``json()`` function returns a promise that represents the future result 
+of turning the response data into JSON.
 
-The below example involves two promises. One promise on line 1 that represents the fetch
-request and a second on line 3 that represents the response data being turned into JSON.
+The below example involves two promises. One promise on line 1 that represents the 
+fetch request and a second on line 3 that represents the response data being turned 
+into JSON.
 
-Finally on line 5 the JSON data can be logged.
+Finally on line 5, the JSON data can be logged.
 
 .. sourcecode:: js
    :linenos:
