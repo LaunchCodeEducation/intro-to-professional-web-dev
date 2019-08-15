@@ -8,7 +8,7 @@ using your Angular skills.
 Mission Planning Dashboard
 --------------------------
 A useful and common front end application is a *dashboard*. It shows a summary of
-information about a topic, so individuals using the web app can be informed and make good decisions.
+information about a topic, helping users of the web app make informed decisions.
 
 You will create a Space Mission Planning Dashboard.
 
@@ -17,14 +17,14 @@ Setup
 -----
 1. Fork the `Angular Lesson 1 Studio repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`_.
 2. Clone your fork to your computer.
-3. Verify that you are on branch ``studio-1``.
+3. Use ``git status`` to verify that you are on branch ``studio-1``.
 
    * Note ``studio-1`` this is a mostly empty branch.
 
 Create Angular Project
 ^^^^^^^^^^^^^^^^^^^^^^
-4. Open a terminal at the root of the ``angular-lc101-mission-planner`` repository you just cloned.
-5. Create a new Angular project by running ``ng new mission-dashboard``.
+1. Open a terminal at the root of the ``angular-lc101-mission-planner`` repository you just cloned.
+2. Create a new Angular project by running ``ng new mission-dashboard``.
 
    #. When prompted about using routing, enter "N" for No.
    #. When prompted to select the stylesheet format, select CSS.
@@ -35,14 +35,20 @@ Create Angular Project
    ? Would you like to add Angular routing? No
    ? Which stylesheet format would you like to use? CSS
 
-6. Navigate into the new folder by running ``cd mission-planning-dashboard``
-7. Install dependencies by running ``npm install``
-8. Verify that the application will run by running ``ng serve``
-9. View the site in your browser at http://localhost:4200
+3. Navigate into the new folder by running ``cd mission-planning-dashboard``
+4. Install dependencies by running ``npm install``
+5. Verify that the application will run by running ``ng serve``
+6. View the site in your browser at http://localhost:4200
 
    * You should see a header that says "Welcome to mission-planning-dashboard!"
 
-10. Stage and commit the files before starting on the features.
+7. Stage and commit the files before starting on the features.
+
+.. tip::
+
+   You will likely still have ``ng serve`` running in your terminal. You can stop ``ng serve`` by
+   using they keys control+c. Or you can open an additional terminal window to run the git
+   commands.
 
 Requirements
 ------------
@@ -57,7 +63,8 @@ The default stater page created by Angular contains default text, images, and li
 
 1. Clear out the contents of file ``mission-planning-dashboard/src/app/app.component.html``.
 2. Type in the text ``Add components here...`` into ``app.component.html``.
-3. View the app in your browser to verify the words "Add components here..." is the only thing that appears on the page.
+3. Run ``ng serve`` if it's not already running.
+4. View the app in your browser to verify the words "Add components here..." is the only thing that appears on the page.
 
 Header Component
 ^^^^^^^^^^^^^^^^
@@ -173,7 +180,7 @@ Experiments Component
       <li>Human bone density</li>
    </ul>
 
-2. Make the list of equipment show up to the right of equipment.
+2. Make the list of experiments show up to the right of equipment list.
 
 When done the dashboard should look like this:
 
