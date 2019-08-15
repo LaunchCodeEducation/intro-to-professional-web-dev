@@ -118,38 +118,71 @@ opens the URL in your default browser).
 .. figure:: ./figures/launch-project.png
    :alt: Terminal feedback after ``ng serve``.
 
+What is ``ng serve`` Doing?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``ng serve`` allows you to view your project in a browser by running a series
+of tasks in the background. It's NOT magic, just the tedious mechanics that you
+don't need to set up yourself.
+
+``ng serve`` performs these tasks:
+
+#. Compiles and analyzes your Angular files to *build* HTML and JavaScript
+   files that can be run in a browser.
+
+   a. This step will throw errors if you try to serve code that contains syntax
+      or other errors.
+   b. You will learn more about the different types of files that are compiled
+      in the coming sections.
+
+#. Starts a web server on your computer that serves the built version of your
+   Angular project.
+
+   a. Your Angular project is viewable at the web address http://localhost:4200
+
+.. admonition:: Note
+
+   Angular projects are written in TypeScript. Your web browser can run HTML, CSS, and JavaScript.
+   In order for your Angular project to run in the browser, the TypeScript code has to be converted into JavaScript.
+   The conversion from TypeScript to JavaScript happens during the build phase of ``ng serve.``
+
 Yay! A Webpage!
 ----------------
+
+Congratulations! You have a functioning webpage. You should see the following
+in your browser:
 
 .. figure:: ./figures/HelloAngular.png
    :alt: Angular new app default page.
 
-Congratulations! You have a functioning webpage. This is the default format
-created by ``ng new``, but your chosen project name will replace
-``my-project-name`` in the title. The links lead back to selected pages from
-the `angular.io <https://angular.io/>`__ documentation.
+This is the default format created by ``ng new``, but your chosen project name
+will replace ``my-project-name`` in the title. The links lead back to selected
+pages from the `angular.io <https://angular.io/>`__ documentation.
 
 Feel free to play around a little bit before continuing. Do not worry about
 breaking anything. If necessary, you can always start another new project.
 
 .. _try-it-Angular-intro:
 
-.. admonition:: Try It!
+Try It
+^^^^^^^
 
-   In VSCode, open the four files within the ``app`` folder. Modify the code to
-   accomplish the following:
+In VSCode, open the four files within the ``app`` folder. Modify the code to
+accomplish the following:
 
-   #. Find where your project name is assigned to the ``title`` variable.
-      Replace it with a different string.
-   #. Change one ``h2`` heading to an ``h3``.
-   #. Change the color for the *Welcome to...* heading.
-   #. Change one of the links to send users to your favorite website.
-   #. Replace the Angular shield with a different image.
+#. Find where your project name is assigned to the ``title`` variable.
+   Replace it with a different string.
+#. Change one ``h2`` heading to an ``h3``.
+#. Change the color for the *Welcome to...* heading.
+#. Change one of the links to send users to your favorite website.
+#. Replace the Angular shield with a different image.
 
-   After making a change and saving your work, your webpage should automatically
-   refresh.
+After making each change, save your work. Your webpage should automatically
+refresh.
 
-   Note: Which files did you modify?
+.. admonition:: Note
+
+   Which files did you modify?
 
 Your new webpage might look something like:
 
@@ -168,26 +201,3 @@ ahead and interrupt the process now. If you try refreshing your page, you will
 see an error.
 
 Now let's take a look at the different project files.
-
-
-What is ``ng serve`` Doing?
----------------------------
-As you learned from previous tasks ``ng serve`` allows you to see your Angular site
-locally in your browser.
-
-``ng serve`` performs these tasks:
-
-1. Compiles and analyzes your Angular files to *build* HTML and JavaScript files that can be run in a browser.
-
-   * This step can throw errors because of incorrect code you have written.
-   * You will learn more about the different types of files that are compiled in the coming sections.
-
-2. Starts a web server on your computer that serves the built version of your Angular project.
-
-   * Your angular project is viewable at the web address http://localhost:4200
-
-.. note::
-
-   Angular projects are written in TypeScript. Your web browser can run HTML, CSS, and JavaScript.
-   In order for your Angular project to run in the browser, the TypeScript code has to be converted into JavaScript.
-   The conversion from TypeScript to JavaScript happens during the build phase of ``ng serve.``
