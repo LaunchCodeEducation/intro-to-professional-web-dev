@@ -61,7 +61,7 @@ Update Starter Page Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The default stater page created by Angular contains default text, images, and links. Your job is to remove the default content.
 
-1. Clear out the contents of file ``mission-planning-dashboard/src/app/app.component.html``.
+1. Clear out the contents of file ``app.component.html``.
 2. Type in the text ``Add components here...`` into ``app.component.html``.
 3. Run ``ng serve`` if it's not already running.
 4. View the app in your browser to verify the words "Add components here..." is the only thing that appears on the page.
@@ -70,8 +70,9 @@ Header Component
 ^^^^^^^^^^^^^^^^
 You need to create a component that shows the title, mission name, and carrier rocket.
 
-1. Create a header component using ``ng g component header``.
-2. In file ``/mission-planning-dashboard/src/app/header/header.component.html`` add HTML:
+1. In terminal navigate to the folder ``src/app`` folder.
+2. Create a header component using ``ng g component header``.
+3. In the file ``header.component.html`` add HTML:
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -80,7 +81,7 @@ You need to create a component that shows the title, mission name, and carrier r
    <h3>Mission Name: {{ missionName }}</h3>
    <h3>Carrier Rocket: {{ rocketName }}</h3>
 
-3. Add variables ``missionName`` and ``rocketName`` to the header component in ``mission-planning-dashboard/src/app/header/header.component.ts``
+4. Add the variables ``missionName`` and ``rocketName`` to the header component in ``header.component.ts``
 
 .. sourcecode:: TypeScript
 
@@ -89,14 +90,14 @@ You need to create a component that shows the title, mission name, and carrier r
        missionName: string = "Mars 2030";
        rocketName: string = "Plasma Max";
 
-4. Add a reference to the header component in ``mission-planning-dashboard/src/app/app.component.html``.
+5. Add a reference to the header component in ``app.component.html``.
 
 .. sourcecode:: html+ng2
 
    <app-header></app-header>
 
 
-5. View the app in your browser to verify that the title, mission name, and rocket name are visible.
+6. View the app in your browser to verify that the title, mission name, and rocket name are visible.
 
 .. figure:: ./figures/example-header-component.png
    :alt: Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name, and a Carrier Rocket.
@@ -106,9 +107,10 @@ Crew Component
 Next you need to make a component to show a list of crew members.
 
 1. Create the component by running ``ng g component crew``.
-2. Set the contents of to be:
+2. Set the contents of ``crew.component.html`` to be:
 
 .. sourcecode:: html
+   :linenos:
 
    <h3>Crew</h3>
    <ul>
@@ -117,7 +119,7 @@ Next you need to make a component to show a list of crew members.
       <li>Jasmin Moghbeli</li>
    </ul>
 
-3. Add a reference to the header component in ``mission-planning-dashboard/src/app/app.component.html``.
+3. Add a reference to the header component in ``app.component.html``.
 
 .. sourcecode:: html+ng2
 
@@ -137,7 +139,7 @@ Now you need to create a component to show a list of equipment.
    * An ``<h3>`` that contains "Equipment"
    * A ``<ul>`` that contains ``<li>`` for: Habitat dome, Drones, Food containers, Oxygen tanks
 
-2. Add the component to ``mission-planning-dashboard/src/app/app.component.html`` using the below HTML. Notice the ``<div>`` surrounding the crew and equipment components.
+3. Add the equipment component to ``app.component.html`` using the below HTML. Notice the ``<div>`` surrounding the crew and equipment components.
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -148,7 +150,7 @@ Now you need to create a component to show a list of equipment.
       <app-equipment></app-equipment>
    </div>
 
-3. Add CSS to file ``mission-planning-dashboard/src/app/app.component.css`` that will align the crew and equipment lists. Without this CSS the crew list will appear above the equipment list.
+4. Add CSS to file ``app.component.css`` to horizontally align the crew and equipment lists. Without this CSS the equipment list will appear below the crew list.
 
 .. sourcecode:: css
    :linenos:
@@ -169,7 +171,7 @@ Now you need to create a component to show a list of equipment.
 
 Experiments Component
 ^^^^^^^^^^^^^^^^^^^^^
-1. Finally add an experiments component that contains the below HTML:
+1. Finally, add an experiments component that contains the HTML below:
 
 .. sourcecode:: html
 
@@ -190,7 +192,7 @@ When done the dashboard should look like this:
 
 Commit Your Work
 ----------------
-This repository will be used for the next two studios. Be sure to stage and commit your changes. The next studio will start with a different branch.
+This repository will be used for the next two studios. Be sure to stage, commit, and push your changes. The next studio will start with a different branch.
 
 #. Verify the branch and status of the files.
 #. Commit your changes.
@@ -200,5 +202,10 @@ This repository will be used for the next two studios. Be sure to stage and comm
 Bonus Mission
 -------------
 
-#. Add CSS to change add different colors, fonts, borders, etc. to your dashboard.
+#. Display crew members by adding an array of crew names.
+
+   * In ``crew.component.ts`` add ``crew: string[] = ["Jessica Watkins", "Raja Chari", "Jasmin Moghbeli"];``
+   * In ``crew.component.html`` you would reference ``<li>{{crew[0]}}</li><li>{{crew[1]}}</li><li>{{crew[2]}}</li>``
+
+#. Use CSS to change different colors, fonts, borders, etc. to your dashboard.
 #. Move the components around to see how that affects the display of the data.
