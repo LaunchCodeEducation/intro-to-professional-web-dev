@@ -21,14 +21,14 @@ The Requirements
 2. When the "Take off" button is clicked, the following should happen:
 
    1. A window confirm should let the user know "Confirm that the shuttle is ready for takeoff." If the shuttle is ready for liftoff, then add steps 2-4.
-   2. The flight status should change to "Shuttle in flight".
+   2. The flight status should change to "Shuttle in flight."
    3. The background color of the shuttle flight screen (``id = "shuttleBackground"``) should change from green to blue.
    4. The shuttle height should increase by 10,000 miles.
 
 3. When the "Land" button is clicked, the following should happen:
 
    1. A window alert should let the user know "The shuttle is landing. Landing gear engaged."
-   2. The flight status should change to "The shuttle has landed".
+   2. The flight status should change to "The shuttle has landed."
    3. The background color of the shuttle flight screen should change from blue to green.
    4. The shuttle height should go down to 0.
 
