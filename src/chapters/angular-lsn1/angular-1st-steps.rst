@@ -168,3 +168,26 @@ ahead and interrupt the process now. If you try refreshing your page, you will
 see an error.
 
 Now let's take a look at the different project files.
+
+
+What is ``ng serve`` Doing?
+---------------------------
+As you learned from previous tasks ``ng serve`` allows you to see your Angular site
+locally in your browser.
+
+``ng serve`` performs these tasks:
+
+1. Compiles and analyzes your Angular files to *build* HTML and JavaScript files that can be run in a browser.
+
+   * This step can throw errors because of incorrect code you have written.
+   * You will learn more about the different types of files that are compiled in the coming sections.
+
+2. Starts a web server on your computer that serves the built version of your Angular project.
+
+   * Your angular project is viewable at the web address http://localhost:4200
+
+.. note::
+
+   Angular projects are written in TypeScript. Your web browser can run HTML, CSS, and JavaScript.
+   In order for your Angular project to run in the browser, the TypeScript code has to be converted into JavaScript.
+   The conversion from TypeScript to JavaScript happens during the build phase of ``ng serve.``
