@@ -6,6 +6,12 @@ Requirements are below.
 
 `Repl.it with starter code <https://repl.it/@launchcode/Studio-Starter-Fetch-and-JSON>`_
 
+Get Started
+-----------
+
+1. Fork the `studio repository <https://github.com/LaunchCodeEducation/Fetch-and-JSON-Studio/>`_ to your own Github account.
+2. Clone the repository to your computer.
+
 Requirements
 ------------
 
@@ -151,5 +157,5 @@ What the web page should look like after your code loads the data and builds the
 Bonus Missions
 --------------
 * Display the astronauts sorted from most to least time in space.
-* make the "Active: true" text green, for astronauts that are still active (active is true).
+* Make the "Active: true" text green, for astronauts that are still active (active is true).
 * Add a count of astronauts to the page.
