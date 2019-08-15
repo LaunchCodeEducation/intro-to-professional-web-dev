@@ -7,32 +7,32 @@ Taking JavaScript on the Web
 ----------------------------
 
 So far, we have created web pages with HTML and CSS. These pages have been **static**, meaning that the page appears the same each time it loads. 
-However, you may find that you want to create a web page that changes after its been loaded. In order to create such a page, you would use JavaScript.
+However, you may find that you want to create a web page that changes after it's been loaded. In order to create such a page, you would use JavaScript.
 Web pages that can change after loading in the browser are called **dynamic**.
 This is useful to programmers and users alike because they can interact with an application without refreshing the page.
 Having to constantly refresh the page would be a poor experience for the user and JavaScript helps programmers alleviate this burden.
 
 .. admonition:: Example 
 
-   When you are on social media web page, you may like someone's post.
-   When you do like their post, you have noticed that several things happen.
+   When you are on a social media page, you may like someone's post.
+   When you do like their post, you may notice that several things happen.
    The counter of how many likes the post has received increases by one and the like button may change color to indicate to you that you liked the post.
-   This is an example of how JavaScript could be used to create an application that dyanmically updates without the page having to be refreshed.
+   This is an example of how JavaScript could be used to create an application that dynamically updates without the page having to be refreshed.
 
 We have been running all of our JavaScript code in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages.
-Node is an intepreter for JavaScript with access to lots of different JavaScript libraries. 
-When running JavaScript in the browser, each browser has an engine for running it. JavaScript run in the browser is called client-side JavaScript. 
+Node.js, or just Node, is a JavaScript interpreter with access to lots of different JavaScript libraries. 
+Each browser has their own engine for running JavaScript. JavaScript run in the browser is called client-side JavaScript. 
 Firefox uses an engine called Spider Monkey to run client-side JavaScript. 
 
 The ``<script>`` Tag
 --------------------
-In the HTML chapter we learned that an HTML page is made up of elements that are written as tags. Those
+In the HTML chapter, we learned that an HTML page is made up of elements that are written as tags. Those
 elements have different purposes. The ``script`` element's purpose is to include JavaScript into the
 web page. A ``<script>`` tag can contain JavaScript code inside of it or reference an external JavaScript file.
 
 JavaScript Console
 ^^^^^^^^^^^^^^^^^^
-Using the Developer Tools, you can access a JavaScript console. There you can mess around with fun JavaScript statements or you can use it to see the outputs of the client-side JavaScript you have written.
+Using the Developer Tools, you can access a JavaScript console. There, you can mess around with fun JavaScript statements or you can use it to see the outputs of the client-side JavaScript you have written.
 
 Inline JavaScript
 ^^^^^^^^^^^^^^^^^
@@ -49,7 +49,7 @@ Inline JavaScript
             <title>Embedded JavaScript Example</title>
             <script>
                // JavaScript code goes here!
-               console.log("Hello from inside the web page");
+               console.log("Hello from inside the web page!");
             </script>
       </head>
       <body>
@@ -61,14 +61,16 @@ Inline JavaScript
 
    ::
 
-      Hello from inside the web page
+      Hello from inside the web page!
 
 External JavaScript
 ^^^^^^^^^^^^^^^^^^^
 
-However, some programmers have large amounts of JavaScript to add to an HTML document.
+Some programmers have large amounts of JavaScript to add to an HTML document.
 Using an external JavaScript file can help in these cases.
-You can still use the ``<script>`` tag to include the JavaScript file with the HTML document while using the ``src`` attribute for the path to the JavaScript file.
+You can still use the ``<script>`` tag to include the JavaScript file within the 
+HTML document. In this case, you'll need to use the ``src`` attribute for the path 
+to the JavaScript file.
 
 .. admonition:: Example
 
@@ -100,7 +102,7 @@ You can still use the ``<script>`` tag to include the JavaScript file with the H
 .. note::
 
    You can use the ``<script>``  tag to reference JavaScript files hosted on external servers.
-   Some of these JavaScript files will be files that you have not written yourself, but you will want to include in your application.
+   Some of these JavaScript files will be files that you have not written yourself but you will want to include in your application.
 
 Check Your Understanding
 ------------------------

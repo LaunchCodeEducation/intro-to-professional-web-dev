@@ -245,7 +245,7 @@ Finally we are going to make the edit state update the member name when save is 
 
    <ng-template #elseBlock>
       <!-- edit state of member -->
-      <input #updatedName (keyup.enter)="save(updatedName.value, member)" [value]="member.name"/>
+      <input #updatedName (keyup.enter)="save(updatedName.value, member)" value="{{member.name}}"/>
       <button (click)="save(updatedName.value, member)">save</button>
    </ng-template>
 
