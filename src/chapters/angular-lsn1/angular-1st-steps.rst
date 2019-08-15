@@ -185,7 +185,6 @@ locally in your browser.
 2. Starts a web server on your computer that serves the built version of your Angular project.
 
    * Your angular project is viewable at the web address http://localhost:4200
-   * When you visit that address your Angular code will run.
 
 .. note::
 
