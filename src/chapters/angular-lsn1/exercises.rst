@@ -3,28 +3,55 @@
 Exercises: Angular, Lesson 1
 =============================
 
+The following exercises walk you through the process of modifying existing
+components and generating new ones.
+
 Starter Code
 -------------
 
-For this set of exercises, follow the link to this
-`StackBlitz project <https://stackblitz.com/edit/angular-lesson1-starter-code>`__
-and click the *Fork* button. This allows you to edit the file.
+For this set of exercises, you will need a copy of the LaunchCode Angular
+projects repository:
 
-``hello.component.ts`` has been removed from the project, and two other
-components have been added.
+#. Login to your `GitHub account <https://github.com>`__.
+#. Follow this link to the
+   `angular-lc101-projects <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
+   repo on GitHub.
+#. Click the *Fork* button to copy the project to your GitHub account.
+#. Click the *Clone* button and copy the project URL.
 
-Open the preview in a new window and examine the content of the webpage.
+   .. figure:: ./figures/clone-Angular-repo.png
+      :alt: Clone and fork buttons for Angular repository.
 
-.. admonition:: Note
+#. Open VSCode and use the terminal panel to navigate into your
+   ``angular_practice`` folder.
+#. Run ``git clone <project URL>``. Be sure to paste in the copied URL instead
+   of typing ``<project URL>``.
 
-   There are some issues with running StackBlitz in the Firefox browser. The
-   preview page may only be visible in a separate tab, some menu items may not
-   be visible when logged into the site, and saving your progress becomes
-   quirky.
+The repository contains all of the starter code you will need for the examples
+and exercises in Angular lessons 1, 2, and 3. Each lesson has its own folder,
+so navigate into the lesson 1 exercises now:
 
-   For these exercises, we recommend using Safari or Chrome as alternates. If
-   you insist on using Firefox, follow the instructions for
-   :ref:`saving your work <angular-lesson1-save>` carefully.
+.. sourcecode:: bash
+
+   $ pwd
+      angular_practice/angular-lc101-projects
+   $ ls
+      lesson1 lesson2 lesson3
+   $ cd lesson1
+   $ ls
+      exercises
+   $ cd exercises
+
+The repository contains code but NOT the Angular modules necessary to launch
+the webpage. In the terminal, run ``npm install`` to add these modules. Next,
+enter ``ng serve`` and open the ``localhost`` URL in your browser.
+
+The starter page should look like this:
+
+.. figure:: ./figures/lesson1-exercises-start.png
+   :alt: Starting setup for exercises.
+
+The page is not pretty yet, but you get to fix that.
 
 Part 1: Modify the CSS
 -----------------------
@@ -35,18 +62,19 @@ they appear pretty bland. Let's change that.
 #. Change the movie list text by adjusting the code in
    ``movie-list.component.css`` to accomplish the following:
 
-   #. The text can be any color EXCEPT black.
+   #. The text for the heading and list items can be any color EXCEPT black.
+      (HINT: Take advantage of the ``movies`` class).
    #. The movie list should have a centered heading.
    #. There should be at least 4 movie titles in an ordered list. Find the
-      ``movies`` array in ``MovieListComponent`` and add more titles, then
-      modify ``movies.component.html`` to display all the array entries.
+      ``movies`` array in the ``MovieListComponent`` class and add more titles.
+      Next, modify ``movies.component.html`` to display all the array entries.
    #. The font size should be large enough to easily read.
 
 #. Change the chore list text by adjusting the code in
    ``chores-list.component.css`` to accomplish the following:
 
    #. Use a different font, with a size large enough to easily read.
-   #. The text color should be different from the movie list, and not black.
+   #. The text color should be different from the movie list, but not black.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
 
@@ -57,19 +85,20 @@ Complete the ``fav-photos`` Component
    page needs more images, which also need to be smaller in size.
 
    #. In the ``FavPhotosComponent`` class, assign a better section heading to
-      ``photosTitle``.
+      the ``photosTitle`` variable.
    #. The ``image`` variables should hold URLs for images, but only one is
       is filled in. Complete at least one more, which can be from the web or
-      personal pictures.
-   #. In the ``.html`` file for this component, use placeholders and ``img``
-      tags to display one image per line.
-   #. Use the ``.css`` file for this component to make the images all be the
-      same size on the page.
-   #. Refresh the preview page to see the updated content.
+      personal pictures. To copy the URL for an image on the web, right-click
+      (or control-click) on the image and select the "Copy Image Location" menu
+      option.
+   #. In the ``.html`` file for this component, use placeholders in the ``img``
+      tags to display your chosen images.
+   #. Adjust the HTML to display one image per line.
+   #. Use the ``.css`` file for this component to make all the images be the
+      same size.
+   #. Refresh the webpage to check the updated content.
 
-Before moving on, click the *Sign in* button. Save your work and rename the
-project (something like "angular-lesson-1-exercises"). This will allow you to
-store your progress and return to it later, if necessary.
+Before moving on, save and commit your work.
 
 Part 2: Add More Components
 ----------------------------
@@ -78,32 +107,45 @@ Part 2: Add More Components
 
    You will be adding and modifying HTML elements for this project. If you need
    to review this topic, look back at the :ref:`HTML Tags <html-tags>` page, or
-   try `W3Schools <https://www.w3schools.com/html/default.asp>`__.
+   try `W3Schools <https://www.w3schools.com/tags/>`__.
 
 4. The page needs a title.
 
-   #. Right-click the ``app`` folder in the files pane and select *Angular
-      Generator/Component*. Name the new component ``page-title``.
-   #. Examine ``page-title.component.ts`` and note that the ``app-page-title``
-      tag has been defined next to ``selector``. Shorten the tag name to
-      just ``page-title``.
+   #. Use the terminal to navigate into ``app`` folder.
+   #. Generate the new component ``page-title``:
+
+      .. sourcecode:: bash
+
+         ng generate component page-title
+
+   #. Open ``page-title.component.ts`` and note that the ``app-page-title`` tag
+      has been defined next to ``selector``. Shorten the tag name to just
+      ``page-title``.
    #. In the ``PageTitleComponent`` class, define a ``title`` variable and
       assign it a string.
    #. Add an ``<h1>`` to the ``page-title.component.html`` file. Use
       ``{{title}}`` as a placeholder for the title you defined. Style the text
       to be underlined and centered on the screen.
-   #. Add ``<page-title></page-title>`` to ``app.component.html`` and refresh
-      the preview page to see your new content.
+   #. Add the ``<page-title></page-title>`` element to ``app.component.html``.
+   #. Save all of your changes and refresh the page to see your new content.
 
 #. The page needs a set of links to favorite websites.
 
-   #. Repeat steps 4a and b to generate a ``fav-links`` component.
-   #. In the ``FavLinksComponent`` class, define a variable and assign it an
-      array that contains two or more URLs.
-   #. In the ``.html`` file for this component, use placeholders in a set of
-      ``<a>`` tags for the web links. Each link should be on its own line.
-   #. Add ``<fav-links></fav-links>`` to ``app.component.html`` and refresh
-      the preview page to see the new content.
+   #. Generate a ``fav-links`` component. Open ``fav-links.component.ts`` and
+      shorten the tag name to just ``fav-links``.
+   #. In the ``FavLinksComponent`` class, define the variable ``favLinks`` and
+      assign it an array that contains two or more URLs.
+   #. In the ``.html`` file for this component, add a set of ``<a>`` tags for
+      the web links. Each link should be on its own line.
+   #. Inside each ``<a>`` tag, set the ``href`` attribute equal to a
+      placeholder for an element in the ``favLinks`` array:
+
+      .. sourcecode:: html
+
+         <a href = "{{placeholder}}">Link text...</a>
+
+   #. Add ``<fav-links></fav-links>`` to ``app.component.html``. Save all of
+      your changes, then refresh the page to see your new content.
 
 .. admonition:: Note
 
@@ -111,19 +153,19 @@ Part 2: Add More Components
    chores, title, links, and photos have all been automatically imported and
    declared.
 
-   Whether or not we use StackBlitz, Angular automatically takes care of
-   updating ``app.module.ts`` when new components are generated. However,
-   *deleting* a component does NOT remove the references from the file.
+   Angular automatically takes care of updating ``app.module.ts`` when you
+   generate new components. However, *deleting* a component does NOT remove the
+   references from the file.
 
 Part 3: Rearrange the Components
 ---------------------------------
 
-The content on the page might appear a bit jumbled, since we gave you no
-guidance on where to add the custom tags in ``app.component.html``.
-Fortunately, templates allow us to easily move items around the framework.
+The content on the page appears quite jumbled, since we gave you no guidance on
+where to put the custom tags in ``app.component.html``. Fortunately, templates
+allow us to easily move items around the framework.
 
 6. Rearrange the tags ``fav-photos``, ``fav-links``, ``page-title``, etc. to
-   create a specific page layout.
+   create a specific page layout:
 
    #. ``app.component.html`` has ``<div>`` tags to set up a three-column row.
       Use this to arrange the movie list, images, and chore list.
@@ -144,31 +186,30 @@ Optional Final Touches
    #. Change the background to a decent color, image or pattern.
    #. Add a border around one or more of the components on the page.
    #. Add a fun, coding related gif to the page.
-   #. Make one component change when the user clicks on it.
 
-.. _angular-lesson1-save:
+Sanity Check
+-------------
 
-Saving Your Work
------------------
+The ``angular-lc101-projects`` repository contains two branches:
 
-As mentioned above, we recommend using Safari or Chrome for these exercises.
-The following instructions apply ONLY if you run StackBlitz in Firefox.
+#. A ``master`` branch with all the starter code for lessons 1, 2, and 3.
+#. A ``solutions`` branch with completed code.
 
-To save your work using Firefox:
+If you get stuck on a particular exercise:
 
-#. Once you open the starter code, immediately click the *Fork* button. Do NOT
-   login to StackBlitz yet.
-#. Make the edits described in the exercises, saving your work as you go.
-#. Once ALL of the exercises are complete, click the *Sign in* button and enter
-   your password.
-#. Rename the file by clicking the pencil icon near its name.
+#. Try again.
+#. Try again again.
+#. Ask your TA, instructor, classmates, or Google for tips.
+#. Try again.
+#. Take a break and give your brain a chance to rest.
+#. Try again.
+#. Feel completely justified in switching to the ``solutions`` branch to check
+   the code.
 
-To modify your saved project using Firefox:
+.. admonition:: Note
 
-#. Click on the *Sign in* icon and enter your password.
-#. Click on your username button to see a list of saved projects.
-#. Copy the URL for your project (stackblitz.com/edit/my-project-name).
-#. *Log out* of StackBlitz.
-#. Paste the URL into the address bar and fork the project again.
-#. Once you finish your new edits, log back in to StackBlitz and rename the
-   file.
+   If you jumped right to step 7, you missed out on a stellar learning
+   opportunity.
+
+.. figure:: ./figures/lesson1-exercise-results.png
+   :alt: Angular Lesson 1 results.
