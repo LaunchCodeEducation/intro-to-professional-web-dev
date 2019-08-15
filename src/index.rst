@@ -64,9 +64,9 @@ Studios
    chapters/dom-and-events/studio
    chapters/forms/studio
    chapters/fetch-json/studio
+   chapters/typescript/studio
    chapters/angular-lsn1/studio
    chapters/angular-lsn2/studio
-   chapters/typescript/studio
 
 Assignments
 ^^^^^^^^^^^

@@ -86,24 +86,54 @@
     
   <div class="section" id="exercises-angular-lesson-1">
 <span id="angular-exercises-1"></span><h1>28.7. Exercises: Angular, Lesson 1<a class="headerlink" href="#exercises-angular-lesson-1" title="Permalink to this headline">¶</a></h1>
+<p>The following exercises walk you through the process of modifying existing
+components and generating new ones.</p>
 <div class="section" id="starter-code">
 <h2>28.7.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
-<p>For this set of exercises, follow the link to this
-<a class="reference external" href="https://stackblitz.com/edit/angular-lesson1-starter-code" target="_blank">StackBlitz project<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-and click the <em>Fork</em> button. This allows you to edit the file.</p>
-<p><code class="docutils literal notranslate"><span class="pre">hello.component.ts</span></code> has been removed from the project, and two other
-components have been added.</p>
-<p>Open the preview in a new window and examine the content of the webpage.</p>
-<div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p>There are some issues with running StackBlitz in the Firefox browser. The
-preview page may only be visible in a separate tab, some menu items may not
-be visible when logged into the site, and saving your progress becomes
-quirky.</p>
-<p class="last">For these exercises, we recommend using Safari or Chrome as alternates. If
-you insist on using Firefox, follow the instructions for
-<a class="reference internal" href="#angular-lesson1-save"><span class="std std-ref">saving your work</span></a> carefully.</p>
+<p>For this set of exercises, you will need a copy of the LaunchCode Angular
+projects repository:</p>
+<ol class="arabic">
+<li><p class="first">Login to your <a class="reference external" href="https://github.com" target="_blank">GitHub account<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">Follow this link to the
+<a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">angular-lc101-projects<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+repo on GitHub.</p>
+</li>
+<li><p class="first">Click the <em>Fork</em> button to copy the project to your GitHub account.</p>
+</li>
+<li><p class="first">Click the <em>Clone</em> button and copy the project URL.</p>
+<div class="figure">
+<img alt="Clone and fork buttons for Angular repository." src="../../_images/clone-Angular-repo.png" />
 </div>
+</li>
+<li><p class="first">Open VSCode and use the terminal panel to navigate into your
+<code class="docutils literal notranslate"><span class="pre">angular_practice</span></code> folder.</p>
+</li>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;project</span> <span class="pre">URL&gt;</span></code>. Be sure to paste in the copied URL instead
+of typing <code class="docutils literal notranslate"><span class="pre">&lt;project</span> <span class="pre">URL&gt;</span></code>.</p>
+</li>
+</ol>
+<p>The repository contains all of the starter code you will need for the examples
+and exercises in Angular lessons 1, 2, and 3. Each lesson has its own folder,
+so navigate into the lesson 1 exercises now:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+   angular_practice/angular-lc101-projects
+$ ls
+   lesson1 lesson2 lesson3
+$ <span class="nb">cd</span> lesson1
+$ ls
+   exercises
+$ <span class="nb">cd</span> exercises
+</pre></div>
+</div>
+<p>The repository contains code but NOT the Angular modules necessary to launch
+the webpage. In the terminal, run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to add these modules. Next,
+enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> and open the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> URL in your browser.</p>
+<p>The starter page should look like this:</p>
+<div class="figure">
+<img alt="Starting setup for exercises." src="../../_images/lesson1-exercises-start.png" />
+</div>
+<p>The page is not pretty yet, but you get to fix that.</p>
 </div>
 <div class="section" id="part-1-modify-the-css">
 <h2>28.7.2. Part 1: Modify the CSS<a class="headerlink" href="#part-1-modify-the-css" title="Permalink to this headline">¶</a></h2>
@@ -112,18 +142,19 @@ they appear pretty bland. Let’s change that.</p>
 <ol class="arabic simple">
 <li>Change the movie list text by adjusting the code in
 <code class="docutils literal notranslate"><span class="pre">movie-list.component.css</span></code> to accomplish the following:<ol class="arabic">
-<li>The text can be any color EXCEPT black.</li>
+<li>The text for the heading and list items can be any color EXCEPT black.
+(HINT: Take advantage of the <code class="docutils literal notranslate"><span class="pre">movies</span></code> class).</li>
 <li>The movie list should have a centered heading.</li>
 <li>There should be at least 4 movie titles in an ordered list. Find the
-<code class="docutils literal notranslate"><span class="pre">movies</span></code> array in <code class="docutils literal notranslate"><span class="pre">MovieListComponent</span></code> and add more titles, then
-modify <code class="docutils literal notranslate"><span class="pre">movies.component.html</span></code> to display all the array entries.</li>
+<code class="docutils literal notranslate"><span class="pre">movies</span></code> array in the <code class="docutils literal notranslate"><span class="pre">MovieListComponent</span></code> class and add more titles.
+Next, modify <code class="docutils literal notranslate"><span class="pre">movies.component.html</span></code> to display all the array entries.</li>
 <li>The font size should be large enough to easily read.</li>
 </ol>
 </li>
 <li>Change the chore list text by adjusting the code in
 <code class="docutils literal notranslate"><span class="pre">chores-list.component.css</span></code> to accomplish the following:<ol class="arabic">
 <li>Use a different font, with a size large enough to easily read.</li>
-<li>The text color should be different from the movie list, and not black.</li>
+<li>The text color should be different from the movie list, but not black.</li>
 <li>The chores list should have an underlined heading.</li>
 <li>The chores in the list should be italicized.</li>
 </ol>
@@ -135,21 +166,22 @@ modify <code class="docutils literal notranslate"><span class="pre">movies.compo
 <li>The <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component has been generated, but it is incomplete. The
 page needs more images, which also need to be smaller in size.<ol class="arabic">
 <li>In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, assign a better section heading to
-<code class="docutils literal notranslate"><span class="pre">photosTitle</span></code>.</li>
+the <code class="docutils literal notranslate"><span class="pre">photosTitle</span></code> variable.</li>
 <li>The <code class="docutils literal notranslate"><span class="pre">image</span></code> variables should hold URLs for images, but only one is
 is filled in. Complete at least one more, which can be from the web or
-personal pictures.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders and <code class="docutils literal notranslate"><span class="pre">img</span></code>
-tags to display one image per line.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">.css</span></code> file for this component to make the images all be the
-same size on the page.</li>
-<li>Refresh the preview page to see the updated content.</li>
+personal pictures. To copy the URL for an image on the web, right-click
+(or control-click) on the image and select the “Copy Image Location” menu
+option.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders in the <code class="docutils literal notranslate"><span class="pre">img</span></code>
+tags to display your chosen images.</li>
+<li>Adjust the HTML to display one image per line.</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">.css</span></code> file for this component to make all the images be the
+same size.</li>
+<li>Refresh the webpage to check the updated content.</li>
 </ol>
 </li>
 </ol>
-<p>Before moving on, click the <em>Sign in</em> button. Save your work and rename the
-project (something like “angular-lesson-1-exercises”). This will allow you to
-store your progress and return to it later, if necessary.</p>
+<p>Before moving on, save and commit your work.</p>
 </div>
 </div>
 <div class="section" id="part-2-add-more-components">
@@ -158,32 +190,55 @@ store your progress and return to it later, if necessary.</p>
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">You will be adding and modifying HTML elements for this project. If you need
 to review this topic, look back at the <a class="reference internal" href="../html/tags.html#html-tags"><span class="std std-ref">HTML Tags</span></a> page, or
-try <a class="reference external" href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+try <a class="reference external" href="https://www.w3schools.com/tags/" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
-<ol class="arabic simple" start="4">
-<li>The page needs a title.<ol class="arabic">
-<li>Right-click the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder in the files pane and select <em>Angular
-Generator/Component</em>. Name the new component <code class="docutils literal notranslate"><span class="pre">page-title</span></code>.</li>
-<li>Examine <code class="docutils literal notranslate"><span class="pre">page-title.component.ts</span></code> and note that the <code class="docutils literal notranslate"><span class="pre">app-page-title</span></code>
-tag has been defined next to <code class="docutils literal notranslate"><span class="pre">selector</span></code>. Shorten the tag name to
-just <code class="docutils literal notranslate"><span class="pre">page-title</span></code>.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">PageTitleComponent</span></code> class, define a <code class="docutils literal notranslate"><span class="pre">title</span></code> variable and
-assign it a string.</li>
-<li>Add an <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> to the <code class="docutils literal notranslate"><span class="pre">page-title.component.html</span></code> file. Use
+<ol class="arabic" start="4">
+<li><p class="first">The page needs a title.</p>
+<ol class="arabic">
+<li><p class="first">Use the terminal to navigate into <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</p>
+</li>
+<li><p class="first">Generate the new component <code class="docutils literal notranslate"><span class="pre">page-title</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ng generate component page-title
+</pre></div>
+</div>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">page-title.component.ts</span></code> and note that the <code class="docutils literal notranslate"><span class="pre">app-page-title</span></code> tag
+has been defined next to <code class="docutils literal notranslate"><span class="pre">selector</span></code>. Shorten the tag name to just
+<code class="docutils literal notranslate"><span class="pre">page-title</span></code>.</p>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">PageTitleComponent</span></code> class, define a <code class="docutils literal notranslate"><span class="pre">title</span></code> variable and
+assign it a string.</p>
+</li>
+<li><p class="first">Add an <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> to the <code class="docutils literal notranslate"><span class="pre">page-title.component.html</span></code> file. Use
 <code class="docutils literal notranslate"><span class="pre">{{title}}</span></code> as a placeholder for the title you defined. Style the text
-to be underlined and centered on the screen.</li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;page-title&gt;&lt;/page-title&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
-the preview page to see your new content.</li>
+to be underlined and centered on the screen.</p>
+</li>
+<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">&lt;page-title&gt;&lt;/page-title&gt;</span></code> element to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</p>
+</li>
+<li><p class="first">Save all of your changes and refresh the page to see your new content.</p>
+</li>
 </ol>
 </li>
-<li>The page needs a set of links to favorite websites.<ol class="arabic">
-<li>Repeat steps 4a and b to generate a <code class="docutils literal notranslate"><span class="pre">fav-links</span></code> component.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">FavLinksComponent</span></code> class, define a variable and assign it an
-array that contains two or more URLs.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders in a set of
-<code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tags for the web links. Each link should be on its own line.</li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;fav-links&gt;&lt;/fav-links&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and refresh
-the preview page to see the new content.</li>
+<li><p class="first">The page needs a set of links to favorite websites.</p>
+<ol class="arabic">
+<li><p class="first">Generate a <code class="docutils literal notranslate"><span class="pre">fav-links</span></code> component. Open <code class="docutils literal notranslate"><span class="pre">fav-links.component.ts</span></code> and
+shorten the tag name to just <code class="docutils literal notranslate"><span class="pre">fav-links</span></code>.</p>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">FavLinksComponent</span></code> class, define the variable <code class="docutils literal notranslate"><span class="pre">favLinks</span></code> and
+assign it an array that contains two or more URLs.</p>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, add a set of <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tags for
+the web links. Each link should be on its own line.</p>
+</li>
+<li><p class="first">Inside each <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tag, set the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute equal to a
+placeholder for an element in the <code class="docutils literal notranslate"><span class="pre">favLinks</span></code> array:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href </span><span class="o">=</span> <span class="s">&quot;{{placeholder}}&quot;</span><span class="p">&gt;</span>Link text...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">&lt;fav-links&gt;&lt;/fav-links&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>. Save all of
+your changes, then refresh the page to see your new content.</p>
+</li>
 </ol>
 </li>
 </ol>
@@ -192,19 +247,19 @@ the preview page to see the new content.</li>
 <p>Opening the <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> file shows that the components for the movies,
 chores, title, links, and photos have all been automatically imported and
 declared.</p>
-<p class="last">Whether or not we use StackBlitz, Angular automatically takes care of
-updating <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> when new components are generated. However,
-<em>deleting</em> a component does NOT remove the references from the file.</p>
+<p class="last">Angular automatically takes care of updating <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> when you
+generate new components. However, <em>deleting</em> a component does NOT remove the
+references from the file.</p>
 </div>
 </div>
 <div class="section" id="part-3-rearrange-the-components">
 <h2>28.7.4. Part 3: Rearrange the Components<a class="headerlink" href="#part-3-rearrange-the-components" title="Permalink to this headline">¶</a></h2>
-<p>The content on the page might appear a bit jumbled, since we gave you no
-guidance on where to add the custom tags in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.
-Fortunately, templates allow us to easily move items around the framework.</p>
+<p>The content on the page appears quite jumbled, since we gave you no guidance on
+where to put the custom tags in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>. Fortunately, templates
+allow us to easily move items around the framework.</p>
 <ol class="arabic simple" start="6">
 <li>Rearrange the tags <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code>, <code class="docutils literal notranslate"><span class="pre">fav-links</span></code>, <code class="docutils literal notranslate"><span class="pre">page-title</span></code>, etc. to
-create a specific page layout.<ol class="arabic">
+create a specific page layout:<ol class="arabic">
 <li><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> has <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags to set up a three-column row.
 Use this to arrange the movie list, images, and chore list.</li>
 <li>Center the title at the top of the page.</li>
@@ -224,35 +279,37 @@ Use this to arrange the movie list, images, and chore list.</li>
 <li>Change the background to a decent color, image or pattern.</li>
 <li>Add a border around one or more of the components on the page.</li>
 <li>Add a fun, coding related gif to the page.</li>
-<li>Make one component change when the user clicks on it.</li>
 </ol>
 </li>
 </ol>
 </div>
 </div>
-<div class="section" id="saving-your-work">
-<span id="angular-lesson1-save"></span><h2>28.7.5. Saving Your Work<a class="headerlink" href="#saving-your-work" title="Permalink to this headline">¶</a></h2>
-<p>As mentioned above, we recommend using Safari or Chrome for these exercises.
-The following instructions apply ONLY if you run StackBlitz in Firefox.</p>
-<p>To save your work using Firefox:</p>
+<div class="section" id="sanity-check">
+<h2>28.7.5. Sanity Check<a class="headerlink" href="#sanity-check" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">angular-lc101-projects</span></code> repository contains two branches:</p>
 <ol class="arabic simple">
-<li>Once you open the starter code, immediately click the <em>Fork</em> button. Do NOT
-login to StackBlitz yet.</li>
-<li>Make the edits described in the exercises, saving your work as you go.</li>
-<li>Once ALL of the exercises are complete, click the <em>Sign in</em> button and enter
-your password.</li>
-<li>Rename the file by clicking the pencil icon near its name.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">master</span></code> branch with all the starter code for lessons 1, 2, and 3.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">solutions</span></code> branch with completed code.</li>
 </ol>
-<p>To modify your saved project using Firefox:</p>
+<p>If you get stuck on a particular exercise:</p>
 <ol class="arabic simple">
-<li>Click on the <em>Sign in</em> icon and enter your password.</li>
-<li>Click on your username button to see a list of saved projects.</li>
-<li>Copy the URL for your project (stackblitz.com/edit/my-project-name).</li>
-<li><em>Log out</em> of StackBlitz.</li>
-<li>Paste the URL into the address bar and fork the project again.</li>
-<li>Once you finish your new edits, log back in to StackBlitz and rename the
-file.</li>
+<li>Try again.</li>
+<li>Try again again.</li>
+<li>Ask your TA, instructor, classmates, or Google for tips.</li>
+<li>Try again.</li>
+<li>Take a break and give your brain a chance to rest.</li>
+<li>Try again.</li>
+<li>Feel completely justified in switching to the <code class="docutils literal notranslate"><span class="pre">solutions</span></code> branch to check
+the code.</li>
 </ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you jumped right to step 7, you missed out on a stellar learning
+opportunity.</p>
+</div>
+<div class="figure">
+<img alt="Angular Lesson 1 results." src="../../_images/lesson1-exercise-results.png" />
+</div>
 </div>
 </div>
 
