@@ -92,32 +92,17 @@ components and generating new ones.</p>
 <h2>28.7.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
 <p>For this set of exercises, you will need a copy of the LaunchCode Angular
 projects repository:</p>
-<ol class="arabic">
-<li><p class="first">Login to your <a class="reference external" href="https://github.com" target="_blank">GitHub account<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-</li>
-<li><p class="first">Follow this link to the
-<a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">angular-lc101-projects<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-repo on GitHub.</p>
-</li>
-<li><p class="first">Click the <em>Fork</em> button to copy the project to your GitHub account.</p>
-</li>
-<li><p class="first">Click the <em>Clone</em> button and copy the project URL.</p>
-<div class="figure">
-<img alt="Clone and fork buttons for Angular repository." src="../../_images/clone-Angular-repo.png" />
-</div>
-</li>
-<li><p class="first">Open VSCode and use the terminal panel to navigate into your
-<code class="docutils literal notranslate"><span class="pre">angular_practice</span></code> folder.</p>
-</li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;project</span> <span class="pre">URL&gt;</span></code>. Be sure to paste in the copied URL instead
-of typing <code class="docutils literal notranslate"><span class="pre">&lt;project</span> <span class="pre">URL&gt;</span></code>.</p>
-</li>
+<ol class="arabic simple">
+<li>Fork the
+<a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">angular-lc101-projects repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+on GitHub.</li>
+<li>Clone your fork.</li>
 </ol>
 <p>The repository contains all of the starter code you will need for the examples
 and exercises in Angular lessons 1, 2, and 3. Each lesson has its own folder,
 so navigate into the lesson 1 exercises now:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
-   angular_practice/angular-lc101-projects
+   angular-lc101-projects
 $ ls
    lesson1 lesson2 lesson3
 $ <span class="nb">cd</span> lesson1
@@ -145,9 +130,6 @@ they appear pretty bland. Let’s change that.</p>
 <li>The text for the heading and list items can be any color EXCEPT black.
 (HINT: Take advantage of the <code class="docutils literal notranslate"><span class="pre">movies</span></code> class).</li>
 <li>The movie list should have a centered heading.</li>
-<li>There should be at least 4 movie titles in an ordered list. Find the
-<code class="docutils literal notranslate"><span class="pre">movies</span></code> array in the <code class="docutils literal notranslate"><span class="pre">MovieListComponent</span></code> class and add more titles.
-Next, modify <code class="docutils literal notranslate"><span class="pre">movies.component.html</span></code> to display all the array entries.</li>
 <li>The font size should be large enough to easily read.</li>
 </ol>
 </li>
@@ -160,9 +142,43 @@ Next, modify <code class="docutils literal notranslate"><span class="pre">movies
 </ol>
 </li>
 </ol>
-<div class="section" id="complete-the-fav-photos-component">
-<h3>28.7.2.1. Complete the <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> Component<a class="headerlink" href="#complete-the-fav-photos-component" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="add-more-movies">
+<h3>28.7.2.1. Add More Movies<a class="headerlink" href="#add-more-movies" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<img alt="Browser screen shot showing list of movies that contains &quot;The Manchurian Candidate&quot; and &quot;Oceans 8&quot;." src="../../_images/movies-list-start.png" />
+</div>
+<p>The list of movies is built using an array defined in <code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> that is referenced in the template
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code>. The movies are referenced by their array index.</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">MovieListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;The Manchurian Candidate&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceans 8&#39;</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>You can put almost any valid JavaScript
+inside the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code> in an Angular template. Putting in <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">movies[0]</span> <span class="pre">}}</span></code> will reference the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array and
+<code class="docutils literal notranslate"><span class="pre">movies[0]</span></code> is the classic array index syntax which returns the first item in the array.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&lt;div <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;movies&quot;</span>&gt;
+   &lt;h3&gt;Movies to Watch&lt;/h3&gt;
+   &lt;ol&gt;
+      &lt;li&gt;<span class="o">{{</span> movies<span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="o">}}</span>&lt;/li&gt;
+      &lt;li&gt;<span class="o">{{</span> movies<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">}}</span>&lt;/li&gt;
+   &lt;/ol&gt;
+&lt;/div&gt;
+</pre></div>
+</td></tr></table></div>
 <ol class="arabic simple" start="3">
+<li>Add two more items to the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array.</li>
+<li>Reference those two new movies in the template.</li>
+</ol>
+</div>
+<div class="section" id="complete-the-fav-photos-component">
+<h3>28.7.2.2. Complete the <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> Component<a class="headerlink" href="#complete-the-fav-photos-component" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="5">
 <li>The <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component has been generated, but it is incomplete. The
 page needs more images, which also need to be smaller in size.<ol class="arabic">
 <li>In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, assign a better section heading to
@@ -192,7 +208,7 @@ same size.</li>
 to review this topic, look back at the <a class="reference internal" href="../html/tags.html#html-tags"><span class="std std-ref">HTML Tags</span></a> page, or
 try <a class="reference external" href="https://www.w3schools.com/tags/" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
-<ol class="arabic" start="4">
+<ol class="arabic" start="6">
 <li><p class="first">The page needs a title.</p>
 <ol class="arabic">
 <li><p class="first">Use the terminal to navigate into <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</p>
@@ -257,7 +273,7 @@ references from the file.</p>
 <p>The content on the page appears quite jumbled, since we gave you no guidance on
 where to put the custom tags in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>. Fortunately, templates
 allow us to easily move items around the framework.</p>
-<ol class="arabic simple" start="6">
+<ol class="arabic simple" start="8">
 <li>Rearrange the tags <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code>, <code class="docutils literal notranslate"><span class="pre">fav-links</span></code>, <code class="docutils literal notranslate"><span class="pre">page-title</span></code>, etc. to
 create a specific page layout:<ol class="arabic">
 <li><code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> has <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags to set up a three-column row.
@@ -274,7 +290,7 @@ Use this to arrange the movie list, images, and chore list.</li>
 </div>
 <div class="section" id="optional-final-touches">
 <h3>28.7.4.1. Optional Final Touches<a class="headerlink" href="#optional-final-touches" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple" start="7">
+<ol class="arabic simple" start="9">
 <li>To boost your practice, complete one or more of the following:<ol class="arabic">
 <li>Change the background to a decent color, image or pattern.</li>
 <li>Add a border around one or more of the components on the page.</li>

@@ -8,24 +8,13 @@ components and generating new ones.
 
 Starter Code
 -------------
-
 For this set of exercises, you will need a copy of the LaunchCode Angular
 projects repository:
 
-#. Login to your `GitHub account <https://github.com>`__.
-#. Follow this link to the
-   `angular-lc101-projects <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
-   repo on GitHub.
-#. Click the *Fork* button to copy the project to your GitHub account.
-#. Click the *Clone* button and copy the project URL.
-
-   .. figure:: ./figures/clone-Angular-repo.png
-      :alt: Clone and fork buttons for Angular repository.
-
-#. Open VSCode and use the terminal panel to navigate into your
-   ``angular_practice`` folder.
-#. Run ``git clone <project URL>``. Be sure to paste in the copied URL instead
-   of typing ``<project URL>``.
+#. Fork the
+   `angular-lc101-projects repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
+   on GitHub.
+#. Clone your fork.
 
 The repository contains all of the starter code you will need for the examples
 and exercises in Angular lessons 1, 2, and 3. Each lesson has its own folder,
@@ -34,7 +23,7 @@ so navigate into the lesson 1 exercises now:
 .. sourcecode:: bash
 
    $ pwd
-      angular_practice/angular-lc101-projects
+      angular-lc101-projects
    $ ls
       lesson1 lesson2 lesson3
    $ cd lesson1
@@ -55,22 +44,18 @@ The page is not pretty yet, but you get to fix that.
 
 Part 1: Modify the CSS
 -----------------------
-
 The ``movie-list`` and ``chores-list`` components have been created, but so far
 they appear pretty bland. Let's change that.
 
-#. Change the movie list text by adjusting the code in
+1. Change the movie list text by adjusting the code in
    ``movie-list.component.css`` to accomplish the following:
 
    #. The text for the heading and list items can be any color EXCEPT black.
       (HINT: Take advantage of the ``movies`` class).
    #. The movie list should have a centered heading.
-   #. There should be at least 4 movie titles in an ordered list. Find the
-      ``movies`` array in the ``MovieListComponent`` class and add more titles.
-      Next, modify ``movies.component.html`` to display all the array entries.
    #. The font size should be large enough to easily read.
 
-#. Change the chore list text by adjusting the code in
+2. Change the chore list text by adjusting the code in
    ``chores-list.component.css`` to accomplish the following:
 
    #. Use a different font, with a size large enough to easily read.
@@ -78,10 +63,41 @@ they appear pretty bland. Let's change that.
    #. The chores list should have an underlined heading.
    #. The chores in the list should be italicized.
 
+Add More Movies
+^^^^^^^^^^^^^^^
+.. figure:: ./figures/movies-list-start.png
+   :alt: Browser screen shot showing list of movies that contains "The Manchurian Candidate" and "Oceans 8".
+
+The list of movies is built using an array defined in ``movie-list.component.ts`` that is referenced in the template
+``movie-list.component.html``. The movies are referenced by their array index.
+
+.. sourcecode:: TypeScript
+
+   export class MovieListComponent implements OnInit {
+      movies = ['The Manchurian Candidate', 'Oceans 8'];
+
+You can put almost any valid JavaScript
+inside the ``{{ }}`` in an Angular template. Putting in ``{{ movies[0] }}`` will reference the ``movies`` array and
+``movies[0]`` is the classic array index syntax which returns the first item in the array.
+
+.. sourcecode:: bash
+   :linenos:
+
+   <div class="movies">
+      <h3>Movies to Watch</h3>
+      <ol>
+         <li>{{ movies[0] }}</li>
+         <li>{{ movies[1] }}</li>
+      </ol>
+   </div>
+
+3. Add two more items to the ``movies`` array.
+4. Reference those two new movies in the template.
+
 Complete the ``fav-photos`` Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. The ``fav-photos`` component has been generated, but it is incomplete. The
+5. The ``fav-photos`` component has been generated, but it is incomplete. The
    page needs more images, which also need to be smaller in size.
 
    #. In the ``FavPhotosComponent`` class, assign a better section heading to
@@ -109,7 +125,7 @@ Part 2: Add More Components
    to review this topic, look back at the :ref:`HTML Tags <html-tags>` page, or
    try `W3Schools <https://www.w3schools.com/tags/>`__.
 
-4. The page needs a title.
+6. The page needs a title.
 
    #. Use the terminal to navigate into ``app`` folder.
    #. Generate the new component ``page-title``:
@@ -129,7 +145,7 @@ Part 2: Add More Components
    #. Add the ``<page-title></page-title>`` element to ``app.component.html``.
    #. Save all of your changes and refresh the page to see your new content.
 
-#. The page needs a set of links to favorite websites.
+7. The page needs a set of links to favorite websites.
 
    #. Generate a ``fav-links`` component. Open ``fav-links.component.ts`` and
       shorten the tag name to just ``fav-links``.
@@ -164,7 +180,7 @@ The content on the page appears quite jumbled, since we gave you no guidance on
 where to put the custom tags in ``app.component.html``. Fortunately, templates
 allow us to easily move items around the framework.
 
-6. Rearrange the tags ``fav-photos``, ``fav-links``, ``page-title``, etc. to
+8. Rearrange the tags ``fav-photos``, ``fav-links``, ``page-title``, etc. to
    create a specific page layout:
 
    #. ``app.component.html`` has ``<div>`` tags to set up a three-column row.
@@ -181,7 +197,7 @@ Your final page should have this format (the dashed lines are optional):
 Optional Final Touches
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-7. To boost your practice, complete one or more of the following:
+9. To boost your practice, complete one or more of the following:
 
    #. Change the background to a decent color, image or pattern.
    #. Add a border around one or more of the components on the page.
