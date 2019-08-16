@@ -9,9 +9,41 @@ The HTML, CSS, and JavaScript files are provided. For each event, the requiremen
 Getting Started
 ---------------
 
-1. Fork the `studio repository <https://github.com/LaunchCodeEducation/DOM-and-Events-Studio/>`_ to your Github account.
-2. Clone the remote repository to your computer.
-3. Open the project with Visual Studio Code!
+First, fork the `studio repository <https://github.com/LaunchCodeEducation/DOM-and-Events-Studio/>`_ to your Github account.
+To do so, on the studio repository page on Github, click the "Fork" button.
+
+.. figure:: figures/fork-screenshot.png
+   :alt: Image showing the "Fork" button is in the top right on the repository page.
+
+A popup appears asking where to fork the repository to and you select your profile.
+You should now have a copy of the repository on your own profile!
+
+.. note:: 
+
+   Not only is forking repositories an important Git skill, it is especially vital in the class so that everyone has the same starter code!
+   Before continuing, make sure that the repository is now on your profile and you are working with your copy of the starter code for the rest of the studio.
+
+If you have properly forked a repository, when you click on the forked repository on your profile, you will see the following:
+
+.. figure:: figures/forked-repo-screenshot.png
+   :alt: Image showing that the repository name says "Forked from" in the top left when the repository has been forked.
+
+Once you have properly forked the repository, you can clone the remote repository to your computer.
+To start, click on the green "Clone" button to get the proper HTTPS url for the command. 
+
+.. figure:: figures/clone-repository-screenshot.png
+   :alt: Image showing that a popup appears once the "Clone" button is clicked with the proper url.
+
+Copy the url either by clicking on the button with a clipboard icon or highlighting the whole url and copying.
+
+In the terminal, navigate to the directory where you want to put your new project.
+Use the command, ``git clone <url>``, with the url you just copied to put the project on your local machine.
+
+.. note::
+
+   ``git clone`` will clone a whole directory including the Git repository on your machine, so there is no need to initialize a Git repository in a new directory to get started this way!
+
+Open Visual Studio Code and go to `File > Open` to find your new project and get started!
 
 The Requirements
 ----------------
