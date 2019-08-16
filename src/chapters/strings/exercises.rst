@@ -14,10 +14,7 @@ Part One
    *There's no code snippet for this one, just try it on your own with old-fashioned 
    pen and paper!*
 
-Part Two
---------
-
-1. The ``length`` method returns how many characters are in a string. However,
+#. The ``length`` method returns how many characters are in a string. However,
    the method will NOT give us the length of a number. If ``num = 1001``,
    ``num.length`` returns ``undefined`` rather than 4.
 
@@ -33,8 +30,8 @@ Part Two
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises02/>`__
 
-Part Three
-----------
+Part Two
+--------
 
 1. Remember, strings are *immutable*. Consider a string that represents a
    strand of DNA: ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``.
@@ -66,14 +63,14 @@ Part Three
 
    `Code it at repl.it <https://repl.it/@launchcode/DNA-strings/>`__
 
-Part Four
----------
+Part Three
+----------
 
 1. If we want to turn the string ``'JavaScript'`` into ``'JS'``, we might try
    ``.remove()``. Unfortunately, there is no such method in JavaScript.
    However, we can use our cleverness to achieve the same result.
 
-   #. Use string concatenation and two ``slice()`` to print ``'JS'`` from
+   #. Use string concatenation and two ``slice()`` methods to print ``'JS'`` from
       ``'JavaScript'``.
    #. Without using ``slice()``, use method chaining to accomplish the same
       thing.
