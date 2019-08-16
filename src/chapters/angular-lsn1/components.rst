@@ -377,6 +377,11 @@ If you have not already done so, use  ``ng generate`` to *nest* the
 
    EXPERIMENT! Discover.
 
-   There are two ways to modify ``app.component.html`` and
-   ``task-list.component.html`` to make "inner-task-list works!" appear on the
-   screen. What are they?
+   Where could we place the ``<inner-task-list></inner-task-list>`` element to
+   make "inner-task-list works!" appear on the screen? Select ALL options that
+   work.
+
+   #. Place the element in``app.component.html``.
+   #. Place the element in ``task-list.component.html``.
+   #. Place the element in ``inner-task-list.component.html``.
+   #. Place the element in ``index.html``.
