@@ -8,6 +8,9 @@ Exercises: Strings
    #. ``"Wonderful".length``
    #. ``"Do spaces count?".length``
 
+   *There's no code snippet for this one, just try it on your own with old-fashioned 
+   pen and paper!*
+
 #. The ``length`` method returns how many characters are in a string. However,
    the method will NOT give us the length of a number. If ``num = 1001``,
    ``num.length`` returns ``undefined`` rather than 4.
@@ -15,13 +18,16 @@ Exercises: Strings
    #. Use type conversion to print the length (number of digits) of an integer.
    #. Print the number of digits in a DECIMAL value (e.g. ``num = 123.45`` has 5
       digits but a length of 6).
+      
+      #. Modify your code to print out the length of a decimal value EXCLUDING the period.
+
    #. What if ``num`` could be EITHER an integer or a decimal?  Add an ``if/else``
       statement so your code can handle both cases.  (Hint: Consider the
       ``indexOf()`` or ``includes()`` string methods).
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises02/>`__
 
-#. Remember, strings are *immutable*. Consider a string that represents a
+2. PART A: Remember, strings are *immutable*. Consider a string that represents a
    strand of DNA: ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``.
    There are some typos in the string that we would like to fix:
 
@@ -37,7 +43,7 @@ Exercises: Strings
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises03/>`__
 
-#. Let's use string methods to do more work on the DNA strand:
+2. PART B: Let's use string methods to do more work on the DNA strand:
 
    #. Replace the gene ``'GCT'`` with ``'AGG'``, and then print the altered
       strand.
@@ -51,11 +57,11 @@ Exercises: Strings
 
    `Code it at repl.it <https://repl.it/@launchcode/DNA-strings/>`__
 
-#. If we want to turn the string ``'JavaScript'`` into ``'JS'``, we might try
+3. PART A: If we want to turn the string ``'JavaScript'`` into ``'JS'``, we might try
    ``.remove()``. Unfortunately, there is no such method in JavaScript.
    However, we can use our cleverness to achieve the same result.
 
-   #. Use string concatenation and two ``slice()``'s to print ``'JS'`` from
+   #. Use string concatenation and two ``slice()``s to print ``'JS'`` from
       ``'JavaScript'``.
    #. Without using ``slice()``, use method chaining to accomplish the same
       thing.
@@ -66,7 +72,7 @@ Exercises: Strings
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises05/>`__
 
-#. Some programming languages (like Python) include a ``title()`` method to
+3. PART B: Some programming languages (like Python) include a ``title()`` method to
    return a string with Every Word Capitalized (e.g. ``'title case'.title()``
    returns ``Title Case``).  JavaScript has no ``title()`` method, but that
    won't stop us! Use the string methods you know to print ``'Title Case'``
