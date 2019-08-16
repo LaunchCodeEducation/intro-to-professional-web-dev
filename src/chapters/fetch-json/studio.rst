@@ -4,8 +4,6 @@ Studio: Fetch & JSON
 Your task is to build a website that shows astronauts fetched from an API.
 Requirements are below.
 
-`Repl.it with starter code <https://repl.it/@launchcode/Studio-Starter-Fetch-and-JSON>`_
-
 Get Started
 -----------
 
