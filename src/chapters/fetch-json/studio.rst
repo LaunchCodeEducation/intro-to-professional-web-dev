@@ -2,7 +2,6 @@ Studio: Fetch & JSON
 ====================
 
 Your task is to build a website that shows astronauts fetched from an API.
-Requirements are below.
 
 `Repl.it with starter code <https://repl.it/@launchcode/Studio-Starter-Fetch-and-JSON>`_
 
@@ -11,16 +10,16 @@ Requirements
 
 1. Add code that runs on the ``window`` ``load`` event.
 
-   * This is done because we can't interact with the HTML elements until the page has loaded.
+   a. This is done because we can't interact with the HTML elements until the page has loaded.
 
 2. Make a GET request using ``fetch`` to the astronauts API `https://api.education.launchcode.org/astronauts <https://api.education.launchcode.org/astronauts>`_
 
-   * Do this part inside the ``load`` event handler.
+   a. Do this part inside the ``load`` event handler.
 
 3. Add each astronaut returned to the web page.
 
-   * Use this HTML template shown below.
-   * Be sure to use the exact HTML including the CSS classes. (starter code contains CSS definitions)
+   a. Use the HTML template shown below.
+   b. Be sure to use the exact HTML including the CSS classes. (starter code contains CSS definitions)
 
 
 Example JSON
@@ -115,12 +114,13 @@ use a loop to access each object inside the JSON array.
 
 HTML Template
 ^^^^^^^^^^^^^
-Create HTML in this exact format for each astronaut, but include data about that specific astronaut.
-For example the below HTML is what should be created for astronaut Mae Jemison. All HTML created should
-be added to the ``<div id="container">`` tag.
+Create HTML in this exact format for each astronaut, but include data about
+that specific astronaut. For example the HTML below is what should be created
+for astronaut Mae Jemison. All HTML created should be added to the
+``<div id="container">`` tag.
 
-Do NOT copy and paste this into your HTML file. Use this
-as a template to build HTML dynamically for each astronaut returned from the API.
+Do NOT copy and paste this into your HTML file. Use this as a template to
+build HTML dynamically for each astronaut returned from the API.
 
 .. sourcecode:: html
    :linenos:
@@ -140,7 +140,8 @@ as a template to build HTML dynamically for each astronaut returned from the API
 
 Expected Results
 ^^^^^^^^^^^^^^^^
-What the web page should look like after your code loads the data and builds the HTML.
+After your code loads the data and builds the HTML, the web page should look
+like:
 
 .. figure:: figures/studio-example-page.png
        :alt: Screen shot showing what result of studio should look like.
@@ -150,6 +151,7 @@ What the web page should look like after your code loads the data and builds the
 
 Bonus Missions
 --------------
-* Display the astronauts sorted from most to least time in space.
-* make the "Active: true" text green, for astronauts that are still active (active is true).
-* Add a count of astronauts to the page.
+#. Display the astronauts sorted from most to least time in space.
+#. Make the "Active: true" text green, for astronauts that are still active
+   (active is true).
+#. Add a count of astronauts to the page.
