@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -86,7 +86,9 @@
     
   <div class="section" id="exercises-debugging">
 <h1>6.8. Exercises: Debugging<a class="headerlink" href="#exercises-debugging" title="Permalink to this headline">¶</a></h1>
-<p>Avast, ye scurvy dogs! We be needn’ ta fix yonder code!</p>
+<p>Imagine we are pirates running a space station. Captain Api Hook tells the crew the following:</p>
+<blockquote>
+<div><p>Avast, ye scurvy dogs! We be needn’ ta fix yonder code!</p>
 <p>The cap’n in charge of clearing the shuttle for launch(code) be out with
 an illness, and ye be the next tech in line.</p>
 <p>Yer job is to evaluate the code and fix any errors. Remember, the lives
@@ -99,6 +101,7 @@ launch (then scrub the deck).</li>
 <li>If all checks be successful, print a countdown to the console, then
 bellow “Liftoff!”</li>
 </ol>
+</div></blockquote>
 <div class="section" id="debugging-practice">
 <h2>6.8.1. Debugging Practice<a class="headerlink" href="#debugging-practice" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -132,7 +135,26 @@ check it.</p>
 find the mistakes. <em>Tip</em>: Don’t be too hasty, Matey! Only ONE error will
 be flagged at a time. Fix that ONE problem, and then re-run the code to
 check yer work. Avoid trying to fix multiple issues at once.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span>let launchReady = false;
 let crewStatus = true;
 let computerStatus = &#39;green&#39;;
 
@@ -153,7 +175,7 @@ if (launchReady) {
    console.log(&quot;Launch scrubbed.&quot;);
 }
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugSyntaxErrors2" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </li>
 <li><p class="first">Fix <strong>runtime errors</strong> next. Remember to examine the error message for

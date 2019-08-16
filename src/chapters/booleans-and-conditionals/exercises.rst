@@ -110,7 +110,8 @@ the only person who needs help.
         - ``1200``
 
 #. Next, implement the checks below using ``if`` / ``else if`` / ``else``
-   statements.
+   statements. Order is important when working with conditionals and the checks below are not in the order that you would code in.
+   Please read each check carefully before coding and consider the order the checks should be in!
 
    #. If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is at or below
       2500, print ``"Full tank. Engines good."``

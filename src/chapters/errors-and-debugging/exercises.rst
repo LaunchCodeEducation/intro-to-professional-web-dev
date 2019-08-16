@@ -1,21 +1,24 @@
 Exercises: Debugging
 ====================
 
-Avast, ye scurvy dogs! We be needn' ta fix yonder code!
+Imagine we are pirates running a space station. Captain Api Hook tells the crew the following:
 
-The cap'n in charge of clearing the shuttle for launch(code) be out with
-an illness, and ye be the next tech in line.
+   Avast, ye scurvy dogs! We be needn' ta fix yonder code!
 
-Yer job is to evaluate the code and fix any errors. Remember, the lives
-of the crew rest squarely upon yer shoulders. Happy second day on the job!
+   The cap'n in charge of clearing the shuttle for launch(code) be out with
+   an illness, and ye be the next tech in line.
 
-Yer directions are as follows:
+   Yer job is to evaluate the code and fix any errors. Remember, the lives
+   of the crew rest squarely upon yer shoulders. Happy second day on the job!
 
-#. Launch the shuttle *only if* the fuel, crew and computer all check out OK.
-#. If a check fails, print that information to the console and scrub the
-   launch (then scrub the deck).
-#. If all checks be successful, print a countdown to the console, then
-   bellow "Liftoff!"
+   Yer directions are as follows:
+
+   #. Launch the shuttle *only if* the fuel, crew and computer all check out OK.
+   #. If a check fails, print that information to the console and scrub the
+      launch (then scrub the deck).
+   #. If all checks be successful, print a countdown to the console, then
+      bellow "Liftoff!"
+
 
 Debugging Practice
 ------------------
@@ -45,7 +48,8 @@ Debugging Practice
    be flagged at a time. Fix that ONE problem, and then re-run the code to
    check yer work. Avoid trying to fix multiple issues at once.
 
-   ::
+   .. sourcecode:: js
+      :linenos:
 
       let launchReady = false;
       let crewStatus = true;
