@@ -1,21 +1,24 @@
 Exercises: Debugging
 ====================
 
-Avast, ye scurvy dogs! We be needn' ta fix yonder code!
+Imagine we are pirates running a space station. Captain Api Hook tells the crew the following:
 
-The cap'n in charge of clearing the shuttle for launch(code) be out with
-an illness, and ye be the next tech in line.
+   Avast, ye scurvy dogs! We be needn' ta fix yonder code!
 
-Yer job is to evaluate the code and fix any errors. Remember, the lives
-of the crew rest squarely upon yer shoulders. Happy second day on the job!
+   The cap'n in charge of clearing the shuttle for launch(code) be out with
+   an illness, and ye be the next tech in line.
 
-Yer directions are as follows:
+   Yer job is to evaluate the code and fix any errors. Remember, the lives
+   of the crew rest squarely upon yer shoulders. Happy second day on the job!
 
-#. Launch the shuttle *only if* the fuel, crew and computer all check out OK.
-#. If a check fails, print that information to the console and scrub the
-   launch (then scrub the deck).
-#. If all checks be successful, print a countdown to the console, then
-   bellow "Liftoff!"
+   Yer directions are as follows:
+
+   #. Launch the shuttle *only if* the fuel, crew and computer all check out OK.
+   #. If a check fails, print that information to the console and scrub the
+      launch (then scrub the deck).
+   #. If all checks be successful, print a countdown to the console, then
+      bellow "Liftoff!"
+
 
 Debugging Practice
 ------------------
@@ -24,8 +27,7 @@ Debugging Practice
    eyes at the error message. Fix the mistake, and then re-run the code to
    check it.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let fuelLevel = 17000;
@@ -75,8 +77,7 @@ Debugging Practice
    numbers mentioned in the message - these will help ye locate and repair
    the mistake in the code.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let fuelLevel = 17000;
@@ -93,8 +94,7 @@ Debugging Practice
 
 #. *Arrr!*  Now find and fix the runtime error in a longer code sample.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let fuelLevel = 27000;
@@ -128,8 +128,7 @@ Debugging Practice
 
    #. First, run this sample code as-is and examine the output.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let fuelLevel = 17000;
@@ -165,8 +164,7 @@ Debugging Practice
 
    #. Let's break the code down into smaller chunks. Consider the first if/else block below. Add ``console.log(launchReady)`` after this block, then run the program.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let fuelLevel = 17000;
@@ -185,8 +183,7 @@ Debugging Practice
 
    #. Now consider the second if/else block. Add another ``console.log(launchReady)`` after this block and run the program.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let crewStatus = true;
@@ -206,8 +203,7 @@ Debugging Practice
 
    #. Now consider both if/else blocks together (keeping the added ``console.log`` lines). Run the code and examine the output.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let fuelLevel = 17000;
