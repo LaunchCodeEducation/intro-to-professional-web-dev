@@ -28,15 +28,13 @@ The form will send a request with query parameter ``q`` to the selected engine. 
 Getting Started
 ---------------
 
-- Create a new directory, ``forms-studio``
-- ``cd`` into this new directory
-- Create a file to use for the studio: ``touch index.html``
-- Copy/paste the `starter code <https://gist.github.com/chrisbay/f8842097f5c9424d87cf6e37f64d127d>`_ for the studio into ``index.html``
+1. Go to the `studio repository <https://github.com/LaunchCodeEducation/HTTP-and-Forms-Studio/>`_ and fork to your Github account.
+2. Clone the repository and ``cd`` into the new directory.
 
 Create Form Inputs
 ------------------
 
-Let's build out the form. We will need some data for the search engines we want to work with.
+Let's build out the form in ``index.html``. We will need some data for the search engines we want to work with.
 
 .. list-table:: Search Engine Options
    :header-rows: 1
