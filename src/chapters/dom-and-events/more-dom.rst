@@ -117,13 +117,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the value of ``p.innerHTML``?
-
-   .. sourcecode:: html
-      :linenos:
-
-      <p id="demo-text">Hello friend</p>
-      <script>
-         let p = document.getElementById("demo-text");
-         console.log(p.innerHTML);
-      </script>
+   What is the difference between the document and window variables?

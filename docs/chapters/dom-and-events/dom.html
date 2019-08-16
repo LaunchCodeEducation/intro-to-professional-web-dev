@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -102,7 +102,7 @@ For now, let’s get used to the idea of using JavaScript to interact with the D
 As mentioned above, we will go into more detail on these variables and what they are later.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Here the <code class="docutils literal notranslate"><span class="pre">window</span></code> and <code class="docutils literal notranslate"><span class="pre">document</span></code> variables are used to print information about the web page to the browser’s console.</p>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">window</span></code> and <code class="docutils literal notranslate"><span class="pre">document</span></code> variables are used to print information about the web page to the browser’s console.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -141,7 +141,11 @@ the protocol: https:
 <h2>23.2.2. Dynamic Web Page Using the DOM<a class="headerlink" href="#dynamic-web-page-using-the-dom" title="Permalink to this headline">¶</a></h2>
 <p>The DOM plays a key part in making web pages dynamic.
 Since the DOM is a JavaScript representation of the web page, you can use JavaScript to alter the DOM and consequently, the web page.
-The browser will re-render, which is not the same thing as reloading, the web page anytime changes are made via the DOM.</p>
+The browser will re-render the web page anytime changes are made via the DOM.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Rendering is not the same action as loading.</p>
+</div>
 <p>In order to add or edit HTML elements with code, we need to be able to access them.
 The method <code class="docutils literal notranslate"><span class="pre">document.getElementById</span></code> will search for a matching element and return a reference to it.
 We will go into more detail on how this method works in the next section.</p>
@@ -185,9 +189,11 @@ We will go into more detail on how this method works in the next section.</p>
 </div>
 <div class="section" id="where-to-put-the-script">
 <h2>23.2.3. Where to Put the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code><a class="headerlink" href="#where-to-put-the-script" title="Permalink to this headline">¶</a></h2>
-<p>In the previous example, notice the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> is placed below the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag in the HTML document.
-HTML documents are executed top down, therefore, a <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag must come after any other elements that will be affected by the code inside the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>.
-Later in the chapter, we will learn about another way to handle this.</p>
+<p>In the previous example, notice the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag is placed below the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>
+tag in the HTML document. HTML documents are executed top down. Therefore, a
+<code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag must come after any other elements that will be affected by the code
+inside the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. Later in the chapter, we will learn about another way to
+handle this.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>23.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
@@ -202,7 +208,18 @@ Later in the chapter, we will learn about another way to handle this.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What is the difference between the document and window variables?</p>
+<p>What is the value of <code class="docutils literal notranslate"><span class="pre">p.innerHTML</span></code>?</p>
+<div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo-text&quot;</span><span class="p">&gt;</span>Hello friend<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+   <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo-text&quot;</span><span class="p">);</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 </div>

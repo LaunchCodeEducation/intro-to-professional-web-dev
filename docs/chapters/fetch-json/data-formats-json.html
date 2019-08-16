@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-   <label for="q" class="searchLabel">Search: </label>
-   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -88,19 +88,19 @@
 <h1>26.2. Data Formats and JSON<a class="headerlink" href="#data-formats-and-json" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">In order for our application to make a request to an API, the data will need to be formatted in a
 way both our application and the API can understand.</p>
-<p>The API may have been built with another programming language, and it may not use the same variables,
-objects, and data structures as JavaScript. To solve the issue of APIs being built in different
-programming languages Data Formats are used.</p>
-<p>A <strong>data format</strong> is a set of rules that govern how data is written, organized, and labeled.
-Data formats make working with data consistent and reliable.</p>
+<p>The API may have been built with another programming language. And it may not use the
+same variables, objects, and data structures as JavaScript. To solve the issue of
+APIs being built in different programming languages, data formats are used.</p>
+<p>A <strong>data format</strong> is a set of rules that govern how data is written, organized, and
+labeled. Data formats make working with data consistent and reliable.</p>
 <div class="section" id="json">
 <h2>26.2.1. JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="index-1"></span><p id="index-2">There are quite a few different data formats, but we will only focus on one throughout this
-class: <strong>JavaScript Object Notation</strong>, also known as <strong>JSON</strong>. JSON
+<span class="target" id="index-1"></span><p id="index-2">There are quite a few different data formats, but we will only focus on one
+throughout this class: <strong>JavaScript Object Notation</strong>, also known as <strong>JSON</strong>. JSON
 is one of the leading data formats used, especially on the web.</p>
 <p>JSON is based on JavaScript object syntax, but has some differences.</p>
-<p>Let’s consider an API that serves information about the books in a library. In this example we searched
-for “An Astronaut’s guide to life on Earth”.</p>
+<p>Let’s consider an API that serves information about the books in a library. In this
+example, we searched for “An Astronaut’s guide to life on Earth”.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -118,20 +118,23 @@ for “An Astronaut’s guide to life on Earth”.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>The API returned a match for our search. The search provides us with information that may be useful to the user in the
-form of the title, author, ISBN, the year the book was published, the subjects of the book, and if the book is currently
+<p>The API returned a match for our search. The search provides us with information
+that may be useful to the user in the form of the title, author, ISBN, the year the
+book was published, the subjects of the book, and if the book is currently
 available for checkout.</p>
 </div>
 <div class="section" id="json-rules">
 <h2>26.2.2. JSON Rules<a class="headerlink" href="#json-rules" title="Permalink to this headline">¶</a></h2>
-<p>JSON is a collection of key value pairs. In the example above <code class="docutils literal notranslate"><span class="pre">&quot;title&quot;</span></code> is a key, and it’s value is
-<code class="docutils literal notranslate"><span class="pre">&quot;An</span> <span class="pre">Astronaut's</span> <span class="pre">guide</span> <span class="pre">to</span> <span class="pre">life</span> <span class="pre">on</span> <span class="pre">Earth&quot;</span></code>.</p>
-<p>The key value pairs describe the data that is being transferred.</p>
-<p>A JSON key MUST be a string, but the value may be a number, string, boolean, array, object, or null.</p>
-<p>In the example above the JSON describes one object, a book! All of the keys are strings, and the values
-are: string, string, number, number, array, and boolean respectively.</p>
-<p>JSON can also be used to describe a collection of objects at the same time. Consider we search for
-the word “Astronaut”.</p>
+<p>JSON is a collection of key-value pairs. In the example above, <code class="docutils literal notranslate"><span class="pre">&quot;title&quot;</span></code> is a key
+and it’s value is <code class="docutils literal notranslate"><span class="pre">&quot;An</span> <span class="pre">Astronaut's</span> <span class="pre">guide</span> <span class="pre">to</span> <span class="pre">life</span> <span class="pre">on</span> <span class="pre">Earth&quot;</span></code>.</p>
+<p>The key-value pairs describe the data that is being transferred.</p>
+<p>A JSON key MUST be a string, but the value may be a number, string, boolean, array,
+object, or null.</p>
+<p>In the example above, the JSON describes one object, a book! All of the keys are
+strings, and the values are: string, string, number, number, array, and boolean
+respectively.</p>
+<p>JSON can also be used to describe a collection of objects at the same time. Consider
+we search for the word “Astronaut”.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -176,7 +179,7 @@ the word “Astronaut”.</p>
             <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;Lucy M. George&quot;</span><span class="p">,</span>
             <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">9781609929411</span><span class="p">,</span>
             <span class="s2">&quot;year_published&quot;</span><span class="o">:</span> <span class="mi">2016</span><span class="p">,</span>
-            <span class="s2">&quot;subject&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Juvenille Fiction&quot;</span><span class="p">,</span> <span class="s2">&quot;Space stations&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;subject&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Astronauts&quot;</span><span class="p">,</span> <span class="s2">&quot;Juvenile Fiction&quot;</span><span class="p">,</span> <span class="s2">&quot;Space stations&quot;</span><span class="p">],</span>
             <span class="s2">&quot;available&quot;</span><span class="o">:</span> <span class="kc">false</span>
         <span class="p">},</span>
         <span class="p">{</span>
@@ -191,18 +194,21 @@ the word “Astronaut”.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>This time our search term “Astronaut” returned multiple books, and so a collection of book objects was returned in JSON format.</p>
-<p>Each book object can be found in the array with the key <code class="docutils literal notranslate"><span class="pre">&quot;book&quot;</span></code>. Each book contains the keys title, author, ISBN, year_published,
-subject, and available.</p>
-<p>When we make a request to an API, the API formats the data we requested into JSON, and then responds to our request with the
-JSON representation of our request.</p>
+<p>This time, our search term “Astronaut” returned multiple books, and so a collection
+of book objects was returned in JSON format.</p>
+<p>Each book object can be found in the array with the key <code class="docutils literal notranslate"><span class="pre">&quot;book&quot;</span></code>. Each book
+contains the keys <code class="docutils literal notranslate"><span class="pre">&quot;title&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;author&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ISBN&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;year_published&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;subject&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;available&quot;</span></code>.</p>
+<p>When we make a request to an API, the API formats the data we requested into JSON
+and then responds to our request with the JSON representation of our request.</p>
 </div>
 <div class="section" id="json-javascript-object-differences">
 <h2>26.2.3. JSON &amp; JavaScript Object Differences<a class="headerlink" href="#json-javascript-object-differences" title="Permalink to this headline">¶</a></h2>
-<p>JSON is based on how JavaScript objects work. However, there are some key differences between the two.</p>
-<p>JSON keys MUST be in double quotes. When defining properties for a JavaScript object double quotes should not be used when
-declaring properties.</p>
-<p>JSON</p>
+<p>JSON is rooted in JavaScript objects syntax. However, there are some key differences
+between the two.</p>
+<p>JSON keys MUST be in double quotes. Double quotes should not be used when
+declaring properties for a JavaScript object.</p>
+<p>JSON:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -212,7 +218,7 @@ declaring properties.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>JavaScript object</p>
+<p>JavaScript object:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -222,8 +228,9 @@ declaring properties.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>To represent a string in JSON you MUST use double quotes. In JavaScript you can use double quotes, or single quotes.</p>
-<p>JSON</p>
+<p>To represent a string in JSON, you MUST use double quotes. In JavaScript, you can
+use double quotes or single quotes.</p>
+<p>JSON:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -233,7 +240,7 @@ declaring properties.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>JavaScript object</p>
+<p>JavaScript object:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -245,8 +252,8 @@ declaring properties.</p>
 </td></tr></table></div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">JSON is based on JavaScript objects, but there are key differences. JSON syntax is a little more strict than JavaScript
-object syntax.</p>
+<p class="last">JSON is based on JavaScript objects, but there are key differences. JSON syntax is
+a little more strict than JavaScript object syntax.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">

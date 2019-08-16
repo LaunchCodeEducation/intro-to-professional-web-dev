@@ -27,7 +27,7 @@ As mentioned above, we will go into more detail on these variables and what they
 
 .. admonition:: Example
 
-   Here the ``window`` and ``document`` variables are used to print information about the web page to the browser's console.
+   Here, the ``window`` and ``document`` variables are used to print information about the web page to the browser's console.
 
    .. sourcecode:: html
       :linenos:
@@ -58,7 +58,11 @@ Dynamic Web Page Using the DOM
 ------------------------------
 The DOM plays a key part in making web pages dynamic.
 Since the DOM is a JavaScript representation of the web page, you can use JavaScript to alter the DOM and consequently, the web page.
-The browser will re-render, which is not the same thing as reloading, the web page anytime changes are made via the DOM.
+The browser will re-render the web page anytime changes are made via the DOM.
+
+.. note::
+
+    Rendering is not the same action as loading.
 
 In order to add or edit HTML elements with code, we need to be able to access them.
 The method ``document.getElementById`` will search for a matching element and return a reference to it.
@@ -95,9 +99,11 @@ We will go into more detail on how this method works in the next section.
 Where to Put the ``<script>``
 -----------------------------
 
-In the previous example, notice the ``<script>`` is placed below the ``<p>`` tag in the HTML document.
-HTML documents are executed top down, therefore, a ``<script>`` tag must come after any other elements that will be affected by the code inside the ``<script>``.
-Later in the chapter, we will learn about another way to handle this.
+In the previous example, notice the ``<script>`` tag is placed below the ``<p>`` 
+tag in the HTML document. HTML documents are executed top down. Therefore, a 
+``<script>`` tag must come after any other elements that will be affected by the code 
+inside the ``<script>``. Later in the chapter, we will learn about another way to 
+handle this.
 
 Check Your Understanding
 ------------------------
@@ -112,4 +118,13 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the difference between the document and window variables?
+   What is the value of ``p.innerHTML``?
+
+   .. sourcecode:: html
+      :linenos:
+
+      <p id="demo-text">Hello friend</p>
+      <script>
+         let p = document.getElementById("demo-text");
+         console.log(p.innerHTML);
+      </script>
