@@ -108,53 +108,25 @@ bellow “Liftoff!”</li>
 <li><p class="first">Fix <strong>syntax errors</strong> first. Run the following code as-is and squint yer
 eyes at the error message. Fix the mistake, and then re-run the code to
 check it.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">fuelLevel</span> <span class="o">=</span> <span class="mi">17000</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">fuelLevel</span> <span class="o">&gt;=</span> <span class="mi">20000</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fuel level cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Insufficient fuel!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (fuelLevel &gt;= 20000 {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/Debug1stSyntaxError" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </li>
 <li><p class="first">The next block of code hides two syntax errors. Run the code as-is to
 find the mistakes. <em>Tip</em>: Don’t be too hasty, Matey! Only ONE error will
 be flagged at a time. Fix that ONE problem, and then re-run the code to
 check yer work. Avoid trying to fix multiple issues at once.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span>let launchReady = false;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
 let crewStatus = true;
 let computerStatus = &#39;green&#39;;
 
@@ -175,80 +147,51 @@ if (launchReady) {
    console.log(&quot;Launch scrubbed.&quot;);
 }
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugSyntaxErrors2" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </li>
 <li><p class="first">Fix <strong>runtime errors</strong> next. Remember to examine the error message for
 clues about what is going wrong. Pay close attention to any line
 numbers mentioned in the message - these will help ye locate and repair
 the mistake in the code.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">fuelLevel</span> <span class="o">=</span> <span class="mi">17000</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">fuellevel</span> <span class="o">&gt;=</span> <span class="mi">20000</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fuel level cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Insufficient fuel!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (fuellevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugRuntimeErrors1" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </li>
 <li><p class="first"><em>Arrr!</em>  Now find and fix the runtime error in a longer code sample.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">fuelLevel</span> <span class="o">=</span> <span class="mi">27000</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 27000;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">fuelLevel</span> <span class="o">&gt;=</span> <span class="mi">20000</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fuel level cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Insufficient fuel!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">launchReady</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;10, 9, 8...&quot;</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fed parrot...&quot;</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;6, 5, 4...&quot;</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ignition...&quot;</span><span class="p">);</span>
-   <span class="nx">consoul</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3, 2, 1...&quot;</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Liftoff!&quot;</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Launch scrubbed.&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+if (launchReady) {
+   console.log(&quot;10, 9, 8...&quot;);
+   console.log(&quot;Fed parrot...&quot;);
+   console.log(&quot;6, 5, 4...&quot;);
+   console.log(&quot;Ignition...&quot;);
+   consoul.log(&quot;3, 2, 1...&quot;);
+   console.log(&quot;Liftoff!&quot;);
+} else {
+   console.log(&quot;Launch scrubbed.&quot;);
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugRuntimeErrors2" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </li>
 <li><p class="first">Solve <strong>logic errors</strong> last. Logic errors do not generate warning
@@ -258,162 +201,96 @@ not work as intended. (Refer to
 review).</p>
 <ol class="arabic">
 <li><p class="first">First, run this sample code as-is and examine the output.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">fuelLevel</span> <span class="o">=</span> <span class="mi">17000</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">crewStatus</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">computerStatus</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">fuelLevel</span> <span class="o">&gt;=</span> <span class="mi">20000</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fuel level cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Insufficient fuel!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">crewStatus</span> <span class="o">&amp;&amp;</span> <span class="nx">computerStatus</span> <span class="o">===</span> <span class="s1">&#39;green&#39;</span><span class="p">){</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Crew &amp; computer cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Crew or computer not ready!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (crewStatus &amp;&amp; computerStatus === &#39;green&#39;){
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">launchReady</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;10, 9, 8, 7, 6, 5, 4, 3, 2, 1...&#39;</span><span class="p">);</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Liftoff!&#39;</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Launch scrubbed.&#39;</span><span class="p">);</span>
-<span class="p">}</span>
+if (launchReady) {
+   console.log(&#39;10, 9, 8, 7, 6, 5, 4, 3, 2, 1...&#39;);
+   console.log(&#39;Liftoff!&#39;);
+} else {
+   console.log(&#39;Launch scrubbed.&#39;);
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors1" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>Should the shuttle have launched? Did it?</p>
 </li>
 <li><p class="first">Let’s break the code down into smaller chunks. Consider the first if/else block below. Add <code class="docutils literal notranslate"><span class="pre">console.log(launchReady)</span></code> after this block, then run the program.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">fuelLevel</span> <span class="o">=</span> <span class="mi">17000</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">fuelLevel</span> <span class="o">&gt;=</span> <span class="mi">20000</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fuel level cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Insufficient fuel!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors2" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>Given the <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> value, should <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> after the check? Is the program behaving as expected?</p>
 </li>
 <li><p class="first">Now consider the second if/else block. Add another <code class="docutils literal notranslate"><span class="pre">console.log(launchReady)</span></code> after this block and run the program.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">crewStatus</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">computerStatus</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">crewStatus</span> <span class="o">&amp;&amp;</span> <span class="nx">computerStatus</span> <span class="o">===</span> <span class="s1">&#39;green&#39;</span><span class="p">){</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Crew &amp; computer cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Crew or computer not ready!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+if (crewStatus &amp;&amp; computerStatus === &#39;green&#39;){
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors3" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>Given <code class="docutils literal notranslate"><span class="pre">crewStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">computerStatus</span></code>, should <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> after this check? Is the program behaving as expected?</p>
 </li>
 <li><p class="first">Now consider both if/else blocks together (keeping the added <code class="docutils literal notranslate"><span class="pre">console.log</span></code> lines). Run the code and examine the output.</p>
-<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">fuelLevel</span> <span class="o">=</span> <span class="mi">17000</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">crewStatus</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">computerStatus</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">fuelLevel</span> <span class="o">&gt;=</span> <span class="mi">20000</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fuel level cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Insufficient fuel!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">launchReady</span><span class="p">);</span>
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+console.log(launchReady);
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">crewStatus</span> <span class="o">&amp;&amp;</span> <span class="nx">computerStatus</span> <span class="o">===</span> <span class="s1">&#39;green&#39;</span><span class="p">){</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Crew &amp; computer cleared.&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WARNING: Crew or computer not ready!&#39;</span><span class="p">);</span>
-   <span class="nx">launchReady</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">launchReady</span><span class="p">);</span>
+if (crewStatus &amp;&amp; computerStatus === &#39;green&#39;){
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
+console.log(launchReady);
 </pre></div>
-</td></tr></table></div>
+</div>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors4" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>Given the values for <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code>, <code class="docutils literal notranslate"><span class="pre">crewStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">computerStatus</span></code>, should <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>? Is the program behaving as expected?</p>
 </li>

@@ -27,8 +27,7 @@ Debugging Practice
    eyes at the error message. Fix the mistake, and then re-run the code to
    check it.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let fuelLevel = 17000;
@@ -48,8 +47,7 @@ Debugging Practice
    be flagged at a time. Fix that ONE problem, and then re-run the code to
    check yer work. Avoid trying to fix multiple issues at once.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let crewStatus = true;
@@ -79,8 +77,7 @@ Debugging Practice
    numbers mentioned in the message - these will help ye locate and repair
    the mistake in the code.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let fuelLevel = 17000;
@@ -97,8 +94,7 @@ Debugging Practice
 
 #. *Arrr!*  Now find and fix the runtime error in a longer code sample.
 
-   .. sourcecode:: js
-      :linenos:
+   ::
 
       let launchReady = false;
       let fuelLevel = 27000;
@@ -132,8 +128,7 @@ Debugging Practice
 
    #. First, run this sample code as-is and examine the output.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let fuelLevel = 17000;
@@ -169,8 +164,7 @@ Debugging Practice
 
    #. Let's break the code down into smaller chunks. Consider the first if/else block below. Add ``console.log(launchReady)`` after this block, then run the program.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let fuelLevel = 17000;
@@ -189,8 +183,7 @@ Debugging Practice
 
    #. Now consider the second if/else block. Add another ``console.log(launchReady)`` after this block and run the program.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let crewStatus = true;
@@ -210,8 +203,7 @@ Debugging Practice
 
    #. Now consider both if/else blocks together (keeping the added ``console.log`` lines). Run the code and examine the output.
 
-      .. sourcecode:: js
-         :linenos:
+      ::
 
          let launchReady = false;
          let fuelLevel = 17000;
