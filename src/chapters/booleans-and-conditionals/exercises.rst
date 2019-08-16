@@ -87,7 +87,7 @@ the only person who needs help.
    .. sourcecode:: js
       :linenos:
 
-      if (!crewStatus | computerStatusCode !== 200 | !spaceSuitsOn) {
+      if (!crewStatus || computerStatusCode !== 200 || !spaceSuitsOn) {
          console.log("WARNING. Not ready");
       } else {
          console.log("all systems go");
@@ -95,21 +95,7 @@ the only person who needs help.
 
 #. The remaining exercises implement conditional code to monitor the shuttle's
    fuel status. `Code exercises 5 - 7 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
-
-   First, declare and initialize the following variables:
-
-   .. list-table::
-      :widths: auto
-      :header-rows: 1
-
-      * - Variable
-        - Value
-      * - ``fuelLevel``
-        - ``21000``
-      * - ``engineTemperature``
-        - ``1200``
-
-#. Next, implement the checks below using ``if`` / ``else if`` / ``else``
+   Implement the checks below using ``if`` / ``else if`` / ``else``
    statements. Order is important when working with conditionals, and the checks below are not written in the correct sequence.
    Please read ALL of the checks before coding and then decide on the best order for the conditionals.
 
@@ -122,7 +108,7 @@ the only person who needs help.
    #. If ``fuelLevel`` is at or below 5000 OR ``engineTemperature`` is above
       2500, print ``"Check fuel level. Engines running hot."``
    #. If ``fuelLevel`` is below 1000 OR ``engineTemperature`` is above 3500 OR
-      ``engineIndicatorLight`` is red blinking print ``"ENGINE FAILURE
+      ``engineIndicatorLight`` is red blinking, print ``"ENGINE FAILURE
       IMMINENT!"``
    #. Otherwise, print ``"Fuel and engine status pending..."``
 
@@ -164,7 +150,7 @@ the only person who needs help.
         - NOT ``red blinking``
         - ``Fuel level above 50%. Engines good.``
 
-7. Final bit of fun!
+6. Final bit of fun!
 
    The shuttle should only launch if the fuel tank is full and the engine check
    is OK. *However*, let's establish an override command to ignore any warnings
