@@ -58,8 +58,9 @@ Studios
    chapters/objects-and-math/studio
    chapters/modules/studio
    chapters/unit-testing/studio
-   chapters/classes/studio
    chapters/exceptions/studio
+   chapters/classes/studio
+   chapters/html/studio
    chapters/git/studio
    chapters/dom-and-events/studio
    chapters/forms/studio

@@ -41,8 +41,8 @@ navigate to the address in the ``href`` attribute.
 .. note::
 
    The DOM defines *numerous* events. Each element type does
-   NOT support every event type. The events that each element supports relates to how the element
-   is used.
+   NOT support every event type. The kinds of events that each element supports 
+   relate to how the element is used.
 
 
 Handling Events
@@ -58,8 +58,9 @@ To write a handler, you need to tell the browser what to do when a certain event
 DOM elements use the *on event* naming convention when declaring event handlers.
 
 The first way we will handle events is to declare the event handler in HTML, this is often
-referred to as an **inline event handler**. For example, when defining what happens when a ``<button>`` is clicked, the ``onclick`` attribute is used.
-This naming convention can be read as: *On click of the button, print a message to the console.*
+referred to as an **inline event handler**. For example, when defining what happens 
+when a ``button`` element is clicked, the ``onclick`` attribute is used. This naming 
+convention can be read as: *On click of the button, print a message to the console.*
 
 .. admonition:: Example
 
@@ -72,7 +73,7 @@ This naming convention can be read as: *On click of the button, print a message 
             <title>Button click handler</title>
       </head>
       <body>
-            <button onclick="console('you rang...');">Ring Bell</button>
+            <button onclick="console.log('you rang...');">Ring Bell</button>
       </body>
       </html>
 
@@ -84,17 +85,18 @@ This naming convention can be read as: *On click of the button, print a message 
 
 .. tip::
 
-   Notice the use of single quotes ``'`` around ``'you rang...'``. When declaring the value
+   Notice the use of single quotes around ``'you rang...'``. When declaring the value
    of an attribute to be a string, you must use single quotes ``'`` inside the double
    quotes ``"``.
 
 .. note::
 
-   ``<button>`` elements represent a clickable entity. ``<button>`` elements have
-   default *click* handling behavior related to ``<form>`` elements, that we will
-   get into in a later chapter. For now, we will be defining the *click* handler behavior.
+   ``button`` elements represent a clickable entity. ``button`` elements have
+   default *click* handling behavior related to ``form`` elements. That we will
+   get into in a later chapter. For now, we will be defining the *click* handler 
+   behavior.
 
-Any JavaScript function can be used as the event handler, that means any defined
+Any JavaScript function can be used as the event handler. That means any defined
 functions can be used.
 Because programmers can write functions to do whatever their hearts desire, defined functions as event handlers allow for more functionality to occur when an event is handled.
 
