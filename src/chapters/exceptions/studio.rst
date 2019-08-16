@@ -1,5 +1,5 @@
-Strategic Debugging
-===================
+Studio: Strategic Debugging
+============================
 
 Summary
 -------

@@ -26,7 +26,7 @@ Through the Finder
 Through LaunchPad
 ^^^^^^^^^^^^^^^^^
 
-1. If you are a fan of the LaunchPad features on Apple computers, hit the F4 key. 
+1. If you are a fan of the LaunchPad features on Apple computers, hit the F4 key.
 2. Inside the Other or Utilities folder, you can find the Terminal.
 
 If you are still struggling to find the Terminal application, you can do a simple search in the Finder for it!
@@ -40,5 +40,5 @@ Windows Users
 
       When you are doing your Git Bash setup, you only need to leave the default selected.
 
-2. Once Git Bash is installed on your machine, you can find the folder for it through the Home screen. 
+2. Once Git Bash is installed on your machine, you can find the folder for it through the Home screen.
 3. Inside the folder, simply select Git Bash to open the appropriate CLI.

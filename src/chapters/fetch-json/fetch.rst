@@ -5,7 +5,7 @@ Now that we know what an API is, let's use one to update a web page. Let's use a
 to add weather data to a webpage. The URL for this special LaunchCode weather API is
 `<https://api.education.launchcode.org/weather>`_.
 
-Example JSON returned from weather API.
+Example JSON returned from our weather API.
 
 .. sourcecode:: js
 
@@ -20,7 +20,7 @@ Example JSON returned from weather API.
    }
 
 We can see that this API returns useful information like ``temp`` and ``windSpeed``. Our goal is to
-add that data to a Launch Status web page. Note this API is for instruction purposes and does not
+add that data to a Launch Status web page. Note, this API is for instruction purposes and does not
 contain real time data.
 
 .. admonition:: Example
@@ -55,15 +55,15 @@ contain real time data.
 .. index:: !fetch
 
 To request the weather data, we will use the ``fetch`` function. ``fetch`` is a global
-function that requests, or fetches resources such as data from an API.
+function that requests, or fetches, resources such as data from an API.
 
 Take note of two necessary aspects of the ``fetch`` function:
 
-1. The URL of where the data is located.
+#. The URL of where the data is located.
 
    * For this example it will be ``'https://api.education.launchcode.org/weather'``
 
-2. A response handler function to utilize the data that is being fetched.
+#. A response handler function to utilize the data that is being fetched.
 
    * For this example it will be ``function(response){...};``
 
@@ -79,7 +79,7 @@ Take note of two necessary aspects of the ``fetch`` function:
          console.log(response);
       } );
 
-   In this example we are requesting data from ``https://api/education.launchcode.org/weather`` and our response handler (the function) simply logs the response to the console.
+   In this example, we are requesting data from ``https://api/education.launchcode.org/weather`` and our response handler (the function) simply logs the response to the console.
 
 ``fetch`` Example
 -----------------
@@ -90,9 +90,9 @@ Now let's add ``fetch`` in the Launch Status web page.
 
    A ``<script>`` tag has been added that includes:
 
-   1. A *load* event handler on line 5
-   2. A ``fetch`` and response handler function on line 6
-   3. A ``console.log(response);`` on line 7 that prints out the response object
+   #. A *load* event handler on line 5
+   #. A ``fetch`` and response handler function on line 6
+   #. A ``console.log(response);`` on line 7 that prints out the response object
 
    .. replit:: html
       :linenos:
@@ -118,45 +118,49 @@ Now let's add ``fetch`` in the Launch Status web page.
          </body>
       </html>
 
-Let's break down how ``fetch`` works. A URL is passed to ``fetch`` as a parameter, that causes
-an HTTP GET request to be sent from the browser to the API. Remember that HTTP is a request then
-response protocol. The response handler function, as the name implies, handles the response sent
-back from the API. Using the data in the response, the web page can be updated using DOM methods.
+Let's break down how ``fetch`` works. A URL is passed to ``fetch`` as a parameter. 
+That causes an HTTP GET request to be sent from the browser to the API. Remember that 
+HTTP is a request then response protocol. The response handler function, as the name 
+implies, handles the response sent back from the API. Using the data in the response, 
+the web page can be updated using DOM methods.
 
 .. note::
 
-   In this section ``fetch`` is used to make GET requests. ``fetch`` can also be used to make
+   In this section, ``fetch`` is used to make GET requests. ``fetch`` can also be used to make
    other types of HTTP requests such as POST and PUT.
 
 View the GET Request
 ^^^^^^^^^^^^^^^^^^^^
 We can see evidence of the GET request by following these steps:
 
-1. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`_ in it's own tab.
-2. Open developer tools.
-3. Open the *Network* tab in developer tools.
+#. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`_ in it's own tab.
+#. Open developer tools.
+#. Open the *Network* tab in developer tools.
 
 .. figure:: figures/weather-developer-tools.png
        :alt: Screen shot showing developer tools open with the network call to the API highlighted.
 
        The GET request to the Weather API highlighted in developer tools.
 
-In the above image you can see the web page has been rendered on the left. In the developer tools
-the GET request to the Weather API has been highlighted along with the response from that request.
-The response shows the JSON data that was received. In the console output you can see the ``Response``
-object has been logged. We will use that object next.
+In the above image, you can see the web page has been rendered on the left. In the 
+developer tools, the GET request to the Weather API has been highlighted along with 
+the response from that request. The response shows the JSON data that was received. 
+In the console output, you can see the ``Response`` object has been logged. We will 
+use that object next.
 
 Response Object
 ^^^^^^^^^^^^^^^
-The response to the GET request is contained in a ``response`` object that is an instance of the
-`Response class <https://developer.mozilla.org/en-US/docs/Web/API/Response>`_. The Response class
-represents an HTTP response and has methods that allow access to the status and data.
+The response to the GET request is contained in a ``Response`` object that is an 
+instance of the
+`Response class <https://developer.mozilla.org/en-US/docs/Web/API/Response>`_. 
+The Response class represents an HTTP response and has methods that allow access to 
+the status and data.
 
 .. admonition:: Example
 
-   On line 8 the ``json()`` method is used to gain access to the JSON data contained in the response.
+   On line 8, the ``json()`` method is used to gain access to the JSON data contained in the response.
 
-   Line 9 logs the JSON to the console. We'll discuss ``then`` later.
+   Line 9 logs the JSON to the console. We'll discuss ``.then()`` later.
 
    .. replit:: html
       :linenos:
@@ -192,11 +196,12 @@ represents an HTTP response and has methods that allow access to the status and 
 
 Use the DOM and JSON Data to Update the Page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Now that we have JSON weather data we can add HTML elements to the page to show the data.
+Now that we have JSON weather data, we can add HTML elements to the page to show the 
+data.
 
 .. admonition:: Example
 
-   On line 10 ``innerHTML`` of the ``div`` variable is set to be HTML built using
+   On line 10, ``innerHTML`` of the ``div`` variable is set to be HTML built using
    JSON weather data.
 
    .. replit:: html
@@ -243,8 +248,8 @@ Now that we have JSON weather data we can add HTML elements to the page to show 
 
    ``fetch`` was chosen as the tool to request data because it's supported in modern browsers by default
    and is simple to use. When viewing resources other than this book, you will see various other ways to
-   request data in a web page with JavaScript. Other ways include but are not limited to
-   ``jQuery.get``, ``jQuery.ajax``, and ``XMLHttpRequest``.
+   request data in a web page with JavaScript. Other ways include, but are not 
+   limited to, ``jQuery.get``, ``jQuery.ajax``, and ``XMLHttpRequest``.
 
 
 Check Your Understanding

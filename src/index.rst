@@ -58,15 +58,16 @@ Studios
    chapters/objects-and-math/studio
    chapters/modules/studio
    chapters/unit-testing/studio
-   chapters/classes/studio
    chapters/exceptions/studio
+   chapters/classes/studio
+   chapters/html/studio
    chapters/git/studio
    chapters/dom-and-events/studio
    chapters/forms/studio
    chapters/fetch-json/studio
+   chapters/typescript/studio
    chapters/angular-lsn1/studio
    chapters/angular-lsn2/studio
-   chapters/typescript/studio
 
 Assignments
 ^^^^^^^^^^^

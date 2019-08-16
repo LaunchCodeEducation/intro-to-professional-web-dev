@@ -111,8 +111,8 @@ navigate to the address in the <code class="docutils literal notranslate"><span 
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">The DOM defines <em>numerous</em> events. Each element type does
-NOT support every event type. The events that each element supports relates to how the element
-is used.</p>
+NOT support every event type. The kinds of events that each element supports
+relate to how the element is used.</p>
 </div>
 </div>
 <div class="section" id="handling-events">
@@ -123,8 +123,9 @@ elements and then writing the event handler code.</p>
 <p>To write a handler, you need to tell the browser what to do when a certain event happens.
 DOM elements use the <em>on event</em> naming convention when declaring event handlers.</p>
 <p>The first way we will handle events is to declare the event handler in HTML, this is often
-referred to as an <strong>inline event handler</strong>. For example, when defining what happens when a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked, the <code class="docutils literal notranslate"><span class="pre">onclick</span></code> attribute is used.
-This naming convention can be read as: <em>On click of the button, print a message to the console.</em></p>
+referred to as an <strong>inline event handler</strong>. For example, when defining what happens
+when a <code class="docutils literal notranslate"><span class="pre">button</span></code> element is clicked, the <code class="docutils literal notranslate"><span class="pre">onclick</span></code> attribute is used. This naming
+convention can be read as: <em>On click of the button, print a message to the console.</em></p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -141,7 +142,7 @@ This naming convention can be read as: <em>On click of the button, print a messa
       <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Button click handler<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;console(&#39;you rang...&#39;);&quot;</span><span class="p">&gt;</span>Ring Bell<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;console.log(&#39;you rang...&#39;);&quot;</span><span class="p">&gt;</span>Ring Bell<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -153,17 +154,18 @@ This naming convention can be read as: <em>On click of the button, print a messa
 </div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Notice the use of single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> around <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">rang...'</span></code>. When declaring the value
+<p class="last">Notice the use of single quotes around <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">rang...'</span></code>. When declaring the value
 of an attribute to be a string, you must use single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> inside the double
 quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p>
 </div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> elements represent a clickable entity. <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> elements have
-default <em>click</em> handling behavior related to <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> elements, that we will
-get into in a later chapter. For now, we will be defining the <em>click</em> handler behavior.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">button</span></code> elements represent a clickable entity. <code class="docutils literal notranslate"><span class="pre">button</span></code> elements have
+default <em>click</em> handling behavior related to <code class="docutils literal notranslate"><span class="pre">form</span></code> elements. That we will
+get into in a later chapter. For now, we will be defining the <em>click</em> handler
+behavior.</p>
 </div>
-<p>Any JavaScript function can be used as the event handler, that means any defined
+<p>Any JavaScript function can be used as the event handler. That means any defined
 functions can be used.
 Because programmers can write functions to do whatever their hearts desire, defined functions as event handlers allow for more functionality to occur when an event is handled.</p>
 <div class="admonition-example admonition">

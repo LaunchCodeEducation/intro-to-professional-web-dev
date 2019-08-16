@@ -3,7 +3,11 @@ Studio: Fetch & JSON
 
 Your task is to build a website that shows astronauts fetched from an API.
 
-`Repl.it with starter code <https://repl.it/@launchcode/Studio-Starter-Fetch-and-JSON>`_
+Get Started
+-----------
+
+1. Fork the `studio repository <https://github.com/LaunchCodeEducation/Fetch-and-JSON-Studio/>`_ to your own Github account.
+2. Clone the repository to your computer.
 
 Requirements
 ------------
