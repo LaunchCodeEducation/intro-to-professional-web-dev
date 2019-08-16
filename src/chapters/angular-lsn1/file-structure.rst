@@ -8,8 +8,8 @@ figure below.
    :alt: Visual of the standard Angular file structure.
 
 All of the project files (and there will be LOTS) are stored in the single,
-top-level folder, ``projectName``, which contains a ``src`` folder and a set of
-support files.
+top-level folder, ``project-name``, which contains a ``src`` folder and a set
+of support files.
 
 .. admonition:: Note
 
@@ -17,63 +17,77 @@ support files.
    These will be generated automatically, and they take care of the routine
    technical details for making your project run smoothly.
 
-``src`` contains the ``app`` folder and four important files: ``index.html``,
-``main.ts``, ``style.css``, and ``polyfills.ts``. We will explore these files
-in more detail on the next page. For now, recognize that they control how the
-Angular project operates.
+``src`` contains the ``app`` folder and five important files: ``index.html``,
+``main.ts``, ``style.css``, ``tests.ts`` and ``polyfills.ts``. We will explore
+these files in more detail on the next page. For now, recognize that they
+control how the Angular project operates.
 
 The ``app`` folder contains the files and subfolders needed to control the
 nitty-gritty details of displaying a webpage. For your projects, most of your
 time and effort will be spent modifying the contents within ``app``.
 
-StackBlitz
------------
+Installing Angular
+-------------------
 
-Your first Angular project will be another "Hello, World" example, and we will
-use a different online tool to build this. The site is called
-`StackBlitz <https://stackblitz.com>`__, and it is similar to Repl.it in that
-it allows us to play without risk. The main difference is that StackBlitz is
-specifically designed to create webpage templates.
+Angular uses its own set of command line instructions to create, update, and
+launch projects. Before you dive too deeply into the Angular lessons, you need
+to install the Angular command line interface (CLI) on your computer.
+Fortunately, the process is relatively painless.
+
+Open up the terminal (or the terminal panel in VSCode) and enter the following
+command:
+
+.. sourcecode:: bash
+
+   npm install -g @angular/cli
 
 .. admonition:: Note
 
-   For the "HTML Me Something" assignment, you created an account on
-   `GitHub <https://github.com>`__ . Since you will modify an Angular project
-   over the next few studios, you need access to GitHub to store your progress.
+   If the installer prompts you to make choices, just accept all of the default
+   options.
 
-   Follow the link and make sure you remember your login information, or enroll
-   if you have not yet created an account.
+This command installs the CLI *globally* on your computer, which means that
+Angular commands will work regardless of the folder you have open.
 
-StackBlitz Workspace Layout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Angular commands begin with the keyword ``ng`` (for A-ng-ular), and the most
+commonly used include:
 
-Before we dive into the project, we need to become familiar with the StackBlitz
-layout, which is based on the popular editor
-`Visual Studio Code <https://code.visualstudio.com/>`__.
+#. ``ng new``: Creates a new Angular project in the current directory. The
+   shortcut syntax is ``ng n``.
+#. ``ng generate``: Creates new files within an existing project. The shortcut
+   syntax is ``ng g``.
+#. ``ng serve``: Compiles a project and *launches* it in a form that can be
+   displayed in a browser. The shortcut syntax is ``ng s``.
 
-The workspace consists of 3 main panels and several menu functions.
+For a complete list of commands, refer to the
+`Angular documentation <https://angular.io/cli#command-overview>`__.
 
-Features to note:
+Check Your GitHub Account
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Use your GitHub account to store your projects. Click the GitHub button (1)
-   to save your progress.
-#. If you are viewing someone else's project, you can *fork* the content (2)
-   and store a copy of that project in your GitHub account. This allows you to
-   edit the files without changing the originals, and it lets you use other
-   programmers' work (with permission) to enhance your own. As we learn more
-   about Angular, you will need to fork sample code for the exercises and
-   studios.
+For the "HTML Me Something" assignment, you created an account on
+`GitHub <https://github.com>`__ . Since you will modify Angular projects
+over several lessons, you need access to GitHub to download starter code and
+store your progress.
 
-.. figure:: ./figures/StackBlitzWorkspace.png
-   :alt: StackBlitz workspace layout.
+Follow the link and make sure you remember your login information, or enroll
+if you have not yet created an account.
 
-3. File panel and menu (3). Allows you to search for an item, add extensions,
-   update settings, and add, open, or delete files.
-#. Editor panel (4). Your code goes here. Click on a filename to open it in a
-   tab in the editor.
-#. Preview panel (5). Provides a view of what the webpage looks like. This
-   panel can be minimized to save space or opened into a new browser window
-   (6).
+What's in a Name?
+^^^^^^^^^^^^^^^^^^
+
+If you Google "Angular tutorial", you will receive plenty of hits. Some of the
+resources will be exceptional, others not. However, you will probably notice
+that many of the results refer to *AngularJS*. This is a previous version of
+the software, and it is NOT the same as modern Angular.
+
+AngularJS is NOT the same as Angular. Even the websites are different
+(angularjs.org vs. angular.io). We recommend that you avoid AngularJS resources
+for now. You can always learn how to use the old version later if your job
+requires it.
+
+Ready To Go
+------------
 
 As with any new coding skill or tool, the best way to learn is to actively
 practice. Let's begin building your first Angular project.

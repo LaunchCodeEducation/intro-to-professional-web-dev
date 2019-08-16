@@ -182,9 +182,9 @@ set of data, especially if that data is unknown to us.
 Templates Provide Structure, Not Content
 -----------------------------------------
 
-Templates allow us to decide where we want to display data on our webpage, even
-if we do not know beforehand what that data will be. Information pulled from
-forms, APIs, or user input will be formatted to fit within our design.
+Templates allow us to decide where to display data on our webpage, even if we
+do not know exactly what that data will be. Information pulled from forms,
+APIs, or user input will be formatted to fit within our design.
 
 .. figure:: ./figures/AngularTemplateDiagram.png
    :scale: 90%
