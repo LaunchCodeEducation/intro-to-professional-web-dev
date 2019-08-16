@@ -147,15 +147,17 @@ they appear pretty bland. Let’s change that.</p>
 <div class="figure">
 <img alt="Browser screen shot showing list of movies that contains &quot;The Manchurian Candidate&quot; and &quot;Oceans 8&quot;." src="../../_images/movies-list-start.png" />
 </div>
-<p>The list of movies is built using an array defined in <code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> that is referenced in the template
-<code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code>. The movies are referenced by their array index.</p>
+<p>The list of movies is built using an array defined in
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code>:</p>
 <div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">MovieListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
    <span class="nx">movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;The Manchurian Candidate&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceans 8&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
-<p>You can put almost any valid JavaScript
-inside the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code> in an Angular template. Putting in <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">movies[0]</span> <span class="pre">}}</span></code> will reference the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array and
-<code class="docutils literal notranslate"><span class="pre">movies[0]</span></code> is the classic array index syntax which returns the first item in the array.</p>
+<p>The titles in the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array are referenced in the template
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> by adding <em>placeholders</em> in the HTML.</p>
+<p>You can put almost any valid JavaScript inside the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code> in an Angular
+template. For example, <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">movies[0]</span> <span class="pre">}}</span></code> references the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array,
+and <code class="docutils literal notranslate"><span class="pre">movies[0]</span></code> returns the first item in the array.</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -171,29 +173,44 @@ inside the <code class="docutils literal notranslate"><span class="pre">{{</span
 &lt;/div&gt;
 </pre></div>
 </td></tr></table></div>
+<p>Using references in your HTML allows you to easily modify the content on your
+webpage. Instead of typing specific movie titles between the tags every time
+the list changes, references allow us to modify the data in one easy to find
+array.</p>
 <ol class="arabic simple" start="3">
 <li>Add two more items to the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array.</li>
-<li>Reference those two new movies in the template.</li>
+<li>Add two more <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> elements to <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code>
+and use placeholders to reference the new movies in the array.</li>
 </ol>
 </div>
 <div class="section" id="complete-the-fav-photos-component">
 <h3>28.7.2.2. Complete the <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> Component<a class="headerlink" href="#complete-the-fav-photos-component" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple" start="5">
-<li>The <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component has been generated, but it is incomplete. The
-page needs more images, which also need to be smaller in size.<ol class="arabic">
-<li>In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, assign a better section heading to
-the <code class="docutils literal notranslate"><span class="pre">photosTitle</span></code> variable.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">image</span></code> variables should hold URLs for images, but only one is
+<ol class="arabic" start="5">
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">fav-photos</span></code> component has been generated, but it is incomplete. The
+page needs more images, which also need to be smaller in size.</p>
+<ol class="arabic">
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">FavPhotosComponent</span></code> class, assign a better section heading to
+the <code class="docutils literal notranslate"><span class="pre">photosTitle</span></code> variable.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">image</span></code> variables should hold URLs for images, but only one is
 is filled in. Complete at least one more, which can be from the web or
 personal pictures. To copy the URL for an image on the web, right-click
 (or control-click) on the image and select the “Copy Image Location” menu
-option.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders in the <code class="docutils literal notranslate"><span class="pre">img</span></code>
-tags to display your chosen images.</li>
-<li>Adjust the HTML to display one image per line.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">.css</span></code> file for this component to make all the images be the
-same size.</li>
-<li>Refresh the webpage to check the updated content.</li>
+option.</p>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file for this component, use placeholders in the <code class="docutils literal notranslate"><span class="pre">img</span></code>
+tags to display your chosen images.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{placeholder}}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Oops! Missing photo!&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Adjust the HTML to display one image per line.</p>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">.css</span></code> file for this component to make all the images be the
+same size.</p>
+</li>
+<li><p class="first">Refresh the webpage to check the updated content.</p>
+</li>
 </ol>
 </li>
 </ol>

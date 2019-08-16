@@ -68,17 +68,20 @@ Add More Movies
 .. figure:: ./figures/movies-list-start.png
    :alt: Browser screen shot showing list of movies that contains "The Manchurian Candidate" and "Oceans 8".
 
-The list of movies is built using an array defined in ``movie-list.component.ts`` that is referenced in the template
-``movie-list.component.html``. The movies are referenced by their array index.
+The list of movies is built using an array defined in
+``movie-list.component.ts``:
 
 .. sourcecode:: TypeScript
 
    export class MovieListComponent implements OnInit {
       movies = ['The Manchurian Candidate', 'Oceans 8'];
 
-You can put almost any valid JavaScript
-inside the ``{{ }}`` in an Angular template. Putting in ``{{ movies[0] }}`` will reference the ``movies`` array and
-``movies[0]`` is the classic array index syntax which returns the first item in the array.
+The titles in the ``movies`` array are referenced in the template
+``movie-list.component.html`` by adding *placeholders* in the HTML.
+
+You can put almost any valid JavaScript inside the ``{{ }}`` in an Angular
+template. For example, ``{{ movies[0] }}`` references the ``movies`` array,
+and ``movies[0]`` returns the first item in the array.
 
 .. sourcecode:: bash
    :linenos:
@@ -91,8 +94,14 @@ inside the ``{{ }}`` in an Angular template. Putting in ``{{ movies[0] }}`` will
       </ol>
    </div>
 
+Using references in your HTML allows you to easily modify the content on your
+webpage. Instead of typing specific movie titles between the tags every time
+the list changes, references allow us to modify the data in one easy to find
+array.
+
 3. Add two more items to the ``movies`` array.
-4. Reference those two new movies in the template.
+4. Add two more ``<li></li>`` elements to ``movie-list.component.html``
+   and use placeholders to reference the new movies in the array.
 
 Complete the ``fav-photos`` Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,6 +118,11 @@ Complete the ``fav-photos`` Component
       option.
    #. In the ``.html`` file for this component, use placeholders in the ``img``
       tags to display your chosen images.
+
+      .. sourcecode:: html
+
+         <img src="{{placeholder}}" alt="Oops! Missing photo!">
+
    #. Adjust the HTML to display one image per line.
    #. Use the ``.css`` file for this component to make all the images be the
       same size.
