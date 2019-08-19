@@ -50,7 +50,7 @@ Expected Output
 
 ::
 
-   Space Shuttle would take 332.67857142857144 days to get to Mars.
+   Determination would take 332.67857142857144 days to get to Mars.
 
 
 Part 3 - Create a Function
