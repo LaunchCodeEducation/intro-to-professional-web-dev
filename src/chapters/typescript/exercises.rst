@@ -66,7 +66,7 @@ Part 3 - Create a Function
    * Returns the number of days to Mars.
 
      * Use the same calculations as in Part 2.1.
-     * Inside the function, make the variables name generic. Use ``milesAway`` and ``hours`` instead of ``milesToMars`` and ``hoursToMars``.
+     * Inside the function, make the variable names generic. Use ``milesAway`` and ``hours`` instead of ``milesToMars`` and ``hoursToMars``.
      * The function should declare that it returns a number.
 
 #. Print out the days to Mars.

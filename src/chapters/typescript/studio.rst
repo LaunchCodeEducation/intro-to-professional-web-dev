@@ -7,19 +7,23 @@ Let's practice TypeScript by creating classes for rocket cargo calculations.
 Requirements
 ------------
 #. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_.
-#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``.  (Details below)
+#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``.  (Details
+   below)
 
-   * All classes should be defined in their own files.
+   a. All classes should be defined in their own files.
 
-#. Use new classes to run a simulation in ``index.ts`` file.
+#. Use new classes to run a simulation in the ``index.ts`` file.
 
-In the starter code, you will notice that an interface named ``Payload`` has been declared.
-This interface ensures that any class that implements it will have a ``weightKg`` property.
+In the starter code, you will notice that an interface named ``Payload`` has
+been declared. This interface ensures that any class that implements it will
+have a ``massKg`` property.
 
 
 Classes
--------
-Define each of these classes in a separate files. Each class should be exported using ``export``.
+--------
+
+Define each of these classes in a separate file. Each class should be exported
+using ``export``.
 
 .. sourcecode:: js
 
@@ -34,91 +38,90 @@ As needed, the classes can be imported using ``import``.
    import { Astronaut } from './Astronaut';
 
 Astronaut Class
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
-* Defined in ``Astronaut.ts``
-* Implements the ``Payload`` interface
-* Properties
+#. Defined in ``Astronaut.ts``
+#. Implements the ``Payload`` interface
+#. Properties
 
-  * ``weightKg`` should be a number.
-  * ``name`` should be a string.
+   a. ``massKg`` should be a number.
+   b. ``name`` should be a string.
 
-* Constructor
+#. Constructor
 
-  * Parameter ``weightKg`` should be a number.
-  * Parameter ``name`` should be string.
-  * Sets value of ``this.weightKg`` and ``this.name``.
+   a. Parameter ``massKg`` should be a number.
+   b. Parameter ``name`` should be string.
+   c. Sets value of ``this.massKg`` and ``this.name``.
 
 Cargo Class
-^^^^^^^^^^^
-
-* Defined in ``Cargo.ts``
-* Implements the ``Payload`` interface
-* Properties
-
-  * ``weightKg`` should be a number.
-  * ``material`` should be a string.
-
-* Constructor
-
-  * Parameter ``weightKg`` should be a number.
-  * Parameter ``material`` should be a string.
-  * Sets value of ``this.weightKg`` and ``this.material``
-
-Rocket Class
 ^^^^^^^^^^^^
 
-* Defined in ``Rocket.ts``
-* Properties
+#. Defined in ``Cargo.ts``
+#. Implements the ``Payload`` interface
+#. Properties
 
-  * ``name`` should be a string.
-  * ``totalCapacityKg`` should be a number.
-  * ``cargoItems`` should be an array of ``Cargo`` objects.
+   a. ``massKg`` should be a number.
+   b. ``material`` should be a string.
 
-    * Should be initialized to an empty array ``[]``
+#. Constructor
 
-  * ``astronauts`` should be an array of ``Astronaut`` objects.
+   a. Parameter ``massKg`` should be a number.
+   b. Parameter ``material`` should be a string.
+   c. Sets value of ``this.massKg`` and ``this.material``
 
-    * Should be initialized to an empty array ``[]``
+Rocket Class
+^^^^^^^^^^^^^
 
-* Constructor
+#. Defined in ``Rocket.ts``.
+#. Properties:
 
-  * Parameter ``name`` should be a string.
-  * Parameter ``totalCapacityKg`` should be a number.
-  * Sets value of ``this.name`` and ``this.totalCapacityKg``
+   a. ``name`` should be a string.
+   b. ``totalCapacityKg`` should be a number.
+   c. ``cargoItems`` should be an array of ``Cargo`` objects.
 
-* Methods
+      * Should be initialized to an empty array ``[]``
 
-  * ``sumWeight( items: Payload[] ): number``
+   d. ``astronauts`` should be an array of ``Astronaut`` objects.
 
-    * Returns the sum of all ``items`` using each item's ``weightKg`` property
+      * Should be initialized to an empty array ``[]``
 
-  * ``currentWeightKg(): number``
+#. Constructor:
 
-    * Uses ``this.sumWeight`` to return the combined weight of ``this.astronauts`` and ``this.cargoItems``
+   a. Parameter ``name`` should be a string.
+   b. Parameter ``totalCapacityKg`` should be a number.
+   c. Sets value of ``this.name`` and ``this.totalCapacityKg``
 
-  * ``canAdd(item: Payload): boolean``
+#. Methods:
 
-    * Returns ``true`` if ``this.currentWeightKg() + item.weightKg <= this.totalCapacityKg``
+   a. ``sumMass( items: Payload[] ): number``
 
-  * ``addCargo(cargo: Cargo)``
+      * Returns the sum of all ``items`` using each item's ``massKg`` property
 
-    * Uses ``this.canAdd(item: Payload)`` to see if it can be added
+   b. ``currentmassKg(): number``
 
-      * If ``true``, adds ``cargo`` to ``this.cargoItems`` and returns ``true``
-      * If ``false``, returns ``false``
+      * Uses ``this.sumMass`` to return the combined mass of
+        ``this.astronauts`` and ``this.cargoItems``
 
-  * ``addAstronaut(astronaut: Astronaut)``
+   c. ``canAdd(item: Payload): boolean``
 
-    * Uses ``this.canAdd(item: Payload)`` to see if it can be added
+      * Returns ``true`` if ``this.currentmassKg() + item.massKg <= this.totalCapacityKg``
 
-      * If ``true``, adds ``astronaut`` to ``this.astronauts`` and returns ``true``
-      * If ``false``, returns ``false``
+   d. ``addCargo(cargo: Cargo)``.
 
+      * Uses ``this.canAdd()`` to see if another item can be added.
+      * If ``true``, adds ``cargo`` to ``this.cargoItems`` and returns
+        ``true``.
+      * If ``false``, returns ``false``.
+
+   e. ``addAstronaut(astronaut: Astronaut)``.
+
+      * Uses ``this.canAdd()`` to see if another astronaut can be added.
+      * If ``true``, adds ``astronaut`` to ``this.astronauts`` and returns ``true``.
+      * If ``false``, returns ``false``.
 
 Simulation in ``index.ts``
 --------------------------
-Paste the below code into ``index.ts``.
+Paste the code shown below into ``index.ts``.
 
 .. sourcecode:: js
    :linenos:
@@ -153,7 +156,7 @@ Paste the below code into ``index.ts``.
       console.log(c.material, falcon9.addCargo(c));
    }
 
-   console.log('final cargo and astronaut weight:', falcon9.currentWeightKg());
+   console.log('final cargo and astronaut mass:', falcon9.currentmassKg());
 
 
 Expected Console Output
@@ -169,7 +172,7 @@ Expected Console Output
    Water true
    Food true
    Tesla Roadster false
-   final cargo and astronaut weight: 5656.78
+   final cargo and astronaut mass: 5656.78
 
 
 Submitting Your Work
