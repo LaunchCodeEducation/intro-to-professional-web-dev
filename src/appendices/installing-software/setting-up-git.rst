@@ -1,3 +1,5 @@
+.. _git-install:
+
 Setting Up Git
 ==============
 
