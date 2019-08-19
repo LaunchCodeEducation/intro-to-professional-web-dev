@@ -184,7 +184,7 @@ variables defined from the table above.
 2
 3
 4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">crewStatus</span> <span class="o">|</span> <span class="nx">computerStatusCode</span> <span class="o">!==</span> <span class="mi">200</span> <span class="o">|</span> <span class="o">!</span><span class="nx">spaceSuitsOn</span><span class="p">)</span> <span class="p">{</span>
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">crewStatus</span> <span class="o">||</span> <span class="nx">computerStatusCode</span> <span class="o">!==</span> <span class="mi">200</span> <span class="o">||</span> <span class="o">!</span><span class="nx">spaceSuitsOn</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;WARNING. Not ready&quot;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;all systems go&quot;</span><span class="p">);</span>
@@ -193,26 +193,10 @@ variables defined from the table above.
 </td></tr></table></div>
 </li>
 <li><p class="first">The remaining exercises implement conditional code to monitor the shuttle’s
-fuel status. <a class="reference external" href="https://repl.it/&#64;launchcode/ConditionalsExercises03" target="_blank">Code exercises 5 - 7 here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-<p>First, declare and initialize the following variables:</p>
-<table border="1" class="colwidths-auto docutils">
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Variable</th>
-<th class="head">Value</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">21000</span></code></td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">1200</span></code></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><p class="first">Next, implement the checks below using <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code>
-statements.</p>
+fuel status. <a class="reference external" href="https://repl.it/&#64;launchcode/ConditionalsExercises03" target="_blank">Code exercises 5 - 7 here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Implement the checks below using <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code>
+statements. Order is important when working with conditionals, and the checks below are not written in the correct sequence.
+Please read ALL of the checks before coding and then decide on the best order for the conditionals.</p>
 <ol class="arabic simple">
 <li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is above 20000 AND <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is at or below
 2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Full</span> <span class="pre">tank.</span> <span class="pre">Engines</span> <span class="pre">good.&quot;</span></code></li>
@@ -223,7 +207,7 @@ statements.</p>
 <li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is at or below 5000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above
 2500, print <code class="docutils literal notranslate"><span class="pre">&quot;Check</span> <span class="pre">fuel</span> <span class="pre">level.</span> <span class="pre">Engines</span> <span class="pre">running</span> <span class="pre">hot.&quot;</span></code></li>
 <li>If <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> is below 1000 OR <code class="docutils literal notranslate"><span class="pre">engineTemperature</span></code> is above 3500 OR
-<code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is red blinking print <code class="docutils literal notranslate"><span class="pre">&quot;ENGINE</span> <span class="pre">FAILURE</span>
+<code class="docutils literal notranslate"><span class="pre">engineIndicatorLight</span></code> is red blinking, print <code class="docutils literal notranslate"><span class="pre">&quot;ENGINE</span> <span class="pre">FAILURE</span>
 <span class="pre">IMMINENT!&quot;</span></code></li>
 <li>Otherwise, print <code class="docutils literal notranslate"><span class="pre">&quot;Fuel</span> <span class="pre">and</span> <span class="pre">engine</span> <span class="pre">status</span> <span class="pre">pending...&quot;</span></code></li>
 </ol>
@@ -275,7 +259,7 @@ each set of conditions.</p>
 </tbody>
 </table>
 </div>
-<ol class="arabic" start="7">
+<ol class="arabic" start="6">
 <li><p class="first">Final bit of fun!</p>
 <p>The shuttle should only launch if the fuel tank is full and the engine check
 is OK. <em>However</em>, let’s establish an override command to ignore any warnings

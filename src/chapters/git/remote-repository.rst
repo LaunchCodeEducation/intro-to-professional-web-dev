@@ -2,11 +2,11 @@ Remote Repositories
 ===================
 
 Local, Remote, Github, Oh My!
------------------------------------
+-----------------------------
 
 So far, the book has covered how to setup a Git repository on the local machine.
 But, one of the benefits of using a VCS was storage of backups.
-What happens to the code base if something happens to the machine.
+So, what happens to the code base if something happens to the machine?
 That is where remote repositories come in.
 Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository** and the programmers working on it keep copies on their local machine. 
 
@@ -15,7 +15,7 @@ From there, programmers can create a remote repository, view commit history, and
  
 
 Collaborating with Colleagues
----------------------------------
+-----------------------------
 
 What if a programmer wants to start collaborating with their colleagues on a new project?
 They might need to start with the work that one of their colleagues has already done.
@@ -30,7 +30,7 @@ The ``<url>`` of the command is where the programmer adds the url to the reposit
    Throughout this book, HTTPS will be used for cloning repositories.
 
 Contributing to a Remote Repository
------------------------------------------
+-----------------------------------
 
 Now that the programmer has a profile on Github and a local copy of a remote repository, they start coding!
 

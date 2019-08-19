@@ -10,6 +10,7 @@ Angular, Part 1
    templates
    file-structure
    angular-1st-steps
+   inside-app-folder
    components
    exercises
    studio
