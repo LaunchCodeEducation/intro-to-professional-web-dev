@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>27.6. Studio: TypeScript &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="28. Angular, Part 1" href="../angular-lsn1/index.html" />
+    <link rel="prev" title="27.5. Exercises: TypeScript" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">27. TypeScript</a></li>
+    <li class="active">27.6. Studio: TypeScript</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-typescript">
+<h1>27.6. Studio: TypeScript<a class="headerlink" href="#studio-typescript" title="Permalink to this headline">¶</a></h1>
+<p>Let’s practice TypeScript by creating classes for rocket cargo calculations.</p>
+<div class="section" id="requirements">
+<h2>27.6.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fork <a class="reference external" href="https://repl.it/&#64;launchcode/rocket-studio-starter" target="_blank">the starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li>Create classes for <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>.  (Details below)<ul>
+<li>All classes should be defined in their own files.</li>
+</ul>
+</li>
+<li>Use new classes to run a simulation in <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</li>
+</ol>
+<p>In the starter code, you will notice that an interface named <code class="docutils literal notranslate"><span class="pre">Payload</span></code> has been declared.
+This interface ensures that any class that implements it will have a <code class="docutils literal notranslate"><span class="pre">weightKg</span></code> property.</p>
+</div>
+<div class="section" id="classes">
+<h2>27.6.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p>Define each of these classes in a separate files. Each class should be exported using <code class="docutils literal notranslate"><span class="pre">export</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+   <span class="c1">// properties and methods</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As needed, the classes can be imported using <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Astronaut</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Astronaut&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="section" id="astronaut-class">
+<h3>27.6.2.1. Astronaut Class<a class="headerlink" href="#astronaut-class" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Defined in <code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code></li>
+<li>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</li>
+<li>Properties<ul>
+<li><code class="docutils literal notranslate"><span class="pre">weightKg</span></code> should be a number.</li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</li>
+</ul>
+</li>
+<li>Constructor<ul>
+<li>Parameter <code class="docutils literal notranslate"><span class="pre">weightKg</span></code> should be a number.</li>
+<li>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> should be string.</li>
+<li>Sets value of <code class="docutils literal notranslate"><span class="pre">this.weightKg</span></code> and <code class="docutils literal notranslate"><span class="pre">this.name</span></code>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="cargo-class">
+<h3>27.6.2.2. Cargo Class<a class="headerlink" href="#cargo-class" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Defined in <code class="docutils literal notranslate"><span class="pre">Cargo.ts</span></code></li>
+<li>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</li>
+<li>Properties<ul>
+<li><code class="docutils literal notranslate"><span class="pre">weightKg</span></code> should be a number.</li>
+<li><code class="docutils literal notranslate"><span class="pre">material</span></code> should be a string.</li>
+</ul>
+</li>
+<li>Constructor<ul>
+<li>Parameter <code class="docutils literal notranslate"><span class="pre">weightKg</span></code> should be a number.</li>
+<li>Parameter <code class="docutils literal notranslate"><span class="pre">material</span></code> should be a string.</li>
+<li>Sets value of <code class="docutils literal notranslate"><span class="pre">this.weightKg</span></code> and <code class="docutils literal notranslate"><span class="pre">this.material</span></code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="rocket-class">
+<h3>27.6.2.3. Rocket Class<a class="headerlink" href="#rocket-class" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Defined in <code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code></li>
+<li>Properties<ul>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</li>
+<li><code class="docutils literal notranslate"><span class="pre">totalCapacityKg</span></code> should be a number.</li>
+<li><code class="docutils literal notranslate"><span class="pre">cargoItems</span></code> should be an array of <code class="docutils literal notranslate"><span class="pre">Cargo</span></code> objects.<ul>
+<li>Should be initialized to an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">astronauts</span></code> should be an array of <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects.<ul>
+<li>Should be initialized to an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Constructor<ul>
+<li>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</li>
+<li>Parameter <code class="docutils literal notranslate"><span class="pre">totalCapacityKg</span></code> should be a number.</li>
+<li>Sets value of <code class="docutils literal notranslate"><span class="pre">this.name</span></code> and <code class="docutils literal notranslate"><span class="pre">this.totalCapacityKg</span></code></li>
+</ul>
+</li>
+<li>Methods<ul>
+<li><code class="docutils literal notranslate"><span class="pre">sumWeight(</span> <span class="pre">items:</span> <span class="pre">Payload[]</span> <span class="pre">):</span> <span class="pre">number</span></code><ul>
+<li>Returns the sum of all <code class="docutils literal notranslate"><span class="pre">items</span></code> using each item’s <code class="docutils literal notranslate"><span class="pre">weightKg</span></code> property</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">currentWeightKg():</span> <span class="pre">number</span></code><ul>
+<li>Uses <code class="docutils literal notranslate"><span class="pre">this.sumWeight</span></code> to return the combined weight of <code class="docutils literal notranslate"><span class="pre">this.astronauts</span></code> and <code class="docutils literal notranslate"><span class="pre">this.cargoItems</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">canAdd(item:</span> <span class="pre">Payload):</span> <span class="pre">boolean</span></code><ul>
+<li>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">this.currentWeightKg()</span> <span class="pre">+</span> <span class="pre">item.weightKg</span> <span class="pre">&lt;=</span> <span class="pre">this.totalCapacityKg</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">addCargo(cargo:</span> <span class="pre">Cargo)</span></code><ul>
+<li>Uses <code class="docutils literal notranslate"><span class="pre">this.canAdd(item:</span> <span class="pre">Payload)</span></code> to see if it can be added<ul>
+<li>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds <code class="docutils literal notranslate"><span class="pre">cargo</span></code> to <code class="docutils literal notranslate"><span class="pre">this.cargoItems</span></code> and returns <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">addAstronaut(astronaut:</span> <span class="pre">Astronaut)</span></code><ul>
+<li>Uses <code class="docutils literal notranslate"><span class="pre">this.canAdd(item:</span> <span class="pre">Payload)</span></code> to see if it can be added<ul>
+<li>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds <code class="docutils literal notranslate"><span class="pre">astronaut</span></code> to <code class="docutils literal notranslate"><span class="pre">this.astronauts</span></code> and returns <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="simulation-in-index-ts">
+<h2>27.6.3. Simulation in <code class="docutils literal notranslate"><span class="pre">index.ts</span></code><a class="headerlink" href="#simulation-in-index-ts" title="Permalink to this headline">¶</a></h2>
+<p>Paste the below code into <code class="docutils literal notranslate"><span class="pre">index.ts</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Astronaut</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Astronaut&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Cargo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Cargo&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Rocket</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Rocket&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">falcon9</span><span class="o">:</span> <span class="nx">Rocket</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rocket</span><span class="p">(</span><span class="s1">&#39;Falcon 9&#39;</span><span class="p">,</span> <span class="mi">7500</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">astronauts</span><span class="o">:</span> <span class="nx">Astronaut</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Mae&#39;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">81</span><span class="p">,</span> <span class="s1">&#39;Sally&#39;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">)</span>
+<span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">astronauts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">astronaut</span> <span class="o">=</span> <span class="nx">astronauts</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addAstronaut</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">cargo</span><span class="o">:</span> <span class="nx">Cargo</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">3107.39</span><span class="p">,</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">1000.39</span><span class="p">,</span> <span class="s2">&quot;Space Probe&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mi">753</span><span class="p">,</span> <span class="s2">&quot;Water&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mi">541</span><span class="p">,</span> <span class="s2">&quot;Food&quot;</span><span class="p">),</span>
+   <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">2107.39</span><span class="p">,</span> <span class="s2">&quot;Tesla Roadster&quot;</span><span class="p">),</span>
+<span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cargo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">cargo</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">material</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addCargo</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;final cargo and astronaut weight:&#39;</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">currentWeightKg</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="expected-console-output">
+<h3>27.6.3.1. Expected Console Output<a class="headerlink" href="#expected-console-output" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mae true
+Sally true
+Charles true
+Satellite true
+Space Probe true
+Water true
+Food true
+Tesla Roadster false
+final cargo and astronaut weight: 5656.78
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>27.6.4. Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<p>In Canvas, open the TypeScript studio and click the “Submit” button. An input
+box will appear.</p>
+<p>Copy the URL for your repl.it project and paste it into the box, then click
+“Submit” again.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 27.5. Exercises: TypeScript</a></li>
+        
+        
+        <li class="next"><a href="../angular-lsn1/index.html">28. Angular, Part 1 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

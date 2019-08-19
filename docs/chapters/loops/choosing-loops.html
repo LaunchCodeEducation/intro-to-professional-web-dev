@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>9.8. Choosing Which Loop to Use &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9.9. Exercises: Loops" href="exercises.html" />
+    <link rel="prev" title="9.7. Terminating a Loop With break" href="terminating-loops.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">9. Repeating With Loops</a></li>
+    <li class="active">9.8. Choosing Which Loop to Use</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="choosing-which-loop-to-use">
+<h1>9.8. Choosing Which Loop to Use<a class="headerlink" href="#choosing-which-loop-to-use" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is typically used to iterate through a fixed set of values that can be determined before the loop executes. This is why we say that a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop exhibits <strong>definite iteration</strong>.</p>
+<p>On the other hand, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is more flexible, as we saw with the example of validating user input. In that case, we could not determine in advance how many times the loop would iterate; it depended entirely on the values provided by the user during program execution. For this reason, a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is often described as <strong>indefinite iteration</strong>. We expect that <em>eventually</em> the condition controlling the iteration will evaluate to <code class="docutils literal notranslate"><span class="pre">false</span></code> and the iteration will stop. (Unless we have an infinite loop, which is a problem we want to avoid.)</p>
+<p>While we saw that any <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can be written as a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop by manually creating and updating a loop variable, it is preferable to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop when iterating over a collection or iterating a fixed number of times. Manually updating the variable in a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is more work for you, the programmer, and can lead to infinite loops if not handled properly.</p>
+<div class="section" id="check-your-understanding">
+<h2>9.8.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>You are asked to program a robot to move tennis balls from one box (Box #1) to another (Box #2), one-by-one. The robot should continue moving balls until Box #1 is empty, and balls may be added to the box after the robot begins its work.</p>
+<p>Which type of loop should you use to write the program?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</li>
+<li><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>You are asked to write a program similar to the one above, with the modification that a user may give the robot a specific number of balls to move from Box #1 to Box #2. (You can assume there will always be more balls than the user has asked the robot to move.)</p>
+<p>Which type of loop should you use to write the program?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</li>
+<li><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="terminating-loops.html"><span aria-hidden="true">&larr;</span> 9.7. Terminating a Loop With <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+        
+        
+        <li class="next"><a href="exercises.html">9.9. Exercises: Loops <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

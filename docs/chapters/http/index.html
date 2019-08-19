@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>24. HTTP: The Postal Service of the Internet &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.1. How the Internet Works" href="how-the-internet-works.html" />
+    <link rel="prev" title="23.8. Studio: The DOM and Events" href="../dom-and-events/studio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">24. HTTP: The Postal Service of the Internet</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="http-the-postal-service-of-the-internet">
+<h1>24. HTTP: The Postal Service of the Internet<a class="headerlink" href="#http-the-postal-service-of-the-internet" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="how-the-internet-works.html">24.1. How the Internet Works</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="how-the-internet-works.html#servers-and-clients">24.1.1. Servers and Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-the-internet-works.html#protocols">24.1.2. Protocols</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#http">24.1.2.1. HTTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#tcp-ip">24.1.2.2. TCP/IP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#dns">24.1.2.3. DNS</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how-the-internet-works.html#web-addresses">24.1.3. Web Addresses</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#scheme">24.1.3.1. Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#host">24.1.3.2. Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#port">24.1.3.3. Port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#path">24.1.3.4. Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-the-internet-works.html#query-string">24.1.3.5. Query String</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how-the-internet-works.html#putting-it-all-together">24.1.4. Putting It All Together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-the-internet-works.html#check-your-understanding">24.1.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http-at-a-glance.html">24.2. HTTP at a Glance</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="http-at-a-glance.html#requests-and-responses">24.2.1. Requests and Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-at-a-glance.html#the-postal-service-of-the-internet">24.2.2. The Postal Service of the Internet</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http-requests.html">24.3. Requests</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="http-requests.html#request-methods">24.3.1. Request Methods</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="http-requests.html#the-get-method">24.3.1.1. The <code class="docutils literal notranslate"><span class="pre">GET</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http-requests.html#the-post-method">24.3.1.2. The <code class="docutils literal notranslate"><span class="pre">POST</span></code> Method</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http-requests.html#headers">24.3.2. Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-requests.html#body">24.3.3. Body</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-requests.html#check-your-understanding">24.3.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http-responses.html">24.4. Responses</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="http-responses.html#response-codes">24.4.1. Response Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-responses.html#response-headers">24.4.2. Response Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-responses.html#response-body">24.4.3. Response Body</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-responses.html#check-your-understanding">24.4.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http-in-the-browser.html">24.5. HTTP in the Browser</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="http-in-the-browser.html#viewing-requests-and-response-using-developer-tools">24.5.1. Viewing Requests and Response Using Developer Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-in-the-browser.html#browser-flow">24.5.2. Browser Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-in-the-browser.html#check-your-understanding">24.5.3. Check Your Understanding</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../dom-and-events/studio.html"><span aria-hidden="true">&larr;</span> 23.8. Studio: The DOM and Events</a></li>
+        
+        
+        <li class="next"><a href="how-the-internet-works.html">24.1. How the Internet Works <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
