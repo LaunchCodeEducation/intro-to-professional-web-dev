@@ -6,21 +6,61 @@ Studio: The DOM and Events
 Now that we can build a basic flight simulator, we want to add more controls for the staff at our space station.
 The HTML, CSS, and JavaScript files are provided. For each event, the requirements and desired effect is listed.
 
-`Repl.it with starter code <https://repl.it/@launchcode/Studio-DOM-and-Events>`_
+Getting Started
+---------------
+
+First, fork the `studio repository <https://github.com/LaunchCodeEducation/DOM-and-Events-Studio/>`_ to your Github account.
+To do so, on the studio repository page on Github, click the "Fork" button.
+
+.. figure:: figures/fork-screenshot.png
+   :alt: Image showing the "Fork" button is in the top right on the repository page.
+
+A popup appears asking where to fork the repository to and you select your profile.
+You should now have a copy of the repository on your own profile!
+
+.. note:: 
+
+   Not only is forking repositories an important Git skill, it is especially vital in the class so that everyone has the same starter code!
+   Before continuing, make sure that the repository is now on your profile and you are working with your copy of the starter code for the rest of the studio.
+
+If you have properly forked a repository, when you click on the forked repository on your profile, you will see the following:
+
+.. figure:: figures/forked-repo-screenshot.png
+   :alt: Image showing that the repository name says "Forked from" in the top left when the repository has been forked.
+
+Once you have properly forked the repository, you can clone the remote repository to your computer.
+To start, click on the green "Clone" button to get the proper HTTPS url for the command. 
+
+.. figure:: figures/clone-repository-screenshot.png
+   :alt: Image showing that a popup appears once the "Clone" button is clicked with the proper url.
+
+Copy the url either by clicking on the button with a clipboard icon or highlighting the whole url and copying.
+
+In the terminal, navigate to the directory where you want to put your new project.
+Use the command, ``git clone <url>``, with the url you just copied to put the project on your local machine.
+
+.. note::
+
+   ``git clone`` will clone a whole directory including the Git repository on your machine, so there is no need to initialize a Git repository in a new directory to get started this way!
+
+Open Visual Studio Code and go to `File > Open` to find your new project and get started!
+
+The Requirements
+----------------
 
 1. Use the window *load* event to ensure all elements have loaded before attaching event handlers.
 
 2. When the "Take off" button is clicked, the following should happen:
 
    1. A window confirm should let the user know "Confirm that the shuttle is ready for takeoff." If the shuttle is ready for liftoff, then add steps 2-4.
-   2. The flight status should change to "Shuttle in flight".
+   2. The flight status should change to "Shuttle in flight."
    3. The background color of the shuttle flight screen (``id = "shuttleBackground"``) should change from green to blue.
    4. The shuttle height should increase by 10,000 miles.
 
 3. When the "Land" button is clicked, the following should happen:
 
    1. A window alert should let the user know "The shuttle is landing. Landing gear engaged."
-   2. The flight status should change to "The shuttle has landed".
+   2. The flight status should change to "The shuttle has landed."
    3. The background color of the shuttle flight screen should change from blue to green.
    4. The shuttle height should go down to 0.
 
