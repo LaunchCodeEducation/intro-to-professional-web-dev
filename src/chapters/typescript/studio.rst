@@ -127,14 +127,14 @@ Rocket Class
 
       * Returns the sum of all ``items`` using each item's ``massKg`` property
 
-   b. ``currentmassKg(): number``
+   b. ``currentMassKg(): number``
 
       * Uses ``this.sumMass`` to return the combined mass of
         ``this.astronauts`` and ``this.cargoItems``
 
    c. ``canAdd(item: Payload): boolean``
 
-      * Returns ``true`` if ``this.currentmassKg() + item.massKg <= this.totalCapacityKg``
+      * Returns ``true`` if ``this.currentMassKg() + item.massKg <= this.totalCapacityKg``
 
    d. ``addCargo(cargo: Cargo)``.
 
@@ -186,7 +186,7 @@ Paste the code shown below into ``index.ts``.
       console.log(c.material, falcon9.addCargo(c));
    }
 
-   console.log('final cargo and astronaut mass:', falcon9.currentmassKg());
+   console.log('final cargo and astronaut mass:', falcon9.currentMassKg());
 
 Compile and Run ``index.ts``
 -----------------------------
