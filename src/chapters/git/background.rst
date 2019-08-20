@@ -17,10 +17,10 @@ A VCS has a **repository** or storage container for the code base.
 Repositories include the files within the code base, the versions over time and a log of the changes made.
 When a programmer updates the repository, it means they are making a **commit**.
 
-Get Started
------------
+Getting Started with Git
+------------------------
 
-In order to work on Git, you need to install :ref:`Git <git-install>`.
+In order to get started with Git, you need to install :ref:`Git <git-install>` on your machine and :ref:`install Visual Studio Code <vsc-install>`.
 
 Check Your Understanding
 ------------------------
