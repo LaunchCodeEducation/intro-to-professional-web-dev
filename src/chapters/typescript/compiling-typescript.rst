@@ -1,25 +1,64 @@
 Compiling TypeScript
 ====================
 
-To work with TypeScript in our Node environment, we'll need to install TypeScript. 
-In your terminal, type 
+To work with TypeScript in our Node environment, we'll need to install the TypeScript
+module. In this section, you'll install the compiler and practice compiling and 
+running your TypeScript programs all from the terminal.
 
-``npm install -g typescript``.
+To install Typescript, in your terminal, type
+
+.. sourcecode:: bash
+
+   $ npm install -g typescript
 
 Once you have TypeScript installed, you'll be able to run 
 
-``tsc -v``.
+.. sourcecode:: bash
 
-``tsc`` is is the TypeScript compiler we'll need to run TypeScript programs in our terminal. 
+   $ tsc -v
 
-To compile a TypeScript file, you'll run 
+``tsc`` is is the TypeScript compiler and ``-v`` is the version flag to show us that
+we have TypeScript and it's compiler installed. 
 
-``tsc <ts_file.ts>``.
+In true tutorial form, let's write a quick ``Hello, World`` program so we can see this 
+compiling in action.
 
-This compiles your TypeScript into a separate JavaScript file. If you look in your file
-tree, or the directory where your ``ts_file.ts`` resides, you'll see a newly generated 
-``ts_file.js`` file. Open it up and take a look!
+In your code editor, create a new file called ``hello_world.ts``. In it, initialize a 
+variable called ``message`` with the string value ``'Hello, World'``. Print the message.
 
-Now, to run that JavaScript file, back in the terminal, type
+.. sourcecode:: ts
+   :linenos:
 
-``node <ts_file.js>``
+    let message: string = 'Hello, World';
+    console.log(message);
+
+
+Return to the terminal in the directory that houses your new file and compile your 
+TypeScript with the following command
+
+.. sourcecode:: bash
+
+   $ tsc hello_world.ts
+
+If your TypeScript file is free of syntax errors, you won't see a response from the
+terminal directly. However, you should see that you now have a newly generated file
+in your working directory called ``hello_world.js``. Open it up and take a look!
+
+Back in the terminal, run that JavaScript file
+
+.. sourcecode:: bash
+
+   $ node hello_world.ts
+   Hello, World
+
+Look at that! Your message printed. You're now running your own code straight from 
+the terminal!
+
+.. note::
+
+   Changing your TypeScript file won't update the corresponding JavaScript file
+   unless you re-compile.
+
+You'll need these compiling and executing steps for the exercises in the following 
+section so refer back here as needed.
+
