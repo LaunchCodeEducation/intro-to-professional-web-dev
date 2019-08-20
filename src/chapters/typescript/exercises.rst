@@ -50,7 +50,7 @@ Expected Output
 
 ::
 
-   Space Shuttle would take 332.67857142857144 days to get to Mars.
+   Determination would take 332.67857142857144 days to get to Mars.
 
 
 Part 3 - Create a Function
@@ -81,8 +81,8 @@ Expected Output
 
 ::
 
-   Space Shuttle would take 332.67857142857144 days to get to Mars.
-   Space Shuttle would take 0.5683628571428571 days to get to the Moon.
+   Determination would take 332.67857142857144 days to get to Mars.
+   Determination would take 0.5683628571428571 days to get to the Moon.
 
 
 Part 4 - Create a Spacecraft Class
@@ -110,7 +110,7 @@ Organize the function and variables previously defined into a class named ``Spac
 
 #. Create an instance of the ``Spacecraft`` class.
 
-   * ``let spaceShuttle = new Spacecraft('Space Shuttle', 17500);``
+   * ``let spaceShuttle = new Spacecraft('Determination', 17500);``
 
 #. Print out the days to Mars.
 
@@ -124,8 +124,8 @@ Expected Output
 
 ::
 
-   Space Shuttle would take 332.67857142857144 days to get to Mars.
-   Space Shuttle would take 0.5683628571428571 days to get to the Moon.
+   Determination would take 332.67857142857144 days to get to Mars.
+   Determination would take 0.5683628571428571 days to get to the Moon.
 
 
 Part 5 - Export and Import the SpaceLocation Class
@@ -169,7 +169,7 @@ Part 5 - Export and Import the SpaceLocation Class
 .. sourcecode:: js
    :linenos:
 
-   let spaceShuttle = new Spacecraft('Space Shuttle', 17500);
+   let spaceShuttle = new Spacecraft('Determination', 17500);
    spaceShuttle.printDaysToLocation(new SpaceLocation('Mars', kilometersToMars));
    spaceShuttle.printDaysToLocation(new SpaceLocation('the Moon', kilometersToTheMoon));
 
@@ -177,5 +177,5 @@ Expected Output
 
 ::
 
-   Space Shuttle would take 332.67857142857144 days to get to Mars.
-   Space Shuttle would take 0.5683628571428571 days to get to the Moon.
+   Determination would take 332.67857142857144 days to get to Mars.
+   Determination would take 0.5683628571428571 days to get to the Moon.

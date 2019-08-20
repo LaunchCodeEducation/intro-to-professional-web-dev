@@ -3,7 +3,7 @@ Hello, Jasmine!
 
 .. index:: ! Jasmine
 
-In order to unit test our code, we need to use a module. Such a module of called a **unit-testing framework**, **test runner**, or **test harness**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
+In order to unit test our code, we need to use a module. Such a module is called a **unit-testing framework**, **test runner**, or **test harness**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
 
 We will use `Jasmine <https://jasmine.github.io/>`_, a popular JavaScript testing framework.
 
