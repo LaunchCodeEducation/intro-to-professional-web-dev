@@ -86,12 +86,40 @@
     
   <div class="section" id="exercises-typescript">
 <h1>27.5. Exercises: TypeScript<a class="headerlink" href="#exercises-typescript" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="part-1-declare-variables-with-type">
-<h2>27.5.1. Part 1 - Declare Variables With Type<a class="headerlink" href="#part-1-declare-variables-with-type" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/ts-exercises-part-1-and-2" target="_blank">part 1 repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li>Declare and assign a variable for each in the below table.</li>
+<div class="section" id="part-0-get-the-starter-code">
+<h2>27.5.1. Part 0 - Get the Starter Code<a class="headerlink" href="#part-0-get-the-starter-code" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Login to your GitHub account.</p>
+</li>
+<li><p class="first">Fork the
+<a class="reference external" href="https://github.com/LaunchCodeEducation/typescript-lc101-projects" target="_blank">typescript-lc101-projects repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">Open VSCode and use the terminal panel to clone your fork from GitHub.</p>
+</li>
+<li><p class="first">Use the terminal to navigate into the <code class="docutils literal notranslate"><span class="pre">typescript-lc101-projects</span></code> folder,
+then into the <code class="docutils literal notranslate"><span class="pre">exercises</span></code> subfolder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+   typescript-lc101-projects
+$ <span class="nb">cd</span> typescript-lc101-projects
+$ ls
+   exercises       studio
+$ <span class="nb">cd</span> exercises
+$ ls
+   SpaceLocation.ts        part3.ts                part5.ts
+   part1-2.ts              part4.ts                tsconfig.json
+</pre></div>
+</div>
+</li>
 </ol>
+</div>
+<div class="section" id="part-1-declare-variables-with-type">
+<h2>27.5.2. Part 1 - Declare Variables With Type<a class="headerlink" href="#part-1-declare-variables-with-type" title="Permalink to this headline">¶</a></h2>
+<p>From the file tree in VSCode, open the <code class="docutils literal notranslate"><span class="pre">part1-2.ts</span></code> file.</p>
+<div class="figure">
+<img alt="VSCode file tree for the TypeScript exercises." src="../../_images/TS-exercises-file-tree.png" />
+</div>
+<p>In the space indicated, declare and assign a variable for each of the
+following:</p>
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Variable Name</th>
@@ -124,19 +152,22 @@
 </table>
 </div>
 <div class="section" id="part-2-print-days-to-mars">
-<h2>27.5.2. Part 2 - Print Days to Mars<a class="headerlink" href="#part-2-print-days-to-mars" title="Permalink to this headline">¶</a></h2>
-<p>In the <em>same</em> repl.it you completed Part 1, do the following.</p>
+<h2>27.5.3. Part 2 - Print Days to Mars<a class="headerlink" href="#part-2-print-days-to-mars" title="Permalink to this headline">¶</a></h2>
+<p>In the <em>same</em> file you opened in Part 1, do the following.</p>
 <ol class="arabic simple">
-<li>Declare and assign these variables.<ul>
+<li>Declare and assign these variables.<ol class="loweralpha">
 <li>Remember: variable declarations in TypeScript include the type!</li>
-<li><code class="docutils literal notranslate"><span class="pre">milesToMars</span></code> is a number with the value of <code class="docutils literal notranslate"><span class="pre">kilometersToMars</span> <span class="pre">*</span> <span class="pre">milesPerKilometer</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">hoursToMars</span></code> is a number with the value of  <code class="docutils literal notranslate"><span class="pre">milesToMars</span> <span class="pre">/</span> <span class="pre">speedMph</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">milesToMars</span></code> is a number with the value of
+<code class="docutils literal notranslate"><span class="pre">kilometersToMars</span> <span class="pre">*</span> <span class="pre">milesPerKilometer</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">hoursToMars</span></code> is a number with the value of
+<code class="docutils literal notranslate"><span class="pre">milesToMars</span> <span class="pre">/</span> <span class="pre">speedMph</span></code>.</li>
 <li><code class="docutils literal notranslate"><span class="pre">daysToMars</span></code> is a number with the value of <code class="docutils literal notranslate"><span class="pre">hoursToMars</span> <span class="pre">/</span> <span class="pre">24</span></code>.</li>
-</ul>
+</ol>
 </li>
-<li>Write a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement that prints out the days to Mars.<ul>
-<li>Use template literal syntax and the variables <code class="docutils literal notranslate"><span class="pre">${spacecraftName}</span></code> and <code class="docutils literal notranslate"><span class="pre">${daysToMars}</span></code>.</li>
-</ul>
+<li>Write a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement that prints out the days to Mars.<ol class="loweralpha">
+<li>Use template literal syntax and the variables <code class="docutils literal notranslate"><span class="pre">${spacecraftName}</span></code> and
+<code class="docutils literal notranslate"><span class="pre">${daysToMars}</span></code>.</li>
+</ol>
 </li>
 </ol>
 <p>Expected Output</p>
@@ -145,7 +176,7 @@
 </div>
 </div>
 <div class="section" id="part-3-create-a-function">
-<h2>27.5.3. Part 3 - Create a Function<a class="headerlink" href="#part-3-create-a-function" title="Permalink to this headline">¶</a></h2>
+<h2>27.5.4. Part 3 - Create a Function<a class="headerlink" href="#part-3-create-a-function" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/ts-exercises-part-3" target="_blank">part 3 repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
 <li>Define a function that calculates the days it would take to travel.<ul>
@@ -178,7 +209,7 @@ Space Shuttle would take 0.5683628571428571 days to get to the Moon.
 </div>
 </div>
 <div class="section" id="part-4-create-a-spacecraft-class">
-<h2>27.5.4. Part 4 - Create a Spacecraft Class<a class="headerlink" href="#part-4-create-a-spacecraft-class" title="Permalink to this headline">¶</a></h2>
+<h2>27.5.5. Part 4 - Create a Spacecraft Class<a class="headerlink" href="#part-4-create-a-spacecraft-class" title="Permalink to this headline">¶</a></h2>
 <p>Organize the function and variables previously defined into a class named <code class="docutils literal notranslate"><span class="pre">Spacecraft</span></code>.</p>
 <ol class="arabic simple">
 <li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/ts-exercises-part-4" target="_blank">part 4 repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
@@ -221,7 +252,7 @@ Space Shuttle would take 0.5683628571428571 days to get to the Moon.
 </div>
 </div>
 <div class="section" id="part-5-export-and-import-the-spacelocation-class">
-<h2>27.5.5. Part 5 - Export and Import the SpaceLocation Class<a class="headerlink" href="#part-5-export-and-import-the-spacelocation-class" title="Permalink to this headline">¶</a></h2>
+<h2>27.5.6. Part 5 - Export and Import the SpaceLocation Class<a class="headerlink" href="#part-5-export-and-import-the-spacelocation-class" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/ts-exercises-part-5" target="_blank">part 5 repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
 <li>In repl.it, add a new file named <code class="docutils literal notranslate"><span class="pre">SpaceLocation.ts</span></code>.</li>

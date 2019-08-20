@@ -5,10 +5,13 @@ Let's practice TypeScript by creating classes for rocket cargo calculations.
 
 
 Requirements
-------------
-#. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_.
-#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``.  (Details
-   below)
+-------------
+
+#. Login to your `GitHub account <https://github.com/login>`__.
+#. Fork the `starter repository <https://github.com/LaunchCodeEducation/typescript-lc101-projects/>`__
+   for this studio.
+#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``. (Details
+   below).
 
    a. All classes should be defined in their own files.
 

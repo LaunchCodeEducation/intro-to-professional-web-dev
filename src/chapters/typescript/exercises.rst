@@ -1,11 +1,38 @@
 Exercises: TypeScript
 =====================
 
+Part 0 - Get the Starter Code
+------------------------------
+
+#. Login to your GitHub account.
+#. Fork the
+   `typescript-lc101-projects repository <https://github.com/LaunchCodeEducation/typescript-lc101-projects>`__.
+#. Open VSCode and use the terminal panel to clone your fork from GitHub.
+#. Use the terminal to navigate into the ``typescript-lc101-projects`` folder,
+   then into the ``exercises`` subfolder.
+
+   .. sourcecode:: bash
+
+      $ ls
+         typescript-lc101-projects
+      $ cd typescript-lc101-projects
+      $ ls
+         exercises       studio
+      $ cd exercises
+      $ ls
+         SpaceLocation.ts        part3.ts                part5.ts
+         part1-2.ts              part4.ts                tsconfig.json
+
 Part 1 - Declare Variables With Type
 ------------------------------------
 
-#. Fork the `part 1 repl.it <https://repl.it/@launchcode/ts-exercises-part-1-and-2>`_.
-#. Declare and assign a variable for each in the below table.
+From the file tree in VSCode, open the ``part1-2.ts`` file.
+
+.. figure:: ./figures/TS-exercises-file-tree.png
+   :alt: VSCode file tree for the TypeScript exercises.
+
+In the space indicated, declare and assign a variable for each of the
+following:
 
 .. list-table::
    :widths: auto
@@ -30,21 +57,23 @@ Part 1 - Declare Variables With Type
      - number
      - 0.621
 
-
 Part 2 - Print Days to Mars
 ---------------------------
-In the *same* repl.it you completed Part 1, do the following.
+In the *same* file you opened in Part 1, do the following.
 
 #. Declare and assign these variables.
 
-   * Remember: variable declarations in TypeScript include the type!
-   * ``milesToMars`` is a number with the value of ``kilometersToMars * milesPerKilometer``.
-   * ``hoursToMars`` is a number with the value of  ``milesToMars / speedMph``.
-   * ``daysToMars`` is a number with the value of ``hoursToMars / 24``.
+   a. Remember: variable declarations in TypeScript include the type!
+   b. ``milesToMars`` is a number with the value of
+      ``kilometersToMars * milesPerKilometer``.
+   c. ``hoursToMars`` is a number with the value of
+      ``milesToMars / speedMph``.
+   d. ``daysToMars`` is a number with the value of ``hoursToMars / 24``.
 
 #. Write a ``console.log`` statement that prints out the days to Mars.
 
-   * Use template literal syntax and the variables ``${spacecraftName}`` and ``${daysToMars}``.
+   a. Use template literal syntax and the variables ``${spacecraftName}`` and
+      ``${daysToMars}``.
 
 Expected Output
 
