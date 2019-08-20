@@ -88,19 +88,52 @@
 <span id="dom-studio"></span><h1>23.8. Studio: The DOM and Events<a class="headerlink" href="#studio-the-dom-and-events" title="Permalink to this headline">¶</a></h1>
 <p>Now that we can build a basic flight simulator, we want to add more controls for the staff at our space station.
 The HTML, CSS, and JavaScript files are provided. For each event, the requirements and desired effect is listed.</p>
-<p><a class="reference external" href="https://repl.it/&#64;launchcode/Studio-DOM-and-Events" target="_blank">Repl.it with starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<div class="section" id="getting-started">
+<h2>23.8.1. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>First, fork the <a class="reference external" href="https://github.com/LaunchCodeEducation/DOM-and-Events-Studio/" target="_blank">studio repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to your Github account.
+To do so, on the studio repository page on Github, click the “Fork” button.</p>
+<div class="figure">
+<img alt="Image showing the &quot;Fork&quot; button is in the top right on the repository page." src="../../_images/fork-screenshot.png" />
+</div>
+<p>A popup appears asking where to fork the repository to and you select your profile.
+You should now have a copy of the repository on your own profile!</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Not only is forking repositories an important Git skill, it is especially vital in the class so that everyone has the same starter code!
+Before continuing, make sure that the repository is now on your profile and you are working with your copy of the starter code for the rest of the studio.</p>
+</div>
+<p>If you have properly forked a repository, when you click on the forked repository on your profile, you will see the following:</p>
+<div class="figure">
+<img alt="Image showing that the repository name says &quot;Forked from&quot; in the top left when the repository has been forked." src="../../_images/forked-repo-screenshot.png" />
+</div>
+<p>Once you have properly forked the repository, you can clone the remote repository to your computer.
+To start, click on the green “Clone” button to get the proper HTTPS url for the command.</p>
+<div class="figure">
+<img alt="Image showing that a popup appears once the &quot;Clone&quot; button is clicked with the proper url." src="../../_images/clone-repository-screenshot.png" />
+</div>
+<p>Copy the url either by clicking on the button with a clipboard icon or highlighting the whole url and copying.</p>
+<p>In the terminal, navigate to the directory where you want to put your new project.
+Use the command, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;url&gt;</span></code>, with the url you just copied to put the project on your local machine.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> will clone a whole directory including the Git repository on your machine, so there is no need to initialize a Git repository in a new directory to get started this way!</p>
+</div>
+<p>Open Visual Studio Code and go to <cite>File &gt; Open</cite> to find your new project and get started!</p>
+</div>
+<div class="section" id="the-requirements">
+<h2>23.8.2. The Requirements<a class="headerlink" href="#the-requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Use the window <em>load</em> event to ensure all elements have loaded before attaching event handlers.</li>
 <li>When the “Take off” button is clicked, the following should happen:<ol class="arabic">
 <li>A window confirm should let the user know “Confirm that the shuttle is ready for takeoff.” If the shuttle is ready for liftoff, then add steps 2-4.</li>
-<li>The flight status should change to “Shuttle in flight”.</li>
+<li>The flight status should change to “Shuttle in flight.”</li>
 <li>The background color of the shuttle flight screen (<code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">&quot;shuttleBackground&quot;</span></code>) should change from green to blue.</li>
 <li>The shuttle height should increase by 10,000 miles.</li>
 </ol>
 </li>
 <li>When the “Land” button is clicked, the following should happen:<ol class="arabic">
 <li>A window alert should let the user know “The shuttle is landing. Landing gear engaged.”</li>
-<li>The flight status should change to “The shuttle has landed”.</li>
+<li>The flight status should change to “The shuttle has landed.”</li>
 <li>The background color of the shuttle flight screen should change from blue to green.</li>
 <li>The shuttle height should go down to 0.</li>
 </ol>
@@ -118,8 +151,9 @@ The HTML, CSS, and JavaScript files are provided. For each event, the requiremen
 </ol>
 </li>
 </ol>
+</div>
 <div class="section" id="bonus-mission">
-<h2>23.8.1. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<h2>23.8.3. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
 <p>If you are done with the above and have some time left during class, there are a few problems that you can tackle for a bonus mission.</p>
 <ol class="arabic simple">
 <li>Keep the rocket from flying off of the background.</li>
