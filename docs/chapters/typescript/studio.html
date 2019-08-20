@@ -265,7 +265,19 @@ Each class should be exported using <code class="docutils literal notranslate"><
 28
 29
 30
-31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Astronaut</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Astronaut&#39;</span><span class="p">;</span>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Astronaut</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Astronaut&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Cargo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Cargo&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Rocket</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Rocket&#39;</span><span class="p">;</span>
 
@@ -277,9 +289,15 @@ Each class should be exported using <code class="docutils literal notranslate"><
    <span class="k">new</span> <span class="nx">Astronaut</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">)</span>
 <span class="p">];</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">astronauts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">astronauts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">astronaut</span> <span class="o">=</span> <span class="nx">astronauts</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addAstronaut</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">));</span>
+   <span class="kd">let</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">falcon9</span><span class="p">.</span><span class="nx">addAstronaut</span><span class="p">(</span><span class="nx">astronaut</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">status</span> <span class="o">=</span> <span class="s2">&quot;On board&quot;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">status</span> <span class="o">=</span> <span class="s2">&quot;Not on board&quot;</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">astronaut</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">status</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">cargo</span><span class="o">:</span> <span class="nx">Cargo</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
@@ -290,12 +308,18 @@ Each class should be exported using <code class="docutils literal notranslate"><
    <span class="k">new</span> <span class="nx">Cargo</span><span class="p">(</span><span class="mf">2107.39</span><span class="p">,</span> <span class="s2">&quot;Tesla Roadster&quot;</span><span class="p">),</span>
 <span class="p">];</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cargo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cargo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">cargo</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">material</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">addCargo</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span>
+   <span class="kd">let</span> <span class="nx">loaded</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">falcon9</span><span class="p">.</span><span class="nx">addCargo</span><span class="p">(</span><span class="nx">c</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">loaded</span> <span class="o">=</span> <span class="s2">&quot;Loaded&quot;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">loaded</span> <span class="o">=</span> <span class="s2">&quot;Not loaded&quot;</span>
+   <span class="p">}</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">c</span><span class="p">.</span><span class="nx">material</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">loaded</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;final cargo and astronaut mass:&#39;</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">currentMassKg</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Final cargo and astronaut mass: </span><span class="si">${</span><span class="nx">falcon9</span><span class="p">.</span><span class="nx">currentMassKg</span><span class="p">()</span><span class="si">}</span><span class="sb"> kg.`</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -319,15 +343,15 @@ $ node index.js
 </div>
 <div class="section" id="expected-console-output">
 <h3>27.7.5.1. Expected Console Output<a class="headerlink" href="#expected-console-output" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mae true
-Sally true
-Charles true
-Satellite true
-Space Probe true
-Water true
-Food true
-Tesla Roadster false
-final cargo and astronaut mass: 5656.78
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mae: On board
+Sally: On board
+Charles: On board
+Satellite: Loaded
+Space Probe: Loaded
+Water: Loaded
+Food: Loaded
+Tesla Roadster: Not loaded
+Final cargo and astronaut mass: 5656.78 kg.
 </pre></div>
 </div>
 </div>

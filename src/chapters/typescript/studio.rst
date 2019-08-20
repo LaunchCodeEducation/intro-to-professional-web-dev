@@ -168,9 +168,15 @@ Paste the code shown below into ``index.ts``.
       new Astronaut(99, 'Charles')
    ];
 
-   for (let i =0; i < astronauts.length; i++) {
+   for (let i = 0; i < astronauts.length; i++) {
       let astronaut = astronauts[i];
-      console.log(astronaut.name, falcon9.addAstronaut(astronaut));
+      let status = '';
+      if (falcon9.addAstronaut(astronaut)) {
+         status = "On board";
+      } else {
+         status = "Not on board";
+      }
+      console.log(`${astronaut.name}: ${status}`);
    }
 
    let cargo: Cargo[] = [
@@ -181,12 +187,18 @@ Paste the code shown below into ``index.ts``.
       new Cargo(2107.39, "Tesla Roadster"),
    ];
 
-   for (let i =0; i < cargo.length; i++) {
+   for (let i = 0; i < cargo.length; i++) {
       let c = cargo[i];
-      console.log(c.material, falcon9.addCargo(c));
+      let loaded = '';
+      if (falcon9.addCargo(c)) {
+         loaded = "Loaded"
+      } else {
+         loaded = "Not loaded"
+      }
+      console.log(`${c.material}: ${loaded}`);
    }
 
-   console.log('final cargo and astronaut mass:', falcon9.currentMassKg());
+   console.log(`Final cargo and astronaut mass: ${falcon9.currentMassKg()} kg.`);
 
 Compile and Run ``index.ts``
 -----------------------------
@@ -212,15 +224,15 @@ Expected Console Output
 
 ::
 
-   Mae true
-   Sally true
-   Charles true
-   Satellite true
-   Space Probe true
-   Water true
-   Food true
-   Tesla Roadster false
-   final cargo and astronaut mass: 5656.78
+   Mae: On board
+   Sally: On board
+   Charles: On board
+   Satellite: Loaded
+   Space Probe: Loaded
+   Water: Loaded
+   Food: Loaded
+   Tesla Roadster: Not loaded
+   Final cargo and astronaut mass: 5656.78 kg.
 
 Submitting Your Work
 ---------------------
