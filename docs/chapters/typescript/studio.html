@@ -87,27 +87,51 @@
   <div class="section" id="studio-typescript">
 <h1>27.6. Studio: TypeScript<a class="headerlink" href="#studio-typescript" title="Permalink to this headline">¶</a></h1>
 <p>Let’s practice TypeScript by creating classes for rocket cargo calculations.</p>
+<div class="section" id="starter-code">
+<h2>27.6.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
+<p>If you have not already done so, follow the instructions given in the
+<a class="reference internal" href="exercises.html#ts-repo"><span class="std std-ref">TypeScript exercises</span></a> to fork the GitHub repository.</p>
+<p>Use the terminal check that you are in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, then navigate
+into the <code class="docutils literal notranslate"><span class="pre">studio</span></code> folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch
+   * master
+   solutions
+$ <span class="nb">pwd</span>
+   /typescript-lc101-projects
+$ ls
+   exercises       studio
+$ <span class="nb">cd</span> studio
+$ ls
+   index.ts    Payload.ts
+</pre></div>
+</div>
+<p>From the file tree in VSCode, open the <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</p>
+<div class="figure">
+<img alt="VSCode file tree for the TypeScript studio." src="../../_images/TS-studio-file-tree.png" />
+</div>
+</div>
 <div class="section" id="requirements">
-<h2>27.6.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2>27.6.2. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Login to your <a class="reference external" href="https://github.com/login" target="_blank">GitHub account<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li>Fork the <a class="reference external" href="https://github.com/LaunchCodeEducation/typescript-lc101-projects/" target="_blank">starter repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-for this studio.</li>
 <li>Create classes for <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>. (Details
 below).<ol class="loweralpha">
 <li>All classes should be defined in their own files.</li>
 </ol>
 </li>
-<li>Use new classes to run a simulation in the <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</li>
+<li>Use the new classes to run a simulation in the <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</li>
 </ol>
 <p>In the starter code, you will notice that an interface named <code class="docutils literal notranslate"><span class="pre">Payload</span></code> has
 been declared. This interface ensures that any class that implements it will
 have a <code class="docutils literal notranslate"><span class="pre">massKg</span></code> property.</p>
 </div>
 <div class="section" id="classes">
-<h2>27.6.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<p>Define each of these classes in a separate file. Each class should be exported
-using <code class="docutils literal notranslate"><span class="pre">export</span></code>.</p>
+<h2>27.6.3. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p>To create a new file in VSCode, click the “New File” button:</p>
+<div class="figure">
+<img alt="VSCode new file button." src="../../_images/VSCode-new-file.png" />
+</div>
+<p>Define each class (<code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>) in a separate file.
+Each class should be exported using <code class="docutils literal notranslate"><span class="pre">export</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="c1">// properties and methods</span>
 <span class="p">}</span>
@@ -118,7 +142,7 @@ using <code class="docutils literal notranslate"><span class="pre">export</span>
 </pre></div>
 </div>
 <div class="section" id="astronaut-class">
-<h3>27.6.2.1. Astronaut Class<a class="headerlink" href="#astronaut-class" title="Permalink to this headline">¶</a></h3>
+<h3>27.6.3.1. Astronaut Class<a class="headerlink" href="#astronaut-class" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Defined in <code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code></li>
 <li>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</li>
@@ -136,7 +160,7 @@ using <code class="docutils literal notranslate"><span class="pre">export</span>
 </ol>
 </div>
 <div class="section" id="cargo-class">
-<h3>27.6.2.2. Cargo Class<a class="headerlink" href="#cargo-class" title="Permalink to this headline">¶</a></h3>
+<h3>27.6.3.2. Cargo Class<a class="headerlink" href="#cargo-class" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Defined in <code class="docutils literal notranslate"><span class="pre">Cargo.ts</span></code></li>
 <li>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</li>
@@ -154,7 +178,7 @@ using <code class="docutils literal notranslate"><span class="pre">export</span>
 </ol>
 </div>
 <div class="section" id="rocket-class">
-<h3>27.6.2.3. Rocket Class<a class="headerlink" href="#rocket-class" title="Permalink to this headline">¶</a></h3>
+<h3>27.6.3.3. Rocket Class<a class="headerlink" href="#rocket-class" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Defined in <code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>.</li>
 <li>Properties:<ol class="loweralpha">
@@ -209,7 +233,7 @@ using <code class="docutils literal notranslate"><span class="pre">export</span>
 </div>
 </div>
 <div class="section" id="simulation-in-index-ts">
-<h2>27.6.3. Simulation in <code class="docutils literal notranslate"><span class="pre">index.ts</span></code><a class="headerlink" href="#simulation-in-index-ts" title="Permalink to this headline">¶</a></h2>
+<h2>27.6.4. Simulation in <code class="docutils literal notranslate"><span class="pre">index.ts</span></code><a class="headerlink" href="#simulation-in-index-ts" title="Permalink to this headline">¶</a></h2>
 <p>Paste the code shown below into <code class="docutils literal notranslate"><span class="pre">index.ts</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -274,8 +298,27 @@ using <code class="docutils literal notranslate"><span class="pre">export</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;final cargo and astronaut mass:&#39;</span><span class="p">,</span> <span class="nx">falcon9</span><span class="p">.</span><span class="nx">currentmassKg</span><span class="p">());</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+<div class="section" id="compile-and-run-index-ts">
+<h2>27.6.5. Compile and Run <code class="docutils literal notranslate"><span class="pre">index.ts</span></code><a class="headerlink" href="#compile-and-run-index-ts" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Use the terminal in VSCode to compile your <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file. This will also
+compile the modules you imported into the file (<code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>, etc.).</li>
+<li>Use the command <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">index.js</span></code> to run the JavaScript file created during
+the build process.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+   Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
+$ tsc index.ts
+$ ls
+   Astronaut.js    Cargo.js        Payload.js      Rocket.js       index.js
+   Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
+$ node index.js
+</pre></div>
+</div>
 <div class="section" id="expected-console-output">
-<h3>27.6.3.1. Expected Console Output<a class="headerlink" href="#expected-console-output" title="Permalink to this headline">¶</a></h3>
+<h3>27.6.5.1. Expected Console Output<a class="headerlink" href="#expected-console-output" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mae true
 Sally true
 Charles true
@@ -290,11 +333,16 @@ final cargo and astronaut mass: 5656.78
 </div>
 </div>
 <div class="section" id="submitting-your-work">
-<h2>27.6.4. Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
-<p>In Canvas, open the TypeScript studio and click the “Submit” button. An input
-box will appear.</p>
-<p>Copy the URL for your repl.it project and paste it into the box, then click
-“Submit” again.</p>
+<h2>27.6.6. Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Once you have your project working, use the terminal to commit and push your
+work up to GitHub.</li>
+<li>Login to your account and navigate to your project. Copy the URL.</li>
+<li>In Canvas, open the TypeScript studio assignment and click the “Submit”
+button. An input box will appear.</li>
+<li>Paste the URL for your GitHub project into the box, then click “Submit”
+again.</li>
+</ol>
 </div>
 </div>
 

@@ -1,6 +1,8 @@
 Exercises: TypeScript
 =====================
 
+.. _TS-repo:
+
 Part 0 - Get the Starter Code
 ------------------------------
 

@@ -3,30 +3,57 @@ Studio: TypeScript
 
 Let's practice TypeScript by creating classes for rocket cargo calculations.
 
+Starter Code
+-------------
+
+If you have not already done so, follow the instructions given in the
+:ref:`TypeScript exercises <TS-repo>` to fork the GitHub repository.
+
+Use the terminal check that you are in the ``master`` branch, then navigate
+into the ``studio`` folder.
+
+.. sourcecode:: bash
+
+   $ git branch
+      * master
+      solutions
+   $ pwd
+      /typescript-lc101-projects
+   $ ls
+      exercises       studio
+   $ cd studio
+   $ ls
+      index.ts    Payload.ts
+
+From the file tree in VSCode, open the ``index.ts`` file.
+
+.. figure:: ./figures/TS-studio-file-tree.png
+   :alt: VSCode file tree for the TypeScript studio.
 
 Requirements
 -------------
 
-#. Login to your `GitHub account <https://github.com/login>`__.
-#. Fork the `starter repository <https://github.com/LaunchCodeEducation/typescript-lc101-projects/>`__
-   for this studio.
 #. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``. (Details
    below).
 
    a. All classes should be defined in their own files.
 
-#. Use new classes to run a simulation in the ``index.ts`` file.
+#. Use the new classes to run a simulation in the ``index.ts`` file.
 
 In the starter code, you will notice that an interface named ``Payload`` has
 been declared. This interface ensures that any class that implements it will
 have a ``massKg`` property.
 
-
 Classes
 --------
 
-Define each of these classes in a separate file. Each class should be exported
-using ``export``.
+To create a new file in VSCode, click the "New File" button:
+
+.. figure:: ./figures/VSCode-new-file.png
+   :alt: VSCode new file button.
+
+Define each class (``Astronaut``, ``Cargo``, ``Rocket``) in a separate file.
+Each class should be exported using ``export``.
 
 .. sourcecode:: js
 
@@ -161,9 +188,27 @@ Paste the code shown below into ``index.ts``.
 
    console.log('final cargo and astronaut mass:', falcon9.currentmassKg());
 
+Compile and Run ``index.ts``
+-----------------------------
+
+#. Use the terminal in VSCode to compile your ``index.ts`` file. This will also
+   compile the modules you imported into the file (``Astronaut.ts``,
+   ``Rocket.ts``, etc.).
+#. Use the command ``node index.js`` to run the JavaScript file created during
+   the build process.
+
+.. sourcecode:: bash
+
+   $ ls
+      Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
+   $ tsc index.ts
+   $ ls
+      Astronaut.js    Cargo.js        Payload.js      Rocket.js       index.js
+      Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
+   $ node index.js
 
 Expected Console Output
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -177,12 +222,13 @@ Expected Console Output
    Tesla Roadster false
    final cargo and astronaut mass: 5656.78
 
-
 Submitting Your Work
---------------------
+---------------------
 
-In Canvas, open the TypeScript studio and click the "Submit" button. An input
-box will appear.
-
-Copy the URL for your repl.it project and paste it into the box, then click
-"Submit" again.
+#. Once you have your project working, use the terminal to commit and push your
+   work up to GitHub.
+#. Login to your account and navigate to your project. Copy the URL.
+#. In Canvas, open the TypeScript studio assignment and click the "Submit"
+   button. An input box will appear.
+#. Paste the URL for your GitHub project into the box, then click "Submit"
+   again.
