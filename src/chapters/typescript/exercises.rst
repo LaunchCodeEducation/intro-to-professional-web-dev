@@ -9,7 +9,7 @@ Part 0 - Get the Starter Code
 #. Login to your GitHub account.
 #. Fork the
    `typescript-lc101-projects repository <https://github.com/LaunchCodeEducation/typescript-lc101-projects>`__.
-#. Open VSCode and use the terminal panel to clone your fork from GitHub.
+#. Use the terminal to clone your fork from GitHub.
 #. Use the terminal to navigate into the ``typescript-lc101-projects`` folder,
    then into the ``exercises`` subfolder.
 
@@ -28,7 +28,8 @@ Part 0 - Get the Starter Code
 Part 1 - Declare Variables With Type
 ------------------------------------
 
-From the file tree in VSCode, open the ``part1-2.ts`` file.
+Run VSCode and open the ``typescript-lc101-projects`` folder. From the file
+tree, select the ``part1-2.ts`` file.
 
 .. figure:: ./figures/TS-exercises-file-tree.png
    :alt: VSCode file tree for the TypeScript exercises.
@@ -81,7 +82,7 @@ In the *same* file you opened in Part 1, do the following.
    command ``node part1-2.js`` to run the JavaScript file created during the
    build process.
 
-**Expected Output**
+**Terminal**
 
 ::
 
@@ -121,7 +122,7 @@ Part 3 - Create a Function
 #. Use the terminal in VSCode to compile your ``.ts`` file, then run the
    ``part3.js`` file.
 
-**Expected Output**
+**Terminal**
 
 ::
 
@@ -177,7 +178,7 @@ Organize the function and variables previously defined into a class named
 #. Use the terminal in VSCode to compile your ``.ts`` file, then run the
    ``part4.js`` file.
 
-**Expected Output**
+**Terminal**
 
 ::
 
@@ -190,7 +191,7 @@ Part 5 - Export and Import the SpaceLocation Class
 ---------------------------------------------------
 
 #. From the file tree in VSCode, open the ``part5.ts`` file.
-#. In repl.it, add a new file named ``SpaceLocation.ts``.
+#. In your project, add a new file named ``SpaceLocation.ts``.
 #. Paste in the below code to ``SpaceLocation.ts``.
 
    a. Notice the ``export`` keyword. That is what allows us to import it later.
@@ -235,7 +236,7 @@ Part 5 - Export and Import the SpaceLocation Class
 #. Use the terminal in VSCode to compile your ``.ts`` file, then run the
    ``part5.js`` file.
 
-**Expected Output**
+**Terminal**
 
 ::
 
