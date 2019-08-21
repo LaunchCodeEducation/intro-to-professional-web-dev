@@ -9,7 +9,7 @@ Starter Code
 If you have not already done so, follow the instructions given in the
 :ref:`TypeScript exercises <TS-repo>` to fork the GitHub repository.
 
-Use the terminal check that you are in the ``master`` branch, then navigate
+Use the terminal to check that you are in the ``master`` branch, then navigate
 into the ``studio`` folder.
 
 .. sourcecode:: bash
@@ -47,25 +47,27 @@ have a ``massKg`` property.
 Classes
 --------
 
-To create a new file in VSCode, click the "New File" button:
+#. Create three new files---``Astronaut.ts``, ``Cargo.ts``, and ``Rocket.ts``. To
+   do this in VSCode, click the "New File" button and enter the file name.
+   Another option is to run the command ``touch new_file_name`` in the terminal.
 
-.. figure:: ./figures/VSCode-new-file.png
-   :alt: VSCode new file button.
+   .. figure:: ./figures/VSCode-new-file.png
+      :alt: VSCode new file button.
 
-Define each class (``Astronaut``, ``Cargo``, ``Rocket``) in a separate file.
-Each class should be exported using ``export``.
+#. Define each class (``Astronaut``, ``Cargo``, ``Rocket``) in a separate file.
+   Each class should be exported using ``export``.
 
-.. sourcecode:: js
+   .. sourcecode:: js
 
-   export class Astronaut {
-      // properties and methods
-   }
+      export class Astronaut {
+         // properties and methods
+      }
 
-As needed, the classes can be imported using ``import``.
+#. As needed, the classes can be imported using ``import``.
 
-.. sourcecode:: js
+   .. sourcecode:: js
 
-   import { Astronaut } from './Astronaut';
+      import { Astronaut } from './Astronaut';
 
 Astronaut Class
 ^^^^^^^^^^^^^^^^
@@ -238,7 +240,7 @@ Submitting Your Work
 ---------------------
 
 #. Once you have your project working, use the terminal to commit and push your
-   work up to GitHub.
+   changes up to your forked GitHub repository.
 #. Login to your account and navigate to your project. Copy the URL.
 #. In Canvas, open the TypeScript studio assignment and click the "Submit"
    button. An input box will appear.
