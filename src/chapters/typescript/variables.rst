@@ -25,7 +25,7 @@ When declaring a ``string``, we want to use the ``string`` keyword.
 
 .. sourcecode:: js
 
-    let variableName: string = "10":
+    let variableName: string = "10";
 
 ``boolean``
 -----------
