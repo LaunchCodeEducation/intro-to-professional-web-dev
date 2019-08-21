@@ -19,13 +19,15 @@ Classes in TypeScript look something like this:
       }
    }
 
-   let Bob = Astronaut("Bob","Smith");
+   let Bob = new Astronaut("Bob","Smith");
 
-You may remember the ``this`` and ``new`` keywords from working with classes in JavaScript.
-Earlier in the chapter, we also noted that when declaring variables in TypeScript, we have to specify the type of value.
-The same applies to function parameters, as you can see in the constructor.
+You may remember the ``this`` and ``new`` keywords from working with classes in
+JavaScript. Earlier in the chapter, we also noted that when declaring variables
+in TypeScript, we have to specify the type of value. The same applies to
+function parameters, as you can see in the constructor.
 
-When :ref:`using inheritance <inheritance>`, classes in TypeScript can also use the ``extends`` keyword to denote child and parent classes, as shown here:
+When :ref:`using inheritance <inheritance>`, classes in TypeScript can also use
+the ``extends`` keyword to denote child and parent classes, as shown here:
 
 .. sourcecode:: js
    :linenos:
@@ -49,11 +51,13 @@ When :ref:`using inheritance <inheritance>`, classes in TypeScript can also use 
 Interfaces
 ----------
 
-When we start working with Angular, you may see the ``interface`` keyword quite a bit.
-Like classes, interfaces define properties and methods that a type will have.
-The difference is that interfaces do NOT include initialization of properties or implementations of methods.
+When we start working with Angular, you may see the ``interface`` keyword quite
+a bit. Like classes, interfaces define properties and methods that a type will
+have. The difference is that interfaces do NOT include initialization of
+properties or implementations of methods.
 
-We may create an interface for a data type that contains all of the information we need about an astronaut and then use that information in a function.
+We may create an interface for a data type that contains all of the information
+we need about an astronaut and then use that information in a function.
 
 .. sourcecode:: js
    :linenos:

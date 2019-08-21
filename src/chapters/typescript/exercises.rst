@@ -1,11 +1,41 @@
 Exercises: TypeScript
 =====================
 
+.. _TS-repo:
+
+Part 0 - Get the Starter Code
+------------------------------
+
+#. Login to your GitHub account.
+#. Fork the
+   `typescript-lc101-projects repository <https://github.com/LaunchCodeEducation/typescript-lc101-projects>`__.
+#. Use the terminal to clone your fork from GitHub.
+#. Use the terminal to navigate into the ``typescript-lc101-projects`` folder,
+   then into the ``exercises`` subfolder.
+
+   .. sourcecode:: bash
+
+      $ ls
+         typescript-lc101-projects
+      $ cd typescript-lc101-projects
+      $ ls
+         exercises       studio
+      $ cd exercises
+      $ ls
+         SpaceLocation.ts        part3.ts                part5.ts
+         part1-2.ts              part4.ts                tsconfig.json
+
 Part 1 - Declare Variables With Type
 ------------------------------------
 
-#. Fork the `part 1 repl.it <https://repl.it/@launchcode/ts-exercises-part-1-and-2>`_.
-#. Declare and assign a variable for each in the below table.
+Run VSCode and open the ``typescript-lc101-projects`` folder. From the file
+tree, select the ``part1-2.ts`` file.
+
+.. figure:: ./figures/TS-exercises-file-tree.png
+   :alt: VSCode file tree for the TypeScript exercises.
+
+In the space indicated, declare and assign a variable for each of the
+following:
 
 .. list-table::
    :widths: auto
@@ -30,152 +60,193 @@ Part 1 - Declare Variables With Type
      - number
      - 0.621
 
-
 Part 2 - Print Days to Mars
 ---------------------------
-In the *same* repl.it you completed Part 1, do the following.
+In the *same* file you opened in Part 1, do the following.
 
 #. Declare and assign these variables.
 
-   * Remember: variable declarations in TypeScript include the type!
-   * ``milesToMars`` is a number with the value of ``kilometersToMars * milesPerKilometer``.
-   * ``hoursToMars`` is a number with the value of  ``milesToMars / speedMph``.
-   * ``daysToMars`` is a number with the value of ``hoursToMars / 24``.
+   a. Remember: variable declarations in TypeScript include the type!
+   b. ``milesToMars`` is a number with the value of
+      ``kilometersToMars * milesPerKilometer``.
+   c. ``hoursToMars`` is a number with the value of
+      ``milesToMars / speedMph``.
+   d. ``daysToMars`` is a number with the value of ``hoursToMars / 24``.
 
 #. Write a ``console.log`` statement that prints out the days to Mars.
 
-   * Use template literal syntax and the variables ``${spacecraftName}`` and ``${daysToMars}``.
+   a. Use template literal syntax and the variables ``${spacecraftName}`` and
+      ``${daysToMars}``.
 
-Expected Output
+#. Use the terminal in VSCode to compile your ``.ts`` file, then use the
+   command ``node part1-2.js`` to run the JavaScript file created during the
+   build process.
+
+**Terminal**
 
 ::
 
-   Determination would take 332.67857142857144 days to get to Mars.
-
+   $ tsc part1-2.ts
+   $ node part1-2.js
+      Determination would take 332.67857142857144 days to get to Mars.
 
 Part 3 - Create a Function
---------------------------
-#. Fork the `part 3 repl.it <https://repl.it/@launchcode/ts-exercises-part-3>`_.
-#. Define a function that calculates the days it would take to travel.
+---------------------------
 
-   * Function name ``getDaysToLocation``
-   * Parameters
+#. From the file tree in VSCode, open the ``part3.ts`` file. Notice that a few
+   variables have already been declared and assigned for you.
+#. In the space indicated, define a function that calculates the days it would
+   take to travel.
 
-     *   ``kilometersAway`` must be a number.
+   a. Function name ``getDaysToLocation``
+   b. Parameters
 
-   * Returns the number of days to Mars.
+      * ``kilometersAway`` must be a number.
 
-     * Use the same calculations as in Part 2.1.
-     * Inside the function, make the variables name generic. Use ``milesAway`` and ``hours`` instead of ``milesToMars`` and ``hoursToMars``.
-     * The function should declare that it returns a number.
+   c. Returns the number of days to Mars.
+
+      * Use the same calculations as in Part 2.1.
+      * Inside the function, make the variable names generic. Use ``milesAway`` and ``hours`` instead of ``milesToMars`` and ``hoursToMars``.
+      * The function should declare that it returns a number.
 
 #. Print out the days to Mars.
 
-   * Use template literals, ``${getDaysToLocation(kilometersToMars)}`` and ``${spacecraftName}``.
+   a. Use a template literal, ``${getDaysToLocation(kilometersToMars)}`` and
+      ``${spacecraftName}``.
 
 #. Print out the days to the Moon.
 
-   * Use template literals, ``${getDaysToLocation(kilometersToTheMoon)}`` and ``${spacecraftName}``.
+   a. Use template literals, ``${getDaysToLocation(kilometersToTheMoon)}`` and
+      ``${spacecraftName}``.
 
-Expected Output
+#. Use the terminal in VSCode to compile your ``.ts`` file, then run the
+   ``part3.js`` file.
+
+**Terminal**
 
 ::
 
-   Determination would take 332.67857142857144 days to get to Mars.
-   Determination would take 0.5683628571428571 days to get to the Moon.
-
+   $ tsc part3.ts
+   $ node part3.js
+      Determination would take 332.67857142857144 days to get to Mars.
+      Determination would take 0.5683628571428571 days to get to the Moon.
 
 Part 4 - Create a Spacecraft Class
-----------------------------------
-Organize the function and variables previously defined into a class named ``Spacecraft``.
+-----------------------------------
 
-#. Fork the `part 4 repl.it <https://repl.it/@launchcode/ts-exercises-part-4>`_.
+Organize the function and variables previously defined into a class named
+``Spacecraft``.
+
+#. From the file tree in VSCode, open the ``part4.ts`` file. Notice that the
+   commented-out variables and function need to be moved into a *class*.
 #. Define a class named ``Spacecraft``.
 
-   * Properties
+   a. Properties
 
-     * ``milesPerKilometer: number = 0.621;``
-     * ``name: string;``
-     * ``speedMph: number;``
+      * ``milesPerKilometer: number = 0.621;``
+      * ``name: string;``
+      * ``speedMph: number;``
 
-   * Constructor
+   b. Constructor
 
-     * ``name`` is the first parameter and it MUST be a string.
-     * ``speedMph`` is the second parameter and it MUST be a number.
-     * Sets the class properties using ``this.name`` and ``this.speedMph``.
+      * ``name`` is the first parameter and it MUST be a string.
+      * ``speedMph`` is the second parameter and it MUST be a number.
+      * Sets the class properties using ``this.name`` and ``this.speedMph``.
 
-#. Move the function ``getDaysToLocation``, defined in Part 3, into the ``Spacecraft`` class.
+#. Move the function ``getDaysToLocation``, defined in Part 3, into the
+   ``Spacecraft`` class.
 
-   * Update the function to reference the class properties ``this.milesPerKilometer`` and ``this.speedMph``.
+   a. Update the function to reference the class properties
+      ``this.milesPerKilometer`` and ``this.speedMph``.
 
 #. Create an instance of the ``Spacecraft`` class.
 
-   * ``let spaceShuttle = new Spacecraft('Determination', 17500);``
+   a. ``let spaceShuttle = new Spacecraft('Determination', 17500);``
 
 #. Print out the days to Mars.
 
-   * Use template literals, ``${spaceShuttle.getDaysToLocation(kilometersToMars)}`` and ``${spaceShuttle.name}``.
+   a. Use template literals,
+      ``${spaceShuttle.getDaysToLocation(kilometersToMars)}`` and
+      ``${spaceShuttle.name}``.
 
 #. Print out the days to the Moon.
 
-   * Use template literals, ``${spaceShuttle.getDaysToLocation(kilometersToTheMoon)}`` and ``${spaceShuttle.name}``.
+   a. Use template literals,
+      ``${spaceShuttle.getDaysToLocation(kilometersToTheMoon)}`` and
+      ``${spaceShuttle.name}``.
 
-Expected Output
+#. Use the terminal in VSCode to compile your ``.ts`` file, then run the
+   ``part4.js`` file.
+
+**Terminal**
 
 ::
 
-   Determination would take 332.67857142857144 days to get to Mars.
-   Determination would take 0.5683628571428571 days to get to the Moon.
-
+   $ tsc part4.ts
+   $ node part4.js
+      Determination would take 332.67857142857144 days to get to Mars.
+      Determination would take 0.5683628571428571 days to get to the Moon.
 
 Part 5 - Export and Import the SpaceLocation Class
---------------------------------------------------
-1. Fork the `part 5 repl.it <https://repl.it/@launchcode/ts-exercises-part-5>`_.
-2. In repl.it, add a new file named ``SpaceLocation.ts``.
-3. Paste in the below code to ``SpaceLocation.ts``.
+---------------------------------------------------
 
-   * Notice the ``export`` keyword. That is what allows us to import it later.
+#. From the file tree in VSCode, open the ``part5.ts`` file.
+#. In your project, add a new file named ``SpaceLocation.ts``.
+#. Paste in the below code to ``SpaceLocation.ts``.
 
-.. sourcecode:: js
-   :linenos:
+   a. Notice the ``export`` keyword. That is what allows us to import it later.
 
-   export class SpaceLocation {
-      kilometersAway: number;
-      name: string;
+   .. sourcecode:: js
+      :linenos:
 
-      constructor(name: string, kilometersAway: number) {
-         this.name = name;
-         this.kilometersAway = kilometersAway;
+      export class SpaceLocation {
+         kilometersAway: number;
+         name: string;
+
+         constructor(name: string, kilometersAway: number) {
+            this.name = name;
+            this.kilometersAway = kilometersAway;
+         }
       }
-   }
 
 4. Add the function ``printDaysToLocation`` to the ``Spacecraft`` class.
 
    * Notice that it takes a parameter of type ``SpaceLocation``.
 
-.. sourcecode:: js
-   :linenos:
+   .. sourcecode:: js
+      :linenos:
 
-   printDaysToLocation(location: SpaceLocation) {
-      console.log(`${this.name} would take ${this.getDaysToLocation(location.kilometersAway)} days to get to ${location.name}.`);
-   }
+      printDaysToLocation(location: SpaceLocation) {
+         console.log(`${this.name} would take ${this.getDaysToLocation(location.kilometersAway)} days to get to ${location.name}.`);
+      }
 
-5. Import ``SpaceLocation`` into ``index.ts``.
+#. Import ``SpaceLocation`` into ``index.ts``.
 
    * Add ``import { SpaceLocation } from './SpaceLocation';`` to the top of ``index.ts``.
 
-6. Print out the days to Mars and the Moon.
+#. Print out the days to Mars and the Moon.
 
-.. sourcecode:: js
-   :linenos:
+   .. sourcecode:: js
+      :linenos:
 
-   let spaceShuttle = new Spacecraft('Determination', 17500);
-   spaceShuttle.printDaysToLocation(new SpaceLocation('Mars', kilometersToMars));
-   spaceShuttle.printDaysToLocation(new SpaceLocation('the Moon', kilometersToTheMoon));
+      let spaceShuttle = new Spacecraft('Determination', 17500);
+      spaceShuttle.printDaysToLocation(new SpaceLocation('Mars', kilometersToMars));
+      spaceShuttle.printDaysToLocation(new SpaceLocation('the Moon', kilometersToTheMoon));
 
-Expected Output
+#. Use the terminal in VSCode to compile your ``.ts`` file, then run the
+   ``part5.js`` file.
+
+**Terminal**
 
 ::
 
-   Determination would take 332.67857142857144 days to get to Mars.
-   Determination would take 0.5683628571428571 days to get to the Moon.
+   $ tsc part5.ts
+   $ node part5.js
+      Determination would take 332.67857142857144 days to get to Mars.
+      Determination would take 0.5683628571428571 days to get to the Moon.
+
+Sanity Check
+-------------
+
+The ``typescript-lc101-projects`` repository has two branches---``master`` and
+``solutions``. 'Nuff said.

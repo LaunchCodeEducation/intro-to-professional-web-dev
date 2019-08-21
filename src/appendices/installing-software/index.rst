@@ -5,3 +5,5 @@ Setting up Software for the Class
    :maxdepth: 3
 
    setting-up-terminal
+   setting-up-vsc
+   setting-up-git
