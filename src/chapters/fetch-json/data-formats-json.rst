@@ -29,13 +29,13 @@ is one of the leading data formats used, especially on the web.
 JSON is based on JavaScript object syntax, but has some differences.
 
 Let's consider an API that serves information about the books in a library. In this 
-example, we searched for "An Astronaut's guide to life on Earth".
+example, we searched for "An Astronaut's Guide to Life on Earth".
 
 .. sourcecode:: js
    :linenos:
 
    {
-       "title": "An Astronaut's guide to life on Earth",
+       "title": "An Astronaut's Guide to Life on Earth",
        "author": "Chris Hadfield",
        "ISBN": 9780316253017,
        "year_published": 2013,
@@ -52,7 +52,7 @@ JSON Rules
 ----------
 
 JSON is a collection of key-value pairs. In the example above, ``"title"`` is a key 
-and it's value is ``"An Astronaut's guide to life on Earth"``.
+and it's value is ``"An Astronaut's Guide to Life on Earth"``.
 
 The key-value pairs describe the data that is being transferred.
 
@@ -73,7 +73,7 @@ we search for the word "Astronaut".
        "hits": 3,
        "book": [
            {
-               "title": "An Astronaut's guide to life on Earth",
+               "title": "An Astronaut's Guide to Life on Earth",
                 "author": "Chris Hadfield",
                 "ISBN": 9780316253017,
                 "year_published": 2013,
