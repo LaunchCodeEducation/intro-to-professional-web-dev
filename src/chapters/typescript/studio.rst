@@ -3,122 +3,157 @@ Studio: TypeScript
 
 Let's practice TypeScript by creating classes for rocket cargo calculations.
 
+Starter Code
+-------------
+
+If you have not already done so, follow the instructions given in the
+:ref:`TypeScript exercises <TS-repo>` to fork the GitHub repository.
+
+Use the terminal to check that you are in the ``master`` branch, then navigate
+into the ``studio`` folder.
+
+.. sourcecode:: bash
+
+   $ git branch
+      * master
+      solutions
+   $ pwd
+      /typescript-lc101-projects
+   $ ls
+      exercises       studio
+   $ cd studio
+   $ ls
+      index.ts    Payload.ts
+
+From the file tree in VSCode, open the ``index.ts`` file.
+
+.. figure:: ./figures/TS-studio-file-tree.png
+   :alt: VSCode file tree for the TypeScript studio.
 
 Requirements
-------------
-#. Fork `the starter repl.it <https://repl.it/@launchcode/rocket-studio-starter>`_.
-#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``.  (Details below)
+-------------
 
-   * All classes should be defined in their own files.
+#. Create classes for ``Astronaut``, ``Cargo``, and ``Rocket``. (Details
+   below).
 
-#. Use new classes to run a simulation in ``index.ts`` file.
+   a. All classes should be defined in their own files.
 
-In the starter code, you will notice that an interface named ``Payload`` has been declared.
-This interface ensures that any class that implements it will have a ``weightKg`` property.
+#. Use the new classes to run a simulation in the ``index.ts`` file.
 
+In the starter code, you will notice that an interface named ``Payload`` has
+been declared. This interface ensures that any class that implements it will
+have a ``massKg`` property.
 
 Classes
--------
-Define each of these classes in a separate files. Each class should be exported using ``export``.
+--------
 
-.. sourcecode:: js
+#. Create three new files---``Astronaut.ts``, ``Cargo.ts``, and ``Rocket.ts``. To
+   do this in VSCode, click the "New File" button and enter the file name.
+   Another option is to run the command ``touch new_file_name`` in the terminal.
 
-   export class Astronaut {
-      // properties and methods
-   }
+   .. figure:: ./figures/VSCode-new-file.png
+      :alt: VSCode new file button.
 
-As needed, the classes can be imported using ``import``.
+#. Define each class (``Astronaut``, ``Cargo``, ``Rocket``) in a separate file.
+   Each class should be exported using ``export``.
 
-.. sourcecode:: js
+   .. sourcecode:: js
 
-   import { Astronaut } from './Astronaut';
+      export class Astronaut {
+         // properties and methods
+      }
+
+#. As needed, the classes can be imported using ``import``.
+
+   .. sourcecode:: js
+
+      import { Astronaut } from './Astronaut';
 
 Astronaut Class
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
-* Defined in ``Astronaut.ts``
-* Implements the ``Payload`` interface
-* Properties
+#. Defined in ``Astronaut.ts``
+#. Implements the ``Payload`` interface
+#. Properties
 
-  * ``weightKg`` should be a number.
-  * ``name`` should be a string.
+   a. ``massKg`` should be a number.
+   b. ``name`` should be a string.
 
-* Constructor
+#. Constructor
 
-  * Parameter ``weightKg`` should be a number.
-  * Parameter ``name`` should be string.
-  * Sets value of ``this.weightKg`` and ``this.name``.
+   a. Parameter ``massKg`` should be a number.
+   b. Parameter ``name`` should be string.
+   c. Sets value of ``this.massKg`` and ``this.name``.
 
 Cargo Class
-^^^^^^^^^^^
-
-* Defined in ``Cargo.ts``
-* Implements the ``Payload`` interface
-* Properties
-
-  * ``weightKg`` should be a number.
-  * ``material`` should be a string.
-
-* Constructor
-
-  * Parameter ``weightKg`` should be a number.
-  * Parameter ``material`` should be a string.
-  * Sets value of ``this.weightKg`` and ``this.material``
-
-Rocket Class
 ^^^^^^^^^^^^
 
-* Defined in ``Rocket.ts``
-* Properties
+#. Defined in ``Cargo.ts``
+#. Implements the ``Payload`` interface
+#. Properties
 
-  * ``name`` should be a string.
-  * ``totalCapacityKg`` should be a number.
-  * ``cargoItems`` should be an array of ``Cargo`` objects.
+   a. ``massKg`` should be a number.
+   b. ``material`` should be a string.
 
-    * Should be initialized to an empty array ``[]``
+#. Constructor
 
-  * ``astronauts`` should be an array of ``Astronaut`` objects.
+   a. Parameter ``massKg`` should be a number.
+   b. Parameter ``material`` should be a string.
+   c. Sets value of ``this.massKg`` and ``this.material``
 
-    * Should be initialized to an empty array ``[]``
+Rocket Class
+^^^^^^^^^^^^^
 
-* Constructor
+#. Defined in ``Rocket.ts``.
+#. Properties:
 
-  * Parameter ``name`` should be a string.
-  * Parameter ``totalCapacityKg`` should be a number.
-  * Sets value of ``this.name`` and ``this.totalCapacityKg``
+   a. ``name`` should be a string.
+   b. ``totalCapacityKg`` should be a number.
+   c. ``cargoItems`` should be an array of ``Cargo`` objects.
 
-* Methods
+      * Should be initialized to an empty array ``[]``
 
-  * ``sumWeight( items: Payload[] ): number``
+   d. ``astronauts`` should be an array of ``Astronaut`` objects.
 
-    * Returns the sum of all ``items`` using each item's ``weightKg`` property
+      * Should be initialized to an empty array ``[]``
 
-  * ``currentWeightKg(): number``
+#. Constructor:
 
-    * Uses ``this.sumWeight`` to return the combined weight of ``this.astronauts`` and ``this.cargoItems``
+   a. Parameter ``name`` should be a string.
+   b. Parameter ``totalCapacityKg`` should be a number.
+   c. Sets value of ``this.name`` and ``this.totalCapacityKg``
 
-  * ``canAdd(item: Payload): boolean``
+#. Methods:
 
-    * Returns ``true`` if ``this.currentWeightKg() + item.weightKg <= this.totalCapacityKg``
+   a. ``sumMass( items: Payload[] ): number``
 
-  * ``addCargo(cargo: Cargo)``
+      * Returns the sum of all ``items`` using each item's ``massKg`` property
 
-    * Uses ``this.canAdd(item: Payload)`` to see if it can be added
+   b. ``currentMassKg(): number``
 
-      * If ``true``, adds ``cargo`` to ``this.cargoItems`` and returns ``true``
-      * If ``false``, returns ``false``
+      * Uses ``this.sumMass`` to return the combined mass of
+        ``this.astronauts`` and ``this.cargoItems``
 
-  * ``addAstronaut(astronaut: Astronaut)``
+   c. ``canAdd(item: Payload): boolean``
 
-    * Uses ``this.canAdd(item: Payload)`` to see if it can be added
+      * Returns ``true`` if ``this.currentMassKg() + item.massKg <= this.totalCapacityKg``
 
-      * If ``true``, adds ``astronaut`` to ``this.astronauts`` and returns ``true``
-      * If ``false``, returns ``false``
+   d. ``addCargo(cargo: Cargo)``.
 
+      * Uses ``this.canAdd()`` to see if another item can be added.
+      * If ``true``, adds ``cargo`` to ``this.cargoItems`` and returns
+        ``true``.
+      * If ``false``, returns ``false``.
+
+   e. ``addAstronaut(astronaut: Astronaut)``.
+
+      * Uses ``this.canAdd()`` to see if another astronaut can be added.
+      * If ``true``, adds ``astronaut`` to ``this.astronauts`` and returns ``true``.
+      * If ``false``, returns ``false``.
 
 Simulation in ``index.ts``
 --------------------------
-Paste the below code into ``index.ts``.
+Paste the code shown below into ``index.ts``.
 
 .. sourcecode:: js
    :linenos:
@@ -135,9 +170,15 @@ Paste the below code into ``index.ts``.
       new Astronaut(99, 'Charles')
    ];
 
-   for (let i =0; i < astronauts.length; i++) {
+   for (let i = 0; i < astronauts.length; i++) {
       let astronaut = astronauts[i];
-      console.log(astronaut.name, falcon9.addAstronaut(astronaut));
+      let status = '';
+      if (falcon9.addAstronaut(astronaut)) {
+         status = "On board";
+      } else {
+         status = "Not on board";
+      }
+      console.log(`${astronaut.name}: ${status}`);
    }
 
    let cargo: Cargo[] = [
@@ -148,35 +189,60 @@ Paste the below code into ``index.ts``.
       new Cargo(2107.39, "Tesla Roadster"),
    ];
 
-   for (let i =0; i < cargo.length; i++) {
+   for (let i = 0; i < cargo.length; i++) {
       let c = cargo[i];
-      console.log(c.material, falcon9.addCargo(c));
+      let loaded = '';
+      if (falcon9.addCargo(c)) {
+         loaded = "Loaded"
+      } else {
+         loaded = "Not loaded"
+      }
+      console.log(`${c.material}: ${loaded}`);
    }
 
-   console.log('final cargo and astronaut weight:', falcon9.currentWeightKg());
+   console.log(`Final cargo and astronaut mass: ${falcon9.currentMassKg()} kg.`);
 
+Compile and Run ``index.ts``
+-----------------------------
+
+#. Use the terminal in VSCode to compile your ``index.ts`` file. This will also
+   compile the modules you imported into the file (``Astronaut.ts``,
+   ``Rocket.ts``, etc.).
+#. Use the command ``node index.js`` to run the JavaScript file created during
+   the build process.
+
+.. sourcecode:: bash
+
+   $ ls
+      Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
+   $ tsc index.ts
+   $ ls
+      Astronaut.js    Cargo.js        Payload.js      Rocket.js       index.js
+      Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
+   $ node index.js
 
 Expected Console Output
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-   Mae true
-   Sally true
-   Charles true
-   Satellite true
-   Space Probe true
-   Water true
-   Food true
-   Tesla Roadster false
-   final cargo and astronaut weight: 5656.78
-
+   Mae: On board
+   Sally: On board
+   Charles: On board
+   Satellite: Loaded
+   Space Probe: Loaded
+   Water: Loaded
+   Food: Loaded
+   Tesla Roadster: Not loaded
+   Final cargo and astronaut mass: 5656.78 kg.
 
 Submitting Your Work
---------------------
+---------------------
 
-In Canvas, open the TypeScript studio and click the "Submit" button. An input
-box will appear.
-
-Copy the URL for your repl.it project and paste it into the box, then click
-"Submit" again.
+#. Once you have your project working, use the terminal to commit and push your
+   changes up to your forked GitHub repository.
+#. Login to your account and navigate to your project. Copy the URL.
+#. In Canvas, open the TypeScript studio assignment and click the "Submit"
+   button. An input box will appear.
+#. Paste the URL for your GitHub project into the box, then click "Submit"
+   again.
