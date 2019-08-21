@@ -35,6 +35,7 @@ Chapters
    chapters/typescript/index
    chapters/angular-lsn1/index
    chapters/angular-lsn2/index
+   chapters/angular-lsn3/index
    chapters/booster-rockets/index
 
 .. toctree::
@@ -68,6 +69,7 @@ Studios
    chapters/typescript/studio
    chapters/angular-lsn1/studio
    chapters/angular-lsn2/studio
+   chapters/angular-lsn3/studio
 
 Assignments
 ^^^^^^^^^^^
