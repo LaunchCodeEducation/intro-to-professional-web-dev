@@ -111,7 +111,8 @@ The first mate swiped a copy of the code ye need ta hack:
 #. Finally, ye need to print a receipt for the accountant. Don't laugh! That
    genius knows MATH and saves us more gold than ye can imagine.
 
-   #. Define a function that takes yer fuel and cargo functions as
-      parametarrrrrs.
-   #. Use a template literal to print out, ``"Raided _____ kg of fuel from the
+   #. Define a function called ``irs`` that takes ``fuelLevel`` and
+      ``cargoHold`` as parametarrrrrs.
+   #. Call yer anonymous fuel and cargo functions from within ``irs``.
+   #. Use a template literal to return, ``"Raided _____ kg of fuel from the
       tanks, and stole ____ and ____ from the cargo hold."``
