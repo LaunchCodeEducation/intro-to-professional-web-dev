@@ -8,3 +8,4 @@ Styling the Web With CSS
    background
    structure
    rules
+   exercises
