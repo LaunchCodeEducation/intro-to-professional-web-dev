@@ -1,9 +1,9 @@
 Fetching Data
 =============
 
-Now that we know what an API is, let's use one to update a web page. Let's use a weather API
-to add weather data to a webpage. The URL for this special LaunchCode weather API is
-`<https://api.education.launchcode.org/weather>`_.
+Now that we know what an API is, let's use one to update a web page. Let's use
+a weather API to add weather data to a webpage. The URL for this special
+LaunchCode weather API is `<https://handlers.education.launchcode.org/static/weather.json>`__.
 
 Example JSON returned from our weather API.
 
@@ -19,9 +19,9 @@ Example JSON returned from our weather API.
       "zipcode": 63108
    }
 
-We can see that this API returns useful information like ``temp`` and ``windSpeed``. Our goal is to
-add that data to a Launch Status web page. Note, this API is for instruction purposes and does not
-contain real time data.
+We can see that this API returns useful information like ``temp`` and
+``windSpeed``. Our goal is to add that data to a Launch Status web page. Note,
+this API is for instruction purposes and does not contain real time data.
 
 .. admonition:: Example
 
@@ -46,40 +46,44 @@ contain real time data.
 
 .. warning::
 
-   Before going through the ``fetch`` examples, please know that ``fetch`` does NOT work in
-   Internet Explorer. `List of alternative browsers <https://browsehappy.com/>`_
+   Before going through the ``fetch`` examples, please know that ``fetch`` does
+   NOT work in Internet Explorer.
+   `List of alternative browsers <https://browsehappy.com/>`_
 
 ``fetch`` Function
 ------------------
 
 .. index:: !fetch
 
-To request the weather data, we will use the ``fetch`` function. ``fetch`` is a global
-function that requests, or fetches, resources such as data from an API.
+To request the weather data, we will use the ``fetch`` function. ``fetch`` is a
+global function that requests, or fetches, resources such as data from an API.
 
 Take note of two necessary aspects of the ``fetch`` function:
 
 #. The URL of where the data is located.
 
-   * For this example it will be ``'https://api.education.launchcode.org/weather'``
+   a. For this example it will be ``"https://handlers.education.launchcode.org/static/weather.json"``
 
 #. A response handler function to utilize the data that is being fetched.
 
-   * For this example it will be ``function(response){...};``
+   a. For this example it will be ``function(response){...};``
 
 .. admonition:: Example
 
-   Notice a string URL is passed to ``fetch``. Also notice the anonymous function that
-   has a ``response`` parameter, that is the request handler function. The ``then``
-   function will be explained soon.
+   Notice a string URL is passed to ``fetch``. Also notice the anonymous
+   *request handler function* that has a ``response`` parameter. The ``.then``
+   method will be explained soon.
 
    .. sourcecode:: js
 
-      fetch('https://api.education.launchcode.org/weather').then( function(response) {
+      fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
          console.log(response);
       } );
 
-   In this example, we are requesting data from ``https://api/education.launchcode.org/weather`` and our response handler (the function) simply logs the response to the console.
+   In this example, we are requesting data from
+   ``https://handlers.education.launchcode.org/static/weather.json`` and our
+   response handler (the anonymous function) simply logs the response to the
+   console.
 
 ``fetch`` Example
 -----------------
@@ -90,9 +94,10 @@ Now let's add ``fetch`` in the Launch Status web page.
 
    A ``<script>`` tag has been added that includes:
 
-   #. A *load* event handler on line 5
-   #. A ``fetch`` and response handler function on line 6
-   #. A ``console.log(response);`` on line 7 that prints out the response object
+   #. A *load* event handler on line 5.
+   #. A ``fetch`` and *response handler function* on line 6.
+   #. A ``console.log(response);`` on line 7 that prints out the ``response``
+      object.
 
    .. replit:: html
       :linenos:
@@ -103,7 +108,7 @@ Now let's add ``fetch`` in the Launch Status web page.
             <title>Launch Status</title>
             <script>
                window.addEventListener("load", function() {
-                  fetch("weather.json").then( function(response) {
+                  fetch("https://handlers.education.launchcode.org/static/weather.json").then(function(response) {
                      console.log(response);
                   } );
                });
@@ -118,47 +123,57 @@ Now let's add ``fetch`` in the Launch Status web page.
          </body>
       </html>
 
-Let's break down how ``fetch`` works. A URL is passed to ``fetch`` as a parameter. 
-That causes an HTTP GET request to be sent from the browser to the API. Remember that 
-HTTP is a request then response protocol. The response handler function, as the name 
-implies, handles the response sent back from the API. Using the data in the response, 
-the web page can be updated using DOM methods.
+Let's break down how ``fetch`` works:
+
+#. A URL is passed to ``fetch`` as a parameter.
+#. This causes an HTTP GET request to be sent from the browser to the API.
+#. The API processes the request and sends back a response, which contains
+   data.
+#. Once the browser receives the response, the ``.then()`` statement executes.
+#. The anonymous *response handler function* called by
+   ``.then(function(response)`` runs, and this function deals with the data
+   sent back from the API.
+#. Based on the code in the handler function, the web page gets updated using
+   DOM methods.
 
 .. note::
 
-   In this section, ``fetch`` is used to make GET requests. ``fetch`` can also be used to make
-   other types of HTTP requests such as POST and PUT.
+   In this section, ``fetch`` is used to make GET requests. ``fetch`` can also
+   be used to make other types of HTTP requests such as POST and PUT.
 
 View the GET Request
 ^^^^^^^^^^^^^^^^^^^^
+
 We can see evidence of the GET request by following these steps:
 
-#. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`_ in it's own tab.
+#. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`__ in it's own tab.
 #. Open developer tools.
 #. Open the *Network* tab in developer tools.
 
 .. figure:: figures/weather-developer-tools.png
-       :alt: Screen shot showing developer tools open with the network call to the API highlighted.
+   :alt: Screen shot showing developer tools open with the network call to the API highlighted.
 
-       The GET request to the Weather API highlighted in developer tools.
+   The GET request to the Weather API highlighted in developer tools.
 
-In the above image, you can see the web page has been rendered on the left. In the 
-developer tools, the GET request to the Weather API has been highlighted along with 
-the response from that request. The response shows the JSON data that was received. 
-In the console output, you can see the ``Response`` object has been logged. We will 
-use that object next.
+In the image above, you can see the web page has been rendered on the left. In
+the developer tools, the GET request to the Weather API has been highlighted
+along with the response from that request. The response shows the JSON data
+that was received. In the console output, you can see the ``Response`` object
+has been logged. We will use that object next.
 
 Response Object
-^^^^^^^^^^^^^^^
-The response to the GET request is contained in a ``Response`` object that is an 
-instance of the
-`Response class <https://developer.mozilla.org/en-US/docs/Web/API/Response>`_. 
-The Response class represents an HTTP response and has methods that allow access to 
-the status and data.
+^^^^^^^^^^^^^^^^
+
+The response to the GET request is contained in a ``Response`` object, which is
+an instance of the
+`Response class <https://developer.mozilla.org/en-US/docs/Web/API/Response>`__.
+The class contains methods that allow us to access the status of an API request
+and the data returned in the response.
 
 .. admonition:: Example
 
-   On line 8, the ``json()`` method is used to gain access to the JSON data contained in the response.
+   On line 8, the ``json()`` method is used to gain access to the JSON data
+   contained in the ``response`` object.
 
    Line 9 logs the JSON to the console. We'll discuss ``.then()`` later.
 
@@ -171,7 +186,7 @@ the status and data.
             <title>Launch Status</title>
             <script>
                window.addEventListener("load", function() {
-                  fetch("weather.json").then( function(response) {
+                  fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
                      // Access the JSON in the response
                      response.json().then( function(json) {
                         console.log(json);
@@ -192,17 +207,28 @@ the status and data.
    **Console Output**
    ::
 
-      Object { temp: 67, windSpeed: 5, tempMin: 50, tempMax: 71, status: "Sunny", chanceOfPrecipitation: 20, zipcode: 63108 }
+      Object {
+         temp: 67,
+         windSpeed: 5,
+         tempMin: 50,
+         tempMax: 71,
+         status: "Sunny",
+         chanceOfPrecipitation: 20,
+         zipcode: 63108
+      }
 
 Use the DOM and JSON Data to Update the Page
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Now that we have JSON weather data, we can add HTML elements to the page to show the 
-data.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now that we have JSON weather data, we can add HTML elements to the page to
+display that data.
 
 .. admonition:: Example
 
-   On line 10, ``innerHTML`` of the ``div`` variable is set to be HTML built using
-   JSON weather data.
+   #. On line 8, the ``div`` object is defined and linked to the HTML element
+      with the id ``weather-conditions``.
+   #. On line 10, the ``innerHTML`` property of the ``div`` object is set to be
+      the HTML elements in lines 11 - 16.
 
    .. replit:: html
       :linenos:
@@ -213,9 +239,9 @@ data.
             <title>Launch Status</title>
             <script>
                window.addEventListener("load", function() {
-                  fetch("weather.json").then( function(response) {
+                  fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
                      response.json().then( function(json) {
-                        const div = document.getElementById('weather-conditions');
+                        const div = document.getElementById("weather-conditions");
                         // Add HTML that includes the JSON data
                         div.innerHTML = `
                            <ul>
@@ -239,6 +265,27 @@ data.
          </body>
       </html>
 
+Let's take a look at the expected sequence of events:
+
+#. In line 6, the ``fetch`` command sends a request to the URL.
+#. When the API returns a response, the ``then`` method calls the anonymous
+   handler function and passes in the ``response`` object (also line 6).
+#. On line 7, the handler function tries to retrieve the JSON data from the
+   ``response`` object. When this is successful, the anonymous
+   ``function(json)`` gets called.
+
+   a. On line 8, the ``div`` object is defined and linked to the HTML element
+      with the id ``weather-conditions``.
+   b. On line 10, the ``innerHTML`` property of the ``div`` object is set to be
+      the HTML elements in lines 11 - 16.
+   c. The HTML in lines 11 - 16 gets filled in using weather data stored in the
+      ``json`` object.
+
+#. The two anonymous functions end, and the HTML defined in lines 11 - 16
+   gets added to the ``div`` element on line 26.
+
+Opening the developer tools on the webpage shows the added HTML:
+
 .. figure:: figures/weather-data-on-page.png
    :alt: Screen shot of browser showing Launch Status web page with the weather data in HTML.
 
@@ -248,7 +295,7 @@ data.
 
    ``fetch`` was chosen as the tool to request data because it's supported in modern browsers by default
    and is simple to use. When viewing resources other than this book, you will see various other ways to
-   request data in a web page with JavaScript. Other ways include, but are not 
+   request data in a web page with JavaScript. Other ways include, but are not
    limited to, ``jQuery.get``, ``jQuery.ajax``, and ``XMLHttpRequest``.
 
 
@@ -258,6 +305,6 @@ Check Your Understanding
 
    What is the correct syntax for ``fetch``?
 
-   a. ``fetch('GET', 'https://api.education.launchcode.org/weather').then(...);``
-   b. ``fetch('https://api.education.launchcode.org/weather').doStuff(...)``
-   c. ``fetch('https://api.education.launchcode.org/weather').then(...);``
+   a. ``fetch("GET", "https://api.url").then(...);``
+   b. ``fetch("https://api.url").doStuff(...)``
+   c. ``fetch("https://api.url").then(...);``
