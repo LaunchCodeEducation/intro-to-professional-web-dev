@@ -117,7 +117,7 @@ provides us with a way to handle the response whenever it is received.</p>
 called on the value returned from <code class="docutils literal notranslate"><span class="pre">fetch</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
@@ -127,22 +127,23 @@ named <code class="docutils literal notranslate"><span class="pre">promise</span
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">);</span>
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">);</span>
 <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> returns an instance of the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class. The <strong>Promise</strong> class represents
-a future event that will eventually occur. In the above example, <code class="docutils literal notranslate"><span class="pre">promise</span></code> represents
-the eventual response from the HTTP request to <code class="docutils literal notranslate"><span class="pre">https://api.education.launchcode.org/weather</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> returns an instance of the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class. The <strong>Promise</strong> class
+represents a future event that will eventually occur. In the above example,
+<code class="docutils literal notranslate"><span class="pre">promise</span></code> represents the eventual response from the HTTP request to
+<code class="docutils literal notranslate"><span class="pre">https://handlers.education.launchcode.org/static/weather.json</span></code>.</p>
 <p>A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed
 to the response handler function. The <code class="docutils literal notranslate"><span class="pre">then</span></code> method of a promise defines what will
 happen when the promise is fulfilled. When a promise is rejected, an error reason is
 provided.</p>
 <p>The above example can be translated to these steps</p>
 <ol class="arabic simple">
-<li>Make an HTTP request to <code class="docutils literal notranslate"><span class="pre">https://api.education.launchcode.org/weather</span></code></li>
+<li>Make an HTTP request to <code class="docutils literal notranslate"><span class="pre">https://handlers.education.launchcode.org/static/weather.json</span></code></li>
 <li>When the response is received, THEN run the response handler function (passing in response data)</li>
 <li>In the response handler function, console log the <code class="docutils literal notranslate"><span class="pre">response</span></code> object</li>
 </ol>
@@ -163,7 +164,7 @@ into JSON.</p>
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.education.launchcode.org/weather&#39;</span><span class="p">);</span>
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">);</span>
 <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
    <span class="kr">const</span> <span class="nx">jsonPromise</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
    <span class="nx">jsonPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
