@@ -7,53 +7,82 @@ same five animal objects throughout.
 
 `Starter Code <https://repl.it/@launchcode/ObjectsExercises/>`_
 
-1. Based on the two provided object literals and the following data about the
-   remaining three animals, create the three remaining object literals needed
-   for these exercises.
+Part 1: Create More Objects
+----------------------------
 
-   .. list-table:: Animal Astronauts
-      :header-rows: 1
+Based on the two object literals provided in the starter code, create new
+object literals for three more animals:
 
-      + - Name
-        - Species
-        - Mass (kg)
-        - Age (years)
-      + - Brad
-        - Chimpanzee
-        - 11
-        - 6
-      + - Leroy
-        - Beagle
-        - 14
-        - 5
-      + - Almina
-        - Tardigrade
-        - 0.0000000001
-        - 1
+.. list-table:: Animal Astronauts
+   :header-rows: 1
 
-2. For each animal, add a property called ``astronautID``. Each ``astronautID``
-   should be a randomly selected number between 0 and 10. The number can be 10,
-   but it cannot be 0, and the numbers cannot repeat.
+   + - Name
+     - Species
+     - Mass (kg)
+     - Age (years)
+   + - Brad
+     - Chimpanzee
+     - 11
+     - 6
+   + - Leroy
+     - Beagle
+     - 14
+     - 5
+   + - Almina
+     - Tardigrade
+     - 0.0000000001
+     - 1
 
-3. Create an array to store all of the animal objects.
+Add a New Property
+^^^^^^^^^^^^^^^^^^^
 
-4. For upper management at the space base, we need to print out all of the
-   relevant information about the animal astronauts. For each animal, print to
-   the console the following string: ``'____ is a ____. They are ____ years old
-   and ____ kilograms. Their ID is ____.'`` Fill in the blanks with the
-   appropriate values for each animal.
+For each animal, add a property called ``astronautID``. Each ``astronautID``
+should be assigned a number between 1 and 10 (including 10). However, no
+crew members should have the same ID.
 
-5. Before these animal astronauts can get ready for launch, they need to take a
-   physical fitness test. Add a ``move`` method to each animal object. The
-   ``move`` method will select a random number of steps from 0 to 10 for the
-   animal to take. Race the five animals together. An animal is done with the
-   race when they reach 20 steps or greater. Create a new array to store how
-   many turns it takes each animal to complete the race. Print the race
-   results, ``'____ took ____ turns to take 20 steps.'`` Fill in the blanks
-   with the animal's name and race result.
+Add a Method
+^^^^^^^^^^^^^
 
-   `HINT`: There are a lot of different ways to approach this problem. One way
-   that works well is to see how many iterations of the ``move`` method it will
-   take for one animal to reach 20 steps. Once that has been done for every
-   animal, you can compare the number of iterations to see which animal was the
-   fastest.
+Add a ``move`` method to each animal object. The ``move`` method will select a
+random number of steps from 0 to 10 for the animal to take. The number can
+be 0 as well as 10.
+
+Store the Objects
+^^^^^^^^^^^^^^^^^^
+
+Create a ``crew`` array to store all of the animal objects.
+
+Part 2: Crew Reports
+---------------------
+
+Upper management at the space base wants us to report all of the relevant
+information about the animal astronauts.
+
+Define a ``crewReports`` function to accomplish this. When passed one of the
+animal objects, the function returns a template literal with the following
+string:
+``'____ is a ____. They are ____ years old and ____ kilograms. Their ID is
+____.'``
+
+Fill in the blanks with the name, species, age, mass, and ID for the selected
+animal.
+
+Part 3: Crew Fitness
+---------------------
+
+Before these animal astronauts can get ready for launch, they need to take a
+physical fitness test. Define a ``fitnessTest`` function that takes an array as
+a parameter.
+
+Within the function, race the five animals together by using the ``move``
+method. An animal is done with the race when they reach 20 steps or greater.
+Store the result as a string: ``'____ took ____ turns to take 20 steps.'``
+Fill in the blanks with the animal’s name and race result. Create a new array
+to store how many turns it takes each animal to complete the race.
+
+Return the array from the function, then print the results to the console (one
+animal per line).
+
+*HINT*: There are a lot of different ways to approach this problem. One way
+that works well is to see how many iterations of the ``move`` method it will
+take for each animal to reach 20 steps.

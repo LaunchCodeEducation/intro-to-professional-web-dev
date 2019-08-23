@@ -16,7 +16,7 @@ Requirements
 
    a. This is done because we can't interact with the HTML elements until the page has loaded.
 
-2. Make a GET request using ``fetch`` to the astronauts API `https://api.education.launchcode.org/astronauts <https://api.education.launchcode.org/astronauts>`_
+2. Make a GET request using ``fetch`` to the astronauts API `<https://handlers.education.launchcode.org/static/astronauts.json>`__
 
    a. Do this part inside the ``load`` event handler.
 
@@ -28,6 +28,7 @@ Requirements
 
 Example JSON
 ^^^^^^^^^^^^
+
 Notice that it's an array of objects, due to the outer ``[`` and ``]``. That means you will have to
 use a loop to access each object inside the JSON array.
 
