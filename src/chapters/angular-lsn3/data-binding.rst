@@ -45,9 +45,9 @@ a file to the view. In the example above, data contained in the
 ``movie-list.component.ts`` file is *bound* to placeholders in the
 ``movie-list.component.html`` file.
 
-By binding ``listHeading`` and ``movies``, we are telling Angular to watch them
-for changes. Whenever the variables in ``movie-list.component.ts``
-change in value, Angular responds by automatically updating the HTML file.
+By binding ``listHeading`` and ``movies``, we tell Angular to watch them for
+changes. Whenever the variables in ``movie-list.component.ts`` change in value,
+Angular responds by automatically updating the HTML file.
 
 Data binding is a powerful technique, since it allows developers to focus on
 the fun part of the code rather than dealing with all the nitty-gritty
