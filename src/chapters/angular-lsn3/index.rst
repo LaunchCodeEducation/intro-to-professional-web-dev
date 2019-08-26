@@ -10,6 +10,5 @@ Angular, Part 3
    one-way-binding
    attribute-directives
    two-way-binding
-   adding-code
    exercises
    studio

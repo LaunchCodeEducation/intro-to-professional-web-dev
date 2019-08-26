@@ -86,6 +86,62 @@
     
   <div class="section" id="data-binding">
 <h1>30.1. Data Binding<a class="headerlink" href="#data-binding" title="Permalink to this headline">¶</a></h1>
+<p>In the previous two Angular lessons, you <em>stored</em> data in a <code class="docutils literal notranslate"><span class="pre">component.ts</span></code>
+file, and then <em>displayed</em> that data in a <code class="docutils literal notranslate"><span class="pre">component.html</span></code> file.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Assign a <code class="docutils literal notranslate"><span class="pre">listHeading</span></code> variable and a <code class="docutils literal notranslate"><span class="pre">movies</span></code> array in the
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> file:</p>
+<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">MovieListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">listHeading</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;Oscar Winners to Watch&quot;</span><span class="p">;</span>
+   <span class="nx">movies</span>: <span class="kt">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Titanic&#39;</span><span class="p">,</span> <span class="s1">&#39;Gladiator&#39;</span><span class="p">,</span> <span class="s1">&#39;Mutiny on the Bounty&#39;</span><span class="p">,</span> <span class="s1">&#39;The Silence of the Lambs&#39;</span><span class="p">];</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span> <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Display the list heading and the titles from the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array using the
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> file:</p>
+<div class="last highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movies&#39;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&#39;let movie of movies&#39;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">movie</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p id="index-0">Each Angular component contains an HTML file that organizes the content users
+see in their web browsers. We call these files the <strong>view</strong>.</p>
+<p><strong>Data binding</strong> refers to the technique of linking information contained in
+a file to the view. In the example above, data contained in the
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> file is <em>bound</em> to placeholders in the
+<code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> file.</p>
+<p>By binding <code class="docutils literal notranslate"><span class="pre">listHeading</span></code> and <code class="docutils literal notranslate"><span class="pre">movies</span></code>, we tell Angular to watch them for
+changes. Whenever the variables in <code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> change in value,
+Angular responds by automatically updating the HTML file.</p>
+<p>Data binding is a powerful technique, since it allows developers to focus on
+the fun part of the code rather than dealing with all the nitty-gritty
+“ugh-I-need-to-add-statements-here-here-and-here-to-refresh-the-page”.</p>
+<p>Fortunately, you already experienced setting up data binding in Angular, so the
+groundwork is done. In this chapter, we will continue practicing the skill, add
+in the vocabulary, and explore some refinements.</p>
 </div>
 
 
