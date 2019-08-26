@@ -86,6 +86,108 @@
     
   <div class="section" id="one-way-data-binding">
 <h1>30.2. One-Way Data Binding<a class="headerlink" href="#one-way-data-binding" title="Permalink to this headline">¶</a></h1>
+<p>Linking data from a <code class="docutils literal notranslate"><span class="pre">component.ts</span></code> file to the <code class="docutils literal notranslate"><span class="pre">component.html</span></code> file is an
+example of <em>one-way</em> binding. Changes made to the <code class="docutils literal notranslate"><span class="pre">component.ts</span></code> file are
+reflected in the view, but changes made in <code class="docutils literal notranslate"><span class="pre">component.html</span></code> have no influence
+on <code class="docutils literal notranslate"><span class="pre">component.ts</span></code>. Information flows in one direction only.</p>
+<div class="section" id="displaying-the-values-of-variables">
+<h2>30.2.1. Displaying the Values of Variables<a class="headerlink" href="#displaying-the-values-of-variables" title="Permalink to this headline">¶</a></h2>
+<p>As we saw in Angular lessons 1 and 2, the syntax for binding a variable is to
+encase its name in double braces <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code>. We used this in the exercises and
+studios to display headings, titles from our movie list, astronauts on our
+crew, etc.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">my-list.component.ts</span></code> file:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">MyListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">listHeading</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;My Great List&#39;</span><span class="p">;</span>
+   <span class="nx">luckyNumber</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">my-list.component.html</span></code> file:</p>
+<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>{{listHeading}}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{luckyNumber}}<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Changing the value of <code class="docutils literal notranslate"><span class="pre">luckyNumber</span></code> in the <code class="docutils literal notranslate"><span class="pre">MyListComponent</span></code> class will
+change the text displayed by the <code class="docutils literal notranslate"><span class="pre">p</span></code> element. However, altering the HTML will
+NOT affect the value of <code class="docutils literal notranslate"><span class="pre">luckyNumber</span></code> in the class.</p>
+</div>
+<div class="section" id="binding-to-html-attributes">
+<h2>30.2.2. Binding to HTML Attributes<a class="headerlink" href="#binding-to-html-attributes" title="Permalink to this headline">¶</a></h2>
+<p>We also used one-way data binding to modify attributes within an HTML tag. For
+example, assume the <code class="docutils literal notranslate"><span class="pre">image</span></code> variable holds the URL for a photo we want to use
+on our webpage.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">photos.component.ts</span></code> file:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PhotosComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">image</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;https://www.launchcode.org/assets/icons/trophy-95e8cbe9bfda44123422302951deb1c92a237d39052669b8fbfafec00cb4f608.png&#39;</span><span class="p">;</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">photos.component.html</span></code> file:</p>
+<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{image}}&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag, we bind the <code class="docutils literal notranslate"><span class="pre">image</span></code> variable to the <code class="docutils literal notranslate"><span class="pre">src</span></code>
+attribute. Note that the braces and variable name must be inside quotes. When
+the code runs, the string stored in <code class="docutils literal notranslate"><span class="pre">image</span></code> is used to provide the required
+URL.</p>
+<div class="section" id="update-on-the-binding-syntax">
+<h3>30.2.2.1. Update on the Binding Syntax<a class="headerlink" href="#update-on-the-binding-syntax" title="Permalink to this headline">¶</a></h3>
+<p>Angular allows us to use an alternate syntax whenever we use data-binding to
+modify an HTML attribute.</p>
+<p>To avoid cluttering up our HTML tags with lots of double braces <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code>, we
+simplify the notation as follows:</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>Double braces syntax:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ variableName }}&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{{ otherVariable }}&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ thirdVariable }}&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>Alternate syntax:</p>
+<div class="last highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="p">[</span><span class="na">src</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;variableName&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="p">[</span><span class="na">name</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;otherVariable&quot;</span> <span class="p">[</span><span class="na">value</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;thirdVariable&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code>, place the HTML attribute in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> and
+set that equal to the variable name in quotes.</p>
+<blockquote>
+<div>Note: Although the two methods accomplish exactly the same thing, the square
+brackets syntax is recommended as a best practice.</div></blockquote>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>30.2.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Lorem ipsum…</p>
+</div>
 </div>
 
 
