@@ -25,6 +25,14 @@ Rather than complete the code and *then* test it, TDD flips the process:
 #. Examine the code and test scripts, and refactor them to increase efficiency.
    Remember the DRY idea (Don't Repeat Yourself).
 
+
+Before You Start
+----------------
+
+If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at learn.launchcode.org.
+
+If you are working through this material on your own, use the repl.it links contained on this page.
+
 Source Code
 ------------
 

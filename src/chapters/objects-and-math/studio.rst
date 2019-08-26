@@ -11,6 +11,13 @@ A. Select the crew.
 B. Perform critical mission calculations.
 C. Determine the fuel required for launch.
 
+Before You Start
+----------------
+
+If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at learn.launchcode.org.
+
+If you are working through this material on your own, use the repl.it links contained on this page.
+
 Select the Crew
 ----------------
 
