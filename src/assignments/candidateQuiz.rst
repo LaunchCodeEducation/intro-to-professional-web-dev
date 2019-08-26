@@ -26,7 +26,8 @@ The results output should include the candidate's name, the candidate's
 responses, the correct answers, the final percentage, and if the candidate
 passed the quiz.
 
-You are expected to match this format.
+While you are expected to match this format, you need to take the assignment STEP BY STEP, beginning at "Part 1: Minimum Viable Quiz" below.
+
 ::
 
    Candidate Name: Can Twin
