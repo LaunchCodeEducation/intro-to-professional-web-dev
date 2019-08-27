@@ -58,25 +58,25 @@ called on the value returned from ``fetch``.
    } );
 
 To make it clearer, let's capture the value returned by ``fetch`` in a variable 
-named ``promise``.
+named ``fetchPromise``.
 
 .. sourcecode:: js
    :linenos:
 
-   const promise = fetch("https://handlers.education.launchcode.org/static/weather.json");
-   promise.then( function(response) {
+   const fetchPromise = fetch("https://handlers.education.launchcode.org/static/weather.json");
+   fetchPromise.then( function(response) {
       console.log(response);
    } );
 
-``fetch`` returns an instance of the ``Promise`` class. The **Promise** class
-represents a future event that will eventually occur. In the above example,
-``promise`` represents the eventual response from the HTTP request to
+``fetch`` returns an instance of the ``Promise`` class. The ``Promise`` class
+represents a **promise**. A promise is the `eventual` outcome of an asynchronous event and any returned values.
+In the above example, ``fetchPromise`` represents the eventual response from the HTTP request to
 ``https://handlers.education.launchcode.org/static/weather.json``.
 
 A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed 
-to the response handler function. The ``then`` method of a promise defines what will 
-happen when the promise is fulfilled. When a promise is rejected, an error reason is 
-provided.
+to the response handler function. The ``then`` method of ``Promise`` defines what will 
+happen when the promise is fulfilled. When a promise is rejected, the error reason is 
+returned.
 
 The above example can be translated to these steps
 
@@ -87,27 +87,31 @@ The above example can be translated to these steps
 More Promises
 --------------
 
-Promises are used for more than HTTP requests. A promise can represent any future event.
-The ``response`` object has a ``json()`` function that will return the JSON data in the
-response. The ``json()`` function returns a promise that represents the future result 
+Above, we showed a promise representing the outcome of an HTTP request, however, promises can represent the outcome of `any` asynchronous event.
+For example, the ``response`` object has a ``json()`` function that will return the JSON data in the
+response. The ``json()`` function returns a `promise` that represents the future result 
 of turning the response data into JSON.
 
-The below example involves two promises. One promise on line 1 that represents the 
-fetch request and a second on line 3 that represents the response data being turned 
-into JSON.
+.. admonition:: Example
 
-Finally on line 5, the JSON data can be logged.
+   .. sourcecode:: js
+      :linenos:
 
-.. sourcecode:: js
-   :linenos:
+      const fetchPromise = fetch("https://handlers.education.launchcode.org/static/weather.json");
+      fetchPromise.then( function(response) {
+         const jsonPromise = response.json();
+         jsonPromise.then( function(json) {
+            console.log("temp", json.temp);
+         });
+      } );
 
-   const promise = fetch("https://handlers.education.launchcode.org/static/weather.json");
-   promise.then( function(response) {
-      const jsonPromise = response.json();
-      jsonPromise.then( function(json) {
-         console.log("temp", json.temp);
-      });
-   } );
+   This example involves two promises. On line 1, ``fetchPromise`` is a promise that represents the 
+   fetch request. On line 3, ``jsonPromise`` is a promise that represents the response data being turned 
+   into JSON.
+
+   Finally on line 5, the JSON data can be logged.
+
+The above exaxmple shows how promises are used to represent two different types of asynchronous events and the outcomes.
 
 .. tip::
 
