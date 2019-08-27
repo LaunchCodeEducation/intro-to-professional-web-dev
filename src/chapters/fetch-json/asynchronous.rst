@@ -69,7 +69,7 @@ named ``fetchPromise``.
    } );
 
 ``fetch`` returns an instance of the ``Promise`` class. The ``Promise`` class
-represents a **promise**. A promise is the `eventual` outcome of an asynchronous event and any returned values.
+represents a **promise**. A promise is the `eventual` outcome of an asynchronous event.
 In the above example, ``fetchPromise`` represents the eventual response from the HTTP request to
 ``https://handlers.education.launchcode.org/static/weather.json``.
 
@@ -92,6 +92,8 @@ For example, the ``response`` object has a ``json()`` function that will return 
 response. The ``json()`` function returns a `promise` that represents the future result 
 of turning the response data into JSON.
 
+The example below shows how promises are used to represent two different types of asynchronous events and the outcomes.
+
 .. admonition:: Example
 
    .. sourcecode:: js
@@ -110,8 +112,6 @@ of turning the response data into JSON.
    into JSON.
 
    Finally on line 5, the JSON data can be logged.
-
-The above exaxmple shows how promises are used to represent two different types of asynchronous events and the outcomes.
 
 .. tip::
 
