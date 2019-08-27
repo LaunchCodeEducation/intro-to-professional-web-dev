@@ -16,7 +16,7 @@ You already know :ref:`one method for creating a function <function-syntax>`:
 
    }
 
-A function defined in this way is a **named function** (``myFunction``, in the example above).  
+A function defined in this way is a **named function** (``myFunction``, in the example above).
 
 Many programming languages, including JavaScript, allow us to create **anonymous functions**, which *do not* have names. We can create an anonymous function by simply leaving off the function name when defining it:
 
