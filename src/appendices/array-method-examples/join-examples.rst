@@ -7,7 +7,7 @@ The general syntax for this method is:
 
 .. sourcecode:: js
 
-   arrayName.join('connecter')
+   arrayName.join('connector')
 
 ``join`` combines all the elements of an array into a string. The *connector*
 determines the string that "glues" the array elements together.
