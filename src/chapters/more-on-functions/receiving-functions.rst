@@ -7,7 +7,7 @@ The previous section illustrates how a function can be passed to another functio
 Example: A Generic Input Validator
 ----------------------------------
 
-Our first example will be a generic input validator. It will prompt a user for input, using a parameter to the function to do the actual work of validating the input. 
+Our first example will be a generic input validator. It will prompt a user for input, using a parameter to the function to do the actual work of validating the input.
 
 .. admonition:: Example
 
@@ -17,7 +17,7 @@ Our first example will be a generic input validator. It will prompt a user for i
       const input = require('readline-sync');
 
       function getValidInput(prompt, isValid) {
-         
+
          // Prompt the user, using the prompt string that was passed
          let userInput = input.question(prompt);
 
@@ -60,7 +60,7 @@ The function ``getValidInput`` handles the work of interacting with the user, wh
       const input = require('readline-sync');
 
       function getValidInput(prompt, isValid) {
-         
+
          let userInput = input.question(prompt);
 
          while (!isValid(userInput)) {
@@ -118,7 +118,7 @@ A Simple Logger
 
    .. sourcecode:: js
       :linenos:
-   
+
       let fileLogger = function(msg) {
 
          // Put the message in a file
@@ -157,7 +157,7 @@ This example can be made even more powerful by enabling multiple loggers.
 
    .. sourcecode:: js
       :linenos:
-   
+
       let fileLogger = function(msg) {
 
          // Put the message in a file
@@ -165,9 +165,9 @@ This example can be made even more powerful by enabling multiple loggers.
       }
 
       let consoleLogger = function(msg) {
-      
+
          console.log(msg);
-      
+
       }
 
       function logError(msg, loggers) {
@@ -175,10 +175,10 @@ This example can be made even more powerful by enabling multiple loggers.
          let errorMsg = 'ERROR: ' + msg;
 
          for (let i = 0; i < loggers.length; i++) {
-            logger[i](errorMsg);
+            loggers[i](errorMsg);
          }
 
-      }   
+      }
 
       logError('Something broke!', [fileLogger, consoleLogger]);
 
@@ -196,7 +196,7 @@ What happens if a function expects an argument to be a function, but it isn't?
    .. replit:: js
       :linenos:
       :slug: TypeError-Example
-   
+
       function callMe(func) {
          func();
       }
@@ -205,6 +205,4 @@ What happens if a function expects an argument to be a function, but it isn't?
 
 .. admonition:: Question
 
-   What type of error occurs when attempting to use a value that is NOT a function as if it were one? 
-
-   
+   What type of error occurs when attempting to use a value that is NOT a function as if it were one?
