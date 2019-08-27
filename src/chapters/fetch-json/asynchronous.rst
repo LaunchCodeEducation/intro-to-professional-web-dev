@@ -1,5 +1,6 @@
 Asynchronous and Promises
-=========================
+==========================
+
 .. index:: ! asynchronous
 
 .. index:: ! AJAX
@@ -28,6 +29,7 @@ speed, the address location, and response size.
 
 Response Handlers
 -----------------
+
 Browsers can't stop everything and wait for a response to an HTTP request. Browsers 
 have to render HTML, interact with the user, and run JavaScript. To keep these 
 processes running seamlessly, without any noticeable pauses, the browser relies on 
@@ -38,7 +40,8 @@ provides us with a way to handle the response whenever it is received.
 
 
 Promises and the ``then`` Function
-----------------------------------
+-----------------------------------
+
 .. index:: ! promise
 
 .. index::
@@ -50,7 +53,7 @@ called on the value returned from ``fetch``.
 .. sourcecode:: js
    :linenos:
 
-   fetch('https://api.education.launchcode.org/weather').then( function(response) {
+   fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
       console.log(response);
    } );
 
@@ -60,14 +63,15 @@ named ``promise``.
 .. sourcecode:: js
    :linenos:
 
-   const promise = fetch('https://api.education.launchcode.org/weather');
+   const promise = fetch("https://handlers.education.launchcode.org/static/weather.json");
    promise.then( function(response) {
       console.log(response);
    } );
 
-``fetch`` returns an instance of the ``Promise`` class. The **Promise** class represents
-a future event that will eventually occur. In the above example, ``promise`` represents
-the eventual response from the HTTP request to ``https://api.education.launchcode.org/weather``.
+``fetch`` returns an instance of the ``Promise`` class. The **Promise** class
+represents a future event that will eventually occur. In the above example,
+``promise`` represents the eventual response from the HTTP request to
+``https://handlers.education.launchcode.org/static/weather.json``.
 
 A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed 
 to the response handler function. The ``then`` method of a promise defines what will 
@@ -76,12 +80,13 @@ provided.
 
 The above example can be translated to these steps
 
-#. Make an HTTP request to ``https://api.education.launchcode.org/weather``
+#. Make an HTTP request to ``https://handlers.education.launchcode.org/static/weather.json``
 #. When the response is received, THEN run the response handler function (passing in response data)
 #. In the response handler function, console log the ``response`` object
 
 More Promises
--------------
+--------------
+
 Promises are used for more than HTTP requests. A promise can represent any future event.
 The ``response`` object has a ``json()`` function that will return the JSON data in the
 response. The ``json()`` function returns a promise that represents the future result 
@@ -96,7 +101,7 @@ Finally on line 5, the JSON data can be logged.
 .. sourcecode:: js
    :linenos:
 
-   const promise = fetch('https://api.education.launchcode.org/weather');
+   const promise = fetch("https://handlers.education.launchcode.org/static/weather.json");
    promise.then( function(response) {
       const jsonPromise = response.json();
       jsonPromise.then( function(json) {

@@ -129,30 +129,31 @@ Bonus Missions
 4. Define a function with one parameter, which will be a string. The function
    must do the following:
 
-   a. Have a clear, descriptive name.
-   b. Return only the last character from strings with lengths of 3 or less.
-   c. Return only the first 3 characters from strings with lengths larger than
-      3.
-   d. `Build your function at repl.it <https://repl.it/@launchcode/FunctionsExercises01>`__.
+   a. Have a clear, descriptive name like ``funPhrase``.
+   b. Retrieve only the last character from strings with lengths of 3 or less.
+   c. Retrieve only the first 3 characters from strings with lengths larger
+      than 3.
+   d. Use a template literal to return the phrase ``We put the '___' in '___'.``
+      Fill the first blank with the modified string, and fill the second blank
+      with the original string.
+   e. `Build your function at repl.it <https://repl.it/@launchcode/FunctionsExercises01>`__.
 
 #. Now test your function:
 
-   e. Outside of the function, define the variable ``str`` and initialize it with
-      a string (e.g. ``'Functions rock!'``).
-   f. Define a second variable and initialize it with ``myFunctionName(str);``.
-   g. Use a template literal to print, ``We put the '___' in '___'.`` Fill in the blanks
-      with the values from ``someNameThatIChose`` and ``str``.
+   f. Outside of the function, define the variable ``str`` and initialize it
+      with a string (e.g. ``'Functions rock!'``).
+   g. Call your function and print the returned phrase.
 
 #. The area of a rectangle is equal to its *length x width*.
 
-   a. Define a function and the required parameters to calculate the area of a
+   a. Define a function with the required parameters to calculate the area of a
       rectangle.
    b. The function should *return* the area, NOT print it.
    c. Call your area function by passing in two arguments - the length and
       width.
-   d. Use a template literal to print, "The area is ____ cm^2."
-   e. *Optional*: If only one argument is passed to the function, then the shape is
-      a square. Modify your code to deal with this case.
+   d. If only one argument is passed to the function, then the shape is a
+      square. Modify your code to deal with this case.
+   e. Use a template literal to print, "The area is ____ cm^2."
    f. `Code the area function at repl.it <https://repl.it/@launchcode/FunctionsExercises02>`__.
 
 .. admonition:: Tip

@@ -92,68 +92,76 @@ figure below.</p>
 <img alt="Visual of the standard Angular file structure." src="../../_images/AngularFileStructure.png" />
 </div>
 <p>All of the project files (and there will be LOTS) are stored in the single,
-top-level folder, <code class="docutils literal notranslate"><span class="pre">projectName</span></code>, which contains a <code class="docutils literal notranslate"><span class="pre">src</span></code> folder and a set of
-support files.</p>
+top-level folder, <code class="docutils literal notranslate"><span class="pre">project-name</span></code>, which contains a <code class="docutils literal notranslate"><span class="pre">src</span></code> folder and a set
+of support files.</p>
 <div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">When you start a new Angular project, do not worry about the support files.
 These will be generated automatically, and they take care of the routine
 technical details for making your project run smoothly.</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">src</span></code> contains the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder and four important files: <code class="docutils literal notranslate"><span class="pre">index.html</span></code>,
-<code class="docutils literal notranslate"><span class="pre">main.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">style.css</span></code>, and <code class="docutils literal notranslate"><span class="pre">polyfills.ts</span></code>. We will explore these files
-in more detail on the next page. For now, recognize that they control how the
-Angular project operates.</p>
+<p><code class="docutils literal notranslate"><span class="pre">src</span></code> contains the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder and five important files: <code class="docutils literal notranslate"><span class="pre">index.html</span></code>,
+<code class="docutils literal notranslate"><span class="pre">main.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">style.css</span></code>, <code class="docutils literal notranslate"><span class="pre">tests.ts</span></code> and <code class="docutils literal notranslate"><span class="pre">polyfills.ts</span></code>. We will explore
+these files in more detail on the next page. For now, recognize that they
+control how the Angular project operates.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">app</span></code> folder contains the files and subfolders needed to control the
 nitty-gritty details of displaying a webpage. For your projects, most of your
 time and effort will be spent modifying the contents within <code class="docutils literal notranslate"><span class="pre">app</span></code>.</p>
-<div class="section" id="stackblitz">
-<h2>28.3.1. StackBlitz<a class="headerlink" href="#stackblitz" title="Permalink to this headline">¶</a></h2>
-<p>Your first Angular project will be another “Hello, World” example, and we will
-use a different online tool to build this. The site is called
-<a class="reference external" href="https://stackblitz.com" target="_blank">StackBlitz<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and it is similar to Repl.it in that
-it allows us to play without risk. The main difference is that StackBlitz is
-specifically designed to create webpage templates.</p>
+<div class="section" id="installing-angular">
+<h2>28.3.1. Installing Angular<a class="headerlink" href="#installing-angular" title="Permalink to this headline">¶</a></h2>
+<p>Angular uses its own set of command line instructions to create, update, and
+launch projects. Before you dive too deeply into the Angular lessons, you need
+to install the Angular command line interface (CLI) on your computer.
+Fortunately, the process is relatively painless.</p>
+<p>Open up the terminal (or the terminal panel in VSCode) and enter the following
+command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g @angular/cli
+</pre></div>
+</div>
 <div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If the installer prompts you to make choices, just accept all of the default
+options.</p>
+</div>
+<p>This command installs the CLI <em>globally</em> on your computer, which means that
+Angular commands will work regardless of the folder you have open.</p>
+<p>Angular commands begin with the keyword <code class="docutils literal notranslate"><span class="pre">ng</span></code> (for A-ng-ular), and the most
+commonly used include:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code>: Creates a new Angular project in the current directory. The
+shortcut syntax is <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">n</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code>: Creates new files within an existing project. The shortcut
+syntax is <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>: Compiles a project and <em>launches</em> it in a form that can be
+displayed in a browser. The shortcut syntax is <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">s</span></code>.</li>
+</ol>
+<p>For a complete list of commands, refer to the
+<a class="reference external" href="https://angular.io/cli#command-overview" target="_blank">Angular documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="section" id="check-your-github-account">
+<h3>28.3.1.1. Check Your GitHub Account<a class="headerlink" href="#check-your-github-account" title="Permalink to this headline">¶</a></h3>
 <p>For the “HTML Me Something” assignment, you created an account on
-<a class="reference external" href="https://github.com" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> . Since you will modify an Angular project
-over the next few studios, you need access to GitHub to store your progress.</p>
-<p class="last">Follow the link and make sure you remember your login information, or enroll
+<a class="reference external" href="https://github.com" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> . Since you will modify Angular projects
+over several lessons, you need access to GitHub to download starter code and
+store your progress.</p>
+<p>Follow the link and make sure you remember your login information, or enroll
 if you have not yet created an account.</p>
 </div>
-<div class="section" id="stackblitz-workspace-layout">
-<h3>28.3.1.1. StackBlitz Workspace Layout<a class="headerlink" href="#stackblitz-workspace-layout" title="Permalink to this headline">¶</a></h3>
-<p>Before we dive into the project, we need to become familiar with the StackBlitz
-layout, which is based on the popular editor
-<a class="reference external" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-<p>The workspace consists of 3 main panels and several menu functions.</p>
-<p>Features to note:</p>
-<ol class="arabic simple">
-<li>Use your GitHub account to store your projects. Click the GitHub button (1)
-to save your progress.</li>
-<li>If you are viewing someone else’s project, you can <em>fork</em> the content (2)
-and store a copy of that project in your GitHub account. This allows you to
-edit the files without changing the originals, and it lets you use other
-programmers’ work (with permission) to enhance your own. As we learn more
-about Angular, you will need to fork sample code for the exercises and
-studios.</li>
-</ol>
-<div class="figure">
-<img alt="StackBlitz workspace layout." src="../../_images/StackBlitzWorkspace.png" />
+<div class="section" id="what-s-in-a-name">
+<h3>28.3.1.2. What’s in a Name?<a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h3>
+<p>If you Google “Angular tutorial”, you will receive plenty of hits. Some of the
+resources will be exceptional, others not. However, you will probably notice
+that many of the results refer to <em>AngularJS</em>. This is a previous version of
+the software, and it is NOT the same as modern Angular.</p>
+<p>AngularJS is NOT the same as Angular. Even the websites are different
+(angularjs.org vs. angular.io). We recommend that you avoid AngularJS resources
+for now. You can always learn how to use the old version later if your job
+requires it.</p>
 </div>
-<ol class="arabic simple" start="3">
-<li>File panel and menu (3). Allows you to search for an item, add extensions,
-update settings, and add, open, or delete files.</li>
-<li>Editor panel (4). Your code goes here. Click on a filename to open it in a
-tab in the editor.</li>
-<li>Preview panel (5). Provides a view of what the webpage looks like. This
-panel can be minimized to save space or opened into a new browser window
-(6).</li>
-</ol>
+</div>
+<div class="section" id="ready-to-go">
+<h2>28.3.2. Ready To Go<a class="headerlink" href="#ready-to-go" title="Permalink to this headline">¶</a></h2>
 <p>As with any new coding skill or tool, the best way to learn is to actively
 practice. Let’s begin building your first Angular project.</p>
-</div>
 </div>
 </div>
 

@@ -16,54 +16,72 @@ Select the Crew
 
 To access the code for exercise 1, open this `repl.it link <https://repl.it/@launchcode/ObjectsStudio01>`__.
 
-1. Each candidate was assigned an ID number, which is stored in the candidate's
-   data file and in the ``idNumbers`` array.
+Randomly Select ID Numbers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   a. Write a function to select a random entry from the ``idNumbers`` array. Review
-      the :ref:`Combining Math Methods <random-array-item>` section if you need
-      a reminder on how to do this.
-   b. Use the function to select three ID numbers.  Store these selections in a new
-      array, making sure to avoid repeated numbers. No animal can be selected
-      more than once!
-   c. Use one or more loops to check which animals hold the lucky ID numbers. They
-      will be going on the space mission! Store these animals in a ``crew``
-      array.
-   d. Use a template literal to print, ``'____, ____, and ____ are going to space!'``
-      Fill in the blanks with the names of the selected animals.
+Each candidate was assigned an ID number, which is stored in the candidate's
+data file and in the ``idNumbers`` array.
 
-.. tip::
+#. Write a ``selectRandomEntry`` function to select a random entry from the
+   ``idNumbers`` array.vReview the
+   :ref:`Combining Math Methods <random-array-item>` section if you need a
+   reminder on how to do this.
+#. Use the function to select three ID numbers.  Store these selections in a
+   new array, making sure to avoid repeated numbers. No animal can be selected
+   more than once!
+#. Use a template literal to print, ``'____, ____, and ____ are going to
+   space!'`` Fill in the blanks with the names of the selected animals.
+
+.. admonition:: Tip
 
    ``arrayName.includes(item)`` can be used to check if the array already contains
    ``item``. A ``while`` loop can keep the selection process going until the
    desired number of entries have been added to the array.
 
+Build a ``crew`` Array
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Design a function that takes two arrays as parameters. These hold the randomly
+selected ID numbers and the candidate objects.
+
+Use one or more loops to check which animals hold the lucky ID numbers. They
+will be going on the space mission! Store these animals in a ``crew`` array,
+and then return that array.
+
 Orbit Calculations
 -------------------
 
-To access the code for exercises 2 - 4, go to `repl.it <https://repl.it/@launchcode/ObjectsStudio02>`__.
+To access the code for the orbit calculations and first bonus mission, go to
+`repl.it <https://repl.it/@launchcode/ObjectsStudio02>`__.
 
-2. Spacecraft orbits are not circular, but we will assume that our mission is
+#. Spacecraft orbits are not circular, but we will assume that our mission is
    special. The animals will achieve a circular orbit with an altitude of
    2000 km.
 
    a. Define a function that returns the circumference (C = 2πr) of the orbit.
       Round the circumference to an integer.
-   b. Given an orbital speed of 28000 km/hr, calculate how long will it take our
-      animals to complete 5 orbits (time = distance/speed). Round the answer to
-      2 decimal places.
-   c. Print, ``'The mission will travel ____ km around the planet, and it will
+   b. Define the ``missionDuration`` function to take three parameters - the
+      number of orbits completed, the orbit radius, and the orbital speed. Set
+      the default radius to 2000 km and the default orbital speed to
+      28000 km/hr.
+   c. Calculate how long will it take our animals to complete 5 orbits (time =
+      distance/speed). Round the answer to 2 decimal places, then return the
+      result.
+   d. Print, ``'The mission will travel ____ km around the planet, and it will
       take ____ hours to complete.'``
 
-3. Time for an excursion!
+#. Time for an excursion! Code an ``oxygenExpended`` function to accomplish the
+   following:
 
-   a. Randomly select one crew member to perform a spacewalk.
-   b. The spacewalk will last for three orbits around the earth. Calculate how many
-      hours the spacewalk will take. Round the answer to 2 decimal places.
-   c. Use the animal's ``rate`` method to calculate how much oxygen (O :sub:`2`)
+   a. Use your ``selectRandomEntry`` function to select one crew member to
+      perform a spacewalk.
+   b. The spacewalk will last for three orbits around the earth. Use
+      ``missionDuration`` to calculate how many hours the spacewalk will take.
+   c. Use the animal’s ``rate`` method to calculate how much oxygen (O :sub:`2`)
       they consume during the spacewalk. Round the answer to 3 decimal places.
-   d. Print, ``'___ will perform the spacewalk, which will last ____ hours and
-      require ___ kg of oxygen.'`` Fill in the blanks with the animal's name,
-      the spacewalk time, and the amount of O :sub:`2` used.
+   d. Return the string, ``'__ will perform the spacewalk, which will last __
+      hours and require __ kg of oxygen.'`` Fill in the blanks with the
+      animal's name, the spacewalk time, and the amount of O :sub:`2` used.
 
 Bonus Missions
 ---------------
@@ -71,27 +89,29 @@ Bonus Missions
 Conserve O :sub:`2`
 ^^^^^^^^^^^^^^^^^^^
 
-4. Instead of randomly selecting a crew member for the spacewalk, have your
-   program select the animal with the smallest oxygen consumption rate.
+Instead of randomly selecting a crew member for the spacewalk, have your
+program select the animal with the smallest oxygen consumption rate.
 
 Fuel Required for Launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To access the code for exercise 5, go to `repl.it <https://repl.it/@launchcode/ObjectsStudio03>`__.
+To access the code for this bonus mission, go to
+`repl.it <https://repl.it/@launchcode/ObjectsStudio03>`__.
 
-5. A general rule of thumb states that it takes about 9 - 10 kg of rocket
-   fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we
-   will assume a value of 9.5 kg to calculate how much fuel we need to launch
-   our crew into space.
+A general rule of thumb states that it takes about 9 - 10 kg of rocket
+fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we
+will assume a value of 9.5 kg to calculate how much fuel we need to launch
+our crew into space.
 
-   a. Write a function that returns the total mass of the selected crew
-      members.
-   b. The mass of the uncrewed rocket plus the food and other supplies is
-      75,000 kg. Combine the rocket and crew masses, then calculate and store
-      the amount of fuel required to reach LEO.
-   c. Our launch requires a safety margin for the fuel level, especially if the
-      crew members are cute and fuzzy.  Add an extra 200 kg of fuel for each
-      dog or cat on board, but only an extra 100 kg for the other species.
-   d. Round the final amount of fuel UP to the nearest integer, then print ``'The
-      mission has a launch mass of ____ kg and requires ____ kg of fuel.'``
-      Fill in the blanks with the calculated amounts.
+#. Write a ``crewMass`` function that returns the total mass of the selected
+   crew members rounded to 1 decimal place.
+#. The mass of the un-crewed rocket plus the food and other supplies is
+   75,000 kg. Create a ``fuelRequired`` function to combine the rocket and crew
+   masses, then calculate and return the amount of fuel needed to reach LEO.
+#. Our launch requires a safety margin for the fuel level, especially if the
+   crew members are cute and fuzzy.  Add an extra 200 kg of fuel for each
+   dog or cat on board, but only an extra 100 kg for the other species. Update
+   ``fuelRequired`` to account for this, then round the final amount of fuel UP
+   to the nearest integer.
+#. Print ``'The mission has a launch mass of ____ kg and requires ____ kg of
+   fuel.'`` Fill in the blanks with the calculated amounts.

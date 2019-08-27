@@ -24,7 +24,7 @@ Have fun with this, but be respectful of others and avoid overtly critical polit
 
 You might do something like this:
 
-.. figure:: figures/making-headlines-sample.png
+.. figure:: figures/making-headlines-screenshot.png
    :alt: A screenshot of the New York Times website, with a fake article announcing an astronaut apprenticeship program at LaunchCode.
 
    A Sample Fake Article
