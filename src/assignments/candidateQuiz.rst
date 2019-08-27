@@ -17,46 +17,7 @@ Requirements
 #. Calculate the candidate's overall percentage
 #. Determine if the candidate did well enough to enter our program (need >= 80%
    to pass)
-#. Display the results. Example output is listed below.
-
-Example Output
-^^^^^^^^^^^^^^
-
-The results output should include the candidate's name, the candidate's
-responses, the correct answers, the final percentage, and if the candidate
-passed the quiz.
-
-While you are expected to match this format, you need to take the assignment STEP BY STEP, beginning at "Part 1: Minimum Viable Quiz" below.
-
-::
-
-   Candidate Name: Can Twin
-   1) True or false: 5000 meters = 5 kilometers.
-   Your Answer: false
-   Correct Answer: true
-
-   2) (5 + 3)/2 * 10 = ?
-   Your Answer: 45
-   Correct Answer: 40
-
-   3) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
-   Your Answer: trajectory
-   Correct Answer: trajectory
-
-   4) Who was the first American woman in space?
-   Your Answer: sally ride
-   Correct Answer: sally ride
-
-   5) What is the minimum crew size for the International Space Station (ISS)?
-   Your Answer: 10
-   Correct Answer: 3
-
-   >>> Overall Grade: 40% (2 of 5 responses correct) <<<
-   >>> Status: FAILED <<<
-
-.. admonition:: Note
-
-   The output will vary slightly based on the candidate's answers to each question.
+#. Display the results.
 
 Take It Step by Step
 --------------------
@@ -157,6 +118,43 @@ Before submitting your solution, make sure your program:
 #. Includes at least one loop and one conditional.
 #. Uses at least one template literal.
 #. Correctly accepts or rejects a candidate based on their percentage.
+
+Example Output
+^^^^^^^^^^^^^^
+
+The results output should include the candidate's name, the candidate's
+responses, the correct answers, the final percentage, and if the candidate
+passed the quiz.
+
+::
+
+   Candidate Name: Can Twin
+   1) True or false: 5000 meters = 5 kilometers.
+   Your Answer: false
+   Correct Answer: true
+
+   2) (5 + 3)/2 * 10 = ?
+   Your Answer: 45
+   Correct Answer: 40
+
+   3) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
+   Your Answer: trajectory
+   Correct Answer: trajectory
+
+   4) Who was the first American woman in space?
+   Your Answer: sally ride
+   Correct Answer: sally ride
+
+   5) What is the minimum crew size for the International Space Station (ISS)?
+   Your Answer: 10
+   Correct Answer: 3
+
+   >>> Overall Grade: 40% (2 of 5 responses correct) <<<
+   >>> Status: FAILED <<<
+
+.. admonition:: Note
+
+   The output will vary slightly based on the candidate's answers to each question.
 
 Submitting Your Work
 ---------------------
