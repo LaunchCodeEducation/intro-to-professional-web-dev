@@ -13,7 +13,7 @@ The general syntax for this method is:
    single: whitespace; leading
    single: whitespace; trailing
 
-This method returns a copy of the string with any leading or trailing whitespace removed. Whitespace characters are those that do note display anything on the screen, such as spaces and tabs.
+This method returns a copy of the string with any leading or trailing whitespace removed. Whitespace characters are those that do not display anything on the screen, such as spaces and tabs.
 
 .. admonition:: Example
 
