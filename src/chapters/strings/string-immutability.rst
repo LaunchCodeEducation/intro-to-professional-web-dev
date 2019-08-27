@@ -4,7 +4,7 @@ String Immutability
 .. index::
    pair: string; immutable
 
-If an object cannot be changed, we say that it is **immutable**. Strings are immutable, which means we cannot change the invidual characters within a given string. While we can access individual characters using bracket notation, attempting to change individual characters simply does not work.
+If an object cannot be changed, we say that it is **immutable**. Strings are immutable, which means we cannot change the individual characters within a given string. While we can access individual characters using bracket notation, attempting to change individual characters simply does not work.
 
 .. admonition:: Example
 
