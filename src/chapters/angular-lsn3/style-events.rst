@@ -64,7 +64,7 @@ time you see a greyed out button on a webpage, ``disabled`` is the cause.
       :linenos:
 
       <button [style.background]="lcLightBlue">Click Me!</button>
-      <button disabled>Cant' Click Me!</button>
+      <button disabled>Can't Click Me!</button>
 
    Result:
 
