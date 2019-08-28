@@ -7,6 +7,12 @@ OK, staff, we received many applications for our astronaut training program,
 and we need to do an initial evaluation of the candidates.  Management needs
 you to create a quick quiz to help select the best candidates.
 
+.. note::
+
+   The requirements below are what your END assignment will look like.
+   This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at Part 1.
+   Please read the WHOLE assignment page before starting.
+
 Requirements
 ------------
 
