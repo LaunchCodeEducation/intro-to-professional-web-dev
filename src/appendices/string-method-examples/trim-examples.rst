@@ -13,7 +13,9 @@ The general syntax for this method is:
    single: whitespace; leading
    single: whitespace; trailing
 
-This method returns a copy of the string with any leading or trailing whitespace removed. Whitespace characters are those that do not display anything on the screen, such as spaces and tabs.
+This method returns a copy of the string with any leading or trailing
+whitespace removed. Whitespace characters are those that do not display
+anything on the screen, such as spaces and tabs.
 
 .. admonition:: Example
 
@@ -40,7 +42,7 @@ This method returns a copy of the string with any leading or trailing whitespace
    This example cleans up user input with ``trim``.
 
    .. sourcecode:: js
-   
+
       let input = " fake.email@launchcode.org ";
       let email = input.trim();
       console.log(email);
