@@ -40,7 +40,7 @@ Let's make one of the paragraph elements respond to user clicks.
 
    #. Replace ``(click)`` with ``(mouseover)`` in line 7 and examine how the
       interactivity changes.
-   #. What happens if we add ``[class.pcentered]="changeColor" (click)="changeColor = !changeColor"``
+   #. What happens if we add ``[class.pcentered]="!changeColor" (click)="changeColor = !changeColor"``
       to the ``<li>`` tag in line 4?
 
 Button Styling

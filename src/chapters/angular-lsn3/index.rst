@@ -11,5 +11,6 @@ Angular, Part 3
    attribute-directives
    style-events
    two-way-binding
+   wrap-up
    exercises
    studio
