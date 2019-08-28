@@ -18,7 +18,7 @@ starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
 .. note::
 
    The requirements below are what your END assignment will look like.
-   This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at Part 1.
+   This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at "Transform".
    Please read the WHOLE assignment page before starting.
 
 Requirements
@@ -136,9 +136,7 @@ User Prompts
 The current Scrabble Scorer only uses one scoring algorithm. For the new
 version we want to let the user pick between three algorithms. Define an
 ``initialPrompt`` function that will introduce the program and then ask the
-user which scoring algorithm they want to use. See
-:ref:`Example Output <example-output>` above and the next section for details
-on available options.
+user which scoring algorithm they want to use.
 
 Scoring Algorithms
 ^^^^^^^^^^^^^^^^^^
@@ -230,7 +228,7 @@ Example Output
 
 ::
 
-   Welcome to the Scrabble score calculator. Click 'Stop' to quit.
+   Welcome to the Scrabble score calculator. Enter 'Stop' to quit.
 
    Which scoring algorithm would you like to use?
 
