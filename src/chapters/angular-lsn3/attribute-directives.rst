@@ -16,10 +16,14 @@ Open VSCode and return to the ``angular-lc101-projects`` folder. Find
 .. figure:: ./figures/lesson3-menu.png
    :alt: Access Angular lesson 3 in VSCode.
 
-Open the terminal panel and navigate to the lesson3 ``examples`` folder.
+Open the terminal panel and navigate to the lesson3 ``examples`` folder. Also
+make sure that you are on the ``master`` branch.
 
 .. sourcecode:: bash
 
+   $ git branch
+      * master
+      solutions
    $ ls
       lesson1 lesson2 lesson3
    $ cd lesson3
@@ -55,7 +59,6 @@ Examine the code in the ``skill-set.component.html`` and
          </ul>
          <p>Here is some practice text...</p>
          <p>Here is some more practice text...</p>
-         <div>Here is another line of practice text...</div>
       </div>
 
    ``skill-set.component.ts`` SkillSetComponent class:
@@ -82,15 +85,15 @@ Right now, there is an awful lot of green in the list, which is set by the
 Inline Styling
 ^^^^^^^^^^^^^^^
 
-To change the color and alignment of the first paragraph element, we can
+To change the color and alignment of the first paragraph element, we could
 override the CSS instructions with some inline code:
 
 .. sourcecode:: html
 
    <p style="color: black" align="center">Here is some practice text...</p>
 
-Using what we learned about data-binding, we can replace these hard-coded
-styles with variables:
+However, we can use what we learned about data-binding to replace these
+hard-coded styles with variables:
 
 .. sourcecode:: html+ng2
 
@@ -122,7 +125,7 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
    .. sourcecode:: html
       :linenos:
 
-      .pStyle {
+      .pcentered {
          color: black;
          text-align: center;
       }
@@ -138,26 +141,27 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
             <li *ngFor="let skill of skills">{{skill}}</li>
          </ul>
          <p [style.color]="color" [align]="alignment">Here is some practice text...</p>
-         <p [class.pStyle]="changeColor">Here is some more practice text...</p>
+         <p [class.pcentered]="changeColor">Here is some more practice text...</p>
          <div>Here is another line of practice text...</div>
       </div>
 
    After saving these updates, the skills list changes appearance:
 
-   .. figure:: ./figures/lesson3-partially-styled-skill-text.png
+   .. figure:: ./figures/lesson3-styled-skill-text.png
       :alt: Attribute directives midpoint screen.
 
-#. Instead of setting ``[class.pStyle]`` equal to a string, the ``changeColor``
-   variable is a boolean (line 6 in ``skill-set.component.ts``). If
-   ``changeColor`` is ``true``, Angular adds the ``pStyle`` class of the tag.
-   If ``changeColor`` is ``false``, the class remains absent from the tag.
+#. Instead of setting ``[class.pcentered]`` equal to a string, the
+   ``changeColor`` variable is a boolean (line 6 in
+   ``skill-set.component.ts``). If ``changeColor`` is ``true``, Angular adds
+   the ``pStyle`` class of the tag. If ``changeColor`` is ``false``, the class
+   remains absent from the tag.
 
 .. admonition:: Try It
 
    #. Set ``changeColor`` to ``false`` and verify that "Here is some more
       text..." changes back to green.
-   #. Create a ``divStyle`` class in the CSS file and modify line 8  in
-      ``skill-set.component.html`` to make the style of the ``div`` element
+   #. Create a ``li-centered`` class in the CSS file and modify line 4  in
+      ``skill-set.component.html`` to make the style of the ``li`` elements
       depend on ``!changeColor``.
 
 What About the Buttons?

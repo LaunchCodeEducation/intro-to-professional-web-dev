@@ -93,8 +93,12 @@ styling on the page in response to user actions.</p>
 a little bit.</p>
 <div class="section" id="interactive-elements">
 <h2>30.4.1. Interactive Elements<a class="headerlink" href="#interactive-elements" title="Permalink to this headline">¶</a></h2>
-<p>Let’s make one of the paragraph elements respond to user clicks. Change line 7
-in <code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event:</p>
+<p>Let’s make one of the paragraph elements respond to user clicks.</p>
+<ol class="arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code>. Define the boolean variable <code class="docutils literal notranslate"><span class="pre">changeColor</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">SkillSetComponent</span></code> class. Initialize it as <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</li>
+<li><p class="first">Change line 7 in <code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -102,15 +106,13 @@ in <code class="docutils literal notranslate"><span class="pre">skill-set.compon
 5
 6
 7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="p">[</span><span class="na">align</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alignment&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.pStyle</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;changeColor&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;changeColor = !changeColor&quot;</span><span class="p">&gt;</span>Here is some more practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Here is another line of practice text...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.pcentered</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;changeColor&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;changeColor = !changeColor&quot;</span><span class="p">&gt;</span>Here is some more practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
@@ -120,10 +122,16 @@ text is clicked.</p>
 <div class="figure">
 <img alt="Interactive text styling." src="../../_images/lesson3-partially-interactive-text-styling.gif" />
 </div>
+</li>
+</ol>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<p class="last">Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 7 and examine how the
-interactivity changes.</p>
+<ol class="last arabic simple">
+<li>Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 7 and examine how the
+interactivity changes.</li>
+<li>What happens if we add <code class="docutils literal notranslate"><span class="pre">[class.pcentered]=&quot;changeColor&quot;</span> <span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code>
+to the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag in line 4?</li>
+</ol>
 </div>
 </div>
 <div class="section" id="button-styling">
@@ -196,17 +204,77 @@ examine the code.</p>
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>Do dynamically activate or deactivate a button, we need to bind the attribute
+<p>To dynamically activate or deactivate a button, we need to bind the attribute
 to a boolean. In this case, we can use the <code class="docutils literal notranslate"><span class="pre">inactive</span></code> variable defined in the
 <code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> file.</p>
-<p>Modify line 3 in the HTML file as follows:</p>
+<ol class="arabic">
+<li><p class="first">Modify line 3 in the HTML file as follows:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">[</span><span class="na">class.gold</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!inactive&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;inactive&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;inactive = true&quot;</span><span class="p">&gt;</span>Gold<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Save your changes and refresh the webpage. Now when you click on the
-“Gold” button, <code class="docutils literal notranslate"><span class="pre">inactive</span></code> gets set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, which adds the <code class="docutils literal notranslate"><span class="pre">disabled</span></code>
-attribute to the HTML tag. In addition, the <code class="docutils literal notranslate"><span class="pre">gold</span></code> class is removed.</p>
+“Gold” button, <code class="docutils literal notranslate"><span class="pre">inactive</span></code> gets set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. This adds the <code class="docutils literal notranslate"><span class="pre">disabled</span></code>
+attribute to the HTML tag, turing it off. In addition, the <code class="docutils literal notranslate"><span class="pre">gold</span></code> class is
+removed, changing the color of the button.</p>
+</li>
+<li><p class="first">Since the “Gold” button is no longer active, clicking on it again will not
+trigger any events. To re-enable the button, we need to tie <code class="docutils literal notranslate"><span class="pre">inactive</span></code> to
+another tag and event.</p>
+</li>
+<li><p class="first">Modify line 6 in the HTML file as follows:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;inactive = !inactive&quot;</span><span class="p">&gt;</span>Activate/Deactivate Buttons<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
 </div>
+</li>
+</ol>
+<p>The buttons on the page should now behave something like:</p>
+<div class="figure">
+<img alt="Activating and deactivating a button on click." src="../../_images/lesson3-one-button-activation.gif" />
+</div>
+<div class="section" id="silver-and-copper">
+<h4>30.4.2.1.1. Silver and Copper<a class="headerlink" href="#silver-and-copper" title="Permalink to this headline">¶</a></h4>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">button</span></code> tags for “Silver” and “Copper” so that they also depend
+on <code class="docutils literal notranslate"><span class="pre">inactive</span></code>. Properly done, clicking ANY of the buttons deactivates ALL of
+them:</p>
+<div class="figure">
+<img alt="Activating and deactivating multiple buttons on click." src="../../_images/lesson3-three-button-activation.gif" />
+</div>
+<p>If we want to disable only the button that gets clicked, then we will need
+to create a separate boolean variable for each element. We must also update the
+“Activate/Deactivate” button to reset all of the booleans to <code class="docutils literal notranslate"><span class="pre">true</span></code>. (Hint:
+How about setting the <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event to a function call?)</p>
+</div>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2>30.4.3. Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>Modify the code in <code class="docutils literal notranslate"><span class="pre">buttons.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> to
+make the buttons behave like this:</p>
+<div class="figure">
+<img alt="Deactivating one button at a time." src="../../_images/lesson3-final-button-behavior.gif" />
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you find yourself stuck after trying, and trying, and TRYING, remember that
+there is a <code class="docutils literal notranslate"><span class="pre">solutions</span></code> branch in the repository.</p>
+</div>
+</div>
+<div class="section" id="bonus-try-it">
+<h2>30.4.4. Bonus Try It!<a class="headerlink" href="#bonus-try-it" title="Permalink to this headline">¶</a></h2>
+<p>Just for fun, use what you have learned about events and data binding to create
+buttons that behave like this:</p>
+<div class="figure">
+<img alt="Fun but frustrating buttons." src="../../_images/lesson3-joke-buttons.gif" />
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">These bonus options are ONLY FOR FUN. Using any of these on a business
+website would be a poor choice.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>30.4.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Lorem ipsum…</p>
 </div>
 </div>
 
