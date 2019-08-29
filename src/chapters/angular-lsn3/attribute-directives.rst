@@ -59,9 +59,10 @@ Examine the code in the ``skill-set.component.html`` and
          </ul>
          <p>Here is some practice text...</p>
          <p>Here is some more practice text...</p>
+         <div>Here is another line of practice text...</div>
       </div>
 
-   ``skill-set.component.ts`` SkillSetComponent class:
+   ``skill-set.component.ts``
 
    .. sourcecode:: TypeScript
       :linenos:
@@ -90,14 +91,14 @@ override the CSS instructions with some inline code:
 
 .. sourcecode:: html
 
-   <p style="color: black" align="center">Here is some practice text...</p>
+   <p style="color: black; text-align: right">Here is some practice text...</p>
 
 However, we can use what we learned about data-binding to replace these
 hard-coded styles with variables:
 
 .. sourcecode:: html+ng2
 
-   <p [style.color]="color" [align]="alignment">Here is some practice text...</p>
+   <p [style.color]="color" [style.textAlign]="alignment">Here is some practice text...</p>
 
 Ideas to note:
 
@@ -125,12 +126,12 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
    .. sourcecode:: html
       :linenos:
 
-      .pcentered {
+      .pCentered {
          color: black;
          text-align: center;
       }
 
-#. Next, modify line 7 in the starter code:
+#. Next, modify line 7 in ``skill-set.component.html``x:
 
    .. sourcecode:: html+ng2
       :linenos:
@@ -141,7 +142,7 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
             <li *ngFor="let skill of skills">{{skill}}</li>
          </ul>
          <p [style.color]="color" [align]="alignment">Here is some practice text...</p>
-         <p [class.pcentered]="changeColor">Here is some more practice text...</p>
+         <p [class.pCentered]="changeColor">Here is some more practice text...</p>
          <div>Here is another line of practice text...</div>
       </div>
 
@@ -150,10 +151,10 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
    .. figure:: ./figures/lesson3-styled-skill-text.png
       :alt: Attribute directives midpoint screen.
 
-#. Instead of setting ``[class.pcentered]`` equal to a string, the
+#. Instead of setting ``[class.pCentered]`` equal to a string, the
    ``changeColor`` variable is a boolean (line 6 in
    ``skill-set.component.ts``). If ``changeColor`` is ``true``, Angular adds
-   the ``pStyle`` class of the tag. If ``changeColor`` is ``false``, the class
+   the ``pCentered`` class of the tag. If ``changeColor`` is ``false``, the class
    remains absent from the tag.
 
 .. admonition:: Try It

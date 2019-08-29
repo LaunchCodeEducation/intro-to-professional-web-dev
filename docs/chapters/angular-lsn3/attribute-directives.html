@@ -132,17 +132,19 @@ $ <span class="nb">cd</span> examples
 5
 6
 7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Here is some more practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Here is another line of practice text...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code> SkillSetComponent class:</p>
+<p><code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code></p>
 <div class="last highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -175,12 +177,12 @@ $ <span class="nb">cd</span> examples
 <h3>30.3.2.1. Inline Styling<a class="headerlink" href="#inline-styling" title="Permalink to this headline">¶</a></h3>
 <p>To change the color and alignment of the first paragraph element, we could
 override the CSS instructions with some inline code:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: black&quot;</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: black; text-align: right&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>However, we can use what we learned about data-binding to replace these
 hard-coded styles with variables:</p>
-<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="p">[</span><span class="na">align</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alignment&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="p">[</span><span class="na">style.textAlign</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alignment&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Ideas to note:</p>
@@ -208,14 +210,14 @@ work and refresh the webpage to see the results.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>.pcentered {
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>.pCentered {
    color: black;
    text-align: center;
 }
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Next, modify line 7 in the starter code:</p>
+<li><p class="first">Next, modify line 7 in <a href="#id1"><span class="problematic" id="id2">``</span></a>skill-set.component.html``x:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -230,7 +232,7 @@ work and refresh the webpage to see the results.</p>
       <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="p">[</span><span class="na">align</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alignment&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.pcentered</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;changeColor&quot;</span><span class="p">&gt;</span>Here is some more practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.pCentered</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;changeColor&quot;</span><span class="p">&gt;</span>Here is some more practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Here is another line of practice text...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
@@ -240,10 +242,10 @@ work and refresh the webpage to see the results.</p>
 <img alt="Attribute directives midpoint screen." src="../../_images/lesson3-styled-skill-text.png" />
 </div>
 </li>
-<li><p class="first">Instead of setting <code class="docutils literal notranslate"><span class="pre">[class.pcentered]</span></code> equal to a string, the
+<li><p class="first">Instead of setting <code class="docutils literal notranslate"><span class="pre">[class.pCentered]</span></code> equal to a string, the
 <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> variable is a boolean (line 6 in
 <code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code>). If <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, Angular adds
-the <code class="docutils literal notranslate"><span class="pre">pStyle</span></code> class of the tag. If <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the class
+the <code class="docutils literal notranslate"><span class="pre">pCentered</span></code> class of the tag. If <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the class
 remains absent from the tag.</p>
 </li>
 </ol>
