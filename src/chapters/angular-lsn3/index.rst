@@ -10,7 +10,6 @@ Angular, Part 3
    one-way-binding
    attribute-directives
    style-events
-   two-way-binding
    wrap-up
    exercises
    studio
