@@ -184,7 +184,7 @@ This example can be made even more powerful by enabling multiple loggers.
 
 The main change to the program is that ``logError`` now accepts an *array* of functions. It loops through the array, calling each logger with the message string.
 
-As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call ``logError``. The code *inside* ``logError`` doesn't know how each logging function does it's job. It is concerned only with creating the message string and passing it to the logger(s).
+As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call ``logError``. The code *inside* ``logError`` doesn't know how each logging function does its job. It is concerned only with creating the message string and passing it to the logger(s).
 
 A Word of Caution
 -----------------
