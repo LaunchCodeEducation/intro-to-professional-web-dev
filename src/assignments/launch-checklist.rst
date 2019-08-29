@@ -9,11 +9,7 @@ The form should do the following:
 
 1. Make POST form submission to server
 2. Validate the form in JS based on responses
-3. Validate with JS before the form is submitted
-   
-   1. Handle form submit event
-   2. ``preventDefault`` if form is not valid
-
+3. Validate with JS before the form is submitted and use ``preventDefault`` if form submissions are not valid.
 4. Inform the user with validation messages before they submit
 5. Use CSS to indicate good/bad responses
 
@@ -33,10 +29,19 @@ Set up a repository on your Github profile for your assignment and connect to yo
 Creating the Form
 -----------------
 
+Your form should have the following fields:
 
+1. Pilot's name
+2. Copilot's name
+3. Fuel levels
+4. Cargo weight
 
 Adding Validation
 -----------------
+
+The name fields should be text.
+The fuel levels need to be a number.
+Cargo weight needs to be a number.
 
 Styling the Page
 ----------------
