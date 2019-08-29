@@ -40,7 +40,6 @@ Chapters
 .. toctree::
 
    genindex
-   glossary
 
 Studios
 ^^^^^^^
@@ -106,3 +105,4 @@ Appendices
    index-full
    assignments/html-me-part1
    assignments/html-me-part2
+   glossary
