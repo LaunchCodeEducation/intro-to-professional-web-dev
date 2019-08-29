@@ -10,7 +10,7 @@ Example: ``setTimeout``
 
 .. index:: ! setTimeout
 
-The built-in function ``setTimeout`` allows a programmer to pass a function, specifying that it should be called at later point in time. Its basic syntax is:
+The built-in function ``setTimeout`` allows a programmer to pass a function, specifying that it should be called at a later point in time. Its basic syntax is:
 
 ::
 
@@ -64,7 +64,7 @@ Example: The Array Method ``map``
 
 The array method ``map`` allows for every element in an array to be *mapped* or *translated*, using a given function. Here's how to use it:
 
-::
+.. sourcecode:: js
 
    let mappedArray = someArray.map(func);
 
