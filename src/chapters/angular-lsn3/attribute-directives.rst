@@ -153,8 +153,8 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
 #. Instead of setting ``[class.pcentered]`` equal to a string, the
    ``changeColor`` variable is a boolean (line 6 in
    ``skill-set.component.ts``). If ``changeColor`` is ``true``, Angular adds
-   the ``pStyle`` class of the tag. If ``changeColor`` is ``false``, the class
-   remains absent from the tag.
+   the ``pcentered`` class of the tag. If ``changeColor`` is ``false``, the
+   class remains absent from the tag.
 
 .. admonition:: Try It
 

@@ -22,14 +22,20 @@ The Angular skills you learned are a small slice of what the framework can
 accomplish. They provide a solid foundation if you choose to learn more on your
 own.
 
+Of course, practice makes better. The best way for you to get better at
+Angular is to use Angular. Adapt the examples, exercises, and studio projects
+however you want. Also, create your own project and build your own sample
+webpages. Create an interactive family photo page, a grocery list, a web based
+breakout box, or whatever you want.
+
 You can find full documentation on the `Angular.io <https://angular.io/>`__
 website. A good "next step" for your Angular learning would be to complete the
-`Tour of Heros <https://angular.io/tutorial>`__ tutorial project.
+`Tour of Heros <https://angular.io/tutorial>`__ tutorial.
 
-More coming soon...
+.. admonition:: Note
 
-The Angular documentation is excruciatingly complete, but do not be
-intimidated. There are plenty of separate tutorial sites that cover individual
-skills and techniques. When you find an interesting topic on the Angular site,
-feel free to Google that topic and explore how other coders explain how to use
-it.
+   The Angular documentation is excruciatingly complete, but do not be
+   intimidated. There are plenty of separate tutorial sites that cover individual
+   skills and techniques. When you find an interesting topic on the Angular site,
+   feel free to Google that topic and explore how other coders explain how to use
+   it.
