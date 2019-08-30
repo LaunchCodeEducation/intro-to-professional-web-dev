@@ -1,7 +1,8 @@
 Exercises: Angular, Part 3
 ===========================
 
-Intro text here...
+Remember that :ref:`DOM and Events studio <DOM-studio>`? Let's
+revisit this and do it again Angular-style.
 
 Starter Code
 -------------
