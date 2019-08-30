@@ -21,7 +21,7 @@ Initializing Objects
 
 .. index:: ! object literal
 
-When defining an object, we call the intialization an **object literal**.
+When defining an object, we call the initialization an **object literal**.
 Objects require three things for the definition: a name, a set of keys, and their corresponding values.
 
 .. note::

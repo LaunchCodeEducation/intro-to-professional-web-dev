@@ -36,6 +36,8 @@ In particular, *a variable defined using `let` within a function is not visible 
                strWithoutHyphens += str[i];
             }
          }
+
+         return strWithoutHyphens;
       }
 
       let launchCodePhone = "314-254-0107";
