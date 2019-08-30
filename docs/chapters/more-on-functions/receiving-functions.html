@@ -315,7 +315,7 @@ launchcode
    <span class="kd">let</span> <span class="nx">errorMsg</span> <span class="o">=</span> <span class="s1">&#39;ERROR: &#39;</span> <span class="o">+</span> <span class="nx">msg</span><span class="p">;</span>
 
    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loggers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">logger</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">errorMsg</span><span class="p">);</span>
+      <span class="nx">loggers</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">errorMsg</span><span class="p">);</span>
    <span class="p">}</span>
 
 <span class="p">}</span>
@@ -325,7 +325,7 @@ launchcode
 </td></tr></table></div>
 </div>
 <p>The main change to the program is that <code class="docutils literal notranslate"><span class="pre">logError</span></code> now accepts an <em>array</em> of functions. It loops through the array, calling each logger with the message string.</p>
-<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know how each logging function does it’s job. It is concerned only with creating the message string and passing it to the logger(s).</p>
+<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know how each logging function does its job. It is concerned only with creating the message string and passing it to the logger(s).</p>
 </div>
 </div>
 <div class="section" id="a-word-of-caution">

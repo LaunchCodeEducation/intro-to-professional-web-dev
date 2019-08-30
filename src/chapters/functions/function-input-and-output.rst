@@ -294,7 +294,9 @@ While this may seem new, we have already seen a function that allows for some ar
 
 .. admonition:: Example
 
-   The string method ``slice`` allows the second argument to be left off. When this happens, the method behaves as if they value of the second argument is the length of the string.
+   The string method ``slice`` allows the second argument to be left off.
+   When this happens, the method behaves as if the value of the second
+   argument is the length of the string.
 
    .. sourcecode:: js
       :linenos:

@@ -28,7 +28,7 @@ API
 
 When using a website, we mainly work with **GUIs (Graphical User Interface)** which 
 contain buttons, forms, text boxes, etc. However, our program does not know how to 
-use a GUI. Programs use **APIs (Application Programming Interface)** need an to 
+use a GUI. Programs use **APIs (Application Programming Interface)** to 
 communicate with other programs.
 
 Consider the software you use on a daily basis, like Microsoft Word, Google Chrome, 
@@ -37,11 +37,10 @@ up on your screen and is filled with text, buttons, search bars, scroll bars, et
 Usually, with a little trial and error, you can learn how to use the interface 
 easily. This interface we use is called a Graphical User Interface, or GUI for short.
 
-How we interact with computers is with various interfaces, either GUI, or CLI. 
+We interact with computers using various interfaces, either with a GUI or a CLI. 
 However, an application does not know how to use a GUI, or a CLI, and needs it's own 
-interface to communicate with another application. So a new interface was defined so 
-that one application could communicate with another application.
-This interface was called an Application Programming Interface, or API for short.
+interface to communicate with another application.
+An API is the interface that allows one application to communicate with another application.
 
 An API is how one application communicates with another application. We will be 
 making a request to an API in order to retrieve information we
