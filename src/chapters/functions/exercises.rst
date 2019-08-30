@@ -1,11 +1,17 @@
 Exercises: Functions
 =====================
 
-To become good at solving problems with code you need to be able to break large problems into small ones. Usually, these smaller problems will take the form of functions that are used to solve the larger problem. Therefore, to become good at solving problems you need to become good at writing functions. And to master functions, you need to write a *lot* of them.
+To become good at solving problems with code you need to be able to break large
+problems into small ones. Usually, these smaller problems will take the form of
+functions that are used to solve the larger problem. Therefore, to become good
+at solving problems you need to become good at writing functions. And to master
+functions, you need to write a *lot* of them.
 
-These exercises ask you to write lots of relatively small functions, which combine to form larger, more complicated ones.
+These exercises ask you to write lots of relatively small functions, which
+combine to form larger, more complicated ones.
 
-At the end, you will be able to create strings of shapes, like this nifty diamond:
+At the end, you will be able to create strings of shapes, like this nifty
+diamond:
 
 ::
 
@@ -26,12 +32,12 @@ at `repl.it <https://repl.it/student>`_ to get started.
 Rectangles
 ----------
 
-#. Write a function ``line(size)`` that returns a line with exactly ``size``
+#. Write a function ``makeLine(size)`` that returns a line with exactly ``size``
    hashes.
 
    .. sourcecode:: js
 
-      console.log(line(5));
+      console.log(makeLine(5));
 
    **Console Output**
 
@@ -39,12 +45,12 @@ Rectangles
 
       #####
 
-2. Write a function ``square(size)`` that returns an ``size`` by ``size`` square
-   of hashes. Use your ``line`` function to do this.
+#. Write a function ``makeSquare(size)`` that returns an ``size`` by ``size``
+   square of hashes. Use your ``makeLine`` function to do this.
 
    .. sourcecode:: js
 
-      console.log(square(5));
+      console.log(makeSquare(5));
 
    **Console Output**
 
@@ -56,18 +62,22 @@ Rectangles
       #####
       #####
 
-   .. tip:: The newline character, ``\n``, will be helpful to you.
+   .. tip::
 
-   .. warning:: For this and all other functions in these exercises, make sure you do NOT have a newline character at the end of your string. Not only will ``console.log`` add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the exercises.
+      The newline character, ``\n``, will be helpful to you.
+
+   .. warning::
+
+      For this and all other functions in these exercises, make sure you do NOT have a newline character at the end of your string. Not only will ``console.log`` add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the exercises.
 
 
-#. Write a function ``rectangle(width, height)`` that returns a
-   rectangle with the given width and height. Use your
-   ``line`` function to do this.
+#. Write a function ``makeRectangle(width, height)`` that returns a
+   rectangle with the given width and height. Use your ``makeLine`` function to
+   do this.
 
    .. sourcecode:: js
 
-      console.log(rectangle(5, 3));
+      console.log(makeRectangle(5, 3));
 
    **Console Output**
 
@@ -77,17 +87,18 @@ Rectangles
       #####
       #####
 
-#. Now, go back and rewrite ``square`` to use ``rectangle``.
+#. Now, go back and rewrite ``makeSquare`` to use ``makeRectangle``.
 
 Triangles
----------
+----------
 
-#. Write a function ``stairs(height)`` that prints the staircase pattern shown below,
-   with the given height. Use your ``line`` function to do this.
+#. Write a function ``makeDownwardStairs(height)`` that prints the staircase
+   pattern shown below, with the given height. Use your ``makeLine`` function
+   to do this.
 
    .. sourcecode:: js
 
-      console.log(stairs(5));
+      console.log(makeDownwardStairs(5));
 
    **Console Output**
 
@@ -99,13 +110,13 @@ Triangles
       ####
       #####
 
-2. Write a function ``spaceLine(numSpaces, numChars)`` that returns a line
+2. Write a function ``makeSpaceLine(numSpaces, numChars)`` that returns a line
    with exactly the specified number of spaces, followed by the
    specified number of hashes, followed again by ``numSpaces`` more spaces.
 
    .. sourcecode:: js
 
-      console.log(spaceLine(3, 5));
+      console.log(makeSpaceLine(3, 5));
 
    **Console Output**
 
@@ -115,12 +126,12 @@ Triangles
 
    .. note:: We have inserted underscores to represent spaces, so they are visible in the output. Don't do this in your code.
 
-#. Write a function ``triangle(height)`` that returns a triangle of
-   the given height.
+#. Write a function ``makeIsoscelesTriangle(height)`` that returns a triangle
+   of the given height.
 
    .. sourcecode:: js
 
-      console.log(triangle(5));
+      console.log(makeIsoscelesTriangle(5));
 
    **Console Output**
 
@@ -137,12 +148,12 @@ Triangles
 Diamonds
 ---------
 
-#. Write a function ``diamond(height)`` that returns a diamond where the
+#. Write a function ``makeDiamond(height)`` that returns a diamond where the
    triangle formed by the *top* portion has the given height.
 
    .. sourcecode:: js
 
-      console.log(diamond(5));
+      console.log(makeDiamond(5));
 
    **Console Output**
 
@@ -159,9 +170,14 @@ Diamonds
          ###
           #
 
-   .. tip:: Consider what happens if you create a triangle and reverse it using :ref:`our reverse function <reverse_func>`.
+   .. tip::
+
+      Consider what happens if you create a triangle and reverse it using
+      :ref:`our reverse function <reverse_func>`.
 
 Bonus Mission
 --------------
 
-Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using ``'#'``. Make the new parameter optional, with default value ``'#'``.
+Refactor your functions so that they take a single character as a parameter,
+and draw the shapes with that character instead of always using ``'#'``. Make
+the new parameter optional, with default value ``'#'``.
