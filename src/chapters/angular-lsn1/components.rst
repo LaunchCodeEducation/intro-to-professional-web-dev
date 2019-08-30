@@ -110,7 +110,7 @@ in the ``src/app/task-list`` folder.
 
 .. note::
 
-   ``ng generate`` can be shortened to ``ng g``.
+   Recall that ``ng generate`` can be shortened to ``ng g``.
 
 Try It
 ^^^^^^^

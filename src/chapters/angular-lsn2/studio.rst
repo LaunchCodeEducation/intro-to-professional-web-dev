@@ -93,6 +93,13 @@ If a crew member's ``firstMission`` property is ``true``, then display the text 
 
        Example of first mission status being shown.
 
+Add this code right after the member name in ``src/app/crew/crew.component.html``.
+
+.. sourcecode:: html+ng2
+   :linenos:
+
+   <span *ngIf="member.firstMission">- 1st</span>
+
 
 Add Crew Members
 ^^^^^^^^^^^^^^^^
