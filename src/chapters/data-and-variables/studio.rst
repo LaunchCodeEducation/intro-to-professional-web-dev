@@ -13,7 +13,7 @@ rockets before launch.
 Before You Start
 ----------------
 
-If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at learn.launchcode.org.
+If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
 
 If you are working through this material on your own, use the repl.it links contained on this page.
 
