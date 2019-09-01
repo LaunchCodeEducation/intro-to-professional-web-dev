@@ -29,7 +29,7 @@ Part 1: Select Cargo
 ---------------------
 
 We want to add items from the equipment list to the cargo hold, but we must NOT
-exceed the capacity defined by the ``maximumAllowedMass`` variable.
+exceed the value of the ``maximumAllowedMass`` variable.
 
 The interactive equipment list should behave as follows:
 
@@ -63,13 +63,15 @@ Make the ``Add to Cargo Hold`` Buttons Work
 Open ``equipment.component.html`` and do the following:
 
 #. Add an "Add to Cargo Hold" button within each list item.
-   TODO: Add screenshot of minimum buttons.
+
+   *TODO: Add screenshot of minimum buttons.*
+
 #. Add a ``(click)`` event to each button that calls the ``addItem`` function
    and passes the selected equipment as the argument.
 #. Bind the ``disabled`` attribute to the following conditions:
 
-   #. If all of the cargo hold spots are full, disable the button.
-   #. If adding the item to the cargo hold would exceed ``maximumAllowedMass``,
+   a. If all of the cargo hold spots are full, disable the button.
+   b. If adding the item to the cargo hold would exceed ``maximumAllowedMass``,
       disable the button.
 
 #. If active, make the button an attractive color.
@@ -82,8 +84,8 @@ following:
 
 #. Add a ``nearMaxMass`` class in the CSS file that styles the text to be:
 
-   #. Bold OR italic,
-   #. Red.
+   a. Bold OR italic,
+   b. Red.
 
 #. Bind ``[class.nearMaxMass]`` to a boolean that will change the style of
    the "Mass Budget Remaining" text whenever the cargo hold gets within 200 kg
@@ -152,11 +154,11 @@ Update the ``Crew`` List
    determine if the mouse pointer is currently over a name in the "Crew" list.
 #. If a crew member is selected by moving the mouse over their name:
 
-   #. Use an ``img`` tag with ``*ngIf`` to display a photo of the astronaut
+   a. Use an ``img`` tag with ``*ngIf`` to display a photo of the astronaut
       below the crew list.
-   #. Bind the ``.photo`` property of the astronaut to the ``src``
+   b. Bind the ``.photo`` property of the astronaut to the ``src``
       attribute.
-   #. When the mouse pointer moves off of a name, the photo should disappear.
+   c. When the mouse pointer moves off of a name, the photo should disappear.
 
 Status Check
 ^^^^^^^^^^^^^

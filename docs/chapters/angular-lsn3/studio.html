@@ -110,7 +110,7 @@ for the crew, equipment, and experiments have been removed.</p>
 <div class="section" id="part-1-select-cargo">
 <h2>30.7.2. Part 1: Select Cargo<a class="headerlink" href="#part-1-select-cargo" title="Permalink to this headline">¶</a></h2>
 <p>We want to add items from the equipment list to the cargo hold, but we must NOT
-exceed the capacity defined by the <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code> variable.</p>
+exceed the value of the <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code> variable.</p>
 <p>The interactive equipment list should behave as follows:</p>
 <ol class="arabic simple">
 <li>When clicked, the “Add to Cargo Hold” button adds the selected equipment to
@@ -140,18 +140,22 @@ within 200 kg of <code class="docutils literal notranslate"><span class="pre">ma
 <div class="section" id="make-the-add-to-cargo-hold-buttons-work">
 <h3>30.7.2.2. Make the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">to</span> <span class="pre">Cargo</span> <span class="pre">Hold</span></code> Buttons Work<a class="headerlink" href="#make-the-add-to-cargo-hold-buttons-work" title="Permalink to this headline">¶</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">equipment.component.html</span></code> and do the following:</p>
-<ol class="arabic simple">
-<li>Add an “Add to Cargo Hold” button within each list item.
-TODO: Add screenshot of minimum buttons.</li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event to each button that calls the <code class="docutils literal notranslate"><span class="pre">addItem</span></code> function
-and passes the selected equipment as the argument.</li>
-<li>Bind the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute to the following conditions:<ol class="arabic">
+<ol class="arabic">
+<li><p class="first">Add an “Add to Cargo Hold” button within each list item.</p>
+<p><em>TODO: Add screenshot of minimum buttons.</em></p>
+</li>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event to each button that calls the <code class="docutils literal notranslate"><span class="pre">addItem</span></code> function
+and passes the selected equipment as the argument.</p>
+</li>
+<li><p class="first">Bind the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute to the following conditions:</p>
+<ol class="loweralpha simple">
 <li>If all of the cargo hold spots are full, disable the button.</li>
 <li>If adding the item to the cargo hold would exceed <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code>,
 disable the button.</li>
 </ol>
 </li>
-<li>If active, make the button an attractive color.</li>
+<li><p class="first">If active, make the button an attractive color.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="update-the-cargo-hold-display">
@@ -159,7 +163,7 @@ disable the button.</li>
 <p>Open <code class="docutils literal notranslate"><span class="pre">equipment.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">equipment.component.css</span></code> and do the
 following:</p>
 <ol class="arabic simple">
-<li>Add a <code class="docutils literal notranslate"><span class="pre">nearMaxMass</span></code> class in the CSS file that styles the text to be:<ol class="arabic">
+<li>Add a <code class="docutils literal notranslate"><span class="pre">nearMaxMass</span></code> class in the CSS file that styles the text to be:<ol class="loweralpha">
 <li>Bold OR italic,</li>
 <li>Red.</li>
 </ol>
@@ -227,7 +231,7 @@ of a candidate’s name when they are selected or de-selected for the crew.</li>
 <li>When the crew size reaches 3, the heading should change to “Crew Full”.</li>
 <li>Add <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> and <code class="docutils literal notranslate"><span class="pre">(mouseout)</span></code> events to the <code class="docutils literal notranslate"><span class="pre">li</span></code> tags to
 determine if the mouse pointer is currently over a name in the “Crew” list.</li>
-<li>If a crew member is selected by moving the mouse over their name:<ol class="arabic">
+<li>If a crew member is selected by moving the mouse over their name:<ol class="loweralpha">
 <li>Use an <code class="docutils literal notranslate"><span class="pre">img</span></code> tag with <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to display a photo of the astronaut
 below the crew list.</li>
 <li>Bind the <code class="docutils literal notranslate"><span class="pre">.photo</span></code> property of the astronaut to the <code class="docutils literal notranslate"><span class="pre">src</span></code>
