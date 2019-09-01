@@ -15,6 +15,12 @@ user friendly.
 If you are NOT enrolled in a repl.it classroom for this course, fork the
 starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
 
+.. note::
+
+   The requirements below are what your END assignment will look like.
+   This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at "Transform".
+   Please read the WHOLE assignment page before starting.
+
 Requirements
 ------------
 
@@ -26,31 +32,6 @@ Requirements
    include different scoring functions.
 #. Create a ``runProgram`` function to serve as the starting point for your
    program.
-
-.. _example-output:
-
-Example Output
-^^^^^^^^^^^^^^
-::
-
-   Welcome to the Scrabble score calculator. Click 'Stop' to quit.
-
-   Which scoring algorithm would you like to use?
-
-   0 - Scrabble: The traditional scoring algorithm.
-   1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
-   Enter 0,1,2: 0
-   Using algorithm: Scrabble
-
-   Enter a word to be scored:  LaunchCode
-   Score for 'LaunchCode': 18
-
-   Enter a word to be scored:  Rocket
-   Score for 'Rocket': 12
-
-   Enter a word to be scored:
-
 
 Detailed Requirements
 ---------------------
@@ -155,9 +136,7 @@ User Prompts
 The current Scrabble Scorer only uses one scoring algorithm. For the new
 version we want to let the user pick between three algorithms. Define an
 ``initialPrompt`` function that will introduce the program and then ask the
-user which scoring algorithm they want to use. See
-:ref:`Example Output <example-output>` above and the next section for details
-on available options.
+user which scoring algorithm they want to use.
 
 Scoring Algorithms
 ^^^^^^^^^^^^^^^^^^
@@ -241,6 +220,31 @@ Here are some words you can use to test your code:
    Bonus Vowels.
 #. ``Zox`` = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
    Vowels.
+
+.. _example-output:
+
+Example Output
+^^^^^^^^^^^^^^
+
+::
+
+   Welcome to the Scrabble score calculator. Enter 'Stop' to quit.
+
+   Which scoring algorithm would you like to use?
+
+   0 - Scrabble: The traditional scoring algorithm.
+   1 - Simple Score: Each letter is worth 1 point.
+   2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
+   Enter 0,1,2: 0
+   Using algorithm: Scrabble
+
+   Enter a word to be scored:  LaunchCode
+   Score for 'LaunchCode': 18
+
+   Enter a word to be scored:  Rocket
+   Score for 'Rocket': 12
+
+   Enter a word to be scored:
 
 Bonus Mission
 -------------

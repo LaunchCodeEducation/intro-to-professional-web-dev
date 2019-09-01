@@ -42,5 +42,5 @@ array. The **delimiter** argument determines how the string is broken apart.
    ::
 
       ['1', '2', '3', '4']
-      ['Bookkeeper', 'of', 'balloons']
+      ['Bookkeeper', 'of', 'balloons.']
       ['R', 'u', 't', 'a', 'b', 'a', 'g', 'a']
