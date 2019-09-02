@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -102,37 +102,39 @@ resolve it.</li>
 <li>Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to build and serve the project.</li>
 </ol>
 <p>When viewed in your browser, the project should look like this:</p>
-<blockquote>
-<div>TODO: Add screenshot of starting conditions.</div></blockquote>
-<p>The mission name and rocket name are still editable, but the functionality
+<div class="figure">
+<img alt="Angular studio 3 starting point." src="../../_images/angular-lsn3-starter-page.png" />
+</div>
+<p><em>Mission Name</em> and <em>Carrier Rocket</em> are still editable, but the functionality
 for the crew, equipment, and experiments have been removed.</p>
 </div>
 <div class="section" id="part-1-select-cargo">
 <h2>30.7.2. Part 1: Select Cargo<a class="headerlink" href="#part-1-select-cargo" title="Permalink to this headline">¶</a></h2>
 <p>We want to add items from the equipment list to the cargo hold, but we must NOT
 exceed the value of the <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code> variable.</p>
-<p>The interactive equipment list should behave as follows:</p>
+<p>The interactive equipment list will eventually behave as follows:</p>
 <ol class="arabic simple">
-<li>When clicked, the “Add to Cargo Hold” button adds the selected equipment to
+<li>When clicked, an <em>Add to Cargo Hold</em> button adds the selected equipment to
 the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array and updates the <code class="docutils literal notranslate"><span class="pre">cargoMass</span></code> variable.</li>
 <li>As items are added to the hold, their names should appear in the Cargo Hold
-section of the page. Also, the “Mass in Hold”, “Mass Budget Remaining”, and
-“Spots Filled” values should update.</li>
-<li>The “Add to Cargo Hold” buttons should be disabled if all of the spots in
+section of the page. Also, the <em>Mass in Hold</em>, <em>Mass Budget Remaining</em>, and
+<em>Spots Filled</em> values should update.</li>
+<li>The <em>Add to Cargo Hold</em> buttons should be disabled if all of the spots in
 the hold have been filled.</li>
 <li>If the mass of a particular item will push the cargo hold over
 <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code>, that item’s button should be disabled.</li>
 <li>If <code class="docutils literal notranslate"><span class="pre">cargoMass</span></code> comes within 200 kg of <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code>, then the
-“Mass Budget Remaining” text should turn red.</li>
+<em>Mass Budget Remaining</em> text should turn red.</li>
 </ol>
+<p>The following sections will guide you through completing Part 1.</p>
 <div class="section" id="code-the-additem-function">
 <h3>30.7.2.1. Code the <code class="docutils literal notranslate"><span class="pre">addItem</span></code> Function<a class="headerlink" href="#code-the-additem-function" title="Permalink to this headline">¶</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">equipment.component.ts</span></code> and create the <code class="docutils literal notranslate"><span class="pre">addItem</span></code> function:</p>
 <ol class="arabic simple">
 <li>It should take an equipment object as a parameter.</li>
-<li>It should add the selected item to the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array.</li>
-<li>It should increase the <code class="docutils literal notranslate"><span class="pre">cargoMass</span></code> variable by the mass of the selected
-item.</li>
+<li>It should add the equipment object to the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array.</li>
+<li>It should increase the <code class="docutils literal notranslate"><span class="pre">cargoMass</span></code> variable by the mass of the new
+equipment.</li>
 <li>It should return <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> depending on whether <code class="docutils literal notranslate"><span class="pre">cargoMass</span></code> is
 within 200 kg of <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code>.</li>
 </ol>
@@ -141,8 +143,10 @@ within 200 kg of <code class="docutils literal notranslate"><span class="pre">ma
 <h3>30.7.2.2. Make the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">to</span> <span class="pre">Cargo</span> <span class="pre">Hold</span></code> Buttons Work<a class="headerlink" href="#make-the-add-to-cargo-hold-buttons-work" title="Permalink to this headline">¶</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">equipment.component.html</span></code> and do the following:</p>
 <ol class="arabic">
-<li><p class="first">Add an “Add to Cargo Hold” button within each list item.</p>
-<p><em>TODO: Add screenshot of minimum buttons.</em></p>
+<li><p class="first">Include an <em>Add to Cargo Hold</em> button within each list item.</p>
+<div class="figure">
+<img alt="Minimal *Add to Cargo Hold* button style." src="../../_images/minimal-addtocargo-buttons.png" />
+</div>
 </li>
 <li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event to each button that calls the <code class="docutils literal notranslate"><span class="pre">addItem</span></code> function
 and passes the selected equipment as the argument.</p>
@@ -157,6 +161,9 @@ disable the button.</li>
 <li><p class="first">If active, make the button an attractive color.</p>
 </li>
 </ol>
+<div class="figure">
+<img alt="Final *Add to Cargo Hold* button style." src="../../_images/styled-addtocargo-buttons.png" />
+</div>
 </div>
 <div class="section" id="update-the-cargo-hold-display">
 <h3>30.7.2.3. Update the <code class="docutils literal notranslate"><span class="pre">Cargo</span> <span class="pre">Hold</span></code> Display<a class="headerlink" href="#update-the-cargo-hold-display" title="Permalink to this headline">¶</a></h3>
@@ -169,18 +176,19 @@ following:</p>
 </ol>
 </li>
 <li>Bind <code class="docutils literal notranslate"><span class="pre">[class.nearMaxMass]</span></code> to a boolean that will change the style of
-the “Mass Budget Remaining” text whenever the cargo hold gets within 200 kg
+the <em>Mass Budget Remaining</em> text whenever the cargo hold gets within 200 kg
 of <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code>.</li>
-<li>Add an “Empty Hold” button that clears the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array and resets
+<li>Add an <em>Empty Hold</em> button that clears the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> array and resets
 <code class="docutils literal notranslate"><span class="pre">cargoMass</span></code>. As a side effect, clearing the hold should reactivate all
-of the buttons and return “Mass Budget Remaining” to its original style.</li>
+of the buttons and return <em>Mass Budget Remaining</em> to its original style.</li>
 </ol>
 </div>
 <div class="section" id="status-check">
 <h3>30.7.2.4. Status Check<a class="headerlink" href="#status-check" title="Permalink to this headline">¶</a></h3>
 <p>At this point, the equipment component should behave something like:</p>
-<blockquote>
-<div>TODO: Add gif of functioning equipment component.</div></blockquote>
+<div class="figure">
+<img alt="Gif of Equipment list and Cargo Hold interactivity." src="../../_images/equipment-list-interactions.gif" />
+</div>
 <p>Before moving on to part 2, be sure to commit and push your work.</p>
 </div>
 </div>
@@ -188,18 +196,19 @@ of the buttons and return “Mass Budget Remaining” to its original style.</li
 <h2>30.7.3. Part 2: Select Crew Members<a class="headerlink" href="#part-2-select-crew-members" title="Permalink to this headline">¶</a></h2>
 <p>We want to add up to three astronauts to the mission crew, and we want to do
 this by clicking on their names rather than creating more buttons.</p>
-<p>The interactive candidates list should behave as follows:</p>
+<p>The interactive candidates list will eventually behave as follows:</p>
 <ol class="arabic simple">
 <li>When clicked, the candidate’s name will change color and will appear in the
-“Crew” list.</li>
+<em>Crew</em> list.</li>
 <li>If a candidate is already part of the crew, clicking their name again in the
-“Candidates” list will remove them from the crew.</li>
-<li>When the mouse pointer hovers over an astronaut’s name in the “Crew” list,
+<em>Candidates</em> list will remove them from the crew.</li>
+<li>When the mouse pointer hovers over an astronaut’s name in the <em>Crew</em> list,
 their photo appears below the list. When the pointer leaves their name,
 their photo disappears.</li>
-<li>When the crew size reaches 3 members, the heading changes to “Crew Full” and
+<li>When the crew size reaches 3 members, the heading changes to <em>Crew Full</em> and
 clicking on more candidate names will not do anything.</li>
 </ol>
+<p>The following sections will guide you through completing Part 2.</p>
 <div class="section" id="code-the-addcrewmember-function">
 <h3>30.7.3.1. Code the <code class="docutils literal notranslate"><span class="pre">addCrewMember</span></code> Function<a class="headerlink" href="#code-the-addcrewmember-function" title="Permalink to this headline">¶</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">crew.component.ts</span></code> and create the <code class="docutils literal notranslate"><span class="pre">addCrewMember</span></code> function:</p>
@@ -213,7 +222,7 @@ removed from the <code class="docutils literal notranslate"><span class="pre">cr
 </ol>
 </div>
 <div class="section" id="update-the-candidates-list">
-<h3>30.7.3.2. Update the <code class="docutils literal notranslate"><span class="pre">Candidates</span></code> List<a class="headerlink" href="#update-the-candidates-list" title="Permalink to this headline">¶</a></h3>
+<h3>30.7.3.2. Update the Candidates List<a class="headerlink" href="#update-the-candidates-list" title="Permalink to this headline">¶</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">crew.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">crew.component.css</span></code> and do the following:</p>
 <ol class="arabic simple">
 <li>Add a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event to each <code class="docutils literal notranslate"><span class="pre">li</span></code> element that calls the
@@ -226,11 +235,11 @@ of a candidate’s name when they are selected or de-selected for the crew.</li>
 </ol>
 </div>
 <div class="section" id="update-the-crew-list">
-<h3>30.7.3.3. Update the <code class="docutils literal notranslate"><span class="pre">Crew</span></code> List<a class="headerlink" href="#update-the-crew-list" title="Permalink to this headline">¶</a></h3>
+<h3>30.7.3.3. Update the Crew List<a class="headerlink" href="#update-the-crew-list" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>When the crew size reaches 3, the heading should change to “Crew Full”.</li>
 <li>Add <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> and <code class="docutils literal notranslate"><span class="pre">(mouseout)</span></code> events to the <code class="docutils literal notranslate"><span class="pre">li</span></code> tags to
-determine if the mouse pointer is currently over a name in the “Crew” list.</li>
+determine if the mouse pointer is currently over a name in the <em>Crew</em> list.</li>
 <li>If a crew member is selected by moving the mouse over their name:<ol class="loweralpha">
 <li>Use an <code class="docutils literal notranslate"><span class="pre">img</span></code> tag with <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to display a photo of the astronaut
 below the crew list.</li>
@@ -244,8 +253,9 @@ attribute.</li>
 <div class="section" id="id1">
 <h3>30.7.3.4. Status Check<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>At this point, the crew component should behave something like:</p>
-<blockquote>
-<div>TODO: Add gif of functioning crew component.</div></blockquote>
+<div class="figure">
+<img alt="Gif of the Candidates and Crew list interactivity." src="../../_images/crew-list-interactions.gif" />
+</div>
 <p>Before moving on to the bonus missions, be sure to commit and push your work.</p>
 </div>
 </div>

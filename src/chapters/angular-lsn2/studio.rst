@@ -180,9 +180,9 @@ Finally we are going to allow the user to edit crew members who have already bee
 3. Only one crew member can be edited at a time.
 
 .. figure:: figures/edit-crew-name.gif
-       :alt: Animated gif of crew member name being clicked, edited, and then saved.
+   :alt: Animated gif of crew member name being clicked, edited, and then saved.
 
-       Example of crew member name being edited.
+   Example of crew member name being edited.
 
 We need to add a click event to the member name.
 
