@@ -250,20 +250,13 @@ advantage of our old friend ``ngIf`` to display the whole set based on ``status.
 
 .. sourcecode:: html+ng2
    :linenos:
-   
+
    <div *ngIf="!status.takeOffEnabled">
       <button (click)="handleUpClick(rocketImage)">Up</button>
       <button (click)="handleDownClick(rocketImage)">Down</button>
       <button (click)="handleRightClick(rocketImage)">Right</button>
       <button (click)="handleLeftClick(rocketImage)">Left</button>
    </div>
-
-
-Maybe change text color if fuel level drops too low?
-
-Maybe enable/disable buttons based on whether ``cargoHold`` is full?
-
-Enable ``Launch`` button when all checks pass?
 
 
 Bonus Mission
