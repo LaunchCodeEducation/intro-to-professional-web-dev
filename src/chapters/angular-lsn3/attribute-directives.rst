@@ -11,7 +11,7 @@ Open the Lesson 3 Folder
 
 Open VSCode and return to the ``angular-lc101-projects`` folder. Find
 ``lesson3/examples/src/app`` in the sidebar and open the
-``skill-set.component.ts``, ``skill-set.component.html``, and 
+``skill-set.component.ts``, ``skill-set.component.html``, and
 ``skill-set.component.css`` files.
 
 .. figure:: ./figures/lesson3-menu.png
@@ -202,4 +202,23 @@ Nice display of eagerness! We will deal with the buttons on the next page.
 Check Your Understanding
 -------------------------
 
-Lorem ipsum...
+The ``reverse`` attribute labels ordered lists from highest to lowest values
+(9, 8, 7... instead of 1, 2, 3...). Unlike attributes like ``class`` or
+``style``, ``reverse`` is not set equal to a string inside the HTML tag. Just
+having it in the tag flips the numbering of the bullets.
+
+.. sourcecode:: html
+
+   <ol style="color: blue" reverse>
+
+.. admonition:: Question
+
+   How could we data-bind the ``reverse`` attribute in an ``ol`` tag? Indicate
+   ALL working options.
+
+   #. Bind the attribute to a variable that holds the string ``"reversed"`` or
+      ``"notReversed"``.
+   #. Bind the attribute to a boolean variable set as ``true`` or ``false``.
+   #. Bind the attribute to a boolean statement like ``variable1 > variable2``.
+   #. Bind the attribute to the empty string ``""``.
+   #. Just put square brackets around ``reverse`` and hope for the best.

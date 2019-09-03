@@ -108,4 +108,14 @@ set that equal to the variable name in quotes.
 Check Your Understanding
 -------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Which of the following show proper data-binding syntax? Choose ALL that
+   apply.
+
+   #. ``<li>{{ variableName }}</li>``
+   #. ``<img [src]="variableName"/>``
+   #. ``<p>[variableName]</p>``
+   #. ``<button value="[variableName]">Go!</button>``
+   #. ``<input placeholder="{{ variableName }}"/>``
+   #. ``<button [name]="{{ variableName }}"/>``
