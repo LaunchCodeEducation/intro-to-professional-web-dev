@@ -11,44 +11,51 @@ a little bit.
 Interactive Elements
 ---------------------
 
-Let's make one of the paragraph elements respond to user clicks.
+Let's make the paragraph element respond to user clicks.
 
-#. Open ``skill-set.component.ts``. Define the boolean variable ``changeColor``
-   in the ``SkillSetComponent`` class. Initialize it as ``false``.
-#. Change line 7 in ``skill-set.component.html`` by adding a ``(click)`` event:
+Change line 12 in ``skill-set.component.html`` by adding a ``(click)`` event:
 
-   .. sourcecode:: html+ng2
-      :linenos:
+.. sourcecode:: html+ng2
+   :linenos:
 
-      <div class="skills">
-         <h3>{{listHeading}}</h3>
-         <ul>
-            <li *ngFor="let skill of skills">{{skill}}</li>
-         </ul>
-         <p [style.color]="color" [align]="alignment">Here is some practice text...</p>
-         <p [class.pcentered] = "changeColor" (click)="changeColor = !changeColor">Here is some more practice text...</p>
-      </div>
+   <div class="skills">
+      <h3>{{listHeading}}</h3>
+      <ol [style.color]="alternateColor" [type]="bulletType">
+         <li *ngFor="let skill of skills">{{skill}}</li>
+      </ol>
+      <hr>
+      <h3>Copy of Skill List</h3>
+      <ol [class.ol-style]="changeColor">
+         <li *ngFor="let skill of skills">{{skill}}</li>
+      </ol>
+      <hr>
+      <p [class.p-style]="!changeColor" (click)="changeColor = !changeColor">Here is some practice text...</p>
+   </div>
 
-   Since ``changeColor`` is a boolean, ``(click)="changeColor = !changeColor"``
-   flips the value of the variable between ``true`` and ``false`` whenever the
-   text is clicked.
+Since ``changeColor`` is a boolean, ``(click)="changeColor = !changeColor"``
+flips the value of the variable between ``true`` and ``false`` whenever the
+text is clicked.
 
-   .. figure:: ./figures/lesson3-partially-interactive-text-styling.gif
-      :alt: Interactive text styling.
+.. figure:: ./figures/lesson3-interactive-text-styling.gif
+   :alt: Interactive text styling.
+
+Notice that since the style of the ordered list also depends on
+``changeColor``, its appearance changes as well.
 
 .. admonition:: Try It
 
-   #. Replace ``(click)`` with ``(mouseover)`` in line 7 and examine how the
+   #. Replace ``(click)`` with ``(mouseover)`` in line 12 and examine how the
       interactivity changes.
-   #. What happens if we add ``[class.pcentered]="!changeColor" (click)="changeColor = !changeColor"``
-      to the ``<li>`` tag in line 4?
+   #. What happens if we add ``(click)="changeColor = !changeColor"`` to the
+      ``<li>`` tag in line 9? Does this make a single list element clickable
+      or all of them?
 
 Button Styling
 ---------------
 
 The ``button`` tag accepts ``class`` and ``style`` just like other HTML
 elements, but ``button`` also has its own set of special attributes. Detailed
-lists of these attributes reside on
+descriptions of these attributes appear at
 `W3 schools <https://www.w3schools.com/tags/tag_button.asp>`__ and
 `MDN <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button>`__.
 However, for these examples we will focus on ``disabled``.

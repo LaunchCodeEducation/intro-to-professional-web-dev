@@ -93,26 +93,32 @@ styling on the page in response to user actions.</p>
 a little bit.</p>
 <div class="section" id="interactive-elements">
 <h2>30.4.1. Interactive Elements<a class="headerlink" href="#interactive-elements" title="Permalink to this headline">¶</a></h2>
-<p>Let’s make one of the paragraph elements respond to user clicks.</p>
-<ol class="arabic">
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code>. Define the boolean variable <code class="docutils literal notranslate"><span class="pre">changeColor</span></code>
-in the <code class="docutils literal notranslate"><span class="pre">SkillSetComponent</span></code> class. Initialize it as <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-</li>
-<li><p class="first">Change line 7 in <code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event:</p>
-<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
+<p>Let’s make the paragraph element respond to user clicks.</p>
+<p>Change line 12 in <code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alternateColor&quot;</span> <span class="p">[</span><span class="na">type</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bulletType&quot;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="p">[</span><span class="na">align</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alignment&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.pcentered</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;changeColor&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;changeColor = !changeColor&quot;</span><span class="p">&gt;</span>Here is some more practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Copy of Skill List<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">class.ol-style</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;changeColor&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.p-style</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!changeColor&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;changeColor = !changeColor&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
@@ -120,17 +126,18 @@ in the <code class="docutils literal notranslate"><span class="pre">SkillSetComp
 flips the value of the variable between <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> whenever the
 text is clicked.</p>
 <div class="figure">
-<img alt="Interactive text styling." src="../../_images/lesson3-partially-interactive-text-styling.gif" />
+<img alt="Interactive text styling." src="../../_images/lesson3-interactive-text-styling.gif" />
 </div>
-</li>
-</ol>
+<p>Notice that since the style of the ordered list also depends on
+<code class="docutils literal notranslate"><span class="pre">changeColor</span></code>, its appearance changes as well.</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <ol class="last arabic simple">
-<li>Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 7 and examine how the
+<li>Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 12 and examine how the
 interactivity changes.</li>
-<li>What happens if we add <code class="docutils literal notranslate"><span class="pre">[class.pcentered]=&quot;!changeColor&quot;</span> <span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code>
-to the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag in line 4?</li>
+<li>What happens if we add <code class="docutils literal notranslate"><span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag in line 9? Does this make a single list element clickable
+or all of them?</li>
 </ol>
 </div>
 </div>
@@ -138,7 +145,7 @@ to the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</
 <h2>30.4.2. Button Styling<a class="headerlink" href="#button-styling" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">button</span></code> tag accepts <code class="docutils literal notranslate"><span class="pre">class</span></code> and <code class="docutils literal notranslate"><span class="pre">style</span></code> just like other HTML
 elements, but <code class="docutils literal notranslate"><span class="pre">button</span></code> also has its own set of special attributes. Detailed
-lists of these attributes reside on
+descriptions of these attributes appear at
 <a class="reference external" href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">W3 schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and
 <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
 However, for these examples we will focus on <code class="docutils literal notranslate"><span class="pre">disabled</span></code>.</p>
