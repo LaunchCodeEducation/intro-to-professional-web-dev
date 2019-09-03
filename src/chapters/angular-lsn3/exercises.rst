@@ -59,7 +59,6 @@ The requirements are the same as before:
 
 Add Attribute Directives and Template Variables
 -----------------------------------------------
-TODO: add directives for ``class``, ``value``, etc.?
 
 For requirements 1-3, you'll see that the properties that need to be changed 
 have been arranged into several status objects, ``initStatus``, ``shuttleTakeOff``,
@@ -72,7 +71,7 @@ change line 19 to the following:
 
 .. sourcecode:: html+ng2
       
-      <div class="shuttleBackground" [style.backgroundColor]=“status.color”>
+      <div class="shuttle-background" [style.backgroundColor]=“status.color”>
 
 Use the ``status.height`` property to determine the 
 displayed height. Change line 31 as follows;
@@ -95,6 +94,9 @@ to render the page.
 
 Add Events to Modify Directives
 -------------------------------
+
+Control Buttons
+^^^^^^^^^^^^^^^
 
 Now, we'll add some event listeners to the three control
 buttons on the bottom of the page. These listeners will
@@ -124,6 +126,9 @@ time we can use a few less lines of code to update the view.
 
 Follow the same pattern to handle the *Land* and *Abort Mission*
 click events.
+
+Movement Buttons
+^^^^^^^^^^^^^^^^
 
 Next, we'll tackle the ``Up``, ``Down``, ``Left``, and ``Right`` buttons that
 move the rocket. The ``movement`` formula is the same as we've used before:
@@ -175,15 +180,82 @@ For example, the *Down* click handler could look like this:
     this.status.height = this.status.height - 10000;
    }
 
+Update the Control Button Click Handlers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Along those same lines, we'll want to modify a couple of our control 
 button handlers to update ``rocketImage``'s position when the status
 changes. Pass in ``rocketImage`` to your *Land* and *Abort Mission* 
 handlers and add the following:
 
 .. sourcecode:: TypeScript
-   :linenos:
 
    rocketImage.style.bottom = '0px';
+
+New Requirements
+----------------
+
+You'll notice, a user can move the rocket before the shuttle is officially taken off. One can also
+abort a mission while the rocket is landed. This doesn't make much sense. With attribute
+directives, we can dynamically set those buttons to only be enabled in some states.
+
+Let's add some properties to our status objects to account for the enabled/disabled status of our
+control buttons. 
+
+.. sourcecode:: TypeScript
+   :linenos:
+
+   initStatus = {
+    color: 'green',
+    height: 0,
+    message: 'Space shuttle ready for takeoff!',
+    takeOffEnabled: true,
+    landEnabled: false,
+    missionAbortEnabled: false
+   };
+
+When the app is first loaded, we want the user to be able to initiate the ``shuttleTakeOff`` status,
+but not ``shuttleLand`` or ``shuttleMissionAbort``. We'll add some ``[disabled]`` attribute
+directives on the control buttons to reflect these values.
+
+Update the control buttons:
+
+.. sourcecode:: html+ng2
+   :linenos:
+      
+   <div class="container-control-buttons">
+      <button (click)="handleTakeOff()" [disabled]="!status.takeOffEnabled">Take Off</button>
+      <button (click)="handleLand(rocketImage)" [disabled]="!status.landEnabled">Land</button>
+      <button (click)="handleMissionAbort(rocketImage)" [disabled]="!status.missionAbortEnabled">Abort Mission</button>
+   </div>
+
+Now, only the *Take Off* button is enabled and the other two controls are disabled on first load,
+based on the boolean values we added to our ``initStatus`` object.
+
+Add these properties and the appropriate boolean values to the other status variables to toggle
+the enabled/disabled status of the controls.
+
+Lastly, we shouldn't be able to move the rocket if it hasn't taken off. To toggle the status of
+the directions buttons, we could add more properties to our status object. However, we know we only
+want these buttons to be accessible when the *Take Off* button is not. We can therefore take advantage
+of this property we already defined to determine if the user can click the direction buttons.
+
+.. sourcecode:: html+ng2
+   :linenos:
+      
+   <button (click)="handleUpClick(rocketImage)" [disabled]="status.takeOffEnabled">Up</button>
+
+In fact, since all four direction buttons share the same requirements for disablement, we can take
+advantage of our old friend ``ngIf`` to display the whole set based on ``status.takeOffEnabled``.
+
+.. sourcecode:: html+ng2
+   :linenos:
+   <div *ngIf="!status.takeOffEnabled">
+      <button (click)="handleUpClick(rocketImage)">Up</button>
+      <button (click)="handleDownClick(rocketImage)">Down</button>
+      <button (click)="handleRightClick(rocketImage)">Right</button>
+      <button (click)="handleLeftClick(rocketImage)">Left</button>
+   </div>
 
 
 Maybe change text color if fuel level drops too low?
@@ -193,5 +265,8 @@ Maybe enable/disable buttons based on whether ``cargoHold`` is full?
 Enable ``Launch`` button when all checks pass?
 
 
-Fly the Rocket?
-----------------
+Bonus Mission
+-------------
+
+#. Just like the original studio, change the code to prevent the rocket image from flying off the colored background.
+#. Dynamically adjust the enabled/disabled status of the direction buttons based on the position of the rocket.
