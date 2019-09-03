@@ -11,7 +11,8 @@ Open the Lesson 3 Folder
 
 Open VSCode and return to the ``angular-lc101-projects`` folder. Find
 ``lesson3/examples/src/app`` in the sidebar and open the
-``skill-set.component.ts`` and ``skill-set.component.html`` files.
+``skill-set.component.ts``, ``skill-set.component.html``, and 
+``skill-set.component.css`` files.
 
 .. figure:: ./figures/lesson3-menu.png
    :alt: Access Angular lesson 3 in VSCode.
@@ -42,10 +43,23 @@ You should see the following:
 Update the Skill-Set Styling
 -----------------------------
 
-Examine the code in the ``skill-set.component.html`` and
-``skill-set.component.ts`` files:
+Examine the code in the three ``skill-set.component`` files:
 
 .. admonition:: Examples
+
+   ``skill-set.component.css``
+
+   .. sourcecode:: css
+      :linenos:
+
+      h3 {
+         text-align: center;
+         text-decoration: underline;
+      }
+
+      .skills {
+         color: green;
+      }
 
    ``skill-set.component.html``
 
@@ -54,11 +68,16 @@ Examine the code in the ``skill-set.component.html`` and
 
       <div class="skills">
          <h3>{{listHeading}}</h3>
-         <ul>
+         <ol>
             <li *ngFor="let skill of skills">{{skill}}</li>
-         </ul>
+         </ol>
+         <hr>
+         <h3>Copy of Skill List</h3>
+         <ol>
+            <li *ngFor="let skill of skills">{{skill}}</li>
+         </ol>
+         <hr>
          <p>Here is some practice text...</p>
-         <p>Here is some more practice text...</p>
       </div>
 
    ``skill-set.component.ts`` SkillSetComponent class:
@@ -69,8 +88,8 @@ Examine the code in the ``skill-set.component.html`` and
       export class SkillSetComponent implements OnInit {
          listHeading: string = 'Some Coding Skills I Know';
          skills: string[] = ['Loops', 'Conditionals', 'Functions', 'Classes', 'Modules', 'Git', 'HTML/CSS'];
-         color: string = 'black';
-         alignment: string = 'center';
+         alternateColor: string = 'black';
+         bulletType: string = 'A';
          changeColor: boolean = true;
 
          constructor() { }
@@ -79,25 +98,26 @@ Examine the code in the ``skill-set.component.html`` and
 
       }
 
-Right now, there is an awful lot of green in the list, which is set by the
-``skills`` class in ``skill-set.component.css``. Let's fix this.
+Right now, there is an awful lot of green on the page, which is set by the
+``skills`` class in the CSS file. Let's fix this with some attribute
+directives.
 
 Inline Styling
 ^^^^^^^^^^^^^^^
 
-To change the color and alignment of the first paragraph element, we could
+To change the color and bullet type of the first list element, we could
 override the CSS instructions with some inline code:
 
 .. sourcecode:: html
 
-   <p style="color: black" align="center">Here is some practice text...</p>
+   <ol style="color: black" type="A">
 
 However, we can use what we learned about data-binding to replace these
 hard-coded styles with variables:
 
 .. sourcecode:: html+ng2
 
-   <p [style.color]="color" [align]="alignment">Here is some practice text...</p>
+   <ol [style.color]="alternateColor" [type]="bulletType">
 
 Ideas to note:
 
@@ -105,44 +125,54 @@ Ideas to note:
    than one attribute directive to an HTML tag.
 #. The ``style`` attribute has different properties that can be assigned using
    dot notation. Examples include ``style.color`` and ``style.background``.
-#. The variables ``color`` and ``alignment`` are assigned in
+#. The variables ``alternateColor`` and ``bulletType`` are assigned in
    ``skill-set.component.ts`` file.
-#. NEAT! Reassigning the ``color`` variable in the ``.ts`` file causes EVERY
-   tag with ``[style.color]="color"`` to change color.
+#. NEAT! Reassigning the ``alternateColor`` variable in the ``.ts`` file
+   causes EVERY tag with ``[style.color]="alternateColor"`` to change color.
 
 .. admonition:: Try It
 
-   Change the values for the ``color`` and ``alignment`` variables. Save your
-   work and refresh the webpage to see the results.
+   Change the values for the ``alternateColor`` and ``bulletType`` variables.
+   Save your work and refresh the webpage to see the results.
+
+   Note that ``bulletType`` takes options of numbers (``1``), upper and lower
+   case letters (``A``, ``a``), or upper and lower case Roman numerals (``I``,
+   ``i``).
 
 Changing Styles with Booleans
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We can accomplish the same results by applying a class to the second ``p`` tag:
+We can accomplish the same results by applying a class to the second ``ol``
+tag:
 
 #. Add the following code to ``skill-set.component.css``:
 
    .. sourcecode:: html
       :linenos:
 
-      .pcentered {
+      .ol-style {
          color: black;
          text-align: center;
+         list-style-type: upper-roman;
       }
 
-#. Next, modify line 7 in the starter code:
+#. Next, modify line 8 in the starter code:
 
    .. sourcecode:: html+ng2
       :linenos:
 
       <div class="skills">
          <h3>{{listHeading}}</h3>
-         <ul>
+         <ol [style.color]="alternateColor" [type]="bulletType">
             <li *ngFor="let skill of skills">{{skill}}</li>
-         </ul>
-         <p [style.color]="color" [align]="alignment">Here is some practice text...</p>
-         <p [class.pcentered]="changeColor">Here is some more practice text...</p>
-         <div>Here is another line of practice text...</div>
+         </ol>
+         <hr>
+         <h3>Copy of Skill List</h3>
+         <ol [class.ol-style]="changeColor">
+            <li *ngFor="let skill of skills">{{skill}}</li>
+         </ol>
+         <hr>
+         <p>Here is some practice text...</p>
       </div>
 
    After saving these updates, the skills list changes appearance:
@@ -150,19 +180,19 @@ We can accomplish the same results by applying a class to the second ``p`` tag:
    .. figure:: ./figures/lesson3-styled-skill-text.png
       :alt: Attribute directives midpoint screen.
 
-#. Instead of setting ``[class.pcentered]`` equal to a string, the
-   ``changeColor`` variable is a boolean (line 6 in
-   ``skill-set.component.ts``). If ``changeColor`` is ``true``, Angular adds
-   the ``pcentered`` class of the tag. If ``changeColor`` is ``false``, the
-   class remains absent from the tag.
+#. Instead of setting ``[class.ol-style]`` equal to a string, the
+   ``changeColor`` variable is a boolean defined in the
+   ``skill-set.component.ts`` file. If ``changeColor`` is ``true``, Angular
+   adds the ``ol-style`` class of the tag. If ``changeColor`` is ``false``,
+   the class remains absent from the tag.
 
 .. admonition:: Try It
 
-   #. Set ``changeColor`` to ``false`` and verify that "Here is some more
-      text..." changes back to green.
-   #. Create a ``li-centered`` class in the CSS file and modify line 4  in
-      ``skill-set.component.html`` to make the style of the ``li`` elements
-      depend on ``!changeColor``.
+   #. Set ``changeColor`` to ``false`` and verify that the second ordered list
+      changes back to green, left-aligned, and numbered.
+   #. Create a ``p-style`` class in the CSS file and modify line 12  in
+      ``skill-set.component.html`` to make the color and alignment of the
+      ``p`` element depend on ``!changeColor``.
 
 What About the Buttons?
 ------------------------
