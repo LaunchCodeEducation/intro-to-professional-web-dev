@@ -41,7 +41,7 @@ Let's change our code in ``movie-list.component.html`` to call the function
    Now when the user taps "Enter" or clicks the "Add" button after typing, the
    input ``newMovie.value`` gets sent to the function.
 
-#. Since our plan is to use a function to add the new movie the array, we no
+#. Since our plan is to use a function to add the new movie to the array, we no
    longer need the title to appear below the input box. Remove
    ``<p>{{newMovie.value}}</p>`` from line 9.
 
