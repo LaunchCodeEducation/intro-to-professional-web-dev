@@ -85,14 +85,9 @@
 
     
   <div class="section" id="exercises-angular-part-3">
-<<<<<<< HEAD
-<h1>30.7. Exercises: Angular, Part 3<a class="headerlink" href="#exercises-angular-part-3" title="Permalink to this headline">¶</a></h1>
+<h1>30.6. Exercises: Angular, Part 3<a class="headerlink" href="#exercises-angular-part-3" title="Permalink to this headline">¶</a></h1>
 <p>Remember that <a class="reference internal" href="../dom-and-events/studio.html#dom-studio"><span class="std std-ref">DOM and Events studio</span></a>? Let’s
 revisit this and do it again Angular-style.</p>
-=======
-<h1>30.6. Exercises: Angular, Part 3<a class="headerlink" href="#exercises-angular-part-3" title="Permalink to this headline">¶</a></h1>
-<p>Intro text here…</p>
->>>>>>> angular-lsn3
 <div class="section" id="starter-code">
 <h2>30.6.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
 <p>The starter code for the exercises is in the same
@@ -112,7 +107,7 @@ open the webpage in your browser, it should look like this:</p>
 </div></blockquote>
 </div>
 <div class="section" id="the-requirements-review">
-<h2>30.7.2. The Requirements Review<a class="headerlink" href="#the-requirements-review" title="Permalink to this headline">¶</a></h2>
+<h2>30.6.2. The Requirements Review<a class="headerlink" href="#the-requirements-review" title="Permalink to this headline">¶</a></h2>
 <p>The requirements are the same as before:</p>
 <ol class="arabic simple">
 <li>When the “Take off” button is clicked, the following should happen:<ol class="arabic">
@@ -144,7 +139,7 @@ open the webpage in your browser, it should look like this:</p>
 </ol>
 </div>
 <div class="section" id="add-attribute-directives-and-template-variables">
-<h2>30.7.3. Add Attribute Directives and Template Variables<a class="headerlink" href="#add-attribute-directives-and-template-variables" title="Permalink to this headline">¶</a></h2>
+<h2>30.6.3. Add Attribute Directives and Template Variables<a class="headerlink" href="#add-attribute-directives-and-template-variables" title="Permalink to this headline">¶</a></h2>
 <p>For requirements 1-3, you’ll see that the properties that need to be changed
 have been arranged into several status objects, <code class="docutils literal notranslate"><span class="pre">initStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">shuttleTakeOff</span></code>,
 <code class="docutils literal notranslate"><span class="pre">shuttleLand</span></code>, and <code class="docutils literal notranslate"><span class="pre">shuttleMissionAbort</span></code>. Depending on the state of the rocket,
@@ -160,7 +155,6 @@ displayed height. Change line 31 as follows;</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">status.height</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span> miles<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<<<<<<< HEAD
 <p>Finally, change line 5 to make use of <code class="docutils literal notranslate"><span class="pre">status.message</span></code>.</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">status.message</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
@@ -171,9 +165,9 @@ So the app now uses the properties found in <code class="docutils literal notran
 to render the page.</p>
 </div>
 <div class="section" id="add-events-to-modify-directives">
-<h2>30.7.4. Add Events to Modify Directives<a class="headerlink" href="#add-events-to-modify-directives" title="Permalink to this headline">¶</a></h2>
+<h2>30.6.4. Add Events to Modify Directives<a class="headerlink" href="#add-events-to-modify-directives" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="control-buttons">
-<h3>30.7.4.1. Control Buttons<a class="headerlink" href="#control-buttons" title="Permalink to this headline">¶</a></h3>
+<h3>30.6.4.1. Control Buttons<a class="headerlink" href="#control-buttons" title="Permalink to this headline">¶</a></h3>
 <p>Now, we’ll add some event listeners to the three control
 buttons on the bottom of the page. These listeners will
 reassign the status object to one of <code class="docutils literal notranslate"><span class="pre">shuttleTakeOff</span></code>,
@@ -203,7 +197,7 @@ time we can use a few less lines of code to update the view.</p>
 click events.</p>
 </div>
 <div class="section" id="movement-buttons">
-<h3>30.7.4.2. Movement Buttons<a class="headerlink" href="#movement-buttons" title="Permalink to this headline">¶</a></h3>
+<h3>30.6.4.2. Movement Buttons<a class="headerlink" href="#movement-buttons" title="Permalink to this headline">¶</a></h3>
 <p>Next, we’ll tackle the <code class="docutils literal notranslate"><span class="pre">Up</span></code>, <code class="docutils literal notranslate"><span class="pre">Down</span></code>, <code class="docutils literal notranslate"><span class="pre">Left</span></code>, and <code class="docutils literal notranslate"><span class="pre">Right</span></code> buttons that
 move the rocket. The <code class="docutils literal notranslate"><span class="pre">movement</span></code> formula is the same as we’ve used before:</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">movement</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">img</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
@@ -247,7 +241,7 @@ to also update the current status object’s height property.</p>
 </td></tr></table></div>
 </div>
 <div class="section" id="update-the-control-button-click-handlers">
-<h3>30.7.4.3. Update the Control Button Click Handlers<a class="headerlink" href="#update-the-control-button-click-handlers" title="Permalink to this headline">¶</a></h3>
+<h3>30.6.4.3. Update the Control Button Click Handlers<a class="headerlink" href="#update-the-control-button-click-handlers" title="Permalink to this headline">¶</a></h3>
 <p>Along those same lines, we’ll want to modify a couple of our control
 button handlers to update <code class="docutils literal notranslate"><span class="pre">rocketImage</span></code>’s position when the status
 changes. Pass in <code class="docutils literal notranslate"><span class="pre">rocketImage</span></code> to your <em>Land</em> and <em>Abort Mission</em>
@@ -258,7 +252,7 @@ handlers and add the following:</p>
 </div>
 </div>
 <div class="section" id="new-requirements">
-<h2>30.7.5. New Requirements<a class="headerlink" href="#new-requirements" title="Permalink to this headline">¶</a></h2>
+<h2>30.6.5. New Requirements<a class="headerlink" href="#new-requirements" title="Permalink to this headline">¶</a></h2>
 <p>You’ll notice, a user can move the rocket before the shuttle is officially taken off. One can also
 abort a mission while the rocket is landed. This doesn’t make much sense. With attribute
 directives, we can dynamically set those buttons to only be enabled in some states.</p>
@@ -309,29 +303,29 @@ of this property we already defined to determine if the user can click the direc
 </td></tr></table></div>
 <p>In fact, since all four direction buttons share the same requirements for disablement, we can take
 advantage of our old friend <code class="docutils literal notranslate"><span class="pre">ngIf</span></code> to display the whole set based on <code class="docutils literal notranslate"><span class="pre">status.takeOffEnabled</span></code>.</p>
-=======
-<div class="section" id="add-attribute-directives">
-<h2>30.6.2. Add Attribute Directives<a class="headerlink" href="#add-attribute-directives" title="Permalink to this headline">¶</a></h2>
-<p>For <code class="docutils literal notranslate"><span class="pre">style</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>, etc.</p>
-</div>
-<div class="section" id="add-events-to-modify-directives">
-<h2>30.6.3. Add Events to Modify Directives<a class="headerlink" href="#add-events-to-modify-directives" title="Permalink to this headline">¶</a></h2>
->>>>>>> angular-lsn3
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;!status.takeOffEnabled&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleUpClick(rocketImage)&quot;</span><span class="p">&gt;</span>Up<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleDownClick(rocketImage)&quot;</span><span class="p">&gt;</span>Down<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleRightClick(rocketImage)&quot;</span><span class="p">&gt;</span>Right<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleLeftClick(rocketImage)&quot;</span><span class="p">&gt;</span>Left<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
 <p>Maybe change text color if fuel level drops too low?</p>
 <p>Maybe enable/disable buttons based on whether <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> is full?</p>
 <p>Enable <code class="docutils literal notranslate"><span class="pre">Launch</span></code> button when all checks pass?</p>
 </div>
-<<<<<<< HEAD
 <div class="section" id="bonus-mission">
-<h2>30.7.6. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<h2>30.6.6. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Just like the original studio, change the code to prevent the rocket image from flying off the colored background.</li>
 <li>Dynamically adjust the enabled/disabled status of the direction buttons based on the position of the rocket.</li>
 </ol>
-=======
-<div class="section" id="fly-the-rocket">
-<h2>30.6.4. Fly the Rocket?<a class="headerlink" href="#fly-the-rocket" title="Permalink to this headline">¶</a></h2>
->>>>>>> angular-lsn3
 </div>
 </div>
 

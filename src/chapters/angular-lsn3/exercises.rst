@@ -250,6 +250,7 @@ advantage of our old friend ``ngIf`` to display the whole set based on ``status.
 
 .. sourcecode:: html+ng2
    :linenos:
+   
    <div *ngIf="!status.takeOffEnabled">
       <button (click)="handleUpClick(rocketImage)">Up</button>
       <button (click)="handleDownClick(rocketImage)">Down</button>
