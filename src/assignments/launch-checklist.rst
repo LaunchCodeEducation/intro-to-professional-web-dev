@@ -7,11 +7,10 @@ Requirements
 Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
 The form should do the following:
 
-1. Make POST form submission to server
-2. Validate the form in JS based on responses
-3. Validate with JS before the form is submitted and use ``preventDefault`` if form submissions are not valid.
-4. Inform the user with validation messages before they submit
-5. Use CSS to indicate good/bad responses
+1. Validate the form in JS based on responses
+2. Validate with JS before the form is submitted and use ``preventDefault`` if form submissions are not valid.
+3. Inform the user with validation messages before they submit
+4. Use CSS to indicate good/bad responses
 
 Setting Up Your Project Repository
 ----------------------------------
@@ -43,6 +42,15 @@ The name fields should be text.
 The fuel levels need to be a number.
 Cargo weight needs to be a number.
 
+If the user submits a form without one or more of the fields filled out, then have a pop up appear that tells the user all fields are required.
+
+If the user submits a fuel level that is too low, let the user know.
+
+If the user submits a cargo weight that is too heavy, let the user know.
+
 Styling the Page
 ----------------
 
+The launch status should turn red if the flight is not ready.
+
+The launch status should turn green if the flight is ready.
