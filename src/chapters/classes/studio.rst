@@ -1,6 +1,16 @@
 Studio: Classes
 ================
 
+Before You Start
+----------------
+
+If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
+
+If you are working through this material on your own, use the repl.it links contained on this page.
+
+Getting Started
+---------------
+
 Let's create a class to handle new animal crew candidates!
 
 Edit the `practice file <https://repl.it/@launchcode/ClassStudio01>`__ as you
