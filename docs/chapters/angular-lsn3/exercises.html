@@ -94,28 +94,160 @@ revisit this and do it again Angular-style.</p>
 <a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 that you cloned for the all of the Angular lessons.</p>
 <p>From the <code class="docutils literal notranslate"><span class="pre">lesson3</span></code> folder in VSCode, navigate into the
-<code class="docutils literal notranslate"><span class="pre">exercises/src/app/component-name</span></code> folder. Open the
-<code class="docutils literal notranslate"><span class="pre">component-name.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">component-name.component.ts</span></code> files.</p>
-<blockquote>
-<div>TODO: Add figure for lesson 3 exercises file tree.</div></blockquote>
+<code class="docutils literal notranslate"><span class="pre">exercises/src/app/</span></code> folder. Open the
+<code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> files.</p>
 <p>In the terminal, navigate into the lesson 3 <code class="docutils literal notranslate"><span class="pre">exercises</span></code> folder. Enter
 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to add the Angular modules, then run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>. When you
 open the webpage in your browser, it should look like this:</p>
 <blockquote>
-<div>TODO: Add screenshot of the lesson 3 exercises starter page.</div></blockquote>
+<div><div class="figure">
+<img alt="Initial view of the exercises app." src="../../_images/lesson3-exercises-initial-view.png" />
 </div>
-<div class="section" id="add-attribute-directives">
-<h2>30.7.2. Add Attribute Directives<a class="headerlink" href="#add-attribute-directives" title="Permalink to this headline">¶</a></h2>
-<p>For <code class="docutils literal notranslate"><span class="pre">style</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>, etc.</p>
+<p>Initial view of the exercises app</p>
+</div></blockquote>
+</div>
+<div class="section" id="the-requirements-review">
+<h2>30.7.2. The Requirements Review<a class="headerlink" href="#the-requirements-review" title="Permalink to this headline">¶</a></h2>
+<p>The requirements are the same as before:</p>
+<ol class="arabic simple">
+<li>When the “Take off” button is clicked, the following should happen:<ol class="arabic">
+<li>A window confirm should let the user know “Confirm that the shuttle is ready for takeoff.” If the shuttle is ready for liftoff, then add steps 2-4.</li>
+<li>The flight status should change to “Shuttle in flight.”</li>
+<li>The background color of the shuttle flight screen should change from green to blue.</li>
+<li>The shuttle height should increase by 10,000 miles.</li>
+</ol>
+</li>
+<li>When the “Land” button is clicked, the following should happen:<ol class="arabic">
+<li>A window alert should let the user know “The shuttle is landing. Landing gear engaged.”</li>
+<li>The flight status should change to “The shuttle has landed.”</li>
+<li>The background color of the shuttle flight screen should change from blue to green.</li>
+<li>The shuttle height should go down to 0.</li>
+</ol>
+</li>
+<li>When the “Abort Mission” button is clicked, the following should happen:<ol class="arabic">
+<li>A window confirm should let the user know “Confirm that you want to abort the mission.” If the user wants to abort the mission, then add steps 2-4.</li>
+<li>The flight status should change to “Mission aborted.”</li>
+<li>The background color of the shuttle flight screen should change from blue to green.</li>
+<li>The shuttle height should go do to 0.</li>
+</ol>
+</li>
+<li>When the “Up”, “Down”, “Right”, and “Left” buttons are clicked, the following should happen:<ol class="arabic">
+<li>The rocket image should move 10 px in the direction of the button that was clicked.</li>
+<li>If the “Up” or “Down” buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="add-attribute-directives-and-template-variables">
+<h2>30.7.3. Add Attribute Directives and Template Variables<a class="headerlink" href="#add-attribute-directives-and-template-variables" title="Permalink to this headline">¶</a></h2>
+<p>TODO: add directives for <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>, etc.?</p>
+<p>For requirements 1-3, you’ll see that the properties that need to be changed
+have been arranged into several status objects, <code class="docutils literal notranslate"><span class="pre">initStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">shuttleTakeOff</span></code>,
+<code class="docutils literal notranslate"><span class="pre">shuttleLand</span></code>, and <code class="docutils literal notranslate"><span class="pre">shuttleMissionAbort</span></code>. Depending on the state of the rocket,
+one of these status objects will assign the values seen in the app view.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <code class="docutils literal notranslate"><span class="pre">message</span></code> properties will all be used as
+template variables to dynamically update the view. In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>,
+change line 19 to the following:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;shuttleBackground&quot;</span> <span class="p">[</span><span class="na">style.backgroundColor</span><span class="p">]</span><span class="o">=</span><span class="s">“status.color”</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">status.height</span></code> property to determine the
+displayed height. Change line 31 as follows;</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">status.height</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span> miles<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Finally, change line 5 to make use of <code class="docutils literal notranslate"><span class="pre">status.message</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">status.message</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now, back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, you’ll see that line 35
+assigns the current status to the <code class="docutils literal notranslate"><span class="pre">initStatus</span></code> object.
+So the app now uses the properties found in <code class="docutils literal notranslate"><span class="pre">initStatus</span></code>
+to render the page.</p>
 </div>
 <div class="section" id="add-events-to-modify-directives">
-<h2>30.7.3. Add Events to Modify Directives<a class="headerlink" href="#add-events-to-modify-directives" title="Permalink to this headline">¶</a></h2>
+<h2>30.7.4. Add Events to Modify Directives<a class="headerlink" href="#add-events-to-modify-directives" title="Permalink to this headline">¶</a></h2>
+<p>Now, we’ll add some event listeners to the three control
+buttons on the bottom of the page. These listeners will
+reassign the status object to one of <code class="docutils literal notranslate"><span class="pre">shuttleTakeOff</span></code>,
+<code class="docutils literal notranslate"><span class="pre">shuttleLand</span></code>, or <code class="docutils literal notranslate"><span class="pre">shuttleMissionAbort</span></code>.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, add an event listener to the <em>Take Off</em>
+button.</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;handleTakeOff()&quot;</span><span class="p">&gt;</span>Take Off<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, we’ll define this listener.
+The confirm method will look the same as before, but this
+time we can use a few less lines of code to update the view.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">handleTakeOff() {</span>
+   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">&#39;Are you sure the shuttle is ready for takeoff?&#39;</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">shuttleTakeOff</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Follow the same pattern to handle the <em>Land</em> and <em>Abort Mission</em>
+click events.</p>
+<p>Next, we’ll tackle the <code class="docutils literal notranslate"><span class="pre">Up</span></code>, <code class="docutils literal notranslate"><span class="pre">Down</span></code>, <code class="docutils literal notranslate"><span class="pre">Left</span></code>, and <code class="docutils literal notranslate"><span class="pre">Right</span></code> buttons that
+move the rocket. The <code class="docutils literal notranslate"><span class="pre">movement</span></code> formula is the same as we’ve used before:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">movement</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">img</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>But now, instead of using the <code class="docutils literal notranslate"><span class="pre">getElementById</span></code> method, we’ll
+access the <code class="docutils literal notranslate"><span class="pre">img</span></code> element by passing it in to the click
+event.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, label the <code class="docutils literal notranslate"><span class="pre">img</span></code> element so we can reference it:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="p">#</span><span class="na">rocketImage</span><span class="p"> </span><span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/images/LaunchCode_rocketline_white.png&quot;</span> <span class="na">height </span><span class="o">=</span> <span class="s">&quot;75&quot;</span> <span class="na">width </span><span class="o">=</span> <span class="s">&quot;75&quot;</span> <span class="p">[</span><span class="na">style.left</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="p">[</span><span class="na">style.bottom</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>While you’re here, add the click handler to the <em>Right</em> button:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleRightClick(rocketImage)&quot;</span><span class="p">&gt;</span>Right<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> we can write the <code class="docutils literal notranslate"><span class="pre">handleRightClick()</span></code>:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">handleRightClick</span><span class="p">(</span><span class="nx">rocketImage</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">movement</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+   <span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">movement</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Follow the same pattern for the other directional buttons, modifying the
+movement formula as needed. For the <em>Up</em> and <em>Down</em> buttons, we’ll want
+to also update the current status object’s height property.</p>
+<p>For example, the <em>Down</em> click handler could look like this:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">handleDownClick</span><span class="p">(</span><span class="nx">rocketImage</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">let</span> <span class="nx">movement</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">bottom</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+ <span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">=</span> <span class="nx">movement</span><span class="p">;</span>
+ <span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span> <span class="mi">10000</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Along those same lines, we’ll want to modify a couple of our control
+button handlers to update <code class="docutils literal notranslate"><span class="pre">rocketImage</span></code>’s position when the status
+changes. Pass in <code class="docutils literal notranslate"><span class="pre">rocketImage</span></code> to your <em>Land</em> and <em>Abort Mission</em>
+handlers and add the following:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">=</span> <span class="s1">&#39;0px&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
 <p>Maybe change text color if fuel level drops too low?</p>
 <p>Maybe enable/disable buttons based on whether <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> is full?</p>
 <p>Enable <code class="docutils literal notranslate"><span class="pre">Launch</span></code> button when all checks pass?</p>
 </div>
 <div class="section" id="fly-the-rocket">
-<h2>30.7.4. Fly the Rocket?<a class="headerlink" href="#fly-the-rocket" title="Permalink to this headline">¶</a></h2>
+<h2>30.7.5. Fly the Rocket?<a class="headerlink" href="#fly-the-rocket" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
