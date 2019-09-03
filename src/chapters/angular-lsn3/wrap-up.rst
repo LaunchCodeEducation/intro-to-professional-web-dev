@@ -39,3 +39,25 @@ website. A good "next step" for your Angular learning would be to complete the
    skills and techniques. When you find an interesting topic on the Angular site,
    feel free to Google that topic and explore how other coders explain how to use
    it.
+
+Two Topics to Consider
+^^^^^^^^^^^^^^^^^^^^^^^
+
+In this chapter, we discussed *one-way* data binding. As the name suggests,
+*two-way* binding exits as well. We chose not to explore this idea because
+one-way tasks are more flexible and more frequently used. However, two-way
+binding can come in handy if you want data from an ``input`` element to
+automatically change a variable in the ``.ts`` file.
+
+A much larger idea involves passing data between different components in the
+same template. Passing data from a parent component to its children, from a
+child to the parent, or between children is VERY useful. Unfortunately, that
+topic is beyond the scope of these lessons.
+
+Try Googling "Passing data between Angular components", and explore several
+of the most recent results. Find one that best suits your learning style, and
+then create a simple template that includes parent-child communication. Also,
+the *Tour of Heros* tutorial uses component to component communication.
+
+If your future coding job involves Angular, you will most likely need to learn
+the skill.
