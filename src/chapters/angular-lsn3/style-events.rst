@@ -195,4 +195,23 @@ buttons that behave like this:
 Check Your Understanding
 -------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   To include dynamic styles in a component:
+
+   #. Only data-binding is needed,
+   #. Only an event handler is needed,
+   #. Data-binding and event handling are both necessary,
+   #. Angular, data-binding, and event handling are all necessary.
+
+.. admonition:: Question
+
+   Which of the following shows the three Angular directives arranged from the
+   most general to most specific?
+
+   #. Components, structural directives, attribute directives
+   #. Components, attribute directives, structural directives
+   #. Structural directives, components, attribute directives
+   #. Structural directives, attribute directives, components
+   #. Attribute directives, structural directives, components
+   #. Attribute directives, components, structural directives
