@@ -215,3 +215,46 @@ Check Your Understanding
    #. Structural directives, attribute directives, components
    #. Attribute directives, structural directives, components
    #. Attribute directives, components, structural directives
+
+
+.. admonition:: Question
+
+   Consider the following code samples:
+
+   CSS:
+
+   .. sourcecode:: css
+
+      .special {
+         background-color: blue;
+      }
+
+   TypeScript:
+
+   .. sourcecode:: TypeScript
+      :linenos:
+
+      export class Component implements OnInit {
+
+         specialFactor: boolean = false;
+
+         constructor() { }
+
+         ngOnInit() { }
+
+      }
+
+   HTML:
+
+   .. sourcecode:: html+ng2
+      :linenos:
+
+      <div [class.special]="specialFactor">Very Special Content</div>
+
+   Which of the following, when added to the HTML tag, will render the
+   ``<div>`` element blue when clicked?
+
+   #. ``(click)="!specialFactor"``
+   #. ``(click)="specialFactor = 5 < 3"``
+   #. ``(click)="specialFactor = !specialFactor"``
+   #. ``(click)="specialFactor = false"``
