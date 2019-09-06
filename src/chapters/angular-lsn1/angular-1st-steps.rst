@@ -4,7 +4,7 @@ Angular First Steps
 ====================
 
 The goal here is to create a minimum working template for a webpage. It will
-serve as a jumping off point for your later exercises and studios, so take as
+serve as a jumping-off point for your later exercises and studios, so take as
 much time as you need to get comfortable with the basics.
 
 Starting a New Project
@@ -24,7 +24,7 @@ Each new project you create will have its own folder inside this container.
    the built-in Terminal panel in VSCode.
 
    For Angular projects, some programmers find it more convenient to work
-   entirely inside VSCode or other code editor. The IDEs provide a visual tree
+   entirely inside VSCode or another code editor. The IDEs provide a visual tree
    for navigating between files and folders, and Angular generates LOTS of
    these.
 
@@ -76,7 +76,7 @@ leave the following alone:
 The ``assets`` folder is a "Maybe touch". It holds user defined files that
 support a project. Examples include JavaScript code, images, gifs, or video
 clips. The exercises in the next chapter will use files stored in this folder,
-but for this lesson we will leave it empty.
+but we will leave it empty for this lesson.
 
 Launch the Page
 ----------------
