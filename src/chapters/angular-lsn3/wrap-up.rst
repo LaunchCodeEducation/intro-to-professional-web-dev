@@ -61,3 +61,24 @@ the *Tour of Heros* tutorial uses component to component communication.
 
 If your future coding job involves Angular, you will most likely need to learn
 the skill.
+
+Components Should Be Re-used
+-----------------------------
+
+Recall that at their best, functions accomplish only ONE task. This makes them
+re-usable within the same program, or as a module accessible by many different
+programs. Components should behave in a similar manner. Each one should do just
+one simple thing and should be flexible enough to work within many different
+templates.
+
+The real power of a front end framework comes when you view components as
+reusable elements. With time and practice, you will build a collection of
+small, generic components. You can then combine these tools in different ways
+to build small or large sections of any new project. The Lego analogy works
+here---the same set of blocks can be combined in multiple ways to produce
+different outcomes. Also, if you need consistent results on multiple webpages,
+then you just put the components together the same way each time instead of
+writing new code.
+
+After you finish the following exercises and studio, consider how you could
+split the larger components into smaller, re-usable pieces.
