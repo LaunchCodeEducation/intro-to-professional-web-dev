@@ -60,8 +60,8 @@
             
 <form class="navbar-form navbar-right" action="../../search.html" method="get">
  <div class="form-group">
-    <label for="q" class="searchLabel">Search</label>
-    <input type="text" name="q" class="form-control" />
+   <label for="q" class="searchLabel">Search: </label>
+   <input type="text" name="q" class="form-control" placeholder="Enter search term(s)" />
  </div>
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -121,10 +121,11 @@ $ <span class="nb">cd</span> examples
 </div>
 <div class="section" id="update-the-skill-set-styling">
 <h2>30.3.2. Update the Skill-Set Styling<a class="headerlink" href="#update-the-skill-set-styling" title="Permalink to this headline">¶</a></h2>
-<p>Examine the code in the three <code class="docutils literal notranslate"><span class="pre">skill-set.component</span></code> files:</p>
+<p>Examine the code in the <code class="docutils literal notranslate"><span class="pre">skill-set.component.css</span></code> and
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> files:</p>
 <div class="admonition-examples admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
-<p><code class="docutils literal notranslate"><span class="pre">skill-set.component.css</span></code></p>
+<p>CSS</p>
 <div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -142,8 +143,8 @@ $ <span class="nb">cd</span> examples
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code></p>
-<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p>HTML</p>
+<div class="last highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -170,8 +171,36 @@ $ <span class="nb">cd</span> examples
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p><code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code> SkillSetComponent class:</p>
-<div class="last highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</div>
+<p>Right now, there is an awful lot of green on the page, which is set by the
+<code class="docutils literal notranslate"><span class="pre">skills</span></code> class in the CSS file. Let’s fix this with some attribute
+directives.</p>
+<div class="section" id="inline-styling">
+<h3>30.3.2.1. Inline Styling<a class="headerlink" href="#inline-styling" title="Permalink to this headline">¶</a></h3>
+<p>To change the color and bullet type of the first list element, we could
+override the CSS instructions with some inline code:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: black&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;A&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>However, we can use what we learned about data-binding to replace these
+hard-coded styles with variables:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alternateColor&quot;</span> <span class="p">[</span><span class="na">type</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bulletType&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Ideas to note:</p>
+<ol class="arabic">
+<li><p class="first">Unlike the structural directives <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> and <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code>, we can add more
+than one attribute directive to an HTML tag.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">style</span></code> attribute has different properties that can be assigned using
+dot notation. Examples include <code class="docutils literal notranslate"><span class="pre">style.color</span></code> and <code class="docutils literal notranslate"><span class="pre">style.background</span></code>. For
+properties with two-word labels, like <code class="docutils literal notranslate"><span class="pre">text-align</span></code>, the data-binding
+syntax accepts either hyphens or camel case (<code class="docutils literal notranslate"><span class="pre">style.text-align</span></code> or
+<code class="docutils literal notranslate"><span class="pre">style.textAlign</span></code>).</p>
+</li>
+<li><p class="first">The variables <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> and <code class="docutils literal notranslate"><span class="pre">bulletType</span></code> are assigned in the
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code> file.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -196,32 +225,10 @@ $ <span class="nb">cd</span> examples
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-</div>
-<p>Right now, there is an awful lot of green on the page, which is set by the
-<code class="docutils literal notranslate"><span class="pre">skills</span></code> class in the CSS file. Let’s fix this with some attribute
-directives.</p>
-<div class="section" id="inline-styling">
-<h3>30.3.2.1. Inline Styling<a class="headerlink" href="#inline-styling" title="Permalink to this headline">¶</a></h3>
-<p>To change the color and bullet type of the first list element, we could
-override the CSS instructions with some inline code:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: black&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;A&quot;</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>However, we can use what we learned about data-binding to replace these
-hard-coded styles with variables:</p>
-<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alternateColor&quot;</span> <span class="p">[</span><span class="na">type</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bulletType&quot;</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>Ideas to note:</p>
-<ol class="arabic simple">
-<li>Unlike the structural directives <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> and <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code>, we can add more
-than one attribute directive to an HTML tag.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">style</span></code> attribute has different properties that can be assigned using
-dot notation. Examples include <code class="docutils literal notranslate"><span class="pre">style.color</span></code> and <code class="docutils literal notranslate"><span class="pre">style.background</span></code>.</li>
-<li>The variables <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> and <code class="docutils literal notranslate"><span class="pre">bulletType</span></code> are assigned in
-<code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code> file.</li>
-<li>NEAT! Reassigning the <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file
-causes EVERY tag with <code class="docutils literal notranslate"><span class="pre">[style.color]=&quot;alternateColor&quot;</span></code> to change color.</li>
+</li>
+<li><p class="first">NEAT! Reassigning the <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file
+causes EVERY tag with <code class="docutils literal notranslate"><span class="pre">[style.color]=&quot;alternateColor&quot;</span></code> to change color.</p>
+</li>
 </ol>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
@@ -229,7 +236,9 @@ causes EVERY tag with <code class="docutils literal notranslate"><span class="pr
 Save your work and refresh the webpage to see the results.</p>
 <p class="last">Note that <code class="docutils literal notranslate"><span class="pre">bulletType</span></code> takes options of numbers (<code class="docutils literal notranslate"><span class="pre">1</span></code>), upper and lower
 case letters (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>), or upper and lower case Roman numerals (<code class="docutils literal notranslate"><span class="pre">I</span></code>,
-<code class="docutils literal notranslate"><span class="pre">i</span></code>).</p>
+<code class="docutils literal notranslate"><span class="pre">i</span></code>). For a detailed description of using the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute in an
+ordered list, check out the
+<a class="reference external" href="https://www.w3schools.com/tags/att_ol_type.asp" target="_blank">W3 schools documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 <div class="section" id="changing-styles-with-booleans">
@@ -238,19 +247,19 @@ case letters (<code class="docutils literal notranslate"><span class="pre">A</sp
 tag:</p>
 <ol class="arabic">
 <li><p class="first">Add the following code to <code class="docutils literal notranslate"><span class="pre">skill-set.component.css</span></code>:</p>
-<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-CSS notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>.ol-style {
-   color: black;
-   text-align: center;
-   list-style-type: upper-roman;
-}
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">ol-style</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+   <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+   <span class="k">list-style-type</span><span class="p">:</span> <span class="kc">upper-roman</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Next, modify line 8 in the starter code:</p>
+<li><p class="first">Next, modify line 8 in the starter HTML:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -308,16 +317,16 @@ changes back to green, left-aligned, and numbered.</li>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>30.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> attribute labels ordered lists from highest to lowest values
-(9, 8, 7… instead of 1, 2, 3…). Unlike attributes like <code class="docutils literal notranslate"><span class="pre">class</span></code> or
-<code class="docutils literal notranslate"><span class="pre">style</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code> is not set equal to a string inside the HTML tag. Just
+<p>The <code class="docutils literal notranslate"><span class="pre">reversed</span></code> attribute labels ordered lists from highest to lowest values
+(9, 8, 7… instead of 1, 2, 3…). Unlike the <code class="docutils literal notranslate"><span class="pre">class</span></code> or <code class="docutils literal notranslate"><span class="pre">style</span></code>
+attributes, <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is not set equal to a string inside the HTML tag. Just
 having it in the tag flips the numbering of the bullets.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: blue&quot;</span> <span class="na">reverse</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: blue&quot;</span> <span class="na">reversed</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p>How could we data-bind the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> attribute in an <code class="docutils literal notranslate"><span class="pre">ol</span></code> tag? Indicate
+<p>How could we data-bind the <code class="docutils literal notranslate"><span class="pre">reversed</span></code> attribute in an <code class="docutils literal notranslate"><span class="pre">ol</span></code> tag? Indicate
 ALL working options.</p>
 <ol class="last arabic simple">
 <li>Bind the attribute to a variable that holds the string <code class="docutils literal notranslate"><span class="pre">&quot;reversed&quot;</span></code> or
@@ -325,7 +334,7 @@ ALL working options.</p>
 <li>Bind the attribute to a boolean variable set as <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
 <li>Bind the attribute to a boolean statement like <code class="docutils literal notranslate"><span class="pre">variable1</span> <span class="pre">&gt;</span> <span class="pre">variable2</span></code>.</li>
 <li>Bind the attribute to the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</li>
-<li>Just put square brackets around <code class="docutils literal notranslate"><span class="pre">reverse</span></code> and hope for the best.</li>
+<li>Just put square brackets around <code class="docutils literal notranslate"><span class="pre">reversed</span></code> and hope for the best.</li>
 </ol>
 </div>
 </div>
