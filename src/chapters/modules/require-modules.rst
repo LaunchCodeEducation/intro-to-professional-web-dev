@@ -114,7 +114,7 @@ Core modules take precedence over ANY other modules with the same name.
    `W3 schools <https://www.w3schools.com/nodejs/ref_modules.asp>`__ provides a
    convenient list of the Core Node modules.
 
-If Node does find the requested module after checking Core, it looks to the
+If Node does not find the requested module after checking Core, it looks to the
 `NPM registry <https://docs.npmjs.com/about-npm/>`__, which contains hundreds
 of thousands of free code packages for developers.
 
