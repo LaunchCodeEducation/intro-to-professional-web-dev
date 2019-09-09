@@ -108,6 +108,10 @@ Creating a ``task-list`` component looks something like this:
 From the output, we see that the ``ng generate`` command created four new files
 in the ``src/app/task-list`` folder.
 
+.. note::
+
+   Recall that ``ng generate`` can be shortened to ``ng g``.
+
 Try It
 ^^^^^^^
 
@@ -136,7 +140,7 @@ When done, your file structure in VSCode should look something like:
 ------------------
 
 In order to communicate with the new components, ``app.module.ts`` needs new
-``input`` statements. Fortunately, ``ng generate`` updates the code
+``import`` statements. Fortunately, ``ng generate`` updates the code
 automatically. We do not need to worry about taking care of this task
 ourselves.
 
@@ -337,7 +341,7 @@ However, sometimes you might want to nest a new component inside of another one
 rather than in ``app``.
 
 Let's assume we want to add a new component within our ``task-list`` folder. In
-this case we navigate into the ``task-list`` directory and then run the
+this case, we navigate into the ``task-list`` directory and then run the
 ``ng generate component`` command.
 
 .. sourcecode:: bash
@@ -357,7 +361,7 @@ and it contains the four files we would expect.
 When we place one component inside of another, we must pay attention to how the
 components interact. The nested component is called the *child*, while the
 original component is called the *parent*. In our example, ``task-list`` serves
-as the parent, while ``inner-task-list`` is the child.
+as the parent, while ``inside-task-list`` is the child.
 
 #. Any CSS, HTML, or JavaScript we write for the nested component (the child)
    only affects that component. Changes to the child do NOT affect the parent.
@@ -371,17 +375,17 @@ Check Your Understanding
 -------------------------
 
 If you have not already done so, use  ``ng generate`` to *nest* the
-``inner-task-list`` component inside the ``task-list component``.
+``inside-task-list`` component inside the ``task-list component``.
 
 .. admonition:: Question
 
    EXPERIMENT! Discover.
 
-   Where could we place the ``<inner-task-list></inner-task-list>`` element to
-   make "inner-task-list works!" appear on the screen? Select ALL options that
+   Where could we place the ``<inside-task-list></inside-task-list>`` element to
+   make "inside-task-list works!" appear on the screen? Select ALL options that
    work.
 
    #. Place the element in``app.component.html``.
    #. Place the element in ``task-list.component.html``.
-   #. Place the element in ``inner-task-list.component.html``.
+   #. Place the element in ``inside-task-list.component.html``.
    #. Place the element in ``index.html``.
