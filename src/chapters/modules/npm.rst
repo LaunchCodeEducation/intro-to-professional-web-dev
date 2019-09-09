@@ -49,15 +49,16 @@ NPM Command Line Interface (CLI)
 ---------------------------------
 
 The NPM command line tool, **CLI**, is installed with Node. The NPM CLI is used
-in a computer's terminal to install modules into a Node project. Before we can
-talk more about the NPM CLI, however, we need to discuss repl.it and NPM.
+in a computer's *terminal* to install modules into a Node project. How to use
+the terminal is a topic for a later chapter.
 
-We have coded many Node projects inside of repl.it. Repl.it is great. It allows
-us to simulate a development environment WITHOUT having to install any software
-on our computers. As such, it automatically handles much of the work for
-installing external modules.
+Fortunately, we have coded many Node projects inside of repl.it. Repl.it allows
+us to simulate a development environment WITHOUT having to install any
+software on our computers. As such, it automatically handles much of the work
+of installing external modules.
 
-Let's examine how using the CLI is different when using repl.it.
+Instead of typing commands into this mysterious "Terminal" thing, repl.it adds
+modules in a more user-friendly manner.
 
 CLI With Local Development Environment
 ---------------------------------------
