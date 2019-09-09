@@ -146,30 +146,32 @@ But now, instead of using the ``getElementById`` method, we'll
 access the ``img`` element by passing it in to the click
 event.
 
-In ``app.component.html``, label the ``img`` element so we can reference it:
+1. In ``app.component.html``, label the ``img`` element so we can reference it:
 
 .. sourcecode:: html+ng2
       
       <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
 
-While you're here, add the click handler to the *Right* button:
+2. While you're here, add the click handler to the *Right* button:
 
 .. sourcecode:: html+ng2
       
-      <button (click)="handleRightClick(rocketImage)">Right</button>
+      <button (click)="moveRocket(rocketImage, 'right')">Right</button>
 
-Now in ``app.component.ts`` we can write the ``handleRightClick()``:
+3. Now in ``app.component.ts`` we can write the ``handleRightClick()``:
 
 .. sourcecode:: TypeScript
    :linenos:
 
-   handleRightClick(rocketImage) {
+   moveRocket(rocketImage, direction) {
+    if (direction === 'right') {
       let movement = parseInt(rocketImage.style.left) + 10 + 'px';
       rocketImage.style.left = movement;
-      this.width= this.width + 10000;
+      this.width = this.width + 10000;
+    } 
    }
 
-Follow the same pattern for the other directional buttons, modifying the
+4. Add conditional logic to this ``moveRocket()`` method to account for the other movement directions, modifying the
 movement formula as needed. Be sure to also update the height or width property
 where appropriate.
 
@@ -188,8 +190,8 @@ handlers and add the following:
 New Requirements
 ----------------
 
-You'll notice, a user can move the rocket before the shuttle is officially taken off. One can also
-abort a mission while the rocket is landed. This doesn't make much sense. With attribute
+1. Right now, a user can move the rocket before it has officially taken off or abort the 
+mission while the rocket is still on the ground. This doesn't make much sense. With attribute
 directives, we can dynamically set those buttons to only be enabled in some states.
 
 Let's add a check for the take off status of the shuttle.
@@ -200,7 +202,7 @@ Let's add a check for the take off status of the shuttle.
     takeOffEnabled: true,
     
 
-When the app is first loaded, we want the user to be able to click the *Take Off*
+2. When the app is first loaded, we want the user to be able to click the *Take Off*
 button, but not the *Land* or *Abort Mission* button. We'll add some 
 ``[disabled]`` attribute directives on the control buttons to reflect these values.
 
@@ -215,13 +217,13 @@ Update the control buttons:
       <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
    </div>
 
-Now, only the *Take Off* button is enabled and the other two controls are disabled on first load,
-based on the boolean value of ``takeOffEnabled``.
+Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button 
+is enabled when the rocket is on the ground.
 
 Update the control button click handlers to toggle the enabled/disabled status 
 of the controls using this value.
 
-For another improvement, we shouldn't be able to move the rocket if it hasn't taken off. To toggle the status of
+3. For another improvement, we shouldn't be able to move the rocket if it hasn't taken off. To toggle the status of
 the direction buttons, we could add more boolean checks to our component. However, we know we only
 want these buttons to be accessible when the *Take Off* button is not. We can therefore take advantage
 of this property we already defined to determine if the user can click the direction buttons.
@@ -229,7 +231,7 @@ of this property we already defined to determine if the user can click the direc
 .. sourcecode:: html+ng2
    :linenos:
       
-   <button (click)="handleUpClick(rocketImage)" [disabled]="takeOffEnabled">Up</button>
+   <button (click)="moveRocket(rocketImage, 'up')" [disabled]="takeOffEnabled">Up</button>
 
 In fact, since all four direction buttons share the same requirements for disablement, we can take
 advantage of our old friend ``ngIf`` to display the whole set based on ``takeOffEnabled``.
@@ -238,13 +240,13 @@ advantage of our old friend ``ngIf`` to display the whole set based on ``takeOff
    :linenos:
 
    <div *ngIf="!takeOffEnabled">
-      <button (click)="handleUpClick(rocketImage)">Up</button>
-      <button (click)="handleDownClick(rocketImage)">Down</button>
-      <button (click)="handleRightClick(rocketImage)">Right</button>
-      <button (click)="handleLeftClick(rocketImage)">Left</button>
+      <button (click)="moveRocket(rocketImage, 'up')">Up</button>
+      <button (click)="moveRocket(rocketImage, 'down')">Down</button>
+      <button (click)="moveRocket(rocketImage, 'right')">Right</button>
+      <button (click)="moveRocket(rocketImage, 'left')">Left</button>
    </div>
 
-Lastly, let's change the shuttle's background color to a warning color if the rocket image gets too 
+4. Lastly, let's change the shuttle's background color to a warning color if the rocket image gets too 
 close to the edge. Add a function to your component that will check the width and height values
 and changes the color value to orange if those values are too high or low. Call that function in each
 of the direction button click handlers.
