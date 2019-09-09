@@ -24,8 +24,7 @@ starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
 Requirements
 ------------
 
-#. Create an ``oldScoreKey`` object that contains the previous scoring system.
-#. Create a ``transform`` function which will return a ``newScoreKey`` object.
+#. Create a ``transform`` function that takes in the ``oldScoreKey`` object and returns a ``newScoreKey`` object.
 #. Create an ``initialPrompt`` function that asks the user which scoring
    algorithm to use.
 #. Create a ``scoringAlgorithms`` array to hold three scoring objects, which
@@ -256,11 +255,6 @@ Submitting Your Work
 
 #. From the address bar at the top of the browser window, copy the URL of the
    repl.it that contains your solution.
-
-   .. admonition:: Example
-
-      repl.it classroom URL: ``https://repl.it/student/submissions/9999999``
-
 #. Go to the Graded Assignment #2 page in Canvas and click *Submit Assignment*.
 #. Paste the URL into the Website URL input.
 #. Click *Submit Assignment* again.
