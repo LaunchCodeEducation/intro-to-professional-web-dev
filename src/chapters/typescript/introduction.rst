@@ -20,19 +20,20 @@ and is based on the value inside the variable, not the variable declaration.
 Statically typed languages are considered by many to be more stable and less
 prone to production errors, because the errors will occur in development.
 
-CLI With Local Development Environment
----------------------------------------
+Set Up Your Local Development Environment
+------------------------------------------
 
-The following describes the steps for working with NPM outside of repl.it. Do
-not worry about following along. We are simply reviewing these to familiarize
-you with the general process.
+As we continue to shift away from online work in repl.it to *local* development
+on your computer, you need to install some specific software.
 
-#. `Install Node on your computer <https://nodejs.org/en/download/>`__, which
-   also installs the NPM CLI tool.
-#. Use the CLI tool in a terminal to install modules into your local project.
-   The syntax is ``npm install <package_name>``, and running it downloads the
-   module to your computer and adds an entry into a ``package.json`` file.
-   This entry indicates that your project depends on the module called
-   ``package_name``.
-#. More detailed instructions can be found in the
-   `NPM documentation <https://docs.npmjs.com/downloading-and-installing-packages-locally>`__.
+#. If you have not already done so, download and install
+   :ref:`Visual Studio Code <vsc-install>` on your machine.
+#. :ref:`Install Node on your computer <node-install>`, which also installs the
+   NPM Command Line Interface (CLI). We discussed this briefly in the
+   :ref:`Modules <npm-cli>` chapter, but now you are ready to use the tool
+   outside of the automatic structure provided by repl.it.
+
+The NPM CLI tool provides you with an efficient and deliberate way to install
+other software and modules onto your computer. As you proceed through the next
+four chapters, you will use the NPM CLI in the terminal to perform these
+installations.

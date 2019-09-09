@@ -45,6 +45,8 @@ you can search for a module by name or desired functionality.
 
    .. figure:: ./figures/readline-sync-npm-page.png
 
+.. _npm-cli:
+
 NPM Command Line Interface (CLI)
 ---------------------------------
 
