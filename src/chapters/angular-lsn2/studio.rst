@@ -1,11 +1,13 @@
 Studio: Angular, Part 2
 =======================
+
 At the end of the first mission planner studio, multiple components display data about the mission.
 Your job is to allow the user to update the mission plan by adding user interaction.
 
 
 Getting Started
 ---------------
+
 This studio uses the same mission planner repository as Angular studio part 1.
 
 #. Open the `mission planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`_ in VSCode
@@ -14,13 +16,14 @@ This studio uses the same mission planner repository as Angular studio part 1.
 #. Run ``npm install`` to download dependencies
 #. Run ``ng serve`` to build and serve the project
 
-
 Review the Starter Code
 -----------------------
+
 The starter code for this studio is similar to the *solution* for the first mission planner studio, but with a few notable changes.
 
 Editable Mission Name
 ^^^^^^^^^^^^^^^^^^^^^
+
 The mission name can now be edited by clicking on the text, changing the text in the input box, and then updated by clicking save
 or pressing the enter key. Review the code in ``src/app/header/header.component.html`` and ``src/app/header/header.component.ts`` to see how this
 feature was implemented.
@@ -32,6 +35,7 @@ feature was implemented.
 
 Crew Array of Objects
 ^^^^^^^^^^^^^^^^^^^^^
+
 Open ``src/app/crew/crew.component.ts`` in VSCode.
 Notice on line 10 that a crew array is defined. This array of objects will be used to display
 the crew. Each crew member has a ``name`` and ``firstMission`` property. If ``firstMission`` is ``true``,
@@ -75,6 +79,7 @@ and ``src/app/header/header.component.ts`` to allow the user to edit the rocket 
 
 Use ``*ngFor`` to Display Crew
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Replace the static list of ``<li>`` tags in ``src/app/crew/crew.component.html`` with an ``*ngFor`` that loops over the ``crew`` array.
 
 Add this code to ``src/app/crew/crew.component.html``.
@@ -86,6 +91,7 @@ Add this code to ``src/app/crew/crew.component.html``.
 
 Display 1st Mission Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 If a crew member's ``firstMission`` property is ``true``, then display the text "- 1st" next to their name.
 
 .. figure:: figures/first-mission-example.png
@@ -103,6 +109,7 @@ Add this code right after the member name in ``src/app/crew/crew.component.html`
 
 Add Crew Members
 ^^^^^^^^^^^^^^^^
+
 Allow crew members to be added to the list. To create a new crew member, two pieces of information are required:
 
 #. crew member's name
@@ -139,6 +146,7 @@ Add the below ``add`` function to the crew component in file ``src/app/crew/crew
 
 Remove Crew Members
 ^^^^^^^^^^^^^^^^^^^
+
 Allow removing of crew members by adding a button next to each person in the crew list.
 When the remove button is clicked, the ``remove`` function in the crew component will be called which
 will delete that person from the crew array.
@@ -172,6 +180,7 @@ Add the below ``remove`` function to the crew component in file ``src/app/crew/c
 
 Edit Crew Members
 ^^^^^^^^^^^^^^^^^
+
 Finally we are going to allow the user to edit crew members who have already been added.
 
 1. If the crew member name is clicked, then their name should be replaced with a text input and a save button.
@@ -179,9 +188,9 @@ Finally we are going to allow the user to edit crew members who have already bee
 3. Only one crew member can be edited at a time.
 
 .. figure:: figures/edit-crew-name.gif
-       :alt: Animated gif of crew member name being clicked, edited, and then saved.
+   :alt: Animated gif of crew member name being clicked, edited, and then saved.
 
-       Example of crew member name being edited.
+   Example of crew member name being edited.
 
 We need to add a click event to the member name.
 
@@ -273,7 +282,8 @@ when the ``<button>`` is clicked or when the enter key is pressed and the ``<inp
 
 
 Bonus Missions
---------------
+---------------
+
 Before starting on any of these bonus features, be sure to commit and push your work.
 
 #. Don't allow duplicate names to be added to the crew.
@@ -283,3 +293,9 @@ Before starting on any of these bonus features, be sure to commit and push your 
 #. Allow user to add experiments.
 #. Allow the user to edit experiments.
 #. Allow the user to remove experiments.
+
+Sanity Check
+-------------
+
+Complete code for this studio (without the bonus content) can be found in the
+``studio-2-solution`` branch of the repository.
