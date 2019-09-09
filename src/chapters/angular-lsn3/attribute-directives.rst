@@ -161,6 +161,13 @@ tag:
          list-style-type: upper-roman;
       }
 
+   .. admonition:: Note
+
+      The CSS property ``list-style-type`` defines the look of the list item
+      markers, similar to the ``ol`` element's ``type`` attribute. The values
+      available to the CSS property are different, however. You can find a full
+      list at `W3 schools <https://www.w3schools.com/cssref/pr_list-style-type.asp>`__.
+
 #. Next, modify line 8 in the starter HTML:
 
    .. sourcecode:: html+ng2
