@@ -18,6 +18,8 @@ When the user clicks "More" the hidden part of the text will be displayed. The
 layout of the page responds to the user's actions. The click *event* is
 *handled* by showing more text.
 
+.. _angular-events:
+
 Angular Events
 ---------------
 

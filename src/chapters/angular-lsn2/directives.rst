@@ -1,3 +1,5 @@
+.. _angular-directives:
+
 Angular Directives
 ===================
 
