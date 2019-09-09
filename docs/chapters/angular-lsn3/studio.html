@@ -103,7 +103,7 @@ resolve it.</li>
 </ol>
 <p>When viewed in your browser, the project should look like this:</p>
 <div class="figure">
-<img alt="Angular studio 3 starting point." src="../../_images/angular-lsn3-starter-page.png" />
+<img alt="Initial view of Angular studio 3." src="../../_images/angular-lsn3-starter-page.png" />
 </div>
 <p><em>Mission Name</em> and <em>Carrier Rocket</em> are still editable, but the functionality
 for the crew, equipment, and experiments have been removed.</p>
@@ -111,7 +111,7 @@ for the crew, equipment, and experiments have been removed.</p>
 <div class="section" id="part-1-select-cargo">
 <h2>30.7.2. Part 1: Select Cargo<a class="headerlink" href="#part-1-select-cargo" title="Permalink to this headline">¶</a></h2>
 <p>We want to add items from the equipment list to the cargo hold, but we must NOT
-exceed the value of the <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code> variable.</p>
+exceed the values of the <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code> or <code class="docutils literal notranslate"><span class="pre">maxItems</span></code> variables.</p>
 <p>The interactive equipment list will eventually behave as follows:</p>
 <ol class="arabic simple">
 <li>When clicked, an <em>Add to Cargo Hold</em> button adds the selected equipment to
@@ -153,7 +153,8 @@ and passes the selected equipment as the argument.</p>
 </li>
 <li><p class="first">Bind the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute to the following conditions:</p>
 <ol class="loweralpha simple">
-<li>If all of the cargo hold spots are full, disable the button.</li>
+<li>If all of the cargo hold spots are full
+(<code class="docutils literal notranslate"><span class="pre">cargoHold.length</span> <span class="pre">===</span> <span class="pre">maxItems</span></code>), disable the button.</li>
 <li>If adding the item to the cargo hold would exceed <code class="docutils literal notranslate"><span class="pre">maximumAllowedMass</span></code>,
 disable the button.</li>
 </ol>

@@ -80,5 +80,7 @@ different outcomes. Also, if you need consistent results on multiple webpages,
 then you just put the components together the same way each time instead of
 writing new code.
 
-After you finish the following exercises and studio, consider how you could
-split the larger components into smaller, re-usable pieces.
+For demonstration purposes, some of our examples don't use this best practice
+and instead include components that serve many purposes. After you finish the
+following exercises and studio, consider how you could split the larger
+components into smaller, re-usable pieces.

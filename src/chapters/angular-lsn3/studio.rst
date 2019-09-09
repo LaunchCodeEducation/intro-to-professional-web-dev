@@ -21,7 +21,7 @@ and 2.
 When viewed in your browser, the project should look like this:
 
 .. figure:: figures/angular-lsn3-starter-page.png
-   :alt: Angular studio 3 starting point.
+   :alt: Initial view of Angular studio 3.
 
 *Mission Name* and *Carrier Rocket* are still editable, but the functionality
 for the crew, equipment, and experiments have been removed.
@@ -30,7 +30,7 @@ Part 1: Select Cargo
 ---------------------
 
 We want to add items from the equipment list to the cargo hold, but we must NOT
-exceed the value of the ``maximumAllowedMass`` variable.
+exceed the values of the ``maximumAllowedMass`` or ``maxItems`` variables.
 
 The interactive equipment list will eventually behave as follows:
 
@@ -74,7 +74,8 @@ Open ``equipment.component.html`` and do the following:
    and passes the selected equipment as the argument.
 #. Bind the ``disabled`` attribute to the following conditions:
 
-   a. If all of the cargo hold spots are full, disable the button.
+   a. If all of the cargo hold spots are full
+      (``cargoHold.length === maxItems``), disable the button.
    b. If adding the item to the cargo hold would exceed ``maximumAllowedMass``,
       disable the button.
 
