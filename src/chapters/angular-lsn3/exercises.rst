@@ -34,7 +34,7 @@ The requirements are the same as before:
    1. A confirmation window should let the user know "Confirm that the shuttle is ready for takeoff." If the shuttle is ready for liftoff, then add steps b-d.
    2. The flight status should change to "Shuttle in flight."
    3. The background color of the shuttle flight screen should change from green to blue.
-   4. The shuttle height should increase by 10,000 miles.
+   4. The shuttle height should increase by 10,000 km.
 
 #. When the "Land" button is clicked, the following should happen:
 
@@ -54,7 +54,7 @@ The requirements are the same as before:
 #. When the "Up", "Down", "Right", and "Left" buttons are clicked, the following should happen:
 
    1. The rocket image should move 10 px in the direction of the button that was clicked.
-   2. If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
+   2. If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 km.
 
 
 Add Attribute Directives and Template Variables
@@ -95,7 +95,7 @@ Update the HTML
 
 .. sourcecode:: html+ng2
       
-      <p>{{height}}</p><p> miles</p>
+      <p>{{height}} km</p>
 
 4. Refresh the page to ensure your template variables are assigned correctly.
 
@@ -115,7 +115,7 @@ These listeners will reassign the values of ``color``, ``height``, ``width``, an
       
       <button (click) = "handleTakeOff()">Take Off</button>
 
-2. Back in ``app.component.ts``, we'll define this listener. The confirm method will look the same as before, but this time we can use a few less lines of code to update the view.
+2. Back in ``app.component.ts``, we'll define this listener. The ``confirm()`` method will look the same as before, but this time we can use a few less lines of code to update the view.
 
 .. sourcecode:: TypeScript
    :linenos:
@@ -160,7 +160,7 @@ event.
       
       <button (click)="moveRocket(rocketImage, 'right')">Right</button>
 
-3. Now in ``app.component.ts`` we can write the ``handleRightClick()``:
+3. Now in ``app.component.ts`` we can write the ``moveRocket()``:
 
 .. sourcecode:: TypeScript
    :linenos:
@@ -174,7 +174,7 @@ event.
    }
 
 4. Add conditional logic to this ``moveRocket()`` method to account for the other movement directions, modifying the
-movement formula as needed. Be sure to also update the height or width property
+movement formula as needed. Be sure to also update the ``height`` or ``width`` property
 where appropriate.
 
 Update the Control Button Click Handlers
@@ -192,38 +192,40 @@ handlers and add the following:
 New Requirements
 ----------------
 
-1. Right now, a user can move the rocket before it has officially taken off or abort the 
-mission while the rocket is still on the ground. This doesn't make much sense. With attribute
-directives, we can dynamically set those buttons to only be enabled in some states.
+#. Right now, a user can move the rocket before it has officially taken 
+   off or abort the mission while the rocket is still on the ground. This 
+   doesn't make much sense. With attribute directives, we can dynamically 
+   set those buttons to only be enabled in some states.
 
-Let's add a check for the take off status of the shuttle.
+   Let's add a check for the take off status of the shuttle.
 
-.. sourcecode:: TypeScript
-   :linenos:
+	.. sourcecode:: TypeScript
+	   :linenos:
 
-    takeOffEnabled: true,
+	   takeOffEnabled: true,
     
 
-2. When the app is first loaded, we want the user to be able to click the *Take Off*
-button, but not the *Land* or *Abort Mission* button. We'll add some 
-``[disabled]`` attribute directives on the control buttons to reflect these values.
+2. When the app is first loaded, we want the user to be able to click the 
+   *Take Off* button, but not the *Land* or *Abort Mission* button. We'll 
+   add some ``[disabled]`` attribute directives on the control buttons to 
+   reflect these values.
 
-Update the control buttons:
+   Update the control buttons:
 
 .. sourcecode:: html+ng2
-   :linenos:
+  :linenos:
       
-   <div class="container-control-buttons">
-      <button (click)="handleTakeOff()" [disabled]="!takeOffEnabled">Take Off</button>
-      <button (click)="handleLand(rocketImage)" [disabled]="takeOffEnabled">Land</button>
-      <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
-   </div>
+  	<div class="container-control-buttons">
+    <button (click)="handleTakeOff()" [disabled]="!takeOffEnabled">Take Off</button>
+    <button (click)="handleLand(rocketImage)" [disabled]="takeOffEnabled">Land</button>
+    <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
+	</div>
 
-Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button 
-is enabled when the rocket is on the ground.
+  Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button 
+  is enabled when the rocket is on the ground.
 
-Update the control button click handlers to toggle the enabled/disabled status 
-of the controls using this value.
+    Update the control button click handlers to toggle the enabled/disabled status 
+    of the controls using this value.
 
 3. For another improvement, we shouldn't be able to move the rocket if it hasn't taken off. To toggle the status of
 the direction buttons, we could add more boolean checks to our component. However, we know we only

@@ -114,7 +114,7 @@ open the webpage in your browser, it should look like this:</p>
 <li>A confirmation window should let the user know “Confirm that the shuttle is ready for takeoff.” If the shuttle is ready for liftoff, then add steps b-d.</li>
 <li>The flight status should change to “Shuttle in flight.”</li>
 <li>The background color of the shuttle flight screen should change from green to blue.</li>
-<li>The shuttle height should increase by 10,000 miles.</li>
+<li>The shuttle height should increase by 10,000 km.</li>
 </ol>
 </li>
 <li>When the “Land” button is clicked, the following should happen:<ol class="arabic">
@@ -133,7 +133,7 @@ open the webpage in your browser, it should look like this:</p>
 </li>
 <li>When the “Up”, “Down”, “Right”, and “Left” buttons are clicked, the following should happen:<ol class="arabic">
 <li>The rocket image should move 10 px in the direction of the button that was clicked.</li>
-<li>If the “Up” or “Down” buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.</li>
+<li>If the “Up” or “Down” buttons were clicked, then the shuttle height should increase or decrease by 10,000 km.</li>
 </ol>
 </li>
 </ol>
@@ -177,7 +177,7 @@ update the view.</p>
 <ol class="arabic simple" start="3">
 <li>Use the <code class="docutils literal notranslate"><span class="pre">height</span></code> property to determine the displayed height. Change line 31 as follows;</li>
 </ol>
-<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">height</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span> miles<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">height</span><span class="cp">}}</span> km<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
@@ -198,7 +198,7 @@ These listeners will reassign the values of <code class="docutils literal notran
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, we’ll define this listener. The confirm method will look the same as before, but this time we can use a few less lines of code to update the view.</li>
+<li>Back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, we’ll define this listener. The <code class="docutils literal notranslate"><span class="pre">confirm()</span></code> method will look the same as before, but this time we can use a few less lines of code to update the view.</li>
 </ol>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -246,7 +246,7 @@ event.</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Now in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> we can write the <code class="docutils literal notranslate"><span class="pre">handleRightClick()</span></code>:</li>
+<li>Now in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> we can write the <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code>:</li>
 </ol>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -264,7 +264,7 @@ event.</p>
 </pre></div>
 </td></tr></table></div>
 <p>4. Add conditional logic to this <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code> method to account for the other movement directions, modifying the
-movement formula as needed. Be sure to also update the height or width property
+movement formula as needed. Be sure to also update the <code class="docutils literal notranslate"><span class="pre">height</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> property
 where appropriate.</p>
 </div>
 <div class="section" id="update-the-control-button-click-handlers">
@@ -280,32 +280,50 @@ handlers and add the following:</p>
 </div>
 <div class="section" id="new-requirements">
 <h2>30.6.5. New Requirements<a class="headerlink" href="#new-requirements" title="Permalink to this headline">¶</a></h2>
-<p>1. Right now, a user can move the rocket before it has officially taken off or abort the
-mission while the rocket is still on the ground. This doesn’t make much sense. With attribute
-directives, we can dynamically set those buttons to only be enabled in some states.</p>
+<ol class="arabic">
+<li><p class="first">Right now, a user can move the rocket before it has officially taken
+off or abort the mission while the rocket is still on the ground. This
+doesn’t make much sense. With attribute directives, we can dynamically
+set those buttons to only be enabled in some states.</p>
 <p>Let’s add a check for the take off status of the shuttle.</p>
-<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">takeOffEnabled</span>: <span class="kt">true</span><span class="p">,</span>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">takeOffEnabled</span>: <span class="kt">true</span><span class="p">,</span>
 </pre></div>
 </td></tr></table></div>
-<p>2. When the app is first loaded, we want the user to be able to click the <em>Take Off</em>
-button, but not the <em>Land</em> or <em>Abort Mission</em> button. We’ll add some
-<code class="docutils literal notranslate"><span class="pre">[disabled]</span></code> attribute directives on the control buttons to reflect these values.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p class="first">When the app is first loaded, we want the user to be able to click the
+<em>Take Off</em> button, but not the <em>Land</em> or <em>Abort Mission</em> button. We’ll
+add some <code class="docutils literal notranslate"><span class="pre">[disabled]</span></code> attribute directives on the control buttons to
+reflect these values.</p>
 <p>Update the control buttons:</p>
-<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-control-buttons&quot;</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleTakeOff()&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!takeOffEnabled&quot;</span><span class="p">&gt;</span>Take Off<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleLand(rocketImage)&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;takeOffEnabled&quot;</span><span class="p">&gt;</span>Land<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleMissionAbort(rocketImage)&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;takeOffEnabled&quot;</span><span class="p">&gt;</span>Abort Mission<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</li>
+</ol>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>      &lt;div class=&quot;container-control-buttons&quot;&gt;
+  &lt;button (click)=&quot;handleTakeOff()&quot; [disabled]=&quot;!takeOffEnabled&quot;&gt;Take Off&lt;/button&gt;
+  &lt;button (click)=&quot;handleLand(rocketImage)&quot; [disabled]=&quot;takeOffEnabled&quot;&gt;Land&lt;/button&gt;
+  &lt;button (click)=&quot;handleMissionAbort(rocketImage)&quot; [disabled]=&quot;takeOffEnabled&quot;&gt;Abort Mission&lt;/button&gt;
+      &lt;/div&gt;
+
+Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button
+is enabled when the rocket is on the ground.
+
+  Update the control button click handlers to toggle the enabled/disabled status
+  of the controls using this value.
 </pre></div>
 </td></tr></table></div>
-<p>Now, based on the boolean <code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code>, only the <em>Take Off</em> control button
-is enabled when the rocket is on the ground.</p>
-<p>Update the control button click handlers to toggle the enabled/disabled status
-of the controls using this value.</p>
 <p>3. For another improvement, we shouldn’t be able to move the rocket if it hasn’t taken off. To toggle the status of
 the direction buttons, we could add more boolean checks to our component. However, we know we only
 want these buttons to be accessible when the <em>Take Off</em> button is not. We can therefore take advantage
