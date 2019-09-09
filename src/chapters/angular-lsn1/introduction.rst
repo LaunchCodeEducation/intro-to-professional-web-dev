@@ -18,7 +18,7 @@ clock would be the various cogs, wheels, and power source.
 
 .. index:: ! angular
 
-In this chapter we will use Angular as our front-end JavaScript framework.
+In this chapter, we will use Angular as our front-end JavaScript framework.
 Angular dictates how to structure our files, as well as how the information
 flows between them. It also contains a number of tools to help us build the
 part of the application users see in their web browsers.
@@ -34,5 +34,5 @@ to create the full web page.
 Taking this modular based approach allows us to separate the individual pieces
 of our application so we can focus on them one at a time.
 
-Through the next three chapters we will look at the basic building blocks of an
+Through the next three chapters, we will look at the basic building blocks of an
 Angular application.

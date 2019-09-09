@@ -1,3 +1,5 @@
+.. _events-call-functions:
+
 Events Can Call Functions
 ==========================
 
@@ -10,7 +12,7 @@ call a function when an event occurs. The syntax for this is:
 
 ::
 
-   (event) = 'functionName(parameters...)'
+   (event) = "functionName(parameters...)"
 
 Changing the movie list displayed on the webpage requires us to modify the
 ``movies`` array in the ``movie-list.component.ts`` file. We will do this by
@@ -41,7 +43,7 @@ Let's change our code in ``movie-list.component.html`` to call the function
    Now when the user taps "Enter" or clicks the "Add" button after typing, the
    input ``newMovie.value`` gets sent to the function.
 
-#. Since our plan is to use a function to add the new movie the array, we no
+#. Since our plan is to use a function to add the new movie to the array, we no
    longer need the title to appear below the input box. Remove
    ``<p>{{newMovie.value}}</p>`` from line 9.
 

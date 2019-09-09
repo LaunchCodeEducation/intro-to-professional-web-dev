@@ -4,15 +4,18 @@ String Immutability
 .. index::
    pair: string; immutable
 
-If an object cannot be changed, we say that it is **immutable**. Strings are immutable, which means we cannot change the invidual characters within a given string. While we can access individual characters using bracket notation, attempting to change individual characters simply does not work.
+If an object cannot be changed, we say that it is **immutable**. Strings are
+immutable, which means we cannot change the individual characters within a
+given string. While we can access individual characters using bracket
+notation, attempting to change individual characters simply does not work.
 
 .. admonition:: Example
 
    .. sourcecode:: js
       :linenos:
-   
+
       let nonprofit = "Launchcode";
-      
+
       console.log(nonprofit);
       nonprofit[6] = "C";
       console.log(nonprofit);
@@ -23,8 +26,8 @@ If an object cannot be changed, we say that it is **immutable**. Strings are imm
 
       Launchcode
       Launchcode
-   
-We attempted to change the value of the character at index 6 from ``'c'`` to ``'C'``, by using an assignment statement along with bracket notation on line 4 (perhaps to align with official LaunchCode branding guidelines). However, this change clearly did not take place. In many programming langauges strings are immutable, and while trying to change a string in some languages results in an error, JavaScript simply ignores our request to alter a string.
+
+We attempted to change the value of the character at index 6 from ``'c'`` to ``'C'``, by using an assignment statement along with bracket notation on line 4 (perhaps to align with official LaunchCode branding guidelines). However, this change clearly did not take place. In many programming languages strings are immutable, and while trying to change a string in some languages results in an error, JavaScript simply ignores our request to alter a string.
 
 It is important to notice that immutability applies to string *values* and not string variables.
 
@@ -34,7 +37,7 @@ It is important to notice that immutability applies to string *values* and not s
 
    .. sourcecode:: js
       :linenos:
-   
+
       let nonprofit = "Launchcode";
       nonprofit = "LaunchCode";
 

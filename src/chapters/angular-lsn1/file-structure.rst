@@ -39,8 +39,13 @@ command:
 
 .. sourcecode:: bash
 
-   npm install -g @angular/cli
+   npm install -g @angular/cli@8.2.2
 
+.. admonition:: Note
+
+   There are more recent versions of this package but we're using the @8.2.2 version 
+   to keep our examples consistent.
+   
 .. admonition:: Note
 
    If the installer prompts you to make choices, just accept all of the default

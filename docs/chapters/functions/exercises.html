@@ -86,9 +86,15 @@
     
   <div class="section" id="exercises-functions">
 <h1>10.10. Exercises: Functions<a class="headerlink" href="#exercises-functions" title="Permalink to this headline">¶</a></h1>
-<p>To become good at solving problems with code you need to be able to break large problems into small ones. Usually, these smaller problems will take the form of functions that are used to solve the larger problem. Therefore, to become good at solving problems you need to become good at writing functions. And to master functions, you need to write a <em>lot</em> of them.</p>
-<p>These exercises ask you to write lots of relatively small functions, which combine to form larger, more complicated ones.</p>
-<p>At the end, you will be able to create strings of shapes, like this nifty diamond:</p>
+<p>To become good at solving problems with code you need to be able to break large
+problems into small ones. Usually, these smaller problems will take the form of
+functions that are used to solve the larger problem. Therefore, to become good
+at solving problems you need to become good at writing functions. And to master
+functions, you need to write a <em>lot</em> of them.</p>
+<p>These exercises ask you to write lots of relatively small functions, which
+combine to form larger, more complicated ones.</p>
+<p>At the end, you will be able to create strings of shapes, like this nifty
+diamond:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
    ###
   #####
@@ -106,9 +112,9 @@ at <a class="reference external" href="https://repl.it/student" target="_blank">
 <div class="section" id="rectangles">
 <h2>10.10.1. Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">line(size)</span></code> that returns a line with exactly <code class="docutils literal notranslate"><span class="pre">size</span></code>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeLine(size)</span></code> that returns a line with exactly <code class="docutils literal notranslate"><span class="pre">size</span></code>
 hashes.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">line</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeLine</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -116,11 +122,9 @@ hashes.</p>
 </pre></div>
 </div>
 </li>
-</ol>
-<ol class="arabic" start="2">
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">square(size)</span></code> that returns an <code class="docutils literal notranslate"><span class="pre">size</span></code> by <code class="docutils literal notranslate"><span class="pre">size</span></code> square
-of hashes. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeSquare(size)</span></code> that returns an <code class="docutils literal notranslate"><span class="pre">size</span></code> by <code class="docutils literal notranslate"><span class="pre">size</span></code>
+square of hashes. Use your <code class="docutils literal notranslate"><span class="pre">makeLine</span></code> function to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -140,10 +144,10 @@ of hashes. Use your <code class="docutils literal notranslate"><span class="pre"
 <p class="last">For this and all other functions in these exercises, make sure you do NOT have a newline character at the end of your string. Not only will <code class="docutils literal notranslate"><span class="pre">console.log</span></code> add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the exercises.</p>
 </div>
 </li>
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">rectangle(width,</span> <span class="pre">height)</span></code> that returns a
-rectangle with the given width and height. Use your
-<code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeRectangle(width,</span> <span class="pre">height)</span></code> that returns a
+rectangle with the given width and height. Use your <code class="docutils literal notranslate"><span class="pre">makeLine</span></code> function to
+do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeRectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -153,16 +157,17 @@ rectangle with the given width and height. Use your
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now, go back and rewrite <code class="docutils literal notranslate"><span class="pre">square</span></code> to use <code class="docutils literal notranslate"><span class="pre">rectangle</span></code>.</p>
+<li><p class="first">Now, go back and rewrite <code class="docutils literal notranslate"><span class="pre">makeSquare</span></code> to use <code class="docutils literal notranslate"><span class="pre">makeRectangle</span></code>.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="triangles">
 <h2>10.10.2. Triangles<a class="headerlink" href="#triangles" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">stairs(height)</span></code> that prints the staircase pattern shown below,
-with the given height. Use your <code class="docutils literal notranslate"><span class="pre">line</span></code> function to do this.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stairs</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeDownwardStairs(height)</span></code> that prints the staircase
+pattern shown below, with the given height. Use your <code class="docutils literal notranslate"><span class="pre">makeLine</span></code> function
+to do this.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeDownwardStairs</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -176,10 +181,10 @@ with the given height. Use your <code class="docutils literal notranslate"><span
 </li>
 </ol>
 <ol class="arabic" start="2">
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">spaceLine(numSpaces,</span> <span class="pre">numChars)</span></code> that returns a line
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeSpaceLine(numSpaces,</span> <span class="pre">numChars)</span></code> that returns a line
 with exactly the specified number of spaces, followed by the
 specified number of hashes, followed again by <code class="docutils literal notranslate"><span class="pre">numSpaces</span></code> more spaces.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">spaceLine</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeSpaceLine</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -191,9 +196,9 @@ specified number of hashes, followed again by <code class="docutils literal notr
 <p class="last">We have inserted underscores to represent spaces, so they are visible in the output. Don’t do this in your code.</p>
 </div>
 </li>
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">triangle(height)</span></code> that returns a triangle of
-the given height.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">triangle</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeIsoscelesTriangle(height)</span></code> that returns a triangle
+of the given height.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeIsoscelesTriangle</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -214,9 +219,9 @@ the given height.</p>
 <div class="section" id="diamonds">
 <h2>10.10.3. Diamonds<a class="headerlink" href="#diamonds" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">diamond(height)</span></code> that returns a diamond where the
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">makeDiamond(height)</span></code> that returns a diamond where the
 triangle formed by the <em>top</em> portion has the given height.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">diamond</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeDiamond</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
@@ -234,14 +239,17 @@ triangle formed by the <em>top</em> portion has the given height.</p>
 </div>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Consider what happens if you create a triangle and reverse it using <a class="reference internal" href="composing-functions.html#reverse-func"><span class="std std-ref">our reverse function</span></a>.</p>
+<p class="last">Consider what happens if you create a triangle and reverse it using
+<a class="reference internal" href="composing-functions.html#reverse-func"><span class="std std-ref">our reverse function</span></a>.</p>
 </div>
 </li>
 </ol>
 </div>
 <div class="section" id="bonus-mission">
 <h2>10.10.4. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
-<p>Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">'#'</span></code>. Make the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</p>
+<p>Refactor your functions so that they take a single character as a parameter,
+and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">'#'</span></code>. Make
+the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</p>
 </div>
 </div>
 

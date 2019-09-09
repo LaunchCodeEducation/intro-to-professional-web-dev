@@ -12,7 +12,7 @@ We :ref:`defined a value <def-value>` as "a specific piece of data." Some exampl
 
 .. index:: data type
 
-In particular, functions have a data type, just like all other values. Recall that a **data type** is a group of values that share characteristics, such as strings and numbers. Strings share the characteristice of having a length, while numbers don't. Numbers can be manipulated in ways that strings cannot, via operations like division and subtraction. 
+In particular, functions have a data type, just like all other values. Recall that a **data type** is a group of values that share characteristics, such as strings and numbers. Strings share the characteristics of having a length, while numbers don't. Numbers can be manipulated in ways that strings cannot, via operations like division and subtraction. 
 
 .. admonition:: Example
 
@@ -34,7 +34,7 @@ In particular, functions have a data type, just like all other values. Recall th
       string
       function
 
-Like other data types, functions may be assigned to variables. If we create a function named ``hello`` we can assign it to a variable with this syntax:
+Like other data types, functions may be assigned to variables. If we create a function named ``hello``, we can assign it to a variable with this syntax:
 
 .. sourcecode:: js
    :linenos:
@@ -55,7 +55,7 @@ When a variable refers to a function, we can use the variable name to *call* the
 
 The variable ``helloFunc`` can be thought of as an *alias* for the function ``hello``. When we call the function ``helloFunc``, JavaScript sees that it refers to the function ``hello`` and calls that *specific* function. 
 
-When we use a variable *name*, we are really using its *value*. If the variable ``class`` is assigned the value ``"LC101"``, then ``console.log(class)`` prints ``"LC101"``. When a variable holds a function, it behaves the same way as when it holds a number or a string. The variable *refers to* the function. 
+When we use a variable *name*, we are really using its *value*. If the variable ``course`` is assigned the value ``"LC101"``, then ``console.log(course)`` prints ``"LC101"``. When a variable holds a function, it behaves the same way as when it holds a number or a string. The variable *refers to* the function. 
 
 .. figure:: figures/function-var.png
    :alt: The variable helloFunc on the left *referst to* the function hello on the right

@@ -96,11 +96,16 @@ algorithm to use. These new features will make the program more efficient and
 user friendly.</p>
 <p>If you are NOT enrolled in a repl.it classroom for this course, fork the
 starter code at this <a class="reference external" href="https://repl.it/&#64;launchcode/scrabble-scorer" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The requirements below are what your END assignment will look like.
+This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at “Transform”.
+Please read the WHOLE assignment page before starting.</p>
+</div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Create an <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> object that contains the previous scoring system.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function which will return a <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function that takes in the <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> object and returns a <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code> object.</li>
 <li>Create an <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function that asks the user which scoring
 algorithm to use.</li>
 <li>Create a <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array to hold three scoring objects, which
@@ -108,28 +113,6 @@ include different scoring functions.</li>
 <li>Create a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function to serve as the starting point for your
 program.</li>
 </ol>
-<div class="section" id="example-output">
-<span id="id1"></span><h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator. Click &#39;Stop&#39; to quit.
-
-Which scoring algorithm would you like to use?
-
-0 - Scrabble: The traditional scoring algorithm.
-1 - Simple Score: Each letter is worth 1 point.
-2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
-Enter 0,1,2: 0
-Using algorithm: Scrabble
-
-Enter a word to be scored:  LaunchCode
-Score for &#39;LaunchCode&#39;: 18
-
-Enter a word to be scored:  Rocket
-Score for &#39;Rocket&#39;: 12
-
-Enter a word to be scored:
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="detailed-requirements">
 <h2>Detailed Requirements<a class="headerlink" href="#detailed-requirements" title="Permalink to this headline">¶</a></h2>
@@ -234,9 +217,7 @@ Letters with score &#39;8&#39;: [ &#39;J&#39;, &#39;X&#39; ]
 <p>The current Scrabble Scorer only uses one scoring algorithm. For the new
 version we want to let the user pick between three algorithms. Define an
 <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function that will introduce the program and then ask the
-user which scoring algorithm they want to use. See
-<a class="reference internal" href="#example-output"><span class="std std-ref">Example Output</span></a> above and the next section for details
-on available options.</p>
+user which scoring algorithm they want to use.</p>
 </div>
 <div class="section" id="scoring-algorithms">
 <h3>Scoring Algorithms<a class="headerlink" href="#scoring-algorithms" title="Permalink to this headline">¶</a></h3>
@@ -332,6 +313,28 @@ Bonus Vowels.</li>
 <li><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
 Vowels.</li>
 </ol>
+<div class="section" id="example-output">
+<span id="id1"></span><h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator. Enter &#39;Stop&#39; to quit.
+
+Which scoring algorithm would you like to use?
+
+0 - Scrabble: The traditional scoring algorithm.
+1 - Simple Score: Each letter is worth 1 point.
+2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
+Enter 0,1,2: 0
+Using algorithm: Scrabble
+
+Enter a word to be scored:  LaunchCode
+Score for &#39;LaunchCode&#39;: 18
+
+Enter a word to be scored:  Rocket
+Score for &#39;Rocket&#39;: 12
+
+Enter a word to be scored:
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="bonus-mission">
 <h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
@@ -340,22 +343,13 @@ object. The point value for a blank tile is <code class="docutils literal notran
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">From the address bar at the top of the browser window, copy the URL of the
-repl.it that contains your solution.</p>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p class="last">repl.it classroom URL: <code class="docutils literal notranslate"><span class="pre">https://repl.it/student/submissions/9999999</span></code></p>
-</div>
-</li>
-<li><p class="first">Go to the Graded Assignment #2 page in Canvas and click <em>Submit Assignment</em>.</p>
-</li>
-<li><p class="first">Paste the URL into the Website URL input.</p>
-</li>
-<li><p class="first">Click <em>Submit Assignment</em> again.</p>
-</li>
-<li><p class="first">Notify your TA that your assignment is ready to be graded.</p>
-</li>
+<ol class="arabic simple">
+<li>From the address bar at the top of the browser window, copy the URL of the
+repl.it that contains your solution.</li>
+<li>Go to the Graded Assignment #2 page in Canvas and click <em>Submit Assignment</em>.</li>
+<li>Paste the URL into the Website URL input.</li>
+<li>Click <em>Submit Assignment</em> again.</li>
+<li>Notify your TA that your assignment is ready to be graded.</li>
 </ol>
 </div>
 </div>

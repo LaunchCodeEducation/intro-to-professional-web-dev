@@ -173,6 +173,10 @@ go BEFORE running the generate command.</p>
 </div>
 <p>From the output, we see that the <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> command created four new files
 in the <code class="docutils literal notranslate"><span class="pre">src/app/task-list</span></code> folder.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Recall that <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> can be shortened to <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span></code>.</p>
+</div>
 </div>
 <div class="section" id="try-it">
 <h3>28.6.3.2. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
@@ -203,7 +207,7 @@ $ ls
 <div class="section" id="app-module-ts">
 <h2>28.6.4. <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code><a class="headerlink" href="#app-module-ts" title="Permalink to this headline">¶</a></h2>
 <p>In order to communicate with the new components, <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> needs new
-<code class="docutils literal notranslate"><span class="pre">input</span></code> statements. Fortunately, <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> updates the code
+<code class="docutils literal notranslate"><span class="pre">import</span></code> statements. Fortunately, <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> updates the code
 automatically. We do not need to worry about taking care of this task
 ourselves.</p>
 <p>Before <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code>:</p>
@@ -427,7 +431,7 @@ tags.</li>
 <p>However, sometimes you might want to nest a new component inside of another one
 rather than in <code class="docutils literal notranslate"><span class="pre">app</span></code>.</p>
 <p>Let’s assume we want to add a new component within our <code class="docutils literal notranslate"><span class="pre">task-list</span></code> folder. In
-this case we navigate into the <code class="docutils literal notranslate"><span class="pre">task-list</span></code> directory and then run the
+this case, we navigate into the <code class="docutils literal notranslate"><span class="pre">task-list</span></code> directory and then run the
 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">component</span></code> command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
    app.component.css    app.component.spec.ts   app.module.ts   task-list
@@ -444,7 +448,7 @@ and it contains the four files we would expect.</p>
 <p>When we place one component inside of another, we must pay attention to how the
 components interact. The nested component is called the <em>child</em>, while the
 original component is called the <em>parent</em>. In our example, <code class="docutils literal notranslate"><span class="pre">task-list</span></code> serves
-as the parent, while <code class="docutils literal notranslate"><span class="pre">inner-task-list</span></code> is the child.</p>
+as the parent, while <code class="docutils literal notranslate"><span class="pre">inside-task-list</span></code> is the child.</p>
 <ol class="arabic simple">
 <li>Any CSS, HTML, or JavaScript we write for the nested component (the child)
 only affects that component. Changes to the child do NOT affect the parent.</li>
@@ -458,17 +462,17 @@ code to <code class="docutils literal notranslate"><span class="pre">inside-task
 <div class="section" id="check-your-understanding">
 <h2>28.6.7. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <p>If you have not already done so, use  <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> to <em>nest</em> the
-<code class="docutils literal notranslate"><span class="pre">inner-task-list</span></code> component inside the <code class="docutils literal notranslate"><span class="pre">task-list</span> <span class="pre">component</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">inside-task-list</span></code> component inside the <code class="docutils literal notranslate"><span class="pre">task-list</span> <span class="pre">component</span></code>.</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>EXPERIMENT! Discover.</p>
-<p>Where could we place the <code class="docutils literal notranslate"><span class="pre">&lt;inner-task-list&gt;&lt;/inner-task-list&gt;</span></code> element to
-make “inner-task-list works!” appear on the screen? Select ALL options that
+<p>Where could we place the <code class="docutils literal notranslate"><span class="pre">&lt;inside-task-list&gt;&lt;/inside-task-list&gt;</span></code> element to
+make “inside-task-list works!” appear on the screen? Select ALL options that
 work.</p>
 <ol class="last arabic simple">
 <li>Place the element in``app.component.html``.</li>
 <li>Place the element in <code class="docutils literal notranslate"><span class="pre">task-list.component.html</span></code>.</li>
-<li>Place the element in <code class="docutils literal notranslate"><span class="pre">inner-task-list.component.html</span></code>.</li>
+<li>Place the element in <code class="docutils literal notranslate"><span class="pre">inside-task-list.component.html</span></code>.</li>
 <li>Place the element in <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.</li>
 </ol>
 </div>
