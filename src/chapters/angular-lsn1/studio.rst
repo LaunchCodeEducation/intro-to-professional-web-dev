@@ -157,7 +157,7 @@ Now you need to create a component to show a list of equipment.
          <app-equipment></app-equipment>
       </div>
 
-4. Add CSS to file ``app.component.css`` to horizontally align the crew and equipment lists. Without this CSS the equipment list will appear below the crew list.
+4. Add CSS to file ``app.component.css`` to horizontally align the crew and equipment lists. Without this CSS, the equipment list will appear below the crew list.
 
    .. sourcecode:: css
       :linenos:

@@ -108,4 +108,24 @@ set that equal to the variable name in quotes.
 Check Your Understanding
 -------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Which of the following is NOT a true statement about data-binding?
+
+   #. Data-binding refers to the linking of component information to a view.
+   #. In one-way binding, information flows in one direction only.
+   #. In one-way binding, changing a component variable never updates the application
+      view.
+   #. In one-way binding, user input does not affect component data.
+
+.. admonition:: Question
+
+   Which of the following show proper data-binding syntax? Choose ALL that
+   apply.
+
+   #. ``<li>{{ variableName }}</li>``
+   #. ``<img [src]="variableName"/>``
+   #. ``<p>[variableName]</p>``
+   #. ``<button value="[variableName]">Go!</button>``
+   #. ``<input placeholder="{{ variableName }}"/>``
+   #. ``<button [name]="{{ variableName }}"/>``

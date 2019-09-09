@@ -189,6 +189,10 @@ and <code class="docutils literal notranslate"><span class="pre">src/app/header/
 <img alt="Example of first mission status appearing next to crew member name." src="../../_images/first-mission-example.png" />
 <p class="caption"><span class="caption-text">Example of first mission status being shown.</span></p>
 </div>
+<p>Add this code right after the member name in <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>- 1st<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="add-crew-members">
 <h3>29.8.3.4. Add Crew Members<a class="headerlink" href="#add-crew-members" title="Permalink to this headline">¶</a></h3>
@@ -236,8 +240,10 @@ so that the button appears next to each item in the crew list.</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
    <span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span>
+   <span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>- 1st<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;remove(member)&quot;</span><span class="p">&gt;</span>remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
@@ -258,7 +264,7 @@ so that the button appears next to each item in the crew list.</p>
 <p>Finally we are going to allow the user to edit crew members who have already been added.</p>
 <ol class="arabic simple">
 <li>If the crew member name is clicked, then their name should be replaced with a text input and a save button.</li>
-<li>When save is clicked the input and save button are replaced by the text only version of the name.</li>
+<li>When save is clicked, the input and save button are replaced by the text-only version of the name.</li>
 <li>Only one crew member can be edited at a time.</li>
 </ol>
 <div class="figure" id="id5">
@@ -273,8 +279,10 @@ so that the button appears next to each item in the crew list.</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">span</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;edit(member)&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;editable-text&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>- 1st<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;remove(member)&quot;</span><span class="p">&gt;</span>remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
@@ -296,7 +304,7 @@ so that the button appears next to each item in the crew list.</p>
 </div>
 <p>Now we need to add an <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> that will show the two versions of the member, the display state or the edit state.</p>
 <ol class="arabic simple" start="8">
-<li>In the edit state an input box with a save button will appear, but for now the input and save won’t have any functionality. Make your <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> file look like the below code.</li>
+<li>In the edit state, an input box with a save button will appear, but for now the input and save won’t have any functionality. Make your <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> file look like the below code.</li>
 </ol>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -347,7 +355,7 @@ so that the button appears next to each item in the crew list.</p>
 <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;add(name.value, firstMission.checked)&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Finally we are going to make the edit state update the member name when save is clicked.</p>
+<p>Finally, we are going to make the edit state update the member name when save is clicked.</p>
 <ol class="arabic simple" start="9">
 <li>Update the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags to look like:</li>
 </ol>

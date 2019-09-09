@@ -11,7 +11,7 @@ Open the Lesson 3 Folder
 
 Open VSCode and return to the ``angular-lc101-projects`` folder. Find
 ``lesson3/examples/src/app`` in the sidebar and open the
-``skill-set.component.ts``, ``skill-set.component.html``, and 
+``skill-set.component.ts``, ``skill-set.component.html``, and
 ``skill-set.component.css`` files.
 
 .. figure:: ./figures/lesson3-menu.png
@@ -43,11 +43,12 @@ You should see the following:
 Update the Skill-Set Styling
 -----------------------------
 
-Examine the code in the three ``skill-set.component`` files:
+Examine the code in the ``skill-set.component.css`` and
+``skill-set.component.html`` files:
 
 .. admonition:: Examples
 
-   ``skill-set.component.css``
+   CSS
 
    .. sourcecode:: css
       :linenos:
@@ -61,7 +62,7 @@ Examine the code in the three ``skill-set.component`` files:
          color: green;
       }
 
-   ``skill-set.component.html``
+   HTML
 
    .. sourcecode:: html+ng2
       :linenos:
@@ -79,24 +80,6 @@ Examine the code in the three ``skill-set.component`` files:
          <hr>
          <p>Here is some practice text...</p>
       </div>
-
-   ``skill-set.component.ts`` SkillSetComponent class:
-
-   .. sourcecode:: TypeScript
-      :linenos:
-
-      export class SkillSetComponent implements OnInit {
-         listHeading: string = 'Some Coding Skills I Know';
-         skills: string[] = ['Loops', 'Conditionals', 'Functions', 'Classes', 'Modules', 'Git', 'HTML/CSS'];
-         alternateColor: string = 'black';
-         bulletType: string = 'A';
-         changeColor: boolean = true;
-
-         constructor() { }
-
-         ngOnInit() { }
-
-      }
 
 Right now, there is an awful lot of green on the page, which is set by the
 ``skills`` class in the CSS file. Let's fix this with some attribute
@@ -124,9 +107,29 @@ Ideas to note:
 #. Unlike the structural directives ``*ngFor`` and ``*ngIf``, we can add more
    than one attribute directive to an HTML tag.
 #. The ``style`` attribute has different properties that can be assigned using
-   dot notation. Examples include ``style.color`` and ``style.background``.
-#. The variables ``alternateColor`` and ``bulletType`` are assigned in
+   dot notation. Examples include ``style.color`` and ``style.background``. For
+   properties with two-word labels, like ``text-align``, the data-binding
+   syntax accepts either hyphens or camel case (``style.text-align`` or
+   ``style.textAlign``).
+#. The variables ``alternateColor`` and ``bulletType`` are assigned in the
    ``skill-set.component.ts`` file.
+
+   .. sourcecode:: TypeScript
+      :linenos:
+
+      export class SkillSetComponent implements OnInit {
+         listHeading: string = 'Some Coding Skills I Know';
+         skills: string[] = ['Loops', 'Conditionals', 'Functions', 'Classes', 'Modules', 'Git', 'HTML/CSS'];
+         alternateColor: string = 'black';
+         bulletType: string = 'A';
+         changeColor: boolean = true;
+
+         constructor() { }
+
+         ngOnInit() { }
+
+      }
+
 #. NEAT! Reassigning the ``alternateColor`` variable in the ``.ts`` file
    causes EVERY tag with ``[style.color]="alternateColor"`` to change color.
 
@@ -137,7 +140,9 @@ Ideas to note:
 
    Note that ``bulletType`` takes options of numbers (``1``), upper and lower
    case letters (``A``, ``a``), or upper and lower case Roman numerals (``I``,
-   ``i``).
+   ``i``). For a detailed description of using the ``type`` attribute in an
+   ordered list, check out the
+   `W3 schools documentation <https://www.w3schools.com/tags/att_ol_type.asp>`__.
 
 Changing Styles with Booleans
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -147,7 +152,7 @@ tag:
 
 #. Add the following code to ``skill-set.component.css``:
 
-   .. sourcecode:: html
+   .. sourcecode:: CSS
       :linenos:
 
       .ol-style {
@@ -156,7 +161,7 @@ tag:
          list-style-type: upper-roman;
       }
 
-#. Next, modify line 8 in the starter code:
+#. Next, modify line 8 in the starter HTML:
 
    .. sourcecode:: html+ng2
       :linenos:
@@ -202,4 +207,23 @@ Nice display of eagerness! We will deal with the buttons on the next page.
 Check Your Understanding
 -------------------------
 
-Lorem ipsum...
+The ``reversed`` attribute labels ordered lists from highest to lowest values
+(9, 8, 7... instead of 1, 2, 3...). Unlike the ``class`` or ``style``
+attributes, ``reversed`` is not set equal to a string inside the HTML tag. Just
+having it in the tag flips the numbering of the bullets.
+
+.. sourcecode:: html
+
+   <ol style="color: blue" reversed>
+
+.. admonition:: Question
+
+   How could we data-bind the ``reversed`` attribute in an ``ol`` tag? Indicate
+   ALL working options.
+
+   #. Bind the attribute to a variable that holds the string ``"reversed"`` or
+      ``"notReversed"``.
+   #. Bind the attribute to a boolean variable set as ``true`` or ``false``.
+   #. Bind the attribute to a boolean statement like ``variable1 > variable2``.
+   #. Bind the attribute to the empty string ``""``.
+   #. Just put square brackets around ``reversed`` and hope for the best.

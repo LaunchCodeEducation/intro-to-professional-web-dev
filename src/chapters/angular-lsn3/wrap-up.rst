@@ -39,3 +39,46 @@ website. A good "next step" for your Angular learning would be to complete the
    skills and techniques. When you find an interesting topic on the Angular site,
    feel free to Google that topic and explore how other coders explain how to use
    it.
+
+Two Topics to Consider
+^^^^^^^^^^^^^^^^^^^^^^^
+
+In this chapter, we discussed *one-way* data binding. As the name suggests,
+*two-way* binding exits as well. We chose not to explore this idea because
+one-way tasks are more flexible and more frequently used. However, two-way
+binding can come in handy if you want data from an ``input`` element to
+automatically change a variable in the ``.ts`` file.
+
+A much larger idea involves passing data between different components in the
+same template. Passing data from a parent component to its children, from a
+child to the parent, or between children is VERY useful. Unfortunately, that
+topic is beyond the scope of these lessons.
+
+Try Googling "Passing data between Angular components", and explore several
+of the most recent results. Find one that best suits your learning style, and
+then create a simple template that includes parent-child communication. Also,
+the *Tour of Heros* tutorial uses component to component communication.
+
+If your future coding job involves Angular, you will most likely need to learn
+the skill.
+
+Components Should Be Re-used
+-----------------------------
+
+Recall that at their best, functions accomplish only ONE task. This makes them
+re-usable within the same program, or as a module accessible by many different
+programs. Components should behave in a similar manner. Each one should do just
+one simple thing and should be flexible enough to work within many different
+templates.
+
+The real power of a front end framework comes when you view components as
+reusable elements. With time and practice, you will build a collection of
+small, generic components. You can then combine these tools in different ways
+to build small or large sections of any new project. The Lego analogy works
+here---the same set of blocks can be combined in multiple ways to produce
+different outcomes. Also, if you need consistent results on multiple webpages,
+then you just put the components together the same way each time instead of
+writing new code.
+
+After you finish the following exercises and studio, consider how you could
+split the larger components into smaller, re-usable pieces.

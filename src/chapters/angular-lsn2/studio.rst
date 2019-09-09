@@ -99,6 +99,13 @@ If a crew member's ``firstMission`` property is ``true``, then display the text 
 
        Example of first mission status being shown.
 
+Add this code right after the member name in ``src/app/crew/crew.component.html``.
+
+.. sourcecode:: html+ng2
+   :linenos:
+
+   <span *ngIf="member.firstMission">- 1st</span>
+
 
 Add Crew Members
 ^^^^^^^^^^^^^^^^
@@ -157,6 +164,7 @@ so that the button appears next to each item in the crew list.
 
    <li *ngFor="let member of crew">
       {{member.name}}
+      <span *ngIf="member.firstMission">- 1st</span>
       <button (click)="remove(member)">remove</button>
    </li>
 
@@ -176,7 +184,7 @@ Edit Crew Members
 Finally we are going to allow the user to edit crew members who have already been added.
 
 1. If the crew member name is clicked, then their name should be replaced with a text input and a save button.
-2. When save is clicked the input and save button are replaced by the text only version of the name.
+2. When save is clicked, the input and save button are replaced by the text-only version of the name.
 3. Only one crew member can be edited at a time.
 
 .. figure:: figures/edit-crew-name.gif
@@ -194,6 +202,7 @@ We need to add a click event to the member name.
 
    <li *ngFor="let member of crew">
       <span (click)="edit(member)" class="editable-text">{{member.name}}</span>
+      <span *ngIf="member.firstMission">- 1st</span>
       <button (click)="remove(member)">remove</button>
    </li>
 
@@ -215,7 +224,7 @@ We need a way of knowing which crew is being edited.
 
 Now we need to add an ``*ngIf`` that will show the two versions of the member, the display state or the edit state.
 
-8. In the edit state an input box with a save button will appear, but for now the input and save won't have any functionality. Make your ``src/app/crew/crew.component.html`` file look like the below code.
+8. In the edit state, an input box with a save button will appear, but for now the input and save won't have any functionality. Make your ``src/app/crew/crew.component.html`` file look like the below code.
 
 .. sourcecode:: html+ng2
    :linenos:
@@ -245,7 +254,7 @@ Now we need to add an ``*ngIf`` that will show the two versions of the member, t
    <label>First mission<input #firstMission type="checkbox"/></label>
    <button (click)="add(name.value, firstMission.checked)">Add</button>
 
-Finally we are going to make the edit state update the member name when save is clicked.
+Finally, we are going to make the edit state update the member name when save is clicked.
 
 9. Update the ``<input>`` and ``<button>`` tags to look like:
 
