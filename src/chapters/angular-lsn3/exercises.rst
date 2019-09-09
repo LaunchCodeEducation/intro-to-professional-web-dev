@@ -109,28 +109,28 @@ Control Buttons
 Now, we'll add some event listeners to the three control buttons on the bottom of the page. 
 These listeners will reassign the values of ``color``, ``height``, ``width``, and ``message``.
 
-1. In ``app.component.html``, add an event listener to the *Take Off* button.
+#. In ``app.component.html``, add an event listener to the *Take Off* button.
 
-.. sourcecode:: html+ng2
-      
+   .. sourcecode:: html+ng2
+   
       <button (click) = "handleTakeOff()">Take Off</button>
 
-2. Back in ``app.component.ts``, we'll define this listener. The ``confirm()`` method will look the same as before, but this time we can use a few less lines of code to update the view.
+#. Back in ``app.component.ts``, we'll define this listener. The ``confirm()`` method will look the same as before, but this time we can use a few less lines of code to update the view.
 
-.. sourcecode:: TypeScript
-   :linenos:
+   .. sourcecode:: TypeScript
+      :linenos:
 
-   handleTakeOff() {
-      let result = window.confirm('Are you sure the shuttle is ready for takeoff?');
-      if (result) {
-         this.color = 'blue';
-         this.height = 10000;
-         this.width = 0;
-         this.message = 'Shuttle in flight.';
+      handleTakeOff() {
+         let result = window.confirm('Are you sure the shuttle is ready for takeoff?');
+         if (result) {
+            this.color = 'blue';
+            this.height = 10000;
+            this.width = 0;
+            this.message = 'Shuttle in flight.';
+         }
       }
-   }
 
-3. Follow the same pattern to handle the *Land* and *Abort Mission* click events.
+#. Follow the same pattern to handle the *Land* and *Abort Mission* click events.
 
 Movement Buttons
 ^^^^^^^^^^^^^^^^
@@ -148,34 +148,34 @@ But now, instead of using the ``getElementById`` method, we'll
 access the ``img`` element by passing it in to the click
 event.
 
-1. In ``app.component.html``, label the ``img`` element so we can reference it:
+#. In ``app.component.html``, label the ``img`` element so we can reference it:
 
-.. sourcecode:: html+ng2
-      
+   .. sourcecode:: html+ng2
+
       <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
 
-2. While you're here, add the click handler to the *Right* button:
+#. While you're here, add the click handler to the *Right* button:
 
-.. sourcecode:: html+ng2
-      
+   .. sourcecode:: html+ng2
+
       <button (click)="moveRocket(rocketImage, 'right')">Right</button>
 
-3. Now in ``app.component.ts`` we can write the ``moveRocket()``:
+#. Now in ``app.component.ts`` we can write the ``moveRocket()``:
 
-.. sourcecode:: TypeScript
-   :linenos:
+   .. sourcecode:: TypeScript
+      :linenos:
 
-   moveRocket(rocketImage, direction) {
-    if (direction === 'right') {
-      let movement = parseInt(rocketImage.style.left) + 10 + 'px';
-      rocketImage.style.left = movement;
-      this.width = this.width + 10000;
-    } 
-   }
+      moveRocket(rocketImage, direction) {
+         if (direction === 'right') {
+         let movement = parseInt(rocketImage.style.left) + 10 + 'px';
+         rocketImage.style.left = movement;
+         this.width = this.width + 10000;
+         } 
+      }
 
-4. Add conditional logic to this ``moveRocket()`` method to account for the other movement directions, modifying the
-movement formula as needed. Be sure to also update the ``height`` or ``width`` property
-where appropriate.
+#. Add conditional logic to this ``moveRocket()`` method to account for the other movement 
+   directions, modifying the movement formula as needed. Be sure to also update the 
+   ``height`` or ``width`` property where appropriate.
 
 Update the Control Button Click Handlers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,64 +196,65 @@ New Requirements
    off or abort the mission while the rocket is still on the ground. This 
    doesn't make much sense. With attribute directives, we can dynamically 
    set those buttons to only be enabled in some states.
+   
+   In ``app.component.ts``, let's add a check for the take off status of the shuttle.
 
-   Let's add a check for the take off status of the shuttle.
+   .. sourcecode:: TypeScript
 
-	.. sourcecode:: TypeScript
-	   :linenos:
-
-	   takeOffEnabled: true,
+      takeOffEnabled: true,
     
 
-2. When the app is first loaded, we want the user to be able to click the 
-   *Take Off* button, but not the *Land* or *Abort Mission* button. We'll 
-   add some ``[disabled]`` attribute directives on the control buttons to 
-   reflect these values.
+#. When the app is first loaded, we want the user to be able to click the *Take Off* 
+   button, but not the *Land* or *Abort Mission* button. We'll 
+   add some ``[disabled]`` attribute directives on the control buttons to reflect these 
+   values.
+   
+   In ``app.component.html``, update the control buttons:
 
-   Update the control buttons:
+   .. sourcecode:: html+ng2
+      :linenos:
 
-.. sourcecode:: html+ng2
-  :linenos:
-      
-  	<div class="container-control-buttons">
-    <button (click)="handleTakeOff()" [disabled]="!takeOffEnabled">Take Off</button>
-    <button (click)="handleLand(rocketImage)" [disabled]="takeOffEnabled">Land</button>
-    <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
-	</div>
+      <div class="container-control-buttons">
+         <button (click)="handleTakeOff()" [disabled]="!takeOffEnabled">Take Off</button>
+         <button (click)="handleLand(rocketImage)" [disabled]="takeOffEnabled">Land</button>
+         <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
+      </div>
 
-  Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button 
-  is enabled when the rocket is on the ground.
+   Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button is 
+   enabled when the rocket is on the ground.
 
-    Update the control button click handlers to toggle the enabled/disabled status 
-    of the controls using this value.
+   Update the control button click handlers to toggle the enabled/disabled status 
+   of the controls using this value.
 
-3. For another improvement, we shouldn't be able to move the rocket if it hasn't taken off. To toggle the status of
-the direction buttons, we could add more boolean checks to our component. However, we know we only
-want these buttons to be accessible when the *Take Off* button is not. We can therefore take advantage
-of this property we already defined to determine if the user can click the direction buttons.
+#. For another improvement, we shouldn't be able to move the rocket if it hasn't taken off. 
+   To toggle the status of the direction buttons, we could add more boolean checks to our 
+   component. However, we know we only want these buttons to be accessible when the 
+   *Take Off* button is not. We can therefore reuse ``takeOffEnabled`` to determine if the 
+   user can click the direction buttons.
 
-.. sourcecode:: html+ng2
-   :linenos:
-      
-   <button (click)="moveRocket(rocketImage, 'up')" [disabled]="takeOffEnabled">Up</button>
+   .. sourcecode:: html+ng2
+      :linenos:
+   
+      <button (click)="moveRocket(rocketImage, 'up')" [disabled]="takeOffEnabled">Up</button>
 
-In fact, since all four direction buttons share the same requirements for disablement, we can take
-advantage of our old friend ``ngIf`` to display the whole set based on ``takeOffEnabled``.
+   In fact, since all four direction buttons share the same requirements for disablement, 
+   we can take advantage of our old friend ``*ngIf`` to display the whole set based on 
+   ``takeOffEnabled``.
 
-.. sourcecode:: html+ng2
-   :linenos:
+   .. sourcecode:: html+ng2
+      :linenos:
 
-   <div *ngIf="!takeOffEnabled">
-      <button (click)="moveRocket(rocketImage, 'up')">Up</button>
-      <button (click)="moveRocket(rocketImage, 'down')">Down</button>
-      <button (click)="moveRocket(rocketImage, 'right')">Right</button>
-      <button (click)="moveRocket(rocketImage, 'left')">Left</button>
-   </div>
+      <div *ngIf="!takeOffEnabled">
+         <button (click)="moveRocket(rocketImage, 'up')">Up</button>
+         <button (click)="moveRocket(rocketImage, 'down')">Down</button>
+         <button (click)="moveRocket(rocketImage, 'right')">Right</button>
+         <button (click)="moveRocket(rocketImage, 'left')">Left</button>
+      </div>
 
-4. Lastly, let's change the shuttle's background color to a warning color if the rocket image gets too 
-close to the edge. Add a function to your component that will check the width and height values
-and changes the color value to orange if those values are too high or low. Call that function in each
-of the direction button click handlers.
+#. Lastly, let's change the shuttle's background color to a warning color if the rocket 
+   image gets too close to the edge. Add a function to your component that will check the 
+   width and height values and changes the color value to orange if those values are too 
+   high or low. Call that function in each of the direction button click handlers.
 
 
 Bonus Mission
