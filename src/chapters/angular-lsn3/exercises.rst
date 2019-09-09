@@ -49,7 +49,7 @@ The requirements are the same as before:
    1. A confirmation window should prompt the user if they really want to abort the mission. If the user wants to abort the mission, then add steps b-d.
    2. The flight status should change to "Mission aborted."
    3. The background color of the shuttle flight screen should change from blue to red.
-   4. The shuttle height should go do to 0.
+   4. The shuttle height should go down to 0.
 
 #. When the "Up", "Down", "Right", and "Left" buttons are clicked, the following should happen:
 
