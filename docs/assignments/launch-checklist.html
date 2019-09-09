@@ -90,41 +90,28 @@
 <p>Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
 The form should do the following:</p>
 <ol class="arabic simple">
-<li>Validate the form in JS based on responses</li>
-<li>Validate with JS before the form is submitted and use <code class="docutils literal notranslate"><span class="pre">preventDefault</span></code> if form submissions are not valid.</li>
-<li>Inform the user with validation messages before they submit</li>
-<li>Use CSS to indicate good/bad responses</li>
+<li>Validate the user responses with <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to insure the following:<ol class="arabic">
+<li>The user has entered something for every field.</li>
+<li>The user has entered text for names and numbers for fuel and cargo levels.</li>
+</ol>
+</li>
+<li>With validation, update a listing of what is currently ready for shuttle launch and not.</li>
+<li>Use CSS to indicate what is good and bad about the shuttle and whether it is ready for launch.</li>
 </ol>
 </div>
 <div class="section" id="setting-up-your-project-repository">
 <h2>Setting Up Your Project Repository<a class="headerlink" href="#setting-up-your-project-repository" title="Permalink to this headline">¶</a></h2>
-<p>In the directory where you have been keeping your code for the class, create a new directory for this graded assignment.</p>
-<p>Create 3 files in your assignment directory:</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">index.html</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">script.js</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">styles.css</span></code></li>
-</ol>
-<p>Set up a repository on your Github profile for your assignment and connect to your local directory.</p>
-</div>
-<div class="section" id="creating-the-form">
-<h2>Creating the Form<a class="headerlink" href="#creating-the-form" title="Permalink to this headline">¶</a></h2>
-<p>Your form should have the following fields:</p>
-<ol class="arabic simple">
-<li>Pilot’s name</li>
-<li>Copilot’s name</li>
-<li>Fuel levels</li>
-<li>Cargo weight</li>
-</ol>
+<p>Fork and clone the repository with the starter code.</p>
 </div>
 <div class="section" id="adding-validation">
 <h2>Adding Validation<a class="headerlink" href="#adding-validation" title="Permalink to this headline">¶</a></h2>
-<p>The name fields should be text.
+<p>Use <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> and an alert to notify the user if they have not filled out any of the fields.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> and an alert to notify the user if they have not entered the correct type of info.
+The name fields should be text.
 The fuel levels need to be a number.
 Cargo weight needs to be a number.</p>
-<p>If the user submits a form without one or more of the fields filled out, then have a pop up appear that tells the user all fields are required.</p>
-<p>If the user submits a fuel level that is too low, let the user know.</p>
-<p>If the user submits a cargo weight that is too heavy, let the user know.</p>
+<p>If the user submits a fuel level that is too low (less than 10,000 gallons), let the user know.</p>
+<p>If the user submits a cargo weight that is too heavy (more than 10,000 pounds), let the user know.</p>
 </div>
 <div class="section" id="styling-the-page">
 <h2>Styling the Page<a class="headerlink" href="#styling-the-page" title="Permalink to this headline">¶</a></h2>

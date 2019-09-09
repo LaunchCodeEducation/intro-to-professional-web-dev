@@ -7,46 +7,32 @@ Requirements
 Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
 The form should do the following:
 
-1. Validate the form in JS based on responses
-2. Validate with JS before the form is submitted and use ``preventDefault`` if form submissions are not valid.
-3. Inform the user with validation messages before they submit
-4. Use CSS to indicate good/bad responses
+1. Validate the user responses with ``preventDefault()`` to insure the following:
+
+   1. The user has entered something for every field.
+   2. The user has entered text for names and numbers for fuel and cargo levels.
+
+2. With validation, update a listing of what is currently ready for shuttle launch and not.
+3. Use CSS to indicate what is good and bad about the shuttle and whether it is ready for launch. 
 
 Setting Up Your Project Repository
 ----------------------------------
 
-In the directory where you have been keeping your code for the class, create a new directory for this graded assignment.
-
-Create 3 files in your assignment directory:
-
-1. ``index.html``
-2. ``script.js``
-3. ``styles.css``
-
-Set up a repository on your Github profile for your assignment and connect to your local directory.
-
-Creating the Form
------------------
-
-Your form should have the following fields:
-
-1. Pilot's name
-2. Copilot's name
-3. Fuel levels
-4. Cargo weight
+Fork and clone the repository with the starter code.
 
 Adding Validation
 -----------------
 
+Use ``preventDefault()`` and an alert to notify the user if they have not filled out any of the fields.
+
+Use ``preventDefault()`` and an alert to notify the user if they have not entered the correct type of info.
 The name fields should be text.
 The fuel levels need to be a number.
 Cargo weight needs to be a number.
 
-If the user submits a form without one or more of the fields filled out, then have a pop up appear that tells the user all fields are required.
+If the user submits a fuel level that is too low (less than 10,000 gallons), let the user know.
 
-If the user submits a fuel level that is too low, let the user know.
-
-If the user submits a cargo weight that is too heavy, let the user know.
+If the user submits a cargo weight that is too heavy (more than 10,000 pounds), let the user know.
 
 Styling the Page
 ----------------
