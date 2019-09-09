@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>30.6. Exercises: Angular, Part 3 &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="30.7. Studio: Angular, Part 3" href="studio.html" />
+    <link rel="prev" title="30.5. Angular Wrap-Up" href="wrap-up.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">30. Angular, Part 3</a></li>
+    <li class="active">30.6. Exercises: Angular, Part 3</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="exercises-angular-part-3">
+<h1>30.6. Exercises: Angular, Part 3<a class="headerlink" href="#exercises-angular-part-3" title="Permalink to this headline">¶</a></h1>
+<p>Remember that <a class="reference internal" href="../dom-and-events/studio.html#dom-studio"><span class="std std-ref">DOM and Events studio</span></a>? Let’s
+revisit this and do it again Angular-style.</p>
+<div class="section" id="starter-code">
+<h2>30.6.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
+<p>The starter code for the exercises is in the same
+<a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+that you cloned for the all of the Angular lessons.</p>
+<p>From the <code class="docutils literal notranslate"><span class="pre">lesson3</span></code> folder in VSCode, navigate into the
+<code class="docutils literal notranslate"><span class="pre">exercises/src/app/</span></code> folder. Open the
+<code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> files.</p>
+<p>In the terminal, navigate into the lesson 3 <code class="docutils literal notranslate"><span class="pre">exercises</span></code> folder. Enter
+<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to add the Angular modules, then run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>. When you
+open the webpage in your browser, it should look like this:</p>
+<blockquote>
+<div><div class="figure">
+<img alt="Initial view of the exercises app." src="../../_images/lesson3-exercises-initial-view.png" />
+</div>
+<p>Initial view of the exercises app</p>
+</div></blockquote>
+</div>
+<div class="section" id="the-requirements-review">
+<h2>30.6.2. The Requirements Review<a class="headerlink" href="#the-requirements-review" title="Permalink to this headline">¶</a></h2>
+<p>The requirements are the same as before:</p>
+<ol class="arabic simple">
+<li>When the “Take off” button is clicked, the following should happen:<ol class="arabic">
+<li>A confirmation window should let the user know “Confirm that the shuttle is ready for takeoff.” If the shuttle is ready for liftoff, then add steps b-d.</li>
+<li>The flight status should change to “Shuttle in flight.”</li>
+<li>The background color of the shuttle flight screen should change from green to blue.</li>
+<li>The shuttle height should increase by 10,000 km.</li>
+</ol>
+</li>
+<li>When the “Land” button is clicked, the following should happen:<ol class="arabic">
+<li>A window alert should let the user know “The shuttle is landing. Landing gear engaged.”</li>
+<li>The flight status should change to “The shuttle has landed.”</li>
+<li>The background color of the shuttle flight screen should change from blue to green.</li>
+<li>The shuttle height should go down to 0.</li>
+</ol>
+</li>
+<li>When the “Abort Mission” button is clicked, the following should happen:<ol class="arabic">
+<li>A confirmation window should prompt the user if they really want to abort the mission. If the user wants to abort the mission, then add steps b-d.</li>
+<li>The flight status should change to “Mission aborted.”</li>
+<li>The background color of the shuttle flight screen should change from blue to red.</li>
+<li>The shuttle height should go down to 0.</li>
+</ol>
+</li>
+<li>When the “Up”, “Down”, “Right”, and “Left” buttons are clicked, the following should happen:<ol class="arabic">
+<li>The rocket image should move 10 px in the direction of the button that was clicked.</li>
+<li>If the “Up” or “Down” buttons were clicked, then the shuttle height should increase or decrease by 10,000 km.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="add-attribute-directives-and-template-variables">
+<h2>30.6.3. Add Attribute Directives and Template Variables<a class="headerlink" href="#add-attribute-directives-and-template-variables" title="Permalink to this headline">¶</a></h2>
+<p>Open <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> and take a look. The <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">message</span></code> properties will all be used as template variables to dynamically
+update the view.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;Exercises: Angular Lesson 3&#39;</span><span class="p">;</span>
+
+   <span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">;</span>
+   <span class="nx">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="nx">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Space shuttle ready for takeoff!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="update-the-html">
+<h3>30.6.3.1. Update the HTML<a class="headerlink" href="#update-the-html" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, change line 5 to make use of <code class="docutils literal notranslate"><span class="pre">message</span></code>:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">message</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change line 19 to the following:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;shuttle-background&quot;</span> <span class="p">[</span><span class="na">style.backgroundColor</span><span class="p">]</span><span class="o">=</span><span class="s">“color”</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">height</span></code> property to determine the displayed height. Change line 31 as follows;</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">height</span><span class="cp">}}</span> km<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Refresh the page to ensure your template variables are assigned correctly.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="add-events-to-modify-directives">
+<h2>30.6.4. Add Events to Modify Directives<a class="headerlink" href="#add-events-to-modify-directives" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="control-buttons">
+<h3>30.6.4.1. Control Buttons<a class="headerlink" href="#control-buttons" title="Permalink to this headline">¶</a></h3>
+<p>Now, we’ll add some event listeners to the three control buttons on the bottom of the page.
+These listeners will reassign the values of <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, and <code class="docutils literal notranslate"><span class="pre">message</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, add an event listener to the <em>Take Off</em> button.</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;handleTakeOff()&quot;</span><span class="p">&gt;</span>Take Off<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, we’ll define this listener. The <code class="docutils literal notranslate"><span class="pre">confirm()</span></code> method will look the same as before, but this time we can use a few less lines of code to update the view.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">handleTakeOff() {</span>
+   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">&#39;Are you sure the shuttle is ready for takeoff?&#39;</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Shuttle in flight.&#39;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Follow the same pattern to handle the <em>Land</em> and <em>Abort Mission</em> click events.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="movement-buttons">
+<h3>30.6.4.2. Movement Buttons<a class="headerlink" href="#movement-buttons" title="Permalink to this headline">¶</a></h3>
+<p>Next, we’ll tackle the <code class="docutils literal notranslate"><span class="pre">Up</span></code>, <code class="docutils literal notranslate"><span class="pre">Down</span></code>, <code class="docutils literal notranslate"><span class="pre">Left</span></code>, and <code class="docutils literal notranslate"><span class="pre">Right</span></code> buttons that
+move the rocket. The <code class="docutils literal notranslate"><span class="pre">movement</span></code> formula is the same as we’ve used before:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">movement</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">img</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>But now, instead of using the <code class="docutils literal notranslate"><span class="pre">getElementById</span></code> method, we’ll
+access the <code class="docutils literal notranslate"><span class="pre">img</span></code> element by passing it in to the click
+event.</p>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, label the <code class="docutils literal notranslate"><span class="pre">img</span></code> element so we can reference it:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="p">#</span><span class="na">rocketImage</span><span class="p"> </span><span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/images/LaunchCode_rocketline_white.png&quot;</span> <span class="na">height </span><span class="o">=</span> <span class="s">&quot;75&quot;</span> <span class="na">width </span><span class="o">=</span> <span class="s">&quot;75&quot;</span> <span class="p">[</span><span class="na">style.left</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="p">[</span><span class="na">style.bottom</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">While you’re here, add the click handler to the <em>Right</em> button:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;moveRocket(rocketImage, &#39;right&#39;)&quot;</span><span class="p">&gt;</span>Right<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> we can write the <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code>:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">moveRocket</span><span class="p">(</span><span class="nx">rocketImage</span><span class="p">,</span> <span class="nx">direction</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">direction</span> <span class="o">===</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">movement</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+   <span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">movement</span><span class="p">;</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="mi">10000</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Add conditional logic to this <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code> method to account for the other movement
+directions, modifying the movement formula as needed. Be sure to also update the
+<code class="docutils literal notranslate"><span class="pre">height</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> property where appropriate.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="update-the-control-button-click-handlers">
+<h3>30.6.4.3. Update the Control Button Click Handlers<a class="headerlink" href="#update-the-control-button-click-handlers" title="Permalink to this headline">¶</a></h3>
+<p>Along those same lines, we’ll want to modify a couple of our control
+button handlers to update <code class="docutils literal notranslate"><span class="pre">rocketImage</span></code>’s position when the status
+changes. Pass in <code class="docutils literal notranslate"><span class="pre">rocketImage</span></code> to your <em>Land</em> and <em>Abort Mission</em>
+handlers and add the following:</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">rocketImage</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">=</span> <span class="s1">&#39;0px&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="new-requirements">
+<h2>30.6.5. New Requirements<a class="headerlink" href="#new-requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Right now, a user can move the rocket before it has officially taken
+off or abort the mission while the rocket is still on the ground. This
+doesn’t make much sense. With attribute directives, we can dynamically
+set those buttons to only be enabled in some states.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, let’s add a check for the take off status of the shuttle.</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">takeOffEnabled</span>: <span class="kt">true</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">When the app is first loaded, we want the user to be able to click the <em>Take Off</em>
+button, but not the <em>Land</em> or <em>Abort Mission</em> button. We’ll
+add some <code class="docutils literal notranslate"><span class="pre">[disabled]</span></code> attribute directives on the control buttons to reflect these
+values.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, update the control buttons:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-control-buttons&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleTakeOff()&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!takeOffEnabled&quot;</span><span class="p">&gt;</span>Take Off<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleLand(rocketImage)&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;takeOffEnabled&quot;</span><span class="p">&gt;</span>Land<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;handleMissionAbort(rocketImage)&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;takeOffEnabled&quot;</span><span class="p">&gt;</span>Abort Mission<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now, based on the boolean <code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code>, only the <em>Take Off</em> control button is
+enabled when the rocket is on the ground.</p>
+<p>Update the control button click handlers to toggle the enabled/disabled status
+of the controls using this value.</p>
+</li>
+<li><p class="first">For another improvement, we shouldn’t be able to move the rocket if it hasn’t taken off.
+To toggle the status of the direction buttons, we could add more boolean checks to our
+component. However, we know we only want these buttons to be accessible when the
+<em>Take Off</em> button is not. We can therefore reuse <code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code> to determine if the
+user can click the direction buttons.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;moveRocket(rocketImage, &#39;up&#39;)&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;takeOffEnabled&quot;</span><span class="p">&gt;</span>Up<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>In fact, since all four direction buttons share the same requirements for disablement,
+we can take advantage of our old friend <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to display the whole set based on
+<code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;!takeOffEnabled&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;moveRocket(rocketImage, &#39;up&#39;)&quot;</span><span class="p">&gt;</span>Up<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;moveRocket(rocketImage, &#39;down&#39;)&quot;</span><span class="p">&gt;</span>Down<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;moveRocket(rocketImage, &#39;right&#39;)&quot;</span><span class="p">&gt;</span>Right<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;moveRocket(rocketImage, &#39;left&#39;)&quot;</span><span class="p">&gt;</span>Left<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Lastly, let’s change the shuttle’s background color to a warning color if the rocket
+image gets too close to the edge. Add a function to your component that will check the
+width and height values and changes the color value to orange if those values are too
+high or low. Call that function in each of the direction button click handlers.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-mission">
+<h2>30.6.6. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Just like the original studio, change the code to prevent the rocket image from flying off the colored background.</li>
+<li>Dynamically adjust the enabled/disabled status of the direction buttons based on the position of the rocket.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="wrap-up.html"><span aria-hidden="true">&larr;</span> 30.5. Angular Wrap-Up</a></li>
+        
+        
+        <li class="next"><a href="studio.html">30.7. Studio: Angular, Part 3 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
