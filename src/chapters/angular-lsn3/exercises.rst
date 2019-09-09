@@ -76,26 +76,28 @@ update the view.
       message = 'Space shuttle ready for takeoff!';
    }
 
-In ``app.component.html``, change line 19 to the following:
+Update the HTML
+^^^^^^^^^^^^^^^
 
-.. sourcecode:: html+ng2
-      
-      <div class="shuttle-background" [style.backgroundColor]=“color”>
-
-Use the ``height`` property to determine the 
-displayed height. Change line 31 as follows;
-
-.. sourcecode:: html+ng2
-      
-      <p>{{height}}</p><p> miles</p>
-
-Finally, change line 5 to make use of ``message``.
+1. In ``app.component.html``, change line 5 to make use of ``message``:
 
 .. sourcecode:: html+ng2
       
       <p>{{message}}</p>
 
-Refresh the page to ensure your template variables are assigned correctly.
+2. Change line 19 to the following:
+
+.. sourcecode:: html+ng2
+      
+      <div class="shuttle-background" [style.backgroundColor]=“color”>
+
+3. Use the ``height`` property to determine the displayed height. Change line 31 as follows;
+
+.. sourcecode:: html+ng2
+      
+      <p>{{height}}</p><p> miles</p>
+
+4. Refresh the page to ensure your template variables are assigned correctly.
 
 
 Add Events to Modify Directives
