@@ -125,58 +125,44 @@ that describes the <code class="docutils literal notranslate"><span class="pre">
 <div class="section" id="npm-command-line-interface-cli">
 <h2>13.3.2. NPM Command Line Interface (CLI)<a class="headerlink" href="#npm-command-line-interface-cli" title="Permalink to this headline">¶</a></h2>
 <p>The NPM command line tool, <strong>CLI</strong>, is installed with Node. The NPM CLI is used
-in a computer’s terminal to install modules into a Node project. Before we can
-talk more about the NPM CLI, however, we need to discuss repl.it and NPM.</p>
-<p>We have coded many Node projects inside of repl.it. Repl.it is great. It allows
-us to simulate a development environment WITHOUT having to install any software
-on our computers. As such, it automatically handles much of the work for
-installing external modules.</p>
-<p>Let’s examine how using the CLI is different when using repl.it.</p>
-</div>
-<div class="section" id="cli-with-local-development-environment">
-<h2>13.3.3. CLI With Local Development Environment<a class="headerlink" href="#cli-with-local-development-environment" title="Permalink to this headline">¶</a></h2>
-<p>The following describes the steps for working with NPM outside of repl.it. Do
-not worry about following along. We are simply reviewing these to familiarize
-you with the general process.</p>
-<ol class="arabic simple">
-<li><a class="reference external" href="https://nodejs.org/en/download/" target="_blank">Install Node on your computer<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which
-also installs the NPM CLI tool.</li>
-<li>Use the CLI tool in a terminal to install modules into your local project.
-The syntax is <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code>, and running it downloads the
-module to your computer and adds an entry into a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file.
-This entry indicates that your project depends on the module called
-<code class="docutils literal notranslate"><span class="pre">package_name</span></code>.</li>
-<li>More detailed instructions can be found in the
-<a class="reference external" href="https://docs.npmjs.com/downloading-and-installing-packages-locally" target="_blank">NPM documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-</ol>
+in a computer’s <em>terminal</em> to install modules into a Node project. There is no
+need to panic! You will learn how to use the terminal in a later chapter.</p>
+<p>For now, recall that we coded many Node projects inside of repl.it, which
+allows us to simulate a development environment WITHOUT having to install any
+software on our computers. As such, repl.it automatically handles much of the
+work of installing external modules.</p>
+<p>Instead of typing commands into this mysterious “Terminal” thing, repl.it adds
+modules in a more user-friendly manner.</p>
 </div>
 <div class="section" id="npm-cli-with-repl-it">
-<h2>13.3.4. NPM CLI With repl.it<a class="headerlink" href="#npm-cli-with-repl-it" title="Permalink to this headline">¶</a></h2>
-<p>NOW you can follow along, because you use repl.it frequently.</p>
+<h2>13.3.3. NPM CLI With repl.it<a class="headerlink" href="#npm-cli-with-repl-it" title="Permalink to this headline">¶</a></h2>
+<p>Login to your repl.it account, fork <a class="reference external" href="https://repl.it/&#64;launchcode/npm-with-replit-starter" target="_blank">this example<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+and then follow these instructions:</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Fork this <a class="reference external" href="https://repl.it/&#64;launchcode/npm-with-replit-starter" target="_blank">example repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-<p>Since we are in repl.it, we can skip NPM CLI. Instead, we will use the
-repl.it interface to add the modules we want.</p>
-<ol class="arabic simple">
-<li>Click on the Packages icon in the left menu (it looks like a box).</li>
-<li>Enter “readline-sync” in the search box.</li>
-<li>Click on the top matching result.</li>
-</ol>
+<p>We will use the repl.it interface to add new modules to a project.</p>
+<ol class="last arabic">
+<li><p class="first">Click on the Packages icon in the left menu (it looks like a box).</p>
+</li>
+<li><p class="first">Enter “readline-sync” in the search box.</p>
+</li>
+<li><p class="first">Click on the top matching result.</p>
 <div class="figure">
 <img alt="../../_images/replit-search-for-module.png" src="../../_images/replit-search-for-module.png" />
 </div>
-<ol class="arabic simple">
-<li>Verify this is the module you want, then click on the plus icon.</li>
-</ol>
+</li>
+<li><p class="first">Verify this is the module you want, then click on the plus icon.</p>
 <div class="figure">
 <img alt="../../_images/replit-add-module.png" src="../../_images/replit-add-module.png" />
 </div>
-<p>Clicking the plus icon adds a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file that includes a
+</li>
+<li><p class="first">Clicking the plus icon adds a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file that includes a
 dependency listing for <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>.</p>
-<div class="last figure">
+<div class="figure">
 <img alt="../../_images/replit-package-json-added.png" src="../../_images/replit-package-json-added.png" />
 </div>
+</li>
+</ol>
 </div>
 <p>Even though we added <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> to <code class="docutils literal notranslate"><span class="pre">package.json</span></code>, our code still
 fails because <code class="docutils literal notranslate"><span class="pre">input</span></code> is not defined. The final step of requiring
