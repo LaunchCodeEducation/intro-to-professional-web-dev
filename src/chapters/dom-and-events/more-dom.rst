@@ -104,7 +104,7 @@ Check Your Understanding
 
    .. sourcecode:: js
 
-    let response = window.confirm("String message")
+    let response = window.confirm("String message");
 
 .. admonition:: Question
 

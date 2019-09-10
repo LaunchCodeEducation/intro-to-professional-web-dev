@@ -7,3 +7,4 @@ Setting up Software for the Class
    setting-up-terminal
    setting-up-vsc
    setting-up-git
+   setting-up-node

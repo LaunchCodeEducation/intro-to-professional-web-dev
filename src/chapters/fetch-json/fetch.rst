@@ -306,5 +306,5 @@ Check Your Understanding
    What is the correct syntax for ``fetch``?
 
    a. ``fetch("GET", "https://api.url").then(...);``
-   b. ``fetch("https://api.url").doStuff(...)``
+   b. ``fetch("https://api.url").doStuff(...);``
    c. ``fetch("https://api.url").then(...);``

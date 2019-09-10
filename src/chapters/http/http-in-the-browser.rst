@@ -57,5 +57,4 @@ Check Your Understanding
    For the first screenshot on this page, answer these questions:
 
    #. What is its file name?
-   #. How large is it? 
-   #. When was the file last modified?   
+   #. How large is it?   
