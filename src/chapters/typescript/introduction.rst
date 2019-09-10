@@ -30,8 +30,7 @@ on your computer, you need to install some specific software.
    :ref:`Visual Studio Code <vsc-install>` on your machine.
 #. :ref:`Install Node on your computer <node-install>`, which also installs the
    NPM Command Line Interface (CLI). We discussed this briefly in the
-   :ref:`Modules <npm-cli>` chapter, but now you are ready to use the tool
-   outside of the automatic structure provided by repl.it.
+   :ref:`Modules <npm-cli>` chapter.
 
 The NPM CLI tool provides you with an efficient and deliberate way to install
 other software and modules onto your computer. As you proceed through the next

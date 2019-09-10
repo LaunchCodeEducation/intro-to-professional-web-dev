@@ -59,9 +59,6 @@ allows us to simulate a development environment WITHOUT having to install any
 software on our computers. As such, repl.it automatically handles much of the
 work of installing external modules.
 
-Instead of typing commands into this mysterious "Terminal" thing, repl.it adds
-modules in a more user-friendly manner.
-
 NPM CLI With repl.it
 ---------------------
 
