@@ -278,7 +278,8 @@ in ``app.component.html``.
 
       Save your code and refresh the page. How does its appearance change?
 
-   #. What happens if we use TWO ``<app-header>`` elements? Try it to find out.
+   #. What happens if we use TWO ``<app-header>`` elements in ``app.component.html``?
+      Try it to find out.
 
       .. sourcecode:: html
          :linenos:
