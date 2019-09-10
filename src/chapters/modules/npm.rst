@@ -45,63 +45,44 @@ you can search for a module by name or desired functionality.
 
    .. figure:: ./figures/readline-sync-npm-page.png
 
+.. _npm-cli:
+
 NPM Command Line Interface (CLI)
 ---------------------------------
 
 The NPM command line tool, **CLI**, is installed with Node. The NPM CLI is used
-in a computer's terminal to install modules into a Node project. Before we can
-talk more about the NPM CLI, however, we need to discuss repl.it and NPM.
+in a computer's *terminal* to install modules into a Node project. There is no
+need to panic! You will learn how to use the terminal in a later chapter.
 
-We have coded many Node projects inside of repl.it. Repl.it is great. It allows
-us to simulate a development environment WITHOUT having to install any software
-on our computers. As such, it automatically handles much of the work for
-installing external modules.
-
-Let's examine how using the CLI is different when using repl.it.
-
-CLI With Local Development Environment
----------------------------------------
-
-The following describes the steps for working with NPM outside of repl.it. Do
-not worry about following along. We are simply reviewing these to familiarize
-you with the general process.
-
-#. `Install Node on your computer <https://nodejs.org/en/download/>`__, which
-   also installs the NPM CLI tool.
-#. Use the CLI tool in a terminal to install modules into your local project.
-   The syntax is ``npm install <package_name>``, and running it downloads the
-   module to your computer and adds an entry into a ``package.json`` file.
-   This entry indicates that your project depends on the module called
-   ``package_name``.
-#. More detailed instructions can be found in the
-   `NPM documentation <https://docs.npmjs.com/downloading-and-installing-packages-locally>`__.
+For now, recall that we coded many Node projects inside of repl.it, which
+allows us to simulate a development environment WITHOUT having to install any
+software on our computers. As such, repl.it automatically handles much of the
+work of installing external modules.
 
 NPM CLI With repl.it
 ---------------------
 
-NOW you can follow along, because you use repl.it frequently.
+Login to your repl.it account, fork `this example <https://repl.it/@launchcode/npm-with-replit-starter>`__,
+and then follow these instructions:
 
 .. admonition:: Example
 
-   Fork this `example repl.it <https://repl.it/@launchcode/npm-with-replit-starter>`_.
-
-   Since we are in repl.it, we can skip NPM CLI. Instead, we will use the
-   repl.it interface to add the modules we want.
+   We will use the repl.it interface to add new modules to a project.
 
    #. Click on the Packages icon in the left menu (it looks like a box).
    #. Enter "readline-sync" in the search box.
    #. Click on the top matching result.
 
-   .. figure:: ./figures/replit-search-for-module.png
+      .. figure:: ./figures/replit-search-for-module.png
 
    #. Verify this is the module you want, then click on the plus icon.
 
-   .. figure:: ./figures/replit-add-module.png
+      .. figure:: ./figures/replit-add-module.png
 
-   Clicking the plus icon adds a ``package.json`` file that includes a
-   dependency listing for ``readline-sync``.
+   #. Clicking the plus icon adds a ``package.json`` file that includes a
+      dependency listing for ``readline-sync``.
 
-   .. figure:: ./figures/replit-package-json-added.png
+      .. figure:: ./figures/replit-package-json-added.png
 
 Even though we added ``readline-sync`` to ``package.json``, our code still
 fails because ``input`` is not defined. The final step of requiring
