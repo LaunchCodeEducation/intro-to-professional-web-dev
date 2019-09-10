@@ -13,9 +13,12 @@ Using Jasmine
 .. index::
    single: Jasmine; installing
 
-Jasmine is an npm module that can be installed like any other npm module via ``npm install``. In this chapter we will continue to use
-repl.it which, automatically installs npm modules when the program is run. For a review of how to install npm modules on your computer
-see the :ref:`Modules chapter <modules-index>`.
+Jasmine is an npm module that can be installed and used in a manner similar to
+``readline-sync``. Usually, Jasmine must be manually installed into a project,
+but we do not need to learn how to do this yet.
+
+In this chapter we will continue to use repl.it, which automatically installs
+npm modules when it runs a program that contains a ``require`` statement.
 
 .. admonition:: Try It!
 
