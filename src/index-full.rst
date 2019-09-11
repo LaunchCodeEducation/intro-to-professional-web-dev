@@ -80,6 +80,7 @@ Assignments
    assignments/scrabble-scorer
    assignments/mars-rover
    assignments/html-me-something
+   assignments/orbit-report
 
 Appendices
 ^^^^^^^^^^
