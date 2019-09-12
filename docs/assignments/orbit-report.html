@@ -85,77 +85,87 @@
     
   <div class="section" id="assignment-6-orbit-report">
 <h1>Assignment #6: Orbit Report<a class="headerlink" href="#assignment-6-orbit-report" title="Permalink to this headline">¶</a></h1>
-<p>TODO: Summary of the assignment. Define satellite.</p>
-<p>TODO: screen shot of finished report in the browser</p>
+<p>There are thousands of satellites oribiting the earth. You are tasked with creating a searchable, sortable table of satellites.
+For the purposes of this assigment, <strong>satellite</strong> will be defined as any objects that were purposefully placed into orbit.</p>
+<p>TODO: screen shot of finished report in the browser with numbers by each feature</p>
+<ol class="arabic simple">
+<li><strong>Satellites</strong>: Table with each row being a satellite.</li>
+<li><strong>Counts:</strong> Count of all satellites and count for each type of satellite.</li>
+<li><strong>Search form:</strong> Text entered limits results based on matches. Pressing enter or clicking button triggers search.</li>
+<li><strong>Sortable columns:</strong> The name and type column headers can be clicked, which will sort the table using that property.</li>
+</ol>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>create a new project on github named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code></li>
-<li>clone that repo to your computer</li>
-<li>create a new angular project in that cloned repo folder<ul>
-<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">new</span> <span class="pre">orbit-report</span></code></li>
-<li>(put answers to prompted questions: css, no routing)</li>
+<ol class="arabic simple">
+<li>Create a new project on github named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code>.</li>
+<li>Clone that repo to your computer.</li>
+<li>Create a new Angular project in the cloned repo folder using this command.<ul>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">new</span> <span class="pre">--skip-git</span> <span class="pre">orbit-report</span></code></li>
+<li>It’s important to include the <code class="docutils literal notranslate"><span class="pre">--skip-git</span></code> because we don’t want Angular to create a git repo for us.</li>
+<li>Prompt answers: No Routing, Use CSS</li>
 </ul>
 </li>
-<li>push your changes to your remote repo</li>
-</ul>
+<li>Commit and push your changes to github.</li>
+</ol>
 </div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="define-and-create-satellites">
-<h3>Define and Create Satellites<a class="headerlink" href="#define-and-create-satellites" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>create <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class<ul>
-<li>I’m not 100% sure on the properites yet</li>
-</ul>
-</li>
-<li>Define arrays of Satellites in <code class="docutils literal notranslate"><span class="pre">src/app/app.component.ts</span></code><ul>
-<li><code class="docutils literal notranslate"><span class="pre">displayList:</span> <span class="pre">Satellite[];</span></code></li>
+<h3>1) Define and Create Satellites<a class="headerlink" href="#define-and-create-satellites" title="Permalink to this headline">¶</a></h3>
+<p>In JavaScript, TypeScript, and Angular projects you can create classes to represent entities in the project.
+For this project you need to create a class named <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> to represent, you guessed it, a satellite. The <code class="docutils literal notranslate"><span class="pre">Satellite</span></code>
+class needs to define the properties needed to accurately represent a satellite.</p>
+<ol class="arabic simple">
+<li>In terminal go to the <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code> folder</li>
+<li>Create a the class with command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">g</span> <span class="pre">class</span> <span class="pre">Satellite</span></code></li>
+<li>Notice that the new file <code class="docutils literal notranslate"><span class="pre">orbit-report/src/app/satellite.ts</span></code> was created.</li>
+<li>Add these properties to the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class in <code class="docutils literal notranslate"><span class="pre">satellite.ts</span></code>:</li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="nx">orbitType</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="nx">type</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="nx">operational</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">;</span>
+<span class="nx">launchDate</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Add a constructor that has this method signature:</li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">launchDate</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">orbitType</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">operational</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we need to use the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class to create an initial array of <a href="#id1"><span class="problematic" id="id2">``</span></a>Satellite``s.</p>
+<ol class="arabic simple" start="6">
+<li>Define an array named <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>.<ul>
 <li><code class="docutils literal notranslate"><span class="pre">sourceList:</span> <span class="pre">Satellite[];</span></code></li>
+<li>For this to compile, you must add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">{</span> <span class="pre">Satellite</span> <span class="pre">}</span> <span class="pre">from</span> <span class="pre">'./satellite';</span></code> to the top of the file.</li>
 </ul>
 </li>
-</ul>
+<li>In the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> set <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> to be an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects.</li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;SiriusXM&quot;</span><span class="p">,</span> <span class="s2">&quot;Communication&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-03-21&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;Cat Scanner&quot;</span><span class="p">,</span> <span class="s2">&quot;Imaging&quot;</span><span class="p">,</span> <span class="s2">&quot;2012-01-05&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;Weber Grill&quot;</span><span class="p">,</span> <span class="s2">&quot;Space Debris&quot;</span><span class="p">,</span> <span class="s2">&quot;2001-11-01&quot;</span><span class="p">,</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">),</span>
+      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;GPS 938&quot;</span><span class="p">,</span> <span class="s2">&quot;Positioning&quot;</span><span class="p">,</span> <span class="s2">&quot;2001-11-01&quot;</span><span class="p">,</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;ISS&quot;</span><span class="p">,</span> <span class="s2">&quot;Space Station&quot;</span><span class="p">,</span> <span class="s2">&quot;1998-11-20&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+   <span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>In termainl run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code></li>
+<li>At this point you should see the default Angular starter page. Check the build output and console for any errors.</li>
+</ol>
 </div>
 <div class="section" id="display-table-of-satellites">
-<h3>Display Table of Satellites<a class="headerlink" href="#display-table-of-satellites" title="Permalink to this headline">¶</a></h3>
+<h3>2) Display Table of Satellites<a class="headerlink" href="#display-table-of-satellites" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>create <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component<ul>
 <li><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">component</span> <span class="pre">orbit-list</span></code></li>
 </ul>
 </li>
-<li>Add this CSS to file <code class="docutils literal notranslate"><span class="pre">orbit-list.component.css</span></code></li>
-</ul>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>.sortable {
-    cursor: pointer;
-    color: #dd5;
-}
-
-.warning {
-    background-color: #da8a8a;
-}
-
-table {
-  color: #111;
-  border-radius: .4em;
-  overflow: hidden;
-  margin: 1em 0;
-  min-width: 300px;
-  background: #dad8d8;
-}
-
-.header-row {
-    background: #34495E;
-    color: #fff
-}
-
-th, td {
-    text-align: left;
-    margin: .5em 1em;
-    padding: 1em;
-}
-</pre></div>
-</div>
-<ul class="simple">
 <li>Satellite list (using array first, fetch and json later)<ul>
 <li>In <code class="docutils literal notranslate"><span class="pre">ngOnInit</span></code> set <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> to be an array that contains satellites created using <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Satellite()</span></code></li>
 <li>Set the display list to be a copy of the source list. <code class="docutils literal notranslate"><span class="pre">this.displayList</span> <span class="pre">=</span> <span class="pre">this.sourceList.slice()</span></code></li>
@@ -169,10 +179,20 @@ th, td {
 <li>Create a table with each row being a satellite.</li>
 </ul>
 </li>
+<li>Copy css from <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into app.component.css</li>
+<li>Copy css from <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into index.html in a style tag</li>
 </ul>
 </div>
-<div class="section" id="highlight-space-junk">
-<h3>Highlight Space Junk<a class="headerlink" href="#highlight-space-junk" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fetch-satellite-data">
+<h3>3) Fetch Satellite Data<a class="headerlink" href="#fetch-satellite-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">ngOnInit</span></code> in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> add a <code class="docutils literal notranslate"><span class="pre">fetch</span></code> to this URL <a class="reference external" href="https://api.myjson.com/bins/103ku9" target="_blank">https://api.myjson.com/bins/103ku9<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Populate <code class="docutils literal notranslate"><span class="pre">displayList</span></code> with the results that come back from the fetch</li>
+<li>This replaces the hardcoded array of Satellites you had been using</li>
+</ul>
+</div>
+<div class="section" id="highlight-space-debris">
+<h3>Highlight Space Debris<a class="headerlink" href="#highlight-space-debris" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Add a <code class="docutils literal notranslate"><span class="pre">isSpaceJunk</span></code> method to the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class.</li>
 <li>Use that method to add a <code class="docutils literal notranslate"><span class="pre">waring</span></code> css class to the Type column<ul>
@@ -239,18 +259,18 @@ th, td {
 </li>
 </ul>
 </div>
-<div class="section" id="fetch-satellite-data">
-<h3>Fetch Satellite Data<a class="headerlink" href="#fetch-satellite-data" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">ngOnInit</span></code> in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> add a <code class="docutils literal notranslate"><span class="pre">fetch</span></code> to this URL <a class="reference external" href="https://api.myjson.com/bins/103ku9" target="_blank">https://api.myjson.com/bins/103ku9<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>Populate <code class="docutils literal notranslate"><span class="pre">displayList</span></code> with the results that come back from the fetch</li>
-<li>This replaces the hardcoded array of Satellites you had been using</li>
-</ul>
+<div class="section" id="counting-satellites">
+<h3>Counting Satellites<a class="headerlink" href="#counting-satellites" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Create a <code class="docutils literal notranslate"><span class="pre">orbit-counts</span></code> component</li>
+<li>Copy css from <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into orbit-counts.component.css</li>
+<li>TODO: tell them what to do</li>
+</ol>
 </div>
 </div>
 <div class="section" id="bonus-mission">
 <h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
-<p>TODO: do these</p>
+<p>Sort feature should also find matches using the <code class="docutils literal notranslate"><span class="pre">orbitType</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> properties.</p>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>

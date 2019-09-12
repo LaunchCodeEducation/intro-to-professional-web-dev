@@ -1,73 +1,88 @@
 Assignment #6: Orbit Report
 ===========================
-TODO: Summary of the assignment. Define satellite.
+There are thousands of satellites oribiting the earth. You are tasked with creating a searchable, sortable table of satellites.
+For the purposes of this assigment, **satellite** will be defined as any objects that were purposefully placed into orbit.
 
-TODO: screen shot of finished report in the browser
+TODO: screen shot of finished report in the browser with numbers by each feature
+
+1. **Satellites**: Table with each row being a satellite.
+2. **Counts:** Count of all satellites and count for each type of satellite.
+3. **Search form:** Text entered limits results based on matches. Pressing enter or clicking button triggers search.
+4. **Sortable columns:** The name and type column headers can be clicked, which will sort the table using that property.
+
 
 Setup
 -----
-* create a new project on github named ``orbit-report``
-* clone that repo to your computer
-* create a new angular project in that cloned repo folder
 
-  * ``$ ng new orbit-report``
-  * (put answers to prompted questions: css, no routing)
-* push your changes to your remote repo
+1. Create a new project on github named ``orbit-report``.
+2. Clone that repo to your computer.
+3. Create a new Angular project in the cloned repo folder using this command.
+
+   * ``$ ng new --skip-git orbit-report``
+   * It's important to include the ``--skip-git`` because we don't want Angular to create a git repo for us.
+   * Prompt answers: No Routing, Use CSS
+
+4. Commit and push your changes to github.
+
 
 Requirements
 ------------
 
-Define and Create Satellites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* create ``Satellite`` class
+1) Define and Create Satellites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In JavaScript, TypeScript, and Angular projects you can create classes to represent entities in the project.
+For this project you need to create a class named ``Satellite`` to represent, you guessed it, a satellite. The ``Satellite``
+class needs to define the properties needed to accurately represent a satellite.
 
-  * I'm not 100% sure on the properites yet
+1. In terminal go to the ``orbit-report`` folder
+2. Create a the class with command ``$ ng g class Satellite``
+3. Notice that the new file ``orbit-report/src/app/satellite.ts`` was created.
+4. Add these properties to the ``Satellite`` class in ``satellite.ts``:
 
-* Define arrays of Satellites in ``src/app/app.component.ts``
+.. sourcecode:: js
 
-  * ``displayList: Satellite[];``
-  * ``sourceList: Satellite[];``
+   name: string;
+   orbitType: string;
+   type: string;
+   operational: boolean;
+   launchDate: string;
+
+5. Add a constructor that has this method signature:
+
+.. sourcecode:: js
+
+   constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean)
+
+Now we need to use the ``Satellite`` class to create an initial array of ``Satellite``s.
+
+6. Define an array named ``sourceList`` in ``app.component.ts``.
+
+   * ``sourceList: Satellite[];``
+   * For this to compile, you must add ``import { Satellite } from './satellite';`` to the top of the file.
+
+7. In the ``constructor`` in ``app.component.ts`` set ``sourceList`` to be an array of ``Satellite`` objects.
+
+.. sourcecode:: js
+
+   constructor() {
+      this.sourceList = [
+         new Satellite("SiriusXM", "Communication", "2009-03-21", "LOW", true),
+         new Satellite("Cat Scanner", "Imaging", "2012-01-05", "LOW", true),
+         new Satellite("Weber Grill", "Space Debris", "2001-11-01", "HIGH", false),
+         new Satellite("GPS 938", "Positioning", "2001-11-01", "HIGH", true),
+         new Satellite("ISS", "Space Station", "1998-11-20", "LOW", true),
+      ];
+   }
+
+8. In termainl run ``ng serve``
+9. At this point you should see the default Angular starter page. Check the build output and console for any errors.
 
 
-Display Table of Satellites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2) Display Table of Satellites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * create ``orbit-list`` component
 
   * ``ng g component orbit-list``
-
-* Add this CSS to file ``orbit-list.component.css``
-
-.. sourcecode:: html
-
-  .sortable {
-      cursor: pointer;
-      color: #dd5;
-  }
-
-  .warning {
-      background-color: #da8a8a;
-  }
-
-  table {
-    color: #111;
-    border-radius: .4em;
-    overflow: hidden;
-    margin: 1em 0;
-    min-width: 300px;
-    background: #dad8d8;
-  }
-
-  .header-row {
-      background: #34495E;
-      color: #fff
-  }
-
-  th, td {
-      text-align: left;
-      margin: .5em 1em;
-      padding: 1em;
-  }
-
 
 * Satellite list (using array first, fetch and json later)
 
@@ -82,14 +97,23 @@ Display Table of Satellites
 
   * Create a table with each row being a satellite.
 
+* Copy css from https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6 and put it into app.component.css
+* Copy css from https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6 and put it into index.html in a style tag
 
-Highlight Space Junk
-^^^^^^^^^^^^^^^^^^^^
+
+3) Fetch Satellite Data
+^^^^^^^^^^^^^^^^^^^^^^^
+* In ``ngOnInit`` in ``AppComponent`` add a ``fetch`` to this URL https://api.myjson.com/bins/103ku9
+* Populate ``displayList`` with the results that come back from the fetch
+* This replaces the hardcoded array of Satellites you had been using
+
+
+Highlight Space Debris
+^^^^^^^^^^^^^^^^^^^^^^
 * Add a ``isSpaceJunk`` method to the ``Satellite`` class.
 * Use that method to add a ``waring`` css class to the Type column
 
   * ``[class.warning]="satellite.isSpaceJunk()"``
-
 
 Sorting
 ^^^^^^^
@@ -136,15 +160,16 @@ Searching
   * TODO: define matches. Give them the algorithm. Maybe even give them the code
 
 
-Fetch Satellite Data
-^^^^^^^^^^^^^^^^^^^^
-* In ``ngOnInit`` in ``AppComponent`` add a ``fetch`` to this URL https://api.myjson.com/bins/103ku9
-* Populate ``displayList`` with the results that come back from the fetch
-* This replaces the hardcoded array of Satellites you had been using
+Counting Satellites
+^^^^^^^^^^^^^^^^^^^
+#. Create a ``orbit-counts`` component
+#. Copy css from https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6 and put it into orbit-counts.component.css
+#. TODO: tell them what to do
+
 
 Bonus Mission
 -------------
-TODO: do these
+Sort feature should also find matches using the ``orbitType`` and ``type`` properties.
 
 
 Submitting Your Work
