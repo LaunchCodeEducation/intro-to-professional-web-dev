@@ -75,19 +75,28 @@ Now we need to use the ``Satellite`` class to create an initial array of ``Satel
    }
 
 8. In termainl run ``ng serve``
-9. At this point you should see the default Angular starter page. Check the build output and console for any errors.
+9. View the app in your browser. At this point you should see the default Angular starter page. If you don't, check the build output and browser console for any errors.
 
 
 2) Display Table of Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* create ``orbit-list`` component
+Now that you have an array of ``Satellite`` objects, you can display them. To do that, you are going to need to create a
+new component named ``oribit-list``.
 
-  * ``ng g component orbit-list``
+1. Create ``orbit-list`` component using ``$ ng g component orbit-list``
+2. Completely wipe out the contents of ``app.component.html``
+3. Use ``<app-orbit-list></app-orbit-list>`` in ``app.component.html``
+4. View the app in your browser. You should see: orbit-list works!
 
-* Satellite list (using array first, fetch and json later)
+You declared an array of ``Satellite``s in ``app.component.ts`` named ``sourceList``. The reason you were instructed to
+declare the array there, was so that the ``sourceList`` array could be is going to be used by two different components.
 
-  * In ``ngOnInit`` set ``sourceList`` to be an array that contains satellites created using ``new Satellite()``
-  * Set the display list to be a copy of the source list. ``this.displayList = this.sourceList.slice()``
+* tell more about why data is shared
+* introduce the syntax of passing in the data
+
+  * run it without adding the property to the compoment. have the student see the error
+
+* then add the @Input property to component
 
 * In ``app.component.html`` pass in the list of satellites to ``<app-orbit-list>`` via ``[satellites]="displayList"``
 
