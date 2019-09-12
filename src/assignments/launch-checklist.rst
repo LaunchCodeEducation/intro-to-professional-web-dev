@@ -4,7 +4,7 @@ Assignment #5: Launch Checklist Form
 Using our knowledge of forms, the DOM, and HTTP, our favorite space shuttle program has asked us to create a quick launch checklist.
 We have four fields that need to be filled out with vital information: the pilot's name, the co-pilot's name, the fuel levels, and the weight of the cargo.
 
-Our pilot, Chris, and their co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to insure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.
+Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to ensure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.
 
 Requirements
 ------------
@@ -12,22 +12,30 @@ Requirements
 Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
 The form should do the following:
 
-1. Validate the user responses with ``preventDefault()`` to insure the following:
+1. Validate the user responses with ``preventDefault()`` to ensure the following:
 
-   1. The user has entered something for every field.
-   2. The user has entered text for names and numbers for fuel and cargo levels.
+   a. The user has entered something for every field.
+   b. The user has entered text for names and numbers for fuel and cargo levels.
 
-2. With validation, update a listing of what is currently ready for shuttle launch and not.
-3. Use CSS to indicate what is good and bad about the shuttle and whether it is ready for launch. 
+2. With validation, update a list of what is currently ready or not ready for the shuttle launch.
+3. Use the DOM to update CSS to indicate what is good and bad about the shuttle and whether it is ready for launch.
+4. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
 
 Setting Up Your Project Repository
 ----------------------------------
 
 Fork the repository with the `starter code <https://github.com/LaunchCodeEducation/Launch-Checklist-Form/>`_ to your personal Github profile and clone the repository to the directory where you are keeping your assignments for the class.
 
-.. note::
+.. warning::
 
    When updating styles to indicate whether the shuttle is ready for launch, do not modify ``styles.css``!
+
+To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
+
+When you open ``index.html``, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says "Awaiting Information Before Launch".
+
+.. figure:: figures/form-starting-point.png
+   :alt: Image showing the form and the box stating that more information is needed before launch.
 
 Adding Validation
 -----------------
@@ -52,16 +60,21 @@ The pilot and co-pilot names should be strings and the fuel level and cargo weig
 Updating Shuttle Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The list of shuttle requirements, ``"faultyItems``, should be updated if something is not ready for launch. 
-Using template literals, update ``pilotStatus`` and ``copilotStatus`` to include the pilot's name and the co-pilot's name.
+The list of shuttle requirements, the ``div`` with the id ``faultyItems``, should be updated if something is not ready for launch. 
+Using template literals, update the ``li`` elements ``pilotStatus`` and ``copilotStatus`` to include the pilot's name and the co-pilot's name.
 
-If the user submits a fuel level that is too low (less than 10,000 gallons), change the list to visible with an updated fuel status stating that there is not enough fuel for the journey.
-The text of ``launchStatus`` should also change to let the user know that the shuttle is not ready for launch and become red.
+If the user submits a fuel level that is too low (less than 10,000 liters), change the list to ``visible`` with an updated fuel status stating that there is not enough fuel for the journey.
+The text of the ``h2`` element, ``launchStatus``, should also change to red and "Shuttle not ready for launch".
 
-If the user submits a cargo weight that is too heavy (more than 10,000 pounds), change the list to visible with an updated cargo status stating that there is too much weight for the shuttle to take off.
-The text of ``launchStatus`` should also change to let the user know that the shuttle is not ready for launch and become red.
+If the user submits a cargo mass that is too heavy (more than 10,000 kilograms), change the list to ``visible`` with an updated cargo status stating that there is too much mass for the shuttle to take off.
+The text of ``launchStatus`` should also change to red and "Shuttle not ready for launch".
 
-If the shuttle is ready to launch, change ``launchStatus`` to the shuttle is ready for launch and make the status green. The list should also become visible.
+If the shuttle is ready to launch, change the text of ``launchStatus`` to green and display "Shuttle is ready for launch".
+
+Fetching Planetary Data
+-----------------------
+
+Finally, we need some JSON to fill in the crew on the mission destination.
 
 The End Result
 --------------
@@ -69,9 +82,9 @@ The End Result
 After you implement everything, the following form submission would result in the proper updates to the ``launchStatus`` and ``faultyItems`` list.
 
 .. figure:: figures/form-fields-ready.png
-   :alt: Image showing the user is submitting a form with Chris as the pilot, Blake as the co-pilot, 890 gallons as the fuel level, and 178 pounds as the cargo weight.
+   :alt: Image showing the user is submitting a form with Chris as the pilot, Blake as the co-pilot, 890 liters as the fuel level, and 178 kilograms as the cargo mass.
 
-With only 890 gallons of fuel, the status of the launch becomes red and states that the shuttle is not ready. 
+With only 890 liters of fuel, the status of the launch becomes red and states that the shuttle is not ready. 
 The list has also updated to indicate that that is not enough fuel for the shuttle to launch.
 
 .. figure:: figures/form-submission-result.png

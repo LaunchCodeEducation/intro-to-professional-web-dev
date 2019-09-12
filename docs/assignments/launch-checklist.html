@@ -87,27 +87,33 @@
 <h1>Assignment #5: Launch Checklist Form<a class="headerlink" href="#assignment-5-launch-checklist-form" title="Permalink to this headline">¶</a></h1>
 <p>Using our knowledge of forms, the DOM, and HTTP, our favorite space shuttle program has asked us to create a quick launch checklist.
 We have four fields that need to be filled out with vital information: the pilot’s name, the co-pilot’s name, the fuel levels, and the weight of the cargo.</p>
-<p>Our pilot, Chris, and their co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to insure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.</p>
+<p>Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to ensure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
 The form should do the following:</p>
 <ol class="arabic simple">
-<li>Validate the user responses with <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to insure the following:<ol class="arabic">
+<li>Validate the user responses with <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to ensure the following:<ol class="loweralpha">
 <li>The user has entered something for every field.</li>
 <li>The user has entered text for names and numbers for fuel and cargo levels.</li>
 </ol>
 </li>
-<li>With validation, update a listing of what is currently ready for shuttle launch and not.</li>
-<li>Use CSS to indicate what is good and bad about the shuttle and whether it is ready for launch.</li>
+<li>With validation, update a list of what is currently ready or not ready for the shuttle launch.</li>
+<li>Use the DOM to update CSS to indicate what is good and bad about the shuttle and whether it is ready for launch.</li>
+<li>Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.</li>
 </ol>
 </div>
 <div class="section" id="setting-up-your-project-repository">
 <h2>Setting Up Your Project Repository<a class="headerlink" href="#setting-up-your-project-repository" title="Permalink to this headline">¶</a></h2>
 <p>Fork the repository with the <a class="reference external" href="https://github.com/LaunchCodeEducation/Launch-Checklist-Form/" target="_blank">starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to your personal Github profile and clone the repository to the directory where you are keeping your assignments for the class.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">When updating styles to indicate whether the shuttle is ready for launch, do not modify <code class="docutils literal notranslate"><span class="pre">styles.css</span></code>!</p>
+</div>
+<p>To get started, navigate to the directory with your copy of the starter code. Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> with Firefox to verify that your starter code is working.</p>
+<p>When you open <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says “Awaiting Information Before Launch”.</p>
+<div class="figure">
+<img alt="Image showing the form and the box stating that more information is needed before launch." src="../_images/form-starting-point.png" />
 </div>
 </div>
 <div class="section" id="adding-validation">
@@ -128,22 +134,26 @@ JavaScript does have a built-in method called <code class="docutils literal notr
 </div>
 <div class="section" id="updating-shuttle-requirements">
 <h3>Updating Shuttle Requirements<a class="headerlink" href="#updating-shuttle-requirements" title="Permalink to this headline">¶</a></h3>
-<p>The list of shuttle requirements, <code class="docutils literal notranslate"><span class="pre">&quot;faultyItems</span></code>, should be updated if something is not ready for launch.
-Using template literals, update <code class="docutils literal notranslate"><span class="pre">pilotStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">copilotStatus</span></code> to include the pilot’s name and the co-pilot’s name.</p>
-<p>If the user submits a fuel level that is too low (less than 10,000 gallons), change the list to visible with an updated fuel status stating that there is not enough fuel for the journey.
-The text of <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> should also change to let the user know that the shuttle is not ready for launch and become red.</p>
-<p>If the user submits a cargo weight that is too heavy (more than 10,000 pounds), change the list to visible with an updated cargo status stating that there is too much weight for the shuttle to take off.
-The text of <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> should also change to let the user know that the shuttle is not ready for launch and become red.</p>
-<p>If the shuttle is ready to launch, change <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> to the shuttle is ready for launch and make the status green. The list should also become visible.</p>
+<p>The list of shuttle requirements, the <code class="docutils literal notranslate"><span class="pre">div</span></code> with the id <code class="docutils literal notranslate"><span class="pre">faultyItems</span></code>, should be updated if something is not ready for launch.
+Using template literals, update the <code class="docutils literal notranslate"><span class="pre">li</span></code> elements <code class="docutils literal notranslate"><span class="pre">pilotStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">copilotStatus</span></code> to include the pilot’s name and the co-pilot’s name.</p>
+<p>If the user submits a fuel level that is too low (less than 10,000 liters), change the list to <code class="docutils literal notranslate"><span class="pre">visible</span></code> with an updated fuel status stating that there is not enough fuel for the journey.
+The text of the <code class="docutils literal notranslate"><span class="pre">h2</span></code> element, <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code>, should also change to red and “Shuttle not ready for launch”.</p>
+<p>If the user submits a cargo mass that is too heavy (more than 10,000 kilograms), change the list to <code class="docutils literal notranslate"><span class="pre">visible</span></code> with an updated cargo status stating that there is too much mass for the shuttle to take off.
+The text of <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> should also change to red and “Shuttle not ready for launch”.</p>
+<p>If the shuttle is ready to launch, change the text of <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> to green and display “Shuttle is ready for launch”.</p>
 </div>
+</div>
+<div class="section" id="fetching-planetary-data">
+<h2>Fetching Planetary Data<a class="headerlink" href="#fetching-planetary-data" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we need some JSON to fill in the crew on the mission destination.</p>
 </div>
 <div class="section" id="the-end-result">
 <h2>The End Result<a class="headerlink" href="#the-end-result" title="Permalink to this headline">¶</a></h2>
 <p>After you implement everything, the following form submission would result in the proper updates to the <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">faultyItems</span></code> list.</p>
 <div class="figure">
-<img alt="Image showing the user is submitting a form with Chris as the pilot, Blake as the co-pilot, 890 gallons as the fuel level, and 178 pounds as the cargo weight." src="../_images/form-fields-ready.png" />
+<img alt="Image showing the user is submitting a form with Chris as the pilot, Blake as the co-pilot, 890 liters as the fuel level, and 178 kilograms as the cargo mass." src="../_images/form-fields-ready.png" />
 </div>
-<p>With only 890 gallons of fuel, the status of the launch becomes red and states that the shuttle is not ready.
+<p>With only 890 liters of fuel, the status of the launch becomes red and states that the shuttle is not ready.
 The list has also updated to indicate that that is not enough fuel for the shuttle to launch.</p>
 <div class="figure">
 <img alt="Image showing the updates to the faulty items list and the launch status." src="../_images/form-submission-result.png" />
