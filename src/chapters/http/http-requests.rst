@@ -111,11 +111,6 @@ As mentioned above, ``GET`` requests generally do *not* have a body.
 
 Check Your Understanding
 ------------------------
-
-.. admonition:: Question
-
-   Which request type was used to load this page (the one you are currently reading)?
-
    
 .. admonition:: Question
 
