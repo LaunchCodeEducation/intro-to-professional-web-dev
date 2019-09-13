@@ -147,7 +147,7 @@ class needs to define the properties needed to accurately represent a satellite.
    <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span> <span class="o">=</span> <span class="p">[</span>
       <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;SiriusXM&quot;</span><span class="p">,</span> <span class="s2">&quot;Communication&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-03-21&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
       <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;Cat Scanner&quot;</span><span class="p">,</span> <span class="s2">&quot;Imaging&quot;</span><span class="p">,</span> <span class="s2">&quot;2012-01-05&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
-      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;Weber Grill&quot;</span><span class="p">,</span> <span class="s2">&quot;Space Debris&quot;</span><span class="p">,</span> <span class="s2">&quot;2001-11-01&quot;</span><span class="p">,</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">),</span>
+      <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;Weber Grill&quot;</span><span class="p">,</span> <span class="s2">&quot;Space Debris&quot;</span><span class="p">,</span> <span class="s2">&quot;1996-03-25&quot;</span><span class="p">,</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">),</span>
       <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;GPS 938&quot;</span><span class="p">,</span> <span class="s2">&quot;Positioning&quot;</span><span class="p">,</span> <span class="s2">&quot;2001-11-01&quot;</span><span class="p">,</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
       <span class="k">new</span> <span class="nx">Satellite</span><span class="p">(</span><span class="s2">&quot;ISS&quot;</span><span class="p">,</span> <span class="s2">&quot;Space Station&quot;</span><span class="p">,</span> <span class="s2">&quot;1998-11-20&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
    <span class="p">];</span>
@@ -266,14 +266,48 @@ Can&#39;t bind to &#39;satellites&#39; since it isn&#39;t a known property of &#
 </div>
 <div class="section" id="display-table-of-satellites">
 <h3>4) Display Table of Satellites<a class="headerlink" href="#display-table-of-satellites" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>In orbit list component loop over <code class="docutils literal notranslate"><span class="pre">satellites</span></code> using an <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code><ul>
-<li>Create a table with each row being a satellite.</li>
+<p>Now that <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> has a <code class="docutils literal notranslate"><span class="pre">satellites</span></code> property that is an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects, you can
+use that array to build an HTML table with each row being a different satellite.</p>
+<ol class="arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">orbit-list.component.html</span></code> use``*ngFor`` to loop over the <code class="docutils literal notranslate"><span class="pre">satellites</span></code>. The HTML table you build should look like the following.</li>
+</ol>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Orbit Report<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header-row&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sortable&quot;</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sortable&quot;</span><span class="p">&gt;</span>Type<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Operational<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Orbit Type<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Launch Date<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- TODO: put &lt;tr </span><span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="c">&gt;&lt;/tr&gt; here --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Next you need to include CSS that will make your table and application look a little nicer.</p>
+<ol class="arabic simple" start="2">
+<li>Copy the entire contents of the <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">example orbit-list-component.css<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into your <code class="docutils literal notranslate"><span class="pre">orbit-list-component.css</span></code>.</li>
+<li>Copy the entire contents of the <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">example app.component.css<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into your <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code>.</li>
+<li>Copy the <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> tag from the <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">example index.html<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and paste it into the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> of your <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.<ul>
+<li>Only add in the <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code>, do NOT remove any other HTML from your <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.</li>
 </ul>
 </li>
-<li>Copy css from <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into app.component.css</li>
-<li>Copy css from <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into index.html in a style tag</li>
-</ul>
+<li>View the app in your browser. You should see a table like the below.</li>
+</ol>
+<div class="figure" id="id1">
+<img alt="Screen shot of browser showing http://localhost:4200 with the table of satellites visible with a header row and five satellites in the table." src="../_images/basic-table-satellites.png" />
+<p class="caption"><span class="caption-text">Example of application at this point. Don’t worry if yours doesn’t have a heading of “Orbit Report” yet, you can add that later.</span></p>
+</div>
 </div>
 <div class="section" id="fetch-satellite-data">
 <h3>5) Fetch Satellite Data<a class="headerlink" href="#fetch-satellite-data" title="Permalink to this headline">¶</a></h3>

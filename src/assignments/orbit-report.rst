@@ -68,7 +68,7 @@ Now we need to use the ``Satellite`` class to create an initial array of ``Satel
       this.sourceList = [
          new Satellite("SiriusXM", "Communication", "2009-03-21", "LOW", true),
          new Satellite("Cat Scanner", "Imaging", "2012-01-05", "LOW", true),
-         new Satellite("Weber Grill", "Space Debris", "2001-11-01", "HIGH", false),
+         new Satellite("Weber Grill", "Space Debris", "1996-03-25", "HIGH", false),
          new Satellite("GPS 938", "Positioning", "2001-11-01", "HIGH", true),
          new Satellite("ISS", "Space Station", "1998-11-20", "LOW", true),
       ];
@@ -175,12 +175,40 @@ Your ``orbit-list.component.ts`` should now look like the below.
 
 4) Display Table of Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* In orbit list component loop over ``satellites`` using an ``*ngFor``
+Now that ``orbit-list`` has a ``satellites`` property that is an array of ``Satellite`` objects, you can
+use that array to build an HTML table with each row being a different satellite.
 
-  * Create a table with each row being a satellite.
+1. In ``orbit-list.component.html`` use``*ngFor`` to loop over the ``satellites``. The HTML table you build should look like the following.
 
-* Copy css from https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6 and put it into app.component.css
-* Copy css from https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6 and put it into index.html in a style tag
+.. sourcecode:: html+ng2
+   :linenos:
+
+   <h3>Orbit Report</h3>
+   <table>
+      <tr class="header-row">
+         <th class="sortable">Name</th>
+         <th class="sortable">Type</th>
+         <th>Operational</th>
+         <th>Orbit Type</th>
+         <th>Launch Date</th>
+      </tr>
+      <!-- TODO: put <tr *ngFor=""></tr> here -->
+   </table>
+
+Next you need to include CSS that will make your table and application look a little nicer.
+
+2. Copy the entire contents of the `example orbit-list-component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``orbit-list-component.css``.
+3. Copy the entire contents of the `example app.component.css <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``app.component.css``.
+4. Copy the ``<style>`` tag from the `example index.html <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and paste it into the ``<head>`` of your ``index.html``.
+
+   * Only add in the ``<style>``, do NOT remove any other HTML from your ``index.html``.
+
+5. View the app in your browser. You should see a table like the below.
+
+.. figure:: figures/basic-table-satellites.png
+   :alt: Screen shot of browser showing http://localhost:4200 with the table of satellites visible with a header row and five satellites in the table.
+
+   Example of application at this point. Don't worry if yours doesn't have a heading of "Orbit Report" yet, you can add that later.
 
 
 5) Fetch Satellite Data
@@ -196,6 +224,7 @@ Your ``orbit-list.component.ts`` should now look like the below.
 * Use that method to add a ``waring`` css class to the Type column
 
   * ``[class.warning]="satellite.isSpaceJunk()"``
+
 
 7) Sorting
 ^^^^^^^^^^
