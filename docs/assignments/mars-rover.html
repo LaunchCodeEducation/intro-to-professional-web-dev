@@ -136,7 +136,10 @@ You can also look at the <a class="reference external" href="https://nodejs.org/
 <h3>Command Tests<a class="headerlink" href="#command-tests" title="Permalink to this headline">¶</a></h3>
 <p>To be written in <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code>.</p>
 <ol class="arabic simple" start="4">
-<li>Throws error if type is NOT passed into constructor as first parameter</li>
+<li>Throws error if type is NOT passed into constructor as first parameter<ul>
+<li>Look at the constructor in <code class="docutils literal notranslate"><span class="pre">Message.js</span></code> and at the test named “throws error if name NOT passed into constructor” in <code class="docutils literal notranslate"><span class="pre">message.spec.js</span></code> for examples of how to complete this task.</li>
+</ul>
+</li>
 </ol>
 </div>
 <div class="section" id="rover-tests">
@@ -155,6 +158,13 @@ You can also look at the <a class="reference external" href="https://nodejs.org/
 </div>
 <div class="section" id="required-classes-and-methods">
 <span id="rover-classes-methods"></span><h2>Required Classes and Methods<a class="headerlink" href="#required-classes-and-methods" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is already provided for you in <code class="docutils literal notranslate"><span class="pre">message.js</span></code>. You will need to create a <code class="docutils literal notranslate"><span class="pre">command.js</span></code> file for the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class and a <code class="docutils literal notranslate"><span class="pre">rover.js</span></code> file for the <code class="docutils literal notranslate"><span class="pre">Rover</span></code> class.
+The <code class="docutils literal notranslate"><span class="pre">Command</span></code> and <code class="docutils literal notranslate"><span class="pre">Rover</span></code> classes will need to be exported from the files they are delcared in and imported into the test files.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">For help using <code class="docutils literal notranslate"><span class="pre">require</span></code> to import a <code class="docutils literal notranslate"><span class="pre">class</span></code>, notice in <code class="docutils literal notranslate"><span class="pre">message.js</span></code> that the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is exported using <code class="docutils literal notranslate"><span class="pre">module.exports</span> <span class="pre">=</span> <span class="pre">Message;</span></code>.
+In <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code> the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is imported with this statement <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">Message</span> <span class="pre">=</span> <span class="pre">require('../message.js');</span></code>.</p>
+</div>
 <div class="section" id="message-class">
 <h3>Message Class<a class="headerlink" href="#message-class" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">

@@ -56,6 +56,8 @@ To be written in ``spec/command.spec.js``.
 
 4. Throws error if type is NOT passed into constructor as first parameter
 
+   * Look at the constructor in ``Message.js`` and at the test named "throws error if name NOT passed into constructor" in ``message.spec.js`` for examples of how to complete this task.
+
 Rover Tests
 ^^^^^^^^^^^
 To be written in ``spec/rover.spec.js``.
@@ -72,6 +74,15 @@ To be written in ``spec/rover.spec.js``.
 
 Required Classes and Methods
 ----------------------------
+
+The ``Message`` class is already provided for you in ``message.js``. You will need to create a ``command.js`` file for the ``Command`` class and a ``rover.js`` file for the ``Rover`` class.
+The ``Command`` and ``Rover`` classes will need to be exported from the files they are delcared in and imported into the test files.
+
+.. note::
+
+   For help using ``require`` to import a ``class``, notice in ``message.js`` that the ``Message`` class is exported using ``module.exports = Message;``.
+   In ``spec/rover.spec.js`` the ``Message`` class is imported with this statement ``const Message = require('../message.js');``.
+
 Message Class
 ^^^^^^^^^^^^^
 
