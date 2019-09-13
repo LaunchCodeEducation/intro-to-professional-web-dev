@@ -40,6 +40,13 @@ To be written in ``spec/message.spec.js``.
 
    * This test is provided in the starter code. The code to make it pass is also included.
 
+   .. note::
+
+      So far you have only used methods on ``assert`` to check for equality. Using ``assert.throws`` to verify if a specific
+      error is thrown is a new concept. To learn how to use this new ability of ``assert``, look at the constructor in
+      ``Message.js`` and look at the test named "throws error if name NOT passed into constructor" in ``message.spec.js``.
+      You can also look at the `official Node.js assert.throws documentation <https://nodejs.org/docs/latest-v10.x/api/assert.html#assert_assert_throws_fn_error_message>`_.
+
 2. Constructor sets name
 3. Contains commands passed into constructor as 2nd argument
 
