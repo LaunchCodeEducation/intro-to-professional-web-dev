@@ -240,8 +240,10 @@ Rover Modes
 
 
 Bonus Mission
--------------
-Add the following test that checks for unknown commands in ``spec/rover.spec.js``.
+--------------
+
+Add the following test that checks for unknown commands in
+``spec/rover.spec.js``.
 
 12. Responds with completed false and a message for an unknown command
 
