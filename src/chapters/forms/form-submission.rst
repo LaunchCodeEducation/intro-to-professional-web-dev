@@ -6,7 +6,7 @@ Form Submission
 
 Forms collect data input by the user. As we learned in the previous
 chapter, communication on the web occurs via a series of HTTP requests and responses. A
-**form submission** is an HTTP request is sent to the server containing the values
+**form submission** is an HTTP request sent to the server containing the values
 in a form.
 
 Trigger Form Submission
