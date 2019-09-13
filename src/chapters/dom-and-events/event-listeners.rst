@@ -100,8 +100,8 @@ and quite common, to pass in an *anonymous function* as the event handler.
 
 Event Details
 -------------
-A benefit of using ``addEventListener`` is that an *event* parameter is passed as the 
-parameter to the event handler function. This event is an object instance of the Event 
+A benefit of using ``addEventListener`` is that an *event* parameter can be passed to 
+the event handler function. This event is an object instance of the Event 
 class, which defines methods and properties related to events.
 
 .. sourcecode:: js
