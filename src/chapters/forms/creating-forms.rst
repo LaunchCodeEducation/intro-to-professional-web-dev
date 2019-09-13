@@ -180,10 +180,6 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is a self-closing tag?
-
-.. admonition:: Question
-
    What is the purpose of the ``name`` attribute for ``input`` elements?
 
 .. admonition:: Question
