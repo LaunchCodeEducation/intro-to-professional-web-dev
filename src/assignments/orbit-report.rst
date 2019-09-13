@@ -206,16 +206,47 @@ Next you need to include CSS that will make your table and application look a li
 5. View the app in your browser. You should see a table like the below.
 
 .. figure:: figures/basic-table-satellites.png
-   :alt: Screen shot of browser showing http://localhost:4200 with the table of satellites visible with a header row and five satellites in the table.
+   :alt: Screen shot of browser showing http://localhost:4200 with a table of four satellites.
 
    Example of application at this point. Don't worry if yours doesn't have a heading of "Orbit Report" yet, you can add that later.
 
 
 5) Fetch Satellite Data
 ^^^^^^^^^^^^^^^^^^^^^^^
-* In ``ngOnInit`` in ``AppComponent`` add a ``fetch`` to this URL https://api.myjson.com/bins/103ku9
-* Populate ``displayList`` with the results that come back from the fetch
-* This replaces the hardcoded array of Satellites you had been using
+So far you have used an array declared in ``app.component.ts`` as the source of data to display.
+Your next task is to switch to using a ``fetch`` that retrieves json data from a server.
+
+1. Replace your ``constructor`` in ``AppComponent`` with the code below.
+
+.. sourcecode:: typescript
+
+   constructor() {
+      this.sourceList = [];
+      let satellitesUrl = 'https://api.myjson.com/bins/ccxv5';
+
+      window.fetch(satellitesUrl).then(function(response) {
+         response.json().then(function(data) {
+
+            let fetchedSatellites = data.satellites;
+            // TODO: loop over satellites
+            // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].fetchedSatellites, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+            // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
+
+         }.bind(this));
+      }.bind(this));
+
+   }
+
+.. note::
+
+   Explaining the ``.bind(this)`` syntax is beyond the scope of this book, but is crucial for ``this.sourceList.push(satellite)`` to work properly.
+
+2. View the app in your browser. You should see a table like the below.
+
+.. figure:: figures/fetched-table-satellites.png
+   :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites.
+
+   Example of application after switching to fetched data.
 
 
 6) Highlight Space Debris

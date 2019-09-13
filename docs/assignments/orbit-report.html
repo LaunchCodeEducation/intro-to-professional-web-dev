@@ -305,17 +305,46 @@ use that array to build an HTML table with each row being a different satellite.
 <li>View the app in your browser. You should see a table like the below.</li>
 </ol>
 <div class="figure" id="id1">
-<img alt="Screen shot of browser showing http://localhost:4200 with the table of satellites visible with a header row and five satellites in the table." src="../_images/basic-table-satellites.png" />
+<img alt="Screen shot of browser showing http://localhost:4200 with a table of four satellites." src="../_images/basic-table-satellites.png" />
 <p class="caption"><span class="caption-text">Example of application at this point. Don’t worry if yours doesn’t have a heading of “Orbit Report” yet, you can add that later.</span></p>
 </div>
 </div>
 <div class="section" id="fetch-satellite-data">
 <h3>5) Fetch Satellite Data<a class="headerlink" href="#fetch-satellite-data" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">ngOnInit</span></code> in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> add a <code class="docutils literal notranslate"><span class="pre">fetch</span></code> to this URL <a class="reference external" href="https://api.myjson.com/bins/103ku9" target="_blank">https://api.myjson.com/bins/103ku9<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>Populate <code class="docutils literal notranslate"><span class="pre">displayList</span></code> with the results that come back from the fetch</li>
-<li>This replaces the hardcoded array of Satellites you had been using</li>
-</ul>
+<p>So far you have used an array declared in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> as the source of data to display.
+Your next task is to switch to using a <code class="docutils literal notranslate"><span class="pre">fetch</span></code> that retrieves json data from a server.</p>
+<ol class="arabic simple">
+<li>Replace your <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> with the code below.</li>
+</ol>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span> <span class="o">=</span> <span class="p">[];</span>
+   <span class="kd">let</span> <span class="nx">satellitesUrl</span> <span class="o">=</span> <span class="s1">&#39;https://api.myjson.com/bins/ccxv5&#39;</span><span class="p">;</span>
+
+   <span class="nb">window</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">satellitesUrl</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+
+         <span class="kd">let</span> <span class="nx">fetchedSatellites</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">satellites</span><span class="p">;</span>
+         <span class="c1">// TODO: loop over satellites</span>
+         <span class="c1">// TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].fetchedSatellites, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);</span>
+         <span class="c1">// TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);</span>
+
+      <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+   <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Explaining the <code class="docutils literal notranslate"><span class="pre">.bind(this)</span></code> syntax is beyond the scope of this book, but is crucial for <code class="docutils literal notranslate"><span class="pre">this.sourceList.push(satellite)</span></code> to work properly.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>View the app in your browser. You should see a table like the below.</li>
+</ol>
+<div class="figure" id="id2">
+<img alt="Screen shot of browser showing http://localhost:4200 with a table of 9 satellites." src="../_images/fetched-table-satellites.png" />
+<p class="caption"><span class="caption-text">Example of application after switching to fetched data.</span></p>
+</div>
 </div>
 <div class="section" id="highlight-space-debris">
 <h3>6) Highlight Space Debris<a class="headerlink" href="#highlight-space-debris" title="Permalink to this headline">¶</a></h3>
