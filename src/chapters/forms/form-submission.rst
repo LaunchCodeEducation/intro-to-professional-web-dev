@@ -118,7 +118,3 @@ Check Your Understanding
 .. admonition:: Question
 
    By *default*, are HTTP forms submitted with GET or POST?
-
-.. admonition:: Question
-
-   When a form is submitted, where does the data for the key-value pairs come from?
