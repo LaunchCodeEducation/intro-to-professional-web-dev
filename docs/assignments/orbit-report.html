@@ -376,11 +376,11 @@ by adding an Angular attribute directive.</p>
 <code class="docutils literal notranslate"><span class="pre">name</span></code> property when the “Name” heading is clicked. Also the table should display sorted
 by the <code class="docutils literal notranslate"><span class="pre">type</span></code> property when the “Type” heading is clicked.</p>
 <ol class="arabic simple">
-<li>Add click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
-<li>Add click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('type')</span></code> to the Type <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
+<li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
+<li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('type')</span></code> to the Type <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
 <li>Add a <code class="docutils literal notranslate"><span class="pre">sort</span></code> method to the <code class="docutils literal notranslate"><span class="pre">OrbitListComponent</span></code> class.<ul>
 <li>The sorting method has been provided below.</li>
-<li>For an example of a work sort, see <a class="reference internal" href="#orbit-report-demo"><span class="std std-ref">Orbit Report Demo</span></a></li>
+<li>For an example of sort working, see <a class="reference internal" href="#orbit-report-demo"><span class="std std-ref">Orbit Report Demo</span></a>.</li>
 </ul>
 </li>
 </ol>
@@ -417,26 +417,66 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="section" id="searching">
 <h3>8) Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Add an input and button to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></li>
-</ul>
-<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span>Search: <span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">searchTerm</span><span class="p"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;searchTerm&quot;</span><span class="p">/&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;searchButton&quot;</span><span class="p">&gt;</span>search<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li>Add a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> handler to the button that calls the <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value);</span></code></li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">(keyup.enter)</span></code> to the input that calls the <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value);</span></code></li>
-<li>Define a <code class="docutils literal notranslate"><span class="pre">search</span></code> function in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code><ul>
-<li>Returns void</li>
-<li>Takes one parameter <code class="docutils literal notranslate"><span class="pre">searchTerm:</span> <span class="pre">string</span></code></li>
-<li>Find matches in <code class="docutils literal notranslate"><span class="pre">satellites</span></code></li>
-<li>Update <code class="docutils literal notranslate"><span class="pre">this.displayList</span></code> to be the an array that only conatins matches</li>
-<li>TODO: define matches. Give them the algorithm. Maybe even give them the code</li>
+<p>You are doing great! Only two more features to add. Next you will add a search feature.</p>
+<ol class="arabic simple">
+<li>Add this HTML <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;search-form&quot;&gt;&lt;/div&gt;</span></code> in your <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
+<li>Add an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> element insde the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element insde the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
+<li>Add an Angular click handler to the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> that when clicked calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code><ul>
+<li><code class="docutils literal notranslate"><span class="pre">searchTerm</span></code> being the local variable name for the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code></li>
 </ul>
 </li>
+<li>Add an Angular keyup.enter handler to the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> that when clicked calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code><ul>
+<li><code class="docutils literal notranslate"><span class="pre">searchTerm</span></code> being the local variable name for the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code></li>
 </ul>
+</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">search</span></code> method to the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class.<ul>
+<li>The <code class="docutils literal notranslate"><span class="pre">search</span></code> method is provded below.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">searchTerm</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+ <span class="kd">let</span> <span class="nx">matchingSatellites</span>: <span class="kt">Satellite</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+ <span class="nx">searchTerm</span> <span class="o">=</span> <span class="nx">searchTerm</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+ <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">matchingSatellites</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+ <span class="c1">// update displayList to be only the matching satellites</span>
+ <span class="k">this</span><span class="p">.</span><span class="nx">displayList</span> <span class="o">=</span> <span class="nx">matchingSatellites</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Notice the usage of a new variable named <code class="docutils literal notranslate"><span class="pre">displayList</span></code>. <code class="docutils literal notranslate"><span class="pre">displayList</span></code> should contain the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects
+that the user wants to see. That was previously ALL the satellites. Now the user can perform a search, which
+means they want to see the matching results. <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> will contain ALL the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects. If you removed
+the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects from <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>, then the user could never see them again. Instead when the user
+performs a search, <code class="docutils literal notranslate"><span class="pre">displayList</span></code> will be populated with the all the matching <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>.
+Matching is defined as <code class="docutils literal notranslate"><span class="pre">satellite.name</span></code> containing the search term.</p>
+<ol class="arabic simple" start="7">
+<li>Add the <code class="docutils literal notranslate"><span class="pre">displayList:</span> <span class="pre">Satellite[];</span></code> property to the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class.<ul>
+<li>Set <code class="docutils literal notranslate"><span class="pre">displayList</span> <span class="pre">=</span> <span class="pre">[]</span></code> in the constructor.</li>
+</ul>
+</li>
+<li>Pass in the <code class="docutils literal notranslate"><span class="pre">displayList</span></code> to the <code class="docutils literal notranslate"><span class="pre">orbit-list-component</span></code>.<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;app-orbit-list</span> <span class="pre">[satellites]=&quot;displayList&quot;&gt;&lt;/app-orbit-list&gt;</span></code></li>
+</ul>
+</li>
+<li>For an example of search working, see <a class="reference internal" href="#orbit-report-demo"><span class="std std-ref">Orbit Report Demo</span></a>.</li>
+</ol>
 </div>
 <div class="section" id="counting-satellites">
 <h3>9) Counting Satellites<a class="headerlink" href="#counting-satellites" title="Permalink to this headline">¶</a></h3>
@@ -457,7 +497,8 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="section" id="application-demo">
 <span id="orbit-report-demo"></span><h2>Application Demo<a class="headerlink" href="#application-demo" title="Permalink to this headline">¶</a></h2>
-<p>TODO: gif of all features being demoed (not including bonus)</p>
+<p>TODO: video of all features being demoed (not including bonus)
+TODO: I have an mp4 of the demo saved. Need to upload it to youtube. (It was too large for gif)</p>
 </div>
 </div>
 

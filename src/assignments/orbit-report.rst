@@ -276,12 +276,12 @@ Sorting is a useful feature of any table. You need to make the table display sor
 ``name`` property when the "Name" heading is clicked. Also the table should display sorted
 by the ``type`` property when the "Type" heading is clicked.
 
-1. Add click handler that calls ``sort('name')`` to the Name  ``<th>`` element.
-2. Add click handler that calls ``sort('type')`` to the Type ``<th>`` element.
+1. Add an Angular click handler that calls ``sort('name')`` to the Name  ``<th>`` element.
+2. Add an Angular click handler that calls ``sort('type')`` to the Type ``<th>`` element.
 3. Add a ``sort`` method to the ``OrbitListComponent`` class.
 
    * The sorting method has been provided below.
-   * For an example of a work sort, see :ref:`Orbit Report Demo <orbit-report-demo>`
+   * For an example of sort working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
 
 .. note::
 
@@ -308,24 +308,55 @@ by the ``type`` property when the "Type" heading is clicked.
 
 8) Searching
 ^^^^^^^^^^^^
-* Add an input and button to ``app.component.html``
+You are doing great! Only two more features to add. Next you will add a search feature.
 
-.. sourcecode:: html+ng2
+#. Add this HTML ``<div class="search-form"></div>`` in your ``app.component.html``.
+#. Add an ``<input>`` element insde the ``<div>``.
+#. Add a ``<button>`` element insde the ``<div>``.
+#. Add an Angular click handler to the ``<button>`` that when clicked calls ``search(searchTerm.value)``
 
-  Search: <input #searchTerm type="text" name="searchTerm"/>
+   * ``searchTerm`` being the local variable name for the ``<input>``
 
-  <button id="searchButton">search</button>
+#. Add an Angular keyup.enter handler to the ``<input>`` that when clicked calls ``search(searchTerm.value)``
 
-* Add a ``(click)`` handler to the button that calls the ``search(searchTerm.value);``
-* Add a ``(keyup.enter)`` to the input that calls the ``search(searchTerm.value);``
-* Define a ``search`` function in ``AppComponent``
+   * ``searchTerm`` being the local variable name for the ``<input>``
 
-  * Returns void
-  * Takes one parameter ``searchTerm: string``
-  * Find matches in ``satellites``
-  * Update ``this.displayList`` to be the an array that only conatins matches
-  * TODO: define matches. Give them the algorithm. Maybe even give them the code
+#. Add a ``search`` method to the ``AppComponent`` class.
 
+   * The ``search`` method is provded below.
+
+.. sourcecode:: typescript
+   :linenos:
+
+   search(searchTerm: string): void {
+    let matchingSatellites: Satellite[] = [];
+    searchTerm = searchTerm.toLowerCase();
+    for(let i=0; i < this.sourceList.length; i++) {
+      let name = this.sourceList[i].name.toLowerCase();
+      if (name.indexOf(searchTerm) >= 0) {
+        matchingSatellites.push(this.sourceList[i]);
+      }
+    }
+    // update displayList to be only the matching satellites
+    this.displayList = matchingSatellites;
+   }
+
+Notice the usage of a new variable named ``displayList``. ``displayList`` should contain the ``Satellite`` objects
+that the user wants to see. That was previously ALL the satellites. Now the user can perform a search, which
+means they want to see the matching results. ``sourceList`` will contain ALL the ``Satellite`` objects. If you removed
+the ``Satellite`` objects from ``sourceList``, then the user could never see them again. Instead when the user
+performs a search, ``displayList`` will be populated with the all the matching ``Satellite`` objects in ``sourceList``.
+Matching is defined as ``satellite.name`` containing the search term.
+
+7. Add the ``displayList: Satellite[];`` property to the ``AppComponent`` class.
+
+   * Set ``displayList = []`` in the constructor.
+
+8. Pass in the ``displayList`` to the ``orbit-list-component``.
+
+   * ``<app-orbit-list [satellites]="displayList"></app-orbit-list>``
+
+9. For an example of search working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
 
 9) Counting Satellites
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -348,4 +379,5 @@ TODO: do these
 
 Application Demo
 ----------------
-TODO: gif of all features being demoed (not including bonus)
+TODO: video of all features being demoed (not including bonus)
+TODO: I have an mp4 of the demo saved. Need to upload it to youtube. (It was too large for gif)
