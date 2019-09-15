@@ -193,8 +193,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What event should you listen to if you want to validate a form before it's submitted?
-
-.. admonition:: Question
-
    What method on the ``event`` object can be used to stop a form submission?
