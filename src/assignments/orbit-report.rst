@@ -27,6 +27,7 @@ Setup
 
 Requirements
 ------------
+As you accomplish each task, be sure to commit and push your changes before moving on to the next item.
 
 1) Define and Create Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -217,6 +218,7 @@ So far you have used an array declared in ``app.component.ts`` as the source of 
 Your next task is to switch to using a ``fetch`` that retrieves json data from a server.
 
 1. Replace your ``constructor`` in ``AppComponent`` with the code below.
+2. Implement the three features mentioned in the ``TODO:`` comments.
 
 .. sourcecode:: typescript
 
@@ -241,7 +243,7 @@ Your next task is to switch to using a ``fetch`` that retrieves json data from a
 
    Explaining the ``.bind(this)`` syntax is beyond the scope of this book, but is crucial for ``this.sourceList.push(satellite)`` to work properly.
 
-2. View the app in your browser. You should see a table like the below.
+3. View the app in your browser. You should see a table like the below.
 
 .. figure:: figures/fetched-table-satellites.png
    :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites.
@@ -251,25 +253,48 @@ Your next task is to switch to using a ``fetch`` that retrieves json data from a
 
 6) Highlight Space Debris
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-* Add a ``isSpaceJunk`` method to the ``Satellite`` class.
-* Use that method to add a ``waring`` css class to the Type column
+You need to make it easier to spot dangerous space debris in the list. You will accomplish this
+by adding an Angular attribute directive.
 
-  * ``[class.warning]="satellite.isSpaceJunk()"``
+1. Add a ``shouldShowWarning`` method to the ``Satellite`` class.
 
+   * ``shouldShowWarning`` has no parameters.
+   * ``shouldShowWarning`` should return ``this.type === 'Space Debris';``.
+
+* Use ``shouldShowWarning`` to add the ``warning`` CSS class to the ``<td>`` containing the satellite's type.
+
+  * ``[class.warning]="satellite.shouldShowWarning()"``
+
+.. figure:: figures/table-satellites-with-warning.png
+   :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background.
+
+   Example of warning style adding a red background to Space Debris type.
 
 7) Sorting
 ^^^^^^^^^^
-* Add a ``(click)="sort('name')"`` handler to the Name and Type ``<th>`` elements
-* Add a ``sort`` function to ``OrbitListComponent``
+Sorting is a useful feature of any table. You need to make the table display sorted by the
+``name`` property when the "Name" heading is clicked. Also the table should display sorted
+by the ``type`` property when the "Type" heading is clicked.
 
-  * This function will sort the ``satellites`` array in the component
+1. Add click handler that calls ``sort('name')`` to the Name  ``<th>`` element.
+2. Add click handler that calls ``sort('type')`` to the Type ``<th>`` element.
+3. Add a ``sort`` method to the ``OrbitListComponent`` class.
+
+   * The sorting method has been provided below.
+   * For an example of a work sort, see :ref:`Orbit Report Demo <orbit-report-demo>`
+
+.. note::
+
+   The provided ``sort`` method contains a new usage of ``array.sort``. has been used without passing it a
+   function that is used to compare all the items in the array. This compare function allows the programmer
+   to control how the array is sorted. For more details see the `MDN description of sort using a compare
+   function <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description>`_
 
 .. sourcecode:: typescript
    :linenos:
 
    sort(column: string): void {
-    // sort modifies the array, sorting the items based on the given sorting function
-    // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description
+    // array.sort modifies the array, sorting the items based on the given compare function
     this.satellites.sort(function(a: Satellite, b: Satellite): number {
       if(a[column] < b[column]) {
         return -1;
@@ -317,3 +342,10 @@ Search feature should also find matches using the ``orbitType`` and ``type`` pro
 Submitting Your Work
 --------------------
 TODO: do these
+
+
+.. _orbit-report-demo:
+
+Application Demo
+----------------
+TODO: gif of all features being demoed (not including bonus)

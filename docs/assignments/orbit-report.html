@@ -110,6 +110,7 @@ For the purposes of this assigment, <strong>satellite</strong> will be defined a
 </div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>As you accomplish each task, be sure to commit and push your changes before moving on to the next item.</p>
 <div class="section" id="define-and-create-satellites">
 <h3>1) Define and Create Satellites<a class="headerlink" href="#define-and-create-satellites" title="Permalink to this headline">¶</a></h3>
 <p>In JavaScript, TypeScript, and Angular projects you can create classes to represent entities in the project.
@@ -315,6 +316,7 @@ use that array to build an HTML table with each row being a different satellite.
 Your next task is to switch to using a <code class="docutils literal notranslate"><span class="pre">fetch</span></code> that retrieves json data from a server.</p>
 <ol class="arabic simple">
 <li>Replace your <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> with the code below.</li>
+<li>Implement the three features mentioned in the <code class="docutils literal notranslate"><span class="pre">TODO:</span></code> comments.</li>
 </ol>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
    <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span> <span class="o">=</span> <span class="p">[];</span>
@@ -338,7 +340,7 @@ Your next task is to switch to using a <code class="docutils literal notranslate
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">Explaining the <code class="docutils literal notranslate"><span class="pre">.bind(this)</span></code> syntax is beyond the scope of this book, but is crucial for <code class="docutils literal notranslate"><span class="pre">this.sourceList.push(satellite)</span></code> to work properly.</p>
 </div>
-<ol class="arabic simple" start="2">
+<ol class="arabic simple" start="3">
 <li>View the app in your browser. You should see a table like the below.</li>
 </ol>
 <div class="figure" id="id2">
@@ -348,23 +350,47 @@ Your next task is to switch to using a <code class="docutils literal notranslate
 </div>
 <div class="section" id="highlight-space-debris">
 <h3>6) Highlight Space Debris<a class="headerlink" href="#highlight-space-debris" title="Permalink to this headline">¶</a></h3>
+<p>You need to make it easier to spot dangerous space debris in the list. You will accomplish this
+by adding an Angular attribute directive.</p>
+<ol class="arabic simple">
+<li>Add a <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> method to the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class.<ul>
+<li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> has no parameters.</li>
+<li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> should return <code class="docutils literal notranslate"><span class="pre">this.type</span> <span class="pre">===</span> <span class="pre">'Space</span> <span class="pre">Debris';</span></code>.</li>
+</ul>
+</li>
+</ol>
 <ul class="simple">
-<li>Add a <code class="docutils literal notranslate"><span class="pre">isSpaceJunk</span></code> method to the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class.</li>
-<li>Use that method to add a <code class="docutils literal notranslate"><span class="pre">waring</span></code> css class to the Type column<ul>
-<li><code class="docutils literal notranslate"><span class="pre">[class.warning]=&quot;satellite.isSpaceJunk()&quot;</span></code></li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite’s type.<ul>
+<li><code class="docutils literal notranslate"><span class="pre">[class.warning]=&quot;satellite.shouldShowWarning()&quot;</span></code></li>
 </ul>
 </li>
 </ul>
+<div class="figure" id="id3">
+<img alt="Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background." src="../_images/table-satellites-with-warning.png" />
+<p class="caption"><span class="caption-text">Example of warning style adding a red background to Space Debris type.</span></p>
+</div>
 </div>
 <div class="section" id="sorting">
 <h3>7) Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Add a <code class="docutils literal notranslate"><span class="pre">(click)=&quot;sort('name')&quot;</span></code> handler to the Name and Type <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> elements</li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">sort</span></code> function to <code class="docutils literal notranslate"><span class="pre">OrbitListComponent</span></code><ul>
-<li>This function will sort the <code class="docutils literal notranslate"><span class="pre">satellites</span></code> array in the component</li>
+<p>Sorting is a useful feature of any table. You need to make the table display sorted by the
+<code class="docutils literal notranslate"><span class="pre">name</span></code> property when the “Name” heading is clicked. Also the table should display sorted
+by the <code class="docutils literal notranslate"><span class="pre">type</span></code> property when the “Type” heading is clicked.</p>
+<ol class="arabic simple">
+<li>Add click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
+<li>Add click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('type')</span></code> to the Type <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">sort</span></code> method to the <code class="docutils literal notranslate"><span class="pre">OrbitListComponent</span></code> class.<ul>
+<li>The sorting method has been provided below.</li>
+<li>For an example of a work sort, see <a class="reference internal" href="#orbit-report-demo"><span class="std std-ref">Orbit Report Demo</span></a></li>
 </ul>
 </li>
-</ul>
+</ol>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The provided <code class="docutils literal notranslate"><span class="pre">sort</span></code> method contains a new usage of <code class="docutils literal notranslate"><span class="pre">array.sort</span></code>. has been used without passing it a
+function that is used to compare all the items in the array. This compare function allows the programmer
+to control how the array is sorted. For more details see the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description" target="_blank">MDN description of sort using a compare
+function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
 <div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -375,10 +401,8 @@ Your next task is to switch to using a <code class="docutils literal notranslate
  8
  9
 10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">sort</span><span class="p">(</span><span class="nx">column</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
- <span class="c1">// sort modifies the array, sorting the items based on the given sorting function</span>
- <span class="c1">// See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description</span>
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">sort</span><span class="p">(</span><span class="nx">column</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+ <span class="c1">// array.sort modifies the array, sorting the items based on the given compare function</span>
  <span class="k">this</span><span class="p">.</span><span class="nx">satellites</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">Satellite</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">Satellite</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
    <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">column</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">[</span><span class="nx">column</span><span class="p">])</span> <span class="p">{</span>
      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
@@ -430,6 +454,10 @@ Your next task is to switch to using a <code class="docutils literal notranslate
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <p>TODO: do these</p>
+</div>
+<div class="section" id="application-demo">
+<span id="orbit-report-demo"></span><h2>Application Demo<a class="headerlink" href="#application-demo" title="Permalink to this headline">¶</a></h2>
+<p>TODO: gif of all features being demoed (not including bonus)</p>
 </div>
 </div>
 
