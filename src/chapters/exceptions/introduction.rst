@@ -84,7 +84,7 @@ A ``TypeError`` is thrown when JavaScript expects something to be one type, but 
 
       TypeError: invalid assignment to const 'a'
 
-In this case, we declare a constant as the string "Launch", and then try to change the immutable variable to "Code". JavaScript throws a ``TypeError`` with the message: ``invalid assignment to const 'b'``.
+In this case, we declare a constant as the string "Launch", and then try to change the immutable variable to "Code". JavaScript throws a ``TypeError`` with the message: ``invalid assignment to const 'a'``.
 
 Exceptions give us a way to provide more information on how something went wrong. JavaScript's built-in Exceptions are regularly used in the debugging process.
 
