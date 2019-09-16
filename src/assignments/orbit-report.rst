@@ -329,16 +329,17 @@ You are doing great! Only two more features to add. Next you will add a search f
    :linenos:
 
    search(searchTerm: string): void {
-    let matchingSatellites: Satellite[] = [];
-    searchTerm = searchTerm.toLowerCase();
-    for(let i=0; i < this.sourceList.length; i++) {
-      let name = this.sourceList[i].name.toLowerCase();
-      if (name.indexOf(searchTerm) >= 0) {
-        matchingSatellites.push(this.sourceList[i]);
+      let matchingSatellites: Satellite[] = [];
+      searchTerm = searchTerm.toLowerCase();
+      for(let i=0; i < this.sourceList.length; i++) {
+         let name = this.sourceList[i].name.toLowerCase();
+         if (name.indexOf(searchTerm) >= 0) {
+            matchingSatellites.push(this.sourceList[i]);
+         }
       }
-    }
-    // update displayList to be only the matching satellites
-    this.displayList = matchingSatellites;
+      // assign this.displayList to be the the array of matching satellites
+      // this will cause Angular to re-make the table, but now only containg matches
+      this.displayList = matchingSatellites;
    }
 
 Notice the usage of a new variable named ``displayList``. ``displayList`` should contain the ``Satellite`` objects
@@ -358,11 +359,36 @@ Matching is defined as ``satellite.name`` containing the search term.
 
 9. For an example of search working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
 
+
 9) Counting Satellites
 ^^^^^^^^^^^^^^^^^^^^^^
-#. Create a ``orbit-counts`` component
-#. Copy css from https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6 and put it into orbit-counts.component.css
-#. TODO: tell them what to do
+For the last feature, you are on your own. You are tasked with creating a new component that
+show the total count and count by type for the satellites currently displayed in the table.
+
+#. Create an ``orbit-counts`` component.
+#. Copy the entire contents of the `example orbit-counts.component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``orbit-counts.component.css``.
+#. Use the component in ``app.component.html``.
+#. Pass in ``displayList`` via ``[satellites]="displayList"``.
+#. Use the given HTML as a template.
+#. The rest of the steps are left for you to figure out.
+
+.. sourcecode:: html
+
+   <h3>Satellite Counts:</h3>
+   <div class="counts">
+      <div>Total: <span>9</span></div>
+      <div>Total Space Debris: <span>1</span></div>
+      <div>Total Communication: <span>2</span></div>
+      <div>Total Probe: <span>2</span></div>
+      <div>Total Positioning: <span>1</span></div>
+      <div>Total Space Station: <span>2</span></div>
+      <div>Total Telescope: <span>1</span></div>
+   </div>
+
+.. figure:: figures/orbit-counts-output.png
+   :alt: Example of six satellite counts being displayed.
+
+   Example of the seven different satellite counts being displayed.
 
 
 Bonus Mission

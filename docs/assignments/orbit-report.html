@@ -446,17 +446,19 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">searchTerm</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
- <span class="kd">let</span> <span class="nx">matchingSatellites</span>: <span class="kt">Satellite</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
- <span class="nx">searchTerm</span> <span class="o">=</span> <span class="nx">searchTerm</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
- <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-     <span class="nx">matchingSatellites</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">searchTerm</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">matchingSatellites</span>: <span class="kt">Satellite</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+   <span class="nx">searchTerm</span> <span class="o">=</span> <span class="nx">searchTerm</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+   <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">matchingSatellites</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+      <span class="p">}</span>
    <span class="p">}</span>
- <span class="p">}</span>
- <span class="c1">// update displayList to be only the matching satellites</span>
- <span class="k">this</span><span class="p">.</span><span class="nx">displayList</span> <span class="o">=</span> <span class="nx">matchingSatellites</span><span class="p">;</span>
+   <span class="c1">// assign this.displayList to be the the array of matching satellites</span>
+   <span class="c1">// this will cause Angular to re-make the table, but now only containg matches</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">displayList</span> <span class="o">=</span> <span class="nx">matchingSatellites</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
@@ -480,11 +482,32 @@ Matching is defined as <code class="docutils literal notranslate"><span class="p
 </div>
 <div class="section" id="counting-satellites">
 <h3>9) Counting Satellites<a class="headerlink" href="#counting-satellites" title="Permalink to this headline">¶</a></h3>
+<p>For the last feature, you are on your own. You are tasked with creating a new component that
+show the total count and count by type for the satellites currently displayed in the table.</p>
 <ol class="arabic simple">
-<li>Create a <code class="docutils literal notranslate"><span class="pre">orbit-counts</span></code> component</li>
-<li>Copy css from <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into orbit-counts.component.css</li>
-<li>TODO: tell them what to do</li>
+<li>Create an <code class="docutils literal notranslate"><span class="pre">orbit-counts</span></code> component.</li>
+<li>Copy the entire contents of the <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">example orbit-counts.component.css<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into your <code class="docutils literal notranslate"><span class="pre">orbit-counts.component.css</span></code>.</li>
+<li>Use the component in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
+<li>Pass in <code class="docutils literal notranslate"><span class="pre">displayList</span></code> via <code class="docutils literal notranslate"><span class="pre">[satellites]=&quot;displayList&quot;</span></code>.</li>
+<li>Use the given HTML as a template.</li>
+<li>The rest of the steps are left for you to figure out.</li>
 </ol>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Satellite Counts:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;counts&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Space Debris: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Communication: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Probe: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Positioning: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Space Station: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Telescope: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure" id="id4">
+<img alt="Example of six satellite counts being displayed." src="../_images/orbit-counts-output.png" />
+<p class="caption"><span class="caption-text">Example of the seven different satellite counts being displayed.</span></p>
+</div>
 </div>
 </div>
 <div class="section" id="bonus-mission">
