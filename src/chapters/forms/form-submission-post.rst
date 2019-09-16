@@ -98,7 +98,3 @@ Check Your Understanding
 .. admonition:: Question
 
    What attribute on ``<form>`` determines *where* the request is sent?
-
-.. admonition:: Question
-
-   What do *form handlers* do with form submissions?

@@ -1,5 +1,6 @@
 Test-Driven Development
 =======================
+
 .. index:: ! TDD
 
 .. index::
@@ -29,6 +30,7 @@ lead to code that is easy to read. Along the way we will build confidence as we 
 
 The Test/Code Cycle
 -------------------
+
 With TDD you start with the unit test first. As with any unit test, the test should describe
 a clearly described behavior that can be tested.
 
@@ -37,7 +39,6 @@ a clearly described behavior that can be tested.
    Example test case for a data parsing project.
 
    * Take in string of numbers delimited by a character and return an array.
-
 
 Because the test is for a feature that does NOT exist *yet*, we need to think about how the
 feature will be implemented. This is the time to ask questions like. Should we add a new
@@ -57,10 +58,9 @@ parameter? What about an entirely new function? What will the function return?
 
    * ``parseData`` will be defined in a module
 
-
 Next, write the unit test as if the parameter or function you imagined already exists.
 This may seem a bit odd, but considering how the new code will be used helps find bugs and flaws earlier.
-We also have to use test utilities such ``assert.strictEqual`` to will clearly demonstrate
+We also have to use test utilities such ``assert.strictEqual`` to clearly demonstrate
 that the proposed new code functions properly.
 
 .. admonition:: Example
@@ -68,7 +68,7 @@ that the proposed new code functions properly.
    This is were the ideas are typed out into a test. In this example the test references
    a module and a function that have not been created yet. The code follows the plan
    we came up with earlier. Very importantly there is an ``assert.strictEqual``
-   that verifies an array is returned.   
+   that verifies an array is returned.
 
    .. sourcecode:: js
       :linenos:
@@ -106,13 +106,13 @@ but with TDD writing new code is the *last* step.
       module.exports = parseData;
 
 Coding this way builds confidence in your work. No matter how large your code base may
-get, you know that each part has a test to validate it's functionality.
+get, you know that each part has a test to validate its functionality.
 
 .. admonition:: Example
 
    Now that we have one passing test for our data parser project, we could confidently
    move on to writing tests and code for the remaining features.
-   
+
 
 Red, Green, Refactor
 --------------------

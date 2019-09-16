@@ -199,6 +199,8 @@ interface.
 
    A repository with one commit in GitHub
 
+.. _clone-from-git:
+
 Step 3: Clone a Project from GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

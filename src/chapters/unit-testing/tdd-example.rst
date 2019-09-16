@@ -72,7 +72,7 @@ parameter describe the group of tests inside.
 
    });
 
-Give the test the name ``"takes a string returns an object"``.
+Give the test the name ``"takes a string and returns an object"``.
 
 .. sourcecode:: js
    :linenos:
@@ -89,7 +89,7 @@ Give the test the name ``"takes a string returns an object"``.
 
 Now that we identified a clear goal for the test, let's add logic and ``assert`` calls
 in the test to verify the desired behavior. *But wait...* we haven't added anything
-except an empty at this point. There isn't any actual code to verify. That's okay,
+except an empty test at this point. There isn't any actual code to verify. That's okay,
 this is part of the TDD process.
 
 We are going to think about and visualize
@@ -97,7 +97,7 @@ how this feature should be implemented in code. Then we will write out in the te
 this new code will be used.
 
 We need to think of something that will satisfy the statement
-``it("takes a string returns an object"``.
+``it("takes a string and returns an object"``.
 The ``it`` will be a function that is imported from a module. Below on line 2,
 a ``processor`` function is imported from the ``processor.js`` module.
 
@@ -109,7 +109,7 @@ a ``processor`` function is imported from the ``processor.js`` module.
 
    describe("transmission processor", function() {
 
-      it("takes a string returns an object", function(){
+      it("takes a string and returns an object", function(){
 
       });
 
@@ -120,7 +120,7 @@ Keep in mind this function only exists as a concept and we are writing a test
 to see if this concept makes sense.
 
 Now for the real heart of the test. We are going to use ``assert.strictEqual`` to
-verify that if we pass a string to ``processor`` that an object is returned.
+verify that if we pass a string to ``processor``, an object is returned.
 Carefully review lines 7 and 8 shown below.
 
 .. sourcecode:: js
@@ -131,7 +131,7 @@ Carefully review lines 7 and 8 shown below.
 
    describe("transmission processor", function() {
 
-      it("takes a string returns an object", function(){
+      it("takes a string and returns an object", function(){
          let result = processor("9701::<489584872710>");
          assert.strictEqual(typeof result, "object");
       });
@@ -223,7 +223,7 @@ For requirement #2, the solution for *steps 1 - 4* can be seen on lines *11 - 14
 
    describe("transmission processor", function() {
 
-      it("takes a string returns an object", function(){
+      it("takes a string and returns an object", function(){
          let result = processor("9701::<489584872710>");
          assert.strictEqual(typeof result, "object");
       });
@@ -549,9 +549,9 @@ You know what's next, our tests pass!
    ``rawData`` for all of these.
 
    * ``"9701::8729740349572>0912"``
-   * ``9701::4872<97403495720912"``
-   * ``9701::487297403495720912"``
-   * ``9701::<487297403495<720912>"``
+   * ``"9701::4872<97403495720912"``
+   * ``"9701::487297403495720912"``
+   * ``"9701::<487297403495<720912>"``
 
 
 Use TDD to Add These Features
