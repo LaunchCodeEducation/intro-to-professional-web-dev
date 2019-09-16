@@ -60,7 +60,7 @@ parameter? What about an entirely new function? What will the function return?
 
 Next, write the unit test as if the parameter or function you imagined already exists.
 This may seem a bit odd, but considering how the new code will be used helps find bugs and flaws earlier.
-We also have to use test utilities such ``assert.strictEqual`` to will clearly demonstrate
+We also have to use test utilities such ``assert.strictEqual`` to clearly demonstrate
 that the proposed new code functions properly.
 
 .. admonition:: Example
