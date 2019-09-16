@@ -75,7 +75,19 @@ Fetching Planetary Data
 -----------------------
 
 Finally, we need some JSON to fill in the crew on the mission destination.
+Our planetary data can be found in `JSON format <https://handlers.education.launchcode.org/static/planets.json/>`_.
+Review the list and decide which planet you want to send our intrepid crew to and make note of the index number.
 
+.. note:: 
+
+   When fetching more than one JSON object, we get an array of all of the JSON objects.
+   In this case, that means an array of our possible mission destinations.
+   So when picking the mission destination, you simply have to pick which item in the array and count starting at 0.
+
+In ``script.js``, we have a block of code commented out at the top.
+This is the format of the ``innerHTML`` for the ``missionTarget`` div.
+Be sure to include the appropriate variables in the template literals!
+ 
 The End Result
 --------------
 
@@ -89,3 +101,13 @@ The list has also updated to indicate that that is not enough fuel for the shutt
 
 .. figure:: figures/form-submission-result.png
    :alt: Image showing the updates to the faulty items list and the launch status.
+
+If the user forgets to enter the cargo mass, then an alert pops up letting the user know that all fields are required.
+
+.. figure:: figures/form-fields-required.png
+   :alt: Image showing an alert pop up stating that all fields are required.
+
+If the user switches up the information that needs to go in the fields, then an alert pops up letting the user know that they have tried to enter invalid information.
+
+.. figure:: figures/form-fields-invalid.png
+   :alt: Image showing an alert pop up stating that some fields have invalid information.

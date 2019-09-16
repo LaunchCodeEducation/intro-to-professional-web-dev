@@ -145,7 +145,18 @@ The text of <code class="docutils literal notranslate"><span class="pre">launchS
 </div>
 <div class="section" id="fetching-planetary-data">
 <h2>Fetching Planetary Data<a class="headerlink" href="#fetching-planetary-data" title="Permalink to this headline">¶</a></h2>
-<p>Finally, we need some JSON to fill in the crew on the mission destination.</p>
+<p>Finally, we need some JSON to fill in the crew on the mission destination.
+Our planetary data can be found in <a class="reference external" href="https://handlers.education.launchcode.org/static/planets.json/" target="_blank">JSON format<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Review the list and decide which planet you want to send our intrepid crew to and make note of the index number.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">When fetching more than one JSON object, we get an array of all of the JSON objects.
+In this case, that means an array of our possible mission destinations.
+So when picking the mission destination, you simply have to pick which item in the array and count starting at 0.</p>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">script.js</span></code>, we have a block of code commented out at the top.
+This is the format of the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> for the <code class="docutils literal notranslate"><span class="pre">missionTarget</span></code> div.
+Be sure to include the appropriate variables in the template literals!</p>
 </div>
 <div class="section" id="the-end-result">
 <h2>The End Result<a class="headerlink" href="#the-end-result" title="Permalink to this headline">¶</a></h2>
@@ -157,6 +168,14 @@ The text of <code class="docutils literal notranslate"><span class="pre">launchS
 The list has also updated to indicate that that is not enough fuel for the shuttle to launch.</p>
 <div class="figure">
 <img alt="Image showing the updates to the faulty items list and the launch status." src="../_images/form-submission-result.png" />
+</div>
+<p>If the user forgets to enter the cargo mass, then an alert pops up letting the user know that all fields are required.</p>
+<div class="figure">
+<img alt="Image showing an alert pop up stating that all fields are required." src="../_images/form-fields-required.png" />
+</div>
+<p>If the user switches up the information that needs to go in the fields, then an alert pops up letting the user know that they have tried to enter invalid information.</p>
+<div class="figure">
+<img alt="Image showing an alert pop up stating that some fields have invalid information." src="../_images/form-fields-invalid.png" />
 </div>
 </div>
 </div>
