@@ -398,7 +398,12 @@ Search feature should also find matches using the ``orbitType`` and ``type`` pro
 
 Submitting Your Work
 --------------------
-TODO: do these
+
+In Canvas, open the Orbit Report assignment and click the "Submit" button.
+An input box will appear.
+
+Copy the URL for your Github repository and paste it into the box, then click
+"Submit" again.
 
 
 .. _orbit-report-demo:
