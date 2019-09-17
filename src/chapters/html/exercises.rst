@@ -1,7 +1,7 @@
 Exercises: HTML
 ===============
 
-Complete the HTML file for this simple webpage. Add lines to ``index.html`` that do the following.
+Complete the HTML file for this simple web page. Add lines to ``index.html`` that do the following.
 
 1. Add a ``h1`` to the page that says "Why I Love Web Development"
 2. Add an ordered list to the page with 3 reasons why you love web development.

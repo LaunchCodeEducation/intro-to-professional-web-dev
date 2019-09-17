@@ -10,7 +10,7 @@ Over the past three chapters, you have learned:
    template.
 #. How to use the *structural directives* ``*ngFor`` and ``*ngIf`` to
    automatically generate HTML elements and display dynamic content.
-#. How to catch events and set up data-binding to make your webpage respond to
+#. How to catch events and set up data-binding to make your web page respond to
    user actions.
 #. How to use *attribute directives* to modify the appearance and behavior of
    specific HTML elements.
@@ -25,7 +25,7 @@ own.
 Of course, practice makes better. The best way for you to get better at
 Angular is to use Angular. Adapt the examples, exercises, and studio projects
 however you want. Also, create your own project and build your own sample
-webpages. Create an interactive family photo page, a grocery list, a web based
+web pages. Create an interactive family photo page, a grocery list, a web based
 breakout box, or whatever you want.
 
 You can find full documentation on the `Angular.io <https://angular.io/>`__
@@ -76,7 +76,7 @@ reusable elements. With time and practice, you will build a collection of
 small, generic components. You can then combine these tools in different ways
 to build small or large sections of any new project. The Lego analogy works
 here---the same set of blocks can be combined in multiple ways to produce
-different outcomes. Also, if you need consistent results on multiple webpages,
+different outcomes. Also, if you need consistent results on multiple web pages,
 then you just put the components together the same way each time instead of
 writing new code.
 

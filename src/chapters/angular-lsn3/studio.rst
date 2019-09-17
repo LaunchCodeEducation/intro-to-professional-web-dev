@@ -186,7 +186,7 @@ Bonus Missions
 
 To boost your Angular skills, add one or more of the following features:
 
-#. Update the CSS files to make the webpage look a little less bland.
+#. Update the CSS files to make the web page look a little less bland.
 #. Don't allow more than two of the same item in the cargo hold.
 #. Allow the user to remove individual items from the hold.
 #. Complete the ``experiments`` component with features similar to the ``crew``

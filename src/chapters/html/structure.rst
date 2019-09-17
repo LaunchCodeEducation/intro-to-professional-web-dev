@@ -17,7 +17,7 @@ When it comes to laying out the overarching structure of an HTML file, a program
 2. The ``<html>`` tag denotes the beginning and end of the HTML the programmer has written.
 3. The ``<head>`` tag contains data about the web page.
 4. The ``<body>`` tag contains everything that appears on the page of the document.
-5. The ``<title>`` tag goes in the ``<head>`` of the document and browsers require it. It gives the title of the webpage that appears in the tab.
+5. The ``<title>`` tag goes in the ``<head>`` of the document and browsers require it. It gives the title of the web page that appears in the tab.
 
 Here is an example of the structure of an HTML page based off of these rules:
 

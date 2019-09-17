@@ -2,7 +2,7 @@ Fetching Data
 =============
 
 Now that we know what an API is, let's use one to update a web page. Let's use
-a weather API to add weather data to a webpage. The URL for this special
+a weather API to add weather data to a web page. The URL for this special
 LaunchCode weather API is `<https://handlers.education.launchcode.org/static/weather.json>`__.
 
 Example JSON returned from our weather API.
@@ -284,7 +284,7 @@ Let's take a look at the expected sequence of events:
 #. The two anonymous functions end, and the HTML defined in lines 11 - 16
    gets added to the ``div`` element on line 26.
 
-Opening the developer tools on the webpage shows the added HTML:
+Opening the developer tools on the web page shows the added HTML:
 
 .. figure:: figures/weather-data-on-page.png
    :alt: Screen shot of browser showing Launch Status web page with the weather data in HTML.

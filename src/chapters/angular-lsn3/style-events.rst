@@ -2,7 +2,7 @@ Dynamic Style Changes
 ======================
 
 By adding :ref:`event listeners <angular-events>` to our Angular projects, we
-can make any element on our webpage interactive. This allows us to change the
+can make any element on our web page interactive. This allows us to change the
 styling on the page in response to user actions.
 
 Before we add functionality to the buttons, let's first update our text styling
@@ -61,7 +61,7 @@ descriptions of these attributes appear at
 However, for these examples we will focus on ``disabled``.
 
 Adding the ``disabled`` attribute inside the tag deactivates the button. Any
-time you see a greyed out button on a webpage, ``disabled`` is the cause.
+time you see a greyed out button on a web page, ``disabled`` is the cause.
 
 .. admonition:: Example
 
@@ -130,7 +130,7 @@ to a boolean. In this case, we can use the ``inactive`` variable defined in the
 
       <button [class.gold]="!inactive" [disabled]="inactive" (click)="inactive = true">Gold</button> <br>
 
-   Save your changes and refresh the webpage. Now when you click on the
+   Save your changes and refresh the web page. Now when you click on the
    "Gold" button, ``inactive`` gets set to ``true``. This adds the ``disabled``
    attribute to the HTML tag, turing it off. In addition, the ``gold`` class is
    removed, changing the color of the button.
