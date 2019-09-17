@@ -27,7 +27,7 @@ The starter code should match this:
    </div>
 
 In the terminal, navigate into the ``input-practice`` folder. Enter
-``npm install`` to add the Angular modules, then run ``ng serve``. The webpage
+``npm install`` to add the Angular modules, then run ``ng serve``. The web page
 should look like this:
 
 .. figure:: ./figures/input-start.png
@@ -184,7 +184,7 @@ Summary
 --------
 
 We now have a way to collect user input and store it in a variable. We also
-learned how to access the data and display it on the webpage.
+learned how to access the data and display it on the web page.
 
 To accept user input, Angular requires three items:
 

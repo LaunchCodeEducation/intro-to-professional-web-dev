@@ -26,12 +26,12 @@ You have seen most of the HTML tags before, but line 12 shows something odd.
 The strange tag ``<app-root>`` represents a key idea behind building templates.
 Angular allows us to define our own tags, which are used as another type of
 placeholder in an HTML file. In this case, ``<app-root></app-root>`` reserves
-space on the webpage for information supplied by other files. Line 12
+space on the web page for information supplied by other files. Line 12
 essentially says, "Display all the content from the ``app`` folder here."
 
 As we add more pieces to our template, we will define specific tags to help us
 arrange the different items on the screen. This makes it easier for us to keep
-track of our content. For example, if we want to build a webpage that contains
+track of our content. For example, if we want to build a web page that contains
 a shopping list, a movies to watch list, and family photos, we can define the
 tags ``<movies>``, ``<grocery-list>``, and ``<family-photos>``. With these
 tags, we can reference specific content whenever we want and clearly place it
@@ -92,7 +92,7 @@ Let's examine the code contained in three other ``app`` files.
 gets filled with data passed in from another file, and it allows us to modify
 the content on the page without revising the HTML.
 
-``app.component.html`` serves as the main template for your webpage. This file
+``app.component.html`` serves as the main template for your web page. This file
 will usually NOT hold a lot of HTML code. Instead, it will contain many
 placeholders for content defined elsewhere in the project.
 
@@ -135,7 +135,7 @@ Take a look at ``app.component.html`` again. We mentioned the ``{{title}}``
 placeholder earlier and said that it gets filled with data from a different
 file. Line 9 in ``app.component.ts`` supplies this data by assigning the string
 ``'my-project-name'`` to the ``title`` variable. Changing ``'my-project-name'``
-to a different value alters the webpage.
+to a different value alters the web page.
 
 ``app.module.ts`` File
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -189,7 +189,7 @@ tasks on the previous page, attempt them now. After that...
 Try It!
 ^^^^^^^^
 
-#. Run ``ng serve`` in the terminal to launch your webpage again.
+#. Run ``ng serve`` in the terminal to launch your web page again.
 #. In ``app.component.ts``, declare and assign two variables in the
    ``AppComponent`` class---``name`` and ``itemList``.
 
@@ -219,7 +219,7 @@ Try It!
 
 #. Replace line 4 in ``app.component.html`` with ``<h1>{{name}}'s First
    Angular Project</h1>``. Save your work and then check to make sure the
-   webpage shows the new heading.
+   web page shows the new heading.
 #. Modify the ``<li></li>`` elements in ``app.component.html`` to display the
    elements from ``itemList`` in an unordered list. Be sure to use
    placeholders like ``{{itemList[0]}}`` between the tags.
@@ -241,7 +241,7 @@ Try It!
 
 #. Add a ``<p></p>`` element in ``app.component.html`` to display the sentence,
    "The rectangle has a length of ___ cm, a width of ___ cm, and an area of ___
-   cm^2." Replace the blanks with placeholders so the webpage displays the
+   cm^2." Replace the blanks with placeholders so the web page displays the
    correct numbers whenever ``length`` or ``width`` are changed.
 
    .. sourcecode:: html
@@ -254,7 +254,7 @@ Filename Pattern
 
 Each of the files in the ``app`` folder contain the word ``component`` in their
 name. This results from the fundamental idea behind Angular. Each *template*
-for a webpage is constructed from smaller pieces, and these pieces are the
+for a web page is constructed from smaller pieces, and these pieces are the
 *components*.
 
 Our next step is to take a closer look at these building blocks within a

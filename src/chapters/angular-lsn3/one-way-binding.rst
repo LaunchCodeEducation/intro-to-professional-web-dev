@@ -46,7 +46,7 @@ Binding to HTML Attributes
 
 We also used one-way data binding to modify attributes within an HTML tag. For
 example, assume the ``image`` variable holds the URL for a photo we want to use
-on our webpage.
+on our web page.
 
 .. admonition:: Example
 

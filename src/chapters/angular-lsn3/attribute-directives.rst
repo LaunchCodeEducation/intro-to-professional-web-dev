@@ -136,7 +136,7 @@ Ideas to note:
 .. admonition:: Try It
 
    Change the values for the ``alternateColor`` and ``bulletType`` variables.
-   Save your work and refresh the webpage to see the results.
+   Save your work and refresh the web page to see the results.
 
    Note that ``bulletType`` takes options of numbers (``1``), upper and lower
    case letters (``A``, ``a``), or upper and lower case Roman numerals (``I``,
