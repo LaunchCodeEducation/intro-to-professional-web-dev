@@ -1,8 +1,8 @@
 Assignment #5: Launch Checklist Form
 ====================================
 
-Using our knowledge of forms, the DOM, and HTTP, our favorite space shuttle program has asked us to create a quick launch checklist.
-We have four fields that need to be filled out with vital information: the pilot's name, the co-pilot's name, the fuel levels, and the weight of the cargo.
+Using our knowledge of forms, the DOM, and HTTP, the commanders of our favorite space shuttle program asked us to create a quick launch checklist.
+We have four fields that need to be filled out with vital information: the pilot's name, the co-pilot's name, the fuel levels, and the mass of the cargo.
 
 Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to ensure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.
 
@@ -28,7 +28,7 @@ Fork the repository with the `starter code <https://github.com/LaunchCodeEducati
 
 .. warning::
 
-   When updating styles to indicate whether the shuttle is ready for launch, do not modify ``styles.css``!
+   When updating styles to indicate whether the shuttle is ready for launch, do NOT modify ``styles.css``!
 
 To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
 
@@ -43,19 +43,19 @@ Adding Validation
 Adding Alerts
 ^^^^^^^^^^^^^
 
-First, let's add the validation to notify the user if they forgot to enter a value for any one of the fields.
+First, let's add validation to notify the user if they forgot to enter a value for any one of the fields.
 
 This process is going to look similar to the :ref:`validation section <javascript-validation>` in the chapter on forms. 
 Make sure to use ``preventDefault()`` and an alert to notify the user that all fields are required.
 
 You also want to make sure that the user entered valid info for each of the fields.
 Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.
-The pilot and co-pilot names should be strings and the fuel level and cargo weight should be numbers.
+The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
 
 .. note:: 
 
    If you want to check if something is ``NaN``, you cannot use ``==`` or ``===``.
-   JavaScript does have a built-in method called ``isNaN(value)`` that returns ``true`` if ``value`` is ``NaN`` and ``false`` if ``value`` is not ``NaN``.
+   Instead, JavaScript has a built-in method called ``isNaN(value)`` that returns ``true`` if ``value`` is ``NaN`` and ``false`` if ``value`` is not ``NaN``.
 
 Updating Shuttle Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
