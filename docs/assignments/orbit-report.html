@@ -85,8 +85,8 @@
     
   <div class="section" id="assignment-6-orbit-report">
 <h1>Assignment #6: Orbit Report<a class="headerlink" href="#assignment-6-orbit-report" title="Permalink to this headline">¶</a></h1>
-<p>There are thousands of satellites oribiting the earth. You are tasked with creating a searchable, sortable table of satellites.
-For the purposes of this assigment, <strong>satellite</strong> will be defined as any objects that were purposefully placed into orbit.</p>
+<p>There are thousands of satellites orbiting the earth. You are tasked with creating a searchable, sortable table of satellites.
+For the purposes of this assignment, <strong>satellite</strong> will be defined as any object purposefully placed into orbit.</p>
 <p>TODO: screen shot of finished report in the browser with numbers by each feature</p>
 <ol class="arabic simple">
 <li><strong>Satellites</strong>: Table with each row being a satellite.</li>
@@ -97,7 +97,7 @@ For the purposes of this assigment, <strong>satellite</strong> will be defined a
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Create a new project on github named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code>.</li>
+<li>Create a new project on Github named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code>.</li>
 <li>Clone that repo to your computer.</li>
 <li>Create a new Angular project in the cloned repo folder using this command.<ul>
 <li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">new</span> <span class="pre">--skip-git</span> <span class="pre">orbit-report</span></code></li>
@@ -105,7 +105,7 @@ For the purposes of this assigment, <strong>satellite</strong> will be defined a
 <li>Prompt answers: No Routing, Use CSS</li>
 </ul>
 </li>
-<li>Commit and push your changes to github.</li>
+<li>Commit and push your changes to Github.</li>
 </ol>
 </div>
 <div class="section" id="requirements">
@@ -117,8 +117,8 @@ For the purposes of this assigment, <strong>satellite</strong> will be defined a
 For this project you need to create a class named <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> to represent, you guessed it, a satellite. The <code class="docutils literal notranslate"><span class="pre">Satellite</span></code>
 class needs to define the properties needed to accurately represent a satellite.</p>
 <ol class="arabic simple">
-<li>In terminal go to the <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code> folder</li>
-<li>Create a the class with command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">g</span> <span class="pre">class</span> <span class="pre">Satellite</span></code></li>
+<li>In terminal go to the <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code> folder.</li>
+<li>Create a class with command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">g</span> <span class="pre">class</span> <span class="pre">Satellite</span></code>.</li>
 <li>Notice that the new file <code class="docutils literal notranslate"><span class="pre">orbit-report/src/app/satellite.ts</span></code> was created.</li>
 <li>Add these properties to the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class in <code class="docutils literal notranslate"><span class="pre">satellite.ts</span></code>:</li>
 </ol>
@@ -156,27 +156,26 @@ class needs to define the properties needed to accurately represent a satellite.
 </pre></div>
 </div>
 <ol class="arabic simple" start="8">
-<li>In termainl run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code></li>
+<li>In terminal run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code></li>
 <li>View the app in your browser. At this point you should see the default Angular starter page. If you don’t, check the build output and browser console for any errors.</li>
 </ol>
 </div>
 <div class="section" id="create-orbit-list-component">
 <h3>2) Create Orbit List Component<a class="headerlink" href="#create-orbit-list-component" title="Permalink to this headline">¶</a></h3>
 <p>Now that you have an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects, you can display them. To do that, you are going to need to create a
-new component named <code class="docutils literal notranslate"><span class="pre">oribit-list</span></code>.</p>
+new component named <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code>.</p>
 <ol class="arabic simple">
-<li>Create <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">g</span> <span class="pre">component</span> <span class="pre">orbit-list</span></code></li>
-<li>Completely wipe out the contents of <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">&lt;app-orbit-list&gt;&lt;/app-orbit-list&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code></li>
+<li>Create <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">g</span> <span class="pre">component</span> <span class="pre">orbit-list</span></code> in the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</li>
+<li>Replace the contents of <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> with just one line of code, <code class="docutils literal notranslate"><span class="pre">&lt;app-orbit-list&gt;&lt;/app-orbit-list&gt;</span></code>.</li>
 <li>View the app in your browser. You should see: orbit-list works!</li>
 </ol>
 </div>
 <div class="section" id="pass-in-satellites-to-orbit-list-component">
 <h3>3) Pass in Satellites to Orbit List Component<a class="headerlink" href="#pass-in-satellites-to-orbit-list-component" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component’s job is to show a list of statellites. Rember you declared an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in
+<p>The <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component’s job is to show a list of satellites. Remember you declared an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in
 <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> named <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>. In order to pass that array into the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code>, you need to learn a new Angular
 feature named <a class="reference external" href="https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding" target="_blank">input properties<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
-For the purpose of this feature, the term input refers to data being sent <em>into</em> the compoment. Angular input properties are NOT related to HTML <code class="docutils literal notranslate"><span class="pre">input</span></code>
+For the purpose of this feature, the term input refers to data being sent <em>into</em> the component. Angular input properties are NOT related to HTML <code class="docutils literal notranslate"><span class="pre">input</span></code>
 elements.</p>
 <p>Currently <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> uses the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component like so:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">app-orbit-list</span><span class="p">&gt;&lt;/</span><span class="nt">app-orbit-list</span><span class="p">&gt;</span>
@@ -200,16 +199,16 @@ of the <code class="docutils literal notranslate"><span class="pre">satellites</
 </li>
 <li>Open developer tools in your browser and look at the JavaScript console.</li>
 </ol>
-<p>You should see the below error message telling you that the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> compoment does NOT have a <code class="docutils literal notranslate"><span class="pre">satellites</span></code> property.
-Note only the relavent message text has been included below.</p>
+<p>You should see the below error message telling you that the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component does NOT have a <code class="docutils literal notranslate"><span class="pre">satellites</span></code> property.
+Note only the relevant message text has been included below.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error: Template parse errors:
 Can&#39;t bind to &#39;satellites&#39; since it isn&#39;t a known property of &#39;app-orbit-list&#39;.
 1. If &#39;app-orbit-list&#39; is an Angular component and it has &#39;satellites&#39; input, then verify that it is part of this module.
 </pre></div>
 </div>
-<p>To solve this issue, you need to declare in <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code> that the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> compoment has an input property named <code class="docutils literal notranslate"><span class="pre">satellites</span></code>.</p>
+<p>To solve this issue, you need to declare in <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code> that the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component has an input property named <code class="docutils literal notranslate"><span class="pre">satellites</span></code>.</p>
 <ol class="arabic simple" start="4">
-<li>Add the code below to line 10 of <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code><ul>
+<li>Add the code below to just before the constructor in <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code>.<ul>
 <li><code class="docutils literal notranslate"><span class="pre">&#64;Input()</span> <span class="pre">satellites:</span> <span class="pre">Satellite[];</span></code></li>
 </ul>
 </li>
@@ -226,44 +225,6 @@ Can&#39;t bind to &#39;satellites&#39; since it isn&#39;t a known property of &#
 </ul>
 </li>
 </ol>
-<p>Your <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code> should now look like the below.</p>
-<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Satellite</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../satellite&#39;</span><span class="p">;</span>
-
-<span class="kd">@Component</span><span class="p">({</span>
-   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-orbit-list&#39;</span><span class="p">,</span>
-   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./orbit-list.component.html&#39;</span><span class="p">,</span>
-   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./orbit-list.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">OrbitListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-
-   <span class="kd">@Input</span><span class="p">()</span> <span class="nx">satellites</span>: <span class="kt">Satellite</span><span class="p">[];</span>
-
-   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
-
-   <span class="nx">ngOnInit() {</span>
-   <span class="p">}</span>
-
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
 </div>
 <div class="section" id="display-table-of-satellites">
 <h3>4) Display Table of Satellites<a class="headerlink" href="#display-table-of-satellites" title="Permalink to this headline">¶</a></h3>
@@ -327,7 +288,7 @@ Your next task is to switch to using a <code class="docutils literal notranslate
 
          <span class="kd">let</span> <span class="nx">fetchedSatellites</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">satellites</span><span class="p">;</span>
          <span class="c1">// TODO: loop over satellites</span>
-         <span class="c1">// TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].fetchedSatellites, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);</span>
+         <span class="c1">// TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);</span>
          <span class="c1">// TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);</span>
 
       <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
@@ -341,7 +302,7 @@ Your next task is to switch to using a <code class="docutils literal notranslate
 <p class="last">Explaining the <code class="docutils literal notranslate"><span class="pre">.bind(this)</span></code> syntax is beyond the scope of this book, but is crucial for <code class="docutils literal notranslate"><span class="pre">this.sourceList.push(satellite)</span></code> to work properly.</p>
 </div>
 <ol class="arabic simple" start="3">
-<li>View the app in your browser. You should see a table like the below.</li>
+<li>View the app in your browser. Your table should look similar to:</li>
 </ol>
 <div class="figure" id="id2">
 <img alt="Screen shot of browser showing http://localhost:4200 with a table of 9 satellites." src="../_images/fetched-table-satellites.png" />
@@ -358,13 +319,14 @@ by adding an Angular attribute directive.</p>
 <li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> should return <code class="docutils literal notranslate"><span class="pre">this.type</span> <span class="pre">===</span> <span class="pre">'Space</span> <span class="pre">Debris';</span></code>.</li>
 </ul>
 </li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite’s type.</li>
 </ol>
-<ul class="simple">
-<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite’s type.<ul>
+<blockquote>
+<div><ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">[class.warning]=&quot;satellite.shouldShowWarning()&quot;</span></code></li>
+<li>NOTE: The variable <code class="docutils literal notranslate"><span class="pre">satellite</span></code> is the variable declared in the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>, your variable may be called something different.</li>
 </ul>
-</li>
-</ul>
+</div></blockquote>
 <div class="figure" id="id3">
 <img alt="Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background." src="../_images/table-satellites-with-warning.png" />
 <p class="caption"><span class="caption-text">Example of warning style adding a red background to Space Debris type.</span></p>
@@ -420,8 +382,8 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p>You are doing great! Only two more features to add. Next you will add a search feature.</p>
 <ol class="arabic simple">
 <li>Add this HTML <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;search-form&quot;&gt;&lt;/div&gt;</span></code> in your <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
-<li>Add an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> element insde the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element insde the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
+<li>Add an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> element inside the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element inside the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
 <li>Add an Angular click handler to the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> that when clicked calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">searchTerm</span></code> being the local variable name for the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code></li>
 </ul>
@@ -431,7 +393,7 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </ul>
 </li>
 <li>Add a <code class="docutils literal notranslate"><span class="pre">search</span></code> method to the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class.<ul>
-<li>The <code class="docutils literal notranslate"><span class="pre">search</span></code> method is provded below.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">search</span></code> method is provided below.</li>
 </ul>
 </li>
 </ol>
@@ -457,7 +419,7 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
       <span class="p">}</span>
    <span class="p">}</span>
    <span class="c1">// assign this.displayList to be the the array of matching satellites</span>
-   <span class="c1">// this will cause Angular to re-make the table, but now only containg matches</span>
+   <span class="c1">// this will cause Angular to re-make the table, but now only containing matches</span>
    <span class="k">this</span><span class="p">.</span><span class="nx">displayList</span> <span class="o">=</span> <span class="nx">matchingSatellites</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -483,7 +445,7 @@ Matching is defined as <code class="docutils literal notranslate"><span class="p
 <div class="section" id="counting-satellites">
 <h3>9) Counting Satellites<a class="headerlink" href="#counting-satellites" title="Permalink to this headline">¶</a></h3>
 <p>For the last feature, you are on your own. You are tasked with creating a new component that
-show the total count and count by type for the satellites currently displayed in the table.</p>
+shows the total count and count by type for the satellites currently displayed in the table.</p>
 <ol class="arabic simple">
 <li>Create an <code class="docutils literal notranslate"><span class="pre">orbit-counts</span></code> component.</li>
 <li>Copy the entire contents of the <a class="reference external" href="https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6" target="_blank">example orbit-counts.component.css<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and put it into your <code class="docutils literal notranslate"><span class="pre">orbit-counts.component.css</span></code>.</li>
