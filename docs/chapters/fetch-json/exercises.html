@@ -184,20 +184,22 @@ In your terminal, type <code class="docutils literal notranslate"><span class="p
 13
 14
 15
-16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Fetch Planets<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
             <span class="c1">// TODO: fetch planets JSON</span>
          <span class="p">});</span>
       <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Destination<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;destination&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;destination&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Planet<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -210,7 +212,7 @@ Add the code to fetch this URL inside the load event listener on line 6:</p>
 3
 4
 5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
       <span class="c1">// TODO: do something after fetching and receiving a response</span>
    <span class="p">});</span>
 <span class="p">});</span>
@@ -223,7 +225,7 @@ Add the code to fetch this URL inside the load event listener on line 6:</p>
 3
 4
 5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
    <span class="p">});</span>
 <span class="p">});</span>
@@ -241,7 +243,7 @@ You won’t see much on the page yet. Open your developer tools and examine both
 5
 6
 7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
       <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
       <span class="p">});</span>
@@ -262,8 +264,92 @@ into the app.</p>
 Play around by changing the index number. Does the planet name change?
 Can you change the planet’s property being printed?</p>
 </li>
-<li><p class="first">TODO: LAST INSTRUCTIONS</p>
-<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<li><p class="first">Now, what happens if we move those last lines we added to outside and after
+the fetch request? Since <code class="docutils literal notranslate"><span class="pre">json</span></code> hasn’t been defined outside of the
+<code class="docutils literal notranslate"><span class="pre">response.json()</span></code> method yet, in order to move the template literal that uses
+that <code class="docutils literal notranslate"><span class="pre">json</span></code> variable, we’ll need to also initiate it outside of the function
+call.
+Let’s also put our print statement back so we can verify that our fetch works.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+   <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+   <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;`</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Refresh the page and try this. See any data? See anything of note in the console?</p>
+<p>We can tell that our fetch works because the JSON array is printed to the console.
+However, you should also see an error in the console related to the template literal
+using <code class="docutils literal notranslate"><span class="pre">json[0].name</span></code>.
+This error occurs because of the asynchronous nature of JavaScript. Although we
+now have <code class="docutils literal notranslate"><span class="pre">json</span></code> defined outside of the fetch request, at the point in time that
+we seek it for the template literal, we haven’t yet received the json data.
+One clue that asynchronism is at play, the error appears before the printed JSON.</p>
+</li>
+<li><p class="first">Our last task left us with some knowledge about where and how we can use the
+fetched data, but we don’t really want to keep those changes. Instead, how
+about we use an event to change the planet information we see? Let’s move
+the DOM manipulation to inside a click handler.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+   <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+      <span class="nx">destination</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">            &lt;div&gt;</span>
+<span class="sb">               &lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+<span class="sb">               &lt;img src=</span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">image</span><span class="si">}</span><span class="sb"> height=250&gt;&lt;/img&gt;</span>
+<span class="sb">            &lt;/div&gt;</span>
+<span class="sb">         `</span><span class="p">;</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now, after refreshing the page, you can click on the <code class="docutils literal notranslate"><span class="pre">Planet</span></code> header to make
+the name and image appear.
+Take note, we’re still fetching on load, just not displaying the data until the
+the header is clicked.</p>
+</li>
+<li><p class="first">For fun and good measure, let’s dynamically change which planet’s info we’re displaying each time
+the header is clicked. To do this,</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>We declare a counter variable, <code class="docutils literal notranslate"><span class="pre">index</span></code> that changes each time a
+<code class="docutils literal notranslate"><span class="pre">click</span></code> event takes place.</li>
+<li>We then use the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> as the position in the planets array to
+use in the template literal.</li>
+<li>Finally, since we want to cap the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> so that it does not
+exceed the length of the planets array, we’ll use a modulo to control how
+large <code class="docutils literal notranslate"><span class="pre">index</span></code> can get.</li>
+</ol>
+</div></blockquote>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -277,59 +363,28 @@ Can you change the planet’s property being printed?</p>
 12
 13
 14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Fetch Planets<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="kd">let</span> <span class="nx">planetData</span> <span class="o">=</span> <span class="p">[];</span>
-            <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-               <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="nx">planetData</span> <span class="o">=</span> <span class="nx">json</span><span class="p">;</span>
-               <span class="p">});</span>
-            <span class="p">});</span>
-            <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
-            <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="nx">destination</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-               <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
-<span class="sb">                     &lt;div&gt;</span>
-<span class="sb">                        &lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">planetData</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
-<span class="sb">                        &lt;img src=</span><span class="si">${</span><span class="nx">planetData</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">image</span><span class="si">}</span><span class="sb"> height=250&gt;&lt;/img&gt;</span>
-<span class="sb">                     &lt;/div&gt;</span>
-<span class="sb">                  `</span><span class="p">;</span>
-               <span class="nx">index</span> <span class="o">=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nx">planetData</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-            <span class="p">});</span>
-         <span class="p">});</span>
-      <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Destination<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;destination&quot;</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Planet<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">destination</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">            &lt;div&gt;</span>
+<span class="sb">               &lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+<span class="sb">               &lt;img src=</span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">image</span><span class="si">}</span><span class="sb"> height=250&gt;&lt;/img&gt;</span>
+<span class="sb">            &lt;/div&gt;</span>
+<span class="sb">         `</span><span class="p">;</span>
+         <span class="nx">index</span> <span class="o">=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nx">json</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+          <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
+<p>Et voila! Our destination changes on each click!</p>
+<div class="figure">
+<img alt="Clicking through destinations." src="../../_images/planet-destinations.gif" />
+</div>
+<p>Put on your planetary shoes. We are moving through planets!</p>
 </li>
 </ol>
 </div>
