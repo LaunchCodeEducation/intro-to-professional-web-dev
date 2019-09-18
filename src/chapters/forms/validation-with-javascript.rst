@@ -1,3 +1,5 @@
+.. _javascript-validation:
+
 Validation with JavaScript
 ==========================
 
