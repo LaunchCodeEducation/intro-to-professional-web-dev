@@ -85,8 +85,8 @@ JSON
 Fetch
 -----
 
-#. Create a file called ``fetch_planets.html``.
-   In your terminal, type ``touch fetch_planets.html``. 
+#. Go to the directory where you are working on your LC101 homework. Create a file called 
+   ``fetch_planets.html`` using ``touch``.
 
 #. Open the file in VSCode and add the preliminary HTML:
 
@@ -112,27 +112,18 @@ Fetch
       </html>
 
 #. The URL where our planet data is located is: ``"https://handlers.education.launchcode.org/static/planets.json"``.
-   Add the code to fetch this URL inside the load event listener on line 6:
+   Add the code to fetch this URL inside the load event listener.
 
    .. sourcecode :: js
       :linenos:
 
       window.addEventListener("load", function() {
-         fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+         fetch(URL).then(function(response){
             // TODO: do something after fetching and receiving a response
          });
       });
 
-#. Peek the response returned in the request with a print statement:
-
-   .. sourcecode :: js
-      :linenos:
-
-      window.addEventListener("load", function() {
-         fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
-            console.log(response);
-         });
-      });
+#. Peek the response returned in the request with a print statement inside of the function.
 
    Copy the file path of this HTML file and paste it as the URL in your browser.
    You won't see much on the page yet. Open your developer tools and examine both the 
@@ -143,13 +134,10 @@ Fetch
    .. sourcecode :: js
       :linenos:
 
-      window.addEventListener("load", function() {
-         fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
-            response.json().then(function(json) {
-               console.log(json);
-            });
-         });
+      response.json().then(function(json) {
+         console.log(json);
       });
+
    
    What data type do you see printed? 
 
