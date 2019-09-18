@@ -81,6 +81,7 @@ Assignments
    assignments/scrabble-scorer
    assignments/mars-rover
    assignments/html-me-something
+   assignments/launch-checklist
 
 Appendices
 ^^^^^^^^^^
