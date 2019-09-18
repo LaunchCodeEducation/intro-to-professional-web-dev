@@ -14,7 +14,8 @@ projects repository:
 #. Fork the
    `angular-lc101-projects repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
    on GitHub.
-#. Clone your fork.
+#. Clone your fork. If you need a reminder for how to do this, refer to the
+   :ref:`Git studio <clone-from-git>`.
 
 The repository contains all of the starter code you will need for the examples
 and exercises in Angular lessons 1, 2, and 3. Each lesson has its own folder,

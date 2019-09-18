@@ -26,7 +26,8 @@ Sections:
 ----------
 
 #. :ref:`Getting Started <getting-started>`
-#. :ref:`Getting to Work <getting-to-work>`
+#. :ref:`Part 1: HTML <html-me-part1>`
+#. :ref:`Part 2: CSS <html-me-part2>`
 #. :ref:`Submitting Your Work <submitting-your-work>`
 
 .. _getting-started:

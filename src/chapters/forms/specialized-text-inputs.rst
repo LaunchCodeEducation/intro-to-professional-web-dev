@@ -55,11 +55,3 @@ Example
       crewCount=8
 
     `Run it <https://repl.it/@launchcode/specialized-inputs-example>`_
-
-
-Check Your Understanding
-------------------------
-
-.. admonition:: Question
-
-   What happens if you type in ``1234`` into ``<input type="email"/>``?

@@ -142,7 +142,7 @@ traditional Scrabble scoring algorithm. Take a few moments to review how
 </td></tr></table></div>
 <p>The object keys of <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> are the Scrabble points, and the values
 are arrays of letters. All letters in the array have the Scrabble
-point value equal to the key. For example, <code class="docutils literal notranslate"><span class="pre">'A'</span></code> is worth 1, and <code class="docutils literal notranslate"><span class="pre">'J'</span></code> is
+point value equal to the key. For example, <code class="docutils literal notranslate"><span class="pre">'A'</span></code> is worth 1, <code class="docutils literal notranslate"><span class="pre">'K'</span></code> is worth 5, and <code class="docutils literal notranslate"><span class="pre">'J'</span></code> is
 worth 8.</p>
 <p>With the old format, to find the point value for a letter, the program must
 iterate over each key in <code class="docutils literal notranslate"><span class="pre">oldScoreKey</span></code> and then check if the letter is inside
@@ -152,8 +152,8 @@ each letter. The value of each key will be the Scrabble point value.</p>
 <p>Example of new key storage</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">a</span></code> is worth <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">k</span></code> is worth <code class="docutils literal notranslate"><span class="pre">5</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">k</span></code> is worth <code class="docutils literal notranslate"><span class="pre">10</span></code></li>
 </ul>
 <p>In <code class="docutils literal notranslate"><span class="pre">newScoreKey</span></code>, the letters themselves are keys, so a single search will
 identify a point value.</p>
