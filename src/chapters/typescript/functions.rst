@@ -2,8 +2,8 @@ Functions in TypeScript
 =======================
 
 When creating functions in TypeScript, we have many of the same options as in JavaScript.
-We can make anonymous functions, give it a different number of parameters and so on.
-However, when working with functions in TypeScript, we have to keep *type* in mind.
+We can make anonymous functions, give them a different number of parameters, and so on.
+However, when working with functions in TypeScript, we have to keep *data types* in mind.
 
 Declaring Functions
 -------------------
@@ -13,18 +13,40 @@ Named Functions
 
 Let's take a look at a TypeScript function declaration.
 
-.. sourcecode:: typescript
+.. admonition:: Example
 
-   function myFunction(a: number): number {
-      return a*2;
-   }
+   We want to declare a function called ``myFunction``.
+   ``myFunction`` has one parameter, a number called ``x``.
+   ``myFunction`` returns the value of ``x`` multiplied by 2.
 
-Here you can see that we provided the type of the parameters and the type of the value that is returned.
-If the function doesn't have a return value, then you use ``void`` for its type.
+   With this in mind, the declaration in TypeScript would look like:
 
-.. note::
+   .. sourcecode:: typescript
 
-   While in many cases, it is possible to determine the return type during compilation, if you know the return type, you should give it. 
+      function myFunction(x: number): number {
+         return x*2;
+      }
+
+   Here you can see that we provided the type of the parameter and the type of the value that is returned after the colons.
+   If ``x`` was a string or a boolean, then we would replace ``number`` with the data type of ``x``.
+
+What if the function doesn't return a value? In these cases, we use ``void`` as the return type.
+
+.. admonition:: Example
+
+   Let's change up ``myFunction`` a little bit!
+   ``myFunction`` still has one parameter, our number called ``x``, however, it doesn't return a specific value.
+
+   .. sourcecode:: typescript
+
+      let y: number = 0;
+
+      function myFunction(x: number): void {
+         y = x*2;
+      }
+
+   Instead of returning the value of ``x`` multiplied by 2, ``myFunction`` now assigns to a variable, ``y``, the value of ``x`` multiplied by 2.
+   We can now use ``void`` to specify the no value is returned.
 
 Anonymous Functions
 ^^^^^^^^^^^^^^^^^^^
@@ -48,8 +70,10 @@ Optional Parameter
 ------------------
 
 In JavaScript, you can declare a function with 5 parameters and only give it 2 when it comes time to use it.
-In TypeScript, that is not the case. When you declare a function with 5 parameters, you have to give the function 5 arguments when calling it.
-However, in TypeScript, you can make parameters optional. This means that when you are calling the function, you can leave off the optional parameter.
+In TypeScript, that is not the case.
+In TypeScript when you declare a function with 5 parameters, you have to give the function 5 arguments when calling it, unless you make some of those parameters optional.
+As with JavaScript functions, optional parameters can be omitted.
+This means that when you are calling the function, you can leave off the optional parameter(s).
 
 To denote a parameter as optional, you can use ``?`` notation. Any parameters that are optional must follow the required parameters.
 
@@ -58,7 +82,7 @@ To denote a parameter as optional, you can use ``?`` notation. Any parameters th
    .. sourcecode:: typescript
 
       function myFunction(a: number, b?:number): number {
-         return a+b;
+         return a+b+5;
       }
 
       console.log(myFunction(1,2));
@@ -68,24 +92,27 @@ To denote a parameter as optional, you can use ``?`` notation. Any parameters th
 
    ::
 
-      3
-      1
       8
-      3
+      6
+      13
+      8
 
-In this example, the ``myFunction`` function has two parameters, ``a`` and ``b``. ``a`` is required and ``b`` is optional. When only one argument is provided to the function, then the value of ``a`` is returned.
-When both arguments are provided, then the sum of the 2 arguments is returned.
+In this example, the ``myFunction`` function has two parameters, ``a`` and ``b``.
+``a`` is required and ``b`` is optional.
+When only one argument is provided to the function, then the value of ``a+5`` is returned.
+When both arguments are provided, then the sum of the 2 arguments and 5 is returned.
 
 Another way to deal with a parameter you need to be optional is to give it a default value.
 
-Let's say that in the example above, we wanted to give ``b`` a default value of 5. That way, if no argument is supplied for ``b``, then the value returned is that of ``a+5``.
+Let's say that in the example above, we wanted to give ``b`` a default value of 5.
+That way, if no argument is supplied for ``b``, then the value returned is that of ``a+10``.
 
 .. admonition:: Example
 
    .. sourcecode:: typescript
 
       function myFunction(a: number, b = 5): number {
-         return a+b;
+         return a+b+5;
       }
 
       console.log(myFunction(1,2));
@@ -95,10 +122,10 @@ Let's say that in the example above, we wanted to give ``b`` a default value of 
 
    :: 
 
-      3
-      6
-      9
       8
+      11
+      14
+      13
 
 Because ``b`` has a default value of ``5``, when the user does not pass a value to the second argument of ``myFunction``, 5 is used as the value of ``b``.
 

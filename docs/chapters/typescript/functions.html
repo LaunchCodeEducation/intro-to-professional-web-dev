@@ -87,23 +87,41 @@
   <div class="section" id="functions-in-typescript">
 <h1>27.4. Functions in TypeScript<a class="headerlink" href="#functions-in-typescript" title="Permalink to this headline">¶</a></h1>
 <p>When creating functions in TypeScript, we have many of the same options as in JavaScript.
-We can make anonymous functions, give it a different number of parameters and so on.
-However, when working with functions in TypeScript, we have to keep <em>type</em> in mind.</p>
+We can make anonymous functions, give them a different number of parameters, and so on.
+However, when working with functions in TypeScript, we have to keep <em>data types</em> in mind.</p>
 <div class="section" id="declaring-functions">
 <h2>27.4.1. Declaring Functions<a class="headerlink" href="#declaring-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="named-functions">
 <h3>27.4.1.1. Named Functions<a class="headerlink" href="#named-functions" title="Permalink to this headline">¶</a></h3>
 <p>Let’s take a look at a TypeScript function declaration.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We want to declare a function called <code class="docutils literal notranslate"><span class="pre">myFunction</span></code>.
+<code class="docutils literal notranslate"><span class="pre">myFunction</span></code> has one parameter, a number called <code class="docutils literal notranslate"><span class="pre">x</span></code>.
+<code class="docutils literal notranslate"><span class="pre">myFunction</span></code> returns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2.</p>
+<p>With this in mind, the declaration in TypeScript would look like:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Here you can see that we provided the type of the parameters and the type of the value that is returned.
-If the function doesn’t have a return value, then you use <code class="docutils literal notranslate"><span class="pre">void</span></code> for its type.</p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">While in many cases, it is possible to determine the return type during compilation, if you know the return type, you should give it.</p>
+<p class="last">Here you can see that we provided the type of the parameter and the type of the value that is returned after the colons.
+If <code class="docutils literal notranslate"><span class="pre">x</span></code> was a string or a boolean, then we would replace <code class="docutils literal notranslate"><span class="pre">number</span></code> with the data type of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</div>
+<p>What if the function doesn’t return a value? In these cases, we use <code class="docutils literal notranslate"><span class="pre">void</span></code> as the return type.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s change up <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> a little bit!
+<code class="docutils literal notranslate"><span class="pre">myFunction</span></code> still has one parameter, our number called <code class="docutils literal notranslate"><span class="pre">x</span></code>, however, it doesn’t return a specific value.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">y</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+   <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="last">Instead of returning the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> now assigns to a variable, <code class="docutils literal notranslate"><span class="pre">y</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2.
+We can now use <code class="docutils literal notranslate"><span class="pre">void</span></code> to specify the no value is returned.</p>
 </div>
 </div>
 <div class="section" id="anonymous-functions">
@@ -123,13 +141,15 @@ However, TypeScript has arrow notation and here we use the <strong>fat arrow</st
 <div class="section" id="optional-parameter">
 <h2>27.4.2. Optional Parameter<a class="headerlink" href="#optional-parameter" title="Permalink to this headline">¶</a></h2>
 <p>In JavaScript, you can declare a function with 5 parameters and only give it 2 when it comes time to use it.
-In TypeScript, that is not the case. When you declare a function with 5 parameters, you have to give the function 5 arguments when calling it.
-However, in TypeScript, you can make parameters optional. This means that when you are calling the function, you can leave off the optional parameter.</p>
+In TypeScript, that is not the case.
+In TypeScript when you declare a function with 5 parameters, you have to give the function 5 arguments when calling it, unless you make some of those parameters optional.
+As with JavaScript functions, optional parameters can be omitted.
+This means that when you are calling the function, you can leave off the optional parameter(s).</p>
 <p>To denote a parameter as optional, you can use <code class="docutils literal notranslate"><span class="pre">?</span></code> notation. Any parameters that are optional must follow the required parameters.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">b?</span>:<span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
@@ -138,21 +158,24 @@ However, in TypeScript, you can make parameters optional. This means that when y
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
 </pre></div>
 </div>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>3
-1
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+6
+13
 8
-3
 </pre></div>
 </div>
 </div>
-<p>In this example, the <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> function has two parameters, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. <code class="docutils literal notranslate"><span class="pre">a</span></code> is required and <code class="docutils literal notranslate"><span class="pre">b</span></code> is optional. When only one argument is provided to the function, then the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is returned.
-When both arguments are provided, then the sum of the 2 arguments is returned.</p>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> function has two parameters, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.
+<code class="docutils literal notranslate"><span class="pre">a</span></code> is required and <code class="docutils literal notranslate"><span class="pre">b</span></code> is optional.
+When only one argument is provided to the function, then the value of <code class="docutils literal notranslate"><span class="pre">a+5</span></code> is returned.
+When both arguments are provided, then the sum of the 2 arguments and 5 is returned.</p>
 <p>Another way to deal with a parameter you need to be optional is to give it a default value.</p>
-<p>Let’s say that in the example above, we wanted to give <code class="docutils literal notranslate"><span class="pre">b</span></code> a default value of 5. That way, if no argument is supplied for <code class="docutils literal notranslate"><span class="pre">b</span></code>, then the value returned is that of <code class="docutils literal notranslate"><span class="pre">a+5</span></code>.</p>
+<p>Let’s say that in the example above, we wanted to give <code class="docutils literal notranslate"><span class="pre">b</span></code> a default value of 5.
+That way, if no argument is supplied for <code class="docutils literal notranslate"><span class="pre">b</span></code>, then the value returned is that of <code class="docutils literal notranslate"><span class="pre">a+10</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
@@ -161,10 +184,10 @@ When both arguments are provided, then the sum of the 2 arguments is returned.</
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
 </pre></div>
 </div>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>3
-6
-9
-8
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+11
+14
+13
 </pre></div>
 </div>
 </div>
