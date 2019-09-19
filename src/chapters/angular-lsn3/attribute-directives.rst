@@ -144,6 +144,8 @@ Ideas to note:
    ordered list, check out the
    `W3 schools documentation <https://www.w3schools.com/tags/att_ol_type.asp>`__.
 
+.. _changing-styles-with-booleans:
+
 Changing Styles with Booleans
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

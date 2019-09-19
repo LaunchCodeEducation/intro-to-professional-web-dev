@@ -242,25 +242,25 @@ by adding an Angular attribute directive.
 
 #. Add a ``shouldShowWarning`` method to the ``Satellite`` class.
 
-   * ``shouldShowWarning`` has no parameters.
-   * ``shouldShowWarning`` should return ``this.type === 'Space Debris';``.
+   * ``shouldShowWarning`` returns a boolean and has no parameters.
+   * ``shouldShowWarning`` returns ``true`` if the satellite ``type`` is ``'Space Debris'``, returns false otherwise.
 
 #. Use ``shouldShowWarning`` to add the ``warning`` CSS class to the ``<td>`` containing the satellite's type.
 
-  * ``[class.warning]="satellite.shouldShowWarning()"``
-  * NOTE: The variable ``satellite`` is the variable declared in the ``*ngFor``, your variable may be called something different.
+   * For guidance refer to the section on :ref:`changing styles with attribute directives <changing-styles-with-booleans>`
 
 .. figure:: figures/table-satellites-with-warning.png
    :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background.
 
    Example of warning style adding a red background to Space Debris type.
 
+
 7) Sorting
 ^^^^^^^^^^
 
-Sorting is a useful feature of any table. You need to make the table display sorted by the
-``name`` property when the "Name" heading is clicked. Also the table should display sorted
-by the ``type`` property when the "Type" heading is clicked.
+Sorting is a useful feature for any table. When the "Name" heading is clicked sort the table by the
+``name`` property. Also when the "Type" heading is clicked, the table should display sorted by the
+``type`` property.
 
 1. Add an Angular click handler that calls ``sort('name')`` to the Name  ``<th>`` element.
 2. Add an Angular click handler that calls ``sort('type')`` to the Type ``<th>`` element.
@@ -300,14 +300,11 @@ You are doing great! Only two more features to add. Next you will add a search f
 #. Add this HTML ``<div class="search-form"></div>`` in your ``app.component.html``.
 #. Add an ``<input>`` element inside the ``<div>``.
 #. Add a ``<button>`` element inside the ``<div>``.
-#. Add an Angular click handler to the ``<button>`` that when clicked calls ``search(searchTerm.value)``
+#. Add an Angular ``(click)`` handler to the ``<button>`` that when triggered calls ``search(searchTerm.value)``
 
    * ``searchTerm`` being the local variable name for the ``<input>``
 
-#. Add an Angular keyup.enter handler to the ``<input>`` that when clicked calls ``search(searchTerm.value)``
-
-   * ``searchTerm`` being the local variable name for the ``<input>``
-
+#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` that when triggered calls ``search(searchTerm.value)``
 #. Add a ``search`` method to the ``AppComponent`` class.
 
    * The ``search`` method is provided below.
@@ -330,11 +327,11 @@ You are doing great! Only two more features to add. Next you will add a search f
    }
 
 Notice the usage of a new variable named ``displayList``. ``displayList`` should contain the ``Satellite`` objects
-that the user wants to see. That was previously ALL the satellites. Now the user can perform a search, which
-means they want to see the matching results. ``sourceList`` will contain ALL the ``Satellite`` objects. If you removed
-the ``Satellite`` objects from ``sourceList``, then the user could never see them again. Instead when the user
-performs a search, ``displayList`` will be populated with the all the matching ``Satellite`` objects in ``sourceList``.
-Matching is defined as ``satellite.name`` containing the search term.
+that the user wants to see. Previously ALL the satellites were displayed, because there was not a search feature. 
+Now the user can perform a search, which means they want to see ONLY the matching results. The ``sourceList`` variable contains ALL
+the ``Satellite`` objects. If you removed the ``Satellite`` objects from ``sourceList`` that didn't match the search term, then
+the user could never see them again. Instead when the user performs a search, ``displayList`` will be populated with only the matching
+``Satellite`` objects in ``sourceList``. Matching is defined as ``satellite.name`` containing the search term.
 
 7. Add the ``displayList: Satellite[];`` property to the ``AppComponent`` class.
 
@@ -344,7 +341,22 @@ Matching is defined as ``satellite.name`` containing the search term.
 
    * ``<app-orbit-list [satellites]="displayList"></app-orbit-list>``
 
-9. For an example of search working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
+9. View the app in your browser. Why is the table empty when the app loads?
+
+   * What is the value of ``displayList`` when the app first loads?
+
+10. Set ``displayList`` to be a copy of ``sourceList`` when the app loads.
+
+    * Add this code after ``sourceList`` has been populated by the fetched data in the ``constructor``.
+
+.. sourcecode:: typescript
+
+         // make a copy of the sourceList to be shown to the user
+         this.displayList = this.sourceList.slice(0);
+      }.bind(this));
+   }.bind(this));
+
+11. For an example of search working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
 
 
 9) Counting Satellites

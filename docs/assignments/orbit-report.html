@@ -315,18 +315,15 @@ Your next task is to switch to using a <code class="docutils literal notranslate
 by adding an Angular attribute directive.</p>
 <ol class="arabic simple">
 <li>Add a <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> method to the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class.<ul>
-<li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> has no parameters.</li>
-<li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> should return <code class="docutils literal notranslate"><span class="pre">this.type</span> <span class="pre">===</span> <span class="pre">'Space</span> <span class="pre">Debris';</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> returns a boolean and has no parameters.</li>
+<li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the satellite <code class="docutils literal notranslate"><span class="pre">type</span></code> is <code class="docutils literal notranslate"><span class="pre">'Space</span> <span class="pre">Debris'</span></code>, returns false otherwise.</li>
 </ul>
 </li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite’s type.</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[class.warning]=&quot;satellite.shouldShowWarning()&quot;</span></code></li>
-<li>NOTE: The variable <code class="docutils literal notranslate"><span class="pre">satellite</span></code> is the variable declared in the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>, your variable may be called something different.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite’s type.<ul>
+<li>For guidance refer to the section on <a class="reference internal" href="../chapters/angular-lsn3/attribute-directives.html#changing-styles-with-booleans"><span class="std std-ref">changing styles with attribute directives</span></a></li>
 </ul>
-</div></blockquote>
+</li>
+</ol>
 <div class="figure" id="id3">
 <img alt="Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background." src="../_images/table-satellites-with-warning.png" />
 <p class="caption"><span class="caption-text">Example of warning style adding a red background to Space Debris type.</span></p>
@@ -334,9 +331,9 @@ by adding an Angular attribute directive.</p>
 </div>
 <div class="section" id="sorting">
 <h3>7) Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h3>
-<p>Sorting is a useful feature of any table. You need to make the table display sorted by the
-<code class="docutils literal notranslate"><span class="pre">name</span></code> property when the “Name” heading is clicked. Also the table should display sorted
-by the <code class="docutils literal notranslate"><span class="pre">type</span></code> property when the “Type” heading is clicked.</p>
+<p>Sorting is a useful feature for any table. When the “Name” heading is clicked sort the table by the
+<code class="docutils literal notranslate"><span class="pre">name</span></code> property. Also when the “Type” heading is clicked, the table should display sorted by the
+<code class="docutils literal notranslate"><span class="pre">type</span></code> property.</p>
 <ol class="arabic simple">
 <li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
 <li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('type')</span></code> to the Type <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
@@ -384,14 +381,11 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <li>Add this HTML <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;search-form&quot;&gt;&lt;/div&gt;</span></code> in your <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
 <li>Add an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> element inside the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
 <li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element inside the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>.</li>
-<li>Add an Angular click handler to the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> that when clicked calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code><ul>
+<li>Add an Angular <code class="docutils literal notranslate"><span class="pre">(click)</span></code> handler to the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> that when triggered calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">searchTerm</span></code> being the local variable name for the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code></li>
 </ul>
 </li>
-<li>Add an Angular keyup.enter handler to the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> that when clicked calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code><ul>
-<li><code class="docutils literal notranslate"><span class="pre">searchTerm</span></code> being the local variable name for the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code></li>
-</ul>
-</li>
+<li>Add an Angular <code class="docutils literal notranslate"><span class="pre">(keyup.enter)</span></code> handler to the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> that when triggered calls <code class="docutils literal notranslate"><span class="pre">search(searchTerm.value)</span></code></li>
 <li>Add a <code class="docutils literal notranslate"><span class="pre">search</span></code> method to the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class.<ul>
 <li>The <code class="docutils literal notranslate"><span class="pre">search</span></code> method is provided below.</li>
 </ul>
@@ -425,11 +419,11 @@ function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </pre></div>
 </td></tr></table></div>
 <p>Notice the usage of a new variable named <code class="docutils literal notranslate"><span class="pre">displayList</span></code>. <code class="docutils literal notranslate"><span class="pre">displayList</span></code> should contain the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects
-that the user wants to see. That was previously ALL the satellites. Now the user can perform a search, which
-means they want to see the matching results. <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> will contain ALL the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects. If you removed
-the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects from <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>, then the user could never see them again. Instead when the user
-performs a search, <code class="docutils literal notranslate"><span class="pre">displayList</span></code> will be populated with the all the matching <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>.
-Matching is defined as <code class="docutils literal notranslate"><span class="pre">satellite.name</span></code> containing the search term.</p>
+that the user wants to see. Previously ALL the satellites were displayed, because there was not a search feature.
+Now the user can perform a search, which means they want to see ONLY the matching results. The <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> variable contains ALL
+the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects. If you removed the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects from <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> that didn’t match the search term, then
+the user could never see them again. Instead when the user performs a search, <code class="docutils literal notranslate"><span class="pre">displayList</span></code> will be populated with only the matching
+<code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>. Matching is defined as <code class="docutils literal notranslate"><span class="pre">satellite.name</span></code> containing the search term.</p>
 <ol class="arabic simple" start="7">
 <li>Add the <code class="docutils literal notranslate"><span class="pre">displayList:</span> <span class="pre">Satellite[];</span></code> property to the <code class="docutils literal notranslate"><span class="pre">AppComponent</span></code> class.<ul>
 <li>Set <code class="docutils literal notranslate"><span class="pre">displayList</span> <span class="pre">=</span> <span class="pre">[]</span></code> in the constructor.</li>
@@ -439,6 +433,22 @@ Matching is defined as <code class="docutils literal notranslate"><span class="p
 <li><code class="docutils literal notranslate"><span class="pre">&lt;app-orbit-list</span> <span class="pre">[satellites]=&quot;displayList&quot;&gt;&lt;/app-orbit-list&gt;</span></code></li>
 </ul>
 </li>
+<li>View the app in your browser. Why is the table empty when the app loads?<ul>
+<li>What is the value of <code class="docutils literal notranslate"><span class="pre">displayList</span></code> when the app first loads?</li>
+</ul>
+</li>
+<li>Set <code class="docutils literal notranslate"><span class="pre">displayList</span></code> to be a copy of <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> when the app loads.<ul>
+<li>Add this code after <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> has been populated by the fetched data in the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span>      <span class="c1">// make a copy of the sourceList to be shown to the user</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">displayList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sourceList</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+   <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
 <li>For an example of search working, see <a class="reference internal" href="#orbit-report-demo"><span class="std std-ref">Orbit Report Demo</span></a>.</li>
 </ol>
 </div>
