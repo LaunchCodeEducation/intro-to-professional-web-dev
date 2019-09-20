@@ -130,11 +130,12 @@ class needs to define the properties needed to accurately represent a satellite.
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li>Add a constructor that has this method signature:</li>
+<li>Add a constructor to <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class.<ul>
+<li>Constructor signature should be <code class="docutils literal notranslate"><span class="pre">constructor(name:</span> <span class="pre">string,</span> <span class="pre">type:</span> <span class="pre">string,</span> <span class="pre">launchDate:</span> <span class="pre">string,</span> <span class="pre">orbitType:</span> <span class="pre">string,</span> <span class="pre">operational:</span> <span class="pre">boolean)</span></code></li>
+<li>You need to assign the class properties in the constructor.</li>
+</ul>
+</li>
 </ol>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">type</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">launchDate</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">orbitType</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">operational</span>: <span class="kt">boolean</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>Now we need to use the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class to create an initial array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects.</p>
 <ol class="arabic simple" start="6">
 <li>Define an array named <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>.<ul>
@@ -335,7 +336,10 @@ by adding an Angular attribute directive.</p>
 <code class="docutils literal notranslate"><span class="pre">name</span></code> property. Also when the “Type” heading is clicked, the table should display sorted by the
 <code class="docutils literal notranslate"><span class="pre">type</span></code> property.</p>
 <ol class="arabic simple">
-<li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
+<li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.<ul>
+<li>Note that the sorting feature will not work until you have completed step 3.</li>
+</ul>
+</li>
 <li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('type')</span></code> to the Type <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.</li>
 <li>Add a <code class="docutils literal notranslate"><span class="pre">sort</span></code> method to the <code class="docutils literal notranslate"><span class="pre">OrbitListComponent</span></code> class.<ul>
 <li>The sorting method has been provided below.</li>
@@ -345,10 +349,13 @@ by adding an Angular attribute directive.</p>
 </ol>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The provided <code class="docutils literal notranslate"><span class="pre">sort</span></code> method contains a new usage of <code class="docutils literal notranslate"><span class="pre">array.sort</span></code>. has been used without passing it a
-function that is used to compare all the items in the array. This compare function allows the programmer
-to control how the array is sorted. For more details see the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description" target="_blank">MDN description of sort using a compare
-function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="last">The provided <code class="docutils literal notranslate"><span class="pre">sort</span></code> method contains a new usage of the <code class="docutils literal notranslate"><span class="pre">array.sort</span></code> method. Previously in the book you used
+<code class="docutils literal notranslate"><span class="pre">array.sort</span></code> without passing it a function, see <a class="reference internal" href="../appendices/array-method-examples/sort-examples.html#sort-examples"><span class="std std-ref">sort function examples</span></a>. This usage of <code class="docutils literal notranslate"><span class="pre">array.sort</span></code>
+uses a compare function, which allows you to control how the objects in the array are sorted. A compare function
+is needed to sort the array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects, because JavaScript does not know how to sort objects, JavaScript
+needs you to tell it which <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> object should go before another <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> object.
+For more details about the compare function see
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description" target="_blank">MDN description of sort using a compare function<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 <div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -467,12 +474,12 @@ shows the total count and count by type for the satellites currently displayed i
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Satellite Counts:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;counts&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Space Debris: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Communication: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Probe: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Positioning: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Space Station: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Total Telescope: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Space Debris: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Communication: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Probe: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Positioning: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Space Station: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Telescope: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -482,9 +489,16 @@ shows the total count and count by type for the satellites currently displayed i
 </div>
 </div>
 </div>
-<div class="section" id="bonus-mission">
-<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
-<p>Search feature should also find matches using the <code class="docutils literal notranslate"><span class="pre">orbitType</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> properties.</p>
+<div class="section" id="bonus-missions">
+<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Search feature should also find matches using the <code class="docutils literal notranslate"><span class="pre">orbitType</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> properties.</li>
+<li>Make every other row in the table have a background color.</li>
+<li>For step 9, use an <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over an array of the different types, instead of explicitly writing a <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code> for each satellite type.<ul>
+<li>You may have already completed this mission, depending on how you accomplished step 9.</li>
+</ul>
+</li>
+</ol>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>

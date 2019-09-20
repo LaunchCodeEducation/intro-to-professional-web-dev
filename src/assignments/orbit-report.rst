@@ -52,11 +52,10 @@ class needs to define the properties needed to accurately represent a satellite.
    operational: boolean;
    launchDate: string;
 
-5. Add a constructor that has this method signature:
+5. Add a constructor to ``Satellite`` class.
 
-.. sourcecode:: typescript
-
-   constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean)
+   * Constructor signature should be ``constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean)``
+   * You need to assign the class properties in the constructor.
 
 Now we need to use the ``Satellite`` class to create an initial array of ``Satellite`` objects.
 
@@ -263,6 +262,9 @@ Sorting is a useful feature for any table. When the "Name" heading is clicked so
 ``type`` property.
 
 1. Add an Angular click handler that calls ``sort('name')`` to the Name  ``<th>`` element.
+
+   * Note that the sorting feature will not work until you have completed step 3.
+
 2. Add an Angular click handler that calls ``sort('type')`` to the Type ``<th>`` element.
 3. Add a ``sort`` method to the ``OrbitListComponent`` class.
 
@@ -271,10 +273,13 @@ Sorting is a useful feature for any table. When the "Name" heading is clicked so
 
 .. note::
 
-   The provided ``sort`` method contains a new usage of ``array.sort``. has been used without passing it a
-   function that is used to compare all the items in the array. This compare function allows the programmer
-   to control how the array is sorted. For more details see the `MDN description of sort using a compare
-   function <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description>`_
+   The provided ``sort`` method contains a new usage of the ``array.sort`` method. Previously in the book you used
+   ``array.sort`` without passing it a function, see :ref:`sort function examples <sort-examples>`. This usage of ``array.sort``
+   uses a compare function, which allows you to control how the objects in the array are sorted. A compare function
+   is needed to sort the array of ``Satellite`` objects, because JavaScript does not know how to sort objects, JavaScript
+   needs you to tell it which ``Satellite`` object should go before another ``Satellite`` object.
+   For more details about the compare function see
+   `MDN description of sort using a compare function <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description>`_.
 
 .. sourcecode:: typescript
    :linenos:
@@ -377,12 +382,12 @@ shows the total count and count by type for the satellites currently displayed i
    <h3>Satellite Counts:</h3>
    <div class="counts">
       <div>Total: <span>9</span></div>
-      <div>Total Space Debris: <span>1</span></div>
-      <div>Total Communication: <span>2</span></div>
-      <div>Total Probe: <span>2</span></div>
-      <div>Total Positioning: <span>1</span></div>
-      <div>Total Space Station: <span>2</span></div>
-      <div>Total Telescope: <span>1</span></div>
+      <div>Space Debris: <span>1</span></div>
+      <div>Communication: <span>2</span></div>
+      <div>Probe: <span>2</span></div>
+      <div>Positioning: <span>1</span></div>
+      <div>Space Station: <span>2</span></div>
+      <div>Telescope: <span>1</span></div>
    </div>
 
 .. figure:: figures/orbit-counts-output.png
@@ -391,10 +396,14 @@ shows the total count and count by type for the satellites currently displayed i
    Example of the seven different satellite counts being displayed.
 
 
-Bonus Mission
--------------
+Bonus Missions
+--------------
 
-Search feature should also find matches using the ``orbitType`` and ``type`` properties.
+#. Search feature should also find matches using the ``orbitType`` and ``type`` properties.
+#. Make every other row in the table have a background color.
+#. For step 9, use an ``*ngFor`` to loop over an array of the different types, instead of explicitly writing a ``<tr>`` for each satellite type.
+
+   * You may have already completed this mission, depending on how you accomplished step 9.
 
 
 Submitting Your Work
