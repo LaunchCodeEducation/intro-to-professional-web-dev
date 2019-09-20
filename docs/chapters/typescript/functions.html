@@ -120,22 +120,21 @@ If <code class="docutils literal notranslate"><span class="pre">x</span></code> 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="last">Instead of returning the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> now assigns to a variable, <code class="docutils literal notranslate"><span class="pre">y</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2.
-We can now use <code class="docutils literal notranslate"><span class="pre">void</span></code> to specify the no value is returned.</p>
+<p class="last">Instead of returning the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> now assigns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2 to another variable, <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+We can now use <code class="docutils literal notranslate"><span class="pre">void</span></code> to specify that no value is returned.</p>
 </div>
 </div>
 <div class="section" id="anonymous-functions">
 <h3>27.4.1.2. Anonymous Functions<a class="headerlink" href="#anonymous-functions" title="Permalink to this headline">¶</a></h3>
 <p>For an anonymous function, you still need to provide types for the value returned and the parameters.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span> <span class="p">};</span>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Now we want to declare an anonymous function, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, which has one parameter, a number called <code class="docutils literal notranslate"><span class="pre">x</span></code>, and returns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2.</p>
+<div class="last highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span> <span class="p">};</span>
 </pre></div>
 </div>
-<p>The above code looks very much like an anonymous function declaration with the types included!
-However, TypeScript has arrow notation and here we use the <strong>fat arrow</strong>, <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span><span class="o">:</span> <span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kt">number</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span> <span class="p">};</span>
-</pre></div>
 </div>
-<p>In TypeScript, the keywords that come after the colon are the type. The <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code> operator then indicates the return type of the function.</p>
+<p>Just as we did above with the named function, we need to make sure that we include the data type for the parameters and the return type of the function.</p>
 </div>
 </div>
 <div class="section" id="optional-parameter">
@@ -198,7 +197,7 @@ That way, if no argument is supplied for <code class="docutils literal notransla
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is wrong with this function declaration? NOTE there are 3 things that are wrong here.</p>
-<div class="last highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="p">(</span><span class="nx">a</span>:<span class="kt">number</span><span class="p">,</span> <span class="nx">b</span><span class="o">/:</span><span class="kt">number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">string</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span>:<span class="kt">number</span><span class="p">,</span><span class="nx">b?</span>:<span class="kt">number</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">;};</span>
+<div class="last highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span>:<span class="kt">string</span><span class="p">,</span><span class="nx">b??</span>:<span class="kt">number</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>

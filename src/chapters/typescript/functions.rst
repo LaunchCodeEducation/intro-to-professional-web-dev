@@ -45,26 +45,23 @@ What if the function doesn't return a value? In these cases, we use ``void`` as 
          y = x*2;
       }
 
-   Instead of returning the value of ``x`` multiplied by 2, ``myFunction`` now assigns to a variable, ``y``, the value of ``x`` multiplied by 2.
-   We can now use ``void`` to specify the no value is returned.
+   Instead of returning the value of ``x`` multiplied by 2, ``myFunction`` now assigns the value of ``x`` multiplied by 2 to another variable, ``y``.
+   We can now use ``void`` to specify that no value is returned.
 
 Anonymous Functions
 ^^^^^^^^^^^^^^^^^^^
 
 For an anonymous function, you still need to provide types for the value returned and the parameters.
 
-.. sourcecode:: typescript
+.. admonition:: Example
 
-   let myFunction = function(a: number): number { return a*2; };
+   Now we want to declare an anonymous function, ``myFunction``, which has one parameter, a number called ``x``, and returns the value of ``x`` multiplied by 2.
 
-The above code looks very much like an anonymous function declaration with the types included!
-However, TypeScript has arrow notation and here we use the **fat arrow**, ``=>``.
+   .. sourcecode:: typescript
 
-.. sourcecode:: typescript
+      let myFunction = function(x: number): number { return x*2; };
 
-   let myFunction: (a: number) => number = function(a: number): number { return a*2; };
-
-In TypeScript, the keywords that come after the colon are the type. The ``=>`` operator then indicates the return type of the function.
+Just as we did above with the named function, we need to make sure that we include the data type for the parameters and the return type of the function.
 
 Optional Parameter
 ------------------
@@ -138,5 +135,5 @@ Check Your Understanding
 
    .. sourcecode:: typescript
 
-      let myFunction (a:number, b/:number) -> string = function(a:number,b?:number) {return a*b;};
+      let myFunction = function(a:string,b??:number) {return a*b};
 
