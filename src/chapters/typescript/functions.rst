@@ -28,7 +28,7 @@ Let's take a look at a TypeScript function declaration.
       }
 
    Here you can see that we provided the type of the parameter and the type of the value that is returned after the colons.
-   If ``x`` was a string or a boolean, then we would replace ``number`` with the data type of ``x``.
+   If ``x`` were a string or a boolean, then we would replace ``number`` with the data type of ``x``.
 
 What if the function doesn't return a value? In these cases, we use ``void`` as the return type.
 
@@ -69,7 +69,6 @@ Optional Parameter
 In JavaScript, you can declare a function with 5 parameters and only give it 2 when it comes time to use it.
 In TypeScript, that is not the case.
 In TypeScript when you declare a function with 5 parameters, you have to give the function 5 arguments when calling it, unless you make some of those parameters optional.
-As with JavaScript functions, optional parameters can be omitted.
 This means that when you are calling the function, you can leave off the optional parameter(s).
 
 To denote a parameter as optional, you can use ``?`` notation. Any parameters that are optional must follow the required parameters.
