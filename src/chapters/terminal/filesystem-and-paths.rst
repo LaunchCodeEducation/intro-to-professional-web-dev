@@ -3,19 +3,20 @@ Filesystem and Paths
 
 .. index:: ! filesystem
 
-A **filesystem** is a structure for the computer to store the files and folders that make up the data of the operating system. 
+A **filesystem** is a structure for the computer to store the files and folders
+that make up the data of the operating system.
 
 Inside a filesystem, folders are referred to as **directories**.
 Your **root directory** is your Home folder or C drive.
 When you open a new terminal window to work in, it opens to your root directory.
-The root directory is the **parent directory** for the folders stored inside of it. 
+The root directory is the **parent directory** for the folders stored inside of it.
 
 .. admonition:: Example
 
-   Oftentimes, there is a ``Desktop`` folder inside the root directory.
-   If there is a folder on your Desktop called "LC101_Homework", then the parent directory of ``LC101_Homework`` is ``Desktop``.
-   The parent directory of ``Desktop`` is ``LC101_Homework``. 
-
+   Oftentimes, there is a ``Desktop`` folder inside the root directory. If there
+   is a folder on your Desktop called "LC101_Homework", then the parent directory
+   of ``LC101_Homework`` is ``Desktop``. The parent directory of ``Desktop`` is
+   your Home folder or C drive.
 
 A **path** for files and folders is the list of parent directories that the computer must go through to find that particular item.
 
@@ -34,4 +35,5 @@ In order to do so, you can use ``..`` in the file path to tell the computer to g
    If ``homework.js`` were in a different directory called ``CoderGirl_Homework``, which is inside the ``Desktop`` directory, and the current directory was ``LC101_Homework``, then we would use the ``..`` syntax in our relative path.
    The relative path would then be ``/../CoderGirl_Homework`` for Mac users and ``\..\CoderGirl_Homework`` for Windows users.
 
-Many programmers use paths to navigate through the filesystem in the terminal. We will discuss the commands to do so in the next section.
+Many programmers use paths to navigate through the filesystem in the terminal.
+We will discuss the commands to do so in the next section.
