@@ -34,7 +34,7 @@ To see detailed examples for a particular method, control-click
 
    * - :ref:`indexOf <indexOf-examples>`
      - ``arrayName.indexOf(item)``
-     - Returns the index of the FIRST occurence of an item in the array. If the item is not in the array, -1 is returned.
+     - Returns the index of the FIRST occurrence of an item in the array. If the item is not in the array, -1 is returned.
 
 .. list-table:: Methods That Rearrange The Entries In The Array
    :header-rows: 1

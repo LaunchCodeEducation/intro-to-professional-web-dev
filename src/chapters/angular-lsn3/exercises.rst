@@ -17,7 +17,7 @@ From the ``lesson3`` folder in VSCode, navigate into the
 
 In the terminal, navigate into the lesson 3 ``exercises`` folder. Enter
 ``npm install`` to add the Angular modules, then run ``ng serve``. When you
-open the webpage in your browser, it should look like this:
+open the web page in your browser, it should look like this:
 
    .. figure:: ./figures/lesson3-exercises-initial-view.png
       :alt: Initial view of the exercises app.

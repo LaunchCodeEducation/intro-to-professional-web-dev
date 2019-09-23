@@ -65,7 +65,7 @@ that the proposed new code functions properly.
 
 .. admonition:: Example
 
-   This is were the ideas are typed out into a test. In this example the test references
+   This is where the ideas are typed out into a test. In this example the test references
    a module and a function that have not been created yet. The code follows the plan
    we came up with earlier. Very importantly there is an ``assert.strictEqual``
    that verifies an array is returned.

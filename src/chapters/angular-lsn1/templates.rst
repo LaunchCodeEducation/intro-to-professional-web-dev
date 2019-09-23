@@ -41,7 +41,7 @@ Let's see how using a template makes our lives easier.
 No Template
 ^^^^^^^^^^^^
 
-The code below builds a simple 3-column webpage. It defines the location for
+The code below builds a simple 3-column web page. It defines the location for
 each heading, unordered list, and button. The CSS file (not shown) specifies
 the font, text size, colors, etc.
 
@@ -176,13 +176,13 @@ balloons does not matter. The template sets the layout, and the code feeds in
 the data. If more photos are found, extra rows are produced on the page, but
 each row shows 4 images.
 
-Templates must be used anytime we create a webpage that responds to a changing
+Templates must be used anytime we create a web page that responds to a changing
 set of data, especially if that data is unknown to us.
 
 Templates Provide Structure, Not Content
 -----------------------------------------
 
-Templates allow us to decide where to display data on our webpage, even if we
+Templates allow us to decide where to display data on our web page, even if we
 do not know exactly what that data will be. Information pulled from forms,
 APIs, or user input will be formatted to fit within our design.
 
@@ -203,7 +203,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Why should we use a template to design a webpage rather than just coding
+   Why should we use a template to design a web page rather than just coding
    the entire site with HTML and CSS?
 
 .. admonition:: Question

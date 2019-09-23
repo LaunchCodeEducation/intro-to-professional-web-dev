@@ -21,7 +21,7 @@ Requirements
 #. Write classes and methods for each
    :ref:`required class and method <rover-classes-methods>` shown below.
 
-#. Each class should be defined in it's own file and exported and imported
+#. Each class should be defined in its own file and exported and imported
    using modules.
 
 .. _rover-test-list:

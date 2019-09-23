@@ -21,9 +21,9 @@ In general, the syntax for ``*ngIf`` is:
 
 ``*ngIf`` statements are added inside an HTML tag. The ``condition`` can either
 be a boolean or an expression that returns a boolean. If ``condition``
-evaluates to ``true``, then the HTML tag is added to the webpage, and the
+evaluates to ``true``, then the HTML tag is added to the web page, and the
 content gets displayed. If ``condition`` returns ``false``, then the HTML tag
-is NOT generated, and the content stays off the webpage.
+is NOT generated, and the content stays off the web page.
 
 .. admonition:: Note
 
@@ -50,7 +50,7 @@ is NOT generated, and the content stays off the webpage.
       </div>
 
 Adding the ``*ngIf`` statement inside the ``<div>`` tag determines whether
-that element and any content it contains gets added to the webpage. If the
+that element and any content it contains gets added to the web page. If the
 condition ``movies.length > 3`` evaluates to ``true``, then the ``div``,
 ``h3``, ``ol``, and ``li`` tags all get generated. If the condition returns
 ``false``, then none of the tags are added to the HTML code.
@@ -75,7 +75,7 @@ Just like ``if`` statements, we can use the operators AND (``&&``), OR
 
       <p *ngIf = "conditionA && conditionB">Some text</p>
 
-   ``Some text`` appears on the webpage only if ``conditionA`` and
+   ``Some text`` appears on the web page only if ``conditionA`` and
    ``conditionB`` both return ``true``.
 
    Logical OR:
@@ -160,7 +160,7 @@ In line 1, the condition for ``*ngIf`` specifies what to do if
    ``needMoreMovies``. In this case, Lines 9 - 14 hold the alternate HTML tags.
 
 ``<ng-template></ng-template>`` is a special Angular element. It contains
-content that *might* be required for a webpage. When the ``else`` statement in
+content that *might* be required for a web page. When the ``else`` statement in
 line 1 executes, Angular searches for an ``ng-template`` block labeled with the
 matching variable name. Angular then ignores the original ``div`` tags and
 anything they contain, and it replaces that content with lines 9 - 14.
@@ -221,7 +221,7 @@ Now use ``*ngIf`` to do the following:
    the ``Done Chores`` list. Otherwise, use a ``p`` tag to display the text,
    "No allowance yet."
 #. Return to ``chores.component.ts`` and change the number of items in the
-   arrays again. Check to make sure the webpage correctly responds to your
+   arrays again. Check to make sure the web page correctly responds to your
    changes.
 #. Finally, if the ``chores`` array is empty AND ``finishedChores`` contains
    4 or more items, display an ``h1`` underneath the lists with the text "Ice
@@ -255,7 +255,7 @@ Examine the following code:
 .. admonition:: Question
 
    Assume we have defined a ``prepWork`` array to hold the homework tasks for our
-   next class. We want the webpage to always show the heading. Underneath that
+   next class. We want the web page to always show the heading. Underneath that
    we want to add either the list of tasks or the paragraph text if the array is
    empty.
 

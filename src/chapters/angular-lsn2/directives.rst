@@ -4,7 +4,7 @@ Angular Directives
 ===================
 
 In the :ref:`DOM chapter <DOM-and-events>` you learned how to wait for *events*
-and then change the appearance of the webpage in response. You practiced these
+and then change the appearance of the web page in response. You practiced these
 skills in the :ref:`DOM studio <DOM-studio>`. By waiting for the users to click
 specific buttons, your code launched, guided, and landed the LaunchCode rocket.
 

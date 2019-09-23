@@ -142,16 +142,16 @@ Enter ``ng serve`` to launch the project, then:
       ``<li *ngfor = "let chore of chores">{{chore}}</li>``.
    b. Delete lines 5 and 6.
    c. Save your changes.
-   d. Reload the webpage to verify that all the chores are displayed.
+   d. Reload the web page to verify that all the chores are displayed.
 
 #. Open ``chores.component.ts``. Add "Clean bathroom" to the ``chores``
-   array, then save. Reload the webpage to make sure the new chore appears.
+   array, then save. Reload the web page to make sure the new chore appears.
    Your output should look like this:
 
    .. figure:: ./figures/clean-bathroom-solution.png
       :alt: *ngFor first solution.
 
-#. Remove two chores from the array. Reload the webpage to make sure these
+#. Remove two chores from the array. Reload the web page to make sure these
    items disappear from the list.
 #. Use ``*ngFor`` within the ``<div>`` tag to loop over the ``todoTitles``
    array:
@@ -166,7 +166,7 @@ Enter ``ng serve`` to launch the project, then:
       :alt: *ngFor practice solution.
 
 #. Return to ``chores.component.ts``. Add an item to the ``todoTitles`` array,
-   then save. Check to make sure another list appears on the webpage. Next,
+   then save. Check to make sure another list appears on the web page. Next,
    remove two items from the ``todoTitles`` array. Save and make sure the page
    reflects the changes.
 

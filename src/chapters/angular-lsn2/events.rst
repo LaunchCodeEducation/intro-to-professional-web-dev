@@ -2,7 +2,7 @@ Events
 =======
 
 Recall that *events* are actions that allow users to interact with the
-content on a webpage. Events include clicks, key presses, typing into an input
+content on a web page. Events include clicks, key presses, typing into an input
 box, hovering over images, etc.
 
 *Handling* an event performs an action that influences the DOM.
