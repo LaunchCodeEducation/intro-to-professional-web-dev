@@ -7,6 +7,7 @@ TypeScript
    introduction
    variables
    arrays
+   functions
    classes
    compiling-typescript
    exercises

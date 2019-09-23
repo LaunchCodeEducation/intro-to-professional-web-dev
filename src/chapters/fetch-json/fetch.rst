@@ -62,11 +62,11 @@ Take note of two necessary aspects of the ``fetch`` function:
 
 #. The URL of where the data is located.
 
-   a. For this example it will be ``"https://handlers.education.launchcode.org/static/weather.json"``
+   a. For this example, it will be ``"https://handlers.education.launchcode.org/static/weather.json"``
 
 #. A response handler function to utilize the data that is being fetched.
 
-   a. For this example it will be ``function(response){...};``
+   a. For this example, it will be ``function(response){...};``
 
 .. admonition:: Example
 
@@ -76,7 +76,7 @@ Take note of two necessary aspects of the ``fetch`` function:
 
    .. sourcecode:: js
 
-      fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
+      fetch("https://handlers.education.launchcode.org/static/weather.json").then(function(response) {
          console.log(response);
       } );
 
@@ -103,6 +103,7 @@ Now let's add ``fetch`` in the Launch Status web page.
       :linenos:
       :slug: fetch-weather-pt1
 
+		<!DOCTYPE html>
       <html>
          <head>
             <title>Launch Status</title>
