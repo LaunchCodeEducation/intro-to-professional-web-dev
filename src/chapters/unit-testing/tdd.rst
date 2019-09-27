@@ -27,6 +27,7 @@ lead to code that is easy to read. Along the way we will build confidence as we 
 
    TDD is a process that some organizations choose to use. Using the TDD process is not required when using unit tests.
 
+.. _test-code-cycle:
 
 The Test/Code Cycle
 -------------------
