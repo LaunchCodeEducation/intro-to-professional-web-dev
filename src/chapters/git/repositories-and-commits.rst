@@ -1,4 +1,4 @@
-Respositories and Commits
+Repositories and Commits
 =========================
 
 Create a Repository
@@ -14,7 +14,7 @@ To create a git repository, the programmer navigates to their project directory 
    Students-Computer:homework student$ git init
       Initialized empty Git repository in /Users/student/homework/.git/
 
-Now the programmer is ready to code away! 
+Now the programmer is ready to code away!
 
 Making Commits
 -------------------
@@ -26,7 +26,7 @@ So when do they make a commit to their repository?
 
    The general rule of thumb is that any time a significant change in      functionality is made, a commit should be made.
 
-If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process. 
+If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process.
 
 .. note::
 
@@ -84,7 +84,7 @@ This is helpful for looking through the log and seeing detailed comments of the 
 
 ``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
 This hash or value that is a key for Git to refer to the version.
-Programmers rarely use these hashes unless they want to roll back to that version. 
+Programmers rarely use these hashes unless they want to roll back to that version.
 
 Check Your Understanding
 ------------------------

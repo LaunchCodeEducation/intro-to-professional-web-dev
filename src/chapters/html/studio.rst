@@ -8,7 +8,7 @@ As you've learned, debugging is an essential part of coding. When it comes to de
 
 This studio requires you to use Firefox's developer tools. In particular, you should be able to:
 
-- Open Firebox's dev tools
+- Open Firefox's dev tools
 - Inspect an HTML element
 - Modify an element's HTML
 - Explain the difference between the content displayed when using *View Source* and what you see in the *Inspector* tab
@@ -45,7 +45,7 @@ If you want to use an image of your own that is not already available via the in
 ::
 
    https://www.dropbox.com/sc/qc3htnhv7fb3i2x/AAC5OzECOyBynstMDWawCZhxa?raw=1
-   
+
 - Copy the URL of the loaded image. You can use this URL within any HTML.
 
 Resources
