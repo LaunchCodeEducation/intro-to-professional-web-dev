@@ -589,7 +589,7 @@ following:
 
 ``touch <new_file_name>`` creates a new file.
 
-Back in ``data_analysis``, lets add a new ``cafes.sql`` file to our directory.
+Back in ``data_analysis``, lets add a new ``cafes.json`` file to our directory.
 
 .. sourcecode:: bash
    :linenos:
@@ -598,9 +598,9 @@ Back in ``data_analysis``, lets add a new ``cafes.sql`` file to our directory.
    launchcode_courses/data_analysis
    data_analysis $ ls
    final_project
-   data_analysis $ touch cafes.sql
+   data_analysis $ touch cafes.json
    data_analysis $ ls
-   cafes.sql    final_project
+   cafes.json    final_project
    data_analysis $
 
 Here's what that gives us:

@@ -34,16 +34,16 @@ There are many commands you can use in the terminal to move through the filesyst
      - Result
    + - ``ls``
      - Lists all files and folders in the current directory.
-   + - ``cd <new-directory>`` 
+   + - ``cd <new-directory>``
      - Navigates from the current directory to ``new-directory``.
    + - ``pwd``
      - Prints the path of the current directory.
    + - ``mkdir <new-folder>``
      - Creates ``new-folder`` inside the current directory.
    + - ``touch <new-file>``
-     - Creates a file called ``new-file`` in the current directory.  
+     - Creates a file called ``new-file`` in the current directory.
    + - ``rm <old-file>``
-     - Removes ``old-file`` from the current directory. 
+     - Removes ``old-file`` from the current directory.
    + - ``man <command>``
      - Prints to the screen the manual pages for the command. This includes the proper syntax and a description of how that command works.
    + - ``clear``
