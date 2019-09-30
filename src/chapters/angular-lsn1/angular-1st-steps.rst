@@ -3,7 +3,7 @@
 Angular First Steps
 ====================
 
-The goal here is to create a minimum working template for a webpage. It will
+The goal here is to create a minimum working template for a web page. It will
 serve as a jumping-off point for your later exercises and studios, so take as
 much time as you need to get comfortable with the basics.
 
@@ -51,7 +51,7 @@ Examine the Files Created
    :alt: File tree for a new Angular project.
 
 #. The ``src`` folder holds the files and source code needed for the project.
-#. The ``app`` folder holds the content for the webpage. Although the page is
+#. The ``app`` folder holds the content for the web page. Although the page is
    treated as a single entity, it actually consists of multiple pieces. ``app``
    holds these different parts and establishes links between them. We will
    modify some of these files soon.
@@ -81,7 +81,7 @@ but we will leave it empty for this lesson.
 Launch the Page
 ----------------
 
-``ng new`` creates all of the files required to launch a functioning webpage.
+``ng new`` creates all of the files required to launch a functioning web page.
 You have not added any content yet, but Angular provides a standard starting
 point that allows you to check if everything works.
 

@@ -9,7 +9,8 @@ Part 0 - Get the Starter Code
 #. Login to your GitHub account.
 #. Fork the
    `typescript-lc101-projects repository <https://github.com/LaunchCodeEducation/typescript-lc101-projects>`__.
-#. Use the terminal to clone your fork from GitHub.
+#. Use the terminal to clone your fork from GitHub. If you need a reminder for
+   how to do this, refer to the :ref:`Git studio <clone-from-git>`.
 #. Use the terminal to navigate into the ``typescript-lc101-projects`` folder,
    then into the ``exercises`` subfolder.
 

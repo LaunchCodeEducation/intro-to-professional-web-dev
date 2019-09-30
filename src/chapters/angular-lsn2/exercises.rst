@@ -1,7 +1,7 @@
 Exercises: Angular, Lesson 2
 =============================
 
-Let's build an interactive webpage that allows us to review data for our
+Let's build an interactive web page that allows us to review data for our
 astronaut candidates and select crew members for a space mission.
 
 Starter Code
@@ -33,7 +33,7 @@ From the ``lesson2`` folder in VSCode, navigate into the
 
 In the terminal, navigate into the lesson 2 ``exercises`` folder. Enter
 ``npm install`` to add the Angular modules, then run ``ng serve``. When you
-open the webpage in your browser, it should look like this:
+open the web page in your browser, it should look like this:
 
 .. figure:: ./figures/lesson2-exercises-start.png
    :alt: Starting setup for exercises.
@@ -43,7 +43,7 @@ Candidates Column
 
 Examine the ``candidates`` array in ``candidates.component.ts``. It contains
 one object for each animal astronaut. We want to start by listing the names of
-the animals in the "Candidates" column of the webpage.
+the animals in the "Candidates" column of the web page.
 
 #. Find the "Candidates" section in ``candidates.component.html``. Use
    ``*ngFor`` in the ``<li>`` tag to loop over the ``candidates`` array and

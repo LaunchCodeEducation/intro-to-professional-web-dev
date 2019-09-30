@@ -155,7 +155,7 @@ parameter describe the group of tests inside.</p>
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
-<p>Give the test the name <code class="docutils literal notranslate"><span class="pre">&quot;takes</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object&quot;</span></code>.</p>
+<p>Give the test the name <code class="docutils literal notranslate"><span class="pre">&quot;takes</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">and</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object&quot;</span></code>.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -177,13 +177,13 @@ parameter describe the group of tests inside.</p>
 </td></tr></table></div>
 <p>Now that we identified a clear goal for the test, let’s add logic and <code class="docutils literal notranslate"><span class="pre">assert</span></code> calls
 in the test to verify the desired behavior. <em>But wait…</em> we haven’t added anything
-except an empty at this point. There isn’t any actual code to verify. That’s okay,
+except an empty test at this point. There isn’t any actual code to verify. That’s okay,
 this is part of the TDD process.</p>
 <p>We are going to think about and visualize
 how this feature should be implemented in code. Then we will write out in the test how
 this new code will be used.</p>
 <p>We need to think of something that will satisfy the statement
-<code class="docutils literal notranslate"><span class="pre">it(&quot;takes</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object&quot;</span></code>.
+<code class="docutils literal notranslate"><span class="pre">it(&quot;takes</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">and</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object&quot;</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">it</span></code> will be a function that is imported from a module. Below on line 2,
 a <code class="docutils literal notranslate"><span class="pre">processor</span></code> function is imported from the <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> module.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -200,7 +200,7 @@ a <code class="docutils literal notranslate"><span class="pre">processor</span><
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string and returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 
    <span class="p">});</span>
 
@@ -211,7 +211,7 @@ a <code class="docutils literal notranslate"><span class="pre">processor</span><
 Keep in mind this function only exists as a concept and we are writing a test
 to see if this concept makes sense.</p>
 <p>Now for the real heart of the test. We are going to use <code class="docutils literal notranslate"><span class="pre">assert.strictEqual</span></code> to
-verify that if we pass a string to <code class="docutils literal notranslate"><span class="pre">processor</span></code> that an object is returned.
+verify that if we pass a string to <code class="docutils literal notranslate"><span class="pre">processor</span></code>, an object is returned.
 Carefully review lines 7 and 8 shown below.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -228,7 +228,7 @@ Carefully review lines 7 and 8 shown below.</p>
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string and returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
       <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
       <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">result</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
    <span class="p">});</span>
@@ -325,7 +325,7 @@ Before jumping into the code, let’s review the steps we took to implement requ
 
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;transmission processor&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;takes a string and returns an object&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
       <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">processor</span><span class="p">(</span><span class="s2">&quot;9701::&lt;489584872710&gt;&quot;</span><span class="p">);</span>
       <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">result</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span><span class="p">);</span>
    <span class="p">});</span>
@@ -683,9 +683,9 @@ to cover these cases. <code class="docutils literal notranslate"><span class="pr
 <code class="docutils literal notranslate"><span class="pre">rawData</span></code> for all of these.</p>
 <ul class="last simple">
 <li><code class="docutils literal notranslate"><span class="pre">&quot;9701::8729740349572&gt;0912&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">9701::4872&lt;97403495720912&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">9701::487297403495720912&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">9701::&lt;487297403495&lt;720912&gt;&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::4872&lt;97403495720912&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::487297403495720912&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::&lt;487297403495&lt;720912&gt;&quot;</span></code></li>
 </ul>
 </div>
 </div>

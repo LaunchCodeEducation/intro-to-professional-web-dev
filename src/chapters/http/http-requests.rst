@@ -111,12 +111,7 @@ As mentioned above, ``GET`` requests generally do *not* have a body.
 
 Check Your Understanding
 ------------------------
-
-.. admonition:: Question
-
-   Which request type was used to load this page (the one you are currently reading)?
-
    
 .. admonition:: Question
 
-   Visit `Wikipedia's article on HTTP request headers <https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields>`_. Which request header is used to set cookies? (Cookeis are small pieces of data related to your interaction with a web site.)
+   Visit `Wikipedia's article on HTTP request headers <https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields>`_. Which request header is used to set cookies? (Cookies are small pieces of data related to your interaction with a web site.)

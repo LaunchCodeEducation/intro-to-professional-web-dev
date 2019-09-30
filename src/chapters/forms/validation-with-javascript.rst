@@ -1,3 +1,5 @@
+.. _javascript-validation:
+
 Validation with JavaScript
 ==========================
 
@@ -190,10 +192,6 @@ are passed an ``event`` argument which represents the event that the handler is 
 
 Check Your Understanding
 ------------------------
-
-.. admonition:: Question
-
-   What event should you listen to if you want to validate a form before it's submitted?
 
 .. admonition:: Question
 

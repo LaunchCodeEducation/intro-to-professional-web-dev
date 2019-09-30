@@ -180,7 +180,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is JSON?
+   True or False: JSON is JavaScript.
 
 .. admonition:: Question
 

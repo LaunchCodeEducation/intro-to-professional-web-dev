@@ -104,7 +104,7 @@ Check Your Understanding
 
    .. sourcecode:: js
 
-    let response = window.confirm("String message")
+    let response = window.confirm("String message");
 
 .. admonition:: Question
 
@@ -114,7 +114,3 @@ Check Your Understanding
    b. You can select elements by *id attribute* value
    c. You can select elements by *tag* name
    d. All of the above
-
-.. admonition:: Question
-
-   What is the difference between the document and window variables?

@@ -87,7 +87,7 @@
   <div class="section" id="fetching-data">
 <h1>26.3. Fetching Data<a class="headerlink" href="#fetching-data" title="Permalink to this headline">¶</a></h1>
 <p>Now that we know what an API is, let’s use one to update a web page. Let’s use
-a weather API to add weather data to a webpage. The URL for this special
+a weather API to add weather data to a web page. The URL for this special
 LaunchCode weather API is <a class="reference external" href="https://handlers.education.launchcode.org/static/weather.json" target="_blank">https://handlers.education.launchcode.org/static/weather.json<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>Example JSON returned from our weather API.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -148,11 +148,11 @@ global function that requests, or fetches, resources such as data from an API.</
 <p>Take note of two necessary aspects of the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function:</p>
 <ol class="arabic simple">
 <li>The URL of where the data is located.<ol class="loweralpha">
-<li>For this example it will be <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span></code></li>
+<li>For this example, it will be <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span></code></li>
 </ol>
 </li>
 <li>A response handler function to utilize the data that is being fetched.<ol class="loweralpha">
-<li>For this example it will be <code class="docutils literal notranslate"><span class="pre">function(response){...};</span></code></li>
+<li>For this example, it will be <code class="docutils literal notranslate"><span class="pre">function(response){...};</span></code></li>
 </ol>
 </li>
 </ol>
@@ -161,7 +161,7 @@ global function that requests, or fetches, resources such as data from an API.</
 <p>Notice a string URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code>. Also notice the anonymous
 <em>request handler function</em> that has a <code class="docutils literal notranslate"><span class="pre">response</span></code> parameter. The <code class="docutils literal notranslate"><span class="pre">.then</span></code>
 method will be explained soon.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
@@ -202,7 +202,9 @@ object.</li>
 16
 17
 18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span>          <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Launch Status<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -427,7 +429,7 @@ the HTML elements in lines 11 - 16.</li>
 <li>The two anonymous functions end, and the HTML defined in lines 11 - 16
 gets added to the <code class="docutils literal notranslate"><span class="pre">div</span></code> element on line 26.</li>
 </ol>
-<p>Opening the developer tools on the webpage shows the added HTML:</p>
+<p>Opening the developer tools on the web page shows the added HTML:</p>
 <div class="figure" id="id2">
 <img alt="Screen shot of browser showing Launch Status web page with the weather data in HTML." src="../../_images/weather-data-on-page.png" />
 <p class="caption"><span class="caption-text">Weather data added to web page.</span></p>
@@ -448,7 +450,7 @@ limited to, <code class="docutils literal notranslate"><span class="pre">jQuery.
 <p>What is the correct syntax for <code class="docutils literal notranslate"><span class="pre">fetch</span></code>?</p>
 <ol class="last loweralpha simple">
 <li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;GET&quot;,</span> <span class="pre">&quot;https://api.url&quot;).then(...);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).doStuff(...)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).doStuff(...);</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).then(...);</span></code></li>
 </ol>
 </div>

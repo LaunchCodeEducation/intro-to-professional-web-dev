@@ -56,7 +56,7 @@ traditional Scrabble scoring algorithm. Take a few moments to review how
 
 The object keys of ``oldScoreKey`` are the Scrabble points, and the values
 are arrays of letters. All letters in the array have the Scrabble
-point value equal to the key. For example, ``'A'`` is worth 1, and ``'J'`` is
+point value equal to the key. For example, ``'A'`` is worth 1, ``'K'`` is worth 5, and ``'J'`` is
 worth 8.
 
 With the old format, to find the point value for a letter, the program must
@@ -69,8 +69,9 @@ each letter. The value of each key will be the Scrabble point value.
 Example of new key storage
 
 * ``a`` is worth ``1``
+* ``k`` is worth ``5``
 * ``j`` is worth ``8``
-* ``k`` is worth ``10``
+
 
 In ``newScoreKey``, the letters themselves are keys, so a single search will
 identify a point value.

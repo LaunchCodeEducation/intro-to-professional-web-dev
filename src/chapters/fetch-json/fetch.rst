@@ -2,7 +2,7 @@ Fetching Data
 =============
 
 Now that we know what an API is, let's use one to update a web page. Let's use
-a weather API to add weather data to a webpage. The URL for this special
+a weather API to add weather data to a web page. The URL for this special
 LaunchCode weather API is `<https://handlers.education.launchcode.org/static/weather.json>`__.
 
 Example JSON returned from our weather API.
@@ -62,11 +62,11 @@ Take note of two necessary aspects of the ``fetch`` function:
 
 #. The URL of where the data is located.
 
-   a. For this example it will be ``"https://handlers.education.launchcode.org/static/weather.json"``
+   a. For this example, it will be ``"https://handlers.education.launchcode.org/static/weather.json"``
 
 #. A response handler function to utilize the data that is being fetched.
 
-   a. For this example it will be ``function(response){...};``
+   a. For this example, it will be ``function(response){...};``
 
 .. admonition:: Example
 
@@ -76,7 +76,7 @@ Take note of two necessary aspects of the ``fetch`` function:
 
    .. sourcecode:: js
 
-      fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
+      fetch("https://handlers.education.launchcode.org/static/weather.json").then(function(response) {
          console.log(response);
       } );
 
@@ -103,6 +103,7 @@ Now let's add ``fetch`` in the Launch Status web page.
       :linenos:
       :slug: fetch-weather-pt1
 
+		<!DOCTYPE html>
       <html>
          <head>
             <title>Launch Status</title>
@@ -284,7 +285,7 @@ Let's take a look at the expected sequence of events:
 #. The two anonymous functions end, and the HTML defined in lines 11 - 16
    gets added to the ``div`` element on line 26.
 
-Opening the developer tools on the webpage shows the added HTML:
+Opening the developer tools on the web page shows the added HTML:
 
 .. figure:: figures/weather-data-on-page.png
    :alt: Screen shot of browser showing Launch Status web page with the weather data in HTML.
@@ -306,5 +307,5 @@ Check Your Understanding
    What is the correct syntax for ``fetch``?
 
    a. ``fetch("GET", "https://api.url").then(...);``
-   b. ``fetch("https://api.url").doStuff(...)``
+   b. ``fetch("https://api.url").doStuff(...);``
    c. ``fetch("https://api.url").then(...);``

@@ -9,8 +9,8 @@ Write a function called divide that takes two parameters: a ``numerator`` and a
 
 Your function should return the result of ``numerator / denominator``.
 
-However, if the ``denominator`` is zero you should throw an error informing the
-user they attempted to divide by zero. The error text should be ``Attempted to divide by zero.``
+However, if ``denominator`` is zero you should throw the error, ``"Attempted to
+divide by zero."``
 
 .. admonition:: Note
 
@@ -55,17 +55,18 @@ result don't match, then the lab is considered a failure.
 
    gradeLabs(studentLabs);
 
-The ``gradeLabs`` function works for the majority of cases. However what happens if a student named their function incorrectly?
-Run ``gradeLabs`` and pass it ``studentLabs2`` as defined below.
+The ``gradeLabs`` function works for the majority of cases. However, what
+happens if a student named their function incorrectly? Run ``gradeLabs`` and
+pass it ``studentLabs2`` as defined below.
 
 .. sourcecode:: js
    :linenos:
 
    let studentLabs2 = [
       {
-         student: 'Jim',
+         student: 'Blake',
          myCode: function (num) {
-            return num + num;
+            return Math.pow(num, num);
          }
       },
       {
@@ -73,11 +74,20 @@ Run ``gradeLabs`` and pass it ``studentLabs2`` as defined below.
          runLab: function (num) {
             return Math.pow(num, num);
          }
+      },
+      {
+         student: 'Mya',
+         runLab: function (num) {
+            return num * num;
+         }
       }
    ];
 
    gradeLabs(studentLabs2);
 
-Upon running the second example, the teacher gets a ``TypeError: lab.runLab is not a function``.
+Upon running the second example, the teacher gets ``TypeError: lab.runLab is
+not a function``.
 
-Your task is to add a ``try`` ``catch`` block inside of ``gradeLabs`` to catch an exception if the ``runLab`` property is not defined.
+Add a ``try/catch`` block inside of ``gradeLabs`` to catch an exception if the
+``runLab`` property is not defined. If the exception is thrown, ``result``
+should be set to the text ``"Error thrown"``.

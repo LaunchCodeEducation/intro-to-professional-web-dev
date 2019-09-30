@@ -130,7 +130,7 @@ Which Way is Preferred?
          }
       }
 
-      // Here we assign the method outside fo the constructor
+      // Here we assign the method outside of the constructor
       class AstronautO {
          constructor(name, age, mass){
             this.name = name,

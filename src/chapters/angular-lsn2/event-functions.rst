@@ -12,9 +12,9 @@ call a function when an event occurs. The syntax for this is:
 
 ::
 
-   (event) = "functionName(parameters...)"
+   (event) = "functionName(arguments...)"
 
-Changing the movie list displayed on the webpage requires us to modify the
+Changing the movie list displayed on the web page requires us to modify the
 ``movies`` array in the ``movie-list.component.ts`` file. We will do this by
 creating an ``addMovie`` function and linking it to our event handlers.
 
@@ -71,7 +71,7 @@ Open ``movie-list.component.ts`` and examine the code:
       }
    }
 
-The ``movies`` array stores the titles displayed on the webpage, and we want to
+The ``movies`` array stores the titles displayed on the web page, and we want to
 update this when the user supplies new information.
 
 3. Declare a function called ``addMovie`` that takes one parameter:
