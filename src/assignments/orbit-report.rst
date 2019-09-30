@@ -2,10 +2,15 @@
 Assignment #6: Orbit Report
 ===========================
 
+.. warning::
+
+   Please do not attempt this assignment until AFTER your first lecture on Angular.
+   It can be tempting to dive right in, but Angular is a broad topic and you want to wait to start until you have time to go over the requirements in class.
+
 There are thousands of satellites orbiting the earth. You are tasked with creating a searchable, sortable table of satellites.
 For the purposes of this assignment, **satellite** will be defined as any object purposefully placed into orbit.
 
-TODO: screen shot of finished report in the browser with numbers by each feature
+.. TODO: screen shot of finished report in the browser with numbers by each feature
 
 1. **Satellites**: Table with each row being a satellite.
 2. **Counts:** Count of all satellites and count for each type of satellite.
@@ -421,5 +426,5 @@ Copy the URL for your Github repository and paste it into the box, then click
 Application Demo
 ----------------
 
-TODO: video of all features being demoed (not including bonus)
-TODO: I have an mp4 of the demo saved. Need to upload it to youtube. (It was too large for gif)
+.. TODO: video of all features being demoed (not including bonus)
+.. TODO: I have an mp4 of the demo saved. Need to upload it to youtube. (It was too large for gif)
