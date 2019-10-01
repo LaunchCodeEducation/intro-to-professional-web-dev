@@ -88,24 +88,24 @@
 <p id="index-0">When working with branches in Git, you will sometimes make some changes
 to your code only to realize you are not working in the branch
 you thought you were. Thankfully, this is easy to remedy as long as you
-haven’t committed the changes.</p>
+haven't committed the changes.</p>
 <p>This tutorial introduces the <code class="docutils literal notranslate"><span class="pre">stash</span></code>
 command of <code class="docutils literal notranslate"><span class="pre">git</span></code>, which allows you to easily move the changes from one branch to another</p>
 <div class="section" id="the-situation">
 <h2>The Situation<a class="headerlink" href="#the-situation" title="Permalink to this headline">¶</a></h2>
 <p>We address the following situation:</p>
 <ul class="simple">
-<li>You have multiple branches in your local repository. For this tutorial, we’ll work with <code class="docutils literal notranslate"><span class="pre">master</span></code> and <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches.</li>
+<li>You have multiple branches in your local repository. For this tutorial, we'll work with <code class="docutils literal notranslate"><span class="pre">master</span></code> and <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches.</li>
 <li>You are working in a given branch, and have saved some changes.</li>
 <li>Your changes have NOT been staged or committed.</li>
 <li>You want to move your changes to another branch.</li>
 </ul>
-<p>If this situation describes you, you’re in luck! Let’s fix it.</p>
+<p>If this situation describes you, you're in luck! Let's fix it.</p>
 </div>
 <div class="section" id="using-git-stash">
 <h2>Using Git Stash<a class="headerlink" href="#using-git-stash" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you have a branch called <code class="docutils literal notranslate"><span class="pre">feature</span></code> that you want to work in.
-You’ve made some changes, and saved them, only to realize that you’re in
+You've made some changes, and saved them, only to realize that you're in
 (Gasp!) the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch master
@@ -128,7 +128,7 @@ Aborting
 </pre></div>
 </div>
 <p>This error results from the situation in which your <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch
-has commits that your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch doesn’t, so Git can’t move the
+has commits that your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch doesn't, so Git can't move the
 un-staged changes you made in <code class="docutils literal notranslate"><span class="pre">master</span></code> cleanly over to <code class="docutils literal notranslate"><span class="pre">feature</span></code>.</p>
 <p>Take a deep breath. This is an easy one to remedy.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> to put these changes off to the side for a moment.</p>
@@ -165,7 +165,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 Dropped refs/stash@{0} (cb556d3734ed8675b6b81f5d4e37d003bd1bc6b9)
 </pre></div>
 </div>
-<p>That’s it! Carry on coding.</p>
+<p>That's it! Carry on coding.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

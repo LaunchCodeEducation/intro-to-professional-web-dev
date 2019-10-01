@@ -99,7 +99,7 @@ decimal number between 0 and 1, the method on its own will not work.</p>
 <p>The <a class="reference internal" href="../../appendices/math-method-examples/random-examples.html#random-integers"><span class="std std-ref">Math.random</span></a> appendix page describes how to
 generate random integers by combining the <code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">floor</span></code> methods. We
 will use this functionality now.</p>
-<p>Let’s define a function that takes an array as a parameter. Since we might not
+<p>Let's define a function that takes an array as a parameter. Since we might not
 know how many items are in the array, we cannot multiply <code class="docutils literal notranslate"><span class="pre">Math.round()</span></code> by a
 specific value.  Fortunately, we have the <code class="docutils literal notranslate"><span class="pre">length</span></code> property…</p>
 <div class="admonition-example admonition">
@@ -147,17 +147,17 @@ Line 3 then returns a random selection from the array.</p>
 <span id="id1"></span><h2>12.6.2. Rounding to Decimal Places<a class="headerlink" href="#rounding-to-decimal-places" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, and <code class="docutils literal notranslate"><span class="pre">round</span></code> methods all take a decimal value and
 return an integer, but what if we wanted to round 5.56789123 to two decimal
-places? Let’s explore how to make this happen by starting with a simpler
+places? Let's explore how to make this happen by starting with a simpler
 example.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Math.round(1.23)</span></code> returns 1, but what if we want to round to one decimal
-place (1.2)? We cannot alter what <code class="docutils literal notranslate"><span class="pre">round</span></code> does—it <em>always</em> returns an
+place (1.2)? We cannot alter what <code class="docutils literal notranslate"><span class="pre">round</span></code> does---it <em>always</em> returns an
 integer. However, we CAN change the number used as the argument.</p>
-<p>Let’s multiply 1.23 by 10 (1.23*10  = 12.3) and then apply the method.
+<p>Let's multiply 1.23 by 10 (1.23*10  = 12.3) and then apply the method.
 <code class="docutils literal notranslate"><span class="pre">Math.round(12.3)</span></code> returns 12. Why do this? Well, if we divide 12 by 10
 (12/10 = 1.2) we get the result of <em>rounding 1.23 to one decimal place</em>.</p>
 <p>Combining these steps gives us <code class="docutils literal notranslate"><span class="pre">Math.round(1.23*10)/10</span></code>, which returns the
 value 1.2.</p>
-<p>Let’s return to 5.56789123 and step through the logic for rounding to two
+<p>Let's return to 5.56789123 and step through the logic for rounding to two
 decimal places:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -184,7 +184,7 @@ decimal places:</p>
 <p>The clever trick for rounding to decimal places is to multiply the original
 number by some factor of 10, <code class="docutils literal notranslate"><span class="pre">round</span></code> the result, then divide the integer by
 the same factor of 10. The number of digits we want after the decimal are
-shifted in front of the ‘.’ before rounding, then moved back into place by the
+shifted in front of the '.' before rounding, then moved back into place by the
 division.</p>
 <table border="1" class="docutils" id="id2">
 <caption><span class="caption-text">Rounding to Decimal Places</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>

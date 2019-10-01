@@ -86,7 +86,7 @@
     
   <div class="section" id="recursion-walkthrough-the-base-case">
 <h1>11.7. Recursion Walkthrough: The Base Case<a class="headerlink" href="#recursion-walkthrough-the-base-case" title="Permalink to this headline">¶</a></h1>
-<p>To ease into the concept of recursion, let’s start with a loop task.</p>
+<p>To ease into the concept of recursion, let's start with a loop task.</p>
 <p>In the Arrays chapter, we examined  the <a class="reference internal" href="../../appendices/array-method-examples/join-examples.html#join-examples"><span class="std std-ref">join method</span></a>,
 which combines the elements of an array into a single string. If we have
 <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>, then <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code> returns the string
@@ -159,11 +159,11 @@ which combines the elements of an array into a single string. If we have
 </tr>
 </tbody>
 </table>
-<p>Inside each loop, the code simply adds two strings together—whatever is
+<p>Inside each loop, the code simply adds two strings together---whatever is
 stored in <code class="docutils literal notranslate"><span class="pre">newString</span></code> plus one element from the array. In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
 the element is the next item in the sequence of entries.  In the <code class="docutils literal notranslate"><span class="pre">while</span></code>
 loop, the element is always the first entry from whatever remains in the array.</p>
-<p>OK, the loops join the array elements together. Now let’s see how to
+<p>OK, the loops join the array elements together. Now let's see how to
 accomplish the same task without a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.</p>
 </div>
 <div class="section" id="bring-in-recursion-concepts">
@@ -171,9 +171,9 @@ accomplish the same task without a <code class="docutils literal notranslate"><s
 <p>First, state the problem to solve: <em>Combine the elements from an array into a
 string</em>.</p>
 <p>Second, split the problem into small, identical steps: Looking at the loops
-above, the “identical step” is just adding two strings together - <code class="docutils literal notranslate"><span class="pre">newString</span></code>
+above, the &quot;identical step&quot; is just adding two strings together - <code class="docutils literal notranslate"><span class="pre">newString</span></code>
 and the next entry in the array.</p>
-<p>Third, build a function to accomplish the small steps: Let’s call the function
+<p>Third, build a function to accomplish the small steps: Let's call the function
 <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code>, and we will set an array as the parameter.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
    <span class="c1">//TODO: Add code here</span>
@@ -214,7 +214,7 @@ represents the simplest possible task for our function.</p>
 <p>For the joining task, the <em>base case</em> occurs when we pass in a one-element
 array (e.g. <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'L'</span> <span class="pre">]</span></code>). With no other elements to join together, the function
 just needs to return <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
-<p>Let’s update <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> to check if the array contains only one item.</p>
+<p>Let's update <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> to check if the array contains only one item.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -250,7 +250,7 @@ the condition, we ended the recursion process too soon.</p>
 <p>Similarly, if we used <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span> <span class="pre">===</span> <span class="pre">'Rutabaga'</span></code> as the condition, then
 any array that does NOT contain the string <code class="docutils literal notranslate"><span class="pre">'Rutabaga'</span></code> would never match the
 base case. In situations where the base case cannot be reached, the recusion
-process either throws an error, or it continues without end—an infinite loop.</p>
+process either throws an error, or it continues without end---an infinite loop.</p>
 <p>Correctly identifying and checking for the base case is <em>critical</em> to building
 a working recursive process.</p>
 </div>
@@ -258,7 +258,7 @@ a working recursive process.</p>
 <h2>11.7.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p>We can use recursion to remove all of the ‘i’ entries from the array
+<p>We can use recursion to remove all of the 'i' entries from the array
 <code class="docutils literal notranslate"><span class="pre">['One',</span> <span class="pre">'i',</span> <span class="pre">'c',</span> <span class="pre">'X',</span> <span class="pre">'i',</span> <span class="pre">'i',</span> <span class="pre">54]</span></code>.</p>
 <p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">removeI</span></code> function.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
