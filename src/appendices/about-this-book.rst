@@ -16,15 +16,41 @@ Introduction to Professional Web Development in JavaScript by `The LaunchCode Fo
 Contributors
 ------------
 
-`Chris Bay`_
+.. list-table::
 
-`Jim Flores`_
+   * - .. figure:: ./figures/Staff_Chris_Bay.png
+          :alt: Chris Bay
 
-`Blake Mills`_
+          `Chris Bay`_
+     - .. figure:: ./figures/Staff_Jim_Flores.png
+          :alt: Jim Flores
 
-`Sally Steuterman`_
+          `Jim Flores`_
+     - .. figure:: ./figures/Staff_Blake_Mills.png
+          :alt: Blake Mills
+
+          `Blake Mills`_
+   * - 
+     -
+     -
+   * - .. figure:: ./figures/Staff_Sally_Steuterman.png
+          :alt: Sally Steuterman
+
+          `Sally Steuterman`_
+     - .. figure:: ./figures/Staff_Paul_Matthews.png
+          :alt: Paul Matthews
+
+          `Paul Matthews`_
+     - .. figure:: ./figures/Staff_Carly_Langlois.png
+          :alt: Carly Langlois
+
+          `Carly Langlois`_
+
+  
 
 .. _Chris Bay: https://github.com/chrisbay
 .. _Jim Flores: https://github.com/jimflores5
 .. _Blake Mills: https://github.com/welzie
 .. _Sally Steuterman: https://github.com/gildedgardenia
+.. _Paul Matthews: https://github.com/pdmxdd
+.. _Carly Langlois: https://github.com/carlylanglois
