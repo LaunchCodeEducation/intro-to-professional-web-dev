@@ -23,7 +23,7 @@ A generic HTTP request looks like this:
 
    Request Body
 
-The strurcture has these componenets:
+The structure has these components:
 
 .. index::
    single: HTTP; request method
