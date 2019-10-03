@@ -108,7 +108,7 @@ or modify a variable.</p>
 <p><code class="docutils literal notranslate"><span class="pre">a</span></code> is accessible <em>inside</em> and <em>outside</em> of <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code>.</p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">b</span></code> is only accessible <em>inside</em> of <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code>.</p>
 </div>
-<p>Let’s add some <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to explore this code snippet.</p>
+<p>Let's add some <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements to explore this code snippet.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -221,11 +221,11 @@ disrupt how well the loop operates.</p>
 <div class="section" id="execution-context">
 <h2>15.1.3. Execution Context<a class="headerlink" href="#execution-context" title="Permalink to this headline">¶</a></h2>
 <p id="index-3"><strong>Execution context</strong> refers to the conditions under which a variable is
-executed—its scope. Scoping affects the variable’s behavior at runtime.
+executed---its scope. Scoping affects the variable's behavior at runtime.
 When the code is run in the browser, everything is first run at a global
 context. As the compiler processes the code and finds a function, it shifts
 into the function context before returning to global execution context.</p>
-<p>Let’s consider this code:</p>
+<p>Let's consider this code:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -251,7 +251,7 @@ into the function context before returning to global execution context.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Now, let’s consider the execution context for each step.</p>
+<p>Now, let's consider the execution context for each step.</p>
 <ol class="arabic">
 <li><p class="first">First, the global execution context is entered as the compiler executes the
 code.</p>
@@ -278,7 +278,7 @@ execution of <code class="docutils literal notranslate"><span class="pre">cooler
 </li>
 <li><p class="first">Inside of <code class="docutils literal notranslate"><span class="pre">coolerFunction()</span></code> is a call to <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code>. The compiler
 will go up in execution context to <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code> before returning down
-to <code class="docutils literal notranslate"><span class="pre">coolerFunction()</span></code>’s execution context. Upon completion of that
+to <code class="docutils literal notranslate"><span class="pre">coolerFunction()</span></code>'s execution context. Upon completion of that
 function, the compiler returns to the global execution context.</p>
 <div class="figure">
 <img alt="Figure showing coolFunction on top of coolerFunction on top of the global execution context." src="../../_images/coolandcoolerFunction.png" />

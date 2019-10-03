@@ -87,7 +87,7 @@
   <div class="section" id="assigning-class-methods">
 <span id="adding-class-methods"></span><h1>18.3. Assigning Class Methods<a class="headerlink" href="#assigning-class-methods" title="Permalink to this headline">¶</a></h1>
 <p>Just as with objects, we may want to add methods to our classes in addition to properties.
-So far, we have learned how to set the values of the class’s properties inside the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
+So far, we have learned how to set the values of the class's properties inside the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
 <p>When assigning methods in classes, we can either create them <cite>outside</cite> or <cite>inside</cite> the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
 <div class="section" id="assigning-methods-outside-constructor">
 <h2>18.3.1. Assigning Methods Outside <code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#assigning-methods-outside-constructor" title="Permalink to this headline">¶</a></h2>
@@ -172,7 +172,7 @@ When we declare a new instance of the <code class="docutils literal notranslate"
 </td></tr></table></div>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class that we have been working with.
+<p>Let's consider the <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> class that we have been working with.
 When assigning the method, <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>, inside the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, we would do so like this:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -286,10 +286,10 @@ We will weigh the pros and cons of both methods below.</p>
 <p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/ClassMethodsTryIt" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p>In the case of assigning the method <cite>inside</cite> the constructor, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>
-object carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>. With today’s computers,
+object carries around the code for <code class="docutils literal notranslate"><span class="pre">reportStats()</span></code>. With today's computers,
 this is a relatively minor concern. However, each <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> has extra code
 that may not be needed. This consumes memory, which you need to consider since
-today’s businesses want efficient code that does not tax their systems.</p>
+today's businesses want efficient code that does not tax their systems.</p>
 <p>Because of this, if a method is the same for ALL objects of a class, define that method <cite>outside</cite> of the constructor.
 Each object does not need a copy of identical code.
 Therefore, the declaration of a method outside of the constructor will not consume as much memory.</p>

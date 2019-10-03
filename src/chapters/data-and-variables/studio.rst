@@ -15,21 +15,13 @@ Before You Start
 
 If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
 
-If you are working through this material on your own, use the repl.it links contained on this page.
+If you are working through this material on your own, use the `starter repl.it file <https://repl.it/@launchcode/Studio-Data-and-Variables>`__.
 
 Declare and Initialize Variables
----------------------------------
+--------------------------------
 
-Click this link to open the `starter repl.it file <https://repl.it/@launchcode/Studio-Data-and-Variables>`__.
-
-Declare and initialize a variable for every data point listed in the table
-below. Remember to account for the different data types.
-
-.. admonition:: Note
-
-   For now, use the ``string`` type for the ``date`` and ``time`` values. Later
-   in the class, we will learn other ways to work with date and time in
-   JavaScript.
+Declare and initialize a variable for every data point listed below. 
+Remember to account for the different data types.
 
 .. list-table::
    :widths: auto

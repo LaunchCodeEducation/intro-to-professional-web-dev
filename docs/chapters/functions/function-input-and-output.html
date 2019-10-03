@@ -89,7 +89,7 @@
 <p>In the introduction to this chapter, we used the metaphor of the <a class="reference internal" href="intro.html#function-machine"><span class="std std-ref">function machine</span></a>, noting that the machine takes <em>input</em> and provides <em>output</em>. This section focuses on the details of these two aspects of function behavior.</p>
 <div class="section" id="return-statements">
 <h2>10.4.1. Return Statements<a class="headerlink" href="#return-statements" title="Permalink to this headline">¶</a></h2>
-<p id="index-0">Some functions return values that are useful. In particular, the type conversion functions convert input to the specified data type and return the result—calling <code class="docutils literal notranslate"><span class="pre">Number(&quot;3.14&quot;)</span></code> returns the value <code class="docutils literal notranslate"><span class="pre">3.14</span></code>.</p>
+<p id="index-0">Some functions return values that are useful. In particular, the type conversion functions convert input to the specified data type and return the result---calling <code class="docutils literal notranslate"><span class="pre">Number(&quot;3.14&quot;)</span></code> returns the value <code class="docutils literal notranslate"><span class="pre">3.14</span></code>.</p>
 <div class="section" id="returning-a-value">
 <h3>10.4.1.1. Returning a Value<a class="headerlink" href="#returning-a-value" title="Permalink to this headline">¶</a></h3>
 <p>To return a value from functions that <em>we</em> create, we can use a <strong>return statement</strong>. A return statement has the form:</p>
@@ -100,7 +100,7 @@
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This function has a single parameter, <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is expected to be a
-positive integer. It returns the sum 1+2+…+n.</p>
+positive integer. It returns the sum 1+2+...+n.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -144,7 +144,7 @@ it called?</p>
 </pre></div>
 </div>
 <p>As written, this function is completely valid, but useless. Although the
-function doesn’t have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, JavaScript still implicitly
+function doesn't have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, JavaScript still implicitly
 returns a value.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
@@ -192,7 +192,7 @@ returns a value.</p>
 <p>We can use the fact that <code class="docutils literal notranslate"><span class="pre">return</span></code> stops the execution of a function intentionally, to force a function to stop execution.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>This function prints out the integers 1…n using an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, which nonetheless terminates when the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is executed.</p>
+<p>This function prints out the integers 1...n using an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, which nonetheless terminates when the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is executed.</p>
 <div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -248,8 +248,8 @@ false
 </pre></div>
 </div>
 </div>
-<p>It is conventional to name boolean functions by starting with either <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">has</span></code>, which creates a nice semantic effect when reading the code. For example, reading <code class="docutils literal notranslate"><span class="pre">isEven(4)</span></code> communicates to the reader that the function should answer the question, “Is 4 even?” This is a convention so widely used by programmers that it extends to nearly every language.</p>
-<p>Let’s return to the <code class="docutils literal notranslate"><span class="pre">isEven</span></code> function above, to see how we can use the power of return statements to make it even better.</p>
+<p>It is conventional to name boolean functions by starting with either <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">has</span></code>, which creates a nice semantic effect when reading the code. For example, reading <code class="docutils literal notranslate"><span class="pre">isEven(4)</span></code> communicates to the reader that the function should answer the question, &quot;Is 4 even?&quot; This is a convention so widely used by programmers that it extends to nearly every language.</p>
+<p>Let's return to the <code class="docutils literal notranslate"><span class="pre">isEven</span></code> function above, to see how we can use the power of return statements to make it even better.</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">return</span></code> terminates the function, we can leave out the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause and have the same effect. This is because if <code class="docutils literal notranslate"><span class="pre">n</span></code> is even, the return statement in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block will execute and the function will end. If <code class="docutils literal notranslate"><span class="pre">n</span></code> is odd, the <code class="docutils literal notranslate"><span class="pre">if</span></code> block will be skipped and the second return statement will execute.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -273,7 +273,7 @@ false
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>This version of <code class="docutils literal notranslate"><span class="pre">isEven</span></code> is better than the first two, not because it is shorter (shorter isn’t always better), but because it is simpler to read. We don’t have to break down the conditional logic to see what is being returned.</p>
+<p>This version of <code class="docutils literal notranslate"><span class="pre">isEven</span></code> is better than the first two, not because it is shorter (shorter isn't always better), but because it is simpler to read. We don't have to break down the conditional logic to see what is being returned.</p>
 <p>Most boolean functions can be written so that they return the value of a boolean expression, rather than explicitly returning <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 </div>
@@ -283,7 +283,7 @@ false
 <p>The easiest way to talk about the difference between arguments and parameters is by referring to an example.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>The function <code class="docutils literal notranslate"><span class="pre">hello</span></code> takes a single value, which we expect to be a person’s name, and returns a message that greets that person.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">hello</span></code> takes a single value, which we expect to be a person's name, and returns a message that greets that person.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -352,7 +352,7 @@ Hello, Lamar!
 </pre></div>
 </div>
 </div>
-<p>While this may seem new, we have already seen a function that allows for some arguments to be omitted—the string method <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
+<p>While this may seem new, we have already seen a function that allows for some arguments to be omitted---the string method <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The string method <code class="docutils literal notranslate"><span class="pre">slice</span></code> allows the second argument to be left off.
@@ -398,7 +398,7 @@ argument is the length of the string.</p>
 </div>
 <div class="admonition-fun-fact admonition">
 <p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
-<p class="last">These “extra” arguments can still be accessed using a special object named <code class="docutils literal notranslate"><span class="pre">arguments</span></code>, which is made available to every function. If you are curious, <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank">read more at MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. However, we will not need to use this advanced JavaScript feature in this course.</p>
+<p class="last">These &quot;extra&quot; arguments can still be accessed using a special object named <code class="docutils literal notranslate"><span class="pre">arguments</span></code>, which is made available to every function. If you are curious, <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank">read more at MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. However, we will not need to use this advanced JavaScript feature in this course.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">

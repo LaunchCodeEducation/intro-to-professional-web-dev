@@ -215,7 +215,7 @@ launchcode
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic simple">
-<li>Use our <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> function to ensure user input starts with “a”.</li>
+<li>Use our <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> function to ensure user input starts with &quot;a&quot;.</li>
 <li>Create another validator that ensures user input is a vowel.</li>
 </ol>
 <p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Validator-check" target="_blank">Try it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
@@ -256,11 +256,11 @@ launchcode
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>Let’s examine this example in more detail.</p>
+<p>Let's examine this example in more detail.</p>
 <p>There are three main program components:</p>
 <ol class="arabic simple">
 <li>Lines 1-5 define <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>, which takes a string argument, <code class="docutils literal notranslate"><span class="pre">msg</span></code>. We have not discussed writing to a file, but Node.js is capable of doing so.</li>
-<li>Lines 7-10 define <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The first parameter is the message to be logged. The second parameter is the logging function that will do the work of sending the message somewhere. <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know the details of how the message will be logged. It simply formats the message, and calls <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</li>
+<li>Lines 7-10 define <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The first parameter is the message to be logged. The second parameter is the logging function that will do the work of sending the message somewhere. <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn't know the details of how the message will be logged. It simply formats the message, and calls <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</li>
 <li>Line 12 logs an error using the <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>.</li>
 </ol>
 <p>This is the flow of execution:</p>
@@ -325,12 +325,12 @@ launchcode
 </td></tr></table></div>
 </div>
 <p>The main change to the program is that <code class="docutils literal notranslate"><span class="pre">logError</span></code> now accepts an <em>array</em> of functions. It loops through the array, calling each logger with the message string.</p>
-<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn’t know how each logging function does its job. It is concerned only with creating the message string and passing it to the logger(s).</p>
+<p>As with the validation example, these programs separate behaviors in a way that makes the code more flexible. To add or remove a logging destination, we can simply change the way that we call <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The code <em>inside</em> <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn't know how each logging function does its job. It is concerned only with creating the message string and passing it to the logger(s).</p>
 </div>
 </div>
 <div class="section" id="a-word-of-caution">
 <h2>11.4.3. A Word of Caution<a class="headerlink" href="#a-word-of-caution" title="Permalink to this headline">¶</a></h2>
-<p>What happens if a function expects an argument to be a function, but it isn’t?</p>
+<p>What happens if a function expects an argument to be a function, but it isn't?</p>
 <div class="admonition-try-it admonition">
 <p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1

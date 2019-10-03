@@ -89,17 +89,17 @@
 <p id="index-0">The practice of using functions to build other functions is known as <strong>function composition</strong>, or simply <strong>composition</strong>. To demonstrate, we consider a specific example.</p>
 <div class="section" id="palindrome-checker">
 <h2>10.8.1. Palindrome Checker<a class="headerlink" href="#palindrome-checker" title="Permalink to this headline">¶</a></h2>
-<p>A palindrome can be defined as a word that is spelled the same backwards and forwards. Some examples are “tacocat”, “kayak”,  and “racecar”.</p>
+<p>A palindrome can be defined as a word that is spelled the same backwards and forwards. Some examples are &quot;tacocat&quot;, &quot;kayak&quot;,  and &quot;racecar&quot;.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">There are other factors that are sometimes included in the definition of a palindrome. For example, an alternative definition is that a palindrome is a sentence or phrase that contains letters in the same order, whether considered from beginning-to-end, or end-to beginning, ignoring punctuation, case, and spaces.</p>
 </div>
-<p>We want to write a boolean function—a function that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>—to deteremine if a word is a palindrome.</p>
+<p>We want to write a boolean function---a function that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>---to deteremine if a word is a palindrome.</p>
 <p>One way to state the palindrome condition is to say that a palindrome is a string that is equal to its reverse. In other words, we can test for palindromes by taking a string, reversing it, and then comparing the reversed string to the original. If the two are equal, we have a palindrome.</p>
-<p>To that end, it would be very useful to have a function that reversed a string, wouldn’t it?</p>
+<p>To that end, it would be very useful to have a function that reversed a string, wouldn't it?</p>
 <div class="section" id="the-reverse-function">
 <h3>10.8.1.1. The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> Function<a class="headerlink" href="#the-reverse-function" title="Permalink to this headline">¶</a></h3>
-<p>Let’s write a function that, given a string, returns its reverse.</p>
+<p>Let's write a function that, given a string, returns its reverse.</p>
 <p>One approach uses the accumulator pattern:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -134,7 +134,7 @@
 </pre></div>
 </td></tr></table></div>
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/reverse-Function" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-<p>Let’s break down the steps carried out by this function:</p>
+<p>Let's break down the steps carried out by this function:</p>
 <ol class="arabic simple">
 <li><strong>Turn the string into an array of characters.</strong> We call <code class="docutils literal notranslate"><span class="pre">str.split('')</span></code>, using the empty string as the splitting character, returns an array of the individual characters that make up the string.</li>
 <li><strong>Reverse the array of characters.</strong> To do this, we use the built-in array method <code class="docutils literal notranslate"><span class="pre">reverse</span></code>.</li>
@@ -173,7 +173,7 @@
 </div>
 <div class="section" id="functions-should-do-exactly-one-thing">
 <h2>10.8.2. Functions Should Do Exactly One Thing<a class="headerlink" href="#functions-should-do-exactly-one-thing" title="Permalink to this headline">¶</a></h2>
-<p>An important consideration when writing a function is size. By “size” we mean that functions should be short and, more importantly, <em>do exactly one thing.</em></p>
+<p>An important consideration when writing a function is size. By &quot;size&quot; we mean that functions should be short and, more importantly, <em>do exactly one thing.</em></p>
 <p>This principle is easier to state than to put into practice. For example, what if we had written <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> without breaking out the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> code into a separate function?</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -213,7 +213,7 @@
 </pre></div>
 </td></tr></table></div>
 <p>Why is this better? Smaller functions are easier to debug, for one thing. And by separating single responsibilities into individual functions, we also make our code easier to read and more reusable. In looking at the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function, it is very clear what is going on. First, it makes a sandwich, then it pours a drink.</p>
-<p>Were the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function to simply contain all of the code necessary to carry out <em>both</em> tasks, there would be no clear separation between one task and the other, and the only way we might describe the various sections of the larger function would be to use comments. And, <a class="reference internal" href="naming-functions.html#comments-lie"><span class="std std-ref">as we’ve discussed</span></a>, comments should be a secondary option for explaining your code.</p>
+<p>Were the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function to simply contain all of the code necessary to carry out <em>both</em> tasks, there would be no clear separation between one task and the other, and the only way we might describe the various sections of the larger function would be to use comments. And, <a class="reference internal" href="naming-functions.html#comments-lie"><span class="std std-ref">as we've discussed</span></a>, comments should be a secondary option for explaining your code.</p>
 </div>
 </div>
 

@@ -71,7 +71,7 @@ TCP/IP
 
 **TCP/IP** is a low-level protocol that is quite complicated. For our purposes, it is important only to know that TCP/IP is the standard that allows *raw data* to get from one place to another on the Internet. 
 
-When a server sends a file back to a client, that file must pysically be sent across a series of network components, including cables, routers, and switches. Files are broken down into *packets*---small chunks of a standard size---that are individually sent from one location to the next, until arriving at their final destination and being reassembeld.
+When a server sends a file back to a client, that file must physically be sent across a series of network components, including cables, routers, and switches. Files are broken down into *packets*---small chunks of a standard size---that are individually sent from one location to the next, until arriving at their final destination and being reassembeld.
 
 .. admonition:: Fun Fact
 
@@ -84,7 +84,7 @@ DNS
 
 **DNS** is the address book of the Internet. It enables us to use readable and memorable names for servers, such as ``www.launchcode.org`` or ``mail.google.com``. Such names are called **domain names**, and they function as aliases for the actual server addresses.
 
-Every server on the internet has a numberical address known as an **IP address**. When a message is addressed using a domain name, the corresponding IP address must be determined before it can be sent. 
+Every server on the internet has a numerical address known as an **IP address**. When a message is addressed using a domain name, the corresponding IP address must be determined before it can be sent. 
 
 .. admonition:: Example
 
