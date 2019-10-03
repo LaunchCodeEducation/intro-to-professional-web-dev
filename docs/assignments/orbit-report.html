@@ -105,7 +105,7 @@ For the purposes of this assignment, <strong>satellite</strong> will be defined 
 <li>Clone that repo to your computer.</li>
 <li>Create a new Angular project in the cloned repo folder using this command.<ul>
 <li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">new</span> <span class="pre">--skip-git</span> <span class="pre">orbit-report</span></code></li>
-<li>It’s important to include the <code class="docutils literal notranslate"><span class="pre">--skip-git</span></code> because we don’t want Angular to create a git repo for us.</li>
+<li>It's important to include the <code class="docutils literal notranslate"><span class="pre">--skip-git</span></code> because we don't want Angular to create a git repo for us.</li>
 <li>Prompt answers: No Routing, Use CSS</li>
 </ul>
 </li>
@@ -162,7 +162,7 @@ class needs to define the properties needed to accurately represent a satellite.
 </div>
 <ol class="arabic simple" start="8">
 <li>In terminal run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code></li>
-<li>View the app in your browser. At this point you should see the default Angular starter page. If you don’t, check the build output and browser console for any errors.</li>
+<li>View the app in your browser. At this point you should see the default Angular starter page. If you don't, check the build output and browser console for any errors.</li>
 </ol>
 </div>
 <div class="section" id="create-orbit-list-component">
@@ -177,7 +177,7 @@ new component named <code class="docutils literal notranslate"><span class="pre"
 </div>
 <div class="section" id="pass-in-satellites-to-orbit-list-component">
 <h3>3) Pass in Satellites to Orbit List Component<a class="headerlink" href="#pass-in-satellites-to-orbit-list-component" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component’s job is to show a list of satellites. Remember you declared an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in
+<p>The <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component's job is to show a list of satellites. Remember you declared an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in
 <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> named <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>. In order to pass that array into the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code>, you need to learn a new Angular
 feature named <a class="reference external" href="https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding" target="_blank">input properties<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
 For the purpose of this feature, the term input refers to data being sent <em>into</em> the component. Angular input properties are NOT related to HTML <code class="docutils literal notranslate"><span class="pre">input</span></code>
@@ -199,7 +199,7 @@ of the <code class="docutils literal notranslate"><span class="pre">satellites</
 </ul>
 </li>
 <li>View the app in your browser.<ul>
-<li>You should NOT see the message “orbit-list worked!”. Why?</li>
+<li>You should NOT see the message &quot;orbit-list worked!&quot;. Why?</li>
 </ul>
 </li>
 <li>Open developer tools in your browser and look at the JavaScript console.</li>
@@ -226,7 +226,7 @@ Can&#39;t bind to &#39;satellites&#39; since it isn&#39;t a known property of &#
 </ul>
 </li>
 <li>View the app in your browser. You should see: orbit-list works!<ul>
-<li>You still don’t have satellites showing yet. That is the next step.</li>
+<li>You still don't have satellites showing yet. That is the next step.</li>
 </ul>
 </li>
 </ol>
@@ -273,7 +273,7 @@ use that array to build an HTML table with each row being a different satellite.
 </ol>
 <div class="figure" id="id1">
 <img alt="Screen shot of browser showing http://localhost:4200 with a table of four satellites." src="../_images/basic-table-satellites.png" />
-<p class="caption"><span class="caption-text">Example of application at this point. Don’t worry if yours doesn’t have a heading of “Orbit Report” yet, you can add that later.</span></p>
+<p class="caption"><span class="caption-text">Example of application at this point. Don't worry if yours doesn't have a heading of &quot;Orbit Report&quot; yet, you can add that later.</span></p>
 </div>
 </div>
 <div class="section" id="fetch-satellite-data">
@@ -324,7 +324,7 @@ by adding an Angular attribute directive.</p>
 <li><code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the satellite <code class="docutils literal notranslate"><span class="pre">type</span></code> is <code class="docutils literal notranslate"><span class="pre">'Space</span> <span class="pre">Debris'</span></code>, returns false otherwise.</li>
 </ul>
 </li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite’s type.<ul>
+<li>Use <code class="docutils literal notranslate"><span class="pre">shouldShowWarning</span></code> to add the <code class="docutils literal notranslate"><span class="pre">warning</span></code> CSS class to the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> containing the satellite's type.<ul>
 <li>For guidance refer to the section on <a class="reference internal" href="../chapters/angular-lsn3/attribute-directives.html#changing-styles-with-booleans"><span class="std std-ref">changing styles with attribute directives</span></a></li>
 </ul>
 </li>
@@ -336,8 +336,8 @@ by adding an Angular attribute directive.</p>
 </div>
 <div class="section" id="sorting">
 <h3>7) Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h3>
-<p>Sorting is a useful feature for any table. When the “Name” heading is clicked sort the table by the
-<code class="docutils literal notranslate"><span class="pre">name</span></code> property. Also when the “Type” heading is clicked, the table should display sorted by the
+<p>Sorting is a useful feature for any table. When the &quot;Name&quot; heading is clicked sort the table by the
+<code class="docutils literal notranslate"><span class="pre">name</span></code> property. Also when the &quot;Type&quot; heading is clicked, the table should display sorted by the
 <code class="docutils literal notranslate"><span class="pre">type</span></code> property.</p>
 <ol class="arabic simple">
 <li>Add an Angular click handler that calls <code class="docutils literal notranslate"><span class="pre">sort('name')</span></code> to the Name  <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> element.<ul>
@@ -432,7 +432,7 @@ For more details about the compare function see
 <p>Notice the usage of a new variable named <code class="docutils literal notranslate"><span class="pre">displayList</span></code>. <code class="docutils literal notranslate"><span class="pre">displayList</span></code> should contain the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects
 that the user wants to see. Previously ALL the satellites were displayed, because there was not a search feature.
 Now the user can perform a search, which means they want to see ONLY the matching results. The <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> variable contains ALL
-the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects. If you removed the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects from <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> that didn’t match the search term, then
+the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects. If you removed the <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects from <code class="docutils literal notranslate"><span class="pre">sourceList</span></code> that didn't match the search term, then
 the user could never see them again. Instead when the user performs a search, <code class="docutils literal notranslate"><span class="pre">displayList</span></code> will be populated with only the matching
 <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>. Matching is defined as <code class="docutils literal notranslate"><span class="pre">satellite.name</span></code> containing the search term.</p>
 <ol class="arabic simple" start="7">
@@ -506,10 +506,10 @@ shows the total count and count by type for the satellites currently displayed i
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
-<p>In Canvas, open the Orbit Report assignment and click the “Submit” button.
+<p>In Canvas, open the Orbit Report assignment and click the &quot;Submit&quot; button.
 An input box will appear.</p>
 <p>Copy the URL for your Github repository and paste it into the box, then click
-“Submit” again.</p>
+&quot;Submit&quot; again.</p>
 </div>
 <div class="section" id="application-demo">
 <span id="orbit-report-demo"></span><h2>Application Demo<a class="headerlink" href="#application-demo" title="Permalink to this headline">¶</a></h2>

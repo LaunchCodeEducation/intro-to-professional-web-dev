@@ -221,7 +221,7 @@ Add the code to fetch this URL inside the load event listener.</p>
 </li>
 <li><p class="first">Peek the response returned in the request with a print statement inside of the function.</p>
 <p>Copy the file path of this HTML file and paste it as the URL in your browser.
-You won’t see much on the page yet. Open your developer tools and examine both the
+You won't see much on the page yet. Open your developer tools and examine both the
 <em>Console</em> tab for the response value, as well as the <em>Network</em> tab for the request status.</p>
 </li>
 <li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">.json()</span></code> method on your response now to see more of the data in the console:</p>
@@ -243,14 +243,14 @@ into the app.</p>
 </td></tr></table></div>
 <p>Refresh the page to see some new data in your HTML.
 Play around by changing the index number. Does the planet name change?
-Can you change the planet’s property being printed?</p>
+Can you change the planet's property being printed?</p>
 </li>
 <li><p class="first">Now, what happens if we move those last lines we added to outside and after
-the fetch request? Since <code class="docutils literal notranslate"><span class="pre">json</span></code> hasn’t been defined outside of the
+the fetch request? Since <code class="docutils literal notranslate"><span class="pre">json</span></code> hasn't been defined outside of the
 <code class="docutils literal notranslate"><span class="pre">response.json()</span></code> method yet, in order to move the template literal that uses
-that <code class="docutils literal notranslate"><span class="pre">json</span></code> variable, we’ll need to also initiate it outside of the function
+that <code class="docutils literal notranslate"><span class="pre">json</span></code> variable, we'll need to also initiate it outside of the function
 call.
-Let’s also put our print statement back so we can verify that our fetch works.</p>
+Let's also put our print statement back so we can verify that our fetch works.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -278,12 +278,12 @@ However, you should also see an error in the console related to the template lit
 using <code class="docutils literal notranslate"><span class="pre">json[0].name</span></code>.
 This error occurs because of the asynchronous nature of JavaScript. Although we
 now have <code class="docutils literal notranslate"><span class="pre">json</span></code> defined outside of the fetch request, at the point in time that
-we seek it for the template literal, we haven’t yet received the json data.
+we seek it for the template literal, we haven't yet received the json data.
 One clue that asynchronism is at play, the error appears before the printed JSON.</p>
 </li>
 <li><p class="first">Our last task left us with some knowledge about where and how we can use the
-fetched data, but we don’t really want to keep those changes. Instead, how
-about we use an event to change the planet information we see? Let’s move
+fetched data, but we don't really want to keep those changes. Instead, how
+about we use an event to change the planet information we see? Let's move
 the DOM manipulation to inside a click handler.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -314,10 +314,10 @@ the DOM manipulation to inside a click handler.</p>
 </td></tr></table></div>
 <p>Now, after refreshing the page, you can click on the <code class="docutils literal notranslate"><span class="pre">Planet</span></code> header to make
 the name and image appear.
-Take note, we’re still fetching on load, just not displaying the data until the
+Take note, we're still fetching on load, just not displaying the data until the
 the header is clicked.</p>
 </li>
-<li><p class="first">For fun and good measure, let’s dynamically change which planet’s info we’re displaying each time
+<li><p class="first">For fun and good measure, let's dynamically change which planet's info we're displaying each time
 the header is clicked. To do this,</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -326,7 +326,7 @@ the header is clicked. To do this,</p>
 <li>We then use the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> as the position in the planets array to
 use in the template literal.</li>
 <li>Finally, since we want to cap the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> so that it does not
-exceed the length of the planets array, we’ll use a modulo to control how
+exceed the length of the planets array, we'll use a modulo to control how
 large <code class="docutils literal notranslate"><span class="pre">index</span></code> can get.</li>
 </ol>
 </div></blockquote>

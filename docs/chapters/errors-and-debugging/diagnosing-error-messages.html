@@ -95,9 +95,9 @@ When we are working with a broken program, we might feel frustrated, like we do
 not fully understand the concepts at hand.</p>
 <p>However, the reality is that <em>all</em> programmers, no matter how experienced,
 regularly make simple mistakes. If you run your program and it produces an
-error message, your first reaction should be, “Great! My program has an error,
-but I have a helpful message to help me fix it.”</p>
-<p>Let’s consider a small program with a couple of syntax errors.</p>
+error message, your first reaction should be, &quot;Great! My program has an error,
+but I have a helpful message to help me fix it.&quot;</p>
+<p>Let's consider a small program with a couple of syntax errors.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
@@ -105,7 +105,7 @@ console.log(&quot;Hello, name);
 </pre></div>
 </div>
 </div>
-<p>While you can spot one or more errors just by looking at the code, let’s
+<p>While you can spot one or more errors just by looking at the code, let's
 examine the error messages produced.</p>
 <div class="section" id="a-syntax-error">
 <span id="syntax-error"></span><h2>6.3.1. A Syntax Error<a class="headerlink" href="#a-syntax-error" title="Permalink to this headline">¶</a></h2>
@@ -136,7 +136,7 @@ everything we need to know.</p>
 </div>
 <p>For many simple syntax errors, we will quickly be able to spot the mistake once
 JavaScript points out its location to us.</p>
-<p>If knowing the location of the error isn’t enough, then next line provides more
+<p>If knowing the location of the error isn't enough, then next line provides more
 information:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SyntaxError: Invalid or unexpected token
 </pre></div>
@@ -144,8 +144,8 @@ information:</p>
 <p>This line identifies that actual issue that JavaScript found. It makes it clear
 that we are dealing with a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, and it provides a message that
 describes the issue.</p>
-<p>If you are scratching your head at the message, “Invalid or unexpected token,”
-don’t worry. Programming languages often report errors in ways that are not
+<p>If you are scratching your head at the message, &quot;Invalid or unexpected token,&quot;
+don't worry. Programming languages often report errors in ways that are not
 always easy to decipher at first glance. However, a second look at the line in
 question helps us make sense of this message.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>console.log(&quot;Hello, name);
@@ -182,7 +182,7 @@ a quick, visual way to identify syntax errors.</p>
 <p>Notice that the string <code class="docutils literal notranslate"><span class="pre">Hello</span></code> is colored red, while <em>most</em> of the symbols
 (<code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">(</span></code>) are colored black. At the end of line 2,
 however, the final <code class="docutils literal notranslate"><span class="pre">)</span></code> and <code class="docutils literal notranslate"><span class="pre">;</span></code> are both red rather than black. Since we
-haven’t closed the string, the editor assumes that these two symbols are <em>part
+haven't closed the string, the editor assumes that these two symbols are <em>part
 of</em> the string. Since we expect <code class="docutils literal notranslate"><span class="pre">);</span></code> to be black in this editor, the
 difference in color is a clue that something is wrong with our syntax.</p>
 </div>
@@ -205,21 +205,21 @@ ReferenceError: Julie is not defined
    at internal/main/run_main_module.js:21:11
 </pre></div>
 </div>
-<p>We have a new error message, this time involving line 1 of our code. We didn’t see this error before because it is a runtime error. Due to the syntax error on line 2, the program stopped during the parsing phase. Even though the current error involves the line <em>before</em> the original syntax error, the syntax error still gets reported first.</p>
+<p>We have a new error message, this time involving line 1 of our code. We didn't see this error before because it is a runtime error. Due to the syntax error on line 2, the program stopped during the parsing phase. Even though the current error involves the line <em>before</em> the original syntax error, the syntax error still gets reported first.</p>
 <p>Once again, we are told where the error occurs:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
          ^
 </pre></div>
 </div>
-<p>There appears to be an issue with the assignment statement. You might be able to see what it is, but let’s inspect the error message anyway. Doing so will help us understand JavaScript errors more generally.</p>
+<p>There appears to be an issue with the assignment statement. You might be able to see what it is, but let's inspect the error message anyway. Doing so will help us understand JavaScript errors more generally.</p>
 <p>The message is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ReferenceError: Julie is not defined
 </pre></div>
 </div>
-<p>The type of error is <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>. If we search the web for “JS ReferenceError” then one of the first results is the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError" target="_blank">MDN documentation for ReferenceError<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. No need to read the entire document, however. The first sentence on this page tells us what we need to know:</p>
+<p>The type of error is <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>. If we search the web for &quot;JS ReferenceError&quot; then one of the first results is the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError" target="_blank">MDN documentation for ReferenceError<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. No need to read the entire document, however. The first sentence on this page tells us what we need to know:</p>
 <blockquote class="pull-quote">
 <div>The <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> object represents an error when a non-existent variable is referenced.</div></blockquote>
-<p>This information, along with the rest of the message, “Julie is not defined,” makes it clear what JavaScript is complaining about. The error message is saying, <em>Hey, check your variables!</em></p>
+<p>This information, along with the rest of the message, &quot;Julie is not defined,&quot; makes it clear what JavaScript is complaining about. The error message is saying, <em>Hey, check your variables!</em></p>
 <p>To us, we see that we forgot to enclose the string <code class="docutils literal notranslate"><span class="pre">Julie</span></code> in quotes, because we know that we intended to assign the variable <code class="docutils literal notranslate"><span class="pre">name</span></code> a string value. However, to JavaScript there is nothing in the program to indicate that <code class="docutils literal notranslate"><span class="pre">Julie</span></code> should be a string. In fact, JavaScript sees <code class="docutils literal notranslate"><span class="pre">Julie</span></code> as a variable. Since there is no such defined variable in our program, it returns a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>.</p>
 <p>This is one of many examples when we, as humans, describe the same error slightly differently than JavaScript. Usually, neither description is better than the other. Humans and computers simply view information differently.</p>
 </div>
