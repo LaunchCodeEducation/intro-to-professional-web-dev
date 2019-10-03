@@ -1,21 +1,26 @@
 Exceptions as Control Flow
 ==========================
-Runtime errors occur as the program runs, and they are also called exceptions. Exceptions
-are caused by referencing undeclared variables and invalid or unexpected data.
+
+Runtime errors occur as the program runs, and they are also called exceptions.
+Exceptions are caused by referencing undeclared variables and invalid or
+unexpected data.
 
 
 Control Flow
 ------------
+
 .. index:: ! control flow
 
-The **control flow** of a program is the order in which the statements are executed. Normal control flow
-runs from top to bottom of a file. An exception breaks the normal flow and stops the program. A stopped
-program can no longer interact with the user. Luckily JavaScript provides a way to anticipate and
+The **control flow** of a program is the order in which the statements are
+executed. Normal control flow runs from top to bottom of a file. An exception
+breaks the normal flow and stops the program. A stopped program can no longer
+interact with the user. Luckily JavaScript provides a way to anticipate and
 handle exceptions.
 
 
 Catching an Exception
 ---------------------
+
 .. index:: ! try catch
 
 JavaScript provides ``try`` and ``catch`` statements that allow us to keep our programs running even if there
@@ -28,7 +33,7 @@ the control flow.
 .. admonition:: Example
 
    In this example there is an array of animals. The user is asked to enter the index for the animal they want to see.
-   If the user enters an index that does NOT contain an animal, the code will throw an ``TypeError`` when ``name``
+   If the user enters an index that does NOT contain an animal, the code will throw a ``TypeError`` when ``name``
    is referenced on an undefined value.
 
    There is a ``try`` block around the code that will throw the ``TypeError``. There is a ``catch`` block that catches the error
