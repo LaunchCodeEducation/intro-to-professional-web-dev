@@ -76,7 +76,7 @@ Using the ``POST`` method tells the server that we want to *create* new data on 
 
    - Signing into a web site
    - Sending an email via a web-based email client
-   - Making an online purhcase
+   - Making an online purchase
 
 Headers
 -------
