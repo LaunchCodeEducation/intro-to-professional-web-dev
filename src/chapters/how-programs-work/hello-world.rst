@@ -59,16 +59,16 @@ Features to note:
 
 #. **File panel and menus**: Allows you to add extensions, update settings, and
    add, open, or delete files.
-#. **Editor panel**: Your code goes here. Click on a file to open it the
+#. **Editor panel**: Your code goes here. Click on a file to open it in the
    editor. For most new projects, an ``index`` file will be created and opened
    by default.
 #. **Console panel**: Any output produced by your code will appear in this
    panel. The console also displays error messages, test results, and other
    information.
-#. **Fork button**: If you are viewing someone else's project, you can *fork* the content (4)
-   and store a copy of that project to your own account. This allows you to
-   edit the files without changing the originals, and it lets you use other
-   programmers' work (with permission) to enhance your own.
+#. **Fork button**: If you are viewing someone else's project, you can *fork*
+   the content (4) and store a copy of that project to your own account. This
+   allows you to edit the files without changing the originals, and it lets
+   you use other programmers' work (with permission) to enhance your own.
 #. **Run button**: Executes any code written in the ``index`` file.
 #. **Managing projects**: When logged into Repl.it, you can create a new
    project, view saved projects, or share your projects.
