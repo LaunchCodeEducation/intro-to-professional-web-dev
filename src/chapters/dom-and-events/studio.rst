@@ -18,7 +18,7 @@ To do so, on the studio repository page on Github, click the "Fork" button.
 A popup appears asking where to fork the repository to and you select your profile.
 You should now have a copy of the repository on your own profile!
 
-.. note:: 
+.. note::
 
    Not only is forking repositories an important Git skill, it is especially vital in the class so that everyone has the same starter code!
    Before continuing, make sure that the repository is now on your profile and you are working with your copy of the starter code for the rest of the studio.
@@ -48,39 +48,40 @@ Open Visual Studio Code and go to `File > Open` to find your new project and get
 The Requirements
 ----------------
 
-1. Use the window *load* event to ensure all elements have loaded before attaching event handlers.
+#. Use the window *load* event to ensure all elements have loaded before attaching event handlers.
+#. When the "Take off" button is clicked, the following should happen:
 
-2. When the "Take off" button is clicked, the following should happen:
+   a. A window confirm should let the user know "Confirm that the shuttle is
+      ready for takeoff." If the shuttle is ready for liftoff, then add parts
+      b-d.
+   b. The flight status should change to "Shuttle in flight."
+   c. The background color of the shuttle flight screen (``id = "shuttleBackground"``) should change from green to blue.
+   d. The shuttle height should increase by 10,000 miles.
 
-   1. A window confirm should let the user know "Confirm that the shuttle is ready for takeoff." If the shuttle is ready for liftoff, then add steps 2-4.
-   2. The flight status should change to "Shuttle in flight."
-   3. The background color of the shuttle flight screen (``id = "shuttleBackground"``) should change from green to blue.
-   4. The shuttle height should increase by 10,000 miles.
+#. When the "Land" button is clicked, the following should happen:
 
-3. When the "Land" button is clicked, the following should happen:
+   a. A window alert should let the user know "The shuttle is landing. Landing gear engaged."
+   b. The flight status should change to "The shuttle has landed."
+   c. The background color of the shuttle flight screen should change from blue to green.
+   d. The shuttle height should go down to 0.
 
-   1. A window alert should let the user know "The shuttle is landing. Landing gear engaged."
-   2. The flight status should change to "The shuttle has landed."
-   3. The background color of the shuttle flight screen should change from blue to green.
-   4. The shuttle height should go down to 0.
+#. When the "Abort Mission" button is clicked, the following should happen:
 
+   a. A window confirm should let the user know "Confirm that you want to abort
+      the mission." If the user wants to abort the mission, then add parts b-d.
+   b. The flight status should change to "Mission aborted."
+   c. The background color of the shuttle flight screen should change from blue to green.
+   d. The shuttle height should go to 0.
 
-4. When the "Abort Mission" button is clicked, the following should happen:
+#. When the "Up", "Down", "Right", and "Left" buttons are clicked, the following should happen:
 
-   1. A window confirm should let the user know "Confirm that you want to abort the mission." If the user wants to abort the mission, then add steps 2-4.
-   2. The flight status should change to "Mission aborted."
-   3. The background color of the shuttle flight screen should change from blue to green.
-   4. The shuttle height should go do to 0.
-
-5. When the "Up", "Down", "Right", and "Left" buttons are clicked, the following should happen:
-
-   1. The rocket image should move 10 px in the direction of the button that was clicked.
-   2. If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
+   a. The rocket image should move 10 px in the direction of the button that was clicked.
+   b. If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
 
 Bonus Mission
 -------------
 
 If you are done with the above and have some time left during class, there are a few problems that you can tackle for a bonus mission.
 
-1. Keep the rocket from flying off of the background.
-2. Return the rocket to its original position on the background when it has been landed or the mission was aborted.
+#. Keep the rocket from flying off of the background.
+#. Return the rocket to its original position on the background when it has been landed or the mission was aborted.
