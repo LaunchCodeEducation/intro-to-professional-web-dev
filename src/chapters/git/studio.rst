@@ -263,7 +263,7 @@ username and click *Add Collaborator*.
 Step 5: Join the Project and Push
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Piolt**: You should receive an email invitation to join this repository.
+**Pilot**: You should receive an email invitation to join this repository.
 View and accept the invitation.
 
 .. note::

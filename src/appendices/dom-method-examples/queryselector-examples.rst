@@ -148,5 +148,5 @@ ALL elements that match the selector. If NO match is found, ``null`` is returned
 
    ::
 
-      contents of first red li: Strawberry is yummy dom-demo.html:45:13
+      contents of first red li: Strawberry is yummy 
       contents of first purple li: Blackberry is yummy!!!

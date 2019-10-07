@@ -101,7 +101,7 @@ There are `quite a few response headers <https://en.wikipedia.org/wiki/List_of_H
 Response Body
 -------------
 
-While requests often don't have a body, requests almost *always* have a body. The response body is where the data that a request asked for is located. It can contain HTML, CSS, JavaScript, or image data.
+While requests often don't have a body, responses almost *always* have a body. The response body is where the data that a request asked for is located. It can contain HTML, CSS, JavaScript, or image data.
 
 When a response is received by a browser, it is loaded into the browser's memory, with additional processing in some cases. For HTML files, the markup is rendered into a web page. For CSS files, the style rules are parsed and applied to the given HTML page.
 

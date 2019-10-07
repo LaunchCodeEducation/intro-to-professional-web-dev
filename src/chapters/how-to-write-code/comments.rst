@@ -10,9 +10,10 @@ Best practice encourages us to add notes to our programs, which clearly
 explain what the program is doing. These notes are called *comments*.
 
 A **comment** is text within a program intended only for a human reader---it is
-completely ignored by the compiler. In JavaScript, the ``//`` token starts a
-comment, and the rest of the line gets ignored. For comments that stretch over
-multiple lines, the text falls between the symbols ``/*   */``.
+completely ignored by the compiler or interpreter. In JavaScript, the ``//``
+token starts a comment, and the rest of the line gets ignored. For comments
+that stretch over multiple lines, the text falls between the symbols
+``/*   */``.
 
 .. admonition:: Try It
 
