@@ -20,7 +20,7 @@ If you are working through this material on your own, use the `starter repl.it f
 Declare and Initialize Variables
 --------------------------------
 
-Declare and initialize a variable for every data point listed below. 
+Declare and initialize a variable for every data point listed below.
 Remember to account for the different data types.
 
 .. list-table::
@@ -66,7 +66,7 @@ spaces and symbols (-, >, and \*).
 Example Output
 ^^^^^^^^^^^^^^^
 
-Note that your output will should change when you assign different values to
+Note that your output should change when you assign different values to
 ``astronautCount``, ``fuelMassKg``, etc. The point is to AVOID coding specific
 values into the ``console.log`` statements. Use your variable names instead.
 
