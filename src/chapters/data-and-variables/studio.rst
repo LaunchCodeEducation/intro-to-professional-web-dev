@@ -91,7 +91,7 @@ values into the ``console.log`` statements. Use your variable names instead.
    * Fuel level: 100%
 
    -------------------------------------
-   > WEIGHT DATA
+   > MASS DATA
    -------------------------------------
    * Crew mass: 564.9 kg
    * Fuel mass: 760000 kg
