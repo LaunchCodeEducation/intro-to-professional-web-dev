@@ -123,6 +123,6 @@ Bonus Mission
 Use ``readline-sync`` to prompt the user to enter the value for
 ``astronautCount``.
 
-The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg`` should
-change based on the number of astronauts on the shuttle. (Don't forget to
-convert the input value from a string to a number).
+The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg``
+should change based on the number of astronauts on the shuttle. (Don't forget
+to convert the input value from a string to a number).
