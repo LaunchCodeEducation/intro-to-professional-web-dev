@@ -1,4 +1,3 @@
-
 Assignment #6: Orbit Report
 ===========================
 
@@ -17,8 +16,8 @@ into orbit.
 Your table will have the following features:
 
 #. **Satellites**: Each row in the table contains data on one satellite.
-#. **Search form:** Text entered limits results based on matches. Pressing
-   enter or clicking the button triggers the search.
+#. **Search form:** Filters the results based on matches to the entered text.
+   Pressing enter or clicking the button triggers the search.
 #. **Sortable columns:** The ``Name`` and ``Type`` column headers can be
    clicked, which will sort the table using that property.
 #. **Counts:** Displays the total number of satellites in the table as well as
@@ -64,7 +63,7 @@ named ``Satellite`` to represent, you guessed it, a satellite. The
 represent a satellite.
 
 #. In terminal go to the ``orbit-report`` folder.
-#. Create a class with command ``$ ng g class Satellite``.
+#. Create a class with command ``$ ng generate class Satellite``.
 #. Notice that the new file ``orbit-report/src/app/satellite.ts`` was created.
 #. Add these properties to the ``Satellite`` class in ``satellite.ts``:
 
@@ -106,7 +105,7 @@ Now we need to use the ``Satellite`` class to create an initial array of
          ];
       }
 
-#. In terminal run ``ng serve``.
+#. In the terminal run ``ng serve``.
 #. View the app in your browser. At this point you should see the default
    Angular starter page. If you don't, check the build output and browser
    console for any errors.
@@ -117,8 +116,9 @@ Now we need to use the ``Satellite`` class to create an initial array of
 Now that you have an array of ``Satellite`` objects, you need to display them.
 To do that, create a new component named ``orbit-list``.
 
-#. Create ``orbit-list`` component using ``$ ng g component orbit-list`` in the
-   ``app`` folder.
+#. Generate the ``orbit-list`` component in the ``app`` folder. If you need a
+   reminder of how to do this, review the
+   :ref:`Adding a New Component <add-new-component>` section.
 #. Replace the contents of ``app.component.html`` with just one line of code,
    ``<app-orbit-list></app-orbit-list>``.
 #. View the app in your browser. You should see: ``orbit-list works!``
@@ -130,9 +130,8 @@ The ``orbit-list`` component's job is to show a list of satellites. Remember
 you declared an array of ``Satellite`` objects in ``app.component.ts`` named
 ``sourceList``. In order to pass that array into the ``orbit-list``, you need
 to learn a new Angular feature named `input properties <https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding>`__.
-For the purpose of this feature, the term input refers to data being sent
-*into* the component. Angular input properties are NOT related to HTML
-``input`` elements.
+Here, the term "input" refers to data being sent *into* the component. Angular
+input properties are NOT related to HTML ``input`` elements.
 
 Currently ``app.component.html`` uses the ``orbit-list`` component like so:
 
@@ -140,7 +139,7 @@ Currently ``app.component.html`` uses the ``orbit-list`` component like so:
 
    <app-orbit-list></app-orbit-list>
 
-To pass in the ``sourceList`` array to the ``orbit-list`` component you need to
+To pass the ``sourceList`` array into the ``orbit-list`` component, you need to
 learn new syntax.
 
 #. Modify ``<app-orbit-list></app-orbit-list>`` in ``app.component.html`` as
@@ -152,16 +151,16 @@ learn new syntax.
 
    a. ``[satellites]`` declares a new ``satellites`` property on the
       ``orbit-list`` component.
-   b. ``="sourceList`` declares that the value of the ``satellites`` property
-      will be the value of the ``sourceList`` array.
+   b. ``="sourceList"`` sets the value of the ``satellites`` property to be the
+      ``sourceList`` array.
 
 #. View the app in your browser. You should NOT see the message ``orbit-list
-   worked!``. Why?
+   worked!`` Why?
 #. Open developer tools in your browser and look at the JavaScript console.
 
    You should see an error message telling you that the ``orbit-list``
-   component does NOT have a ``satellites`` property. Note only the relevant
-   message text has been included below.
+   component does NOT have a ``satellites`` property. Note that only the
+   relevant message text has been included below.
 
    ::
 
@@ -170,16 +169,18 @@ learn new syntax.
       1. If 'app-orbit-list' is an Angular component and it has 'satellites' input, then verify that it is part of this module.
 
 To solve this issue, you need to declare in ``orbit-list.component.ts`` that
-the ``orbit-list`` component has an input property named ``satellites``.
+the component has an input property named ``satellites``.
 
 4. Add the code below just before the constructor in
    ``orbit-list.component.ts``.
 
-   a. ``@Input() satellites: Satellite[];``
+   .. sourcecode:: typescript
 
-The ``@Input()`` is special Angular syntax that declares that ``satellites`` is
-a property that will be passed into the component via
-``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
+      @Input() satellites: Satellite[];
+
+   The ``@Input()`` is special Angular syntax that declares that ``satellites``
+   is a property that will be passed into the component via
+   ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
 
 5. Update the ``require`` statements in ``orbit-list.component.ts`` to import
    ``Input`` and ``Satellite``.
@@ -190,8 +191,8 @@ a property that will be passed into the component via
       import { Component, OnInit, Input } from '@angular/core';
       import { Satellite } from '../satellite';
 
-#. View the app in your browser. You should see ``orbit-list works!`` You still
-   don't have satellites showing yet. That is the next step.
+#. View the app in your browser. You should see ``orbit-list works!`` but no
+   satellites yet. That is the next step.
 
 4) Display Table of Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,14 +223,17 @@ row being a different satellite.
 Next, you need to include CSS that will make your table and application look a
 little nicer.
 
-2. Copy the entire contents of the `example orbit-list-component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``orbit-list-component.css``.
-#. Copy the entire contents of the `example app.component.css <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``app.component.css``.
-#. Copy the ``<style>`` tag from the `example index.html <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and paste it into the ``<head>`` of your ``index.html``.
+2. Copy the entire contents of the example `orbit-list-component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__
+   and put it into your ``orbit-list-component.css``. Leave the ``sortable``
+   class alone, but change the ``table`` and ``warning`` styles to colors
+   and sizes you find pleasing.
+#. Copy the entire contents of the example `app.component.css <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``app.component.css``.
+#. Copy the ``<style>`` tag from the example `index.html <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and paste it into the ``<head>`` of your ``index.html``.
 
    a. Only add in the ``<style>``, do NOT remove any other HTML from your
       ``index.html``.
 
-#. View the app in your browser. You should see a table like:
+#. View the app in your browser. Your table should look something like:
 
    .. figure:: figures/basic-table-satellites.png
       :alt: Screen shot of browser showing http://localhost:4200 with a table of four satellites.
@@ -301,18 +305,21 @@ Angular attribute directive to accomplish this.
 
       Example of warning style adding a red background to Space Debris type.
 
+.. admonition:: Note
+
+   If you prefer, modify the table HTML to make the entire row the warning
+   color.
+
 7) Sorting
-^^^^^^^^^^
+^^^^^^^^^^^
 
 Sorting is a useful feature for any table. When a user clicks the "Name"
 heading, sort the table by the ``name`` property. Also, if the user clicks the
 "Type" heading, then sort the table by the ``type`` property.
 
 #. Add an Angular click handler that calls ``sort('name')`` to the Name
-   ``<th>`` element.
-
-   a. Note that the sorting feature will NOT work until you have completed
-      step 3.
+   ``<th>`` element. Note that the sorting feature will NOT work until you
+   have completed step 3.
 
 #. Add an Angular click handler that calls ``sort('type')`` to the Type
    ``<th>`` element.
@@ -321,8 +328,8 @@ heading, sort the table by the ``name`` property. Also, if the user clicks the
    ``ngOnInit``.
 
    a. The sorting method has been provided below.
-   b. For an example of sort working, see
-      :ref:`Orbit Report Demo <orbit-report-demo>`.
+   b. To see an example of the sort working, see the
+      :ref:`Orbit Report Demo <orbit-report-demo>` below.
 
    .. sourcecode:: typescript
 
@@ -351,17 +358,16 @@ heading, sort the table by the ``name`` property. Also, if the user clicks the
 8) Searching
 ^^^^^^^^^^^^
 
-You are doing great! Only two more features to add. Next you will add a search
-feature.
+You are doing great! Next you will add a search feature.
 
 #. Add this HTML ``<div class="search-form"></div>`` in ``app.component.html``.
 #. Add an ``<input>`` element inside the ``<div>``.
 #. Add a ``<button>`` element inside the ``<div>``.
-#. Add an Angular ``(click)`` handler to the ``<button>`` that when triggered
-   calls ``search(searchTerm.value)``. ``searchTerm`` is the local variable
-   name for the ``<input>``
-#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` that when
-   triggered calls ``search(searchTerm.value)``
+#. Add an Angular ``(click)`` handler to the ``<button>`` that calls
+   ``search(searchTerm.value)``. ``searchTerm`` is the local variable
+   name for the ``<input>``.
+#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` that also calls
+   ``search(searchTerm.value)``.
 #. Add a ``search`` method to the ``AppComponent`` class. The code for this
    method is provided below.
 
@@ -394,9 +400,7 @@ be populated with only the matching ``Satellite`` objects in ``sourceList``.
 Matching is defined as ``satellite.name`` containing the search term.
 
 7. Add the ``displayList: Satellite[];`` property to the ``AppComponent``
-   class.
-
-   a. Set ``displayList = []`` in the constructor.
+   class and set ``displayList = []`` in the constructor.
 
 #. Pass in the ``displayList`` to the ``orbit-list-component``.
 
@@ -443,10 +447,12 @@ displayed in the table. Also, the component should show the number of each
 type of satellite.
 
 #. Create an ``orbit-counts`` component.
-#. Copy the entire contents of the `example orbit-counts.component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``orbit-counts.component.css``.
+#. Add styles to ``orbit-counts.component.css`` to make your count table
+   complement the list of satellites, or use the CSS provided in this
+   `sample file  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__.
 #. Add the ``orbit-counts`` component to ``app.component.html``.
 #. Pass in ``displayList`` via ``[satellites]="displayList"``.
-#. Use the given HTML as a template.
+#. Use the given HTML as a template. Remember to replace the hard-coded counts.
 
    .. sourcecode:: html
       :linenos:
@@ -503,12 +509,20 @@ Orbit Report Demo
 Once you complete all of the tasks outlined above, your project should behave
 something like this:
 
-   TODO: Add video clip here.
+Sorting the Table
+^^^^^^^^^^^^^^^^^^
 
-.. TODO: video of all features being demoed (not including bonus)
-.. TODO: I have an mp4 of the demo saved. Need to upload it to YouTube.
-   (It was too large for gif).
+.. figure:: figures/orbit-report-sort.gif
+   :alt: Sorting the table gif.
 
-.. admonition:: Note
+Searching the Table
+^^^^^^^^^^^^^^^^^^^^
 
-   This demo includes only the counting satellites bonus mission.
+.. figure:: figures/orbit-report-search.gif
+   :alt: Searching the table gif.
+
+Counting Satellites Bonus
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: figures/orbit-report-count.gif
+   :alt: Satellite counts component.
