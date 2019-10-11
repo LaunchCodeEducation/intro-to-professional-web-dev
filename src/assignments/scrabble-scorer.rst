@@ -5,15 +5,20 @@ To see how far your skills have come, we are going to give you a mission to
 update our *super* important Scrabble Scorer program. Did you think you were
 going to work on Mars rover code already?
 
-The current Scrabble Scorer, is a program that will take in a word and return
-the point value. The program needs to be rewritten for two reasons. First the
-data structure used to store the letter point values is inefficient. Second the
-program should have three scoring algorithms and allow the user to pick which
-algorithm to use. These new features will make the program more efficient and
-user friendly.
+The current Scrabble Scorer program takes in a word and returns its point
+value. The program needs to be rewritten for two reasons:
+
+#. The data structure used to store the letter point values is inefficient.
+#. The program should have three scoring algorithms and allow the user to pick
+   which one to use.
+
+These new features will make the program more efficient and user friendly.
 
 If you are NOT enrolled in a repl.it classroom for this course, fork the
 starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
+
+Requirements
+------------
 
 .. note::
 
@@ -21,30 +26,53 @@ starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
    This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at "Transform".
    Please read the WHOLE assignment page before starting.
 
-Requirements
-------------
-
-#. Create a ``transform`` function that takes in the ``oldScoreKey`` object and returns a ``newScoreKey`` object.
 #. Create an ``initialPrompt`` function that asks the user which scoring
    algorithm to use.
-#. Create a ``scoringAlgorithms`` array to hold three scoring objects, which
-   include different scoring functions.
+#. Create a ``transform`` function that takes in the ``oldPointStructure``
+   object and returns a ``newPointStructure`` object.
+#. Code three different scoring functions for assigning points to a word.
+#. Create a ``scoringAlgorithms`` array to hold three scoring *objects*. Each
+   object will contain three key/value pairs.
 #. Create a ``runProgram`` function to serve as the starting point for your
    program.
 
-Detailed Requirements
----------------------
+Instructions
+-------------
+
+User Prompt
+^^^^^^^^^^^^
+
+The current Scrabble Scorer only uses one scoring algorithm. For the new
+version, we want to let the user pick between three algorithms. Define an
+``initialPrompt`` function that introduces the program and asks the user which
+scoring algorithm they want to use. The prompt should also offer an option for
+stopping the program.
+
+Your prompt could look something like:
+
+::
+
+   Welcome to the Scrabble score calculator!
+
+   Which scoring algorithm would you like to use?
+
+   0 - Scrabble: The traditional scoring algorithm.
+   1 - Simple Score: Each letter is worth 1 point.
+   2 - Bonus Vowels: Vowels are worth 3 pts, abd consonants are 1pt.
+
+   Enter 0, 1, or 2 (enter 'Stop' to quit):
 
 Transform
 ^^^^^^^^^
+
 Currently the Scrabble Grader software uses the data structure below for the
-traditional Scrabble scoring algorithm. Take a few moments to review how
-``oldScoreKey`` relates a letter to a point value.
+traditional Scrabble scoring algorithm. Take a few moments to review how the
+``oldPointStructure`` object relates a letter to a point value.
 
 .. sourcecode:: js
    :linenos:
 
-   const oldScoreKey = {
+   const oldPointStructure = {
       1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
       2: ['D', 'G'],
       3: ['B', 'C', 'M', 'P'],
@@ -54,38 +82,39 @@ traditional Scrabble scoring algorithm. Take a few moments to review how
       10: ['Q', 'Z']
    };
 
-The object keys of ``oldScoreKey`` are the Scrabble points, and the values
-are arrays of letters. All letters in the array have the Scrabble
-point value equal to the key. For example, ``'A'`` is worth 1, ``'K'`` is worth 5, and ``'J'`` is
-worth 8.
+The *keys* of ``oldPointStructure`` are the Scrabble points, and the
+*values* are arrays of letters. All letters in the array have the Scrabble
+point value equal to the key. For example, ``'A'`` and ``'R'`` are worth 1,
+``'K'`` is worth 5, and ``'J'`` is worth 8.
 
-With the old format, to find the point value for a letter, the program must
-iterate over each key in ``oldScoreKey`` and then check if the letter is inside
-the array paired with that key. This search within a search is inefficient.
+To find the point value for a letter with the old format, the program must
+iterate over each key in ``oldPointStructure`` and then check if the letter is
+inside the array paired with that key. *This search within a search is
+inefficient*.
 
-It would be better to create a ``newScoreKey`` object that has 26 keys, one for
-each letter. The value of each key will be the Scrabble point value.
+It would be better to create a ``newPointStructure`` object that has 26 keys,
+one for each letter. The value of each key will be the Scrabble point value.
 
-Example of new key storage
+Examples of the new key storage:
 
 * ``a`` is worth ``1``
-* ``k`` is worth ``5``
+* ``b`` is worth ``3``
+* ``c`` is worth ``3``
 * ``j`` is worth ``8``
 
-
-In ``newScoreKey``, the letters themselves are keys, so a single search will
-identify a point value.
+In ``newPointStructure``, the letters themselves are keys, so a *single* search
+will identify a point value. This is much more efficient than the old method.
 
 .. admonition:: Example
 
-   Example of ``newScoreKey`` object usage.
+   Example of ``newPointStructure`` object usage.
 
    .. sourcecode:: js
 
       console.log("Scrabble scoring values for");
-      console.log("letter a: ", newScoreKey.a);
-      console.log("letter j: ", newScoreKey.j);
-      console.log("letter z: ", newScoreKey["z"]);
+      console.log("letter a: ", newPointStructure.a);
+      console.log("letter j: ", newPointStructure.j);
+      console.log("letter z: ", newPointStructure["z"]);
 
    **Console Output**
 
@@ -96,47 +125,45 @@ identify a point value.
       letter j:  8
       letter z:  10
 
-Write a ``transform`` function that takes the ``oldScoreKey`` object as a
-parameter. ``transform(oldScoreKey)`` will return an object with the letters as
-keys. The keys in the ``newScoreKey`` object should be *lowercase* letters.
+Code the Function
+~~~~~~~~~~~~~~~~~~
 
-Hints
-~~~~~~
+#. Write a ``transform`` function that takes the ``oldPointStructure`` object
+   as a parameter. ``transform(oldPointStructure)`` will return an object with
+   *lowercase* letters as keys. The value for each key will be points assigned
+   to that letter.
+#. Initialize ``newPointStructure`` by setting it equal to
+   ``transform(oldPointStructure)``.
+#. Hints:
 
-#. Recall that ``for...in`` loops iterate over the keys within an object.
-#. To access the letter arrays within ``oldScoreKey``, use bracket notation
-   (``oldScoreKey['key']``).
-#. To access a particular element within a letter array, add a second set of
-   brackets (``oldScoreKey['key'][index]``), or assign the array to a variable.
+   a. Recall that ``for...in`` loops iterate over the keys within an object.
+   b. To access the letter arrays within ``oldPointStructure``, use bracket
+      notation (``oldPointStructure['key']``).
+   c. To access a particular element within a letter array, add a second set of
+      brackets (``oldPointStructure['key'][index]``), or assign the array to a
+      variable and use ``variableName[index]``.
 
-.. admonition:: Example
+      .. admonition:: Example
 
-   .. sourcecode:: JavaScript
-      :linenos:
+         .. sourcecode:: JavaScript
+            :linenos:
 
-      console.log("Letters with score '4':", oldScoreKey['4']);
-      console.log("3rd letter within the key '4' array:", oldScoreKey['4'][2]);
+            console.log("Letters with score '4':", oldPointStructure['4']);
+            console.log("3rd letter within the key '4' array:", oldPointStructure['4'][2]);
 
-      let letters = oldScoreKey['8'];
-      console.log("Letters with score '8':", letters);
-      console.log("2nd letter within the key '8' array:", letters[1]);
+            let letters = oldPointStructure['8'];
+            console.log("Letters with score '8':", letters);
+            console.log("2nd letter within the key '8' array:", letters[1]);
 
-   **Console Output**
+         **Console Output**
 
-   ::
+         ::
 
-      Letters with score '4': [ 'F', 'H', 'V', 'W', 'Y' ]
-      3rd letter within the key '4' array: V
+            Letters with score '4': [ 'F', 'H', 'V', 'W', 'Y' ]
+            3rd letter within the key '4' array: V
 
-      Letters with score '8': [ 'J', 'X' ]
-      2nd letter within the key '8' array: X
-
-User Prompts
-^^^^^^^^^^^^^^
-The current Scrabble Scorer only uses one scoring algorithm. For the new
-version we want to let the user pick between three algorithms. Define an
-``initialPrompt`` function that will introduce the program and then ask the
-user which scoring algorithm they want to use.
+            Letters with score '8': [ 'J', 'X' ]
+            2nd letter within the key '8' array: X
 
 Scoring Algorithms
 ^^^^^^^^^^^^^^^^^^
@@ -157,7 +184,7 @@ below. The ``scoreFunction`` functions can named or anonymous.
    * - Scrabble
      - The traditional scoring algorithm.
      - A function with a ``word`` parameter that returns a score.
-       Uses the ``newScoreKey`` object to determine that score.
+       Uses the ``newPointStructure`` object to determine that score.
    * - Simple Score
      - Each letter is worth 1 point.
      - A function with a ``word`` parameter that returns a score.
@@ -248,8 +275,8 @@ Example Output
 
 Bonus Mission
 -------------
-Score words spelled with blank tiles by adding ``' '`` to the ``newScoreKey``
-object. The point value for a blank tile is ``0`` points.
+Score words spelled with blank tiles by adding ``' '`` to the
+``newPointStructure`` object. The point value for a blank tile is ``0`` points.
 
 Submitting Your Work
 ---------------------
