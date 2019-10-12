@@ -20,7 +20,7 @@ Your table will have the following features:
    Pressing enter or clicking the button triggers the search.
 #. **Sortable columns:** The ``Name`` and ``Type`` column headers can be
    clicked, which will sort the table using that property.
-#. **Counts:** Displays the total number of satellites in the table as well as
+#. **Counts:** Displays the total number of satellites in the table, as well as
    the count for each type of satellite.
 
 Your completed assignment should look something like this:
@@ -28,24 +28,25 @@ Your completed assignment should look something like this:
 .. figure:: figures/orbit-report-table.png
    :alt: Screenshot of orbit report table.
 
-You can also view a video of the finished project in the
+You can also view gifs of the finished project in the
 :ref:`Orbit Report Demo <orbit-report-demo>` section at the bottom of this
 page.
 
 Setup
 ------
 
-#. Create a new project on Github named ``orbit-report``.
-#. Clone that repo to your computer.
-#. Create a new Angular project in the cloned repo folder using this command:
+#. Use ``ng new`` to create a new Angular project named ``orbit-report``.
+   Prompt answers: No Routing, Use CSS.
+#. Create a new repository in your GitHub account named ``orbit-report``. Copy
+   the URL for this empty repo.
+#. In the terminal, navigate into your local ``orbit-report`` directory and
+   link the Angular project to the GitHub repo:
 
-   a. ``$ ng new --skip-git orbit-report``
-   b. It's important to include the ``--skip-git`` because in this case we
-      don't want Angular to create a git repo for us. We did that ourselves in
-      step 1.
-   c. Prompt answers: No Routing, Use CSS
+   .. sourcecode:: bash
 
-#. Commit and push your changes to Github.
+      $ git remote add origin <remote-url>
+
+#. Finally, commit and push your Angular assignment to GitHub.
 
 Requirements
 -------------
@@ -56,7 +57,7 @@ moving on to the next item.
 1) Define and Create Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In JavaScript, TypeScript, and Angular projects you can create classes to
+In JavaScript, TypeScript, and Angular projects, you can create classes to
 represent entities in the project. For this project you need to create a class
 named ``Satellite`` to represent, you guessed it, a satellite. The
 ``Satellite`` class needs to define the properties needed to accurately
@@ -77,8 +78,12 @@ represent a satellite.
 
 #. Add a constructor to ``Satellite`` class.
 
-   a. Constructor signature should be ``constructor(name: string, type:
-      string, launchDate: string, orbitType: string, operational: boolean)``
+   a. Constructor signature should be:
+
+      .. sourcecode:: TypeScript
+
+         constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean)
+
    b. You need to assign the class properties in the constructor.
 
 Now we need to use the ``Satellite`` class to create an initial array of
@@ -126,14 +131,14 @@ To do that, create a new component named ``orbit-list``.
 3) Pass in Satellites to Orbit List Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``orbit-list`` component's job is to show a list of satellites. Remember
+The ``orbit-list`` component's job is to show a list of satellites. Remember,
 you declared an array of ``Satellite`` objects in ``app.component.ts`` named
 ``sourceList``. In order to pass that array into the ``orbit-list``, you need
 to learn a new Angular feature named `input properties <https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding>`__.
 Here, the term "input" refers to data being sent *into* the component. Angular
 input properties are NOT related to HTML ``input`` elements.
 
-Currently ``app.component.html`` uses the ``orbit-list`` component like so:
+Currently, ``app.component.html`` uses the ``orbit-list`` component like so:
 
 .. sourcecode:: html+ng2
 
@@ -182,8 +187,8 @@ the component has an input property named ``satellites``.
    is a property that will be passed into the component via
    ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
 
-5. Update the ``require`` statements in ``orbit-list.component.ts`` to import
-   ``Input`` and ``Satellite``.
+#. Update the ``import`` statements in ``orbit-list.component.ts`` to access
+   the ``Input`` and ``Satellite`` classes.
 
    .. sourcecode:: typescript
       :linenos:

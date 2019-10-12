@@ -103,30 +103,33 @@ into orbit.</p>
 Pressing enter or clicking the button triggers the search.</li>
 <li><strong>Sortable columns:</strong> The <code class="docutils literal notranslate"><span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Type</span></code> column headers can be
 clicked, which will sort the table using that property.</li>
-<li><strong>Counts:</strong> Displays the total number of satellites in the table as well as
+<li><strong>Counts:</strong> Displays the total number of satellites in the table, as well as
 the count for each type of satellite.</li>
 </ol>
 <p>Your completed assignment should look something like this:</p>
 <div class="figure">
 <img alt="Screenshot of orbit report table." src="../_images/orbit-report-table.png" />
 </div>
-<p>You can also view a video of the finished project in the
+<p>You can also view gifs of the finished project in the
 <a class="reference internal" href="#orbit-report-demo"><span class="std std-ref">Orbit Report Demo</span></a> section at the bottom of this
 page.</p>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Create a new project on Github named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code>.</li>
-<li>Clone that repo to your computer.</li>
-<li>Create a new Angular project in the cloned repo folder using this command:<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ng</span> <span class="pre">new</span> <span class="pre">--skip-git</span> <span class="pre">orbit-report</span></code></li>
-<li>It's important to include the <code class="docutils literal notranslate"><span class="pre">--skip-git</span></code> because in this case we
-don't want Angular to create a git repo for us. We did that ourselves in
-step 1.</li>
-<li>Prompt answers: No Routing, Use CSS</li>
-</ol>
+<ol class="arabic">
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> to create a new Angular project named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code>.
+Prompt answers: No Routing, Use CSS.</p>
 </li>
-<li>Commit and push your changes to Github.</li>
+<li><p class="first">Create a new repository in your GitHub account named <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code>. Copy
+the URL for this empty repo.</p>
+</li>
+<li><p class="first">In the terminal, navigate into your local <code class="docutils literal notranslate"><span class="pre">orbit-report</span></code> directory and
+link the Angular project to the GitHub repo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add origin &lt;remote-url&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Finally, commit and push your Angular assignment to GitHub.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="requirements">
@@ -135,7 +138,7 @@ step 1.</li>
 moving on to the next item.</p>
 <div class="section" id="define-and-create-satellites">
 <h3>1) Define and Create Satellites<a class="headerlink" href="#define-and-create-satellites" title="Permalink to this headline">¶</a></h3>
-<p>In JavaScript, TypeScript, and Angular projects you can create classes to
+<p>In JavaScript, TypeScript, and Angular projects, you can create classes to
 represent entities in the project. For this project you need to create a class
 named <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> to represent, you guessed it, a satellite. The
 <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class needs to define the properties needed to accurately
@@ -157,10 +160,14 @@ represent a satellite.</p>
 </div>
 </li>
 <li><p class="first">Add a constructor to <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> class.</p>
-<ol class="loweralpha simple">
-<li>Constructor signature should be <code class="docutils literal notranslate"><span class="pre">constructor(name:</span> <span class="pre">string,</span> <span class="pre">type:</span>
-<span class="pre">string,</span> <span class="pre">launchDate:</span> <span class="pre">string,</span> <span class="pre">orbitType:</span> <span class="pre">string,</span> <span class="pre">operational:</span> <span class="pre">boolean)</span></code></li>
-<li>You need to assign the class properties in the constructor.</li>
+<ol class="loweralpha">
+<li><p class="first">Constructor signature should be:</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">type</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">launchDate</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">orbitType</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">operational</span>: <span class="kt">boolean</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You need to assign the class properties in the constructor.</p>
+</li>
 </ol>
 </li>
 </ol>
@@ -211,13 +218,13 @@ reminder of how to do this, review the
 </div>
 <div class="section" id="pass-in-satellites-to-orbit-list-component">
 <h3>3) Pass in Satellites to Orbit List Component<a class="headerlink" href="#pass-in-satellites-to-orbit-list-component" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component's job is to show a list of satellites. Remember
+<p>The <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component's job is to show a list of satellites. Remember,
 you declared an array of <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> objects in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code> named
 <code class="docutils literal notranslate"><span class="pre">sourceList</span></code>. In order to pass that array into the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code>, you need
 to learn a new Angular feature named <a class="reference external" href="https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding" target="_blank">input properties<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
 Here, the term &quot;input&quot; refers to data being sent <em>into</em> the component. Angular
 input properties are NOT related to HTML <code class="docutils literal notranslate"><span class="pre">input</span></code> elements.</p>
-<p>Currently <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> uses the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component like so:</p>
+<p>Currently, <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> uses the <code class="docutils literal notranslate"><span class="pre">orbit-list</span></code> component like so:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">app-orbit-list</span><span class="p">&gt;&lt;/</span><span class="nt">app-orbit-list</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -262,8 +269,8 @@ the component has an input property named <code class="docutils literal notransl
 is a property that will be passed into the component via
 <code class="docutils literal notranslate"><span class="pre">&lt;app-orbit-list</span> <span class="pre">[satellites]=&quot;sourceList&quot;&gt;&lt;/app-orbit-list&gt;</span></code>.</p>
 </li>
-<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">require</span></code> statements in <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code> to import
-<code class="docutils literal notranslate"><span class="pre">Input</span></code> and <code class="docutils literal notranslate"><span class="pre">Satellite</span></code>.</p>
+<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">import</span></code> statements in <code class="docutils literal notranslate"><span class="pre">orbit-list.component.ts</span></code> to access
+the <code class="docutils literal notranslate"><span class="pre">Input</span></code> and <code class="docutils literal notranslate"><span class="pre">Satellite</span></code> classes.</p>
 <div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Satellite</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../satellite&#39;</span><span class="p">;</span>
