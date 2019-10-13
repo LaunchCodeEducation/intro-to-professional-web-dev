@@ -351,18 +351,18 @@ scoreFunction result:  16
 <h3>D) Tie it All Together<a class="headerlink" href="#d-tie-it-all-together" title="Permalink to this headline">¶</a></h3>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function that will:</p>
 <ol class="arabic simple">
-<li>Accept the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array as an argument.</li>
+<li>Accept the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array as a parameter.</li>
 <li>Use <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> to pick the algorithm.</li>
 <li>Prompt the user for a word to score.</li>
 <li>Use the selected algorithm to determine the score for the word:<ol class="loweralpha">
-<li>If the user entered <code class="docutils literal notranslate"><span class="pre">0</span></code> or an invalid option, use the Scrabble
+<li>If the user enters <code class="docutils literal notranslate"><span class="pre">0</span></code> or an invalid option, use the Scrabble
 <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
 <li>If the user entered <code class="docutils literal notranslate"><span class="pre">1</span></code>, use the Simple Score <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
 <li>If the user entered <code class="docutils literal notranslate"><span class="pre">2</span></code>, use the Bonus Vowels <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
 </ol>
 </li>
 <li>Display the score for the word.</li>
-<li>Repeat steps 3 to 5 until the program is stopped.</li>
+<li>Repeat steps 3 to 5 until the user stops the program by entering 'Stop'.</li>
 </ol>
 </div>
 </div>
@@ -379,23 +379,25 @@ Vowels.</li>
 </ol>
 <div class="section" id="example-output">
 <span id="id1"></span><h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator. Enter &#39;Stop&#39; to quit.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator!
 
 Which scoring algorithm would you like to use?
 
 0 - Scrabble: The traditional scoring algorithm.
 1 - Simple Score: Each letter is worth 1 point.
-2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
-Enter 0,1,2: 0
+2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
+
+Enter 0, 1, or 2 (enter &#39;Stop&#39; to quit): 0
+
 Using algorithm: Scrabble
 
-Enter a word to be scored:  LaunchCode
+Enter a word to be scored, or &#39;Stop&#39; to quit:  LaunchCode
 Score for &#39;LaunchCode&#39;: 18
 
-Enter a word to be scored:  Rocket
+Enter a word to be scored, or &#39;Stop&#39; to quit:  Rocket
 Score for &#39;Rocket&#39;: 12
 
-Enter a word to be scored:
+Enter a word to be scored, or &#39;Stop&#39; to quit:
 </pre></div>
 </div>
 </div>

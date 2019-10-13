@@ -253,20 +253,21 @@ notation and dot notation.
 
 D) Tie it All Together
 ^^^^^^^^^^^^^^^^^^^^^^^
+
 Define a ``runProgram`` function that will:
 
-#. Accept the ``scoringAlgorithms`` array as an argument.
+#. Accept the ``scoringAlgorithms`` array as a parameter.
 #. Use ``initialPrompt`` to pick the algorithm.
 #. Prompt the user for a word to score.
 #. Use the selected algorithm to determine the score for the word:
 
-   a. If the user entered ``0`` or an invalid option, use the Scrabble
+   a. If the user enters ``0`` or an invalid option, use the Scrabble
       ``scoreFunction``.
    b. If the user entered ``1``, use the Simple Score ``scoreFunction``.
    c. If the user entered ``2``, use the Bonus Vowels ``scoreFunction``.
 
 #. Display the score for the word.
-#. Repeat steps 3 to 5 until the program is stopped.
+#. Repeat steps 3 to 5 until the user stops the program by entering 'Stop'.
 
 Test Words
 -----------
@@ -287,23 +288,25 @@ Example Output
 
 ::
 
-   Welcome to the Scrabble score calculator. Enter 'Stop' to quit.
+   Welcome to the Scrabble score calculator!
 
    Which scoring algorithm would you like to use?
 
    0 - Scrabble: The traditional scoring algorithm.
    1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are 3 pts, consonants are 1pt
-   Enter 0,1,2: 0
+   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
+
+   Enter 0, 1, or 2 (enter 'Stop' to quit): 0
+
    Using algorithm: Scrabble
 
-   Enter a word to be scored:  LaunchCode
+   Enter a word to be scored, or 'Stop' to quit:  LaunchCode
    Score for 'LaunchCode': 18
 
-   Enter a word to be scored:  Rocket
+   Enter a word to be scored, or 'Stop' to quit:  Rocket
    Score for 'Rocket': 12
 
-   Enter a word to be scored:
+   Enter a word to be scored, or 'Stop' to quit:
 
 Bonus Mission
 -------------
