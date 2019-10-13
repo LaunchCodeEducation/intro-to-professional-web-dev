@@ -45,8 +45,7 @@ A) Initial Prompt
 The current Scrabble Scorer only uses one scoring algorithm. For the new
 version, we want to let the user pick between three algorithms. Define an
 ``initialPrompt`` function that introduces the program and asks the user which
-scoring algorithm to use. The prompt should also offer an option for stopping
-the program.
+scoring algorithm to use.
 
 Your prompt could look something like:
 
@@ -60,7 +59,7 @@ Your prompt could look something like:
    1 - Simple Score: Each letter is worth 1 point.
    2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
 
-   Enter 0, 1, or 2 (enter 'Stop' to quit):
+   Enter 0, 1, or 2:
 
 B) Transform
 ^^^^^^^^^^^^^
@@ -131,18 +130,21 @@ will identify a point value. This is much more efficient than the old method.
 Code the Function
 ~~~~~~~~~~~~~~~~~~
 
-#. Write a ``transform`` function that takes the ``oldPointStructure`` object
-   as a parameter. ``transform(oldPointStructure)`` will return an object with
-   *lowercase* letters as keys. The value for each key will be the points
-   assigned to that letter.
+#. Write a ``transform`` function that takes an object as a parameter. Calling
+   ``transform(oldPointStructure)`` will return an object with *lowercase*
+   letters as keys. The value for each key will be the points assigned to that
+   letter.
 #. Initialize ``newPointStructure`` by setting it equal to
    ``transform(oldPointStructure)``.
 #. Hints:
 
    a. Recall that ``for...in`` loops iterate over the keys within an object.
-   b. To access the letter arrays within ``oldPointStructure``, use bracket
+   b. If you need a reminder of how to assign new key/value pairs, review the
+      :ref:`relevant section <add-new-object-properties>` in the
+      ``Objects and Math`` chapter.
+   c. To access the letter arrays within ``oldPointStructure``, use bracket
       notation (``oldPointStructure['key']``).
-   c. To access a particular element within a letter array, add a second set of
+   d. To access a particular element within a letter array, add a second set of
       brackets (``oldPointStructure['key'][index]``), or assign the array to a
       variable and use ``variableName[index]``.
 
@@ -194,8 +196,8 @@ Define Scoring Objects
 #. Create an object for each of the three scoring options. Each object should
    contain three keys: ``name``, ``description``, and ``scoreFunction``.
 #. Examine the table for the information to store in ``name`` and
-   ``description``. The ``scoreFunction`` for each object should call one of
-   the algorithms you defined above.
+   ``description``. The ``scoreFunction`` for each object should be the name of
+   one of the algorithms you defined above.
 
    .. list-table::
       :header-rows: 1
@@ -256,9 +258,10 @@ D) Tie it All Together
 
 Define a ``runProgram`` function that will:
 
-#. Accept the ``scoringAlgorithms`` array as a parameter.
+#. Accept the ``scoringAlgorithms`` array as an argument.
 #. Use ``initialPrompt`` to pick the algorithm.
-#. Prompt the user for a word to score.
+#. Prompt the user for a word to score. The prompt should also offer an option
+   for stopping the program.
 #. Use the selected algorithm to determine the score for the word:
 
    a. If the user enters ``0`` or an invalid option, use the Scrabble
@@ -296,7 +299,7 @@ Example Output
    1 - Simple Score: Each letter is worth 1 point.
    2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
 
-   Enter 0, 1, or 2 (enter 'Stop' to quit): 0
+   Enter 0, 1, or 2: 0
 
    Using algorithm: Scrabble
 
@@ -308,14 +311,14 @@ Example Output
 
    Enter a word to be scored, or 'Stop' to quit:
 
-Bonus Mission
--------------
+Bonus Missions
+---------------
 
 #. Currently, the prompts accept ANY input values. The user could enter
    something *other* than 0, 1, or 2 when selecting the scoring algorithm, and
-   they could enter numbers or symbols when asked for a word. Add validation to
-   your code to reject invalid inputs and then re-prompt the user for the
-   correct information.
+   they could enter numbers or symbols when asked for a word. Modify your code
+   to reject invalid inputs and then re-prompt the user for the correct
+   information.
 #. Score words spelled with blank tiles by adding ``' '`` to the
    ``newPointStructure`` object. The point value for a blank tile is ``0``.
 

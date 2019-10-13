@@ -125,8 +125,7 @@ program.</li>
 <p>The current Scrabble Scorer only uses one scoring algorithm. For the new
 version, we want to let the user pick between three algorithms. Define an
 <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> function that introduces the program and asks the user which
-scoring algorithm to use. The prompt should also offer an option for stopping
-the program.</p>
+scoring algorithm to use.</p>
 <p>Your prompt could look something like:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the Scrabble score calculator!
 
@@ -136,7 +135,7 @@ Which scoring algorithm would you like to use?
 1 - Simple Score: Each letter is worth 1 point.
 2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
 
-Enter 0, 1, or 2 (enter &#39;Stop&#39; to quit):
+Enter 0, 1, or 2:
 </pre></div>
 </div>
 </div>
@@ -206,10 +205,10 @@ letter z:  10
 <div class="section" id="code-the-function">
 <h4>Code the Function<a class="headerlink" href="#code-the-function" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
-<li><p class="first">Write a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function that takes the <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code> object
-as a parameter. <code class="docutils literal notranslate"><span class="pre">transform(oldPointStructure)</span></code> will return an object with
-<em>lowercase</em> letters as keys. The value for each key will be the points
-assigned to that letter.</p>
+<li><p class="first">Write a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function that takes an object as a parameter. Calling
+<code class="docutils literal notranslate"><span class="pre">transform(oldPointStructure)</span></code> will return an object with <em>lowercase</em>
+letters as keys. The value for each key will be the points assigned to that
+letter.</p>
 </li>
 <li><p class="first">Initialize <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> by setting it equal to
 <code class="docutils literal notranslate"><span class="pre">transform(oldPointStructure)</span></code>.</p>
@@ -217,6 +216,10 @@ assigned to that letter.</p>
 <li><p class="first">Hints:</p>
 <ol class="loweralpha">
 <li><p class="first">Recall that <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loops iterate over the keys within an object.</p>
+</li>
+<li><p class="first">If you need a reminder of how to assign new key/value pairs, review the
+<a class="reference internal" href="../chapters/objects-and-math/modifyingobjects.html#add-new-object-properties"><span class="std std-ref">relevant section</span></a> in the
+<code class="docutils literal notranslate"><span class="pre">Objects</span> <span class="pre">and</span> <span class="pre">Math</span></code> chapter.</p>
 </li>
 <li><p class="first">To access the letter arrays within <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>, use bracket
 notation (<code class="docutils literal notranslate"><span class="pre">oldPointStructure['key']</span></code>).</p>
@@ -280,8 +283,8 @@ the word.</li>
 contain three keys: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</p>
 </li>
 <li><p class="first">Examine the table for the information to store in <code class="docutils literal notranslate"><span class="pre">name</span></code> and
-<code class="docutils literal notranslate"><span class="pre">description</span></code>. The <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code> for each object should call one of
-the algorithms you defined above.</p>
+<code class="docutils literal notranslate"><span class="pre">description</span></code>. The <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code> for each object should be the name of
+one of the algorithms you defined above.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="33%" />
@@ -351,9 +354,10 @@ scoreFunction result:  16
 <h3>D) Tie it All Together<a class="headerlink" href="#d-tie-it-all-together" title="Permalink to this headline">¶</a></h3>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">runProgram</span></code> function that will:</p>
 <ol class="arabic simple">
-<li>Accept the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array as a parameter.</li>
+<li>Accept the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array as an argument.</li>
 <li>Use <code class="docutils literal notranslate"><span class="pre">initialPrompt</span></code> to pick the algorithm.</li>
-<li>Prompt the user for a word to score.</li>
+<li>Prompt the user for a word to score. The prompt should also offer an option
+for stopping the program.</li>
 <li>Use the selected algorithm to determine the score for the word:<ol class="loweralpha">
 <li>If the user enters <code class="docutils literal notranslate"><span class="pre">0</span></code> or an invalid option, use the Scrabble
 <code class="docutils literal notranslate"><span class="pre">scoreFunction</span></code>.</li>
@@ -387,7 +391,7 @@ Which scoring algorithm would you like to use?
 1 - Simple Score: Each letter is worth 1 point.
 2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
 
-Enter 0, 1, or 2 (enter &#39;Stop&#39; to quit): 0
+Enter 0, 1, or 2: 0
 
 Using algorithm: Scrabble
 
@@ -402,14 +406,14 @@ Enter a word to be scored, or &#39;Stop&#39; to quit:
 </div>
 </div>
 </div>
-<div class="section" id="bonus-mission">
-<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bonus-missions">
+<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Currently, the prompts accept ANY input values. The user could enter
 something <em>other</em> than 0, 1, or 2 when selecting the scoring algorithm, and
-they could enter numbers or symbols when asked for a word. Add validation to
-your code to reject invalid inputs and then re-prompt the user for the
-correct information.</li>
+they could enter numbers or symbols when asked for a word. Modify your code
+to reject invalid inputs and then re-prompt the user for the correct
+information.</li>
 <li>Score words spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>
 </ol>
