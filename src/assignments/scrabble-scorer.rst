@@ -39,14 +39,14 @@ Requirements
 Instructions
 -------------
 
-User Prompt
-^^^^^^^^^^^^
+A) Initial Prompt
+^^^^^^^^^^^^^^^^^^
 
 The current Scrabble Scorer only uses one scoring algorithm. For the new
 version, we want to let the user pick between three algorithms. Define an
 ``initialPrompt`` function that introduces the program and asks the user which
-scoring algorithm they want to use. The prompt should also offer an option for
-stopping the program.
+scoring algorithm to use. The prompt should also offer an option for stopping
+the program.
 
 Your prompt could look something like:
 
@@ -58,15 +58,15 @@ Your prompt could look something like:
 
    0 - Scrabble: The traditional scoring algorithm.
    1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are worth 3 pts, abd consonants are 1pt.
+   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
 
    Enter 0, 1, or 2 (enter 'Stop' to quit):
 
-Transform
-^^^^^^^^^
+B) Transform
+^^^^^^^^^^^^^
 
-Currently the Scrabble Grader software uses the data structure below for the
-traditional Scrabble scoring algorithm. Take a few moments to review how the
+Currently, the software uses the data structure below for the traditional
+Scrabble scoring algorithm. Take a few moments to review how the
 ``oldPointStructure`` object relates a letter to a point value.
 
 .. sourcecode:: js
@@ -91,6 +91,9 @@ To find the point value for a letter with the old format, the program must
 iterate over each key in ``oldPointStructure`` and then check if the letter is
 inside the array paired with that key. *This search within a search is
 inefficient*.
+
+Streamlined Score Object
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It would be better to create a ``newPointStructure`` object that has 26 keys,
 one for each letter. The value of each key will be the Scrabble point value.
@@ -130,8 +133,8 @@ Code the Function
 
 #. Write a ``transform`` function that takes the ``oldPointStructure`` object
    as a parameter. ``transform(oldPointStructure)`` will return an object with
-   *lowercase* letters as keys. The value for each key will be points assigned
-   to that letter.
+   *lowercase* letters as keys. The value for each key will be the points
+   assigned to that letter.
 #. Initialize ``newPointStructure`` by setting it equal to
    ``transform(oldPointStructure)``.
 #. Hints:
@@ -143,7 +146,7 @@ Code the Function
       brackets (``oldPointStructure['key'][index]``), or assign the array to a
       variable and use ``variableName[index]``.
 
-      .. admonition:: Example
+      .. admonition:: Examples
 
          .. sourcecode:: JavaScript
             :linenos:
@@ -165,40 +168,71 @@ Code the Function
             Letters with score '8': [ 'J', 'X' ]
             2nd letter within the key '8' array: X
 
-Scoring Algorithms
-^^^^^^^^^^^^^^^^^^
-Create a ``scoringAlgorithms`` array that contains three scorer objects. Each
-object should contain three keys: ``name``, ``description``, and
-``scoreFunction``.
+C) Scoring Algorithms
+^^^^^^^^^^^^^^^^^^^^^^
 
-The ``scoreFunction`` for each object should be a function that takes in one
-parameter named ``word`` and returns a point value based on the logic listed
-below. The ``scoreFunction`` functions can named or anonymous.
+Create a separate function for each of the following scoring algorithms.
 
-.. list-table::
-   :header-rows: 1
+.. admonition:: Note
 
-   * - Name
-     - Description
-     - Score Function
-   * - Scrabble
-     - The traditional scoring algorithm.
-     - A function with a ``word`` parameter that returns a score.
-       Uses the ``newPointStructure`` object to determine that score.
-   * - Simple Score
-     - Each letter is worth 1 point.
-     - A function with a ``word`` parameter that returns a score.
-   * - Bonus Vowels
-     - Vowels are 3 pts, consonants are 1pt.
-     - A function with ``word`` parameter that returns a score.
+   Make each scoring algorithm case *insensitive*, meaning that they
+   should all ignore case when assigning points.
 
-.. admonition:: Example
+#. **Simple Score:** Define a function that takes a word as a parameter and
+   returns a score. Each letter within the word is worth 1 point.
+#. **Bonus Vowels:** Define a function that takes a word as a parameter and
+   returns a score. Each vowel within the word is worth 3 points, and each
+   consonant is worth 1 point.
+#. **Scrabble Score:** Define a function that takes a word and
+   ``newPointStructure`` as parameters and returns a score. The function uses
+   the data stored in ``newPointStructure`` to determine the point value for
+   the word.
+
+Define Scoring Objects
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Create an object for each of the three scoring options. Each object should
+   contain three keys: ``name``, ``description``, and ``scoreFunction``.
+#. Examine the table for the information to store in ``name`` and
+   ``description``. The ``scoreFunction`` for each object should call one of
+   the algorithms you defined above.
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Name
+        - Description
+        - Score Function
+      * - Scrabble
+        - The traditional scoring algorithm.
+        - Uses the ``newPointStructure`` object to determine the score for a given
+          ``word``.
+      * - Simple Score
+        - Each letter is worth 1 point.
+        - A function with a ``word`` parameter that returns a score.
+      * - Bonus Vowels
+        - Vowels are 3 pts, consonants are 1pt.
+        - A function with a ``word`` parameter that returns a score based on the
+          number of vowels and consonants.
+
+#. Create a ``scoringAlgorithms`` array to hold your three scorer objects.
+
+Take a Breath
+~~~~~~~~~~~~~~
+
+Good! Your ``scoringAlgorithms`` structure now holds all of the scoring
+information required for the new Scrabble program.
+
+To access a scoring object and its properties, use a combination of bracket
+notation and dot notation.
+
+.. admonition:: Examples
 
    .. sourcecode:: js
 
       // Scrabble scoring
       console.log("algorithm name: ", scoringAlgorithms[0].name);
-      console.log("scoreFunction result: ", scoringAlgorithms[0].scoreFunction("JavaScript"));
+      console.log("scoreFunction result: ", scoringAlgorithms[0].scoreFunction("JavaScript", newPointStructure));
       // Simple scoring
       console.log("algorithm name: ", scoringAlgorithms[1].name);
       console.log("scoreFunction result: ", scoringAlgorithms[1].scoreFunction("JavaScript"));
@@ -217,10 +251,8 @@ below. The ``scoreFunction`` functions can named or anonymous.
       algorithm name:  Bonus Vowels
       scoreFunction result:  16
 
-.. note:: All three scoring algorithms are case *insensitive*, meaning that they should ignore case.
-
-Tie it All Together
-^^^^^^^^^^^^^^^^^^^
+D) Tie it All Together
+^^^^^^^^^^^^^^^^^^^^^^^
 Define a ``runProgram`` function that will:
 
 #. Accept the ``scoringAlgorithms`` array as an argument.
@@ -275,8 +307,14 @@ Example Output
 
 Bonus Mission
 -------------
-Score words spelled with blank tiles by adding ``' '`` to the
-``newPointStructure`` object. The point value for a blank tile is ``0`` points.
+
+#. Currently, the prompts accept ANY input values. The user could enter
+   something *other* than 0, 1, or 2 when selecting the scoring algorithm, and
+   they could enter numbers or symbols when asked for a word. Add validation to
+   your code to reject invalid inputs and then re-prompt the user for the
+   correct information.
+#. Score words spelled with blank tiles by adding ``' '`` to the
+   ``newPointStructure`` object. The point value for a blank tile is ``0``.
 
 Submitting Your Work
 ---------------------
