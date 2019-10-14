@@ -125,7 +125,7 @@ JSON:
    :linenos:
 
    {
-       "title": "The Cat in the Hat"
+       "title": "The Cat in the Hat",
        "author": "Dr. Seuss"
    }
 

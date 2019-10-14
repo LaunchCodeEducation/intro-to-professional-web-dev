@@ -237,18 +237,24 @@ into the function context before returning to global execution context.</p>
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">coolFunction</span><span class="p">()</span> <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">coolerFunction</span><span class="p">()</span> <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-   <span class="nx">c</span> <span class="o">=</span> <span class="nx">coolFunction</span><span class="p">();</span>
+   <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+   <span class="nx">c</span> <span class="o">+=</span> <span class="nx">coolFunction</span><span class="p">();</span>
    <span class="k">return</span> <span class="nx">c</span><span class="p">;</span>
 <span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">coolFunction</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">coolerFunction</span><span class="p">());</span>
 </pre></div>
 </td></tr></table></div>
 <p>Now, let's consider the execution context for each step.</p>
@@ -256,24 +262,24 @@ into the function context before returning to global execution context.</p>
 <li><p class="first">First, the global execution context is entered as the compiler executes the
 code.</p>
 <div class="figure">
-<img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" />
+<a class="reference internal image-reference" href="../../_images/globalexecutioncontext.png"><img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 </li>
 <li><p class="first">Once <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code> is hit, the compiler creates and executes
 <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code> under the <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code> execution context.</p>
 <div class="figure">
-<img alt="Figure showing coolFunction on top of global execution context." src="../../_images/coolFunction.png" />
+<a class="reference internal image-reference" href="../../_images/coolFunction.png"><img alt="Figure showing coolFunction on top of global execution context." src="../../_images/coolFunction.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 </li>
 <li><p class="first">Upon completion, the compiler returns to the global execution context.</p>
 <div class="figure">
-<img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" />
+<a class="reference internal image-reference" href="../../_images/globalexecutioncontext.png"><img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 </li>
 <li><p class="first">The compiler stays at the global execution context until the creation and
 execution of <code class="docutils literal notranslate"><span class="pre">coolerFunction()</span></code>.</p>
 <div class="figure">
-<img alt="Figure showing coolerFunction on top of the global execution context." src="../../_images/coolerFunction.png" />
+<a class="reference internal image-reference" href="../../_images/coolerFunction.png"><img alt="Figure showing coolerFunction on top of the global execution context." src="../../_images/coolerFunction.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 </li>
 <li><p class="first">Inside of <code class="docutils literal notranslate"><span class="pre">coolerFunction()</span></code> is a call to <code class="docutils literal notranslate"><span class="pre">coolFunction()</span></code>. The compiler
@@ -281,13 +287,13 @@ will go up in execution context to <code class="docutils literal notranslate"><s
 to <code class="docutils literal notranslate"><span class="pre">coolerFunction()</span></code>'s execution context. Upon completion of that
 function, the compiler returns to the global execution context.</p>
 <div class="figure">
-<img alt="Figure showing coolFunction on top of coolerFunction on top of the global execution context." src="../../_images/coolandcoolerFunction.png" />
+<a class="reference internal image-reference" href="../../_images/coolandcoolerFunction.png"><img alt="Figure showing coolFunction on top of coolerFunction on top of the global execution context." src="../../_images/coolandcoolerFunction.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 <div class="figure">
-<img alt="Figure showing coolerFunction on top of the global execution context." src="../../_images/coolerFunction.png" />
+<a class="reference internal image-reference" href="../../_images/coolerFunction.png"><img alt="Figure showing coolerFunction on top of the global execution context." src="../../_images/coolerFunction.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 <div class="figure">
-<img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" />
+<a class="reference internal image-reference" href="../../_images/globalexecutioncontext.png"><img alt="Figure showing global execution context at the bottom of the stack." src="../../_images/globalexecutioncontext.png" style="width: 416.8px; height: 456.0px;" /></a>
 </div>
 </li>
 </ol>

@@ -141,15 +141,18 @@ Let's consider this code:
    let a = 0;
 
    function coolFunction() {
-      let b = 0;
+      let b = 2;
       return a + b;
    }
 
    function coolerFunction() {
-      let c = 0;
-      c = coolFunction();
+      let c = 5;
+      c += coolFunction();
       return c;
    }
+
+   console.log(coolFunction());
+   console.log(coolerFunction());
 
 Now, let's consider the execution context for each step.
 
@@ -157,23 +160,27 @@ Now, let's consider the execution context for each step.
    code.
 
    .. figure:: figures/globalexecutioncontext.png
+      :scale: 80%
       :alt: Figure showing global execution context at the bottom of the stack.
 
 #. Once ``coolFunction()`` is hit, the compiler creates and executes
    ``coolFunction()`` under the ``coolFunction()`` execution context.
 
    .. figure:: figures/coolFunction.png
+      :scale: 80%
       :alt: Figure showing coolFunction on top of global execution context.
 
 #. Upon completion, the compiler returns to the global execution context.
 
    .. figure:: figures/globalexecutioncontext.png
+      :scale: 80%
       :alt: Figure showing global execution context at the bottom of the stack.
 
 #. The compiler stays at the global execution context until the creation and
    execution of ``coolerFunction()``.
 
    .. figure:: figures/coolerFunction.png
+      :scale: 80%
       :alt: Figure showing coolerFunction on top of the global execution context.
 
 #. Inside of ``coolerFunction()`` is a call to ``coolFunction()``. The compiler
@@ -182,12 +189,15 @@ Now, let's consider the execution context for each step.
    function, the compiler returns to the global execution context.
 
    .. figure:: figures/coolandcoolerFunction.png
+      :scale: 80%
       :alt: Figure showing coolFunction on top of coolerFunction on top of the global execution context.
 
    .. figure:: figures/coolerFunction.png
+      :scale: 80%
       :alt: Figure showing coolerFunction on top of the global execution context.
 
    .. figure:: figures/globalexecutioncontext.png
+      :scale: 80%
       :alt: Figure showing global execution context at the bottom of the stack.
 
 

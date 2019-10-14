@@ -12,11 +12,14 @@ B. Perform critical mission calculations.
 C. Determine the fuel required for launch.
 
 Before You Start
-----------------
+-----------------
 
-If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
+If you are enrolled in a LaunchCode program, access this studio by following
+the repl.it classroom links posted in your class at
+`learn.launchcode.org <https://learn.launchcode.org/>`__.
 
-If you are working through this material on your own, use the repl.it links contained on this page.
+If you are working through this material on your own, use the repl.it links
+contained on this page.
 
 Select the Crew
 ----------------
@@ -30,7 +33,7 @@ Each candidate was assigned an ID number, which is stored in the candidate's
 data file and in the ``idNumbers`` array.
 
 #. Write a ``selectRandomEntry`` function to select a random entry from the
-   ``idNumbers`` array.vReview the
+   ``idNumbers`` array. Review the
    :ref:`Combining Math Methods <random-array-item>` section if you need a
    reminder on how to do this.
 #. Use the function to select three ID numbers.  Store these selections in a
@@ -71,7 +74,7 @@ To access the code for the orbit calculations and first bonus mission, go to
       number of orbits completed, the orbit radius, and the orbital speed. Set
       the default radius to 2000 km and the default orbital speed to
       28000 km/hr.
-   c. Calculate how long will it take our animals to complete 5 orbits (time =
+   c. Calculate how long it will take our animals to complete 5 orbits (time =
       distance/speed). Round the answer to 2 decimal places, then return the
       result.
    d. Print, ``'The mission will travel ____ km around the planet, and it will
@@ -84,7 +87,7 @@ To access the code for the orbit calculations and first bonus mission, go to
       perform a spacewalk.
    b. The spacewalk will last for three orbits around the earth. Use
       ``missionDuration`` to calculate how many hours the spacewalk will take.
-   c. Use the animal’s ``rate`` method to calculate how much oxygen (O :sub:`2`)
+   c. Use the animal’s ``o2Used`` method to calculate how much oxygen (O :sub:`2`)
       they consume during the spacewalk. Round the answer to 3 decimal places.
    d. Return the string, ``'__ will perform the spacewalk, which will last __
       hours and require __ kg of oxygen.'`` Fill in the blanks with the
@@ -97,7 +100,7 @@ Conserve O :sub:`2`
 ^^^^^^^^^^^^^^^^^^^
 
 Instead of randomly selecting a crew member for the spacewalk, have your
-program select the animal with the smallest oxygen consumption rate.
+program select the animal with the smallest oxygen consumption.
 
 Fuel Required for Launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^
