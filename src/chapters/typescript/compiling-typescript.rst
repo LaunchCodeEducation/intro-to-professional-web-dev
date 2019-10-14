@@ -15,6 +15,11 @@ To install TypeScript, in your terminal, type
 
    $ npm install -g typescript
 
+.. tip::
+
+   **Mac users:** You may receive a permissions error when running this install command.
+   If you do, try running it as :ref:`sudo <terminal-setupinstructions-sudo>`. 
+
 Once you have TypeScript installed, you'll be able to run 
 
 .. sourcecode:: bash
