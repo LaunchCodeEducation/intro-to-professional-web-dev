@@ -20,7 +20,7 @@ If you are working through this material on your own, use the `starter repl.it f
 Declare and Initialize Variables
 --------------------------------
 
-Declare and initialize a variable for every data point listed below. 
+Declare and initialize a variable for every data point listed below.
 Remember to account for the different data types.
 
 .. list-table::
@@ -66,7 +66,7 @@ spaces and symbols (-, >, and \*).
 Example Output
 ^^^^^^^^^^^^^^^
 
-Note that your output will should change when you assign different values to
+Note that your output should change when you assign different values to
 ``astronautCount``, ``fuelMassKg``, etc. The point is to AVOID coding specific
 values into the ``console.log`` statements. Use your variable names instead.
 
@@ -91,7 +91,7 @@ values into the ``console.log`` statements. Use your variable names instead.
    * Fuel level: 100%
 
    -------------------------------------
-   > WEIGHT DATA
+   > MASS DATA
    -------------------------------------
    * Crew mass: 564.9 kg
    * Fuel mass: 760000 kg
@@ -123,6 +123,6 @@ Bonus Mission
 Use ``readline-sync`` to prompt the user to enter the value for
 ``astronautCount``.
 
-The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg`` should
-change based on the number of astronauts on the shuttle. (Don't forget to
-convert the input value from a string to a number).
+The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg``
+should change based on the number of astronauts on the shuttle. (Don't forget
+to convert the input value from a string to a number).

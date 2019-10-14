@@ -63,9 +63,11 @@ Steps to Add Validation
 -----------------------
 
 1. Add an event handler for the ``window`` *load* event
-2. Within the window's load handler, add an event handlerAdd an event handler for the ``form`` *submit* event
+2. Within the window's load handler, add an event handler for the ``form``
+   *submit* event
 3. Retrieve input values that need to be validated from the DOM.
-4. Within the form's submit handler, check the ``input`` values using conditional statements
+4. Within the form's submit handler, check the ``input`` values using
+   conditional statements
 
    a. If the values are valid, allow the form submission
    b. If the values are NOT valid, inform the user and STOP form submission
