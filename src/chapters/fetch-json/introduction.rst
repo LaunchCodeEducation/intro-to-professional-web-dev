@@ -38,9 +38,9 @@ Usually, with a little trial and error, you can learn how to use the interface
 easily. This interface we use is called a Graphical User Interface, or GUI for short.
 
 We interact with computers using various interfaces, either with a GUI or a CLI. 
-However, an application does not know how to use a GUI, or a CLI, and needs it's own 
-interface to communicate with another application.
-An API is the interface that allows one application to communicate with another application.
+However, an application does not know how to use a GUI, or a CLI, and needs its
+own interface to communicate with another application. An API is the interface
+that allows one application to communicate with another application.
 
 An API is how one application communicates with another application. We will be 
 making a request to an API in order to retrieve information we

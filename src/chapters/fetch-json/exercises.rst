@@ -123,9 +123,10 @@ Fetch
          });
       });
 
-#. Peek the response returned in the request with a print statement inside of the function.
+#. Peek at the ``response`` returned in the request by adding a print statement
+   inside of the function.
 
-   Copy the file path of this HTML file and paste it as the URL in your browser.
+   Copy the file path of your HTML file and paste it as the URL in your browser.
    You won't see much on the page yet. Open your developer tools and examine both the 
    *Console* tab for the response value, as well as the *Network* tab for the request status.
 

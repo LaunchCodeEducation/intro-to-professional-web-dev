@@ -46,3 +46,10 @@ In the terminal, you will be able to:
 - install software
 - open programs 
 - run programs directly
+
+Setup the Terminal
+------------------
+
+Follow these instructions for :ref:`setting up your terminal <terminal-setupinstructions>`.
+You'll need it for this chapter's exercises and you can explore inside it while 
+you read along with the text.

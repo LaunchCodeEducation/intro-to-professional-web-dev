@@ -147,7 +147,7 @@ View the GET Request
 
 We can see evidence of the GET request by following these steps:
 
-#. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`__ in it's own tab.
+#. Open the `Launch Status web page <https://fetch-weather-pt1--launchcode.repl.co/>`__ in its own tab.
 #. Open developer tools.
 #. Open the *Network* tab in developer tools.
 
