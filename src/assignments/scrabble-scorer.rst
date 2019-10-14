@@ -10,7 +10,7 @@ the point value. The program needs to be rewritten for two reasons. First the
 data structure used to store the letter point values is inefficient. Second the
 program should have three scoring algorithms and allow the user to pick which
 algorithm to use. These new features will make the program more efficient and
-user friendly.
+user-friendly.
 
 If you are NOT enrolled in a repl.it classroom for this course, fork the
 starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
