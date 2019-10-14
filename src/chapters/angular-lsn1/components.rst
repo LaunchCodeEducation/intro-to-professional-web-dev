@@ -71,6 +71,8 @@ other component. ``task-list.component.css`` only styles html within the
 applies to this component, and all the tests for ``task-list`` will be found
 in ``task-list.component.spec.ts``.
 
+.. _add-new-component:
+
 Adding a New Component
 ----------------------
 

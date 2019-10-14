@@ -1,282 +1,356 @@
-
 Assignment #6: Orbit Report
 ===========================
 
-.. warning::
+.. admonition:: Warning
 
-   Please do not attempt this assignment until AFTER your first lecture on Angular.
-   It can be tempting to dive right in, but Angular is a broad topic and you want to wait to start until you have time to go over the requirements in class.
+   Please do not attempt this assignment until AFTER your first lesson on
+   Angular. It can be tempting to dive right in, but Angular is a broad topic,
+   and you want to wait to start until you have time to go over the
+   requirements in class.
 
-There are thousands of satellites orbiting the earth. You are tasked with creating a searchable, sortable table of satellites.
-For the purposes of this assignment, **satellite** will be defined as any object purposefully placed into orbit.
+There are thousands of satellites orbiting the earth. You are tasked with
+creating a searchable, sortable table of satellites. For the purposes of this
+assignment, a **satellite** will be defined as any object purposefully placed
+into orbit.
 
-.. TODO: screen shot of finished report in the browser with numbers by each feature
+Your table will have the following features:
 
-1. **Satellites**: Table with each row being a satellite.
-2. **Counts:** Count of all satellites and count for each type of satellite.
-3. **Search form:** Text entered limits results based on matches. Pressing enter or clicking button triggers search.
-4. **Sortable columns:** The name and type column headers can be clicked, which will sort the table using that property.
+#. **Satellites**: Each row in the table contains data on one satellite.
+#. **Search form:** Filters the results based on matches to the entered text.
+   Pressing enter or clicking the button triggers the search.
+#. **Sortable columns:** The ``Name`` and ``Type`` column headers can be
+   clicked, which will sort the table using that property.
+#. **Counts:** Displays the total number of satellites in the table, as well as
+   the count for each type of satellite.
 
+Your completed assignment should look something like this:
+
+.. figure:: figures/orbit-report-table.png
+   :alt: Screenshot of orbit report table.
+
+You can also view gifs of the finished project in the
+:ref:`Orbit Report Demo <orbit-report-demo>` section at the bottom of this
+page.
 
 Setup
------
+------
 
-1. Create a new project on Github named ``orbit-report``.
-2. Clone that repo to your computer.
-3. Create a new Angular project in the cloned repo folder using this command.
+#. Use ``ng new`` to create a new Angular project named ``orbit-report``.
+   Prompt answers: No Routing, Use CSS.
+#. Create a new repository in your GitHub account named ``orbit-report``. Copy
+   the URL for this empty repo.
+#. In the terminal, navigate into your local ``orbit-report`` directory and
+   link the Angular project to the GitHub repo:
 
-   * ``$ ng new --skip-git orbit-report``
-   * It's important to include the ``--skip-git`` because we don't want Angular to create a git repo for us.
-   * Prompt answers: No Routing, Use CSS
+   .. sourcecode:: bash
 
-4. Commit and push your changes to Github.
+      $ git remote add origin <remote-url>
 
+#. Finally, commit and push your Angular assignment to GitHub.
 
 Requirements
-------------
+-------------
 
-As you accomplish each task, be sure to commit and push your changes before moving on to the next item.
+As you accomplish each task, be sure to commit and push your changes before
+moving on to the next item.
 
 1) Define and Create Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In JavaScript, TypeScript, and Angular projects you can create classes to represent entities in the project.
-For this project you need to create a class named ``Satellite`` to represent, you guessed it, a satellite. The ``Satellite``
-class needs to define the properties needed to accurately represent a satellite.
+In JavaScript, TypeScript, and Angular projects, you can create classes to
+represent entities in the project. For this project you need to create a class
+named ``Satellite`` to represent, you guessed it, a satellite. The
+``Satellite`` class needs to define the properties needed to accurately
+represent a satellite.
 
-1. In terminal go to the ``orbit-report`` folder.
-2. Create a class with command ``$ ng g class Satellite``.
-3. Notice that the new file ``orbit-report/src/app/satellite.ts`` was created.
-4. Add these properties to the ``Satellite`` class in ``satellite.ts``:
+#. In terminal go to the ``orbit-report`` folder.
+#. Create a class with command ``$ ng generate class Satellite``.
+#. Notice that the new file ``orbit-report/src/app/satellite.ts`` was created.
+#. Add these properties to the ``Satellite`` class in ``satellite.ts``:
 
-.. sourcecode:: js
+   .. sourcecode:: js
 
-   name: string;
-   orbitType: string;
-   type: string;
-   operational: boolean;
-   launchDate: string;
+      name: string;
+      orbitType: string;
+      type: string;
+      operational: boolean;
+      launchDate: string;
 
-5. Add a constructor to ``Satellite`` class.
+#. Add a constructor to ``Satellite`` class.
 
-   * Constructor signature should be ``constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean)``
-   * You need to assign the class properties in the constructor.
+   a. Constructor signature should be:
 
-Now we need to use the ``Satellite`` class to create an initial array of ``Satellite`` objects.
+      .. sourcecode:: TypeScript
+
+         constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean)
+
+   b. You need to assign the class properties in the constructor.
+
+Now we need to use the ``Satellite`` class to create an initial array of
+``Satellite`` objects.
 
 6. Define an array named ``sourceList`` in ``app.component.ts``.
 
-   * ``sourceList: Satellite[];``
-   * For this to compile, you must add ``import { Satellite } from './satellite';`` to the top of the file.
+   a. ``sourceList: Satellite[];``
+   b. For this to compile, you must add ``import { Satellite } from
+      './satellite';`` to the top of the file.
 
-7. In the ``constructor`` in ``app.component.ts`` set ``sourceList`` to be an array of ``Satellite`` objects.
+#. In the ``constructor`` in ``app.component.ts`` set ``sourceList`` to be an
+   array of ``Satellite`` objects.
 
-.. sourcecode:: typescript
+   .. sourcecode:: typescript
 
-   constructor() {
-      this.sourceList = [
-         new Satellite("SiriusXM", "Communication", "2009-03-21", "LOW", true),
-         new Satellite("Cat Scanner", "Imaging", "2012-01-05", "LOW", true),
-         new Satellite("Weber Grill", "Space Debris", "1996-03-25", "HIGH", false),
-         new Satellite("GPS 938", "Positioning", "2001-11-01", "HIGH", true),
-         new Satellite("ISS", "Space Station", "1998-11-20", "LOW", true),
-      ];
-   }
+      constructor() {
+         this.sourceList = [
+            new Satellite("SiriusXM", "Communication", "2009-03-21", "LOW", true),
+            new Satellite("Cat Scanner", "Imaging", "2012-01-05", "LOW", true),
+            new Satellite("Weber Grill", "Space Debris", "1996-03-25", "HIGH", false),
+            new Satellite("GPS 938", "Positioning", "2001-11-01", "HIGH", true),
+            new Satellite("ISS", "Space Station", "1998-11-20", "LOW", true),
+         ];
+      }
 
-8. In terminal run ``ng serve``
-9. View the app in your browser. At this point you should see the default Angular starter page. If you don't, check the build output and browser console for any errors.
-
+#. In the terminal run ``ng serve``.
+#. View the app in your browser. At this point you should see the default
+   Angular starter page. If you don't, check the build output and browser
+   console for any errors.
 
 2) Create Orbit List Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that you have an array of ``Satellite`` objects, you can display them. To do that, you are going to need to create a
-new component named ``orbit-list``.
+Now that you have an array of ``Satellite`` objects, you need to display them.
+To do that, create a new component named ``orbit-list``.
 
-#. Create ``orbit-list`` component using ``$ ng g component orbit-list`` in the ``app`` folder.
-#. Replace the contents of ``app.component.html`` with just one line of code, ``<app-orbit-list></app-orbit-list>``.
-#. View the app in your browser. You should see: orbit-list works!
-
+#. Generate the ``orbit-list`` component in the ``app`` folder. If you need a
+   reminder of how to do this, review the
+   :ref:`Adding a New Component <add-new-component>` section.
+#. Replace the contents of ``app.component.html`` with just one line of code,
+   ``<app-orbit-list></app-orbit-list>``.
+#. View the app in your browser. You should see: ``orbit-list works!``
 
 3) Pass in Satellites to Orbit List Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``orbit-list`` component's job is to show a list of satellites. Remember you declared an array of ``Satellite`` objects in
-``app.component.ts`` named ``sourceList``. In order to pass that array into the ``orbit-list``, you need to learn a new Angular
-feature named `input properties <https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding>`_.
-For the purpose of this feature, the term input refers to data being sent *into* the component. Angular input properties are NOT related to HTML ``input``
-elements.
+The ``orbit-list`` component's job is to show a list of satellites. Remember,
+you declared an array of ``Satellite`` objects in ``app.component.ts`` named
+``sourceList``. In order to pass that array into the ``orbit-list``, you need
+to learn a new Angular feature named `input properties <https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding>`__.
+Here, the term "input" refers to data being sent *into* the component. Angular
+input properties are NOT related to HTML ``input`` elements.
 
-Currently ``app.component.html`` uses the ``orbit-list`` component like so:
+Currently, ``app.component.html`` uses the ``orbit-list`` component like so:
 
 .. sourcecode:: html+ng2
 
    <app-orbit-list></app-orbit-list>
 
-To pass in the ``sourceList`` array to the ``orbit-list`` component you need to learn new syntax.
-Notice the code ``[satellites]="sourceList"``. The ``[satellites]`` declares that you are setting a
-property on the ``orbit-list`` component named ``satellites``. ``="sourceList`` declares that the value
-of the ``satellites`` property will be the value of the ``sourceList`` array.
+To pass the ``sourceList`` array into the ``orbit-list`` component, you need to
+learn new syntax.
 
-.. sourcecode:: html+ng2
+#. Modify ``<app-orbit-list></app-orbit-list>`` in ``app.component.html`` as
+   follows:
 
-   <app-orbit-list [satellites]="sourceList"></app-orbit-list>
+   .. sourcecode:: html+ng2
 
-1. Add ``[satellites]="sourceList"`` to ``<app-orbit-list></app-orbit-list>`` in ``app.component.html``.
+      <app-orbit-list [satellites]="sourceList"></app-orbit-list>
 
-   * ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``
+   a. ``[satellites]`` declares a new ``satellites`` property on the
+      ``orbit-list`` component.
+   b. ``="sourceList"`` sets the value of the ``satellites`` property to be the
+      ``sourceList`` array.
 
-2. View the app in your browser.
+#. View the app in your browser. You should NOT see the message ``orbit-list
+   worked!`` Why?
+#. Open developer tools in your browser and look at the JavaScript console.
 
-   * You should NOT see the message "orbit-list worked!". Why?
-   
-3. Open developer tools in your browser and look at the JavaScript console.
+   You should see an error message telling you that the ``orbit-list``
+   component does NOT have a ``satellites`` property. Note that only the
+   relevant message text has been included below.
 
-You should see the below error message telling you that the ``orbit-list`` component does NOT have a ``satellites`` property.
-Note only the relevant message text has been included below.
+   ::
 
-::
+      Error: Template parse errors:
+      Can't bind to 'satellites' since it isn't a known property of 'app-orbit-list'.
+      1. If 'app-orbit-list' is an Angular component and it has 'satellites' input, then verify that it is part of this module.
 
-  Error: Template parse errors:
-  Can't bind to 'satellites' since it isn't a known property of 'app-orbit-list'.
-  1. If 'app-orbit-list' is an Angular component and it has 'satellites' input, then verify that it is part of this module.
+To solve this issue, you need to declare in ``orbit-list.component.ts`` that
+the component has an input property named ``satellites``.
 
-To solve this issue, you need to declare in ``orbit-list.component.ts`` that the ``orbit-list`` component has an input property named ``satellites``.
+4. Add the code below just before the constructor in
+   ``orbit-list.component.ts``.
 
-4. Add the code below to just before the constructor in ``orbit-list.component.ts``.
-   
-   * ``@Input() satellites: Satellite[];``
+   .. sourcecode:: typescript
 
-The ``@Input()`` is special Angular syntax that declares that ``satellites`` is a property that will be passed into the component via ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
+      @Input() satellites: Satellite[];
 
-5. Update the ``require`` statements to import ``Input`` and ``Satellite``
+   The ``@Input()`` is special Angular syntax that declares that ``satellites``
+   is a property that will be passed into the component via
+   ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
 
-   * ``import { Component, OnInit, Input } from '@angular/core';``
-   * ``import { Satellite } from '../satellite';``
+#. Update the ``import`` statements in ``orbit-list.component.ts`` to access
+   the ``Input`` and ``Satellite`` classes.
 
-6. View the app in your browser. You should see: orbit-list works!
+   .. sourcecode:: typescript
+      :linenos:
 
-   * You still don't have satellites showing yet. That is the next step.
+      import { Component, OnInit, Input } from '@angular/core';
+      import { Satellite } from '../satellite';
 
+#. View the app in your browser. You should see ``orbit-list works!`` but no
+   satellites yet. That is the next step.
 
 4) Display Table of Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that ``orbit-list`` has a ``satellites`` property that is an array of ``Satellite`` objects, you can
-use that array to build an HTML table with each row being a different satellite.
+Now that ``orbit-list`` has a ``satellites`` property that is an array of
+``Satellite`` objects, you can use that array to build an HTML table with each
+row being a different satellite.
 
-1. In ``orbit-list.component.html`` use``*ngFor`` to loop over the ``satellites``. The HTML table you build should look like the following.
+#. In ``orbit-list.component.html`` use ``*ngFor`` to loop over the
+   ``satellites`` array. The HTML table you build should look like the
+   following.
 
-.. sourcecode:: html+ng2
-   :linenos:
+   .. sourcecode:: html+ng2
+      :linenos:
 
-   <h3>Orbit Report</h3>
-   <table>
-      <tr class="header-row">
-         <th class="sortable">Name</th>
-         <th class="sortable">Type</th>
-         <th>Operational</th>
-         <th>Orbit Type</th>
-         <th>Launch Date</th>
-      </tr>
-      <!-- TODO: put <tr *ngFor=""></tr> here -->
-   </table>
+      <h3>Orbit Report</h3>
+      <table>
+         <tr class="header-row">
+            <th class="sortable">Name</th>
+            <th class="sortable">Type</th>
+            <th>Operational</th>
+            <th>Orbit Type</th>
+            <th>Launch Date</th>
+         </tr>
+         <!-- TODO: put <tr *ngFor=""></tr> here -->
+      </table>
 
-Next you need to include CSS that will make your table and application look a little nicer.
+Next, you need to include CSS that will make your table and application look a
+little nicer.
 
-2. Copy the entire contents of the `example orbit-list-component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``orbit-list-component.css``.
-3. Copy the entire contents of the `example app.component.css <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``app.component.css``.
-4. Copy the ``<style>`` tag from the `example index.html <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and paste it into the ``<head>`` of your ``index.html``.
+2. Copy the entire contents of the example `orbit-list-component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__
+   and put it into your ``orbit-list-component.css``. Leave the ``sortable``
+   class alone, but change the ``table`` and ``warning`` styles to colors
+   and sizes you find pleasing.
+#. Copy the entire contents of the example `app.component.css <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``app.component.css``.
+#. Copy the ``<style>`` tag from the example `index.html <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and paste it into the ``<head>`` of your ``index.html``.
 
-   * Only add in the ``<style>``, do NOT remove any other HTML from your ``index.html``.
+   a. Only add in the ``<style>``, do NOT remove any other HTML from your
+      ``index.html``.
 
-5. View the app in your browser. You should see a table like the below.
+#. View the app in your browser. Your table should look something like:
 
-.. figure:: figures/basic-table-satellites.png
-   :alt: Screen shot of browser showing http://localhost:4200 with a table of four satellites.
+   .. figure:: figures/basic-table-satellites.png
+      :alt: Screen shot of browser showing http://localhost:4200 with a table of four satellites.
 
-   Example of application at this point. Don't worry if yours doesn't have a heading of "Orbit Report" yet, you can add that later.
-
+      Example of application at this point.
 
 5) Fetch Satellite Data
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-So far you have used an array declared in ``app.component.ts`` as the source of data to display.
-Your next task is to switch to using a ``fetch`` that retrieves json data from a server.
+So far, you have used an array declared in ``app.component.ts`` as the source
+of data to display. Your next task is to switch to using a ``fetch`` that
+retrieves json data from a server.
 
-1. Replace your ``constructor`` in ``AppComponent`` with the code below.
-2. Implement the three features mentioned in the ``TODO:`` comments.
+#. Replace your ``constructor`` in ``AppComponent`` with the code below.
+#. Implement the three features mentioned in the ``TODO:`` comments.
 
-.. sourcecode:: typescript
+   .. sourcecode:: typescript
 
-   constructor() {
-      this.sourceList = [];
-      let satellitesUrl = 'https://api.myjson.com/bins/ccxv5';
+      constructor() {
+         this.sourceList = [];
+         let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
 
-      window.fetch(satellitesUrl).then(function(response) {
-         response.json().then(function(data) {
+         window.fetch(satellitesUrl).then(function(response) {
+            response.json().then(function(data) {
 
-            let fetchedSatellites = data.satellites;
-            // TODO: loop over satellites
-            // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-            // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
+               let fetchedSatellites = data.satellites;
+               // TODO: loop over satellites
+               // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+               // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
 
+            }.bind(this));
          }.bind(this));
-      }.bind(this));
 
-   }
+      }
 
-.. note::
+.. admonition:: Note
 
-   Explaining the ``.bind(this)`` syntax is beyond the scope of this book, but is crucial for ``this.sourceList.push(satellite)`` to work properly.
+   Explaining the ``.bind(this)`` syntax is beyond the scope of this book, but
+   the statements are crucial for ``this.sourceList.push(satellite)`` to work
+   properly.
 
 3. View the app in your browser. Your table should look similar to:
 
-.. figure:: figures/fetched-table-satellites.png
-   :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites.
+   .. figure:: figures/fetched-table-satellites.png
+      :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites.
 
-   Example of application after switching to fetched data.
-
+      Example of application after switching to fetched data.
 
 6) Highlight Space Debris
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You need to make it easier to spot dangerous space debris in the list. You will accomplish this
-by adding an Angular attribute directive.
+You need to make it easier to spot dangerous space debris in the list. Add an
+Angular attribute directive to accomplish this.
 
 #. Add a ``shouldShowWarning`` method to the ``Satellite`` class.
 
-   * ``shouldShowWarning`` returns a boolean and has no parameters.
-   * ``shouldShowWarning`` returns ``true`` if the satellite ``type`` is ``'Space Debris'``, returns false otherwise.
+   a. ``shouldShowWarning`` returns a boolean and has no parameters.
+   b. ``shouldShowWarning`` returns ``true`` if the satellite ``type`` is
+      ``'Space Debris'``, and it returns ``false`` otherwise. Note that this
+      check should be case-insensitive.
 
-#. Use ``shouldShowWarning`` to add the ``warning`` CSS class to the ``<td>`` containing the satellite's type.
+#. Use ``shouldShowWarning`` to add the ``warning`` CSS class to the ``<td>``
+   containing the satellite's type.
 
-   * For guidance refer to the section on :ref:`changing styles with attribute directives <changing-styles-with-booleans>`
+   a. For guidance refer to the section on :ref:`changing styles with attribute directives <changing-styles-with-booleans>`.
 
-.. figure:: figures/table-satellites-with-warning.png
-   :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background.
+   .. figure:: figures/table-satellites-with-warning.png
+      :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background.
 
-   Example of warning style adding a red background to Space Debris type.
+      Example of warning style adding a red background to Space Debris type.
 
+.. admonition:: Note
+
+   If you prefer, modify the table HTML to make the entire row the warning
+   color.
 
 7) Sorting
-^^^^^^^^^^
+^^^^^^^^^^^
 
-Sorting is a useful feature for any table. When the "Name" heading is clicked sort the table by the
-``name`` property. Also when the "Type" heading is clicked, the table should display sorted by the
-``type`` property.
+Sorting is a useful feature for any table. When a user clicks the "Name"
+heading, sort the table by the ``name`` property. Also, if the user clicks the
+"Type" heading, then sort the table by the ``type`` property.
 
-1. Add an Angular click handler that calls ``sort('name')`` to the Name  ``<th>`` element.
+#. Add an Angular click handler that calls ``sort('name')`` to the Name
+   ``<th>`` element. Note that the sorting feature will NOT work until you
+   have completed step 3.
 
-   * Note that the sorting feature will not work until you have completed step 3.
+#. Add an Angular click handler that calls ``sort('type')`` to the Type
+   ``<th>`` element.
+#. Add a ``sort`` method to the ``OrbitListComponent`` class. Remember that
+   by convention, the method should come *after* the ``constructor`` *and*
+   ``ngOnInit``.
 
-2. Add an Angular click handler that calls ``sort('type')`` to the Type ``<th>`` element.
-3. Add a ``sort`` method to the ``OrbitListComponent`` class.
+   a. The sorting method has been provided below.
+   b. To see an example of the sort working, see the
+      :ref:`Orbit Report Demo <orbit-report-demo>` below.
 
-   * The sorting method has been provided below.
-   * For an example of sort working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
+   .. sourcecode:: typescript
 
-.. note::
+      sort(column: string): void {
+         // array.sort modifies the array, sorting the items based on the given compare function
+         this.satellites.sort(function(a: Satellite, b: Satellite): number {
+            if(a[column] < b[column]) {
+               return -1;
+            } else if (a[column] > b[column]) {
+               return 1;
+            }
+            return 0;
+         });
+      }
+
+.. admonition:: Note
 
    The provided ``sort`` method contains a new usage of the ``array.sort`` method. Previously in the book you used
    ``array.sort`` without passing it a function, see :ref:`sort function examples <sort-examples>`. This usage of ``array.sort``
@@ -286,130 +360,141 @@ Sorting is a useful feature for any table. When the "Name" heading is clicked so
    For more details about the compare function see
    `MDN description of sort using a compare function <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description>`_.
 
-.. sourcecode:: typescript
-   :linenos:
-
-   sort(column: string): void {
-    // array.sort modifies the array, sorting the items based on the given compare function
-    this.satellites.sort(function(a: Satellite, b: Satellite): number {
-      if(a[column] < b[column]) {
-        return -1;
-      } else if (a[column] > b[column]) {
-        return 1;
-      }
-      return 0;
-     });
-   }
-
-
 8) Searching
 ^^^^^^^^^^^^
 
-You are doing great! Only two more features to add. Next you will add a search feature.
+You are doing great! Next you will add a search feature.
 
-#. Add this HTML ``<div class="search-form"></div>`` in your ``app.component.html``.
+#. Add this HTML ``<div class="search-form"></div>`` in ``app.component.html``.
 #. Add an ``<input>`` element inside the ``<div>``.
 #. Add a ``<button>`` element inside the ``<div>``.
-#. Add an Angular ``(click)`` handler to the ``<button>`` that when triggered calls ``search(searchTerm.value)``
+#. Add an Angular ``(click)`` handler to the ``<button>`` that calls
+   ``search(searchTerm.value)``. ``searchTerm`` is the local variable
+   name for the ``<input>``.
+#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` that also calls
+   ``search(searchTerm.value)``.
+#. Add a ``search`` method to the ``AppComponent`` class. The code for this
+   method is provided below.
 
-   * ``searchTerm`` being the local variable name for the ``<input>``
+   .. sourcecode:: typescript
+      :linenos:
 
-#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` that when triggered calls ``search(searchTerm.value)``
-#. Add a ``search`` method to the ``AppComponent`` class.
-
-   * The ``search`` method is provided below.
-
-.. sourcecode:: typescript
-   :linenos:
-
-   search(searchTerm: string): void {
-      let matchingSatellites: Satellite[] = [];
-      searchTerm = searchTerm.toLowerCase();
-      for(let i=0; i < this.sourceList.length; i++) {
-         let name = this.sourceList[i].name.toLowerCase();
-         if (name.indexOf(searchTerm) >= 0) {
-            matchingSatellites.push(this.sourceList[i]);
+      search(searchTerm: string): void {
+         let matchingSatellites: Satellite[] = [];
+         searchTerm = searchTerm.toLowerCase();
+         for(let i=0; i < this.sourceList.length; i++) {
+            let name = this.sourceList[i].name.toLowerCase();
+            if (name.indexOf(searchTerm) >= 0) {
+               matchingSatellites.push(this.sourceList[i]);
+            }
          }
+         // assign this.displayList to be the the array of matching satellites
+         // this will cause Angular to re-make the table, but now only containing matches
+         this.displayList = matchingSatellites;
       }
-      // assign this.displayList to be the the array of matching satellites
-      // this will cause Angular to re-make the table, but now only containing matches
-      this.displayList = matchingSatellites;
-   }
 
-Notice the usage of a new variable named ``displayList``. ``displayList`` should contain the ``Satellite`` objects
-that the user wants to see. Previously ALL the satellites were displayed, because there was not a search feature. 
-Now the user can perform a search, which means they want to see ONLY the matching results. The ``sourceList`` variable contains ALL
-the ``Satellite`` objects. If you removed the ``Satellite`` objects from ``sourceList`` that didn't match the search term, then
-the user could never see them again. Instead when the user performs a search, ``displayList`` will be populated with only the matching
-``Satellite`` objects in ``sourceList``. Matching is defined as ``satellite.name`` containing the search term.
+Notice the usage of a new variable named ``displayList``. ``displayList``
+should contain the ``Satellite`` objects that the user wants to see.
+Previously ALL the satellites were displayed, because there was not a search
+feature. Now the user can perform a search, which means they want to see ONLY
+the matching results. The ``sourceList`` variable contains ALL the
+``Satellite`` objects. If you removed the ``Satellite`` objects from
+``sourceList`` that didn't match the search term, then the user could never
+see them again. Instead when the user performs a search, ``displayList`` will
+be populated with only the matching ``Satellite`` objects in ``sourceList``.
+Matching is defined as ``satellite.name`` containing the search term.
 
-7. Add the ``displayList: Satellite[];`` property to the ``AppComponent`` class.
+7. Add the ``displayList: Satellite[];`` property to the ``AppComponent``
+   class and set ``displayList = []`` in the constructor.
 
-   * Set ``displayList = []`` in the constructor.
+#. Pass in the ``displayList`` to the ``orbit-list-component``.
 
-8. Pass in the ``displayList`` to the ``orbit-list-component``.
+   .. sourcecode:: html+ng2
 
-   * ``<app-orbit-list [satellites]="displayList"></app-orbit-list>``
+      <app-orbit-list [satellites]="displayList"></app-orbit-list>
 
-9. View the app in your browser. Why is the table empty when the app loads?
+#. View the app in your browser. Why is the table empty when the app loads?
+   What is the value of ``displayList`` when the app first loads?
 
-   * What is the value of ``displayList`` when the app first loads?
+#. Set ``displayList`` to be a copy of ``sourceList`` when the app loads.
 
-10. Set ``displayList`` to be a copy of ``sourceList`` when the app loads.
+   a. Add this code after ``sourceList`` has been populated by the fetched
+      data in the ``constructor``.
 
-    * Add this code after ``sourceList`` has been populated by the fetched data in the ``constructor``.
+      .. sourcecode:: typescript
 
-.. sourcecode:: typescript
+               // make a copy of the sourceList to be shown to the user
+               this.displayList = this.sourceList.slice(0);
+            }.bind(this));
+         }.bind(this));
 
-         // make a copy of the sourceList to be shown to the user
-         this.displayList = this.sourceList.slice(0);
-      }.bind(this));
-   }.bind(this));
-
-11. For an example of search working, see :ref:`Orbit Report Demo <orbit-report-demo>`.
-
-
-9) Counting Satellites
-^^^^^^^^^^^^^^^^^^^^^^
-
-For the last feature, you are on your own. You are tasked with creating a new component that
-shows the total count and count by type for the satellites currently displayed in the table.
-
-#. Create an ``orbit-counts`` component.
-#. Copy the entire contents of the `example orbit-counts.component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``orbit-counts.component.css``.
-#. Use the component in ``app.component.html``.
-#. Pass in ``displayList`` via ``[satellites]="displayList"``.
-#. Use the given HTML as a template.
-#. The rest of the steps are left for you to figure out.
-
-.. sourcecode:: html
-
-   <h3>Satellite Counts:</h3>
-   <div class="counts">
-      <div>Total: <span>9</span></div>
-      <div>Space Debris: <span>1</span></div>
-      <div>Communication: <span>2</span></div>
-      <div>Probe: <span>2</span></div>
-      <div>Positioning: <span>1</span></div>
-      <div>Space Station: <span>2</span></div>
-      <div>Telescope: <span>1</span></div>
-   </div>
-
-.. figure:: figures/orbit-counts-output.png
-   :alt: Example of six satellite counts being displayed.
-
-   Example of the seven different satellite counts being displayed.
-
+#. For an example of search working, see
+   :ref:`Orbit Report Demo <orbit-report-demo>`.
 
 Bonus Missions
---------------
+---------------
 
-#. Search feature should also find matches using the ``orbitType`` and ``type`` properties.
-#. Make every other row in the table have a background color.
-#. For step 9, use an ``*ngFor`` to loop over an array of the different types, instead of explicitly writing a ``<tr>`` for each satellite type.
+A) Zebra Stripes
+^^^^^^^^^^^^^^^^^
 
-   * You may have already completed this mission, depending on how you accomplished step 9.
+Alternate the color for every other row in the table. Choose whichever pair
+of colors you prefer, but the highlighting for space debris should still be
+distinct.
 
+.. figure:: figures/orbit-report-zebra.png
+   :alt: Alternating row colors.
+
+B) Counting Satellites
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a new component that shows the total number of satellites currently
+displayed in the table. Also, the component should show the number of each
+type of satellite.
+
+#. Create an ``orbit-counts`` component.
+#. Add styles to ``orbit-counts.component.css`` to make your count table
+   complement the list of satellites, or use the CSS provided in this
+   `sample file  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__.
+#. Add the ``orbit-counts`` component to ``app.component.html``.
+#. Pass in ``displayList`` via ``[satellites]="displayList"``.
+#. Use the given HTML as a template. Remember to replace the hard-coded counts.
+
+   .. sourcecode:: html
+      :linenos:
+
+      <h3>Satellite Counts:</h3>
+      <div class="counts">
+         <div>Total: <span>9</span></div>
+         <div>Space Debris: <span>1</span></div>
+         <div>Communication: <span>2</span></div>
+         <div>Probe: <span>2</span></div>
+         <div>Positioning: <span>1</span></div>
+         <div>Space Station: <span>2</span></div>
+         <div>Telescope: <span>1</span></div>
+      </div>
+
+#. The rest of the steps are left for you to figure out! Your completed
+   component should look similar to:
+
+   .. figure:: figures/orbit-counts-output.png
+      :alt: Example of six satellite counts being displayed.
+
+      Example of the seven different satellite counts being displayed.
+
+C) Update the Search Feature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Modify the search feature to find matches using the ``orbitType`` and ``type``
+properties.
+
+If you completed the counting satellites bonus, use an ``*ngFor`` to loop over
+an array of the different types, instead of explicitly writing a ``<tr>`` for
+each satellite type.
+
+.. admonition:: Note
+
+   You may have already completed this mission, depending on how you
+   accomplished counting the satellites.
 
 Submitting Your Work
 --------------------
@@ -423,8 +508,26 @@ Copy the URL for your Github repository and paste it into the box, then click
 
 .. _orbit-report-demo:
 
-Application Demo
-----------------
+Orbit Report Demo
+------------------
 
-.. TODO: video of all features being demoed (not including bonus)
-.. TODO: I have an mp4 of the demo saved. Need to upload it to youtube. (It was too large for gif)
+Once you complete all of the tasks outlined above, your project should behave
+something like this:
+
+Sorting the Table
+^^^^^^^^^^^^^^^^^^
+
+.. figure:: figures/orbit-report-sort.gif
+   :alt: Sorting the table gif.
+
+Searching the Table
+^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: figures/orbit-report-search.gif
+   :alt: Searching the table gif.
+
+Counting Satellites Bonus
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: figures/orbit-report-count.gif
+   :alt: Satellite counts component.
