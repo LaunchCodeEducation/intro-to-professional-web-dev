@@ -20,11 +20,12 @@ starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
 Requirements
 ------------
 
-.. note::
+.. admonition:: Note
 
    The requirements below are what your END assignment will look like.
-   This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at "Transform".
-   Please read the WHOLE assignment page before starting.
+   This assignment is broken down so you can complete small pieces as you go.
+   You need to move sequentially starting at part A below. Please read the
+   WHOLE assignment page before starting.
 
 #. Create an ``initialPrompt`` function that asks the user which scoring
    algorithm to use.
@@ -42,10 +43,10 @@ Instructions
 A) Initial Prompt
 ^^^^^^^^^^^^^^^^^^
 
-The current Scrabble Scorer only uses one scoring algorithm. For the new
-version, we want to let the user pick between three algorithms. Define an
-``initialPrompt`` function that introduces the program and asks the user which
-scoring algorithm to use.
+In the starter code, the Scrabble Scorer only uses one scoring algorithm. For
+the new version, we want to let the user pick between three algorithms. Define
+an ``initialPrompt`` function that introduces the program and asks the user
+which scoring algorithm to use.
 
 Your prompt could look something like:
 
@@ -57,7 +58,7 @@ Your prompt could look something like:
 
    0 - Scrabble: The traditional scoring algorithm.
    1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
+   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
 
    Enter 0, 1, or 2:
 
