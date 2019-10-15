@@ -128,6 +128,9 @@ will identify a point value. This is much more efficient than the old method.
       letter j:  8
       letter z:  10
 
+Do not panic! Instead of tediously hard-coding ``newPointStructure``, use your
+clever coding skills to create the new object.
+
 Code the Function
 ~~~~~~~~~~~~~~~~~~
 
