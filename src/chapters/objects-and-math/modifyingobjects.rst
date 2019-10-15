@@ -56,7 +56,7 @@ Modifying Properties
 A programmer can modify the value of a property by using either notation style.
 
 .. warning::
- 
+
    Recall that mutability means that a data structure can be modified without making a copy of that structure.
    Objects are mutable data structures.
    When you change the value of a property, the original object is modified and a copy is NOT made.
@@ -93,6 +93,48 @@ A programmer can modify the value of a property by using either notation style.
       919
       929
 
+.. _add-new-object-properties:
+
+Add New Key/Value Pairs
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+After declaring and initializing an object, we can add new properties at any
+time by using bracket syntax:
+
+.. sourcecode:: js
+
+   objectName["new-key"] = propertyValue;
+
+.. admonition:: Example
+
+   .. sourcecode:: js
+      :linenos:
+
+      let tortoiseTwo = {
+          species: "Galapagos Tortoise",
+          name: "Pete",
+          weight: 919
+      };
+
+      console.log(tortoiseTwo);
+
+      tortoiseTwo["age"] = 120;
+      tortoiseTwo["speed"] = 'Faster than the hare.'
+
+      console.log(tortoiseTwo);
+      console.log(tortoiseTwo.age);
+
+   **Console Output**
+
+   ::
+
+      { species: 'Galapagos Tortoise', name: 'Pete', weight: 919 }
+      { species: 'Galapagos Tortoise',
+         name: 'Pete',
+         weight: 919,
+         age: 120,
+         speed: 'Faster than the hare.' }
+      120
 
 Check Your Understanding
 ------------------------
