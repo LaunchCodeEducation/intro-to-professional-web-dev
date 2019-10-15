@@ -67,7 +67,7 @@ B) Transform
 
 Currently, the software uses the data structure below for the traditional
 Scrabble scoring algorithm. Take a few moments to review how the
-``oldPointStructure`` object relates a letter to a point value.
+``oldPointStructure`` object relates a point value to a letter.
 
 .. sourcecode:: js
    :linenos:
@@ -214,7 +214,7 @@ Define Scoring Objects
         - Each letter is worth 1 point.
         - A function with a ``word`` parameter that returns a score.
       * - Bonus Vowels
-        - Vowels are 3 pts, consonants are 1pt.
+        - Vowels are 3 pts, consonants are 1 pt.
         - A function with a ``word`` parameter that returns a score based on the
           number of vowels and consonants.
 
@@ -261,8 +261,8 @@ Define a ``runProgram`` function that will:
 
 #. Accept the ``scoringAlgorithms`` array as an argument.
 #. Use ``initialPrompt`` to pick the algorithm.
-#. Prompt the user for a word to score. The prompt should also offer an option
-   for stopping the program.
+#. Prompt the user to enter a word to score. The prompt should also provide the
+   user an option for ending the program.
 #. Use the selected algorithm to determine the score for the word:
 
    a. If the user enters ``0`` or an invalid option, use the Scrabble
@@ -298,7 +298,7 @@ Example Output
 
    0 - Scrabble: The traditional scoring algorithm.
    1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1pt.
+   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
 
    Enter 0, 1, or 2: 0
 
