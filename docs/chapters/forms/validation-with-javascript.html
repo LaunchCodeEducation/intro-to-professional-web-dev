@@ -100,7 +100,7 @@ HTML element.</p>
 also assign a new value to <code class="docutils literal notranslate"><span class="pre">input.value</span></code> which will update the value shown in the input.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>This example will log the value of an input, update the input’s value, and then log it again
+<p>This example will log the value of an input, update the input's value, and then log it again
 when the button is clicked.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -164,9 +164,11 @@ when the button is clicked.</p>
 <h2>25.9.2. Steps to Add Validation<a class="headerlink" href="#steps-to-add-validation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Add an event handler for the <code class="docutils literal notranslate"><span class="pre">window</span></code> <em>load</em> event</li>
-<li>Within the window’s load handler, add an event handlerAdd an event handler for the <code class="docutils literal notranslate"><span class="pre">form</span></code> <em>submit</em> event</li>
+<li>Within the window's load handler, add an event handler for the <code class="docutils literal notranslate"><span class="pre">form</span></code>
+<em>submit</em> event</li>
 <li>Retrieve input values that need to be validated from the DOM.</li>
-<li>Within the form’s submit handler, check the <code class="docutils literal notranslate"><span class="pre">input</span></code> values using conditional statements<ol class="loweralpha">
+<li>Within the form's submit handler, check the <code class="docutils literal notranslate"><span class="pre">input</span></code> values using
+conditional statements<ol class="loweralpha">
 <li>If the values are valid, allow the form submission</li>
 <li>If the values are NOT valid, inform the user and STOP form submission</li>
 </ol>
@@ -175,7 +177,7 @@ when the button is clicked.</p>
 <p>Each of these steps involves additional details, which we will now break down.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Let’s start this by showing an <code class="docutils literal notranslate"><span class="pre">alert</span></code> box when the form <em>submit</em> event is
+<p>Let's start this by showing an <code class="docutils literal notranslate"><span class="pre">alert</span></code> box when the form <em>submit</em> event is
 triggered.</p>
 <div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -234,7 +236,7 @@ triggered.</p>
 to add validation to the above example.</p>
 <p><strong>Get Reference to Inputs</strong></p>
 <p>To validate what the user has typed, we can get a reference to the <code class="docutils literal notranslate"><span class="pre">input</span></code> elements in
-the DOM and check the <code class="docutils literal notranslate"><span class="pre">value</span></code> property of each. Let’s change the <em>submit</em> event handler to display the
+the DOM and check the <code class="docutils literal notranslate"><span class="pre">value</span></code> property of each. Let's change the <em>submit</em> event handler to display the
 value of the username input in an <code class="docutils literal notranslate"><span class="pre">alert</span></code> box. To do that, we are going to use
 <code class="docutils literal notranslate"><span class="pre">document.querySelector(&quot;input[name=username]&quot;)</span></code>, which uses an <em>attribute selector</em> to
 select the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> that has <code class="docutils literal notranslate"><span class="pre">name=&quot;username&quot;</span></code>.</p>
@@ -261,7 +263,7 @@ select the <code class="docutils literal notranslate"><span class="pre">&lt;inpu
 </td></tr></table></div>
 <p><strong>Alert the Input Values When Submitted</strong></p>
 <p>Now that we know how to get the value of an input, we can add <em>conditional statements</em>.
-Let’s add code that opens an alert box if <em>either</em> input value is <em>empty</em>.</p>
+Let's add code that opens an alert box if <em>either</em> input value is <em>empty</em>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3

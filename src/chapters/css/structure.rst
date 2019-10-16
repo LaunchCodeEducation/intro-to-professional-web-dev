@@ -58,7 +58,7 @@ For inline CSS, the declaration block is inside one line of HTML like so:
    <tag style="property:value;property:value;property:value;">content</tag>
 
 
-Every property in CSS has a default value. For example, ``font-color`` defaults to "black".
+Every property in CSS has a default value. For example, ``color``, which governs text color, defaults to "black".
 For that reason, programmers only need to declare the CSS properties they want to change from the default.
 
 .. note::
@@ -80,7 +80,7 @@ Using the element selector to change the color of all ``<p>`` elements,
    :linenos:
 
    p {
-      font-color: pink;
+      color: pink;
    }
 
 Using the element selector will make all paragraph elements on the page have pink text.
@@ -94,7 +94,7 @@ To use the class selector in CSS, we would write something like:
    :linenos:
 
    .pink-paragraph {
-      font-color: pink;
+      color: pink;
    }
 
 In CSS, the class selector is preceded by ``.``.
@@ -108,7 +108,7 @@ In CSS, we would use the id selector to make the paragraph pink:
    :linenos:
 
    #pinkParagraph {
-      font-color: pink;
+      color: pink;
    }
 
 In CSS, the id selector is preceded by ``#``.

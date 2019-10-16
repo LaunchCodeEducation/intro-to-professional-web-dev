@@ -90,11 +90,11 @@
 <p>In particular, we focus on identifying good <strong>test cases</strong> by working through a specific example. A test case is a single situation that is being tested.</p>
 <div class="section" id="what-to-test">
 <h2>14.3.1. What to Test<a class="headerlink" href="#what-to-test" title="Permalink to this headline">¶</a></h2>
-<p>When writing tests for your code, what should you test? You can’t test <em>every</em> possible situation or input. But you also don’t want to
-leave out important cases. A function or program that isn’t well-tested might have bugs lurking beneath the surface.</p>
+<p>When writing tests for your code, what should you test? You can't test <em>every</em> possible situation or input. But you also don't want to
+leave out important cases. A function or program that isn't well-tested might have bugs lurking beneath the surface.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Since we are focused on <em>unit</em> testing, in this chapter we will generally use the term “unit” to refer to the function
+<p class="last">Since we are focused on <em>unit</em> testing, in this chapter we will generally use the term &quot;unit&quot; to refer to the function
 or program under consideration.</p>
 </div>
 <p>Regardless of the situation, there are three types of test cases that you should consider: positive, negative, and edge cases.</p>
@@ -113,11 +113,11 @@ or program under consideration.</p>
 </ol>
 </div>
 <p>Considering positive, negative, and edge tests will go a long way toward helping you create well-tested code.</p>
-<p>Let’s see these in action, by writing tests for <a class="reference internal" href="../functions/composing-functions.html#palindrome-function"><span class="std std-ref">our isPalindrome function</span></a>.</p>
+<p>Let's see these in action, by writing tests for <a class="reference internal" href="../functions/composing-functions.html#palindrome-function"><span class="std std-ref">our isPalindrome function</span></a>.</p>
 </div>
 <div class="section" id="setting-up">
 <h2>14.3.2. Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h2>
-<p>Here’s the function we want to test:</p>
+<p>Here's the function we want to test:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -165,13 +165,13 @@ or program under consideration.</p>
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
-<p>Okay, let’s write some tests!</p>
+<p>Okay, let's write some tests!</p>
 </div>
 <div class="section" id="positive-and-negative-test-cases">
 <h2>14.3.3. Positive and Negative Test Cases<a class="headerlink" href="#positive-and-negative-test-cases" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="positive-test-cases">
 <h3>14.3.3.1. Positive Test Cases<a class="headerlink" href="#positive-test-cases" title="Permalink to this headline">¶</a></h3>
-<p>We’ll start with positive and negative tests. For <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, some positive tests have inputs:</p>
+<p>We'll start with positive and negative tests. For <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, some positive tests have inputs:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">&quot;aaaa&quot;</span></code></li>
@@ -181,7 +181,7 @@ or program under consideration.</p>
 <p>Calling <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> with these inputs should return <code class="docutils literal notranslate"><span class="pre">true</span></code> in each case. Notice that these tests are a
 simple as possible. Keeping test inputs simple, while still covering your desired test cases, will make it
 easier to fix a bug in the event that a unit test fails.</p>
-<p>Let’s add tests for these inputs to <code class="docutils literal notranslate"><span class="pre">spec/palindrome.spec.js</span></code>:</p>
+<p>Let's add tests for these inputs to <code class="docutils literal notranslate"><span class="pre">spec/palindrome.spec.js</span></code>:</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -227,7 +227,7 @@ easier to fix a bug in the event that a unit test fails.</p>
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
-<p>Note the clear test case descriptions (for example, “should return true for a single letter repeated”), which will help us easily identify the expected behavior of our code later.</p>
+<p>Note the clear test case descriptions (for example, &quot;should return true for a single letter repeated&quot;), which will help us easily identify the expected behavior of our code later.</p>
 <p>After adding the positive tests to your file, run them to make sure they all pass.</p>
 </div>
 <div class="section" id="negative-test-cases">
@@ -245,19 +245,19 @@ easier to fix a bug in the event that a unit test fails.</p>
 <li>Case should be considered, and</li>
 <li>whitespace should be considered.</li>
 </ul>
-<p>The definition of a palindrome differs sometimes on these two matters, so it’s important to test them.</p>
+<p>The definition of a palindrome differs sometimes on these two matters, so it's important to test them.</p>
 <p>Testing with input <code class="docutils literal notranslate"><span class="pre">&quot;abA&quot;`</span></code> ensures that case is considered, since the lowercase version of this string, <code class="docutils literal notranslate"><span class="pre">&quot;aba&quot;</span></code>,
 <em>is</em> a palindrome. Testing with <code class="docutils literal notranslate"><span class="pre">&quot;so</span> <span class="pre">many</span> <span class="pre">dynamos&quot;</span></code> ensures that whitespace is considered, since the version of
 this string with whitespace removed, <code class="docutils literal notranslate"><span class="pre">&quot;somanydynamos&quot;</span></code>, <em>is</em> a palindrome.</p>
 <div class="admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">It’s important to isolate your test cases. For example, <code class="docutils literal notranslate"><span class="pre">&quot;So</span> <span class="pre">Many</span> <span class="pre">Dynamos&quot;</span></code> is a poor choice of input
+<p class="last">It's important to isolate your test cases. For example, <code class="docutils literal notranslate"><span class="pre">&quot;So</span> <span class="pre">Many</span> <span class="pre">Dynamos&quot;</span></code> is a poor choice of input
 for a negative test, since it contains <em>two</em> characteristics that are being tested for - case and whitespace. If
 a test with this input failed, it would NOT be clear why it failed.</p>
 </div>
 <p>Including specific tests that demonstrate how <em>our</em> <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> function behaves in these situations helps
 make our code <em>self-documenting</em>. Someone can read our tests and easily see that we <em>do</em> consider case and whitespace.</p>
-<p>Let’s add some test for these negative cases. Add these within the <code class="docutils literal notranslate"><span class="pre">describe</span></code> call.</p>
+<p>Let's add some test for these negative cases. Add these within the <code class="docutils literal notranslate"><span class="pre">describe</span></code> call.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;should return false for a longer non-palindrome&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
    <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">isPalindrome</span><span class="p">(</span><span class="s2">&quot;launchcode&quot;</span><span class="p">),</span> <span class="kc">false</span><span class="p">);</span>
 <span class="p">});</span>
@@ -284,9 +284,9 @@ make our code <em>self-documenting</em>. Someone can read our tests and easily s
 <blockquote class="pull-quote">
 <div>An edge case is a test case that provides input at the extreme edge of what the unit should be able to handle.</div></blockquote>
 <p>Edge cases can look very different for different units of code. Most of the examples we provided above dealt with numerical edge cases. However, edge cases can also be non-numeric.</p>
-<p>In the case of <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, the most obvious edge case would be that of the empty string, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>. This is the smallest possible string that we can use when calling <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>. Not only is it the smallest, but it is essentially <em>different</em> from the next longest string, <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>—one has characters and one doesn’t.</p>
-<p>Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is no right or wrong answer. In our case, we decided to take a very literal definition of the term “palindrome” by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> is also <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, it makes sense to consider the emtpy string a palindrome.</p>
-<p>Let’s add this test case to our spec:</p>
+<p>In the case of <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, the most obvious edge case would be that of the empty string, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>. This is the smallest possible string that we can use when calling <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>. Not only is it the smallest, but it is essentially <em>different</em> from the next longest string, <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>---one has characters and one doesn't.</p>
+<p>Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is no right or wrong answer. In our case, we decided to take a very literal definition of the term &quot;palindrome&quot; by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> is also <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, it makes sense to consider the emtpy string a palindrome.</p>
+<p>Let's add this test case to our spec:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;should consider the empty string a palindrome&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
    <span class="nx">assert</span><span class="p">.</span><span class="nx">strictEqual</span><span class="p">(</span><span class="nx">isPalindrome</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
 <span class="p">});</span>
@@ -303,7 +303,7 @@ make our code <em>self-documenting</em>. Someone can read our tests and easily s
 <h2>14.3.5. Toward a Better Testing Workflow<a class="headerlink" href="#toward-a-better-testing-workflow" title="Permalink to this headline">¶</a></h2>
 <p>In this case, we had a well-written function to write tests for, so it was straightforward to create tests that
 pass. Most situations will not be this simple. Your tests will often uncover bugs, forcing you to go back and
-update your code. That’s okay! This is precisely what tests are for.</p>
+update your code. That's okay! This is precisely what tests are for.</p>
 <p>The workflow for this situation is:</p>
 <ol class="arabic simple">
 <li>Write code</li>
@@ -319,7 +319,7 @@ update your code. That’s okay! This is precisely what tests are for.</p>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>14.3.6. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>Let’s assume we updated <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to be case-insensitive (e.g.
+<p>Let's assume we updated <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to be case-insensitive (e.g.
 <code class="docutils literal notranslate"><span class="pre">isPalindrome('Radar')</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>).</p>
 <div class="admonition-question admonition">
 <p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>

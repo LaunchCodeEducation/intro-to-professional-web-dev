@@ -48,6 +48,9 @@ replit_user = 'launchcode'
 numfig_number_figures = True
 numfig_figure_caption_prefix = "Figure"
 
+# disable smart quotes
+smartquotes = False
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['./_templates']
 

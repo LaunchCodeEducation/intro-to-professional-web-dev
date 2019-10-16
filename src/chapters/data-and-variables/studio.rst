@@ -15,21 +15,13 @@ Before You Start
 
 If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
 
-If you are working through this material on your own, use the repl.it links contained on this page.
+If you are working through this material on your own, use the `starter repl.it file <https://repl.it/@launchcode/Studio-Data-and-Variables>`__.
 
 Declare and Initialize Variables
----------------------------------
+--------------------------------
 
-Click this link to open the `starter repl.it file <https://repl.it/@launchcode/Studio-Data-and-Variables>`__.
-
-Declare and initialize a variable for every data point listed in the table
-below. Remember to account for the different data types.
-
-.. admonition:: Note
-
-   For now, use the ``string`` type for the ``date`` and ``time`` values. Later
-   in the class, we will learn other ways to work with date and time in
-   JavaScript.
+Declare and initialize a variable for every data point listed below.
+Remember to account for the different data types.
 
 .. list-table::
    :widths: auto
@@ -74,7 +66,7 @@ spaces and symbols (-, >, and \*).
 Example Output
 ^^^^^^^^^^^^^^^
 
-Note that your output will should change when you assign different values to
+Note that your output should change when you assign different values to
 ``astronautCount``, ``fuelMassKg``, etc. The point is to AVOID coding specific
 values into the ``console.log`` statements. Use your variable names instead.
 
@@ -99,7 +91,7 @@ values into the ``console.log`` statements. Use your variable names instead.
    * Fuel level: 100%
 
    -------------------------------------
-   > WEIGHT DATA
+   > MASS DATA
    -------------------------------------
    * Crew mass: 564.9 kg
    * Fuel mass: 760000 kg
@@ -131,6 +123,6 @@ Bonus Mission
 Use ``readline-sync`` to prompt the user to enter the value for
 ``astronautCount``.
 
-The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg`` should
-change based on the number of astronauts on the shuttle. (Don't forget to
-convert the input value from a string to a number).
+The values printed for ``astronautCount``, ``crewMassKg``, and ``totalMassKg``
+should change based on the number of astronauts on the shuttle. (Don't forget
+to convert the input value from a string to a number).

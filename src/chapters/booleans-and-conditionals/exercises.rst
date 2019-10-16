@@ -94,10 +94,11 @@ the only person who needs help.
       }
 
 #. The remaining exercises implement conditional code to monitor the shuttle's
-   fuel status. `Code exercises 5 - 7 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
+   fuel status. `Code exercises 5 & 6 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
    Implement the checks below using ``if`` / ``else if`` / ``else``
-   statements. Order is important when working with conditionals, and the checks below are not written in the correct sequence.
-   Please read ALL of the checks before coding and then decide on the best order for the conditionals.
+   statements. Order is important when working with conditionals, and the
+   checks below are NOT written in the correct sequence. Please read ALL of the
+   checks before coding and then decide on the best order for the conditionals.
 
    #. If ``fuelLevel`` is above 20000 AND ``engineTemperature`` is at or below
       2500, print ``"Full tank. Engines good."``

@@ -10,7 +10,7 @@ So, what happens to the code base if something happens to the machine?
 That is where remote repositories come in.
 Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository** and the programmers working on it keep copies on their local machine. 
 
-To get started with remote repositories, create an account on `Github <www.github.com/>`_.
+To get started with remote repositories, create an account on `Github <https://www.github.com/>`_.
 From there, programmers can create a remote repository, view commit history, and report issues with the code.
  
 

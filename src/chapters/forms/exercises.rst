@@ -1,17 +1,19 @@
 Exercises: Forms
 ================
-Hello programmer, we need you to make a Rocket Simulation form. Please follow the steps below and good luck!
+
+Hello programmer, we need you to make a Rocket Simulation form. Please follow
+the steps below and good luck!
 
 Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocket-simulation>`_.
 
-1. Create a ``<form>`` with these attributes.
+#. Create a ``<form>`` with these attributes.
 
-   * Set ``method`` to ``"POST"``
-   * Set ``action`` to ``"http://handlers.education.launchcode.org/request-parrot"``
+   a. Set ``method`` to ``"POST"``
+   b. Set ``action`` to ``"https://handlers.education.launchcode.org/request-parrot"``
 
-2. Add a ``<label>`` and ``<input>`` for Test Name to the ``<form>``.
+#. Add a ``<label>`` and ``<input>`` for Test Name to the ``<form>``.
 
-   * ``<label>Test Name <input type="text" name="testName"/></label>``.
+   a. ``<label>Test Name <input type="text" name="testName"/></label>``.
 
 .. list-table::
    :header-rows: 1
@@ -25,18 +27,16 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
      - ``testName``
      - No limitations
 
-3. Can you submit the form now? What is missing?
+#. Can you submit the form now? What is missing?
+#. Add a ``<button>Run Simulation</button>`` to the ``<form>``.
+#. Enter a value into the "testName" input and submit the form.
 
-4. Add a ``<button>Run Simulation</button>`` to the ``<form>``.
+   a. Was the value properly submitted to the form handler?
 
-5. Enter a value into the "testName" input and submit the form.
+#. Next add these five ``inputs`` to the ``<form>``.
 
-   * Was the value properly submitted to the form handler?
-
-6. Next add these five ``inputs`` to the ``<form>``.
-
-   * Pay attention to the types and possible options.
-   * Also add a ``<label>`` for each input.
+   a. Pay attention to the types and possible options.
+   b. Also add a ``<label>`` for each input.
 
 .. list-table::
    :header-rows: 1
@@ -90,5 +90,5 @@ Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocke
 Bonus Mission
 -------------
 
-Use an event handler and the *submit* event to validate that all inputs have values. Do NOT
-let the form be submitted if inputs are empty.
+Use an event handler and the *submit* event to validate that all inputs have
+values. Do NOT let the form be submitted if inputs are empty.

@@ -89,7 +89,7 @@
 <p>For the user input practice, we set the <code class="docutils literal notranslate"><span class="pre">keyup</span></code> and <code class="docutils literal notranslate"><span class="pre">click</span></code> events equal to
 <code class="docutils literal notranslate"><span class="pre">true</span></code>. This just checks to see if these events occur. When they do, the
 input is stored in <code class="docutils literal notranslate"><span class="pre">newMovie</span></code>, and the page refreshes.</p>
-<p>To perform more complicated tasks in response to the user’s actions, we can
+<p>To perform more complicated tasks in response to the user's actions, we can
 call a function when an event occurs. The syntax for this is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(event) = &quot;functionName(arguments...)&quot;
 </pre></div>
@@ -99,7 +99,7 @@ call a function when an event occurs. The syntax for this is:</p>
 creating an <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> function and linking it to our event handlers.</p>
 <div class="section" id="modify-the-html">
 <h2>29.6.1. Modify the HTML<a class="headerlink" href="#modify-the-html" title="Permalink to this headline">¶</a></h2>
-<p>Let’s change our code in <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> to call the function
+<p>Let's change our code in <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> to call the function
 <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> and pass the new movie title as the argument.</p>
 <ol class="arabic">
 <li><p class="first">On lines 7 and 8, replace <code class="docutils literal notranslate"><span class="pre">true</span></code> with the function call:</p>
@@ -124,7 +124,7 @@ creating an <code class="docutils literal notranslate"><span class="pre">addMovi
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Now when the user taps “Enter” or clicks the “Add” button after typing, the
+<p>Now when the user taps &quot;Enter&quot; or clicks the &quot;Add&quot; button after typing, the
 input <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> gets sent to the function.</p>
 </li>
 <li><p class="first">Since our plan is to use a function to add the new movie to the array, we no
@@ -242,11 +242,11 @@ appears in the movie list. Your page should look something like:</p>
 <div class="section" id="tidying-up-the-display">
 <h2>29.6.3. Tidying Up the Display<a class="headerlink" href="#tidying-up-the-display" title="Permalink to this headline">¶</a></h2>
 <p>Notice that after adding a new movie to the list, the text remains in the input
-box. If we click “Add” multiple times in a row, we would see something like:</p>
+box. If we click &quot;Add&quot; multiple times in a row, we would see something like:</p>
 <div class="figure">
 <img alt="Same movie added multiple times." src="../../_images/repeated-movie.png" />
 </div>
-<p>Let’s modify the code to try to prevent this from happening.</p>
+<p>Let's modify the code to try to prevent this from happening.</p>
 <div class="section" id="clear-the-input-box">
 <h3>29.6.3.1. Clear the Input Box<a class="headerlink" href="#clear-the-input-box" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic" start="5">
@@ -260,12 +260,12 @@ and modify the input statement as follows:</p>
 returns from the function, <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> is set equal to <code class="docutils literal notranslate"><span class="pre">''</span></code>, which
 clears any text from the input box.</p>
 </li>
-<li><p class="first">Since the user can also click the “Add” button to submit a title, we need to
+<li><p class="first">Since the user can also click the &quot;Add&quot; button to submit a title, we need to
 modify the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element as well:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;addMovie(newMovie.value); newMovie.value = &#39;&#39;&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Now <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> is set equal to <code class="docutils literal notranslate"><span class="pre">''</span></code>, when “Enter” or “Add” are used
+<p>Now <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> is set equal to <code class="docutils literal notranslate"><span class="pre">''</span></code>, when &quot;Enter&quot; or &quot;Add&quot; are used
 to submit data.</p>
 </li>
 </ol>
@@ -279,7 +279,7 @@ title.</p>
 <h3>29.6.3.2. Check for Duplicates<a class="headerlink" href="#check-for-duplicates" title="Permalink to this headline">¶</a></h3>
 <p>Even though we clear the input box, there is nothing to prevent the user from
 entering the same movie multiple times. While some fans may want to watch a
-film twenty times in a row, let’s have our code prevent repeats.</p>
+film twenty times in a row, let's have our code prevent repeats.</p>
 <p>Recall that the <a class="reference internal" href="../../appendices/array-method-examples/includes-examples.html#includes-examples"><span class="std std-ref">includes method</span></a> checks if an array
 contains a particular element. The method gives us several ways to check for a
 repeated title. One possibility is:</p>

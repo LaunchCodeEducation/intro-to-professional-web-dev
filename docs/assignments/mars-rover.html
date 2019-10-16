@@ -113,7 +113,7 @@ imported as a module.</li>
 <span id="rover-test-list"></span><h2>Create the Required Files<a class="headerlink" href="#create-the-required-files" title="Permalink to this headline">¶</a></h2>
 <p>In the repository, the <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> files are already
 present.</p>
-<p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.js</span></code>, create two more files—<code class="docutils literal notranslate"><span class="pre">message.js</span></code> and
+<p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.js</span></code>, create two more files---<code class="docutils literal notranslate"><span class="pre">message.js</span></code> and
 <code class="docutils literal notranslate"><span class="pre">rover.js</span></code>. Similarly, in the same folder as <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>, create
 <code class="docutils literal notranslate"><span class="pre">message.spec.js</span></code> and <code class="docutils literal notranslate"><span class="pre">rover.spec.js</span></code>.</p>
 </div>
@@ -144,35 +144,35 @@ cause excessive frustration.</p>
 creates a new <code class="docutils literal notranslate"><span class="pre">Command</span></code> object from the class, we want to make sure they pass
 a command type as the first argument.</p>
 <ol class="arabic simple">
-<li>Note that the test description reads, “throws error if a command type is NOT
-passed into the constructor as the first parameter”.<ol class="loweralpha">
+<li>Note that the test description reads, &quot;throws error if a command type is NOT
+passed into the constructor as the first parameter&quot;.<ol class="loweralpha">
 <li>So far you have only used <code class="docutils literal notranslate"><span class="pre">assert</span></code> methods to check for equality.
 Using <code class="docutils literal notranslate"><span class="pre">assert.throws</span></code> to verify if a specific error is thrown is a new
 concept. To learn how to use this new ability of <code class="docutils literal notranslate"><span class="pre">assert</span></code>, look at the
 constructor in <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and look at the test description in
 <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>. You can also look at the
 <a class="reference external" href="https://nodejs.org/docs/latest-v10.x/api/assert.html#assert_assert_throws_fn_error_message" target="_blank">official Node.js assert.throws documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li>Click “Run” to verify that the test passes. Next, comment out line 4 in
-<code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Click “Run” again to verify that the test fails (the
+<li>Click &quot;Run&quot; to verify that the test passes. Next, comment out line 4 in
+<code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Click &quot;Run&quot; again to verify that the test fails (the
 expected error is not thrown when the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is called).</li>
 <li>Restore line 4 to <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">Error(&quot;Command</span> <span class="pre">type</span> <span class="pre">required&quot;);</span></code>.</li>
-<li>Change line 12 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">'Oops'</span></code>. Click “Run”
+<li>Change line 12 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">'Oops'</span></code>. Click &quot;Run&quot;
 again to verify that the test fails (the error message did not match
 <code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required&quot;</span></code>).</li>
 <li>Restore line 12 to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required&quot;</span></code>.</li>
 </ol>
 </li>
-<li>Code the second test using, “constructor sets command type” as the
+<li>Code the second test using, &quot;constructor sets command type&quot; as the
 description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Command</span></code>
 class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains correct code. Click “Run” to verity that the first
+<li><code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains correct code. Click &quot;Run&quot; to verity that the first
 and second tests both pass.</li>
 </ol>
 </li>
-<li>Code the third test using, “constructor sets a value passed in as the 2nd
-argument” as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
+<li>Code the third test using, &quot;constructor sets a value passed in as the 2nd
+argument&quot; as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
 correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.<ol class="loweralpha">
-<li>Click “Run” to verity that all 3 command tests pass.</li>
+<li>Click &quot;Run&quot; to verity that all 3 command tests pass.</li>
 </ol>
 </li>
 </ol>
@@ -191,10 +191,10 @@ tests and passing code.</p>
 make them pass in <code class="docutils literal notranslate"><span class="pre">message.js</span></code>. Remember to use the given phrase as the test
 description.</p>
 <ol class="arabic simple" start="4">
-<li>For this test description use the text, “throws error if a name is NOT
-passed into the constructor as the first parameter”. Review the first test
+<li>For this test description use the text, &quot;throws error if a name is NOT
+passed into the constructor as the first parameter&quot;. Review the first test
 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> for an example of how to write this test.<ol class="loweralpha">
-<li>When you click “Run”, the test should fail, since you have no code in
+<li>When you click &quot;Run&quot;, the test should fail, since you have no code in
 the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class yet.</li>
 <li>Add <code class="docutils literal notranslate"><span class="pre">exports</span></code> and <code class="docutils literal notranslate"><span class="pre">require</span></code> statements as needed for your modules.</li>
 <li>Look at the code in <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Use that to help you write the
@@ -203,10 +203,10 @@ the <a class="reference internal" href="#message-class"><span class="std std-ref
 details.</li>
 </ol>
 </li>
-<li>Use “constructor sets name” as the description. The test confirms
+<li>Use &quot;constructor sets name&quot; as the description. The test confirms
 that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class correctly sets the
 <code class="docutils literal notranslate"><span class="pre">name</span></code> property in a new message object.</li>
-<li>Use “contains a commands array passed into the constructor as 2nd argument”.
+<li>Use &quot;contains a commands array passed into the constructor as 2nd argument&quot;.
 This test confirms that the <code class="docutils literal notranslate"><span class="pre">commands</span></code> property of a new message object
 contains the data passed in from the <code class="docutils literal notranslate"><span class="pre">Message(name,</span> <span class="pre">commands)</span></code> call.<ol class="loweralpha">
 <li>Hint: Inside this test, you will have to create a <code class="docutils literal notranslate"><span class="pre">commands</span></code> array, fill
@@ -226,26 +226,26 @@ constructor.</li>
 make them pass in <code class="docutils literal notranslate"><span class="pre">rover.js</span></code>. Remember to use the given phrase as the test
 description.</p>
 <ol class="arabic simple" start="7">
-<li>“constructor sets position and default values for mode and generatorWatts”.
+<li>&quot;constructor sets position and default values for mode and generatorWatts&quot;.
 Refer to the <a class="reference internal" href="#rover-class"><span class="std std-ref">Rover Class</span></a> description below for these
 default values.</li>
-<li>“response returned by receiveMessage contains name of message”</li>
-<li>“response returned by receiveMessage includes two results if two commands
-are sent in the message”</li>
-<li>“responds correctly to status check command”<ol class="loweralpha">
+<li>&quot;response returned by receiveMessage contains name of message&quot;</li>
+<li>&quot;response returned by receiveMessage includes two results if two commands
+are sent in the message&quot;</li>
+<li>&quot;responds correctly to status check command&quot;<ol class="loweralpha">
 <li>For the <code class="docutils literal notranslate"><span class="pre">STATUS_CHECK</span></code> command, <code class="docutils literal notranslate"><span class="pre">receiveMessage(message)</span></code> returns an
-object with 4 properties—<code class="docutils literal notranslate"><span class="pre">completed</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>,
+object with 4 properties---<code class="docutils literal notranslate"><span class="pre">completed</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">position</span></code>. The test should check each of these for accuracy.</li>
 <li>See the <a class="reference internal" href="#command-types-table"><span class="std std-ref">Rover Command Types</span></a> table for more
 details.</li>
 </ol>
 </li>
-<li>“responds with correct status after MODE_CHANGE”. The test should check the
+<li>&quot;responds with correct status after MODE_CHANGE&quot;. The test should check the
 <code class="docutils literal notranslate"><span class="pre">completed</span></code> property and rover mode for accuracy.</li>
-<li>“responds with false completed value when attempting to move in LOW_POWER
-mode”. The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property for accuracy and
+<li>&quot;responds with false completed value when attempting to move in LOW_POWER
+mode&quot;. The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property for accuracy and
 confirm that the rover position did not change.</li>
-<li>“responds with position for move command”.</li>
+<li>&quot;responds with position for move command&quot;.</li>
 </ol>
 </div>
 </div>
@@ -309,7 +309,7 @@ modes, see <a class="reference internal" href="#rover-modes-table"><span class="
 several functions outside of <code class="docutils literal notranslate"><span class="pre">constructor</span></code>.</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">constructor(position)</span></code><ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">position</span></code> is a number representing the rover’s position.</li>
+<li><code class="docutils literal notranslate"><span class="pre">position</span></code> is a number representing the rover's position.</li>
 <li>Sets <code class="docutils literal notranslate"><span class="pre">this.position</span></code> to <code class="docutils literal notranslate"><span class="pre">position</span></code></li>
 <li>Sets <code class="docutils literal notranslate"><span class="pre">this.mode</span></code> to <code class="docutils literal notranslate"><span class="pre">'NORMAL'</span></code></li>
 <li>Sets default value for <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> to 110</li>
@@ -317,7 +317,7 @@ several functions outside of <code class="docutils literal notranslate"><span cl
 </li>
 <li><code class="docutils literal notranslate"><span class="pre">receiveMessage(message)</span></code><ol class="loweralpha">
 <li><code class="docutils literal notranslate"><span class="pre">message</span></code> is a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</li>
-<li>Returns an object containing two properties—the original message and an
+<li>Returns an object containing two properties---the original message and an
 array of <em>results</em>. Each element in the array is an object that
 corresponds to one <code class="docutils literal notranslate"><span class="pre">Command</span></code> in <code class="docutils literal notranslate"><span class="pre">message.commands</span></code>.</li>
 <li>Specific details about how to respond to different commands are in the
@@ -387,7 +387,7 @@ NOT be completed.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>LOW_POWER</td>
-<td>Can’t be moved in this state.</td>
+<td>Can't be moved in this state.</td>
 </tr>
 <tr class="row-odd"><td>NORMAL</td>
 <td>None</td>
@@ -400,15 +400,15 @@ NOT be completed.</p>
 <p>Add the following test that checks for unknown commands in
 <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code>.</p>
 <ol class="arabic simple" start="14">
-<li>Responds with, “completed false and a message for an unknown command”.</li>
+<li>Responds with, &quot;completed false and a message for an unknown command&quot;.</li>
 </ol>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
-<p>In Canvas, open the Mars Rover assignment and click the “Submit” button.
+<p>In Canvas, open the Mars Rover assignment and click the &quot;Submit&quot; button.
 An input box will appear.</p>
 <p>Copy the URL for your repl.it project and paste it into the box, then click
-“Submit” again.</p>
+&quot;Submit&quot; again.</p>
 </div>
 </div>
 

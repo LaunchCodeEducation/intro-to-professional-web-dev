@@ -86,13 +86,15 @@
     
   <div class="section" id="exceptions-as-control-flow">
 <h1>17.3. Exceptions as Control Flow<a class="headerlink" href="#exceptions-as-control-flow" title="Permalink to this headline">¶</a></h1>
-<p>Runtime errors occur as the program runs, and they are also called exceptions. Exceptions
-are caused by referencing undeclared variables and invalid or unexpected data.</p>
+<p>Runtime errors occur as the program runs, and they are also called exceptions.
+Exceptions are caused by referencing undeclared variables and invalid or
+unexpected data.</p>
 <div class="section" id="control-flow">
 <h2>17.3.1. Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
-<p id="index-0">The <strong>control flow</strong> of a program is the order in which the statements are executed. Normal control flow
-runs from top to bottom of a file. An exception breaks the normal flow and stops the program. A stopped
-program can no longer interact with the user. Luckily JavaScript provides a way to anticipate and
+<p id="index-0">The <strong>control flow</strong> of a program is the order in which the statements are
+executed. Normal control flow runs from top to bottom of a file. An exception
+breaks the normal flow and stops the program. A stopped program can no longer
+interact with the user. Luckily JavaScript provides a way to anticipate and
 handle exceptions.</p>
 </div>
 <div class="section" id="catching-an-exception">
@@ -108,7 +110,7 @@ the control flow.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>In this example there is an array of animals. The user is asked to enter the index for the animal they want to see.
-If the user enters an index that does NOT contain an animal, the code will throw an <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> when <code class="docutils literal notranslate"><span class="pre">name</span></code>
+If the user enters an index that does NOT contain an animal, the code will throw a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> when <code class="docutils literal notranslate"><span class="pre">name</span></code>
 is referenced on an undefined value.</p>
 <p>There is a <code class="docutils literal notranslate"><span class="pre">try</span></code> block around the code that will throw the <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. There is a <code class="docutils literal notranslate"><span class="pre">catch</span></code> block that catches the error
 and contains code to inform the user that they entered an invalid index.</p>
@@ -166,7 +168,7 @@ the code goes on...
 What is special about <code class="docutils literal notranslate"><span class="pre">finally</span></code> is that <code class="docutils literal notranslate"><span class="pre">finally</span></code> code block ALWAYS runs, even if an exception is NOT thrown.</p>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p>Let’s update the above example to print out the index the user entered. We want this message to be printed EVERY time the code runs.
+<p>Let's update the above example to print out the index the user entered. We want this message to be printed EVERY time the code runs.
 Notice the <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement on line 11.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
