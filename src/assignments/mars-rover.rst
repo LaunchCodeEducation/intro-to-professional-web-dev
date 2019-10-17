@@ -87,13 +87,13 @@ tests (14, if you do the bonus) for this assignment.
    cause excessive frustration.
 
 
-``Command``
------------
+A. ``Command``
+--------------
 
 .. _command-class:
 
-Command Class
-^^^^^^^^^^^^^
+``Command`` Class
+^^^^^^^^^^^^^^^^^
 
 We'll follow TDD practices for the creation of ``Message`` and ``Rover``, but for 
 this class, ``Command``, we've provided the functionality. ``Command`` is already 
@@ -132,14 +132,15 @@ Now that we've gone over the class, let's check out the tests.
 
 .. _command-tests:
 
-Command Tests
-^^^^^^^^^^^^^
+``Command`` Tests
+^^^^^^^^^^^^^^^^^
 
 To begin, open and examine ``spec/command.spec.js``. One test has been created for 
 you. When a user creates a new ``Command`` object from the class, we want to make 
 sure they pass a command type as the first argument.
 
-#. Note that the test description reads, "throws error if a command type is NOT
+Test 1 
+   Note that the test description reads, "throws error if a command type is NOT
    passed into the constructor as the first parameter".
 
    a. So far, you have only used ``assert`` methods to check for equality.
@@ -157,7 +158,8 @@ sure they pass a command type as the first argument.
       ``"Command type required."``).
    e. Restore line 12 to ``message: "Command type required."``.
 
-#. Create a second ``Command`` test using, "constructor sets command type" as the
+Test 2
+   Create a second ``Command`` test using, "constructor sets command type" as the
    description. This test checks that the ``constructor`` in the ``Command``
    class correctly sets the ``commandType`` property in the new object.
 
@@ -166,16 +168,14 @@ sure they pass a command type as the first argument.
    b. You do not need to use ``assert.throws()`` in this test.
    c. You may not need to know the specific types of commands to write this test.
 
-#. Code a third test using, "constructor sets a value passed in as the 2nd
+Test 3 
+   Code a third test using, "constructor sets a value passed in as the 2nd
    argument" as the description. This test checks that the ``constructor``
    correctly sets the ``value`` property in the new object.
 
    a. You may not need to know a proper ``value`` in order to write this test.
    
-#. Click "Run" to verity that all 3 command tests pass.
-
-Refer to the :ref:`Command Class <command-class>` description below for more
-details about command objects.
+Click "Run" to verity that all 3 command tests pass.
 
 .. admonition:: Note
 
@@ -183,29 +183,57 @@ details about command objects.
    decrease. Refer to your earlier, passing tests to help you construct new
    tests and passing code.
 
-Message Tests
-^^^^^^^^^^^^^
+B. ``Message``
+--------------
 
-Create the following tests in ``spec/message.spec.js``, and write the code to
-make them pass in ``message.js``. Remember to use the given phrase as the test
-description.
+Recall, the role of a message object is to bundle commands to send to the rover.
 
-4. For this test description use the text, "throws error if a name is NOT
+.. _message-class:
+
+``Message`` Class
+^^^^^^^^^^^^^^^^^
+
+#. This class builds an object with two properties.
+   ``constructor(name, commands)``
+
+   a. ``name`` is a string that is the name of the message.
+   b. ``commands`` is an array of ``Command`` objects.
+
+.. admonition:: Example
+
+   .. sourcecode:: js
+
+      let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
+      let message = new Message('Test message with two commands', commands);
+
+``Message`` Tests
+^^^^^^^^^^^^^^^^^
+
+At the same level as ``command.spec.js``, create a file ``message.spec.js`` and 
+write the unit tests for the ``Message`` class as described below. Remember to use 
+the given phrase as the test description.
+
+Test 4
+   For this test description, use the text, "throws error if a name is NOT
    passed into the constructor as the first parameter". Review the first test
    in ``command.spec.js`` for an example of how to write this test.
 
-   a. When you click "Run", the test should fail, since you have no code in
-      the ``Message`` class yet.
-   b. Add ``exports`` and ``require`` statements as needed for your modules.
+   a. When you click "Run", the test should fail, since you have no ``Message`` 
+      class yet.
+   b. Create a ``message.js`` file and add ``exports`` and ``require`` statements 
+      as needed for your modules.
    c. Look at the code in ``command.js``. Use that to help you write the
       ``Message`` class in ``message.js`` so that your test passes. Refer to
-      the :ref:`Message Class <message-class>` description below for more
+      the :ref:`Message Class <message-class>` description above for more
       details.
 
-#. Use "constructor sets name" as the description. The test confirms
+Test 5
+   Use "constructor sets name" as the description. The test confirms
    that the ``constructor`` in the ``Message`` class correctly sets the
    ``name`` property in a new message object.
-#. Use "contains a commands array passed into the constructor as 2nd argument".
+
+Test 6
+   Use "contains a commands array passed into the constructor as 2nd argument".
    This test confirms that the ``commands`` property of a new message object
    contains the data passed in from the ``Message(name, commands)`` call.
 
@@ -263,47 +291,23 @@ files.
    In ``spec/command.spec.js`` the ``Command`` class is imported with this
    statement ``const Command = require('../command.js');``.
 
-.. .. _command-class:
+.. .. _message-class:
 
-.. Command Class
+.. Message Class
 .. ^^^^^^^^^^^^^
 
 .. #. This class builds an object with two properties.
-..    ``constructor(commandType, value)``
+..    ``constructor(name, commands)``
 
-..    a. ``commandType`` is a string that represents the type of command (see
-..       :ref:`Command Types table <command-types-table>` for possible values)
-..    b. ``value`` is a value related to the type of command.
+..    a. ``name`` is a string that is the name of the message.
+..    b. ``commands`` is an array of ``Command`` objects.
 
 .. .. admonition:: Example
 
 ..    .. sourcecode:: js
 
-..       let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
-..       let moveCommand = new Command('MOVE', 12000);
-
-..    ``'MODE_CHANGE'`` and ``MOVE`` are passed in as the ``commandType``
-
-..    ``'LOW_POWER'`` and 12000 are passed in as the ``value``. For a list of all
-..    modes, see :ref:`Rover Modes table <rover-modes-table>`.
-
-.. _message-class:
-
-Message Class
-^^^^^^^^^^^^^
-
-#. This class builds an object with two properties.
-   ``constructor(name, commands)``
-
-   a. ``name`` is a string that is the name of the message.
-   b. ``commands`` is an array of ``Command`` objects.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-
-      let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
-      let message = new Message('Test message with two commands', commands);
+..       let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
+..       let message = new Message('Test message with two commands', commands);
 
 .. _rover-class:
 

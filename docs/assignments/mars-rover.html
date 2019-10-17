@@ -155,10 +155,10 @@ to write all of the tests at once. Doing so will be inefficient and will
 cause excessive frustration.</p>
 </div>
 </div>
-<div class="section" id="command">
-<h2><code class="docutils literal notranslate"><span class="pre">Command</span></code><a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-command">
+<h2>A. <code class="docutils literal notranslate"><span class="pre">Command</span></code><a class="headerlink" href="#a-command" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="command-class">
-<span id="id1"></span><h3>Command Class<a class="headerlink" href="#command-class" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">Command</span></code> Class<a class="headerlink" href="#command-class" title="Permalink to this headline">¶</a></h3>
 <p>We'll follow TDD practices for the creation of <code class="docutils literal notranslate"><span class="pre">Message</span></code> and <code class="docutils literal notranslate"><span class="pre">Rover</span></code>, but for
 this class, <code class="docutils literal notranslate"><span class="pre">Command</span></code>, we've provided the functionality. <code class="docutils literal notranslate"><span class="pre">Command</span></code> is already
 written for you and you do not need to modify it to write passing tests. Open up and
@@ -193,13 +193,15 @@ types require different kinds of values. <code class="docutils literal notransla
 <p>Now that we've gone over the class, let's check out the tests.</p>
 </div>
 <div class="section" id="command-tests">
-<span id="id2"></span><h3>Command Tests<a class="headerlink" href="#command-tests" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">Command</span></code> Tests<a class="headerlink" href="#command-tests" title="Permalink to this headline">¶</a></h3>
 <p>To begin, open and examine <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code>. One test has been created for
 you. When a user creates a new <code class="docutils literal notranslate"><span class="pre">Command</span></code> object from the class, we want to make
 sure they pass a command type as the first argument.</p>
-<ol class="arabic simple">
-<li>Note that the test description reads, &quot;throws error if a command type is NOT
-passed into the constructor as the first parameter&quot;.<ol class="loweralpha">
+<dl class="docutils">
+<dt>Test 1</dt>
+<dd><p class="first">Note that the test description reads, &quot;throws error if a command type is NOT
+passed into the constructor as the first parameter&quot;.</p>
+<ol class="last loweralpha simple">
 <li>So far, you have only used <code class="docutils literal notranslate"><span class="pre">assert</span></code> methods to check for equality.
 Using <code class="docutils literal notranslate"><span class="pre">assert.throws</span></code> to verify if a specific error is thrown is a new
 concept. To learn how to use this new ability of <code class="docutils literal notranslate"><span class="pre">assert</span></code>, look at the
@@ -215,26 +217,28 @@ again to verify that the test fails (the error message did not match
 <code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>).</li>
 <li>Restore line 12 to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>.</li>
 </ol>
-</li>
-<li>Create a second <code class="docutils literal notranslate"><span class="pre">Command</span></code> test using, &quot;constructor sets command type&quot; as the
+</dd>
+<dt>Test 2</dt>
+<dd><p class="first">Create a second <code class="docutils literal notranslate"><span class="pre">Command</span></code> test using, &quot;constructor sets command type&quot; as the
 description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Command</span></code>
-class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.<ol class="loweralpha">
+class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.</p>
+<ol class="last loweralpha simple">
 <li>Without editing, <code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains the correct code. Click &quot;Run&quot; to verity that the first
 and second tests both pass.</li>
 <li>You do not need to use <code class="docutils literal notranslate"><span class="pre">assert.throws()</span></code> in this test.</li>
 <li>You may not need to know the specific types of commands to write this test.</li>
 </ol>
-</li>
-<li>Code a third test using, &quot;constructor sets a value passed in as the 2nd
+</dd>
+<dt>Test 3</dt>
+<dd><p class="first">Code a third test using, &quot;constructor sets a value passed in as the 2nd
 argument&quot; as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
-correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.<ol class="loweralpha">
+correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.</p>
+<ol class="last loweralpha simple">
 <li>You may not need to know a proper <code class="docutils literal notranslate"><span class="pre">value</span></code> in order to write this test.</li>
 </ol>
-</li>
-<li>Click &quot;Run&quot; to verity that all 3 command tests pass.</li>
-</ol>
-<p>Refer to the <a class="reference internal" href="#command-class"><span class="std std-ref">Command Class</span></a> description below for more
-details about command objects.</p>
+</dd>
+</dl>
+<p>Click &quot;Run&quot; to verity that all 3 command tests pass.</p>
 <div class="admonition-note admonition">
 <p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p class="last">As you move through the remaining instructions, the amount of guidance will
@@ -242,36 +246,64 @@ decrease. Refer to your earlier, passing tests to help you construct new
 tests and passing code.</p>
 </div>
 </div>
-<div class="section" id="message-tests">
-<h3>Message Tests<a class="headerlink" href="#message-tests" title="Permalink to this headline">¶</a></h3>
-<p>Create the following tests in <code class="docutils literal notranslate"><span class="pre">spec/message.spec.js</span></code>, and write the code to
-make them pass in <code class="docutils literal notranslate"><span class="pre">message.js</span></code>. Remember to use the given phrase as the test
-description.</p>
-<ol class="arabic simple" start="4">
-<li>For this test description use the text, &quot;throws error if a name is NOT
-passed into the constructor as the first parameter&quot;. Review the first test
-in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> for an example of how to write this test.<ol class="loweralpha">
-<li>When you click &quot;Run&quot;, the test should fail, since you have no code in
-the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class yet.</li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">exports</span></code> and <code class="docutils literal notranslate"><span class="pre">require</span></code> statements as needed for your modules.</li>
-<li>Look at the code in <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Use that to help you write the
-<code class="docutils literal notranslate"><span class="pre">Message</span></code> class in <code class="docutils literal notranslate"><span class="pre">message.js</span></code> so that your test passes. Refer to
-the <a class="reference internal" href="#message-class"><span class="std std-ref">Message Class</span></a> description below for more
-details.</li>
+</div>
+<div class="section" id="b-message">
+<h2>B. <code class="docutils literal notranslate"><span class="pre">Message</span></code><a class="headerlink" href="#b-message" title="Permalink to this headline">¶</a></h2>
+<p>Recall, the role of a message object is to bundle commands to send to the rover.</p>
+<div class="section" id="message-class">
+<span id="id3"></span><h3><code class="docutils literal notranslate"><span class="pre">Message</span></code> Class<a class="headerlink" href="#message-class" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>This class builds an object with two properties.
+<code class="docutils literal notranslate"><span class="pre">constructor(name,</span> <span class="pre">commands)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> is a string that is the name of the message.</li>
+<li><code class="docutils literal notranslate"><span class="pre">commands</span></code> is an array of <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.</li>
 </ol>
 </li>
-<li>Use &quot;constructor sets name&quot; as the description. The test confirms
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commands</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;STATUS_CHECK&#39;</span><span class="p">)];</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s1">&#39;Test message with two commands&#39;</span><span class="p">,</span> <span class="nx">commands</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="message-tests">
+<h3><code class="docutils literal notranslate"><span class="pre">Message</span></code> Tests<a class="headerlink" href="#message-tests" title="Permalink to this headline">¶</a></h3>
+<p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>, create a file <code class="docutils literal notranslate"><span class="pre">message.spec.js</span></code> and
+write the unit tests for the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class as described below. Remember to use
+the given phrase as the test description.</p>
+<dl class="docutils">
+<dt>Test 4</dt>
+<dd><p class="first">For this test description, use the text, &quot;throws error if a name is NOT
+passed into the constructor as the first parameter&quot;. Review the first test
+in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> for an example of how to write this test.</p>
+<ol class="last loweralpha simple">
+<li>When you click &quot;Run&quot;, the test should fail, since you have no <code class="docutils literal notranslate"><span class="pre">Message</span></code>
+class yet.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">message.js</span></code> file and add <code class="docutils literal notranslate"><span class="pre">exports</span></code> and <code class="docutils literal notranslate"><span class="pre">require</span></code> statements
+as needed for your modules.</li>
+<li>Look at the code in <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Use that to help you write the
+<code class="docutils literal notranslate"><span class="pre">Message</span></code> class in <code class="docutils literal notranslate"><span class="pre">message.js</span></code> so that your test passes. Refer to
+the <a class="reference internal" href="#message-class"><span class="std std-ref">Message Class</span></a> description above for more
+details.</li>
+</ol>
+</dd>
+<dt>Test 5</dt>
+<dd>Use &quot;constructor sets name&quot; as the description. The test confirms
 that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class correctly sets the
-<code class="docutils literal notranslate"><span class="pre">name</span></code> property in a new message object.</li>
-<li>Use &quot;contains a commands array passed into the constructor as 2nd argument&quot;.
+<code class="docutils literal notranslate"><span class="pre">name</span></code> property in a new message object.</dd>
+<dt>Test 6</dt>
+<dd><p class="first">Use &quot;contains a commands array passed into the constructor as 2nd argument&quot;.
 This test confirms that the <code class="docutils literal notranslate"><span class="pre">commands</span></code> property of a new message object
-contains the data passed in from the <code class="docutils literal notranslate"><span class="pre">Message(name,</span> <span class="pre">commands)</span></code> call.<ol class="loweralpha">
+contains the data passed in from the <code class="docutils literal notranslate"><span class="pre">Message(name,</span> <span class="pre">commands)</span></code> call.</p>
+<ol class="last loweralpha simple">
 <li>Hint: Inside this test, you will have to create a <code class="docutils literal notranslate"><span class="pre">commands</span></code> array, fill
 it with some <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects, and pass it into the <code class="docutils literal notranslate"><span class="pre">Message</span></code>
 constructor.</li>
 </ol>
-</li>
-</ol>
+</dd>
+</dl>
 <div class="admonition-warning admonition">
 <p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p class="last">You are moving onto the red planet now. Be prepared for fewer instructions.</p>
@@ -319,24 +351,6 @@ files.</p>
 that the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is exported using <code class="docutils literal notranslate"><span class="pre">module.exports</span> <span class="pre">=</span> <span class="pre">Command;</span></code>.
 In <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code> the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is imported with this
 statement <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">Command</span> <span class="pre">=</span> <span class="pre">require('../command.js');</span></code>.</p>
-</div>
-<div class="section" id="message-class">
-<span id="id3"></span><h3>Message Class<a class="headerlink" href="#message-class" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>This class builds an object with two properties.
-<code class="docutils literal notranslate"><span class="pre">constructor(name,</span> <span class="pre">commands)</span></code><ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code> is a string that is the name of the message.</li>
-<li><code class="docutils literal notranslate"><span class="pre">commands</span></code> is an array of <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.</li>
-</ol>
-</li>
-</ol>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commands</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;STATUS_CHECK&#39;</span><span class="p">)];</span>
-<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s1">&#39;Test message with two commands&#39;</span><span class="p">,</span> <span class="nx">commands</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="rover-class">
 <span id="id4"></span><h3>Rover Class<a class="headerlink" href="#rover-class" title="Permalink to this headline">¶</a></h3>
