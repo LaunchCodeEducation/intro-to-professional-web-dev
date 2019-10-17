@@ -95,14 +95,22 @@ tests (14, if you do the bonus) for this assignment.
 Command Class
 ^^^^^^^^^^^^^
 
-Open up and examine ``command.js``. This class is already written for you and you 
-do not need to modify it to write passing tests.
+We'll follow TDD practices for the creation of ``Message`` and ``Rover``, but for 
+this class, ``Command``, we've provided the functionality. ``Command`` is already 
+written for you and you do not need to modify it to write passing tests. Open up and 
+examine the file ``command.js``. 
 
 #. This class builds an object with two properties.
    ``constructor(commandType, value)``
 
-   a. ``commandType`` is a string that represents the type of command (see
-      :ref:`Command Types table <command-types-table>` for possible values)
+   a. ``commandType`` is a string that represents the type of command. We will go over
+      the details of the types when we get to the ``Rover`` class and tests. At this 
+      time, note that a command type will be one of the following: ``'MODE_CHANGE'``, 
+      ``'MOVE'``, or ``'STATUS_CHECK'``.
+      
+      i. To peek ahead at the full functionality of these types, refer to 
+         :ref:`Command Types table <command-types-table>`. 
+
    b. ``value`` is a value related to the type of command.
 
 .. admonition:: Example
@@ -112,10 +120,20 @@ do not need to modify it to write passing tests.
       let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
       let moveCommand = new Command('MOVE', 12000);
 
-   ``'MODE_CHANGE'`` and ``MOVE`` are passed in as the ``commandType``
+   ``'MODE_CHANGE'`` and ``'MOVE'`` are passed in as the ``commandType``
 
-   ``'LOW_POWER'`` and 12000 are passed in as the ``value``. For a list of all
-   modes, see :ref:`Rover Modes table <rover-modes-table>`.
+   ``'LOW_POWER'`` and 12000 are passed in as the ``value``. Different command 
+   types require different kinds of values. ``'STATUS_CHECK'`` takes no value.
+   
+   Don't worry about the mode options for now. To peek ahead, see 
+   :ref:`Rover Modes table <rover-modes-table>`.
+
+Now that we've gone over the class, let's check out the tests.
+
+.. _command-tests:
+
+Command Tests
+^^^^^^^^^^^^^
 
 To begin, open and examine ``spec/command.spec.js``. One test has been created for 
 you. When a user creates a new ``Command`` object from the class, we want to make 
