@@ -13,8 +13,40 @@ You will create a simulation for issuing commands to Curiosity. The idea is to
 create a *command* at mission control, convert that command into a *message*
 send it to the *rover*, then have the rover respond to that message.
 
-Requirements
-------------
+We will provide the required features you need to implement in three separate classes:
+
+#. ``Command``: 
+   A type of object containing a ``commandType`` property. ``commandType`` is one
+   of the given strings in the table below. Some ``commandTypes`` are coupled with
+   a ``value`` property, but not all. Every ``Command`` object is a single instruction 
+   to be delivered to the rover.
+#. ``Message``:
+   A ``Message`` object has a ``name`` and contains several ``Command`` objects. 
+   ``Message`` is responsible for bundling the commands from mission control and 
+   delivering them to the rover.
+#. and ``Rover``:
+   An object representing the mars rover. This class contains information on the rover's
+   ``position``, operating ``mode``, and ``generatorWatts``. It also contains a function,
+   ``receiveMessage`` that handles the various types of commands it receives and updates 
+   the rover's properties.
+
+In true TDD form, you will be asked to first write the appropriate units tests for 
+these features, before writing the code in the given class to pass those tests. 
+
+.. _rover-test-list:
+
+.. Create the Required Files
+.. --------------------------
+
+.. In the starter code, the ``command.js`` and ``command.spec.js`` files are already
+.. present.
+
+.. .. At the same level as ``command.js``, create two more files---``message.js`` and
+.. .. ``rover.js``. Similarly, in the same folder as ``command.spec.js``, create
+.. .. ``message.spec.js`` and ``rover.spec.js``.
+
+Getting Started
+---------------
 
 #. Fork the `Mars rover starter repl.it <https://repl.it/@launchcode/mars-rover-starter>`__.
 #. Write a unit test for each item in the :ref:`Test List <rover-test-list>`
@@ -30,19 +62,8 @@ Requirements
 #. Each class should be defined in its own file, which will be exported and
    imported as a module.
 
-.. _rover-test-list:
 
-Create the Required Files
---------------------------
-
-In the starter code, the ``command.js`` and ``command.spec.js`` files are already
-present.
-
-At the same level as ``command.js``, create two more files---``message.js`` and
-``rover.js``. Similarly, in the same folder as ``command.spec.js``, create
-``message.spec.js`` and ``rover.spec.js``.
-
-Test List
+How-To TDD
 ----------
 
 Recall that in TDD, you write the test for a given behavior before you code the
@@ -65,17 +86,45 @@ tests (14, if you do the bonus) for this assignment.
    to write all of the tests at once. Doing so will be inefficient and will
    cause excessive frustration.
 
-Command Tests
-^^^^^^^^^^^^^^
 
-One test has been created for you in ``spec/command.spec.js``. When a user
-creates a new ``Command`` object from the class, we want to make sure they pass
-a command type as the first argument.
+``Command``
+-----------
+
+.. _command-class:
+
+Command Class
+^^^^^^^^^^^^^
+
+Open up and examine ``command.js``. This class is already written for you and you 
+do not need to modify it to write passing tests.
+
+#. This class builds an object with two properties.
+   ``constructor(commandType, value)``
+
+   a. ``commandType`` is a string that represents the type of command (see
+      :ref:`Command Types table <command-types-table>` for possible values)
+   b. ``value`` is a value related to the type of command.
+
+.. admonition:: Example
+
+   .. sourcecode:: js
+
+      let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
+      let moveCommand = new Command('MOVE', 12000);
+
+   ``'MODE_CHANGE'`` and ``MOVE`` are passed in as the ``commandType``
+
+   ``'LOW_POWER'`` and 12000 are passed in as the ``value``. For a list of all
+   modes, see :ref:`Rover Modes table <rover-modes-table>`.
+
+To begin, open and examine ``spec/command.spec.js``. One test has been created for 
+you. When a user creates a new ``Command`` object from the class, we want to make 
+sure they pass a command type as the first argument.
 
 #. Note that the test description reads, "throws error if a command type is NOT
    passed into the constructor as the first parameter".
 
-   a. So far you have only used ``assert`` methods to check for equality.
+   a. So far, you have only used ``assert`` methods to check for equality.
       Using ``assert.throws`` to verify if a specific error is thrown is a new
       concept. To learn how to use this new ability of ``assert``, look at the
       constructor in ``command.js`` and look at the test description in
@@ -90,18 +139,22 @@ a command type as the first argument.
       ``"Command type required."``).
    e. Restore line 12 to ``message: "Command type required."``.
 
-#. Code a second ``Command`` test using, "constructor sets command type" as the
+#. Create a second ``Command`` test using, "constructor sets command type" as the
    description. This test checks that the ``constructor`` in the ``Command``
    class correctly sets the ``commandType`` property in the new object.
 
    a. Without editing, ``command.js`` contains the correct code. Click "Run" to verity that the first
       and second tests both pass.
+   b. You do not need to use ``assert.throws()`` in this test.
+   c. You may not need to know the specific types of commands to write this test.
 
 #. Code a third test using, "constructor sets a value passed in as the 2nd
    argument" as the description. This test checks that the ``constructor``
    correctly sets the ``value`` property in the new object.
 
-   a. Click "Run" to verity that all 3 command tests pass.
+   a. You may not need to know a proper ``value`` in order to write this test.
+   
+#. Click "Run" to verity that all 3 command tests pass.
 
 Refer to the :ref:`Command Class <command-class>` description below for more
 details about command objects.
@@ -192,29 +245,29 @@ files.
    In ``spec/command.spec.js`` the ``Command`` class is imported with this
    statement ``const Command = require('../command.js');``.
 
-.. _command-class:
+.. .. _command-class:
 
-Command Class
-^^^^^^^^^^^^^
+.. Command Class
+.. ^^^^^^^^^^^^^
 
-#. This class builds an object with two properties.
-   ``constructor(commandType, value)``
+.. #. This class builds an object with two properties.
+..    ``constructor(commandType, value)``
 
-   a. ``commandType`` is a string that represents the type of command (see
-      :ref:`Command Types table <command-types-table>` for possible values)
-   b. ``value`` is a value related to the type of command.
+..    a. ``commandType`` is a string that represents the type of command (see
+..       :ref:`Command Types table <command-types-table>` for possible values)
+..    b. ``value`` is a value related to the type of command.
 
-.. admonition:: Example
+.. .. admonition:: Example
 
-   .. sourcecode:: js
+..    .. sourcecode:: js
 
-      let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
-      let moveCommand = new Command('MOVE', 12000);
+..       let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
+..       let moveCommand = new Command('MOVE', 12000);
 
-   ``'MODE_CHANGE'`` and ``MOVE`` are passed in as the ``commandType``
+..    ``'MODE_CHANGE'`` and ``MOVE`` are passed in as the ``commandType``
 
-   ``'LOW_POWER'`` and 12000 are passed in as the ``value``. For a list of all
-   modes, see :ref:`Rover Modes table <rover-modes-table>`.
+..    ``'LOW_POWER'`` and 12000 are passed in as the ``value``. For a list of all
+..    modes, see :ref:`Rover Modes table <rover-modes-table>`.
 
 .. _message-class:
 

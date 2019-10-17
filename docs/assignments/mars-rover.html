@@ -94,8 +94,27 @@ use by writing tests and classes for the Mars rover named Curiosity.</p>
 <p>You will create a simulation for issuing commands to Curiosity. The idea is to
 create a <em>command</em> at mission control, convert that command into a <em>message</em>
 send it to the <em>rover</em>, then have the rover respond to that message.</p>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>We will provide the required features you need to implement in three separate classes:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Command</span></code>:
+A type of object containing a <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property. <code class="docutils literal notranslate"><span class="pre">commandType</span></code> is one
+of the given strings in the table below. Some <code class="docutils literal notranslate"><span class="pre">commandTypes</span></code> are coupled with
+a <code class="docutils literal notranslate"><span class="pre">value</span></code> property, but not all. Every <code class="docutils literal notranslate"><span class="pre">Command</span></code> object is a single instruction
+to be delivered to the rover.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Message</span></code>:
+A <code class="docutils literal notranslate"><span class="pre">Message</span></code> object has a <code class="docutils literal notranslate"><span class="pre">name</span></code> and contains several <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.
+<code class="docutils literal notranslate"><span class="pre">Message</span></code> is responsible for bundling the commands from mission control and
+delivering them to the rover.</li>
+<li>and <code class="docutils literal notranslate"><span class="pre">Rover</span></code>:
+An object representing the mars rover. This class contains information on the rover's
+<code class="docutils literal notranslate"><span class="pre">position</span></code>, operating <code class="docutils literal notranslate"><span class="pre">mode</span></code>, and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>. It also contains a function,
+<code class="docutils literal notranslate"><span class="pre">receiveMessage</span></code> that handles the various types of commands it receives and updates
+the rover's properties.</li>
+</ol>
+<p>In true TDD form, you will be asked to first write the appropriate units tests for
+these features, before writing the code in the given class to pass those tests.</p>
+<span class="target" id="rover-test-list"></span><div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </li>
@@ -114,16 +133,8 @@ imported as a module.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="create-the-required-files">
-<span id="rover-test-list"></span><h2>Create the Required Files<a class="headerlink" href="#create-the-required-files" title="Permalink to this headline">¶</a></h2>
-<p>In the starter code, the <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> files are already
-present.</p>
-<p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.js</span></code>, create two more files---<code class="docutils literal notranslate"><span class="pre">message.js</span></code> and
-<code class="docutils literal notranslate"><span class="pre">rover.js</span></code>. Similarly, in the same folder as <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>, create
-<code class="docutils literal notranslate"><span class="pre">message.spec.js</span></code> and <code class="docutils literal notranslate"><span class="pre">rover.spec.js</span></code>.</p>
-</div>
-<div class="section" id="test-list">
-<h2>Test List<a class="headerlink" href="#test-list" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-tdd">
+<h2>How-To TDD<a class="headerlink" href="#how-to-tdd" title="Permalink to this headline">¶</a></h2>
 <p>Recall that in TDD, you write the test for a given behavior before you code the
 actual function. Feel free to review the
 <a class="reference internal" href="../chapters/unit-testing/tdd.html#test-code-cycle"><span class="std std-ref">Test/Code cycle</span></a> while you work on this project.</p>
@@ -143,15 +154,39 @@ tests (14, if you do the bonus) for this assignment.</p>
 to write all of the tests at once. Doing so will be inefficient and will
 cause excessive frustration.</p>
 </div>
-<div class="section" id="command-tests">
-<h3>Command Tests<a class="headerlink" href="#command-tests" title="Permalink to this headline">¶</a></h3>
-<p>One test has been created for you in <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code>. When a user
-creates a new <code class="docutils literal notranslate"><span class="pre">Command</span></code> object from the class, we want to make sure they pass
-a command type as the first argument.</p>
+</div>
+<div class="section" id="command">
+<h2><code class="docutils literal notranslate"><span class="pre">Command</span></code><a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="command-class">
+<span id="id1"></span><h3>Command Class<a class="headerlink" href="#command-class" title="Permalink to this headline">¶</a></h3>
+<p>Open up and examine <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. This class is already written for you and you
+do not need to modify it to write passing tests.</p>
+<ol class="arabic simple">
+<li>This class builds an object with two properties.
+<code class="docutils literal notranslate"><span class="pre">constructor(commandType,</span> <span class="pre">value)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">commandType</span></code> is a string that represents the type of command (see
+<a class="reference internal" href="#command-types-table"><span class="std std-ref">Command Types table</span></a> for possible values)</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code> is a value related to the type of command.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">modeCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">moveCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MOVE&#39;</span><span class="p">,</span> <span class="mi">12000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">'MODE_CHANGE'</span></code> and <code class="docutils literal notranslate"><span class="pre">MOVE</span></code> are passed in as the <code class="docutils literal notranslate"><span class="pre">commandType</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">'LOW_POWER'</span></code> and 12000 are passed in as the <code class="docutils literal notranslate"><span class="pre">value</span></code>. For a list of all
+modes, see <a class="reference internal" href="#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a>.</p>
+</div>
+<p>To begin, open and examine <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code>. One test has been created for
+you. When a user creates a new <code class="docutils literal notranslate"><span class="pre">Command</span></code> object from the class, we want to make
+sure they pass a command type as the first argument.</p>
 <ol class="arabic simple">
 <li>Note that the test description reads, &quot;throws error if a command type is NOT
 passed into the constructor as the first parameter&quot;.<ol class="loweralpha">
-<li>So far you have only used <code class="docutils literal notranslate"><span class="pre">assert</span></code> methods to check for equality.
+<li>So far, you have only used <code class="docutils literal notranslate"><span class="pre">assert</span></code> methods to check for equality.
 Using <code class="docutils literal notranslate"><span class="pre">assert.throws</span></code> to verify if a specific error is thrown is a new
 concept. To learn how to use this new ability of <code class="docutils literal notranslate"><span class="pre">assert</span></code>, look at the
 constructor in <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and look at the test description in
@@ -167,19 +202,22 @@ again to verify that the test fails (the error message did not match
 <li>Restore line 12 to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>.</li>
 </ol>
 </li>
-<li>Code a second <code class="docutils literal notranslate"><span class="pre">Command</span></code> test using, &quot;constructor sets command type&quot; as the
+<li>Create a second <code class="docutils literal notranslate"><span class="pre">Command</span></code> test using, &quot;constructor sets command type&quot; as the
 description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Command</span></code>
 class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.<ol class="loweralpha">
 <li>Without editing, <code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains the correct code. Click &quot;Run&quot; to verity that the first
 and second tests both pass.</li>
+<li>You do not need to use <code class="docutils literal notranslate"><span class="pre">assert.throws()</span></code> in this test.</li>
+<li>You may not need to know the specific types of commands to write this test.</li>
 </ol>
 </li>
 <li>Code a third test using, &quot;constructor sets a value passed in as the 2nd
 argument&quot; as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
 correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.<ol class="loweralpha">
-<li>Click &quot;Run&quot; to verity that all 3 command tests pass.</li>
+<li>You may not need to know a proper <code class="docutils literal notranslate"><span class="pre">value</span></code> in order to write this test.</li>
 </ol>
 </li>
+<li>Click &quot;Run&quot; to verity that all 3 command tests pass.</li>
 </ol>
 <p>Refer to the <a class="reference internal" href="#command-class"><span class="std std-ref">Command Class</span></a> description below for more
 details about command objects.</p>
@@ -267,28 +305,6 @@ files.</p>
 that the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is exported using <code class="docutils literal notranslate"><span class="pre">module.exports</span> <span class="pre">=</span> <span class="pre">Command;</span></code>.
 In <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code> the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is imported with this
 statement <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">Command</span> <span class="pre">=</span> <span class="pre">require('../command.js');</span></code>.</p>
-</div>
-<div class="section" id="command-class">
-<span id="id1"></span><h3>Command Class<a class="headerlink" href="#command-class" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>This class builds an object with two properties.
-<code class="docutils literal notranslate"><span class="pre">constructor(commandType,</span> <span class="pre">value)</span></code><ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">commandType</span></code> is a string that represents the type of command (see
-<a class="reference internal" href="#command-types-table"><span class="std std-ref">Command Types table</span></a> for possible values)</li>
-<li><code class="docutils literal notranslate"><span class="pre">value</span></code> is a value related to the type of command.</li>
-</ol>
-</li>
-</ol>
-<div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">modeCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">moveCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MOVE&#39;</span><span class="p">,</span> <span class="mi">12000</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">'MODE_CHANGE'</span></code> and <code class="docutils literal notranslate"><span class="pre">MOVE</span></code> are passed in as the <code class="docutils literal notranslate"><span class="pre">commandType</span></code></p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">'LOW_POWER'</span></code> and 12000 are passed in as the <code class="docutils literal notranslate"><span class="pre">value</span></code>. For a list of all
-modes, see <a class="reference internal" href="#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a>.</p>
-</div>
 </div>
 <div class="section" id="message-class">
 <span id="id2"></span><h3>Message Class<a class="headerlink" href="#message-class" title="Permalink to this headline">¶</a></h3>
