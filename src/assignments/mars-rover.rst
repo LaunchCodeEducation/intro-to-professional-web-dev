@@ -33,17 +33,6 @@ We will provide the required features you need to implement in three separate cl
 In true TDD form, you will be asked to first write the appropriate units tests for 
 these features, before writing the code in the given class to pass those tests. 
 
-.. _rover-test-list:
-
-.. Create the Required Files
-.. --------------------------
-
-.. In the starter code, the ``command.js`` and ``command.spec.js`` files are already
-.. present.
-
-.. .. At the same level as ``command.js``, create two more files---``message.js`` and
-.. .. ``rover.js``. Similarly, in the same folder as ``command.spec.js``, create
-.. .. ``message.spec.js`` and ``rover.spec.js``.
 
 Getting Started
 ---------------
@@ -222,6 +211,14 @@ Test 4
       class yet.
    b. Create a ``message.js`` file and add ``exports`` and ``require`` statements 
       as needed for your modules.
+
+      .. admonition:: Tip
+
+         For help using ``require`` to import a ``class``, notice in ``command.js``
+         that the ``Command`` class is exported using ``module.exports = Command;``.
+         In ``spec/command.spec.js`` the ``Command`` class is imported with this
+         statement ``const Command = require('../command.js');``.
+
    c. Look at the code in ``command.js``. Use that to help you write the
       ``Message`` class in ``message.js`` so that your test passes. Refer to
       the :ref:`Message Class <message-class>` description above for more
@@ -245,77 +242,20 @@ Test 6
 
    You are moving onto the red planet now. Be prepared for fewer instructions.
 
-Rover Tests
-^^^^^^^^^^^^
 
-Create the following tests in ``spec/rover.spec.js``, and write the code to
-make them pass in ``rover.js``. Remember to use the given phrase as the test
-description.
+C. ``Rover``
+------------
 
-7. "constructor sets position and default values for mode and generatorWatts".
-   Refer to the :ref:`Rover Class <rover-class>` description below for these
-   default values.
-#. "response returned by receiveMessage contains name of message"
-#. "response returned by receiveMessage includes two results if two commands
-   are sent in the message"
-#. "responds correctly to status check command"
-
-   a. For the ``STATUS_CHECK`` command, ``receiveMessage(message)`` returns an
-      object with 4 properties---``completed``, ``mode``, ``generatorWatts``,
-      and ``position``. The test should check each of these for accuracy.
-   b. See the :ref:`Rover Command Types <command-types-table>` table for more
-      details.
-
-#. "responds with correct status after MODE_CHANGE". The test should check the
-   ``completed`` property and rover mode for accuracy.
-#. "responds with false completed value when attempting to move in LOW_POWER
-   mode". The test should check the ``completed`` property for accuracy and
-   confirm that the rover position did not change.
-#. "responds with position for move command".
-
-.. _rover-classes-methods:
-
-Required Classes and Methods
-----------------------------
-
-The ``Command`` class is already provided for you in ``command.js``. You will
-need to create a ``message.js`` file for the ``Message`` class and a
-``rover.js`` file for the ``Rover`` class. The ``Message`` and ``Rover``
-classes will need to be exported from their files and imported into the test
-files.
-
-.. admonition:: Tip
-
-   For help using ``require`` to import a ``class``, notice in ``command.js``
-   that the ``Command`` class is exported using ``module.exports = Command;``.
-   In ``spec/command.spec.js`` the ``Command`` class is imported with this
-   statement ``const Command = require('../command.js');``.
-
-.. .. _message-class:
-
-.. Message Class
-.. ^^^^^^^^^^^^^
-
-.. #. This class builds an object with two properties.
-..    ``constructor(name, commands)``
-
-..    a. ``name`` is a string that is the name of the message.
-..    b. ``commands`` is an array of ``Command`` objects.
-
-.. .. admonition:: Example
-
-..    .. sourcecode:: js
-
-..       let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
-..       let message = new Message('Test message with two commands', commands);
+``Rover`` receives a message object, updates its properties from the message, and 
+returns the results.
 
 .. _rover-class:
 
 Rover Class
 ^^^^^^^^^^^
 
-This class builds a rover object with one property, but it also contains
-several functions outside of ``constructor``.
+This class builds a rover object with a few properties, and it also contains
+a function outside of ``constructor`` to handle updates to its properties.
 
 #. ``constructor(position)``
 
@@ -327,11 +267,16 @@ several functions outside of ``constructor``.
 #. ``receiveMessage(message)``
 
    a. ``message`` is a ``Message`` object
-   b. Returns an object containing two properties---the original message and an
-      array of *results*. Each element in the array is an object that
-      corresponds to one ``Command`` in ``message.commands``.
-   c. Specific details about how to respond to different commands are in the
-      :ref:`Test List <rover-test-list>`.
+   b. Returns an object containing at least two properties:
+         
+      i. ``message``: the name of the original ``Message`` object
+      ii. ``results``: an array of *results*. Each element in the array is an 
+          object that corresponds to one ``Command`` in ``message.commands``.
+         
+   c. Updates certain properties of the rover object
+
+      i. Details about how to respond to different commands are in the
+         :ref:`Command Types table <command-types-table>`.
 
 .. admonition:: Example
 
@@ -342,18 +287,81 @@ several functions outside of ``constructor``.
       let rover = new Rover(98382);    // Passes 98382 as the rover's position.
       let response = rover.receiveMessage(message);
 
-      console.log(response.message);
-      console.log(response.results);
+      console.log(response);
 
    **Output**
 
    ::
 
-      Test message with two commands
-      [
-         {completed: true},
-         {completed: true, mode: 'LOW_POWER', generatorWatts: 110, position: 98382}
-      ]
+      {
+         message: 'Test message with two commands',
+         results: [
+            {
+               completed: true
+            },
+            {
+               completed: true, 
+               roverStatus: {
+                  mode: 'LOW_POWER', 
+                  generatorWatts: 110, 
+                  position: 98382
+               }
+            }
+         ]
+      }
+
+
+``Rover`` Tests
+^^^^^^^^^^^^^^^
+
+Create ``spec/rover.spec.js`` and write the following tests. Write the code to
+make them pass in ``rover.js``. Remember to use the given phrase as the test
+description.
+
+Test 7 
+   "constructor sets position and default values for mode and generatorWatts".
+   Refer to the :ref:`Rover Class <rover-class>` description above for these
+   default values.
+
+Test 8
+   "response returned by receiveMessage contains name of message"
+
+Test 9
+   "response returned by receiveMessage includes two results if two commands
+   are sent in the message"
+
+Test 10
+   "responds correctly to status check command"
+
+   a. For the ``STATUS_CHECK`` command, ``receiveMessage(message).results`` 
+      includes a ``roverStatus`` object describing the current state of the 
+      rover object --- ``mode``, ``generatorWatts``, and ``position``. The test 
+      should check each of these for accuracy.
+   b. See the :ref:`Rover Command Types <command-types-table>` table for more
+      details.
+
+Test 11
+   "responds correctly to mode change command". 
+   
+   a. The test should check the ``completed`` property and rover mode for accuracy.
+   b. The rover has two modes that can be passed a values to a mode change command,
+      'LOW_POWER' and 'NORMAL'.
+
+Test 12
+   "responds with false completed value when attempting to move in LOW_POWER
+   mode". 
+   
+   a. The test should check the ``completed`` property for accuracy and confirm 
+      that the rover position did not change.
+   b. Use the :ref:`Rover Modes table <rover-modes-table>` for guidance on how
+      to handle move commands in different modes.
+
+Test 13
+   "responds with position for move command".
+
+   a. A move command will update the rover's position with the position value in 
+      the command.
+
 
 .. _command-types-table:
 
@@ -365,15 +373,19 @@ Rover Command Types
 
    * - Command
      - Value sent with command
-     - Result returned from ``receiveMessage``
+     - Updates to ``Rover`` object
+     - Result returned
    * - MOVE
      - Number representing the position the rover should move to.
-     - ``{completed: true, position: 88929237}``
+     - ``position``
+     - ``{completed: true}``
    * - STATUS_CHECK
      - No values sent with this command.
-     - ``{completed: true, mode: 'NORMAL', generatorWatts: 110, position: 87382098}`` Values for ``mode``, ``generatorWatts``, ``position`` will depend on current state of rover.
+     - No updates
+     - ``{completed: true, roverStatus: {mode: 'NORMAL', generatorWatts: 110, position: 87382098}}`` Values for ``mode``, ``generatorWatts``, ``position`` will depend on current state of rover.
    * - MODE_CHANGE
      - String representing rover mode (see modes)
+     - ``mode``
      - ``{completed: true}``
 
 .. note::
@@ -403,7 +415,9 @@ Bonus Mission
 Add the following test that checks for unknown commands in
 ``spec/rover.spec.js``.
 
-14. Responds with, "completed false and a message for an unknown command".
+
+Test 14
+   "completed false and a message for an unknown command".
 
 Submitting Your Work
 --------------------
