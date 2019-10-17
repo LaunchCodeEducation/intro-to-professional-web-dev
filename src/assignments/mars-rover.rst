@@ -1,7 +1,7 @@
 Assignment #3: Mars Rover
 ==========================
 
-This task is going to put your unit tests, modules, and exceptions knowledge to
+This task puts your unit testing, modules making, and exception handling knowledge to
 use by writing tests and classes for the Mars rover named Curiosity.
 
 .. figure:: figures/curiosity-rover-selfie.jpg
@@ -11,7 +11,7 @@ use by writing tests and classes for the Mars rover named Curiosity.
 
 You will create a simulation for issuing commands to Curiosity. The idea is to
 create a *command* at mission control, convert that command into a *message*
-sent to the rover, then have the rover respond to that message.
+send it to the *rover*, then have the rover respond to that message.
 
 Requirements
 ------------
@@ -20,9 +20,11 @@ Requirements
 #. Write a unit test for each item in the :ref:`Test List <rover-test-list>`
    shown below.
 
-   a. One complete test has been created for you as an example.
+   .. note::
+   
+      One complete test has been created for you as an example.
 
-#. Use test-driven-development (TDD) to create each of the
+#. Use :ref:`test-driven development (TDD) <tdd>` to create each of the
    :ref:`required classes and methods <rover-classes-methods>` described below.
 
 #. Each class should be defined in its own file, which will be exported and
@@ -33,7 +35,7 @@ Requirements
 Create the Required Files
 --------------------------
 
-In the repository, the ``command.js`` and ``command.spec.js`` files are already
+In the starter code, the ``command.js`` and ``command.spec.js`` files are already
 present.
 
 At the same level as ``command.js``, create two more files---``message.js`` and
@@ -79,23 +81,23 @@ a command type as the first argument.
       constructor in ``command.js`` and look at the test description in
       ``command.spec.js``. You can also look at the
       `official Node.js assert.throws documentation <https://nodejs.org/docs/latest-v10.x/api/assert.html#assert_assert_throws_fn_error_message>`__.
-   b. Click "Run" to verify that the test passes. Next, comment out line 4 in
+   b. Click "Run" to verify that the test passes. Next, comment out lines 4-6 in
       ``command.js``. Click "Run" again to verify that the test fails (the
       expected error is not thrown when the ``Command`` class is called).
-   c. Restore line 4 to ``throw Error("Command type required");``.
+   c. Restore lines 4-6 to ``throw Error("Command type required.");``.
    d. Change line 12 in ``command.spec.js`` to ``message: 'Oops'``. Click "Run"
       again to verify that the test fails (the error message did not match
-      ``"Command type required"``).
-   e. Restore line 12 to ``message: "Command type required"``.
+      ``"Command type required."``).
+   e. Restore line 12 to ``message: "Command type required."``.
 
-#. Code the second test using, "constructor sets command type" as the
+#. Code a second ``Command`` test using, "constructor sets command type" as the
    description. This test checks that the ``constructor`` in the ``Command``
    class correctly sets the ``commandType`` property in the new object.
 
-   a. ``command.js`` contains correct code. Click "Run" to verity that the first
+   a. Without editing, ``command.js`` contains the correct code. Click "Run" to verity that the first
       and second tests both pass.
 
-#. Code the third test using, "constructor sets a value passed in as the 2nd
+#. Code a third test using, "constructor sets a value passed in as the 2nd
    argument" as the description. This test checks that the ``constructor``
    correctly sets the ``value`` property in the new object.
 

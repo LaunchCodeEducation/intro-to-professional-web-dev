@@ -85,7 +85,7 @@
     
   <div class="section" id="assignment-3-mars-rover">
 <h1>Assignment #3: Mars Rover<a class="headerlink" href="#assignment-3-mars-rover" title="Permalink to this headline">¶</a></h1>
-<p>This task is going to put your unit tests, modules, and exceptions knowledge to
+<p>This task puts your unit testing, modules making, and exception handling knowledge to
 use by writing tests and classes for the Mars rover named Curiosity.</p>
 <div class="figure" id="id4">
 <img alt="Image of Curiosity rover taken by the rover on Mars." src="../_images/curiosity-rover-selfie.jpg" />
@@ -93,25 +93,30 @@ use by writing tests and classes for the Mars rover named Curiosity.</p>
 </div>
 <p>You will create a simulation for issuing commands to Curiosity. The idea is to
 create a <em>command</em> at mission control, convert that command into a <em>message</em>
-sent to the rover, then have the rover respond to that message.</p>
+send it to the <em>rover</em>, then have the rover respond to that message.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li>Write a unit test for each item in the <a class="reference internal" href="#rover-test-list"><span class="std std-ref">Test List</span></a>
-shown below.<ol class="loweralpha">
-<li>One complete test has been created for you as an example.</li>
-</ol>
+<ol class="arabic">
+<li><p class="first">Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </li>
-<li>Use test-driven-development (TDD) to create each of the
-<a class="reference internal" href="#rover-classes-methods"><span class="std std-ref">required classes and methods</span></a> described below.</li>
-<li>Each class should be defined in its own file, which will be exported and
-imported as a module.</li>
+<li><p class="first">Write a unit test for each item in the <a class="reference internal" href="#rover-test-list"><span class="std std-ref">Test List</span></a>
+shown below.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">One complete test has been created for you as an example.</p>
+</div>
+</li>
+<li><p class="first">Use <a class="reference internal" href="../chapters/unit-testing/tdd.html#tdd"><span class="std std-ref">test-driven development (TDD)</span></a> to create each of the
+<a class="reference internal" href="#rover-classes-methods"><span class="std std-ref">required classes and methods</span></a> described below.</p>
+</li>
+<li><p class="first">Each class should be defined in its own file, which will be exported and
+imported as a module.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="create-the-required-files">
 <span id="rover-test-list"></span><h2>Create the Required Files<a class="headerlink" href="#create-the-required-files" title="Permalink to this headline">¶</a></h2>
-<p>In the repository, the <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> files are already
+<p>In the starter code, the <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> files are already
 present.</p>
 <p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.js</span></code>, create two more files---<code class="docutils literal notranslate"><span class="pre">message.js</span></code> and
 <code class="docutils literal notranslate"><span class="pre">rover.js</span></code>. Similarly, in the same folder as <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>, create
@@ -152,24 +157,24 @@ concept. To learn how to use this new ability of <code class="docutils literal n
 constructor in <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and look at the test description in
 <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>. You can also look at the
 <a class="reference external" href="https://nodejs.org/docs/latest-v10.x/api/assert.html#assert_assert_throws_fn_error_message" target="_blank">official Node.js assert.throws documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li>Click &quot;Run&quot; to verify that the test passes. Next, comment out line 4 in
+<li>Click &quot;Run&quot; to verify that the test passes. Next, comment out lines 4-6 in
 <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Click &quot;Run&quot; again to verify that the test fails (the
 expected error is not thrown when the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is called).</li>
-<li>Restore line 4 to <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">Error(&quot;Command</span> <span class="pre">type</span> <span class="pre">required&quot;);</span></code>.</li>
+<li>Restore lines 4-6 to <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">Error(&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;);</span></code>.</li>
 <li>Change line 12 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">'Oops'</span></code>. Click &quot;Run&quot;
 again to verify that the test fails (the error message did not match
-<code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required&quot;</span></code>).</li>
-<li>Restore line 12 to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required&quot;</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>).</li>
+<li>Restore line 12 to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>.</li>
 </ol>
 </li>
-<li>Code the second test using, &quot;constructor sets command type&quot; as the
+<li>Code a second <code class="docutils literal notranslate"><span class="pre">Command</span></code> test using, &quot;constructor sets command type&quot; as the
 description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Command</span></code>
 class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains correct code. Click &quot;Run&quot; to verity that the first
+<li>Without editing, <code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains the correct code. Click &quot;Run&quot; to verity that the first
 and second tests both pass.</li>
 </ol>
 </li>
-<li>Code the third test using, &quot;constructor sets a value passed in as the 2nd
+<li>Code a third test using, &quot;constructor sets a value passed in as the 2nd
 argument&quot; as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
 correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.<ol class="loweralpha">
 <li>Click &quot;Run&quot; to verity that all 3 command tests pass.</li>
