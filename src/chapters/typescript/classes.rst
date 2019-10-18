@@ -71,6 +71,7 @@ we need about an astronaut and then use that information in a function.
    }
 
    function astronautName (astronaut: Astronaut) {
+      name: string;
       return astronaut.name;
    }
 
