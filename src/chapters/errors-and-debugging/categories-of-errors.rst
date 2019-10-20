@@ -3,6 +3,8 @@
 Categories of Errors
 ====================
 
+.. index:: error-categories
+
 It is useful to distinguish between categories of errors in order to quickly identify and fix them. Each category manifests itself in a different way, and some strategies may be more useful for certain types of errors.
 
 Stages of JavaScript Execution
@@ -18,7 +20,6 @@ Parsing
 Before code can be run, it must first be parsed, or validated and prepared for execution. This is known as the **parsing stage**, and you can think of it like the pre-flight check for a plane or space craft. 
 
 A lot of detailed, low-level tasks are carried out during this process, but it is enough for us to understand that parsing verifies the syntax and structure of the code.
-.. _error-categories:
 
 Execution
 ^^^^^^^^^
@@ -43,7 +44,7 @@ A **syntax error** is a violation of the formal rules for a given language.
 
    So does this one
 
-For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more more syntax errors.
+For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one or more syntax errors.
 
 Programming languages are not so forgiving. If there is a single syntax error anywhere in your program, JavaScript will display an error message and quit immediately. Since syntax is validated during the parsing stage, syntax errors are the first we see when running a program.
 
