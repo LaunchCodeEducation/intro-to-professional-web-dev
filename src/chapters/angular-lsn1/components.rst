@@ -384,11 +384,11 @@ If you have not already done so, use  ``ng generate`` to *nest* the
 
    EXPERIMENT! Discover.
 
-   Where could we place the ``<inside-task-list></inside-task-list>`` element to
-   make "inside-task-list works!" appear on the screen? Select ALL options that
-   work.
+   Where could we place the ``<app-inside-task-list></app-inside-task-list>`` 
+   element to make "inside-task-list works!" appear on the screen? Select ALL 
+   options that work.
 
-   #. Place the element in``app.component.html``.
+   #. Place the element in ``app.component.html``.
    #. Place the element in ``task-list.component.html``.
    #. Place the element in ``inside-task-list.component.html``.
    #. Place the element in ``index.html``.
