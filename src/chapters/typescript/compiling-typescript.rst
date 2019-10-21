@@ -3,17 +3,22 @@ Compiling TypeScript
 
 To work with TypeScript in our Node environment, we'll need to install the TypeScript
 module. We talked before about running JavaScript in Node. Unlike JavaScript, TypeScript
-cannot be run directly in Node. Typescript files must first be transformed, or compiled,
+cannot be run directly in Node. TypeScript files must first be transformed, or compiled,
 into JavaScript.
 
 In this section, you will install the compiler and then practice compiling and
 running a small TypeScript program from the terminal.
 
-To install Typescript, in your terminal, type
+To install TypeScript, in your terminal, type
 
 .. sourcecode:: bash
 
    $ npm install -g typescript
+
+.. tip::
+
+   **Mac users:** You may receive a permissions error when running this install command.
+   If you do, try running it as :ref:`sudo <terminal-setupinstructions-sudo>`. 
 
 Once you have TypeScript installed, you'll be able to run 
 

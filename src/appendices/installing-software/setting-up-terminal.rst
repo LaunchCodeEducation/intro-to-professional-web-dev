@@ -31,6 +31,31 @@ Through LaunchPad
 
 If you are still struggling to find the Terminal application, you can do a simple search in the Finder for it!
 
+.. _terminal-setupinstructions-sudo:
+
+.. index:: ! sudo
+
+``sudo`` Commands
+^^^^^^^^^^^^^^^^^
+
+Some terminal commands require the addition of **sudo** at the front of the command. This name
+gives the user *super user* rights. ``sudo`` is often required when installing software from the terminal.
+
+.. sourcecode:: Bash
+
+   $ sudo install mocha
+   Password:
+   
+The Terminal will ask you for your machine's password. 
+
+.. tip::
+   
+   When typing, don't be alarmed if you don't see your keystrokes while typing 
+   your password. Your machine is still receiving this information.
+      
+Press *enter* when you are finished. If you're attempting to run a command from the terminal and receive a permissions error, 
+check if adding ``sudo`` to your command will resolve the error.
+
 Windows Users
 -------------
 
