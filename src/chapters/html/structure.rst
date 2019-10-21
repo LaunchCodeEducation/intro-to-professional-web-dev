@@ -68,7 +68,7 @@ To make HTML more readable to other programmers, programmers write comments in H
 .. note::
 
    Spacing and tabs helps many programmers read through theirs and their colleagues' code.
-   Be aware that doing so in HTML can effect how the browser renders the page in rare instances.
+   Be aware that doing so in HTML can affect how the browser renders the page in rare instances.
 
 Check Your Understanding
 ------------------------
