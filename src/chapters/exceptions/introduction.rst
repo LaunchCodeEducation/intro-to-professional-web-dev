@@ -34,7 +34,7 @@ Common Exceptions
 
 JavaScript has some built-in Exceptions you may have already encountered in this class.
 
-One of the most common errors in Javascript is a ``SyntaxError`` which is thrown when we include a symbol JavaScript is not expecting.
+One of the most common errors in JavaScript is a ``SyntaxError`` which is thrown when we include a symbol JavaScript is not expecting.
 
 .. admonition:: Example
 

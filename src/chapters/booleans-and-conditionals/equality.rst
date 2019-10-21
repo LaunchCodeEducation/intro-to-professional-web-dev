@@ -31,7 +31,7 @@ In the section :ref:`booleans`, we learned about the comparison operators ``==``
    single: equality; loose
 
 
-In order to properly make a comparison, the two operands must be the same type. If the two operands to ``==`` are of different data types, Javascript will implicitly convert the operands so that the values are of the same data type before comparing the two. For this reason, the ``==`` operator is often said to measure **loose equality**.
+In order to properly make a comparison, the two operands must be the same type. If the two operands to ``==`` are of different data types, JavaScript will implicitly convert the operands so that the values are of the same data type before comparing the two. For this reason, the ``==`` operator is often said to measure **loose equality**.
 
 Type conversions with ``==`` are carried out according to a `complex set of rules <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using>`_, and while many of these conversions make some sense, others do not. 
 

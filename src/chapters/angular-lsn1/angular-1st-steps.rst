@@ -196,7 +196,7 @@ learned something valuable.
 Un-launching Your Page
 -----------------------
 
-``ng serve`` continues to run until you type "control+c" in the terminal. Go
+``ng serve`` continues to run until you press *control+c* in the terminal. Go
 ahead and interrupt the process now. If you try refreshing your page, you will
 see an error.
 
