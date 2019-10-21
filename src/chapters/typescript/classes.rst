@@ -51,10 +51,14 @@ the ``extends`` keyword to denote child and parent classes, as shown here:
 Interfaces
 ----------
 
-When we start working with Angular, you may see the ``interface`` keyword quite
-a bit. Like classes, interfaces define properties and methods that a type will
+Interfaces are not used in JavaScript, but are important in TypeScript.
+Like classes, interfaces define properties and methods that a type will
 have. The difference is that interfaces do NOT include initialization of
 properties or implementations of methods.
+
+.. note:: 
+
+   Though the use of interfaces in Angular is not within the scope of this book, interfaces are used rather frequently in Angular code and are important in object-oriented programming languages, such as Java.
 
 We may create an interface for a data type that contains all of the information
 we need about an astronaut and then use that information in a function.
@@ -67,6 +71,7 @@ we need about an astronaut and then use that information in a function.
    }
 
    function astronautName (astronaut: Astronaut) {
+      name: string;
       return astronaut.name;
    }
 
