@@ -152,10 +152,14 @@ the <code class="docutils literal notranslate"><span class="pre">extends</span><
 </div>
 <div class="section" id="interfaces">
 <h2>27.5.2. Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
-<p>When we start working with Angular, you may see the <code class="docutils literal notranslate"><span class="pre">interface</span></code> keyword quite
-a bit. Like classes, interfaces define properties and methods that a type will
+<p>Interfaces are not used in JavaScript, but are important in TypeScript.
+Like classes, interfaces define properties and methods that a type will
 have. The difference is that interfaces do NOT include initialization of
 properties or implementations of methods.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Though the use of interfaces in Angular is not within the scope of this book, interfaces are used rather frequently in Angular code and are important in object-oriented programming languages, such as Java.</p>
+</div>
 <p>We may create an interface for a data type that contains all of the information
 we need about an astronaut and then use that information in a function.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -167,11 +171,13 @@ we need about an astronaut and then use that information in a function.</p>
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Astronaut</span> <span class="p">{</span>
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">astronautName</span> <span class="p">(</span><span class="nx">astronaut</span><span class="o">:</span> <span class="nx">Astronaut</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
    <span class="k">return</span> <span class="nx">astronaut</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
 <span class="p">}</span>
 
