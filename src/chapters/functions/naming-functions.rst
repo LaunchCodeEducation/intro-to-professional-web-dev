@@ -26,7 +26,7 @@ As with variables, use camel case. All functions in JavaScript should begin with
 Use Verb/Noun Pairs When Applicable
 -----------------------------------
 
-A function carries out an action, and it often produces some specific output or effect. Therefore, using a verb/noun pairs can go a long way toward making it clear what a functions does. A good verb can describe the action, and a good noun can describe the output, or the object that is being affected by the function.
+A function carries out an action, and it often produces some specific output or effect. Therefore, using verb/noun pairs can go a long way toward making it clear what a functions does. A good verb can describe the action, and a good noun can describe the output, or the object that is being affected by the function.
 
 .. admonition:: Example
 
