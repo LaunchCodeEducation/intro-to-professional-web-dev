@@ -156,7 +156,7 @@ they will be used.
 
 .. pull-quote:: Variable names should be descriptive, providing context about the data they contain and how they will be used.
 
-Let's look at an improved version this program.
+Let's look at an improved version of this program.
 
 .. sourcecode:: js
    :linenos:
