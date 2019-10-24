@@ -26,7 +26,7 @@ Create Angular Project
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Open a terminal at the root of the ``angular-lc101-mission-planner`` repository you just cloned.
-#. Create a new Angular project by running ``ng new mission-dashboard``.
+#. Create a new Angular project by running ``ng new mission-planning-dashboard``.
 
    a. When prompted about using routing, enter "N" for No.
    b. When prompted to select the stylesheet format, select CSS.
