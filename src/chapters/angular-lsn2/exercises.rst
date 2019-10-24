@@ -145,6 +145,7 @@ Change the Mission Name
 
 We can make the Mission Name heading interactive. When clicked, we want to
 present the user with an input box to enter a new name.
+For this exercise, the ``ng-template`` code you need is at the bottom of ``candidates.component.html``.
 
 #. Replace line 2 in ``candidates.component.html`` with
    ``<h2 class="centered" *ngIf = "!editMissionName; else editMission" (click)="editMissionName = true">Mission Name: {{missionName}}</h2>``.
