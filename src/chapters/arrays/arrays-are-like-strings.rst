@@ -6,7 +6,7 @@ Arrays Are Like Strings
 Arrays are similar to strings, but are a more general collection type. Like strings, **arrays** are a sequence of values that can be
 accessed via an ordered index. Unlike strings, arrays can store data of any type.
 
-The figure below demonstrates an array named languages. The array contains four strings, each of those values has an index position.
+The figure below demonstrates an array of named languages. The array contains four strings, each of those values has an index position.
 
 .. figure:: figures/Arrays-are-like-strings.png
    :alt: A label, languages, pointing to an array that contains "Python" at index 0, "C#" at index 1, "Java" at index 2, and "JavaScript" at index 3.
