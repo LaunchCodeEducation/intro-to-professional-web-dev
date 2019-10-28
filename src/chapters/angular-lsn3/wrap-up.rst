@@ -44,7 +44,7 @@ Two Topics to Consider
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 In this chapter, we discussed *one-way* data binding. As the name suggests,
-*two-way* binding exits as well. We chose not to explore this idea because
+*two-way* binding exists as well. We chose not to explore this idea because
 one-way tasks are more flexible and more frequently used. However, two-way
 binding can come in handy if you want data from an ``input`` element to
 automatically change a variable in the ``.ts`` file.

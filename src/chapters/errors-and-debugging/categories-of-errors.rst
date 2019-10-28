@@ -43,7 +43,7 @@ A **syntax error** is a violation of the formal rules for a given language.
 
    So does this one
 
-For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more more syntax errors.
+For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more syntax errors.
 
 Programming languages are not so forgiving. If there is a single syntax error anywhere in your program, JavaScript will display an error message and quit immediately. Since syntax is validated during the parsing stage, syntax errors are the first we see when running a program.
 

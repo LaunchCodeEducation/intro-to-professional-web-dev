@@ -156,7 +156,7 @@ they will be used.
 
 .. pull-quote:: Variable names should be descriptive, providing context about the data they contain and how they will be used.
 
-Let's look at an improved version this program.
+Let's look at an improved version of this program.
 
 .. sourcecode:: js
    :linenos:
@@ -194,7 +194,7 @@ In JavaScript, most programmers use the **camel case** style, which stipulates t
 - start with a lowercase letter, and
 - capitalize each internal word.
 
-In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called camel case because the capitalization of internal words is reminiscent of a camel's humps. Another another common name for this convention is **lower camel case**, since names start with a lowercase letter.
+In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. This convention is called camel case because the capitalization of internal words is reminiscent of a camel's humps. Another common name for this convention is **lower camel case**, since names start with a lowercase letter.
 
 .. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``.
 

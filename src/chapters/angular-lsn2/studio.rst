@@ -156,7 +156,7 @@ will delete that person from the crew array.
 
        Example of crew member being removed.
 
-Add line 3 to file ``src/app/crew/crew.component.ts``. Be sure to put it before the closing ``</li>``,
+Add line 4 to file ``src/app/crew/crew.component.ts``. Be sure to put it before the closing ``</li>``,
 so that the button appears next to each item in the crew list.
 
 .. sourcecode:: html+ng2
