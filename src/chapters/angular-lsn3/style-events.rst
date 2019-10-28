@@ -132,7 +132,7 @@ to a boolean. In this case, we can use the ``inactive`` variable defined in the
 
    Save your changes and refresh the web page. Now when you click on the
    "Gold" button, ``inactive`` gets set to ``true``. This adds the ``disabled``
-   attribute to the HTML tag, turing it off. In addition, the ``gold`` class is
+   attribute to the HTML tag, turning it off. In addition, the ``gold`` class is
    removed, changing the color of the button.
 #. Since the "Gold" button is no longer active, clicking on it again will not
    trigger any events. To re-enable the button, we need to tie ``inactive`` to
