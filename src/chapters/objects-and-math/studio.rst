@@ -83,15 +83,26 @@ To access the code for the orbit calculations and first bonus mission, go to
 #. Time for an excursion! Code an ``oxygenExpended`` function to accomplish the
    following:
 
-   a. Use your ``selectRandomEntry`` function to select one crew member to
-      perform a spacewalk.
+   a. The function should take a candidate object as a parameter and NOT the
+      ``crew`` array.
+
+      .. admonition:: Note
+
+         When you call ``oxygenExpended``, feel free to use your
+         ``selectRandomEntry`` to pick the crew member to pass into the
+         function.
+
    b. The spacewalk will last for three orbits around the earth. Use
       ``missionDuration`` to calculate how many hours the spacewalk will take.
-   c. Use the animal’s ``o2Used`` method to calculate how much oxygen (O :sub:`2`)
+   c. Use the candidate's ``o2Used`` method to calculate how much oxygen (O :sub:`2`)
       they consume during the spacewalk. Round the answer to 3 decimal places.
    d. Return the string, ``'__ will perform the spacewalk, which will last __
       hours and require __ kg of oxygen.'`` Fill in the blanks with the
       animal's name, the spacewalk time, and the amount of O :sub:`2` used.
+   e. We should not restrict our mission to the default values for orbital
+      radius and orbital speed. Refactor ``oxygenExpended`` to accept values
+      for these items. Remember to include the values in the
+      ``missionDuration`` call.
 
 Bonus Missions
 ---------------
