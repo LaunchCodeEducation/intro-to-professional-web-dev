@@ -39,13 +39,17 @@ We can visualize the flow of execution of a ``while`` loop as follows.
 Here is the flow of execution for a ``while`` loop:
 
 #. Evaluate the condition, which yields a value of ``true`` or ``false``.
-#. If the condition is ``false``, exit the ``while`` loop and continue execution at the next statement after the loop body.
-#. If the condition is ``true``, execute the loop body and then go back to step 1.
+#. If the condition is ``false``, exit the ``while`` loop and continue
+   execution at the next statement after the loop body.
+#. If the condition is ``true``, execute the loop body and then go back to step
+   1.
 
 ``for`` Loops Rewritten as ``while`` Loops
 ------------------------------------------
 
-We can use the ``while`` loop to create any type of iteration we wish, including anything that we have previously done with a ``for`` loop. For example, consider our initial ``for`` loop example.
+We can use the ``while`` loop to create any type of iteration we wish,
+including anything that we have previously done with a ``for`` loop. For
+example, consider our initial ``for`` loop example.
 
 .. sourcecode:: js
    :linenos:
@@ -88,9 +92,14 @@ loop*.
 Beyond ``for`` Loops
 --------------------
 
-We stated earlier that ``while`` loops are more flexible than ``for`` loops. Now we will look at an example that illustrates this.
+We stated earlier that ``while`` loops are more flexible than ``for`` loops.
+Now we will look at an example that illustrates this.
 
-This program is an example of **input validation**. It prompts the user to enter a positive number, converting the input string to the number data type. If the number is not positive, then the user is prompted again within the body of the loop. As long as the user continues to input non-positive numbers, the loop will continue to iterate.
+This program is an example of **input validation**. It prompts the user to
+enter a positive number, converting the input string to the number data type.
+If the number is not positive, then the user is prompted again within the body
+of the loop. As long as the user continues to input non-positive numbers, the
+loop will continue to iterate.
 
 .. sourcecode:: js
    :linenos:
@@ -108,7 +117,11 @@ This program is an example of **input validation**. It prompts the user to enter
 .. index::
    pair: input; validation
 
-This example illustrates the additional flexibility provided by ``while`` loops. While we use ``for`` loops to iterate over fixed collections (a string, an array, a collection of integers), the ``while`` loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.
+This example illustrates the additional flexibility provided by ``while``
+loops. While we use ``for`` loops to iterate over fixed collections (a string,
+an array, a collection of integers), the ``while`` loop can be used to iterate
+in more general circumstances. For the input validation example, at runtime it
+cannot be determined how many times the loop will repeat.
 
 Infinite Loops, Revisited
 -------------------------
@@ -131,7 +144,29 @@ if we forget to update the loop variable.
 
 This is an infinite loop. The variable ``i`` is initialized to 0 and never
 updated, so the condition ``i < 51`` will always be true. If you ran this
-program, you would see an ever-increasing list of numbers.
+program, you would see an never-ending list of zeros.
+
+Even when we remember to update the counter, we must be careful to make sure
+that the condition will eventually be ``false``.
+
+.. sourcecode:: js
+   :linenos:
+
+   let i = 0;
+
+   while (i < 51) {
+      console.log(i);
+      i--;
+   }
+
+In this case, ``i--`` decreases the value of the counter. Since ``i`` starts at
+0, ``i < 51`` will always be true. If you ran this program, you would see an
+ever-expanding list of negative numbers.
+
+.. admonition:: Tip
+
+   At some point, everyone creates an infinite loop. When this happens to you,
+   typing ``control-c`` will usually force your program to stop.
 
 Check Your Understanding
 ------------------------
