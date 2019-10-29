@@ -137,8 +137,17 @@ Winston Scott
 </div>
 <div class="section" id="multi-dimensions-and-array-methods">
 <h2>8.4.2. Multi-Dimensions and Array Methods<a class="headerlink" href="#multi-dimensions-and-array-methods" title="Permalink to this headline">¶</a></h2>
-<p>Both the inner and outer arrays in a multi-dimensional array are still altered with array
-methods.</p>
+<p>In a multi-dimensional array, both the inner and outer arrays can be altered
+with array methods. However, bracket notation must be used carefully and
+correctly.</p>
+<p>To apply a method to the outer array, the syntax is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>multiArrayName.method<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>To apply a method to one of the inner arrays, the syntax is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>multiArrayName<span class="o">[</span>indexOfInnerArray<span class="o">]</span>.method<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
 <div class="admonition-example admonition">
 <p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Use array methods to add an additional crew array and alter existing arrays.</p>
