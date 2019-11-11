@@ -114,13 +114,17 @@ false.</p>
 <p>Here is the flow of execution for a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
 <ol class="arabic simple">
 <li>Evaluate the condition, which yields a value of <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
-<li>If the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>, exit the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and continue execution at the next statement after the loop body.</li>
-<li>If the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>, execute the loop body and then go back to step 1.</li>
+<li>If the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>, exit the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and continue
+execution at the next statement after the loop body.</li>
+<li>If the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>, execute the loop body and then go back to step
+1.</li>
 </ol>
 </div>
 <div class="section" id="for-loops-rewritten-as-while-loops">
 <h2>9.6.3. <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops Rewritten as <code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#for-loops-rewritten-as-while-loops" title="Permalink to this headline">¶</a></h2>
-<p>We can use the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to create any type of iteration we wish, including anything that we have previously done with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. For example, consider our initial <code class="docutils literal notranslate"><span class="pre">for</span></code> loop example.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to create any type of iteration we wish,
+including anything that we have previously done with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. For
+example, consider our initial <code class="docutils literal notranslate"><span class="pre">for</span></code> loop example.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -161,8 +165,13 @@ loop</em>.</p>
 </div>
 <div class="section" id="beyond-for-loops">
 <h2>9.6.4. Beyond <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#beyond-for-loops" title="Permalink to this headline">¶</a></h2>
-<p>We stated earlier that <code class="docutils literal notranslate"><span class="pre">while</span></code> loops are more flexible than <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. Now we will look at an example that illustrates this.</p>
-<p>This program is an example of <strong>input validation</strong>. It prompts the user to enter a positive number, converting the input string to the number data type. If the number is not positive, then the user is prompted again within the body of the loop. As long as the user continues to input non-positive numbers, the loop will continue to iterate.</p>
+<p>We stated earlier that <code class="docutils literal notranslate"><span class="pre">while</span></code> loops are more flexible than <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.
+Now we will look at an example that illustrates this.</p>
+<p>This program is an example of <strong>input validation</strong>. It prompts the user to
+enter a positive number, converting the input string to the number data type.
+If the number is not positive, then the user is prompted again within the body
+of the loop. As long as the user continues to input non-positive numbers, the
+loop will continue to iterate.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -182,7 +191,11 @@ loop</em>.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p id="index-1">This example illustrates the additional flexibility provided by <code class="docutils literal notranslate"><span class="pre">while</span></code> loops. While we use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to iterate over fixed collections (a string, an array, a collection of integers), the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop can be used to iterate in more general circumstances. For the input validation example, at runtime it cannot be determined how many times the loop will repeat.</p>
+<p id="index-1">This example illustrates the additional flexibility provided by <code class="docutils literal notranslate"><span class="pre">while</span></code>
+loops. While we use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to iterate over fixed collections (a string,
+an array, a collection of integers), the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop can be used to iterate
+in more general circumstances. For the input validation example, at runtime it
+cannot be determined how many times the loop will repeat.</p>
 </div>
 <div class="section" id="infinite-loops-revisited">
 <h2>9.6.5. Infinite Loops, Revisited<a class="headerlink" href="#infinite-loops-revisited" title="Permalink to this headline">¶</a></h2>
@@ -202,7 +215,30 @@ if we forget to update the loop variable.</p>
 </td></tr></table></div>
 <p>This is an infinite loop. The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> is initialized to 0 and never
 updated, so the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> will always be true. If you ran this
-program, you would see an ever-increasing list of numbers.</p>
+program, you would see an never-ending list of zeros.</p>
+<p>Even when we remember to update the counter, we must be careful to make sure
+that the condition will eventually be <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">51</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+   <span class="nx">i</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">i--</span></code> decreases the value of the counter. Since <code class="docutils literal notranslate"><span class="pre">i</span></code> starts at
+0, <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">51</span></code> will always be true. If you ran this program, you would see an
+ever-expanding list of negative numbers.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">At some point, everyone creates an infinite loop. When this happens to you,
+typing <code class="docutils literal notranslate"><span class="pre">control-c</span></code> will usually force your program to stop.</p>
+</div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2>9.6.6. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
