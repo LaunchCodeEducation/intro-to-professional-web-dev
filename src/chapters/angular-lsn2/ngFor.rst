@@ -139,7 +139,7 @@ Enter ``ng serve`` to launch the project, then:
    array:
 
    a. Replace line 4 with
-      ``<li *ngfor = "let chore of chores">{{chore}}</li>``.
+      ``<li *ngFor = "let chore of chores">{{chore}}</li>``.
    b. Delete lines 5 and 6.
    c. Save your changes.
    d. Reload the web page to verify that all the chores are displayed.
