@@ -51,8 +51,21 @@ or the "column".
 
 Multi-Dimensions and Array Methods
 ----------------------------------
-Both the inner and outer arrays in a multi-dimensional array are still altered with array
-methods.
+
+In a multi-dimensional array, both the inner and outer arrays can be altered
+with array methods. However, bracket notation must be used correctly.
+
+To apply a method to the outer array, the syntax is:
+
+.. sourcecode:: bash
+
+   multiArrayName.method();
+
+To apply a method to one of the inner arrays, the syntax is:
+
+.. sourcecode:: bash
+
+   multiArrayName[indexOfInnerArray].method();
 
 .. admonition:: Example
 
@@ -86,8 +99,9 @@ methods.
 
 Beyond Two Dimensional Arrays
 -----------------------------
-Generally there is no limit to how many dimensions you can have when creating arrays. However it is rare that you will
-use more than two dimensions. Later on in the class we will learn about more collection types that can handle complex
+Generally, there is no limit to how many dimensions you can have when creating
+arrays. However it is rare that you will use more than two dimensions. Later on
+in the class we will learn about more collection types that can handle complex
 problems beyond the scope of two dimensional arrays.
 
 
