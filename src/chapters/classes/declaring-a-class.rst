@@ -40,9 +40,9 @@ properties in ``constructor`` as follows:
 
    class Astronaut {
       constructor(name, age, mass) {
-         this.name = name,
-         this.age = age,
-         this.mass = mass
+         this.name = name;
+         this.age = age;
+         this.mass = mass;
       }
    }
 
@@ -88,9 +88,9 @@ For this reason, objects created with the same class are NOT equal.
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
       }
 
@@ -132,9 +132,9 @@ key/value pairs as described in the
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
       }
 
@@ -177,9 +177,9 @@ required arguments?
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
       }
 
@@ -195,9 +195,9 @@ parameter as follows:
 
    class Astronaut {
       constructor(name, age, mass = 54){
-         this.name = name,
-         this.age = age,
-         this.mass = mass
+         this.name = name;
+         this.age = age;
+         this.mass = mass;
       }
    }
 
@@ -218,11 +218,11 @@ The questions below refer to a class called ``Car``.
 
    class Car {
       constructor(make, model, year, color, mpg){
-         this.make = make,
-         this.model = model,
-         this.year = year,
-         this.color = color,
-         this.mpg = mpg
+         this.make = make;
+         this.model = model;
+         this.year = year;
+         this.color = color;
+         this.mpg = mpg;
       }
    }
 
