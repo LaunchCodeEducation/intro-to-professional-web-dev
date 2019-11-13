@@ -367,11 +367,11 @@ You are doing great! Next you will add a search feature.
 
 #. Add this HTML ``<div class="search-form"></div>`` in ``app.component.html``.
 #. Add an ``<input>`` element inside the ``<div>``.
-#. Add a ``<button>`` element inside the ``<div>``.
-#. Add an Angular ``(click)`` handler to the ``<button>`` that calls
+#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` tag that calls
    ``search(searchTerm.value)``. ``searchTerm`` is the local variable
-   name for the ``<input>``.
-#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` that also calls
+   defined in ``<input>`` to store the data entered by the user.
+#. Add a ``<button>`` element inside the ``<div>``.
+#. Add an Angular ``(click)`` handler to the ``<button>`` that also calls
    ``search(searchTerm.value)``.
 #. Add a ``search`` method to the ``AppComponent`` class. The code for this
    method is provided below.
