@@ -60,9 +60,11 @@ filesystem of your computer and projects.
    + - ``mv <source-path> <target-path>``
      - *Moves* the file or directory at ``source-path`` from its current location to ``target-path``.
 
-.. note::
+.. admonition:: Note
 
-   ``rm`` will permanently remove items from the computer and cannot be undone.
+   #. ``rm`` will permanently remove items from the computer and cannot be undone.
+   #. Git bash does not support ``man``. Instead, ``<command> --help`` provides a
+      scaled down alternative.
 
 Beyond these basic commands, there are some shortcuts if you don't want to type
 out the full name of a directory or simply can't remember it.
