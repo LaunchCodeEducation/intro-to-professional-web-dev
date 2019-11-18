@@ -33,9 +33,9 @@ When assigning methods outside of the ``constructor``, we simply declare our met
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
 
          reportStats() {
@@ -82,9 +82,9 @@ When declaring methods inside the ``constructor``, we need to make use of the ``
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass,
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
             this.reportStats = function() {
                let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
                return stats;
@@ -120,9 +120,9 @@ Which Way is Preferred?
       // Here we assign the method inside the constructor
       class AstronautI {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass,
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
             this.reportStats = function() {
                let stats = `${this.name} is ${this.age} years old and has a mass of ${this.mass} kg.`;
                return stats;
@@ -133,9 +133,9 @@ Which Way is Preferred?
       // Here we assign the method outside of the constructor
       class AstronautO {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
 
          reportStats() {
@@ -173,8 +173,8 @@ Check Your Understanding
 
       class Plant {
          constructor(type, height) {
-            this.type = type,
-            this.height = height
+            this.type = type;
+            this.height = height;
          }
 
          grow  {

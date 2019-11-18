@@ -65,7 +65,7 @@ Tigers also got their retractable claws from the `felidae` family.
       class Panthera extends Felidae {
          constructor() {
             super();
-            this.roar = "loud"
+            this.roar = "loud";
          }
       }
 

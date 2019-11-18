@@ -40,9 +40,9 @@ properties in ``constructor`` as follows:
 
    class Astronaut {
       constructor(name, age, mass) {
-         this.name = name,
-         this.age = age,
-         this.mass = mass
+         this.name = name;
+         this.age = age;
+         this.mass = mass;
       }
    }
 
@@ -75,9 +75,7 @@ To create an object from a class, we use the keyword ``new``. The syntax is:
 
 ``new`` creates an **instance** of the class, which means that the object
 generated shares the same set of keys as every other object made from the
-class. However, the values assigned to each key differ.
-
-For this reason, objects created with the same class are NOT equal.
+class. However, the values assigned to each key may differ.
 
 .. admonition:: Example
 
@@ -88,9 +86,9 @@ For this reason, objects created with the same class are NOT equal.
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
       }
 
@@ -117,6 +115,12 @@ The output of line 14 shows that ``fox`` and ``hippo`` are both the same
 *type* of object (``Astronaut``). The two share the same *keys*, but they have
 different values assigned to those keys.
 
+.. admonition:: Note
+
+   Two objects created from the same class are NOT equal, even if the keys
+   within the objects all have the same values. The reason behind this was
+   discussed :ref:`previously <comparing-objects>`.
+
 After creating an ``Astronaut`` object, we can access, modify, or add new
 key/value pairs as described in the
 :ref:`Objects and Math chapter <objects-chapter>`.
@@ -132,9 +136,9 @@ key/value pairs as described in the
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
       }
 
@@ -177,9 +181,9 @@ required arguments?
 
       class Astronaut {
          constructor(name, age, mass){
-            this.name = name,
-            this.age = age,
-            this.mass = mass
+            this.name = name;
+            this.age = age;
+            this.mass = mass;
          }
       }
 
@@ -195,9 +199,9 @@ parameter as follows:
 
    class Astronaut {
       constructor(name, age, mass = 54){
-         this.name = name,
-         this.age = age,
-         this.mass = mass
+         this.name = name;
+         this.age = age;
+         this.mass = mass;
       }
    }
 
@@ -218,11 +222,11 @@ The questions below refer to a class called ``Car``.
 
    class Car {
       constructor(make, model, year, color, mpg){
-         this.make = make,
-         this.model = model,
-         this.year = year,
-         this.color = color,
-         this.mpg = mpg
+         this.make = make;
+         this.model = model;
+         this.year = year;
+         this.color = color;
+         this.mpg = mpg;
       }
    }
 
