@@ -75,9 +75,7 @@ To create an object from a class, we use the keyword ``new``. The syntax is:
 
 ``new`` creates an **instance** of the class, which means that the object
 generated shares the same set of keys as every other object made from the
-class. However, the values assigned to each key differ.
-
-For this reason, objects created with the same class are NOT equal.
+class. However, the values assigned to each key may differ.
 
 .. admonition:: Example
 
@@ -116,6 +114,12 @@ sets of arguments, creating the ``fox`` and ``hippo`` objects.
 The output of line 14 shows that ``fox`` and ``hippo`` are both the same
 *type* of object (``Astronaut``). The two share the same *keys*, but they have
 different values assigned to those keys.
+
+.. admonition:: Note
+
+   Two objects created from the same class are NOT equal, even if the keys
+   within the objects all have the same values. The reason behind this was
+   discussed :ref:`previously <comparing-objects>`.
 
 After creating an ``Astronaut`` object, we can access, modify, or add new
 key/value pairs as described in the
