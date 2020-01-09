@@ -1,0 +1,22 @@
+sudo: true 
+cache: pip 
+python: "3.7" 
+language: python
+
+# only execute if the master branch has changed (from a merge)
+if: type = push AND branch = master
+
+install: # install dependencies (cached)
+  - pip install -r requirements.txt
+  - pip install --upgrade git+https://github.com/LaunchCodeEducation/sphinx-bootstrap-theme.git@master
+
+script:
+  - ./build -c # run a clean build
+  - mv docs/ gh-pages/ # move to a non-conflicting directory
+
+deploy:
+  provider: pages # github pages provider
+  skip_cleanup: true # save the build output (artifact)
+  local_dir: gh-pages # the directory to deploy to GH pages
+  target_branch: gh-pages # branch to push the build artifact to 
+  github_token: $GITHUB_ACCESS_TOKEN # access token with repo:public scope
