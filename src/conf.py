@@ -1,7 +1,6 @@
 import sys
 import os
 import sphinx_bootstrap_theme
-from recommonmark.transform import AutoStructify
 
 sys.path.append(os.path.abspath('../exts'))
 
@@ -10,17 +9,17 @@ sys.path.append(os.path.abspath('../exts'))
 # Customize for the specific site. Any options in the html_theme_options
 # dictionary below may be overriden here
 site_theme_options = {
-    'navbar_title': 'Curriculum Docs',
-    'navbar_site_name': "Pages",
+    'navbar_title': 'Curriculum Book',
+    'navbar_site_name': "",
     'bootswatch_theme': 'launchcode',
 }
 
-project = 'LaunchCode Curriculum Docs'
+project = 'LaunchCode Curriculum Book'
 
 # -- Project information -----------------------------------------------------
 
 
-copyright = '2018, LaunchCode'
+copyright = '2020, LaunchCode'
 author = 'LaunchCode'
 
 # The short X.Y version
@@ -162,10 +161,8 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 html_sidebars = {
-    '**': ['localtoc.html'],
-    'index': [],
-    'search': [],
-    'about': []
+    '**': [],
+
 }
 
 
@@ -183,7 +180,4 @@ todo_include_todos = False
 def setup(app):
     app.add_stylesheet('fa/css/all.css')
     app.add_stylesheet('css/launchcode.css')
-    app.add_config_value('recommonmark_config', {
-            'enable_eval_rst': True,
-            }, True)
-    app.add_transform(AutoStructify)
+    app.add_stylesheet('css/site.css')

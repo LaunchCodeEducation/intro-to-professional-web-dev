@@ -30,8 +30,3 @@ Appendices
 .. toctree::
    :maxdepth: 1
    :name: appendicestoc
-
-.. toctree::
-   :hidden:
-
-   index-full
