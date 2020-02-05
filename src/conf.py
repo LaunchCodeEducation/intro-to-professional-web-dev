@@ -36,7 +36,7 @@ release = ''
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
-    'youtube'
+    'youtube',
     'external_links',
     'admonition_icons',
     'replit',
