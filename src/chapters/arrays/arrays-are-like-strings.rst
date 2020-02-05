@@ -3,10 +3,12 @@ Arrays Are Like Strings
 
 .. index:: ! array
 
-Arrays are similar to strings, but are a more general collection type. Like strings, **arrays** are a sequence of values that can be
-accessed via an ordered index. Unlike strings, arrays can store data of any type.
+Arrays are similar to strings, but are a more general collection type. Like
+strings, **arrays** are a sequence of values that can be accessed via an
+ordered index. Unlike strings, arrays can store data of any type.
 
-The figure below demonstrates an array of named languages. The array contains four strings, each of those values has an index position.
+The figure below demonstrates an array of named languages. The array contains
+four strings, each of those values has an index position.
 
 .. figure:: figures/Arrays-are-like-strings.png
    :alt: A label, languages, pointing to an array that contains "Python" at index 0, "C#" at index 1, "Java" at index 2, and "JavaScript" at index 3.
@@ -17,7 +19,10 @@ Declaring an Array
 .. index::
    single: array; literal
 
-Programmers use multiple ways to declare a new array. The simplest way is to use **array literal** notation ``[]``. Anything enclosed in the square brackets will be *items* in the array. Each item should be followed by a comma ``,``. If there are no items inside the brackets, then the array is considered empty.
+Programmers use multiple ways to declare a new array. The simplest way is to
+use **array literal** notation ``[]``. Anything enclosed in the square brackets
+will be *items* in the array. Each item should be followed by a comma ``,``. If
+there are no items inside the brackets, then the array is considered empty.
 
 .. sourcecode:: js
    :linenos:
@@ -40,8 +45,10 @@ Array items can also be declared on multiple lines.
 
 Array Length
 ------------
-To check the length of an array, use the ``length`` property, just like with strings.
-JavaScript array length is NOT fixed, meaning you can add or remove items dynamically.
+
+To check the length of an array, use the ``length`` property, just like with
+strings. JavaScript array length is NOT fixed, meaning you can add or remove
+items dynamically.
 
 .. note::
 
@@ -72,14 +79,15 @@ JavaScript array length is NOT fixed, meaning you can add or remove items dynami
 Varying Data Types
 ------------------
 
-JavaScript arrays can hold a mixture of values of any type. For example, you can have an array that contains strings, numbers, and booleans.
+JavaScript arrays can hold a mixture of values of any type. For example, you
+can have an array that contains strings, numbers, and booleans.
 
 .. sourcecode:: js
 
    let grabBag = ["A string value", true, 99, 105.5];
 
-.. note::
-   
+.. admonition:: Note
+
    It’s rare that you would store data of multiple types in the same array, because grouped data is usually the same type. In other languages, such as Java and C#, all items in an array have to be of the same type.
 
 
