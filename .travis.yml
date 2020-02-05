@@ -1,0 +1,21 @@
+sudo: true
+cache: pip
+python: "3.7"
+language: python
+
+if: type = push AND branch = master
+
+install: # install dependencies (cached)
+  - pip install -r requirements.txt
+
+script:
+  - ./build -c # run clean build
+  - mv docs/ gh-pages/
+
+deploy:
+  provider: pages # github pages provider
+  skip_cleanup: true # save the build output (artifact)
+  local_dir: gh-pages # the directory to deploy to GH pages
+  target_branch: gh-pages # branch to push to
+  github_token: $GITHUB_ACCESS_TOKEN # access token with repo:public scope
+  
