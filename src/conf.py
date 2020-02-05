@@ -1,7 +1,6 @@
 import sys
 import os
 import sphinx_bootstrap_theme
-from recommonmark.transform import AutoStructify
 
 sys.path.append(os.path.abspath('../exts'))
 
