@@ -34,6 +34,8 @@ tree, select the ``parts1-5.ts`` file.
 .. figure:: ./figures/TS-exercises-file-tree.png
    :alt: VSCode file tree for the TypeScript exercises.
 
+   VSCode file tree
+
 In the space indicated, declare and assign a variable for each of the
 following:
 
@@ -136,7 +138,7 @@ Part 4 - Create a Spacecraft Class
 
 Organize ``getDaysToLocation`` and the variables for name, speed, and miles per
 kilometer by moving them into a *class*.
- 
+
 #. Define a class named ``Spacecraft``.
 
    a. Properties
