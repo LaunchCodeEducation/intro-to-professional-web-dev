@@ -1,12 +1,12 @@
 # About this Repository
 
-This repository is a template to be used to create curriculum sites for LaunchCode education purposes.
+This repository is a template used by the LaunchCode Education team for creating LaunchCode education sites for LaunchCode classes. 
 
 ## How to Use this Repository
 
-Create a new LaunchCode curriculum site using this template as a starting point. 
-Maintain this template as an upstream repository so that you may incorporate any updates made here into your 
-curriculum. 
+This template is derived from [LaunchCode's Curriculum Module Template](https://github.com/LaunchCodeEducation/curriculum-module-template) and used for original LaunchCode Education content.
+
+When creating a new LaunchCode Education book, use this template as a starting point and add it as a remote repository so that you may pull down updates made to it into your book. 
 
 ### Customize conf.py
 
