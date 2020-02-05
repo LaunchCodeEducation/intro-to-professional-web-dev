@@ -9,7 +9,7 @@ components and generating new ones.
 Starter Code
 -------------
 For this set of exercises, you will need a copy of the LaunchCode Angular
-projects repository:
+projects repository. If you haven't done so already,
 
 #. Fork the
    `angular-lc101-projects repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
@@ -17,9 +17,7 @@ projects repository:
 #. Clone your fork. If you need a reminder for how to do this, refer to the
    :ref:`Git studio <clone-from-git>`.
 
-The repository contains all of the starter code you will need for the examples
-and exercises in Angular lessons 1, 2, and 3. Each lesson has its own folder,
-so navigate into the lesson 1 exercises now:
+Navigate into the lesson 1 exercises now:
 
 .. sourcecode:: bash
 
@@ -29,7 +27,7 @@ so navigate into the lesson 1 exercises now:
       lesson1 lesson2 lesson3
    $ cd lesson1
    $ ls
-      exercises
+      exercises examples
    $ cd exercises
 
 The repository contains code but NOT the Angular modules necessary to launch
