@@ -39,14 +39,35 @@ like. No details yet, just defined spaces where information needs to be added.
 Let's see how using a template makes our lives easier.
 
 No Template
-^^^^^^^^^^^^
+^^^^^^^^^^^
 
-The code below builds a simple 3-column web page. It defines the location for
-each heading, unordered list, and button. The CSS file (not shown) specifies
+To demonstrate how helpful templates can be, you will need a copy of the LaunchCode Angular projects repository:
+
+#. Fork the
+   `angular-lc101-projects repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
+   on GitHub.
+#. Clone your fork. If you need a reminder for how to do this, refer to the
+   :ref:`Git studio <clone-from-git>`.
+
+The repository contains a lot of angular code that we will soon go over. For now, navigate to 
+*lesson1/examples/noTemplate*.
+
+.. sourcecode:: bash
+
+   $ pwd
+      angular-lc101-projects
+   $ ls
+      lesson1 lesson2 lesson3
+   $ cd lesson1
+   $ ls
+      exercises examples
+   $ cd examples/noTemplate
+
+The code in ``noTemplate/index.html`` builds a simple 3-column web page. It defines the location for
+each heading, unordered list, and button. The ``noTemplate/style.css`` file (not shown) specifies
 the font, text size, colors, etc.
 
-.. replit:: html
-   :slug: NoTemplateExample
+.. sourcecode:: html
    :linenos:
 
    <body>
@@ -87,6 +108,16 @@ the font, text size, colors, etc.
          <a href="https://www.webelements.com/" target="_blank">WebElements</a>
       </div>
    </body>
+   
+
+Copy the file path for ``noTemplate/index.html`` and enter the address into your browser. You'll see a page
+like this:
+
+.. figure:: ./figures/angularNoTemplate.png
+   :scale: 40%
+   :alt: A uniquely styled web page.
+
+   A uniquely styled web page.
 
 We could drastically improve the appearance and content of the page by playing
 around with the tags, classes, styles and text. However, any change we want to
@@ -97,6 +128,7 @@ multiple blocks of code.
 
 A Better Way
 ^^^^^^^^^^^^^
+
 
 Each section in a template contains one or more *blanks* where specific items
 need to be added. Separate JavaScript code sends data to the template to fill
@@ -128,6 +160,13 @@ in these blanks, and this data can change based on a user's actions.
       <div class="links">{{headingAndLinkList}}</div>
    </body>
 
+
+.. admonition:: Tip 
+
+   Don't change your HTML in ``noTemplate/index.html``. We haven't yet covered the Angular work needed 
+   to make use of this templating syntax.
+
+   
 This HTML looks similar to the previous example, but saves about 16 lines. It
 provides the same ``<div></div>`` structure but replaces some of the specific
 text between the tags with *placeholders*.

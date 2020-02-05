@@ -8,11 +8,10 @@ if: type = push AND branch = master
 
 install: # install dependencies (cached)
   - pip install -r requirements.txt
-  - pip install --upgrade git+https://github.com/LaunchCodeEducation/sphinx-bootstrap-theme.git@master
 
 script:
-  - ./build -c # run a clean build
-  - mv docs/ gh-pages/ # move to a non-conflicting directory
+  - ./build -c # run clean build
+  - mv docs/ gh-pages/
 
 deploy:
   provider: pages # github pages provider
