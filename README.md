@@ -12,3 +12,6 @@ curriculum.
 
 Change ``site_theme_options.navbar_title`` and ``project`` to match your curriculum content.
 
+## Disclaimer
+
+Some LaunchCode Education book sites use a modified version of this template called [Curriculum Book Template](https://github.com/LaunchCodeEducation/curriculum-book-template).
