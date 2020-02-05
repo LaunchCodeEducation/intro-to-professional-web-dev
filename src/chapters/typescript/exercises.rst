@@ -229,10 +229,11 @@ Part 5 - Export and Import the SpaceLocation Class
    a. Paste ``import { SpaceLocation } from './SpaceLocation';`` to the top of
       ``parts1-5.ts``.
 
-#. Replace the earlier ``console.log`` statements to use the class instance to
-   print out the days to Mars and the Moon.
+#. Replace the earlier ``console.log`` statements by using the class instance
+   to print out the days to Mars and the Moon.
 
    .. sourcecode:: js
+      :lineno-start: 47
 
       spaceShuttle.printDaysToLocation(new SpaceLocation('Mars', kilometersToMars));
       spaceShuttle.printDaysToLocation(new SpaceLocation('the Moon', kilometersToTheMoon));
