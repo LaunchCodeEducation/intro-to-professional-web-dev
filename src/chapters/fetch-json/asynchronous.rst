@@ -143,7 +143,7 @@ Check Your Understanding
 .. admonition:: Question
 
    ``then`` is a method of the ``Promise`` class that allows us to run code
-   after an event is completed?
+   after an event is completed.
 
    #. True
    #. False
