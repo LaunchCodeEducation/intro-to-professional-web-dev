@@ -15,27 +15,27 @@ and talk about the terms **asynchronous** and **synchronous**.
 
     Synchronous: Simultaneous or concurrent in time.
 
-When fetching data in JavaScript, the HTTP requests are asynchronous. In brief, that 
-means when an HTTP request is sent, we don't know exactly when a response will be 
-received by the browser. Remember that HTTP requests are sent to an address, then a 
-response is sent. That process takes a variable amount of time depending on network 
+When fetching data in JavaScript, the HTTP requests are asynchronous. In brief, that
+means when an HTTP request is sent, we don't know exactly when a response will be
+received by the browser. Remember that HTTP requests are sent to an address, then a
+response is sent. That process takes a variable amount of time depending on network
 speed, the address location, and response size.
 
 .. note::
 
-   These requests are also called **AJAX requests** (Asynchronous JavaScript and XML). 
+   These requests are also called **AJAX requests** (Asynchronous JavaScript and XML).
    The XML part of AJAX refers to a data format that was popular before JSON.
 
 
 Response Handlers
 -----------------
 
-Browsers can't stop everything and wait for a response to an HTTP request. Browsers 
-have to render HTML, interact with the user, and run JavaScript. To keep these 
-processes running seamlessly, without any noticeable pauses, the browser relies on 
+Browsers can't stop everything and wait for a response to an HTTP request. Browsers
+have to render HTML, interact with the user, and run JavaScript. To keep these
+processes running seamlessly, without any noticeable pauses, the browser relies on
 events.
 
-This is where ``.then()`` and the response handler function come in. The browser 
+This is where ``.then()`` and the response handler function come in. The browser
 provides us with a way to handle the response whenever it is received.
 
 
@@ -47,7 +47,7 @@ Promises and the ``then`` Function
 .. index::
    single: asynchronous; promise
 
-Let's look again at a simple ``fetch`` example. Notice on line 1 that ``then`` is 
+Let's look again at a simple ``fetch`` example. Notice on line 1 that ``then`` is
 called on the value returned from ``fetch``.
 
 .. sourcecode:: js
@@ -57,7 +57,7 @@ called on the value returned from ``fetch``.
       console.log(response);
    } );
 
-To make it clearer, let's capture the value returned by ``fetch`` in a variable 
+To make it clearer, let's capture the value returned by ``fetch`` in a variable
 named ``fetchPromise``.
 
 .. sourcecode:: js
@@ -73,9 +73,9 @@ represents a **promise**. A promise is the `eventual` outcome of an asynchronous
 In the above example, ``fetchPromise`` represents the eventual response from the HTTP request to
 ``https://handlers.education.launchcode.org/static/weather.json``.
 
-A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed 
-to the response handler function. The ``then`` method of ``Promise`` defines what will 
-happen when the promise is fulfilled. When a promise is rejected, the error reason is 
+A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed
+to the response handler function. The ``then`` method of ``Promise`` defines what will
+happen when the promise is fulfilled. When a promise is rejected, the error reason is
 returned.
 
 The above example can be translated to these steps
@@ -89,7 +89,7 @@ More Promises
 
 Above, we showed a promise representing the outcome of an HTTP request, however, promises can represent the outcome of `any` asynchronous event.
 For example, the ``response`` object has a ``json()`` function that will return the JSON data in the
-response. The ``json()`` function returns a `promise` that represents the future result 
+response. The ``json()`` function returns a `promise` that represents the future result
 of turning the response data into JSON.
 
 The example below shows how promises are used to represent two different types of asynchronous events and the outcomes.
@@ -107,8 +107,8 @@ The example below shows how promises are used to represent two different types o
          });
       } );
 
-   This example involves two promises. On line 1, ``fetchPromise`` is a promise that represents the 
-   fetch request. On line 3, ``jsonPromise`` is a promise that represents the response data being turned 
+   This example involves two promises. On line 1, ``fetchPromise`` is a promise that represents the
+   fetch request. On line 3, ``jsonPromise`` is a promise that represents the response data being turned
    into JSON.
 
    Finally on line 5, the JSON data can be logged.
@@ -124,14 +124,28 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   True or False, we know exactly when an asynchronous request will return?
+   We know exactly when an asynchronous request will return.
 
+   #. True
+   #. False
+
+.. Answer: False
 
 .. admonition:: Question
 
-   True or False, a Promise can represent any future event?
+   A promise can represent the outcome of *any* future event.
+
+   #. True
+   #. False
+
+.. Answer: True
 
 .. admonition:: Question
 
-   True or False, ``then`` is a method of the ``Promise`` class that allows us to run code
-   after an event is completed?
+   ``then`` is a method of the ``Promise`` class that allows us to run code
+   after an event is completed.
+
+   #. True
+   #. False
+
+.. Answer: True
