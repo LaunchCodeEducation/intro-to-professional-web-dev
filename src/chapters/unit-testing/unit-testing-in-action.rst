@@ -101,7 +101,7 @@ We'll start with positive and negative tests. For ``isPalindrome``, some positiv
 - ``"aba"``
 - ``"racecar"``
 
-Calling ``isPalindrome`` with these inputs should return ``true`` in each case. Notice that these tests are a
+Calling ``isPalindrome`` with these inputs should return ``true`` in each case. Notice that these tests are as
 simple as possible. Keeping test inputs simple, while still covering your desired test cases, will make it
 easier to fix a bug in the event that a unit test fails.
 

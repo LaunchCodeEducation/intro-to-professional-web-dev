@@ -157,4 +157,4 @@ a function so it can be reused.
 
 The refactor is also done in a TDD process. Decide on what is the improved way of implementing the
 feature and then change the unit test to use this new idea. See the test fail, then
-implement the refactor idea. Finally see the tests pass with the refactored design.
+implement the refactor idea. Finally, see the tests pass with the refactored design.
