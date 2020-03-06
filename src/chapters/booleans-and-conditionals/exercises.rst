@@ -65,7 +65,7 @@ the only person who needs help.
 
    #. ``shuttleSpeed``
 
-      - If the value is ``> 17,500``, print
+      - If the value is ``> 17500``, print
         ``"ALERT: Escape velocity reached!"``
       - Else if the value is ``< 8000``, print
         ``"ALERT: Cannot maintain orbit!"``
