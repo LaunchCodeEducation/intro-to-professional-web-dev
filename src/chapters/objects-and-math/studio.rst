@@ -36,9 +36,9 @@ data file and in the ``idNumbers`` array.
    ``idNumbers`` array. Review the
    :ref:`Combining Math Methods <random-array-item>` section if you need a
    reminder on how to do this.
-#. Use the function to select three ID numbers.  Store these selections in a
-   new array, making sure to avoid repeated numbers. No animal can be selected
-   more than once!
+#. Call the function three times to select three ID numbers. Store these
+   selections in a new array, making sure to avoid repeated numbers. No animal
+   can be selected more than once!
 #. Use a template literal to print, ``'____, ____, and ____ are going to
    space!'`` Fill in the blanks with the names of the selected animals.
 
