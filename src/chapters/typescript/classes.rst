@@ -134,7 +134,7 @@ This can be helpful when a function parameter needs to make use of certain behav
    which means ``Tiger`` and ``Lion`` must have a ``roar`` property.
 
    The function ``pantheraSounds`` has one parameter of type ``Panthera``. The variables ``tiger`` and ``lion`` can be passed into ``pantheraSounds``
-   because they are instances of classes that implement the ``Panthera`` type.
+   because they are instances of classes that implement the ``Panthera`` interface.
 
 Optional Parameters
 ^^^^^^^^^^^^^^^^^^^
