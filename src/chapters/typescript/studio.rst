@@ -138,14 +138,14 @@ Rocket Class
 
       * Returns ``true`` if ``this.currentMassKg() + item.massKg <= this.totalCapacityKg``
 
-   d. ``addCargo(cargo: Cargo)``.
+   d. ``addCargo(cargo: Cargo): boolean``
 
       * Uses ``this.canAdd()`` to see if another item can be added.
       * If ``true``, adds ``cargo`` to ``this.cargoItems`` and returns
         ``true``.
       * If ``false``, returns ``false``.
 
-   e. ``addAstronaut(astronaut: Astronaut)``.
+   e. ``addAstronaut(astronaut: Astronaut): boolean``
 
       * Uses ``this.canAdd()`` to see if another astronaut can be added.
       * If ``true``, adds ``astronaut`` to ``this.astronauts`` and returns ``true``.
