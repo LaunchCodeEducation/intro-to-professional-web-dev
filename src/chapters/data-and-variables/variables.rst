@@ -130,7 +130,7 @@ After a variable has been created, it may be used later in a program anywhere a 
 
 .. admonition:: Example
 
-   These two examples have the exact same same output.
+   These two examples have the exact same output.
 
    .. sourcecode:: js
 
