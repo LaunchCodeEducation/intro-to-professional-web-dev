@@ -70,6 +70,8 @@ Arithmetic Operators
 
 .. index:: ! arithmetic operators
 
+.. index:: ! +, ! -, ! *, ! /, ! **, ! ++, ! --
+
 Some of most commonly-used operators are the **arithmetic operators**, which carry out basic mathematical operations. These behave exactly as you are used to, though the modulus operator (``%``) may be new to you.
 
 .. list-table:: Arithmetic operators
@@ -106,7 +108,10 @@ Some of most commonly-used operators are the **arithmetic operators**, which car
      - Subtracts one from its operand. The return value is analogous to that for the increment operator.
      - If ``x`` is ``2``, then ``--x`` sets ``x`` to ``1`` and returns ``1``, whereas ``x--`` returns ``2`` and, only then, sets ``x`` to ``1``
 
-While the modulus operator (``%``) is common in programming, it is not used much outside of programming. Let's explore how it works with a few examples.
+.. index:: ! modulus, ! %
+
+While the **modulus operator** (``%``) is common in programming, it is not used much
+outside of programming. Let's explore how it works with a few examples.
 
 The ``%`` operator returns the *remainder* obtained by carrying out integer division of the first operand by the second operand. Therefore, ``5 % 3`` is ``2`` because 3 goes into 5 one whole time, with a remainder of 2 left over.
 
@@ -118,7 +123,7 @@ The ``%`` operator returns the *remainder* obtained by carrying out integer divi
    - 7 % 2 is 1
 
 The last two examples illustrate a general rule: An integer x is even exactly
-when x % 2 is 0 and is odd exactly when x % 2 is 1.
+when ``x % 2`` is ``0`` and is odd exactly when ``x % 2`` is ``1``.
 
 .. admonition:: Note
 
