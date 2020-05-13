@@ -9,9 +9,9 @@ Special Characters
 Aside from letters, numbers, and symbols, there is another class of characters
 that we will occasionally use in strings, known as **special characters**.
 These characters consist of special character combinations that all begin with
-``\`` backslash). They allow us to include characters in strings that would be
-difficult or impossible to include otherwise, such as Unicode characters that
-are not on our keyboards, control characters, and whitespace characters.
+a ``\`` (backslash). They allow us to include characters in strings that would
+be difficult or impossible to include otherwise, such as Unicode characters
+that are not on our keyboards, control characters, and whitespace characters.
 
 The most commonly-used special characters are ``\n`` and ``\t``, which are the
 newline and tab characters, respectively. They work as you would expect.
@@ -70,10 +70,13 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the options below print ``'Launch'`` and ``'Code'`` on separate lines?
+   Which of the options below prints ``'Launch'`` and ``'Code'`` on separate
+   lines?
 
    #. ``console.log('Launch\nCode');``
    #. ``console.log('Launch/nCode');``
    #. ``console.log('Launch', 'Code');``
    #. ``console.log('Launch\tCode');``
    #. ``console.log('Launch/tCode');``
+
+.. Answer = a
