@@ -53,7 +53,7 @@ One final observation for all of the examples above is that each time we use
 a newline as the same as hitting the Enter or Return key on your keyboard. The
 cursor moves to the beginning of the next line.
 
-For the computer, *newline* as an invisible character that is used to tell the
+For the computer, *newline* is an invisible character that is used to tell the
 machine to move to the next line. It is possible to use this invisible
 character with the special representation ``\n``.
 
