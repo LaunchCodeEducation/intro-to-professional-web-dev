@@ -92,7 +92,7 @@ For this reason, the ``===`` operator is often said to measure **strict equality
 
 .. index:: ! !==
 
-Just as equality operator ``==`` has the inequality operator ``!=``, there is also a strict inquality operator, ``!==``. The boolean expression ``a !== b`` returns ``true`` when the two operands are of different types, or if they are of the same type and have different values. 
+Just as equality operator ``==`` has the inequality operator ``!=``, there is also a strict inequality operator, ``!==``. The boolean expression ``a !== b`` returns ``true`` when the two operands are of different types, or if they are of the same type and have different values. 
 
 .. tip:: USE ``===`` AND ``!==`` WHENEVER POSSIBLE. In this book we will use these strict operators over the loose operators from now on.
 
