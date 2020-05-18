@@ -25,10 +25,10 @@ NOT alter the original arrays.
       newArray = arr.concat(otherArray);
       console.log(newArray);
 
-      newArray = otherArr.concat(arr);
+      newArray = otherArray.concat(arr);
       console.log(newArray);
 
-      console.log(arr.concat(otherArr, arr));
+      console.log(arr.concat(otherArray, arr));
 
       console.log(arr);
 
