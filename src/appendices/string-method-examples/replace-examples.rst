@@ -38,7 +38,7 @@ Given a search string ``searchChar`` and a replacement value ``replacementChar``
 
    .. sourcecode:: js
    
-      let input = " fake.email@launchcode.org ";
+      let input = "fake.email@launchcode.org";
       let email = input.replace(".", "");
       console.log(email);
 

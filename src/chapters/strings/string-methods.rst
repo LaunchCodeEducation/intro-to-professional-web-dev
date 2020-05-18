@@ -63,7 +63,7 @@ Here we present the most commonly-used string methods. You can find documentatio
      - Returns a copy of ``stringName``, with the first occurrence of ``searchChar`` replaced by ``replacementChar``.
    * - :ref:`slice <string-slice-examples>`
      - ``stringName.slice(i, j)``
-     - Return the substring consisting of characters from index ``i`` through index ``j-1``.
+     - Returns the substring consisting of characters from index ``i`` through index ``j-1``.
 
 .. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'JavaScript';``, word.toUpperCase() returns ``JAVASCRIPT``. What would ``word.slice(4).toUpperCase()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-To-Method-Chaining>`_.
 
