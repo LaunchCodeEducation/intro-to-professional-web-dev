@@ -178,7 +178,7 @@ A bad choice of update expression can also cause an *infinite loop*.
 .. admonition:: Try It!
 
    How does each of the three components affect the behavior of a ``for`` loop?
-   Experiment by modifying each of them in our example: the variable
+   Experiment by modifying each of them in this example: the variable
    initialization, the boolean condition, and the update expression.
 
    .. replit:: js
