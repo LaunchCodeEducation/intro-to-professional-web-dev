@@ -146,7 +146,9 @@ The final component in a for loop definition is the **update expression**,
 which executes after *every* iteration of the loop. While this expression may
 be anything, it most often updates the value of the loop variable.
 
-In all of the examples we have seen so far, the update expression has been ``i++``, incrementing the loop variable by 1. However, it can update the loop variable in other ways.
+In all of the examples we have seen so far, the update expression has been
+``i++``, incrementing the loop variable by 1. However, it can update the loop
+variable in other ways.
 
 .. admonition:: Example
 
@@ -159,16 +161,15 @@ In all of the examples we have seen so far, the update expression has been ``i++
          console.log(i);
       }
 
-A bad choice of update expression can also cause an infinite loop.
+A bad choice of update expression can also cause an *infinite loop*.
 
 .. admonition:: Example
 
    This loop repeats indefinitely, since ``i`` becomes smaller with each
    iteration and thus is never greater than or equal to 51.
 
-   .. replit:: js
+   .. sourcecode:: js
       :linenos:
-      :slug: Loop-variable
 
       for (let i = 0; i < 51; i--) {
          console.log(i);
@@ -176,12 +177,13 @@ A bad choice of update expression can also cause an infinite loop.
 
 .. admonition:: Try It!
 
-   How does each of these three components affect the behavior of a ``for``
-   loop? Experiment by modifying each of them in our example: the variable
+   How does each of the three components affect the behavior of a ``for`` loop?
+   Experiment by modifying each of them in this example: the variable
    initialization, the boolean condition, and the update expression.
 
-   .. sourcecode:: js
+   .. replit:: js
       :linenos:
+      :slug: Loop-variable
 
       for (let i = 0; i < 51; i++) {
          console.log(i);

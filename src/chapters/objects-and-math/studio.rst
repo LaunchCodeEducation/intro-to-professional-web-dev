@@ -39,8 +39,6 @@ data file and in the ``idNumbers`` array.
 #. Call the function three times to select three ID numbers. Store these
    selections in a new array, making sure to avoid repeated numbers. No animal
    can be selected more than once!
-#. Use a template literal to print, ``'____, ____, and ____ are going to
-   space!'`` Fill in the blanks with the names of the selected animals.
 
 .. admonition:: Tip
 
@@ -57,6 +55,9 @@ selected ID numbers and the candidate objects.
 Use one or more loops to check which animals hold the lucky ID numbers. They
 will be going on the space mission! Store these animals in a ``crew`` array,
 and then return that array.
+
+Use a template literal to print, ``'____, ____, and ____ are going to space!'``
+Fill in the blanks with the names of the selected animals.
 
 Orbit Calculations
 -------------------

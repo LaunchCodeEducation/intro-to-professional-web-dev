@@ -20,7 +20,12 @@ A **value** is a specific piece of data, such as a word or a number. Some exampl
 
 .. index:: ! data type, ! number, ! string, ! type 
 
-Each value belongs to a category called a **data type**. We will see many different data types throughout the course, the first two of which are the **number** and **string** types. Numeric values such as ``4`` and ``3.3`` are a numbers. Sequences of characters enclosed in quotes, such as ``"Hello, World!"``, are strings, so-called because they contain a string of letters. Strings must be enclosed in either single or double quotes. 
+Each value belongs to a category called a **data type**. We will see many
+different data types throughout the course, the first two of which are the
+**number** and **string** types. Numeric values such as ``4`` and ``3.3`` are
+*numbers*. Sequences of characters enclosed in quotes, such as
+``"Hello, World!"``, are *strings*, so-called because they contain a string of
+letters. Strings must be enclosed in either single or double quotes. 
 
 .. index:: ! integer, ! float
 

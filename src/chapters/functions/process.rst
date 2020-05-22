@@ -26,7 +26,7 @@ For our sandwich function, the answers might look like this:
 .. list-table:: Specification for a Sandwich Function
    :stub-columns: 1
 
-   * - Paremeters
+   * - Parameters
      - bread, filling, condiments
    * - Return Value
      - The finished sandwich
