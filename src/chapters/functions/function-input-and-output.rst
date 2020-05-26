@@ -267,7 +267,7 @@ without values will have the value ``undefined``.
 .. index::
    single: function; default parameter
 
-If your function will not work properly without one more more of its parameters defined, then you should define a **default value** for these parameters. The default value can be provided next to the parameter name, after ``=``.
+If your function will not work properly without one or more of its parameters defined, then you should define a **default value** for these parameters. The default value can be provided next to the parameter name, after ``=``.
 
 .. admonition:: Example
 
