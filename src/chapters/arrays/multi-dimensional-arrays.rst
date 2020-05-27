@@ -17,6 +17,7 @@ are synonyms of each other. Notice each inner array has an index position.
 
 Two Dimensional Arrays
 ----------------------
+
 The simplest form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
 spreadsheet with rows and columns. To access items in a two dimensional array, use square bracket notation and
 two indexes ``array[0][0]``. The first index is for the outer array, or the "row", and second index is for the inner array,
@@ -57,13 +58,13 @@ with array methods. However, bracket notation must be used correctly.
 
 To apply a method to the outer array, the syntax is:
 
-.. sourcecode:: bash
+.. sourcecode:: js
 
    multiArrayName.method();
 
 To apply a method to one of the inner arrays, the syntax is:
 
-.. sourcecode:: bash
+.. sourcecode:: js
 
    multiArrayName[indexOfInnerArray].method();
 
@@ -99,6 +100,7 @@ To apply a method to one of the inner arrays, the syntax is:
 
 Beyond Two Dimensional Arrays
 -----------------------------
+
 Generally, there is no limit to how many dimensions you can have when creating
 arrays. However it is rare that you will use more than two dimensions. Later on
 in the class we will learn about more collection types that can handle complex
