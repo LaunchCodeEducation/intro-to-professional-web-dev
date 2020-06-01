@@ -47,7 +47,7 @@ Part 1: Minimum Viable Quiz
 #. Define variables for:
 
    a. candidate's name
-   b. a quiz question (pick any question from the table in step 2)
+   b. a quiz question (pick any question from the table in Part 2 below)
    c. the correct answer
    d. the candidate's response
 
