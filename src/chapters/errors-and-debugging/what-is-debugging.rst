@@ -21,4 +21,4 @@ Debugging a program requires a different approach compared to writing the origin
 
 Oftentimes, you will find it tempting to blame errors on JavaScript itself. However, it is far, far more likely that the error is due to an issue with your code. We encourage you to think critically about the code you have written, and whether you may have made an error in writing your code. Even senior developers make basic errors on occasion!
 
-In this chapter, we will discuss in detail common types of bugs, along with some effective strategies for debugging. You will learn to rely on error messages and ``console.log`` for clues and insight, and over time you will sharpen your debugging skills. We will also discuss how to approach writing code so as to prevent bugs from occuring in the first place.
+In this chapter, we will discuss in detail common types of bugs, along with some effective strategies for debugging. You will learn to rely on error messages and ``console.log`` for clues and insight, and over time you will sharpen your debugging skills. We will also discuss how to approach writing code so as to prevent bugs from occurring in the first place.
