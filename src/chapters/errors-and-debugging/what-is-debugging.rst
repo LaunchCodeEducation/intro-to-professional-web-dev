@@ -5,7 +5,7 @@ What is Debugging?
 
 Programming is a complex process. Since it is done by human beings, errors often occur. Programming errors are called **bugs** and the process of tracking them down and correcting them is called **debugging**.  
 
-Some claim that in 1945, a dead moth caused a problem in one of the first computers. The term "bug" has remained in use since, to refer to any issue that prevents a program from working as intended. Wikipedia even has an image of the supposed `first bug <http://en.wikipedia.org/wiki/File:H96566k.jpg>`_.
+Some claim that in 1947, a dead moth caused a problem in one of the first computers. The term "bug" has remained in use since, to refer to any issue that prevents a program from working as intended. Wikipedia even has an image of the supposed `first bug <http://en.wikipedia.org/wiki/File:H96566k.jpg>`_.
 
 .. index::
    single: error; syntax
