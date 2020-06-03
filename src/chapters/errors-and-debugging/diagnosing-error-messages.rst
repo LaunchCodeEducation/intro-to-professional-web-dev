@@ -66,7 +66,7 @@ The first portion identifies where in our code the error exists:
 For many simple syntax errors, we will quickly be able to spot the mistake once
 JavaScript points out its location to us.
 
-If knowing the location of the error isn't enough, then next line provides more
+If knowing the location of the error isn't enough, the next line provides more
 information:
 
 ::
