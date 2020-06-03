@@ -72,7 +72,7 @@ We don't expect you to memorize all of the response codes, but you should be abl
      - The server received the request, but the requested resource does not exist on the server.
      - Requesting an image or HTML file that does not exist on the server.
    * - 500
-     - The server experienced and error while fulfilling the request.
+     - The server experienced an error while fulfilling the request.
      - The server lost its database connection and cannot retrieve requested data.
 
 
