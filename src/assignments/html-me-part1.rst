@@ -1,6 +1,6 @@
 .. _html-me-part1:
 
-HTML Me Someting, Part 1
+HTML Me Something, Part 1
 =========================
 
 In Part 1, you will get comfortable with writing markup, and with separating
