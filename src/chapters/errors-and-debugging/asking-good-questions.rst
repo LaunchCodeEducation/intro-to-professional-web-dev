@@ -27,7 +27,7 @@ Another programmer can glean a lot of information by hearing what you have alrea
 
 **Bad:** Using trial and error without any specific direction.
 
-**Good:** "I added user input validation, but am still seeing the problem."
+**Good:** "I added user input validation, but I am still seeing the problem."
 
 Where have you looked for an answer?
 ------------------------------------
