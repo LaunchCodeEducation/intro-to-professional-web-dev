@@ -160,7 +160,7 @@ the condition, we ended the recursion process too soon.
 
 Similarly, if we used ``arrayName[0] === 'Rutabaga'`` as the condition, then
 any array that does NOT contain the string ``'Rutabaga'`` would never match the
-base case. In situations where the base case cannot be reached, the recusion
+base case. In situations where the base case cannot be reached, the recursion
 process either throws an error, or it continues without end---an infinite loop.
 
 Correctly identifying and checking for the base case is *critical* to building

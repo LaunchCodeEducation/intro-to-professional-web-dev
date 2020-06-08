@@ -1,36 +1,49 @@
-..
-
 Categories of Errors
 ====================
 
-It is useful to distinguish between categories of errors in order to quickly identify and fix them. Each category manifests itself in a different way, and some strategies may be more useful for certain types of errors.
+It is useful to distinguish between categories of errors in order to quickly
+identify and fix them. Each category manifests itself in a different way, and
+some strategies may be more useful for certain types of errors.
 
 Stages of JavaScript Execution
 ------------------------------
 
-In order to understand programming errors it is useful to understand the two stages of code execution.
+In order to understand programming errors it is useful to understand the two
+stages of code execution.
 
 Parsing
 ^^^^^^^
 
 .. index:: ! code parsing
 
-Before code can be run, it must first be parsed, or validated and prepared for execution. This is known as the **parsing stage**, and you can think of it like the pre-flight check for a plane or space craft. 
+Before code can be run, it must first be parsed, or validated and prepared for
+execution. This is known as the **parsing stage**, and you can think of it like
+the pre-flight check for a plane or space craft. 
 
-A lot of detailed, low-level tasks are carried out during this process, but it is enough for us to understand that parsing verifies the syntax and structure of the code.
+A lot of detailed, low-level tasks are carried out during this process, but it
+is enough for us to understand that parsing verifies the syntax and structure
+of the code.
+
 .. _error-categories:
 
 Execution
 ^^^^^^^^^
 
-Once our code has been parsed, its syntax has been verified and the program is ready to run. The **execution stage** is when the actions written into our program---printing to the console, prompting the user for input, making calculations, etc.---are actually carried out. You can think of this stage as the plane taking flight. 
+Once our code has been parsed, its syntax has been verified and the program is
+ready to run. The **execution stage** is when the actions written into our
+program---printing to the console, prompting the user for input, making
+calculations, etc.---are actually carried out. You can think of this stage as
+the plane taking flight. 
 
 Syntax Errors
 -------------
 
 .. index:: syntax
 
-JavaScript can only execute a program if the program is syntactically correct. **Syntax** refers to the structure of a language (spoken, programming, or otherwise) and the rules about that structure. For example, in English, a sentence must begin with a capital letter and end with appropriate punctuation.
+JavaScript can only execute a program if the program is syntactically correct.
+**Syntax** refers to the structure of a language (spoken, programming, or
+otherwise) and the rules about that structure. For example, in English, a
+sentence must begin with a capital letter and end with appropriate punctuation.
 
 .. index::
    single: error; syntax
@@ -43,7 +56,9 @@ A **syntax error** is a violation of the formal rules for a given language.
 
    So does this one
 
-For most readers of English, a few syntax errors are not a significant problem. Our brains are often flexible enough to determine the intended meaning of a sentence even if it contains one more syntax errors.
+For most readers of English, a few syntax errors are not a significant problem.
+Our brains are often flexible enough to determine the intended meaning of a
+sentence even if it contains one or more syntax errors.
 
 Programming languages are not so forgiving. If there is a single syntax error anywhere in your program, JavaScript will display an error message and quit immediately. Since syntax is validated during the parsing stage, syntax errors are the first we see when running a program.
 
