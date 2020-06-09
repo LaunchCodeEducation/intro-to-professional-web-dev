@@ -24,7 +24,7 @@ The form should do the following:
 Setting Up Your Project Repository
 ----------------------------------
 
-Fork the repository with the `starter code <https://github.com/LaunchCodeEducation/Launch-Checklist-Form/>`_ to your personal Github profile and clone the repository to the directory where you are keeping your assignments for the class.
+Fork the repository with the `starter code <https://github.com/LaunchCodeEducation/Launch-Checklist-Form/>`_ to your personal GitHub profile and clone the repository to the directory where you are keeping your assignments for the class.
 
 .. warning::
 
