@@ -153,8 +153,8 @@ Enter ``ng serve`` to launch the project, then:
 
 #. Remove two chores from the array. Reload the web page to make sure these
    items disappear from the list.
-#. Use ``*ngFor`` within the ``<div>`` tag to loop over the ``todoTitles``
-   array:
+#. Return to ``chores.component.html``. Use ``*ngFor`` within the ``<div>`` tag to
+   loop over the ``todoTitles`` array:
 
    a. Replace line 1 with
       ``<div class='chores' *ngFor = "let title of todoTitles">``.
