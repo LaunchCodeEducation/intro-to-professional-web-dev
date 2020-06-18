@@ -64,7 +64,7 @@ Let's break down the steps carried out by this function:
 
 #. **Turn the string into an array of characters.** We call ``str.split('')``, using the empty string as the splitting character, returns an array of the individual characters that make up the string.
 #. **Reverse the array of characters.** To do this, we use the built-in array method ``reverse``.
-#. **Join the reversed character array into a string.** We call ``.join('')``. Joining with the empty string is the same as concatenating each of the invididual characters together into a single string.
+#. **Join the reversed character array into a string.** We call ``.join('')``. Joining with the empty string is the same as concatenating each of the individual characters together into a single string.
 
 .. admonition:: Try It!
 
