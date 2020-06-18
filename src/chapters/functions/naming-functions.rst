@@ -83,7 +83,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which is the best name for the following function?
+   Which is the BEST name for the following function?
 
    .. sourcecode:: js
       :linenos:
