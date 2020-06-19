@@ -47,7 +47,7 @@ Following the function name, we define **parameters** within the parentheses. Th
 
 JavaScript *does not* allow you to specify the types of parameters, though the JavaScript extension TypeScript does. We will learn a bit of TypeScript later on.
 
-After the parameters and closing parenthesis, within currly brackets, ``{ }``, is the **function body**. This is where the actions that the function should carry out are defined. The function body can consist of any amount of code.
+After the parameters and closing parenthesis, within curly brackets, ``{ }``, is the **function body**. This is where the actions that the function should carry out are defined. The function body can consist of any amount of code.
 
 An Example
 ^^^^^^^^^^
@@ -133,7 +133,7 @@ Let's see how this works explicitly.
 
    .. replit:: js
       :linenos:
-      :slug: Function-Defnition
+      :slug: Function-Definition
    
       function sayHello() {
          console.log("Hello, World!");
