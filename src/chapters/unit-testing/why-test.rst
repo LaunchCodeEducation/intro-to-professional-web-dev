@@ -82,7 +82,7 @@ quickly. Out dated, incorrect documentation is very frustrating for a user.
 
 Properly designed unit tests are runnable documentation for your project. Because unit
 tests are runnable code that declares and verifies features, they can NEVER get out of
-sync with the updated code. If feature is added or removed, the tests must be updated
+sync with the updated code. If a feature is added or removed, the tests must be updated
 in order to make them pass.
 
 

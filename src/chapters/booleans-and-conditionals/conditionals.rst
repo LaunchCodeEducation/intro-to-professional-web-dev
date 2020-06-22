@@ -87,7 +87,7 @@ prevent syntax errors.
 
 .. admonition:: Warning
 
-   If the the code block associated with a conditional consists of only one
+   If the code block associated with a conditional consists of only one
    line, then the enclosing curly brackets can be omitted.
 
    However, this is NOT a best-practice, as it makes the logic harder to

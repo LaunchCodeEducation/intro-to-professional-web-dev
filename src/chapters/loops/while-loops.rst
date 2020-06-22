@@ -71,7 +71,7 @@ This can be rewritten as a while loop:
       i++;
    }
 
-Instead of relying on the the initial and update expressions, as we do in a
+Instead of relying on the initial and update expressions, as we do in a
 ``for`` loop, we must manage the state of our loop manually. To do this,
 *before* entering the ``while`` loop, we will create the variable ``i`` and
 initialize it to 0, the first number we want to print. This variable plays the
