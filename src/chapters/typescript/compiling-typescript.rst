@@ -26,7 +26,7 @@ Once you have TypeScript installed, you'll be able to run
 
    $ tsc -v
 
-``tsc`` is is the TypeScript compiler and ``-v`` is the version flag to show us that
+``tsc`` is the TypeScript compiler and ``-v`` is the version flag to show us that
 we have TypeScript and it's compiler installed. 
 
 ``hello_world.ts``
