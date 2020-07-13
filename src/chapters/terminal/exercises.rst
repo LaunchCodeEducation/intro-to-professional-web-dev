@@ -39,7 +39,7 @@ Exercises: Terminal
 #. Move your copied file into your 'my_first_directory' with
    ``mv my_first_copy.txt my_first_directory/``.
 
-#. Use ``ls`` to see that the the copied file is no longer on your Desktop.
+#. Use ``ls`` to see that the copied file is no longer on your Desktop.
 
 #. Type ``cd my_first_directory/``, followed by ``ls`` to confirm that your
    copy has been moved into 'my_first_directory'.

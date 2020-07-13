@@ -468,7 +468,7 @@ Here's the map of what we've done:
 
 To remove a directory entry, rather than simply a file, requires an **option**
 on the command. An option is an additional character, or set of characters,
-added on the the end of a text command to give the computer more instructions
+added on the end of a text command to give the computer more instructions
 related to your command. Options are usually indicated with a ``-``. We'll talk
 more about the presence of options in :ref:`terminal-man`.
 
