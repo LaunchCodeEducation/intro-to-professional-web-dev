@@ -78,7 +78,7 @@ Notice in the above example that the browser address has changed to:
 The web address is the same as the form we loaded, but now includes a query parameter
 for *every* input, with a name, in the form. These parameters are known as the query string parameters.
 The form values are submitted via the query string because the default submission type for
-forms is GET. In the next section will soon learn how to submit form data via POST.
+forms is GET. In the next section, we will soon learn how to submit form data via POST.
 
 .. note::
 
