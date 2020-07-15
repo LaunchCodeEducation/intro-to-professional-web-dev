@@ -71,20 +71,20 @@ Here is how the process will look in the terminal:
 To break down what happens in a commit even further:
 
 When using ``git status``, the output shows two categories: modified tracked files and modified untracked files.
-Modified tracked means that Git the file exists in the repository already, but is different than the version in the repository.
+Modified tracked means that the file exists in the Git repository already, but is different than the version in the repository.
 Modified untracked means that it is a new file that is not currently in the repository.
 
 ``git add`` adds files to the commit, but it does not commit those files.
 By using ``git add .``, all the modified files were added to the commit.
-If a programmer only wants add one modified file, they can do so.
+If a programmer only wants to add one modified file, they can do so.
 
 ``git commit`` actually commits the files that were added to the repository.
 By adding ``-m "My first commit"``, a comment was added to the commit.
 This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
 
 ``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
-This hash or value that is a key for Git to refer to the version.
-Programmers rarely use these hashes unless they want to roll back to that version.
+This hash or value is a key for Git to refer to the version.
+Programmers use these hashes to reference specific commits, or snapshots, in the repository's history.
 
 Check Your Understanding
 ------------------------
