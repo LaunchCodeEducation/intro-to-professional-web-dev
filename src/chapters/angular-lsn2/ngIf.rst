@@ -217,7 +217,7 @@ Now use ``*ngIf`` to do the following:
    and modify the number of items. Save your changes and reload the page to
    verify that your code works.
 #. If the ``chores`` array is empty OR the ``finishedChores`` array has at
-   least 3 more items than the ``chores`` array, display ``trophyImage`` under
+   least 3 more items than the ``chores`` array, display ``targetImage`` under
    the ``Done Chores`` list. Otherwise, use a ``p`` tag to display the text,
    "No allowance yet."
 #. Return to ``chores.component.ts`` and change the number of items in the
