@@ -89,7 +89,7 @@ Update the HTML
 
    .. sourcecode:: html+ng2
 
-      <div class="shuttle-background" [style.backgroundColor]=“color”>
+      <div class="shuttle-background" [style.backgroundColor]="color">
 
 #. Use the ``height`` property to determine the displayed height. Change line 31 as follows;
 
@@ -200,7 +200,7 @@ New Requirements
 
    .. sourcecode:: TypeScript
 
-      takeOffEnabled: true,
+      takeOffEnabled: boolean = true;
 
 #. When the app is first loaded, we want the user to be able to click the *Take Off*
    button, but not the *Land* or *Abort Mission* button. We'll
