@@ -121,7 +121,6 @@ JavaScript doesn't care whether you use single or double quotes to surround your
    
       console.log('Bruce's beard');
 
-
 More On Numbers
 ---------------
 
@@ -157,7 +156,7 @@ Well, that's not what we expected at all! Because of the comma, JavaScript chose
    ::
 
       42 17 56 34 11 4.35 32
-      3.4 'hello' 45
+      3.4 hello 45
 
 Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the chapter :ref:`how-programs-work`: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intend.
 
