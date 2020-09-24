@@ -1,13 +1,17 @@
-
 Receiving Function Arguments
 ============================
 
-The previous section illustrates how a function can be passed to another function as an argument. This section takes the opposite perspective to *write* functions that can take other functions as arguments.
+The previous section illustrates how a function can be passed to another
+function as an argument. This section takes the opposite perspective to
+*write* functions that can take other functions as arguments.
 
 Example: A Generic Input Validator
 ----------------------------------
 
-Our first example will be a generic input validator. It will prompt a user for input, using a parameter to the function to do the actual work of validating the input.
+Our first example will be a generic input validator. It asks the user for some
+input, using the ``prompt`` parameter for the text of the question. A second
+parameter receives a function that does the actual work of validating the
+input.
 
 .. admonition:: Example
 
@@ -47,6 +51,13 @@ Our first example will be a generic input validator. It will prompt a user for i
       Invalid input. Try again.
       Enter an even number: 4
       4
+
+   When we call ``getValidInput`` on line 22, we pass it the string
+   ``'Enter an even number:'``, which gets assigned to the ``prompt``
+   parameter.
+
+   Notice that we also pass in the function ``isEven`` (with no arguments).
+   This gets assigned to the ``isValid`` parameter.
 
 The function ``getValidInput`` handles the work of interacting with the user, while allowing the validation logic to be customized. This separates the different concerns of validation and user interaction, sticking to the idea that *a function should do only one thing*. It also enables more reusable code. If we need to get different input from the user, we can simply call ``getValidInput`` with different arguments.
 
