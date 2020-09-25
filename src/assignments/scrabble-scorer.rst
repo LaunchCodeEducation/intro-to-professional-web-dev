@@ -274,7 +274,8 @@ Define a ``runProgram`` function that will:
    c. If the user entered ``2``, use the Bonus Vowels ``scoreFunction``.
 
 #. Display the score for the word.
-#. Repeat steps 3 to 5 until the user stops the program by entering 'Stop'.
+#. Repeat steps 3 to 5 until the user ends the program by entering ``'Stop'``.
+   (*Consider*: Should this check be case-insensitive?)
 
 Test Words
 -----------
@@ -313,7 +314,7 @@ Example Output
    Enter a word to be scored, or 'Stop' to quit:  Rocket
    Score for 'Rocket': 12
 
-   Enter a word to be scored, or 'Stop' to quit:
+   Enter a word to be scored, or 'Stop' to quit: stop
 
 Bonus Missions
 ---------------

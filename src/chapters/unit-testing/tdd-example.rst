@@ -24,9 +24,9 @@ We need to write a Node module to process transmissions from the
          rawData: 932829840830053761
       }
 
-
 Requirements
 ------------
+
 The features for this project have already been broken down into
 small testable units. Let's review them and then we will
 take it slow, one step at a time.
@@ -44,9 +44,9 @@ take it slow, one step at a time.
 
 #. Return -1 for the value ``rawData`` if the ``rawData`` part of the transmission does NOT start with ``<`` and end with ``>``
 
-
 Requirement #1
 --------------
+
 *Requirement:* Take in a transmission string and return an object.
 
 To get started on this we need to:
@@ -146,6 +146,7 @@ returned an object.
 
 Code Red
 ^^^^^^^^
+
 Let's run the test! Click the ``run >`` button in your repl.it.
 You should see an error about ``processor.js`` not existing. This makes sense, because we have not
 created the file yet. We are officially in the Red phase of Red, Green, Refactor!
@@ -153,7 +154,6 @@ created the file yet. We are officially in the Red phase of Red, Green, Refactor
 ::
 
    Error: Cannot find module '../processor.js'
-
 
 Go Green!
 ^^^^^^^^^
@@ -167,17 +167,16 @@ Contents of the new ``processor.js`` file.
 .. sourcecode:: js
    :linenos:
 
-   function process(transmission) {
+   function processor(transmission) {
       return {};
    }
 
-   module.exports = process;
-
+   module.exports = processor;
 
 .. figure:: figures/processor-module-added-to-replit.png
-       :alt: Screen shot showing processor.js file added to replit with function in it.
+   :alt: Screen shot showing processor.js file added to replit with function in it.
 
-       processor.js file
+   processor.js file
 
 *Run the test again.*
 
@@ -190,13 +189,14 @@ test. In repl.it you have to imagine the satisfying green color of a passing tes
 
 Refactor if Needed
 ^^^^^^^^^^^^^^^^^^
+
 This solution is very simple and does not need to be improved. The refactor step 
 does not always lead to an actual changing of your code. The most important part is to
 review your code to make sure that it's efficient and meets your team's standards.
 
-
 Requirement #2
 --------------
+
 *Requirement:* Return ``-1`` if the transmission does NOT contain ``"::"``.
 
 Next we have a negative test requirement that tells us what should happen if the data is invalid.
@@ -236,7 +236,9 @@ For requirement #2, the solution for *steps 1 - 4* can be seen on lines *11 - 14
    });
 
 Now for *step 5*, run the test and see it fail. When you run the tests, you should see the below
-error message. Notice that ``-1`` was the expected value, but the actual value was ``'object'``.
+error message. Notice that ``-1`` was the expected value, but the actual value was
+and empty object, ``{}``.
+
 ::
 
    Failures:
@@ -245,16 +247,17 @@ error message. Notice that ``-1`` was the expected value, but the actual value w
     AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
     + expected - actual
 
-    - 'object'
+    - {}
     + -1
 
-Next is *step 6*, write code that will make the test pass. Go to ``processor.js`` and update the ``processor`` function
-to check the ``transmission`` argument for the presence of ``'::'``.
+Next is *step 6*, write code that will make the test pass. Go to ``processor.js`` and
+update the ``processor`` function to check the ``transmission`` argument for the
+presence of ``'::'``.
 
 .. sourcecode:: js
    :linenos:
 
-   function process(transmission) {
+   function processor(transmission) {
       if (transmission.indexOf("::") < 0) {
          // Data is invalid
          return -1;
@@ -262,7 +265,7 @@ to check the ``transmission`` argument for the presence of ``'::'``.
       return {};
    }
 
-   module.exports = process;
+   module.exports = processor;
 
 Lucky *step 7* is to run the tests again. They should both pass.
 
@@ -274,9 +277,9 @@ Lucky *step 7* is to run the tests again. They should both pass.
 Finally *step 8* is to review the code to see if it needs to be refactored. As with the first requirement
 our code is quite simple and can not be improved at this time.
 
-
 Requirement #3
 --------------
+
 *Requirement:* Returned object should contain an ``id`` property.
 The ``id`` is the part of the transmission *before* the ``"::"``
 
@@ -314,7 +317,7 @@ object that does NOT exist, ``undefined`` is returned.
    });
 
 The fail message looks a little different than what we have seen. The phrase
-"Identical input passed to notStrictEqual" lets us know that the two values
+"Expected 'actual' to be strictly unequal to" lets us know that the two values
 were equal when we didn't expect them to be.
 
 ::
@@ -322,16 +325,16 @@ were equal when we didn't expect them to be.
    Failures:
    1) transmission processor returns id in object
    Message:
-      AssertionError [ERR_ASSERTION]: Identical input passed to notStrictEqual: undefined
+      AssertionError: Expected "actual" to be strictly unequal to: undefined
 
-The object returned from ``processor`` doesn't have an id property. We need to
-split the transmission on ``'::'`` and then add that value to the object with
-the key ``id``. See solution in ``processor.js`` below.
+The object returned from ``processor`` doesn't have an ``id`` property. We need
+to split the transmission on ``'::'`` and then add that value to the object
+with the key ``id``. See solution in ``processor.js`` below.
 
 .. sourcecode:: js
    :linenos:
 
-   function process(transmission) {
+   function processor(transmission) {
       if (transmission.indexOf("::") < 0) {
          // Data is invalid
          return -1;
@@ -342,7 +345,7 @@ the key ``id``. See solution in ``processor.js`` below.
       };
    }
 
-   module.exports = process;
+   module.exports = processor;
 
 Run the tests again. That did it. The tests pass! :-)
 
@@ -354,14 +357,14 @@ the first entry in the array to the key ``id``.
   3 specs, 0 failures
   Finished in 0.011 seconds
 
-
 Requirement #4
 --------------
-*Requirement:* The ``id`` property should be of type ``Number``
+
+*Requirement:* The ``id`` property should be of type ``Number``.
 
 Again the same steps are followed, though not listed.
 
-New test to be added to ``specs/processor.spec.js``
+New test to be added to ``specs/processor.spec.js``:
 
 .. sourcecode:: js
    :linenos:
@@ -378,19 +381,16 @@ Fail Message
    Failures:
    1) transmission processor converts id to a number
    Message:
-      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-      + expected - actual
+      AssertionError: Expected values to be strictly equal:
 
-      - '9701'
-      + 9701
-
+      '9701' !== 9701
 
 Convert the id part of the string to be of type ``number``.
 
 .. sourcecode:: js
    :linenos:
 
-   function process(transmission) {
+   function processor(transmission) {
       if (transmission.indexOf("::") < 0) {
          // Data is invalid
          return -1;
@@ -401,7 +401,7 @@ Convert the id part of the string to be of type ``number``.
       };
    }
 
-   module.exports = process;
+   module.exports = processor;
 
 Now for the great feeling of a passing tests!
 
@@ -416,9 +416,9 @@ Now for the great feeling of a passing tests!
    turned into a number. That is a negative test case related to this feature
    and is left for you to address in the final section.
 
-
 Requirement #5
 --------------
+
 *Requirement:* Returned object should contain a ``rawData`` property. The ``rawData``
 is the part of the transmission *after* the ``"::"``
 
@@ -439,16 +439,15 @@ Fail Message
    Failures:
    1) transmission processor returns rawData in object
    Message:
-      AssertionError [ERR_ASSERTION]: Identical input passed to notStrictEqual: undefined
+      AssertionError: Expected "actual" to be strictly unequal to: undefined
 
-
-We need to extract the rawData from the second half of the transmission string after it's
-been split. Then return that in the object.
+We need to extract the ``rawData`` from the second half of the transmission
+string after it's been split. Then return that in the object.
 
 .. sourcecode:: js
    :linenos:
 
-   function process(transmission) {
+   function processor(transmission) {
       if (transmission.indexOf("::") < 0) {
          // Data is invalid
          return -1;
@@ -461,7 +460,7 @@ been split. Then return that in the object.
       };
    }
 
-   module.exports = process;
+   module.exports = processor;
 
 It's that time again, our tests pass!
 
@@ -470,20 +469,20 @@ It's that time again, our tests pass!
   5 specs, 0 failures
   Finished in 0.041 seconds
 
-
 Requirement #6
 --------------
-*Requirement:* Return -1 for the value ``rawData`` if the ``rawData`` part of
-the transmission does NOT start with ``<`` and end with ``>``
+
+*Requirement:* Return ``-1`` for the value ``rawData`` if the ``rawData`` part of
+the transmission does NOT start with ``<`` and end with ``>``.
 
 Let's think about what test data to use for this requirement. What ways could the
 transmission data be invalid?
 
-1. It could be missing ``<`` at the beginning
-2. It could be missing ``>`` at the end
-3. It could be missing both ``<`` and ``>``
-4. Has ``<`` but is in the wrong place
-5. Has ``>`` but is in the wrong place
+#. It could be missing ``<`` at the beginning
+#. It could be missing ``>`` at the end
+#. It could be missing both ``<`` and ``>``
+#. Has ``<`` but the symbol is in the wrong place
+#. Has ``>`` but the symbol is in the wrong place
 
 All these cases need to be covered by a test. Let's start with #1, which
 is missing ``<`` at the beginning.
@@ -505,19 +504,20 @@ Fail Message
    Failures:
    1) transmission processor returns -1 for rawData if missing < at position 0
    Message:
-      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-      + expected - actual
+      AssertionError: Expected values to be strictly equal:
+      + actual - expected
       
-      - '487297403495720912>'
-      + -1
+      + '487297403495720912>'
+      - -1
 
-New code added to ``processor.js`` to make tests pass. Note that we don't simply return
-``-1``, the requirement is to return the object and set the value of ``rawData`` to ``-1``.
+Now add new code to ``processor.js`` to make the tests pass. Note that we don't
+simply return ``-1``, the requirement is to return the object and set the value
+of ``rawData`` to ``-1``.
 
 .. sourcecode:: js
    :linenos:
 
-   function process(transmission) {
+   function processor(transmission) {
       if (transmission.indexOf("::") < 0) {
          // Data is invalid
          return -1;
@@ -533,7 +533,7 @@ New code added to ``processor.js`` to make tests pass. Note that we don't simply
       };
    }
 
-   module.exports = process;
+   module.exports = processor;
 
 You know what's next, our tests pass!
 
@@ -553,19 +553,16 @@ You know what's next, our tests pass!
    * ``"9701::487297403495720912"``
    * ``"9701::<487297403495<720912>"``
 
-
 Use TDD to Add These Features
 -----------------------------
-Use the steps demonstrated above to implement all or some of the below features.
-Take your time, you can do it!
+
+Use the steps demonstrated above to implement all or some of the features
+below. Take your time, you can do it!
 
 #. Trim leading and trailing whitespace from ``transmission``.
-#. Return -1 if the ``id`` part of the ``transmission`` can not be converted to a number.
-#. Return -1 if more than one ``"::"`` found in ``transmission``
-#. Return -1 for value of ``rawData`` if anything besides numbers are present
-#. Allow for multiple ``rawData`` values
-
-   * ``rawData`` would be returned as an array of numbers
-   * Get the new test working and then fix any broken existing tests
-   * Example Transmission:  ``"9701::<21212.232323.242424>"``
-   * Result: ``{ id: 9701, rawData: [21212,232323,242424] }``
+#. Return ``-1`` if the ``id`` part of the ``transmission`` cannot be converted
+   to a number.
+#. Return ``-1`` if more than one ``"::"`` is found in ``transmission``.
+#. Do not include the ``< >`` symbols in the value assigned to ``rawData``.
+#. Return ``-1`` for the value of ``rawData`` if anything besides numbers are
+   present between the ``< >`` symbols.

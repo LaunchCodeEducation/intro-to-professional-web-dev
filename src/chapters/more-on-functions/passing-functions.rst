@@ -62,13 +62,23 @@ Examples like this look odd at first. However, they become easier to read over t
 Example: The Array Method ``map``
 ---------------------------------
 
-The array method ``map`` allows for every element in an array to be *mapped* or *translated*, using a given function. Here's how to use it:
+The array method ``map`` allows for every element in an array to be *mapped*
+or *translated*, using a given function. Here's how to use it:
 
 .. sourcecode:: js
 
-   let mappedArray = someArray.map(func);
+   let mappedArray = someArray.map(functionName);
 
-The argument ``func`` should take a single value from the array and return a new value. The returned array, ``mappedArray``, contains each of the individual return values from the mapping function, ``func``.
+When the ``map`` method executes, the following actions occur:
+
+#. The first element in ``someArray`` is passed into ``functionName`` as an
+   argument.
+#. ``functionName`` executes and returns a new value.
+#. The return value is added to ``mappedArray``.
+#. Steps 1 - 3 repeat for each element in ``someArray``.
+
+When complete, ``mappedArray``, contains each of the individual return values
+from the mapping function, ``functionName``.
 
 .. admonition:: Example
 

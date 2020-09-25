@@ -132,7 +132,7 @@ control+c in a terminal).
          console.log("LaunchCode");
       }
 
-You will accidentally write an infinite loop at some point; doing so is a right
+You will accidentally write an infinite loop at some point; doing so is a rite
 of passage for new programmers. When this happens, don't panic. Stop your
 program and figure out why your loop condition never became false.
 

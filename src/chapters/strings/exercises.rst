@@ -51,12 +51,12 @@ Part Two
 
 2. Let's use string methods to do more work on the DNA strand:
 
-   #. Replace the gene ``'GCT'`` with ``'AGG'``, and then print the altered
+   #. Replace the sequence ``'GCT'`` with ``'AGG'``, and then print the altered
       strand.
-   #. Look for the gene ``'CAT'`` with ``indexOf()``. If found print, ``'CAT gene
-      found'``, otherwise print, ``'CAT gene NOT found'``.
-   #. Use ``slice()`` to print out the fifth gene (set of 3 characters) from
-      the DNA strand.
+   #. Look for the sequence ``'CAT'`` with ``indexOf()``. If found print, ``'CAT
+      found'``, otherwise print, ``'CAT NOT found'``.
+   #. Use ``slice()`` to print out the fifth set of 3 characters (called a **codon**)
+      from the DNA strand.
    #. Use a template literal to print, ``"The DNA string is ___ characters long."``
    #. Just for fun, apply methods to ``dna`` and use another template literal to
       print, ``'taco cat'``.
