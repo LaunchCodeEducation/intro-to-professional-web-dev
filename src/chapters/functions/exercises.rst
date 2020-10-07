@@ -27,7 +27,7 @@ diamond:
        #
 
 There is no starter code for these exercises, so create a new Node.js project
-at `repl.it <https://repl.it/>`_ to get started.
+at `repl.it <https://repl.it/login>`__ to get started.
 
 Rectangles
 ----------
