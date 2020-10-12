@@ -4,7 +4,7 @@ Terminal Commands Tutorial
 ==========================
 
 As mentioned in the terminal chapter, the essence of the command line is
-is text. Since this is quite different from how many may be used to using
+text. Since this is quite different from how many may be used to using
 their computers, this tutorial is meant to help you picture how your
 machine is responding when you input common commands into the terminal.
 
