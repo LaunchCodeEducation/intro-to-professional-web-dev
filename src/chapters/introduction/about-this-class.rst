@@ -17,11 +17,10 @@ skills found in a wide variety of industries.
 Course Activities
 -----------------
 
-We have spent a lot of time creating the course activities to make the most of
-your in-class and out-of-class time. While there are a lot of different
-activities we will do in a day, it is important to actively engage with each
-activity. Skipping the prep work or falling behind on assignments can quickly
-lead to struggling to complete the course.
+We have created the course activities to make the most of
+your time. It is important to actively engage with each
+activity to maximize your learning potential. Skipping the textbook reading or 
+falling behind on assignments can quickly lead to struggling to complete the course.
 
 Textbook Reading
 ^^^^^^^^^^^^^^^^
@@ -35,17 +34,16 @@ most of your learning potential.
 Exercises
 ^^^^^^^^^
 
-At the end of most of the textbook chapters, you will find a a page called "Exercises".
-Exercises are small coding problems and are a chance for you to implement what
+At the end of most of the textbook chapters, you will find a a page of Exercises.
+These are small coding problems and are a chance for you to implement what
 you have just learned. While exercises do not count towards your final grade in
 the class, it is essential to practice in order to reinforce your understanding
 of the new concepts.
 
 
-Assignments
-^^^^^^^^^^^
+Graded Assignments
+^^^^^^^^^^^^^^^^^^
 
-Assignments are larger projects where you demonstrate what you have learned and
+Graded assignments are larger projects where you demonstrate what you have learned and
 challenge yourself. Assignments oftentimes cover multiple lessons.
 
-.. index:: ! Canvas
