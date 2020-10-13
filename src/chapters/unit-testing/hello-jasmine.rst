@@ -42,7 +42,7 @@ There are three important files:
 #. ``spec/reverse.spec.js`` contains the tests for ``reverse``.
 #. ``index.js`` contains the Jasmine code needed to run the tests. This is the file that executes when you hit *run* in repl.it.
 
-.. warning:: Jasmine can be set up and used in many different ways. If you are looking for an answer on the Internet,---on Stack Overflow or in the Jasmine documentation---you will see widely varying usages of Jasmine that don't apply to your situation. Rely on this book as your main reference, and you'll be fine.
+.. warning:: Jasmine can be set up and used in many different ways. If you are looking for an answer on the Internet (like on Stack Overflow or in the Jasmine documentation) you will see widely varying usages of Jasmine that don't apply to your situation. Rely on this book as your main reference, and you'll be fine.
 
 Hello, Jasmine!
 ---------------

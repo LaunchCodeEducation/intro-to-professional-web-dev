@@ -57,7 +57,7 @@ Part Two
       found'``, otherwise print, ``'CAT NOT found'``.
    #. Use ``slice()`` to print out the fifth set of 3 characters (called a **codon**)
       from the DNA strand.
-   #. Use a template literal to print, ``"The DNA string is ___ characters long."``
+   #. Use a template literal to print, ``"The DNA strand is ___ characters long."``
    #. Just for fun, apply methods to ``dna`` and use another template literal to
       print, ``'taco cat'``.
 

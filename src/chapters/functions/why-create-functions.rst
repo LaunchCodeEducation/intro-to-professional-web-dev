@@ -44,7 +44,7 @@ While the variable name ``reversed`` is descriptive, giving us a sense of what i
    }
 
    function isPalindrome(str) {
-      return reversed(str) === str;
+      return reverse(str) === str;
    }
 
 Aside from following the principle that functions should do only one thing, the logic within ``isPalindrome`` is more clear and self-descriptive. The function itself says, *a string is a palindrome if it is equal to its reverse*. To draw this same conclusion from the example above, without a ``reverse`` function, we are required to analyze more of the program's logic.

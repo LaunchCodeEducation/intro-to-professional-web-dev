@@ -9,7 +9,7 @@ order to create specific output:
    .. sourcecode:: js
       :linenos:
 
-      let name = Jack;
+      let name = "Jack";
       let currentAge = 9;
 
       console.log("Next year, " + name + " will be " + (currentAge + 1) + ".");
