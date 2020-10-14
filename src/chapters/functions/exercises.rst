@@ -45,8 +45,16 @@ Rectangles
 
       #####
 
-#. Write a function ``makeSquare(size)`` that returns an ``size`` by ``size``
-   square of hashes. Use your ``makeLine`` function to do this.
+#. Write a function called ``makeSquare(size)`` that returns a ``size`` by
+   ``size`` string of hashes. The function should NOT print each row of the
+   square. Instead, it must return a single string that contains the entire
+   shape.
+
+   .. admonition:: Tip
+   
+      #. Call your ``makeLine`` function to create each row of the square.
+      #. The newline character, ``\n``, will be helpful to you.
+      #. Do NOT include a newline character at the end of your string.
 
    .. sourcecode:: js
 
@@ -62,14 +70,12 @@ Rectangles
       #####
       #####
 
-   .. tip::
+   .. admonition:: Warning
 
-      The newline character, ``\n``, will be helpful to you.
-
-   .. warning::
-
-      For this and all other functions in these exercises, make sure you do NOT have a newline character at the end of your string. Not only will ``console.log`` add a newline there for you, but having an extra newline at the end will make life harder for you toward the end of the exercises.
-
+      For each of the shape exercises, do not include a newline character at
+      the very end of your string. While the final ``\n`` might not be
+      noticeable for the simpler shapes, including it will make life harder for
+      you toward the end of the exercises.
 
 #. Write a function ``makeRectangle(width, height)`` that returns a
    rectangle with the given width and height. Use your ``makeLine`` function to
