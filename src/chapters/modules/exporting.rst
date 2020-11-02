@@ -78,8 +78,8 @@ In ``index.js``, we import ``practiceExports.js`` with a ``require`` statement.
 
 There are several points to make about the code and output.
 
-#. By setting ``module.exports`` equal to ``isPalindrome``, we exported that
-   single function.
+#. Assigning ``isPalindrome`` to ``module.exports`` allows us to use that
+   function in other files.
 #. Even though we ``require`` the file ``practiceExports.js``, it only assigns
    ``isPalindrome`` to the variable ``palindromeCheck``. Thus, ``typeof
    palindromeCheck`` returns ``function``.
