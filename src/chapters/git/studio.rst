@@ -122,7 +122,7 @@ The file is not staged. Let's add everything in this directory.
 
       new file:   index.html
 
-We see that the file is staged. Let's commmit.
+We see that the file is staged. Let's commit.
 
 ::
 
