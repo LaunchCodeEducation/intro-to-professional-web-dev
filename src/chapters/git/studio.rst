@@ -74,7 +74,7 @@ create a new project.
    $ cd communication-log
    $ git init
 
-In that directory, open a new file `index.html` in the editor of your choice.
+In that directory, open a new file ``index.html`` in the editor of your choice.
 Paste in this code:
 
 .. sourcecode:: html
