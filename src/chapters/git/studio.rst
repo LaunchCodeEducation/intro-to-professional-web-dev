@@ -220,7 +220,7 @@ The command should look something like this.
 
    $ git clone https://github.com/chrisbay/communication-log.git
 
-Now you can respond to Control! Open the `index.html` file in your editor and
+Now you can respond to Control! Open the ``index.html`` file in your editor and
 add your response to mission control. Be creative---the communication can go
 anywhere! Just don't ask your partner what you should write. After you finish,
 commit your change.
@@ -251,7 +251,7 @@ have security permissions to write to Control's repo. Let's fix that.
 Step 4: Add A Collaborator To A GitHub Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Control**: In your web browser, go to your `communication-log` repo. Click
+**Control**: In your web browser, go to your ``communication-log`` repo. Click
 the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
 username and click *Add Collaborator*.
 
@@ -409,8 +409,8 @@ Now stage and commit these changes.
    $ git push origin open-mic
 
 Note that the last command is a bit different than what we've used before
-(`git push origin master`). The final piece of this command is the name of the
-branch that we want to push to GitHub.
+(``git push origin master``). The final piece of this command is the name of
+the branch that we want to push to GitHub.
 
 You and your partner should both now see a second branch present on the GitHub
 project page. To view branches on GitHub, select *Branches* from the navigation
@@ -517,7 +517,7 @@ Now switch back to the ``master`` branch:
    Your branch is up-to-date with 'origin/master'.
 
 You will see your files no longer have the changes made in the ``open-mic``
-branch. Let's go merge those changes in, so that the ```master``` branch adopts
+branch. Let's go merge those changes in, so that the ``master`` branch adopts
 all the changes in the ``open-mic`` branch.
 
 Step 11: Merge the Pull Request
