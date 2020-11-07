@@ -66,20 +66,22 @@ Just as we did above with the named function, we need to make sure that we inclu
 Optional Parameter
 ------------------
 
-In JavaScript, you can declare a function with 5 parameters and only give it 2 when it comes time to use it.
-In TypeScript, that is not the case.
-In TypeScript when you declare a function with 5 parameters, you have to give the function 5 arguments when calling it, unless you make some of those parameters optional.
+When declaring a function in TypeScript, you may make some of your parameters optional.
 This means that when you are calling the function, you can leave off the optional parameter(s).
 
-To denote a parameter as optional, you can use ``?`` notation. Any parameters that are optional must follow the required parameters.
+To denote a parameter as optional, we use the ``?`` notation. Any parameters that are optional must follow the required parameters.
 
 .. admonition:: Example
 
    .. sourcecode:: typescript
 
-      function myFunction(a: number, b?:number): number {
-         return a+b+5;
-      }
+		function myFunction(a: number, b?:number): number {
+			if (typeof b !== 'undefined'){
+				return a+b+5;
+			} else {
+				return a+5;
+			}
+		}
 
       console.log(myFunction(1,2));
       console.log(myFunction(1));
@@ -94,9 +96,8 @@ To denote a parameter as optional, you can use ``?`` notation. Any parameters th
       8
 
 In this example, the ``myFunction`` function has two parameters, ``a`` and ``b``.
-``a`` is required and ``b`` is optional.
+``a`` is required and ``b`` is optional. When both arguments are provided, then the sum of the 2 arguments and 5 is returned.
 When only one argument is provided to the function, then the value of ``a+5`` is returned.
-When both arguments are provided, then the sum of the 2 arguments and 5 is returned.
 
 Another way to deal with a parameter you need to be optional is to give it a default value.
 
@@ -113,14 +114,14 @@ That way, if no argument is supplied for ``b``, then the value returned is that 
 
       console.log(myFunction(1,2));
       console.log(myFunction(1));
-      console.log(myFunction(3,6));
+      console.log(myFunction(3,5));
       console.log(myFunction(3));      
 
    :: 
 
       8
       11
-      14
+      13
       13
 
 Because ``b`` has a default value of ``5``, when the user does not pass a value to the second argument of ``myFunction``, 5 is used as the value of ``b``.
@@ -130,9 +131,11 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is wrong with this function declaration? NOTE there are 3 things that are wrong here.
+   What is wrong with this function declaration? NOTE there are at least 3 things that should be changed.
 
    .. sourcecode:: typescript
 
-      let myFunction = function(a:string,b??:number) {return a*b};
+      let myFunction = function(a:number,b? = 3) {return a*b};
+
+.. ans: let myFunction = function(a:number, b=3): number {return a*b;};
 

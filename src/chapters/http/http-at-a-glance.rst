@@ -61,6 +61,9 @@ And just as your friend will respond with a letter telling you their favorite ch
 
 As we wade into the details of HTTP, keep this analogy in mind. It will help simplify the concepts and make them more concrete. 
 
+Check Your Understanding
+------------------------
+
 .. admonition:: Question
 
    In your own words, explain the role of HTTP in enabling communication over the Internet.
