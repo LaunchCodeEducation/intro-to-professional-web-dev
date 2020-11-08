@@ -46,13 +46,13 @@ HTTP **response codes** are standardized codes that servers use to convey the re
 - 4xx (Client Error): There was a problem with the client's request
 - 5xx (Server Error): The client's request was valid, but the server experienced an error when fulfilling it
 
-Specific codes will have all 3 digits specified, such as 201, 302, or 404. Each specific code has a specific meaning. One of the most commonly exprienced error codes is 404. You have likely encountered a message like this at some point:
+Specific codes will have all 3 digits specified, such as 201, 302, or 404. Each specific code has a specific meaning. One of the most commonly experienced error codes is 404. You have likely encountered a message like this at some point:
 
 .. figure:: figures/404.png
    :alt: A generic 404 message displayed in a browser.
    :height: 250px
 
-A 404 response code indicates that the requested resource does not exist on the server. This can occur when, for example, you make a typo when typing a URL into the address bar. Refering back to our postal service analogy, a 404 is similar to receiving a letter marked "Return to Sender" because the addressee doesn't live there anymore. 
+A 404 response code indicates that the requested resource does not exist on the server. This can occur when, for example, you make a typo when typing a URL into the address bar. Referring back to our postal service analogy, a 404 is similar to receiving a letter marked "Return to Sender" because the addressee doesn't live there anymore. 
 
 We don't expect you to memorize all of the response codes, but you should be able to quickly recall the most common codes.
 
@@ -96,7 +96,6 @@ There are `quite a few response headers <https://en.wikipedia.org/wiki/List_of_H
    * - ``Location``
      - The URL that the client should visit to find a relocated resource.
      - ``https://www.launchcode.org/new-blog/``
-
 
 Response Body
 -------------
