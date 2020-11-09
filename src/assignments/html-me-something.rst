@@ -271,8 +271,8 @@ Here’s how:
 
       GitHub Clone Url
 
-   b. Use the command below, *but replace ``PASTE_REPO_URL_HERE`` with the
-      actual url you copied from part a*:
+   b. Use the command below, but replace ``PASTE_REPO_URL_HERE`` with the
+      actual url you copied from Part A:
 
    ::
 

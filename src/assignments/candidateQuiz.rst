@@ -170,9 +170,9 @@ Submitting Your Work
 
    .. admonition:: Example
 
-      repl.it classroom URL: ``https://repl.it/student/submissions/9999999``
+      repl.it project URL: ``https://repl.it/@username/candidate-tester#index.js``
 
-#. Go to the Canvas assignment page and click Submit Assignment.
-#. Paste the URL into the Website URL input.
-#. Click Submit Assignment again.
+#. Go to the Canvas assignment page and click *Submit Assignment*.
+#. Paste the URL into the *Website URL* input.
+#. Click *Submit Assignment* again.
 #. Notify your TA that your assignment is ready to be graded.

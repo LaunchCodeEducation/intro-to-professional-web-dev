@@ -26,8 +26,8 @@ outputs:
 
    console.log('Hello, JavaScript.');
    console.log(2001);
-   console.log("Spot", "the", "difference");
-   console.log("Spot","the","difference");
+   console.log("What","do","commas","do?");
+   console.log("Does", "adding",      "space", "matter?");
    console.log('Launch' + 'Code');
    console.log("LaunchCode was founded in", 2013);
 
@@ -35,11 +35,11 @@ Observations line by line:
 
 #. In the line 1, we print some text, which is surrounded by quotes.
 #. In the line 2, we print a number. Note the absence of quote marks.
-#. In line 3, we use three words, separated by commas, all within the same
-   set of parentheses ``()``. When these three words print, they show up on
+#. In line 3, we use four words, separated by commas, all within the same
+   set of parentheses ``()``. When these four words print, they show up on
    the same line but separated by spaces.
-#. The code in line 4 is just like line 3, only there are no spaces after the
-   commas. How does this affect the output?
+#. The code in line 4 puts extra spaces after the commas. How does this affect
+   the output?
 #. Line 5 also prints more words, but in this case the code uses ``+``
    instead of a comma. The result is to print the words without spaces in
    between.

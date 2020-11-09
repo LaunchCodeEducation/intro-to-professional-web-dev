@@ -76,7 +76,7 @@ We'll start by initializing two variables: the string we want to reverse, and a 
 .. sourcecode:: js
    :linenos:
 
-   let str = "accumulator";
+   let str = "blue";
    let reversed = "";
 
 Here, ``reversed`` is our accumulator variable. Our approach to reversing the string will be to loop over ``str``, adding each subsequent character to the *beginning* of ``reversed``, so that the first character becomes the last, and the last character becomes the first.

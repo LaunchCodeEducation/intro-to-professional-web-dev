@@ -26,8 +26,6 @@ CSS has three different selectors that the programmer can use to make their styl
 The first one that most beginners start with is the **element selector**.
 Element refers to the HTML elements, so if the selector used is ``p``, then the styling will apply to all paragraph elements.
 
-
-
 The **id selector** is a specific id given to one element for CSS styling, for example when one paragraph on the web page needs to be bright pink.
 
 The final selector is the **class selector**. A class is a group of HTML elements that need the same styling. The class name is determined by the programmer.

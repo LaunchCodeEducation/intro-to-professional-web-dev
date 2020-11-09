@@ -204,7 +204,7 @@ Edge cases can look very different for different units of code. Most of the exam
 
 In the case of ``isPalindrome``, the most obvious edge case would be that of the empty string, ``""``. This is the smallest possible string that we can use when calling ``isPalindrome``. Not only is it the smallest, but it is essentially *different* from the next longest string, ``"a"``---one has characters and one doesn't. 
 
-Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is no right or wrong answer. In our case, we decided to take a very literal definition of the term "palindrome" by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of ``""`` is also ``""``, it makes sense to consider the emtpy string a palindrome.
+Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is no right or wrong answer. In our case, we decided to take a very literal definition of the term "palindrome" by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of ``""`` is also ``""``, it makes sense to consider the empty string a palindrome.
 
 Let's add this test case to our spec:
 

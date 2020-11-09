@@ -46,18 +46,20 @@ array, then modify the array and convert it back to a printable string.
 
 a. For a given string, use the ``includes`` method to check to see if the
    words are separated by commas (``,``), semicolons (``;``) or just spaces.
-b. If the string uses commas to separate the words, ``split`` it into an array, reverse
-   the entries, and then ``join`` the array into a new comma separated
-   string.
-c. If the string uses semicolons to separate the words, ``split`` it into an array,
-   alphabetize the entries, and then ``join`` the array into a new comma
-   separated string.
-d. If the string uses spaces to separate the words, ``split`` it into an array, reverse
-   alphabetize the entries, and then ``join`` the array into a new space
-   separated string.
-e. *Consider*: What if the string uses 'comma spaces' (, ) to separate the list? Modify your
-   code to produce the same result as part "b", making sure that the extra
-   spaces are NOT part of the final string.
+b. If the string uses commas to separate the words, ``split`` it into an array,
+   reverse the entries, and then ``join`` the array into a new comma separated
+   string. For example, ``"up,to,code,fun"`` becomes ``"fun,code,to,up"``.
+c. If the string uses semicolons to separate the words, ``split`` it into an
+   array, alphabetize the entries, and then ``join`` the array into a new
+   hyphen separated string. For example, ``"up;to;code;fun"`` becomes
+   ``"code-fun-to-up"``.
+d. If the string uses spaces to separate the words, ``split`` it into an array,
+   reverse alphabetize the entries, and then ``join`` the array into a new
+   space separated string. For example, ``"to code up fun"`` becomes
+   ``"up to fun code"``.
+e. *Consider*: What if the string uses 'comma spaces' (, ) to separate the
+   list? Modify your code to produce the same result as part "b", making sure
+   that the extra spaces are NOT part of the final string.
 
 `Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio02>`__
 
@@ -70,10 +72,10 @@ a. The cargo hold in our shuttle contains several smaller storage spaces. Use
    ``split`` to convert the following strings into four cabinet arrays.
    Alphabetize the contents of each cabinet.
 
-   i. "water bottles, meal packs, snacks, chocolate"
-   ii. "space suits, jet packs, tool belts, thermal detonators"
-   iii. "parrots, cats, moose, alien eggs"
-   iv. "blankets, pillows, eyepatches, alarm clocks"
+   i. ``"water bottles, meal packs, snacks, chocolate"``
+   ii. ``"space suits, jet packs, tool belts, thermal detonators"``
+   iii. ``"parrots, cats, moose, alien eggs"``
+   iv. ``"blankets, pillows, eyepatches, alarm clocks"``
 
 b. Initialize a ``cargoHold`` array and add the cabinet arrays to it. Print
    ``cargoHold`` to verify its structure.
@@ -83,7 +85,7 @@ d. Use bracket notation and a template literal to display the contents of
    error message instead.
 e. *Bonus to the Bonus*: Modify the code to query the user for BOTH a cabinet in
    ``cargoHold`` AND a particular item. Use the ``includes`` method to check
-   if the cabinet contains the selected item, then print "Cabinet ____
-   DOES/DOES NOT contain ____."
+   if the cabinet contains the selected item, then print ``"Cabinet ____
+   DOES/DOES NOT contain ____."``
 
 `Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio03>`__
