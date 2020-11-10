@@ -62,7 +62,7 @@ Not surprisingly, JavaScript reports that the data type of ``"Hello, World!"`` i
 
 .. note::
 
-   ``typeof`` is a JavaScript entity known as an **operator**. It is similar to a function in that it carries out some kind of action, though the syntax is different from that of functions (notice using ``typeof`` does not require parenthses).
+   ``typeof`` is a JavaScript entity known as an **operator**. It is similar to a function in that it carries out some kind of action, though the syntax is different from that of functions (notice using ``typeof`` does not require parentheses).
    
    We will more about operators in upcoming sections.
 

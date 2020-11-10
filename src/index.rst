@@ -101,6 +101,7 @@ Appendices
    appendices/math-method-examples/index
    appendices/terminal-commands/index
    appendices/installing-software/index
+   appendices/exercise-solutions/index
 
 .. toctree::
    :hidden:
