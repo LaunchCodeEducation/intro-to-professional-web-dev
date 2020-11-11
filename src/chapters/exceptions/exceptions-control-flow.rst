@@ -50,7 +50,7 @@ the control flow.
 
       try {
          console.log('animal at index:', animals[index].name);
-      } catch(TypeError) {
+      } catch(err) {
          console.log("We caught a TypeError, but our program continues to run!");
          console.log("You tried to access an animal at index:", index);
       }
@@ -103,7 +103,7 @@ What is special about ``finally`` is that ``finally`` code block ALWAYS runs, ev
 
       try {
          console.log('animal at index:', animals[index].name);
-      } catch(TypeError) {
+      } catch(err) {
          console.log("We caught a TypeError, but our program continues to run!");
       } finally {
          console.log("You tried to access an animal at index:", index);
