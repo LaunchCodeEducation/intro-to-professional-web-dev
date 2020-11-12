@@ -1,3 +1,5 @@
+.. _exercises-booleans-and-conditionals:
+
 Exercises: Booleans and Conditionals
 ====================================
 
@@ -5,33 +7,40 @@ Attempt these exercises to test your understanding. Don't worry if you struggle
 while working on them. Struggling and then reviewing the material will help you
 remember it.
 
-In class, be sure to ask about the topics you do not understand. You are NOT
-the only person who needs help.
+Take note of any problem here or topic from this chapter that you don't understand. 
+Take a break and return to the problem. Do you see it in a new way or have a better 
+understanding? If not, try spending five minutes researching the topic. Start with this
+book and if you still have questions, ask one on the internet or Slack/Discourse. 
+You're not the first person to learn to code and you're definitely not the first person
+to ask a question or get stuck!
 
-`Code exercises 1 & 2 here <https://repl.it/@launchcode/ConditionalsExercises01>`__.
+`Code exercises A & B here <https://repl.it/@launchcode/ConditionalsExercises01>`__.
 
-#. Declare and initialize the following variables for our space shuttle:
+A. **Declare and initialize the following variables for our space shuttle**
 
    .. list-table::
       :widths: auto
       :header-rows: 1
 
-      * - Variable
+      * - Variable Name
         - Value
-      * - ``engineIndicatorLight``
-        - ``"red blinking"``
-      * - ``spaceSuitsOn``
-        - ``true``
-      * - ``shuttleCabinReady``
-        - ``true``
-      * - ``crewStatus``
-        - ``spaceSuitsOn && shuttleCabinReady``
-      * - ``computerStatusCode``
-        - ``200``
-      * - ``shuttleSpeed``
-        - ``15000``
+      * - engineIndicatorLight
+        - red blinking
+      * - spaceSuitsOn
+        - true
+      * - shuttleCabinReady
+        - true
+      * - crewStatus
+        - spaceSuitsOn && shuttleCabinReady
+      * - computerStatusCode
+        - 200
+      * - shuttleSpeed
+        - 15000
 
-#. Examine the code below. What will be printed to the console?
+
+   :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsA>`. 
+
+#. **Examine the code below. What will be printed to the console?**
 
    Use the value of ``engineIndicatorLight`` defined above to answer this
    question.
@@ -47,14 +56,18 @@ the only person who needs help.
          console.log("engines are off");
       }
 
-#. Write conditional expressions to satisfy the safety rules below, using the
-   variables defined from the table above.
-   `Code exercises 3 & 4 here <https://repl.it/@launchcode/ConditionalsExercises02>`__.
+`Code exercises C & D here <https://repl.it/@launchcode/ConditionalsExercises02>`__.
+
+C. **Write conditional expressions to satisfy the safety rules below** 
+
+   Use the variables defined from the table above.
 
    #. ``crewStatus``
 
       - If the value is ``true``, print ``"Crew Ready"``
       - Else print ``"Crew Not Ready"``
+
+      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsC1>`
 
    #. ``computerStatusCode``
 
@@ -62,6 +75,8 @@ the only person who needs help.
         ``"Please stand by. Computer is rebooting."``
       - Else if the value is ``400``, print ``"Success! Computer online."``
       - Else print ``"ALERT: Computer offline!"``
+
+      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsC2>`
 
    #. ``shuttleSpeed``
 
@@ -71,7 +86,9 @@ the only person who needs help.
         ``"ALERT: Cannot maintain orbit!"``
       - Else print ``"Stable speed"``
 
-#. PREDICT:
+      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsC3>`
+
+#. **PREDICT**
 
    Do these code blocks produce the same result? Answer Yes or No.
 
