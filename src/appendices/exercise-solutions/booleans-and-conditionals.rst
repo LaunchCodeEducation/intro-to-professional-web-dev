@@ -19,14 +19,9 @@ A. **Declare and initialize the following variables for our space shuttle.**
 
    :ref:`Back to the exercises <exercises-booleans-and-conditionals>`
 
-C. **Write conditional expressions to satisfy the safety rules below.** 
+C. **Write conditional expressions to satisfy the safety rules.** 
 
-   #. ``crewStatus``
-
-      - If the value is ``true``, print ``"Crew Ready"``
-      - Else print ``"Crew Not Ready"``
-
-      .. _booleans-and-conditionals-exercise-solutionsC1:
+   a. .. _booleans-and-conditionals-exercise-solutionsCa:
 
       .. sourcecode:: js
          :linenos:
@@ -37,14 +32,7 @@ C. **Write conditional expressions to satisfy the safety rules below.**
             console.log("Crew Not Ready");
          }
 
-   #. ``computerStatusCode``
-
-      - If the value is ``200``, print
-        ``"Please stand by. Computer is rebooting."``
-      - Else if the value is ``400``, print ``"Success! Computer online."``
-      - Else print ``"ALERT: Computer offline!"``
-
-      .. _booleans-and-conditionals-exercise-solutionsC2:
+   #. .. _booleans-and-conditionals-exercise-solutionsCb:
 
       .. sourcecode:: js
          :linenos:
@@ -57,15 +45,7 @@ C. **Write conditional expressions to satisfy the safety rules below.**
             console.log("ALERT: Computer offline!");
          }
 
-   #. ``shuttleSpeed``
-
-      - If the value is ``> 17500``, print
-        ``"ALERT: Escape velocity reached!"``
-      - Else if the value is ``< 8000``, print
-        ``"ALERT: Cannot maintain orbit!"``
-      - Else print ``"Stable speed"``
-
-      .. _booleans-and-conditionals-exercise-solutionsC3:
+   #. .. _booleans-and-conditionals-exercise-solutionsCc:
 
       .. sourcecode:: js
          :linenos:
@@ -77,5 +57,28 @@ C. **Write conditional expressions to satisfy the safety rules below.**
          } else {
             console.log("Stable speed.");
          }
+
+   :ref:`Back to the exercises <exercises-booleans-and-conditionals>`
+
+.. _booleans-and-conditionals-exercise-solutionsE:
+
+E. **Monitor the shuttle's fuel status.**
+
+   .. sourcecode:: js
+      :linenos:
+
+      if (fuelLevel < 1000 || engineTemperature > 3500 || engineIndicatorLight === "red blinking") {
+         console.log("ENGINE FAILURE IMMINENT!");
+      } else if (fuelLevel <= 5000 || engineTemperature > 2500) {
+         console.log("Check fuel level. Engines running hot.");
+      } else if (fuelLevel > 20000 && engineTemperature <= 2500) {
+         console.log("Full tank. Engines good.");
+      } else if (fuelLevel > 10000 && engineTemperature <= 2500) {
+         console.log("Fuel level above 50%. Engines good.");
+      } else if (fuelLevel > 5000 && engineTemperature <= 2500) {
+         console.log("Fuel level above 25%. Engines good.");
+      } else {
+         console.log("Fuel and engine status pending...");
+      }
 
    :ref:`Back to the exercises <exercises-booleans-and-conditionals>`

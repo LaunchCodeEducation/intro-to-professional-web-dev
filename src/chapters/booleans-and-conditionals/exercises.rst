@@ -58,27 +58,27 @@ A. **Declare and initialize the following variables for our space shuttle**
 
 `Code exercises C & D here <https://repl.it/@launchcode/ConditionalsExercises02>`__.
 
-C. **Write conditional expressions to satisfy the safety rules below** 
+C. **Write conditional expressions to satisfy the safety rules.** 
 
-   Use the variables defined from the table above.
+   Use the variables defined from the table above to satisfy the rules listed below.
 
    #. ``crewStatus``
 
       - If the value is ``true``, print ``"Crew Ready"``
       - Else print ``"Crew Not Ready"``
 
-      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsC1>`
+      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsCa>`
 
-   #. ``computerStatusCode``
+   2. ``computerStatusCode``
 
       - If the value is ``200``, print
         ``"Please stand by. Computer is rebooting."``
       - Else if the value is ``400``, print ``"Success! Computer online."``
       - Else print ``"ALERT: Computer offline!"``
 
-      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsC2>`
+      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsCb>`
 
-   #. ``shuttleSpeed``
+   3. ``shuttleSpeed``
 
       - If the value is ``> 17500``, print
         ``"ALERT: Escape velocity reached!"``
@@ -86,7 +86,7 @@ C. **Write conditional expressions to satisfy the safety rules below**
         ``"ALERT: Cannot maintain orbit!"``
       - Else print ``"Stable speed"``
 
-      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsC3>`
+      :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsCc>`
 
 #. **PREDICT**
 
@@ -110,8 +110,10 @@ C. **Write conditional expressions to satisfy the safety rules below**
          console.log("all systems go");
       }
 
-#. The remaining exercises implement conditional code to monitor the shuttle's
-   fuel status. `Code exercises 5 & 6 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
+`Code exercises E & F here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
+
+E. **Monitor the shuttle's fuel status.**
+
    Implement the checks below using ``if`` / ``else if`` / ``else``
    statements. Order is important when working with conditionals, and the
    checks below are NOT written in the correct sequence. Please read ALL of the
@@ -130,45 +132,47 @@ C. **Write conditional expressions to satisfy the safety rules below**
       IMMINENT!"``
    #. Otherwise, print ``"Fuel and engine status pending..."``
 
-.. admonition:: Try It
+   .. admonition:: Try It
 
-   Run your code several times to make sure it prints the correct phrase for
-   each set of conditions.
+      Run your code several times to make sure it prints the correct phrase for
+      each set of conditions.
 
-   .. list-table::
-      :widths: auto
-      :header-rows: 1
+      .. list-table::
+         :widths: auto
+         :header-rows: 1
 
-      * - **fuelLevel**
-        - **engineTemperature**
-        - **engineIndicatorLight**
-        - **Result**
-      * - Any
-        - Any
-        - ``red blinking``
-        - ``ENGINE FAILURE IMMINENT!``
-      * - 21000
-        - 1200
-        - NOT ``red blinking``
-        - ``Full tank. Engines good.``
-      * - 900
-        - Any
-        - Any
-        - ``ENGINE FAILURE IMMINENT!``
-      * - 5000
-        - 1200
-        - NOT ``red blinking``
-        - ``Check fuel level. Engines running hot.``
-      * - 12000
-        - 2600
-        - NOT ``red blinking``
-        - ``Check fuel level. Engines running hot.``
-      * - 18000
-        - 2500
-        - NOT ``red blinking``
-        - ``Fuel level above 50%. Engines good.``
+         * - **fuelLevel**
+           - **engineTemperature**
+           - **engineIndicatorLight**
+           - **Result**
+         * - Any
+           - Any
+           - ``red blinking``
+           - ``ENGINE FAILURE IMMINENT!``
+         * - 21000
+           - 1200
+           - NOT ``red blinking``
+           - ``Full tank. Engines good.``
+         * - 900
+           - Any
+           - Any
+           - ``ENGINE FAILURE IMMINENT!``
+         * - 5000
+           - 1200
+           - NOT ``red blinking``
+           - ``Check fuel level. Engines running hot.``
+         * - 12000
+           - 2600
+           - NOT ``red blinking``
+           - ``Check fuel level. Engines running hot.``
+         * - 18000
+           - 2500
+           - NOT ``red blinking``
+           - ``Fuel level above 50%. Engines good.``
 
-6. Final bit of fun!
+   :ref:`Check your solution <booleans-and-conditionals-exercise-solutionsE>`
+
+6. **Final bit of fun!**
 
    The shuttle should only launch if the fuel tank is full and the engine check
    is OK. *However*, let's establish an override command to ignore any warnings
