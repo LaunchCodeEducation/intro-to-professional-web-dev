@@ -85,8 +85,9 @@ Using the element selector will make all paragraph elements on the page have pin
 
 **Class Selector**
 
-Now, if a few of the paragraphs on the page are given the class ``pink-paragraph`` on the HTML document, like so: ``<p class="pink-paragraph">content</p>``.
-To use the class selector in CSS, we would write something like:
+We can give a few of the paragraphs on the page the class ``pink-paragraph`` on the HTML document, like so: ``<p class="pink-paragraph">content</p>``.
+If we want to then style the ``pink-paragraph`` elements, we need to use the class selector in CSS.
+Here is how our CSS might look:
 
 .. sourcecode:: css
    :linenos:
