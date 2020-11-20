@@ -117,7 +117,7 @@ Linking CSS to HTML
 
 To get started with CSS, programmers need to add CSS to HTML.
 
-There are three different places to add CSS in an HTML file as indicated above:
+There are three different places to add CSS in an HTML file as indicated below:
 
 1. External: The CSS is in a separate file linked to the HTML document in the ``<head>``. External linking of CSS is great for when programmers have large quantities of CSS that apply to the whole page.
 
