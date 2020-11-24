@@ -1,33 +1,27 @@
+.. _exercises-errors-and-debugging:
+
 Exercises: Debugging
 ====================
 
-Imagine we are pirates running a space station. Captain Api Hook tells the crew the following:
+Imagine we are running a space station. Your job is to evaluate the station's code and fix any errors. 
+The lives of the crew rest squarely upon your shoulders. 
 
-   Avast, ye scurvy dogs! We be needn' ta fix yonder code!
+Your directions from superiors:
 
-   The cap'n in charge of clearing the shuttle for launch(code) be out with
-   an illness, and ye be the next tech in line.
-
-   Yer job is to evaluate the code and fix any errors. Remember, the lives
-   of the crew rest squarely upon yer shoulders. Happy second day on the job!
-
-   Yer directions are as follows:
-
-   #. Launch the shuttle *only if* the fuel, crew and computer all check out OK.
-   #. If a check fails, print that information to the console and scrub the
-      launch (then scrub the deck).
-   #. If all checks be successful, print a countdown to the console, then
-      bellow "Liftoff!"
+#. Launch the shuttle *only if* the fuel, crew and computer all check out OK.
+#. If a check fails, print that information to the console and scrub the
+   launch.
+#. If all checks are successful, print a countdown to launch in the console.
 
 
 Debugging Practice
 ------------------
 
-#. Fix **syntax errors** first. Run the following code as-is and squint yer
-   eyes at the error message. Fix the mistake, and then re-run the code to
-   check it.
+A. Fix **syntax errors** first. Run the following code as-is and read the error message. 
+   Fix the mistake, and then re-run the code to check it.
 
-   ::
+   .. sourcecode:: js
+      :linenos:
 
       let launchReady = false;
       let fuelLevel = 17000;
@@ -42,12 +36,13 @@ Debugging Practice
 
    `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError>`_
 
-#. The next block of code hides two syntax errors. Run the code as-is to
-   find the mistakes. *Tip*: Don't be too hasty, Matey! Only ONE error will
-   be flagged at a time. Fix that ONE problem, and then re-run the code to
-   check yer work. Avoid trying to fix multiple issues at once.
+   :ref:`Check your solution <errors-and-debugging-exercise-solutionsA>`. 
 
-   ::
+#. The next block of code hides two syntax errors. Run the code as-is to
+   find the mistakes. 
+   
+   .. sourcecode:: js
+      :linenos:
 
       let launchReady = false;
       let crewStatus = true;
@@ -70,14 +65,22 @@ Debugging Practice
          console.log("Launch scrubbed.");
       }
 
+   .. admonition:: Tip
+
+      Only one error will
+      be flagged at a time. Fix that ONE problem, and then re-run the code to
+      check your work. Avoid trying to fix multiple issues at once.
+
+
    `Fix it at repl.it <https://repl.it/@launchcode/DebugSyntaxErrors2>`__
 
 #. Fix **runtime errors** next. Remember to examine the error message for
    clues about what is going wrong. Pay close attention to any line
-   numbers mentioned in the message - these will help ye locate and repair
+   numbers mentioned in the message - these will help you locate and repair
    the mistake in the code.
 
-   ::
+   .. sourcecode:: js
+      :linenos:
 
       let launchReady = false;
       let fuelLevel = 17000;
@@ -91,6 +94,8 @@ Debugging Practice
       }
 
    `Fix it at repl.it <https://repl.it/@launchcode/DebugRuntimeErrors1>`__
+
+   :ref:`Check your solution <errors-and-debugging-exercise-solutionsC>`. 
 
 #. *Arrr!*  Now find and fix the runtime error in a longer code sample.
 
@@ -236,13 +241,13 @@ Debugging Practice
       in the first ``if/else`` block got changed in the second ``if/else``
       block. Dangerous waters, Matey. Since the issue is with ``launchReady``,
       ONE way to fix the logic error is to use a different variable to store the
-      fuel check result. Update yer code to do this. Verify that yer change works
+      fuel check result. Update your code to do this. Verify that your change works
       by updating the ``console.log`` statements.
 
       `Fix it at repl.it <https://repl.it/@launchcode/DebugLogicErrors5>`__
 
-   #. Almost done, so wipe the sweat off yer brow! Add a final ``if/else`` block
+   #. Almost done, so wipe the sweat off your brow! Add a final ``if/else`` block
       to print a countdown and "Liftoff!" if all the checks pass, or print "Launch
       scrubbed" if any check fails.
 
-      Blimey! That's some good work. Now go feed yer parrot.
+      Blimey! That's some good work. Now go feed your parrot.
