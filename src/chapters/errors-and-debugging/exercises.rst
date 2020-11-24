@@ -97,9 +97,11 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
 
    :ref:`Check your solution <errors-and-debugging-exercise-solutionsC>`. 
 
-#. *Arrr!*  Now find and fix the runtime error in a longer code sample.
+#. *Arrr!*  Did we mention your crew are space pirates? 
+   Now find and fix the runtime error in a longer code sample.
 
-   ::
+   .. sourcecode:: js
+      :linenos:
 
       let launchReady = false;
       let fuelLevel = 27000;
@@ -133,7 +135,8 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
 
    #. First, run this sample code as-is and examine the output.
 
-      ::
+      .. sourcecode:: js
+         :linenos:
 
          let launchReady = false;
          let fuelLevel = 17000;
@@ -167,12 +170,19 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
 
       Should the shuttle have launched? Did it?
 
-   #. Let's break the code down into smaller chunks. Consider the first if/else block below. Add ``console.log(launchReady)`` after this block, then run the program.
+      :ref:`Check your answer <errors-and-debugging-exercise-solutionsEa>`. 
 
-      ::
+   #. Let's break the code down into smaller chunks. Consider the first ``if/else`` block below. 
+      We've commented out some of the variables we're not inspecting right now.
+      Add ``console.log(launchReady)`` after this block, then run the program.
+
+      .. sourcecode:: js
+         :linenos:
 
          let launchReady = false;
          let fuelLevel = 17000;
+         // let crewStatus = true;
+         // let computerStatus = 'green';
 
          if (fuelLevel >= 20000) {
             console.log('Fuel level cleared.');
@@ -182,17 +192,29 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
             launchReady = false;
          }
 
+
       `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors2>`__
 
       Given the ``fuelLevel`` value, should ``launchReady`` be ``true`` or ``false`` after the check? Is the program behaving as expected?
 
-   #. Now consider the second if/else block. Add another ``console.log(launchReady)`` after this block and run the program.
+   #. Now consider the second ``if/else`` block. Here again, we comment the variables and blocks that we're not inspecting.
+      Add another ``console.log(launchReady)`` after this block and run the program.
 
-      ::
+      .. sourcecode:: js
+         :linenos:
 
          let launchReady = false;
+         // let fuelLevel = 17000;
          let crewStatus = true;
          let computerStatus = 'green';
+
+         // if (fuelLevel >= 20000) {
+         //    console.log('Fuel level cleared.');
+         //    launchReady = true;
+         // } else {
+         //    console.log('WARNING: Insufficient fuel!');
+         //    launchReady = false;
+         // }
 
          if (crewStatus && computerStatus === 'green'){
             console.log('Crew & computer cleared.');
@@ -204,11 +226,16 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
 
       `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors3>`__
 
-      Given ``crewStatus`` and ``computerStatus``, should ``launchReady`` be ``true`` or ``false`` after this check? Is the program behaving as expected?
+      Given ``crewStatus`` and ``computerStatus``, should ``launchReady`` be ``true`` or ``false`` after this check? 
+      
+      .. Is the program behaving as expected?
 
-   #. Now consider both if/else blocks together (keeping the added ``console.log`` lines). Run the code and examine the output.
+      :ref:`Check your answer <errors-and-debugging-exercise-solutionsEc>`. 
 
-      ::
+   #. Now consider both ``if/else`` blocks together (keeping the added ``console.log`` lines). Run the code and examine the output.
+
+      .. sourcecode:: js
+         :linenos:
 
          let launchReady = false;
          let fuelLevel = 17000;
@@ -239,15 +266,21 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
 
    #. Ahoy, Houston! We spied a problem! The value of ``launchReady`` assigned
       in the first ``if/else`` block got changed in the second ``if/else``
-      block. Dangerous waters, Matey. Since the issue is with ``launchReady``,
-      ONE way to fix the logic error is to use a different variable to store the
-      fuel check result. Update your code to do this. Verify that your change works
+      block. Dangerous waters, Matey. 
+      
+      The issue is with the ``launchReady`` value being assigned and reassigned based on different checks.
+      One way to fix the logic error is to use two different variables to store the
+      results of checking the fuel readiness (lines 6-13) and checking the crew and computer readiness (lines 15-22). 
+      
+      Update your code to do this. Verify that your change works
       by updating the ``console.log`` statements.
 
       `Fix it at repl.it <https://repl.it/@launchcode/DebugLogicErrors5>`__
+
+      :ref:`Check your solution <errors-and-debugging-exercise-solutionsEe>`. 
 
    #. Almost done, so wipe the sweat off your brow! Add a final ``if/else`` block
       to print a countdown and "Liftoff!" if all the checks pass, or print "Launch
       scrubbed" if any check fails.
 
-      Blimey! That's some good work. Now go feed your parrot.
+      Blimey! That's some good work. 
