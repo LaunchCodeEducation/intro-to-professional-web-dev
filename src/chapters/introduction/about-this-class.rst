@@ -39,35 +39,6 @@ the class, it is essential to practice in order to reinforce your understanding
 of the new concepts.
 
 
-In-class Time
--------------
-
-In class you will meet many fellow students on the same learning journey as
-you. We encourage students to engage, interact, and encourage each other
-throughout the class.
-
-In class there will also be an instructor and teaching assistants. This
-dedicated staff facilitates the activities and provides support to the
-students.
-
-Large Group Time
-^^^^^^^^^^^^^^^^
-
-During the large group time, the whole class participates in the lesson, led by
-the instructor. The lesson is not a substitute for doing the prep work before
-class. It's a time for us to review examples as a group and shore up concepts
-from the prep work.
-
-Small Group Time
-^^^^^^^^^^^^^^^^
-
-After the large group time, we will break up into small groups, each led by a
-teaching assistant. During small group time, we will do in-class coding
-activities called studios. This time is equally as important as large group
-time because it is time for individual support and a place where you can feel
-comfortable talking openly about concepts you are struggling with.
-
-
 Graded Assignments
 ^^^^^^^^^^^^^^^^^^
 
