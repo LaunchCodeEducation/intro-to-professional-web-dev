@@ -24,7 +24,7 @@ same skills required to make a phone today. A career as a technologist,
 specifically as a programmer, is one of lifelong learning.
 
 Learning to code is not only valuable and challenging, it is also fun.
-Every "EUREKA!" moment inspires us to keep going forward and to learn new
+Every *EUREKA!* moment inspires us to keep going forward and to learn new
 things. You may find some concepts difficult to understand at first, but these
 will also be the skills you take the most pride in mastering. While the journey
 to learning to code is long and winding, it is also rewarding.
