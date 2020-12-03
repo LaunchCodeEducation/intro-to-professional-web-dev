@@ -7,9 +7,9 @@ As a user of the web, you know that web pages both display and accept data. In t
 we are going to learn more about how web pages handle data input using HTML forms.
 An HTML **form** is used to accept input from the user and send that data to the server.
 
-
 Create a Form
 -------------
+
 To declare a form in HTML use the ``<form>`` tag with open and closing tags. This form element
 will serve as container for various types of other elements that are designed to capture
 input from the user.
@@ -121,19 +121,23 @@ For *text* inputs, when the label is clicked, then the input gains *focus*. An e
 
 .. admonition:: Example
 
-   Click on the label text to the associated text input element gain focus.
+   Try clicking on the ``Username`` and ``Team Name`` labels below. What
+   happens?
 
    .. raw:: html
 
-      <div><label for="username">Username</label><input id="username" name="username" type="text"/></div>
+      <form>
+         <label>Username <input type="text" name="username"/></label>
+         <label>Team Name <input type="text" name="team"/></label>
+      </form>
 
    .. sourcecode:: html
       :linenos:
 
-      <div>
-         <label for="username">Username</label>
-         <input id="username" name="username" type="text"/>
-      </div>
+      <form>
+         <label>Username <input type="text" name="username"/></label>
+         <label>Team Name <input type="text" name="team"/></label>
+      </form>
 
 For *non-text* inputs, when the label is clicked, a value is selected. This behavior
 can be seen with ``radio`` and ``checkbox`` elements which we will learn more about soon.
@@ -144,20 +148,20 @@ can be seen with ``radio`` and ``checkbox`` elements which we will learn more ab
 
    .. raw:: html
 
-      <div><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></div>
+      <form><label>Subscribe to Newsletter<input type="checkbox" name="newsletter"/></label></form>
 
    .. sourcecode:: html
       :linenos:
 
-      <div>
+      <form>
          <label>Subscribe to Newsletter
             <input type="checkbox" name="newsletter"/>
          </label>
-      </div>
-
+      </form>
 
 Value Attribute
 ---------------
+
 The ``value`` attribute of an ``<input>`` tag can be used to set the default value. If the
 ``value`` attribute is declared, then the browser will show that value in the input. The user
 can choose to update the value by typing in the input box.
@@ -168,12 +172,14 @@ can choose to update the value by typing in the input box.
 
    .. raw:: html
 
-      <div><label>Language<input name="language" type="text" value="JavaScript"/></label></div>
+      <div><label>Language <input name="language" type="text" value="JavaScript"/></label></div>
 
    .. sourcecode:: html
+      :linenos:
 
-      <div><label>Language<input name="language" type="text" value="JavaScript"/></label></div>
-
+      <form>
+         <label>Language <input name="language" type="text" value="JavaScript"/></label>
+      </form>
 
 Check Your Understanding
 ------------------------
