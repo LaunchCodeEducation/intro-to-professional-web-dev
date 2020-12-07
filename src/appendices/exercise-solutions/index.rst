@@ -7,3 +7,5 @@ Exercise Solutions
    :maxdepth: 2
 
    data-and-variables
+   booleans-and-conditionals
+
