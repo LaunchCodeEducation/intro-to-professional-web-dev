@@ -1,3 +1,5 @@
+.. _exercises-strings:
+
 Exercises: Strings
 ==================
 
@@ -29,6 +31,8 @@ Part One
       ``indexOf()`` or ``includes()`` string methods).
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises02/>`__
+
+   :ref:`Check your solution <strings-exercise-solutions1>`. 
 
 Part Two
 --------
@@ -63,6 +67,8 @@ Part Two
 
    `Code it at repl.it <https://repl.it/@launchcode/DNA-strings/>`__
 
+   :ref:`Check your solution <strings-exercise-solutions2>`. 
+
 Part Three
 ----------
 
@@ -88,3 +94,5 @@ Part Three
    from the string ``'title case'``.
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises06/>`__
+
+   :ref:`Check your solution <strings-exercise-solutions3>`. 
