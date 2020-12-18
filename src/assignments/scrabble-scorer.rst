@@ -26,11 +26,11 @@ Requirements
 .. admonition:: Note
 
    The requirements below are what your assignment should look like when it's 
-	time to submit. Rome wasn't built in a day and neither was Scrabble.
+   time to submit. Rome wasn't built in a day and neither was Scrabble.
 
    This assignment is broken down so you can complete small pieces as you go.
-   You need to move sequentially starting at part A below. You'll have a much more 
-	enjoyable time writing this program if you read this entire page before even opening repl.it.
+   You need to move sequentially starting with Part A below. You'll have a much more 
+   enjoyable time writing this program if you read this entire page before even opening repl.it.
 
 .. TODO: reorder these bad boys
 
@@ -47,7 +47,28 @@ Requirements
 Starter Code
 ------------
 
+You only need to pay attention to one file here, ``scrabble-scorer.js``. Within this JavaScript
+file is still some more starter code that you don't need to touch. We'll point out what you 
+should be modifying here to write your Scrabble Scorer program.
 
+Hit the repl.it run button initally and you'll see a message printed to the console:
+
+:: 
+
+   > node program
+   Let's play some Scrabble! Enter a word:
+   >
+
+.. admonition:: Tip
+
+   If you don't see this message printed and have used your repl.it troubleshooting skills, 
+   reach out to your classmates or course staff ASAP so you can get started with the real coding.
+
+.. admonition:: Your Task
+
+   Modify the provided ``initialPrompt()`` function to prompt the user to enter a word to score. 
+   The prompt should also provide the
+   user an option for ending the program.
 
 Instructions
 ------------
