@@ -5,14 +5,17 @@ To see how far your skills have come, we are going to give you a mission to
 update our *super* important Scrabble Scorer program. Did you think you were
 going to work on Mars rover code already?
 
-The current Scrabble Scorer program takes in a word and returns its point
-value. The program needs to be rewritten for two reasons:
+.. TODO: little blurb about what scrabble is and how scoring works
 
-#. The data structure used to store the letter point values is inefficient.
-#. The program should have three scoring algorithms and allow the user to pick
-   which one to use.
+We want you to write a scrabble scoring program that asks a user for a word 
+and outputs a score. Your final version will have three scoring algorithms and 
+allow the user to pick which one to use. We've provided some starter code that
+includes the official Scrabble scoring point system and we'd like you to make 
+some modifications to improve it.
 
-These new features will make the program more efficient and user friendly.
+Let's roll.
+
+.. TODO: mod this replit instruction. 3 types of students. independent learning track, instructor led track, and independent readers
 
 If you are NOT enrolled in a repl.it classroom for this course, fork the
 starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
@@ -22,10 +25,14 @@ Requirements
 
 .. admonition:: Note
 
-   The requirements below are what your END assignment will look like.
+   The requirements below are what your assignment should look like when it's 
+	time to submit. Rome wasn't built in a day and neither was Scrabble.
+
    This assignment is broken down so you can complete small pieces as you go.
-   You need to move sequentially starting at part A below. Please read the
-   WHOLE assignment page before starting.
+   You need to move sequentially starting at part A below. You'll have a much more 
+	enjoyable time writing this program if you read this entire page before even opening repl.it.
+
+.. TODO: reorder these bad boys
 
 #. Create an ``initialPrompt`` function that asks the user which scoring
    algorithm to use.
@@ -37,11 +44,16 @@ Requirements
 #. Create a ``runProgram`` function to serve as the starting point for your
    program.
 
+Starter Code
+------------
+
+
+
 Instructions
--------------
+------------
 
 A) Initial Prompt
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 In the starter code, the Scrabble Scorer only uses one scoring algorithm. For
 the new version, we want to let the user pick between three algorithms. Define
@@ -63,7 +75,7 @@ Your prompt could look something like:
    Enter 0, 1, or 2:
 
 B) Transform
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Currently, the software uses the data structure below for the traditional
 Scrabble scoring algorithm. Take a few moments to review how the
@@ -93,7 +105,7 @@ inside the array paired with that key. *This search within a search is
 inefficient*.
 
 Streamlined Score Object
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 It would be better to create a ``newPointStructure`` object that has 26 keys,
 one for each letter. The value of each key will be the Scrabble point value.
@@ -132,7 +144,7 @@ Do not panic! Instead of tediously hard-coding ``newPointStructure``, use your
 clever coding skills to create the new object.
 
 Code the Function
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 #. Write a ``transform`` function that takes an object as a parameter. Calling
    ``transform(oldPointStructure)`` will return an object with *lowercase*
@@ -175,7 +187,7 @@ Code the Function
             2nd letter within the key '8' array: X
 
 C) Scoring Algorithms
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Create a separate function for each of the following scoring algorithms.
 
@@ -195,7 +207,7 @@ Create a separate function for each of the following scoring algorithms.
    the word.
 
 Define Scoring Objects
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 #. Create an object for each of the three scoring options. Each object should
    contain three keys: ``name``, ``description``, and ``scoreFunction``.
@@ -224,7 +236,7 @@ Define Scoring Objects
 #. Create a ``scoringAlgorithms`` array to hold your three scorer objects.
 
 Take a Breath
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 Good! Your ``scoringAlgorithms`` structure now holds all of the scoring
 information required for the new Scrabble program.
@@ -258,7 +270,7 @@ notation and dot notation.
       scoreFunction result:  16
 
 D) Tie it All Together
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Define a ``runProgram`` function that will:
 
@@ -278,7 +290,7 @@ Define a ``runProgram`` function that will:
    (*Consider*: Should this check be case-insensitive?)
 
 Test Words
------------
+----------
 
 Here are some words you can use to test your code:
 
@@ -317,7 +329,7 @@ Example Output
    Enter a word to be scored, or 'Stop' to quit: stop
 
 Bonus Missions
----------------
+--------------
 
 #. Currently, the prompts accept ANY input values. The user could enter
    something *other* than 0, 1, or 2 when selecting the scoring algorithm, and
@@ -328,7 +340,7 @@ Bonus Missions
    ``newPointStructure`` object. The point value for a blank tile is ``0``.
 
 Submitting Your Work
----------------------
+--------------------
 
 #. From the address bar at the top of the browser window, copy the URL of the
    repl.it that contains your solution.
