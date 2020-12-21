@@ -51,7 +51,7 @@ You only need to pay attention to one file here, ``scrabble-scorer.js``. Within 
 file is still some more starter code that you don't need to touch. We'll point out what you 
 should be modifying here to write your Scrabble Scorer program.
 
-Hit the repl.it run button initally and you'll see a message printed to the console:
+Hit the repl.it run button initially and you'll see a message printed to the console:
 
 :: 
 
@@ -61,14 +61,8 @@ Hit the repl.it run button initally and you'll see a message printed to the cons
 
 .. admonition:: Tip
 
-   If you don't see this message printed and have used your repl.it troubleshooting skills, 
+   If you don't see this message printed and have exhausted used your troubleshooting skills, 
    reach out to your classmates or course staff ASAP so you can get started with the real coding.
-
-.. admonition:: Your Task
-
-   Modify the provided ``initialPrompt()`` function to prompt the user to enter a word to score. 
-   The prompt should also provide the
-   user an option for ending the program.
 
 Instructions
 ------------
@@ -76,24 +70,36 @@ Instructions
 A) Initial Prompt
 ^^^^^^^^^^^^^^^^^
 
-In the starter code, the Scrabble Scorer only uses one scoring algorithm. For
-the new version, we want to let the user pick between three algorithms. Define
-an ``initialPrompt`` function that introduces the program and asks the user
-which scoring algorithm to use.
+#. Modify the provided ``initialPrompt()`` function to prompt the user to enter a word to score. 
+#. Have the function return the word entered.
+.. TODO add this item later
+#. The prompt should also provide the user an option for ending the program. If the user enters the 
+   word "STOP" (case-insensitive), have the 
 
-Your prompt could look something like:
+B) Scrabble Scoring
+^^^^^^^^^^^^^^^^^^^
 
-::
+Currently, the software contains the data structure below for the traditional
+Scrabble scoring algorithm. Take a few moments to review how the
+``oldPointStructure`` object relates a point value to a letter.
 
-   Welcome to the Scrabble score calculator!
+.. sourcecode:: js
+   :linenos:
 
-   Which scoring algorithm would you like to use?
+   const oldPointStructure = {
+      1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
+      2: ['D', 'G'],
+      3: ['B', 'C', 'M', 'P'],
+      4: ['F', 'H', 'V', 'W', 'Y'],
+      5: ['K'],
+      8: ['J', 'X'],
+      10: ['Q', 'Z']
+   };
 
-   0 - Scrabble: The traditional scoring algorithm.
-   1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
-
-   Enter 0, 1, or 2:
+The *keys* of ``oldPointStructure`` are the Scrabble points, and the
+*values* are arrays of letters. All letters in the array have the Scrabble
+point value equal to the key. For example, ``'A'`` and ``'R'`` are worth 1,
+``'K'`` is worth 5, and ``'J'`` is worth 8.
 
 B) Transform
 ^^^^^^^^^^^^
