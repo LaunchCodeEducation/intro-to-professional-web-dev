@@ -117,10 +117,6 @@ three scoring algorithms.
       * - Name
         - Description
         - Score Function
-      * - Scrabble
-        - The traditional scoring algorithm.
-        - Uses the ``oldScrabbleScorer()`` function to determine the score for a given
-          word.
       * - Simple Score
         - Each letter is worth 1 point.
         - A function with a parameter for user input that returns a score.
@@ -128,15 +124,20 @@ three scoring algorithms.
         - Vowels are 3 pts, consonants are 1 pt.
         - A function that returns a score based on the
           number of vowels and consonants.
+		* - Scrabble
+        - The traditional scoring algorithm.
+        - Uses the ``oldScrabbleScorer()`` function to determine the score for a given
+          word.
 
-.. todo: how does the program select this 
 
 #. Finish writing ``scorerPrompt()`` so that the user can select which scoring algorithm to use when the program scores their word. 
 	Use the selected algorithm to determine the score for the word:
 
-   a. If the user enters ``0``, use the simple scorer.
+   a. If the user enters ``0``, have the program output a score using the simple scorer.
    b. If the user enters ``1``, use the vowel bonus scoring function.
    c. If the user enters ``2``, use the Scrabble scoring option.
+
+.. TODO: add example
 
 C) Transform Scrabble Scoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -259,7 +260,7 @@ Transform the Object
 
 .. admonition:: Warning 
 
-	Hardcoding the ``newPointStructure`` object literal:
+	Hardcoding the ``newPointStructure`` object literal like this:
 
 	.. sourcecode:: js
 
@@ -270,7 +271,10 @@ Transform the Object
 			 etc ...
 			 }
 
-	won't passes. And you'll lose an opportunity to practice this skill.
+	won't pass. And you'll lose an opportunity to practice this skill.
+
+#. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScorer()`` function and then replace 
+   the ``oldScrabbleScorer()`` function in ``scoringAlgorithms`` with this new function.
 
 
 .. C) Scoring Algorithms
@@ -366,7 +370,9 @@ Locate ``runProgram()`` and add some code to it to do the following:
 .. #. Accept the ``scoringAlgorithms`` array as an argument.
 
 #. Use ``initialPrompt`` to pick the algorithm.
-#. Prompt the user to enter a word to score. The prompt should also provide the
+#. Prompt the user to enter a word to score and select the scoring algorithm they would like to use. 
+
+.. The prompt should also provide the
    user an option for ending the program.
 .. #. Use the selected algorithm to determine the score for the word:
 
@@ -375,9 +381,12 @@ Locate ``runProgram()`` and add some code to it to do the following:
 ..    b. If the user entered ``1``, use the Simple Score ``scorerFunction``.
 ..    c. If the user entered ``2``, use the Bonus Vowels ``scorerFunction``.
 
-#. Display the score for the word, dependent on which scoring algorith the user has selected.
-#. Repeat steps 3 to 5 until the user ends the program by entering ``'Stop'``.
-   (*Consider*: Should this check be case-insensitive?)
+#. Display the score for the word, dependent on which scoring algorithm the user has selected.
+
+.. TODO: if we add back the perma-run, it would be here
+
+.. #. Repeat steps 3 to 5 until the user ends the program by entering ``'Stop'``.
+..    (*Consider*: Should this check be case-insensitive?)
 
 Test Words
 ----------
