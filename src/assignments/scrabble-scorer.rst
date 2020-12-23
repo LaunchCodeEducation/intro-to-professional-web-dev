@@ -71,10 +71,11 @@ A) Initial Prompt
 ^^^^^^^^^^^^^^^^^
 
 #. Modify the provided ``initialPrompt()`` function to prompt the user to enter a word to score. 
-#. Use the ``oldScrabbleScorer()`` function to score the word provided by the user.
-#. The prompt should also provide the user an option for ending the program. If the user enters the 
-   word "STOP" (case-insensitive), have the function stop running.
+#. Use the ``oldScrabbleScorer()`` function to score the word provided by the user. Print the result to the console.
+.. #. The prompt should also provide the user an option for ending the program. If the user enters the 
+..    word "STOP" (case-insensitive), have the function stop running.
 
+.. TODO: add an example?
 
 B) Other Scoring Algorithms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,6 +101,10 @@ Your job here is to write two other scoring algorithms for the Scrabble player.
 Define Scoring Objects
 ~~~~~~~~~~~~~~~~~~~~~~
 
+Once you've written these scoring functions, organize all three of the scoring options into an array.
+Your program will use the ``scoringAlgorithms`` array to organize and store information about the 
+three scoring algorithms. 
+
 #. Finish writing the ``scoringAlgorithms`` array. It should be populated with three objects, one for each of the three scoring options. 
    Each object should contain three keys: ``name``, ``description``, and ``scorerFunction``.
 #. Examine the table for the information to store in ``name`` and
@@ -124,9 +129,16 @@ Define Scoring Objects
         - A function that returns a score based on the
           number of vowels and consonants.
 
-.. TODO - im stopping here
+.. todo: how does the program select this 
 
-B) Transform Scrabble Scoring
+#. Finish writing ``scorerPrompt()`` so that the user can select which scoring algorithm to use when the program scores their word. 
+	Use the selected algorithm to determine the score for the word:
+
+   a. If the user enters ``0``, use the simple scorer.
+   b. If the user enters ``1``, use the vowel bonus scoring function.
+   c. If the user enters ``2``, use the Scrabble scoring option.
+
+C) Transform Scrabble Scoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currently, the software contains the data structure below for the traditional
@@ -344,6 +356,8 @@ notation and dot notation.
       algorithm name:  Bonus Vowels
       scorerFunction result:  16
 
+.. TODO - im stopping here
+
 D) Tie it All Together
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -354,14 +368,14 @@ Locate ``runProgram()`` and add some code to it to do the following:
 #. Use ``initialPrompt`` to pick the algorithm.
 #. Prompt the user to enter a word to score. The prompt should also provide the
    user an option for ending the program.
-#. Use the selected algorithm to determine the score for the word:
+.. #. Use the selected algorithm to determine the score for the word:
 
-   a. If the user enters ``0`` or an invalid option, use the Scrabble
-      ``scorerFunction``.
-   b. If the user entered ``1``, use the Simple Score ``scorerFunction``.
-   c. If the user entered ``2``, use the Bonus Vowels ``scorerFunction``.
+..    a. If the user enters ``0`` or an invalid option, use the Scrabble
+..       ``scorerFunction``.
+..    b. If the user entered ``1``, use the Simple Score ``scorerFunction``.
+..    c. If the user entered ``2``, use the Bonus Vowels ``scorerFunction``.
 
-#. Display the score for the word.
+#. Display the score for the word, dependent on which scoring algorith the user has selected.
 #. Repeat steps 3 to 5 until the user ends the program by entering ``'Stop'``.
    (*Consider*: Should this check be case-insensitive?)
 
