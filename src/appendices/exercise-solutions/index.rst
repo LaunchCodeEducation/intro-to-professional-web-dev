@@ -4,8 +4,9 @@ Exercise Solutions
 ==================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    data-and-variables
    booleans-and-conditionals
    errors-and-debugging
+   strings
