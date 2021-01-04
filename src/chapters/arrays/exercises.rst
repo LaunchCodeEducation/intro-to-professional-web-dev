@@ -1,3 +1,5 @@
+.. _exercises-arrays:
+
 Exercises: Arrays
 =================
 
@@ -18,6 +20,8 @@ rearrange our records for the items stored in our hold.
 
    *Congratulations, rookie. You can now add items to an array.*
 
+   :ref:`Check your solution <arrays-exercise-solutions1>`. 
+
 #. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
    from the beginning/end of an array. **Bracket notation** can be used to
    modify any element within an array. Starting with the ``cargoHold`` array
@@ -27,7 +31,7 @@ rearrange our records for the items stored in our hold.
 
    #. Use bracket notation to replace ``'slinky'`` in the array with ``'space
       tether'``. Print the array to confirm the change.
-   #. Remove the last item from the array with ``pop``. Print the element
+   #. Remove the last item from the array with ``pop``. Print the elgit ement
       removed and the updated array.
    #. Remove the first item from the array with ``shift``. Print the element
       removed and the updated array.
@@ -42,6 +46,8 @@ rearrange our records for the items stored in our hold.
    *Status check, rookie. Which array methods ADD items, and where are the new
    entries placed? Which methods REMOVE items, and where do the entries come
    from? Which methods require entries inside the ``()``?*
+
+   :ref:`Check your solution <arrays-exercise-solutions2>`. 
 
 #. The ``splice`` method can be used to either add or remove items from an
    array. It can also accomplish both tasks at the same time. Review the

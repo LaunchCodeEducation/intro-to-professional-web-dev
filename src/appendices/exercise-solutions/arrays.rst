@@ -9,44 +9,74 @@ OK, rookie. It's time to train you on how to modify the shuttle's cargo
 manifest. The following actions will teach you how to add, remove, modify and
 rearrange our records for the items stored in our hold.
 
-#. Create an array called ``practiceFile`` with the following entry: 273.15.
-   Use the ``push`` method to add the following elements to the array. Add
-   items a & b one at a time, then use a single ``push`` to add the items in
-   part c. Print the array after each step to confirm the changes.
+1. Create an array called ``practiceFile`` with the following entry: 273.15.
+Use the ``push`` method to add the following elements to the array. Add
+items a & b one at a time, then use a single ``push`` to add the items in
+part c. Print the array after each step to confirm the changes.
 
-   #. 42
-   #. "hello"
-   #. ``false``, -4.6, "87"
+.. sourcecode:: js
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises01>`__
+   let practiceFile = [273.15];
 
-   *Congratulations, rookie. You can now add items to an array.*
+a. 42
 
-#. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
-   from the beginning/end of an array. **Bracket notation** can be used to
-   modify any element within an array. Starting with the ``cargoHold`` array
-   ``['oxygen tanks', 'space suits', 'parrot', 'instruction manual',
-   'meal packs', 'slinky', 'security blanket']``, write statements to do the
-   following:
+.. sourcecode:: js
+   :linenos:
 
-   #. Use bracket notation to replace ``'slinky'`` in the array with ``'space
-      tether'``. Print the array to confirm the change.
-   #. Remove the last item from the array with ``pop``. Print the element
-      removed and the updated array.
-   #. Remove the first item from the array with ``shift``. Print the element
-      removed and the updated array.
-   #. Unlike ``pop`` and ``shift``, ``push`` and ``unshift`` require arguments
-      inside the ``()``. Add the items 1138 and '20 meters' to the array -
-      the number at the start and the string at the end. Print the updated
-      array to confirm the changes.
-   #. Use a template literal to print the final array and its length.
+   practiceFile.push(42);
+   console.log(practiceFile);
+   
+c. ``false``, -4.6, "87"
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises02>`__
+.. sourcecode:: js
+   :linenos:
 
-   *Status check, rookie. Which array methods ADD items, and where are the new
-   entries placed? Which methods REMOVE items, and where do the entries come
-   from? Which methods require entries inside the ``()``?*
+   practiceFile.push(false, -4.6, "87");
+   console.log(practiceFile);
 
+:ref:`Back to the exercises <exercises-arrays>`.
+   
+
+.. _arrays-exercise-solutions2:
+
+2. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
+from the beginning/end of an array. **Bracket notation** can be used to
+modify any element within an array. Starting with the ``cargoHold`` array
+``['oxygen tanks', 'space suits', 'parrot', 'instruction manual',
+'meal packs', 'slinky', 'security blanket']``, write statements to do the
+following:
+
+.. sourcecode:: js
+   let cargoHold = ['oxygen tanks', 'space suits', 'parrot', 'instruction manual', 'meal packs', 'slinky', 'security blanket'];
+
+a. Use bracket notation to replace ``'slinky'`` in the array with ``'space
+   tether'``. Print the array to confirm the change.
+
+.. sourcecode:: js
+   :linenos:
+
+   cargoHold[5] = 'space tether';
+   console.log(cargoHold);
+
+
+c. Remove the first item from the array with ``shift``. Print the element
+   removed and the updated array.
+
+.. sourcecode::js
+   :linenos:
+
+   console.log(cargoHold.shift());
+   console.log(cargoHold);
+
+
+e. Use a template literal to print the final array and its length.
+
+.. sourcecode::js
+   console.log(`The array ${cargoHold} has a length of ${cargoHold.length}.`);
+
+:ref:`Back to the exercises <exercises-arrays>`.
+
+.. _arrays-exercise-solutions3:
 #. The ``splice`` method can be used to either add or remove items from an
    array. It can also accomplish both tasks at the same time. Review the
    :ref:`splice appendix <splice-examples>` if you need a syntax reminder. Use
