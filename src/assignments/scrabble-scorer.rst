@@ -1,15 +1,12 @@
 Assignment #2: Scrabble Scorer
 ==============================
 
-To see how far your skills have come, we are going to give you a mission to
-update our *super* important Scrabble Scorer program. Did you think you were
-going to work on Mars rover code already?
+For your second assignment, we'll ask you to modify and improve our Scrabble Scorer program. 
+Did you think you were going to work on Mars Rover code already? That will come next!
 
-.. TODO: little blurb about what scrabble is and how scoring works
-
-We want you to write a scrabble scoring program that asks a user for a word 
+We want you to update our program that asks a user for a word 
 and outputs a score. Your final version will have three scoring algorithms and 
-allow the user to pick which one to use. We've provided some starter code that
+allow a user to interactively choose which algorithm to use. We've provided some starter code that
 includes the official Scrabble scoring point system and we'd like you to make 
 some modifications to improve it.
 
@@ -32,16 +29,12 @@ Requirements
    You need to move sequentially starting with Part A below. You'll have a much more 
    enjoyable time writing this program if you read this entire page before even opening repl.it.
 
-.. TODO: reorder these bad boys
-
-#. Create an ``initialPrompt`` function that asks the user which scoring
-   algorithm to use.
-#. Create a ``transform`` function that takes in the ``oldPointStructure``
+#. Write an ``initialPrompt()`` function that asks a user to input a word.
+#. Have the program return a score for the word using ``oldScrabbleScorer()``.
+#. Add additional scoring algorithms and store them in the ``scoringAlgorithms`` array.
+#. Create a ``transform()`` function that takes in the ``oldPointStructure``
    object and returns a ``newPointStructure`` object.
-#. Code three different scoring functions for assigning points to a word.
-#. Create a ``scoringAlgorithms`` array to hold three scoring *objects*. Each
-   object will contain three key/value pairs.
-#. Create a ``runProgram`` function to serve as the starting point for your
+#. Use the ``runProgram()`` function to serve as the starting point for your
    program.
 
 Starter Code
@@ -61,7 +54,7 @@ Hit the repl.it run button initially and you'll see a message printed to the con
 
 .. admonition:: Tip
 
-   If you don't see this message printed and have exhausted used your troubleshooting skills, 
+   If you don't see this message printed and have exhausted your troubleshooting skills, 
    reach out to your classmates or course staff ASAP so you can get started with the real coding.
 
 Instructions
@@ -71,45 +64,56 @@ A) Initial Prompt
 ^^^^^^^^^^^^^^^^^
 
 #. Modify the provided ``initialPrompt()`` function to prompt the user to enter a word to score. 
-#. Use the ``oldScrabbleScorer()`` function to score the word provided by the user. Print the result to the console.
-.. #. The prompt should also provide the user an option for ending the program. If the user enters the 
-..    word "STOP" (case-insensitive), have the function stop running.
+#. Use the ``oldScrabbleScorer()`` function provided to score the word provided by the user. Print the result to the console.
 
-.. TODO: add an example?
 
-B) Other Scoring Algorithms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Before you move on, be sure you're on the right track. At this point, your program should have an output like this:
+
+:: 
+
+   > node program
+   Let's play some Scrabble!
+
+   Enter a word to score: pineapple
+   Points for 'P': 3
+   Points for 'I': 1
+   Points for 'N': 1
+   Points for 'E': 1
+   Points for 'A': 1
+   Points for 'P': 3
+   Points for 'P': 3
+   Points for 'L': 1
+   Points for 'E': 1
+
+   >
+
+
+B) Add and Organize Scoring Algorithms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your job here is to write two other scoring algorithms for the Scrabble player.
+
+#. ``simpleScorer``: Define a function that takes a word as a parameter and
+   returns a numerical score. Each letter within the word is worth 1 point.
+#. ``vowelBonusScorer``: Define a function that takes a word as a parameter and
+   returns a score. Each vowel within the word is worth 3 points, and each
+   consonant is worth 1 point.
 
 .. admonition:: Note
 
    Make each scoring algorithm case *insensitive*, meaning that they
    should all ignore case when assigning points.
 
-#. ``simpleScorer``: Define a function that takes a word as a parameter and
-   returns a score. Each letter within the word is worth 1 point.
-#. ``vowelBonusScorer``: Define a function that takes a word as a parameter and
-   returns a score. Each vowel within the word is worth 3 points, and each
-   consonant is worth 1 point.
-
-.. #. **Scrabble Score:** Define a function that takes a word and
-..    ``newPointStructure`` as parameters and returns a score. The function uses
-..    the data stored in ``newPointStructure`` to determine the point value for
-..    the word.
-
-Define Scoring Objects
-~~~~~~~~~~~~~~~~~~~~~~
 
 Once you've written these scoring functions, organize all three of the scoring options into an array.
-Your program will use the ``scoringAlgorithms`` array to organize and store information about the 
-three scoring algorithms. 
+Your program will use the ``scoringAlgorithms`` array to retrieve information about the 
+three scoring algorithms and convey that information to the user. 
 
 #. Finish writing the ``scoringAlgorithms`` array. It should be populated with three objects, one for each of the three scoring options. 
    Each object should contain three keys: ``name``, ``description``, and ``scorerFunction``.
 #. Examine the table for the information to store in ``name`` and
    ``description``. The ``scorerFunction`` for each object should be the name of
-   one of the algorithms you defined above.
+   one of the three scoring algorithms already defined.
 
    .. list-table::
       :header-rows: 1
@@ -124,20 +128,62 @@ three scoring algorithms.
         - Vowels are 3 pts, consonants are 1 pt.
         - A function that returns a score based on the
           number of vowels and consonants.
-		* - Scrabble
+      * - Scrabble
         - The traditional scoring algorithm.
         - Uses the ``oldScrabbleScorer()`` function to determine the score for a given
           word.
 
 
 #. Finish writing ``scorerPrompt()`` so that the user can select which scoring algorithm to use when the program scores their word. 
-	Use the selected algorithm to determine the score for the word:
+   Use the selected algorithm to determine the score for the word:
 
    a. If the user enters ``0``, have the program output a score using the simple scorer.
    b. If the user enters ``1``, use the vowel bonus scoring function.
    c. If the user enters ``2``, use the Scrabble scoring option.
 
-.. TODO: add example
+   ``scorerPrompt()`` should return the object the user has selected.
+
+   .. admonition :: Tips
+
+      Your ``scoringAlgorithms`` structure now holds all of the scoring information required for the program.
+
+      To access a scoring object and its properties, use a combination of bracket notation and dot notation.
+
+      .. admonition:: Examples
+
+         .. sourcecode:: js
+
+            // Simple scoring
+            console.log("algorithm name: ", scoringAlgorithms[0].name);
+            console.log("scorerFunction result: ", scoringAlgorithms[0].scorerFunction("JavaScript"));
+
+         Console Output
+
+         ::
+
+            algorithm name:  Simple Score
+            scorerFunction result:  10
+
+#. Call ``scorerPrompt()`` inside of ``runProgram()`` so that the program asks the user for a scoring algorithm after prompting for a word.
+   Use the scoring object returned from ``scorerPrompt()`` to score the user's word and let the user know what score their word receives.
+
+Before moving forward, your running program should behave roughly like this:
+
+:: 
+
+   > node program
+   Let's play some Scrabble!
+
+   Enter a word to score: coconut
+   Which scoring algorithm would you like to use?
+
+   0 - Simple: One point per character
+   1 - Vowel Bonus: Vowels are worth 3 points
+   2 - Scrabble: Uses scrabble point system
+   Enter 0, 1, or 2: 0
+   Score for 'coconut': 7
+
+   > 
 
 C) Transform Scrabble Scoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -171,15 +217,12 @@ inefficient*.
 
 .. admonition:: Tip
 
-	Think about this for a second. The scoring action takes in letters in a word as input
-	and output number point values. 
+   Think about this for a second. The scoring action takes in letters in a word as input
+   and outputs numerical point values. 
 
-	We can improve our program by rewriting the data structure to better fit the action
-	we want to take. Try keeping this idea in mind as you go on to code your own
-	applications.
-
-Streamlined Score Object
-~~~~~~~~~~~~~~~~~~~~~~~~
+   We can improve our program by rewriting the data structure to better fit the action
+   we want to take. Keep this idea in mind as you go on to code your own
+   applications.
 
 It would improve the performance of the program to create a ``newPointStructure`` object that has 26 keys,
 one for each letter. The value of each key will be the Scrabble point value.
@@ -192,7 +235,7 @@ Examples of the new key storage:
 * ``j`` is worth ``8``
 
 In ``newPointStructure``, the letters themselves are keys, so a *single* search
-will identify a point value. This is much more efficient than the old method.
+will identify a point value. 
 
 .. admonition:: Example
 
@@ -218,175 +261,73 @@ Transform the Object
 ~~~~~~~~~~~~~~~~~~~~
 
 #. Write the rest of the ``transform()`` function. It will need to take an object 
-	as a parameter - specifically the ``oldPointStructure`` object. Calling
+   as a parameter - specifically the ``oldPointStructure`` object. Calling
    ``transform(oldPointStructure)`` will return an object with *lowercase*
    letters as keys. The value for each key will be the points assigned to that
    letter.
+
+   .. admonition:: Tips
+
+      a. Recall that ``for...in`` loops iterate over the keys within an object.
+      b. If you need a reminder of how to assign new key/value pairs, review the
+         :ref:`relevant section <add-new-object-properties>` in the
+         ``Objects and Math`` chapter.
+      c. To access the letter arrays within ``oldPointStructure``, use bracket
+         notation (``oldPointStructure['key']``).
+      d. To access a particular element within a letter array, add a second set of
+         brackets (``oldPointStructure['key'][index]``), or assign the array to a
+         variable and use ``variableName[index]``.
+
+         .. admonition:: Examples
+
+            .. sourcecode:: JavaScript
+               :linenos:
+
+               console.log("Letters with score '4':", oldPointStructure['4']);
+               console.log("3rd letter within the key '4' array:", oldPointStructure['4'][2]);
+
+               let letters = oldPointStructure['8'];
+               console.log("Letters with score '8':", letters);
+               console.log("2nd letter within the key '8' array:", letters[1]);
+
+            **Console Output**
+
+            ::
+
+               Letters with score '4': [ 'F', 'H', 'V', 'W', 'Y' ]
+               3rd letter within the key '4' array: V
+
+               Letters with score '8': [ 'J', 'X' ]
+               2nd letter within the key '8' array: X
+
+
 #. Locate the ``newPointStructure`` object in the starter code and set it equal to
    ``transform(oldPointStructure)``.
-#. Hints:
 
-   a. Recall that ``for...in`` loops iterate over the keys within an object.
-   b. If you need a reminder of how to assign new key/value pairs, review the
-      :ref:`relevant section <add-new-object-properties>` in the
-      ``Objects and Math`` chapter.
-   c. To access the letter arrays within ``oldPointStructure``, use bracket
-      notation (``oldPointStructure['key']``).
-   d. To access a particular element within a letter array, add a second set of
-      brackets (``oldPointStructure['key'][index]``), or assign the array to a
-      variable and use ``variableName[index]``.
-
-      .. admonition:: Examples
-
-         .. sourcecode:: JavaScript
-            :linenos:
-
-            console.log("Letters with score '4':", oldPointStructure['4']);
-            console.log("3rd letter within the key '4' array:", oldPointStructure['4'][2]);
-
-            let letters = oldPointStructure['8'];
-            console.log("Letters with score '8':", letters);
-            console.log("2nd letter within the key '8' array:", letters[1]);
-
-         **Console Output**
-
-         ::
-
-            Letters with score '4': [ 'F', 'H', 'V', 'W', 'Y' ]
-            3rd letter within the key '4' array: V
-
-            Letters with score '8': [ 'J', 'X' ]
-            2nd letter within the key '8' array: X
 
 .. admonition:: Warning 
 
-	Hardcoding the ``newPointStructure`` object literal like this:
-
-	.. sourcecode:: js
-
-		let newPointStructure = 
-			{a:1,
-			 b: 1,
-			 c: 1,
-			 etc ...
-			 }
-
-	won't pass. And you'll lose an opportunity to practice this skill.
-
-#. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScorer()`` function and then replace 
-   the ``oldScrabbleScorer()`` function in ``scoringAlgorithms`` with this new function.
-
-
-.. C) Scoring Algorithms
-.. ^^^^^^^^^^^^^^^^^^^^^
-
-.. Create a separate function for each of the following scoring algorithms.
-
-.. .. admonition:: Note
-
-..    Make each scoring algorithm case *insensitive*, meaning that they
-..    should all ignore case when assigning points.
-
-.. #. **Simple Score:** Define a function that takes a word as a parameter and
-..    returns a score. Each letter within the word is worth 1 point.
-.. #. **Bonus Vowels:** Define a function that takes a word as a parameter and
-..    returns a score. Each vowel within the word is worth 3 points, and each
-..    consonant is worth 1 point.
-.. #. **Scrabble Score:** Define a function that takes a word and
-..    ``newPointStructure`` as parameters and returns a score. The function uses
-..    the data stored in ``newPointStructure`` to determine the point value for
-..    the word.
-
-.. Define Scoring Objects
-.. ~~~~~~~~~~~~~~~~~~~~~~
-
-.. #. Create an object for each of the three scoring options. Each object should
-..    contain three keys: ``name``, ``description``, and ``scorerFunction``.
-.. #. Examine the table for the information to store in ``name`` and
-..    ``description``. The ``scorerFunction`` for each object should be the name of
-..    one of the algorithms you defined above.
-
-..    .. list-table::
-..       :header-rows: 1
-
-..       * - Name
-..         - Description
-..         - Score Function
-..       * - Scrabble
-..         - The traditional scoring algorithm.
-..         - Uses the ``newPointStructure`` object to determine the score for a given
-..           ``word``.
-..       * - Simple Score
-..         - Each letter is worth 1 point.
-..         - A function with a ``word`` parameter that returns a score.
-..       * - Bonus Vowels
-..         - Vowels are 3 pts, consonants are 1 pt.
-..         - A function with a ``word`` parameter that returns a score based on the
-..           number of vowels and consonants.
-
-.. #. Create a ``scoringAlgorithms`` array to hold your three scorer objects.
-
-Take a Breath
-~~~~~~~~~~~~~
-
-Good! Your ``scoringAlgorithms`` structure now holds all of the scoring
-information required for the new Scrabble program.
-
-To access a scoring object and its properties, use a combination of bracket
-notation and dot notation.
-
-.. admonition:: Examples
+   Hardcoding the ``newPointStructure`` object literal like this:
 
    .. sourcecode:: js
 
-      // Scrabble scoring
-      console.log("algorithm name: ", scoringAlgorithms[0].name);
-      console.log("scorerFunction result: ", scoringAlgorithms[0].scorerFunction("JavaScript", newPointStructure));
-      // Simple scoring
-      console.log("algorithm name: ", scoringAlgorithms[1].name);
-      console.log("scorerFunction result: ", scoringAlgorithms[1].scorerFunction("JavaScript"));
-      // Bonus Vowel scoring
-      console.log("algorithm name: ", scoringAlgorithms[2].name);
-      console.log("scorerFunction result: ", scoringAlgorithms[2].scorerFunction("JavaScript"));
+      let newPointStructure = 
+      {
+         a:1,
+         b: 1,
+         c: 1,
+         etc ...
+      }
 
-   Console Output
+   won't pass. And you'll lose an opportunity to practice this skill.
 
-   ::
+4. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScorer()`` function and then replace 
+   the ``oldScrabbleScorer()`` function in ``scoringAlgorithms`` with this new function.
 
-      algorithm name:  Scrabble
-      scorerFunction result:  24
-      algorithm name:  Simple Score
-      scorerFunction result:  10
-      algorithm name:  Bonus Vowels
-      scorerFunction result:  16
+   .. admonition:: Tip
 
-.. TODO - im stopping here
-
-D) Tie it All Together
-^^^^^^^^^^^^^^^^^^^^^^
-
-Locate ``runProgram()`` and add some code to it to do the following:
-
-.. #. Accept the ``scoringAlgorithms`` array as an argument.
-
-#. Use ``initialPrompt`` to pick the algorithm.
-#. Prompt the user to enter a word to score and select the scoring algorithm they would like to use. 
-
-.. The prompt should also provide the
-   user an option for ending the program.
-.. #. Use the selected algorithm to determine the score for the word:
-
-..    a. If the user enters ``0`` or an invalid option, use the Scrabble
-..       ``scorerFunction``.
-..    b. If the user entered ``1``, use the Simple Score ``scorerFunction``.
-..    c. If the user entered ``2``, use the Bonus Vowels ``scorerFunction``.
-
-#. Display the score for the word, dependent on which scoring algorithm the user has selected.
-
-.. TODO: if we add back the perma-run, it would be here
-
-.. #. Repeat steps 3 to 5 until the user ends the program by entering ``'Stop'``.
-..    (*Consider*: Should this check be case-insensitive?)
+      ``oldScrabbleScorer()`` uses ``oldPointStructure`` and returns a score for each letter in a word. You'll want to write
+      ``scrabbleScorer()`` to use ``newPointStructure`` and return a cumulative score for the whole word entered.
 
 Test Words
 ----------
@@ -407,25 +348,19 @@ Example Output
 
 ::
 
-   Welcome to the Scrabble score calculator!
+   > node program
+   Let's play some Scrabble!
 
+   Enter a word to score: rum
    Which scoring algorithm would you like to use?
 
-   0 - Scrabble: The traditional scoring algorithm.
-   1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
+   0 - Simple: One point per character
+   1 - Vowel Bonus: Vowels are worth 3 points
+   2 - Scrabble: Uses scrabble point system
+   Enter 0, 1, or 2: 2
+   Score for 'rum': 5
 
-   Enter 0, 1, or 2: 0
-
-   Using algorithm: Scrabble
-
-   Enter a word to be scored, or 'Stop' to quit:  LaunchCode
-   Score for 'LaunchCode': 18
-
-   Enter a word to be scored, or 'Stop' to quit:  Rocket
-   Score for 'Rocket': 12
-
-   Enter a word to be scored, or 'Stop' to quit: stop
+   > 
 
 Bonus Missions
 --------------
@@ -438,12 +373,14 @@ Bonus Missions
 #. Score words spelled with blank tiles by adding ``' '`` to the
    ``newPointStructure`` object. The point value for a blank tile is ``0``.
 
-Submitting Your Work
---------------------
+.. TODO: what does submission look like now?
 
-#. From the address bar at the top of the browser window, copy the URL of the
-   repl.it that contains your solution.
-#. Go to the Graded Assignment #2 page in Canvas and click *Submit Assignment*.
-#. Paste the URL into the Website URL input.
-#. Click *Submit Assignment* again.
-#. Notify your TA that your assignment is ready to be graded.
+.. Submitting Your Work
+.. --------------------
+
+.. #. From the address bar at the top of the browser window, copy the URL of the
+..    repl.it that contains your solution.
+.. #. Go to the Graded Assignment #2 page in Canvas and click *Submit Assignment*.
+.. #. Paste the URL into the Website URL input.
+.. #. Click *Submit Assignment* again.
+.. #. Notify your TA that your assignment is ready to be graded.
