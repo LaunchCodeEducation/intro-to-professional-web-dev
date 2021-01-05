@@ -31,7 +31,7 @@ To start, here are three types of text inputs. These input types can contain tex
      - A text field that obscures the text typed by the user.
      - :raw-html:`<input type="password" name="passCode"/>`
 
-.. note::
+.. admonition:: Note
 
    Form inputs will NOT look exactly the same in all browsers.
    However, the inputs *should* function the same way. Use `<https://caniuse.com>`_,
@@ -42,35 +42,35 @@ Example
 
 .. admonition:: Example
 
-    .. sourcecode:: html
+   .. sourcecode:: html
+      :linenos:
 
-       <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
-          <label>Code Name<input type="text" name="codeName"/></label>
-          <label>Code Word<input type="password" name="codeWord"/></label>
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+         <label>Code Name<input type="text" name="codeName"/></label>
+         <label>Code Word<input type="password" name="codeWord"/></label>
 
-          <!-- textarea must have open and closing tags -->
-          <label>Mission Description<br/>
-              <textarea name="description" rows="5" cols="75"></textarea>
-          </label>
+         <!-- textarea must have open and closing tags -->
+         <label>Mission Description<br/>
+            <textarea name="description" rows="5" cols="75"></textarea>
+         </label>
 
-          <button>Send Report</button>
-       </form>
+         <button>Send Report</button>
+      </form>
 
-    .. figure:: figures/basic-inputs-example.png
-       :alt: Form with Code Name, Code Word, and Description field. All fields have values.
+   .. figure:: figures/basic-inputs-example.png
+      :alt: Form with Code Name, Code Word, and Description field. All fields have values.
 
-    **Submitted Values**
+   **Submitted Values**
 
-    ::
+   ::
 
       codeName=Captain+Danvers
       codeWord=avengers!
       description=Test+flight.+Plane+maintenance.+Superhero+stuff.
 
-    Notice that the textarea value does NOT include new lines, even thought it was typed that way.
+      Notice that the textarea value does NOT include new lines, even though it was typed that way.
 
-    `Run it <https://repl.it/@launchcode/basic-inputs-example>`_
-
+      `Run it <https://repl.it/@launchcode/basic-inputs-example>`__
 
 Check Your Understanding
 ------------------------
