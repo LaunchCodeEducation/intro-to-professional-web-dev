@@ -97,7 +97,6 @@ There are `quite a few response headers <https://en.wikipedia.org/wiki/List_of_H
      - The URL that the client should visit to find a relocated resource.
      - ``https://www.launchcode.org/new-blog/``
 
-
 Response Body
 -------------
 
