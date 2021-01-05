@@ -215,7 +215,7 @@ Part 5 - Export and Import the SpaceLocation Class
          }
       }
 
-4. Add the function ``printDaysToLocation`` to the ``Spacecraft`` class.
+#. Add the function ``printDaysToLocation`` to the ``Spacecraft`` class.
 
    a. Notice that it takes a parameter of type ``SpaceLocation``.
 

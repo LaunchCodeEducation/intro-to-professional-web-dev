@@ -159,7 +159,7 @@ selector ``:checked`` specifies that we only want the selected element from
 that group of matches. Combined, the selector gives us the selected element in
 the radio group.
 
-Once you have the selected radio button, get it's value using ``.value``. The
+Once you have the selected radio button, get its value using ``.value``. The
 value tells us which search engine the user has chosen.
 
 At this stage, we could use a large ``if``/``else if``/``else`` statement to
