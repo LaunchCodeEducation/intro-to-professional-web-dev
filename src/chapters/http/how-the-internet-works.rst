@@ -71,7 +71,7 @@ TCP/IP
 
 **TCP/IP** is a low-level protocol that is quite complicated. For our purposes, it is important only to know that TCP/IP is the standard that allows *raw data* to get from one place to another on the Internet. 
 
-When a server sends a file back to a client, that file must physically be sent across a series of network components, including cables, routers, and switches. Files are broken down into *packets*---small chunks of a standard size---that are individually sent from one location to the next, until arriving at their final destination and being reassembeld.
+When a server sends a file back to a client, that file must physically be sent across a series of network components, including cables, routers, and switches. Files are broken down into *packets*---small chunks of a standard size---that are individually sent from one location to the next, until arriving at their final destination and being reassembled.
 
 .. admonition:: Fun Fact
 
@@ -163,7 +163,7 @@ Port
 
 Following the host is an optional **port** number. While the host determines the *server* that the request should be sent to, the port determines the specific *application* on the server that should handle the request. This is important because a single server may run several applications capable of handling requests.
 
-Conventionally, a given type of application will always use the same port, though this is not a hard rule. For example, web servers typically use port 80 or 443, for regular and encrpyted messages, respectively. On the other hand, MySQL databases typically use port 3306.
+Conventionally, a given type of application will always use the same port, though this is not a hard rule. For example, web servers typically use port 80 or 443, for regular and encrypted messages, respectively. On the other hand, MySQL databases typically use port 3306.
 
 .. admonition:: Example
 

@@ -2,7 +2,7 @@ Repositories and Commits
 =========================
 
 Create a Repository
-----------------------
+-------------------
 
 To get started with a git repository, the programmer must first create one.
 To create a git repository, the programmer navigates to their project directory and uses the command ``git init``, like so:
@@ -17,7 +17,7 @@ To create a git repository, the programmer navigates to their project directory 
 Now the programmer is ready to code away!
 
 Making Commits
--------------------
+--------------
 
 After a while, the programmer has made a lot of changes and saved their code files many times over.
 So when do they make a commit to their repository?
@@ -43,7 +43,7 @@ If the steps above are followed correctly, the programmer will find their latest
 
 Here is how the process will look in the terminal:
 
-.. sourcecode:: bash
+::
 
    Students-Computer:homework student$ git status
    On branch master
