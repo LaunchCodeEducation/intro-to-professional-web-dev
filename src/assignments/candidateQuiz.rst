@@ -16,7 +16,7 @@ you to create a quick quiz to help select the best candidates.
 Requirements
 ------------
 
-#. Ask the candidate to enter their name
+#. Ask the candidate (user) to enter their name
 #. Use a loop to ask five questions, one at a time, to the candidate
 #. Collect the candidate's answers
 #. Check those answers for accuracy (case insensitive equality check)
@@ -43,25 +43,55 @@ you are NOT enrolled in a repl.it classroom, fork this
 
 Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. #. Define variables for:
 
-#. Define variables for:
+..    a. candidate's name
+..    b. a quiz question (pick any question from the table in Part 2 below)
+..    c. the correct answer
+..    d. the candidate's response
 
-   a. candidate's name
-   b. a quiz question (pick any question from the table in Part 2 below)
-   c. the correct answer
-   d. the candidate's response
+1.1 candidateName
+~~~~~~~~~~~~~~~~~
 
-#. Ask for the candidate's name. Before moving to the next step, use
-   ``console.log`` to verify that your code correctly stores the information.
-#. Display the question and prompt the candidate for an answer. As before, use
-   ``console.log`` to verify that your program correctly stored the answer.
-#. Check the candidate's answer to see if it is correct.
-#. Provide basic feedback to the student. This should include their name and
-   whether their answer was correct.
+a. Ask for the candidate's name. Look for ``TODO 1.1a`` in the starter code. 
+   On the line below this TODO comment, define a variable called ``candidateName``
+   with an initial value of the empty string.
+
+#. Look for ``TODO 1.1b``. Inside of the function ``askForName()``, write code
+   asking the user to enter their name into the program and store the value as
+   ``candidateName``.
+
+#. Look for ``TODO 1.1c``. Underneath it, write a message to the console greeting 
+   the user using the name they just provided.
+
+
+1.2 question, correctAnswer, and candidateAnswer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+a. Ask the user to answer a single quiz question. Look for ``TODO 1.2a``.
+   Below the TODO comment, define variables called ``question``, ``correctAnswer``,
+   and ``candidateAnswer``.
+
+   - ``question`` should be initialized to the following string: ``"Who was the first American woman in space? "``.
+
+   .. admonition:: Tip
+
+      Note the trailing space at the end of this string is required. 
+
+   - ``correctAnswer`` should be initialized to ``"Sally Ride"``.
+
+   - ``candidateAnswer`` will initially be set to the empty string.
+
+#. Find ``TODO 1.2b``. Using your question variable, display the question and prompt the candidate for 
+   their answer. Store their response in one of the variables you defined just above.
+
+#. Under ``TODO 1.2c``, check the candidate's answer to see if it is correct. 
+   Provide basic feedback to the candidate, letting them know if their answer is correct
+   or not.
 
 .. admonition:: Note
 
-   If not already done, remove the extra ``console.log`` statements from steps 2 & 3. Make sure your small app works properly before moving on to part 2.
+   Make sure your small app works properly before moving on to part 2.
 
 Part 2: Use Arrays
 ^^^^^^^^^^^^^^^^^^
