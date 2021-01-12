@@ -21,6 +21,8 @@ The form should do the following:
 3. Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
 4. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
 
+.. TODO: Remember to update with new instructions to direct Github Classroom students
+
 Setting Up Your Project Repository
 ----------------------------------
 
@@ -51,6 +53,12 @@ Make sure to use ``preventDefault()`` and an alert to notify the user that all f
 You also want to make sure that the user entered valid info for each of the fields.
 Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.
 The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
+To do this, complete the helper function in your ``scriptHelpers.js`` called ``validateInput()``.
+``validateInput()`` should take in a string as a parameter and return ``"Empty"``, ``"Not a Number"``, or ``"Is a Number"`` as appropriate.
+In ``scriptHelper.js``, you will use ``validateInput()`` to complete the ``formSubmission()`` function.
+``formSubmission()`` will take in strings representing the pilot, co-pilot, fuel level, and cargo mass.
+Using the values in those strings, update the shuttle requirements as described below.
+Make sure to call your ``formSubmission()`` function at the appropriate time in your ``script.js`` file!
 
 .. note:: 
 
@@ -86,6 +94,8 @@ Review the list and decide which planet you want to send our intrepid crew to an
 
 In ``script.js``, we have a block of code commented out at the top.
 This is the format of the ``innerHTML`` for the ``missionTarget`` div.
+Pass the information you have fetched about your planet to the ``addDestinationInfo()`` function in ``scriptHelpers.js`` and use that function to update the planetary info!
+
 Be sure to include the appropriate variables in the template literals!
  
 The End Result
@@ -111,6 +121,16 @@ If the user switches up the information that needs to go in the fields, then an 
 
 .. figure:: figures/form-fields-invalid.png
    :alt: Image showing an alert pop up stating that some fields have invalid information.
+
+Submission
+----------
+
+Even if everything is working perfectly with your site, the autograder may still be counting something as wrong.
+Here are some steps you can take to make sure your great work is counted as such!
+
+#. Make sure that all of your methods are complete in ``scriptHelpers.js``! The autograder needs to check your logic for each of the methods.
+   ``script.js`` should contain calls to these functions.
+#. Comment out your fetch to keep the autograder from hanging for infinity trying to get planetary info.
 
 Bonus Mission
 -------------
