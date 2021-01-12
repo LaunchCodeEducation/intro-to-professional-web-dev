@@ -103,8 +103,8 @@ to determine which lines need to be modified.
 #. Define ``questions`` and ``correctAnswers`` variables as arrays. Use the table below to fill these arrays.
 #. Replace your code from ``TODO 1.2b`` with a loop that programmatically asks each question in the array and stores 
    the user's responses.
-#. Replace the basic feedback from ``TODO 1.2c`` with a template literal that compares each of the candidate's responses with
-   the correct answers.
+#. Replace the basic feedback from ``TODO 1.2c`` with a template literal that displays each of the candidate's responses in 
+   addition to the corresponding correct answers.
 
 .. list-table::
    :header-rows: 1
@@ -130,19 +130,28 @@ to determine which lines need to be modified.
 Part 3: Grade the Quiz
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Finally, calculate the candidate's score and print the results.
+Finally, calculate the candidate's score and print the results. There are no ``TODOs`` in this section, 
+just be sure to only modify code that you have written, or add code. Don't remove anything in the file 
+that you haven't written. Doing so may cause your program to behave unexpectedly - and we might not be able to grade it!
 
-Helpful hint - To calculate the candidate's percentage, use the equation:
+Your task here is to:
 
-   (Number of Correct Answers) / (Number of Questions) * 100
+#. Compare the candidate answers with the correct answers,
+#. Calculate the candidate's score as a percentage,
+#. Convey to the candidate if they have passed the quiz with an 80% or if they have failed.
 
-Note that the final report MUST have the format shown in the "Results Output"
-section.
+Some tips:
+
+#. Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
+#. To calculate the candidate's percentage, use the equation:
+
+   **(Number of Correct Answers) / (Number of Quiz Questions) * 100**
 
 
-.. admonition:: Note
+.. Note that the final report MUST have the format shown in the "Results Output"
+.. section.
 
-   Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
+
 
 Sanity Checks
 --------------
@@ -152,7 +161,8 @@ Before submitting your solution, make sure your program:
 #. Does NOT consider case when checking answers.
 #. Includes at least one loop and one conditional.
 #. Uses at least one template literal.
-#. Correctly accepts or rejects a candidate based on their percentage.
+
+.. #. Correctly accepts or rejects a candidate based on their percentage.
 
 Example Output
 ^^^^^^^^^^^^^^
