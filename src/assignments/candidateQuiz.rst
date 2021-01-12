@@ -97,18 +97,14 @@ Part 2: Use Arrays
 ^^^^^^^^^^^^^^^^^^
 
 Now that your small app is working, expand it to deal with multiple questions.
+This time, you only have one ``TODO`` item in the starter code. You will need
+to determine which lines need to be modified.
 
-#. Redefine your question and correct answer variables to be arrays.
-#. Fill these arrays with the questions and answers listed in the table below.
-#. You still need to ask for the candidate's name.
-#. Using bracket notation, select one question and use that to prompt the
-   candidate.
-#. Compare the candidate's response to the proper entry in the answers array.
-#. Replace the basic feedback with a template literal.
-
-.. admonition:: Note
-
-   Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
+#. Define ``questions`` and ``correctAnswers`` variables as arrays. Use the table below to fill these arrays.
+#. Replace your code from ``TODO 1.2b`` with a loop that programmatically asks each question in the array and stores 
+   the user's responses.
+#. Replace the basic feedback from ``TODO 1.2c`` with a template literal that compares each of the candidate's responses with
+   the correct answers.
 
 .. list-table::
    :header-rows: 1
@@ -122,7 +118,7 @@ Now that your small app is working, expand it to deal with multiple questions.
    * - (5 + 3)/2 * 10 = ?
      - "40"
 
-   * - Given the array ``[8, "Orbit", "Trajectory", 45]``, what entry is at index 2?
+   * - Given the array ``[8, 'Orbit', 'Trajectory', 45]``, what entry is at index 2?
      - "Trajectory"
 
    * - Who was the first American woman in space?
@@ -131,12 +127,10 @@ Now that your small app is working, expand it to deal with multiple questions.
    * - What is the minimum crew size for the International Space Station (ISS)?
      - "3"
 
-Part 3: Use Iteration to Ask All Questions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Part 3: Grade the Quiz
+^^^^^^^^^^^^^^^^^^^^^^
 
-Add one or more loops to your code to ask all the questions in the quiz.
-Use arrays to collect and check all the candidate's answers.  Finally,
-calculate the candidate's score and print the results.
+Finally, calculate the candidate's score and print the results.
 
 Helpful hint - To calculate the candidate's percentage, use the equation:
 
@@ -144,6 +138,11 @@ Helpful hint - To calculate the candidate's percentage, use the equation:
 
 Note that the final report MUST have the format shown in the "Results Output"
 section.
+
+
+.. admonition:: Note
+
+   Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
 
 Sanity Checks
 --------------
