@@ -96,6 +96,8 @@ rearrange our records for the items stored in our hold.
 
    *Good progress, cadet. Here are two more methods for you to examine.*
 
+   :ref:`Check your solution <arrays-exercise-solutions3>`. 
+
 #. The ``split`` method converts a string into an array, while the ``join``
    method does the opposite.
 
@@ -115,6 +117,8 @@ rearrange our records for the items stored in our hold.
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises05>`__
 
    *Nicely done, astronaut. Now it's time to bring you fully up to speed.*
+  
+   :ref:`Check your solution <arrays-exercise-solutions4>`. 
 
 #. Arrays can hold different data types, even other arrays! A
    **multi-dimensional array** is one with entries that are themselves arrays.
@@ -139,5 +143,7 @@ rearrange our records for the items stored in our hold.
       print out one entry from each level in the array.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises06>`__
+
+   :ref:`Check your solution <arrays-exercise-solutions5>`. 
 
 *Excellent work, records keeper. Welcome aboard.*
