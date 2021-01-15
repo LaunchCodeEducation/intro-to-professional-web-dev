@@ -127,6 +127,10 @@ to determine which lines need to be modified.
    * - What is the minimum crew size for the International Space Station (ISS)?
      - "3"
 
+.. admonition:: Warning
+
+   Keep the questions and correct answers stored in this exact order.
+
 Part 3: Grade the Quiz
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -201,17 +205,17 @@ passed the quiz.
 
    The output will vary slightly based on the candidate's answers to each question.
 
-Submitting Your Work
----------------------
+.. Submitting Your Work
+.. ---------------------
 
-#. From the address bar at the top of the browser window, copy the URL of the
-   repl.it that contains your solution.
+.. #. From the address bar at the top of the browser window, copy the URL of the
+..    repl.it that contains your solution.
 
-   .. admonition:: Example
+..    .. admonition:: Example
 
-      repl.it project URL: ``https://repl.it/@username/candidate-tester#index.js``
+..       repl.it project URL: ``https://repl.it/@username/candidate-tester#index.js``
 
-#. Go to the Canvas assignment page and click *Submit Assignment*.
-#. Paste the URL into the *Website URL* input.
-#. Click *Submit Assignment* again.
-#. Notify your TA that your assignment is ready to be graded.
+.. #. Go to the Canvas assignment page and click *Submit Assignment*.
+.. #. Paste the URL into the *Website URL* input.
+.. #. Click *Submit Assignment* again.
+.. #. Notify your TA that your assignment is ready to be graded.
