@@ -112,6 +112,9 @@ to determine which lines need to be modified.
    * - Question
      - Answer
 
+   * - Who was the first American woman in space?
+     - "Sally Ride"
+
    * - True or false: 5000 meters = 5 kilometers.
      - "True"
 
@@ -120,9 +123,6 @@ to determine which lines need to be modified.
 
    * - Given the array ``[8, 'Orbit', 'Trajectory', 45]``, what entry is at index 2?
      - "Trajectory"
-
-   * - Who was the first American woman in space?
-     - "Sally Ride"
 
    * - What is the minimum crew size for the International Space Station (ISS)?
      - "3"
