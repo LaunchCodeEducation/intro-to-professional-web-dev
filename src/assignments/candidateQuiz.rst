@@ -43,15 +43,9 @@ you are NOT enrolled in a repl.it classroom, fork this
 
 Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. #. Define variables for:
 
-..    a. candidate's name
-..    b. a quiz question (pick any question from the table in Part 2 below)
-..    c. the correct answer
-..    d. the candidate's response
-
-1.1 candidateName
-~~~~~~~~~~~~~~~~~
+1.1 ``candidateName``
+~~~~~~~~~~~~~~~~~~~~~
 
 a. Ask for the candidate's name. Look for ``TODO 1.1a`` in the starter code. 
    On the line below this TODO comment, define a variable called ``candidateName``
@@ -65,8 +59,8 @@ a. Ask for the candidate's name. Look for ``TODO 1.1a`` in the starter code.
    the user using the name they just provided.
 
 
-1.2 question, correctAnswer, and candidateAnswer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.2 Single Question Quiz
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 a. Ask the user to answer a single quiz question. Look for ``TODO 1.2a``.
    Below the TODO comment, define variables called ``question``, ``correctAnswer``,
@@ -93,8 +87,8 @@ a. Ask the user to answer a single quiz question. Look for ``TODO 1.2a``.
 
    Make sure your small app works properly before moving on to part 2.
 
-Part 2: Use Arrays
-^^^^^^^^^^^^^^^^^^
+Part 2: Multiple Questions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that your small app is working, expand it to deal with multiple questions.
 This time, you only have one ``TODO`` item in the starter code. You will need
@@ -147,26 +141,12 @@ Your task here is to:
 Some tips:
 
 #. Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
+#. Somewhere below ``TODO 1.2c`` you should see a variable declaration for ``grade``. Use this to calculate the candidate's
+   score.
 #. To calculate the candidate's percentage, use the equation:
 
    **(Number of Correct Answers) / (Number of Quiz Questions) * 100**
 
-
-.. Note that the final report MUST have the format shown in the "Results Output"
-.. section.
-
-
-
-Sanity Checks
---------------
-
-Before submitting your solution, make sure your program:
-
-#. Does NOT consider case when checking answers.
-#. Includes at least one loop and one conditional.
-#. Uses at least one template literal.
-
-.. #. Correctly accepts or rejects a candidate based on their percentage.
 
 Example Output
 ^^^^^^^^^^^^^^
@@ -178,21 +158,21 @@ passed the quiz.
 ::
 
    Candidate Name: Can Twin
-   1) True or false: 5000 meters = 5 kilometers.
+   1) Who was the first American woman in space?
+   Your Answer: sally ride
+   Correct Answer: Sally Ride
+
+   2) True or false: 5000 meters = 5 kilometers.
    Your Answer: false
    Correct Answer: true
 
-   2) (5 + 3)/2 * 10 = ?
+   3) (5 + 3)/2 * 10 = ?
    Your Answer: 45
    Correct Answer: 40
 
-   3) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
+   4) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
    Your Answer: trajectory
-   Correct Answer: trajectory
-
-   4) Who was the first American woman in space?
-   Your Answer: sally ride
-   Correct Answer: sally ride
+   Correct Answer: Trajectory
 
    5) What is the minimum crew size for the International Space Station (ISS)?
    Your Answer: 10
