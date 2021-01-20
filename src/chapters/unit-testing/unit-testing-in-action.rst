@@ -37,7 +37,6 @@ Considering positive, negative, and edge tests will go a long way toward helping
 
 Let's see these in action, by writing tests for :ref:`our isPalindrome function <palindrome-function>`.
 
-
 Setting Up
 ----------
 
@@ -57,17 +56,25 @@ Here's the function we want to test:
 
 .. _export-set-up:
 
-Code along with us by forking `our repl.it starter code project <https://repl.it/@launchcode/isPalindrome-With-Tests-Starter>`_, which includes the above code in ``palindrome.js`` and the Jasmine test runner code in ``index.js``. Note that we have removed the ``console.log`` statements from the original code and exported the ``isPalindrome`` function:
+.. TODO: Replace this repl.it with a version that uses expectations
+
+Code along with us by forking `our repl.it starter code project <https://repl.it/@launchcode/isPalindrome-With-Tests-Starter>`_, which includes the above code in ``palindrome.js`` and the Jasmine test runner code in ``index.js``.
+Note that we have removed the ``console.log`` statements from the original code and exported the ``isPalindrome`` function:
 
 .. sourcecode:: js
 
    module.exports = isPalindrome;
 
-.. tip:: When creating a unit-tested project, *always* start by copying the Jasmine test runner code into ``index.js`` and putting the code you want to test in an appropriately named ``.js`` file.
+.. admonition:: Tip
+
+   When creating a unit-tested project, *always* start by copying the Jasmine test runner code into ``index.js`` and putting the code you want to test in an appropriately named ``.js`` file.
 
 You have become used to testing your code by running it and printing output with ``console.log``. When writing unit-tested code, we no longer need to take this approach.
 
-.. tip:: If you find yourself tempted to add a ``console.log`` statement to your code, write a unit test instead! You would mostly likely remove that ``console.log`` after getting your code to work, while the test will remain for you and other developers to use in the future.
+.. admonition:: Tip
+
+   If you find yourself tempted to add a ``console.log`` statement to your code, write a unit test instead!
+   You would mostly likely remove that ``console.log`` after getting your code to work, while the test will remain for you and other developers to use in the future.
 
 .. _set-up:
 
@@ -77,7 +84,6 @@ Finally, create ``spec/`` folder and add a spec file, ``palindrome.spec.js``. Th
    :linenos:
 
    const isPalindrome = require('../palindrome.js');
-   const assert = require('assert');
 
    describe("isPalindrome", function(){
 
@@ -111,24 +117,23 @@ Let's add tests for these inputs to ``spec/palindrome.spec.js``:
    :linenos:
 
    const isPalindrome = require('../palindrome.js');
-   const assert = require('assert');
 
    describe("isPalindrome", function(){
 
       it("should return true for a single letter", function(){
-         assert.strictEqual(isPalindrome("a"), true);
+         expect(isPalindrome("a")).toBeTrue();
       });
 
       it("should return true for a single letter repeated", function(){
-         assert.strictEqual(isPalindrome("aaa"), true);
+         expect(isPalindrome("aaa")).toBeTrue();
       });
 
       it("should return true for a simple palindrome", function(){
-         assert.strictEqual(isPalindrome("aba"), true);
+         expect(isPalindrome("aba")).toBeTrue();
       });
 
       it("should return true for a longer palindrome", function(){
-         assert.strictEqual(isPalindrome("racecar"), true);
+         expect(isPalindrome("racecar")).toBeTrue();
       });
 
    });
@@ -147,7 +152,8 @@ For ``isPalindrome``, some negative tests have inputs:
 - ``"abA"``
 - ``"so many dynamos"``
 
-Calling ``isPalindrome`` with these inputs should return ``false`` in each case. The last two of these negative tests deserve a bit more discussion.
+Calling ``isPalindrome`` with these inputs should return ``false`` in each case.
+The last two of these negative tests deserve a bit more discussion.
 
 When writing our ``isPalindrome`` function initially, we made two important decisions:
 
@@ -172,21 +178,22 @@ make our code *self-documenting*. Someone can read our tests and easily see that
 Let's add some test for these negative cases. Add these within the ``describe`` call.
 
 .. sourcecode:: js
+   :linenos:
 
    it("should return false for a longer non-palindrome", function(){
-      assert.strictEqual(isPalindrome("launchcode"), false);
+      expect(isPalindrome("launchcode")).toBeFalse();
    });
 
    it("should return false for a simple non-palindrome", function(){
-      assert.strictEqual(isPalindrome("ab"), false);
+      expect(isPalindrome("ab")).toBeFalse();
    });
 
    it("should be case-sensitive", function(){
-      assert.strictEqual(isPalindrome("abA"), false);
+      expect(isPalindrome("abA")).toBeFalse();
    });
 
    it("should consider whitespace", function(){
-      assert.strictEqual(isPalindrome("so many dynamos"), false);
+      expect(isPalindrome("so many dynamos")).toBeFalse();
    });
 
 Now run the tests to make sure they pass. Your code now includes a set of tests that considers a wide variety of positive and negative cases.
@@ -211,7 +218,7 @@ Let's add this test case to our spec:
 .. sourcecode:: js
 
    it("should consider the empty string a palindrome", function(){
-      assert.strictEqual(isPalindrome(""), true);
+      expect(isPalindrome("")).toBeTrue();
    });
 
 Now run the tests, which should all pass.

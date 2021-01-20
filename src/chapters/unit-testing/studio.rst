@@ -1,3 +1,5 @@
+.. TODO: Check starter code and solutions!
+
 Studio: Unit Testing
 =====================
 

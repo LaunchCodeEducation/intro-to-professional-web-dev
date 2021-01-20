@@ -1,6 +1,8 @@
 TDD in Action
 =============
 
+.. TODO: Replace this repl.it
+
 `Fork our starter code repl.it <https://repl.it/@launchcode/Transmission-processor-TDD-starter>`_
 and follow along as we implement a project using TDD.
 
@@ -62,8 +64,6 @@ parameter describe the group of tests inside.
 .. sourcecode:: js
    :linenos:
 
-   const assert = require('assert');
-
    describe("transmission processor", function() {
 
       it("", function(){
@@ -77,8 +77,6 @@ Give the test the name ``"takes a string and returns an object"``.
 .. sourcecode:: js
    :linenos:
 
-   const assert = require('assert');
-
    describe("transmission processor", function() {
 
       it("takes a string returns an object", function() {
@@ -87,7 +85,7 @@ Give the test the name ``"takes a string and returns an object"``.
 
    });
 
-Now that we identified a clear goal for the test, let's add logic and ``assert`` calls
+Now that we identified a clear goal for the test, let's add logic and ``expect`` calls
 in the test to verify the desired behavior. *But wait...* we haven't added anything
 except an empty test at this point. There isn't any actual code to verify. That's okay,
 this is part of the TDD process.
@@ -104,7 +102,6 @@ a ``processor`` function is imported from the ``processor.js`` module.
 .. sourcecode:: js
    :linenos:
 
-   const assert = require('assert');
    const processor = require('../processor.js');
 
    describe("transmission processor", function() {
@@ -119,21 +116,20 @@ We have an idea for a function named ``processor`` and we have imported it.
 Keep in mind this function only exists as a concept and we are writing a test
 to see if this concept makes sense.
 
-Now for the real heart of the test. We are going to use ``assert.strictEqual`` to
+Now for the real heart of the test. We are going to use ``expect().toEqual()`` to
 verify that if we pass a string to ``processor``, an object is returned.
 Carefully review lines 7 and 8 shown below.
 
 .. sourcecode:: js
    :linenos:
 
-   const assert = require('assert');
    const processor = require('../processor.js');
 
    describe("transmission processor", function() {
 
       it("takes a string and returns an object", function(){
          let result = processor("9701::<489584872710>");
-         assert.strictEqual(typeof result, "object");
+         expect(typeof result).toEqual("object");
       });
 
    });
@@ -182,6 +178,7 @@ Contents of the new ``processor.js`` file.
 
 We did it! ``1 spec, 0 failures`` means 1 passing
 test. In repl.it you have to imagine the satisfying green color of a passing test.
+
 ::
 
    1 spec, 0 failures
@@ -218,19 +215,18 @@ For requirement #2, the solution for *steps 1 - 4* can be seen on lines *11 - 14
 .. sourcecode:: js
    :linenos:
 
-   const assert = require('assert');
    const processor = require('../processor.js');
 
    describe("transmission processor", function() {
 
       it("takes a string and returns an object", function(){
          let result = processor("9701::<489584872710>");
-         assert.strictEqual(typeof result, "object");
+         expect(typeof result).toEqual("object");
       });
 
       it("returns -1 if '::' not found", function(){
          let result = processor("9701<489584872710>");
-         assert.strictEqual(result, -1);
+         expect(result).toEqual(-1);
       });
 
    });
@@ -286,32 +282,31 @@ The ``id`` is the part of the transmission *before* the ``"::"``
 The same steps will be followed, even though they are not explicitly listed.
 
 See lines *16 - 19* to see the test added for this requirement. To test
-this case ``notStrictEqual`` was used, which is checking if the two values
-are NOT equal. ``notStrictEqual`` is used to make sure that ``result.id``
+this case ``not.toEqual()`` was used, which is checking if the two values
+are NOT equal. ``not.toEqual()`` is used to make sure that ``result.id``
 is NOT equal to ``undefined``. Remember that if you reference a property on an
 object that does NOT exist, ``undefined`` is returned.
 
 .. sourcecode:: js
    :linenos:
 
-   const assert = require('assert');
    const processor = require('../processor.js');
 
    describe("transmission processor", function() {
 
       it("takes a string returns an object", function(){
          let result = processor("9701::<489584872710>");
-         assert.strictEqual(typeof result, "object");
+         expect(typeof result).toEqual("object");
       });
 
       it("returns -1 if '::' not found", function(){
          let result = processor("9701<489584872710>");
-         assert.strictEqual(result, -1);
+         expect(result).toEqual(-1);
       });
 
       it("returns id in object", function() {
         let result = processor("9701::<489584872710>");
-        assert.notStrictEqual(result.id, undefined);
+        expect(result.id).not.toEqual(undefined);
       });
 
    });
@@ -371,7 +366,7 @@ New test to be added to ``specs/processor.spec.js``:
 
    it("converts id to a number", function() {
       let result = processor("9701::<489584872710>");
-      assert.strictEqual(result.id, 9701);
+      expect(result.id).toEqual(9701);
    });
 
 Fail Message
@@ -429,7 +424,7 @@ New test to be added to ``specs/processor.spec.js``
 
    it("returns rawData in object", function() {
       let result = processor("9701::<487297403495720912>");
-      assert.notStrictEqual(result.rawData, undefined);
+      expect(result.rawData).not.toEqual(undefined);
    });
 
 Fail Message
@@ -494,7 +489,7 @@ New test to be added to ``specs/processor.spec.js``
 
    it("returns -1 for rawData if missing < at position 0", function() {
       let result = processor("9701::487297403495720912>");
-      assert.strictEqual(result.rawData, -1);
+      expect(result.rawData).toEqual(-1);
    });
 
 Fail Message

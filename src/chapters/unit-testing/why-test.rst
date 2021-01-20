@@ -21,7 +21,6 @@ components (or *units*) of code. These are typically individual functions.
 
 Before we dive into the *how* of unit testing, let's discuss the *why*.
 
-
 Know Your Code *Really* Works
 -----------------------------
 
@@ -38,7 +37,6 @@ The unit testing process helps avoid this by starting with a list of specific, c
 behaviors that the program should satisfy. The behaviors are then converted into automated tests that demonstrate
 program behavior and provide a framework for writing code that *really* works.
 
-
 Find Regressions
 ----------------
 
@@ -46,7 +44,9 @@ Find Regressions
 
 What about this situation?
 
-.. pull-quote:: You write feature #1 for a program. You then move on to feature #2. After finishing feature #2, you realize that your changes broke feature #1.
+.. pull-quote::
+
+   You write feature #1 for a program. You then move on to feature #2. After finishing feature #2, you realize that your changes broke feature #1.
 
 This is frustrating, right? Especially with larger programs, adding new features often causes unexpected
 problems in other parts of the code, potentially breaking the entire program. The introduction of such a bug is

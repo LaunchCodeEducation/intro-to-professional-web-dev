@@ -1,3 +1,5 @@
+.. TODO: Check starter code and solutions!
+
 Exercises: Unit Testing
 ========================
 
@@ -54,8 +56,7 @@ c. ``index.js`` which holds special code to make Jasmine work.
 #. We need to add a few lines to ``checkFive.js`` and ``checkFive.spec.js`` to
    get them to talk to each other.
 
-   a. ``checkFive.spec.js`` needs to access ``checkFive.js``, and we also need
-      to import the ``assert`` testing function. Add two ``require`` statements
+   a. ``checkFive.spec.js`` needs to access ``checkFive.js``. Add a ``require`` statement
       to accomplish this (review :ref:`Unit Testing in Action <set-up>` if
       needed).
 
@@ -68,9 +69,9 @@ c. ``index.js`` which holds special code to make Jasmine work.
    clause:
 
    .. sourcecode:: js
+      :linenos:
 
       const checkFive = require('../checkFive.js');
-      const assert = require('assert');
 
       describe("checkFive", function(){
 
@@ -85,15 +86,15 @@ c. ``index.js`` which holds special code to make Jasmine work.
 
    a. First, replace ``Descriptive feedback...`` with a DETAILED message. This
       is the text that the user will see if the test *fails*. Do NOT skimp on
-      this. Refer back to the :ref:`Specifications and Assertions <feedback>`
+      this. Refer back to the :ref:`Specifications and Expectations <feedback>`
       section to review best practices.
    b. Define the variable ``output``, and initialize it by passing a value of
       ``2`` to ``checkFive``.
 
       .. sourcecode:: js
+         :linenos:
 
          const checkFive = require('../checkFive.js');
-         const assert = require('assert');
 
          describe("checkFive", function(){
 
@@ -103,18 +104,18 @@ c. ``index.js`` which holds special code to make Jasmine work.
 
          });
 
-   c. Now use the ``assert`` function to check the result:
+   c. Now use the ``expect`` function to check the result:
 
       .. sourcecode:: js
+         :linenos:
 
          const checkFive = require('../checkFive.js');
-         const assert = require('assert');
 
          describe("checkFive", function(){
 
             it("Descriptive feedback...", function(){
                let output = checkFive(2);
-               assert.strictEqual(output, "2 is less than 5.");
+               expect(output).toEqual("2 is less than 5.");
             });
 
          });
