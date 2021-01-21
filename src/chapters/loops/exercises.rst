@@ -56,6 +56,8 @@ Loops simplify repetitive tasks!
    c. Print the arrays to confirm the results. Print ``evens`` first. Example:
       ``console.log(evens);``
 
+   :ref:`Check your solution <loops-exercise-solutions1>`. 
+
 ``while`` Practice
 -------------------
 
@@ -83,3 +85,5 @@ the altitude the shuttle reaches.
 
    #. If the altitude is 2000 km or higher, add "Orbit achieved!"
    #. Otherwise add, "Failed to reach orbit."
+
+      :ref:`Check your solution <loops-exercise-solutions2>`. 
