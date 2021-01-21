@@ -56,8 +56,6 @@ Here's the function we want to test:
 
 .. _export-set-up:
 
-.. TODO: Replace this repl.it with a version that uses expectations
-
 Code along with us by forking `our repl.it starter code project <https://repl.it/@launchcode/isPalindrome-With-Tests-Starter>`_, which includes the above code in ``palindrome.js`` and the Jasmine test runner code in ``index.js``.
 Note that we have removed the ``console.log`` statements from the original code and exported the ``isPalindrome`` function:
 

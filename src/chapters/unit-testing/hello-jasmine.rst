@@ -20,11 +20,9 @@ but we do not need to learn how to do this yet.
 In this chapter we will continue to use repl.it, which automatically installs
 npm modules when it runs a program that contains a ``require`` statement.
 
-.. TODO: Update code in repl.it
-
 .. admonition:: Try It!
 
-   Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-With-Tests>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
+   Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-with-Tests-Expectations>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
 
    Don't worry about understanding the code at this point, just hit *run* to execute the tests. How many total tests are there? How many passed? How many failed? 
 
