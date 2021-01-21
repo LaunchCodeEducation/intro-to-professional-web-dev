@@ -65,6 +65,8 @@ rearrange our records for the items stored in our hold.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises03>`__
 
+   :ref:`Check your solution <arrays-exercise-solutions3>`.
+
    *Well done, cadet. Now let's look at some finer details about array methods.
    We've got to keep our paperwork straight, so you need to know when your
    actions change the original records.*
