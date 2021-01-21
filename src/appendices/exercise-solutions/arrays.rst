@@ -36,7 +36,6 @@ c. ``false``, -4.6, "87"
 
 :ref:`Back to the exercises <exercises-arrays>`.
    
-
 .. _arrays-exercise-solutions2:
 
 2. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
@@ -178,9 +177,9 @@ c. Do ``split`` or ``join`` change the original string/array?
 a. Define and initialize the following arrays, which hold the name, chemical
 symbol and mass for different elements:
 
-   i. ``element1 = ['hydrogen', 'H', 1.008]``
-   ii. ``element2 = ['helium', 'He', 4.003]``
-   iii. ``element26 = ['iron', 'Fe', 55.85]``
+i. ``element1 = ['hydrogen', 'H', 1.008]``
+ii. ``element2 = ['helium', 'He', 4.003]``
+iii. ``element26 = ['iron', 'Fe', 55.85]``
 
    .. sourcecode::js
       :linenos:
