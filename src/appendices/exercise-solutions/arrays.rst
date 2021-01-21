@@ -3,6 +3,7 @@
 Exercise Solutions: Arrays
 ======================================
 
+
 .. _arrays-exercise-solutions1:
 
 1. Create an array called ``practiceFile`` with the following entry: 273.15.
@@ -30,8 +31,9 @@ c. ``false``, -4.6, "87"
    practiceFile.push(false, -4.6, "87");
    console.log(practiceFile);
 
+
 :ref:`Back to the exercises <exercises-arrays>`.
-   
+
 .. _arrays-exercise-solutions2:
 
 2. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
@@ -70,6 +72,7 @@ e. Use a template literal to print the final array and its length.
 
    console.log(`The array ${cargoHold} has a length of ${cargoHold.length}.`);
 
+
 :ref:`Back to the exercises <exercises-arrays>`.
 
 .. _arrays-exercise-solutions3:
@@ -98,6 +101,7 @@ c. Replace the elements at indexes 2 - 4 with the items ``'cat'``,
 
    cargoHold.splice(2,3,'cat','fob','string cheese');
    console.log(cargoHold);
+
 
 :ref:`Back to the exercises <exercises-arrays>`.
 
@@ -167,6 +171,7 @@ c. Do ``split`` or ``join`` change the original string/array?
 
    console.log(cargoHold.split(',').sort().join(','));
 
+
 :ref:`Back to the exercises <exercises-arrays>`.
 
 .. _arrays-exercise-solutions6:
@@ -195,5 +200,6 @@ HEAR you describe this difference. Go ahead, talk to your screen.
 .. sourcecode:: js
 
    console.log(table[1], table[1][1]);
+
 
 :ref:`Back to the exercises <exercises-arrays>`.
