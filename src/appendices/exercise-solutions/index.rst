@@ -11,3 +11,4 @@ Exercise Solutions
    errors-and-debugging
    strings
    arrays
+   loops
