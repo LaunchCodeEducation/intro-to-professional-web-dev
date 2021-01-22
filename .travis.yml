@@ -15,8 +15,10 @@ script:
 
 deploy:
   provider: pages # github pages provider
-  on: branch:
-    - ind-main
+  on: 
+    branch:
+      only:
+      - ind-main
   skip_cleanup: true # save the build output (artifact)
   local_dir: gh-pages # the directory to deploy to GH pages
   target_branch: gh-pages # branch to push the build artifact to 
