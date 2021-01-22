@@ -34,7 +34,7 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
          launchReady = false;
       }
 
-   `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError>`_
+   `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError>`__
 
    :ref:`Check your solution <errors-and-debugging-exercise-solutionsA>`. 
 
