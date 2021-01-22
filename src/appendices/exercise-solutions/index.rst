@@ -10,3 +10,5 @@ Exercise Solutions
    booleans-and-conditionals
    errors-and-debugging
    strings
+   functions
+   
