@@ -91,7 +91,7 @@ We just learned that variables and parameters defined within a function are not 
 Even though ``message`` is defined outside the function, it is still visible within the function. When ``printMessage`` is called and ``console.log(message);`` executes, ``message`` has the value ``"Hello, World!"``, so that value is printed to the console. This means that the scope of ``message`` extends to the function ``printMessage``.
 
 
-.. warning:: 
+.. admonition:: Warning
 
    It is NOT the case that all variables defined outside of a function are
    visible within *every* function. The reality is a bit more nuanced than
