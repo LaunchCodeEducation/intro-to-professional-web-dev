@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>7.6. Encoding Characters &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.7. Special Characters" href="special-characters.html" />
+    <link rel="prev" title="7.5. String Methods" href="string-methods.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">7. Stringing Characters Together</a></li>
+    <li class="active">7.6. Encoding Characters</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="encoding-characters">
+<h1>7.6. Encoding Characters<a class="headerlink" href="#encoding-characters" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">If you had microscope powerful enough to view the data stored on a computer's
+hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and
+1 is known as a <strong>bit</strong>. A bit is a unit of measurement, like a meter or a
+pound. Collections of computer data are measured in bits; every letter, image,
+and pixel you interact with on a computer is represented by bits.</p>
+<p>We work with more complex data when we program, including numbers and strings.
+This section examines how such data is represented within a computer.</p>
+<div class="section" id="representing-numbers">
+<h2>7.6.1. Representing Numbers<a class="headerlink" href="#representing-numbers" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-1"></span><p id="index-2">A <strong>byte</strong> is a set of 8 bits. Bytes look like 00101101 or 11110011, and they
+represent a <strong>binary number</strong>, or a base-2 number. A binary number is a number
+representation that uses only 0s and 1s. The numbers that you are used to,
+which are built out of the integers 0...9, are <strong>decimal numbers</strong>, or base-10
+numbers.</p>
+<p>Since each bit can have one of two values, each byte can have one of
+2<sup>8</sup> = 256 different values.</p>
+<p>It may not be obvious, but every decimal integer can be represented as a binary
+integer, and vice versa. There are 256 different values a byte may take, each
+of which can be used to represent a decimal integer, from 0 to 255.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We will not go into binary to decimal number conversion. If you are
+interested in learning more, there are <a class="reference external" href="https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/" target="_blank">many<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> <a class="reference external" href="https://www.youtube.com/watch?v=wPvI19DmWQw" target="_blank">tutorials<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> <a class="reference external" href="https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary" target="_blank">online<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> that can show you the way.</p>
+</div>
+<p>In this way, the bits in a computer can be viewed as integers. If you want to
+represent values greater than 255, just use more bits!</p>
+</div>
+<div class="section" id="representing-strings">
+<h2>7.6.2. Representing Strings<a class="headerlink" href="#representing-strings" title="Permalink to this headline">¶</a></h2>
+<p>Strings are collections of characters, so if we can represent each character
+as a number, then we'll have a way to go from a string to a collection of bits,
+and back again.</p>
+<div class="section" id="character-encodings">
+<h3>7.6.2.1. Character Encodings<a class="headerlink" href="#character-encodings" title="Permalink to this headline">¶</a></h3>
+<p id="index-3">Unlike the natural translation between binary and decimal numbers, there is no
+natural translation between integers and characters. For example, you might
+create a pairing of 0 to <code class="docutils literal notranslate"><span class="pre">a</span></code>, 1 to <code class="docutils literal notranslate"><span class="pre">b</span></code>, and so on. But what integer should
+be paired with <code class="docutils literal notranslate"><span class="pre">$</span></code> or a tab? Since there is no natural way to translate
+between characters and integers, computer scientists have had to make such
+translations up. Such translations are called <strong>character encodings</strong>.</p>
+<p id="index-4">There are many different encodings, some of which continue to evolve as our use
+of data evolves. For instance, the most recent versions of the Unicode
+character encoding include emoji characters, such as 🌮.</p>
+</div>
+<div class="section" id="the-ascii-encoding">
+<h3>7.6.2.2. The ASCII Encoding<a class="headerlink" href="#the-ascii-encoding" title="Permalink to this headline">¶</a></h3>
+<p id="index-5">Most of the characters that you are used to using---including letters, numbers,
+whitespace, punctuation, and symbols---are part of the <strong>ASCII</strong> (pronounced
+<em>ask-ee</em>) character encoding. This standard has changed very little since the
+1960s, and it is the foundation of all other commonly-used encodings.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">ASCII stands for American Standard Code for Information Interchange, but
+most programmers never remember that, so you shouldn't try to either.</p>
+</div>
+<p>ASCII provides a standard translation of the most commonly-used characters to
+one of the integers 0...127, which means each character can be stored in a
+computer using a single byte.</p>
+<p id="index-6">ASCII maps <code class="docutils literal notranslate"><span class="pre">a</span></code> to 97, <code class="docutils literal notranslate"><span class="pre">b</span></code> to 98, and so on for lowercase letters, with <code class="docutils literal notranslate"><span class="pre">z</span></code> mapping to 122. Uppercase letters map to the values 65 through 90. The other integers between 0 and 127 represent symbols, punctuation, and other assorted odd characters. This scheme is called the <strong>ASCII table</strong>, and rather than replicate it here, we refer you to an <a class="reference external" href="https://www.ascii-code.com/" target="_blank">excellent one online<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>In summary, strings are stored in a computer using the following process:</p>
+<ol class="arabic simple">
+<li>Break a string into its individual characters.</li>
+<li>Use a character encoding, such as ASCII, to convert each of the characters
+to an integer.</li>
+<li>Convert each integer to a series of bits using decimal-to-binary integer
+conversion.</li>
+</ol>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="last">JavaScript uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about &quot;ASCII codes&quot; in JavaScript.</p>
+</div>
+</div>
+</div>
+<div class="section" id="character-encodings-in-javascript">
+<h2>7.6.3. Character Encodings in JavaScript<a class="headerlink" href="#character-encodings-in-javascript" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript provides methods to convert any character into its ASCII code and
+back.</p>
+<p>The string method <code class="docutils literal notranslate"><span class="pre">charCodeAt</span></code> takes an index and returns the ASCII code of
+the character at that index.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nonprofit</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">8</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">9</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>76
+97
+117
+110
+99
+104
+67
+111
+100
+101
+</pre></div>
+</div>
+</div>
+<p>To convert an ASCII code to an actual character, use <code class="docutils literal notranslate"><span class="pre">String.fromCharCode()</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">codes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">76</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">characters</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+               <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+               <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+               <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span> <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
+               <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span> <span class="o">+</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">9</span><span class="p">]);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">characters</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>LaunchCode
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="string-methods.html"><span aria-hidden="true">&larr;</span> 7.5. String Methods</a></li>
+        
+        
+        <li class="next"><a href="special-characters.html">7.7. Special Characters <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

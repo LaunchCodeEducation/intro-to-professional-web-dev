@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>12.1. Objects and Why They Matter &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12.2. Working with Objects" href="modifyingobjects.html" />
+    <link rel="prev" title="12. Objects and the Math Object" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">12. Objects and the Math Object</a></li>
+    <li class="active">12.1. Objects and Why They Matter</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="objects-and-why-they-matter">
+<span id="objects-intro"></span><h1>12.1. Objects and Why They Matter<a class="headerlink" href="#objects-and-why-they-matter" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">So far we have learned a lot about arrays, which are data structures that can hold many values.
+<strong>Objects</strong> are also data structures that can hold many values.</p>
+<p>Unlike arrays, each value in an object has a name or <strong>key</strong> for reference purposes.
+The pairing between a key and its value is called a <strong>key/value pair</strong>.</p>
+<p>Objects store as many key/value pairs as needed, and each value needs a key. Without a key, the value cannot be accessed or modified by the programmer.</p>
+<div class="figure">
+<img alt="Diagram showing that objects are a collection of key/value pairs." src="../../_images/object.png" />
+</div>
+<div class="section" id="initializing-objects">
+<h2>12.1.1. Initializing Objects<a class="headerlink" href="#initializing-objects" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">When defining an object, we call the initialization an <strong>object literal</strong>.
+Objects require three things for the definition: a name, a set of keys, and their corresponding values.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Object literals use curly braces, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, to enclose the key/value pairs.</p>
+</div>
+<p>Once we have these three things, we write an object literal like so:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">key2</span><span class="o">:</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">key3</span><span class="o">:</span><span class="nx">value3</span><span class="p">,</span> <span class="p">...</span> <span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>If we have a lot of key/value pairs in our object, we can also put each one on a separate line!</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objectName</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">key1</span><span class="o">:</span> <span class="nx">value1</span><span class="p">,</span>
+    <span class="nx">key2</span><span class="o">:</span> <span class="nx">value2</span><span class="p">,</span>
+    <span class="nx">key3</span><span class="o">:</span> <span class="nx">value3</span><span class="p">,</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">When putting the key/value pairs on separate lines, it is important to pay attention to spaces and tabs!
+Incorrect spacing or tab usage can result in a bug.</p>
+</div>
+<p>When defining an object, keep in mind that the keys can only be valid JavaScript strings.
+The values can be any of the data types that we have previously discussed.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let's say that we want to create a small program for a zoo.
+We could create an object for storing the different data points about the animals in a zoo.
+We start with our first tortoise. His name is Pete! He is an 85 year old, 919 lb Galapagos Tortoise, who prefers a diet of veggies.
+Our object literal for all of this important data about Pete would be:</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span> <span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Pete&quot;</span><span class="p">,</span>
+    <span class="nx">weight</span><span class="o">:</span> <span class="mi">919</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="nx">diet</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;pumpkins&quot;</span><span class="p">,</span> <span class="s2">&quot;lettuce&quot;</span><span class="p">,</span> <span class="s2">&quot;cabbage&quot;</span><span class="p">]</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="methods-and-properties">
+<h2>12.1.2. Methods and Properties<a class="headerlink" href="#methods-and-properties" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-2"></span><p id="index-3">A <strong>property</strong> of an object is a key/value pair of an object.
+The property's name is the key and the property's value is the data assigned to that key.</p>
+<p>A <strong>method</strong> performs an action on the object, because it is a property that stores a function.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>In the case of Pete, our zoo's friendly Galapagos Tortoise, the object <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> has several properties for his species, name, weight, age, and diet.
+If we wanted to add a method to our object, we might add a function that returns a helpful statement for the general public.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tortoiseOne</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">species</span><span class="o">:</span> <span class="s2">&quot;Galapagos Tortoise&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Pete&quot;</span><span class="p">,</span>
+    <span class="nx">weight</span><span class="o">:</span> <span class="mi">919</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="nx">diet</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;pumpkins&quot;</span><span class="p">,</span> <span class="s2">&quot;lettuce&quot;</span><span class="p">,</span> <span class="s2">&quot;cabbage&quot;</span><span class="p">],</span>
+    <span class="nx">sign</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; is a &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">species</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>In the example above, on line 8, we see a keyword which is new to us.
+Programmers use the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword when they call an object's property from within the object itself.
+We could use the object's name instead of <code class="docutils literal notranslate"><span class="pre">this</span></code>, but <code class="docutils literal notranslate"><span class="pre">this</span></code> is shorter and easier to read.
+For example, the method, <code class="docutils literal notranslate"><span class="pre">sign</span></code>, could have a return statement of <code class="docutils literal notranslate"><span class="pre">tortoiseOne.name</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">tortoiseOne.species&quot;</span></code>.
+However, that return statement is bulky and will get more difficult to read with more references to the <code class="docutils literal notranslate"><span class="pre">tortoiseOne</span></code> object.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>12.1.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following is NOT a true statement about objects?</p>
+<ol class="last loweralpha simple">
+<li>Objects can store many values</li>
+<li>Objects have properties</li>
+<li>Objects have methods</li>
+<li>Keys are stored as numbers</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which keyword can be used to refer to an object within an object?</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">Object</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">let</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">this</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 12. Objects and the Math Object</a></li>
+        
+        
+        <li class="next"><a href="modifyingobjects.html">12.2. Working with Objects <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>7.5. String Methods &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.6. Encoding Characters" href="encoding-characters.html" />
+    <link rel="prev" title="7.4. String Immutability" href="string-immutability.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">7. Stringing Characters Together</a></li>
+    <li class="active">7.5. String Methods</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="string-methods">
+<span id="id1"></span><h1>7.5. String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h1>
+<p>JavaScript provides many useful methods for string objects. Recall that a method is a function that &quot;belongs to&quot; a specific object. Methods will typically result in some operation being carried out on the data within an object. For strings, this means that our methods will typically transform the characters of the given string in some way.</p>
+<p>As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, but instead will <em>return</em> a new string that is the result of the given operation.</p>
+<p>We saw this behavior in the <code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code> example.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nonprofit</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>launchcode
+LaunchCode
+</pre></div>
+</div>
+</div>
+<p>While <code class="docutils literal notranslate"><span class="pre">nonprofit.toLowerCase()</span></code> evaluated to <code class="docutils literal notranslate"><span class="pre">&quot;launchcode&quot;</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">nonprofit</span></code> was left unchanged. This will be case for each of the string methods.</p>
+<div class="section" id="common-string-methods">
+<h2>7.5.1. Common String Methods<a class="headerlink" href="#common-string-methods" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Here we present the most commonly-used string methods. You can find documentation for other string methods at:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2" target="_blank">MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-text">Common String Methods</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Syntax</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/string-method-examples/indexOf-examples.html#string-indexof-examples"><span class="std std-ref">indexOf</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.indexOf(substr)</span></code></td>
+<td>Returns the index of the first occurrence of the substring in the string, and returns -1 if the substring is not found.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/string-method-examples/toLowerCase-examples.html#string-tolowercase-examples"><span class="std std-ref">toLowerCase</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.toLowerCase()</span></code></td>
+<td>Returns a copy of the given string, with all uppercase letters converted to lowercase.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/string-method-examples/toUpperCase-examples.html#string-touppercase-examples"><span class="std std-ref">toUpperCase</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.toUpperCase()</span></code></td>
+<td>Returns a copy of the given string, with all lowercase letters converted to uppercase.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/string-method-examples/trim-examples.html#string-trim-examples"><span class="std std-ref">trim</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.trim()</span></code></td>
+<td>Returns a copy of the given string with the leading and trailing whitespace removed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/string-method-examples/replace-examples.html#string-replace-examples"><span class="std std-ref">replace</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.replace(searchChar,</span> <span class="pre">replacementChar)</span></code></td>
+<td>Returns a copy of <code class="docutils literal notranslate"><span class="pre">stringName</span></code>, with the first occurrence of <code class="docutils literal notranslate"><span class="pre">searchChar</span></code> replaced by <code class="docutils literal notranslate"><span class="pre">replacementChar</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/string-method-examples/slice-examples.html#string-slice-examples"><span class="std std-ref">slice</span></a></td>
+<td><code class="docutils literal notranslate"><span class="pre">stringName.slice(i,</span> <span class="pre">j)</span></code></td>
+<td>Returns the substring consisting of characters from index <code class="docutils literal notranslate"><span class="pre">i</span></code> through index <code class="docutils literal notranslate"><span class="pre">j-1</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">String methods can be combined in a process called <strong>method chaining</strong>. Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'JavaScript';</span></code>, word.toUpperCase() returns <code class="docutils literal notranslate"><span class="pre">JAVASCRIPT</span></code>. What would <code class="docutils literal notranslate"><span class="pre">word.slice(4).toUpperCase()</span></code> return?  <a class="reference external" href="https://repl.it/&#64;launchcode/Intro-To-Method-Chaining" target="_blank">Try it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>7.5.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Follow the links in the table above for the <code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">slice</span></code>, and <code class="docutils literal notranslate"><span class="pre">trim</span></code> methods. Review the content and then answer the following questions.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed by the following code?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">language</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+<span class="nx">language</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">);</span>
+<span class="nx">language</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">language</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;JavaScript&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;QavaScript&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;QavaSc&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;QavaS&quot;</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">language</span> <span class="pre">=</span> <span class="pre">'JavaScript';</span></code>, what does <code class="docutils literal notranslate"><span class="pre">language.slice(1,6)</span></code> return?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;avaScr&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;JavaSc&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;avaSc&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;JavaS&quot;</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the value of the string printed by the following program?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">org</span> <span class="o">=</span> <span class="s2">&quot;  The LaunchCode Foundation &quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">trimmed</span> <span class="o">=</span> <span class="nx">org</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">trimmed</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">The</span> <span class="pre">LaunchCode</span> <span class="pre">Foundation</span> <span class="pre">&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">LaunchCode</span> <span class="pre">Foundation&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;TheLaunchCodeFoundation&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">The</span> <span class="pre">LaunchCode</span> <span class="pre">Foundation&quot;</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="string-immutability.html"><span aria-hidden="true">&larr;</span> 7.4. String Immutability</a></li>
+        
+        
+        <li class="next"><a href="encoding-characters.html">7.6. Encoding Characters <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

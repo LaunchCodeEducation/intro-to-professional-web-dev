@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>17.2. Throw &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.3. Exceptions as Control Flow" href="exceptions-control-flow.html" />
+    <link rel="prev" title="17.1. Introduction" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">17. Exceptions</a></li>
+    <li class="active">17.2. Throw</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="throw">
+<h1>17.2. Throw<a class="headerlink" href="#throw" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">In most programming languages, when the compiler or interpreter encounters code it doesn't know how to handle, it
+<strong>throws</strong> an exception. This is how the compiler notifies the programmer that something has gone wrong. Throwing
+an exception is also known as <em>raising</em> an exception.</p>
+<p>JavaScript gives us the ability to raise exceptions using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement. One reason to throw an exception
+is if your code is being used in an unexpected way.</p>
+<div class="section" id="throw-default-error">
+<h2>17.2.1. Throw Default Error<a class="headerlink" href="#throw-default-error" title="Permalink to this headline">¶</a></h2>
+<p>We can throw a default Error by using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement and passing in a string description as a argument.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;You cannot divide by zero!&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/throw-example" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error: You cannot divide by zero!
+at evalmachine.&lt;anonymous&gt;:1:7
+at Script.runInContext (vm.js:133:20)
+at Object.runInContext (vm.js:311:6)
+at evaluate (/run_dir/repl.js:133:14)
+</pre></div>
+</div>
+<p class="last">The error text displays the error name, and it contains details about where the error was thrown.
+The text <code class="docutils literal notranslate"><span class="pre">at</span> <span class="pre">evalmachine.&lt;anonymous&gt;:1:7</span></code> indicates that the error as thrown from line 1, which we know is
+true because our example only has one line of code.</p>
+</div>
+</div>
+<div class="section" id="pre-existing-error">
+<h2>17.2.2. Pre-existing Error<a class="headerlink" href="#pre-existing-error" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript also gives us the power to throw a more specific type of error.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nx">SyntaxError</span><span class="p">(</span><span class="s2">&quot;That is the incorrect syntax&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SyntaxError: That is the incorrect syntax
+</pre></div>
+</div>
+<p class="last">JavaScript gives us flexibility by allowing us to raise standard library errors and to define our own errors. We can use exceptions to allow our program to break and provide useful information as to why something went wrong.</p>
+</div>
+</div>
+<div class="section" id="custom-error">
+<h2>17.2.3. Custom Error<a class="headerlink" href="#custom-error" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript will also let you define new types of Errors. You may find this helpful in the future, however, that goes beyond the scope of this class.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>17.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What statement do we use to raise an exception?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">How do we customize the message of an exception?</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> 17.1. Introduction</a></li>
+        
+        
+        <li class="next"><a href="exceptions-control-flow.html">17.3. Exceptions as Control Flow <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

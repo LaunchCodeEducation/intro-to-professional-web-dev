@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8. Arrays Keep Things in Order &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.1. Arrays Are Like Strings" href="arrays-are-like-strings.html" />
+    <link rel="prev" title="7.9. Exercises: Strings" href="../strings/exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">8. Arrays Keep Things in Order</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="arrays-keep-things-in-order">
+<h1>8. Arrays Keep Things in Order<a class="headerlink" href="#arrays-keep-things-in-order" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="arrays-are-like-strings.html">8.1. Arrays Are Like Strings</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="arrays-are-like-strings.html#declaring-an-array">8.1.1. Declaring an Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays-are-like-strings.html#array-length">8.1.2. Array Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays-are-like-strings.html#varying-data-types">8.1.3. Varying Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays-are-like-strings.html#check-your-understanding">8.1.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="working-with-arrays.html">8.2. Working With Arrays</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="working-with-arrays.html#bracket-notation-and-index">8.2.1. Bracket Notation and Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-arrays.html#arrays-are-mutable">8.2.2. Arrays are Mutable</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="array-methods.html">8.3. Array Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="array-methods.html#common-array-methods">8.3.1. Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array-methods.html#check-your-understanding">8.3.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multi-dimensional-arrays.html">8.4. Multi-Dimensional Arrays</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-arrays.html#two-dimensional-arrays">8.4.1. Two Dimensional Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-arrays.html#multi-dimensions-and-array-methods">8.4.2. Multi-Dimensions and Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-arrays.html#beyond-two-dimensional-arrays">8.4.3. Beyond Two Dimensional Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-arrays.html#check-your-understanding">8.4.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">8.5. Exercises: Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">8.6. Studio: Strings and Arrays</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#before-you-start">8.6.1. Before You Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#string-modification">8.6.2. String Modification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#array-and-string-conversion">8.6.3. Array and String Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#bonus-mission-multi-dimensional-arrays">8.6.4. Bonus Mission: Multi-dimensional Arrays</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../strings/exercises.html"><span aria-hidden="true">&larr;</span> 7.9. Exercises: Strings</a></li>
+        
+        
+        <li class="next"><a href="arrays-are-like-strings.html">8.1. Arrays Are Like Strings <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

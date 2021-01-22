@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>23. The DOM and Events &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23.1. JavaScript and the Browser" href="javascript-in-the-browser.html" />
+    <link rel="prev" title="22.7. Studio: Communication Log" href="../git/studio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">23. The DOM and Events</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="the-dom-and-events">
+<span id="dom-and-events"></span><h1>23. The DOM and Events<a class="headerlink" href="#the-dom-and-events" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="javascript-in-the-browser.html">23.1. JavaScript and the Browser</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="javascript-in-the-browser.html#taking-javascript-on-the-web">23.1.1. Taking JavaScript on the Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-in-the-browser.html#the-script-tag">23.1.2. The <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> Tag</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="javascript-in-the-browser.html#javascript-console">23.1.2.1. JavaScript Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-in-the-browser.html#inline-javascript">23.1.2.2. Inline JavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-in-the-browser.html#external-javascript">23.1.2.3. External JavaScript</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-in-the-browser.html#check-your-understanding">23.1.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dom.html">23.2. The DOM</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="dom.html#global-dom-variables">23.2.1. Global DOM Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dom.html#dynamic-web-page-using-the-dom">23.2.2. Dynamic Web Page Using the DOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dom.html#where-to-put-the-script">23.2.3. Where to Put the <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dom.html#check-your-understanding">23.2.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more-dom.html">23.3. More DOM Methods and Properties</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="more-dom.html#window">23.3.1. Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more-dom.html#document">23.3.2. Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more-dom.html#element">23.3.3. Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more-dom.html#check-your-understanding">23.3.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">23.4. Events</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="events.html#javascript-and-events">23.4.1. JavaScript and Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#dom-events">23.4.2. DOM Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#handling-events">23.4.3. Handling Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#check-your-understanding">23.4.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="event-listeners.html">23.5. Event Listeners</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="event-listeners.html#add-event-handlers-in-javascript">23.5.1. Add Event Handlers in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event-listeners.html#event-details">23.5.2. Event Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event-listeners.html#event-bubbling">23.5.3. Event Bubbling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event-listeners.html#check-your-understanding">23.5.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="event-types.html">23.6. Event Types</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="event-types.html#load-event">23.6.1. Load Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event-types.html#mouseover-event">23.6.2. Mouseover Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event-types.html#check-your-understanding">23.6.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">23.7. Exercises: The DOM and Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">23.8. Studio: The DOM and Events</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#getting-started">23.8.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#the-requirements">23.8.2. The Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#bonus-mission">23.8.3. Bonus Mission</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../git/studio.html"><span aria-hidden="true">&larr;</span> 22.7. Studio: Communication Log</a></li>
+        
+        
+        <li class="next"><a href="javascript-in-the-browser.html">23.1. JavaScript and the Browser <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

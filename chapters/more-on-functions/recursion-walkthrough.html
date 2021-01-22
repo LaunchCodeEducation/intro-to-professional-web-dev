@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>11.7. Recursion Walkthrough: The Base Case &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.8. Making A Function Call Itself" href="recursion-walkthrough2.html" />
+    <link rel="prev" title="11.6. Recursion" href="recursion.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">11. More on Functions</a></li>
+    <li class="active">11.7. Recursion Walkthrough: The Base Case</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="recursion-walkthrough-the-base-case">
+<h1>11.7. Recursion Walkthrough: The Base Case<a class="headerlink" href="#recursion-walkthrough-the-base-case" title="Permalink to this headline">¶</a></h1>
+<p>To ease into the concept of recursion, let's start with a loop task.</p>
+<p>In the Arrays chapter, we examined  the <a class="reference internal" href="../../appendices/array-method-examples/join-examples.html#join-examples"><span class="std std-ref">join method</span></a>,
+which combines the elements of an array into a single string. If we have
+<code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">=</span> <span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']</span></code>, then <code class="docutils literal notranslate"><span class="pre">arr.join('')</span></code> returns the string
+<code class="docutils literal notranslate"><span class="pre">'LC101'</span></code>.</p>
+<p>We can reproduce this action with either a <code class="docutils literal notranslate"><span class="pre">for</span></code> or a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="section" id="joining-array-elements-with-a-loop">
+<h2>11.7.1. Joining Array Elements With a Loop<a class="headerlink" href="#joining-array-elements-with-a-loop" title="Permalink to this headline">¶</a></h2>
+<p>Examine the code samples below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through the array and add each entry into the <code class="docutils literal notranslate"><span class="pre">newString</span></code> variable.</th>
+<th class="head">Use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to add the first element in the array to <code class="docutils literal notranslate"><span class="pre">newString</span></code>, then remove that element from the array.</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">newString</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="nx">newString</span> <span class="o">=</span> <span class="nx">newString</span> <span class="o">+</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newString</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
+[&#39;L&#39;, &#39;C&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;]
+</pre></div>
+</div>
+</td>
+<td><div class="first highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">newString</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+   <span class="nx">newString</span> <span class="o">+=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+   <span class="nx">arr</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newString</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
+[ ]
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inside each loop, the code simply adds two strings together---whatever is
+stored in <code class="docutils literal notranslate"><span class="pre">newString</span></code> plus one element from the array. In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
+the element is the next item in the sequence of entries.  In the <code class="docutils literal notranslate"><span class="pre">while</span></code>
+loop, the element is always the first entry from whatever remains in the array.</p>
+<p>OK, the loops join the array elements together. Now let's see how to
+accomplish the same task without a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.</p>
+</div>
+<div class="section" id="bring-in-recursion-concepts">
+<h2>11.7.2. Bring In Recursion Concepts<a class="headerlink" href="#bring-in-recursion-concepts" title="Permalink to this headline">¶</a></h2>
+<p>First, state the problem to solve: <em>Combine the elements from an array into a
+string</em>.</p>
+<p>Second, split the problem into small, identical steps: Looking at the loops
+above, the &quot;identical step&quot; is just adding two strings together - <code class="docutils literal notranslate"><span class="pre">newString</span></code>
+and the next entry in the array.</p>
+<p>Third, build a function to accomplish the small steps: Let's call the function
+<code class="docutils literal notranslate"><span class="pre">combineEntries</span></code>, and we will set an array as the parameter.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
+   <span class="c1">//TODO: Add code here</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We want <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> to repeat over and over again until the task is
+complete.</p>
+<p>How do we make this happen without using <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>?</p>
+</div>
+<div class="section" id="index-0">
+<span id="identifying-the-base-case"></span><h2>11.7.3. Identifying the Base Case<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops end when a particular condition evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>. In the examples above, these conditions are <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">arr.length</span></code> and <code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.</p>
+<p>With recursion, we do not know how many times <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> must be
+called. To make sure the code stops at the proper time, we need to identify a
+condition that ends the process. This is called the <strong>base case</strong>, and it
+represents the simplest possible task for our function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> the base case is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the recursion ends and the task is complete.
+<code class="docutils literal notranslate"><span class="pre">if</span></code> the base case is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the function calls itself again.</p>
+<p>We check for the base case like this:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
+      <span class="c1">//solve last small step</span>
+      <span class="c1">//end recursion</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//call combineEntries again</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>For the joining task, the <em>base case</em> occurs when we pass in a one-element
+array (e.g. <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'L'</span> <span class="pre">]</span></code>). With no other elements to join together, the function
+just needs to return <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
+<p>Let's update <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> to check if the array contains only one item.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">combineEntries</span><span class="p">(</span><span class="nx">arrayName</span><span class="p">){</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">arrayName</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">arrayName</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//call combineEntries again</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> sets up the condition for ending the recursion
+process. If it is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the single entry gets returned, and the function
+stops. Otherwise, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> gets called again.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We define our base case as <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> rather than
+<code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">===</span> <span class="pre">1</span></code> just in case an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code> gets passed to
+the function.</p>
+</div>
+</div>
+<div class="section" id="the-case-for-the-base">
+<h2>11.7.4. The Case for the Base<a class="headerlink" href="#the-case-for-the-base" title="Permalink to this headline">¶</a></h2>
+<p>What if we accidentally typed <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">===</span> <span class="pre">2</span></code> as the condition for
+ending the recursion? If so, it evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> for the array
+<code class="docutils literal notranslate"><span class="pre">['0',</span> <span class="pre">'1']</span></code>, and the function returns <code class="docutils literal notranslate"><span class="pre">'0'</span></code>. However, this leaves the
+element <code class="docutils literal notranslate"><span class="pre">'1'</span></code> in the array instead of adding it to the string. By mistyping
+the condition, we ended the recursion process too soon.</p>
+<p>Similarly, if we used <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span> <span class="pre">===</span> <span class="pre">'Rutabaga'</span></code> as the condition, then
+any array that does NOT contain the string <code class="docutils literal notranslate"><span class="pre">'Rutabaga'</span></code> would never match the
+base case. In situations where the base case cannot be reached, the recursion
+process either throws an error, or it continues without end---an infinite loop.</p>
+<p>Correctly identifying and checking for the base case is <em>critical</em> to building
+a working recursive process.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>11.7.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>We can use recursion to remove all of the 'i' entries from the array
+<code class="docutils literal notranslate"><span class="pre">['One',</span> <span class="pre">'i',</span> <span class="pre">'c',</span> <span class="pre">'X',</span> <span class="pre">'i',</span> <span class="pre">'i',</span> <span class="pre">54]</span></code>.</p>
+<p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">removeI</span></code> function.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">removeI</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
+      <span class="c1">//return final array</span>
+      <span class="c1">//end recursion</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//remove one &#39;i&#39; entry from array</span>
+      <span class="c1">//call removeI function again</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>Which TWO of the following work as a base case for the function? Feel free to
+test the options in the repl.it to check your thinking.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">!arr.includes('i')</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">arr.includes('i')</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></li>
+</ol>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>The <strong>factorial</strong> of a number (n!) is the product of a positive, whole number and
+all the positive integers below it.</p>
+<p>For example, four factorial is 4! = 4*3*2*1 = 24, and 5! = 5*4*3*2*1 =
+120.</p>
+<p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">factorial</span></code> function.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">integer</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">baseCase</span> <span class="nx">is</span> <span class="kc">true</span><span class="p">){</span>
+      <span class="c1">//solve last step</span>
+      <span class="c1">//end recursion</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//call factorial function again</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>Which of the following should be used as base case for the function?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
+</ol>
+<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="recursion.html"><span aria-hidden="true">&larr;</span> 11.6. Recursion</a></li>
+        
+        
+        <li class="next"><a href="recursion-walkthrough2.html">11.8. Making A Function Call Itself <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

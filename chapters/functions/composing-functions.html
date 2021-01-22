@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>10.8. Composing Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.9. Why Create Functions?" href="why-create-functions.html" />
+    <link rel="prev" title="10.7. Naming Functions" href="naming-functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">10. Functions Are at Your Beck and Call</a></li>
+    <li class="active">10.8. Composing Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="composing-functions">
+<h1>10.8. Composing Functions<a class="headerlink" href="#composing-functions" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The practice of using functions to build other functions is known as <strong>function composition</strong>, or simply <strong>composition</strong>. To demonstrate, we consider a specific example.</p>
+<div class="section" id="palindrome-checker">
+<h2>10.8.1. Palindrome Checker<a class="headerlink" href="#palindrome-checker" title="Permalink to this headline">¶</a></h2>
+<p>A palindrome can be defined as a word that is spelled the same backwards and forwards. Some examples are &quot;tacocat&quot;, &quot;kayak&quot;,  and &quot;racecar&quot;.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">There are other factors that are sometimes included in the definition of a palindrome. For example, an alternative definition is that a palindrome is a sentence or phrase that contains letters in the same order, whether considered from beginning-to-end, or end-to beginning, ignoring punctuation, case, and spaces.</p>
+</div>
+<p>We want to write a boolean function---a function that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>---to determine if a word is a palindrome.</p>
+<p>One way to state the palindrome condition is to say that a palindrome is a string that is equal to its reverse. In other words, we can test for palindromes by taking a string, reversing it, and then comparing the reversed string to the original. If the two are equal, we have a palindrome.</p>
+<p>To that end, it would be very useful to have a function that reversed a string, wouldn't it?</p>
+<div class="section" id="the-reverse-function">
+<h3>10.8.1.1. The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> Function<a class="headerlink" href="#the-reverse-function" title="Permalink to this headline">¶</a></h3>
+<p>Let's write a function that, given a string, returns its reverse.</p>
+<p>One approach uses the accumulator pattern:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">reversed</span> <span class="o">=</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">reversed</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="nx">reversed</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This is the same algorithm that we used previously to <a class="reference internal" href="../loops/accumulator-pattern.html#reverse-string"><span class="std std-ref">reverse a string</span></a>.</p>
+<p id="reverse-a-string">Another approach is to use the fact that there is a <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method for arrays, and that the methods <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> allow us to go from strings to arrays and back (this was covered in <a class="reference internal" href="../arrays/array-methods.html#array-methods"><span class="std std-ref">Array Methods</span></a>).</p>
+<div class="highlight-js notranslate" id="reverse-func"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">lettersArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+   <span class="kd">let</span> <span class="nx">reversedLettersArray</span> <span class="o">=</span> <span class="nx">lettersArray</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+   <span class="k">return</span> <span class="nx">reversedLettersArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/reverse-Function" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Let's break down the steps carried out by this function:</p>
+<ol class="arabic simple">
+<li><strong>Turn the string into an array of characters.</strong> We call <code class="docutils literal notranslate"><span class="pre">str.split('')</span></code>, using the empty string as the splitting character, returns an array of the individual characters that make up the string.</li>
+<li><strong>Reverse the array of characters.</strong> To do this, we use the built-in array method <code class="docutils literal notranslate"><span class="pre">reverse</span></code>.</li>
+<li><strong>Join the reversed character array into a string.</strong> We call <code class="docutils literal notranslate"><span class="pre">.join('')</span></code>. Joining with the empty string is the same as concatenating each of the individual characters together into a single string.</li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">Use method chaining to reduce the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function to a single line. Open the link below the source code above to give it a shot.</p>
+</div>
+</div>
+<div class="section" id="the-ispalindrome-function">
+<span id="palindrome-function"></span><h3>10.8.1.2. The <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> Function<a class="headerlink" href="#the-ispalindrome-function" title="Permalink to this headline">¶</a></h3>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function for strings, we can create our palindrome checker. Recall that our approach will be to take the string argument, reverse it, and then compare the reversed string to the original string.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">===</span> <span class="nx">str</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/isPalindrome" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> uses our <code class="docutils literal notranslate"><span class="pre">reverse</span></code> function, this is an example of composition.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">Does our <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> function work? Run it yourself to see!</p>
+</div>
+</div>
+</div>
+<div class="section" id="functions-should-do-exactly-one-thing">
+<h2>10.8.2. Functions Should Do Exactly One Thing<a class="headerlink" href="#functions-should-do-exactly-one-thing" title="Permalink to this headline">¶</a></h2>
+<p>An important consideration when writing a function is size. By &quot;size&quot; we mean that functions should be short and, more importantly, <em>do exactly one thing.</em></p>
+<p>This principle is easier to state than to put into practice. For example, what if we had written <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> without breaking out the <code class="docutils literal notranslate"><span class="pre">reverse</span></code> code into a separate function?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">reversed</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+   <span class="k">return</span> <span class="nx">reversed</span> <span class="o">===</span> <span class="nx">str</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This function is still short, which is good. But does it do one thing (check if a string is a palindrome) or multiple things (check the string, <em>and</em> reverse a string)? This is a bit subjective, and here the answer is certainly debatable.</p>
+<p>Some cases will be much more clear-cut, however. Consider the sandwich function, <code class="docutils literal notranslate"><span class="pre">makeSandwich</span></code>, from the section <a class="reference internal" href="process.html#sandwich-function"><span class="std std-ref">A Good Function-Writing Process</span></a>. Suppose we wanted to expand the capability of our program to not only make a sandwich, but to also pour a beverage (to go along with our lunch). It would be a bad idea to amend our function to do both, ending up with a function that has a name like <code class="docutils literal notranslate"><span class="pre">makeSandwichAndPourDrink</span></code>.</p>
+<p>A much better solution would look like this:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">makeSandwich</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// make the sandwich</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">pourDrink</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// pour the drink</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">makeLunch</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="nx">makeSandwich</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">);</span>
+   <span class="nx">pourDrink</span><span class="p">(</span> <span class="cm">/*parameters*/</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Why is this better? Smaller functions are easier to debug, for one thing. And by separating single responsibilities into individual functions, we also make our code easier to read and more reusable. In looking at the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function, it is very clear what is going on. First, it makes a sandwich, then it pours a drink.</p>
+<p>Were the <code class="docutils literal notranslate"><span class="pre">makeLunch</span></code> function to simply contain all of the code necessary to carry out <em>both</em> tasks, there would be no clear separation between one task and the other, and the only way we might describe the various sections of the larger function would be to use comments. And, <a class="reference internal" href="naming-functions.html#comments-lie"><span class="std std-ref">as we've discussed</span></a>, comments should be a secondary option for explaining your code.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="naming-functions.html"><span aria-hidden="true">&larr;</span> 10.7. Naming Functions</a></li>
+        
+        
+        <li class="next"><a href="why-create-functions.html">10.9. Why Create Functions? <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

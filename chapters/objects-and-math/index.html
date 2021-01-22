@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>12. Objects and the Math Object &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12.1. Objects and Why They Matter" href="background.html" />
+    <link rel="prev" title="11.11. Studio: More Functions" href="../more-on-functions/studio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">12. Objects and the Math Object</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="objects-and-the-math-object">
+<span id="objects-chapter"></span><h1>12. Objects and the Math Object<a class="headerlink" href="#objects-and-the-math-object" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="background.html">12.1. Objects and Why They Matter</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="background.html#initializing-objects">12.1.1. Initializing Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#methods-and-properties">12.1.2. Methods and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#check-your-understanding">12.1.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modifyingobjects.html">12.2. Working with Objects</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="modifyingobjects.html#accessing-properties">12.2.1. Accessing Properties</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="modifyingobjects.html#bracket-syntax">12.2.1.1. Bracket Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modifyingobjects.html#dot-notation">12.2.1.2. Dot Notation</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modifyingobjects.html#modifying-properties">12.2.2. Modifying Properties</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="modifyingobjects.html#add-new-key-value-pairs">12.2.2.1. Add New Key/Value Pairs</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modifyingobjects.html#check-your-understanding">12.2.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="codingwithobjects.html">12.3. Coding With Objects</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="codingwithobjects.html#booleans-and-objects">12.3.1. Booleans and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codingwithobjects.html#iterating-through-objects">12.3.2. Iterating Through Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codingwithobjects.html#objects-and-functions">12.3.3. Objects and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codingwithobjects.html#check-your-understanding">12.3.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math-object.html">12.4. The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Object</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="math-object.html#math-properties-are-constants">12.4.1. <code class="docutils literal notranslate"><span class="pre">Math</span></code> Properties Are Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-object.html#other-math-properties">12.4.2. Other <code class="docutils literal notranslate"><span class="pre">Math</span></code> Properties</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math-methods.html">12.5. Math Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="math-methods.html#common-math-methods">12.5.1. Common Math Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-methods.html#check-your-understanding">12.5.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math-applications.html">12.6. Combining <code class="docutils literal notranslate"><span class="pre">Math</span></code> Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="math-applications.html#random-selection-from-an-array">12.6.1. Random Selection From an Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-applications.html#rounding-to-decimal-places">12.6.2. Rounding to Decimal Places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-applications.html#check-your-understanding">12.6.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">12.7. Exercises: Objects &amp; Math</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-1-create-more-objects">12.7.1. Part 1: Create More Objects</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#add-a-new-property">12.7.1.1. Add a New Property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#add-a-method">12.7.1.2. Add a Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#store-the-objects">12.7.1.3. Store the Objects</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-2-crew-reports">12.7.2. Part 2: Crew Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-3-crew-fitness">12.7.3. Part 3: Crew Fitness</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">12.8. Studio: Objects &amp; Math</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#before-you-start">12.8.1. Before You Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#select-the-crew">12.8.2. Select the Crew</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#randomly-select-id-numbers">12.8.2.1. Randomly Select ID Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#build-a-crew-array">12.8.2.2. Build a <code class="docutils literal notranslate"><span class="pre">crew</span></code> Array</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#orbit-calculations">12.8.3. Orbit Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#bonus-missions">12.8.4. Bonus Missions</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#conserve-o-2">12.8.4.1. Conserve O <sub>2</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#fuel-required-for-launch">12.8.4.2. Fuel Required for Launch</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../more-on-functions/studio.html"><span aria-hidden="true">&larr;</span> 11.11. Studio: More Functions</a></li>
+        
+        
+        <li class="next"><a href="background.html">12.1. Objects and Why They Matter <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>7.3. Strings as Objects &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.4. String Immutability" href="string-immutability.html" />
+    <link rel="prev" title="7.2. Bracket Notation" href="bracket-notation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">7. Stringing Characters Together</a></li>
+    <li class="active">7.3. Strings as Objects</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="strings-as-objects">
+<h1>7.3. Strings as Objects<a class="headerlink" href="#strings-as-objects" title="Permalink to this headline">¶</a></h1>
+<p>Beyond bracket notation, there are many other tools we can use to work with strings. Talking about these tools requires some new terminology.</p>
+<div class="section" id="object-terminology">
+<h2>7.3.1. Object Terminology<a class="headerlink" href="#object-terminology" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">In JavaScript, strings are objects, so to understand how we can use them in our programs, we must first understand some basics about objects.</p>
+<p>An <strong>object</strong> is a collection of related data and operations. An operation that can be carried out on an object is known as a <strong>method</strong>. A piece of data associated with an object is known as a <strong>property</strong>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Suppose we had a <code class="docutils literal notranslate"><span class="pre">square</span></code> object in JavaScript. (While no such object is built into JavaScript, we will learn how we could make one in a later chapter.)</p>
+<p>Since a square has four sides of the same length, it should have a property to represent this length. This property could be called <code class="docutils literal notranslate"><span class="pre">length</span></code>. For a given square, it will have a specific value, such as 4.</p>
+<p class="last">Since a square has an area, it should have a method to calculate the area. This method could be called <code class="docutils literal notranslate"><span class="pre">area</span></code>, and it should calculate the area of a square using its <code class="docutils literal notranslate"><span class="pre">length</span></code> property.</p>
+</div>
+<p>You can think of methods and properties as functions and variables, respectively, that &quot;belong to&quot; an object. Properties and methods are accessed using <strong>dot notation</strong>, which dictates that we use the object name, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code>, followed by the property or method name. When using a method, we must also use parentheses as we do when calling regular functions.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Returning to the <code class="docutils literal notranslate"><span class="pre">square</span></code> example, we can access its length by typing <code class="docutils literal notranslate"><span class="pre">square.length</span></code>.</p>
+<p class="last">We can calculate the area by calling <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>.</p>
+</div>
+<p>Referencing <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">area</span></code> by itself in code <em>does not</em> give you the value of <code class="docutils literal notranslate"><span class="pre">square.length</span></code> or carry out the calculation in <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>. It does not make sense to refer to a property or method without also referring to the associated object. Typing simply <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">area()</span></code> is ambiguous. There might be multiple squares, and it would be unclear which one you were asking about.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We have already encountered one object, the built-in object <code class="docutils literal notranslate"><span class="pre">console</span></code>, which we use to output messages.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">console</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object
+</pre></div>
+</div>
+<p>JavaScript reports that the type of <code class="docutils literal notranslate"><span class="pre">console</span></code> is indeed <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p class="last">When calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we are calling the <code class="docutils literal notranslate"><span class="pre">log</span></code> method of the <code class="docutils literal notranslate"><span class="pre">console</span></code> object.</p>
+</div>
+<p>We will learn quite a bit more about objects in this course, including how to
+use objects to create your own custom data types. This powerful JavaScript
+feature allows us to bundle up data and functionality in useful, modular ways.</p>
+</div>
+<div class="section" id="strings-are-objects">
+<h2>7.3.2. Strings Are Objects<a class="headerlink" href="#strings-are-objects" title="Permalink to this headline">¶</a></h2>
+<p>The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on.</p>
+<p id="index-1">Every string that we work with will have the same properties and methods. The most useful string property is named <code class="docutils literal notranslate"><span class="pre">length</span></code>, and it tells us how many characters are in a string.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">&quot;Grace&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="s2">&quot;Hopper&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="s2">&quot;has&quot;</span><span class="p">,</span> <span class="nx">firstName</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s2">&quot;characters&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastName</span><span class="p">,</span> <span class="s2">&quot;has&quot;</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s2">&quot;characters&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Grace has 5 characters
+Hopper has 6 characters
+</pre></div>
+</div>
+</div>
+<p>Every string has a <code class="docutils literal notranslate"><span class="pre">length</span></code> property, which is an integer.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">length</span></code> property is the only string property that we will use, but there are many useful string methods. We will explore these in depth in the section <a class="reference internal" href="string-methods.html#string-methods"><span class="std std-ref">String Methods</span></a>, but let's look at one now to give you an idea of what's ahead.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> string method returns the value of its string in all lowercase letters. Since it is a method, we must precede it with a specific string in order to use it.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nonprofit</span> <span class="o">=</span> <span class="s2">&quot;LaunchCode&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nonprofit</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>launchcode
+LaunchCode
+</pre></div>
+</div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> does not alter the string itself, but instead <em>returns</em> the result of converting the string to all lowercase characters. In fact, it is not possible to alter the characters within a string, as we will now see.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>7.3.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'Rutabaga'</span></code>, why does <code class="docutils literal notranslate"><span class="pre">word.length</span></code> return the integer 8, but <code class="docutils literal notranslate"><span class="pre">word[8]</span></code> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>?</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="bracket-notation.html"><span aria-hidden="true">&larr;</span> 7.2. Bracket Notation</a></li>
+        
+        
+        <li class="next"><a href="string-immutability.html">7.4. String Immutability <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

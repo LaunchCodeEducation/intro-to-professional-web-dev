@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6. Errors and Debugging &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.1. What is Debugging?" href="what-is-debugging.html" />
+    <link rel="prev" title="5.7. Studio: Goal Setting and Getting into the Right Mindset" href="../booleans-and-conditionals/studio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">6. Errors and Debugging</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="errors-and-debugging">
+<span id="id1"></span><h1>6. Errors and Debugging<a class="headerlink" href="#errors-and-debugging" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="what-is-debugging.html">6.1. What is Debugging?</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="what-is-debugging.html#beginning-tips-for-debugging">6.1.1. Beginning Tips for Debugging</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="categories-of-errors.html">6.2. Categories of Errors</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="categories-of-errors.html#stages-of-javascript-execution">6.2.1. Stages of JavaScript Execution</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="categories-of-errors.html#parsing">6.2.1.1. Parsing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="categories-of-errors.html#execution">6.2.1.2. Execution</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="categories-of-errors.html#syntax-errors">6.2.2. Syntax Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categories-of-errors.html#runtime-errors">6.2.3. Runtime Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categories-of-errors.html#logic-errors">6.2.4. Logic Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categories-of-errors.html#check-your-understanding">6.2.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="diagnosing-error-messages.html">6.3. Diagnosing Error Messages</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="diagnosing-error-messages.html#a-syntax-error">6.3.1. A Syntax Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnosing-error-messages.html#syntax-errors-and-code-highlighting">6.3.2. Syntax Errors and Code Highlighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnosing-error-messages.html#a-runtime-error">6.3.3. A Runtime Error</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="error-types.html">6.4. Error Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-logic-errors.html">6.5. Debugging Logic Errors</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="debugging-logic-errors.html#printing-values">6.5.1. Printing Values</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-avoid-debugging.html">6.6. How to Avoid Debugging</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="how-to-avoid-debugging.html#start-small">6.6.1. Start Small</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-avoid-debugging.html#keep-it-working">6.6.2. Keep It Working</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="asking-good-questions.html">6.7. Asking Good Questions</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="asking-good-questions.html#what-is-the-problem-with-your-code">6.7.1. What is the problem with your code?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asking-good-questions.html#what-have-you-done-to-try-to-address-the-problem">6.7.2. What have you done to try to address the problem?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asking-good-questions.html#where-have-you-looked-for-an-answer">6.7.3. Where have you looked for an answer?</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">6.8. Exercises: Debugging</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#debugging-practice">6.8.1. Debugging Practice</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../booleans-and-conditionals/studio.html"><span aria-hidden="true">&larr;</span> 5.7. Studio: Goal Setting and Getting into the Right Mindset</a></li>
+        
+        
+        <li class="next"><a href="what-is-debugging.html">6.1. What is Debugging? <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

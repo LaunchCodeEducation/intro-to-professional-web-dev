@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.8. Input with readline-sync &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.9. Exercises: Data and Variables" href="exercises.html" />
+    <link rel="prev" title="4.7. Other Operators" href="other-operators.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">4. Data and Variables</a></li>
+    <li class="active">4.8. Input with <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code></li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="input-with-readline-sync">
+<span id="readline-sync"></span><h1>4.8. Input with <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code><a class="headerlink" href="#input-with-readline-sync" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">console.log</span></code> works fine for printing static (unchanging) messages to the
+screen. If we wanted to print a phrase greeting a specific user, then
+<code class="docutils literal notranslate"><span class="pre">console.log(&quot;Hello,</span> <span class="pre">Dave.&quot;);</span></code> would be OK as long as Dave is the actual
+user.</p>
+<p>What if we want to greet someone else? We could change the string inside the
+<code class="docutils literal notranslate"><span class="pre">()</span></code> to be <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">Sarah'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">Elastigirl'</span></code> or any other name we
+need. However, this is inefficient. Also, what if we do not know the name of
+the user beforehand? We need to make our code more general and able to respond
+to different conditions.</p>
+<p>It would be great if we could ask the user to enter a name, store that string
+in a variable, and then print a personalized greeting using <code class="docutils literal notranslate"><span class="pre">console.log</span></code>.
+Variables to the rescue!</p>
+<div class="section" id="requesting-data">
+<h2>4.8.1. Requesting Data<a class="headerlink" href="#requesting-data" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-0"></span><p id="index-1">To personalize the greeting, we have to get <strong>input</strong> from the user. This
+involves displaying a <strong>prompt</strong> on the screen (e.g. &quot;Please enter a number:
+&quot;), and then waiting for the user to respond. Whatever information the user
+enters gets stored for later use.</p>
+<p>As we saw earlier, each programming language has its own way of accomplishing
+the same task. For example, the Python syntax is <code class="docutils literal notranslate"><span class="pre">input(&quot;Please</span> <span class="pre">enter</span> <span class="pre">your</span>
+<span class="pre">name:</span> <span class="pre">&quot;)</span></code>, while C# uses <code class="docutils literal notranslate"><span class="pre">Console.ReadLine();</span></code>.</p>
+<p>JavaScript also has a built-in module for collecting data from the user, called
+<code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>. Unfortunately, using this module requires more than a single
+line of code.</p>
+</div>
+<div class="section" id="syntax">
+<h2>4.8.2. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>Gathering input from the user requires the following setup:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Question text... &quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>There is a lot going on here behind the scenes, but for now you should follow
+this bit of wisdom:</p>
+<blockquote>
+<div>I turn the key, and it goes.</div></blockquote>
+<p>Most of us do not need to know all the details about how cars, phones, or
+microwave ovens work. We just know enough to interact with them in our day to
+day lives. Similarly, we do not need to understand how <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> works
+at this time. We just need to know enough to collect information from a user.</p>
+<p>As you move through the course, you WILL learn about all of the pieces that fit
+together to make this process work. For now, here is a brief overview.</p>
+<div class="section" id="load-the-module">
+<h3>4.8.2.1. Load the Module<a class="headerlink" href="#load-the-module" title="Permalink to this headline">¶</a></h3>
+<p>In line 1, <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">input</span> <span class="pre">=</span> <span class="pre">require('readline-sync')</span></code> pulls in all the functions
+that allow us to get data from the user and assigns them to the variable
+<code class="docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">const</span></code> ensures that <code class="docutils literal notranslate"><span class="pre">input</span></code> cannot be changed.</p>
+</div>
+<div class="section" id="how-to-prompt-the-user">
+<h3>4.8.2.2. How to Prompt the User<a class="headerlink" href="#how-to-prompt-the-user" title="Permalink to this headline">¶</a></h3>
+<p>To display a prompt and wait for a response, we use the following syntax:
+<code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">info</span> <span class="pre">=</span> <span class="pre">input.question(&quot;Question</span> <span class="pre">text...</span> <span class="pre">&quot;);</span></code>.</p>
+<p>When JavaScript evaluates the expression, it follows the instructions:</p>
+<ol class="arabic simple">
+<li>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</li>
+<li>Wait for the user to respond.</li>
+<li>Store the data in the variable <code class="docutils literal notranslate"><span class="pre">info</span></code>.</li>
+</ol>
+<p>For our greeting program, we would code
+<code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">input.question(&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">&quot;);</span></code>. The user enters a name and
+presses the Return or Enter key. When this happens, any text entered is
+collected by the input function and stored in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Let's play around with the <code class="docutils literal notranslate"><span class="pre">input</span></code> statement. Open the repl.it link below
+and click the &quot;Run&quot; button.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/InputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<p>Note that after entering a name, the program does not actually DO anything with
+the information. If we want to print the data as part of a message, we need to
+put <code class="docutils literal notranslate"><span class="pre">name</span></code> inside a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement.</p>
+<p>After line 3, add <code class="docutils literal notranslate"><span class="pre">console.log(&quot;Hello,</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span> <span class="pre">+</span> <span class="pre">&quot;!&quot;);</span></code>, then run the
+code several times, trying different responses to the input prompt.</p>
+<p>By storing the user's name inside <code class="docutils literal notranslate"><span class="pre">name</span></code>, we gain the ability to hold onto
+the data and use it when and where we see fit.</p>
+<p>Try adding another <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">name</span></code> term inside the <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement and see
+what happens. Next, add code to prompt the user for a second name. Store the
+response in <code class="docutils literal notranslate"><span class="pre">otherName</span></code>, then print both names using <code class="docutils literal notranslate"><span class="pre">console.log</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Update your code to request a user's first and last name, then print an
+output that looks like:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
+Last name: Coder
+Last, First: Coder, Elite
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="critical-input-detail">
+<h2>4.8.3. Critical Input Detail<a class="headerlink" href="#critical-input-detail" title="Permalink to this headline">¶</a></h2>
+<p>There is one very important quirk about the input function that we need to
+remember. Given <code class="docutils literal notranslate"><span class="pre">console.log(7</span> <span class="pre">+</span> <span class="pre">2);</span></code>, the output would be <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
+<p>Now explore the following code, which prompts the user for two numbers and then
+prints their sum:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">num1</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">num2</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/InputExamples02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Run the program, enter your choice of numbers, and examine the output. Do you
+see what you expected?</p>
+<p>If we enter <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>, we expect an output of <code class="docutils literal notranslate"><span class="pre">9</span></code>.  We do NOT expect
+<code class="docutils literal notranslate"><span class="pre">72</span></code>, but that is the result printed. What gives?!?!?</p>
+<p>The quirk with the <code class="docutils literal notranslate"><span class="pre">input</span></code> function is that it <em>treats all entries as
+strings</em>, so numbers get concatenated rather than added.  Just like
+&quot;Hello, &quot; + &quot;World&quot; outputs as <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code>, &quot;7&quot; + &quot;2&quot; outputs as <code class="docutils literal notranslate"><span class="pre">72</span></code>.</p>
+<blockquote>
+<div>JavaScript treats input entries as strings!</div></blockquote>
+<p>If we want our program to perform math on the entered numbers, we must
+<a class="reference internal" href="type-conversion.html#type-conversion"><span class="std std-ref">use type conversion</span></a> to change the string values into
+numbers.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="last arabic simple">
+<li>Use <code class="docutils literal notranslate"><span class="pre">Number</span></code> to convert <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> from strings to numbers.
+Run the program and examine the result.</li>
+<li>Instead of using two steps to assign <code class="docutils literal notranslate"><span class="pre">num1</span></code> and then convert it, combine
+the steps in line 3. Place <code class="docutils literal notranslate"><span class="pre">input.question(&quot;Enter</span> <span class="pre">a</span> <span class="pre">number:</span> <span class="pre">&quot;)</span></code> inside
+the <code class="docutils literal notranslate"><span class="pre">Number</span></code> function. Run the program and examine the result.</li>
+<li>Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num2</span></code></li>
+<li>What happens if a user enters <code class="docutils literal notranslate"><span class="pre">Hi</span></code> instead of a number?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>4.8.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed when the following program runs?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Please enter your age: &quot;</span><span class="p">);</span>
+<span class="c1">//The user enters 25.</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">info</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">string</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">number</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">info</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">25</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="other-operators.html"><span aria-hidden="true">&larr;</span> 4.7. Other Operators</a></li>
+        
+        
+        <li class="next"><a href="exercises.html">4.9. Exercises: Data and Variables <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

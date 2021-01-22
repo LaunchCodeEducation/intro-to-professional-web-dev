@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>17.4. Exercises &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.5. Studio: Strategic Debugging" href="studio.html" />
+    <link rel="prev" title="17.3. Exceptions as Control Flow" href="exceptions-control-flow.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">17. Exceptions</a></li>
+    <li class="active">17.4. Exercises</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="exercises">
+<h1>17.4. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zero-division-throw">
+<h2>17.4.1. Zero Division: Throw<a class="headerlink" href="#zero-division-throw" title="Permalink to this headline">¶</a></h2>
+<p>Write a function called divide that takes two parameters: a <code class="docutils literal notranslate"><span class="pre">numerator</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">denominator</span></code>.</p>
+<p>Your function should return the result of <code class="docutils literal notranslate"><span class="pre">numerator</span> <span class="pre">/</span> <span class="pre">denominator</span></code>.</p>
+<p>However, if <code class="docutils literal notranslate"><span class="pre">denominator</span></code> is zero you should throw the error, <code class="docutils literal notranslate"><span class="pre">&quot;Attempted</span> <span class="pre">to</span>
+<span class="pre">divide</span> <span class="pre">by</span> <span class="pre">zero.&quot;</span></code></p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Hint: You can use an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">/</span> <span class="pre">throw</span></code> statement to complete this exercise.</p>
+</div>
+<p>Code your function at this <a class="reference external" href="https://repl.it/&#64;launchcode/ExceptionsExercises01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="test-student-labs">
+<h2>17.4.2. Test Student Labs<a class="headerlink" href="#test-student-labs" title="Permalink to this headline">¶</a></h2>
+<p>A teacher has created a <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> function that verifies if student
+programming labs work. This function loops over an array of JavaScript objects
+that <em>should</em> contain a <code class="docutils literal notranslate"><span class="pre">student</span></code> property and <code class="docutils literal notranslate"><span class="pre">runLab</span></code> property.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">runLab</span></code> property is expected to be a function containing the student's
+code. The <code class="docutils literal notranslate"><span class="pre">runLab</span></code> function is called and the result is compared to the
+expected result. If the result and expected result don't match, then the lab is
+considered a failure.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">function</span> <span class="nx">gradeLabs</span><span class="p">(</span><span class="nx">labs</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">labs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">lab</span> <span class="o">=</span> <span class="nx">labs</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">lab</span><span class="p">.</span><span class="nx">runLab</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">lab</span><span class="p">.</span><span class="nx">student</span><span class="si">}</span><span class="sb"> code worked: </span><span class="si">${</span><span class="nx">result</span> <span class="o">===</span> <span class="mi">27</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">studentLabs</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Carly&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Erica&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">gradeLabs</span><span class="p">(</span><span class="nx">studentLabs</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/ExceptionsExercises02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> function works for the majority of cases. However, what
+happens if a student named their function incorrectly? Run <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> and
+pass it <code class="docutils literal notranslate"><span class="pre">studentLabs2</span></code> as defined below.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">studentLabs2</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Blake&#39;</span><span class="p">,</span>
+      <span class="nx">myCode</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Jessica&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">num</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nx">student</span><span class="o">:</span> <span class="s1">&#39;Mya&#39;</span><span class="p">,</span>
+      <span class="nx">runLab</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">gradeLabs</span><span class="p">(</span><span class="nx">studentLabs2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Upon running the second example, the teacher gets <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">lab.runLab</span> <span class="pre">is</span>
+<span class="pre">not</span> <span class="pre">a</span> <span class="pre">function</span></code>.</p>
+<p>Add a <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> block inside of <code class="docutils literal notranslate"><span class="pre">gradeLabs</span></code> to catch an exception if the
+<code class="docutils literal notranslate"><span class="pre">runLab</span></code> property is not defined. If the exception is thrown, <code class="docutils literal notranslate"><span class="pre">result</span></code>
+should be set to the text <code class="docutils literal notranslate"><span class="pre">&quot;Error</span> <span class="pre">thrown&quot;</span></code>.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exceptions-control-flow.html"><span aria-hidden="true">&larr;</span> 17.3. Exceptions as Control Flow</a></li>
+        
+        
+        <li class="next"><a href="studio.html">17.5. Studio: Strategic Debugging <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

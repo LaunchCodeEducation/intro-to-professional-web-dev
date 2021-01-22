@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.2. Programming Languages &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.3. The JavaScript Language" href="the-javascript-language.html" />
+    <link rel="prev" title="2.1. Introduction" href="algorithms.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">2. How Programs Work</a></li>
+    <li class="active">2.2. Programming Languages</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="programming-languages">
+<h1>2.2. Programming Languages<a class="headerlink" href="#programming-languages" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>&quot;Computer, scan the surface for lifeforms.&quot;</p>
+<p>&quot;Hey Siri, what movies are playing nearby?&quot;</p>
+</div></blockquote>
+<p>Even though today's tech makes it seem like computers understand spoken
+language, the devices do not use English, Chinese, Spanish, etc. to carry out
+their jobs. Instead, programmers must write their instructions in a form that
+computers understand.</p>
+<p id="index-0">Computers operate using <strong>binary code</strong>, which consists only of 0s and 1s. For
+example, here is the binary version of the text <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">01001000</span> <span class="pre">01100101</span> <span class="pre">01101100</span> <span class="pre">01101100</span> <span class="pre">01101111</span> <span class="pre">00100000</span> <span class="pre">01010111</span> <span class="pre">01101111</span>
+<span class="pre">01110010</span> <span class="pre">01101100</span> <span class="pre">01100100</span></code></p>
+<p>Each set of 8 digits represents one character in the text.</p>
+<p id="index-1">To make things a little easier, binary data may also be represented as
+<strong>hexadecimal</strong> values. Here is <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> expressed in <em>hex</em>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">48</span> <span class="pre">65</span> <span class="pre">6c</span> <span class="pre">6c</span> <span class="pre">6f</span> <span class="pre">20</span> <span class="pre">57</span> <span class="pre">6f</span> <span class="pre">72</span> <span class="pre">6c</span> <span class="pre">64</span></code></p>
+<p>To run an algorithm, all of the steps must be written in binary or hex so the
+computer can understand the instructions.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Fortunately, we do not need to worry about binary or hexadecimal code to
+make our programs work!</p>
+</div>
+<div class="section" id="languages">
+<h2>2.2.1. Languages<a class="headerlink" href="#languages" title="Permalink to this headline">¶</a></h2>
+<p>Writing code using only 0s and 1s would be impractical, so many clever
+individuals designed ways to convert between the text readable by humans and
+the binary or hexadecimal forms needed by machines.</p>
+<p id="index-2">A <strong>programming language</strong> is a set of specific words and rules for teaching a
+computer how to perform a desired task. Examples of programming languages
+include Python, JavaScript, Basic, COBOL, C++, C#, Java, and many others.</p>
+<p>These <em>high-level languages</em> can be written and understood by humans, and each
+one has its own characteristic vocabulary, style, and syntax.</p>
+<div class="section" id="how-computers-run-programs">
+<h3>2.2.1.1. How Computers Run Programs<a class="headerlink" href="#how-computers-run-programs" title="Permalink to this headline">¶</a></h3>
+<p>Since computers only understand binary code, every programming language
+includes a <strong>compiler</strong>, which is a special tool that translates a programmer's
+work into the 0s and 1s that the machines need.</p>
+<p>If we want to print <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> on the screen, we would write the
+instructions in our chosen programming language, then select &quot;Run&quot;. Our code
+gets sent to the compiler, which converts our typed commands into something the
+computer can use. The instructions are then executed by the machine, and we
+observe the results.</p>
+<div class="figure">
+<img alt="Visual description for how a compiler works." src="../../_images/Compiler.png" />
+</div>
+<p>In the example above, the <em>syntax</em> for printing <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> varies
+between the Python, JavaScript, and Java languages, but the end result is the
+same.</p>
+</div>
+</div>
+<div class="section" id="how-many-programming-languages-are-there">
+<h2>2.2.2. How Many Programming Languages Are There?<a class="headerlink" href="#how-many-programming-languages-are-there" title="Permalink to this headline">¶</a></h2>
+<p>Ask Google, &quot;How many programming languages are there?&quot; and many results get
+returned. Even with all these options, there is no specific answer to the
+question.</p>
+<p>There are hundreds, if not thousands, of programming languages available.
+However, most are either obsolete, impractical, or too specialized to be widely
+used.</p>
+<p>Arguments occur whenever someone makes a top 10 list for programming languages,
+but regardless of the opinions, one fact remains. Once you learn one language,
+learning the next is much, much easier. Adding a third becomes child's play.</p>
+<p>The reason for this is that thinking like a coder does not change with the
+language. Your logic, reasoning, and problem solving skills apply just as well
+for JavaScript as they do for Python, Swift and C#. To display text on the
+screen in Python, we use <code class="docutils literal notranslate"><span class="pre">print()</span></code>, for JavaScript we use <code class="docutils literal notranslate"><span class="pre">console.log();</span></code>,
+for C# the command is <code class="docutils literal notranslate"><span class="pre">Console.WriteLine();</span></code>. The <em>syntax</em> for each language
+varies, but the results are identical.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="algorithms.html"><span aria-hidden="true">&larr;</span> 2.1. Introduction</a></li>
+        
+        
+        <li class="next"><a href="the-javascript-language.html">2.3. The JavaScript Language <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

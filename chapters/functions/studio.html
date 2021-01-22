@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>10.11. Studio: Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11. More on Functions" href="../more-on-functions/index.html" />
+    <link rel="prev" title="10.10. Exercises: Functions" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">10. Functions Are at Your Beck and Call</a></li>
+    <li class="active">10.11. Studio: Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-functions">
+<h1>10.11. Studio: Functions<a class="headerlink" href="#studio-functions" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">reverse</span></code> method flips the order of the elements within an array.
+However, <code class="docutils literal notranslate"><span class="pre">reverse</span></code> does not affect the digits or characters within those
+elements.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;orange&#39;, 123, &#39;world&#39;, &#39;hello&#39;]
+</pre></div>
+</div>
+</div>
+<p>What if we wanted the reversed array to be
+<code class="docutils literal notranslate"><span class="pre">['egnaro',</span> <span class="pre">321,</span> <span class="pre">'dlrow',</span> <span class="pre">'olleh']</span></code>?</p>
+<p>Let's have some fun by creating a process that reverses BOTH the order of the
+entries in an array AND the order of characters within the individual elements.</p>
+<p>Remember that a function should perform only one task. To follow this best
+practice, we will solve the array reversal by defining two functions - one that
+reverses the characters in a string (or the digits in a number) and one that
+flips the order of entries in the array.</p>
+<div class="section" id="before-you-start">
+<h2>10.11.1. Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
+<p>If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at <a class="reference external" href="https://learn.launchcode.org/" target="_blank">learn.launchcode.org<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>If you are working through this material on your own, use the repl.it links contained on this page.</p>
+</div>
+<div class="section" id="reverse-characters">
+<h2>10.11.2. Reverse Characters<a class="headerlink" href="#reverse-characters" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In the <em>composing functions</em> section, we examined a function that
+<a class="reference internal" href="composing-functions.html#reverse-a-string"><span class="std std-ref">reverses the characters in a string</span></a> using the
+<code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> methods. Let's rebuild that function now.<ol class="loweralpha">
+<li>Define the function as <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code>. Give it one parameter, which will
+be the string to reverse.</li>
+<li>Within the function, <code class="docutils literal notranslate"><span class="pre">split</span></code> the string into an array, then reverse the
+array.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">join</span></code> to create the reversed string and <em>return</em> that string from the
+function.</li>
+<li>Below the function, define and initialize a variable to hold a string.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">console.log(reverseCharacters(myVariableName));</span></code> to call the function and verify
+that it correctly reverses the characters in the string.</li>
+<li><em>Optional</em>: Use method chaining to reduce the lines of code within the
+function.</li>
+</ol>
+</li>
+</ol>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/FunctionsExercises03-05" target="_blank">Code exercises 1 - 3 at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use these sample strings for testing:</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">'apple'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Capitalized</span> <span class="pre">Letters'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">love</span> <span class="pre">the</span> <span class="pre">smell</span> <span class="pre">of</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">morning.'</span></code></li>
+</ol>
+</div>
+</div>
+<div class="section" id="reverse-digits">
+<h2>10.11.3. Reverse Digits<a class="headerlink" href="#reverse-digits" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="2">
+<li>The <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> function works great on strings, but what if the
+argument passed to the function is a number? Using
+<code class="docutils literal notranslate"><span class="pre">console.log(reverseCharacters(1234));</span></code> results in an error, since
+<code class="docutils literal notranslate"><span class="pre">split</span></code> only works on strings (TRY IT). When passed a number, we want the
+function to return a number with all the digits reversed (e.g. 1234 converts
+to 4321 and NOT the string <code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code>).<ol class="loweralpha">
+<li>Add an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> to check the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> the
+parameter.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">typeof</span></code> is 'string', return the reversed string as before.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">typeof</span></code> is 'number', convert the parameter to a string, reverse the
+characters, then convert it back into a number.</li>
+<li>Return the reversed number.</li>
+<li>Be sure to print the result returned by the function to verify that your code
+works for <em>both strings and numbers</em>. Do this before moving on to the
+next exercise.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use these samples for testing:</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">1234</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">8675309</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'radar'</span></code></li>
+</ol>
+</div>
+</div>
+<div class="section" id="complete-reversal">
+<h2>10.11.4. Complete Reversal<a class="headerlink" href="#complete-reversal" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="3">
+<li>Now we are ready to finish our complete reversal process. Create a new
+function with one parameter, which is the array we want to change. The
+function should:<ol class="loweralpha">
+<li>Define and initialize an empty array.</li>
+<li>Loop through the old array.</li>
+<li>For each element in the old array, call <code class="docutils literal notranslate"><span class="pre">reverseCharacters</span></code> to flip the
+characters or digits.</li>
+<li>Add the reversed string (or number) to the array defined in part 'a'.</li>
+<li>Return the final, reversed array.</li>
+<li><em>Be sure to print the results from each test case in order to verify your
+code</em>.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use this sample data for testing.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">['apple',</span> <span class="pre">'potato',</span> <span class="pre">'Capitalized</span> <span class="pre">Words']</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">['sdroW</span> <span class="pre">dezilatipaC',</span> <span class="pre">'otatop',</span> <span class="pre">'elppa']</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">[123,</span> <span class="pre">8897,</span> <span class="pre">42,</span> <span class="pre">1138,</span> <span class="pre">8675309]</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">[9035768,</span> <span class="pre">8311,</span> <span class="pre">24,</span> <span class="pre">7988,</span> <span class="pre">321]</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">['hello',</span> <span class="pre">'world',</span> <span class="pre">123,</span> <span class="pre">'orange']</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">['egnaro',</span> <span class="pre">321,</span> <span class="pre">'dlrow',</span> <span class="pre">'olleh']</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2>10.11.5. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="4">
+<li>Define a function with one parameter, which will be a string. The function
+must do the following:<ol class="loweralpha">
+<li>Have a clear, descriptive name like <code class="docutils literal notranslate"><span class="pre">funPhrase</span></code>.</li>
+<li>Retrieve only the last character from strings with lengths of 3 or less.</li>
+<li>Retrieve only the first 3 characters from strings with lengths larger
+than 3.</li>
+<li>Use a template literal to return the phrase <code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">put</span> <span class="pre">the</span> <span class="pre">'___'</span> <span class="pre">in</span> <span class="pre">'___'.</span></code>
+Fill the first blank with the modified string, and fill the second blank
+with the original string.</li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/FunctionsExercises01" target="_blank">Build your function at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+</ol>
+</li>
+<li>Now test your function:<ol class="loweralpha" start="6">
+<li>Outside of the function, define the variable <code class="docutils literal notranslate"><span class="pre">str</span></code> and initialize it
+with a string (e.g. <code class="docutils literal notranslate"><span class="pre">'Functions</span> <span class="pre">rock!'</span></code>).</li>
+<li>Call your function and print the returned phrase.</li>
+</ol>
+</li>
+<li>The area of a rectangle is equal to its <em>length x width</em>.<ol class="loweralpha">
+<li>Define a function with the required parameters to calculate the area of a
+rectangle.</li>
+<li>The function should <em>return</em> the area, NOT print it.</li>
+<li>Call your area function by passing in two arguments - the length and
+width.</li>
+<li>If only one argument is passed to the function, then the shape is a
+square. Modify your code to deal with this case.</li>
+<li>Use a template literal to print, &quot;The area is ____ cm^2.&quot;</li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/FunctionsExercises02" target="_blank">Code the area function at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use these test cases.</p>
+<ol class="last loweralpha simple">
+<li>length = 2, width = 4 (area = 8)</li>
+<li>length = 14, width = 7 (area = 98)</li>
+<li>length = 20 (area = 400)</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 10.10. Exercises: Functions</a></li>
+        
+        
+        <li class="next"><a href="../more-on-functions/index.html">11. More on Functions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

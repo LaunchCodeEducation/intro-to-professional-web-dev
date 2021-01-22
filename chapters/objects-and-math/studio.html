@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>12.8. Studio: Objects &amp; Math &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13. Modules" href="../modules/index.html" />
+    <link rel="prev" title="12.7. Exercises: Objects &amp; Math" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">12. Objects and the Math Object</a></li>
+    <li class="active">12.8. Studio: Objects &amp; Math</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-objects-math">
+<h1>12.8. Studio: Objects &amp; Math<a class="headerlink" href="#studio-objects-math" title="Permalink to this headline">¶</a></h1>
+<p>In the exercises, you created objects to store data about the candidates for
+our animal astronaut corps. For this studio, we provide you with a ready-made
+set of candidates.</p>
+<p>You must create code to:</p>
+<ol class="upperalpha simple">
+<li>Select the crew.</li>
+<li>Perform critical mission calculations.</li>
+<li>Determine the fuel required for launch.</li>
+</ol>
+<div class="section" id="before-you-start">
+<h2>12.8.1. Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
+<p>If you are enrolled in a LaunchCode program, access this studio by following
+the repl.it classroom links posted in your class at
+<a class="reference external" href="https://learn.launchcode.org/" target="_blank">learn.launchcode.org<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>If you are working through this material on your own, use the repl.it links
+contained on this page.</p>
+</div>
+<div class="section" id="select-the-crew">
+<h2>12.8.2. Select the Crew<a class="headerlink" href="#select-the-crew" title="Permalink to this headline">¶</a></h2>
+<p>To access the code for exercise 1, open this <a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio01" target="_blank">repl.it link<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="section" id="randomly-select-id-numbers">
+<h3>12.8.2.1. Randomly Select ID Numbers<a class="headerlink" href="#randomly-select-id-numbers" title="Permalink to this headline">¶</a></h3>
+<p>Each candidate was assigned an ID number, which is stored in the candidate's
+data file and in the <code class="docutils literal notranslate"><span class="pre">idNumbers</span></code> array.</p>
+<ol class="arabic simple">
+<li>Write a <code class="docutils literal notranslate"><span class="pre">selectRandomEntry</span></code> function to select a random entry from the
+<code class="docutils literal notranslate"><span class="pre">idNumbers</span></code> array. Review the
+<a class="reference internal" href="math-applications.html#random-array-item"><span class="std std-ref">Combining Math Methods</span></a> section if you need a
+reminder on how to do this.</li>
+<li>Call the function three times to select three ID numbers. Store these
+selections in a new array, making sure to avoid repeated numbers. No animal
+can be selected more than once!</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">arrayName.includes(item)</span></code> can be used to check if the array already contains
+<code class="docutils literal notranslate"><span class="pre">item</span></code>. A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop can keep the selection process going until the
+desired number of entries have been added to the array.</p>
+</div>
+</div>
+<div class="section" id="build-a-crew-array">
+<h3>12.8.2.2. Build a <code class="docutils literal notranslate"><span class="pre">crew</span></code> Array<a class="headerlink" href="#build-a-crew-array" title="Permalink to this headline">¶</a></h3>
+<p>Design a function that takes two arrays as parameters. These hold the randomly
+selected ID numbers and the candidate objects.</p>
+<p>Use one or more loops to check which animals hold the lucky ID numbers. They
+will be going on the space mission! Store these animals in a <code class="docutils literal notranslate"><span class="pre">crew</span></code> array,
+and then return that array.</p>
+<p>Use a template literal to print, <code class="docutils literal notranslate"><span class="pre">'____,</span> <span class="pre">____,</span> <span class="pre">and</span> <span class="pre">____</span> <span class="pre">are</span> <span class="pre">going</span> <span class="pre">to</span> <span class="pre">space!'</span></code>
+Fill in the blanks with the names of the selected animals.</p>
+</div>
+</div>
+<div class="section" id="orbit-calculations">
+<h2>12.8.3. Orbit Calculations<a class="headerlink" href="#orbit-calculations" title="Permalink to this headline">¶</a></h2>
+<p>To access the code for the orbit calculations and first bonus mission, go to
+<a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<ol class="arabic">
+<li><p class="first">Spacecraft orbits are not circular, but we will assume that our mission is
+special. The animals will achieve a circular orbit with an altitude of
+2000 km.</p>
+<ol class="loweralpha simple">
+<li>Define a function that returns the circumference (C = 2πr) of the orbit.
+Round the circumference to an integer.</li>
+<li>Define the <code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> function to take three parameters - the
+number of orbits completed, the orbit radius, and the orbital speed. Set
+the default radius to 2000 km and the default orbital speed to
+28000 km/hr.</li>
+<li>Calculate how long it will take our animals to complete 5 orbits (time =
+distance/speed). Round the answer to 2 decimal places, then return the
+result.</li>
+<li>Print, <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">mission</span> <span class="pre">will</span> <span class="pre">travel</span> <span class="pre">____</span> <span class="pre">km</span> <span class="pre">around</span> <span class="pre">the</span> <span class="pre">planet,</span> <span class="pre">and</span> <span class="pre">it</span> <span class="pre">will</span>
+<span class="pre">take</span> <span class="pre">____</span> <span class="pre">hours</span> <span class="pre">to</span> <span class="pre">complete.'</span></code></li>
+</ol>
+</li>
+<li><p class="first">Time for an excursion! Code an <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code> function to accomplish the
+following:</p>
+<ol class="loweralpha">
+<li><p class="first">The function should take a candidate object as a parameter and NOT the
+<code class="docutils literal notranslate"><span class="pre">crew</span></code> array.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">When you call <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code>, feel free to use your
+<code class="docutils literal notranslate"><span class="pre">selectRandomEntry</span></code> to pick the crew member to pass into the
+function.</p>
+</div>
+</li>
+<li><p class="first">The spacewalk will last for three orbits around the earth. Use
+<code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> to calculate how many hours the spacewalk will take.</p>
+</li>
+<li><p class="first">Use the candidate's <code class="docutils literal notranslate"><span class="pre">o2Used</span></code> method to calculate how much oxygen (O <sub>2</sub>)
+they consume during the spacewalk. Round the answer to 3 decimal places.</p>
+</li>
+<li><p class="first">Return the string, <code class="docutils literal notranslate"><span class="pre">'__</span> <span class="pre">will</span> <span class="pre">perform</span> <span class="pre">the</span> <span class="pre">spacewalk,</span> <span class="pre">which</span> <span class="pre">will</span> <span class="pre">last</span> <span class="pre">__</span>
+<span class="pre">hours</span> <span class="pre">and</span> <span class="pre">require</span> <span class="pre">__</span> <span class="pre">kg</span> <span class="pre">of</span> <span class="pre">oxygen.'</span></code> Fill in the blanks with the
+animal's name, the spacewalk time, and the amount of O <sub>2</sub> used.</p>
+</li>
+<li><p class="first">We should not restrict our mission to the default values for orbital
+radius and orbital speed. Refactor <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code> to accept values
+for these items. Remember to include the values in the
+<code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> call.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-missions">
+<h2>12.8.4. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conserve-o-2">
+<h3>12.8.4.1. Conserve O <sub>2</sub><a class="headerlink" href="#conserve-o-2" title="Permalink to this headline">¶</a></h3>
+<p>Instead of randomly selecting a crew member for the spacewalk, have your
+program select the animal with the smallest oxygen consumption.</p>
+</div>
+<div class="section" id="fuel-required-for-launch">
+<h3>12.8.4.2. Fuel Required for Launch<a class="headerlink" href="#fuel-required-for-launch" title="Permalink to this headline">¶</a></h3>
+<p>To access the code for this bonus mission, go to
+<a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio03" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>A general rule of thumb states that it takes about 9 - 10 kg of rocket
+fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we
+will assume a value of 9.5 kg to calculate how much fuel we need to launch
+our crew into space.</p>
+<ol class="arabic simple">
+<li>Write a <code class="docutils literal notranslate"><span class="pre">crewMass</span></code> function that returns the total mass of the selected
+crew members rounded to 1 decimal place.</li>
+<li>The mass of the un-crewed rocket plus the food and other supplies is
+75,000 kg. Create a <code class="docutils literal notranslate"><span class="pre">fuelRequired</span></code> function to combine the rocket and crew
+masses, then calculate and return the amount of fuel needed to reach LEO.</li>
+<li>Our launch requires a safety margin for the fuel level, especially if the
+crew members are cute and fuzzy.  Add an extra 200 kg of fuel for each
+dog or cat on board, but only an extra 100 kg for the other species. Update
+<code class="docutils literal notranslate"><span class="pre">fuelRequired</span></code> to account for this, then round the final amount of fuel UP
+to the nearest integer.</li>
+<li>Print <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">mission</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">launch</span> <span class="pre">mass</span> <span class="pre">of</span> <span class="pre">____</span> <span class="pre">kg</span> <span class="pre">and</span> <span class="pre">requires</span> <span class="pre">____</span> <span class="pre">kg</span> <span class="pre">of</span>
+<span class="pre">fuel.'</span></code> Fill in the blanks with the calculated amounts.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 12.7. Exercises: Objects &amp; Math</a></li>
+        
+        
+        <li class="next"><a href="../modules/index.html">13. Modules <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>26.5. Exercises &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="26.6. Studio: Fetch &amp; JSON" href="studio.html" />
+    <link rel="prev" title="26.4. Asynchronous and Promises" href="asynchronous.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">26. Fetch &amp; JSON</a></li>
+    <li class="active">26.5. Exercises</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="exercises">
+<h1>26.5. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="json">
+<h2>26.5.1. JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Which of the following three code snippets is correct JSON syntax? Why are the other two options incorrect?</li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Bernie&quot;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bernie&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s1">&#39;Bernie&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Which of the following three code snippets is correct JSON? Why are the other two options incorrect?</li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;animals&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bernie&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Draco&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="p">[</span>
+       <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bernie&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Draco&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+     <span class="p">{</span>
+         <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bernie&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+         <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Draco&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">2</span>
+     <span class="p">}</span>
+ <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fetch">
+<h2>26.5.2. Fetch<a class="headerlink" href="#fetch" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Go to the directory where you are working on your LC101 homework. Create a file called
+<code class="docutils literal notranslate"><span class="pre">fetch_planets.html</span></code> using <code class="docutils literal notranslate"><span class="pre">touch</span></code>.</p>
+</li>
+<li><p class="first">Open the file in VSCode and add the preliminary HTML:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Fetch Planets<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// TODO: fetch planets JSON</span>
+         <span class="p">});</span>
+      <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Destination<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;destination&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Planet<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">The URL where our planet data is located is: <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span></code>.
+Add the code to fetch this URL inside the load event listener.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="nx">URL</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+      <span class="c1">// TODO: do something after fetching and receiving a response</span>
+   <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Peek at the <code class="docutils literal notranslate"><span class="pre">response</span></code> returned in the request by adding a print statement
+inside of the function.</p>
+<p>Copy the file path of your HTML file and paste it as the URL in your browser.
+You won't see much on the page yet. Open your developer tools and examine both the
+<em>Console</em> tab for the response value, as well as the <em>Network</em> tab for the request status.</p>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">.json()</span></code> method on your response now to see more of the data in the console:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>What data type do you see printed?</p>
+</li>
+<li><p class="first">Replace your <code class="docutils literal notranslate"><span class="pre">console.log(json)</span></code> with the following to view a portion of the JSON
+into the app.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+<span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;`</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Refresh the page to see some new data in your HTML.
+Play around by changing the index number. Does the planet name change?
+Can you change the planet's property being printed?</p>
+</li>
+<li><p class="first">Now, what happens if we move those last lines we added to outside and after
+the fetch request? Since <code class="docutils literal notranslate"><span class="pre">json</span></code> hasn't been defined outside of the
+<code class="docutils literal notranslate"><span class="pre">response.json()</span></code> method yet, in order to move the template literal that uses
+that <code class="docutils literal notranslate"><span class="pre">json</span></code> variable, we'll need to also initiate it outside of the function
+call.
+Let's also put our print statement back so we can verify that our fetch works.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+   <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+   <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;`</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Refresh the page and try this. See any data? See anything of note in the console?</p>
+<p>We can tell that our fetch works because the JSON array is printed to the console.
+However, you should also see an error in the console related to the template literal
+using <code class="docutils literal notranslate"><span class="pre">json[0].name</span></code>.
+This error occurs because of the asynchronous nature of JavaScript. Although we
+now have <code class="docutils literal notranslate"><span class="pre">json</span></code> defined outside of the fetch request, at the point in time that
+we seek it for the template literal, we haven't yet received the json data.
+One clue that asynchronism is at play, the error appears before the printed JSON.</p>
+</li>
+<li><p class="first">Our last task left us with some knowledge about where and how we can use the
+fetched data, but we don't really want to keep those changes. Instead, how
+about we use an event to change the planet information we see? Let's move
+the DOM manipulation to inside a click handler.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+   <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+      <span class="nx">destination</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">            &lt;div&gt;</span>
+<span class="sb">               &lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+<span class="sb">               &lt;img src=</span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">image</span><span class="si">}</span><span class="sb"> height=250&gt;&lt;/img&gt;</span>
+<span class="sb">            &lt;/div&gt;</span>
+<span class="sb">         `</span><span class="p">;</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now, after refreshing the page, you can click on the <code class="docutils literal notranslate"><span class="pre">Planet</span></code> header to make
+the name and image appear.
+Take note, we're still fetching on load, just not displaying the data until the
+the header is clicked.</p>
+</li>
+<li><p class="first">For fun and good measure, let's dynamically change which planet's info we're displaying each time
+the header is clicked. To do this,</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>We declare a counter variable, <code class="docutils literal notranslate"><span class="pre">index</span></code> that changes each time a
+<code class="docutils literal notranslate"><span class="pre">click</span></code> event takes place.</li>
+<li>We then use the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> as the position in the planets array to
+use in the template literal.</li>
+<li>Finally, since we want to cap the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> so that it does not
+exceed the length of the planets array, we'll use a modulo to control how
+large <code class="docutils literal notranslate"><span class="pre">index</span></code> can get.</li>
+</ol>
+</div></blockquote>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">destination</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">            &lt;div&gt;</span>
+<span class="sb">               &lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+<span class="sb">               &lt;img src=</span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">image</span><span class="si">}</span><span class="sb"> height=250&gt;&lt;/img&gt;</span>
+<span class="sb">            &lt;/div&gt;</span>
+<span class="sb">         `</span><span class="p">;</span>
+         <span class="nx">index</span> <span class="o">=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nx">json</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+          <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Et voila! Our destination changes on each click!</p>
+<div class="figure">
+<img alt="Clicking through destinations." src="../../_images/planet-destinations.gif" />
+</div>
+<p>Put on your planetary shoes. We are moving through planets!</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="asynchronous.html"><span aria-hidden="true">&larr;</span> 26.4. Asynchronous and Promises</a></li>
+        
+        
+        <li class="next"><a href="studio.html">26.6. Studio: Fetch &amp; JSON <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

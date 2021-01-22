@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Assignment #3: Mars Rover &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #4: HTML Me Something" href="html-me-something.html" />
+    <link rel="prev" title="Assignment #2: Scrabble Scorer" href="scrabble-scorer.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Assignment #3: Mars Rover</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="assignment-3-mars-rover">
+<h1>Assignment #3: Mars Rover<a class="headerlink" href="#assignment-3-mars-rover" title="Permalink to this headline">¶</a></h1>
+<p>This task puts your unit testing, modules making, and exception handling knowledge to
+use by writing tests and classes for the Mars rover named Curiosity.</p>
+<div class="figure" id="id5">
+<img alt="Image of Curiosity rover taken by the rover on Mars." src="../_images/curiosity-rover-selfie.jpg" />
+<p class="caption"><span class="caption-text">Selfie of Curiosity on Mars.</span></p>
+</div>
+<p>You will create a simulation for issuing commands to Curiosity. The idea is to
+create a <em>command</em> at mission control, convert that command into a <em>message</em>
+send it to the <em>rover</em>, then have the rover respond to that message.</p>
+<p>We will provide descriptions of the required features you need to implement in
+three separate classes:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Command</span></code>:
+A type of object containing a <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property. <code class="docutils literal notranslate"><span class="pre">commandType</span></code> is one
+of the given strings in the table below. Some <code class="docutils literal notranslate"><span class="pre">commandTypes</span></code> are coupled with
+a <code class="docutils literal notranslate"><span class="pre">value</span></code> property, but not all. Every <code class="docutils literal notranslate"><span class="pre">Command</span></code> object is a single instruction
+to be delivered to the rover.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Message</span></code>:
+A <code class="docutils literal notranslate"><span class="pre">Message</span></code> object has a <code class="docutils literal notranslate"><span class="pre">name</span></code> and contains several <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.
+<code class="docutils literal notranslate"><span class="pre">Message</span></code> is responsible for bundling the commands from mission control and
+delivering them to the rover.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Rover</span></code>:
+An object representing the mars rover. This class contains information on the rover's
+<code class="docutils literal notranslate"><span class="pre">position</span></code>, operating <code class="docutils literal notranslate"><span class="pre">mode</span></code>, and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>. It also contains a function,
+<code class="docutils literal notranslate"><span class="pre">receiveMessage</span></code> that handles the various types of commands it receives and updates
+the rover's properties.</li>
+</ol>
+<p>In true TDD form, you will be asked to first write the appropriate units tests for
+these features, then write the code in the given class to pass those tests.</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Fork the <a class="reference external" href="https://repl.it/&#64;launchcode/mars-rover-starter" target="_blank">Mars rover starter repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">Write a unit test for each test item listed.
+shown below.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">One complete test has been created for you as an example.</p>
+</div>
+</li>
+<li><p class="first">Use <a class="reference internal" href="../chapters/unit-testing/tdd.html#tdd"><span class="std std-ref">test-driven development (TDD)</span></a> to create each of the
+classes described below.</p>
+</li>
+<li><p class="first">Each class should be defined in its own file, which will be exported and
+imported as a module.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="how-to-tdd">
+<h2>How-To TDD<a class="headerlink" href="#how-to-tdd" title="Permalink to this headline">¶</a></h2>
+<p>Recall that in TDD, you write the test for a given behavior before you code the
+actual function. Feel free to review the
+<a class="reference internal" href="../chapters/unit-testing/tdd.html#test-code-cycle"><span class="std std-ref">Test/Code cycle</span></a> while you work on this project.</p>
+<ol class="loweralpha simple">
+<li>Focus on one test at a time.</li>
+<li>Write the test and <em>then</em> create the code to make it pass.</li>
+<li>Only write the minimum amount of code needed to make the test pass.</li>
+<li>There are some constraints on how you can implement these features. A description
+of each class is below.</li>
+</ol>
+<p>Each numbered item describes a test. <em>You should use the given phrases as the
+test descriptions</em> when creating your <code class="docutils literal notranslate"><span class="pre">it</span></code> statements. You must create 13
+tests (14, if you do the bonus) for this assignment.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Did you catch the part about only working on ONE test at a time? Do NOT try
+to write all of the tests at once. Doing so will be inefficient and will
+cause excessive frustration.</p>
+</div>
+</div>
+<div class="section" id="a-command">
+<h2>A. <code class="docutils literal notranslate"><span class="pre">Command</span></code><a class="headerlink" href="#a-command" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="command-class">
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">Command</span></code> Class<a class="headerlink" href="#command-class" title="Permalink to this headline">¶</a></h3>
+<p>We'll follow TDD practices for the creation of <code class="docutils literal notranslate"><span class="pre">Message</span></code> and <code class="docutils literal notranslate"><span class="pre">Rover</span></code>, but for
+this class, <code class="docutils literal notranslate"><span class="pre">Command</span></code>, we've provided the functionality. <code class="docutils literal notranslate"><span class="pre">Command</span></code> is already
+written for you and you do not need to modify it to write passing tests. Open up and
+examine the file <code class="docutils literal notranslate"><span class="pre">command.js</span></code>.</p>
+<ol class="arabic simple">
+<li>This class builds an object with two properties.
+<code class="docutils literal notranslate"><span class="pre">constructor(commandType,</span> <span class="pre">value)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">commandType</span></code> is a string that represents the type of command. We will go over
+the details of the types when we get to the <code class="docutils literal notranslate"><span class="pre">Rover</span></code> class and tests. At this
+time, note that a command type will be one of the following: <code class="docutils literal notranslate"><span class="pre">'MODE_CHANGE'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'MOVE'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'STATUS_CHECK'</span></code>.<ol class="lowerroman">
+<li>To peek ahead at the full functionality of these types, refer to
+<a class="reference internal" href="#command-types-table"><span class="std std-ref">Command Types table</span></a>.</li>
+</ol>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code> is a value related to the type of command.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">modeCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">moveCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MOVE&#39;</span><span class="p">,</span> <span class="mi">12000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">'MODE_CHANGE'</span></code> and <code class="docutils literal notranslate"><span class="pre">'MOVE'</span></code> are passed in as the <code class="docutils literal notranslate"><span class="pre">commandType</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">'LOW_POWER'</span></code> and 12000 are passed in as the <code class="docutils literal notranslate"><span class="pre">value</span></code>. Different command
+types require different kinds of values. <code class="docutils literal notranslate"><span class="pre">'STATUS_CHECK'</span></code> takes no value.</p>
+<p class="last">Don't worry about the mode options for now. To peek ahead, see
+<a class="reference internal" href="#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a>.</p>
+</div>
+<p>Now that we've gone over the class, let's check out the tests.</p>
+</div>
+<div class="section" id="command-tests">
+<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">Command</span></code> Tests<a class="headerlink" href="#command-tests" title="Permalink to this headline">¶</a></h3>
+<p>To begin, open and examine <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code>. One test has been created for
+you. When a user creates a new <code class="docutils literal notranslate"><span class="pre">Command</span></code> object from the class, we want to make
+sure they pass a command type as the first argument.</p>
+<div class="section" id="test-1">
+<h4>Test 1<a class="headerlink" href="#test-1" title="Permalink to this headline">¶</a></h4>
+<p>Note that the test description reads, &quot;throws error if a command type is NOT
+passed into the constructor as the first parameter&quot;.</p>
+<ol class="loweralpha simple">
+<li>So far, you have only used <code class="docutils literal notranslate"><span class="pre">assert</span></code> methods to check for equality.
+Using <code class="docutils literal notranslate"><span class="pre">assert.throws</span></code> to verify if a specific error is thrown is a new
+concept. To learn how to use this new ability of <code class="docutils literal notranslate"><span class="pre">assert</span></code>, look at the
+constructor in <code class="docutils literal notranslate"><span class="pre">command.js</span></code> and look at the test description in
+<code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>. You can also look at the
+<a class="reference external" href="https://nodejs.org/docs/latest-v10.x/api/assert.html#assert_assert_throws_fn_error_message" target="_blank">official Node.js assert.throws documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li>Click &quot;Run&quot; to verify that the test passes. Next, comment out lines 4-6 in
+<code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Click &quot;Run&quot; again to verify that the test fails (the
+expected error is not thrown when the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is called).</li>
+<li>Restore lines 4-6 to <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">Error(&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;);</span></code>.</li>
+<li>Change line 12 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">'Oops'</span></code>. Click &quot;Run&quot;
+again to verify that the test fails (the error message did not match
+<code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>).</li>
+<li>Restore line 12 to <code class="docutils literal notranslate"><span class="pre">message:</span> <span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="test-2">
+<h4>Test 2<a class="headerlink" href="#test-2" title="Permalink to this headline">¶</a></h4>
+<p>Create a second <code class="docutils literal notranslate"><span class="pre">Command</span></code> test using, &quot;constructor sets command type&quot; as the
+description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Command</span></code>
+class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.</p>
+<ol class="loweralpha simple">
+<li>Without editing, <code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains the correct code. Click &quot;Run&quot; to verify that the first
+and second tests both pass.</li>
+<li>You do not need to use <code class="docutils literal notranslate"><span class="pre">assert.throws()</span></code> in this test.</li>
+<li>You may not need to know the specific types of commands to write this test.</li>
+</ol>
+</div>
+<div class="section" id="test-3">
+<h4>Test 3<a class="headerlink" href="#test-3" title="Permalink to this headline">¶</a></h4>
+<p>Code a third test using, &quot;constructor sets a value passed in as the 2nd
+argument&quot; as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
+correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.</p>
+<ol class="loweralpha simple">
+<li>You may not need to know a proper <code class="docutils literal notranslate"><span class="pre">value</span></code> in order to write this test.</li>
+</ol>
+<p>Click &quot;Run&quot; to verify that all 3 command tests pass.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">As you move through the remaining instructions, the amount of guidance will
+decrease. Refer to your earlier, passing tests to help you construct new
+tests and passing code.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-message">
+<h2>B. <code class="docutils literal notranslate"><span class="pre">Message</span></code><a class="headerlink" href="#b-message" title="Permalink to this headline">¶</a></h2>
+<p>Recall, the role of a message object is to bundle commands to send to the rover.</p>
+<div class="section" id="message-class">
+<span id="id3"></span><h3><code class="docutils literal notranslate"><span class="pre">Message</span></code> Class<a class="headerlink" href="#message-class" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>This class builds an object with two properties.
+<code class="docutils literal notranslate"><span class="pre">constructor(name,</span> <span class="pre">commands)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> is a string that is the name of the message.</li>
+<li><code class="docutils literal notranslate"><span class="pre">commands</span></code> is an array of <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commands</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;STATUS_CHECK&#39;</span><span class="p">)];</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s1">&#39;Test message with two commands&#39;</span><span class="p">,</span> <span class="nx">commands</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="message-tests">
+<h3><code class="docutils literal notranslate"><span class="pre">Message</span></code> Tests<a class="headerlink" href="#message-tests" title="Permalink to this headline">¶</a></h3>
+<p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>, create a file <code class="docutils literal notranslate"><span class="pre">message.spec.js</span></code> and
+write the unit tests for the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class as described below. Remember to use
+the given phrase as the test description.</p>
+<div class="section" id="test-4">
+<h4>Test 4<a class="headerlink" href="#test-4" title="Permalink to this headline">¶</a></h4>
+<p>For this test description, use the text, &quot;throws error if a name is NOT
+passed into the constructor as the first parameter&quot;. Review the first test
+in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> for an example of how to write this test.</p>
+<ol class="loweralpha">
+<li><p class="first">When you click &quot;Run&quot;, the test will likely fail, either because you have no
+<code class="docutils literal notranslate"><span class="pre">Message</span></code> class yet or have not written the class to include this feature.</p>
+</li>
+<li><p class="first">If you haven't done so yet, create a <code class="docutils literal notranslate"><span class="pre">message.js</span></code> file and add <code class="docutils literal notranslate"><span class="pre">exports</span></code>
+and <code class="docutils literal notranslate"><span class="pre">require</span></code> statements as needed for your modules.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>For help using <code class="docutils literal notranslate"><span class="pre">require</span></code> to import a <code class="docutils literal notranslate"><span class="pre">class</span></code>, notice in <code class="docutils literal notranslate"><span class="pre">command.js</span></code>
+that the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is exported using:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Command</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">spec/command.spec.js</span></code> the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is imported with this
+statement:</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Command</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../command.js&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first">Look at the code in <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Use that to help you write the
+<code class="docutils literal notranslate"><span class="pre">Message</span></code> class in <code class="docutils literal notranslate"><span class="pre">message.js</span></code> so that your test passes. Refer to
+the <a class="reference internal" href="#message-class"><span class="std std-ref">Message Class</span></a> description above for more
+details.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="test-5">
+<h4>Test 5<a class="headerlink" href="#test-5" title="Permalink to this headline">¶</a></h4>
+<p>Use &quot;constructor sets name&quot; as the description. The test confirms
+that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class correctly sets the
+<code class="docutils literal notranslate"><span class="pre">name</span></code> property in a new message object.</p>
+</div>
+<div class="section" id="test-6">
+<h4>Test 6<a class="headerlink" href="#test-6" title="Permalink to this headline">¶</a></h4>
+<p>Use &quot;contains a commands array passed into the constructor as 2nd argument&quot;.
+This test confirms that the <code class="docutils literal notranslate"><span class="pre">commands</span></code> property of a new message object
+contains the data passed in from the <code class="docutils literal notranslate"><span class="pre">Message(name,</span> <span class="pre">commands)</span></code> call.</p>
+<ol class="loweralpha simple">
+<li>Hint: Inside this test, you will have to create a <code class="docutils literal notranslate"><span class="pre">commands</span></code> array, fill
+it with some <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects, and pass it into the <code class="docutils literal notranslate"><span class="pre">Message</span></code>
+constructor.</li>
+</ol>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">You are moving onto the red planet now. Be prepared for fewer instructions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="c-rover">
+<h2>C. <code class="docutils literal notranslate"><span class="pre">Rover</span></code><a class="headerlink" href="#c-rover" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Rover</span></code> receives a message object, updates its properties from the message, and
+returns the results.</p>
+<div class="section" id="rover-class">
+<span id="id4"></span><h3>Rover Class<a class="headerlink" href="#rover-class" title="Permalink to this headline">¶</a></h3>
+<p>This class builds a rover object with a few properties, and it also contains
+a function outside of <code class="docutils literal notranslate"><span class="pre">constructor</span></code> to handle updates to its properties.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">constructor(position)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">position</span></code> is a number representing the rover's position.</li>
+<li>Sets <code class="docutils literal notranslate"><span class="pre">this.position</span></code> to <code class="docutils literal notranslate"><span class="pre">position</span></code></li>
+<li>Sets <code class="docutils literal notranslate"><span class="pre">this.mode</span></code> to <code class="docutils literal notranslate"><span class="pre">'NORMAL'</span></code></li>
+<li>Sets default value for <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> to 110</li>
+</ol>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">receiveMessage(message)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">message</span></code> is a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</li>
+<li>Returns an object containing at least two properties:<ol class="lowerroman">
+<li><code class="docutils literal notranslate"><span class="pre">message</span></code>: the name of the original <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</li>
+<li><code class="docutils literal notranslate"><span class="pre">results</span></code>: an array of <em>results</em>. Each element in the array is an
+object that corresponds to one <code class="docutils literal notranslate"><span class="pre">Command</span></code> in <code class="docutils literal notranslate"><span class="pre">message.commands</span></code>.</li>
+</ol>
+</li>
+<li>Updates certain properties of the rover object<ol class="lowerroman">
+<li>Details about how to respond to different commands are in the
+<a class="reference internal" href="#command-types-table"><span class="std std-ref">Command Types table</span></a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commands</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;STATUS_CHECK&#39;</span><span class="p">)];</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s1">&#39;Test message with two commands&#39;</span><span class="p">,</span> <span class="nx">commands</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">rover</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rover</span><span class="p">(</span><span class="mi">98382</span><span class="p">);</span>    <span class="c1">// Passes 98382 as the rover&#39;s position.</span>
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">rover</span><span class="p">.</span><span class="nx">receiveMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>{
+   message: &#39;Test message with two commands&#39;,
+   results: [
+      {
+         completed: true
+      },
+      {
+         completed: true,
+         roverStatus: { mode: &#39;LOW_POWER&#39;, generatorWatts: 110, position: 98382 }
+      }
+   ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rover-tests">
+<h3><code class="docutils literal notranslate"><span class="pre">Rover</span></code> Tests<a class="headerlink" href="#rover-tests" title="Permalink to this headline">¶</a></h3>
+<p>Create <code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code> and write the following tests. Write the code to
+make them pass in <code class="docutils literal notranslate"><span class="pre">rover.js</span></code>. Remember to use the given phrase as the test
+description.</p>
+<div class="section" id="test-7">
+<h4>Test 7<a class="headerlink" href="#test-7" title="Permalink to this headline">¶</a></h4>
+<p>&quot;constructor sets position and default values for mode and generatorWatts&quot;.
+Refer to the <a class="reference internal" href="#rover-class"><span class="std std-ref">Rover Class</span></a> description above for these
+default values.</p>
+</div>
+<div class="section" id="test-8">
+<h4>Test 8<a class="headerlink" href="#test-8" title="Permalink to this headline">¶</a></h4>
+<p>&quot;response returned by receiveMessage contains name of message&quot;</p>
+</div>
+<div class="section" id="test-9">
+<h4>Test 9<a class="headerlink" href="#test-9" title="Permalink to this headline">¶</a></h4>
+<p>&quot;response returned by receiveMessage includes two results if two commands
+are sent in the message&quot;</p>
+</div>
+<div class="section" id="test-10">
+<h4>Test 10<a class="headerlink" href="#test-10" title="Permalink to this headline">¶</a></h4>
+<p>&quot;responds correctly to status check command&quot;</p>
+<ol class="loweralpha simple">
+<li>For the <code class="docutils literal notranslate"><span class="pre">STATUS_CHECK</span></code> command, <code class="docutils literal notranslate"><span class="pre">receiveMessage(message).results</span></code>
+includes a <code class="docutils literal notranslate"><span class="pre">roverStatus</span></code> object describing the current state of the
+rover object --- <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>, and <code class="docutils literal notranslate"><span class="pre">position</span></code>. The test
+should check each of these for accuracy.</li>
+<li>See the <a class="reference internal" href="#command-types-table"><span class="std std-ref">Rover Command Types</span></a> table for more
+details.</li>
+</ol>
+</div>
+<div class="section" id="test-11">
+<h4>Test 11<a class="headerlink" href="#test-11" title="Permalink to this headline">¶</a></h4>
+<p>&quot;responds correctly to mode change command&quot;.</p>
+<ol class="loweralpha simple">
+<li>The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property and rover mode for accuracy.</li>
+<li>The rover has two modes that can be passed a values to a mode change command,
+'LOW_POWER' and 'NORMAL'.</li>
+</ol>
+</div>
+<div class="section" id="test-12">
+<h4>Test 12<a class="headerlink" href="#test-12" title="Permalink to this headline">¶</a></h4>
+<p>&quot;responds with false completed value when attempting to move in LOW_POWER
+mode&quot;.</p>
+<ol class="loweralpha simple">
+<li>The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property for accuracy and confirm
+that the rover position did not change.</li>
+<li>Use the <a class="reference internal" href="#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a> for guidance on how
+to handle move commands in different modes.</li>
+</ol>
+</div>
+<div class="section" id="test-13">
+<h4>Test 13<a class="headerlink" href="#test-13" title="Permalink to this headline">¶</a></h4>
+<p>&quot;responds with position for move command&quot;.</p>
+<ol class="loweralpha simple">
+<li>A <code class="docutils literal notranslate"><span class="pre">MOVE</span></code> command will update the rover's position with the position value in
+the command.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="rover-command-types">
+<span id="command-types-table"></span><h2>Rover Command Types<a class="headerlink" href="#rover-command-types" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-auto docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Value sent with command</th>
+<th class="head">Updates to <code class="docutils literal notranslate"><span class="pre">Rover</span></code> object</th>
+<th class="head">Result returned</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>MOVE</td>
+<td>Number representing the position the rover should move to.</td>
+<td><code class="docutils literal notranslate"><span class="pre">position</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
+</tr>
+<tr class="row-odd"><td>STATUS_CHECK</td>
+<td>No values sent with this command.</td>
+<td>No updates</td>
+<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">roverStatus:</span> <span class="pre">{mode:</span> <span class="pre">'NORMAL',</span> <span class="pre">generatorWatts:</span> <span class="pre">110,</span> <span class="pre">position:</span> <span class="pre">87382098}}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code> will depend on current state of rover.</td>
+</tr>
+<tr class="row-even"><td>MODE_CHANGE</td>
+<td>String representing rover mode (see modes)</td>
+<td><code class="docutils literal notranslate"><span class="pre">mode</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The response value for <code class="docutils literal notranslate"><span class="pre">completed</span></code> will be <code class="docutils literal notranslate"><span class="pre">false</span></code> if the command could
+NOT be completed.</p>
+</div>
+</div>
+<div class="section" id="rover-modes">
+<span id="rover-modes-table"></span><h2>Rover Modes<a class="headerlink" href="#rover-modes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-auto docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Mode</th>
+<th class="head">Restrictions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LOW_POWER</td>
+<td>Can't be moved in this state.</td>
+</tr>
+<tr class="row-odd"><td>NORMAL</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="bonus-mission">
+<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Add the following test that checks for unknown commands in
+<code class="docutils literal notranslate"><span class="pre">spec/rover.spec.js</span></code>.</p>
+<div class="section" id="test-14">
+<h3>Test 14<a class="headerlink" href="#test-14" title="Permalink to this headline">¶</a></h3>
+<p>&quot;completed false and a message for an unknown command&quot;.</p>
+</div>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<p>In Canvas, open the Mars Rover assignment and click the &quot;Submit&quot; button.
+An input box will appear.</p>
+<p>Copy the URL for your repl.it project and paste it into the box, then click
+&quot;Submit&quot; again.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="scrabble-scorer.html"><span aria-hidden="true">&larr;</span> Assignment #2: Scrabble Scorer</a></li>
+        
+        
+        <li class="next"><a href="html-me-something.html">Assignment #4: HTML Me Something <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

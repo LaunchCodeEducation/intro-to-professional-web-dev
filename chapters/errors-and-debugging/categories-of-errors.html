@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6.2. Categories of Errors &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.3. Diagnosing Error Messages" href="diagnosing-error-messages.html" />
+    <link rel="prev" title="6.1. What is Debugging?" href="what-is-debugging.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">6. Errors and Debugging</a></li>
+    <li class="active">6.2. Categories of Errors</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="categories-of-errors">
+<h1>6.2. Categories of Errors<a class="headerlink" href="#categories-of-errors" title="Permalink to this headline">¶</a></h1>
+<p>It is useful to distinguish between categories of errors in order to quickly
+identify and fix them. Each category manifests itself in a different way, and
+some strategies may be more useful for certain types of errors.</p>
+<div class="section" id="stages-of-javascript-execution">
+<h2>6.2.1. Stages of JavaScript Execution<a class="headerlink" href="#stages-of-javascript-execution" title="Permalink to this headline">¶</a></h2>
+<p>In order to understand programming errors it is useful to understand the two
+stages of code execution.</p>
+<div class="section" id="parsing">
+<h3>6.2.1.1. Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">¶</a></h3>
+<p id="index-0">Before code can be run, it must first be parsed, or validated and prepared for
+execution. This is known as the <strong>parsing stage</strong>, and you can think of it like
+the pre-flight check for a plane or space craft.</p>
+<p>A lot of detailed, low-level tasks are carried out during this process, but it
+is enough for us to understand that parsing verifies the syntax and structure
+of the code.</p>
+</div>
+<div class="section" id="execution">
+<span id="error-categories"></span><h3>6.2.1.2. Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h3>
+<p>Once our code has been parsed, its syntax has been verified and the program is
+ready to run. The <strong>execution stage</strong> is when the actions written into our
+program---printing to the console, prompting the user for input, making
+calculations, etc.---are actually carried out. You can think of this stage as
+the plane taking flight.</p>
+</div>
+</div>
+<div class="section" id="syntax-errors">
+<h2>6.2.2. Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">JavaScript can only execute a program if the program is syntactically correct.
+<strong>Syntax</strong> refers to the structure of a language (spoken, programming, or
+otherwise) and the rules about that structure. For example, in English, a
+sentence must begin with a capital letter and end with appropriate punctuation.</p>
+<p id="index-2">A <strong>syntax error</strong> is a violation of the formal rules for a given language.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>this sentence contains a syntax error.</p>
+<p class="last">So does this one</p>
+</div>
+<p>For most readers of English, a few syntax errors are not a significant problem.
+Our brains are often flexible enough to determine the intended meaning of a
+sentence even if it contains one or more syntax errors.</p>
+<p>Programming languages are not so forgiving. If there is a single syntax error anywhere in your program, JavaScript will display an error message and quit immediately. Since syntax is validated during the parsing stage, syntax errors are the first we see when running a program.</p>
+<p>During the first few weeks of your programming career, you will probably spend a lot of time tracking down syntax errors. However, as you gain experience, you will make fewer errors, and you will find your errors faster.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Find the syntax errors in the program.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">Wednesday</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Errors" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What syntax errors did you find? What was the specific error message provided by JavaScript in each case?</p>
+</div>
+</div>
+<div class="section" id="runtime-errors">
+<h2>6.2.3. Runtime Errors<a class="headerlink" href="#runtime-errors" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-3"></span><p id="index-4">The second category consists of <strong>runtime errors</strong>, so called because they do not appear until you run the program. These errors are also called <strong>exceptions</strong> because they usually indicate that something exceptional (and bad) has happened.</p>
+<p>Runtime errors occur during the execution phase of a program, so we will only encounter them after the syntax of our program is completely correct.</p>
+<p>A common runtime error occurs when we try to use a variable that has not been created yet. This can happen if you misspell the name of a variable, as the following example shows.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>ReferenceError: firstname is not defined
+   at evalmachine.&lt;anonymous&gt;:2:13
+   at Script.runInContext (vm.js:107:20)
+   at Object.runInContext (vm.js:285:6)
+   at evaluate (/run_dir/repl.js:133:14)
+   at ReadStream.&lt;anonymous&gt; (/run_dir/repl.js:116:5)
+   at ReadStream.emit (events.js:189:13)
+   at addChunk (_stream_readable.js:284:12)
+   at readableAddChunk (_stream_readable.js:265:11)
+   at ReadStream.Readable.push (_stream_readable.js:220:10)
+   at lazyFs.read (internal/fs/streams.js:181:12)
+</pre></div>
+</div>
+</div>
+<p>The syntax of our program is correct, but when the program executes, an error occurs at line 2. We attempt to print the value of the variable <code class="docutils literal notranslate"><span class="pre">firstname</span></code>, but such a variable does not exist.</p>
+</div>
+<div class="section" id="logic-errors">
+<h2>6.2.4. Logic Errors<a class="headerlink" href="#logic-errors" title="Permalink to this headline">¶</a></h2>
+<p id="index-5">The third type of error is the <strong>logic error</strong>. If there is a logic error in your program, it will run successfully and not generate any error messages. However, the program will not work as intended.</p>
+<p>The characteristic of logic errors is that the program you wrote is not the program you wanted. For example, say you want a program to calculate your daily earnings based on your weekly salary. You might try the following:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">weeklyPay</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">dailyEarnings</span> <span class="o">=</span> <span class="nx">weeklyPay</span> <span class="o">/</span> <span class="mi">7</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dailyEarnings</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>85.71428571428571
+</pre></div>
+</div>
+</div>
+<p>The result surprises you because you thought you were making at least $100 per day (you work Monday through Friday). According to this program, though, you are making about $85 per day. The error is a logic one because you divided your weekly pay by 7. It would have been more accurate to divide your weekly pay by 5, since that is how many days a week you come to work.</p>
+<p>Identifying logic errors can be tricky because unlike syntax and runtime problems, there are no error messages to help us identify the issue. We must examine the output of the program and work backward to figure out what it is doing wrong.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>6.2.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Label each of the following as either a syntax, runtime, or logic error.</p>
+<ol class="last arabic simple">
+<li>Trying to use a variable that has not been defined.</li>
+<li>Leaving off a close parenthesis, <code class="docutils literal notranslate"><span class="pre">)</span></code>, when calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code>.</li>
+<li>Forgetting to divide by 100 when printing a percentage amount.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="what-is-debugging.html"><span aria-hidden="true">&larr;</span> 6.1. What is Debugging?</a></li>
+        
+        
+        <li class="next"><a href="diagnosing-error-messages.html">6.3. Diagnosing Error Messages <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

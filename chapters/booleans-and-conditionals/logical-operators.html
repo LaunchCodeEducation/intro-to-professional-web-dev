@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>5.3. Logical Operators &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.4. Conditionals" href="conditionals.html" />
+    <link rel="prev" title="5.2. Equality" href="equality.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">5. Making Decisions With Conditionals</a></li>
+    <li class="active">5.3. Logical Operators</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="logical-operators">
+<h1>5.3. Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Recall that an operator is one or more characters that carries out an action on
+its operand(s). In <a class="reference internal" href="../data-and-variables/index.html#data-and-variables"><span class="std std-ref">Data and Variables</span></a> we learned about three types of
+operators:</p>
+<ul class="simple">
+<li>Arithmetic operators, such as <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, and <code class="docutils literal notranslate"><span class="pre">%</span></code>.</li>
+<li>The string operator <code class="docutils literal notranslate"><span class="pre">+</span></code>.</li>
+<li>Compound assignment operators, such as <code class="docutils literal notranslate"><span class="pre">+=</span></code> and <code class="docutils literal notranslate"><span class="pre">-=</span></code>.</li>
+</ul>
+<p>Arithmetic and string operators take number and string operands, respectively,
+returning values of the same type. Compound assignment operators work similarly
+with numbers or strings while also reassigning the value of the first,
+variable operand.</p>
+<div class="section" id="boolean-operators">
+<h2>5.3.1. Boolean Operators<a class="headerlink" href="#boolean-operators" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">In addition to these operators, we learned about comparison operators like
+<code class="docutils literal notranslate"><span class="pre">===</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, and others. These operators are part of a larger class known as
+<strong>boolean operators</strong>, so-called because they return a boolean value (<code class="docutils literal notranslate"><span class="pre">true</span></code>
+or <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p>
+<p>Three additional boolean operators allow us to create more complex expressions.
+These are described below.</p>
+<div class="section" id="logical-and">
+<h3>5.3.1.1. Logical AND<a class="headerlink" href="#logical-and" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="index-2"></span><p id="index-3">A <strong>compound boolean expression</strong> is a boolean expression built out of smaller
+boolean expressions. JavaScript allows us to create a compound boolean
+expression using the logical AND operator, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>.</p>
+<p>The operator takes two operands, and the resulting expression is <code class="docutils literal notranslate"><span class="pre">true</span></code> if
+<em>both</em> operands are <code class="docutils literal notranslate"><span class="pre">true</span></code> individually. If either operand is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the
+overall expression is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>In English, the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> operator mirrors the use of the word &quot;and&quot; (hence the
+name &quot;logical AND&quot;). A sentence like &quot;Roses are red and violets are blue,&quot;
+is true as a whole precisely because roses are actually red, and violets are
+actually blue.</p>
+<p class="last">On the other hand, the sentence &quot;Roses are red and violets are green,&quot; is
+false as a whole. While roses are indeed red, violets are not green.</p>
+</div>
+<p>Let's see how this works in code.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="s1">&#39;dog&#39;</span> <span class="o">===</span> <span class="s1">&#39;cat&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
+false
+false
+</pre></div>
+</div>
+</div>
+<p>In line 1, <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">&gt;</span> <span class="pre">5</span> <span class="pre">&amp;&amp;</span> <span class="pre">5</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> because both <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">&gt;</span> <span class="pre">5</span></code> and
+<code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> are <code class="docutils literal notranslate"><span class="pre">true</span></code> individually.</p>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">&gt;</span> <span class="pre">5</span> <span class="pre">&amp;&amp;</span> <span class="pre">2</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code> because one of the two
+expressions, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&gt;</span> <span class="pre">3</span></code>, is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Like line 2, line 3 returns <code class="docutils literal notranslate"><span class="pre">false</span></code> because both sub-expressions are
+<code class="docutils literal notranslate"><span class="pre">false</span></code>. Notice that we can mix and match data types however we like, as long
+as both sides of the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> expression are themselves boolean expressions.</p>
+</div>
+<div class="section" id="logical-or">
+<h3>5.3.1.2. Logical OR<a class="headerlink" href="#logical-or" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="index-4"></span><p id="index-5">JavaScript's logical OR operator, <code class="docutils literal notranslate"><span class="pre">||</span></code>, also creates compound boolean
+expressions. This operator takes two operands, and the resulting expression is
+<code class="docutils literal notranslate"><span class="pre">true</span></code> if <em>either</em> of the operands are <code class="docutils literal notranslate"><span class="pre">true</span></code> individually. If both
+operands are <code class="docutils literal notranslate"><span class="pre">false</span></code>, the overall expression is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>As with logical AND, logical OR mirrors our experience of English language
+truth values. The sentence &quot;Pigs can fly or dogs can run,&quot; is true as a
+whole. Joining the two clauses by &quot;or&quot; requires that only one of them is
+true in order for the full sentence to be true.</p>
+<p class="last">When both of the clauses joined by &quot;or&quot; are false, the statement as a whole is false. For example, &quot;Pigs can fly or dogs can speak Spanish,&quot; is a false statement.</p>
+</div>
+<p>Let's look at some examples in JavaScript.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">||</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">||</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="o">||</span> <span class="s1">&#39;dog&#39;</span> <span class="o">===</span> <span class="s1">&#39;cat&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>true
+true
+false
+</pre></div>
+</div>
+<p>Lines 1 and 2 both return <code class="docutils literal notranslate"><span class="pre">true</span></code> because at least one of the comparison expressions joined by <code class="docutils literal notranslate"><span class="pre">||</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Line 3 returns <code class="docutils literal notranslate"><span class="pre">false</span></code> because both sub-expressions are <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>The single symbols <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are themselves valid JavaScript operators,
+so accidentally leaving off one symbols when typing <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">||</span></code> will not
+result in an error message.</p>
+<p>The operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank">bitwise operators<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+which are beyond the scope of this course.</p>
+<p class="last">Most programmers rarely use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code>, and it is not important for you
+to understand them at this point. However, you should <em>never</em> use them in
+place of <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code>.</p>
+</div>
+</div>
+<div class="section" id="logical-not">
+<h3>5.3.1.3. Logical NOT<a class="headerlink" href="#logical-not" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="index-6"></span><p id="index-7">The logical NOT operator, <code class="docutils literal notranslate"><span class="pre">!</span></code>, takes only a single operand and reverses its boolean value.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span> <span class="kc">false</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>false
+true
+</pre></div>
+</div>
+</div>
+<p>The operator <code class="docutils literal notranslate"><span class="pre">!</span></code> (sometimes called &quot;bang&quot;) has the same semantic role as the word &quot;not&quot; in English.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span> <span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span> <span class="o">===</span> <span class="s1">&#39;cat&#39;</span><span class="p">)</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
+true
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operator-precedence">
+<h2>5.3.2. Operator Precedence<a class="headerlink" href="#operator-precedence" title="Permalink to this headline">¶</a></h2>
+<p id="index-8">We now have a number of operators in our toolkit. It is important to understand how these operators relate to each other with respect to <strong>operator precedence</strong>. Operator precedence is the set of rules that dictate in which order the operators are applied.</p>
+<p>JavaScript will always apply the logical NOT operator, <code class="docutils literal notranslate"><span class="pre">!</span></code>, first. Next, it applies the arithmetic operators, followed by the comparison operators. The logical AND and OR are applied last.</p>
+<p>This means that the expression <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">&gt;=</span> <span class="pre">10</span> <span class="pre">&amp;&amp;</span> <span class="pre">y</span> <span class="pre">-</span> <span class="pre">6</span> <span class="pre">&lt;=</span> <span class="pre">20</span></code> will be evaluated so as to first perform the arithmetic and then check the relationships. The <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> evaluation will be done last. The order of evaluation is the same as if we were to use parentheses to group, as follows:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nx">x</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="nx">y</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While parentheses are not always necessary due to default operator precedence,
+they make expressions much more readable. As a best practice, we encourage you
+to use them, especially for more complicated expressions.</p>
+<p>The following table lists operators in order of precedence, from highest (applied first) to lowest (applied last). A complete table for the entire language can be found in the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table" target="_blank">MDN JavaScript Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<table border="1" class="colwidths-auto docutils" id="id1">
+<caption><span class="caption-text">Operator Precedence</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Precedence</th>
+<th class="head">Category</th>
+<th class="head">Operators</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>(highest)</td>
+<td>Logical NOT</td>
+<td><code class="docutils literal notranslate"><span class="pre">!</span></code></td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Exponentiation</td>
+<td><code class="docutils literal notranslate"><span class="pre">**</span></code></td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Multiplication and division</td>
+<td><code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code></td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Addition and subtraction</td>
+<td><code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code></td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Comparison</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Equality</td>
+<td><code class="docutils literal notranslate"><span class="pre">===</span></code>, <code class="docutils literal notranslate"><span class="pre">!==</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code></td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Logical AND</td>
+<td><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></td>
+</tr>
+<tr class="row-odd"><td>(lowest)</td>
+<td>Logical OR</td>
+<td><code class="docutils literal notranslate"><span class="pre">||</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="truth-tables">
+<h2>5.3.3. Truth Tables<a class="headerlink" href="#truth-tables" title="Permalink to this headline">¶</a></h2>
+<p id="index-9"><strong>Truth tables</strong> help us understand how logical operators work by calculating all of the possible return values of a boolean expression. Let's look at the truth table for <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, which assumes we have two boolean expressions, A and B, joined by <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<table border="1" class="colwidths-auto last docutils" id="id2">
+<caption><span class="caption-text">Truth Table for <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Consider the first row of the truth table. This row states that if A is true and B is true, then A &amp;&amp; B is true. This is a fact, regardless of what boolean expressions A and B might actually be. The two middle rows demonstrate that if either A or B is false, then A &amp;&amp; B is false. (If this idea is hard to grasp, try substituting actual expressions for A and B.)</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>5.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Complete the table below.</p>
+<table border="1" class="colwidths-auto last docutils" id="id3">
+<caption><span class="caption-text">Truth Table for <code class="docutils literal notranslate"><span class="pre">||</span></code></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A <code class="docutils literal notranslate"><span class="pre">||</span></code> B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following properly expresses the order of operations (using parentheses) in the following expression?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">*</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">===</span> <span class="mi">11</span>
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">((5*3)</span> <span class="pre">&gt;</span> <span class="pre">10)</span> <span class="pre">&amp;&amp;</span> <span class="pre">((4+6)</span> <span class="pre">===</span> <span class="pre">11)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(5*(3</span> <span class="pre">&gt;</span> <span class="pre">10))</span> <span class="pre">&amp;&amp;</span> <span class="pre">(4</span> <span class="pre">+</span> <span class="pre">(6</span> <span class="pre">===</span> <span class="pre">11))</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">((((5*3)</span> <span class="pre">&gt;</span> <span class="pre">10)</span> <span class="pre">&amp;&amp;</span> <span class="pre">4)+6)</span> <span class="pre">===</span> <span class="pre">11</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">((5*3)</span> <span class="pre">&gt;</span> <span class="pre">(10</span> <span class="pre">&amp;&amp;</span> <span class="pre">(4+6)))</span> <span class="pre">===</span> <span class="pre">11</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is returned by the following boolean expression?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">||</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">true</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="equality.html"><span aria-hidden="true">&larr;</span> 5.2. Equality</a></li>
+        
+        
+        <li class="next"><a href="conditionals.html">5.4. Conditionals <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

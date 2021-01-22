@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.4. Multi-Dimensional Arrays &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.5. Exercises: Arrays" href="exercises.html" />
+    <link rel="prev" title="8.3. Array Methods" href="array-methods.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">8. Arrays Keep Things in Order</a></li>
+    <li class="active">8.4. Multi-Dimensional Arrays</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="multi-dimensional-arrays">
+<h1>8.4. Multi-Dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h1>
+<p>Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
+of arrays? Well yes we can....</p>
+<p id="index-0">A <strong>multi-dimensional array</strong> is an array of arrays, meaning that the values inside the array are also arrays.
+The <em>inner</em> arrays can store other values such as strings, numbers, or even more arrays.</p>
+<p>The figure below demonstrates a synonyms array that has arrays as values. The <em>inner</em> arrays contain words that
+are synonyms of each other. Notice each inner array has an index position.</p>
+<div class="figure">
+<img alt="A label, synonyms, pointing to an array that contains arrays at it's four indexes. Each inner array has a list of words that are synonyms." src="../../_images/multidim-array.png" />
+</div>
+<div class="section" id="two-dimensional-arrays">
+<h2>8.4.1. Two Dimensional Arrays<a class="headerlink" href="#two-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>The simplest form of a multi-dimensional array is a two dimensional array. A two dimensional array is like a
+spreadsheet with rows and columns. To access items in a two dimensional array, use square bracket notation and
+two indexes <code class="docutils literal notranslate"><span class="pre">array[0][0]</span></code>. The first index is for the outer array, or the &quot;row&quot;, and second index is for the inner array,
+or the &quot;column&quot;.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The row and column analogy is used to help visualize a two dimensional array, however it's not a perfect analogy. There are no specific JavaScript language rules forcing the inner arrays to all have the same length. The inner arrays are separate arrays that can be of different length.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use a two dimensional array to contain three different lists of space shuttle crews.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">shuttleCrews</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="s1">&#39;Robert Gibson&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Lee&#39;</span><span class="p">,</span> <span class="s1">&#39;Mae Jemison&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Kent Rominger&#39;</span><span class="p">,</span> <span class="s1">&#39;Ellen Ochoa&#39;</span><span class="p">,</span> <span class="s1">&#39;Bernard Harris&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Eilen Collins&#39;</span><span class="p">,</span> <span class="s1">&#39;Winston Scott&#39;</span><span class="p">,</span>  <span class="s1">&#39;Catherin Coleman&#39;</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Mae Jemison
+Ellen Ochoa
+Winston Scott
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="multi-dimensions-and-array-methods">
+<h2>8.4.2. Multi-Dimensions and Array Methods<a class="headerlink" href="#multi-dimensions-and-array-methods" title="Permalink to this headline">¶</a></h2>
+<p>In a multi-dimensional array, both the inner and outer arrays can be altered
+with array methods. However, bracket notation must be used correctly.</p>
+<p>To apply a method to the outer array, the syntax is:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">multiArrayName</span><span class="p">.</span><span class="nx">method</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>To apply a method to one of the inner arrays, the syntax is:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">multiArrayName</span><span class="p">[</span><span class="nx">indexOfInnerArray</span><span class="p">].</span><span class="nx">method</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use array methods to add an additional crew array and alter existing arrays.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">shuttleCrews</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="s1">&#39;Robert Gibson&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Lee&#39;</span><span class="p">,</span> <span class="s1">&#39;Mae Jemison&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Kent Rominger&#39;</span><span class="p">,</span> <span class="s1">&#39;Ellen Ochoa&#39;</span><span class="p">,</span> <span class="s1">&#39;Bernard Harris&#39;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s1">&#39;Eilen Collins&#39;</span><span class="p">,</span> <span class="s1">&#39;Winston Scott&#39;</span><span class="p">,</span>  <span class="s1">&#39;Catherin Coleman&#39;</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">newCrew</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mark Polansky&#39;</span><span class="p">,</span> <span class="s1">&#39;Robert Curbeam&#39;</span><span class="p">,</span> <span class="s1">&#39;Joan Higginbotham&#39;</span><span class="p">];</span>
+
+<span class="c1">// Add a new crew array to the end of shuttleCrews</span>
+<span class="nx">shuttleCrews</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newCrew</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="c1">// Reverse the order of the crew at index 1</span>
+<span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shuttleCrews</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Joan Higginbotham
+[ &#39;Bernard Harris&#39;, &#39;Ellen Ochoa&#39;, &#39;Kent Rominger&#39; ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="beyond-two-dimensional-arrays">
+<h2>8.4.3. Beyond Two Dimensional Arrays<a class="headerlink" href="#beyond-two-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Generally, there is no limit to how many dimensions you can have when creating
+arrays. However it is rare that you will use more than two dimensions. Later on
+in the class we will learn about more collection types that can handle complex
+problems beyond the scope of two dimensional arrays.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>8.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What are the two dimensional indexes for <code class="docutils literal notranslate"><span class="pre">&quot;Jones&quot;</span></code>?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">school</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="s2">&quot;computer&quot;</span><span class="p">,</span> <span class="s2">&quot;art&quot;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="s2">&quot;Willoughby&quot;</span><span class="p">,</span> <span class="s2">&quot;Rhodes&quot;</span><span class="p">]</span>
+<span class="p">];</span>
+</pre></div>
+</td></tr></table></div>
+<p>How would you add <code class="docutils literal notranslate"><span class="pre">&quot;dance&quot;</span></code> to the array at <code class="docutils literal notranslate"><span class="pre">school[0]</span></code>?</p>
+<p class="last">How would you add <code class="docutils literal notranslate"><span class="pre">&quot;Holmes&quot;</span></code> to the array at <code class="docutils literal notranslate"><span class="pre">school[1]</span></code>?</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="array-methods.html"><span aria-hidden="true">&larr;</span> 8.3. Array Methods</a></li>
+        
+        
+        <li class="next"><a href="exercises.html">8.5. Exercises: Arrays <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

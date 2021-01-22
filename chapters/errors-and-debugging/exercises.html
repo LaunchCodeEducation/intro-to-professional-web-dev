@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6.8. Exercises: Debugging &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Stringing Characters Together" href="../strings/index.html" />
+    <link rel="prev" title="6.7. Asking Good Questions" href="asking-good-questions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">6. Errors and Debugging</a></li>
+    <li class="active">6.8. Exercises: Debugging</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="exercises-debugging">
+<h1>6.8. Exercises: Debugging<a class="headerlink" href="#exercises-debugging" title="Permalink to this headline">¶</a></h1>
+<p>Imagine we are pirates running a space station. Captain Api Hook tells the crew the following:</p>
+<blockquote>
+<div><p>Avast, ye scurvy dogs! We be needn' ta fix yonder code!</p>
+<p>The cap'n in charge of clearing the shuttle for launch(code) be out with
+an illness, and ye be the next tech in line.</p>
+<p>Yer job is to evaluate the code and fix any errors. Remember, the lives
+of the crew rest squarely upon yer shoulders. Happy second day on the job!</p>
+<p>Yer directions are as follows:</p>
+<ol class="arabic simple">
+<li>Launch the shuttle <em>only if</em> the fuel, crew and computer all check out OK.</li>
+<li>If a check fails, print that information to the console and scrub the
+launch (then scrub the deck).</li>
+<li>If all checks be successful, print a countdown to the console, then
+bellow &quot;Liftoff!&quot;</li>
+</ol>
+</div></blockquote>
+<div class="section" id="debugging-practice">
+<h2>6.8.1. Debugging Practice<a class="headerlink" href="#debugging-practice" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Fix <strong>syntax errors</strong> first. Run the following code as-is and squint yer
+eyes at the error message. Fix the mistake, and then re-run the code to
+check it.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+
+if (fuelLevel &gt;= 20000 {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/Debug1stSyntaxError" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first">The next block of code hides two syntax errors. Run the code as-is to
+find the mistakes. <em>Tip</em>: Don't be too hasty, Matey! Only ONE error will
+be flagged at a time. Fix that ONE problem, and then re-run the code to
+check yer work. Avoid trying to fix multiple issues at once.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
+
+if (crewStatus &amp;&amp;&amp; computerStatus === &#39;green&#39;) {
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
+
+if (launchReady) {
+   console.log(&quot;10, 9, 8, 7, 6, 5, 4, 3, 2, 1...&quot;);
+   console.log(&quot;Fed parrot...&quot;);
+   console.log(&quot;Ignition...&quot;);
+   console.log(&quot;Liftoff!&#39;);
+} else {
+   console.log(&quot;Launch scrubbed.&quot;);
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugSyntaxErrors2" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first">Fix <strong>runtime errors</strong> next. Remember to examine the error message for
+clues about what is going wrong. Pay close attention to any line
+numbers mentioned in the message - these will help ye locate and repair
+the mistake in the code.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+
+if (fuellevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugRuntimeErrors1" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first"><em>Arrr!</em>  Now find and fix the runtime error in a longer code sample.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 27000;
+
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+
+if (launchReady) {
+   console.log(&quot;10, 9, 8...&quot;);
+   console.log(&quot;Fed parrot...&quot;);
+   console.log(&quot;6, 5, 4...&quot;);
+   console.log(&quot;Ignition...&quot;);
+   consoul.log(&quot;3, 2, 1...&quot;);
+   console.log(&quot;Liftoff!&quot;);
+} else {
+   console.log(&quot;Launch scrubbed.&quot;);
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugRuntimeErrors2" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first">Solve <strong>logic errors</strong> last. Logic errors do not generate warning
+messages or prevent the code from running, but the program still does
+not work as intended. (Refer to
+<a class="reference internal" href="debugging-logic-errors.html#debugging-logic-errors"><span class="std std-ref">debugging logic errors</span></a> if ye need to
+review).</p>
+<ol class="arabic">
+<li><p class="first">First, run this sample code as-is and examine the output.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
+
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+
+if (crewStatus &amp;&amp; computerStatus === &#39;green&#39;){
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
+
+if (launchReady) {
+   console.log(&#39;10, 9, 8, 7, 6, 5, 4, 3, 2, 1...&#39;);
+   console.log(&#39;Liftoff!&#39;);
+} else {
+   console.log(&#39;Launch scrubbed.&#39;);
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors1" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Should the shuttle have launched? Did it?</p>
+</li>
+<li><p class="first">Let's break the code down into smaller chunks. Consider the first if/else block below. Add <code class="docutils literal notranslate"><span class="pre">console.log(launchReady)</span></code> after this block, then run the program.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors2" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Given the <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code> value, should <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> after the check? Is the program behaving as expected?</p>
+</li>
+<li><p class="first">Now consider the second if/else block. Add another <code class="docutils literal notranslate"><span class="pre">console.log(launchReady)</span></code> after this block and run the program.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
+
+if (crewStatus &amp;&amp; computerStatus === &#39;green&#39;){
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors3" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">crewStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">computerStatus</span></code>, should <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> after this check? Is the program behaving as expected?</p>
+</li>
+<li><p class="first">Now consider both if/else blocks together (keeping the added <code class="docutils literal notranslate"><span class="pre">console.log</span></code> lines). Run the code and examine the output.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let launchReady = false;
+let fuelLevel = 17000;
+let crewStatus = true;
+let computerStatus = &#39;green&#39;;
+
+if (fuelLevel &gt;= 20000) {
+   console.log(&#39;Fuel level cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Insufficient fuel!&#39;);
+   launchReady = false;
+}
+console.log(launchReady);
+
+if (crewStatus &amp;&amp; computerStatus === &#39;green&#39;){
+   console.log(&#39;Crew &amp; computer cleared.&#39;);
+   launchReady = true;
+} else {
+   console.log(&#39;WARNING: Crew or computer not ready!&#39;);
+   launchReady = false;
+}
+console.log(launchReady);
+</pre></div>
+</div>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors4" target="_blank">Run it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Given the values for <code class="docutils literal notranslate"><span class="pre">fuelLevel</span></code>, <code class="docutils literal notranslate"><span class="pre">crewStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">computerStatus</span></code>, should <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>? Is the program behaving as expected?</p>
+</li>
+<li><p class="first">Ahoy, Houston! We spied a problem! The value of <code class="docutils literal notranslate"><span class="pre">launchReady</span></code> assigned
+in the first <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block got changed in the second <code class="docutils literal notranslate"><span class="pre">if/else</span></code>
+block. Dangerous waters, Matey. Since the issue is with <code class="docutils literal notranslate"><span class="pre">launchReady</span></code>,
+ONE way to fix the logic error is to use a different variable to store the
+fuel check result. Update yer code to do this. Verify that yer change works
+by updating the <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statements.</p>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/DebugLogicErrors5" target="_blank">Fix it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first">Almost done, so wipe the sweat off yer brow! Add a final <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block
+to print a countdown and &quot;Liftoff!&quot; if all the checks pass, or print &quot;Launch
+scrubbed&quot; if any check fails.</p>
+<p>Blimey! That's some good work. Now go feed yer parrot.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="asking-good-questions.html"><span aria-hidden="true">&larr;</span> 6.7. Asking Good Questions</a></li>
+        
+        
+        <li class="next"><a href="../strings/index.html">7. Stringing Characters Together <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

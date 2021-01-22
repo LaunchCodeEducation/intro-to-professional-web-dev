@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>29.6. Events Can Call Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="29.7. Exercises: Angular, Lesson 2" href="exercises.html" />
+    <link rel="prev" title="29.5. Responding to User Input" href="user-input.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">29. Angular, Part 2</a></li>
+    <li class="active">29.6. Events Can Call Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="events-can-call-functions">
+<span id="events-call-functions"></span><h1>29.6. Events Can Call Functions<a class="headerlink" href="#events-can-call-functions" title="Permalink to this headline">¶</a></h1>
+<p>For the user input practice, we set the <code class="docutils literal notranslate"><span class="pre">keyup</span></code> and <code class="docutils literal notranslate"><span class="pre">click</span></code> events equal to
+<code class="docutils literal notranslate"><span class="pre">true</span></code>. This just checks to see if these events occur. When they do, the
+input is stored in <code class="docutils literal notranslate"><span class="pre">newMovie</span></code>, and the page refreshes.</p>
+<p>To perform more complicated tasks in response to the user's actions, we can
+call a function when an event occurs. The syntax for this is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(event) = &quot;functionName(arguments...)&quot;
+</pre></div>
+</div>
+<p>Changing the movie list displayed on the web page requires us to modify the
+<code class="docutils literal notranslate"><span class="pre">movies</span></code> array in the <code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> file. We will do this by
+creating an <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> function and linking it to our event handlers.</p>
+<div class="section" id="modify-the-html">
+<h2>29.6.1. Modify the HTML<a class="headerlink" href="#modify-the-html" title="Permalink to this headline">¶</a></h2>
+<p>Let's change our code in <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> to call the function
+<code class="docutils literal notranslate"><span class="pre">addMovie</span></code> and pass the new movie title as the argument.</p>
+<ol class="arabic">
+<li><p class="first">On lines 7 and 8, replace <code class="docutils literal notranslate"><span class="pre">true</span></code> with the function call:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movies col-4&#39;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Movies to Watch<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="p"> </span><span class="o">=</span><span class="s">&quot;let movie of movies&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">movie</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup.enter</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;addMovie(newMovie.value)&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;addMovie(newMovie.value)&#39;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">newMovie.value</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now when the user taps &quot;Enter&quot; or clicks the &quot;Add&quot; button after typing, the
+input <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> gets sent to the function.</p>
+</li>
+<li><p class="first">Since our plan is to use a function to add the new movie to the array, we no
+longer need the title to appear below the input box. Remove
+<code class="docutils literal notranslate"><span class="pre">&lt;p&gt;{{newMovie.value}}&lt;/p&gt;</span></code> from line 9.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="define-the-function">
+<h2>29.6.2. Define the Function<a class="headerlink" href="#define-the-function" title="Permalink to this headline">¶</a></h2>
+<p>Open <code class="docutils literal notranslate"><span class="pre">movie-list.component.ts</span></code> and examine the code:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;movie-list&#39;</span><span class="p">,</span>
+   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./movie-list.component.html&#39;</span><span class="p">,</span>
+   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./movie-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MovieListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Toy Story&#39;</span><span class="p">,</span> <span class="s1">&#39;The Shining&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleepless in Seattle&#39;</span><span class="p">,</span> <span class="s1">&#39;The Martian&#39;</span><span class="p">];</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">movies</span></code> array stores the titles displayed on the web page, and we want to
+update this when the user supplies new information.</p>
+<ol class="arabic" start="3">
+<li><p class="first">Declare a function called <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> that takes one parameter:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">MovieListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Toy Story&#39;</span><span class="p">,</span> <span class="s1">&#39;The Shining&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleepless in Seattle&#39;</span><span class="p">,</span> <span class="s1">&#39;The Martian&#39;</span><span class="p">];</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span>
+   <span class="p">}</span>
+
+   <span class="nx">addMovie</span> <span class="p">(</span><span class="nx">newTitle</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Notice that we have to declare the data type for the <code class="docutils literal notranslate"><span class="pre">newTitle</span></code> parameter.</p>
+</li>
+<li><p class="first">Now add code to <code class="docutils literal notranslate"><span class="pre">push</span></code> the new title to the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">MovieListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Toy Story&#39;</span><span class="p">,</span> <span class="s1">&#39;The Shining&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleepless in Seattle&#39;</span><span class="p">,</span> <span class="s1">&#39;The Martian&#39;</span><span class="p">];</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span>
+   <span class="p">}</span>
+
+   <span class="nx">addMovie</span> <span class="p">(</span><span class="nx">newTitle</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">movies</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newTitle</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">this</span></code> is required.</p>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">It is a common practice to put <code class="docutils literal notranslate"><span class="pre">constructor</span></code> and functions like
+<code class="docutils literal notranslate"><span class="pre">ngOnInit</span></code> AFTER the variable declarations but BEFORE any custom
+functions.</p>
+</div>
+<p>Save the changes and then refresh the page. Enter a new title to verify that it
+appears in the movie list. Your page should look something like:</p>
+<div class="figure">
+<img alt="Updated movie list." src="../../_images/new-movie-added.png" />
+</div>
+</div>
+<div class="section" id="tidying-up-the-display">
+<h2>29.6.3. Tidying Up the Display<a class="headerlink" href="#tidying-up-the-display" title="Permalink to this headline">¶</a></h2>
+<p>Notice that after adding a new movie to the list, the text remains in the input
+box. If we click &quot;Add&quot; multiple times in a row, we would see something like:</p>
+<div class="figure">
+<img alt="Same movie added multiple times." src="../../_images/repeated-movie.png" />
+</div>
+<p>Let's modify the code to try to prevent this from happening.</p>
+<div class="section" id="clear-the-input-box">
+<h3>29.6.3.1. Clear the Input Box<a class="headerlink" href="#clear-the-input-box" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="5">
+<li><p class="first">After the user submits a new title, we can clear the input box by setting its
+value to be the empty string (<code class="docutils literal notranslate"><span class="pre">''</span></code>). Open <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code>
+and modify the input statement as follows:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span><span class="p"> (</span><span class="na">keyup.enter</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;addMovie(newMovie.value); newMovie.value = &#39;&#39;&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code> occurs, the code calls <code class="docutils literal notranslate"><span class="pre">addMovie</span></code>. Once control
+returns from the function, <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> is set equal to <code class="docutils literal notranslate"><span class="pre">''</span></code>, which
+clears any text from the input box.</p>
+</li>
+<li><p class="first">Since the user can also click the &quot;Add&quot; button to submit a title, we need to
+modify the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element as well:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;addMovie(newMovie.value); newMovie.value = &#39;&#39;&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> is set equal to <code class="docutils literal notranslate"><span class="pre">''</span></code>, when &quot;Enter&quot; or &quot;Add&quot; are used
+to submit data.</p>
+</li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="last">Refresh the page and verify that the input box gets cleared after each new
+title.</p>
+</div>
+</div>
+<div class="section" id="check-for-duplicates">
+<h3>29.6.3.2. Check for Duplicates<a class="headerlink" href="#check-for-duplicates" title="Permalink to this headline">¶</a></h3>
+<p>Even though we clear the input box, there is nothing to prevent the user from
+entering the same movie multiple times. While some fans may want to watch a
+film twenty times in a row, let's have our code prevent repeats.</p>
+<p>Recall that the <a class="reference internal" href="../../appendices/array-method-examples/includes-examples.html#includes-examples"><span class="std std-ref">includes method</span></a> checks if an array
+contains a particular element. The method gives us several ways to check for a
+repeated title. One possibility is:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">addMovie</span> <span class="p">(</span><span class="nx">newTitle</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">movies</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">newTitle</span><span class="p">)){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">movies</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newTitle</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array already contains <code class="docutils literal notranslate"><span class="pre">newTitle</span></code>, then the <code class="docutils literal notranslate"><span class="pre">includes</span></code>
+method returns <code class="docutils literal notranslate"><span class="pre">true</span></code>. The NOT operator (<code class="docutils literal notranslate"><span class="pre">!</span></code>) flips the result to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, and line 3 is skipped.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="last">Refresh the page and verify that you cannot enter a duplicate title.</p>
+</div>
+</div>
+</div>
+<div class="section" id="bonus">
+<h2>29.6.4. Bonus<a class="headerlink" href="#bonus" title="Permalink to this headline">¶</a></h2>
+<p>To boost your skills, try these optional tasks to enhance your work:</p>
+<ol class="arabic simple">
+<li>Modify <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> to reject the empty string as a title.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to display an error message if the user does not enter a title
+or submits a title that is already on the list.</li>
+<li>Add CSS to change the color of the error message.</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">example-solutions</span></code> branch of the Angular repo shows completed code for
+the bonus tasks.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>29.6.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Assume that we have an Angular project that presents users with a list of
+potential pets:</p>
+<div class="figure">
+<img alt="Potential pet list." src="../../_images/pet-list.png" />
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following calls the <code class="docutils literal notranslate"><span class="pre">addPet</span></code> function when the user clicks
+on one of the potential pets:</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">#addPet</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;addPet(pet)&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>When the user moves the mouse over an animal, we want to store its name in
+the <code class="docutils literal notranslate"><span class="pre">newFriend</span></code> variable. Which of the following accomplishes this?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">#newFriend</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;newFriend</span> <span class="pre">=</span> <span class="pre">pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;newFriend&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="user-input.html"><span aria-hidden="true">&larr;</span> 29.5. Responding to User Input</a></li>
+        
+        
+        <li class="next"><a href="exercises.html">29.7. Exercises: Angular, Lesson 2 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

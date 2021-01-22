@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>30.3. Attribute Directives &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="30.4. Dynamic Style Changes" href="style-events.html" />
+    <link rel="prev" title="30.2. One-Way Data Binding" href="one-way-binding.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">30. Angular, Part 3</a></li>
+    <li class="active">30.3. Attribute Directives</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="attribute-directives">
+<h1>30.3. Attribute Directives<a class="headerlink" href="#attribute-directives" title="Permalink to this headline">¶</a></h1>
+<p>In the previous two chapters, you learned about two of the three
+<a class="reference internal" href="../angular-lsn2/directives.html#angular-directives"><span class="std std-ref">Angular directives</span></a>---components and structural. You
+will now use data-binding to practice <em>attribute directives</em>. These change the
+appearance of a specific HTML element within the DOM.</p>
+<div class="section" id="open-the-lesson-3-folder">
+<h2>30.3.1. Open the Lesson 3 Folder<a class="headerlink" href="#open-the-lesson-3-folder" title="Permalink to this headline">¶</a></h2>
+<p>Open VSCode and return to the <code class="docutils literal notranslate"><span class="pre">angular-lc101-projects</span></code> folder. Find
+<code class="docutils literal notranslate"><span class="pre">lesson3/examples/src/app</span></code> in the sidebar and open the
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.css</span></code> files.</p>
+<div class="figure">
+<img alt="Access Angular lesson 3 in VSCode." src="../../_images/lesson3-menu.png" />
+</div>
+<p>Open the terminal panel and navigate to the lesson3 <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder. Also
+make sure that you are on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch
+   * master
+   solutions
+$ ls
+   lesson1 lesson2 lesson3
+$ <span class="nb">cd</span> lesson3
+$ ls
+   examples        exercises
+$ <span class="nb">cd</span> examples
+</pre></div>
+</div>
+<p>Once you are in the folder, enter <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> in the terminal, then run
+<code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to launch the project.</p>
+<p>You should see the following:</p>
+<div class="figure">
+<img alt="Attribute directives starting screen." src="../../_images/lesson3-attribute-directive-practice-start.png" />
+</div>
+</div>
+<div class="section" id="update-the-skill-set-styling">
+<h2>30.3.2. Update the Skill-Set Styling<a class="headerlink" href="#update-the-skill-set-styling" title="Permalink to this headline">¶</a></h2>
+<p>Examine the code in the <code class="docutils literal notranslate"><span class="pre">skill-set.component.css</span></code> and
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> files:</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>CSS</p>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">h3</span> <span class="p">{</span>
+   <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+   <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">skills</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>HTML</p>
+<div class="last highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Copy of Skill List<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Right now, there is an awful lot of green on the page, which is set by the
+<code class="docutils literal notranslate"><span class="pre">skills</span></code> class in the CSS file. Let's fix this with some attribute
+directives.</p>
+<div class="section" id="inline-styling">
+<h3>30.3.2.1. Inline Styling<a class="headerlink" href="#inline-styling" title="Permalink to this headline">¶</a></h3>
+<p>To change the color and bullet type of the first list element, we could
+override the CSS instructions with some inline code:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: black&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;A&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>However, we can use what we learned about data-binding to replace these
+hard-coded styles with variables:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alternateColor&quot;</span> <span class="p">[</span><span class="na">type</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bulletType&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Ideas to note:</p>
+<ol class="arabic">
+<li><p class="first">Unlike the structural directives <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> and <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code>, we can add more
+than one attribute directive to an HTML tag.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">style</span></code> attribute has different properties that can be assigned using
+dot notation. Examples include <code class="docutils literal notranslate"><span class="pre">style.color</span></code> and <code class="docutils literal notranslate"><span class="pre">style.background</span></code>. For
+properties with two-word labels, like <code class="docutils literal notranslate"><span class="pre">text-align</span></code>, the data-binding
+syntax accepts either hyphens or camel case (<code class="docutils literal notranslate"><span class="pre">style.text-align</span></code> or
+<code class="docutils literal notranslate"><span class="pre">style.textAlign</span></code>).</p>
+</li>
+<li><p class="first">The variables <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> and <code class="docutils literal notranslate"><span class="pre">bulletType</span></code> are assigned in the
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code> file.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SkillSetComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">listHeading</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;Some Coding Skills I Know&#39;</span><span class="p">;</span>
+   <span class="nx">skills</span>: <span class="kt">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Loops&#39;</span><span class="p">,</span> <span class="s1">&#39;Conditionals&#39;</span><span class="p">,</span> <span class="s1">&#39;Functions&#39;</span><span class="p">,</span> <span class="s1">&#39;Classes&#39;</span><span class="p">,</span> <span class="s1">&#39;Modules&#39;</span><span class="p">,</span> <span class="s1">&#39;Git&#39;</span><span class="p">,</span> <span class="s1">&#39;HTML/CSS&#39;</span><span class="p">];</span>
+   <span class="nx">alternateColor</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">;</span>
+   <span class="nx">bulletType</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">;</span>
+   <span class="nx">changeColor</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span> <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">NEAT! Reassigning the <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file
+causes EVERY tag with <code class="docutils literal notranslate"><span class="pre">[style.color]=&quot;alternateColor&quot;</span></code> to change color.</p>
+</li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Change the values for the <code class="docutils literal notranslate"><span class="pre">alternateColor</span></code> and <code class="docutils literal notranslate"><span class="pre">bulletType</span></code> variables.
+Save your work and refresh the web page to see the results.</p>
+<p class="last">Note that <code class="docutils literal notranslate"><span class="pre">bulletType</span></code> takes options of numbers (<code class="docutils literal notranslate"><span class="pre">1</span></code>), upper and lower
+case letters (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>), or upper and lower case Roman numerals (<code class="docutils literal notranslate"><span class="pre">I</span></code>,
+<code class="docutils literal notranslate"><span class="pre">i</span></code>). For a detailed description of using the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute in an
+ordered list, check out the
+<a class="reference external" href="https://www.w3schools.com/tags/att_ol_type.asp" target="_blank">W3 schools documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+<div class="section" id="changing-styles-with-booleans">
+<span id="id1"></span><h3>30.3.2.2. Changing Styles with Booleans<a class="headerlink" href="#changing-styles-with-booleans" title="Permalink to this headline">¶</a></h3>
+<p>We can accomplish the same results by applying a class to the second <code class="docutils literal notranslate"><span class="pre">ol</span></code>
+tag:</p>
+<ol class="arabic">
+<li><p class="first">Add the following code to <code class="docutils literal notranslate"><span class="pre">skill-set.component.css</span></code>:</p>
+<div class="highlight-CSS notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">ol-style</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+   <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+   <span class="k">list-style-type</span><span class="p">:</span> <span class="kc">upper-roman</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The CSS property <code class="docutils literal notranslate"><span class="pre">list-style-type</span></code> defines the look of the list item
+markers, similar to the <code class="docutils literal notranslate"><span class="pre">ol</span></code> element's <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute. The values
+available to the CSS property are different, however. You can find a full
+list at <a class="reference external" href="https://www.w3schools.com/cssref/pr_list-style-type.asp" target="_blank">W3 schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</li>
+<li><p class="first">Next, modify line 8 in the starter HTML:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alternateColor&quot;</span> <span class="p">[</span><span class="na">type</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bulletType&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Copy of Skill List<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">class.ol-style</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;changeColor&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>After saving these updates, the skills list changes appearance:</p>
+<div class="figure">
+<img alt="Attribute directives midpoint screen." src="../../_images/lesson3-styled-skill-text.png" />
+</div>
+</li>
+<li><p class="first">Instead of setting <code class="docutils literal notranslate"><span class="pre">[class.ol-style]</span></code> equal to a string, the
+<code class="docutils literal notranslate"><span class="pre">changeColor</span></code> variable is a boolean defined in the
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.ts</span></code> file. If <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, Angular
+adds the <code class="docutils literal notranslate"><span class="pre">ol-style</span></code> class of the tag. If <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>,
+the class remains absent from the tag.</p>
+</li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="last arabic simple">
+<li>Set <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> and verify that the second ordered list
+changes back to green, left-aligned, and numbered.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">p-style</span></code> class in the CSS file and modify line 12  in
+<code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> to make the color and alignment of the
+<code class="docutils literal notranslate"><span class="pre">p</span></code> element depend on <code class="docutils literal notranslate"><span class="pre">!changeColor</span></code>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="what-about-the-buttons">
+<h2>30.3.3. What About the Buttons?<a class="headerlink" href="#what-about-the-buttons" title="Permalink to this headline">¶</a></h2>
+<p>Nice display of eagerness! We will deal with the buttons on the next page.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>30.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">reversed</span></code> attribute labels ordered lists from highest to lowest values
+(9, 8, 7... instead of 1, 2, 3...). Unlike the <code class="docutils literal notranslate"><span class="pre">class</span></code> or <code class="docutils literal notranslate"><span class="pre">style</span></code>
+attributes, <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is not set equal to a string inside the HTML tag. Just
+having it in the tag flips the numbering of the bullets.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: blue&quot;</span> <span class="na">reversed</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>How could we data-bind the <code class="docutils literal notranslate"><span class="pre">reversed</span></code> attribute in an <code class="docutils literal notranslate"><span class="pre">ol</span></code> tag? Indicate
+ALL working options.</p>
+<ol class="last arabic simple">
+<li>Bind the attribute to a variable that holds the string <code class="docutils literal notranslate"><span class="pre">&quot;reversed&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;notReversed&quot;</span></code>.</li>
+<li>Bind the attribute to a boolean variable set as <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+<li>Bind the attribute to a boolean statement like <code class="docutils literal notranslate"><span class="pre">variable1</span> <span class="pre">&gt;</span> <span class="pre">variable2</span></code>.</li>
+<li>Bind the attribute to the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</li>
+<li>Just put square brackets around <code class="docutils literal notranslate"><span class="pre">reversed</span></code> and hope for the best.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="one-way-binding.html"><span aria-hidden="true">&larr;</span> 30.2. One-Way Data Binding</a></li>
+        
+        
+        <li class="next"><a href="style-events.html">30.4. Dynamic Style Changes <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

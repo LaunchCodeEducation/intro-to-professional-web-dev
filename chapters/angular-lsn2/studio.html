@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>29.8. Studio: Angular, Part 2 &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="30. Angular, Part 3" href="../angular-lsn3/index.html" />
+    <link rel="prev" title="29.7. Exercises: Angular, Lesson 2" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">29. Angular, Part 2</a></li>
+    <li class="active">29.8. Studio: Angular, Part 2</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-angular-part-2">
+<h1>29.8. Studio: Angular, Part 2<a class="headerlink" href="#studio-angular-part-2" title="Permalink to this headline">¶</a></h1>
+<p>At the end of the first mission planner studio, multiple components display
+data about the mission. Your job is to allow the user to update the mission
+plan by adding user interaction.</p>
+<div class="section" id="getting-started">
+<h2>29.8.1. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>This studio uses the same mission planner repository as Angular studio part 1.
+There is no need to fork and clone new starter code.</p>
+<ol class="arabic simple">
+<li>Open your studio 1 project in VSCode.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see if you have any uncommitted work. If you do,
+resolve it.</li>
+<li>Checkout the <code class="docutils literal notranslate"><span class="pre">studio-2</span></code> branch.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to download dependencies.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to build and serve the project.</li>
+</ol>
+</div>
+<div class="section" id="review-the-starter-code">
+<h2>29.8.2. Review the Starter Code<a class="headerlink" href="#review-the-starter-code" title="Permalink to this headline">¶</a></h2>
+<p>The starter code for this studio is similar to the <em>solution</em> for the first
+mission planner studio, but with a few notable changes.</p>
+<div class="section" id="editable-mission-name">
+<h3>29.8.2.1. Editable Mission Name<a class="headerlink" href="#editable-mission-name" title="Permalink to this headline">¶</a></h3>
+<p>The mission name can now be edited by clicking on the text, changing the text
+in the input box, and then updated by clicking save or pressing the enter key.
+Review the code in <code class="docutils literal notranslate"><span class="pre">src/app/header/header.component.html</span></code> and
+<code class="docutils literal notranslate"><span class="pre">src/app/header/header.component.ts</span></code> to see how this feature was implemented.</p>
+<div class="figure" id="id1">
+<img alt="Animated gif of mission name being clicked, edited, and then saved." src="../../_images/edit-mission-name.gif" />
+<p class="caption"><span class="caption-text">Example of mission name being edited.</span></p>
+</div>
+</div>
+<div class="section" id="crew-array-of-objects">
+<h3>29.8.2.2. Crew Array of Objects<a class="headerlink" href="#crew-array-of-objects" title="Permalink to this headline">¶</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code> in VSCode. Notice on line 10 that a
+crew array is defined. This array of objects will be used to display the crew.
+Each crew member has a <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">firstMission</span></code> property. If
+<code class="docutils literal notranslate"><span class="pre">firstMission</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, it means this is the first mission for that
+person.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-crew&#39;</span><span class="p">,</span>
+   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./crew.component.html&#39;</span><span class="p">,</span>
+   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./crew.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">CrewComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+   <span class="nx">crew</span>: <span class="kt">object</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Eileen Collins&quot;</span><span class="p">,</span> <span class="nx">firstMission</span>: <span class="kt">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Mae Jemison&quot;</span><span class="p">,</span> <span class="nx">firstMission</span>: <span class="kt">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Ellen Ochoa&quot;</span><span class="p">,</span> <span class="nx">firstMission</span>: <span class="kt">true</span><span class="p">}</span>
+   <span class="p">];</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span>
+   <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>29.8.3. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">All of these features only <em>temporarily</em> alter the data. If you refresh the page, the original data will reappear.</p>
+</div>
+<div class="section" id="edit-rocket-name">
+<h3>29.8.3.1. Edit Rocket Name<a class="headerlink" href="#edit-rocket-name" title="Permalink to this headline">¶</a></h3>
+<p>The rocket name should be clickable and editable like the mission name. Alter
+<code class="docutils literal notranslate"><span class="pre">src/app/header/header.component.html</span></code> and
+<code class="docutils literal notranslate"><span class="pre">src/app/header/header.component.ts</span></code> to allow the user to edit the rocket
+name.</p>
+</div>
+<div class="section" id="use-ngfor-to-display-crew">
+<h3>29.8.3.2. Use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to Display Crew<a class="headerlink" href="#use-ngfor-to-display-crew" title="Permalink to this headline">¶</a></h3>
+<p>Replace the static list of <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tags in
+<code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> with an <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> that loops over the
+<code class="docutils literal notranslate"><span class="pre">crew</span></code> array.</p>
+<p>Add this code to <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="display-1st-mission-status">
+<h3>29.8.3.3. Display 1st Mission Status<a class="headerlink" href="#display-1st-mission-status" title="Permalink to this headline">¶</a></h3>
+<p>If a crew member's <code class="docutils literal notranslate"><span class="pre">firstMission</span></code> property is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then display the text
+&quot;- 1st&quot; next to their name.</p>
+<div class="figure" id="id2">
+<img alt="Example of first mission status appearing next to crew member name." src="../../_images/first-mission-example.png" />
+<p class="caption"><span class="caption-text">Example of first mission status being shown.</span></p>
+</div>
+<p>Add this code right after the member name in
+<code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>- 1st<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="add-crew-members">
+<h3>29.8.3.4. Add Crew Members<a class="headerlink" href="#add-crew-members" title="Permalink to this headline">¶</a></h3>
+<p>Allow crew members to be added to the list. To create a new crew member, two
+pieces of information are required:</p>
+<ol class="arabic simple">
+<li>crew member's name</li>
+<li>the first mission status</li>
+</ol>
+<p>We will use an input box and a <em>checkbox</em> to collect the data.</p>
+<div class="figure" id="id3">
+<img alt="Animated gif of crew member being added to list after add button is clicked." src="../../_images/add-crew.gif" />
+<p class="caption"><span class="caption-text">Example of crew member being added.</span></p>
+</div>
+<p>Add this code to the <em>bottom</em> of <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">name</span><span class="p"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>First mission<span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">firstMission</span><span class="p"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;add(name.value, firstMission.checked)&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Line 1 creates an input that declares the local variable <code class="docutils literal notranslate"><span class="pre">name</span></code>. Line 2
+defines a checkbox that declares the <code class="docutils literal notranslate"><span class="pre">firstMission</span></code> variable. Line 3 creates
+a button that, when clicked, sends the new <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> value to
+the <code class="docutils literal notranslate"><span class="pre">add</span></code> function. This function adds the new crew member to the roster!</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code> file, include this code for the
+<code class="docutils literal notranslate"><span class="pre">add</span></code> function:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">add</span><span class="p">(</span><span class="nx">memberName</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">isFirst</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">crew</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">name</span>: <span class="kt">memberName</span><span class="p">,</span> <span class="nx">firstMission</span>: <span class="kt">isFirst</span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="remove-crew-members">
+<h3>29.8.3.5. Remove Crew Members<a class="headerlink" href="#remove-crew-members" title="Permalink to this headline">¶</a></h3>
+<p>Allow removing of crew members by adding a button next to each person in the
+crew list. When the remove button is clicked, the <code class="docutils literal notranslate"><span class="pre">remove</span></code> function in the
+crew component will be called, which deletes that person from the crew array.</p>
+<div class="figure" id="id4">
+<img alt="Animated gif of crew member disappearing from the list after the remove button for that item is clicked." src="../../_images/remove-crew.gif" />
+<p class="caption"><span class="caption-text">Example of crew member being removed.</span></p>
+</div>
+<p>Add line 4 to file <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code>. Be sure to put it
+before the closing <code class="docutils literal notranslate"><span class="pre">&lt;/li&gt;</span></code>, so that the button appears next to each item in
+the crew list.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
+   <span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span>
+   <span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>- 1st<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;remove(member)&quot;</span><span class="p">&gt;</span>remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">remove</span></code> function shown below to the crew component in the
+<code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code> file.</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">remove</span><span class="p">(</span><span class="nx">member</span>: <span class="kt">object</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">crew</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">member</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">crew</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="edit-crew-members">
+<h3>29.8.3.6. Edit Crew Members<a class="headerlink" href="#edit-crew-members" title="Permalink to this headline">¶</a></h3>
+<p>Finally we are going to allow the user to edit crew members who have already
+been added.</p>
+<ol class="arabic">
+<li><p class="first">If the crew member name is clicked, then their name should be replaced with
+a text input and a save button.</p>
+</li>
+<li><p class="first">When save is clicked, the input and save button are replaced by the
+text-only version of the name.</p>
+</li>
+<li><p class="first">Only one crew member can be edited at a time.</p>
+<div class="figure" id="id5">
+<img alt="Animated gif of crew member name being clicked, edited, and then saved." src="../../_images/edit-crew-name.gif" />
+<p class="caption"><span class="caption-text">Example of crew member name being edited.</span></p>
+</div>
+</li>
+</ol>
+<p>We need to add a click event to the member name.</p>
+<ol class="arabic" start="4">
+<li><p class="first">Put <code class="docutils literal notranslate"><span class="pre">{{member.name}}</span></code> inside of a <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> that has a <code class="docutils literal notranslate"><span class="pre">(click)</span></code>
+handler.</p>
+</li>
+<li><p class="first">Make the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> look like the
+code below.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">span</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;edit(member)&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;editable-text&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>- 1st<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;remove(member)&quot;</span><span class="p">&gt;</span>remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>We need a way of knowing which crew is being edited.</p>
+<ol class="arabic" start="6">
+<li><p class="first">Add this property to the crew component in file
+<code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>. The property <code class="docutils literal notranslate"><span class="pre">memberBeingEdited</span></code>
+represents the crew member who is currently being edited.</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">memberBeingEdited</span>: <span class="kt">object</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Next add a <code class="docutils literal notranslate"><span class="pre">edit</span></code> function to the crew component file
+<code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.ts</span></code>. This function will set a
+<code class="docutils literal notranslate"><span class="pre">memberBeingEdited</span></code> variable to be equal to the crew member who was
+clicked.</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">edit</span><span class="p">(</span><span class="nx">member</span>: <span class="kt">object</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">memberBeingEdited</span> <span class="o">=</span> <span class="nx">member</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Now we need to add an <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> that will show the two versions of the member,
+the display state or the edit state.</p>
+<ol class="arabic" start="8">
+<li><p class="first">In the edit state, an input box with a save button will appear, but for now
+the input and save won't have any functionality. Make your
+<code class="docutils literal notranslate"><span class="pre">src/app/crew/crew.component.html</span></code> file look like the below code.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Crew<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of crew&quot;</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;memberBeingEdited !== member; else elseBlock&quot;</span><span class="p">&gt;</span>
+         <span class="c">&lt;!-- display state of member --&gt;</span>
+         <span class="p">&lt;</span><span class="nt">span</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;edit(member)&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;editable-text&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">span</span> <span class="p">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member.firstMission&quot;</span><span class="p">&gt;</span>
+            - 1st
+         <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;remove(member)&quot;</span><span class="p">&gt;</span>remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">ng-template</span> <span class="p">#</span><span class="na">elseBlock</span><span class="p">&gt;</span>
+         <span class="c">&lt;!-- edit state of member --&gt;</span>
+         <span class="p">&lt;</span><span class="nt">input</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+
+   <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">name</span><span class="p"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>First mission<span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">firstMission</span><span class="p"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;add(name.value, firstMission.checked)&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>Finally, we are going to make the edit state update the member name when save
+is clicked.</p>
+<ol class="arabic" start="9">
+<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags to look like:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ng-template</span> <span class="p">#</span><span class="na">elseBlock</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- edit state of member --&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">updatedName</span><span class="p"> (</span><span class="na">keyup.enter</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;save(updatedName.value, member)&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">member.name</span><span class="cp">}}</span><span class="s">&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;save(updatedName.value, member)&quot;</span><span class="p">&gt;</span>save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>The last step is to add the <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component. This
+function will be called when the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> is clicked or when the enter key
+is pressed and the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> has focus.</p>
+<ol class="arabic simple" start="10">
+<li>Add the below <code class="docutils literal notranslate"><span class="pre">save</span></code> function to the crew component.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">save</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">member</span>: <span class="kt">object</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">member</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">memberBeingEdited</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2>29.8.4. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<p>Before starting on any of these bonus features, be sure to commit and push your
+work.</p>
+<ol class="arabic simple">
+<li>Don't allow duplicate names to be added to the crew.</li>
+<li>Allow user to add equipment.</li>
+<li>Allow the user to edit equipment.</li>
+<li>Allow the user to remove equipment.</li>
+<li>Allow user to add experiments.</li>
+<li>Allow the user to edit experiments.</li>
+<li>Allow the user to remove experiments.</li>
+</ol>
+</div>
+<div class="section" id="sanity-check">
+<h2>29.8.5. Sanity Check<a class="headerlink" href="#sanity-check" title="Permalink to this headline">¶</a></h2>
+<p>Complete code for this studio (without the bonus content) can be found in the
+<code class="docutils literal notranslate"><span class="pre">studio-2-solution</span></code> branch of the repository.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 29.7. Exercises: Angular, Lesson 2</a></li>
+        
+        
+        <li class="next"><a href="../angular-lsn3/index.html">30. Angular, Part 3 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

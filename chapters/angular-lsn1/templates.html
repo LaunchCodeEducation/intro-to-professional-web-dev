@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>28.2. Templates &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="28.3. Angular File Structure" href="file-structure.html" />
+    <link rel="prev" title="28.1. Why Use JavaScript Libraries" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">28. Angular, Part 1</a></li>
+    <li class="active">28.2. Templates</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="templates">
+<h1>28.2. Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h1>
+<p>Take a look at the homepage for <a class="reference external" href="https://www.launchcode.org/" target="_blank">LaunchCode<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+The content includes text, images, a navigation bar, buttons, embedded videos,
+static and scrolling sponsor logos, and links. All of this content is carefully
+arranged.</p>
+<div class="section" id="your-own-website">
+<h2>28.2.1. Your Own Website<a class="headerlink" href="#your-own-website" title="Permalink to this headline">¶</a></h2>
+<p>Imagine building your own website with a smaller set of features. You could
+include favorite movies or sports teams, cities where you have lived, schools
+attended, hobbies, etc. Using your <a class="reference internal" href="../html/index.html#html-index"><span class="std std-ref">HTML</span></a> and
+<a class="reference internal" href="../css/index.html#css-index"><span class="std std-ref">CSS</span></a> knowledge, you could construct an appealing layout with
+carefully selected and arranged tags (<code class="docutils literal notranslate"><span class="pre">&lt;div&gt;,</span> <span class="pre">&lt;button&gt;,</span> <span class="pre">&lt;img&gt;</span></code>, etc.).</p>
+<p>Now imagine you have to change one or more items on the page. Maybe you move
+and your school or team loyalty shifts. Updating the city, school logo, etc.
+means adjusting those items in the HTML, and if that information appears in
+other areas of your website, then you need to modify that code as well. Also,
+you need to consider any formatting changes that result from adding or removing
+content.</p>
+<p>Whew! Refreshing your website rapidly gets tedious, especially if it contains
+lots of information or consists of multiple pages. If only there was a way to
+automatically update the content and quickly rearrange the layout for your
+site...</p>
+</div>
+<div class="section" id="templates-are-frameworks">
+<h2>28.2.2. Templates are Frameworks<a class="headerlink" href="#templates-are-frameworks" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">A <strong>template</strong> provides the general structure for a web page. It identifies
+where different elements get placed on the page, but it does NOT fill them with
+content. Think of a template as an outline for what we want the page to look
+like. No details yet, just defined spaces where information needs to be added.</p>
+<p>Let's see how using a template makes our lives easier.</p>
+<div class="section" id="no-template">
+<h3>28.2.2.1. No Template<a class="headerlink" href="#no-template" title="Permalink to this headline">¶</a></h3>
+<p>To demonstrate how helpful templates can be, you will need a copy of the LaunchCode Angular projects repository:</p>
+<ol class="arabic simple">
+<li>Fork the
+<a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">angular-lc101-projects repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+on GitHub.</li>
+<li>Clone your fork. If you need a reminder for how to do this, refer to the
+<a class="reference internal" href="../git/studio.html#clone-from-git"><span class="std std-ref">Git studio</span></a>.</li>
+</ol>
+<p>The repository contains a lot of angular code that we will soon go over. For now, navigate to
+<em>lesson1/examples/noTemplate</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+   angular-lc101-projects
+$ ls
+   lesson1 lesson2 lesson3
+$ <span class="nb">cd</span> lesson1
+$ ls
+   exercises examples
+$ <span class="nb">cd</span> examples/noTemplate
+</pre></div>
+</div>
+<p>The code in <code class="docutils literal notranslate"><span class="pre">noTemplate/index.html</span></code> builds a simple 3-column web page. It defines the location for
+each heading, unordered list, and button. The <code class="docutils literal notranslate"><span class="pre">noTemplate/style.css</span></code> file (not shown) specifies
+the font, text size, colors, etc.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, Screen!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row list&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movie&#39;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Movies<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Hidden Figures<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>The Princess Bride<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ferris Bueller&#39;s Day Off<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movie&#39;</span><span class="p">&gt;</span>More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;school&#39;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Education<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>LaunchCode<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Monsters University<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>My HS<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;school&#39;</span><span class="p">&gt;</span>More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;hobby&#39;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Hobbies<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Knitting<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cycling<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Shark Rodeo<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;hobby&#39;</span><span class="p">&gt;</span>More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;links&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Links<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.launchcode.org/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>LaunchCode<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.webelements.com/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>WebElements<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Copy the file path for <code class="docutils literal notranslate"><span class="pre">noTemplate/index.html</span></code> and enter the address into your browser. You'll see a page
+like this:</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../../_images/angularNoTemplate.png"><img alt="A uniquely styled web page." src="../../_images/angularNoTemplate.png" style="width: 972.8000000000001px; height: 436.8px;" /></a>
+<p class="caption"><span class="caption-text">A uniquely styled web page.</span></p>
+</div>
+<p>We could drastically improve the appearance and content of the page by playing
+around with the tags, classes, styles and text. However, any change we want to
+make needs to be coded directly into the HTML and CSS files.</p>
+<p>This quickly becomes inefficient, especially if changing the items involves
+multiple blocks of code.</p>
+</div>
+<div class="section" id="a-better-way">
+<h3>28.2.2.2. A Better Way<a class="headerlink" href="#a-better-way" title="Permalink to this headline">¶</a></h3>
+<p>Each section in a template contains one or more <em>blanks</em> where specific items
+need to be added. Separate JavaScript code sends data to the template to fill
+in these blanks, and this data can change based on a user's actions.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{mainHeading}}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row list&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movie&#39;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Movies<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>{{movieTitles}}<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movie&#39;</span><span class="p">&gt;</span>More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;school&#39;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Education<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>{{schoolNames}}<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;school&#39;</span><span class="p">&gt;</span>More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;hobby&#39;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Hobbies<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>{{hobbies}}<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;hobby&#39;</span><span class="p">&gt;</span>More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;links&quot;</span><span class="p">&gt;</span>{{headingAndLinkList}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Don't change your HTML in <code class="docutils literal notranslate"><span class="pre">noTemplate/index.html</span></code>. We haven't yet covered the Angular work needed
+to make use of this templating syntax.</p>
+</div>
+<p>This HTML looks similar to the previous example, but saves about 16 lines. It
+provides the same <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;&lt;/div&gt;</span></code> structure but replaces some of the specific
+text between the tags with <em>placeholders</em>.</p>
+<p>Each item listed inside <code class="docutils literal notranslate"><span class="pre">{{}}</span></code> refers to data that will be passed into the
+template and automatically formatted. For example, the template converts
+<code class="docutils literal notranslate"><span class="pre">{{movieTitles}}</span></code> into a sequence of <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> tags.</p>
+<p>By defining our template in an even more general manner, we could replace the
+<code class="docutils literal notranslate"><span class="pre">h4</span></code>, <code class="docutils literal notranslate"><span class="pre">ul</span></code> and <code class="docutils literal notranslate"><span class="pre">button</span></code> structure with a single placeholder.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{mainHeading}}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row list&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;movie&#39;</span><span class="p">&gt;</span>{{movieContent}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;school&#39;</span><span class="p">&gt;</span>{{schoolContent}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;hobby&#39;</span><span class="p">&gt;</span>{{hobbyContent}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;links&quot;</span><span class="p">&gt;</span>{{linkContent}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>By using a template to build the website, changing the list of movies, schools,
+or hobbies involves altering something as simple as an array or object. After
+changing that data, the template does the tedious work of modifying the HTML.
+The list of movies would update automatically if we add &quot;Up&quot; to our
+<code class="docutils literal notranslate"><span class="pre">favoriteMovies</span></code> array, which then gets passed into <code class="docutils literal notranslate"><span class="pre">{{movieContent}}</span></code>. We
+do not need to worry about re-coding any of the tags.</p>
+</div>
+<div class="section" id="templates-support-dynamic-content">
+<h3>28.2.2.3. Templates Support Dynamic Content<a class="headerlink" href="#templates-support-dynamic-content" title="Permalink to this headline">¶</a></h3>
+<p>If we add a search box to our website, a user could enter <em>NASA images</em>,
+<em>giraffe gif</em>, <em>move trailers</em>, or something else. We cannot know ahead of time
+what a user will request, but we want our website to be able to display any
+relevant results.</p>
+<p>Besides making it easier to organize and display content, templates also allow
+us to create a <em>dynamic</em> page. This means that its appearance changes to fit
+new information. For example, we can define a grid for displaying photos in
+rows of 4 across the page. Whether the images are of giraffes, tractors, or
+balloons does not matter. The template sets the layout, and the code feeds in
+the data. If more photos are found, extra rows are produced on the page, but
+each row shows 4 images.</p>
+<p>Templates must be used anytime we create a web page that responds to a changing
+set of data, especially if that data is unknown to us.</p>
+</div>
+</div>
+<div class="section" id="templates-provide-structure-not-content">
+<h2>28.2.3. Templates Provide Structure, Not Content<a class="headerlink" href="#templates-provide-structure-not-content" title="Permalink to this headline">¶</a></h2>
+<p>Templates allow us to decide where to display data on our web page, even if we
+do not know exactly what that data will be. Information pulled from forms,
+APIs, or user input will be formatted to fit within our design.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/AngularTemplateDiagram.png"><img alt="Visual of a template structure." src="../../_images/AngularTemplateDiagram.png" style="width: 673.2px; height: 422.1px;" /></a>
+</div>
+<p>In the figure, the black outlines represent different structures defined by the
+template. Each structure governs a specific portion of the screen. As data gets
+fed into the template, the appearance of the page changes.</p>
+<p>If no data is sent to a particular structure, that part of the screen remains
+empty because the space is still reserved. Other components of the page will
+work around that space.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>28.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">Why should we use a template to design a web page rather than just coding
+the entire site with HTML and CSS?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>PREDICT: Do you think that changing the CSS for the <em>template</em> affects all
+of the smaller parts within that template?</p>
+<ol class="last arabic simple">
+<li>Yes</li>
+<li>No</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>PREDICT: Do you think that changing the CSS for one <em>component</em> in a
+template affects all of the other parts within that template?</p>
+<ol class="last arabic simple">
+<li>Yes</li>
+<li>No</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> 28.1. Why Use JavaScript Libraries</a></li>
+        
+        
+        <li class="next"><a href="file-structure.html">28.3. Angular File Structure <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

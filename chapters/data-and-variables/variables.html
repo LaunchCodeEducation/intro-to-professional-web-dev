@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.3. Variables &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.4. More On Variables" href="more-on-variables.html" />
+    <link rel="prev" title="4.2. Type Conversion" href="type-conversion.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">4. Data and Variables</a></li>
+    <li class="active">4.3. Variables</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="variables">
+<h1>4.3. Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">One of the most powerful features of a programming language is the ability to manipulate variables. A <strong>variable</strong> is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string. Variables allow us to store values for later use.</p>
+<p>A useful visual analogy for how a variable works is that of a label that <em>points to</em> a piece of data.</p>
+<div class="figure" id="id1">
+<img alt="A label, programmingLanguages, pointing to a the string value &quot;JavaScript&quot;" src="../../_images/variable.png" />
+<p class="caption"><span class="caption-text">A variable can be visualized as a label pointing to a specific piece of data.</span></p>
+</div>
+<p>In this figure, the name <code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> points to the string value <code class="docutils literal notranslate"><span class="pre">&quot;JavaScript&quot;</span></code>. This is more than an analogy, since it also is representative of how a variable and its value are stored in a computer's memory.</p>
+<p>With this analogy in mind, let's look at how we can formally create variables in JavaScript.</p>
+<div class="section" id="declaring-and-initializing-variables-with-let">
+<h2>4.3.1. Declaring and Initializing Variables With <code class="docutils literal notranslate"><span class="pre">let</span></code><a class="headerlink" href="#declaring-and-initializing-variables-with-let" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-1"></span><p id="index-2">To create a variable in JavaScript, create a new name for the variable and precede it with the keyword <code class="docutils literal notranslate"><span class="pre">let</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguage</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This creates a variable named <code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code>. The act of creating a variable is referred to as <strong>variable declaration</strong>, or simply <strong>declaration</strong>.</p>
+<span class="target" id="index-3"></span><p id="index-4">Once a variable has been declared, it may be given a value using an <strong>assignment statement</strong>, which uses <code class="docutils literal notranslate"><span class="pre">=</span></code> to give a variable a value.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguage</span><span class="p">;</span>
+<span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The act of assigning a variable a value for the first time is called <strong>initialization</strong>.</p>
+<p>The first line creates a variable that does not yet have a value. The variable is a label that does not point to any data.</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../../_images/unassigned-variable.png"><img alt="The name &quot;programmingLanguage&quot; with no arrow connecting it to data." src="../../_images/unassigned-variable.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">The result of <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">programmingLanguage;</span></code></span></p>
+</div>
+<p>The second line assigns the variable a value, which connects the name to the given piece of data.</p>
+<div class="figure" id="id3">
+<img alt="A label, programmingLanguages, pointing to a the string value &quot;JavaScript&quot;" src="../../_images/variable.png" />
+<p class="caption"><span class="caption-text">The result of <code class="docutils literal notranslate"><span class="pre">programmingLanguage</span> <span class="pre">=</span> <span class="pre">&quot;JavaScript&quot;;</span></code></span></p>
+</div>
+<p>It is possible to declare <em>and</em> initialize a variable with a single line of code. This is the most common way to create a variable.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>You will see some programmers use <code class="docutils literal notranslate"><span class="pre">var</span></code> to create a variable in JavaScript, like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>While this is valid syntax, you should NOT use <code class="docutils literal notranslate"><span class="pre">var</span></code> to declare a variable. Using <code class="docutils literal notranslate"><span class="pre">var</span></code> is old JavaScript syntax, and it differs from <code class="docutils literal notranslate"><span class="pre">let</span></code> in important ways that we will learn about later. When you see examples using <code class="docutils literal notranslate"><span class="pre">var</span></code>, use <code class="docutils literal notranslate"><span class="pre">let</span></code> instead.</p>
+<p class="last">If you're curious, read about <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let" target="_blank">the differences between var and let<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<p>To give a variable a value, use the <strong>assignment operator</strong>, <code class="docutils literal notranslate"><span class="pre">=</span></code>. This operator should not be confused with the concept of <em>equality</em>, which expresses whether two things are the &quot;same&quot; (we will see later that equality uses the <code class="docutils literal notranslate"><span class="pre">===</span></code> operator).  The assignment statement links a <em>name</em>, on the left-hand side of the operator, with a <em>value</em>, on the right-hand side. This is why you will get an error if you try to run:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;JavaScript&quot;</span> <span class="o">=</span> <span class="nx">programmingLanguage</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>An assignment statement must have the name on the left-hand side, and the value on the right-hand side.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>To avoid confusion when reading or writing code, say to yourself:</p>
+<p><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> is assigned <code class="docutils literal notranslate"><span class="pre">'JavaScript'</span></code></p>
+<p>or</p>
+<p><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> gets the value <code class="docutils literal notranslate"><span class="pre">'JavaScript'</span></code>.</p>
+<p>Don't say:</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> equals <code class="docutils literal notranslate"><span class="pre">'JavaScript'</span></code>.</p>
+</div>
+<div class="admonition-warning admonition" id="global-var-intro">
+<span id="index-5"></span><p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>What if, by mistake, you leave off <code class="docutils literal notranslate"><span class="pre">let</span></code> when declaring a variable?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without <code class="docutils literal notranslate"><span class="pre">let</span></code> is valid syntax, but it results in very different behavior. Such a variable will be a <strong>global variable</strong>, which we will discuss later.</p>
+<p class="last">The main point to keep in mind for now is that you should <em>always</em> use <code class="docutils literal notranslate"><span class="pre">let</span></code> unless you have a specific reason not to do so.</p>
+</div>
+</div>
+<div class="section" id="evaluating-variables">
+<h2>4.3.2. Evaluating Variables<a class="headerlink" href="#evaluating-variables" title="Permalink to this headline">¶</a></h2>
+<p id="index-6">After a variable has been created, it may be used later in a program anywhere a value may be used. For example, <code class="docutils literal notranslate"><span class="pre">console.log</span></code> prints a value, we can also give <code class="docutils literal notranslate"><span class="pre">console.log</span></code> a variable.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>These two examples have the exact same output.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>When we refer to a variable name, we are <strong>evaluating</strong> the variable. The effect is just as if the value of the variable is substituted for the variable name in the code when executed.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pi</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>What&#39;s up, Doc?
+17
+3.14159
+</pre></div>
+</div>
+</div>
+<p>In each case, the printed result is the value of the variable.</p>
+<p>Like values, variables also have types. We determine the type of a variable the same way we determine the type of a value, using <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">message</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">n</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">pi</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>string
+number
+number
+</pre></div>
+</div>
+</div>
+<p>The type of a variable is the type of the data it currently refers to.</p>
+</div>
+<div class="section" id="reassigning-variables">
+<h2>4.3.3. Reassigning Variables<a class="headerlink" href="#reassigning-variables" title="Permalink to this headline">¶</a></h2>
+<p>We use variables in a program to &quot;remember&quot; things, like the current score at the football game. As their name implies, variables can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.</p>
+<p>To see this, read and then run the following program in a code editor. You'll notice that we change the value of <code class="docutils literal notranslate"><span class="pre">day</span></code> three times, and on the third assignment we even give it a value that is of a different data type.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+
+ <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Friday&quot;</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+
+ <span class="nx">day</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>A great deal of programming involves asking the computer to remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We only use <code class="docutils literal notranslate"><span class="pre">let</span></code> when <em>declaring</em> a variable, that is, when we create it. We do NOT use <code class="docutils literal notranslate"><span class="pre">let</span></code> when reassigning the variable to a different value. In fact, doing so will result in an error.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>4.3.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed when the following code executes?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">;</span>
+ <span class="nx">day</span> <span class="o">=</span> <span class="mf">32.5</span><span class="p">;</span>
+ <span class="nx">day</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li>Nothing is printed. A runtime error occurs.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Thursday</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">32.5</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">19</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>How can you determine the type of a variable?</p>
+<ol class="last arabic simple">
+<li>Print out the value and determine the data type based on the value printed.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</li>
+<li>Use it in a known equation and print the result.</li>
+<li>Look at the declaration of the variable.</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which line is an example of variable initialization? (<em>Note: only one line is such an example.</em>)</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="type-conversion.html"><span aria-hidden="true">&larr;</span> 4.2. Type Conversion</a></li>
+        
+        
+        <li class="next"><a href="more-on-variables.html">4.4. More On Variables <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

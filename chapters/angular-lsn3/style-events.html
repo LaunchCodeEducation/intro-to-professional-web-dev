@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>30.4. Dynamic Style Changes &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="30.5. Angular Wrap-Up" href="wrap-up.html" />
+    <link rel="prev" title="30.3. Attribute Directives" href="attribute-directives.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">30. Angular, Part 3</a></li>
+    <li class="active">30.4. Dynamic Style Changes</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="dynamic-style-changes">
+<h1>30.4. Dynamic Style Changes<a class="headerlink" href="#dynamic-style-changes" title="Permalink to this headline">¶</a></h1>
+<p>By adding <a class="reference internal" href="../angular-lsn2/events.html#angular-events"><span class="std std-ref">event listeners</span></a> to our Angular projects, we
+can make any element on our web page interactive. This allows us to change the
+styling on the page in response to user actions.</p>
+<p>Before we add functionality to the buttons, let's first update our text styling
+a little bit.</p>
+<div class="section" id="interactive-elements">
+<h2>30.4.1. Interactive Elements<a class="headerlink" href="#interactive-elements" title="Permalink to this headline">¶</a></h2>
+<p>Let's make the paragraph element respond to user clicks.</p>
+<p>Change line 12 in <code class="docutils literal notranslate"><span class="pre">skill-set.component.html</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skills&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">listHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">style.color</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;alternateColor&quot;</span> <span class="p">[</span><span class="na">type</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bulletType&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Copy of Skill List<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ol</span> <span class="p">[</span><span class="na">class.ol-style</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;changeColor&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span> <span class="p">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let skill of skills&quot;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">skill</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="p">[</span><span class="na">class.p-style</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!changeColor&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;changeColor = !changeColor&quot;</span><span class="p">&gt;</span>Here is some practice text...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">changeColor</span></code> is a boolean, <code class="docutils literal notranslate"><span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code>
+flips the value of the variable between <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> whenever the
+text is clicked.</p>
+<div class="figure">
+<img alt="Interactive text styling." src="../../_images/lesson3-interactive-text-styling.gif" />
+</div>
+<p>Notice that since the style of the ordered list also depends on
+<code class="docutils literal notranslate"><span class="pre">changeColor</span></code>, its appearance changes as well.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="last arabic simple">
+<li>Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 12 and examine how the
+interactivity changes.</li>
+<li>What happens if we add <code class="docutils literal notranslate"><span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag in line 9? Does this make a single list element clickable
+or all of them?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="button-styling">
+<h2>30.4.2. Button Styling<a class="headerlink" href="#button-styling" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">button</span></code> tag accepts <code class="docutils literal notranslate"><span class="pre">class</span></code> and <code class="docutils literal notranslate"><span class="pre">style</span></code> just like other HTML
+elements, but <code class="docutils literal notranslate"><span class="pre">button</span></code> also has its own set of special attributes. Detailed
+descriptions of these attributes appear at
+<a class="reference external" href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">W3 schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+However, for these examples we will focus on <code class="docutils literal notranslate"><span class="pre">disabled</span></code>.</p>
+<p>Adding the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute inside the tag deactivates the button. Any
+time you see a greyed out button on a web page, <code class="docutils literal notranslate"><span class="pre">disabled</span></code> is the cause.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Code:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">[</span><span class="na">style.background</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;lcLightBlue&quot;</span><span class="p">&gt;</span>Click Me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">disabled</span><span class="p">&gt;</span>Can&#39;t Click Me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Result:</p>
+<div class="last figure">
+<img alt="Result of ``disabled`` attribute." src="../../_images/lesson3-disabled-example.png" />
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute overrides any other function calls or events within
+the <code class="docutils literal notranslate"><span class="pre">button</span></code> tag.</p>
+<div class="section" id="dynamic-button-activation">
+<h3>30.4.2.1. Dynamic Button Activation<a class="headerlink" href="#dynamic-button-activation" title="Permalink to this headline">¶</a></h3>
+<p>Data-binding lets us activate or deactivate buttons based on user actions or
+variables we control.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">buttons.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> files and
+examine the code.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>HTML file:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;buttons&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">{{</span><span class="nv">buttonHeading</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;gold&quot;</span><span class="p">&gt;</span>Gold<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;silver&quot;</span><span class="p">&gt;</span>Silver<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;copper&quot;</span><span class="p">&gt;</span>Copper<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Activate/Deactivate Buttons<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">ButtonsComponent</span></code> class in the <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file:</p>
+<div class="last highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ButtonsComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+   <span class="nx">buttonHeading</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;Buttons&quot;</span>
+   <span class="nx">inactive</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span> <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>To dynamically activate or deactivate a button, we need to bind the attribute
+to a boolean. In this case, we can use the <code class="docutils literal notranslate"><span class="pre">inactive</span></code> variable defined in the
+<code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> file.</p>
+<ol class="arabic">
+<li><p class="first">Modify line 3 in the HTML file as follows:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">[</span><span class="na">class.gold</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!inactive&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;inactive&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;inactive = true&quot;</span><span class="p">&gt;</span>Gold<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Save your changes and refresh the web page. Now when you click on the
+&quot;Gold&quot; button, <code class="docutils literal notranslate"><span class="pre">inactive</span></code> gets set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. This adds the <code class="docutils literal notranslate"><span class="pre">disabled</span></code>
+attribute to the HTML tag, turning it off. In addition, the <code class="docutils literal notranslate"><span class="pre">gold</span></code> class is
+removed, changing the color of the button.</p>
+</li>
+<li><p class="first">Since the &quot;Gold&quot; button is no longer active, clicking on it again will not
+trigger any events. To re-enable the button, we need to tie <code class="docutils literal notranslate"><span class="pre">inactive</span></code> to
+another tag and event.</p>
+</li>
+<li><p class="first">Modify line 6 in the HTML file as follows:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;inactive = !inactive&quot;</span><span class="p">&gt;</span>Activate/Deactivate Buttons<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The buttons on the page should now behave something like:</p>
+<div class="figure">
+<img alt="Activating and deactivating a button on click." src="../../_images/lesson3-one-button-activation.gif" />
+</div>
+<div class="section" id="silver-and-copper">
+<h4>30.4.2.1.1. Silver and Copper<a class="headerlink" href="#silver-and-copper" title="Permalink to this headline">¶</a></h4>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">button</span></code> tags for &quot;Silver&quot; and &quot;Copper&quot; so that they also depend
+on <code class="docutils literal notranslate"><span class="pre">inactive</span></code>. Properly done, clicking ANY of the buttons deactivates ALL of
+them:</p>
+<div class="figure">
+<img alt="Activating and deactivating multiple buttons on click." src="../../_images/lesson3-three-button-activation.gif" />
+</div>
+<p>If we want to disable only the button that gets clicked, then we will need
+to create a separate boolean variable for each element. We must also update the
+&quot;Activate/Deactivate&quot; button to reset all of the booleans to <code class="docutils literal notranslate"><span class="pre">true</span></code>. (Hint:
+How about setting the <code class="docutils literal notranslate"><span class="pre">(click)</span></code> event to a function call?)</p>
+</div>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2>30.4.3. Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>Modify the code in <code class="docutils literal notranslate"><span class="pre">buttons.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> to
+make the buttons behave like this:</p>
+<div class="figure">
+<img alt="Deactivating one button at a time." src="../../_images/lesson3-final-button-behavior.gif" />
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you find yourself stuck after trying, and trying, and TRYING, remember that
+there is a <code class="docutils literal notranslate"><span class="pre">solutions</span></code> branch in the repository.</p>
+</div>
+</div>
+<div class="section" id="bonus-try-it">
+<h2>30.4.4. Bonus Try It!<a class="headerlink" href="#bonus-try-it" title="Permalink to this headline">¶</a></h2>
+<p>Just for fun, use what you have learned about events and data binding to create
+buttons that behave like this:</p>
+<div class="figure">
+<img alt="Fun but frustrating buttons." src="../../_images/lesson3-joke-buttons.gif" />
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">These bonus options are ONLY FOR FUN. Using any of these on a business
+website would be a poor choice.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>30.4.5. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>To include dynamic styles in a component:</p>
+<ol class="last arabic simple">
+<li>Only data-binding is needed,</li>
+<li>Only an event handler is needed,</li>
+<li>Data-binding and event handling are both necessary,</li>
+<li>Angular, data-binding, and event handling are all necessary.</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following shows the three Angular directives arranged from the
+most general to most specific?</p>
+<ol class="last arabic simple">
+<li>Components, structural directives, attribute directives</li>
+<li>Components, attribute directives, structural directives</li>
+<li>Structural directives, components, attribute directives</li>
+<li>Structural directives, attribute directives, components</li>
+<li>Attribute directives, structural directives, components</li>
+<li>Attribute directives, components, structural directives</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Consider the following code samples:</p>
+<p>CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">special</span> <span class="p">{</span>
+   <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>TypeScript:</p>
+<div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Component</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+   <span class="nx">specialFactor</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span> <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>HTML:</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="p">[</span><span class="na">class.special</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;specialFactor&quot;</span><span class="p">&gt;</span>Very Special Content<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Which of the following, when added to the HTML tag, will render the
+<code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> element blue when clicked?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;!specialFactor&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">3&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">!specialFactor&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">false&quot;</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="attribute-directives.html"><span aria-hidden="true">&larr;</span> 30.3. Attribute Directives</a></li>
+        
+        
+        <li class="next"><a href="wrap-up.html">30.5. Angular Wrap-Up <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>28.4. Angular First Steps &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="28.5. The Angular Framework" href="inside-app-folder.html" />
+    <link rel="prev" title="28.3. Angular File Structure" href="file-structure.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">28. Angular, Part 1</a></li>
+    <li class="active">28.4. Angular First Steps</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="angular-first-steps">
+<span id="id1"></span><h1>28.4. Angular First Steps<a class="headerlink" href="#angular-first-steps" title="Permalink to this headline">¶</a></h1>
+<p>The goal here is to create a minimum working template for a web page. It will
+serve as a jumping-off point for your later exercises and studios, so take as
+much time as you need to get comfortable with the basics.</p>
+<div class="section" id="starting-a-new-project">
+<h2>28.4.1. Starting a New Project<a class="headerlink" href="#starting-a-new-project" title="Permalink to this headline">¶</a></h2>
+<p>First, use the terminal to create a folder for all of your Angular projects:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir angular_practice
+</pre></div>
+</div>
+<p>Each new project you create will have its own folder inside this container.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>You can use either the standalone Terminal application on your computer or
+the built-in Terminal panel in VSCode.</p>
+<p class="last">For Angular projects, some programmers find it more convenient to work
+entirely inside VSCode or another code editor. The IDEs provide a visual tree
+for navigating between files and folders, and Angular generates LOTS of
+these.</p>
+</div>
+<p>Next, navigate into the new folder and create your first Angular project.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> angular_practice
+$ ng new my-project-name
+</pre></div>
+</div>
+<p>This process will take some time, so be patient. You will also be prompted
+twice:</p>
+<div class="figure">
+<img alt="Visual of the prompts for creating a new Angular project." src="../../_images/new-project-prompts.png" />
+</div>
+<p>Answer &quot;No&quot; to the routing question, and select the default &quot;CSS&quot; for the
+stylesheet by pressing &quot;Enter&quot;.</p>
+<div class="section" id="examine-the-files-created">
+<h3>28.4.1.1. Examine the Files Created<a class="headerlink" href="#examine-the-files-created" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<img alt="File tree for a new Angular project." src="../../_images/NewProjectFiles.png" />
+</div>
+<ol class="arabic simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">src</span></code> folder holds the files and source code needed for the project.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">app</span></code> folder holds the content for the web page. Although the page is
+treated as a single entity, it actually consists of multiple pieces. <code class="docutils literal notranslate"><span class="pre">app</span></code>
+holds these different parts and establishes links between them. We will
+modify some of these files soon.</li>
+<li><code class="docutils literal notranslate"><span class="pre">index.html</span></code> is the highest level for displaying content. Anything added
+to this HTML file will appear on every page within a website.</li>
+<li><code class="docutils literal notranslate"><span class="pre">main.ts</span></code> imports the core methods required to make everything work. It
+also imports the content from the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</li>
+<li><code class="docutils literal notranslate"><span class="pre">styles.css</span></code> holds the global style settings for the entire website.</li>
+</ol>
+</div>
+<div class="section" id="what-to-ignore">
+<h3>28.4.1.2. What To Ignore<a class="headerlink" href="#what-to-ignore" title="Permalink to this headline">¶</a></h3>
+<p>For every new project, Angular automatically sets up the code to make the
+different parts communicate with each other. As your skills grow during your
+career, you may need to learn how to modify these files. For now, however,
+leave the following alone:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">main.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">test.ts</span></code>, and <code class="docutils literal notranslate"><span class="pre">polyfills.ts</span></code>. No touch!</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">e2e</span></code>, <code class="docutils literal notranslate"><span class="pre">node_modules</span></code>, and <code class="docutils literal notranslate"><span class="pre">environments</span></code> folders. No touch!</li>
+<li><code class="docutils literal notranslate"><span class="pre">.json</span></code> files. No touch!</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder is a &quot;Maybe touch&quot;. It holds user defined files that
+support a project. Examples include JavaScript code, images, gifs, or video
+clips. The exercises in the next chapter will use files stored in this folder,
+but we will leave it empty for this lesson.</p>
+</div>
+</div>
+<div class="section" id="launch-the-page">
+<h2>28.4.2. Launch the Page<a class="headerlink" href="#launch-the-page" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> creates all of the files required to launch a functioning web page.
+You have not added any content yet, but Angular provides a standard starting
+point that allows you to check if everything works.</p>
+<p>Before sending an Angular project out into the world, you should preview it
+<em>locally</em> in a browser. Any changes you make to the project files will be
+reflected only on your screen, so you can play around with the code without
+worry.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Even though you view your work in a browser, &quot;local&quot; means no one else can
+access your webpage, since it is stored on your computer. If you want to
+share your local page with someone else, they will have to look over your
+shoulder.</p>
+</div>
+<p>To <em>launch</em> your new webpage, use the Terminal to navigate into the project
+folder, then enter the command <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> my-project-name
+$ ng serve
+</pre></div>
+</div>
+<p>Be prepared to wait... The compiler requires some time to build and deploy even
+small projects, and it may be a few moments before you see any action in the
+terminal. If no errors occur, a &quot;Compiled successfully&quot; message eventually
+appears.</p>
+<p>The important part of this feedback is the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> line, which provides
+a URL for viewing your work in a browser. Copy the URL and paste it into the
+address bar of your web browser (Mac shortcut: command-click automatically
+opens the URL in your default browser).</p>
+<div class="figure">
+<img alt="Terminal feedback after ``ng serve``." src="../../_images/launch-project.png" />
+</div>
+<div class="section" id="what-is-ng-serve-doing">
+<h3>28.4.2.1. What is <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> Doing?<a class="headerlink" href="#what-is-ng-serve-doing" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> allows you to view your project in a browser by running a series
+of tasks in the background. It's NOT magic, just the tedious mechanics that you
+don't need to set up yourself.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> performs these tasks:</p>
+<ol class="arabic simple">
+<li>Compiles and analyzes your Angular files to <em>build</em> HTML and JavaScript
+files that can be run in a browser.<ol class="loweralpha">
+<li>This step will throw errors if you try to serve code that contains syntax
+or other errors.</li>
+<li>You will learn more about the different types of files that are compiled
+in the coming sections.</li>
+</ol>
+</li>
+<li>Starts a web server on your computer that serves the built version of your
+Angular project.<ol class="loweralpha">
+<li>Your Angular project is viewable at the web address <a class="reference external" href="http://localhost:4200" target="_blank">http://localhost:4200<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Angular projects are written in TypeScript. Your web browser can run HTML, CSS, and JavaScript.
+In order for your Angular project to run in the browser, the TypeScript code has to be converted into JavaScript.
+The conversion from TypeScript to JavaScript happens during the build phase of <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve.</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="yay-a-webpage">
+<h2>28.4.3. Yay! A Webpage!<a class="headerlink" href="#yay-a-webpage" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations! You have a functioning webpage. You should see the following
+in your browser:</p>
+<div class="figure">
+<img alt="Angular new app default page." src="../../_images/HelloAngular.png" />
+</div>
+<p>This is the default format created by <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code>, but your chosen project name
+will replace <code class="docutils literal notranslate"><span class="pre">my-project-name</span></code> in the title. The links lead back to selected
+pages from the <a class="reference external" href="https://angular.io/" target="_blank">angular.io<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> documentation.</p>
+<p>Feel free to play around a little bit before continuing. Do not worry about
+breaking anything. If necessary, you can always start another new project.</p>
+<div class="section" id="try-it">
+<span id="try-it-angular-intro"></span><h3>28.4.3.1. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<p>In VSCode, open the four files within the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder. Modify the code to
+accomplish the following:</p>
+<ol class="arabic simple">
+<li>Find where your project name is assigned to the <code class="docutils literal notranslate"><span class="pre">title</span></code> variable.
+Replace it with a different string.</li>
+<li>Change one <code class="docutils literal notranslate"><span class="pre">h2</span></code> heading to an <code class="docutils literal notranslate"><span class="pre">h3</span></code>.</li>
+<li>Change the color for the <em>Welcome to...</em> heading.</li>
+<li>Change one of the links to send users to your favorite website.</li>
+<li>Replace the Angular shield with a different image.</li>
+</ol>
+<p>After making each change, save your work. Your webpage should automatically
+refresh.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Which files did you modify?</p>
+</div>
+<p>Your new webpage might look something like:</p>
+<div class="figure">
+<img alt="First changes to my-first-project." src="../../_images/first-project-play.png" />
+</div>
+<p>Do not worry if you got stuck on some of the tasks. This was a time for
+experimentation. As long as you tried something and saw the result, you still
+learned something valuable.</p>
+</div>
+</div>
+<div class="section" id="un-launching-your-page">
+<h2>28.4.4. Un-launching Your Page<a class="headerlink" href="#un-launching-your-page" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> continues to run until you press <em>control+c</em> in the terminal. Go
+ahead and interrupt the process now. If you try refreshing your page, you will
+see an error.</p>
+<p>Now let's take a look at the different project files.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="file-structure.html"><span aria-hidden="true">&larr;</span> 28.3. Angular File Structure</a></li>
+        
+        
+        <li class="next"><a href="inside-app-folder.html">28.5. The Angular Framework <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

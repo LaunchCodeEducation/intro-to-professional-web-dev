@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>29.7. Exercises: Angular, Lesson 2 &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="29.8. Studio: Angular, Part 2" href="studio.html" />
+    <link rel="prev" title="29.6. Events Can Call Functions" href="event-functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">29. Angular, Part 2</a></li>
+    <li class="active">29.7. Exercises: Angular, Lesson 2</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="exercises-angular-lesson-2">
+<h1>29.7. Exercises: Angular, Lesson 2<a class="headerlink" href="#exercises-angular-lesson-2" title="Permalink to this headline">¶</a></h1>
+<p>Let's build an interactive web page that allows us to review data for our
+astronaut candidates and select crew members for a space mission.</p>
+<div class="section" id="starter-code">
+<h2>29.7.1. Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
+<p>The starter code for the exercises is in the same
+<a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-projects" target="_blank">repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> that you cloned
+for the chapter examples.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Remember that the repository contains a <code class="docutils literal notranslate"><span class="pre">master</span></code> branch with all the
+starter code as well as a <code class="docutils literal notranslate"><span class="pre">solutions</span></code> branch showing the completed
+exercises.</p>
+<p>The solutions provide a resource for you to check if you get stuck. However,
+for best results you should make a <em>valiant</em> attempt at solving the tasks
+before looking at &quot;the answers&quot;.</p>
+<p class="last">Also, if your code works but is different from the solutions, that is OK.
+There are usually multiple ways of solving the same problem.</p>
+</div>
+<p>From the <code class="docutils literal notranslate"><span class="pre">lesson2</span></code> folder in VSCode, navigate into the
+<code class="docutils literal notranslate"><span class="pre">exercises/src/app/candidates</span></code> folder. Open the
+<code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code> files.</p>
+<div class="figure">
+<img alt="Access lesson 2 exercises in VSCode." src="../../_images/lesson2-exercises-menu.png" />
+</div>
+<p>In the terminal, navigate into the lesson 2 <code class="docutils literal notranslate"><span class="pre">exercises</span></code> folder. Enter
+<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to add the Angular modules, then run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code>. When you
+open the web page in your browser, it should look like this:</p>
+<div class="figure">
+<img alt="Starting setup for exercises." src="../../_images/lesson2-exercises-start.png" />
+</div>
+</div>
+<div class="section" id="candidates-column">
+<h2>29.7.2. Candidates Column<a class="headerlink" href="#candidates-column" title="Permalink to this headline">¶</a></h2>
+<p>Examine the <code class="docutils literal notranslate"><span class="pre">candidates</span></code> array in <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code>. It contains
+one object for each animal astronaut. We want to start by listing the names of
+the animals in the &quot;Candidates&quot; column of the web page.</p>
+<ol class="arabic simple">
+<li>Find the &quot;Candidates&quot; section in <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code>. Use
+<code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> in the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag to loop over the <code class="docutils literal notranslate"><span class="pre">candidates</span></code> array and
+display each name in an ordered list.</li>
+<li>We want each name to be interactive. Add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>
+tag. When a user clicks on a name, set the variable <code class="docutils literal notranslate"><span class="pre">selected</span></code> to be equal
+to the chosen candidate.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Candidate results." src="../../_images/lesson2-exercises-candidates.gif" />
+</div>
+</div>
+<div class="section" id="candidate-data-column">
+<h2>29.7.3. Candidate Data Column<a class="headerlink" href="#candidate-data-column" title="Permalink to this headline">¶</a></h2>
+<p>When we click on a candidate's name, we want their information to appear in the
+&quot;Candidate Data&quot; column. If no candidate is selected, we want the space under
+the heading to remain blank.</p>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;&lt;/p&gt;</span></code> element underneath the &quot;Candidate Data&quot; heading, add
+labels for a candidate's <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Mass</span></code>, and <code class="docutils literal notranslate"><span class="pre">Sidekick</span></code>.</li>
+<li>Add placeholders to display the candidate's data next to each label.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> inside the <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tag to check if a candidate has been
+selected. If so, display the labels and the data.</li>
+<li>Next, create a way to clear the data. In the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tag for &quot;Clear
+Data &amp; Image&quot;, add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event that sets <code class="docutils literal notranslate"><span class="pre">selected</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Candidate Data results." src="../../_images/lesson2-exercises-candidate-data.gif" />
+</div>
+</div>
+<div class="section" id="sidekick-image-column">
+<h2>29.7.4. Sidekick Image Column<a class="headerlink" href="#sidekick-image-column" title="Permalink to this headline">¶</a></h2>
+<p>Every good hero needs a loyal sidekick, and our candidates are no exception!</p>
+<p>When we click on a candidate's name, we want an image of their sidekick to
+appear under the &quot;Sidekick&quot; column. If no candidate is selected, we want this
+area to remain blank.</p>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag, use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to check if a candidate has been
+selected.</li>
+<li>Replace the generic <code class="docutils literal notranslate"><span class="pre">{{placeholder}}</span></code> with the <code class="docutils literal notranslate"><span class="pre">image</span></code> property of the
+candidate.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Sidekick image results." src="../../_images/lesson2-exercises-sidekicks.gif" />
+</div>
+</div>
+<div class="section" id="selected-crew-column">
+<h2>29.7.5. Selected Crew Column<a class="headerlink" href="#selected-crew-column" title="Permalink to this headline">¶</a></h2>
+<p>Once we select a candidate, we want an option to add them to the crew of the
+next space mission.</p>
+<ol class="arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code>, code an <code class="docutils literal notranslate"><span class="pre">addToCrew</span></code> function that takes an
+<em>object</em> as a parameter.</li>
+<li>If the candidate is NOT part of the crew, the function should push them into
+the <code class="docutils literal notranslate"><span class="pre">crew</span></code> array. Candidates who are already part of the crew should be
+ignored.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code>, add a &quot;Send on Mission&quot; button next to the
+&quot;Clear Data &amp; Image&quot; button.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to the button to call the <code class="docutils literal notranslate"><span class="pre">addToCrew</span></code> function. When
+clicked, pass the selected candidate as the argument.</li>
+<li>Under the &quot;Selected Crew&quot; section, use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the <code class="docutils literal notranslate"><span class="pre">crew</span></code>
+array and display each name.</li>
+</ol>
+<div class="section" id="clear-crew-list">
+<h3>29.7.5.1. Clear Crew List<a class="headerlink" href="#clear-crew-list" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Add a &quot;Clear Crew List&quot; button under the &quot;Selected Crew&quot; list.</li>
+<li>This button should only appear when the <code class="docutils literal notranslate"><span class="pre">crew</span></code> array contains data. Use
+<code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to make this happen.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">click</span></code> event that clears the <code class="docutils literal notranslate"><span class="pre">crew</span></code> array.</li>
+</ol>
+<p>Properly done, your output should behave something like this:</p>
+<div class="figure">
+<img alt="Crew list results." src="../../_images/lesson2-exercises-crew.gif" />
+</div>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2>29.7.6. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fine-tune-the-buttons">
+<h3>29.7.6.1. Fine Tune the Buttons<a class="headerlink" href="#fine-tune-the-buttons" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Update the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">Mission</span></code> button to appear only if a candidate has been
+selected.</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">Mission</span></code> button disappear if the selected candidate is
+already part of the crew.</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">Mission</span></code> button disappear once three crew members have
+been assigned to the mission.</li>
+</ol>
+</div>
+<div class="section" id="change-the-mission-name">
+<h3>29.7.6.2. Change the Mission Name<a class="headerlink" href="#change-the-mission-name" title="Permalink to this headline">¶</a></h3>
+<p>We can make the Mission Name heading interactive. When clicked, we want to
+present the user with an input box to enter a new name.
+For this exercise, the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> code you need is at the bottom of <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code>.</p>
+<ol class="arabic simple">
+<li>Replace line 2 in <code class="docutils literal notranslate"><span class="pre">candidates.component.html</span></code> with
+<code class="docutils literal notranslate"><span class="pre">&lt;h2</span> <span class="pre">class=&quot;centered&quot;</span> <span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;!editMissionName;</span> <span class="pre">else</span> <span class="pre">editMission&quot;</span> <span class="pre">(click)=&quot;editMissionName</span> <span class="pre">=</span> <span class="pre">true&quot;&gt;Mission</span> <span class="pre">Name:</span> <span class="pre">{{missionName}}&lt;/h2&gt;</span></code>.</li>
+<li>When clicked, the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> code executes. Update the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag
+with a <code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code> event. The event should call the
+<code class="docutils literal notranslate"><span class="pre">changeMissionName</span></code> function and pass the new name as an argument.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">candidates.component.ts</span></code>, code a <code class="docutils literal notranslate"><span class="pre">changeMissionName</span></code> function to
+update the name of the mission.</li>
+<li>After changing the mission name, set <code class="docutils literal notranslate"><span class="pre">editMissionName</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="bonus-results">
+<h2>29.7.7. Bonus Results<a class="headerlink" href="#bonus-results" title="Permalink to this headline">¶</a></h2>
+<p>After finishing the bonus missions, your output should behave something like
+this:</p>
+<div class="figure">
+<img alt="Bonus content behavior." src="../../_images/lesson2-exercises-full-solution.gif" />
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="event-functions.html"><span aria-hidden="true">&larr;</span> 29.6. Events Can Call Functions</a></li>
+        
+        
+        <li class="next"><a href="studio.html">29.8. Studio: Angular, Part 2 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>19.2. Filesystem and Paths &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.3. How to Do Stuff in the Terminal" href="basic-commands.html" />
+    <link rel="prev" title="19.1. What is a terminal?" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">19. Terminal</a></li>
+    <li class="active">19.2. Filesystem and Paths</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="filesystem-and-paths">
+<h1>19.2. Filesystem and Paths<a class="headerlink" href="#filesystem-and-paths" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">A <strong>filesystem</strong> is a structure for the computer to store the files and folders
+that make up the data of the operating system.</p>
+<p>Inside a filesystem, folders are referred to as <strong>directories</strong>. Folders that exist inside other folders are
+called <strong>subdirectories</strong>. A <strong>root directory</strong> can refer to a few different things but essentially means the
+top-most directory of a given system. In other words, a root directory is not a sub-directory - but it will probably
+contain its own subdirectories. Inside the machine you work with called your computer, the root directory is the
+location of primary hard drive - in Windows, that's your C drive; in a Mac, the root directory is represented as <code class="docutils literal notranslate"><span class="pre">/</span></code>.
+The root directory is the <strong>parent directory</strong> for the folders stored inside of it.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">Most of you have a <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder on your computer. If there
+is a folder on your Desktop called &quot;LC101_Homework&quot;, then the parent directory
+of <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code> is <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.</p>
+</div>
+<p>A <strong>path</strong> for files and folders is the list of parent directories that the computer must go through to find that particular item.</p>
+<p>Filesystems have two different types of paths: absolute and relative.
+The <strong>absolute path</strong> is the path to a file from the root directory.
+The <strong>relative path</strong> is the path to a file from the current directory. When working with a relative path, you may find yourself wanting to go up into a parent directory to find a file in a different sub, or child, directory.
+In order to do so, you can use <code class="docutils literal notranslate"><span class="pre">..</span></code> in the file path to tell the computer to go up to the parent directory.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We have a file inside our <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code> directory from the above example.
+We named that file <code class="docutils literal notranslate"><span class="pre">homework.js</span></code>.
+The absolute path for <code class="docutils literal notranslate"><span class="pre">homework.js</span></code> is <code class="docutils literal notranslate"><span class="pre">/Users/LaunchCodeStudent/Desktop/LC101_Homework</span></code> for Mac users and <code class="docutils literal notranslate"><span class="pre">C:\windows\Desktop\LC101_Homework</span></code> for Windows users.
+If the current directory is <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>, then the relative path for <code class="docutils literal notranslate"><span class="pre">homework.js</span></code> is <code class="docutils literal notranslate"><span class="pre">/LC101_Homework</span></code> for Mac users and <code class="docutils literal notranslate"><span class="pre">\LC101_Homework</span></code> for Windows users.</p>
+<p class="last">Say <code class="docutils literal notranslate"><span class="pre">homework.js</span></code> is in a different directory called <code class="docutils literal notranslate"><span class="pre">CoderGirl_Homework</span></code>. <code class="docutils literal notranslate"><span class="pre">CoderGirl_Homework</span></code> is inside
+the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory. Your current directory is <code class="docutils literal notranslate"><span class="pre">LC101_Homework</span></code>. In this scenario, we would use the
+<code class="docutils literal notranslate"><span class="pre">..</span></code> syntax in our relative path. The relative path would then be <code class="docutils literal notranslate"><span class="pre">/../CoderGirl_Homework</span></code> for Mac users
+and <code class="docutils literal notranslate"><span class="pre">\..\CoderGirl_Homework</span></code> for Windows users.</p>
+</div>
+<p>Many programmers use paths to navigate through the filesystem in the terminal.
+We will discuss the commands to do so in the next section.</p>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> 19.1. What is a terminal?</a></li>
+        
+        
+        <li class="next"><a href="basic-commands.html">19.3. How to Do Stuff in the Terminal <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>26.4. Asynchronous and Promises &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="26.5. Exercises" href="exercises.html" />
+    <link rel="prev" title="26.3. Fetching Data" href="fetch.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">26. Fetch &amp; JSON</a></li>
+    <li class="active">26.4. Asynchronous and Promises</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="asynchronous-and-promises">
+<h1>26.4. Asynchronous and Promises<a class="headerlink" href="#asynchronous-and-promises" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><span class="target" id="index-1"></span><p id="index-2">In order to fully explain how the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function works, we need to define
+and talk about the terms <strong>asynchronous</strong> and <strong>synchronous</strong>.</p>
+<blockquote>
+<div><p>Asynchronous: Not simultaneous or concurrent in time.</p>
+<p>Synchronous: Simultaneous or concurrent in time.</p>
+</div></blockquote>
+<p>When fetching data in JavaScript, the HTTP requests are asynchronous. In brief, that
+means when an HTTP request is sent, we don't know exactly when a response will be
+received by the browser. Remember that HTTP requests are sent to an address, then a
+response is sent. That process takes a variable amount of time depending on network
+speed, the address location, and response size.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">These requests are also called <strong>AJAX requests</strong> (Asynchronous JavaScript and XML).
+The XML part of AJAX refers to a data format that was popular before JSON.</p>
+</div>
+<div class="section" id="response-handlers">
+<h2>26.4.1. Response Handlers<a class="headerlink" href="#response-handlers" title="Permalink to this headline">¶</a></h2>
+<p>Browsers can't stop everything and wait for a response to an HTTP request. Browsers
+have to render HTML, interact with the user, and run JavaScript. To keep these
+processes running seamlessly, without any noticeable pauses, the browser relies on
+events.</p>
+<p>This is where <code class="docutils literal notranslate"><span class="pre">.then()</span></code> and the response handler function come in. The browser
+provides us with a way to handle the response whenever it is received.</p>
+</div>
+<div class="section" id="promises-and-the-then-function">
+<h2>26.4.2. Promises and the <code class="docutils literal notranslate"><span class="pre">then</span></code> Function<a class="headerlink" href="#promises-and-the-then-function" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-3"></span><p id="index-4">Let's look again at a simple <code class="docutils literal notranslate"><span class="pre">fetch</span></code> example. Notice on line 1 that <code class="docutils literal notranslate"><span class="pre">then</span></code> is
+called on the value returned from <code class="docutils literal notranslate"><span class="pre">fetch</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>To make it clearer, let's capture the value returned by <code class="docutils literal notranslate"><span class="pre">fetch</span></code> in a variable
+named <code class="docutils literal notranslate"><span class="pre">fetchPromise</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">fetchPromise</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">);</span>
+<span class="nx">fetchPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> returns an instance of the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class. The <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class
+represents a <strong>promise</strong>. A promise is the <cite>eventual</cite> outcome of an asynchronous event.
+In the above example, <code class="docutils literal notranslate"><span class="pre">fetchPromise</span></code> represents the eventual response from the HTTP request to
+<code class="docutils literal notranslate"><span class="pre">https://handlers.education.launchcode.org/static/weather.json</span></code>.</p>
+<p>A promise can be fulfilled or rejected. When a promise is fulfilled, data is passed
+to the response handler function. The <code class="docutils literal notranslate"><span class="pre">then</span></code> method of <code class="docutils literal notranslate"><span class="pre">Promise</span></code> defines what will
+happen when the promise is fulfilled. When a promise is rejected, the error reason is
+returned.</p>
+<p>The above example can be translated to these steps</p>
+<ol class="arabic simple">
+<li>Make an HTTP request to <code class="docutils literal notranslate"><span class="pre">https://handlers.education.launchcode.org/static/weather.json</span></code></li>
+<li>When the response is received, THEN run the response handler function (passing in response data)</li>
+<li>In the response handler function, console log the <code class="docutils literal notranslate"><span class="pre">response</span></code> object</li>
+</ol>
+</div>
+<div class="section" id="more-promises">
+<h2>26.4.3. More Promises<a class="headerlink" href="#more-promises" title="Permalink to this headline">¶</a></h2>
+<p>Above, we showed a promise representing the outcome of an HTTP request, however, promises can represent the outcome of <cite>any</cite> asynchronous event.
+For example, the <code class="docutils literal notranslate"><span class="pre">response</span></code> object has a <code class="docutils literal notranslate"><span class="pre">json()</span></code> function that will return the JSON data in the
+response. The <code class="docutils literal notranslate"><span class="pre">json()</span></code> function returns a <cite>promise</cite> that represents the future result
+of turning the response data into JSON.</p>
+<p>The example below shows how promises are used to represent two different types of asynchronous events and the outcomes.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">fetchPromise</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span><span class="p">);</span>
+<span class="nx">fetchPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kr">const</span> <span class="nx">jsonPromise</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+   <span class="nx">jsonPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="nx">json</span><span class="p">.</span><span class="nx">temp</span><span class="p">);</span>
+   <span class="p">});</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>This example involves two promises. On line 1, <code class="docutils literal notranslate"><span class="pre">fetchPromise</span></code> is a promise that represents the
+fetch request. On line 3, <code class="docutils literal notranslate"><span class="pre">jsonPromise</span></code> is a promise that represents the response data being turned
+into JSON.</p>
+<p class="last">Finally on line 5, the JSON data can be logged.</p>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Promises can be a hard concept to understand. Focus on the examples and the theory will
+make sense in time.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>26.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>We know exactly when an asynchronous request will return.</p>
+<ol class="last arabic simple">
+<li>True</li>
+<li>False</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>A promise can represent the outcome of <em>any</em> future event.</p>
+<ol class="last arabic simple">
+<li>True</li>
+<li>False</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p><code class="docutils literal notranslate"><span class="pre">then</span></code> is a method of the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> class that allows us to run code
+after an event is completed.</p>
+<ol class="last arabic simple">
+<li>True</li>
+<li>False</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="fetch.html"><span aria-hidden="true">&larr;</span> 26.3. Fetching Data</a></li>
+        
+        
+        <li class="next"><a href="exercises.html">26.5. Exercises <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

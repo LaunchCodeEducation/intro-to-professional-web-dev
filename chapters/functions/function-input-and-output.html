@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>10.4. Function Input and Output &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.5. A Good Function-Writing Process" href="process.html" />
+    <link rel="prev" title="10.3. Creating Functions" href="creating-functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">10. Functions Are at Your Beck and Call</a></li>
+    <li class="active">10.4. Function Input and Output</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="function-input-and-output">
+<h1>10.4. Function Input and Output<a class="headerlink" href="#function-input-and-output" title="Permalink to this headline">¶</a></h1>
+<p>In the introduction to this chapter, we used the metaphor of the <a class="reference internal" href="intro.html#function-machine"><span class="std std-ref">function machine</span></a>, noting that the machine takes <em>input</em> and provides <em>output</em>. This section focuses on the details of these two aspects of function behavior.</p>
+<div class="section" id="return-statements">
+<h2>10.4.1. Return Statements<a class="headerlink" href="#return-statements" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Some functions return values that are useful. In particular, the type conversion functions convert input to the specified data type and return the result---calling <code class="docutils literal notranslate"><span class="pre">Number(&quot;3.14&quot;)</span></code> returns the value <code class="docutils literal notranslate"><span class="pre">3.14</span></code>.</p>
+<div class="section" id="returning-a-value">
+<h3>10.4.1.1. Returning a Value<a class="headerlink" href="#returning-a-value" title="Permalink to this headline">¶</a></h3>
+<p>To return a value from functions that <em>we</em> create, we can use a <strong>return statement</strong>. A return statement has the form:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nx">someVal</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">someVal</span></code> is any value.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This function has a single parameter, <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is expected to be a
+positive integer. It returns the sum 1+2+...+n.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sumToN</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumToN</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">sumToN</span></code> does not print anything; the output comes from the final
+line of the program, which prints the value <em>returned by</em> the function call
+<code class="docutils literal notranslate"><span class="pre">sumToN(3)</span></code>.</p>
+<p>Now that we have return statements in our coding toolbox, we will very rarely
+print anything <em>within</em> a function. If we want to see the value returned by a
+function then we must print it <em>after</em> calling the function.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">The function <code class="docutils literal notranslate"><span class="pre">sumToN</span></code> uses a pattern that we have seen previously. What is
+it called?</p>
+</div>
+</div>
+<div class="section" id="using-return-is-optional">
+<h3>10.4.1.2. Using <code class="docutils literal notranslate"><span class="pre">return</span></code> is Optional<a class="headerlink" href="#using-return-is-optional" title="Permalink to this headline">¶</a></h3>
+<p>As we saw with our initial examples of function definitions, not every function explicitly returns a value. At its simplest, a function can even have an empty body.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">doNothing</span><span class="p">()</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>As written, this function is completely valid, but useless. Although the
+function doesn't have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, JavaScript still implicitly
+returns a value.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>A function without a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement returns the special value
+<code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">doNothing</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="kd">let</span> <span class="nx">returnVal</span> <span class="o">=</span> <span class="nx">doNothing</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">returnVal</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>undefined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="return-terminates-function-execution">
+<h3>10.4.1.3. <code class="docutils literal notranslate"><span class="pre">return</span></code> Terminates Function Execution<a class="headerlink" href="#return-terminates-function-execution" title="Permalink to this headline">¶</a></h3>
+<p>When a return statement executes, the function terminates, regardless of whether or not there is any code following the return statement. This means that you must be careful to use <code class="docutils literal notranslate"><span class="pre">return</span></code> only when the work of the function has been completed.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement in this function never executes, since the function returns before it is reached.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">pastThePointOfReturn</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="s2">&quot;I&#39;m done!&quot;</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This will not be printed&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pastThePointOfReturn</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>I&#39;m done!
+</pre></div>
+</div>
+</div>
+<p>We can use the fact that <code class="docutils literal notranslate"><span class="pre">return</span></code> stops the execution of a function intentionally, to force a function to stop execution.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This function prints out the integers 1...n using an infinite <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, which nonetheless terminates when the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is executed.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">countToN</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
+      <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="boolean-functions">
+<h3>10.4.1.4. Boolean Functions<a class="headerlink" href="#boolean-functions" title="Permalink to this headline">¶</a></h3>
+<p id="index-1">A function that returns a boolean value is known as a <strong>boolean function</strong>. Perhaps the simplest such function is one that tests an integer to determine if it is even.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isEven</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isEven</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isEven</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>true
+false
+</pre></div>
+</div>
+</div>
+<p>It is conventional to name boolean functions by starting with either <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">has</span></code>, which creates a nice semantic effect when reading the code. For example, reading <code class="docutils literal notranslate"><span class="pre">isEven(4)</span></code> communicates to the reader that the function should answer the question, &quot;Is 4 even?&quot; This is a convention so widely used by programmers that it extends to nearly every language.</p>
+<p>Let's return to the <code class="docutils literal notranslate"><span class="pre">isEven</span></code> function above, to see how we can use the power of return statements to make it even better.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">return</span></code> terminates the function, we can leave out the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause and have the same effect. This is because if <code class="docutils literal notranslate"><span class="pre">n</span></code> is even, the return statement in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block will execute and the function will end. If <code class="docutils literal notranslate"><span class="pre">n</span></code> is odd, the <code class="docutils literal notranslate"><span class="pre">if</span></code> block will be skipped and the second return statement will execute.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isEven</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This updated version works exactly the same as our initial function.</p>
+<p>Additionally, notice that the function returns <code class="docutils literal notranslate"><span class="pre">true</span></code> when <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">===</span> <span class="pre">0</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, and it returns <code class="docutils literal notranslate"><span class="pre">false</span></code> when <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">===</span> <span class="pre">0</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>. In other words, the return value is <em>exactly the same</em> as the value of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">===</span> <span class="pre">0</span></code>. This means that we can simplify the function even further by returning the value of this expression.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isEven</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This version of <code class="docutils literal notranslate"><span class="pre">isEven</span></code> is better than the first two, not because it is shorter (shorter isn't always better), but because it is simpler to read. We don't have to break down the conditional logic to see what is being returned.</p>
+<p>Most boolean functions can be written so that they return the value of a boolean expression, rather than explicitly returning <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</div>
+</div>
+<div class="section" id="parameters-and-arguments">
+<h2>10.4.2. Parameters and Arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">Over the past few sections, we introduced two function-related concepts that are very similar, and are often confusing to distinguish: <em>arguments</em> and <em>parameters</em>. The difference between the two is subtle, so we will attempt to clear that up now.</p>
+<p>The easiest way to talk about the difference between arguments and parameters is by referring to an example.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">hello</span></code> takes a single value, which we expect to be a person's name, and returns a message that greets that person.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;Lamar&quot;</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, Lamar!
+</pre></div>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">name</span></code> is a <strong>parameter</strong>. It is part of the function definition, and <em>behaves like a variable</em> that exists only within the function.</p>
+<p>The value <code class="docutils literal notranslate"><span class="pre">&quot;Lamar&quot;</span></code> that is used when we invoke the function on line 5 is an <strong>argument</strong>. It is a <em>specific value</em> that is used during the function call.</p>
+<p>The difference between a parameter and an argument is the same as that between a variable and a value. A variable <em>refers to</em> a specific value, just like a parameter <em>refers to</em> a specific argument when a function is called. Like a value, an argument is a concrete piece of data.</p>
+</div>
+<div class="section" id="arguments-are-optional">
+<h2>10.4.3. Arguments Are Optional<a class="headerlink" href="#arguments-are-optional" title="Permalink to this headline">¶</a></h2>
+<p>A function may be defined with several parameters, or with no parameters at all. Even if a function is defined with parameters, JavaScript will not complain if the function is called <em>without</em> specifying the value of each parameter.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, undefined!
+</pre></div>
+</div>
+</div>
+<p>We defined <code class="docutils literal notranslate"><span class="pre">hello</span></code> to have one parameter, <code class="docutils literal notranslate"><span class="pre">name</span></code>. When calling it, however, we did not provide any arguments. Regardless, the program ran without error.</p>
+<p><em>Arguments are optional</em> when calling a function. When a function is called
+without specifying a full set of arguments, any parameters that are left
+without values will have the value <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<p id="index-3">If your function will not work properly without one or more of its parameters defined, then you should define a <strong>default value</strong> for these parameters. The default value can be provided next to the parameter name, after <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This example modifies the <code class="docutils literal notranslate"><span class="pre">hello</span></code> function to use a default value for <code class="docutils literal notranslate"><span class="pre">name</span></code>. If <code class="docutils literal notranslate"><span class="pre">name</span></code> is not defined when <code class="docutils literal notranslate"><span class="pre">hello</span></code> is called, it will use the default value.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;Lamar&quot;</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
+Hello, Lamar!
+</pre></div>
+</div>
+</div>
+<p>While this may seem new, we have already seen a function that allows for some arguments to be omitted---the string method <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The string method <code class="docutils literal notranslate"><span class="pre">slice</span></code> allows the second argument to be left off.
+When this happens, the method behaves as if the value of the second
+argument is the length of the string.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// returns &quot;Launch&quot;</span>
+<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+
+<span class="c1">// returns &quot;Code&quot;</span>
+<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+
+<span class="c1">// also returns &quot;Code&quot;</span>
+<span class="s2">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Just as it is possible to call a function with <em>fewer</em> arguments than it has parameters, we can also call a function with <em>more</em> arguments than it has parameters. In this case, such parameters are not available as a named variable.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This example calls <code class="docutils literal notranslate"><span class="pre">hello</span></code> with two arguments, even though it is defined with only one parameter.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="s2">&quot;McKelvey&quot;</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, Jim!
+</pre></div>
+</div>
+</div>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="last">These &quot;extra&quot; arguments can still be accessed using a special object named <code class="docutils literal notranslate"><span class="pre">arguments</span></code>, which is made available to every function. If you are curious, <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank">read more at MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. However, we will not need to use this advanced JavaScript feature in this course.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>10.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What does the following code output?</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">plusTwo</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">a</span> <span class="o">=</span> <span class="nx">plusTwo</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What does the following function <em>return</em>?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">repeater</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">repeated</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">+</span> <span class="nx">str</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repeated</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">repeater</span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;BobBob&quot;</span></code></li>
+<li>Nothing (no return value)</li>
+<li><code class="docutils literal notranslate"><span class="pre">undefined</span></code></li>
+<li>The value of <code class="docutils literal notranslate"><span class="pre">Bob</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What does the following code <em>output</em>?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">repeater</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">repeated</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">+</span> <span class="nx">str</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repeated</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">repeater</span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;BobBob&quot;</span></code></li>
+<li>Nothing (no output)</li>
+<li><code class="docutils literal notranslate"><span class="pre">undefined</span></code></li>
+<li>The value of <code class="docutils literal notranslate"><span class="pre">Bob</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="creating-functions.html"><span aria-hidden="true">&larr;</span> 10.3. Creating Functions</a></li>
+        
+        
+        <li class="next"><a href="process.html">10.5. A Good Function-Writing Process <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

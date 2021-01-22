@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>23.8. Studio: The DOM and Events &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24. HTTP: The Postal Service of the Internet" href="../http/index.html" />
+    <link rel="prev" title="23.7. Exercises: The DOM and Events" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">23. The DOM and Events</a></li>
+    <li class="active">23.8. Studio: The DOM and Events</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-the-dom-and-events">
+<span id="dom-studio"></span><h1>23.8. Studio: The DOM and Events<a class="headerlink" href="#studio-the-dom-and-events" title="Permalink to this headline">¶</a></h1>
+<p>Now that we can build a basic flight simulator, we want to add more controls for the staff at our space station.
+The HTML, CSS, and JavaScript files are provided. For each event, the requirements and desired effect is listed.</p>
+<div class="section" id="getting-started">
+<h2>23.8.1. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>First, fork the <a class="reference external" href="https://github.com/LaunchCodeEducation/DOM-and-Events-Studio/" target="_blank">studio repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to your Github account.
+To do so, on the studio repository page on Github, click the &quot;Fork&quot; button.</p>
+<div class="figure">
+<img alt="Image showing the &quot;Fork&quot; button is in the top right on the repository page." src="../../_images/fork-screenshot.png" />
+</div>
+<p>A popup appears asking where to fork the repository to and you select your profile.
+You should now have a copy of the repository on your own profile!</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Not only is forking repositories an important Git skill, it is especially vital in the class so that everyone has the same starter code!
+Before continuing, make sure that the repository is now on your profile and you are working with your copy of the starter code for the rest of the studio.</p>
+</div>
+<p>If you have properly forked a repository, when you click on the forked repository on your profile, you will see the following:</p>
+<div class="figure">
+<img alt="Image showing that the repository name says &quot;Forked from&quot; in the top left when the repository has been forked." src="../../_images/forked-repo-screenshot.png" />
+</div>
+<p>Once you have properly forked the repository, you can clone the remote repository to your computer.
+To start, click on the green &quot;Clone&quot; button to get the proper HTTPS url for the command.</p>
+<div class="figure">
+<img alt="Image showing that a popup appears once the &quot;Clone&quot; button is clicked with the proper url." src="../../_images/clone-repository-screenshot.png" />
+</div>
+<p>Copy the url either by clicking on the button with a clipboard icon or highlighting the whole url and copying.</p>
+<p>In the terminal, navigate to the directory where you want to put your new project.
+Use the command, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;url&gt;</span></code>, with the url you just copied to put the project on your local machine.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> will clone a whole directory including the Git repository on your machine, so there is no need to initialize a Git repository in a new directory to get started this way!</p>
+</div>
+<p>Open Visual Studio Code and go to <cite>File &gt; Open</cite> to find your new project and get started!</p>
+</div>
+<div class="section" id="the-requirements">
+<h2>23.8.2. The Requirements<a class="headerlink" href="#the-requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Use the window <em>load</em> event to ensure all elements have loaded before attaching event handlers.</li>
+<li>When the &quot;Take off&quot; button is clicked, the following should happen:<ol class="loweralpha">
+<li>A window confirm should let the user know &quot;Confirm that the shuttle is
+ready for takeoff.&quot; If the shuttle is ready for liftoff, then add parts
+b-d.</li>
+<li>The flight status should change to &quot;Shuttle in flight.&quot;</li>
+<li>The background color of the shuttle flight screen (<code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">&quot;shuttleBackground&quot;</span></code>) should change from green to blue.</li>
+<li>The shuttle height should increase by 10,000 miles.</li>
+</ol>
+</li>
+<li>When the &quot;Land&quot; button is clicked, the following should happen:<ol class="loweralpha">
+<li>A window alert should let the user know &quot;The shuttle is landing. Landing gear engaged.&quot;</li>
+<li>The flight status should change to &quot;The shuttle has landed.&quot;</li>
+<li>The background color of the shuttle flight screen should change from blue to green.</li>
+<li>The shuttle height should go down to 0.</li>
+</ol>
+</li>
+<li>When the &quot;Abort Mission&quot; button is clicked, the following should happen:<ol class="loweralpha">
+<li>A window confirm should let the user know &quot;Confirm that you want to abort
+the mission.&quot; If the user wants to abort the mission, then add parts b-d.</li>
+<li>The flight status should change to &quot;Mission aborted.&quot;</li>
+<li>The background color of the shuttle flight screen should change from blue to green.</li>
+<li>The shuttle height should go to 0.</li>
+</ol>
+</li>
+<li>When the &quot;Up&quot;, &quot;Down&quot;, &quot;Right&quot;, and &quot;Left&quot; buttons are clicked, the following should happen:<ol class="loweralpha">
+<li>The rocket image should move 10 px in the direction of the button that was clicked.</li>
+<li>If the &quot;Up&quot; or &quot;Down&quot; buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-mission">
+<h2>23.8.3. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>If you are done with the above and have some time left during class, there are a few problems that you can tackle for a bonus mission.</p>
+<ol class="arabic simple">
+<li>Keep the rocket from flying off of the background.</li>
+<li>Return the rocket to its original position on the background when it has been landed or the mission was aborted.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 23.7. Exercises: The DOM and Events</a></li>
+        
+        
+        <li class="next"><a href="../http/index.html">24. HTTP: The Postal Service of the Internet <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

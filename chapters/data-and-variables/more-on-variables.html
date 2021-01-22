@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.4. More On Variables &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.5. Expressions and Evaluation" href="expressions-and-evaluation.html" />
+    <link rel="prev" title="4.3. Variables" href="variables.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">4. Data and Variables</a></li>
+    <li class="active">4.4. More On Variables</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="more-on-variables">
+<h1>4.4. More On Variables<a class="headerlink" href="#more-on-variables" title="Permalink to this headline">¶</a></h1>
+<p>The previous section covered creating, evaluating, and reassigning variables.
+This section will cover some additional, more nuanced topics related to
+variables.</p>
+<div class="section" id="creating-constants-with-const">
+<h2>4.4.1. Creating Constants With <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#creating-constants-with-const" title="Permalink to this headline">¶</a></h2>
+<p>One of the key features of variables that we have discussed so far is their
+ability to change value. We can create a variable with one value, and then
+reassign it to another value.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+<span class="nx">programmingLanguage</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>In some situations, we want to create variables that cannot change value. Many
+programming languages, including JavaScript, provide mechanisms for programmers
+to make variables that are constant.</p>
+<p>For example, suppose that we are writing a to-do list web application, named
+&quot;Get It Done!&quot; The title of the application might appear in multiple places,
+such as the title bar and the main page header.</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../../_images/get-it-done.png"><img alt="A to-do list web application with application name in the title bar and main header." src="../../_images/get-it-done.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-text">An example to-do list web application</span></p>
+</div>
+<p>We might store the name of our application in a variable so that it can be
+referenced anywhere we want to display the application name.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;Get It Done!&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This allows us to simply refer to the <code class="docutils literal notranslate"><span class="pre">appName</span></code> variable any time we want to
+use it throughout our application. If we change the name of the application, we
+only have to change one line of code, where the <code class="docutils literal notranslate"><span class="pre">appName</span></code> variable is
+initialized.</p>
+<p>One problem with this approach is that an unwitting programmer might change the
+value of <code class="docutils literal notranslate"><span class="pre">appName</span></code> later in the code, leading to inconsistent references to
+the application name. In other words, the title bar and main page header could
+reference different names.</p>
+<span class="target" id="index-0"></span><p id="index-1">Using <code class="docutils literal notranslate"><span class="pre">const</span></code> rather than <code class="docutils literal notranslate"><span class="pre">let</span></code> to create a variable ensures that the value
+of the declared variable cannot be changed.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;Get It Done!&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Such an unchangeable variable is known as a <strong>constant</strong>, since its value is
+just that.</p>
+<p>How does JavaScript prevent a programmer from changing the value of a constant?
+Let's find out. Try running the following code in an editor. What happens?</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;Get It Done&quot;</span><span class="p">;</span>
+<span class="nx">appName</span> <span class="o">=</span> <span class="s2">&quot;Best TODO application Ever!&quot;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>TypeError: Assignment to constant variable.
+</pre></div>
+</div>
+</div>
+<p>As we've seen with other examples---such as trying to declare a variable twice,
+using incorrect syntax, or failing to enclose strings in quotes---JavaScript
+prevents undesired code from executing by throwing an error.</p>
+</div>
+<div class="section" id="naming-variables">
+<h2>4.4.2. Naming Variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="valid-variable-names">
+<h3>4.4.2.1. Valid Variable Names<a class="headerlink" href="#valid-variable-names" title="Permalink to this headline">¶</a></h3>
+<p>As you may have discovered already, not just any sequence of characters is a
+valid variable name. For example, if we try to declare a variable with a name
+containing a space, JavaScript complains.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">application</span> <span class="nx">name</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>SyntaxError: Unexpected identifier
+</pre></div>
+</div>
+</div>
+<p>In this case, &quot;identifier&quot; is another term for variable name, so the error
+message is saying that the variable name is not valid, or is &quot;unexpected&quot;.</p>
+<p>JavaScript provides a broad set of rules for naming variables, but there is no
+reason to go beyond a few easy-to-remember guidelines:</p>
+<ol class="arabic simple" id="index-2">
+<li>Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do
+not use special characters or whitespace (space, tab, and so on).</li>
+<li>Do not start a variable name with a number.</li>
+<li>Avoid starting a variable name with an underscore. Doing so is a convention
+used by some JavaScript developers to mean something very specific about the
+variable, and should be avoided.</li>
+<li>Do not use <strong>keywords</strong>, which are words reserved by JavaScript for use by
+the language itself. We'll discuss these in detail in a moment.</li>
+</ol>
+<p>Following these guidelines will prevent you from creating illegal variable
+names. While this is important, we should also strive to create good variable
+names.</p>
+</div>
+<div class="section" id="good-variable-names">
+<h3>4.4.2.2. Good Variable Names<a class="headerlink" href="#good-variable-names" title="Permalink to this headline">¶</a></h3>
+<p>Writing good code is about more than writing code that simply works and
+accomplishes the task at-hand. It is also about writing code that can be read,
+updated, and maintained as easily as possible. How to write code that achieves
+these goals is a theme we will return to again and again.</p>
+<p>One of the primary ways that code can be written poorly is by using bad
+variable names. For example, consider the following program. While we haven't
+introduced each of the components used here, you should be able to come to a
+general understanding of the new components.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">*</span> <span class="nx">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">z</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Understanding what this program is trying to do is not obvious, to say the
+least. The main problem is that the variable names <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> are
+not descriptive. They don't tell us anything about what they represent, or how
+they will be used.</p>
+<blockquote class="pull-quote">
+<div>Variable names should be descriptive, providing context about the data they contain and how they will be used.</div></blockquote>
+<p>Let's look at an improved version of this program.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">radiusOfCircle</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">areaOfCircle</span> <span class="o">=</span> <span class="nx">pi</span> <span class="o">*</span> <span class="nx">radiusOfCircle</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">areaOfCircle</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>With improved variable names, it now becomes clear that the program is calculating the area of a circle of radius 5.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">When considering program readability, think about whether or not your code will make sense to another programmer. It is not enough for code to be readable by only the programmer that originally wrote it.</p>
+</div>
+</div>
+<div class="section" id="camel-case-variable-names">
+<h3>4.4.2.3. Camel Case Variable Names<a class="headerlink" href="#camel-case-variable-names" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="index-3"></span><p id="index-4">There is one more aspect of naming variables that you should be aware of, and that is conventions used by professional programmers. Conventions are not formal rules, but are informal practices adopted by a group.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>In the United States, it is common for two people to greet each other with a handshake. In other countries and cultures, such as some in east Asia, the conventional greeting is to bow.</p>
+<p class="last">Failing to follow a social convention is not a violation of the law, but is considered impolite nonetheless. It is a signal that you are not part of the group, or do not respect its norms.</p>
+</div>
+<p>There are a variety of types of conventions used by different groups of programmers. One common type of convention is that programmers that specialize in a specific language will adopt certain variable naming practices.</p>
+<p>In JavaScript, most programmers use the <strong>camel case</strong> style, which stipulates that variable names consist of names or phrases that:</p>
+<ul class="simple">
+<li>are joined together to omit spaces,</li>
+<li>start with a lowercase letter, and</li>
+<li>capitalize each internal word.</li>
+</ul>
+<p>In the example from the previous section, the descriptor &quot;area of circle&quot; became the variable name <code class="docutils literal notranslate"><span class="pre">areaOfCircle</span></code>. This convention is called camel case because the capitalization of internal words is reminiscent of a camel's humps. Another common name for this convention is <strong>lower camel case</strong>, since names start with a lowercase letter.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in <code class="docutils literal notranslate"><span class="pre">area_of_circle</span></code>.</p>
+</div>
+<p>We will use the lower camel case convention throughout this course, and strongly encourage you to do so as well.</p>
+</div>
+</div>
+<div class="section" id="keywords">
+<h2>4.4.3. Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p id="index-5">Our last note on naming variables has to do with a collection of words that are reserved for use by the JavaScript language itself. Such words are called <strong>keywords</strong>, or <strong>reserved words</strong>.</p>
+<p>Any word that is formally part of the JavaScript language syntax is a keyword. So far, we have seen only four keywords: <code class="docutils literal notranslate"><span class="pre">let</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>, and <code class="docutils literal notranslate"><span class="pre">typeof</span></code>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">While <code class="docutils literal notranslate"><span class="pre">console</span></code> and <code class="docutils literal notranslate"><span class="pre">console.log</span></code> may seem like keywords, they are actually slightly different things. They are entities (an object and a function, respectively) that are available by default in most JavaScript environments.</p>
+</div>
+<p>Attempting to use a keyword for anything other than it's intended use will result in an error. To see this, let's try to name a variable <code class="docutils literal notranslate"><span class="pre">const</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="kr">const</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>let const
+^^^^^
+
+SyntaxError: Unexpected token const
+</pre></div>
+</div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Most code editors will highlight keywords in a different color than variables or other parts of your code. This serves as a visual cue that a given word is a keyword, and can help prevent mistakes.</p>
+</div>
+<p>We will not provide the full list of keywords at this time, but rather point them out as we learn about each of them. If you are curious, the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Reserved_keywords_as_of_ECMAScript_2015" target="_blank">full list is available at MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>4.4.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which is the best keyword for declaring a variable in most situations?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">let</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">const</span></code></li>
+<li>(no keyword)</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="variables.html"><span aria-hidden="true">&larr;</span> 4.3. Variables</a></li>
+        
+        
+        <li class="next"><a href="expressions-and-evaluation.html">4.5. Expressions and Evaluation <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

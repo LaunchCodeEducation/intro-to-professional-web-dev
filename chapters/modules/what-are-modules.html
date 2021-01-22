@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>13.1. What are Modules? &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13.2. Require Modules" href="require-modules.html" />
+    <link rel="prev" title="13. Modules" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">13. Modules</a></li>
+    <li class="active">13.1. What are Modules?</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="what-are-modules">
+<h1>13.1. What are Modules?<a class="headerlink" href="#what-are-modules" title="Permalink to this headline">¶</a></h1>
+<p>Just like functions should be kept small and accomplish only one thing, we want
+to apply the same idea for the different parts of our program. <strong>Modules</strong>
+allow us to keep the features of our program in separate, smaller pieces. We
+code these smaller chunks and then connect the modules together to create the
+big project.</p>
+<p>Modules are like Legos. Each piece has its own distinct shape and function, and
+the same set of pieces can be combined in lots of different ways to create
+unique results.</p>
+<div class="section" id="one-possible-scenario">
+<h2>13.1.1. One Possible Scenario<a class="headerlink" href="#one-possible-scenario" title="Permalink to this headline">¶</a></h2>
+<p>Imagine we want to create a program that quizzes students on their JavaScript
+skills.</p>
+<p>What would go into this app? Features could include:</p>
+<ol class="arabic simple">
+<li>Selecting questions from a stored array or object.</li>
+<li>Presenting the questions to the students and collecting their answers.</li>
+<li>Scoring the quizzes.</li>
+<li>Storing the results.</li>
+</ol>
+<p>This would be a useful app, but we could make it better by adding some
+other features. Instead of just quizzing students, maybe we could add some
+tutorial pages. Our app now provides some teaching and assessment content.</p>
+<p>Next, how about adding some non-graded practice to make sure the students are
+ready for their final quiz? Once we accomplish that, we could continue adding
+to our app to make it better and better.</p>
+<p>Let's pause a moment to consider what happened to the size of our project. As
+the program evolved from the straightforward quiz app to one that included
+tutorials and practice tasks, the number of lines of code increased. Now
+imagine we replicate all of these features for two or three other programming
+languages.</p>
+<p>We can picture our app as follows:</p>
+<div class="figure" id="id1">
+<img alt="Visual of the parts of a project." src="../../_images/WhyModules.png" />
+<p class="caption"><span class="caption-text">Imagine if the project included two or three additional programming languages!</span></p>
+</div>
+<p>The result is a mammoth program that contains thousands of lines of code. How
+would this impact debugging? How about keeping the code DRY? Do any of the
+features overlap? How easy is it to add new features?</p>
+</div>
+<div class="section" id="why-use-modules">
+<h2>13.1.2. Why Use Modules<a class="headerlink" href="#why-use-modules" title="Permalink to this headline">¶</a></h2>
+<p>Modules help us keep our project organized. If we find a bug in the quiz part
+of our program, then we can focus our attention on the quiz module rather than
+the entire codebase.</p>
+<p>Modules also save us effort in other projects - another example of the DRY
+concept. We have already practiced condensing repetitive tasks into loops or
+functions. Similarly, if we design our quiz module in a generic way, then we
+can use that same module in other programs.</p>
+<p>Even better, we can SHARE our modules with other programmers and use someone
+else's work (with permission) to enhance our own. Writing the imaginary
+quiz/tutorial/practice app from scratch would take us many, many weeks.
+However, someone in the coding community might already have modules that we can
+immediately incorporate into our own project---saving us time and effort.</p>
+<blockquote>
+<div>Modules keep us from reinventing the wheel.</div></blockquote>
+<p>Some modules also provide us with useful shortcuts.
+<a class="reference internal" href="../data-and-variables/input.html#readline-sync"><span class="std std-ref">readline-sync</span></a> allowed us to collect input from a user,
+and this module contains lots of other methods besides the <code class="docutils literal notranslate"><span class="pre">.question</span></code> we
+used in our examples. Rather than making every developer write their own code
+for interacting with the user through the console, <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> makes the
+process easier for all by providing a set of ready-to-use functions. We do not
+need to worry about HOW the module works. We just need to be able to pull it
+into our projects and use its functions.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> 13. Modules</a></li>
+        
+        
+        <li class="next"><a href="require-modules.html">13.2. Require Modules <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Assignment #5: Launch Checklist Form &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #6: Orbit Report" href="orbit-report.html" />
+    <link rel="prev" title="Assignment #4: HTML Me Something" href="html-me-something.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Assignment #5: Launch Checklist Form</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="assignment-5-launch-checklist-form">
+<h1>Assignment #5: Launch Checklist Form<a class="headerlink" href="#assignment-5-launch-checklist-form" title="Permalink to this headline">¶</a></h1>
+<p>Using our knowledge of forms, the DOM, and HTTP, the commanders of our favorite space shuttle program asked us to create a quick launch checklist.
+We have four fields that need to be filled out with vital information: the pilot's name, the co-pilot's name, the fuel levels, and the mass of the cargo.</p>
+<p>Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to ensure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
+The form should do the following:</p>
+<ol class="arabic simple">
+<li>Validate the user responses with <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to ensure the following:<ol class="loweralpha">
+<li>The user entered something for every field.</li>
+<li>The user entered text for names and numbers for fuel and cargo levels.</li>
+</ol>
+</li>
+<li>With validation, update a list of what is currently ready or not ready for the shuttle launch.</li>
+<li>Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.</li>
+<li>Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.</li>
+</ol>
+</div>
+<div class="section" id="setting-up-your-project-repository">
+<h2>Setting Up Your Project Repository<a class="headerlink" href="#setting-up-your-project-repository" title="Permalink to this headline">¶</a></h2>
+<p>Fork the repository with the <a class="reference external" href="https://github.com/LaunchCodeEducation/Launch-Checklist-Form/" target="_blank">starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to your personal GitHub profile and clone the repository to the directory where you are keeping your assignments for the class.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">When updating styles to indicate whether the shuttle is ready for launch, do NOT modify <code class="docutils literal notranslate"><span class="pre">styles.css</span></code>!</p>
+</div>
+<p>To get started, navigate to the directory with your copy of the starter code. Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> with Firefox to verify that your starter code is working.</p>
+<p>When you open <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says &quot;Awaiting Information Before Launch&quot;.</p>
+<div class="figure">
+<img alt="Image showing the form and the box stating that more information is needed before launch." src="../_images/form-starting-point.png" />
+</div>
+</div>
+<div class="section" id="adding-validation">
+<h2>Adding Validation<a class="headerlink" href="#adding-validation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-alerts">
+<h3>Adding Alerts<a class="headerlink" href="#adding-alerts" title="Permalink to this headline">¶</a></h3>
+<p>First, let's add validation to notify the user if they forgot to enter a value for any one of the fields.</p>
+<p>This process is going to look similar to the <a class="reference internal" href="../chapters/forms/validation-with-javascript.html#javascript-validation"><span class="std std-ref">validation section</span></a> in the chapter on forms.
+Make sure to use <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> and an alert to notify the user that all fields are required.</p>
+<p>You also want to make sure that the user entered valid info for each of the fields.
+Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.
+The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you want to check if something is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, you cannot use <code class="docutils literal notranslate"><span class="pre">==</span></code> or <code class="docutils literal notranslate"><span class="pre">===</span></code>.
+Instead, JavaScript has a built-in method called <code class="docutils literal notranslate"><span class="pre">isNaN(value)</span></code> that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> is not <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+</div>
+</div>
+<div class="section" id="updating-shuttle-requirements">
+<h3>Updating Shuttle Requirements<a class="headerlink" href="#updating-shuttle-requirements" title="Permalink to this headline">¶</a></h3>
+<p>The list of shuttle requirements, the <code class="docutils literal notranslate"><span class="pre">div</span></code> with the id <code class="docutils literal notranslate"><span class="pre">faultyItems</span></code>, should be updated if something is not ready for launch.
+Using template literals, update the <code class="docutils literal notranslate"><span class="pre">li</span></code> elements <code class="docutils literal notranslate"><span class="pre">pilotStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">copilotStatus</span></code> to include the pilot's name and the co-pilot's name.</p>
+<p>If the user submits a fuel level that is too low (less than 10,000 liters), change <code class="docutils literal notranslate"><span class="pre">faultyItems</span></code> to <code class="docutils literal notranslate"><span class="pre">visible</span></code> with an updated fuel status stating that there is not enough fuel for the journey.
+The text of the <code class="docutils literal notranslate"><span class="pre">h2</span></code> element, <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code>, should also change to &quot;Shuttle not ready for launch&quot; and the <code class="docutils literal notranslate"><span class="pre">color</span></code> should change to red.</p>
+<p>If the user submits a cargo mass that is too large (more than 10,000 kilograms), change the list to <code class="docutils literal notranslate"><span class="pre">visible</span></code> with an updated cargo status stating that there is too much mass for the shuttle to take off.
+The text of <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> should also change to &quot;Shuttle not ready for launch&quot; and the <code class="docutils literal notranslate"><span class="pre">color</span></code> should change to red.</p>
+<p>If the shuttle is ready to launch, change the text of <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> to green and display &quot;Shuttle is ready for launch&quot;.</p>
+</div>
+</div>
+<div class="section" id="fetching-planetary-data">
+<h2>Fetching Planetary Data<a class="headerlink" href="#fetching-planetary-data" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we need some JSON to fill in the crew on the mission destination.
+Our planetary data can be found in <a class="reference external" href="https://handlers.education.launchcode.org/static/planets.json" target="_blank">JSON format<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Review the list and decide which planet you want to send our intrepid crew to and make note of the index number.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">When fetching more than one JSON object, we get an array of all of the JSON objects.
+In this case, that means an array of our possible mission destinations.
+When picking the mission destination, just pick the item in the array you want and start counting at 0.</p>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">script.js</span></code>, we have a block of code commented out at the top.
+This is the format of the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> for the <code class="docutils literal notranslate"><span class="pre">missionTarget</span></code> div.
+Be sure to include the appropriate variables in the template literals!</p>
+</div>
+<div class="section" id="the-end-result">
+<h2>The End Result<a class="headerlink" href="#the-end-result" title="Permalink to this headline">¶</a></h2>
+<p>After you implement everything, the following form submission would result in the proper updates to the <code class="docutils literal notranslate"><span class="pre">launchStatus</span></code> and <code class="docutils literal notranslate"><span class="pre">faultyItems</span></code> list.</p>
+<div class="figure">
+<img alt="Image showing the user is submitting a form with Chris as the pilot, Blake as the co-pilot, 890 liters as the fuel level, and 178 kilograms as the cargo mass." src="../_images/form-fields-ready.png" />
+</div>
+<p>With only 890 liters of fuel, the status of the launch becomes red and states that the shuttle is not ready.
+The list has also updated to indicate that that is not enough fuel for the shuttle to launch.</p>
+<div class="figure">
+<img alt="Image showing the updates to the faulty items list and the launch status." src="../_images/form-submission-result.png" />
+</div>
+<p>If the user forgets to enter the cargo mass, then an alert pops up letting the user know that all fields are required.</p>
+<div class="figure">
+<img alt="Image showing an alert pop up stating that all fields are required." src="../_images/form-fields-required.png" />
+</div>
+<p>If the user switches up the information that needs to go in the fields, then an alert pops up letting the user know that they have tried to enter invalid information.</p>
+<div class="figure">
+<img alt="Image showing an alert pop up stating that some fields have invalid information." src="../_images/form-fields-invalid.png" />
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Use whichever method you choose to randomly select the mission destination from the available options in the JSON file.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="html-me-something.html"><span aria-hidden="true">&larr;</span> Assignment #4: HTML Me Something</a></li>
+        
+        
+        <li class="next"><a href="orbit-report.html">Assignment #6: Orbit Report <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

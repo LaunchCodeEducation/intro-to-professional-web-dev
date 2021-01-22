@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6.3. Diagnosing Error Messages &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.4. Error Types" href="error-types.html" />
+    <link rel="prev" title="6.2. Categories of Errors" href="categories-of-errors.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">6. Errors and Debugging</a></li>
+    <li class="active">6.3. Diagnosing Error Messages</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="diagnosing-error-messages">
+<h1>6.3. Diagnosing Error Messages<a class="headerlink" href="#diagnosing-error-messages" title="Permalink to this headline">¶</a></h1>
+<p>Syntax and runtime errors <em>always</em> produce error messages. Reading and
+understanding error messages is a crucial first step in fixing these types of
+bugs.</p>
+<p><strong>Error messages are your friends.</strong> This idea can seem foreign to new
+programmers, because an error message is a signal that your program is broken.
+When we are working with a broken program, we might feel frustrated, like we do
+not fully understand the concepts at hand.</p>
+<p>However, the reality is that <em>all</em> programmers, no matter how experienced,
+regularly make simple mistakes. If you run your program and it produces an
+error message, your first reaction should be, &quot;Great! My program has an error,
+but I have a helpful message to help me fix it.&quot;</p>
+<p>Let's consider a small program with a couple of syntax errors.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
+console.log(&quot;Hello, name);
+</pre></div>
+</div>
+</div>
+<p>While you can spot one or more errors just by looking at the code, let's
+examine the error messages produced.</p>
+<div class="section" id="a-syntax-error">
+<span id="syntax-error"></span><h2>6.3.1. A Syntax Error<a class="headerlink" href="#a-syntax-error" title="Permalink to this headline">¶</a></h2>
+<p>Running the program at this stage results in the message:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/chris/dev/sandbox/js/syntax.js:2
+console.log(&quot;Hello, name);
+            ^^^^^^^^^^^^^^
+
+SyntaxError: Invalid or unexpected token
+   at new Script (vm.js:85:7)
+   at createScript (vm.js:266:10)
+   at Object.runInThisContext (vm.js:314:10)
+   at Module._compile (internal/modules/cjs/loader.js:698:28)
+   at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+   at Module.load (internal/modules/cjs/loader.js:630:32)
+   at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+   at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+   at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+   at internal/main/run_main_module.js:21:11
+</pre></div>
+</div>
+<p>While there is a lot of text in this message, the first few lines tell us
+everything we need to know.</p>
+<p>The first portion identifies where in our code the error exists:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>console.log(&quot;Hello, name);
+            ^^^^^^^^^^^^^^
+</pre></div>
+</div>
+<p>For many simple syntax errors, we will quickly be able to spot the mistake once
+JavaScript points out its location to us.</p>
+<p>If knowing the location of the error isn't enough, the next line provides more
+information:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SyntaxError: Invalid or unexpected token
+</pre></div>
+</div>
+<p>This line identifies that actual issue that JavaScript found. It makes it clear
+that we are dealing with a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, and it provides a message that
+describes the issue.</p>
+<p>If you are scratching your head at the message, &quot;Invalid or unexpected token,&quot;
+don't worry. Programming languages often report errors in ways that are not
+always easy to decipher at first glance. However, a second look at the line in
+question helps us make sense of this message.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>console.log(&quot;Hello, name);
+            ^^^^^^^^^^^^^^
+</pre></div>
+</div>
+<p id="index-0">JavaScript is telling us that in the area of <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name);</span></code> it encountered
+an invalid token. <strong>Token</strong> is a fancy word that means a symbol, variable, or
+other atomic element of a program. In this case, the invalid token is <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span>
+<span class="pre">name);</span></code>. JavaScript sees the double-quote character and expects a string.
+However, the string does not have a closing <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, making it invalid.</p>
+<p>Fixing this error gives us a program with correct syntax:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">Julie</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and Node.js on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
+</div>
+</div>
+<div class="section" id="syntax-errors-and-code-highlighting">
+<h2>6.3.2. Syntax Errors and Code Highlighting<a class="headerlink" href="#syntax-errors-and-code-highlighting" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Most code editors provide a feature known as <strong>syntax highlighting</strong>. Such
+editors highlight different types of tokens in different ways. For example,
+strings may be red, while variables may be green. This useful feature gives you
+a quick, visual way to identify syntax errors.</p>
+<p>For example, here is a screenshot of our flawed code taken within an <a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Highlighting" target="_blank">editor at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="figure" id="id1">
+<img alt="A screenshot with two lines of code. Syntax errors on each line cause highlighting to differ from what is expected. On line 1, the string &quot;Julie&quot; is green instead of red, because it is missing quotes. On line 2, the symbols ); are red instead of black, because the preceding string &quot;Hello, World&quot; doesn't have a closing double-quote." src="../../_images/syntax-highlighting.png" />
+<p class="caption"><span class="caption-text">Screenshot of a program with two syntax errors</span></p>
+</div>
+<p>Notice that the string <code class="docutils literal notranslate"><span class="pre">Hello</span></code> is colored red, while <em>most</em> of the symbols
+(<code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">(</span></code>) are colored black. At the end of line 2,
+however, the final <code class="docutils literal notranslate"><span class="pre">)</span></code> and <code class="docutils literal notranslate"><span class="pre">;</span></code> are both red rather than black. Since we
+haven't closed the string, the editor assumes that these two symbols are <em>part
+of</em> the string. Since we expect <code class="docutils literal notranslate"><span class="pre">);</span></code> to be black in this editor, the
+difference in color is a clue that something is wrong with our syntax.</p>
+</div>
+<div class="section" id="a-runtime-error">
+<h2>6.3.3. A Runtime Error<a class="headerlink" href="#a-runtime-error" title="Permalink to this headline">¶</a></h2>
+<p>Having fixed the syntax error, we can now run our program again. Doing so displays yet another error.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hello
+/Users/chris/dev/sandbox/js/syntax.js:1
+let name = Julie;
+         ^
+
+ReferenceError: Julie is not defined
+   at Object.&lt;anonymous&gt; (/Users/chris/dev/sandbox/js/syntax.js:1:74)
+   at Module._compile (internal/modules/cjs/loader.js:738:30)
+   at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+   at Module.load (internal/modules/cjs/loader.js:630:32)
+   at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+   at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+   at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+   at internal/main/run_main_module.js:21:11
+</pre></div>
+</div>
+<p>We have a new error message, this time involving line 1 of our code. We didn't see this error before because it is a runtime error. Due to the syntax error on line 2, the program stopped during the parsing phase. Even though the current error involves the line <em>before</em> the original syntax error, the syntax error still gets reported first.</p>
+<p>Once again, we are told where the error occurs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
+         ^
+</pre></div>
+</div>
+<p>There appears to be an issue with the assignment statement. You might be able to see what it is, but let's inspect the error message anyway. Doing so will help us understand JavaScript errors more generally.</p>
+<p>The message is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ReferenceError: Julie is not defined
+</pre></div>
+</div>
+<p>The type of error is <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>. If we search the web for &quot;JS ReferenceError&quot; then one of the first results is the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError" target="_blank">MDN documentation for ReferenceError<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. No need to read the entire document, however. The first sentence on this page tells us what we need to know:</p>
+<blockquote class="pull-quote">
+<div>The <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> object represents an error when a non-existent variable is referenced.</div></blockquote>
+<p>This information, along with the rest of the message, &quot;Julie is not defined,&quot; makes it clear what JavaScript is complaining about. The error message is saying, <em>Hey, check your variables!</em></p>
+<p>To us, we see that we forgot to enclose the string <code class="docutils literal notranslate"><span class="pre">Julie</span></code> in quotes, because we know that we intended to assign the variable <code class="docutils literal notranslate"><span class="pre">name</span></code> a string value. However, to JavaScript there is nothing in the program to indicate that <code class="docutils literal notranslate"><span class="pre">Julie</span></code> should be a string. In fact, JavaScript sees <code class="docutils literal notranslate"><span class="pre">Julie</span></code> as a variable. Since there is no such defined variable in our program, it returns a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>.</p>
+<p>This is one of many examples when we, as humans, describe the same error slightly differently than JavaScript. Usually, neither description is better than the other. Humans and computers simply view information differently.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="categories-of-errors.html"><span aria-hidden="true">&larr;</span> 6.2. Categories of Errors</a></li>
+        
+        
+        <li class="next"><a href="error-types.html">6.4. Error Types <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

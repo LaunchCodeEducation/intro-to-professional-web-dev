@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>28.8. Studio: Angular, Part 1 &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="29. Angular, Part 2" href="../angular-lsn2/index.html" />
+    <link rel="prev" title="28.7. Exercises: Angular, Lesson 1" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">28. Angular, Part 1</a></li>
+    <li class="active">28.8. Studio: Angular, Part 1</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-angular-part-1">
+<h1>28.8. Studio: Angular, Part 1<a class="headerlink" href="#studio-angular-part-1" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, you learned about the Angular file structure, templates, and
+components. Over the next three classes, you will build a Mission Planning
+Dashboard using your Angular skills.</p>
+<div class="section" id="mission-planning-dashboard">
+<h2>28.8.1. Mission Planning Dashboard<a class="headerlink" href="#mission-planning-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>A useful and common front end application is a <em>dashboard</em>. It shows a summary of
+information about a topic, helping users of the web app make informed decisions.</p>
+<p>You will create a Space Mission Planning Dashboard.</p>
+</div>
+<div class="section" id="setup">
+<h2>28.8.2. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fork the <a class="reference external" href="https://github.com/LaunchCodeEducation/angular-lc101-mission-planner" target="_blank">Angular Lesson 1 Studio repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li>Clone your fork to your computer.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to verify that you are on branch <code class="docutils literal notranslate"><span class="pre">studio-1</span></code>.<ul>
+<li>Note that <code class="docutils literal notranslate"><span class="pre">studio-1</span></code> is a mostly empty branch.</li>
+</ul>
+</li>
+</ol>
+<div class="section" id="create-angular-project">
+<h3>28.8.2.1. Create Angular Project<a class="headerlink" href="#create-angular-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Open a terminal at the root of the <code class="docutils literal notranslate"><span class="pre">angular-lc101-mission-planner</span></code> repository you just cloned.</li>
+<li>Create a new Angular project by running <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span> <span class="pre">mission-planning-dashboard</span></code>.<ol class="loweralpha">
+<li>When prompted about using routing, enter &quot;N&quot; for No.</li>
+<li>When prompted to select the stylesheet format, select CSS.</li>
+</ol>
+</li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ng new mission-planning-dashboard
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Navigate into the new folder by running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">mission-planning-dashboard</span></code></li>
+<li>Install dependencies by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code></li>
+<li>Verify that the application will run by running <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code></li>
+<li>View the site in your browser at <a class="reference external" href="http://localhost:4200" target="_blank">http://localhost:4200<i class="fas fa-external-link-alt" aria-hidden="true"></i></a><ol class="loweralpha">
+<li>You should see a header that says &quot;Welcome to mission-planning-dashboard!&quot;</li>
+</ol>
+</li>
+<li>Stage and commit the files before starting on the features.</li>
+</ol>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">You will likely still have <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> running in your terminal. You can
+stop <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> by pressing the keys &quot;control+c&quot;, or you can open an
+additional terminal window to run the git commands.</p>
+</div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>28.8.3. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>The mission dashboard you are creating will eventually look like this.</p>
+<div class="figure">
+<img alt="Screen shot showing the mission dashboard with mission name, rocket name, crew members, equipment, and experiments." src="../../_images/example-mission-dashboard.png" />
+</div>
+<div class="section" id="update-starter-page-content">
+<h3>28.8.3.1. Update Starter Page Content<a class="headerlink" href="#update-starter-page-content" title="Permalink to this headline">¶</a></h3>
+<p>The default stater page created by Angular contains default text, images, and links. Your job is to remove the default content.</p>
+<ol class="arabic simple">
+<li>Clear out the contents of file <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
+<li>Type in the text <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">components</span> <span class="pre">here...</span></code> into <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> if it's not already running.</li>
+<li>View the app in your browser to verify the words &quot;Add components here...&quot; is the only thing that appears on the page.</li>
+</ol>
+</div>
+<div class="section" id="header-component">
+<h3>28.8.3.2. Header Component<a class="headerlink" href="#header-component" title="Permalink to this headline">¶</a></h3>
+<p>You need to create a component that shows the title, mission name, and carrier rocket.</p>
+<ol class="arabic simple">
+<li>In terminal navigate to the folder <code class="docutils literal notranslate"><span class="pre">src/app</span></code> folder.</li>
+<li>Create a header component using <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">component</span> <span class="pre">header</span></code>.</li>
+<li>In the file <code class="docutils literal notranslate"><span class="pre">header.component.html</span></code> add HTML:</li>
+</ol>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mission Planning Dashboard<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Mission Name: <span class="cp">{{</span> <span class="nv">missionName</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Carrier Rocket: <span class="cp">{{</span> <span class="nv">rocketName</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="4">
+<li>Add the variables <code class="docutils literal notranslate"><span class="pre">missionName</span></code> and <code class="docutils literal notranslate"><span class="pre">rocketName</span></code> to the header component in <code class="docutils literal notranslate"><span class="pre">header.component.ts</span></code></li>
+</ol>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">HeaderComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+    <span class="nx">missionName</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;Mars 2030&quot;</span><span class="p">;</span>
+    <span class="nx">rocketName</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;Plasma Max&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Add a reference to the header component in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
+</ol>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>View the app in your browser to verify that the title, mission name, and rocket name are visible.</li>
+</ol>
+<div class="figure">
+<img alt="Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name, and a Carrier Rocket." src="../../_images/example-header-component.png" />
+</div>
+</div>
+<div class="section" id="crew-component">
+<h3>28.8.3.3. Crew Component<a class="headerlink" href="#crew-component" title="Permalink to this headline">¶</a></h3>
+<p>Next you need to make a component to show a list of crew members.</p>
+<ol class="arabic">
+<li><p class="first">Create the component by running <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">component</span> <span class="pre">crew</span></code>.</p>
+</li>
+<li><p class="first">Set the contents of <code class="docutils literal notranslate"><span class="pre">crew.component.html</span></code> to be:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Crew<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Jessica Watkins<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Raja Chari<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Jasmin Moghbeli<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Add a reference to the header component in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">app-crew</span><span class="p">&gt;&lt;/</span><span class="nt">app-crew</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="figure">
+<img alt="Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name,a Carrier Rocket, a Crew header, and a list of crew members in an unordered list." src="../../_images/example-crew-component.png" />
+</div>
+</div>
+<div class="section" id="equipment-component">
+<h3>28.8.3.4. Equipment Component<a class="headerlink" href="#equipment-component" title="Permalink to this headline">¶</a></h3>
+<p>Now you need to create a component to show a list of equipment.</p>
+<ol class="arabic">
+<li><p class="first">Create an equipment component named <code class="docutils literal notranslate"><span class="pre">equipment</span></code>.</p>
+</li>
+<li><p class="first">The component should display the following:</p>
+<ol class="loweralpha simple">
+<li>An <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> that contains &quot;Equipment&quot;</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> that contains <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> for: Habitat dome, Drones, Food containers, Oxygen tanks</li>
+</ol>
+</li>
+<li><p class="first">Add the equipment component to <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> using the HTML below. Notice the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> surrounding the crew and equipment components.</p>
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-crew</span><span class="p">&gt;&lt;/</span><span class="nt">app-crew</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-equipment</span><span class="p">&gt;&lt;/</span><span class="nt">app-equipment</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p class="first">Add CSS to file <code class="docutils literal notranslate"><span class="pre">app.component.css</span></code> to horizontally align the crew and equipment lists. Without this CSS, the equipment list will appear below the crew list.</p>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
+   <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+   <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<div class="figure">
+<img alt="Screen shot of browser showing address localhost:4200, which has a title of Mission Planning Dashboard, a Mission Name, a Carrier Rocket, a Crew header, a list of crew members, and a list of equipment." src="../../_images/example-equipment-component.png" />
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">A full explanation of <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">flex;</span></code> is beyond the scope of this book. For more information
+see <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">MDN flex box docs<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+and <a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks flex box guide<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+<div class="section" id="experiments-component">
+<h3>28.8.3.5. Experiments Component<a class="headerlink" href="#experiments-component" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Finally, add an experiments component that contains the HTML below:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Experiments<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Mars soil sample<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Plant growth in habitat<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Human bone density<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Make the list of experiments show up to the right of equipment list.</p>
+</li>
+</ol>
+<p>When done your dashboard should look like this:</p>
+<div class="figure">
+<img alt="Screen shot showing the mission dashboard with mission name, rocket name, crew members, equipment, and experiments." src="../../_images/example-mission-dashboard.png" />
+</div>
+</div>
+</div>
+<div class="section" id="commit-your-work">
+<h2>28.8.4. Commit Your Work<a class="headerlink" href="#commit-your-work" title="Permalink to this headline">¶</a></h2>
+<p>This repository will be used for the next two studios. Be sure to stage, commit, and push your changes. The next studio will start with a different branch.</p>
+<ol class="arabic simple">
+<li>Verify the branch and status of the files.</li>
+<li>Commit your changes.</li>
+<li>Push your commits to origin.</li>
+</ol>
+</div>
+<div class="section" id="bonus-mission">
+<h2>28.8.5. Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Display crew members by adding an array of crew names.<ol class="loweralpha">
+<li>In <code class="docutils literal notranslate"><span class="pre">crew.component.ts</span></code> add <code class="docutils literal notranslate"><span class="pre">crew:</span> <span class="pre">string[]</span> <span class="pre">=</span> <span class="pre">[&quot;Jessica</span> <span class="pre">Watkins&quot;,</span> <span class="pre">&quot;Raja</span> <span class="pre">Chari&quot;,</span> <span class="pre">&quot;Jasmin</span> <span class="pre">Moghbeli&quot;];</span></code></li>
+<li>In <code class="docutils literal notranslate"><span class="pre">crew.component.html</span></code> use references like <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;{{crew[0]}}&lt;/li&gt;</span></code> to
+display the crew names.</li>
+</ol>
+</li>
+<li>Use CSS to add different colors, fonts, borders, etc. to your dashboard.</li>
+<li>Move the components around to see how that affects the display of the data.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 28.7. Exercises: Angular, Lesson 1</a></li>
+        
+        
+        <li class="next"><a href="../angular-lsn2/index.html">29. Angular, Part 2 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

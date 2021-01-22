@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>7.2. Bracket Notation &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.3. Strings as Objects" href="strings-as-objects.html" />
+    <link rel="prev" title="7.1. Strings as Collections" href="strings-as-collections.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">7. Stringing Characters Together</a></li>
+    <li class="active">7.2. Bracket Notation</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="bracket-notation">
+<h1>7.2. Bracket Notation<a class="headerlink" href="#bracket-notation" title="Permalink to this headline">¶</a></h1>
+<p>Understanding strings as sequential collections of characters gives us much more than just a mental model of how they are structured. JavaScript provides a rich collection of tools---including special syntax and operations---that allows us to work with strings.</p>
+<span class="target" id="index-0"></span><p id="index-1"><strong>Bracket notation</strong> is the special syntax that allows us to access the individual characters that make up a string. To access a character, we use the syntax <code class="docutils literal notranslate"><span class="pre">someString[i]</span></code>, where <code class="docutils literal notranslate"><span class="pre">i</span></code> is the <strong>index</strong> of the character we want to access. String indices are integers representing the position of a character within a given string, and they start at 0. Thus, the first character of a string has index 0, the second has index 1, and so on.</p>
+<p>Consider the string <code class="docutils literal notranslate"><span class="pre">&quot;JavaScript&quot;</span></code>. The <code class="docutils literal notranslate"><span class="pre">&quot;J&quot;</span></code> has index 0, the first <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> has index 1, <code class="docutils literal notranslate"><span class="pre">&quot;v&quot;</span></code> has index 2, and so on.</p>
+<div class="figure" id="id1">
+<img alt="The string &quot;JavaScript&quot; with indices labeled below each letter" src="../../_images/string-indices.png" />
+<p class="caption"><span class="caption-text">The indices of a string.</span></p>
+</div>
+<p>An expression of the form <code class="docutils literal notranslate"><span class="pre">someString[i]</span></code> gives the character at index <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This program prints out the initials of the person's name.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">jsCreator</span> <span class="o">=</span> <span class="s2">&quot;Brendan Eich&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">firstInitial</span> <span class="o">=</span> <span class="nx">jsCreator</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">lastInitial</span> <span class="o">=</span> <span class="nx">jsCreator</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">outputStr</span> <span class="o">=</span> <span class="s2">&quot;JavaScript was created by somebody with initials &quot;</span> <span class="o">+</span>
+   <span class="nx">firstInitial</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span>
+   <span class="nx">lastInitial</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">outputStr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>JavaScript was created by somebody with initials B.E.
+</pre></div>
+</div>
+</div>
+<p>What happens if we try to access an index that doesn't exist, for example -1 or an index larger than the length of the string?</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">jsCreator</span> <span class="o">=</span> <span class="s2">&quot;Brendan Eich&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsCreator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsCreator</span><span class="p">[</span><span class="mi">42</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/Invalid-String-Indices" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What does an expression using bracket notation evaluate to when the index is invalid (the index does not correspond to a character in the string)?</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>7.2.1. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'Code</span> <span class="pre">for</span> <span class="pre">fun'</span></code>, then <code class="docutils literal notranslate"><span class="pre">phrase[2]</span></code> evaluates to:</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;o&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;d&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;for&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;fun&quot;</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following returns <code class="docutils literal notranslate"><span class="pre">true</span></code> given <code class="docutils literal notranslate"><span class="pre">myStr</span> <span class="pre">=</span> <span class="pre">'Index'</span></code>?  Choose all correct answers.</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">myStr[2]</span> <span class="pre">===</span> <span class="pre">'n';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">myStr[4]</span> <span class="pre">===</span> <span class="pre">'x';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">myStr[6]</span> <span class="pre">===</span> <span class="pre">'</span> <span class="pre">';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">myStr[0]</span> <span class="pre">===</span> <span class="pre">'I';</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed by the following code?</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">phrase</span> <span class="o">=</span> <span class="s2">&quot;JavaScript rocks!&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">phrase</span><span class="p">[</span><span class="nx">phrase</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">8</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;p&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;i&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;t&quot;</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="strings-as-collections.html"><span aria-hidden="true">&larr;</span> 7.1. Strings as Collections</a></li>
+        
+        
+        <li class="next"><a href="strings-as-objects.html">7.3. Strings as Objects <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Math.ceil, floor, and trunc Examples &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Math.max and Math.min Examples" href="max-and-min-examples.html" />
+    <link rel="prev" title="Math.abs Examples" href="abs-examples.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Math Method Examples</a></li>
+    <li class="active"><code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, and <code class="docutils literal notranslate"><span class="pre">trunc</span></code> Examples</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="math-ceil-floor-and-trunc-examples">
+<span id="ceilfloortrunc-examples"></span><h1><code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, and <code class="docutils literal notranslate"><span class="pre">trunc</span></code> Examples<a class="headerlink" href="#math-ceil-floor-and-trunc-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="math-ceil">
+<h2><code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code><a class="headerlink" href="#math-ceil" title="Permalink to this headline">¶</a></h2>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.ceil(number)
+</pre></div>
+</div>
+<p>This method rounds a decimal value UP to the next integer (hence the
+<em>ceiling</em> reference in the name). Integer values remain the same.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ceil</span></code> also operates on arrays (<a class="reference internal" href="#cft-array"><span class="std std-ref">see below</span></a>).</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">8.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">8.1</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.9</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>9
+9
+-3
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="math-floor">
+<span id="floor"></span><h2><code class="docutils literal notranslate"><span class="pre">Math.floor</span></code><a class="headerlink" href="#math-floor" title="Permalink to this headline">¶</a></h2>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.floor(number)
+</pre></div>
+</div>
+<p>This method is the opposite of <code class="docutils literal notranslate"><span class="pre">Math.ceil</span></code>. It rounds a decimal value DOWN to
+the previous integer. Integer values remain the same.</p>
+<p><code class="docutils literal notranslate"><span class="pre">floor</span></code> also operates on arrays (<a class="reference internal" href="#cft-array"><span class="std std-ref">see below</span></a>).</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">8.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">8.1</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.9</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+8
+-4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="math-trunc">
+<span id="trunc"></span><h2><code class="docutils literal notranslate"><span class="pre">Math.trunc</span></code><a class="headerlink" href="#math-trunc" title="Permalink to this headline">¶</a></h2>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Math.trunc(number)
+</pre></div>
+</div>
+<p>This method removes any decimals and returns only the integer part of <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">trunc</span></code> also operates on arrays (<a class="reference internal" href="#cft-array"><span class="std std-ref">see below</span></a>).</p>
+<p>Numerical strings can also be evaluated, but should be avoided as a best
+practice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="mf">8.88</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="mf">10.000111</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+10
+</pre></div>
+</div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>At first glance, <code class="docutils literal notranslate"><span class="pre">Math.floor</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.trunc</span></code> appear to do exactly the
+same thing. However, a closer look shows that the two methods treat negative numbers
+differently.</p>
+<p class="last"><strong>Console Output</strong></p>
+</div>
+</div>
+<div class="section" id="combine-with-map">
+<span id="cft-array"></span><h2>Combine with <code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#combine-with-map" title="Permalink to this headline">¶</a></h2>
+<p>When combined with the <a class="reference internal" href="../../chapters/more-on-functions/passing-functions.html#map-method"><span class="std std-ref">map array method</span></a>, <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">floor</span></code>, and <code class="docutils literal notranslate"><span class="pre">trunc</span></code>
+will operate on each entry in an array. The syntax for this is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arrayName.map(Math.method)
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.33</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.44</span><span class="p">,</span> <span class="mf">8.88</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ -2, 4, -4, 9 ]
+[ -2, 3, -5, 8 ]
+[ -2, 3, -4, 8 ]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="abs-examples.html"><span aria-hidden="true">&larr;</span> <code class="docutils literal notranslate"><span class="pre">Math.abs</span></code> Examples</a></li>
+        
+        
+        <li class="next"><a href="max-and-min-examples.html"><code class="docutils literal notranslate"><span class="pre">Math.max</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.min</span></code> Examples <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

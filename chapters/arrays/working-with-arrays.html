@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.2. Working With Arrays &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.3. Array Methods" href="array-methods.html" />
+    <link rel="prev" title="8.1. Arrays Are Like Strings" href="arrays-are-like-strings.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">8. Arrays Keep Things in Order</a></li>
+    <li class="active">8.2. Working With Arrays</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="working-with-arrays">
+<h1>8.2. Working With Arrays<a class="headerlink" href="#working-with-arrays" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bracket-notation-and-index">
+<h2>8.2.1. Bracket Notation and Index<a class="headerlink" href="#bracket-notation-and-index" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">As previously discussed, arrays are an ordered collection where each item can be accessed via index. Similar to strings, an <strong>index</strong> in an
+array is the number order given to items. Individual items can be accessed using bracket notation (<code class="docutils literal notranslate"><span class="pre">array[index]</span></code>).
+Indexes are zero-based, going from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">array.length-1</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use bracket notation and index to access items in an array.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="c1">// index 0</span>
+   <span class="s2">&quot;Python&quot;</span><span class="p">,</span>     <span class="c1">// index 1</span>
+   <span class="s2">&quot;Java&quot;</span><span class="p">,</span>       <span class="c1">// index 2</span>
+   <span class="s2">&quot;C#&quot;</span>          <span class="c1">// index 3</span>
+<span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
+<span class="c1">// What will happen when index 4 is requested?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>JavaScript
+C#
+undefined
+</pre></div>
+</div>
+</div>
+<p>Notice above that <code class="docutils literal notranslate"><span class="pre">undefined</span></code> was printed out when index 4 was referenced. <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is returned when you request an index
+that the array does not contain.</p>
+<div class="admonition" id="index-1">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><strong>undefined</strong> is a special value in JavaScript that means no value has been assigned. We will discuss <code class="docutils literal notranslate"><span class="pre">undefined</span></code> more later in the class.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">undefined</span></code> will be returned for any index that is outside of the array's index range.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programmingLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">[</span><span class="mi">100</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>undefined
+undefined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="arrays-are-mutable">
+<h2>8.2.2. Arrays are Mutable<a class="headerlink" href="#arrays-are-mutable" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">In programming, mutability refers to what happens when you attempt to change a value. Remember that strings are immutable, meaning that any change
+to a string results in a new string being created. In contrast, arrays are <strong>mutable</strong>, meaning that individual items in
+an array can be edited without a new array being created.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Update an item in an array using bracket notation and index.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">javaScriptFrameworks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span> <span class="s2">&quot;Ember&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">);</span>
+
+<span class="c1">// Set the value of index 2 to be &quot;Vue&quot;</span>
+<span class="nx">javaScriptFrameworks</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
+
+<span class="c1">// Notice the value at index 2 is now &quot;Vue&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">javaScriptFrameworks</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;React&#39;, &#39;Angular&#39;, &#39;Ember&#39; ]
+[ &#39;React&#39;, &#39;Angular&#39;, &#39;Vue&#39; ]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="arrays-are-like-strings.html"><span aria-hidden="true">&larr;</span> 8.1. Arrays Are Like Strings</a></li>
+        
+        
+        <li class="next"><a href="array-methods.html">8.3. Array Methods <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

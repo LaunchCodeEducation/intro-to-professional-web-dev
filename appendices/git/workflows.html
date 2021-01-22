@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Git Workflows &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Git Stash" href="stash.html" />
+    <link rel="prev" title="Style Guide" href="../style-guide.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">Git Workflows</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <span class="target" id="git-workflows"></span><div class="section" id="index-0">
+<span id="id1"></span><h1>Git Workflows<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h1>
+<p>This cheatsheet covers basic workflows for local and remote Git repositories.</p>
+<p>For details on the Git commands mentioned, or on creating and cloning repositories, revisit the chapter on <a class="reference internal" href="../../chapters/git/index.html#git-chapter"><span class="std std-ref">Git More Collaboration</span></a>.</p>
+<div class="section" id="single-developer-single-branch">
+<span id="single-dev-branch"></span><h2>Single Developer / Single Branch<a class="headerlink" href="#single-developer-single-branch" title="Permalink to this headline">¶</a></h2>
+<p>When working on a project by yourself, you will typically follow this workflow:</p>
+<ol class="arabic simple" id="basic-flow">
+<li>Make changes to your code</li>
+<li>Check status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
+<li>Stage changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></li>
+<li>Commit changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Added</span> <span class="pre">feature</span> <span class="pre">X&quot;</span></code></li>
+<li>(If working with a remote repository) Push changes:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></li>
+</ol>
+</div>
+<div class="section" id="single-developer-feature-branches">
+<span id="single-feature"></span><h2>Single Developer / Feature Branches<a class="headerlink" href="#single-developer-feature-branches" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">As you become more comfortable with Git and begin to build larger projects on your own, you'll want to use <strong>feature branches</strong>. This is a branch created in order to <em>isolate</em> changes related to a <em>single</em> feature or bug. Professional developers use them for a few reasons:</p>
+<ul class="simple">
+<li>They can work on multiple new features at the same time, while keeping the work separated.</li>
+<li>If a bug is found, they can commit changes to their feature branch and switch to the branch containing the bug.</li>
+<li>Working in feature branches allows code to be easily reviewed by other developers before it is merged.</li>
+</ul>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="last">Some development teams will <em>only</em> work in feature branches. On these teams, developers are NOT allowed to make changes directly to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. They must work in feature branches and create pull requests into <code class="docutils literal notranslate"><span class="pre">master</span></code> to add those changes to the main code base.</p>
+</div>
+<p>In the workflow below, we use <code class="docutils literal notranslate"><span class="pre">main</span></code> to refer to the branch from which the feature branch is created (often <code class="docutils literal notranslate"><span class="pre">master</span></code>) and <code class="docutils literal notranslate"><span class="pre">feature</span></code> to refer to the feature branch. Remember to use descriptive names for your branches.</p>
+<ol class="arabic simple">
+<li>Create a new branch. While in <code class="docutils literal notranslate"><span class="pre">main</span></code> create and move to the feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature</span></code>.</li>
+<li>Follow the <a class="reference internal" href="#single-dev-branch"><span class="std std-ref">Single Developer / Single Branch</span></a> workflow until work on the feature is complete.</li>
+<li>After all changes in <code class="docutils literal notranslate"><span class="pre">feature</span></code> have been committed and pushed, move back to <code class="docutils literal notranslate"><span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</li>
+<li>Merge your feature branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, resolving any conflicts: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code></li>
+</ol>
+</div>
+<div class="section" id="team-single-branch">
+<span id="team-single"></span><h2>Team / Single Branch<a class="headerlink" href="#team-single-branch" title="Permalink to this headline">¶</a></h2>
+<p>The case of a team working on a project with a single branch is <em>very</em> uncommon. However, multiple developers working on the same branch happens quite a bit. This workflow, therefore, can be thought of as a sub-workflow of the <a class="reference internal" href="#team-feature"><span class="std std-ref">Team / Feature Branches</span></a> workflow.</p>
+<p>This workflow is similar to the <a class="reference internal" href="#single-dev-branch"><span class="std std-ref">Single Developer / Single Branch</span></a> workflow, only now you must be mindful to merge in changes made by others.</p>
+<ol class="arabic simple">
+<li>Make changes to your code</li>
+<li>Check status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
+<li>Stage changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></li>
+<li>Commit changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Added</span> <span class="pre">feature</span> <span class="pre">X&quot;</span></code></li>
+<li>Pull changes made by other: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code></li>
+<li>Merge changes as necessary</li>
+<li>Push changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></li>
+</ol>
+</div>
+<div class="section" id="team-feature-branches">
+<span id="team-feature"></span><h2>Team / Feature Branches<a class="headerlink" href="#team-feature-branches" title="Permalink to this headline">¶</a></h2>
+<p>The workflow for a team of developers using feature branches combines the <a class="reference internal" href="#team-single"><span class="std std-ref">Team / Single Branch</span></a> and <a class="reference internal" href="#single-feature"><span class="std std-ref">Single Developer / Feature Branches</span></a> workflows.</p>
+<p>In the workflow below, we use <code class="docutils literal notranslate"><span class="pre">main</span></code> to refer to the branch from which the feature branch is created (often <code class="docutils literal notranslate"><span class="pre">master</span></code>) and <code class="docutils literal notranslate"><span class="pre">feature</span></code> to refer to the feature branch. Remember to use descriptive names for your branches.</p>
+<ol class="arabic simple">
+<li>Create a new branch. While in <code class="docutils literal notranslate"><span class="pre">main</span></code> create and move to the feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature</span></code>. OR if contributing to a branch made by a team member, fetch and checkout their existing branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">origin</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">feature</span></code></li>
+<li>Follow the <a class="reference internal" href="#team-single"><span class="std std-ref">Team / Single Branch</span></a> workflow until work on the feature is complete.</li>
+<li>After all changes in <code class="docutils literal notranslate"><span class="pre">feature</span></code> have been committed and pushed, move back to <code class="docutils literal notranslate"><span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</li>
+<li>Merge your feature branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, resolving any conflicts: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code>. Alternatively, create a pull request &lt;create-pr&gt; into <code class="docutils literal notranslate"><span class="pre">main</span></code> as described below.</li>
+</ol>
+</div>
+<div class="section" id="working-with-pull-requests">
+<span id="create-pr"></span><h2>Working With Pull Requests<a class="headerlink" href="#working-with-pull-requests" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">The ability to create pull requests is a powerful feature of GitHub that allows changes to be reviewed and discussed by team members.</p>
+<p>A <strong>pull request</strong> is a request via GitHub to merge one branch into another. Team members can comment on and review the changes in the request, suggesting or requiring changes. Once the code is ready, the pull request is merged and closed. The code from the feature branch is now part of the destination branch.</p>
+<p>Many teams use pull requests when using the <a class="reference internal" href="#team-feature"><span class="std std-ref">Team / Feature Branches</span></a> workflow.</p>
+<p>To create a pull request, commit and push all changes in your feature branch. Then visit the project's GitHub page and click on the <em>Branches</em> link.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/branches-link.png"><img alt="The Branches link is just below the project description on GitHub." src="../../_images/branches-link.png" style="height: 250px;" /></a>
+</div>
+<p>The <em>Branches</em> page shows all branches that have been pushed to GitHub. To the right of every branch (except <code class="docutils literal notranslate"><span class="pre">master</span></code>) is a button to create a new pull request.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/new-pr-button.png"><img alt="The Branches page of a repo, with a button to open a new pull request to the right of each feature branch." src="../../_images/new-pr-button.png" style="height: 300px;" /></a>
+</div>
+<p>To create a new pull request, fill out the brief form describing the changes that it contains.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/create-pr.png"><img alt="The form for creating a new pull request." src="../../_images/create-pr.png" style="height: 500px;" /></a>
+</div>
+<p>Once the pull request has been created, it remains in the <em>Open</em> state for team members to comment.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/open-pr.png"><img alt="An open pull request." src="../../_images/open-pr.png" style="height: 500px;" /></a>
+</div>
+<p>When the code is ready, the pull request is merged and closed. The code is then part of the destination branch.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/pr-merged.png"><img alt="A merged pull request." src="../../_images/pr-merged.png" style="height: 500px;" /></a>
+</div>
+</div>
+<div class="section" id="forking-a-repository-at-github">
+<h2>Forking a Repository at GitHub<a class="headerlink" href="#forking-a-repository-at-github" title="Permalink to this headline">¶</a></h2>
+<p>A scenario that will occur from time-to-time in LaunchCode courses, and
+which occurs quite a lot for developers in general, is when you want
+to copy another developer's project and modify it. This process is known
+as &quot;forking a repository&quot; since if you view a project's history as a
+timeline, copying it effectively creates a &quot;fork&quot; in that history.</p>
+<p>To fork another developer's repository, visit the project at GitHub and
+hit the <em>Fork</em> button:</p>
+<div class="figure">
+<img alt="The fork button is at the top right of a project page on GitHub" src="../../_images/fork-button.png" />
+</div>
+<p>This will create a <em>copy</em> of the remote repository under <em>your</em> GitHub
+profile. You will have a snapshot of the other developer's repository,
+taken at the moment you hit the <em>Fork</em> button.</p>
+<p>From your own profile page, you will see the forked repository listed
+alongside your other repositories. To work on the code, clone the
+repository to your computer using the method above.</p>
+<p>Forked repositories can easily be identified by the reference to the
+original project under the project name on your profile.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/forked-repo.png"><img alt="A forked repository on GitHub, with a link to the original repository below" src="../../_images/forked-repo.png" style="height: 200px;" /></a>
+</div>
+</div>
+<div class="section" id="helpful-git-resources">
+<h2>Helpful Git Resources<a class="headerlink" href="#helpful-git-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/book/en/v2" target="_blank">Pro Git Book<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A reference book covering Git in depth.</li>
+<li><a class="reference external" href="https://github.com/k88hudson/git-flight-rules" target="_blank">Flight Rules for Git<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A &quot;How to&quot; guide for git</li>
+<li><a class="reference external" href="https://try.github.io" target="_blank">Interactive GitHub Sandbox<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A place to practice git without fear of messing anything up.</li>
+<li><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">Connecting to GitHub with SSH<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../style-guide.html"><span aria-hidden="true">&larr;</span> Style Guide</a></li>
+        
+        
+        <li class="next"><a href="stash.html">Git Stash <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

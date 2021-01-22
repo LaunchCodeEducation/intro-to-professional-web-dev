@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>28.6. Components &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="28.7. Exercises: Angular, Lesson 1" href="exercises.html" />
+    <link rel="prev" title="28.5. The Angular Framework" href="inside-app-folder.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">28. Angular, Part 1</a></li>
+    <li class="active">28.6. Components</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="components">
+<h1>28.6. Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">In Angular a <strong>component</strong> controls one part of the page, called a <em>view</em>.</p>
+<p>Angular builds a web page by combining multiple components together.
+Splitting our page into individual components makes our application more
+organized. It also increases our ability to focus on one section of our web
+application at a time.</p>
+<p>Everything in Angular centers on the idea of building a webpage from separate,
+smaller pieces. We must understand how to get these pieces to work together,
+and that begins by exploring what makes up each individual component. In order
+to build a reliable component, we must understand how each of its parts work
+and interact.</p>
+<div class="section" id="start-fresh">
+<h2>28.6.1. Start Fresh<a class="headerlink" href="#start-fresh" title="Permalink to this headline">¶</a></h2>
+<p>In the terminal, navigate back to the <code class="docutils literal notranslate"><span class="pre">angular_practice</span></code> folder you created
+on the <a class="reference internal" href="angular-1st-steps.html#angular-first-steps"><span class="std std-ref">Angular First Steps</span></a> page. Create a new
+project called <code class="docutils literal notranslate"><span class="pre">component-practice</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ng new component-practice
+</pre></div>
+</div>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> file in VSCode. Remove ALL of the code and
+replace it with an empty <code class="docutils literal notranslate"><span class="pre">div</span></code> element.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>OK, the stage is set for a closer look at components.</p>
+</div>
+<div class="section" id="component-files">
+<h2>28.6.2. Component Files<a class="headerlink" href="#component-files" title="Permalink to this headline">¶</a></h2>
+<p>Angular components consist of 4 files:</p>
+<ol class="arabic simple">
+<li>an HTML file (.html)</li>
+<li>a CSS file (.css)</li>
+<li>a typescript file (.ts)</li>
+<li>a test file (.spec.ts)</li>
+</ol>
+<div class="figure">
+<img alt="Visual of the files associated with a component." src="../../_images/ComponentPieces.png" />
+</div>
+<p>Looking at the file tree, we see that all four files contain the name of the
+component---<code class="docutils literal notranslate"><span class="pre">header</span></code>, in this case. Also, the files are located in a folder
+named after the component.</p>
+<p>If we add a new component named <code class="docutils literal notranslate"><span class="pre">task-list</span></code>, the four files created inside
+the <code class="docutils literal notranslate"><span class="pre">task-list</span></code> folder would be called:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">task-list.component.html</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">task-list.component.css</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">task-list.component.ts</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">task-list.component.spec.ts</span></code></li>
+</ol>
+<p>Each file contains information specific to that component.
+<code class="docutils literal notranslate"><span class="pre">task-list.component.html</span></code> holds the HTML required for the task-list and no
+other component. <code class="docutils literal notranslate"><span class="pre">task-list.component.css</span></code> only styles html within the
+<code class="docutils literal notranslate"><span class="pre">task-list</span></code> folder, the typescript code in <code class="docutils literal notranslate"><span class="pre">task-list.component.ts</span></code> only
+applies to this component, and all the tests for <code class="docutils literal notranslate"><span class="pre">task-list</span></code> will be found
+in <code class="docutils literal notranslate"><span class="pre">task-list.component.spec.ts</span></code>.</p>
+</div>
+<div class="section" id="adding-a-new-component">
+<span id="add-new-component"></span><h2>28.6.3. Adding a New Component<a class="headerlink" href="#adding-a-new-component" title="Permalink to this headline">¶</a></h2>
+<p>Each component is a smaller part of an overall web application. The main
+component, <code class="docutils literal notranslate"><span class="pre">app</span></code>, serves as a base structure, and it comes standard with all
+Angular applications. It is the container that holds all of the other
+components, and it organizes them into the web application.</p>
+<p>When you generate a new component using the Angular CLI, it is automatically
+added to <code class="docutils literal notranslate"><span class="pre">app</span></code>. Let's explore how this process works.</p>
+<div class="section" id="ng-generate">
+<h3>28.6.3.1. <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code><a class="headerlink" href="#ng-generate" title="Permalink to this headline">¶</a></h3>
+<p>To create a new Angular component, the terminal syntax is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ng generate component component-name
+</pre></div>
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>A common mistake is to create a new component in the wrong location, say in
+the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder instead of in <code class="docutils literal notranslate"><span class="pre">app</span></code>.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> places the new component folder within your current
+directory. Use the terminal to navigate to where you want the component to
+go BEFORE running the generate command.</p>
+</div>
+<p>Creating a <code class="docutils literal notranslate"><span class="pre">task-list</span></code> component looks something like this:</p>
+<div class="figure">
+<img alt="Visual of the terminal command to create a new Component." src="../../_images/GenerateComponent.png" />
+</div>
+<p>From the output, we see that the <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> command created four new files
+in the <code class="docutils literal notranslate"><span class="pre">src/app/task-list</span></code> folder.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Recall that <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> can be shortened to <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span></code>.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h3>28.6.3.2. Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Use the terminal panel in VSCode to navigate into the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+   first-project  component-practice
+$ <span class="nb">cd</span> component-practice
+$ <span class="nb">cd</span> src
+$ <span class="nb">cd</span> app
+$ ls
+   app.component.css    app.component.spec.ts   app.module.ts
+   app.component.html   app.component.ts
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">component</span> <span class="pre">task-list</span></code>.</p>
+</li>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">header</span></code> component by running <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">component</span> <span class="pre">header</span></code>.</p>
+</li>
+</ol>
+<p>When done, your file structure in VSCode should look something like:</p>
+<div class="figure">
+<img alt="Visual of the results of generate Component." src="../../_images/GenerateComponentResult.png" />
+</div>
+</div>
+</div>
+<div class="section" id="app-module-ts">
+<h2>28.6.4. <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code><a class="headerlink" href="#app-module-ts" title="Permalink to this headline">¶</a></h2>
+<p>In order to communicate with the new components, <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> needs new
+<code class="docutils literal notranslate"><span class="pre">import</span></code> statements. Fortunately, <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> updates the code
+automatically. We do not need to worry about taking care of this task
+ourselves.</p>
+<p>Before <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code>:</p>
+<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+   <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">],</span>
+   <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span> <span class="nx">BrowserModule</span> <span class="p">],</span>
+   <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+   <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>After generating the <code class="docutils literal notranslate"><span class="pre">header</span></code> and <code class="docutils literal notranslate"><span class="pre">task-list</span></code> components:</p>
+<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TaskListComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./task-list/task-list.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HeaderComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./header/header.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+   <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+      <span class="nx">AppComponent</span><span class="p">,</span>
+      <span class="nx">TaskListComponent</span><span class="p">,</span>
+      <span class="nx">HeaderComponent</span>
+   <span class="p">],</span>
+   <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span> <span class="nx">BrowserModule</span> <span class="p">],</span>
+   <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+   <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Angular updates <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code> by adding new <code class="docutils literal notranslate"><span class="pre">import</span></code> statements on lines
+5 and 6 as well as expanding the <code class="docutils literal notranslate"><span class="pre">declarations</span></code> array on line 9.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Generating new components automatically updates <code class="docutils literal notranslate"><span class="pre">app.module.ts</span></code>. However,
+if you <em>delete</em> a component, you must MANUALLY remove its <code class="docutils literal notranslate"><span class="pre">import</span></code>
+statement and its name in the <code class="docutils literal notranslate"><span class="pre">declarations</span></code> array.</p>
+</div>
+</div>
+<div class="section" id="arranging-components">
+<h2>28.6.5. Arranging Components<a class="headerlink" href="#arranging-components" title="Permalink to this headline">¶</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to launch the webpage. The page shows up empty because we
+removed all of the code from <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> except for the <code class="docutils literal notranslate"><span class="pre">div</span></code>
+tags.</p>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> as follows:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Save your change and wait for the webpage to refresh. You should now see the
+text &quot;header works!&quot; at the top of the page.</p>
+<div class="figure">
+<img alt="Confirmation that the header component works." src="../../_images/header-works.png" />
+</div>
+<p>This is another helpful feature with Angular---when you correctly implement a
+new component, confirmation text appears on the screen.</p>
+<p>How did <code class="docutils literal notranslate"><span class="pre">&lt;app-header&gt;&lt;/app-header&gt;</span></code> make this happen? Open
+<code class="docutils literal notranslate"><span class="pre">header.component.ts</span></code> in VSCode:</p>
+<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-header&#39;</span><span class="p">,</span>
+   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./header.component.html&#39;</span><span class="p">,</span>
+   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./header.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">HeaderComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+   <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="nx">ngOnInit() {</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Line 4 defines the HTML tag for the <code class="docutils literal notranslate"><span class="pre">header</span></code> component to be <code class="docutils literal notranslate"><span class="pre">app-header</span></code>.
+If we try changing the string to <code class="docutils literal notranslate"><span class="pre">'orange'</span></code>, we would see the &quot;header
+works!&quot; text disappear from the webpage. This is because the HTML tag
+<code class="docutils literal notranslate"><span class="pre">&lt;app-header&gt;</span></code> is no longer linked to the component. The string assigned in
+line 4 MUST match the tags used in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</p>
+<div class="section" id="modify-the-header-text">
+<h3>28.6.5.1. Modify the Header Text<a class="headerlink" href="#modify-the-header-text" title="Permalink to this headline">¶</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">header.component.html</span></code> in VSCode:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>header works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ah ha! The HTML file contains the text that appeared on our webpage. Anything
+added to this file will appear between the <code class="docutils literal notranslate"><span class="pre">&lt;app-header&gt;&lt;/app-header&gt;</span></code> tags
+in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="last arabic">
+<li><p class="first">Replace line 1 in <code class="docutils literal notranslate"><span class="pre">header.component.html</span></code> with:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My header works!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is not a header, but I&#39;m adding it anyway.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Look! A centered h2.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>More centered text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Not centered text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Save your code and refresh the page. How does its appearance change?</p>
+</li>
+<li><p class="first">What happens if we use TWO <code class="docutils literal notranslate"><span class="pre">&lt;app-header&gt;</span></code> elements in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>?
+Try it to find out.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="bring-in-task-list">
+<h3>28.6.5.2. Bring in <code class="docutils literal notranslate"><span class="pre">task-list</span></code><a class="headerlink" href="#bring-in-task-list" title="Permalink to this headline">¶</a></h3>
+<p>Line 4 in <code class="docutils literal notranslate"><span class="pre">header.component.ts</span></code> defined the <code class="docutils literal notranslate"><span class="pre">app-header</span></code> tag, and line 4 in
+<code class="docutils literal notranslate"><span class="pre">task-list.component.ts</span></code> does something similar.</p>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code> as follows:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-header</span><span class="p">&gt;&lt;/</span><span class="nt">app-header</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">app-task-list</span><span class="p">&gt;&lt;/</span><span class="nt">app-task-list</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Your webpage should look similar to:</p>
+<div class="figure">
+<img alt="Two components added to the app template." src="../../_images/header-and-task-list.png" />
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="last">Move <code class="docutils literal notranslate"><span class="pre">&lt;app-task-list&gt;&lt;/app-task-list&gt;</span></code> above <code class="docutils literal notranslate"><span class="pre">&lt;app-header&gt;&lt;/app-header&gt;</span></code>
+and see how the webpage changes.</p>
+</div>
+</div>
+<div class="section" id="this-is-why-templates-are-awesome">
+<h3>28.6.5.3. THIS IS WHY TEMPLATES ARE AWESOME!<a class="headerlink" href="#this-is-why-templates-are-awesome" title="Permalink to this headline">¶</a></h3>
+<p>Trying to correctly format and place content on a webpage can be difficult,
+especially if you need to present lots of data or mix different formatting
+styles for headings, lists, plain text, etc.</p>
+<p>Rather than deal with our header, task-list, and other content at the same
+time, creating components allows us to:</p>
+<ol class="arabic simple">
+<li>Create a simple HTML file that serves as a framework.</li>
+<li>Format each piece of our content separately, without worrying about how that
+formatting affects other parts of the webpage.</li>
+<li>Easily add content to the framework by using custom HTML tags.</li>
+<li>Quickly relocate the components on a page just by rearranging their custom
+tags.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="component-nesting">
+<h2>28.6.6. Component Nesting<a class="headerlink" href="#component-nesting" title="Permalink to this headline">¶</a></h2>
+<p>Components can be put inside of other components. In essence, this is how the
+<code class="docutils literal notranslate"><span class="pre">app</span></code> component works. It is the component that holds all other components.</p>
+<p>However, sometimes you might want to nest a new component inside of another one
+rather than in <code class="docutils literal notranslate"><span class="pre">app</span></code>.</p>
+<p>Let's assume we want to add a new component within our <code class="docutils literal notranslate"><span class="pre">task-list</span></code> folder. In
+this case, we navigate into the <code class="docutils literal notranslate"><span class="pre">task-list</span></code> directory and then run the
+<code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">component</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+   app.component.css    app.component.spec.ts   app.module.ts   task-list
+   app.component.html   app.component.ts        header
+$ <span class="nb">cd</span> task-list
+$ ng generate component inside-task-list
+</pre></div>
+</div>
+<p>Running this command nests our new folder inside of the <code class="docutils literal notranslate"><span class="pre">task-list</span></code> folder,
+and it contains the four files we would expect.</p>
+<div class="figure">
+<img alt="Visual of the result of the running the commands to create a nested component." src="../../_images/GenerateNestedComponentResult.png" />
+</div>
+<p>When we place one component inside of another, we must pay attention to how the
+components interact. The nested component is called the <em>child</em>, while the
+original component is called the <em>parent</em>. In our example, <code class="docutils literal notranslate"><span class="pre">task-list</span></code> serves
+as the parent, while <code class="docutils literal notranslate"><span class="pre">inside-task-list</span></code> is the child.</p>
+<ol class="arabic simple">
+<li>Any CSS, HTML, or JavaScript we write for the nested component (the child)
+only affects that component. Changes to the child do NOT affect the parent.</li>
+<li>The parent component DOES influence the nested one. For example, any CSS
+within <code class="docutils literal notranslate"><span class="pre">task-list.component.css</span></code> applies to both
+<code class="docutils literal notranslate"><span class="pre">task-list.component.html</span></code> AND <code class="docutils literal notranslate"><span class="pre">inside-task-list.component.html</span></code>.</li>
+<li>If we want <code class="docutils literal notranslate"><span class="pre">inside-task-list</span></code> to have different styling, we need to add
+code to <code class="docutils literal notranslate"><span class="pre">inside-task-list.component.css</span></code> to override the parent.</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>28.6.7. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>If you have not already done so, use  <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span></code> to <em>nest</em> the
+<code class="docutils literal notranslate"><span class="pre">inside-task-list</span></code> component inside the <code class="docutils literal notranslate"><span class="pre">task-list</span> <span class="pre">component</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>EXPERIMENT! Discover.</p>
+<p>Where could we place the <code class="docutils literal notranslate"><span class="pre">&lt;app-inside-task-list&gt;&lt;/app-inside-task-list&gt;</span></code>
+element to make &quot;inside-task-list works!&quot; appear on the screen? Select ALL
+options that work.</p>
+<ol class="last arabic simple">
+<li>Place the element in <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>.</li>
+<li>Place the element in <code class="docutils literal notranslate"><span class="pre">task-list.component.html</span></code>.</li>
+<li>Place the element in <code class="docutils literal notranslate"><span class="pre">inside-task-list.component.html</span></code>.</li>
+<li>Place the element in <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="inside-app-folder.html"><span aria-hidden="true">&larr;</span> 28.5. The Angular Framework</a></li>
+        
+        
+        <li class="next"><a href="exercises.html">28.7. Exercises: Angular, Lesson 1 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

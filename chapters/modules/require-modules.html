@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>13.2. Require Modules &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13.3. NPM" href="npm.html" />
+    <link rel="prev" title="13.1. What are Modules?" href="what-are-modules.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">13. Modules</a></li>
+    <li class="active">13.2. Require Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="require-modules">
+<span id="id1"></span><h1>13.2. Require Modules<a class="headerlink" href="#require-modules" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">In order to take advantage of modules, we must <em>import</em> them with the
+<strong>require</strong> command. You have seen this before with <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Line 1 imports the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module and assigns its functions to the
+<code class="docutils literal notranslate"><span class="pre">input</span></code> variable.</p>
+<p>Modules are either <em>single functions</em> or <em>objects that contain multiple
+functions</em>. If importing a module returns a single function, we use the
+variable name to call that function. If the module returns an object, we use
+dot notation to call the functions stored in the object. In line 3, we see an
+example of this. <code class="docutils literal notranslate"><span class="pre">input.question</span></code> calls the <code class="docutils literal notranslate"><span class="pre">question</span></code> function stored in
+the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module.</p>
+<p>Later, we will see examples of importing and using single function modules.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let's check the type of <code class="docutils literal notranslate"><span class="pre">input</span></code> after we import the <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">input</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>object
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> module contains several key/value pairs, each of which
+matches a key (e.g. <code class="docutils literal notranslate"><span class="pre">question</span></code>) with a specific function.</p>
+<div class="section" id="where-do-we-find-modules">
+<h2>13.2.1. Where Do We Find Modules?<a class="headerlink" href="#where-do-we-find-modules" title="Permalink to this headline">¶</a></h2>
+<p>Modules come from three places:</p>
+<ol class="arabic simple">
+<li>A local file on your computer.</li>
+<li>Node itself, known as Core modules.</li>
+<li>An external registry such as NPM.</li>
+</ol>
+</div>
+<div class="section" id="how-does-node-know-where-to-look">
+<h2>13.2.2. How Does Node Know Where to Look?<a class="headerlink" href="#how-does-node-know-where-to-look" title="Permalink to this headline">¶</a></h2>
+<p>The string value passed into <code class="docutils literal notranslate"><span class="pre">require</span></code> tells Node where to look for a module.</p>
+<div class="section" id="user-created-modules">
+<h3>13.2.2.1. User Created Modules<a class="headerlink" href="#user-created-modules" title="Permalink to this headline">¶</a></h3>
+<p>If a module is stored on your computer, the string passed into <code class="docutils literal notranslate"><span class="pre">require</span></code> must
+provide a <em>path</em> and a <em>filename</em>. This path tells Node where to find the
+module, and it describes how to move up and down within the folders on your
+computer. Paths can be extremely detailed, but best practice recommends that
+you keep local modules either in the same folder as your project or only one
+level from your project. Simple paths are better!</p>
+<p>A <strong>relative path</strong> starts with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code>.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">./</span></code> tells Node, <em>Search for the module in the current project folder</em>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">../</span></code> tells Node, <em>Search for the module in the folder one level UP from
+the project</em>.</li>
+</ol>
+<p>As an example, let's assume we have a folder structure like:</p>
+<div class="figure">
+<img alt="../../_images/path-example.png" src="../../_images/path-example.png" />
+</div>
+<p>Following best practice gives us three scenarios for importing one file into
+another:</p>
+<ol class="arabic simple">
+<li><strong>The module is in the same folder:</strong> If we want to import <code class="docutils literal notranslate"><span class="pre">hello.js</span></code> into
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then we add <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('./hello.js');</span></code> on line 1
+of <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
+<li><strong>The module is one level up:</strong> If we want to import <code class="docutils literal notranslate"><span class="pre">hello.js</span></code> into
+<code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>, then we add <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">hello</span> <span class="pre">=</span> <span class="pre">require('../hello.js');</span></code>
+on line 1 of <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code>.</li>
+<li><strong>The module is one level down:</strong> If we want to import <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code> into
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then we add
+<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">coolApp</span> <span class="pre">=</span> <span class="pre">require('./Projects/myCoolApp.js');</span></code> on line 1 of
+<code class="docutils literal notranslate"><span class="pre">index.js</span></code>. This tells Node to search for <code class="docutils literal notranslate"><span class="pre">myCoolApp.js</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">Projects</span></code> sub-folder, which is in the same folder as <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="other-modules">
+<h3>13.2.2.2. Other Modules<a class="headerlink" href="#other-modules" title="Permalink to this headline">¶</a></h3>
+<p>If the filename passed to <code class="docutils literal notranslate"><span class="pre">require</span></code> does NOT start with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code>,
+then Node checks two resources for the module requested.</p>
+<ol class="arabic simple">
+<li>Node looks for a Core module with a matching name.</li>
+<li>Node looks for a module installed from an external resource like NPM.</li>
+</ol>
+<p>Core modules are installed in Node itself, and as such do not require a path
+description. These modules are <em>local</em>, but Node knows where to find them.
+Core modules take precedence over ANY other modules with the same name.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><a class="reference external" href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank">W3 schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> provides a
+convenient list of the Core Node modules.</p>
+</div>
+<p>If Node does not find the requested module after checking Core, it looks to the
+<a class="reference external" href="https://docs.npmjs.com/about-npm/" target="_blank">NPM registry<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which contains hundreds
+of thousands of free code packages for developers.</p>
+<p>In the next section, we will learn more about NPM and how to use it.</p>
+</div>
+</div>
+<div class="section" id="package-json-file">
+<h2>13.2.3. Package.json File<a class="headerlink" href="#package-json-file" title="Permalink to this headline">¶</a></h2>
+<p>Node keeps track of all the modules you import into your project. This list of
+modules is stored inside a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file.</p>
+<p>For example, if we only import <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code>, the file looks something
+like:</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;readline-sync&quot;</span><span class="p">:</span> <span class="s2">&quot;1.4.9&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">You may not have seen <code class="docutils literal notranslate"><span class="pre">package.json</span></code> yet, because repl.it hides this file
+by default. We will talk more about this later.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>13.2.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume you have the following file structure:</p>
+<div class="figure">
+<img alt="../../_images/requireCC.png" src="../../_images/requireCC.png" />
+</div>
+<p>Which statement allows you to import the <code class="docutils literal notranslate"><span class="pre">rutabaga</span></code> module into
+<code class="docutils literal notranslate"><span class="pre">project.js</span></code>?</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">rutabaga</span> <span class="pre">=</span> <span class="pre">require('/rutabaga.js');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">rutabaga</span> <span class="pre">=</span> <span class="pre">require('./rutabaga.js');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">rutabaga</span> <span class="pre">=</span> <span class="pre">require('../rutabaga.js');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">rutabaga</span> <span class="pre">=</span> <span class="pre">require('./Tubers/rutabaga.js');</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="what-are-modules.html"><span aria-hidden="true">&larr;</span> 13.1. What are Modules?</a></li>
+        
+        
+        <li class="next"><a href="npm.html">13.3. NPM <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

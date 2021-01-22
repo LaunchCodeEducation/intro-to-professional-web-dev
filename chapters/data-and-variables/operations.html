@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.6. Operations &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.7. Other Operators" href="other-operators.html" />
+    <link rel="prev" title="4.5. Expressions and Evaluation" href="expressions-and-evaluation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">4. Data and Variables</a></li>
+    <li class="active">4.6. Operations</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="operations">
+<h1>4.6. Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="operators-and-operands">
+<h2>4.6.1. Operators and Operands<a class="headerlink" href="#operators-and-operands" title="Permalink to this headline">¶</a></h2>
+<p>Now that we can store data in variables, let's explore how we can generate new data from existing data.</p>
+<p id="index-0">An <strong>operator</strong> is one or more characters that represents a computation like addition, multiplication, or division. The values an operator works on are called <strong>operands</strong>.</p>
+<p>The following are all legal JavaScript expressions whose meaning is more or less clear:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">+</span> <span class="pre">32</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">hour</span> <span class="pre">-</span> <span class="pre">1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">hour</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">+</span> <span class="pre">minute</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">minute</span> <span class="pre">/</span> <span class="pre">60</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">**</span> <span class="pre">2</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">+</span> <span class="pre">9)</span> <span class="pre">*</span> <span class="pre">(15</span> <span class="pre">-</span> <span class="pre">7)</span></code></li>
+</ul>
+<p>For example, in the calculation <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">+</span> <span class="pre">32</span></code>, the operator is <code class="docutils literal notranslate"><span class="pre">+</span></code> and the operands are <code class="docutils literal notranslate"><span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">32</span></code>.</p>
+<p>The symbols <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>, and the use of parentheses for grouping, mean in JavaScript what they mean in mathematics. The asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) is the symbol for multiplication, and <code class="docutils literal notranslate"><span class="pre">**</span></code> is the symbol for exponentiation. Addition, subtraction, multiplication, and exponentiation all do what you expect.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>5
+-1
+6
+8
+9
+</pre></div>
+</div>
+</div>
+<p>We use the same terminology as before, stating that <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> <strong>returns</strong> the value <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p>When a variable name appears in the place of an operand, it is replaced with the value that it refers to before the operation is performed. For example, suppose that we wanted to convert 645 minutes into hours. Division is denoted by the operator <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="mi">645</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">minutes</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hours</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>10.75
+</pre></div>
+</div>
+</div>
+<p>In summary, operators and operands can be combined to create expressions that are evaluated upon execution. Let's discuss some specific types of operators</p>
+</div>
+<div class="section" id="arithmetic-operators">
+<h2>4.6.2. Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-1"></span><p id="index-2">Some of most commonly-used operators are the <strong>arithmetic operators</strong>, which carry out basic mathematical operations. These behave exactly as you are used to, though the modulus operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) may be new to you.</p>
+<table border="1" class="colwidths-auto docutils" id="id1">
+<caption><span class="caption-text">Arithmetic operators</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>)</td>
+<td>Adds the two operands</td>
+<td><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">5</span></code></td>
+</tr>
+<tr class="row-odd"><td>Subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</td>
+<td>Subtracts the two operands</td>
+<td><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">-1</span></code></td>
+</tr>
+<tr class="row-even"><td>Multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</td>
+<td>Multiplies the two operands</td>
+<td><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">6</span></code></td>
+</tr>
+<tr class="row-odd"><td>Division (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</td>
+<td>Divides the first operand by the second</td>
+<td><code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">/</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">3</span></code></td>
+</tr>
+<tr class="row-even"><td>Modulus (<code class="docutils literal notranslate"><span class="pre">%</span></code>)</td>
+<td>Aka the remainder operator. Returns the integer remainder of dividing the two operands.</td>
+<td><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">%</span> <span class="pre">5</span></code> returns <code class="docutils literal notranslate"><span class="pre">2</span></code></td>
+</tr>
+<tr class="row-odd"><td>Exponentiation (<code class="docutils literal notranslate"><span class="pre">**</span></code>)</td>
+<td>Calculates the base (first operand) to the exponent (second operand) power, that is, base<sup>exponent</sup></td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">**</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">9</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">**</span> <span class="pre">-1</span></code> returns <code class="docutils literal notranslate"><span class="pre">0.2</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td>Increment (<code class="docutils literal notranslate"><span class="pre">++</span></code>)</td>
+<td>Adds one to its operand. If used before the operand (<code class="docutils literal notranslate"><span class="pre">++x</span></code>), returns the value of its operand after adding one; if used after the operand (<code class="docutils literal notranslate"><span class="pre">x++</span></code>), returns the value of its operand before adding one.</td>
+<td>If <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, then <code class="docutils literal notranslate"><span class="pre">++x</span></code> sets <code class="docutils literal notranslate"><span class="pre">x</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code> and returns <code class="docutils literal notranslate"><span class="pre">3</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">x++</span></code> returns <code class="docutils literal notranslate"><span class="pre">2</span></code> and, only then, sets <code class="docutils literal notranslate"><span class="pre">x</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code></td>
+</tr>
+<tr class="row-odd"><td>Decrement (<code class="docutils literal notranslate"><span class="pre">--</span></code>)</td>
+<td>Subtracts one from its operand. The return value is analogous to that for the increment operator.</td>
+<td>If <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, then <code class="docutils literal notranslate"><span class="pre">--x</span></code> sets <code class="docutils literal notranslate"><span class="pre">x</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> and returns <code class="docutils literal notranslate"><span class="pre">1</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">x--</span></code> returns <code class="docutils literal notranslate"><span class="pre">2</span></code> and, only then, sets <code class="docutils literal notranslate"><span class="pre">x</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code></td>
+</tr>
+</tbody>
+</table>
+<p id="index-3">While the <strong>modulus operator</strong> (<code class="docutils literal notranslate"><span class="pre">%</span></code>) is common in programming, it is not used much
+outside of programming. Let's explore how it works with a few examples.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">%</span></code> operator returns the <em>remainder</em> obtained by carrying out integer division of the first operand by the second operand. Therefore, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">3</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code> because 3 goes into 5 one whole time, with a remainder of 2 left over.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<ul class="last simple">
+<li>12 % 4 is 0, because 4 divides 12 evenly (that is, there is no remainder)</li>
+<li>13 % 7 is 6</li>
+<li>6 % 2 is 0</li>
+<li>7 % 2 is 1</li>
+</ul>
+</div>
+<p>The last two examples illustrate a general rule: An integer x is even exactly
+when <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> and is odd exactly when <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The value returned by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> will be in the range from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>
+(not including <code class="docutils literal notranslate"><span class="pre">b</span></code>).</p>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">If remainders and the modulus operator seem tricky to you, we recommend
+getting additional practice at <a class="reference external" href="https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic" target="_blank">Khan Academy<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+<div class="section" id="order-of-operations">
+<h2>4.6.3. Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h2>
+<p id="index-4">When more than one operator appears in an expression, the order of evaluation depends on the <strong>rules of precedence</strong>. JavaScript follows the same precedence rules for its arithmetic operators that mathematics does.</p>
+<ol class="arabic simple">
+<li>Parentheses have the highest precedence and can be used to force an
+expression to evaluate in the order you want. Since expressions in
+parentheses are evaluated first, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(3</span> <span class="pre">-</span> <span class="pre">1)</span></code> is 4, and <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">**</span> <span class="pre">(5</span> <span class="pre">-</span> <span class="pre">2)</span></code> is 8. You can also use parentheses to make an expression easier to read, as in <code class="docutils literal notranslate"><span class="pre">(minute</span> <span class="pre">*</span> <span class="pre">100)</span> <span class="pre">/</span> <span class="pre">60</span></code>, even though it doesn't change the result.</li>
+<li>Exponentiation has the next highest precedence, so <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> is 3 and
+not 4, and <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">1</span> <span class="pre">**</span> <span class="pre">3</span></code> is 3 and not 27. Can you explain why?</li>
+<li>Multiplication, division, and modulus operators have the same precedence,
+which is higher than addition and subtraction, which also have the same
+precedence. So <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">1</span></code> yields 5 rather than 4, and <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code> is 1,
+not 6.</li>
+<li>Operators with the <em>same</em> precedence are evaluated from left-to-right. So in
+the expression <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code>, the subtraction happens first, yielding 3. We
+then add 2 to get the result 5. If the operations had been evaluated from
+right to left, the result would have been <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">(3</span> <span class="pre">+</span> <span class="pre">2)</span></code>, which is 1.</li>
+</ol>
+<div class="admonition-tip admonition" id="index-5">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>The acronym PEMDAS can be used to remember order of operations:</p>
+<p><strong>P</strong> = parentheses</p>
+<p><strong>E</strong> = exponentiation</p>
+<p><strong>M</strong> = multiplication</p>
+<p><strong>D</strong> = division</p>
+<p><strong>A</strong> = addition</p>
+<p class="last"><strong>S</strong> = subtraction</p>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Due to an historical quirk, an exception to the left-to-right rule is the exponentiation operator <code class="docutils literal notranslate"><span class="pre">**</span></code>. A useful hint is to always use parentheses to force exactly the order you want when exponentiation is involved:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// the right-most ** operator is applied first</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">// use parentheses to force the order you want</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>512
+64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>4.6.4. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the value of the following expression?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li>14</li>
+<li>24</li>
+<li>3</li>
+<li>13.666666666666666</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the output of the code below?</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the value of the following expression?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li>768</li>
+<li>128</li>
+<li>12</li>
+<li>256</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="expressions-and-evaluation.html"><span aria-hidden="true">&larr;</span> 4.5. Expressions and Evaluation</a></li>
+        
+        
+        <li class="next"><a href="other-operators.html">4.7. Other Operators <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

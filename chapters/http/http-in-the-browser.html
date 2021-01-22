@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>24.5. HTTP in the Browser &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="25. User Input with Forms" href="../forms/index.html" />
+    <link rel="prev" title="24.4. Responses" href="http-responses.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">24. HTTP: The Postal Service of the Internet</a></li>
+    <li class="active">24.5. HTTP in the Browser</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="http-in-the-browser">
+<h1>24.5. HTTP in the Browser<a class="headerlink" href="#http-in-the-browser" title="Permalink to this headline">¶</a></h1>
+<p>While we have covered all of the HTTP concepts you need to know at this point, it's worth spending some time explaining how web browsers submit requests and receive responses.</p>
+<div class="section" id="viewing-requests-and-response-using-developer-tools">
+<h2>24.5.1. Viewing Requests and Response Using Developer Tools<a class="headerlink" href="#viewing-requests-and-response-using-developer-tools" title="Permalink to this headline">¶</a></h2>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">This section requires you to use Firefox's developer tools. If you need a refresher or just a reference, visit <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank">MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<p>Open a web browser and visit some web page, say, <a class="reference external" href="https://education.launchcode.org/html-me-something/submissions/chrisbay/index.html" target="_blank">our example from the HTML Me Something assignment<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. After the page loads, open your browser's developer tools and select the <em>Network</em> tab.</p>
+<p>You'll see something like this:</p>
+<div class="figure">
+<img alt="Firefox's developer tools, with an empty Network pane." src="../../_images/empty-network-tab.png" />
+</div>
+<p>The <em>Network</em> pane displays all HTTP requests and responses involved in loading a page. However, it only tracks and displays such data if it is open during the request. To see some data in this tab, refresh the page.</p>
+<p>Now you'll see something like this:</p>
+<div class="figure">
+<img alt="Firefox's developer tools, with several requests in the Network pane." src="../../_images/network-tab.png" />
+</div>
+<p>Each entry within the pane represents a single HTTP request. A summary of the request is shown in a table format, including the resource requested, server name, response code, and more. Clicking on one of the entries shows more detailed information about the request.</p>
+<div class="figure">
+<img alt="The details of an HTTP request, viewed in the Network pane." src="../../_images/network-tab-details.png" />
+</div>
+<p>On the right, we see additional request and response details, including response headers and (scrolling down) request headers. We can even view the response body by clicking on the <em>Response</em> label.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">Navigate to a different page with the <em>Network</em> pane open. Find the response code and <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> header for the first request shown in the pane.</p>
+</div>
+</div>
+<div class="section" id="browser-flow">
+<h2>24.5.2. Browser Flow<a class="headerlink" href="#browser-flow" title="Permalink to this headline">¶</a></h2>
+<p>As you can see from using the <em>Network</em> pane, loading a single web page usually involves <em>several</em> HTTP requests. Each resource <em>within</em> the page is loaded in a separate request.</p>
+<p>Let's examine the flow of loading a page. We'll consider the case of an HTML page with CSS, JavaScript, and images, loaded via a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.</p>
+<ol class="arabic simple">
+<li>Browser requests a page from the server.</li>
+<li>Browser receives the HTML page and parses it.</li>
+<li>For <em>each</em> image, external CSS file, and external JavaScript file the browser issues a <em>new</em> HTTP request for the given file.</li>
+<li>As additional responses are received, the browser processes the data or media and updates the page.</li>
+</ol>
+<p>This process explains why you will sometimes load a web page, only to see an image on that page load a few seconds later. In such situations, the HTTP request fetching the image takes substantially more time, making it noticeable.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>24.5.3. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the first screenshot on this page, answer these questions:</p>
+<ol class="last arabic simple">
+<li>What is its file name?</li>
+<li>How large is it?</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="http-responses.html"><span aria-hidden="true">&larr;</span> 24.4. Responses</a></li>
+        
+        
+        <li class="next"><a href="../forms/index.html">25. User Input with Forms <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

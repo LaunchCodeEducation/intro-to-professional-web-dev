@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>26.6. Studio: Fetch &amp; JSON &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="27. TypeScript" href="../typescript/index.html" />
+    <link rel="prev" title="26.5. Exercises" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">26. Fetch &amp; JSON</a></li>
+    <li class="active">26.6. Studio: Fetch &amp; JSON</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="studio-fetch-json">
+<h1>26.6. Studio: Fetch &amp; JSON<a class="headerlink" href="#studio-fetch-json" title="Permalink to this headline">¶</a></h1>
+<p>Your task is to build a website that shows astronauts fetched from an API.</p>
+<div class="section" id="get-started">
+<h2>26.6.1. Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fork the <a class="reference external" href="https://github.com/LaunchCodeEducation/Fetch-and-JSON-Studio/" target="_blank">studio repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to your own Github account.</li>
+<li>Clone the repository to your computer.</li>
+</ol>
+</div>
+<div class="section" id="requirements">
+<h2>26.6.2. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add code that runs on the <code class="docutils literal notranslate"><span class="pre">window</span></code> <code class="docutils literal notranslate"><span class="pre">load</span></code> event.<ol class="loweralpha">
+<li>This is done because we can't interact with the HTML elements until the page has loaded.</li>
+</ol>
+</li>
+<li>Make a GET request using <code class="docutils literal notranslate"><span class="pre">fetch</span></code> to the astronauts API <a class="reference external" href="https://handlers.education.launchcode.org/static/astronauts.json" target="_blank">https://handlers.education.launchcode.org/static/astronauts.json<i class="fas fa-external-link-alt" aria-hidden="true"></i></a><ol class="loweralpha">
+<li>Do this part inside the <code class="docutils literal notranslate"><span class="pre">load</span></code> event handler.</li>
+</ol>
+</li>
+<li>Add each astronaut returned to the web page.<ol class="loweralpha">
+<li>Use the HTML template shown below.</li>
+<li>Be sure to use the exact HTML including the CSS classes. (starter code contains CSS definitions)</li>
+</ol>
+</li>
+</ol>
+<div class="section" id="example-json">
+<h3>26.6.2.1. Example JSON<a class="headerlink" href="#example-json" title="Permalink to this headline">¶</a></h3>
+<p>Notice that it's an array of objects, due to the outer <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code>. That means you will have to
+use a loop to access each object inside the JSON array.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Mae&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Jemison&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Physician&quot;</span><span class="p">,</span> <span class="s2">&quot;Chemical Engineer&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">190</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;mae-jemison.jpg&quot;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Frederick&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Gregory&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Information Systems&quot;</span><span class="p">,</span> <span class="s2">&quot;Shuttle Pilot&quot;</span><span class="p">,</span> <span class="s2">&quot;Fighter Pilot&quot;</span><span class="p">,</span> <span class="s2">&quot;Helicopter Pilot&quot;</span><span class="p">,</span> <span class="s2">&quot;Colonel USAF&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">455</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;frederick-gregory.jpg&quot;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Ellen&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Ochoa&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Physics&quot;</span><span class="p">,</span> <span class="s2">&quot;Electrical Engineer&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">979</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;ellen-ochoa.jpg&quot;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Guion&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Bluford&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Aerospace Engineer&quot;</span><span class="p">,</span> <span class="s2">&quot;Philosophy&quot;</span><span class="p">,</span> <span class="s2">&quot;Physics&quot;</span><span class="p">,</span> <span class="s2">&quot;Colonel USAF&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Fighter Pilot&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">686</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;guion-bluford.jpg&quot;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Sally&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Ride&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Physicist&quot;</span><span class="p">,</span> <span class="s2">&quot;Astrophysics&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">343</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;sally-ride.jpg&quot;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Kjell&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Lindgren&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Physician&quot;</span><span class="p">,</span> <span class="s2">&quot;Surgeon&quot;</span><span class="p">,</span> <span class="s2">&quot;Emergency Medicine&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;kjell-lindgren.jpg&quot;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="o">:</span> <span class="s2">&quot;Jeanette&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="o">:</span> <span class="s2">&quot;Epps&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skills&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Physicist&quot;</span><span class="p">,</span> <span class="s2">&quot;Philosophy&quot;</span><span class="p">,</span> <span class="s2">&quot;Aerospace Engineer&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;hoursInSpace&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;jeanette-epps.jpg&quot;</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="html-template">
+<h3>26.6.2.2. HTML Template<a class="headerlink" href="#html-template" title="Permalink to this headline">¶</a></h3>
+<p>Create HTML in this exact format for each astronaut, but include data about
+that specific astronaut. For example the HTML below is what should be created
+for astronaut Mae Jemison. All HTML created should be added to the
+<code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">id=&quot;container&quot;&gt;</span></code> tag.</p>
+<p>Do NOT copy and paste this into your HTML file. Use this as a template to
+build HTML dynamically for each astronaut returned from the API.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;astronaut&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bio&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Mae Jemison<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Hours in space: 190<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Active: false<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Skills: Physician, Chemical Engineer<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;avatar&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/mae-jemison.jpg&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="expected-results">
+<h3>26.6.2.3. Expected Results<a class="headerlink" href="#expected-results" title="Permalink to this headline">¶</a></h3>
+<p>After your code loads the data and builds the HTML, the web page should look
+like:</p>
+<div class="figure" id="id1">
+<img alt="Screen shot showing what result of studio should look like." src="../../_images/studio-example-page.png" />
+<p class="caption"><span class="caption-text">Example of what resulting page should look like.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2>26.6.3. Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Display the astronauts sorted from most to least time in space.</li>
+<li>Make the &quot;Active: true&quot; text green, for astronauts that are still active
+(active is true).</li>
+<li>Add a count of astronauts to the page.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> 26.5. Exercises</a></li>
+        
+        
+        <li class="next"><a href="../typescript/index.html">27. TypeScript <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

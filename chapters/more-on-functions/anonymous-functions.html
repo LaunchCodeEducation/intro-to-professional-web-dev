@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>11.2. Anonymous Functions &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.3. Passing Functions as Arguments" href="passing-functions.html" />
+    <link rel="prev" title="11.1. Functions as Values" href="functions-as-values.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">11. More on Functions</a></li>
+    <li class="active">11.2. Anonymous Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content ">
+
+    
+  <div class="section" id="anonymous-functions">
+<h1>11.2. Anonymous Functions<a class="headerlink" href="#anonymous-functions" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">You already know <a class="reference internal" href="../functions/creating-functions.html#function-syntax"><span class="std std-ref">one method for creating a function</span></a>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="c1">// function body</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>A function defined in this way is a <strong>named function</strong> (<code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, in the example above).</p>
+<p>Many programming languages, including JavaScript, allow us to create <strong>anonymous functions</strong>, which <em>do not</em> have names. We can create an anonymous function by simply leaving off the function name when defining it:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">,...,</span> <span class="nx">parameterN</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="c1">// function body</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>You might be asking yourself, <em>How do I call a function if it doesn't have a name?!</em> Good question. Let's address that now.</p>
+<div class="section" id="anonymous-function-variables">
+<h2>11.2.1. Anonymous Function Variables<a class="headerlink" href="#anonymous-function-variables" title="Permalink to this headline">¶</a></h2>
+<p>Anonymous functions are often assigned to variables when they are created, which allows them to be called using the variable's name.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let's create and use a simple anonymous function that returns the sum of two numbers.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">add</span></code> refers to the anonymous function created on lines 1 through 3. We call the function using the <em>variable</em> name, since the function doesn't have a name.</p>
+<p>The visual analogy here is the same as that of a variable referring to a named function.</p>
+<div class="figure" id="id1">
+<img alt="The variable add on the left refers to an anonymous function on the right" src="../../_images/function-var-anonymous.png" />
+<p class="caption"><span class="caption-text">A variable that refers to an anonymous function.</span></p>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Like other variable declarations, an assignment statement using an anonymous function should be terminated by a semi-colon, <code class="docutils literal notranslate"><span class="pre">;</span></code>. This is easy to overlook, since named functions do <em>not</em> end with a semi-colon.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2>11.2.2. Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Convert the following named function to an anonymous function that is stored in a variable.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">lettersArray</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+   <span class="kd">let</span> <span class="nx">reversedLettersArray</span> <span class="o">=</span> <span class="nx">lettersArray</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+   <span class="k">return</span> <span class="nx">reversedLettersArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/Refactor-to-make-anonymous" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Consider the code sample below, which declares an anonymous function
+beginning on line 1.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">f1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">str</span> <span class="o">+</span> <span class="nx">str</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">f2</span> <span class="o">=</span> <span class="nx">f1</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Which of the following are valid ways of invoking the anonymous
+function with the argument <code class="docutils literal notranslate"><span class="pre">&quot;abcd&quot;</span></code>? (Choose all that apply.)</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">f1(&quot;abcd&quot;);</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">function(&quot;abcd&quot;);</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">f2(&quot;abcd&quot;);</span></code></li>
+<li>It is not possible to invoke the anonymous function, since it
+doesn’t have a name.</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Complete the following code snippet so that it logs an error message
+if <code class="docutils literal notranslate"><span class="pre">userInput</span></code> is negative.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">logger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">errorMsg</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ERROR: &quot;</span> <span class="o">+</span> <span class="nx">errorMsg</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">userInput</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">____________</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/Check-Fill-in-the-Code" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="functions-as-values.html"><span aria-hidden="true">&larr;</span> 11.1. Functions as Values</a></li>
+        
+        
+        <li class="next"><a href="passing-functions.html">11.3. Passing Functions as Arguments <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
