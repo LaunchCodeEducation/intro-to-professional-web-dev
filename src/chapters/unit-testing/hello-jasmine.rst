@@ -233,34 +233,25 @@ Let's see what a test failure looks like. Go back to ``hello.js`` and remove the
 
 Run the tests again. This time, the output looks quite different:
 
-.. TODO: Change this code block
-
 .. sourcecode:: none
-   :linenos:
 
-   Randomized with seed 98738
+   Randomized with seed 41448
    Started
    F
 
    Failures:
    1) hello world test should return a custom message when name is specified
-   Message:
-      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-      + expected - actual
+      Message:
+         Expected 'Hello, Jasmine' to equal 'Hello, Jasmine!'.
+      Stack:
+         Error: Expected 'Hello, Jasmine' to equal 'Hello, Jasmine!'.
+            at <Jasmine>
+            at UserContext.<anonymous> (/home/runner/Hello-Jasmine-Expectations/spec/hello.spec.js:6:35)
+            at <Jasmine>
 
-      - 'Hello, Jasmine'
-      + 'Hello, Jasmine!'
-   Stack:
-      error properties: Object({ generatedMessage: true, code: 'ERR_ASSERTION', actual: 'Hello, Jasmine', expected: 'Hello, Jasmine!', operator: 'strictEqual' })
-         at <Jasmine>
-         at UserContext.<anonymous> (/home/runner/spec/reverse.spec.js:23:14)
-         at <Jasmine>
-         at runCallback (timers.js:705:18)
-         at tryOnImmediate (timers.js:676:5)
-         at processImmediate (timers.js:658:5)
-
-   1 specs, 1 failure
-   Finished in 0.021 seconds
+   1 spec, 1 failure
+   Finished in 0.01 seconds
+   Randomized with seed 41448 (jasmine --random=true --seed=41448)
 
 We intentionally made a test fail. The failing test appears in the ``Failures:`` section on line 5. This
 describes exactly what went wrong. The test expected the value ``'Hello, Jasmine!'`` but received ``'Hello, Jasmine'``.

@@ -1,9 +1,7 @@
 TDD in Action
 =============
 
-.. TODO: Replace this repl.it
-
-`Fork our starter code repl.it <https://repl.it/@launchcode/Transmission-processor-TDD-starter>`_
+`Fork our starter code repl.it <https://repl.it/@launchcode/Transmission-processor-TDD-starter-Expectations>`_
 and follow along as we implement a project using TDD.
 
 We need to write a Node module to process transmissions from the
@@ -239,12 +237,8 @@ and empty object, ``{}``.
 
    Failures:
    1) transmission processor returns -1 if '::' not found
-   Message:
-    AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-    + expected - actual
-
-    - {}
-    + -1
+      Message:
+         Expected Input A to equal Input B
 
 Next is *step 6*, write code that will make the test pass. Go to ``processor.js`` and
 update the ``processor`` function to check the ``transmission`` argument for the
@@ -319,8 +313,8 @@ were equal when we didn't expect them to be.
 
    Failures:
    1) transmission processor returns id in object
-   Message:
-      AssertionError: Expected "actual" to be strictly unequal to: undefined
+      Message:
+         Expected "actual" to not equal undefined
 
 The object returned from ``processor`` doesn't have an ``id`` property. We need
 to split the transmission on ``'::'`` and then add that value to the object
@@ -374,11 +368,9 @@ Fail Message
 ::
 
    Failures:
-   1) transmission processor converts id to a number
-   Message:
-      AssertionError: Expected values to be strictly equal:
-
-      '9701' !== 9701
+      1) transmission processor converts id to a number
+         Message:
+            Expected '9701' to equal 9701.
 
 Convert the id part of the string to be of type ``number``.
 
@@ -433,8 +425,8 @@ Fail Message
 
    Failures:
    1) transmission processor returns rawData in object
-   Message:
-      AssertionError: Expected "actual" to be strictly unequal to: undefined
+      Message:
+         Expected "actual" to not equal undefined
 
 We need to extract the ``rawData`` from the second half of the transmission
 string after it's been split. Then return that in the object.
@@ -498,12 +490,8 @@ Fail Message
 
    Failures:
    1) transmission processor returns -1 for rawData if missing < at position 0
-   Message:
-      AssertionError: Expected values to be strictly equal:
-      + actual - expected
-      
-      + '487297403495720912>'
-      - -1
+      Message:
+         Expected values to be equal
 
 Now add new code to ``processor.js`` to make the tests pass. Note that we don't
 simply return ``-1``, the requirement is to return the object and set the value
