@@ -1,7 +1,5 @@
-.. TODO: Check starter code and solutions!
-
 Studio: Unit Testing
-=====================
+====================
 
 Let's use Test Driven Development (TDD) to help us design a function that meets
 the following conditions:

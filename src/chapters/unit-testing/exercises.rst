@@ -1,5 +1,3 @@
-.. TODO: Check starter code and solutions!
-
 Exercises: Unit Testing
 ========================
 
@@ -20,7 +18,7 @@ Automatic Testing to Find Errors
 Let's begin with the following, simple code:
 
 .. replit:: js
-   :slug: UnitTestingExercises02
+   :slug: UnitTestingExercises01Exceptions
    :linenos:
 
    function checkFive(num){
@@ -142,15 +140,11 @@ c. ``index.js`` which holds special code to make Jasmine work.
          Failures:
          1) checkFive should return 'num' is less than 5 when passed a number smaller than 5.
          Message:
-            AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-            + expected - actual
-
-            - '2 is greater than 5.'
-            + '2 is less than 5.'
+            Expected Input A to equal Input B:
 
    f. Change line 3 back.
 
-   .. note::
+   .. admonition:: Note
 
       We do NOT need to check every possible value that is less than 5. Testing a single
       example is sufficient to check that part of the function.
