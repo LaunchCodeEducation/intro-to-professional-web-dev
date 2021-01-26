@@ -162,7 +162,7 @@ Time for Rock, Paper, Scissors! The function below takes the choices
 It then decides which player won the match and returns a string.
 
 .. replit:: js
-   :slug: UnitTestingExercises03
+   :slug: UnitTestingExercises02Exceptions
    :linenos:
 
    function whoWon(player1,player2){
