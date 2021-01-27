@@ -12,3 +12,6 @@ Exercise Solutions
    strings
    arrays
    loops
+   functions
+   more-on-functions
+   

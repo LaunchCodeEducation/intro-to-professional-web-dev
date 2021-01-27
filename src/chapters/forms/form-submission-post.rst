@@ -1,7 +1,6 @@
 POST Form Submission
 ====================
 
-
 Form Submission Using POST
 --------------------------
 Instead of using GET and query parameters to submit form data, we can use POST.
@@ -22,9 +21,9 @@ and the query parameters are cached and logged, possibly leaking sensitive data.
          <button>Submit</button>
       </form>
 
-
 Send Form Submission to a Server
 --------------------------------
+
 The ``action`` and ``method`` attributes allows us to choose where the form request will be
 sent and what type of request will be sent. How do we configure what happens in response to
 a form submission?
@@ -37,7 +36,7 @@ been created for us.
 
 .. admonition:: Example
 
-   When submitted this form will send a POST request to the form handler defined by the
+   When submitted, this form will send a POST request to the form handler defined by the
    ``action`` attribute.
 
    .. replit:: html
@@ -80,13 +79,12 @@ been created for us.
    
       POST request highlighted with Params tab open showing Form data
 
-.. warning::
+.. admonition:: Warning
 
-   Using POST for form submissions adds a very low level of security.
-   Using `HTTPS <https://en.wikipedia.org/wiki/HTTPS>`_ instead of HTTP
-   adds a higher level of security. Configuring HTTPS is beyond the
-   scope of this class.
-
+   Using POST for form submissions adds a very low level of security. Using
+   `HTTPS <https://en.wikipedia.org/wiki/HTTPS>`__ instead of HTTP adds a
+   higher level of security. Configuring HTTPS is beyond the scope of this
+   class.
 
 Check Your Understanding
 ------------------------

@@ -34,7 +34,7 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
          launchReady = false;
       }
 
-   `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError>`_
+   `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError>`__
 
    :ref:`Check your solution <errors-and-debugging-exercise-solutionsA>`. 
 
@@ -57,10 +57,10 @@ A. Fix **syntax errors** first. Run the following code as-is and read the error 
       }
 
       if (launchReady) {
-         console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
+         console.log(("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
          console.log("Fed parrot...");
          console.log("Ignition...");
-         console.log("Liftoff!');
+         console.log("Liftoff!");
       } else {
          console.log("Launch scrubbed.");
       }

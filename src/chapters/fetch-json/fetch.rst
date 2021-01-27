@@ -94,9 +94,9 @@ Now let's add ``fetch`` in the Launch Status web page.
 
    A ``<script>`` tag has been added that includes:
 
-   #. A *load* event handler on line 5.
-   #. A ``fetch`` and *response handler function* on line 6.
-   #. A ``console.log(response);`` on line 7 that prints out the ``response``
+   #. A *load* event handler on line 6.
+   #. A ``fetch`` and *response handler function* on line 7.
+   #. A ``console.log(response);`` on line 8 that prints out the ``response``
       object.
 
    .. replit:: html

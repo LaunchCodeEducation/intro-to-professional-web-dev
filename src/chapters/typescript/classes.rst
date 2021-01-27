@@ -70,7 +70,7 @@ we need about an astronaut and then use that information in a function.
       name: string;
    }
 
-   function astronautName (astronaut: Astronaut) {
+   function astronautName (astronaut: Astronaut): string {
       return astronaut.name;
    }
 
@@ -119,7 +119,7 @@ This can be helpful when a function parameter needs to make use of certain behav
          }
       }
 
-      function pantheraSounds(panthera: Panthera) {
+      function pantheraSounds(panthera: Panthera): void {
          console.log(`Panthera says ${panthera.roar}`);
       }
 
