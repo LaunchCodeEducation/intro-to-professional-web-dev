@@ -11,4 +11,5 @@ Exercise Solutions
    errors-and-debugging
    strings
    functions
+   more-on-functions
    
