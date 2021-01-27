@@ -1,4 +1,3 @@
-===============
 Class Platforms
 ===============
 
@@ -8,7 +7,7 @@ assignments, and grading.
 .. index:: ! Canvas
 
 Canvas
-======
+------
 
 LaunchCode monitors your progress in this class through a management system
 called **Canvas**. It provides a central location to manage the flow of
@@ -17,7 +16,7 @@ to the lessons you need, and it keeps a record of your completed assignments
 and scores.
 
 Login to Canvas
----------------
+^^^^^^^^^^^^^^^
 
 Access Canvas and the course assignments at `<https://learn.launchcode.org/>`__.
 To login, use your launchcode.org username and password, which are the same
@@ -26,7 +25,7 @@ ones you used to apply for this class.
 .. index:: ! Canvas dashboard
 
 Canvas Dashboard
-----------------
+^^^^^^^^^^^^^^^^
 
 After logging in, you will arrive at your **dashboard**. Your Canvas dashboard displays the
 LaunchCode courses you can access, upcoming due dates, and several menu items.
@@ -42,7 +41,7 @@ will probably use the *Syllabus* and *Assignments* options the most often.
    :alt: Canvas class menu options
 
 Syllabus Page
--------------
+^^^^^^^^^^^^^
 
 The syllabus page provides general information, such as a description of the
 class, the timeline for the course, a calendar, and a todo list. Scrolling
@@ -56,7 +55,7 @@ and "How can I quickly find and review an old topic?".
    :alt: Course Summary list
 
 Assignments Page
-----------------
+^^^^^^^^^^^^^^^^
 
 This page sorts required tasks by date or type. We regularly add new tasks 
 to this list so check back here often. Old content remains active,
@@ -79,7 +78,7 @@ submitting files for the larger assignments should only be done through Canvas.
 .. index:: ! repl.it
 
 Repl.it
-=======
+-------
 
 `Repl.it <https://repl.it>`__ is a free online code editor, and it provides a
 practice space to boost your programming skills.
@@ -93,7 +92,7 @@ For this class, repl.it serves two purposes:
    tracked for completion.
 
 Repl.it Account Creation
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Creating a standard repl.it account is covered in
 :ref:`Chapter 2 <create-replit-account>`, and logging in allows students to
@@ -104,7 +103,7 @@ To access the tracked and scored tasks, students must also enroll in a repl.it
 Canvas assignment.
 
 Standard Repl.it
-----------------
+^^^^^^^^^^^^^^^^
 
 Standard repl.it is an online code editor for various languages. Coders
 collaborate by sharing repl.it URLs.
@@ -119,7 +118,7 @@ Standard repl.it is used for:
 
 
 Repl.it Classroom
------------------
+^^^^^^^^^^^^^^^^^
 
 Repl.it *Classroom* provides online code editing and submission, but it also
 allows teachers to post instructions and establish automatic code evaluation.
@@ -143,7 +142,7 @@ Repl.it Classroom is used for:
    work.
 
 Repl.it Classroom Workspace
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: figures/replit-classroom-features.png
 
