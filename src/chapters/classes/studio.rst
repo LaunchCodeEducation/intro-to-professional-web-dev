@@ -1,15 +1,5 @@
 Studio: Classes
-================
-
-Before You Start
-----------------
-
-If you are enrolled in a LaunchCode program, access this studio by following
-the repl.it classroom links posted in your class at
-`learn.launchcode.org <https://learn.launchcode.org/>`__.
-
-If you are working through this material on your own, use the repl.it links
-contained on this page.
+===============
 
 Getting Started
 ---------------
@@ -20,7 +10,7 @@ Edit the `practice file <https://repl.it/@launchcode/ClassStudio01>`__ as you
 complete the studio activity.
 
 Part 1 - Add Class Properties
-------------------------------
+-----------------------------
 
 #. Declare a class called ``CrewCandidate`` with a ``constructor`` that takes
    three parameters---``name``, ``mass``, and ``scores``. Note that ``scores``
@@ -36,7 +26,7 @@ Use ``console.log`` for each object to verify that your class correctly assigns
 the key/value pairs.
 
 Part 2 - Add First Class Method
---------------------------------
+-------------------------------
 
 As our candidates complete more tests, we need to be able to add the new
 scores to their records.
@@ -51,7 +41,7 @@ scores to their records.
    print out the new score array with ``objectName.scores``.
 
 Part 3 - Add More Methods
---------------------------
+-------------------------
 
 Now that we can add scores to our candidates' records, we need to be able to
 evaluate their fitness for our astronaut program. Let's add two more methods
@@ -59,7 +49,7 @@ to ``CrewCandidate``---one to average the test scores and the other to
 indicate if the candidate should be admitted.
 
 Calculating the Test Average
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Add an ``average()`` method outside ``constructor``. The function does NOT
    need a parameter.
@@ -72,7 +62,7 @@ Calculating the Test Average
 Verify your code by evaluating and printing Merry's average test score (92.7).
 
 Determining Candidate Status
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Candidates with averages at or above 90% are automatically accepted to our
 training program. Reserve candidates average between 80 - 89%, while
@@ -93,7 +83,7 @@ rejection notice.
    status of ___.'``
 
 Part 4 - Play a Bit
---------------------
+-------------------
 
 Use the three methods to boost Glad Gator's status to ``Reserve`` or higher.
 How many tests will it take to reach ``Reserve`` status? How many to reach
