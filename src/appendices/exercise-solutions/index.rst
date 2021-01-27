@@ -11,3 +11,6 @@ Exercise Solutions
    errors-and-debugging
    strings
    arrays
+   functions
+   more-on-functions
+   

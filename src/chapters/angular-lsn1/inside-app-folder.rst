@@ -223,10 +223,10 @@ Try It!
 #. Modify the ``<li></li>`` elements in ``app.component.html`` to display the
    elements from ``itemList`` in an unordered list. Be sure to use
    placeholders like ``{{itemList[0]}}`` between the tags.
-#. Define a ``rectangle`` object in ``AppComponent`` that has keys of
-   ``length``, ``width`` and ``area``. Assign numbers to ``length`` and
-   ``width``, and have ``area`` be a function that calculates and returns the
-   area.
+#. Return to the ``AppComponent`` class in the ``.ts`` file. Define a
+   ``rectangle`` object that has keys of ``length``, ``width`` and ``area``.
+   Assign numbers to ``length`` and ``width``, and have ``area`` be a function
+   that calculates and returns the area.
 
    .. sourcecode:: TypeScript
       :linenos:
