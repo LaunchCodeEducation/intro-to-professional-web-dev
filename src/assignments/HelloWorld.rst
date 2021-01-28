@@ -45,14 +45,18 @@ If you haven't already done so, create a
 Assignment Invitation
 ~~~~~~~~~~~~~~~~~~~~~
 
+.. admonition:: Note
+
+   Before starting on any assignment, make sure you are signed into both your Github and Repl.it accounts!
+
 In your Canvas classroom, click on the Assignment 0 link to accept your invitation to start coding 
 your assignment solution.
 
-Once you open the assignment invitation, of you are already logged in to your GitHub account, 
+Once you open the assignment invitation, if you are already logged in to your GitHub account, 
 you will see a screen like this:
 
 .. figure:: figures/gh-classroom-accept-assignment.png
-   :alt: Image showing a GitHub Classroom assignment acceptance page.
+   :alt: A GitHub Classroom assignment acceptance page.
 
    Clicking on the assignment link in Canvas takes you to this page.
 
@@ -66,14 +70,14 @@ Once you have accepted and hit the green button, the next page you will see look
 something like this:
 
 .. figure:: figures/gh-classroom-create-assignment.png
-   :alt: Image showing a GitHub Classroom assignment creation page.
+   :alt: A GitHub Classroom assignment creation page.
 
    Most of the time, you only need to wait about 30 seconds to refresh and see the assignment repository.
 
 When you refresh and your assignment repository ahs been created, this is what you should see:
 
 .. figure:: figures/gh-classroom-ready-assignment.png
-   :alt: Image showing that a GitHub Classroom assignment has been created.
+   :alt: A GitHub Classroom assignment has been created.
 
    Your assignment code can now be accessed either via Repl.it or GitHub.
 
@@ -82,22 +86,21 @@ the *Work in Repl.it* button. When you open your GitHub assignment repository,
 you will see the same *Work in Repl.it* button.
 
 .. figure:: figures/github-work-in-replit.png
-   :alt: Image showing a *Work in Repl.it* button on a GitHub assignment.
+   :alt: A *Work in Repl.it* button on a GitHub assignment.
 
    We recommend that you access the assignment Repl.it via the GitHub repository.
 
-
 .. admonition:: Note
 
-   The first time you use the *Work in Repl.it* button, ie for this assignment, you will need to authorize your Repl.it account to
+   The first time you use the *Work in Repl.it* button, i.e. for this assignment, you will need to authorize your Repl.it account to
    work with your GitHub account. If you are prompted to do so, follow the steps to 
    link your accounts.
 
-Hello world!
+Hello World!
 ~~~~~~~~~~~~
 
 Once you have accepted the assignment, have a look around the various files and get curious about what this 
-code does. Indeed, open some of the files and look around.
+code does.
 Don't be afraid to look - just don't edit any of this code just yet.
 
 After you have done some exploring, use the Repl.it *Run* button to run the program. To begin with, 
@@ -144,7 +147,7 @@ a process called version control, which we'll get into in a later lesson. For no
 window and click on the version control icon. 
 
 .. figure:: figures/replit-sidebar.png
-   :alt: Image showing the left sidebar in a Replit window, with cursor hovered over the version control tab.
+   :alt: The left sidebar in a Replit window, with cursor hovered over the version control tab.
 
    Here, the user selects the version control icon.
 
@@ -152,7 +155,7 @@ When you have opened the version control tab, write a commit message in the text
 change?". A **commit message** is a note about what you have changed in your code.
 
 .. figure:: figures/replit-version-control.png
-   :alt: Image showing the Replit version control tab.
+   :alt: The Replit version control tab.
 
    Click on the text box and write a message that conveys what you have changed in the code.
 
@@ -169,7 +172,7 @@ Once you've committed your work, head to Github to see that your solution passes
 The easiest way to do this is to click on the hyperlink at the top of the Repl.it version control tab.
 
 .. figure:: figures/replit-vc-repo-highlight.png
-   :alt: Image showing the Replit version control tab with the github repository indicated.
+   :alt: The Replit version control tab with the github repository indicated.
 
    The hyperlink pointed to here takes you to the GitHub location of your assignment.
 
@@ -177,7 +180,7 @@ The easiest way to do this is to click on the hyperlink at the top of the Repl.i
 If your solution passes the grading requirements, you will see a green check mark near your latest commit.
 
 .. figure:: figures/github-passing-commit.png
-   :alt: Image showing a GitHub repo with a passing commit.
+   :alt: A GitHub repo with a passing commit.
 
    The latest commit message on this assignment is "removed a comma from my solution". The green check to 
    the right of the message indicates that the solution passed.
@@ -186,7 +189,7 @@ If your solution passes the grading requirements, you will see a green check mar
 If your solution does not pass, you will see a red ``x`` in its place.
 
 .. figure:: figures/github-failing-commit.png
-   :alt: Image showing a GitHub repo with a failing commit.
+   :alt: A GitHub repo with a failing commit.
 
    The latest commit, "added a comma to my solution" does not pass the grading requirements.
 
