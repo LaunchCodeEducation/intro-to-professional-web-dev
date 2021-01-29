@@ -33,13 +33,13 @@ testable parts. The goal is to get simple parts working first and then expand
 the code in a systematic way. The following is NOT the only way to complete
 this assignment, but it provides a framework for thinking through the project.
 
-Login to repl.it
-^^^^^^^^^^^^^^^^^
+Get the Starter Code
+^^^^^^^^^^^^^^^^^^^^
 
-If you are enrolled in a repl.it classroom for this course, login to that
-classroom and open the starter code for the *Candidate Testing* assignment. If
-you are NOT enrolled in a repl.it classroom, fork this
-`starter repl.it <https://repl.it/@launchcode/candidate-tester>`__.
+In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #1: Candidate Testing** contains a 
+GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from
+**Graded Assignment #0: Hello World** for submission instructions.
+
 
 Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -12,11 +12,6 @@ some modifications to improve it.
 
 Let's roll.
 
-.. TODO: mod this replit instruction. 3 types of students. independent learning track, instructor led track, and independent readers
-
-If you are NOT enrolled in a repl.it classroom for this course, fork the
-starter code at this `repl.it <https://repl.it/@launchcode/scrabble-scorer>`__.
-
 Requirements
 ------------
 
@@ -39,6 +34,10 @@ Requirements
 
 Starter Code
 ------------
+
+In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #2: Scrabble Scorer** contains a 
+GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from
+**Graded Assignment #0: Hello World** for submission instructions.
 
 You only need to pay attention to one file here, ``scrabble-scorer.js``. Within this JavaScript
 file is still some more starter code that you don't need to touch. We'll point out what you 
@@ -330,7 +329,7 @@ Transform the Object
       ``scrabbleScorer()`` to use ``newPointStructure`` and return a cumulative score for the whole word entered.
 
 Test Words
-----------
+~~~~~~~~~~
 
 Here are some words you can use to test your code:
 
@@ -344,7 +343,7 @@ Here are some words you can use to test your code:
 .. _example-output:
 
 Example Output
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 ::
 
@@ -373,14 +372,4 @@ Bonus Missions
 #. Score words spelled with blank tiles by adding ``' '`` to the
    ``newPointStructure`` object. The point value for a blank tile is ``0``.
 
-.. TODO: what does submission look like now?
 
-.. Submitting Your Work
-.. --------------------
-
-.. #. From the address bar at the top of the browser window, copy the URL of the
-..    repl.it that contains your solution.
-.. #. Go to the Graded Assignment #2 page in Canvas and click *Submit Assignment*.
-.. #. Paste the URL into the Website URL input.
-.. #. Click *Submit Assignment* again.
-.. #. Notify your TA that your assignment is ready to be graded.
