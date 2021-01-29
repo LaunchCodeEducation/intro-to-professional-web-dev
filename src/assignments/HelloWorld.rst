@@ -6,7 +6,7 @@ Assignment #0: Hello World
 ==========================
 
 Your first assignment is mostly an exercise in following instructions. We'll ask you to modify
-an existing program so that, when run, the program prints "Hello world!". Sound simple?
+an existing program so that, when run, the program prints "Hello world!".
 
 Programming jobs often require you to get familiar with, or at least make 
 use of, additional technologies. Here, you'll be using a few web applications, like GitHub and Repl.it, 
@@ -45,7 +45,7 @@ If you haven't already done so, create a
 Assignment Invitation
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. admonition:: Note
+.. admonition:: Tip
 
    Before starting on any assignment, make sure you are signed into both your Github and Repl.it accounts!
 
@@ -74,7 +74,7 @@ something like this:
 
    Most of the time, you only need to wait about 30 seconds to refresh and see the assignment repository.
 
-When you refresh and your assignment repository ahs been created, this is what you should see:
+When you refresh and your assignment repository has been created, this is what you should see:
 
 .. figure:: figures/gh-classroom-ready-assignment.png
    :alt: A GitHub Classroom assignment has been created.
@@ -96,7 +96,7 @@ you will see the same *Work in Repl.it* button.
    work with your GitHub account. If you are prompted to do so, follow the steps to 
    link your accounts.
 
-Hello World!
+Hello world!
 ~~~~~~~~~~~~
 
 Once you have accepted the assignment, have a look around the various files and get curious about what this 
@@ -176,7 +176,6 @@ The easiest way to do this is to click on the hyperlink at the top of the Repl.i
 
    The hyperlink pointed to here takes you to the GitHub location of your assignment.
 
-
 If your solution passes the grading requirements, you will see a green check mark near your latest commit.
 
 .. figure:: figures/github-passing-commit.png
@@ -185,14 +184,12 @@ If your solution passes the grading requirements, you will see a green check mar
    The latest commit message on this assignment is "removed a comma from my solution". The green check to 
    the right of the message indicates that the solution passed.
 
-
 If your solution does not pass, you will see a red ``x`` in its place.
 
 .. figure:: figures/github-failing-commit.png
    :alt: A GitHub repo with a failing commit.
 
    The latest commit, "added a comma to my solution" does not pass the grading requirements.
-
 
 A red ``x`` can always be corrected by repeating the previous steps. These are:
 
@@ -212,4 +209,9 @@ a few moments.
 
 When you see a green check, your code passes and you are all finished with the assignment. 
 
+.. admonition:: Note
 
+   If your program is outputting "Hello world!", but you are still not seeing a green check mark, make sure you did not edit any file other than ``hello.js``.
+   An accidental space or extra character can cause problems with Github Classroom's grading.
+   To double check that you have not done so, you can click on the 7-digit code next to the check mark or x.
+   This will bring up which files have been changed and any changes made. If any other files other than ``hello.js`` were changed, make sure to undo the changes in Repl.it and commit to Github.
