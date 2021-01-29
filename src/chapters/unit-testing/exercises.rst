@@ -1,5 +1,8 @@
+
+.. _exercises-unit-testing:
+
 Exercises: Unit Testing
-========================
+=======================
 
 In many of your previous coding tasks, you had to verify that your code
 worked before moving to the next step. This often required you to add
@@ -13,7 +16,7 @@ completing the code. The exercises below offer practice with using tests to
 find bugs, and the studio asks you to implement TDD.
 
 Automatic Testing to Find Errors
----------------------------------
+--------------------------------
 
 Let's begin with the following, simple code:
 
@@ -160,7 +163,7 @@ c. ``index.js`` which holds special code to make Jasmine work.
 
 
 Try One on Your Own
---------------------
+-------------------
 
 Time for Rock, Paper, Scissors! The function below takes the choices
 (``'rock'``, ``'paper'``, or ``'scissors'``) of two players as its parameters.
@@ -208,7 +211,7 @@ It then decides which player won the match and returns a string.
    testing to identify and fix it.
 
 Bonus Mission
---------------
+-------------
 
 What if something OTHER than ``'rock'``, ``'paper'``, or ``'scissors'`` is
 passed into the ``whoWon`` function? Modify the code to deal with the
