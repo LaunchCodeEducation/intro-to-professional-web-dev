@@ -158,7 +158,7 @@ c. ``index.js`` which holds special code to make Jasmine work.
             - '2 is greater than 5.'
             + '2 is less than 5.'
       
-   :ref:`Check your solution <unit-testing-exercise-solutionsA3e>`.
+      :ref:`Check your solution <unit-testing-exercise-solutionsA3e>`.
 
    f. Change line 3 back.
 
