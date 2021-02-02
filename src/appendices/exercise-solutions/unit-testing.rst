@@ -115,17 +115,10 @@ Try One on Your Own
 
       }
    
-   **Typo to fix:** In ``RPS.js``, there is a conditional block that checks if ``player1`` plays ``'scissors'`` and ``player2`` plays ``'rock '``.
-   The ``'rock '`` string contains a trailing space that should be removed.
+Typo to fix:
+^^^^^^^^^^^^ 
+	
+In ``RPS.js``, there is a conditional block that checks if ``player1`` plays ``'scissors'`` and ``player2`` plays ``'rock '``.
+The ``'rock '`` string contains a trailing space that should be removed.
 
-   :ref:`Back to the exercises <exercises-unit-testing>`
-
-.. b. ``checkFive.spec.js``
-
-..    .. sourcecode:: js
-..       :linenos:
-
-..       const test = require('../checkFive.js');
-..       const assert = require('assert');
-
-..    :ref:`Back to the exercises <exercises-unit-testing>`
+:ref:`Back to the exercises <exercises-unit-testing>`
