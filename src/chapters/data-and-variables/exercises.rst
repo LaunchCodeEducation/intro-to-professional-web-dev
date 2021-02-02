@@ -20,11 +20,7 @@ Unlike the concept checks, you will need a code editor to complete the
 exercises. Fortunately, you :ref:`created a free account <hello-world>` on
 Repl.it as part of the prep work.
 
-If you are enrolled in a LaunchCode program, access these exercises by following the
-repl.it classroom links posted in your class at `<https://learn.launchcode.org>`__.
-
-If you are working through this material on your own, use this 
-`repl.it link <https://repl.it/@launchcode/Exercises-Data-and-Variables>`__.
+Use this `Repl.it link <https://repl.it/@launchcode/Exercises-Data-and-Variables>`__ to get started solving.
 
 The Data
 --------

@@ -6,13 +6,6 @@ Studio: Loops
 Now that we've launched our shuttle, let's use loops (iteration) to
 automate some tasks.
 
-Before You Start
-----------------
-
-If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
-
-If you are working through this material on your own, use the repl.it links contained on this page.
-
 Part A (Put dinner together)
 ----------------------------
 #. First, initialize variables to store the following arrays.  Remember to use descriptive names.
