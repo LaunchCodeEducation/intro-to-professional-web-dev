@@ -14,4 +14,4 @@ Exercise Solutions
    loops
    functions
    more-on-functions
-   
+   exceptions

@@ -1,5 +1,7 @@
-Exercises
-=========
+.. _exercises-exceptions:
+
+Exercises: Exceptions
+=====================
 
 Zero Division: Throw
 --------------------
@@ -17,6 +19,8 @@ divide by zero."``
    Hint: You can use an ``if / throw`` statement to complete this exercise.
 
 Code your function at this `repl.it <https://repl.it/@launchcode/ExceptionsExercises01>`__.
+
+:ref:`Check your solution <exceptions-exercise-solutionsA>`. 
 
 Test Student Labs
 -----------------
