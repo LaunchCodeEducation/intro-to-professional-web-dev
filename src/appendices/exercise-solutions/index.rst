@@ -12,3 +12,4 @@ Exercise Solutions
    strings
    arrays
    loops
+   objects and math
