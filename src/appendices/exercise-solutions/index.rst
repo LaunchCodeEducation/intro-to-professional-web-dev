@@ -15,4 +15,5 @@ Exercise Solutions
    functions
    more-on-functions
    unit-testing
+   exceptions
    
