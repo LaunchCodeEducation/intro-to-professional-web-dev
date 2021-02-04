@@ -12,4 +12,4 @@ Exercise Solutions
    strings
    arrays
    loops
-   objects and math
+   objects-and-math
