@@ -3,7 +3,8 @@
 .. _create-replit-account:
 
 Your First Program
-===================
+==================
+
 We haven’t learned how to code yet, but we can still write and run our first
 program. This exercise asks you to create and run small amounts of code, and it
 reinforces the LaunchCode principle of learning by doing.
@@ -15,7 +16,7 @@ single message is one of the simplest tasks a program can carry out.
 ``Hello, World`` will be your first program as well. Welcome to the club!
 
 Create a Repl.it Account
--------------------------
+------------------------
 
 Throughout this book, you will need to access a code editor to complete
 practice problems, exercises, studios, and assignments. If you have not already
@@ -32,21 +33,15 @@ empty.
 .. figure:: figures/replit-dashboard.png
    :alt: Repl.it dashboard
 
-.. warning::
-
-   These examples are for standard repl.it use.
-   See :ref:`repl.it classroom instructions <replit-classroom>` for instructions on
-   using repl.it when working on repl.it classroom assignments.
-
 
 Click on *new repl* to begin a new project. Scroll through the options and
 select "Node.js". Next, name your project and click "Create Repl".
 
 .. figure:: figures/replit-newrepl.png
-   :alt: Repl.it new replit
+   :alt: Repl.it new repl
 
 The Repl.it Workspace
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Before you dive into your ``Hello, World!`` program, let's take a look at how
 to use Repl.it. The workspace consists of three main panels and several menu
@@ -80,7 +75,7 @@ Features to note:
    click the gear icon and select the "light" theme.
 
 Begin Your Coding Journey
---------------------------
+-------------------------
 
 Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
 open a prepared workspace for your first program.
@@ -103,7 +98,7 @@ mistakes! These experiences still teach you something. Fix any errors and try
 again.
 
 Now Play
-^^^^^^^^^
+^^^^^^^^
 
 Once you print ``Hello, World!`` successfully, go back and play around with the
 code. Make a change, click "Run", and see what happens. Try to:

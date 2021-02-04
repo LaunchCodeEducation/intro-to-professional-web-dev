@@ -8,4 +8,5 @@ How To Write Code
    syntax-rules
    comments
    output
+   debugging
    next-steps

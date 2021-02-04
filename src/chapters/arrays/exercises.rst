@@ -31,7 +31,7 @@ rearrange our records for the items stored in our hold.
 
    #. Use bracket notation to replace ``'slinky'`` in the array with ``'space
       tether'``. Print the array to confirm the change.
-   #. Remove the last item from the array with ``pop``. Print the elgit ement
+   #. Remove the last item from the array with ``pop``. Print the element
       removed and the updated array.
    #. Remove the first item from the array with ``shift``. Print the element
       removed and the updated array.

@@ -12,4 +12,9 @@ Exercise Solutions
    strings
    arrays
    loops
+   functions
+   more-on-functions
    objects-and-math
+   unit-testing
+   exceptions
+   

@@ -19,9 +19,9 @@ used by themselves or in groups. Checkbox inputs are best used with ``<label>`` 
      - A small box for marking form option as *checked*.
      - :raw-html:`<label>sign up<input type="checkbox" name="signUp"/></label>`
 
-
 Examples
 --------
+
 .. admonition:: Example
 
    One checkbox. No ``value`` attribute is set, so the default value of ``on`` is submitted.
@@ -36,7 +36,7 @@ Examples
 
       crewReady=on
 
-   `Run it <https://repl.it/@launchcode/checkbox-inputs-example>`_
+   `Run it at repl.it <https://repl.it/@launchcode/checkbox-inputs-example>`__
 
 .. admonition:: Example
 
@@ -55,7 +55,7 @@ Examples
 
       cooking=on&movies=on
 
-   `Run it <https://repl.it/@launchcode/checkbox-inputs-example>`_
+   `Run it <https://repl.it/@launchcode/checkbox-inputs-example>`__
 
 .. admonition:: Example
 
@@ -74,10 +74,11 @@ Examples
 
       ingredient=butter&ingredient=rice
 
-   `Run it <https://repl.it/@launchcode/checkbox-inputs-example>`_
+   `Run it <https://repl.it/@launchcode/checkbox-inputs-example>`__
 
 Check Your Understanding
 ------------------------
+
 .. admonition:: Question
 
    What is the default value submitted for a ``<checkbox>`` when checked?
