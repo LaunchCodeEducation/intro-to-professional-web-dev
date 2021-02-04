@@ -5,7 +5,7 @@ This task puts your unit testing, modules making, and exception handling knowled
 use by writing tests and classes for the Mars rover named Curiosity.
 
 .. figure:: figures/curiosity-rover-selfie.jpg
-   :alt: Image of Curiosity rover taken by the rover on Mars.
+   :alt: Curiosity rover taken by the rover on Mars.
 
    Selfie of Curiosity on Mars.
 
@@ -135,7 +135,9 @@ Test 1
 Note that the test description reads, "throws error if a command type is NOT
 passed into the constructor as the first parameter".
 
-a. So far, you have only used ``assert`` methods to check for equality.
+.. TODO: Maybe add more info about throws in the chapter?
+
+a. So far, you have only used ``expect`` methods to check for equality.
    Using ``assert.throws`` to verify if a specific error is thrown is a new
    concept. To learn how to use this new ability of ``assert``, look at the
    constructor in ``command.js`` and look at the test description in
@@ -184,10 +186,13 @@ B. ``Message``
 
 Recall, the role of a message object is to bundle commands to send to the rover.
 
+Remember with TDD, to first read through the description of the class. Think about the behaviors of the class and how it should work.
+For each test, think of the positive and negative test cases and use comments in your code to take notes!
+
 .. _message-class:
 
-``Message`` Class
-^^^^^^^^^^^^^^^^^
+``Message`` Class Description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. This class builds an object with two properties.
    ``constructor(name, commands)``
@@ -216,10 +221,10 @@ For this test description, use the text, "throws error if a name is NOT
 passed into the constructor as the first parameter". Review the first test
 in ``command.spec.js`` for an example of how to write this test.
 
-a. When you click "Run", the test will likely fail, either because you have no 
-   ``Message`` class yet or have not written the class to include this feature.
+a. When you click "Run", the test will likely fail, because you have no 
+   ``Message`` class yet.
 
-b. If you haven't done so yet, create a ``message.js`` file and add ``exports`` 
+b. Create a ``message.js`` file and add ``exports`` 
    and ``require`` statements as needed for your modules.
 
    .. admonition:: Tip
@@ -231,7 +236,7 @@ b. If you haven't done so yet, create a ``message.js`` file and add ``exports``
       
          module.exports = Command;
 
-      In ``spec/command.spec.js`` the ``Command`` class is imported with this
+      In ``spec/command.spec.js``, the ``Command`` class is imported with this
       statement:
       
       .. sourcecode:: js 
@@ -272,10 +277,12 @@ C. ``Rover``
 ``Rover`` receives a message object, updates its properties from the message, and 
 returns the results.
 
+Remember to use TDD to write the class by first reading the class description, writing tests, and then coding the class!
+
 .. _rover-class:
 
-Rover Class
-^^^^^^^^^^^
+Rover Class Description
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This class builds a rover object with a few properties, and it also contains
 a function outside of ``constructor`` to handle updates to its properties.
@@ -442,22 +449,19 @@ Rover Modes
      - None
 
 
-Bonus Mission
---------------
-
-Add the following test that checks for unknown commands in
-``spec/rover.spec.js``.
-
-
-Test 14
-^^^^^^^
-"completed false and a message for an unknown command".
-
 Submitting Your Work
 --------------------
+
+Push up your work to your Github repository.
+If you have written 13 passing specs and your 3 classes are complete, then you should get a green check mark.
+
+.. admonition:: Tip
+
+   If you believe that your assignment is correct, but you are not getting a green check mark, make sure that you did not edit either ``studentgrading.spec.js``, ``grading.js``, or any file in the ``helpers`` directory inside ``spec``.
+   Changes to these files could cause the autograder to malfunction.
 
 In Canvas, open the Mars Rover assignment and click the "Submit" button.
 An input box will appear.
 
-Copy the URL for your repl.it project and paste it into the box, then click
+Copy the URL for your Github repo and paste it into the box, then click
 "Submit" again.
