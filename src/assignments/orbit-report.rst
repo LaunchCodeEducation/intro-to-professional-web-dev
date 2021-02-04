@@ -3,10 +3,10 @@ Assignment #6: Orbit Report
 
 .. admonition:: Warning
 
-   Please do not attempt this assignment until AFTER your first lesson on
+   Please do not attempt this assignment until after your first lesson on
    Angular. It can be tempting to dive right in, but Angular is a broad topic,
-   and you want to wait to start until you have time to go over the
-   requirements in class.
+   and you want to wait to have a solid understanding of the framework before you
+   get started.
 
 There are thousands of satellites orbiting the earth. You are tasked with
 creating a searchable, sortable table of satellites. For the purposes of this
