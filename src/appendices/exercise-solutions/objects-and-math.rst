@@ -1,4 +1,4 @@
-.. _exercises-objects-and-math:
+.. _objects-and-math-exercise-solutions:
 
 Exercises: Objects & Math
 ==========================
@@ -7,7 +7,8 @@ At our space base, it is a historic day! Five non-human animals are ready to
 run a space mission without our assistance! For the exercises, you will use the
 same five animal objects throughout.
 
-`Starter Code <https://repl.it/@launchcode/ObjectsExercises/>`_
+
+.. _objects-and-math-exercise-solutions1:
 
 Part 1: Create More Objects
 ----------------------------
@@ -35,6 +36,7 @@ object literals for three more animals:
      - 0.0000000001
      - 1
 
+
 Add a New Property
 ^^^^^^^^^^^^^^^^^^^
 
@@ -54,22 +56,64 @@ Store the Objects
 
 Create a ``crew`` array to store all of the animal objects.
 
-:ref:`Check your solution <objects-and-math-exercise-solutions1>`. 
+Part 1 Exercise Solutions
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Part 2: Crew Reports
----------------------
+.. sourcecode:: js
+   :linenos:
 
-Upper management at the space base wants us to report all of the relevant
-information about the animal astronauts.
+   let superChimpOne = {
+       name: "Chad",
+       species: "Chimpanzee",
+       mass: 9,
+       age: 6,
+       astronautID: 1,
+       move: function () {return Math.floor(Math.random()*11)}
+   };
 
-Define a ``crewReports`` function to accomplish this. When passed one of the
-animal objects, the function returns a template literal with the following
-string:
-``'____ is a ____. They are ____ years old and ____ kilograms. Their ID is
-____.'``
+   let salamander = {
+       name: "Lacey",
+       species: "Axolotl Salamander",
+       mass: 0.1,
+       age: 5,
+       astronautID: 2,
+       move: function () {return Math.floor(Math.random()*11)}
+   };
 
-Fill in the blanks with the name, species, age, mass, and ID for the selected
-animal.
+   let superChimpTwo = {
+       name: "Brad",
+       species: "Chimpanzee",
+       mass: 11,
+       age: 6,
+       astronautID: 3,
+       move: function () {return Math.floor(Math.random()*11)}
+   };
+
+   let dog = {
+       name: "Leroy",
+       species: "Beagle",
+       mass: 14,
+       age: 5,
+       astronautID: 4,
+       move: function () {return Math.floor(Math.random()*11)}
+   };
+
+   let waterBear = {
+       name: "Almina",
+       species: "Tardigrade",
+       mass: 0.0000000001,
+       age: 1,
+       astronautID: 5,
+       move: function () {return Math.floor(Math.random()*11)}
+   };
+
+   let crew = [superChimpOne, superChimpTwo, salamander, dog, waterBear];
+
+
+   let crew = [superChimpOne, superChimpTwo, salamander, dog, waterBear];
+
+
+.. _objects-and-math-exercise-solutions3:
 
 Part 3: Crew Fitness
 ---------------------
@@ -91,4 +135,19 @@ animal per line).
 that works well is to see how many iterations of the ``move`` method it will
 take for each animal to reach 20 steps.
 
-:ref:`Check your solution <objects-and-math-exercise-solutions3>`.
+.. sourcecode:: js
+   :linenos:
+
+   function fitnessTest(candidates){
+    let results = [], numSteps, turns;
+    for (let i = 0; i < candidates.length; i++){
+        numSteps = 0;
+        turns = 0;
+        while(numSteps < 20){
+        numSteps += candidates[i].move();
+        turns++;
+        }
+        results.push(`${candidates[i].name} took ${turns} turns to take 20 steps.`);
+    }
+    return results;
+   }
