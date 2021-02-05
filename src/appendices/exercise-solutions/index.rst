@@ -14,6 +14,7 @@ Exercise Solutions
    loops
    functions
    more-on-functions
+   objects-and-math
    unit-testing
    exceptions
    
