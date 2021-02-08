@@ -1,5 +1,7 @@
+.. _mars-rover1:
+
 Assignment #3: Mars Rover
-==========================
+=========================
 
 This task puts your unit testing, modules making, and exception handling knowledge to
 use by writing tests and classes for the Mars rover named Curiosity.
@@ -34,24 +36,11 @@ three separate classes:
 In true TDD form, you will be asked to first write the appropriate units tests for 
 these features, then write the code in the given class to pass those tests. 
 
+Get the Starter Code
+--------------------
 
-Getting Started
----------------
-
-#. Fork the `Mars rover starter repl.it <https://repl.it/@launchcode/mars-rover-starter>`__.
-#. Write a unit test for each test item listed.
-   shown below.
-
-   .. note::
-   
-      One complete test has been created for you as an example.
-
-#. Use :ref:`test-driven development (TDD) <tdd>` to create each of the
-   classes described below.
-
-#. Each class should be defined in its own file, which will be exported and
-   imported as a module.
-
+In `Canvas <learn.launchcode.org>`__, Graded Assignment #3: Mars Rover contains a GitHub Classroom assignment invitation link.
+Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
 
 How-To TDD
 ----------
@@ -68,22 +57,21 @@ d. There are some constraints on how you can implement these features. A descrip
 
 Each numbered item describes a test. *You should use the given phrases as the
 test descriptions* when creating your ``it`` statements. You must create 13
-tests (14, if you do the bonus) for this assignment.
+tests for this assignment.
 
 .. admonition:: Warning
 
-   Did you catch the part about only working on ONE test at a time? Do NOT try
-   to write all of the tests at once. Doing so will be inefficient and will
+   Do NOT try to write all of the tests at once. Doing so will be inefficient and will
    cause excessive frustration.
 
 
-A. ``Command``
---------------
+``Command``
+-----------
 
 .. _command-class:
 
-``Command`` Class
-^^^^^^^^^^^^^^^^^
+``Command`` Class Description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We'll follow TDD practices for the creation of ``Message`` and ``Rover``, but for 
 this class, ``Command``, we've provided the functionality. ``Command`` is already 
@@ -135,14 +123,9 @@ Test 1
 Note that the test description reads, "throws error if a command type is NOT
 passed into the constructor as the first parameter".
 
-.. TODO: Maybe add more info about throws in the chapter?
-
-a. So far, you have only used ``expect`` methods to check for equality.
-   Using ``assert.throws`` to verify if a specific error is thrown is a new
-   concept. To learn how to use this new ability of ``assert``, look at the
-   constructor in ``command.js`` and look at the test description in
-   ``command.spec.js``. You can also look at the
-   `official Node.js assert.throws documentation <https://nodejs.org/docs/latest-v10.x/api/assert.html#assert_assert_throws_fn_error_message>`__.
+a. So far, you have many used expectations to check for equality.
+   In the chapter on exceptions, we shared an example of how we might use an expectation to check if an exception is thrown.
+   Refer back to that :ref:`example <exception-expectations>` for guidance on the syntax.
 b. Click "Run" to verify that the test passes. Next, comment out lines 4-6 in
    ``command.js``. Click "Run" again to verify that the test fails (the
    expected error is not thrown when the ``Command`` class is called).
@@ -161,7 +144,7 @@ class correctly sets the ``commandType`` property in the new object.
 
 a. Without editing, ``command.js`` contains the correct code. Click "Run" to verify that the first
    and second tests both pass.
-b. You do not need to use ``assert.throws()`` in this test.
+b. You do not need to use ``expect().toThrow()``.
 c. You may not need to know the specific types of commands to write this test.
 
 Test 3 
@@ -181,287 +164,4 @@ Click "Run" to verify that all 3 command tests pass.
    decrease. Refer to your earlier, passing tests to help you construct new
    tests and passing code.
 
-B. ``Message``
---------------
-
-Recall, the role of a message object is to bundle commands to send to the rover.
-
-Remember with TDD, to first read through the description of the class. Think about the behaviors of the class and how it should work.
-For each test, think of the positive and negative test cases and use comments in your code to take notes!
-
-.. _message-class:
-
-``Message`` Class Description
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. This class builds an object with two properties.
-   ``constructor(name, commands)``
-
-   a. ``name`` is a string that is the name of the message.
-   b. ``commands`` is an array of ``Command`` objects.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-
-      let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
-      let message = new Message('Test message with two commands', commands);
-
-``Message`` Tests
-^^^^^^^^^^^^^^^^^
-
-At the same level as ``command.spec.js``, create a file ``message.spec.js`` and 
-write the unit tests for the ``Message`` class as described below. Remember to use 
-the given phrase as the test description.
-
-Test 4
-~~~~~~
-
-For this test description, use the text, "throws error if a name is NOT
-passed into the constructor as the first parameter". Review the first test
-in ``command.spec.js`` for an example of how to write this test.
-
-a. When you click "Run", the test will likely fail, because you have no 
-   ``Message`` class yet.
-
-b. Create a ``message.js`` file and add ``exports`` 
-   and ``require`` statements as needed for your modules.
-
-   .. admonition:: Tip
-
-      For help using ``require`` to import a ``class``, notice in ``command.js``
-      that the ``Command`` class is exported using:
-      
-      .. sourcecode:: js
-      
-         module.exports = Command;
-
-      In ``spec/command.spec.js``, the ``Command`` class is imported with this
-      statement:
-      
-      .. sourcecode:: js 
-      
-         const Command = require('../command.js');
-
-c. Look at the code in ``command.js``. Use that to help you write the
-   ``Message`` class in ``message.js`` so that your test passes. Refer to
-   the :ref:`Message Class <message-class>` description above for more
-   details.
-
-Test 5
-~~~~~~
-
-Use "constructor sets name" as the description. The test confirms
-that the ``constructor`` in the ``Message`` class correctly sets the
-``name`` property in a new message object.
-
-Test 6
-~~~~~~
-
-Use "contains a commands array passed into the constructor as 2nd argument".
-This test confirms that the ``commands`` property of a new message object
-contains the data passed in from the ``Message(name, commands)`` call.
-
-a. Hint: Inside this test, you will have to create a ``commands`` array, fill
-   it with some ``Command`` objects, and pass it into the ``Message``
-   constructor.
-
-.. admonition:: Warning
-
-   You are moving onto the red planet now. Be prepared for fewer instructions.
-
-
-C. ``Rover``
-------------
-
-``Rover`` receives a message object, updates its properties from the message, and 
-returns the results.
-
-Remember to use TDD to write the class by first reading the class description, writing tests, and then coding the class!
-
-.. _rover-class:
-
-Rover Class Description
-^^^^^^^^^^^^^^^^^^^^^^^
-
-This class builds a rover object with a few properties, and it also contains
-a function outside of ``constructor`` to handle updates to its properties.
-
-#. ``constructor(position)``
-
-   a. ``position`` is a number representing the rover's position.
-   b. Sets ``this.position`` to ``position``
-   c. Sets ``this.mode`` to ``'NORMAL'``
-   d. Sets default value for ``generatorWatts`` to 110
-
-#. ``receiveMessage(message)``
-
-   a. ``message`` is a ``Message`` object
-   b. Returns an object containing at least two properties:
-         
-      i. ``message``: the name of the original ``Message`` object
-      ii. ``results``: an array of *results*. Each element in the array is an 
-          object that corresponds to one ``Command`` in ``message.commands``.
-         
-   c. Updates certain properties of the rover object
-
-      i. Details about how to respond to different commands are in the
-         :ref:`Command Types table <command-types-table>`.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-
-      let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
-      let message = new Message('Test message with two commands', commands);
-      let rover = new Rover(98382);    // Passes 98382 as the rover's position.
-      let response = rover.receiveMessage(message);
-
-      console.log(response);
-
-   **Output**
-
-   ::
-
-      {
-         message: 'Test message with two commands',
-         results: [
-            {
-               completed: true
-            },
-            {
-               completed: true, 
-               roverStatus: { mode: 'LOW_POWER', generatorWatts: 110, position: 98382 }
-            }
-         ]
-      }
-
-
-``Rover`` Tests
-^^^^^^^^^^^^^^^
-
-Create ``spec/rover.spec.js`` and write the following tests. Write the code to
-make them pass in ``rover.js``. Remember to use the given phrase as the test
-description.
-
-Test 7 
-~~~~~~
-
-"constructor sets position and default values for mode and generatorWatts".
-Refer to the :ref:`Rover Class <rover-class>` description above for these
-default values.
-
-Test 8
-~~~~~~
-
-"response returned by receiveMessage contains name of message"
-
-Test 9
-~~~~~~
-
-"response returned by receiveMessage includes two results if two commands
-are sent in the message"
-
-Test 10
-~~~~~~~
-
-"responds correctly to status check command"
-
-a. For the ``STATUS_CHECK`` command, ``receiveMessage(message).results`` 
-   includes a ``roverStatus`` object describing the current state of the 
-   rover object --- ``mode``, ``generatorWatts``, and ``position``. The test 
-   should check each of these for accuracy.
-b. See the :ref:`Rover Command Types <command-types-table>` table for more
-   details.
-
-Test 11
-~~~~~~~
-
-"responds correctly to mode change command". 
-
-a. The test should check the ``completed`` property and rover mode for accuracy.
-b. The rover has two modes that can be passed a values to a mode change command,
-   'LOW_POWER' and 'NORMAL'.
-
-Test 12
-~~~~~~~
-
-"responds with false completed value when attempting to move in LOW_POWER
-mode". 
-
-a. The test should check the ``completed`` property for accuracy and confirm 
-   that the rover position did not change.
-b. Use the :ref:`Rover Modes table <rover-modes-table>` for guidance on how
-   to handle move commands in different modes.
-
-Test 13
-~~~~~~~
-
-"responds with position for move command".
-
-a. A ``MOVE`` command will update the rover's position with the position value in 
-   the command.
-
-
-.. _command-types-table:
-
-Rover Command Types
---------------------
-.. list-table::
-   :widths: auto
-   :header-rows: 1
-
-   * - Command
-     - Value sent with command
-     - Updates to ``Rover`` object
-     - Result returned
-   * - MOVE
-     - Number representing the position the rover should move to.
-     - ``position``
-     - ``{completed: true}``
-   * - STATUS_CHECK
-     - No values sent with this command.
-     - No updates
-     - ``{completed: true, roverStatus: {mode: 'NORMAL', generatorWatts: 110, position: 87382098}}`` Values for ``mode``, ``generatorWatts``, ``position`` will depend on current state of rover.
-   * - MODE_CHANGE
-     - String representing rover mode (see modes)
-     - ``mode``
-     - ``{completed: true}``
-
-.. note::
-
-   The response value for ``completed`` will be ``false`` if the command could
-   NOT be completed.
-
-.. _rover-modes-table:
-
-Rover Modes
------------
-.. list-table::
-   :widths: auto
-   :header-rows: 1
-
-   * - Mode
-     - Restrictions
-   * - LOW_POWER
-     - Can't be moved in this state.
-   * - NORMAL
-     - None
-
-
-Submitting Your Work
---------------------
-
-Push up your work to your Github repository.
-If you have written 13 passing specs and your 3 classes are complete, then you should get a green check mark.
-
-.. admonition:: Tip
-
-   If you believe that your assignment is correct, but you are not getting a green check mark, make sure that you did not edit either ``studentgrading.spec.js``, ``grading.js``, or any file in the ``helpers`` directory inside ``spec``.
-   Changes to these files could cause the autograder to malfunction.
-
-In Canvas, open the Mars Rover assignment and click the "Submit" button.
-An input box will appear.
-
-Copy the URL for your Github repo and paste it into the box, then click
-"Submit" again.
+Great job, astronaut! When you are ready to keep going, check out :ref:`Part 2 <mars-rover2>`!
