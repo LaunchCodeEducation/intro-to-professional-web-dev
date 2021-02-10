@@ -1,3 +1,5 @@
+.. _exercises-css:
+
 Exercises: CSS
 ==============
 
@@ -6,12 +8,23 @@ We have built a website for you to test your CSS knowledge. Check out the `repl.
 For the exercises, add the following style rules to the website:
 
 #. Change the background color to yellow.
+
+   :ref:`Check your solution <css-exercise-solutions1>`. 
+
 #. Change all paragraph text color to green.
 #. Change all ``h1`` to 36 px font size.
+
+   :ref:`Check your solution <css-exercise-solutions3>`.
+
 #. Align all text to the center of the page.
 #. Let's say that you don't like aligning all of the text to the center. Use a CSS class to align only the headings to the center of the page.
+
+   :ref:`Check your solution <css-exercise-solutions5>`.
+
 #. Change the font color of elements with the id, ``cool-text``, to blue. 
 #. Use a CSS id to change the elements in the ordered list to a color of your choosing.
+
+   :ref:`Check your solution <css-exercise-solutions7>`.
 
 .. note::
 
