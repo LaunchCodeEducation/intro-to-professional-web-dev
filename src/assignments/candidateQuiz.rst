@@ -118,7 +118,7 @@ to determine which lines need to be modified.
    * - Given the array ``[8, 'Orbit', 'Trajectory', 45]``, what entry is at index 2?
      - "Trajectory"
 
-   * - What is the minimum crew size for the International Space Station (ISS)?
+   * - What is the minimum crew size for the ISS?
      - "3"
 
 .. admonition:: Warning
@@ -174,7 +174,7 @@ passed the quiz.
    Your Answer: trajectory
    Correct Answer: Trajectory
 
-   5) What is the minimum crew size for the International Space Station (ISS)?
+   5) What is the minimum crew size for the ISS?
    Your Answer: 10
    Correct Answer: 3
 
@@ -185,17 +185,3 @@ passed the quiz.
 
    The output will vary slightly based on the candidate's answers to each question.
 
-.. Submitting Your Work
-.. ---------------------
-
-.. #. From the address bar at the top of the browser window, copy the URL of the
-..    repl.it that contains your solution.
-
-..    .. admonition:: Example
-
-..       repl.it project URL: ``https://repl.it/@username/candidate-tester#index.js``
-
-.. #. Go to the Canvas assignment page and click *Submit Assignment*.
-.. #. Paste the URL into the *Website URL* input.
-.. #. Click *Submit Assignment* again.
-.. #. Notify your TA that your assignment is ready to be graded.
