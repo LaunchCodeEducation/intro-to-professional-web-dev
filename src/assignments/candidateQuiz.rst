@@ -118,7 +118,7 @@ to determine which lines need to be modified.
    * - Given the array ``[8, 'Orbit', 'Trajectory', 45]``, what entry is at index 2?
      - "Trajectory"
 
-   * - What is the minimum crew size for the International Space Station (ISS)?
+   * - What is the minimum crew size for the ISS?
      - "3"
 
 .. admonition:: Warning
@@ -174,7 +174,7 @@ passed the quiz.
    Your Answer: trajectory
    Correct Answer: Trajectory
 
-   5) What is the minimum crew size for the International Space Station (ISS)?
+   5) What is the minimum crew size for the ISS?
    Your Answer: 10
    Correct Answer: 3
 
