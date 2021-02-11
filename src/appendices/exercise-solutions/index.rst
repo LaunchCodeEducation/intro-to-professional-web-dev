@@ -17,4 +17,6 @@ Exercise Solutions
    objects-and-math
    unit-testing
    exceptions
+   html
+   css
    
