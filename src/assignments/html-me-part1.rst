@@ -24,8 +24,7 @@ Stub out ``index.html`` with these basic elements:
       <body></body>
    </html>
 
-Fill each element with some appropriate content. You can start by removing the
-snippet ``<p>YOUR NAME</p>`` that you used during setup.
+You can now fill each element with some appropriate content. 
 
 Getting to Work
 -----------------
@@ -144,4 +143,4 @@ coherent chunk of work.
 Done!
 ------
 
-Well done! Time to `dive into some CSS <html-me-part2.html>`__.
+Well done! You may notice that you haven't got a green check mark on your repository yet. Time to `dive into some CSS <html-me-part2.html>`__.
