@@ -156,6 +156,7 @@ Specifications and Expectations
    single: Jasmine; specification
    single: specification
    single: expectation
+   single: matcher
 
 There are two cases we want to test:
 
@@ -181,6 +182,9 @@ The second argument to ``it`` is yet another anonymous function. This function c
 Calling ``expect(x).toEqual(y)`` declares that we expect ``x`` to equal ``y``.
 As you get started with unit testing, nearly *all* of your tests will take this form.
 The argument to ``expect()`` is a call to the function ``hello()``. The argument to ``toEqual()`` is the expected output from that function call. 
+``toEqual()`` is a specialized method called a **matcher**. Matchers in Jasmine compare the value passed to the value passed to ``expect()``.
+These comparisons are not just limited to checking if the two values are equal. Jasmine has a wide variety of matchers built-in and developers can also build custom matchers.
+For a full list of the provided matchers, check out the `Jasmine documentation <https://jasmine.github.io/api/3.6/matchers.html>`__.
 
 If the two arguments are indeed equal, the test will pass. Otherwise, the test will fail. In this case, we are declaring that we *expect* ``hello("Jasmine")`` to return the value ``"Hello, Jasmine!"``.
 
@@ -222,7 +226,12 @@ The most important line in the output is this one:
 
    1 spec, 0 failures
 
-It tells us that Jasmine found 1 test specification, and that 0 of the specs failed.
+It tells us that Jasmine found 1 test specification, and that 0 of the specs failed. If our test had failed, then the line would have read:
+
+::
+
+   1 spec, 1 failure
+
 In other words, *our test passed!* The third line also contains useful information. It will contain one dot (``.``) for each successful test, and an ``F`` for each failed test. As our test suite grows, this becomes a nice visual indicator of the status of our tests.
 
 Let's see what a test failure looks like. Go back to ``hello.js`` and remove the ``"!"`` from the return statement:

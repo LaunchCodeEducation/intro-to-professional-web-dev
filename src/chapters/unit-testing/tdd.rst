@@ -16,7 +16,7 @@ So far we have written tests to verify functionality of *existing* code. Next we
 to use tests to verify functionality of code that does NOT already exist. This may sound
 odd, but this process has many benefits as we will learn.
 
-As the name sounds, **Test-Driven Development (TDD)** is a software development
+As the name sounds, **Test-driven development (TDD)** is a software development
 process where the unit tests are written first. However, that doesn't tell the
 entire story. Writing the tests first and intentionally thinking more about the
 code design leads to better code. The name comes from the idea of the tests
