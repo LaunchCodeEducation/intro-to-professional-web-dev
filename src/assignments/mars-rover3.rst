@@ -11,7 +11,7 @@ With :ref:`Part 2 <mars-rover2>` completed, let's turn our attention to the fina
 ``Rover`` receives a message object, updates its properties from the message, and 
 returns the results.
 
-Remember to use TDD to write the class by first reading the class description, writing tests, and then coding the class!
+Remember to use TDD by first reading the class description, writing tests, and then coding the class.
 
 .. _rover-class:
 
@@ -180,20 +180,4 @@ Rover Modes
    * - NORMAL
      - None
 
-
-Submitting Your Work
---------------------
-
-Push up your work to your Github repository.
-If you have written 13 passing specs and your 3 classes are complete, then you should get a green check mark.
-
-.. admonition:: Tip
-
-   If you believe that your assignment is correct, but you are not getting a green check mark, make sure that you did not edit either ``studentgrading.spec.js``, ``grading.js``, or any file in the ``helpers`` directory inside ``spec``.
-   Changes to these files could cause the autograder to malfunction.
-
-In Canvas, open the Mars Rover assignment and click the "Submit" button.
-An input box will appear.
-
-Copy the URL for your Github repo and paste it into the box, then click
-"Submit" again.
+Once your ``Rover`` class is complete, make sure to :ref:`submit your work <submitting-your-mars-rover>`.

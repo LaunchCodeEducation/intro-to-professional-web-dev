@@ -36,10 +36,21 @@ three separate classes:
 In true TDD form, you will be asked to first write the appropriate units tests for 
 these features, then write the code in the given class to pass those tests. 
 
+Sections:
+----------
+
+#. :ref:`Get the Starter Code <get-the-starter-code>`
+#. :ref:`Command Class <command-class>`
+#. :ref:`Message Class <message-class>`
+#. :ref:`Rover Class <rover-class>`
+#. :ref:`Submitting Your Work <submitting-your-mars-rover>`
+
+.. _get-the-starter-code:
+
 Get the Starter Code
 --------------------
 
-In `Canvas <learn.launchcode.org>`__, Graded Assignment #3: Mars Rover contains a GitHub Classroom assignment invitation link.
+In `Canvas <https://learn.launchcode.org/>`__, Graded Assignment #3: Mars Rover contains a GitHub Classroom assignment invitation link.
 Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
 
 How-To TDD
@@ -63,7 +74,6 @@ tests for this assignment.
 
    Do NOT try to write all of the tests at once. Doing so will be inefficient and will
    cause excessive frustration.
-
 
 ``Command``
 -----------
@@ -165,3 +175,22 @@ Click "Run" to verify that all 3 command tests pass.
    tests and passing code.
 
 Great job, astronaut! When you are ready to keep going, check out :ref:`Part 2 <mars-rover2>`!
+
+.. _submitting-your-mars-rover:
+
+Submitting Your Work
+--------------------
+
+Once your ``Rover`` class is completed, push your work up to your Github repository.
+If you have written 13 passing specs and your 3 classes are complete, then you should get a green check mark.
+
+.. admonition:: Tip
+
+   If you believe that your assignment is correct, but you are not getting a green check mark, make sure that you did not edit either ``studentgrading.spec.js``, ``grading.js``, or any file in the ``helpers`` directory inside ``spec``.
+   Changes to these files could cause the autograder to malfunction.
+
+In Canvas, open the Mars Rover assignment and click the "Submit" button.
+An input box will appear.
+
+Copy the URL for your Github repo and paste it into the box, then click
+"Submit" again.

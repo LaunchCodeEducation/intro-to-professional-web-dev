@@ -107,4 +107,6 @@ Appendices
    todos
    assignments/html-me-part1
    assignments/html-me-part2
+   assignments/mars-rover2
+   assignments/mars-rover3
    glossary
