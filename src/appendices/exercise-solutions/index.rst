@@ -19,4 +19,5 @@ Exercise Solutions
    exceptions
    html
    css
+   forms
    
