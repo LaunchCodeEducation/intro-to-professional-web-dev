@@ -11,7 +11,7 @@ Test-Driven Development
 .. index::
    single: unit testing; TDD
 
-Now that we know more about unit testing, we are going to learn a new way of using them.
+Now that we know more about unit tests, we are going to learn a new way of using them.
 So far we have written tests to verify functionality of *existing* code. Next we are going
 to use tests to verify functionality of code that does NOT already exist. This may sound
 odd, but this process has many benefits as we will learn.
@@ -68,7 +68,7 @@ What will the function return?*
 Next, write the unit test as if the parameter or function you imagined already
 exists. This may seem a bit odd, but considering how the new code will be used
 helps find bugs and flaws earlier. We also have to use test utilities such as
-``assert.strictEqual`` to clearly demonstrate that the proposed new code
+``expect().toEqual()`` to clearly demonstrate that the proposed new code
 functions properly.
 
 .. admonition:: Example
@@ -76,19 +76,18 @@ functions properly.
    Next, type out the ideas into an actual test. In this example, the test
    references a module and a function that have not been created yet. The code
    follows the plan we came up with earlier. Very importantly, there is an
-   ``assert.strictEqual`` that verifies an array is returned.
+   ``expect().toBeTrue()`` that verifies an array is returned.
 
    .. sourcecode:: js
       :linenos:
 
-      const assert = require('assert');
       const parse = require('../parse-numbers');
 
       describe("parse numbers", function(){
 
          it("returns array when passed comma separated list of numbers", function(){
             let items = parse("5,8,0,17,6,4,9,3", ",");
-            assert.strictEqual(Array.isArray(items), true);
+            expect(Array.isArray(items)).toBeTrue();
          });
 
       });
@@ -146,7 +145,6 @@ failing tests and green for passing tests.
 #. Red -> Write a failing test.
 #. Green -> Make it pass by implementing the code.
 #. Refactor -> Make the code better.
-
 
    .. figure:: figures/red-green-refactor.png
       :alt: Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red.
