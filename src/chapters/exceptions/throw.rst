@@ -45,7 +45,9 @@ We can throw a default Error by using the ``throw`` statement and passing in a s
 
    .. sourcecode:: js
 
-      expect( function() { checkThrow() }).toThrow(new Error('You cannot divide by zero!'));
+      expect( function() {
+         checkThrow(); 
+      }).toThrow(new Error('You cannot divide by zero!'));
 
 Pre-existing Error
 ------------------
