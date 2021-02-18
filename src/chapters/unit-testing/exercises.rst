@@ -21,7 +21,7 @@ Automatic Testing to Find Errors
 Let's begin with the following, simple code:
 
 .. replit:: js
-   :slug: UnitTestingExercises02
+   :slug: UnitTestingExercises01Exceptions
    :linenos:
 
    function checkFive(num){
@@ -57,8 +57,7 @@ c. ``index.js`` which holds special code to make Jasmine work.
 #. We need to add a few lines to ``checkFive.js`` and ``checkFive.spec.js`` to
    get them to talk to each other.
 
-   a. ``checkFive.spec.js`` needs to access ``checkFive.js``, and we also need
-      to import the ``assert`` testing function. Add two ``require`` statements
+   a. ``checkFive.spec.js`` needs to access ``checkFive.js``. Add a ``require`` statement
       to accomplish this (review :ref:`Unit Testing in Action <set-up>` if
       needed).
 
@@ -73,9 +72,9 @@ c. ``index.js`` which holds special code to make Jasmine work.
    clause:
 
    .. sourcecode:: js
+      :linenos:
 
       const checkFive = require('../checkFive.js');
-      const assert = require('assert');
 
       describe("checkFive", function(){
 
@@ -90,7 +89,7 @@ c. ``index.js`` which holds special code to make Jasmine work.
 
    a. First, replace ``Descriptive feedback...`` with a DETAILED message. This
       is the text that the user will see if the test *fails*. Do NOT skimp on
-      this. Refer back to the :ref:`Specifications and Assertions <feedback>`
+      this. Refer back to the :ref:`Specifications and Expectations <feedback>`
       section to review best practices.
 
       :ref:`Check your solution <unit-testing-exercise-solutionsA3a>`.
@@ -99,9 +98,9 @@ c. ``index.js`` which holds special code to make Jasmine work.
       ``2`` to ``checkFive``.
 
       .. sourcecode:: js
+         :linenos:
 
          const checkFive = require('../checkFive.js');
-         const assert = require('assert');
 
          describe("checkFive", function(){
 
@@ -111,18 +110,18 @@ c. ``index.js`` which holds special code to make Jasmine work.
 
          });
 
-   c. Now use the ``assert`` function to check the result:
+   c. Now use the ``expect`` function to check the result:
 
       .. sourcecode:: js
+         :linenos:
 
          const checkFive = require('../checkFive.js');
-         const assert = require('assert');
 
          describe("checkFive", function(){
 
             it("Descriptive feedback...", function(){
                let output = checkFive(2);
-               assert.strictEqual(output, "2 is less than 5.");
+               expect(output).toEqual("2 is less than 5.");
             });
 
          });
@@ -152,6 +151,9 @@ c. ``index.js`` which holds special code to make Jasmine work.
          Failures:
          1) checkFive should return 'num' is less than 5 when passed a number smaller than 5.
          Message:
+<<<<<<< HEAD
+            Expected Input A to equal Input B:
+=======
             AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
             + expected - actual
 
@@ -159,10 +161,11 @@ c. ``index.js`` which holds special code to make Jasmine work.
             + '2 is less than 5.'
       
       :ref:`Check your solution <unit-testing-exercise-solutionsA3e>`.
+>>>>>>> ind-main
 
    f. Change line 3 back.
 
-   .. note::
+   .. admonition:: Note
 
       We do NOT need to check every possible value that is less than 5. Testing a single
       example is sufficient to check that part of the function.
@@ -180,7 +183,7 @@ Time for Rock, Paper, Scissors! The function below takes the choices
 It then decides which player won the match and returns a string.
 
 .. replit:: js
-   :slug: UnitTestingExercises03
+   :slug: UnitTestingExercises02Exceptions
    :linenos:
 
    function whoWon(player1,player2){
