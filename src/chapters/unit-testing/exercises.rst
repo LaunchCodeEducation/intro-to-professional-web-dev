@@ -1,5 +1,8 @@
+
+.. _exercises-unit-testing:
+
 Exercises: Unit Testing
-========================
+=======================
 
 In many of your previous coding tasks, you had to verify that your code
 worked before moving to the next step. This often required you to add
@@ -13,7 +16,7 @@ completing the code. The exercises below offer practice with using tests to
 find bugs, and the studio asks you to implement TDD.
 
 Automatic Testing to Find Errors
----------------------------------
+--------------------------------
 
 Let's begin with the following, simple code:
 
@@ -58,6 +61,8 @@ c. ``index.js`` which holds special code to make Jasmine work.
       to accomplish this (review :ref:`Unit Testing in Action <set-up>` if
       needed).
 
+      :ref:`Check your solution <unit-testing-exercise-solutionsA1>`. 
+
    b. Make the ``checkFive`` function available to the spec file, by using
       ``module.exports`` (review :ref:`Unit Testing in Action <export-set-up>` if
       needed).
@@ -86,6 +91,9 @@ c. ``index.js`` which holds special code to make Jasmine work.
       is the text that the user will see if the test *fails*. Do NOT skimp on
       this. Refer back to the :ref:`Specifications and Expectations <feedback>`
       section to review best practices.
+
+      :ref:`Check your solution <unit-testing-exercise-solutionsA3a>`.
+
    b. Define the variable ``output``, and initialize it by passing a value of
       ``2`` to ``checkFive``.
 
@@ -117,6 +125,9 @@ c. ``index.js`` which holds special code to make Jasmine work.
             });
 
          });
+   
+   
+      :ref:`Check your solution <unit-testing-exercise-solutionsA3c>`.
 
    d. Run the test script and examine the results. The test should pass and
       produce output similar to:
@@ -140,7 +151,17 @@ c. ``index.js`` which holds special code to make Jasmine work.
          Failures:
          1) checkFive should return 'num' is less than 5 when passed a number smaller than 5.
          Message:
+<<<<<<< HEAD
             Expected Input A to equal Input B:
+=======
+            AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
+            + expected - actual
+
+            - '2 is greater than 5.'
+            + '2 is less than 5.'
+      
+      :ref:`Check your solution <unit-testing-exercise-solutionsA3e>`.
+>>>>>>> ind-main
 
    f. Change line 3 back.
 
@@ -155,7 +176,7 @@ c. ``index.js`` which holds special code to make Jasmine work.
 
 
 Try One on Your Own
---------------------
+-------------------
 
 Time for Rock, Paper, Scissors! The function below takes the choices
 (``'rock'``, ``'paper'``, or ``'scissors'``) of two players as its parameters.
@@ -191,6 +212,8 @@ It then decides which player won the match and returns a string.
    :ref:`previous exercise <export-syntax>`, or check
    :ref:`Hello Jasmine <hello.js>`.
 
+   :ref:`Check your solution <unit-testing-exercise-solutionsB1>`.
+
 #. Write a test in ``RPS.spec.js`` to check if ``whoWon`` behaves correctly
    when the players tie (both choose the same option). Click "Run" and examine
    the output. SPOILER ALERT: The code for checking ties is correct in
@@ -202,8 +225,10 @@ It then decides which player won the match and returns a string.
    ``whoWon``. You might spot it on your own, but try to use automated
    testing to identify and fix it.
 
+   :ref:`Check your solution <unit-testing-exercise-solutionsB3>`.
+
 Bonus Mission
---------------
+-------------
 
 What if something OTHER than ``'rock'``, ``'paper'``, or ``'scissors'`` is
 passed into the ``whoWon`` function? Modify the code to deal with the

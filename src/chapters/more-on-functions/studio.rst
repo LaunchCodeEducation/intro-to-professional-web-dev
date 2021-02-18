@@ -1,15 +1,8 @@
 Studio: More Functions
-==========================
-
-Before You Start
-----------------
-
-If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
-
-If you are working through this material on your own, use the repl.it links contained on this page.
+======================
 
 Sort Numbers For Real
-----------------------
+---------------------
 
 Recall that using the ``sort`` method on an array of numbers
 :ref:`produced an unexpected result <sort-examples>`, since JavaScript converts
@@ -23,7 +16,7 @@ Here is one approach to sorting an array:
 #. Repeat steps 1 - 3 until the numbers are all in order.
 
 Part A: Find the Minimum Value
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a function with an array of numbers as its parameter. The function
 should iterate through the array and return the minimum value from the
@@ -46,7 +39,7 @@ store the smallest value within the array.
 `Code studio part A at repl.it <https://repl.it/@launchcode/MoreFuncsStudio01>`__.
 
 Part B: Create a New Sorted Array
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create another function with an array of numbers as its parameter. Within
 this function:
@@ -72,7 +65,7 @@ f. *Be sure to print the results in order to verify your code*.
    unknown length?
 
 More on Sorting Numbers
-------------------------
+-----------------------
 
 The sorting approach used above is an example of a *selection sort*. The
 function repeatedly checks an array for the minimum value, then places that
@@ -94,7 +87,7 @@ Fortunately, JavaScript has an elegant way to properly sort numbers.
 .. _js-sort-numbers:
 
 Part C: Number Sorting the Easy Way
-------------------------------------
+-----------------------------------
 
 If you Google "JavaScript sort array of numbers" (or something similar), many
 options appear, and they all give pretty much the same result. The sites just
@@ -119,7 +112,7 @@ d. Did your sorting function from part B alter ``arrayName``?
 `Code studio part C at repl.it <https://repl.it/@launchcode/MoreFuncsStudio03>`__.
 
 So Why Write A Sorting Function?
----------------------------------
+--------------------------------
 
 Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
 sorting methods, so why did we ask you to build one?
@@ -134,6 +127,6 @@ then clearly explain your approach will significantly boost your appeal to an
 employer.
 
 Bonus Mission
---------------
+-------------
 
 Refactor your sorting function from Part B to use recursion.

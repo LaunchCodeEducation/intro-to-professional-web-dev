@@ -3,8 +3,8 @@ cache: pip
 python: "3.7" 
 language: python
 
-# only execute if the master branch has changed (from a merge)
-if: type = push AND branch = master
+# only execute if the ind-main branch has changed (from a merge)
+if: type = push AND branch = ind-main
 
 install: # install dependencies (cached)
   - pip install -r requirements.txt
@@ -15,6 +15,9 @@ script:
 
 deploy:
   provider: pages # github pages provider
+  on: 
+    branch:
+      - ind-main
   skip_cleanup: true # save the build output (artifact)
   local_dir: gh-pages # the directory to deploy to GH pages
   target_branch: gh-pages # branch to push the build artifact to 
