@@ -25,12 +25,11 @@ is over 5 years old. Second, for a novel, the book should be thrown out if it
 has been checked out over 100 times.
 
 1. Construct three classes that hold the information needed by headquarters as
-properties. Also, each class needs two methods that update the book's property
-if the book needs to be discarded. One class should be a ``Book`` class and two
-child classes of the ``Book`` class called ``Manual`` and ``Novel``. `Hint:`
-This means you need to read through the requirements for the problem and decide
-what should belong to ``Book`` and what should belong to the ``Novel`` and
-``Manual`` classes.
+properties. One class should be a ``Book`` class and two
+child classes of the ``Book`` class called ``Manual`` and ``Novel``. 
+Each class will contain two methods. One will be a constructor. The other one will either be in charge of disposal of the book or updating the property related to the number of times a book has been checked out.
+`Hint:` This means you need to read through the requirements for the problem and decide what should belong to ``Book`` and what should belong to the ``Novel`` and
+``Manual`` classes. 
 
 2. Declare an object of the ``Novel`` class for the following tome from the
 library:
