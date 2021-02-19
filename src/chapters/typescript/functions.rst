@@ -74,10 +74,11 @@ To denote a parameter as optional, we use the ``?`` notation. Any parameters tha
 .. admonition:: Example
 
    .. sourcecode:: typescript
+      :linenos:
 
-		function myFunction(a: number, b?:number): number {
-			if (typeof b !== 'undefined'){
-				return a+b+5;
+	   function myFunction(a: number, b?:number): number {
+		   if (typeof b !== 'undefined'){
+			   return a+b+5;
 			} else {
 				return a+5;
 			}
@@ -107,6 +108,7 @@ That way, if no argument is supplied for ``b``, then the value returned is that 
 .. admonition:: Example
 
    .. sourcecode:: typescript
+      :linenos:
 
       function myFunction(a: number, b = 5): number {
          return a+b+5;
