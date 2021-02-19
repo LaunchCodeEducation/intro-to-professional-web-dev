@@ -8,8 +8,8 @@ As you continue your studies of the DOM and events, you may find these two refer
 2. `MDN Event reference <https://developer.mozilla.org/en-US/docs/Web/Events>`_
 
 
-Load Event
-----------
+``load`` Event
+--------------
 
 .. index::
    single: event; load
@@ -19,13 +19,13 @@ been *loaded* by the browser. Why is it important to know when things have loade
 interact with HTML elements in JavaScript unless they have been loaded into the DOM.
 
 Previously, we were moving the ``<script>`` element *below* any HTML elements that we needed
-to reference in the DOM. Using the *load event* on the global variable ``window`` is an
-alternative to ``<script>`` placement. When the *load event* has triggered on the *window* as
+to reference in the DOM. Using the ``load`` event on the global variable ``window`` is an
+alternative to ``<script>`` placement. When the ``load`` event has triggered on the ``window`` as
 a whole, we can know that all the elements are ready to be used.
 
 .. admonition:: Example
 
-   A ``<script>`` tag is in ``<header>`` and all DOM code is inside *load* event handler.
+   A ``<script>`` tag is in ``<header>`` and all DOM code is inside ``load`` event handler.
 
    .. sourcecode:: html
       :linenos:
@@ -68,20 +68,19 @@ a whole, we can know that all the elements are ready to be used.
       knock knock
 
 
-Mouseover Event
----------------
+``mouseover`` and ``mouseout`` Events
+-------------------------------------
 
 .. index::
    single: event; mouseover
 
-There are many mouse related DOM events. We have already used the *click* event. Another example
-of a mouse event is the **mouseover** event, which is triggered when the mouse pointer enters
+There are many mouse related DOM events. We have already used the ``click`` event. Another example
+of a mouse event is the **mouseover event**, which is triggered when the mouse cursor enters
 an element.
 
 .. admonition:: Example
 
-   We can use *mouseover* event to add a ``">"`` to the ``innerHTML`` of the element that the mouse pointer
-   has been moved over.
+   We can use ``mouseover`` event to add a ``">"`` to the ``innerHTML`` of the element that the mouse cursor has been moved over.
 
    .. sourcecode:: html
       :linenos:
@@ -121,18 +120,23 @@ an element.
          Lane 2>>>>>>>>>>>>
          Lane 3>>>>>>>>
 
+.. index::
+   single: event; mouseout
+
+Similarly, there is a **mouseout event** that is triggered when the cursor leaves a given element.
+
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   What error happens when you try to access an element that has not been loaded into the DOM?
+   Which error occurs when you try to access an element that has not been loaded into the DOM?
 
 
 .. admonition:: Question
 
-   What is *true* when the *load* event is triggered on ``window``?
+   What is *true* when the ``load`` event is triggered on ``window``?
 
    a. The console is clear.
    b. All elements and resources have been loaded by the browser.
