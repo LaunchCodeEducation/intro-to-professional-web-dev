@@ -32,11 +32,11 @@ If the programmer has created the Git repository and is ready to commit, they ca
 
    Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
 
-The procedure for making a commit to a Git repository includes 4 stages.
+The procedure for making a commit to a Git repository includes four stages.
 
 1. ``git status`` gives the programmer information about files that have been changed.
 2. ``git add`` allows the programmers to add specific or all changed files to a commit.
-3. ``git commit`` creates the new commit with the files that the programmer added.
+3. ``git commit -m MESSAGE`` creates the new commit with the files that the programmer added, with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
 4. ``git log`` displays a log of every commit in the repository.
 
 If the steps above are followed correctly, the programmer will find their latest commit at the top of the log.
@@ -81,6 +81,10 @@ If a programmer only wants to add one modified file, they can do so.
 ``git commit`` actually commits the files that were added to the repository.
 By adding ``-m "My first commit"``, a comment was added to the commit.
 This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
+
+.. admonition:: Tip
+
+   It's important to include a descriptive commit message. Such messages are visible in your local Git log, as well as in the commit history on GitHub. A good commit message allows you and your fellow developers to easily identify the changes made in a given commit.
 
 ``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
 This hash or value is a key for Git to refer to the version.

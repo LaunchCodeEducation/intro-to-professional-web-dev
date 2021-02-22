@@ -54,7 +54,7 @@ and the other as **Control**. Even when it is not your turn to complete a task,
 read and observe what your partner is doing to complete theirs. The steps here
 mimic how a real-world collaborative Git workflow can be used within a project.
 
-.. warning::
+.. admonition:: Warning
 
    As you go through these steps, you'll be working with branches. It's very
    likely you will make changes to the code only to realize that you did so in the
@@ -65,8 +65,14 @@ mimic how a real-world collaborative Git workflow can be used within a project.
 Step 1: Create a New Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Control**: Navigate to your development folder. Follow these instructions to
-create a new project.
+.. admonition:: Note
+
+   Be careful if you try to use ``copy/paste`` with the ``git`` commands! The
+   ``$`` symbols in the screenshots represent to the prompts in the terminal.
+   They are NOT part of the commands.
+
+**Control**: Navigate to your development folder. Enter the following 3
+commands to create a new project.
 
 ::
 
@@ -81,62 +87,66 @@ Paste in this code:
    :linenos:
 
    <html>
-   <body>
-      <p>Radio check. Pilot, please confirm.</p>
-   </body>
+      <body>
+         <p>Radio check. Pilot, please confirm.</p>
+      </body>
    </html>
 
 Let's check that our html looks okay by opening it in a browser. Do this by
 selecting *File > Open File* in your web browser, and navigating to the
 location of your new HTML file. The URL will look something like this:
-``file:///Users/cheryl/Development/communication-log/index.html``.
+``file:///Users/username/Development/communication-log/index.html``.
 
-Once you've seen this file in the browser, let's stage and commit it.
+Once you've checked this file in the browser, let's stage and commit it.
 
-::
+#. First, check the ``status``.
 
-   $ git status
-   On branch master
+   ::
 
-   Initial commit
+      $ git status
+      On branch master
 
-   Untracked files:
-   (use "Git add <file>..." to include in what will be committed)
+      Initial commit
 
-      index.html
+      Untracked files:
+      (use "Git add <file>..." to include in what will be committed)
 
-   nothing added to commit but untracked files present (use "git add" to track)
+         index.html
 
-The file is not staged. Let's add everything in this directory.
+      nothing added to commit but untracked files present (use "git add" to track)
 
-::
+#. The output shows is that ``index.html`` is not staged. Let's ``add``
+   everything in this directory, then check the ``status`` again.
 
-   $ git add .
-   $ git status
-   On branch master
+   ::
 
-   Initial commit
+      $ git add .
+      $ git status
+      On branch master
 
-   Changes to be committed:
-   (use "git rm --cached <file>..." to unstage)
+      Initial commit
 
-      new file:   index.html
+      Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
 
-We see that the file is staged. Let's commit.
+         new file:   index.html
 
-::
+#. The output tells us that the file is staged. Now let's ``commit``. After
+   that, we can see a record of our progress by using ``git log``.
 
-   $ git commit -m 'Started communication log.'
-   [master (root-commit) e1c1719] Started communication log.
-   1 file changed, 5 insertions(+)
-   create mode 100644 index.html
-   $ git log
-   commit 679de772612099c77891d2a3fab12af8db08b651
-   Author: Cheryl <chrisbay@gmail.com>
-   Date:   Wed Apr 5 10:55:56 2017 -0500
+   ::
 
-      Started communication log.
+      $ git commit -m 'Started communication log.'
+      [master (root-commit) e1c1719] Started communication log.
+      1 file changed, 5 insertions(+)
+      create mode 100644 index.html
 
+      $ git log
+      commit 679de772612099c77891d2a3fab12af8db08b651
+      Author: Cheryl <chrisbay@gmail.com>
+      Date:   Wed Apr 5 10:55:56 2017 -0500
+
+         Started communication log.
 
 Great! We've got our project going locally, but we're going to need to make it
 accessible for **Pilot** also. Let's push this project up to GitHub.
@@ -145,7 +155,7 @@ Step 2: Share Your Repository On GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Control**: Go to your GitHub profile in a web browser. Click on the "+"
-button to add a new repository ('repo').
+button to add a new repository (called a *repo* for short).
 
 .. figure:: figures/studio/new-repo-button.png
    :alt: The New Repository link in the dropdown menu at top right on GitHub.
@@ -162,7 +172,7 @@ To create a new repository:
 
    Create a new repository in GitHub
 
-.. note::
+.. admonition:: Note
 
    If you initialize with a README, in the next step Git will refuse to merge
    this repo with the local repo. There are ways around that, but it's faster
@@ -175,15 +185,29 @@ After clicking, you should see something similar to:
 
    Connecting to a repository in GitHub
 
-Now go back to your terminal and cut and paste the commands shown in the
-instructions on GitHub. These should be very similar to:
+Now go back to your terminal and copy/paste the commands shown in the GitHub
+instructions. These should be very similar to:
 
 ::
 
    $ git remote add origin https://github.com:chrisbay/communication-log.git
    $ git push origin master
 
-.. warning::
+.. admonition:: Note
+
+   The first time you push up to GitHub, you will be prompted in the terminal
+   to enter your account username and password. Do this.
+   
+   You will then see a large amount of output that you can safely ignore. The
+   final few lines will confirm a successful push. They will look something
+   like this:
+
+   ::
+
+      To github.com:chrisbay/communication-log.git
+         c7f97814..54993de3  master -> master
+
+.. admonition:: Warning
 
    Unless you've set up an SSH key with GitHub, make sure you've selected the
    HTTPS clone URL. If you're not sure whether you have an SSH key, you
@@ -221,7 +245,7 @@ The command should look something like this.
    $ git clone https://github.com/chrisbay/communication-log.git
 
 Now you can respond to Control! Open the ``index.html`` file in your editor and
-add your response to mission control. Be creative---the communication can go
+add your response to mission control. Be creative, the communication can go
 anywhere! Just don't ask your partner what you should write. After you finish,
 commit your change.
 
