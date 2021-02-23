@@ -8,80 +8,93 @@ JSON
 
 1. Which of the following three code snippets is correct JSON syntax? Why are the other two options incorrect?
 
-.. sourcecode:: js
+   a. 
+      .. sourcecode:: js
 
-   {
-       type: "dog",
-       name: "Bernie",
-       age: 3
-   }
+         {
+            type: "dog",
+            name: "Bernie",
+            age: 3
+         }
 
-.. sourcecode:: js
+   b. 
 
-   {
-       "type": "dog",
-       "name": "Bernie",
-       "age": 3
-   }
+      .. sourcecode:: js
 
-.. sourcecode:: js
-
-   {
-       "type": 'dog',
-       "name": 'Bernie',
-       "age": 3
-   }
-
-2. Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
-
-.. sourcecode:: js
-
-   {
-       "animals": [
-           {
-               "type": "dog",
-               "name": "Bernie",
-               "age": 3
-           },
-           {
-               "type": "cat",
-               "name": "Draco",
-               "age": 2
-           }
-       ]
-   }
-
-.. sourcecode:: js
-
-   {
-       [
-          {
-               "type": "dog",
-               "name": "Bernie",
-               "age": 3
-           },
-           {
-               "type": "cat",
-               "name": "Draco",
-               "age": 2
-           } 
-       ]
-   }
-
-.. sourcecode:: js
-
-   [
-        {
+         {
             "type": "dog",
             "name": "Bernie",
             "age": 3
-        },
-        {
-            "type": "cat",
-            "name": "Draco",
-            "age": 2
-        } 
-    ]
+         }
+   
+   c.
+
+      .. sourcecode:: js
+
+         {
+            "type": 'dog',
+            "name": 'Bernie',
+            "age": 3
+         }
+
+   :ref:`Check your solution <JSON-exercise-solutions1>`. 
+
+2. Which of the following three code snippets is correct JSON? Why are the other two options incorrect?
+
+   a.
+
+      .. sourcecode:: js
+
+         {
+            "animals": [
+               {
+                     "type": "dog",
+                     "name": "Bernie",
+                     "age": 3
+               },
+               {
+                     "type": "cat",
+                     "name": "Draco",
+                     "age": 2
+               }
+            ]
+         }
+
+   b.
+
+      .. sourcecode:: js
+
+         {
+            [
+               {
+                     "type": "dog",
+                     "name": "Bernie",
+                     "age": 3
+               },
+               {
+                     "type": "cat",
+                     "name": "Draco",
+                     "age": 2
+               } 
+            ]
+         }
+
+   c.
+
+      .. sourcecode:: js
+
+         [
+            {
+                  "type": "dog",
+                  "name": "Bernie",
+                  "age": 3
+            },
+            {
+                  "type": "cat",
+                  "name": "Draco",
+                  "age": 2
+            } 
+         ]
 
 
 Fetch
@@ -244,7 +257,7 @@ Fetch
                index = (index + 1) % json.length;
             });
          });
-		});
+      });
 
    Et voila! Our destination changes on each click!
 

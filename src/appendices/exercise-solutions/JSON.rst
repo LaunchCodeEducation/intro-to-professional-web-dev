@@ -3,19 +3,14 @@
 Exercise Solutions: JSON
 ========================
 
-.. _JSON-exercise-solutionsA:
+.. _JSON-exercise-solutions1:
 
-A. **Declare and assign variables**
+1. **Which of the following three code snippets is correct JSON syntax? Why?**
+ 
+   a. This not correct JSON syntax because keys in JSON need to be strings.
 
-   Declare and assign a variable for each item in the list.
+   b. This is the only correct option.
 
-   .. sourcecode:: js
-      :linenos:
-
-      let shuttleName = 'Determination';
-      let shuttleSpeedMph = '17500';
-      let distanceToMarsKm = 225000000;
-      let distanceToMoonKm = 38400;
-      const milesPerKm = 0.621;
+   c. This not correct JSON syntax because, unlike JavaScript, JSON only uses double quotation marks ("").
 
    :ref:`Back to the exercises <exercises-JSON>`
