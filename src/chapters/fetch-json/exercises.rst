@@ -1,6 +1,8 @@
 Exercises
 =========
 
+.. _exercises-JSON:
+
 JSON
 ----
 

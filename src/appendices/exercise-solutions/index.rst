@@ -20,4 +20,5 @@ Exercise Solutions
    html
    css
    forms
+   JSON
    
