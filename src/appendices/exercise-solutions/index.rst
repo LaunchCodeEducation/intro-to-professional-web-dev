@@ -21,4 +21,5 @@ Exercise Solutions
    css
    forms
    JSON
+   fetch
    
