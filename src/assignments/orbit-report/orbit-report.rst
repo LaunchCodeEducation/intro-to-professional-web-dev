@@ -1,3 +1,5 @@
+.. _orbit-report:
+
 Assignment #6: Orbit Report
 ===========================
 
@@ -9,16 +11,16 @@ Assignment #6: Orbit Report
    get started.
 
 There are thousands of satellites orbiting the earth. You are tasked with
-creating a searchable, sortable table of satellites. For the purposes of this
+updating a searchable, sortable table of satellites. For the purposes of this
 assignment, a **satellite** will be defined as any object purposefully placed
 into orbit.
 
 Your table will have the following features:
 
 #. **Satellites**: Each row in the table contains data on one satellite.
-#. **Search form:** Filters the results based on matches to the entered text.
+#. **Search form:** Filters search results based on matches to the entered text.
    Pressing enter or clicking the button triggers the search.
-#. **Sortable columns:** The ``Name`` and ``Type`` column headers can be
+#. **Sortable columns:** ``Name`` and ``Type`` column headers can be
    clicked, which will sort the table using that property.
 #. **Counts:** Displays the total number of satellites in the table, as well as
    the count for each type of satellite.
@@ -28,9 +30,16 @@ Your completed assignment should look something like this:
 .. figure:: figures/orbit-report-table.png
    :alt: Screenshot of orbit report table.
 
-You can also view gifs of the finished project in the
-:ref:`Orbit Report Demo <orbit-report-demo>` section at the bottom of this
-page.
+Sections:
+---------
+
+#. :ref:`Demo GIFs <orbit-report-demo>`
+#. :ref:`Submitting Your Work <orbit-report-submitting>`
+
+.. toctree::
+   :maxdepth: 1
+
+   orbit-report-demo
 
 Setup
 ------
@@ -496,6 +505,8 @@ each satellite type.
    You may have already completed this mission, depending on how you
    accomplished counting the satellites.
 
+.. _orbit-report-submitting:
+
 Submitting Your Work
 --------------------
 
@@ -506,28 +517,3 @@ Copy the URL for your Github repository and paste it into the box, then click
 "Submit" again.
 
 
-.. _orbit-report-demo:
-
-Orbit Report Demo
-------------------
-
-Once you complete all of the tasks outlined above, your project should behave
-something like this:
-
-Sorting the Table
-^^^^^^^^^^^^^^^^^^
-
-.. figure:: figures/orbit-report-sort.gif
-   :alt: Sorting the table gif.
-
-Searching the Table
-^^^^^^^^^^^^^^^^^^^^
-
-.. figure:: figures/orbit-report-search.gif
-   :alt: Searching the table gif.
-
-Counting Satellites Bonus
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. figure:: figures/orbit-report-count.gif
-   :alt: Satellite counts component.

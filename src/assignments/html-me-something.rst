@@ -23,7 +23,7 @@ Especially for large websites, CSS provides the best place to control the
 overall appearance of a page.
 
 Sections:
-----------
+---------
 
 #. :ref:`Getting Started <getting-started>`
 #. :ref:`Part 1: HTML <html-me-part1>`

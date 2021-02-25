@@ -83,7 +83,7 @@ Assignments
    assignments/mars-rover
    assignments/html-me-something
    assignments/launch-checklist
-   assignments/orbit-report
+   assignments/orbit-report/orbit-report
 
 Appendices
 ^^^^^^^^^^
