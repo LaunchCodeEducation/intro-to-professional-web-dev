@@ -92,9 +92,9 @@ B) Add and Organize Scoring Algorithms
 
 Your job here is to write two other scoring algorithms for the Scrabble player.
 
-#. ``simpleScorer``: Define a function that takes a word as a parameter and
+#. ``simpleScore``: Define a function that takes a word as a parameter and
    returns a numerical score. Each letter within the word is worth 1 point.
-#. ``vowelBonusScorer``: Define a function that takes a word as a parameter and
+#. ``vowelBonusScore``: Define a function that takes a word as a parameter and
    returns a score. Each vowel within the word is worth 3 points, and each
    consonant is worth 1 point.
 
@@ -320,13 +320,13 @@ Transform the Object
 
    won't pass. And you'll lose an opportunity to practice this skill.
 
-4. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScorer()`` function and then replace 
+4. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScore()`` function and then replace 
    the ``oldScrabbleScorer()`` function in ``scoringAlgorithms`` with this new function.
 
    .. admonition:: Tip
 
       ``oldScrabbleScorer()`` uses ``oldPointStructure`` and returns a score for each letter in a word. You'll want to write
-      ``scrabbleScorer()`` to use ``newPointStructure`` and return a cumulative score for the whole word entered.
+      ``scrabbleScore()`` to use ``newPointStructure`` and return a cumulative score for the whole word entered.
 
 Test Words
 ~~~~~~~~~~
