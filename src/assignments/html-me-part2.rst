@@ -125,6 +125,8 @@ It is usually a good idea to check first (using ``git status``) before
 running ``git add .``, so that you don’t mistakenly include unwanted
 changes.
 
+Go ahead and push your work to your remote repository using ``git push`` and head over to Github to see how you did.
+
 Done!
 ------
 

@@ -47,7 +47,7 @@ Setup the Project
 #. Accept the assignment invitation and navigate to the repository page just as you have done in previous assignments.
    As always, if you need to refer back to a guide, check out :ref:`Assignment 0 <assignment0>`. However, there is no Repl.it button on our repository.
    Instead, we are going to clone our repo. Let's follow the steps outlined in the :ref:`Git studio <clone-from-git>` to clone your assignment repository to your own machine.
-#. Open up the directory in Visual Studio Code to start working.
+#. Open up the directory in Visual Studio Code and start exploring the different files. You will only make changes to ``index.html`` and ``styles.css`` so make sure that you don't edit any other files.
 
 .. _getting-to-work:
 

@@ -140,6 +140,8 @@ This is somewhat subjective, and is ultimately up to you. The good habit is to
 pause and commit any time you reach a natural stopping point or complete a
 coherent chunk of work.
 
+Now that you have made a new commit, push your work to your remote repository using the ``git push`` command.
+
 Done!
 ------
 
