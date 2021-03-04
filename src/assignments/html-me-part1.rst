@@ -24,8 +24,7 @@ Stub out ``index.html`` with these basic elements:
       <body></body>
    </html>
 
-Fill each element with some appropriate content. You can start by removing the
-snippet ``<p>YOUR NAME</p>`` that you used during setup.
+You can now fill each element with some appropriate content. 
 
 Getting to Work
 -----------------
@@ -141,7 +140,9 @@ This is somewhat subjective, and is ultimately up to you. The good habit is to
 pause and commit any time you reach a natural stopping point or complete a
 coherent chunk of work.
 
+Now that you have made a new commit, push your work to your remote repository using the ``git push`` command.
+
 Done!
 ------
 
-Well done! Time to `dive into some CSS <html-me-part2.html>`__.
+Well done! You may notice that you haven't got a green check mark on your repository yet. Time to `dive into some CSS <html-me-part2.html>`__.

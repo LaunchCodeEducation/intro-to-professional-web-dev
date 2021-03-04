@@ -9,15 +9,8 @@ display, while keeping your styles separate from your content.
 Getting Started
 ----------------
 
-#. Create a file named ``styles.css`` in your ``html-me-something/``
+#. Open a file named ``styles.css`` in your ``html-me-something/``
    directory.
-
-#. *Optional*: Add a normalization stylesheet (follow any of the links in the
-   :ref:`Normalization <normalization>` section below). You can either put
-   these normalization rules at the top of your ``styles.css``, or you can add
-   another file in the same directory and link to it in your HTML doc. This
-   will reset some of your browser’s built-in styles so that you start with a
-   cleaner slate when you add your own.
 
 Getting to Work
 ----------------
@@ -31,7 +24,7 @@ Your CSS must:
 
 #. Use `margin <http://www.w3schools.com/css/css_margin.asp>`__ and
    `padding <http://www.w3schools.com/css/css_padding.asp>`__ to space your
-   elements in a visually pleasing way.
+   elements in a visually pleasing manner.
 #. Use at least one of each of the following types of selectors:
 
    a. `element <http://www.w3schools.com/cssref/sel_element.asp>`__,
@@ -40,14 +33,9 @@ Your CSS must:
 
 #. Follow these rules:
 
-   a. Avoid adding HTML elements in order to achieve a specific visual effect.
-   b. Use document-level and inline styles sparingly, and only when absolutely
-      necessary.
-   c. Be creative! Make your page look great, and don’t just settle for
-      checking off the items above. Have a look at `CSS Zen Garden
-      <http://www.csszengarden.com>`__ for inspiration (use your browser’s
-      `developer tools <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools>`__
-      to see how those pages’ styles are built).
+   a. Use the element selector to give the ``<body>`` element a margin value of 8px and a display type of block.
+   b. Give a heading on your page the id of ``mainHeading`` and use the id selector in ``styles.css`` to give it a color value of red.
+   c. Give a paragraph on your page the id of ``testP`` and a class name of ``funParagraph``. Use the class selector in ``styles.css`` to give it a color value of green.
 
 Notes
 ^^^^^^
@@ -137,9 +125,11 @@ It is usually a good idea to check first (using ``git status``) before
 running ``git add .``, so that you don’t mistakenly include unwanted
 changes.
 
+Go ahead and push your work to your remote repository using ``git push`` and head over to Github to see how you did.
+
 Done!
 ------
 
-You are ready to submit! Go back to the
+If you have a green check mark, you are ready to submit! Go back to the
 :ref:`Assignment Page <submitting-your-work>` and follow the submission
 instructions there.
