@@ -12,7 +12,7 @@ Now's let turn our focus to the ``Message`` class!
 Recall, the role of a message object is to bundle commands to send to the rover.
 
 Remember with TDD, to first read through the description of the class. Then read through the given tests and think about what each test means for the desired behavior of the class. 
-Only then should start coding the ``Message`` class.
+Only then should you start coding the ``Message`` class.
 
 .. _message-class:
 
