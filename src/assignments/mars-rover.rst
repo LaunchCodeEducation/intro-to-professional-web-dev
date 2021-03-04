@@ -37,7 +37,7 @@ In true TDD form, you will be asked to first write the appropriate units tests f
 these features, then write the code in the given class to pass those tests. 
 
 Sections:
-----------
+---------
 
 #. :ref:`Get the Starter Code <get-the-starter-code>`
 #. :ref:`Command Class <command-class>`

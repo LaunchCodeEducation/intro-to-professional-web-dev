@@ -3,12 +3,20 @@
 Assignment #6: Orbit Report
 ===========================
 
-.. admonition:: Warning
+Sections:
+---------
 
-   Please do not attempt this assignment until after your first lesson on
-   Angular. It can be tempting to dive right in, but Angular is a broad topic,
-   and you want to wait to have a solid understanding of the framework before you
-   get started.
+#. :ref:`Introduction and Background <orbit-report-intro>`
+#. :ref:`Demo GIFs <orbit-report-demo>`
+#. :ref:`Setup and Starter Code <orbit-report-setup>`
+#. :ref:`Requirements <orbit-report-steps>`
+#. :ref:`Submitting Your Work <orbit-report-submitting>`
+
+
+.. _orbit-report-intro:
+
+Background
+----------
 
 There are thousands of satellites orbiting the earth. You are tasked with
 updating a searchable, sortable table of satellites. For the purposes of this
@@ -30,37 +38,30 @@ Your completed assignment should look something like this:
 .. figure:: figures/orbit-report-table.png
    :alt: Screenshot of orbit report table.
 
-Sections:
----------
 
-#. :ref:`Demo GIFs <orbit-report-demo>`
-#. :ref:`Submitting Your Work <orbit-report-submitting>`
+.. admonition:: Warning
 
-.. toctree::
-   :maxdepth: 1
+	Please do not attempt this assignment until after your first lesson on
+	Angular. It can be tempting to dive right in, but Angular is a broad topic,
+	and you want to wait to have a solid understanding of the framework before you
+	get started.
 
-   orbit-report-demo
+
+.. _orbit-report-setup:
 
 Setup
-------
+-----
 
-#. Use ``ng new`` to create a new Angular project named ``orbit-report``.
-   Prompt answers: No Routing, Use CSS.
-#. Create a new repository in your GitHub account named ``orbit-report``. Copy
-   the URL for this empty repo.
-#. In the terminal, navigate into your local ``orbit-report`` directory and
-   link the Angular project to the GitHub repo:
+In `Canvas <https://learn.launchcode.org/>`__, Graded Assignment #6: Orbit Report contains a GitHub Classroom assignment invitation link.
+Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
 
-   .. sourcecode:: bash
 
-      $ git remote add origin <remote-url>
-
-#. Finally, commit and push your Angular assignment to GitHub.
+.. _orbit-report-steps:
 
 Requirements
--------------
+------------
 
-As you accomplish each task, be sure to commit and push your changes before
+As you accomplish each task, commit and push your changes before
 moving on to the next item.
 
 1) Define and Create Satellites
