@@ -41,10 +41,10 @@ Your completed assignment should look something like this:
 
 .. admonition:: Warning
 
-	Please do not attempt this assignment until after your first lesson on
-	Angular. It can be tempting to dive right in, but Angular is a broad topic,
-	and you want to wait to have a solid understanding of the framework before you
-	get started.
+   Please do not attempt this assignment until after your first lesson on
+   Angular. It can be tempting to dive right in, but Angular is a broad topic,
+   and you want to wait to have a solid understanding of the framework before you
+   get started.
 
 
 .. _orbit-report-setup:
@@ -67,15 +67,18 @@ moving on to the next item.
 1) Define and Create Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. TODO: import Satellite to app component
+
 In JavaScript, TypeScript, and Angular projects, you can create classes to
 represent entities in the project. For this project you need to create a class
 named ``Satellite`` to represent, you guessed it, a satellite. The
 ``Satellite`` class needs to define the properties needed to accurately
 represent a satellite.
 
-#. In terminal go to the ``orbit-report`` folder.
-#. Create a class with command ``$ ng generate class Satellite``.
-#. Notice that the new file ``orbit-report/src/app/satellite.ts`` was created.
+.. #. In terminal go to the ``orbit-report`` folder.
+.. #. Create a class with command ``$ ng generate class Satellite``.
+.. #. Notice that the new file ``orbit-report/src/app/satellite.ts`` was created.
+
 #. Add these properties to the ``Satellite`` class in ``satellite.ts``:
 
    .. sourcecode:: js
@@ -325,127 +328,160 @@ Angular attribute directive to accomplish this.
    If you prefer, modify the table HTML to make the entire row the warning
    color.
 
-7) Sorting
-^^^^^^^^^^^
+7) Counting Satellites
+^^^^^^^^^^^^^^^^^^^^^^
 
-Sorting is a useful feature for any table. When a user clicks the "Name"
-heading, sort the table by the ``name`` property. Also, if the user clicks the
-"Type" heading, then sort the table by the ``type`` property.
+Create a new component that shows the total number of satellites currently
+displayed in the table. Also, the component should show the number of each
+type of satellite.
 
-#. Add an Angular click handler that calls ``sort('name')`` to the Name
-   ``<th>`` element. Note that the sorting feature will NOT work until you
-   have completed step 3.
+#. Create an ``orbit-counts`` component at the same level as ``orbit-list``.
+#. Add styles to ``orbit-counts.component.css`` to make your count table
+   complement the list of satellites, or use the CSS provided in this
+   `sample file  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__.
+#. In ``app.component.html``, uncomment the line that adds this component to the page.
+#. Pass in ``displayList`` via ``[satellites]="displayList"``.
+#. Use the given HTML as a template. Replace the hard-coded count with a directive 
+   to display the number of satellites in the displayed table.
 
-#. Add an Angular click handler that calls ``sort('type')`` to the Type
-   ``<th>`` element.
-#. Add a ``sort`` method to the ``OrbitListComponent`` class. Remember that
-   by convention, the method should come *after* the ``constructor`` *and*
-   ``ngOnInit``.
-
-   a. The sorting method has been provided below.
-   b. To see an example of the sort working, see the
-      :ref:`Orbit Report Demo <orbit-report-demo>` below.
-
-   .. sourcecode:: typescript
-
-      sort(column: string): void {
-         // array.sort modifies the array, sorting the items based on the given compare function
-         this.satellites.sort(function(a: Satellite, b: Satellite): number {
-            if(a[column] < b[column]) {
-               return -1;
-            } else if (a[column] > b[column]) {
-               return 1;
-            }
-            return 0;
-         });
-      }
-
-.. admonition:: Note
-
-   The provided ``sort`` method contains a new usage of the ``array.sort`` method. Previously in the book you used
-   ``array.sort`` without passing it a function, see :ref:`sort function examples <sort-examples>`. This usage of ``array.sort``
-   uses a compare function, which allows you to control how the objects in the array are sorted. A compare function
-   is needed to sort the array of ``Satellite`` objects, because JavaScript does not know how to sort objects, JavaScript
-   needs you to tell it which ``Satellite`` object should go before another ``Satellite`` object.
-   For more details about the compare function see
-   `MDN description of sort using a compare function <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description>`_.
-
-8) Searching
-^^^^^^^^^^^^
-
-You are doing great! Next you will add a search feature.
-
-#. Add this HTML ``<div class="search-form"></div>`` in ``app.component.html``.
-#. Add an ``<input>`` element inside the ``<div>``.
-#. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` tag that calls
-   ``search(searchTerm.value)``. ``searchTerm`` is the local variable
-   defined in ``<input>`` to store the data entered by the user.
-#. Add a ``<button>`` element inside the ``<div>``.
-#. Add an Angular ``(click)`` handler to the ``<button>`` that also calls
-   ``search(searchTerm.value)``.
-#. Add a ``search`` method to the ``AppComponent`` class. The code for this
-   method is provided below.
-
-   .. sourcecode:: typescript
+   .. sourcecode:: html
       :linenos:
 
-      search(searchTerm: string): void {
-         let matchingSatellites: Satellite[] = [];
-         searchTerm = searchTerm.toLowerCase();
-         for(let i=0; i < this.sourceList.length; i++) {
-            let name = this.sourceList[i].name.toLowerCase();
-            if (name.indexOf(searchTerm) >= 0) {
-               matchingSatellites.push(this.sourceList[i]);
-            }
-         }
-         // assign this.displayList to be the array of matching satellites
-         // this will cause Angular to re-make the table, but now only containing matches
-         this.displayList = matchingSatellites;
-      }
+      <h3>Satellite Counts:</h3>
+      <div class="counts">
+         <div>Total: <span>9</span></div>
+      </div>
 
-Notice the usage of a new variable named ``displayList``. ``displayList``
-should contain the ``Satellite`` objects that the user wants to see.
-Previously ALL the satellites were displayed, because there was not a search
-feature. Now the user can perform a search, which means they want to see ONLY
-the matching results. The ``sourceList`` variable contains ALL the
-``Satellite`` objects. If you removed the ``Satellite`` objects from
-``sourceList`` that didn't match the search term, then the user could never
-see them again. Instead when the user performs a search, ``displayList`` will
-be populated with only the matching ``Satellite`` objects in ``sourceList``.
-Matching is defined as ``satellite.name`` containing the search term.
+.. TODO: update this screenshot and caption for just the top count
 
-7. Add the ``displayList: Satellite[];`` property to the ``AppComponent``
-   class and set ``displayList = []`` in the constructor.
+#. Your completed component should look similar to:
 
-#. Pass in the ``displayList`` to the ``orbit-list-component``.
+   .. figure:: figures/orbit-counts-output.png
+      :alt: Example of six satellite counts being displayed.
 
-   .. sourcecode:: html+ng2
+      Example of the seven different satellite counts being displayed.
 
-      <app-orbit-list [satellites]="displayList"></app-orbit-list>
+.. 7) Sorting
+.. ^^^^^^^^^^^
 
-#. View the app in your browser. Why is the table empty when the app loads?
-   What is the value of ``displayList`` when the app first loads?
+.. Sorting is a useful feature for any table. When a user clicks the "Name"
+.. heading, sort the table by the ``name`` property. Also, if the user clicks the
+.. "Type" heading, then sort the table by the ``type`` property.
 
-#. Set ``displayList`` to be a copy of ``sourceList`` when the app loads.
+.. #. Add an Angular click handler that calls ``sort('name')`` to the Name
+..    ``<th>`` element. Note that the sorting feature will NOT work until you
+..    have completed step 3.
 
-   a. Add this code after ``sourceList`` has been populated by the fetched
-      data in the ``constructor``.
+.. #. Add an Angular click handler that calls ``sort('type')`` to the Type
+..    ``<th>`` element.
+.. #. Add a ``sort`` method to the ``OrbitListComponent`` class. Remember that
+..    by convention, the method should come *after* the ``constructor`` *and*
+..    ``ngOnInit``.
 
-      .. sourcecode:: typescript
+..    a. The sorting method has been provided below.
+..    b. To see an example of the sort working, see the
+..       :ref:`Orbit Report Demo <orbit-report-demo>` below.
 
-               // make a copy of the sourceList to be shown to the user
-               this.displayList = this.sourceList.slice(0);
-            }.bind(this));
-         }.bind(this));
+..    .. sourcecode:: typescript
 
-#. For an example of search working, see
-   :ref:`Orbit Report Demo <orbit-report-demo>`.
+..       sort(column: string): void {
+..          // array.sort modifies the array, sorting the items based on the given compare function
+..          this.satellites.sort(function(a: Satellite, b: Satellite): number {
+..             if(a[column] < b[column]) {
+..                return -1;
+..             } else if (a[column] > b[column]) {
+..                return 1;
+..             }
+..             return 0;
+..          });
+..       }
+
+.. .. admonition:: Note
+
+..    The provided ``sort`` method contains a new usage of the ``array.sort`` method. Previously in the book you used
+..    ``array.sort`` without passing it a function, see :ref:`sort function examples <sort-examples>`. This usage of ``array.sort``
+..    uses a compare function, which allows you to control how the objects in the array are sorted. A compare function
+..    is needed to sort the array of ``Satellite`` objects, because JavaScript does not know how to sort objects, JavaScript
+..    needs you to tell it which ``Satellite`` object should go before another ``Satellite`` object.
+..    For more details about the compare function see
+..    `MDN description of sort using a compare function <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description>`_.
+
+.. 8) Searching
+.. ^^^^^^^^^^^^
+
+.. You are doing great! Next you will add a search feature.
+
+.. #. Add this HTML ``<div class="search-form"></div>`` in ``app.component.html``.
+.. #. Add an ``<input>`` element inside the ``<div>``.
+.. #. Add an Angular ``(keyup.enter)`` handler to the ``<input>`` tag that calls
+..    ``search(searchTerm.value)``. ``searchTerm`` is the local variable
+..    defined in ``<input>`` to store the data entered by the user.
+.. #. Add a ``<button>`` element inside the ``<div>``.
+.. #. Add an Angular ``(click)`` handler to the ``<button>`` that also calls
+..    ``search(searchTerm.value)``.
+.. #. Add a ``search`` method to the ``AppComponent`` class. The code for this
+..    method is provided below.
+
+..    .. sourcecode:: typescript
+..       :linenos:
+
+..       search(searchTerm: string): void {
+..          let matchingSatellites: Satellite[] = [];
+..          searchTerm = searchTerm.toLowerCase();
+..          for(let i=0; i < this.sourceList.length; i++) {
+..             let name = this.sourceList[i].name.toLowerCase();
+..             if (name.indexOf(searchTerm) >= 0) {
+..                matchingSatellites.push(this.sourceList[i]);
+..             }
+..          }
+..          // assign this.displayList to be the array of matching satellites
+..          // this will cause Angular to re-make the table, but now only containing matches
+..          this.displayList = matchingSatellites;
+..       }
+
+.. Notice the usage of a new variable named ``displayList``. ``displayList``
+.. should contain the ``Satellite`` objects that the user wants to see.
+.. Previously ALL the satellites were displayed, because there was not a search
+.. feature. Now the user can perform a search, which means they want to see ONLY
+.. the matching results. The ``sourceList`` variable contains ALL the
+.. ``Satellite`` objects. If you removed the ``Satellite`` objects from
+.. ``sourceList`` that didn't match the search term, then the user could never
+.. see them again. Instead when the user performs a search, ``displayList`` will
+.. be populated with only the matching ``Satellite`` objects in ``sourceList``.
+.. Matching is defined as ``satellite.name`` containing the search term.
+
+.. 7. Add the ``displayList: Satellite[];`` property to the ``AppComponent``
+..    class and set ``displayList = []`` in the constructor.
+
+.. #. Pass in the ``displayList`` to the ``orbit-list-component``.
+
+..    .. sourcecode:: html+ng2
+
+..       <app-orbit-list [satellites]="displayList"></app-orbit-list>
+
+.. #. View the app in your browser. Why is the table empty when the app loads?
+..    What is the value of ``displayList`` when the app first loads?
+
+.. #. Set ``displayList`` to be a copy of ``sourceList`` when the app loads.
+
+..    a. Add this code after ``sourceList`` has been populated by the fetched
+..       data in the ``constructor``.
+
+..       .. sourcecode:: typescript
+
+..                // make a copy of the sourceList to be shown to the user
+..                this.displayList = this.sourceList.slice(0);
+..             }.bind(this));
+..          }.bind(this));
+
+.. #. For an example of search working, see
+..    :ref:`Orbit Report Demo <orbit-report-demo>`.
 
 Bonus Missions
 ---------------
 
 A) Zebra Stripes
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 Alternate the color for every other row in the table. Choose whichever pair
 of colors you prefer, but the highlighting for space debris should still be
@@ -454,45 +490,8 @@ distinct.
 .. figure:: figures/orbit-report-zebra.png
    :alt: Alternating row colors.
 
-B) Counting Satellites
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Create a new component that shows the total number of satellites currently
-displayed in the table. Also, the component should show the number of each
-type of satellite.
-
-#. Create an ``orbit-counts`` component.
-#. Add styles to ``orbit-counts.component.css`` to make your count table
-   complement the list of satellites, or use the CSS provided in this
-   `sample file  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__.
-#. Add the ``orbit-counts`` component to ``app.component.html``.
-#. Pass in ``displayList`` via ``[satellites]="displayList"``.
-#. Use the given HTML as a template. Remember to replace the hard-coded counts.
-
-   .. sourcecode:: html
-      :linenos:
-
-      <h3>Satellite Counts:</h3>
-      <div class="counts">
-         <div>Total: <span>9</span></div>
-         <div>Space Debris: <span>1</span></div>
-         <div>Communication: <span>2</span></div>
-         <div>Probe: <span>2</span></div>
-         <div>Positioning: <span>1</span></div>
-         <div>Space Station: <span>2</span></div>
-         <div>Telescope: <span>1</span></div>
-      </div>
-
-#. The rest of the steps are left for you to figure out! Your completed
-   component should look similar to:
-
-   .. figure:: figures/orbit-counts-output.png
-      :alt: Example of six satellite counts being displayed.
-
-      Example of the seven different satellite counts being displayed.
-
-C) Update the Search Feature
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+B) Update the Search Feature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Modify the search feature to find matches using the ``orbitType`` and ``type``
 properties.
