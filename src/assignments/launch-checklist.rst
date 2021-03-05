@@ -26,7 +26,7 @@ The form should do the following:
 Setting Up Your Project Repository
 ----------------------------------
 
-Fork the repository with the `starter code <https://github.com/LaunchCodeEducation/Launch-Checklist-Form/>`_ to your personal GitHub profile and clone the repository to the directory where you are keeping your assignments for the class.
+In `Canvas <learn.launchcode.org>`__, Graded Assignment #5: Launch Checklist Form contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
 
 .. warning::
 
@@ -34,7 +34,7 @@ Fork the repository with the `starter code <https://github.com/LaunchCodeEducati
 
 To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
 
-When you open ``index.html``, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says "Awaiting Information Before Launch".
+When you open ``index.html`` in the browser, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says "Awaiting Information Before Launch".
 
 .. figure:: figures/form-starting-point.png
    :alt: Image showing the form and the box stating that more information is needed before launch.
@@ -92,8 +92,33 @@ Review the list and decide which planet you want to send our intrepid crew to an
    In this case, that means an array of our possible mission destinations.
    When picking the mission destination, just pick the item in the array you want and start counting at 0.
 
-In ``script.js``, we have a block of code commented out at the top.
-This is the format of the ``innerHTML`` for the ``missionTarget`` div.
+In ``scriptHelper.js``, you have three functions for this task: ``myFetch()``, ``pickPlanet()``, and ``addDestinationInfo()``.
+First, review the comments in ``addDestinationInfo()``.
+This is the format of the ``innerHTML`` for the ``missionTarget`` div, which you can locate using the ``document`` parameter of ``addDestinationInfo()``.
+
+``myFetch()`` has some of the code necessary for fetching planetary JSON, however, it is not complete. You need to add the URL and return ``response.json()``.
+
+Now it is time to make use of these two helper functions in ``script.js``.  We provided some of the code necessary to use ``myFetch()``, like so:
+
+.. sourcecode:: js
+
+   let listedPlanets;
+   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+   let listedPlanetsResponse;
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+   })
+
+First, do as the comments in the code tell you and set ``listedPlanetsResponse`` equal to the value returned when calling ``myFetch()``. This value is going to be a promise. 
+If we head to our browser and open up our developer tools, we can now see a list of the planets.
+Then using ``pickPlanet()`` and ``addDestinationInfo()``, select a planet at random from ``listedPlanets`` and pass that information to ``addDestinationInfo()``.
+Reload your page and check out your site to see the mission target information.  
+
+
 Pass the information you have fetched about your planet to the ``addDestinationInfo()`` function in ``scriptHelpers.js`` and use that function to update the planetary info!
 
 Be sure to include the appropriate variables in the template literals!
