@@ -39,6 +39,12 @@ When you open ``index.html`` in the browser, you should see the Launch Checklist
 .. figure:: figures/form-starting-point.png
    :alt: Image showing the form and the box stating that more information is needed before launch.
 
+.. admonition:: Note
+
+   If you open up your browser's dev tools, you may see a warning stating that the ``require`` statement in ``scriptHelpers.js`` is not working.
+   This is okay! That ``require`` statement is necessary for the autograder to function and this warning will not impact your site's ability to function.
+
+
 Adding Validation
 -----------------
 
@@ -95,7 +101,8 @@ Review the list and decide which planet you want to send our intrepid crew to an
 In ``scriptHelper.js``, you have three functions for this task: ``myFetch()``, ``pickPlanet()``, and ``addDestinationInfo()``.
 First, review the comments in ``addDestinationInfo()``.
 This is the format of the ``innerHTML`` for the ``missionTarget`` div, which you can locate using the ``document`` parameter of ``addDestinationInfo()``.
-
+``addDestinationInfo()`` does not need to return anything.
+``pickPlanet()`` takes in one argument: a list of planets. Using ``Math.random()``, return one planet from the list with a randomly-selected index.
 ``myFetch()`` has some of the code necessary for fetching planetary JSON, however, it is not complete. You need to add the URL and return ``response.json()``.
 
 Now it is time to make use of these two helper functions in ``script.js``.  We provided some of the code necessary to use ``myFetch()``, like so:
@@ -117,11 +124,6 @@ First, do as the comments in the code tell you and set ``listedPlanetsResponse``
 If we head to our browser and open up our developer tools, we can now see a list of the planets.
 Then using ``pickPlanet()`` and ``addDestinationInfo()``, select a planet at random from ``listedPlanets`` and pass that information to ``addDestinationInfo()``.
 Reload your page and check out your site to see the mission target information.  
-
-
-Pass the information you have fetched about your planet to the ``addDestinationInfo()`` function in ``scriptHelpers.js`` and use that function to update the planetary info!
-
-Be sure to include the appropriate variables in the template literals!
  
 The End Result
 --------------
@@ -155,7 +157,8 @@ Here are some steps you can take to make sure your great work is counted as such
 
 #. Make sure that all of your methods are complete in ``scriptHelpers.js``! The autograder needs to check your logic for each of the methods.
    ``script.js`` should contain calls to these functions.
-#. Comment out your fetch to keep the autograder from hanging for infinity trying to get planetary info.
+#. If the tests labeled ``GRADING DOM MANIPULATION TEST`` are failing, comment out the block of code in ``script.js`` that calls ``myFetch()`` and sets the mission destination.
+   While your site won't be able to load a mission destination, the auto-grader will still be able to make sure that you set up your helper functions and scripts properly. 
 
 Bonus Mission
 -------------
