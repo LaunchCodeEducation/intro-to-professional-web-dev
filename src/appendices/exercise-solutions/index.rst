@@ -20,4 +20,6 @@ Exercise Solutions
    html
    css
    forms
+   JSON
+   fetch
    
