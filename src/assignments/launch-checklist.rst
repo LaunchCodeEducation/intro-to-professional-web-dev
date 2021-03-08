@@ -9,17 +9,17 @@ Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the c
 Requirements
 ------------
 
-Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
-The form should do the following:
+Create a Launch Checklist Form for astronauts to fill out in preparation for launch. The form should do the following:
 
-1. Validate the user responses with ``preventDefault()`` to ensure the following:
+#. Use ``preventDefault()`` to prevent a request from being sent out and the page reloading.
+#. Validate the user-submitted data to ensure the following:
 
    a. The user entered something for every field.
    b. The user entered text for names and numbers for fuel and cargo levels.
 
-2. With validation, update a list of what is currently ready or not ready for the shuttle launch.
-3. Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
-4. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
+#. With validation, update a list of what is currently ready or not ready for the shuttle launch.
+#. Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
+#. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
 
 Setting Up Your Project Repository
 ----------------------------------
@@ -37,20 +37,26 @@ When you open ``index.html``, you should see the Launch Checklist form with a re
 .. figure:: figures/form-starting-point.png
    :alt: Image showing the form and the box stating that more information is needed before launch.
 
+Handling Form Submission
+------------------------
+
+In ``script.js``, set up an event handler that runs when the form's ``submit`` event is triggered. The first line of code in this handler should use the event's ``preventDefault`` method to prevent the default event action (that is, sending a request with form data) from occurring. This is a commonly used technique when a JavaScript application employs a form, but handles all related behavior in the browser.
+
+.. admonition:: Warning
+
+   If you don't use ``preventDefault`` properly, you won't be able to see the effects of the other requirements. The form will fully submit by forcing the browser to send a request. This will, in effect, reload the page.
+
 Adding Validation
 -----------------
 
 Adding Alerts
 ^^^^^^^^^^^^^
 
-First, let's add validation to notify the user if they forgot to enter a value for any one of the fields.
+Now, let's add validation to notify the user if they forgot to enter a value for any one of the fields.
 
-This process is going to look similar to the :ref:`validation section <javascript-validation>` in the chapter on forms. 
-Make sure to use ``preventDefault()`` and an alert to notify the user that all fields are required.
+This process is going to look similar to the :ref:`validation section <javascript-validation>` in the chapter on forms. Add an alert to notify the user that all fields are required.
 
-You also want to make sure that the user entered valid info for each of the fields.
-Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.
-The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
+You also want to make sure that the user entered valid info for each of the fields. Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers. The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
 
 .. note:: 
 

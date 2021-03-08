@@ -66,9 +66,12 @@ To access the code for the orbit calculations and first bonus mission, go to
       number of orbits completed, the orbit radius, and the orbital speed. Set
       the default radius to 2000 km and the default orbital speed to
       28000 km/hr.
-   c. Calculate how long it will take our animals to complete 5 orbits (time =
-      distance/speed). Round the answer to 2 decimal places, then return the
-      result.
+   c. Calculate how long it will take our animals to complete a certain number
+      of orbits (``time = distance/speed``). Round the answer to 2 decimal
+      places, then return the result.
+
+      For example, with the default radius and speed, 5 orbits will take about
+      ``2.24 hours``.
    d. Print, ``'The mission will travel ____ km around the planet, and it will
       take ____ hours to complete.'``
 
