@@ -22,4 +22,5 @@ Exercise Solutions
    forms
    JSON
    fetch
+   angular-lsn2
    
