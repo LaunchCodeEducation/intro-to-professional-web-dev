@@ -119,30 +119,45 @@ Properly done, your output should behave something like this:
 .. figure:: ./figures/lesson2-exercises-sidekicks.gif
    :alt: Sidekick image results.
 
+
+.. _exercises-angular-lsn2-selected-crew-column:
+
 Selected Crew Column
----------------------
+--------------------
 
 Once we select a candidate, we want an option to add them to the crew of the
 next space mission.
 
 #. In ``candidates.component.ts``, code an ``addToCrew`` function that takes an
    *object* as a parameter.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD1>`.
+
 #. If the candidate is NOT part of the crew, the function should push them into
    the ``crew`` array. Candidates who are already part of the crew should be
    ignored.
 #. In ``candidates.component.html``, add a "Send on Mission" button next to the
    "Clear Data & Image" button.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD3>`.
+
 #. Add a ``click`` event to the button to call the ``addToCrew`` function. When
    clicked, pass the selected candidate as the argument.
 #. Under the "Selected Crew" section, use ``*ngFor`` to loop over the ``crew``
    array and display each name.
 
-Clear Crew List
-^^^^^^^^^^^^^^^^
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD5>`.
+   
 
-#. Add a "Clear Crew List" button under the "Selected Crew" list.
+Clear Crew List
+^^^^^^^^^^^^^^^
+
+6. Add a "Clear Crew List" button under the "Selected Crew" list.
 #. This button should only appear when the ``crew`` array contains data. Use
    ``*ngIf`` to make this happen.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD7>`.
+
 #. Add a ``click`` event that clears the ``crew`` array.
 
 Properly done, your output should behave something like this:
@@ -151,10 +166,10 @@ Properly done, your output should behave something like this:
    :alt: Crew list results.
 
 Bonus Missions
----------------
+--------------
 
 Fine Tune the Buttons
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 #. Update the ``Send on Mission`` button to appear only if a candidate has been
    selected.
