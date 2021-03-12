@@ -21,16 +21,10 @@ The form should do the following:
 3. Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
 4. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
 
-.. TODO: Remember to update with new instructions to direct Github Classroom students
-
 Setting Up Your Project Repository
 ----------------------------------
 
 In `Canvas <learn.launchcode.org>`__, Graded Assignment #5: Launch Checklist Form contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
-
-.. warning::
-
-   When updating styles to indicate whether the shuttle is ready for launch, do NOT modify ``styles.css``!
 
 To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
 
@@ -39,9 +33,12 @@ When you open ``index.html`` in the browser, you should see the Launch Checklist
 .. figure:: figures/form-starting-point.png
    :alt: Image showing the form and the box stating that more information is needed before launch.
 
+Before starting work, go ahead and check out the various files in your starter code. You may notice a file called ``bundle.js``. This file contains no code except for a comment. Do NOT delete this file.
+The only files you should be editing when working on this project are ``script.js`` and ``scriptHelper.js``. To modify styles or update HTML, do NOT modify ``styles.css`` or ``index.html``.
+
 .. admonition:: Note
 
-   If you open up your browser's dev tools, you may see a warning stating that the ``require`` statement in ``scriptHelpers.js`` is not working.
+   If you open up your browser's dev tools, you may see a warning stating that the ``require`` statement in ``scriptHelper.js`` is not working.
    This is okay! That ``require`` statement is necessary for the autograder to function and this warning will not impact your site's ability to function.
 
 
@@ -59,7 +56,7 @@ Make sure to use ``preventDefault()`` and an alert to notify the user that all f
 You also want to make sure that the user entered valid info for each of the fields.
 Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.
 The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
-To do this, complete the helper function in your ``scriptHelpers.js`` called ``validateInput()``.
+To do this, complete the helper function in your ``scriptHelper.js`` called ``validateInput()``.
 ``validateInput()`` should take in a string as a parameter and return ``"Empty"``, ``"Not a Number"``, or ``"Is a Number"`` as appropriate.
 In ``scriptHelper.js``, you will use ``validateInput()`` to complete the ``formSubmission()`` function.
 ``formSubmission()`` will take in strings representing the pilot, co-pilot, fuel level, and cargo mass.
@@ -105,7 +102,7 @@ This is the format of the ``innerHTML`` for the ``missionTarget`` div, which you
 ``pickPlanet()`` takes in one argument: a list of planets. Using ``Math.random()``, return one planet from the list with a randomly-selected index.
 ``myFetch()`` has some of the code necessary for fetching planetary JSON, however, it is not complete. You need to add the URL and return ``response.json()``.
 
-Now it is time to make use of these two helper functions in ``script.js``.  We provided some of the code necessary to use ``myFetch()``, like so:
+Now it is time to make use of these helper functions in ``script.js``.  We provided some of the code necessary:
 
 .. sourcecode:: js
 
@@ -155,12 +152,7 @@ Submission
 Even if everything is working perfectly with your site, the autograder may still be counting something as wrong.
 Here are some steps you can take to make sure your great work is counted as such!
 
-#. Make sure that all of your methods are complete in ``scriptHelpers.js``! The autograder needs to check your logic for each of the methods.
+#. Make sure that all of your methods are complete in ``scriptHelper.js``! The autograder needs to check your logic for each of the methods.
    ``script.js`` should contain calls to these functions.
-#. If the tests labeled ``GRADING DOM MANIPULATION TEST`` are failing, comment out the block of code in ``script.js`` that calls ``myFetch()`` and sets the mission destination.
-   While your site won't be able to load a mission destination, the auto-grader will still be able to make sure that you set up your helper functions and scripts properly. 
-
-Bonus Mission
--------------
-
-Use whichever method you choose to randomly select the mission destination from the available options in the JSON file.
+#. If the tests labeled ``GRADING DOM MANIPULATION TEST`` are failing, make sure that you did not modify ``bundle.js`` or remove ``<script src = "bundle.js></script>`` from ``index.html``.
+   The autograder needs ``bundle.js`` linked as a script in ``index.html`` in order to run properly.
