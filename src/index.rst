@@ -114,4 +114,5 @@ Appendices
    assignments/mars-rover2
    assignments/mars-rover3
    assignments/orbit-report/orbit-report-demo
+   assignments/orbit-report/orbit-report-steps
    glossary

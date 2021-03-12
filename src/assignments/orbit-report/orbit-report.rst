@@ -10,13 +10,14 @@ Sections:
 #. :ref:`Demo GIFs <orbit-report-demo>`
 #. :ref:`Setup and Starter Code <orbit-report-setup>`
 #. :ref:`Requirements <orbit-report-steps>`
+#. :ref:`Bonus Missions <orbit-report-bonus-missions>`
 #. :ref:`Submitting Your Work <orbit-report-submitting>`
 
 
 .. _orbit-report-intro:
 
-Background
-----------
+Introduction and Background
+---------------------------
 
 There are thousands of satellites orbiting the earth. You are tasked with
 updating a searchable, sortable table of satellites. For the purposes of this
@@ -49,8 +50,8 @@ Your completed assignment should look something like this:
 
 .. _orbit-report-setup:
 
-Setup
------
+Setup and Starter Code
+----------------------
 
 In `Canvas <https://learn.launchcode.org/>`__, Graded Assignment #6: Orbit Report contains a GitHub Classroom assignment invitation link.
 Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
@@ -306,6 +307,8 @@ retrieves json data from a server.
 You need to make it easier to spot dangerous space debris in the list. Add an
 Angular attribute directive to accomplish this.
 
+.. TODO: change this variable name to ``isSpaceDebris``
+
 #. Add a ``shouldShowWarning`` method to the ``Satellite`` class.
 
    a. ``shouldShowWarning`` returns a boolean and has no parameters.
@@ -323,6 +326,8 @@ Angular attribute directive to accomplish this.
 
       Example of warning style adding a red background to Space Debris type.
 
+.. TODO: remove or require this
+
 .. admonition:: Note
 
    If you prefer, modify the table HTML to make the entire row the warning
@@ -332,15 +337,15 @@ Angular attribute directive to accomplish this.
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Create a new component that shows the total number of satellites currently
-displayed in the table. Also, the component should show the number of each
-type of satellite.
+displayed in the table. 
 
 #. Create an ``orbit-counts`` component at the same level as ``orbit-list``.
+.. TODO: refine this item below: can we remove the exact line to add?
+
+#. Pass in ``displayList`` via ``[satellites]="displayList"``.
 #. Add styles to ``orbit-counts.component.css`` to make your count table
    complement the list of satellites, or use the CSS provided in this
    `sample file  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__.
-#. In ``app.component.html``, uncomment the line that adds this component to the page.
-#. Pass in ``displayList`` via ``[satellites]="displayList"``.
 #. Use the given HTML as a template. Replace the hard-coded count with a directive 
    to display the number of satellites in the displayed table.
 
@@ -351,6 +356,8 @@ type of satellite.
       <div class="counts">
          <div>Total: <span>9</span></div>
       </div>
+
+#. In ``app.component.html``, uncomment the line that adds this component to the page.
 
 .. TODO: update this screenshot and caption for just the top count
 
@@ -477,8 +484,10 @@ type of satellite.
 .. #. For an example of search working, see
 ..    :ref:`Orbit Report Demo <orbit-report-demo>`.
 
+.. _orbit-report-bonus-missions:
+
 Bonus Missions
----------------
+--------------
 
 A) Zebra Stripes
 ^^^^^^^^^^^^^^^^
