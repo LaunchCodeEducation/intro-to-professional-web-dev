@@ -259,47 +259,47 @@ little nicer.
 
       Example of application at this point.
 
-5) Fetch Satellite Data
-^^^^^^^^^^^^^^^^^^^^^^^
+.. 5) Fetch Satellite Data
+.. ^^^^^^^^^^^^^^^^^^^^^^^
 
-So far, you have used an array declared in ``app.component.ts`` as the source
-of data to display. Your next task is to switch to using a ``fetch`` that
-retrieves json data from a server.
+.. So far, you have used an array declared in ``app.component.ts`` as the source
+.. of data to display. Your next task is to switch to using a ``fetch`` that
+.. retrieves json data from a server.
 
-#. Replace your ``constructor`` in ``AppComponent`` with the code below.
-#. Implement the three features mentioned in the ``TODO:`` comments.
+.. #. Replace your ``constructor`` in ``AppComponent`` with the code below.
+.. #. Implement the three features mentioned in the ``TODO:`` comments.
 
-   .. sourcecode:: typescript
+..    .. sourcecode:: typescript
 
-      constructor() {
-         this.sourceList = [];
-         let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
+..       constructor() {
+..          this.sourceList = [];
+..          let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
 
-         window.fetch(satellitesUrl).then(function(response) {
-            response.json().then(function(data) {
+..          window.fetch(satellitesUrl).then(function(response) {
+..             response.json().then(function(data) {
 
-               let fetchedSatellites = data.satellites;
-               // TODO: loop over satellites
-               // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-               // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
+..                let fetchedSatellites = data.satellites;
+..                // TODO: loop over satellites
+..                // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+..                // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
 
-            }.bind(this));
-         }.bind(this));
+..             }.bind(this));
+..          }.bind(this));
 
-      }
+..       }
 
-.. admonition:: Note
+.. .. admonition:: Note
 
-   Explaining the ``.bind(this)`` syntax is beyond the scope of this book, but
-   the statements are crucial for ``this.sourceList.push(satellite)`` to work
-   properly.
+..    Explaining the ``.bind(this)`` syntax is beyond the scope of this book, but
+..    the statements are crucial for ``this.sourceList.push(satellite)`` to work
+..    properly.
 
-3. View the app in your browser. Your table should look similar to:
+.. 3. View the app in your browser. Your table should look similar to:
 
-   .. figure:: figures/fetched-table-satellites.png
-      :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites.
+..    .. figure:: figures/fetched-table-satellites.png
+..       :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites.
 
-      Example of application after switching to fetched data.
+..       Example of application after switching to fetched data.
 
 6) Highlight Space Debris
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -307,16 +307,14 @@ retrieves json data from a server.
 You need to make it easier to spot dangerous space debris in the list. Add an
 Angular attribute directive to accomplish this.
 
-.. TODO: change this variable name to ``isSpaceDebris``
+#. Add an ``isSpaceDebris`` method to the ``Satellite`` class.
 
-#. Add a ``shouldShowWarning`` method to the ``Satellite`` class.
-
-   a. ``shouldShowWarning`` returns a boolean and has no parameters.
-   b. ``shouldShowWarning`` returns ``true`` if the satellite ``type`` is
+   a. ``isSpaceDebris`` returns a boolean and has no parameters.
+   b. ``isSpaceDebris`` returns ``true`` if the satellite ``type`` is
       ``'Space Debris'``, and it returns ``false`` otherwise. Note that this
       check should be case-insensitive.
 
-#. Use ``shouldShowWarning`` to add the ``warning`` CSS class to the ``<td>``
+#. Use ``isSpaceDebris`` to add the ``warning`` CSS class to the ``<td>``
    containing the satellite's type.
 
    a. For guidance refer to the section on :ref:`changing styles with attribute directives <changing-styles-with-booleans>`.
@@ -325,13 +323,6 @@ Angular attribute directive to accomplish this.
       :alt: Screen shot of browser showing http://localhost:4200 with a table of 9 satellites, with Space Debris cell having a red background.
 
       Example of warning style adding a red background to Space Debris type.
-
-.. TODO: remove or require this
-
-.. admonition:: Note
-
-   If you prefer, modify the table HTML to make the entire row the warning
-   color.
 
 7) Counting Satellites
 ^^^^^^^^^^^^^^^^^^^^^^
