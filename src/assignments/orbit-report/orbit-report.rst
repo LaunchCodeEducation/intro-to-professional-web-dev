@@ -142,76 +142,76 @@ To do that, create a new component named ``orbit-list``.
    ``<app-orbit-list></app-orbit-list>``.
 #. View the app in your browser. You should see: ``orbit-list works!``
 
-3) Pass in Satellites to Orbit List Component
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. 3) Pass in Satellites to Orbit List Component
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``orbit-list`` component's job is to show a list of satellites. Remember,
-you declared an array of ``Satellite`` objects in ``app.component.ts`` named
-``sourceList``. In order to pass that array into the ``orbit-list``, you need
-to learn a new Angular feature named `input properties <https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding>`__.
-Here, the term "input" refers to data being sent *into* the component. Angular
-input properties are NOT related to HTML ``input`` elements.
+.. The ``orbit-list`` component's job is to show a list of satellites. Remember,
+.. you declared an array of ``Satellite`` objects in ``app.component.ts`` named
+.. ``sourceList``. In order to pass that array into the ``orbit-list``, you need
+.. to learn a new Angular feature named `input properties <https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding>`__.
+.. Here, the term "input" refers to data being sent *into* the component. Angular
+.. input properties are NOT related to HTML ``input`` elements.
 
-Currently, ``app.component.html`` uses the ``orbit-list`` component like so:
+.. Currently, ``app.component.html`` uses the ``orbit-list`` component like so:
 
-.. sourcecode:: html+ng2
+.. .. sourcecode:: html+ng2
 
-   <app-orbit-list></app-orbit-list>
+..    <app-orbit-list></app-orbit-list>
 
-To pass the ``sourceList`` array into the ``orbit-list`` component, you need to
-learn new syntax.
+.. To pass the ``sourceList`` array into the ``orbit-list`` component, you need to
+.. learn new syntax.
 
-#. Modify ``<app-orbit-list></app-orbit-list>`` in ``app.component.html`` as
-   follows:
+.. #. Modify ``<app-orbit-list></app-orbit-list>`` in ``app.component.html`` as
+..    follows:
 
-   .. sourcecode:: html+ng2
+..    .. sourcecode:: html+ng2
 
-      <app-orbit-list [satellites]="sourceList"></app-orbit-list>
+..       <app-orbit-list [satellites]="sourceList"></app-orbit-list>
 
-   a. ``[satellites]`` declares a new ``satellites`` property on the
-      ``orbit-list`` component.
-   b. ``="sourceList"`` sets the value of the ``satellites`` property to be the
-      ``sourceList`` array.
+..    a. ``[satellites]`` declares a new ``satellites`` property on the
+..       ``orbit-list`` component.
+..    b. ``="sourceList"`` sets the value of the ``satellites`` property to be the
+..       ``sourceList`` array.
 
-#. View the app in your browser. You should NOT see the message ``orbit-list
-   worked!`` Why?
-#. Open developer tools in your browser and look at the JavaScript console.
+.. #. View the app in your browser. You should NOT see the message ``orbit-list
+..    worked!`` Why?
+.. #. Open developer tools in your browser and look at the JavaScript console.
 
-   You should see an error message telling you that the ``orbit-list``
-   component does NOT have a ``satellites`` property. Note that only the
-   relevant message text has been included below.
+..    You should see an error message telling you that the ``orbit-list``
+..    component does NOT have a ``satellites`` property. Note that only the
+..    relevant message text has been included below.
 
-   ::
+..    ::
 
-      Error: Template parse errors:
-      Can't bind to 'satellites' since it isn't a known property of 'app-orbit-list'.
-      1. If 'app-orbit-list' is an Angular component and it has 'satellites' input, then verify that it is part of this module.
+..       Error: Template parse errors:
+..       Can't bind to 'satellites' since it isn't a known property of 'app-orbit-list'.
+..       1. If 'app-orbit-list' is an Angular component and it has 'satellites' input, then verify that it is part of this module.
 
-To solve this issue, you need to declare in ``orbit-list.component.ts`` that
-the component has an input property named ``satellites``.
+.. To solve this issue, you need to declare in ``orbit-list.component.ts`` that
+.. the component has an input property named ``satellites``.
 
-4. Add the code below just before the constructor in
-   ``orbit-list.component.ts``.
+.. 4. Add the code below just before the constructor in
+..    ``orbit-list.component.ts``.
 
-   .. sourcecode:: typescript
+..    .. sourcecode:: typescript
 
-      @Input() satellites: Satellite[];
+..       @Input() satellites: Satellite[];
 
-   The ``@Input()`` is special Angular syntax that declares that ``satellites``
-   is a property that will be passed into the component via
-   ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
+..    The ``@Input()`` is special Angular syntax that declares that ``satellites``
+..    is a property that will be passed into the component via
+..    ``<app-orbit-list [satellites]="sourceList"></app-orbit-list>``.
 
-#. Update the ``import`` statements in ``orbit-list.component.ts`` to access
-   the ``Input`` and ``Satellite`` classes.
+.. #. Update the ``import`` statements in ``orbit-list.component.ts`` to access
+..    the ``Input`` and ``Satellite`` classes.
 
-   .. sourcecode:: typescript
-      :linenos:
+..    .. sourcecode:: typescript
+..       :linenos:
 
-      import { Component, OnInit, Input } from '@angular/core';
-      import { Satellite } from '../satellite';
+..       import { Component, OnInit, Input } from '@angular/core';
+..       import { Satellite } from '../satellite';
 
-#. View the app in your browser. You should see ``orbit-list works!`` but no
-   satellites yet. That is the next step.
+.. #. View the app in your browser. You should see ``orbit-list works!`` but no
+..    satellites yet. That is the next step.
 
 4) Display Table of Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -238,19 +238,6 @@ row being a different satellite.
          </tr>
          <!-- TODO: put <tr *ngFor=""></tr> here -->
       </table>
-
-Next, you need to include CSS that will make your table and application look a
-little nicer.
-
-2. Copy the entire contents of the example `orbit-list-component.css  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__
-   and put it into your ``orbit-list-component.css``. Leave the ``sortable``
-   class alone, but change the ``table`` and ``warning`` styles to colors
-   and sizes you find pleasing.
-#. Copy the entire contents of the example `app.component.css <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and put it into your ``app.component.css``.
-#. Copy the ``<style>`` tag from the example `index.html <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`_ and paste it into the ``<head>`` of your ``index.html``.
-
-   a. Only add in the ``<style>``, do NOT remove any other HTML from your
-      ``index.html``.
 
 #. View the app in your browser. Your table should look something like:
 
