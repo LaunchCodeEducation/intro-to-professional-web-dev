@@ -76,6 +76,7 @@ Assignments
    :maxdepth: 1
    :name: assignmentstoc
 
+   assignments/HelloWorld
    assignments/candidateQuiz
    assignments/scrabble-scorer
    assignments/mars-rover
@@ -107,4 +108,6 @@ Appendices
    todos
    assignments/html-me-part1
    assignments/html-me-part2
+   assignments/mars-rover2
+   assignments/mars-rover3
    glossary

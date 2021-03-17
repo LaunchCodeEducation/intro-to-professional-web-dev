@@ -98,16 +98,6 @@ conversion function, ``Boolean``. It works similarly to the ``Number`` and
       console.log(Boolean(''));
       console.log(Boolean('LaunchCode'));
 
-.. admonition:: Question
-
-   Under which conditions does ``Boolean`` convert a string to ``true``?
-
-   #. Only when the string is ``"true"``.
-   #. Whenever the string contains any non-whitespace character.
-   #. Whenever the string is non-empty.
-   #. Never. It converts all strings to ``false``.
-
-
 Boolean Expressions
 -------------------
 
@@ -257,6 +247,17 @@ not symmetric: ``a = 7`` is legal while ``7 = a`` is not.
 
 Check Your Understanding
 ------------------------
+
+.. admonition:: Question
+
+   Under which conditions does ``Boolean`` convert a string to ``true``?
+
+   #. Only when the string is ``"true"``.
+   #. Whenever the string contains any non-whitespace character.
+   #. Whenever the string is non-empty.
+   #. Never. It converts all strings to ``false``.
+
+.. Answer = c
 
 .. admonition:: Question
 

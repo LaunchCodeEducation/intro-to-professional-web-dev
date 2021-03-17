@@ -10,3 +10,16 @@ Exercise Solutions
    booleans-and-conditionals
    errors-and-debugging
    strings
+   arrays
+   loops
+   functions
+   more-on-functions
+   objects-and-math
+   unit-testing
+   exceptions
+   html
+   css
+   forms
+   JSON
+   fetch
+   

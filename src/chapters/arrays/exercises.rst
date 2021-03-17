@@ -1,3 +1,5 @@
+.. _exercises-arrays:
+
 Exercises: Arrays
 =================
 
@@ -17,6 +19,8 @@ rearrange our records for the items stored in our hold.
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises01>`__
 
    *Congratulations, rookie. You can now add items to an array.*
+
+   :ref:`Check your solution <arrays-exercise-solutions1>`. 
 
 #. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
    from the beginning/end of an array. **Bracket notation** can be used to
@@ -43,6 +47,8 @@ rearrange our records for the items stored in our hold.
    entries placed? Which methods REMOVE items, and where do the entries come
    from? Which methods require entries inside the ``()``?*
 
+   :ref:`Check your solution <arrays-exercise-solutions2>`. 
+
 #. The ``splice`` method can be used to either add or remove items from an
    array. It can also accomplish both tasks at the same time. Review the
    :ref:`splice appendix <splice-examples>` if you need a syntax reminder. Use
@@ -58,6 +64,8 @@ rearrange our records for the items stored in our hold.
       ``'fob'``, and ``'string cheese'``.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises03>`__
+
+   :ref:`Check your solution <arrays-exercise-solutions3>`.
 
    *Well done, cadet. Now let's look at some finer details about array methods.
    We've got to keep our paperwork straight, so you need to know when your
@@ -90,6 +98,8 @@ rearrange our records for the items stored in our hold.
 
    *Good progress, cadet. Here are two more methods for you to examine.*
 
+   :ref:`Check your solution <arrays-exercise-solutions3>`. 
+
 #. The ``split`` method converts a string into an array, while the ``join``
    method does the opposite.
 
@@ -109,6 +119,8 @@ rearrange our records for the items stored in our hold.
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises05>`__
 
    *Nicely done, astronaut. Now it's time to bring you fully up to speed.*
+  
+   :ref:`Check your solution <arrays-exercise-solutions4>`. 
 
 #. Arrays can hold different data types, even other arrays! A
    **multi-dimensional array** is one with entries that are themselves arrays.
@@ -133,5 +145,7 @@ rearrange our records for the items stored in our hold.
       print out one entry from each level in the array.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises06>`__
+
+   :ref:`Check your solution <arrays-exercise-solutions5>`. 
 
 *Excellent work, records keeper. Welcome aboard.*

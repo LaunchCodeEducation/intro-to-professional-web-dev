@@ -1,9 +1,9 @@
 Hello, Jasmine!
 ===============
 
-.. index:: ! Jasmine
+.. index:: ! Jasmine, ! unit-testing framework
 
-In order to unit test our code, we need to use a module. Such a module is called a **unit-testing framework**, **test runner**, or **test harness**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
+In order to unit test our code, we need to use a module. Such a module is called a **unit-testing framework**, and there are `many to choose from <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript>`_.
 
 We will use `Jasmine <https://jasmine.github.io/>`_, a popular JavaScript testing framework.
 
@@ -22,7 +22,7 @@ npm modules when it runs a program that contains a ``require`` statement.
 
 .. admonition:: Try It!
 
-   Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-With-Tests>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
+   Run some `tests for the reverse function <https://repl.it/@launchcode/reverse-Function-with-Tests-Expectations>`_. This is the same ``reverse`` function that :ref:`we wrote previously <reverse_func>`. 
 
    Don't worry about understanding the code at this point, just hit *run* to execute the tests. How many total tests are there? How many passed? How many failed? 
 
@@ -42,7 +42,10 @@ There are three important files:
 #. ``spec/reverse.spec.js`` contains the tests for ``reverse``.
 #. ``index.js`` contains the Jasmine code needed to run the tests. This is the file that executes when you hit *run* in repl.it.
 
-.. warning:: Jasmine can be set up and used in many different ways. If you are looking for an answer on the Internet (like on Stack Overflow or in the Jasmine documentation) you will see widely varying usages of Jasmine that don't apply to your situation. Rely on this book as your main reference, and you'll be fine.
+.. admonition:: Warning
+
+   Jasmine can be set up and used in many different ways. If you are looking for an answer on the Internet (like on Stack Overflow or in the Jasmine documentation) you will see widely varying usages of Jasmine that don't apply to your situation.
+   Rely on this book as your main reference, and you'll be fine.
 
 Hello, Jasmine!
 ---------------
@@ -129,13 +132,12 @@ Your file tree should look something like this:
 .. figure:: figures/hello-test-file-tree.png
    :alt: File tree for test project
 
-At the top of the ``hello.spec.js`` file, import your function from ``hello.js``, along with the ``assert`` module:
+At the top of the ``hello.spec.js`` file, import your function from ``hello.js``:
 
 .. sourcecode:: js
    :linenos:
 
    const hello = require('../hello.js');
-   const assert = require('assert');
 
 Below that, call the function ``describe``, passing in the name of the function we want to test along with an empty anonymous function. ``describe`` is a Jasmine function that is used to group related tests. Related tests are placed *within* the anonymous function that it receives.
 
@@ -147,13 +149,14 @@ Below that, call the function ``describe``, passing in the name of the function 
 
 .. _feedback:
 
-Specifications and Assertions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specifications and Expectations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index::
    single: Jasmine; specification
    single: specification
-   single: assertion
+   single: expectation
+   single: matcher
 
 There are two cases we want to test:
 
@@ -165,38 +168,37 @@ Within ``describe``'s function argument, place a test for case 1:
 .. sourcecode:: js
 
    it("should return custom message when name is specified", function(){
-      assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
+      expect(hello("Jasmine")).toEqual("Hello, Jasmine!");
    });
 
-The ``it`` function is part of the Jasmine framework as well. Calling ``it`` creates a **specification**, or **spec**, which is a description of expected behavior. The first argument to ``it`` is a string describing the expected behavior. This string serves to document the test and is also used in reporting test results. Your expectation strings will usually begin with "should", followed by an expected action.
+The ``it`` function is part of the Jasmine framework as well. Calling ``it`` creates a **specification**, or **spec**, which is a description of expected behavior. The first argument to ``it`` is a string describing the desired behavior. This string serves to document the test and is also used in reporting test results. These strings will usually begin with "should", followed by a desired action.
 
-The second argument to ``it`` is yet another anonymous function. This function contains the test code itself, which takes the form of an **assertion**. An assertion is a declaration of expected behavior *in code*. Let's examine the contents of the anonymous function:
+The second argument to ``it`` is yet another anonymous function. This function contains the test code itself, which takes the form of an **expectation**. An expectation is a declaration of desired behavior *in code*. Let's examine the contents of the anonymous function:
 
 .. sourcecode:: js
 
-   assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
+   expect(hello("Jasmine")).toEqual("Hello, Jasmine!");
 
-Calling ``assert.strictEqual`` with two arguments declares that we expect the two arguments to be (strictly) equal. As you get started with unit testing, nearly *all* of your tests will take this form. The first argument to ``assert.strictEqual`` is a call to the function ``hello``. The second argument is the expected output from that function call. 
+Calling ``expect(x).toEqual(y)`` declares that we expect ``x`` to equal ``y``.
+As you get started with unit testing, nearly *all* of your tests will take this form.
+The argument to ``expect()`` is a call to the function ``hello()``. The argument to ``toEqual()`` is the expected output from that function call. 
+``toEqual()`` is a specialized method called a **matcher**. Matchers in Jasmine compare the value passed to the value passed to ``expect()``.
+These comparisons are not just limited to checking if the two values are equal. Jasmine has a wide variety of matchers built-in and developers can also build custom matchers.
+For a full list of the provided matchers, check out the `Jasmine documentation <https://jasmine.github.io/api/3.6/matchers.html>`__.
 
-If the two arguments are indeed equal, the test will pass. Otherwise, the test will fail. In this case, we are declaring that ``hello("Jasmine")`` should return the value ``"Hello, Jasmine!"``.
+If the two arguments are indeed equal, the test will pass. Otherwise, the test will fail. In this case, we are declaring that we *expect* ``hello("Jasmine")`` to return the value ``"Hello, Jasmine!"``.
 
-.. note::
-
-   Jasmine also has a ``.equal`` comparison, which tests for *loose* equality. The difference between loose and strict equality with Jasmine is the same as that of :ref:`JavaScript in general <equality>`.
-   For this reason, we prefer ``.strictEqual`` over ``.equal``.
-
-Your test file should now look like this:
+Your whole test file should now look like this:
 
 .. sourcecode:: js
    :linenos:
 
    const hello = require('../hello.js');
-   const assert = require('assert');
 
    describe("hello world test", function(){
 
       it("should return a custom message when name is specified", function(){
-         assert.strictEqual(hello("Jasmine"), "Hello, Jasmine!");
+         expect(hello("Jasmine")).toEqual("Hello, Jasmine!");
       });
 
    });
@@ -224,7 +226,13 @@ The most important line in the output is this one:
 
    1 spec, 0 failures
 
-It tells us that Jasmine found 1 test specification, and that 0 of the specs failed. In other words, *our test passed!* The third line also contains useful information. It will contain one dot (``.``) for each successful test, and an ``F`` for each failed test. As our test suite grows, this becomes a nice visual indicator of the status of our tests.
+It tells us that Jasmine found 1 test specification, and that 0 of the specs failed. If our test had failed, then the line would have read:
+
+::
+
+   1 spec, 1 failure
+
+In other words, *our test passed!* The third line also contains useful information. It will contain one dot (``.``) for each successful test, and an ``F`` for each failed test. As our test suite grows, this becomes a nice visual indicator of the status of our tests.
 
 Let's see what a test failure looks like. Go back to ``hello.js`` and remove the ``"!"`` from the return statement:
 
@@ -235,31 +243,24 @@ Let's see what a test failure looks like. Go back to ``hello.js`` and remove the
 Run the tests again. This time, the output looks quite different:
 
 .. sourcecode:: none
-   :linenos:
 
-   Randomized with seed 98738
+   Randomized with seed 41448
    Started
    F
 
    Failures:
    1) hello world test should return a custom message when name is specified
-   Message:
-      AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-      + expected - actual
+      Message:
+         Expected 'Hello, Jasmine' to equal 'Hello, Jasmine!'.
+      Stack:
+         Error: Expected 'Hello, Jasmine' to equal 'Hello, Jasmine!'.
+            at <Jasmine>
+            at UserContext.<anonymous> (/home/runner/Hello-Jasmine-Expectations/spec/hello.spec.js:6:35)
+            at <Jasmine>
 
-      - 'Hello, Jasmine'
-      + 'Hello, Jasmine!'
-   Stack:
-      error properties: Object({ generatedMessage: true, code: 'ERR_ASSERTION', actual: 'Hello, Jasmine', expected: 'Hello, Jasmine!', operator: 'strictEqual' })
-         at <Jasmine>
-         at UserContext.<anonymous> (/home/runner/spec/reverse.spec.js:23:14)
-         at <Jasmine>
-         at runCallback (timers.js:705:18)
-         at tryOnImmediate (timers.js:676:5)
-         at processImmediate (timers.js:658:5)
-
-   1 specs, 1 failure
-   Finished in 0.021 seconds
+   1 spec, 1 failure
+   Finished in 0.01 seconds
+   Randomized with seed 41448 (jasmine --random=true --seed=41448)
 
 We intentionally made a test fail. The failing test appears in the ``Failures:`` section on line 5. This
 describes exactly what went wrong. The test expected the value ``'Hello, Jasmine!'`` but received ``'Hello, Jasmine'``.
@@ -276,7 +277,7 @@ Let's add a final spec to test our other case.
 .. sourcecode:: js
 
    it("should return a general greeting when name is not specified", function(){
-        assert.strictEqual(hello(), "Hello, World!");
+        expect(hello()).toEqual("Hello, World!");
     });
 
 This spec declares that calling ``hello()`` should return ``"Hello, World!"``. Run the tests again and you'll see this output:
@@ -295,16 +296,6 @@ This spec declares that calling ``hello()`` should return ``"Hello, World!"``. R
 Nice work! You just created your first program with a full test suite. You can view `our full Hello, Jasmine! project <https://repl.it/@launchcode/Hello-Jasmine>`_ for reference.
 
 There are a lot of details in the setup of these tests, so take a few minutes to look over the code and describe to yourself what each component is doing.
-
-.. note::
-
-   There are many ways to structure test specifications. If you look at the official Jasmine documentation, you'll see specs with different code in place of ``assert.strictEqual``:
-
-   .. sourcecode:: js
-
-      expect(hello()).toBe("Hello, World!");
-
-   We have chosen to use ``assert.strictEqual`` because its syntax is more similar to common testing frameworks in other languages like Java and C#. Learning to use ``assert.strictEqual`` will make it easier for you to transition to one of those frameworks later in the class.
 
 Check Your Understanding
 -------------------------
@@ -327,7 +318,7 @@ Check Your Understanding
    Which of the following tests checks if the function properly handles
    case-*sensitive* answers.
 
-   a. ``assert.strictEqual(doStringsMatch('Flower', 'Flower'), 'Strings match!');``
-   b. ``assert.strictEqual(doStringsMatch('Flower', 'flower'), 'No match!');``
-   c. ``assert.strictEqual(doStringsMatch('Flower', 'plant'), 'No match!');``
-   d. ``assert.strictEqual(doStringsMatch('Flower', ''), 'No match!');``
+   a. ``expect(doStringsMatch('Flower', 'Flower')).toEqual('Strings match!');``
+   b. ``expect(doStringsMatch('Flower', 'flower')).toEqual('No match!');``
+   c. ``expect(doStringsMatch('Flower', 'plant')).toEqual('No match!');``
+   d. ``expect(doStringsMatch('Flower', '')).toEqual('No match!');``

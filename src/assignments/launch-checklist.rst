@@ -9,17 +9,17 @@ Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the c
 Requirements
 ------------
 
-Create a Launch Checklist Form for astronauts to fill out in preparation for launch.
-The form should do the following:
+Create a Launch Checklist Form for astronauts to fill out in preparation for launch. The form should do the following:
 
-1. Validate the user responses with ``preventDefault()`` to ensure the following:
+#. Use ``preventDefault()`` to prevent a request from being sent out and the page reloading.
+#. Validate the user-submitted data to ensure the following:
 
    a. The user entered something for every field.
    b. The user entered text for names and numbers for fuel and cargo levels.
 
-2. With validation, update a list of what is currently ready or not ready for the shuttle launch.
-3. Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
-4. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
+#. With validation, update a list of what is currently ready or not ready for the shuttle launch.
+#. Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
+#. Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed. 
 
 Setting Up Your Project Repository
 ----------------------------------
@@ -41,17 +41,15 @@ The only files you should be editing when working on this project are ``script.j
    If you open up your browser's dev tools, you may see a warning stating that the ``require`` statement in ``scriptHelper.js`` is not working.
    This is okay! That ``require`` statement is necessary for the autograder to function and this warning will not impact your site's ability to function.
 
-
 Adding Validation
 -----------------
 
 Adding Alerts
 ^^^^^^^^^^^^^
 
-First, let's add validation to notify the user if they forgot to enter a value for any one of the fields.
+Now, let's add validation to notify the user if they forgot to enter a value for any one of the fields.
 
-This process is going to look similar to the :ref:`validation section <javascript-validation>` in the chapter on forms. 
-Make sure to use ``preventDefault()`` and an alert to notify the user that all fields are required.
+This process is going to look similar to the :ref:`validation section <javascript-validation>` in the chapter on forms. Add an alert to notify the user that all fields are required.
 
 You also want to make sure that the user entered valid info for each of the fields.
 Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.

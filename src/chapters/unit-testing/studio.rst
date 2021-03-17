@@ -1,5 +1,5 @@
 Studio: Unit Testing
-=====================
+====================
 
 Let's use Test Driven Development (TDD) to help us design a function that meets
 the following conditions:
@@ -28,7 +28,7 @@ Rather than complete the code and *then* test it, TDD flips the process:
 Source Code
 ------------
 
-Open `this repl.it <https://repl.it/@launchcode/UnitTestingStudio01>`__ and
+Open `this repl.it <https://repl.it/@launchcode/UnitTestingStudio01Expectations>`__ and
 note the expected files:
 
 #. ``index.js`` holds the Jasmine script. DO NOT CHANGE THIS FILE.
@@ -139,7 +139,7 @@ A teammate tried to help you out by writing the ``launchOutput`` code before
 class. Unfortunately, the code contains some errors.
 
 Open the
-`flawed code here <https://repl.it/@launchcode/UnitTestingStudio02>`__, and cut
+`flawed code here <https://repl.it/@launchcode/UnitTestingStudio02Expectations>`__, and cut
 and paste your testing script into the ``launchCodeRocks.spec.js`` file.
 
 Run the tests and see how many fail.  Use the *descriptive feedback* from your

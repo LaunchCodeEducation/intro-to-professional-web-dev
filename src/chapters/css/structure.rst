@@ -61,9 +61,7 @@ For that reason, programmers only need to declare the CSS properties they want t
 
 .. note::
 
-   HTML elements also have a default appearance.
-   When creating web pages, we should be aware of which elements are inline elements and which elements are block elements.
-   Inline elements will not start a new line (such as ``<b>``, ``<em>``, and ``<span>``) and block display elements do (such as ``<h1>``, ``<div>``, and ``<p>``).
+   HTML elements also have a default appearance. When creating web pages, we should be aware of which elements are inline elements and which elements are block elements. Inline elements will not start a new line (such as ``<b>``, ``<em>``, and ``<span>``) and block display elements do (such as ``<h1>``, ``<div>``, and ``<p>``).
 
 CSS Examples
 ^^^^^^^^^^^^

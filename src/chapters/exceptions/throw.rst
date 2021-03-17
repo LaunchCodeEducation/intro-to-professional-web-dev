@@ -36,6 +36,18 @@ We can throw a default Error by using the ``throw`` statement and passing in a s
    The text ``at evalmachine.<anonymous>:1:7`` indicates that the error as thrown from line 1, which we know is
    true because our example only has one line of code.
 
+.. _exception-expectations:
+
+.. admonition:: Note
+
+   With all that we have learned about unit testing, you might be wondering how you test if an error is thrown when it should be.
+   To do so, let's imagine our example above is inside a function called ``checkThrow()``. We need can then use the ``toThrow()`` matcher like so:
+
+   .. sourcecode:: js
+
+      expect( function() {
+         checkThrow(); 
+      }).toThrow(new Error('You cannot divide by zero!'));
 
 Pre-existing Error
 ------------------
