@@ -24,7 +24,7 @@ The form should do the following:
 Setting Up Your Project Repository
 ----------------------------------
 
-In `Canvas <learn.launchcode.org>`__, Graded Assignment #5: Launch Checklist Form contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
+In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #5: Launch Checklist Form** contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from **Graded Assignment #0: Hello World** for submission instructions.
 
 To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
 
@@ -59,8 +59,8 @@ The pilot and co-pilot names should be strings and the fuel level and cargo mass
 To do this, complete the helper function in your ``scriptHelper.js`` called ``validateInput()``.
 ``validateInput()`` should take in a string as a parameter and return ``"Empty"``, ``"Not a Number"``, or ``"Is a Number"`` as appropriate.
 In ``scriptHelper.js``, you will use ``validateInput()`` to complete the ``formSubmission()`` function.
-``formSubmission()`` will take in strings representing the pilot, co-pilot, fuel level, and cargo mass.
-Using the values in those strings, update the shuttle requirements as described below.
+``formSubmission()`` will take in a ``document`` parameter and strings representing the pilot, co-pilot, fuel level, and cargo mass.
+Using the values in those strings and the ``document`` parameter for your HTML document, update the shuttle requirements as described below.
 Make sure to call your ``formSubmission()`` function at the appropriate time in your ``script.js`` file!
 
 .. note:: 
