@@ -24,27 +24,22 @@ Create a Launch Checklist Form for astronauts to fill out in preparation for lau
 Setting Up Your Project Repository
 ----------------------------------
 
-Fork the repository with the `starter code <https://github.com/LaunchCodeEducation/Launch-Checklist-Form/>`_ to your personal GitHub profile and clone the repository to the directory where you are keeping your assignments for the class.
-
-.. warning::
-
-   When updating styles to indicate whether the shuttle is ready for launch, do NOT modify ``styles.css``!
+In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #5: Launch Checklist Form** contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from **Graded Assignment #0: Hello World** for submission instructions.
 
 To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
 
-When you open ``index.html``, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says "Awaiting Information Before Launch".
+When you open ``index.html`` in the browser, you should see the Launch Checklist form with a rectangle above it for the mission destination and a rectangle below it that simply says "Awaiting Information Before Launch".
 
 .. figure:: figures/form-starting-point.png
    :alt: Image showing the form and the box stating that more information is needed before launch.
 
-Handling Form Submission
-------------------------
+Before starting work, go ahead and check out the various files in your starter code. You may notice a file called ``bundle.js``. This file contains no code except for a comment. Do NOT delete this file.
+The only files you should be editing when working on this project are ``script.js`` and ``scriptHelper.js``. To modify styles or update HTML, do NOT modify ``styles.css`` or ``index.html``.
 
-In ``script.js``, set up an event handler that runs when the form's ``submit`` event is triggered. The first line of code in this handler should use the event's ``preventDefault`` method to prevent the default event action (that is, sending a request with form data) from occurring. This is a commonly used technique when a JavaScript application employs a form, but handles all related behavior in the browser.
+.. admonition:: Note
 
-.. admonition:: Warning
-
-   If you don't use ``preventDefault`` properly, you won't be able to see the effects of the other requirements. The form will fully submit by forcing the browser to send a request. This will, in effect, reload the page.
+   If you open up your browser's dev tools, you may see a warning stating that the ``require`` statement in ``scriptHelper.js`` is not working.
+   This is okay! That ``require`` statement is necessary for the autograder to function and this warning will not impact your site's ability to function.
 
 Adding Validation
 -----------------
@@ -56,7 +51,15 @@ Now, let's add validation to notify the user if they forgot to enter a value for
 
 This process is going to look similar to the :ref:`validation section <javascript-validation>` in the chapter on forms. Add an alert to notify the user that all fields are required.
 
-You also want to make sure that the user entered valid info for each of the fields. Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers. The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
+You also want to make sure that the user entered valid info for each of the fields.
+Valid information for the fields means that the user submits a value that is easily converted to the correct data type for our fellow engineers.
+The pilot and co-pilot names should be strings and the fuel level and cargo mass should be numbers.
+To do this, complete the helper function in your ``scriptHelper.js`` called ``validateInput()``.
+``validateInput()`` should take in a string as a parameter and return ``"Empty"``, ``"Not a Number"``, or ``"Is a Number"`` as appropriate.
+In ``scriptHelper.js``, you will use ``validateInput()`` to complete the ``formSubmission()`` function.
+``formSubmission()`` will take in a ``document`` parameter and strings representing the pilot, co-pilot, fuel level, and cargo mass.
+Using the values in those strings and the ``document`` parameter for your HTML document, update the shuttle requirements as described below.
+Make sure to call your ``formSubmission()`` function at the appropriate time in your ``script.js`` file!
 
 .. note:: 
 
@@ -90,9 +93,32 @@ Review the list and decide which planet you want to send our intrepid crew to an
    In this case, that means an array of our possible mission destinations.
    When picking the mission destination, just pick the item in the array you want and start counting at 0.
 
-In ``script.js``, we have a block of code commented out at the top.
-This is the format of the ``innerHTML`` for the ``missionTarget`` div.
-Be sure to include the appropriate variables in the template literals!
+In ``scriptHelper.js``, you have three functions for this task: ``myFetch()``, ``pickPlanet()``, and ``addDestinationInfo()``.
+First, review the comments in ``addDestinationInfo()``.
+This is the format of the ``innerHTML`` for the ``missionTarget`` div, which you can locate using the ``document`` parameter of ``addDestinationInfo()``.
+``addDestinationInfo()`` does not need to return anything.
+``pickPlanet()`` takes in one argument: a list of planets. Using ``Math.random()``, return one planet from the list with a randomly-selected index.
+``myFetch()`` has some of the code necessary for fetching planetary JSON, however, it is not complete. You need to add the URL and return ``response.json()``.
+
+Now it is time to make use of these helper functions in ``script.js``.  We provided some of the code necessary:
+
+.. sourcecode:: js
+
+   let listedPlanets;
+   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+   let listedPlanetsResponse;
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+   })
+
+First, do as the comments in the code tell you and set ``listedPlanetsResponse`` equal to the value returned when calling ``myFetch()``. This value is going to be a promise. 
+If we head to our browser and open up our developer tools, we can now see a list of the planets.
+Then using ``pickPlanet()`` and ``addDestinationInfo()``, select a planet at random from ``listedPlanets`` and pass that information to ``addDestinationInfo()``.
+Reload your page and check out your site to see the mission target information.  
  
 The End Result
 --------------
@@ -118,7 +144,13 @@ If the user switches up the information that needs to go in the fields, then an 
 .. figure:: figures/form-fields-invalid.png
    :alt: Image showing an alert pop up stating that some fields have invalid information.
 
-Bonus Mission
--------------
+Submission
+----------
 
-Use whichever method you choose to randomly select the mission destination from the available options in the JSON file.
+Even if everything is working perfectly with your site, the autograder may still be counting something as wrong.
+Here are some steps you can take to make sure your great work is counted as such!
+
+#. Make sure that all of your methods are complete in ``scriptHelper.js``! The autograder needs to check your logic for each of the methods.
+   ``script.js`` should contain calls to these functions.
+#. If the tests labeled ``GRADING DOM MANIPULATION TEST`` are failing, make sure that you did not modify ``bundle.js`` or remove ``<script src = "bundle.js></script>`` from ``index.html``.
+   The autograder needs ``bundle.js`` linked as a script in ``index.html`` in order to run properly.
