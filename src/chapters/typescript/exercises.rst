@@ -62,6 +62,8 @@ following:
      - number
      - 0.621
 
+:ref:`Check your solution <typescript-exercise-solutions1>`
+
 Part 2 - Print Days to Mars
 ---------------------------
 In the *same* file you opened in Part 1, do the following.
@@ -91,6 +93,8 @@ In the *same* file you opened in Part 1, do the following.
    $ tsc parts1-5.ts
    $ node parts1-5.js
       Determination would take 332.67857142857144 days to get to Mars.
+
+:ref:`Check your solution <typescript-exercise-solutions2>`
 
 Part 3 - Create a Function
 ---------------------------
@@ -132,6 +136,8 @@ Part 3 - Create a Function
    $ node parts1-5.js
       Determination would take 332.67857142857144 days to get to Mars.
       Determination would take 0.5683628571428571 days to get to the Moon.
+
+:ref:`Check your solution <typescript-exercise-solutions3>`
 
 Part 4 - Create a Spacecraft Class
 -----------------------------------
@@ -194,6 +200,8 @@ kilometer by moving them into a *class*.
       Determination would take 332.67857142857144 days to get to Mars.
       Determination would take 0.5683628571428571 days to get to the Moon.
 
+:ref:`Check your solution <typescript-exercise-solutions4>`
+
 Part 5 - Export and Import the SpaceLocation Class
 ---------------------------------------------------
 
@@ -251,7 +259,7 @@ Part 5 - Export and Import the SpaceLocation Class
    $ node parts1-5.js
       Determination would take 332.67857142857144 days to get to Mars.
       Determination would take 0.5683628571428571 days to get to the Moon.
-
+      
 Sanity Check
 -------------
 
