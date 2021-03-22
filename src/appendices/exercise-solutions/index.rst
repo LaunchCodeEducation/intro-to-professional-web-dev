@@ -15,6 +15,7 @@ Exercise Solutions
    functions
    more-on-functions
    objects-and-math
+   modules
    unit-testing
    exceptions
    html
