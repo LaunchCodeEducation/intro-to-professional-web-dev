@@ -31,6 +31,8 @@ Each class will contain two methods. One will be a constructor. The other one wi
 `Hint:` This means you need to read through the requirements for the problem and decide what should belong to ``Book`` and what should belong to the ``Novel`` and
 ``Manual`` classes. 
 
+:ref:`Check your solution <classes-exercise-solutions1>`
+
 2. Declare an object of the ``Novel`` class for the following tome from the
 library:
 
@@ -79,6 +81,8 @@ library:
    * - Whether the book has been discarded
      - No
 
+:ref:`Check your solution <classes-exercise-solutions3>`
+
 4. One of the above books needs to be discarded. Call the appropriate method
 for that book to update the property. That way the crew can throw it into empty
 space to become debris.
@@ -86,3 +90,5 @@ space to become debris.
 5. The other book has been checked out 5 times since you first created the
 object. Call the appropriate method to update the number of times the book has
 been checked out.
+
+:ref:`Check your solution <classes-exercise-solutions5>`

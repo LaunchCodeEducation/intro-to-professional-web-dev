@@ -18,6 +18,7 @@ Exercise Solutions
    modules
    unit-testing
    exceptions
+   classes
    html
    css
    forms
