@@ -86,3 +86,5 @@ space to become debris.
 5. The other book has been checked out 5 times since you first created the
 object. Call the appropriate method to update the number of times the book has
 been checked out.
+
+:ref:`Check your solution now <classes-exericse-solutions>`
