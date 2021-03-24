@@ -15,6 +15,7 @@ Exercise Solutions
    functions
    more-on-functions
    objects-and-math
+   modules
    unit-testing
    exceptions
    classes
@@ -23,5 +24,6 @@ Exercise Solutions
    forms
    JSON
    fetch
+   typescript
    angular-lsn2
    

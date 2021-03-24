@@ -23,6 +23,8 @@ in the ``averages.js`` and ``display.js`` files.
    object.
 #. In ``display.js``, add code to export ONLY ``printAll`` as a function.
 
+:ref:`Check your solution <modules-solutions1>`
+
 Code & Export New Module
 -------------------------
 
@@ -33,6 +35,8 @@ Code & Export New Module
    :ref:`randomly selected element <random-array-item>` from that array.
 #. Do not forget to export the ``randomFromArray`` function so you can use
    it in your project.
+
+:ref:`Check your solution <modules-solutions2>`
 
 Import Required Modules
 ------------------------
@@ -45,6 +49,8 @@ The project code is in ``index.js``. Start by importing the required modules:
    variable.
 #. Assign the function from ``randomSelect.js`` to the ``randomSelect``
    variable.
+
+:ref:`Check your solution <modules-solutions3>`
 
 Finish the Project
 -------------------
@@ -61,6 +67,8 @@ worries. The comments in ``index.js`` will still show you where to add code).
    each astronaut's average score.
 #. Line 33 - Call ``randomSelect`` to pick the next spacewalker from the
    ``astronauts`` array.
+
+:ref:`Check your solution <modules-solutions4>`
 
 Sanity check!
 --------------
