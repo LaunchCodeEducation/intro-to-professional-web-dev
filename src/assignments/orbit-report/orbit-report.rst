@@ -143,7 +143,7 @@ To do that, create a new component named ``orbit-list``.
 #. View the app in your browser. You should see: ``orbit-list works!``
 
 .. 3) Pass in Satellites to Orbit List Component
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. The ``orbit-list`` component's job is to show a list of satellites. Remember,
 .. you declared an array of ``Satellite`` objects in ``app.component.ts`` named
@@ -318,9 +318,10 @@ Create a new component that shows the total number of satellites currently
 displayed in the table. 
 
 #. Create an ``orbit-counts`` component at the same level as ``orbit-list``.
+
 .. TODO: refine this item below: can we remove the exact line to add?
 
-#. Pass in ``displayList`` via ``[satellites]="displayList"``.
+2. Pass in ``displayList`` via ``[satellites]="displayList"``.
 #. Add styles to ``orbit-counts.component.css`` to make your count table
    complement the list of satellites, or use the CSS provided in this
    `sample file  <https://gist.github.com/welzie/5247f5ac36e973903cd5202af50932e6>`__.
@@ -339,7 +340,7 @@ displayed in the table.
 
 .. TODO: update this screenshot and caption for just the top count
 
-#. Your completed component should look similar to:
+6. Your completed component should look similar to:
 
    .. figure:: figures/orbit-counts-output.png
       :alt: Example of six satellite counts being displayed.
