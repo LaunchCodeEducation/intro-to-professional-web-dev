@@ -259,7 +259,9 @@ Part 5 - Export and Import the SpaceLocation Class
    $ node parts1-5.js
       Determination would take 332.67857142857144 days to get to Mars.
       Determination would take 0.5683628571428571 days to get to the Moon.
-      
+
+:ref:`Check your solution <typescript-exercise-solutions5>`
+
 Sanity Check
 -------------
 
