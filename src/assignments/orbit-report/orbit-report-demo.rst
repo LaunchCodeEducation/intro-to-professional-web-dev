@@ -18,8 +18,10 @@ Searching the Table
 .. figure:: figures/orbit-report-search.gif
    :alt: Searching the table gif.
 
-Counting Satellites Bonus
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _orbit-report-demo-counting-satellites:
+
+Counting Satellites
+^^^^^^^^^^^^^^^^^^^
 
 .. figure:: figures/orbit-report-count.gif
    :alt: Satellite counts component.
