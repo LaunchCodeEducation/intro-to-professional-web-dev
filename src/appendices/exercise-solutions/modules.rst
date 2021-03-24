@@ -40,13 +40,13 @@ Code and Export a New Module
 Import Required Modules
 -----------------------
 
-#. Assign ``readline-sync`` to the ``input`` variable.
+1. Assign ``readline-sync`` to the ``input`` variable.
 
    .. sourcecode:: js
 
       const input = require('readline-sync');
 
-#. Assign the ``printAll`` function from ``display.js`` to the ``printAll`` variable.
+3. Assign the ``printAll`` function from ``display.js`` to the ``printAll`` variable.
 
    .. sourcecode:: js
 
@@ -57,7 +57,7 @@ Import Required Modules
 Finish the Project
 ------------------
 
-#. Line 21 - Call ``printAll`` to display all of the tests and student
+1. Line 21 - Call ``printAll`` to display all of the tests and student
    scores. Be sure to pass in the correct arguments.
 
    .. sourcecode:: js
@@ -65,7 +65,7 @@ Finish the Project
 
       printAll(astronauts, testTitles, scores);
 
-#. Line 29 - Call ``averageForStudent`` (with the proper arguments) to print
+3. Line 29 - Call ``averageForStudent`` (with the proper arguments) to print
    each astronaut's average score.
 
    .. sourcecode:: js
