@@ -25,3 +25,6 @@ Counting Satellites
 
 .. figure:: figures/orbit-report-count.gif
    :alt: Satellite counts component.
+
+
+:ref:`Return to Assignment Page <orbit-report>`
