@@ -77,7 +77,19 @@ moving on to the next item.
 2) Display Table of Satellites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. TODO: display sats using *ngFor
+Now that you have the ``orbit-list`` component being rendered on the page,
+you can use the component's ``satellites`` array to build an HTML table with each row being 
+a different satellite.
+
+Find the HTML responsible for displaying the table of satellites. Use ``*ngFor`` to 
+loop over the satellites array. The HTML table you build should look like the following.
+
+View the app in your browser. Your table should look something like:
+
+.. figure:: figures/basic-table-satellites.png
+   :alt: Screen shot of browser showing http://localhost:4200 with a table of 5 satellites.
+
+   Example of satellite table.
 
 
 3) Highlight Space Debris
