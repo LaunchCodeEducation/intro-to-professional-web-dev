@@ -21,6 +21,7 @@ Exercise Solutions
    classes
    html
    css
+   git
    forms
    JSON
    fetch
