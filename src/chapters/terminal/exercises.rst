@@ -1,3 +1,5 @@
+.. _terminal-exercises:
+
 Exercises: Terminal
 ===================
 
