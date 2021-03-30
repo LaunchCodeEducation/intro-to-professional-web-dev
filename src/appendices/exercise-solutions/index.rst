@@ -19,6 +19,7 @@ Exercise Solutions
    unit-testing
    exceptions
    classes
+   terminal
    html
    css
    git
