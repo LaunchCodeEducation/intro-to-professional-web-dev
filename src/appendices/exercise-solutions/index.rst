@@ -23,6 +23,7 @@ Exercise Solutions
    html
    css
    git
+   dom
    forms
    JSON
    fetch
