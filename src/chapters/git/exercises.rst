@@ -1,3 +1,5 @@
+.. _git-exercises:
+
 Exercises: Git
 ==============
 
@@ -7,12 +9,20 @@ Working in a Local Repository
 We will use our new terminal powers to move through the Git exercises.
 
 #. In whichever directory you are keeping your coursework, make a new directory called ``Git-Exercises`` using the ``mkdir`` command. 
+
+   :ref:`Check your solution <git-exercise-solutions1>`
+
 #. Inside the ``Git-Exercises`` directory, initialize a new Git repository using ``git init``.
 #. Add a file called ``exercises.txt`` using the ``touch`` command in the terminal.
+
+   :ref:`Check your solution <git-exercise-solutions3>`
+
 #. Commit your local changes using the ``git commit`` procedures.
 #. Add "Hello World!" to the file called ``exercises.txt``.
 #. Commit your local changes following the same steps that you used for step 4.
 #. View and screenshot the result when you use ``git log``. Make note of what you see!
+
+   :ref:`Check your solution <git-exercise-solutions7>`
 
 Setting up a Github Account
 ---------------------------
