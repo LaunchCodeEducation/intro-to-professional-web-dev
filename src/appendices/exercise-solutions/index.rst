@@ -22,6 +22,7 @@ Exercise Solutions
    terminal
    html
    css
+   git
    forms
    JSON
    fetch
