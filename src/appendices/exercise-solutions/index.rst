@@ -28,5 +28,6 @@ Exercise Solutions
    JSON
    fetch
    typescript
+   angular-lsn1
    angular-lsn2
    

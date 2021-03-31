@@ -43,6 +43,7 @@ The page is not pretty yet, but you get to fix that.
 
 Part 1: Modify the CSS
 -----------------------
+
 The ``movie-list`` and ``chores-list`` components have been created, but so far
 they appear pretty bland. Let's change that.
 
@@ -53,6 +54,8 @@ they appear pretty bland. Let's change that.
       (HINT: Take advantage of the ``movies`` class).
    #. The movie list should have a centered heading.
    #. The font size should be large enough to easily read.
+
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsA1>`
 
 2. Change the chore list text by adjusting the code in
    ``chores-list.component.css`` to accomplish the following:
@@ -99,11 +102,14 @@ the list changes, references allow us to modify the data in one easy to find
 array.
 
 3. Add two more items to the ``movies`` array.
+
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsA3>`
+
 4. Add two more ``<li></li>`` elements to ``movie-list.component.html``
    and use placeholders to reference the new movies in the array.
 
 Complete the ``fav-photos`` Component
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 5. The ``fav-photos`` component has been generated, but it is incomplete. The
    page needs more images, which also need to be smaller in size.
@@ -127,10 +133,12 @@ Complete the ``fav-photos`` Component
       same size.
    #. Refresh the webpage to check the updated content.
 
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsA5>`
+
 Before moving on, save and commit your work.
 
 Part 2: Add More Components
-----------------------------
+---------------------------
 
 .. admonition:: Note
 
