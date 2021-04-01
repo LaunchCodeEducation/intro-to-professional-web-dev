@@ -184,6 +184,8 @@ Part 2: Add More Components
    #. Add ``<fav-links></fav-links>`` to ``app.component.html``. Save all of
       your changes, then refresh the page to see your new content.
 
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsB7>`
+
 .. admonition:: Note
 
    Opening the ``app.module.ts`` file shows that the components for the movies,
@@ -195,7 +197,7 @@ Part 2: Add More Components
    references from the file.
 
 Part 3: Rearrange the Components
----------------------------------
+--------------------------------
 
 The content on the page appears quite jumbled, since we gave you no guidance on
 where to put the custom tags in ``app.component.html``. Fortunately, templates
@@ -210,13 +212,15 @@ allow us to easily move items around the framework.
    #. Add a horizontal line below the three lists with the ``<hr>`` tag.
    #. Center the links below the horizontal line.
 
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsC8>`
+   
 Your final page should have this format (the dashed lines are optional):
 
 .. figure:: ./figures/AngularLesson1Layout.png
    :alt: Angular Lesson 1 Exercises project.
 
 Optional Final Touches
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 9. To boost your practice, complete one or more of the following:
 

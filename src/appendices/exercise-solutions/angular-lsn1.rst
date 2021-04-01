@@ -11,10 +11,10 @@ Part 1: Modify the CSS
 1. Change the movie list text by adjusting the code in
    ``movie-list.component.css`` to accomplish the following:
 
-   #. The text for the heading and list items can be any color EXCEPT black.
+   a. The text for the heading and list items can be any color EXCEPT black.
       (HINT: Take advantage of the ``movies`` class).
-   #. The movie list should have a centered heading.
-   #. The font size should be large enough to easily read.
+   b. The movie list should have a centered heading.
+   c. The font size should be large enough to easily read.
 
 
    .. sourcecode:: css
@@ -52,21 +52,21 @@ Complete the ``fav-photos`` Component
 5. The ``fav-photos`` component has been generated, but it is incomplete. The
    page needs more images, which also need to be smaller in size.
 
-   #. In the ``FavPhotosComponent`` class, assign a better section heading to
+   a. In the ``FavPhotosComponent`` class, assign a better section heading to
       the ``photosTitle`` variable.
 
       .. sourcecode:: TypeScript
 
          photosTitle = 'Random Images';
 
-   3. In the ``.html`` file for this component, use placeholders in the ``img``
+   c. In the ``.html`` file for this component, use placeholders in the ``img``
       tags to display your chosen images.
 
       .. sourcecode:: html
 
          <img src="{{image1}}" alt="Oops! Missing photo!">
 
-   5. Use the ``.css`` file for this component to make all the images be the
+   e. Use the ``.css`` file for this component to make all the images be the
       same size.
 
       .. sourcecode:: css
@@ -85,7 +85,7 @@ Part 2: Add More Components
 
 7. The page needs a set of links to favorite websites.
 
-   #. Generate a ``fav-links`` component. Open ``fav-links.component.ts`` and
+   a. Generate a ``fav-links`` component. Open ``fav-links.component.ts`` and
       shorten the tag name to just ``fav-links``.
 
       .. sourcecode:: TypeScript
@@ -96,7 +96,7 @@ Part 2: Add More Components
             styleUrls: ['./fav-links.component.css']
          })
    
-   3. Inside each ``<a>`` tag, set the ``href`` attribute equal to a
+   c. Inside each ``<a>`` tag, set the ``href`` attribute equal to a
       placeholder for an element in the ``favLinks`` array:
 
       .. sourcecode:: html
@@ -106,5 +106,40 @@ Part 2: Add More Components
    
    :ref:`Back to the exercises <angular-exercises-1>`
 
+.. _angular-lsn1-exercise-solutionsC8:
 
+Part 3: Rearrange the Components
+--------------------------------
+
+8. Rearrange the tags ``fav-photos``, ``fav-links``, ``page-title``, etc. to
+   create a specific page layout:
+
+   a. ``app.component.html`` has ``<div>`` tags to set up a three-column row.
+      Use this to arrange the movie list, images, and chore list.
+   
+      .. sourcecode:: html
+
+         <div class="col-3">
+            <movie-list></movie-list>
+         </div>
+
+         <div class="col-3">
+            <fav-photos></fav-photos>
+         </div>
+
+         <div class="col-3">
+            <chores-list></chores-list>
+         </div>
+
+   c. Add a horizontal line below the three lists with the ``<hr>`` tag.
+
+      .. sourcecode:: html
+
+         <!-- three lists are here -->
+         </div>
+         <hr>
+         <fav-links></fav-links>
+
+   :ref:`Back to the exercises <angular-exercises-1>`
+   
    
