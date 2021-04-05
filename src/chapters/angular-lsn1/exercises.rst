@@ -43,6 +43,7 @@ The page is not pretty yet, but you get to fix that.
 
 Part 1: Modify the CSS
 -----------------------
+
 The ``movie-list`` and ``chores-list`` components have been created, but so far
 they appear pretty bland. Let's change that.
 
@@ -53,6 +54,8 @@ they appear pretty bland. Let's change that.
       (HINT: Take advantage of the ``movies`` class).
    #. The movie list should have a centered heading.
    #. The font size should be large enough to easily read.
+
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsA1>`
 
 2. Change the chore list text by adjusting the code in
    ``chores-list.component.css`` to accomplish the following:
@@ -99,11 +102,14 @@ the list changes, references allow us to modify the data in one easy to find
 array.
 
 3. Add two more items to the ``movies`` array.
+
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsA3>`
+
 4. Add two more ``<li></li>`` elements to ``movie-list.component.html``
    and use placeholders to reference the new movies in the array.
 
 Complete the ``fav-photos`` Component
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 5. The ``fav-photos`` component has been generated, but it is incomplete. The
    page needs more images, which also need to be smaller in size.
@@ -127,10 +133,12 @@ Complete the ``fav-photos`` Component
       same size.
    #. Refresh the webpage to check the updated content.
 
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsA5>`
+
 Before moving on, save and commit your work.
 
 Part 2: Add More Components
-----------------------------
+---------------------------
 
 .. admonition:: Note
 
@@ -176,6 +184,8 @@ Part 2: Add More Components
    #. Add ``<fav-links></fav-links>`` to ``app.component.html``. Save all of
       your changes, then refresh the page to see your new content.
 
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsB7>`
+
 .. admonition:: Note
 
    Opening the ``app.module.ts`` file shows that the components for the movies,
@@ -187,7 +197,7 @@ Part 2: Add More Components
    references from the file.
 
 Part 3: Rearrange the Components
----------------------------------
+--------------------------------
 
 The content on the page appears quite jumbled, since we gave you no guidance on
 where to put the custom tags in ``app.component.html``. Fortunately, templates
@@ -202,13 +212,15 @@ allow us to easily move items around the framework.
    #. Add a horizontal line below the three lists with the ``<hr>`` tag.
    #. Center the links below the horizontal line.
 
+   :ref:`Check your solution <angular-lsn1-exercise-solutionsC8>`
+   
 Your final page should have this format (the dashed lines are optional):
 
 .. figure:: ./figures/AngularLesson1Layout.png
    :alt: Angular Lesson 1 Exercises project.
 
 Optional Final Touches
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 9. To boost your practice, complete one or more of the following:
 

@@ -22,9 +22,13 @@ Exercise Solutions
    terminal
    html
    css
+   git
+   dom
    forms
    JSON
    fetch
    typescript
+   angular-lsn1
    angular-lsn2
+   angular-lsn3
    
