@@ -1,7 +1,7 @@
 .. _forms-exercise-solutions:
 
-Exercise Solutions: Data and Variables
-======================================
+Exercise Solutions: Forms
+=========================
 
 .. _forms-exercise-solutions1:
 

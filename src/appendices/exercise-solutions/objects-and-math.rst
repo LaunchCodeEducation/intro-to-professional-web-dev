@@ -1,7 +1,7 @@
 .. _objects-and-math-exercise-solutions:
 
-Exercises: Objects & Math
-==========================
+Exercise Solutions: Objects & Math
+==================================
 
 At our space base, it is a historic day! Five non-human animals are ready to
 run a space mission without our assistance! For the exercises, you will use the
