@@ -82,7 +82,7 @@ Assignments
    assignments/mars-rover
    assignments/html-me-something
    assignments/launch-checklist
-   assignments/orbit-report
+   assignments/orbit-report/orbit-report
 
 Appendices
 ^^^^^^^^^^
@@ -110,4 +110,6 @@ Appendices
    assignments/html-me-part2
    assignments/mars-rover2
    assignments/mars-rover3
+   assignments/orbit-report/orbit-report-demo
+   
    glossary
