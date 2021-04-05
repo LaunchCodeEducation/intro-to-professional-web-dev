@@ -1,26 +1,22 @@
+.. _exercises-angular-lsn3:
+
 Exercises: Angular, Part 3
-===========================
+==========================
 
 Remember that :ref:`DOM and Events studio <DOM-studio>`? Let's
 revisit this and do it again Angular-style.
 
 Starter Code
--------------
+------------
 
 The starter code for the exercises is in the same
 `repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`__
 that you cloned for the all of the Angular lessons.
 
-From the ``lesson3`` folder in VSCode, navigate into the
-``exercises/src/app/`` folder. Open the
-``app.component.html`` and ``app.component.ts`` files.
-
-In the terminal, navigate into the lesson 3 ``exercises`` folder. Enter
-``npm install`` to add the Angular modules, then run ``ng serve``. When you
-open the web page in your browser, it should look like this:
+When the project is running, it should look like this:
 
    .. figure:: ./figures/lesson3-exercises-initial-view.png
-      :alt: Initial view of the exercises app.
+      :alt: Initial view of the Angular lesson 3 exercises application in a browser.
 
    Initial view of the exercises app
 
@@ -76,31 +72,28 @@ update the view.
       message = 'Space shuttle ready for takeoff!';
    }
 
+.. _exercises-angular-lsn3A:
+
 Update the HTML
 ^^^^^^^^^^^^^^^
 
-#. In ``app.component.html``, change line 5 to make use of ``message``:
+#. Pass in the ``message`` variable to the app html:
 
-   .. sourcecode:: html+ng2
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsA1>`.
 
-      <p>{{message}}</p>
+#. Add this style directive to line 19: ``[style.backgroundColor]="color"``.
 
-#. Change line 19 to the following:
+#. Use the ``height`` property to determine the displayed height. 
 
-   .. sourcecode:: html+ng2
-
-      <div class="shuttle-background" [style.backgroundColor]="color">
-
-#. Use the ``height`` property to determine the displayed height. Change line 31 as follows;
-
-   .. sourcecode:: html+ng2
-
-      <p>{{height}} km</p>
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsA3>`.
 
 #. Refresh the page to ensure your template variables are assigned correctly.
 
+
 Add Events to Modify Directives
 -------------------------------
+
+.. _exercises-angular-lsn3B:
 
 Control Buttons
 ^^^^^^^^^^^^^^^
@@ -108,13 +101,12 @@ Control Buttons
 Now, we'll add some event listeners to the three control buttons on the bottom of the page. 
 These listeners will reassign the values of ``color``, ``height``, ``width``, and ``message``.
 
-#. In ``app.component.html``, add an event listener to the *Take Off* button.
+#. Add an event listener to the *Take Off* button.
 
-   .. sourcecode:: html+ng2
-   
-      <button (click) = "handleTakeOff()">Take Off</button>
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsB1>`.
 
-#. Back in ``app.component.ts``, we'll define this listener. The ``confirm()`` method will look the same as before, but this time we can use a few less lines of code to update the view.
+#. Back in ``app.component.ts``, we'll define this listener. The ``confirm()`` method will look the 
+   same as before, but this time we can use a few less lines of code to update the view.
 
    .. sourcecode:: TypeScript
       :linenos:
@@ -130,6 +122,8 @@ These listeners will reassign the values of ``color``, ``height``, ``width``, an
       }
 
 #. Follow the same pattern to handle the *Land* and *Abort Mission* click events.
+
+.. _exercises-angular-lsn3C:
 
 Movement Buttons
 ^^^^^^^^^^^^^^^^
@@ -147,30 +141,16 @@ But now, instead of using the ``getElementById`` method, we'll
 access the ``img`` element by passing it in to the click
 event.
 
-#. In ``app.component.html``, label the ``img`` element so we can reference it:
+#. In ``app.component.html``, label the ``img`` element so we can reference it.
 
-   .. sourcecode:: html+ng2
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsC1>`.
 
-      <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
 
-#. While you're here, add the click handler to the *Right* button:
+#. While you're here, add this click handler to the *Right* button: ``(click)="moveRocket(rocketImage, 'right')"``
 
-   .. sourcecode:: html+ng2
+#. Complete the ``moveRocket()`` method in the app's component class to handle rocket movement to the right:
 
-      <button (click)="moveRocket(rocketImage, 'right')">Right</button>
-
-#. Now in ``app.component.ts`` we can write the ``moveRocket()``:
-
-   .. sourcecode:: TypeScript
-      :linenos:
-
-      moveRocket(rocketImage, direction) {
-         if (direction === 'right') {
-         let movement = parseInt(rocketImage.style.left) + 10 + 'px';
-         rocketImage.style.left = movement;
-         this.width = this.width + 10000;
-         }
-      }
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsC3>`.
 
 #. Add conditional logic to this ``moveRocket()`` method to account for the other movement
    directions, modifying the movement formula as needed. Be sure to also update the
@@ -188,6 +168,8 @@ handlers and add the following:
 
    rocketImage.style.bottom = '0px';
 
+.. _exercises-angular-lsn3D:
+
 New Requirements
 ----------------
 
@@ -198,27 +180,13 @@ New Requirements
 
    In ``app.component.ts``, let's add a check for the take off status of the shuttle.
 
-   .. sourcecode:: TypeScript
-
-      takeOffEnabled: boolean = true;
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsD1>`.
 
 #. When the app is first loaded, we want the user to be able to click the *Take Off*
-   button, but not the *Land* or *Abort Mission* button. We'll
-   add some ``[disabled]`` attribute directives on the control buttons to reflect these
-   values.
+   button, but not the *Land* or *Abort Mission* button. In ``app.component.html``, update the control buttons
+   to add some ``[disabled]`` attribute directives.
 
-   In ``app.component.html``, update the control buttons:
-
-   .. sourcecode:: html+ng2
-      :linenos:
-
-      <div class="container-control-buttons">
-         <button (click)="handleTakeOff()" [disabled]="!takeOffEnabled">Take Off</button>
-         <button (click)="handleLand(rocketImage)" [disabled]="takeOffEnabled">Land</button>
-         <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
-      </div>
-
-   Now, based on the boolean ``takeOffEnabled``, only the *Take Off* control button is
+   Based on the boolean ``takeOffEnabled`` property, only the *Take Off* control button is
    enabled when the rocket is on the ground.
 
    Update the control button click handlers to toggle the enabled/disabled status
@@ -239,15 +207,7 @@ New Requirements
    we can take advantage of our old friend ``*ngIf`` to display the whole set based on
    ``takeOffEnabled``.
 
-   .. sourcecode:: html+ng2
-      :linenos:
-
-      <div *ngIf="!takeOffEnabled">
-         <button (click)="moveRocket(rocketImage, 'up')">Up</button>
-         <button (click)="moveRocket(rocketImage, 'down')">Down</button>
-         <button (click)="moveRocket(rocketImage, 'right')">Right</button>
-         <button (click)="moveRocket(rocketImage, 'left')">Left</button>
-      </div>
+   :ref:`Check your solution <angular-lsn3-exercise-solutionsD3>`.
 
 #. Lastly, let's change the shuttle's background color to a warning color if the rocket 
    image gets too close to the edge. Add a function to your component that will check the 

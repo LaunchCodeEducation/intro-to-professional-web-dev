@@ -30,4 +30,5 @@ Exercise Solutions
    typescript
    angular-lsn1
    angular-lsn2
+   angular-lsn3
    
