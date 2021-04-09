@@ -41,7 +41,7 @@ Some examples from your home life:
 
 - Are you an avid home cook?
 - Do you know more about how your car runs than your family?
-- Are you so good at needlepoints that your friends are asking you to start an Etsy site?
+- Are you so good at needlepoint that your friends are asking you to start an Etsy site?
 
 Or examples from your work life:
 
