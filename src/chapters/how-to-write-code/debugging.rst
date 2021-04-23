@@ -29,5 +29,3 @@ The more information you can give the person who is helping you, the easier it w
 
    These tips also apply to whenever you encounter a technical issue.
    Having screenshots and a recorded set of steps that you took before encountering the issue can help tech support figure out how to correct the problem and assist you!
-
-
