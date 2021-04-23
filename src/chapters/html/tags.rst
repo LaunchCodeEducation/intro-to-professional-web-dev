@@ -63,10 +63,9 @@ Tags to Know
 
 .. admonition:: Note
 
-   There are multiple headings in HTML going from ``h1`` to ``h6``.
-   The headings get progressively smaller.
-   A good rule of thumb is to have only one ``h1`` in a web page and do not skip a level.
-   Headings can be resized so there is no need to do so.
+   There are multiple headings in HTML going from ``h1`` to ``h6``. ``h1`` is the top-level heading, ``h2`` is a sub-heading of an ``h1``, and so on. By default, the headings get progressively smaller as the heading level goes up. 
+   
+   A good rule of thumb is to have only one ``h1`` in a web page and to not skip a level as you add sub-headings. Resist the temptation to use the heading level to change the size of a given heading. The appearance of a heading should be changed using CSS. We will learn how to do this in the next chapter. 
 
 Tag Example
 -----------

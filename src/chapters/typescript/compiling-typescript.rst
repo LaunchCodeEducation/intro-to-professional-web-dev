@@ -44,6 +44,7 @@ variable called ``message`` with the string value ``'Hello, World'``. Print the 
     let message: string = 'Hello, World';
     console.log(message);
 
+Make sure to save your ``hello_world.ts`` changes before continuing forward!
 
 In the terminal, navigate into the directory that houses your ``hello_world.ts`` file. 
 Compile the code with the following command:
