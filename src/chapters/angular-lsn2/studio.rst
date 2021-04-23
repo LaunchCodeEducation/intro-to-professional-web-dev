@@ -9,13 +9,21 @@ plan by adding user interaction.
 Getting Started
 ---------------
 
-This studio uses the same mission planner repository as Angular studio part 1.
-There is no need to fork and clone new starter code.
+For this studio and the next, you will clone some starter code from GitHub.
 
-#. Open your studio 1 project in VSCode.
-#. Run ``git status`` to see if you have any uncommitted work. If you do,
-   resolve it.
-#. Checkout the ``studio-2`` branch.
+#. Fork the `Angular Mission Planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`__.
+#. In the terminal, navigate into your ``angular_practice`` directory.   
+#. Clone your fork to your computer.
+
+   .. admonition:: Warning
+
+      Initializing a new Angular project inside of another one creates version
+      control complications that are best avoided.
+
+      Before running the ``git clone`` command in the terminal, make sure you
+      are NOT inside a current Angular project.
+
+#. Use ``git status`` to verify that you are on branch ``studio-2``.
 #. Run ``npm install`` to download dependencies.
 #. Run ``ng serve`` to build and serve the project.
 

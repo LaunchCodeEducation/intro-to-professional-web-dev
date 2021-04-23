@@ -11,42 +11,39 @@ Mission Planning Dashboard
 A useful and common front end application is a *dashboard*. It shows a summary of
 information about a topic, helping users of the web app make informed decisions.
 
-You will create a Space Mission Planning Dashboard.
-
-Setup
-------
-
-#. Fork the `Angular Lesson 1 Studio repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`_.
-#. Clone your fork to your computer.
-#. Use ``git status`` to verify that you are on branch ``studio-1``.
-
-   * Note that ``studio-1`` is a mostly empty branch.
+You will create a *Space Mission Planning Dashboard*.
 
 Create Angular Project
-^^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
-#. Open a terminal at the root of the ``angular-lc101-mission-planner`` repository you just cloned.
-#. Create a new Angular project by running ``ng new mission-planning-dashboard``.
+#. Launch Visual Studio Code. If you created an ``angular_practice`` folder earlier in
+   the chapter, use the *File* menu to open it. If you did not create a practice
+   folder, make one!
+#. Open a terminal at the root of your ``angular_practice`` folder.
+#. Create a new Angular project by running ``ng new angular-studio-part1``.
 
    a. When prompted about using routing, enter "N" for No.
    b. When prompted to select the stylesheet format, select CSS.
 
-::
+   ::
 
-   $ ng new mission-planning-dashboard
-   ? Would you like to add Angular routing? No
-   ? Which stylesheet format would you like to use? CSS
+      $ ng new angular-studio-part1
+      ? Would you like to add Angular routing? No
+      ? Which stylesheet format would you like to use? CSS
 
-3. Navigate into the new folder by running ``cd mission-planning-dashboard``
+#. When the process finishes, use the *File* menu to open ``angular-studio-part1``
+   in VS Code.
+#. In the terminal, use ``pwd`` to check your position in the file tree. If necessary,
+   navigate into the ``angular-studio-part1`` directory.
 #. Install dependencies by running ``npm install``
 #. Verify that the application will run by running ``ng serve``
 #. View the site in your browser at http://localhost:4200
 
-   a. You should see a header that says "Welcome to mission-planning-dashboard!"
+   a. You should see a header that says "Welcome to angular-studio-part1!"
 
 #. Stage and commit the files before starting on the features.
 
-.. tip::
+.. admonition:: Tip
 
    You will likely still have ``ng serve`` running in your terminal. You can
    stop ``ng serve`` by pressing the keys "control+c", or you can open an
@@ -199,14 +196,17 @@ When done your dashboard should look like this:
    :alt: Screen shot showing the mission dashboard with mission name, rocket name, crew members, equipment, and experiments.
 
 Commit Your Work
------------------
+----------------
 
-This repository will be used for the next two studios. Be sure to stage, commit, and push your changes. The next studio will start with a different branch.
+Be sure to stage and commit your changes!
 
 #. Verify the branch and status of the files.
 #. Commit your changes.
-#. Push your commits to origin.
+#. **Optional**: Create a new repository in your GitHub account, then push your
+   commits to origin.
 
+You will make different versions of the mission planning dashboard in the next
+two studios.
 
 Bonus Mission
 --------------
