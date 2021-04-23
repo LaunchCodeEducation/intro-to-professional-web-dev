@@ -10,9 +10,8 @@ Getting Started
 This studio uses the same mission planner repository as Angular studio part 2.
 There is no need to fork and clone new starter code.
 
-#. Open your `mission planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner/tree/studio-3>`__
-   in VSCode.
-#. Run ``git status`` to see if you have any uncommitted work, if you do
+#. Open your work from Part 2 in Visual Studio Code.
+#. Run ``git status`` to see if you have any uncommitted work. If you do,
    resolve it.
 #. Checkout the ``studio-3`` branch.
 #. Run ``npm install`` to download dependencies.

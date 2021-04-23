@@ -12,7 +12,8 @@ Getting Started
 For this studio and the next, you will clone some starter code from GitHub.
 
 #. Fork the `Angular Mission Planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`__.
-#. In the terminal, navigate into your ``angular_practice`` directory.   
+#. In the terminal, navigate out of the project folder you used for part 1 and
+   into your root ``angular_practice`` directory.
 #. Clone your fork to your computer.
 
    .. admonition:: Warning
@@ -21,9 +22,10 @@ For this studio and the next, you will clone some starter code from GitHub.
       control complications that are best avoided.
 
       Before running the ``git clone`` command in the terminal, make sure you
-      are NOT inside a current Angular project.
+      are NOT inside a current Angular project!
 
-#. Use ``git status`` to verify that you are on branch ``studio-2``.
+#. Use ``git status`` to verify that you are on branch ``studio-2``. If not,
+   use ``git checkout`` to switch to it.
 #. Run ``npm install`` to download dependencies.
 #. Run ``ng serve`` to build and serve the project.
 
@@ -312,13 +314,13 @@ is pressed and the ``<input>`` has focus.
 
 10. Add the below ``save`` function to the crew component.
 
-   .. sourcecode:: TypeScript
-      :linenos:
+    .. sourcecode:: TypeScript
+       :linenos:
 
-      save(name: string, member: object) {
-      member['name'] = name;
-      this.memberBeingEdited = null;
-      }
+       save(name: string, member: object) {
+       member['name'] = name;
+       this.memberBeingEdited = null;
+       }
 
 
 Bonus Missions
