@@ -10,7 +10,6 @@ Chapters
 
    genindex
 
-<<<<<<< HEAD
 Studios
 =======
 
