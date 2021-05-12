@@ -109,7 +109,7 @@ to determine which lines need to be modified.
    * - Who was the first American woman in space?
      - "Sally Ride"
 
-   * - True or false: 5000 meters == 5 kilometers.
+   * - True or false: 5 kilometer == 5000 meters?
      - "true"
 
    * - (5 + 3)/2 * 10 = ?
