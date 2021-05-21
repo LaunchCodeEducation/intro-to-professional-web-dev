@@ -20,24 +20,25 @@ Making Commits
 --------------
 
 After a while, the programmer has made a lot of changes and saved their code files many times over.
-So when do they make a commit to their repository?
+So when do they make a commit to their repository? Here's a good rule of thumb:
 
 .. pull-quote::
 
-   The general rule of thumb is that any time a significant change in      functionality is made, a commit should be made.
+   Any time a significant change in functionality is made, perform a commit.
 
 If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process.
 
-.. note::
+.. admonition:: Note
 
-   Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
+   Git does have a simple commit command. However, making a proper commit
+   requires a longer process than just one command.
 
 The procedure for making a commit to a Git repository includes four stages.
 
-1. ``git status`` gives the programmer information about files that have been changed.
-2. ``git add`` allows the programmers to add specific or all changed files to a commit.
-3. ``git commit -m MESSAGE`` creates the new commit with the files that the programmer added, with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
-4. ``git log`` displays a log of every commit in the repository.
+#. ``git status`` gives the programmer information about files that have been changed.
+#. ``git add`` allows the programmers to add specific or all changed files to a commit.
+#. ``git commit -m MESSAGE`` creates the new commit with the files that the programmer added, with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
+#. ``git log`` displays a log of every commit in the repository.
 
 If the steps above are followed correctly, the programmer will find their latest commit at the top of the log.
 
@@ -46,7 +47,7 @@ Here is how the process will look in the terminal:
 ::
 
    Students-Computer:homework student$ git status
-   On branch master
+   On branch main
 
    Initial commit
 
@@ -56,23 +57,26 @@ Here is how the process will look in the terminal:
            learning-git.js
 
    nothing added to commit but untracked files present (use "git add" to track)
+   
    Students-Computer:homework student$ git add .
+   
    Students-Computer:homework student$ git commit -m "My first commit"
     [master (root-commit) 2c1e0af] My first commit
      1 file changed, 1 insertion(+)
      create mode 100644 learning-git.js
+   
    Students-Computer:homework student$ git log
    commit 2c1e0af9467217d76c7e3c48bcf9389ceaa4714b
    Author: Student <lc101.student@email.com>
    Date:  Wed Apr 24 14:44:59 2019 -0500
 
-       My first commit
+      My first commit
 
 To break down what happens in a commit even further:
 
 When using ``git status``, the output shows two categories: modified tracked files and modified untracked files.
-Modified tracked means that the file exists in the Git repository already, but is different than the version in the repository.
-Modified untracked means that it is a new file that is not currently in the repository.
+*Modified tracked* means that the file exists in the Git repository already, but it is different than the version in the repository.
+*Modified untracked* means that it is a new file that is not currently in the repository.
 
 ``git add`` adds files to the commit, but it does not commit those files.
 By using ``git add .``, all the modified files were added to the commit.
