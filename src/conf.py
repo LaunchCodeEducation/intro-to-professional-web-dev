@@ -182,8 +182,8 @@ todo_include_todos = False
 
 
 def setup(app):
-   app.add_stylesheet('fa/css/all.css')
-   app.add_stylesheet('css/launchcode.css')
+   app.add_css_file('fa/css/all.css')
+   app.add_css_file('css/launchcode.css')
    app.add_config_value('recommonmark_config', {
          'enable_eval_rst': True,
          }, True)
