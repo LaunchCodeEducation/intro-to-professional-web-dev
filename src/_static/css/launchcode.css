@@ -303,14 +303,23 @@ div.highlight-html + p.repl-link  {
 	margin-top: -1em;
 }
 
-.highlighttable .linenos {
+.highlight .linenos {
     background-color: #354a5f;
     border-radius: 4px 0 0 4px;
     width: 42px;
     text-align: right;
+    font-size: 14px;
+    padding: 0;
+    padding-right: 10px;
+    color: #fff;
+    border-right: 1px solid #fff;
 }
 
-.highlighttable .linenos pre {
+.highlight .linenos  + span:not(.linenos) {
+	padding-left: 1.5rem;
+}
+
+.highlight .linenos pre {
     font-size: 14px;
     padding: 0;
     padding-right: 10px;
@@ -321,17 +330,17 @@ div.highlight-html + p.repl-link  {
     background-color: #354a5f;
 }
 
-table.highlighttable {
+table.highlight {
     width: 100%;
     margin: 0;
     table-layout: fixed;
 }
 
-table.highlighttable td {
+table.highlight td {
 	padding: 0;
 }
 
-.highlighttable .code pre {
+.highlight .code pre {
     border-radius: 0 4px 4px 0;
     border-left: none;
 }
@@ -409,11 +418,11 @@ div.contents a:hover {
 }
 
 .admonition .highlight,
-.admonition .highlighttable {
+.admonition . {
     margin: 10px 0;
 }
 
-.admonition .highlighttable .highlight {
+.admonition .highlight .highlight {
     margin: 0;
 }
 
