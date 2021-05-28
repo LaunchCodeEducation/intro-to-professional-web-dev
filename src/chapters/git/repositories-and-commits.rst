@@ -54,7 +54,7 @@ Here is how the process will look in the terminal:
    Untracked files:
      (use "git add <file>..." to include in what will be committed)
 
-           learning-git.js
+         learning-git.js
 
    nothing added to commit but untracked files present (use "git add" to track)
    

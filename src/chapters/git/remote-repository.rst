@@ -47,9 +47,9 @@ a single, default branch. We can see its name by running the command
 
 For the examples in this book, we refer to the default branch as ``main``.
 However, depending on the Git settings on your computer, you might see a
-different name. This can cause problems, because GitHub uses ``main`` for all
-new repositories. To keep our work clear, we should make the local and remote
-names match.
+different one. This won't affect the performance of your project in any way.
+That said, GitHub defaults to ``main`` for all new repositories. To keep our
+work clear, we should match our local and remote branch names.
 
 .. admonition:: Try It!
 
@@ -65,10 +65,11 @@ names match.
 Contributing to a Remote Repository
 -----------------------------------
 
-Now that the programmer has a profile on Github and a local copy of a remote repository, they start coding!
+Once a programmer has a profile on Github and a local copy of a remote
+repository, they start coding!
 
-Once they create a new feature, it is time to make a commit.
-When working with a remote, the commit process has five steps:
+After they create a new feature, it is time to make a commit. When working with
+a remote repo, the commit process includes five steps:
 
 #. ``git status``
 #. ``git add``
@@ -76,8 +77,10 @@ When working with a remote, the commit process has five steps:
 #. ``git push origin main``
 #. ``git log``
 
-The fourth step uses the new command ``git push`` where the commit is pushed to the remote from the local.
-``origin`` indicates that the commit does indeed go to the remote and ``main`` is the name of the branch that the commit goes to. 
+The fourth step uses the new command ``git push``, where the commit is pushed
+to the remote from the local. ``origin`` indicates that the commit does indeed
+go to the remote, and ``main`` is the name of the branch that receives the
+commit. 
 
 Check Your Understanding
 ------------------------------
