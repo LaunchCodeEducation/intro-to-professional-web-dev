@@ -180,6 +180,6 @@ todo_include_todos = False
 
 
 def setup(app):
-    app.add_stylesheet('fa/css/all.css')
-    app.add_stylesheet('css/launchcode.css')
-    app.add_stylesheet('css/site.css')
+   app.add_css_file('fa/css/all.css')
+   app.add_css_file('css/launchcode.css')
+   app.add_css_file('css/site.css')
