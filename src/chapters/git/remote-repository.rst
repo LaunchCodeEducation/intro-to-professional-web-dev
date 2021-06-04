@@ -29,8 +29,9 @@ The ``<url>`` of the command is where the programmer adds the url to the reposit
 
 .. admonition:: Note
 
-   Throughout this book, SSH will be used for cloning repositories. We'll show
-   you how to set this up soon.
+   Throughout this book, HTTPS will be used for cloning repositories. Later in
+   this chapter, we will link to an external resource that describes the SSH
+   alternative.
 
 Renaming the Default Branch
 ---------------------------
