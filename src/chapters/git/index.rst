@@ -12,3 +12,5 @@ Git More Collaboration
    merge
    exercises
    studio
+   studio_rev_1
+   studio_rev_2
