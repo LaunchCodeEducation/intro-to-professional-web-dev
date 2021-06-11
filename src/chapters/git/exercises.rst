@@ -25,12 +25,12 @@ For our remote repositories, we will be using `GitHub <https://github.com/>`__.
 To create your account, follow these steps:
 
 #. Navigate to GitHub's site using the link above.
-#. Sign up for an account on the homepage either by filling out the form or clicking the "Sign Up" button.
+#. Click the *Sign Up* button and follow the on-screen directions.
 #. Once you have an account, you are ready to store your remote work.
 
-Before August 13, 2021, each time users pushed changes to a remote repository
-(or pulled new content from it), they were prompted to enter their GitHub
-username and password. However, a username/password combination is not the most
+Before August 13, 2021, when users pushed changes to a remote repository (or
+pulled new content from it), they were prompted to enter their GitHub username
+and password. However, a username/password combination is not the most
 secure method available. This is especially true for people who reuse the same
 credentials across multiple websites. (You know who you are. Stop doing that!)
 
@@ -49,8 +49,8 @@ To use HTTPS to push and pull from GitHub, users must create a
 **personal access token**. A PAT takes the place of a password, and the token
 process is considered more secure than a username/password verification.
 
-Once you create your PAT, you will use it instead of your password when
-performing Git operations over HTTPS.
+Once you create your PAT, you will use it instead of your password to perform
+HTTPS Git operations.
 
 .. sourcecode:: bash
 
@@ -58,21 +58,20 @@ performing Git operations over HTTPS.
    Username: your_username
    Password: your_token
 
-Some users question the need for a PAT, since it looks like yet another
-password they have to remember. Rather than diving into the lengthy debate and
-justification, we'll focus on the main point: GitHub requires a PAT or similar
-token. The platform is incredibly helpful, and we want to use it, so we'll
+Some users question the need for a PAT, since it looks like another password
+they have to remember. Rather than diving into a lengthy debate and
+justification, we'll focus on the main point: *GitHub requires a PAT or similar
+token*. The platform is incredibly helpful, and we want to use it, so we'll
 follow their advice.
 
-GitHub provides detailed instructions for setting up your PAT. Follow steps
-1 - 9 for `Creating a Token <https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token>`__
+GitHub provides detailed instructions for setting up your PAT, so we will use
+their documentation. Follow steps 1 - 9 for `Creating a Token <https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token>`__
 carefully.
 
 **Tips**:
 
-#. The checkboxes in step 7 allow you to select which actions you're allowed
-   to perform from the command line (terminal). For now, select the *repo*
-   option.
+#. The checkboxes in step 7 select the actions you're allowed to perform from
+   the command line (terminal). For now, just choose the *repo* option.
 
    There's no harm in selecting more options, but you won't need any of them
    for this course.
@@ -93,12 +92,33 @@ carefully.
 
    The next time you access your remote repo, Git will ask for your username
    and PAT. It will then remember your credentials for a certain amount of
-   time. In the example above, ``timeout-3600`` saves your information for 1
+   time. In the example above, ``timeout=3600`` saves your information for 1
    hour (3600 seconds). You can adjust the amount of time up or down as needed.
+#. **Mac Users**: At the bottom of the PAT documentation page, you can find
+   some OPTIONAL instructions for saving your PAT in the MacOS *Keychain* app.
 
-Create an SSH Key
------------------
+Optional: The SSH Key
+---------------------
 
-Difference between SSH and PAT...
+As an alternative to interacting with GitHub via HTTPS, developers can use the
+SSH protocol instead. A description of the differences between HTTPS and SSH is
+beyond the scope of this text. However, we don't need to understand the nuts
+and bolts of SSH. We just need to be able to use it.
 
-Link to GitHub SSH docs...
+With an SSH key, you can connect to your GitHub repositories without needing to
+enter your username and PAT each time you push, pull, or perform some other
+action. This sounds great! The drawback is that it takes more work to set up.
+
+As we mentioned before, this book assumes the HTTPS protocol. However, the
+GitHub developers make it easy to use either one. If you would like to explore
+how to create an SSH key, here are the relevant instructions:
+
+#. `General info about GitHub and SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`__
+#. `Generate a new SSH key <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>`__
+#. `Add the SSH key to your GitHub account <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`__
+#. `Protecting your SSH key <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/working-with-ssh-key-passphrases>`__
+
+.. admonition:: Warning
+
+   For each page, make sure you click on the tab that matches your operating
+   system (Mac, Windows, Linux).
