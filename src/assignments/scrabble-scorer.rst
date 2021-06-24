@@ -109,9 +109,9 @@ Your program will use the ``scoringAlgorithms`` array to retrieve information ab
 three scoring algorithms and convey that information to the user. 
 
 #. Finish writing the ``scoringAlgorithms`` array. It should be populated with three objects, one for each of the three scoring options. 
-   Each object should contain three keys: ``name``, ``description``, and ``scorerFunction``.
+   Each object should contain three keys: ``name``, ``description``, and ``scoringFunction``.
 #. Examine the table for the information to store in ``name`` and
-   ``description``. The ``scorerFunction`` for each object should be the name of
+   ``description``. The ``scoringFunction`` for each object should be the name of
    one of the three scoring algorithms already defined.
 
    .. list-table::
@@ -154,14 +154,14 @@ three scoring algorithms and convey that information to the user.
 
             // Simple scoring
             console.log("algorithm name: ", scoringAlgorithms[0].name);
-            console.log("scorerFunction result: ", scoringAlgorithms[0].scorerFunction("JavaScript"));
+            console.log("scoringFunction result: ", scoringAlgorithms[0].scoringFunction("JavaScript"));
 
          Console Output
 
          ::
 
             algorithm name:  Simple Score
-            scorerFunction result:  10
+            scoringFunction result:  10
 
 #. Call ``scorerPrompt()`` inside of ``runProgram()`` so that the program asks the user for a scoring algorithm after prompting for a word.
    Use the scoring object returned from ``scorerPrompt()`` to score the user's word and let the user know what score their word receives.
@@ -304,23 +304,23 @@ Transform the Object
    ``transform(oldPointStructure)``.
 
 
-.. admonition:: Warning 
+   .. admonition:: Warning 
 
-   Hardcoding the ``newPointStructure`` object literal like this:
+      Hard-coding the ``newPointStructure`` object literal like this:
 
-   .. sourcecode:: js
+      .. sourcecode:: js
 
-      let newPointStructure = 
-      {
-         a:1,
-         b: 1,
-         c: 1,
-         etc ...
-      }
+         let newPointStructure = 
+         {
+            a:1,
+            b: 1,
+            c: 1,
+            etc ...
+         }
 
-   won't pass. And you'll lose an opportunity to practice this skill.
+      won't pass. And you'll lose an opportunity to practice this skill.
 
-4. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScore()`` function and then replace 
+#. Once you've defined ``newPointStructure``, use it to finish writing the ``scrabbleScore()`` function and then replace 
    the ``oldScrabbleScorer()`` function in ``scoringAlgorithms`` with this new function.
 
    .. admonition:: Tip
