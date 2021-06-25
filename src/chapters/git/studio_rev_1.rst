@@ -17,9 +17,9 @@ faster.
 In this studio, we will practice the common Git commands used when
 multiple people work on the same code base.
 
-You and a partner will begin by coding in tag-team shifts. By the end of the
-task you should have a good idea about how to have two people work on the same
-code at the same time. You will learn how to:
+You and a partner will code in tag-team shifts. By the end of the studio, you
+should have a good idea about how two people can work on the same code at the
+same time. You will learn how to:
 
 #. Quickly add code in pull + push cycles *(Important! This is the fundamental
    process!)*
@@ -51,18 +51,17 @@ partner, ask your TA for help.
 Gitting Ready
 -------------
 
-Before you and your partner can begin your collaboration, you both need
-practice with creating a new repository on GitHub. Your teamwork will soon
-begin, but some preparation is required first.
+Before you and your partner can begin your collaboration, some preparation is
+required first. You both need to practice creating a new repository on GitHub.
 
 Step 1: Create a New Local Repository
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. admonition:: Note
+.. admonition:: Warning
 
-   Be careful if you try to use ``copy/paste`` with the ``git`` commands! The
-   ``$`` symbols in the screenshots represent to the prompts in the terminal.
-   They are NOT part of the commands.
+   Be careful if you try to ``copy/paste`` the ``git`` commands! The ``$``
+   symbol in the sample code represents the terminal prompt. The symbol is NOT
+   part of the commands.
 
 #. In the terminal, navigate to your development folder. Enter the following 3
    commands to create a new project.
@@ -76,11 +75,12 @@ Step 1: Create a New Local Repository
 #. Launch Visual Studio Code. Use the *File* menu to open the
    ``communication-log`` folder.
 #. Create a new file called ``index.html`` and open it in the workspace.
-#. Paste in this code into ``index.html``:
+#. Paste this code into ``index.html``:
 
    .. sourcecode:: html
       :linenos:
 
+      <!DOCTYPE html>
       <html>
          <body>
             <p>Radio check. Pilot, please confirm.</p>
@@ -126,7 +126,7 @@ Step 1: Create a New Local Repository
 
       ::
 
-         $ git commit -m 'Started communication log.'
+         $ git commit -m "Started communication log."
          [main (root-commit) e1c1719] Started communication log.
          1 file changed, 5 insertions(+)
          create mode 100644 index.html
@@ -138,11 +138,24 @@ Step 1: Create a New Local Repository
 
             Started communication log.
 
-Great! You've got your project going locally. The next step is to push the
-project up to GitHub.
+#. Use the command ``git branch`` to check the name for the default branch. If
+   necessary, change the name to ``main``.
+
+   ::
+
+      $ git branch
+      * default_name
+
+      $ git branch -m default_name main.
+
+   GitHub uses ``main`` for its default branch. To make things easier, you
+   should always try to match your local and remote branch names.
+
+Great! You've got your project going locally. The next step is to push it up to
+GitHub.
 
 Step 2: Push Your Repository To GitHub
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Go to your GitHub profile in a web browser. Click on the "+" button to add a
    new repository (called a *repo* for short).
@@ -152,21 +165,21 @@ Step 2: Push Your Repository To GitHub
 
       The *New Repository* link is in the dropdown menu at top right on GitHub.
 
-#. On the next page, fill in the Name and Description fields.
-#. Uncheck *Initialize this repository with a README* and click
+#. On the next page, fill in the *Name* and *Description* fields. Also, uncheck
+   the *Initialize this repository with a README* option, then click 
    *Create Repository*.
 
    .. figure:: figures/studio/create-repo.png
       :alt: Creating a new repository in GitHub by filling out the form.
       :width: 80%
 
-      Create a new repository in GitHub
+      Create a new repository in GitHub.
 
    .. admonition:: Note
 
-      If you initialize with a README, in the next step Git will refuse to merge
-      this repo with the local repo. There are ways around that, but it's faster
-      and easier to just create an empty repo here.
+      If you initialize with a README, Git will refuse to merge the remote repo
+      with your local one. There are ways around this, but it's faster and
+      easier to just create an empty repo on GitHub.
 
 #. After clicking, you should see something similar to:
 
@@ -174,7 +187,7 @@ Step 2: Push Your Repository To GitHub
       :alt: The page you see after creating an empty repository, with several options.
       :width: 80%
 
-      Connecting to a repository in GitHub
+      Connecting to a repository in GitHub.
 
 #. Now go back to your terminal and copy/paste the commands shown in the GitHub
    instructions. These should be very similar to:
@@ -205,34 +218,99 @@ Step 2: Push Your Repository To GitHub
       HTTPS option in the Quick Setup. If you're not sure whether you have an SSH
       key, you probably don't.
 
-#. Now you should be able to confirm that GitHub has the same version as your
-   local project. Click around and see what is there. You can read all your
-   code through GitHub's web interface. The files and code you see in your
-   browser should match what you have in Visual Studio Code!
+#. Confirm that GitHub has the same version as your local project. Click around
+   and see what is there. You can view all your code through GitHub's web
+   interface. The files and code you see in your browser should match what you
+   have in Visual Studio Code!
 
    .. figure:: figures/studio/repo-first-commit.png
       :alt: A repository with one commit in GitHub
       :width: 80%
 
-      A repository with one commit in GitHub
+      A repository with one commit in GitHub.
 
-Git Ready for Some Teamwork!
-----------------------------
+Git the Teamwork Started!
+-------------------------
 
 You've successfully created a new repository in GitHub and pushed content to
 it. Now it's time to grab a partner and start collaborating on the same repo.
 
+You are going to simulate a radio conversation between a shuttle pilot and
+mission control. You and your partner will alternate tasks, so decide who will
+be the **Pilot** and who will be the **Control**.
+
+Even when it is not your turn to complete a task, read and observe what your
+partner is doing. The steps here mimic a real-world collaborative Git workflow.
+
+Step 3: Add A Collaborator
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Control**, the first step is yours. In order for **Pilot** to make changes to
+your GitHub repository, you must invite them to collaborate.
+
+#. **Control**: In your web browser, go to your ``communication-log`` repo.
+   Click the *Settings* button then select the *Manage Access* option.
+
+   .. figure:: figures/studio/manage-access.png
+      :alt: Click "Settings" and "Manage Access" to let other users modify the repo.
+      :width: 70%
+
+      Manage access to your repo.
+
+#. **Control**: Click on the green *Invite a collaborator* button. Enter your
+   partner's GitHub username and click *Add to repository*.
+
+   .. figure:: figures/studio/add-repo-partners.png
+      :alt: Enter a GitHub username, then click the Add button.
+      :width: 40%
+
+      Choose who else can modify your GitHub repo.
+
+#. **Pilot**: You should receive an email invitation to join this repository.
+   View and accept the invitation.
+
+.. admonition:: Note
+
+   **Pilot**: If you don't see the email, check your Spam folder. If you still
+   don't have the email, login to your GitHub account. Visit the URL for 
+   Control's copy of the repo. You should see an invite notification at the
+   top of the page.
+
+Step 4: Clone Project from GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Pilot**, this next step is a little inconvenient, but we know you can handle
+it! You will be changing *Control's* ``communication-log`` repo, not yours.
+Unfortunately, both projects have the same name. To avoid confusion, find your
+*local* ``communication-log`` folder on your machine. RENAME IT!
+
+Once that change is made, continue on with the steps.
+
+#. **Pilot**: Go to Control's GitHub profile and find their
+   ``communication-log`` repo. Click on the green *Code* button. Select the
+   HTTPS option and copy the URL to your clipboard.
+
+   .. figure:: figures/studio/code-button.png
+      :alt: The Code button is on the right-hand side of a project's main page.
+      
+      Cloning a repository in GitHub
+
+#. **Pilot**: In your terminal, navigate back to your development folder and
+   clone Control's repo. The command should look something like this:
+
+   ::
+
+      $ git clone https://github.com/username/communication-log.git
+
+   Replace the URL with the address you copied from GitHub.
+
+#. **Pilot**: You should now have a copy of **Control's** project on your
+   machine.
+
+Git Talking
+-----------
+
+Whew! That was quite the setup experience. Now you're ready to dive into the
+main part of the assignment.
+
 On to :ref:`Studio Part 2 <comm-log-part2>`!
-
-Clone Repo
-----------
-
-.. todo:: Move cloning the repo here!
-
-Instructions for cloning repo and adding a collaborator to the GH project...
-
-Note that each partner needs to choose a role. The *Pilot* will need to clone
-the repo from the *Base*, even though the former has their own!
-
-Maybe have **Pilot** delete local repo? (Don't worry, you've got the original
-saved on GH!)
