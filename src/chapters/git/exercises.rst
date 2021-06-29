@@ -34,9 +34,8 @@ and password. However, a username/password combination is not the most
 secure method available. This is especially true for people who reuse the same
 credentials across multiple websites. (You know who you are. Stop doing that!)
 
-After 8/13/2021, GitHub changed its policy in an effort to boost account
-security. Users must now create a *Personal Access Token* or an *SSH key* to
-verify their identity.
+In an effort to boost account security, GitHub changed its policy. Users must now
+create a *Personal Access Token* or an *SSH key* to verify their identity.
 
 Setting up a token for your account is fairly straightforward.
 
