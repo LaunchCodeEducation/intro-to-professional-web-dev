@@ -35,9 +35,7 @@ Requirements
 Starter Code
 ------------
 
-In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #2: Scrabble Scorer** contains a 
-GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from
-**Graded Assignment #0: Hello World** for submission instructions.
+Fork `this replit <https://replit.com/@launchcode/Scrabble-Scorer-Autograded#scrabble-scorer.js>`__.
 
 You only need to pay attention to one file here, ``scrabble-scorer.js``. Within this JavaScript
 file is still some more starter code that you don't need to touch. We'll point out what you 
@@ -47,8 +45,8 @@ Hit the repl.it run button initially and you'll see a message printed to the con
 
 :: 
 
-   > node program
-   Let's play some Scrabble! Enter a word:
+   > node index
+   Let's play some Scrabble!
    >
 
 .. admonition:: Tip
@@ -70,7 +68,7 @@ Before you move on, be sure you're on the right track. At this point, your progr
 
 :: 
 
-   > node program
+   > node index
    Let's play some Scrabble!
 
    Enter a word to score: pineapple
@@ -170,7 +168,7 @@ Before moving forward, your running program should behave roughly like this:
 
 :: 
 
-   > node program
+   > node index
    Let's play some Scrabble!
 
    Enter a word to score: coconut
@@ -347,7 +345,7 @@ Example Output
 
 ::
 
-   > node program
+   > node index
    Let's play some Scrabble!
 
    Enter a word to score: rum

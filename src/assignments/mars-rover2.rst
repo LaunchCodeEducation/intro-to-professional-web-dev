@@ -45,29 +45,7 @@ This test description is "throws error if a name is NOT
 passed into the constructor as the first parameter". Review the first test
 in ``command.spec.js`` for an example of how this test works.
 
-a. When you click "Run", the test will likely fail, because you have no 
-   ``Message`` class yet.
-
-b. Create a ``message.js`` file and add ``exports`` 
-   and ``require`` statements as needed for your modules.
-
-   .. admonition:: Tip
-
-      For help using ``require`` to import a ``class``, notice in ``command.js``
-      that the ``Command`` class is exported using:
-      
-      .. sourcecode:: js
-      
-         module.exports = Command;
-
-      In ``spec/command.spec.js``, the ``Command`` class is imported with this
-      statement:
-      
-      .. sourcecode:: js 
-      
-         const Command = require('../command.js');
-
-c. Look at the code in ``command.js``. Use that to help you write the
+a. Look at the code in ``command.js``. Use that to help you write the
    ``Message`` class in ``message.js`` so that your test passes. Refer to
    the :ref:`Message Class <message-class>` description above for more
    details.

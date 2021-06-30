@@ -50,8 +50,8 @@ Sections:
 Get the Starter Code
 --------------------
 
-In `Canvas <https://learn.launchcode.org/>`__, Graded Assignment #3: Mars Rover contains a GitHub Classroom assignment invitation link.
-Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
+Fork `this replit <https://replit.com/@launchcode/Mars-Rover-Autograded>`__.
+
 
 How-To TDD
 ----------
@@ -181,16 +181,15 @@ Great job, astronaut! When you are ready to keep going, check out :ref:`Part 2 <
 Submitting Your Work
 --------------------
 
-Once your ``Rover`` class is completed, push your work up to your Github repository.
-If you have written 13 passing specs and your 3 classes are complete, then you should get a green check mark.
+Once your ``Rover`` class is completed and you have written 13 passing specs, you are ready to submit.
 
 .. admonition:: Tip
 
-   If you believe that your assignment is correct, but you are not getting a green check mark, make sure that you did not edit either ``studentgrading.spec.js``, ``grading.js``, or any file in the ``helpers`` directory inside ``spec``.
-   Changes to these files could cause the autograder to malfunction.
+   Make sure that you did not edit either ``studentgrading.spec.js``, ``grading.js``, or any file in the ``helpers`` directory inside ``spec``.
+   Changes to these files could effect your grade.
 
 In Canvas, open the Mars Rover assignment and click the "Submit" button.
 An input box will appear.
 
-Copy the URL for your Github repo and paste it into the box, then click
+Copy the URL for your repl and paste it into the box, then click
 "Submit" again.
