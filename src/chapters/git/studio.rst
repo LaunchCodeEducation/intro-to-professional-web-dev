@@ -671,7 +671,7 @@ link:
 
 .. sourcecode:: html
 
-  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
 Commit your changes to branch ``main``.
 

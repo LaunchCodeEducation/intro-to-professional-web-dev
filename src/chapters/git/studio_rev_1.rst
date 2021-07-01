@@ -51,8 +51,13 @@ partner, ask your TA for help.
 Gitting Ready
 -------------
 
+You are going to simulate a radio conversation between a shuttle pilot and
+mission control. You and your partner will alternate tasks, so decide who will
+be the **Pilot** and who will be the **Control**.
+
 Before you and your partner can begin your collaboration, some preparation is
-required first. You both need to practice creating a new repository on GitHub.
+required first. You will both start by creating a new repository on your
+separate GitHub accounts.
 
 Step 1: Create a New Local Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,13 +69,24 @@ Step 1: Create a New Local Repository
    part of the commands.
 
 #. In the terminal, navigate to your development folder. Enter the following 3
-   commands to create a new project.
+   commands to create a new project. Replace ``-ROLE`` with your part in this
+   studio, either ``-pilot`` or ``-control``.
 
    ::
 
-      $ mkdir communication-log
-      $ cd communication-log
+      $ mkdir communication-log-ROLE
+      $ cd communication-log-ROLE
       $ git init
+
+   .. _important-note:
+
+   .. admonition:: Note
+
+      **IMPORTANT**: To avoid confusion later, it's critical that you and your
+      partner give different names to your repositories.
+
+      For the remainder of this studio, we will refer to the repo as
+      ``communication-log``.
 
 #. Launch Visual Studio Code. Use the *File* menu to open the
    ``communication-log`` folder.
@@ -233,11 +249,11 @@ Git the Teamwork Started!
 -------------------------
 
 You've successfully created a new repository in GitHub and pushed content to
-it. Now it's time to grab a partner and start collaborating on the same repo.
+it. Now it's time for you and your partner to start collaborating on the same
+repo.
 
-You are going to simulate a radio conversation between a shuttle pilot and
-mission control. You and your partner will alternate tasks, so decide who will
-be the **Pilot** and who will be the **Control**.
+One of you decided to play the **Pilot**, while the other chose to play the
+**Control**.
 
 Even when it is not your turn to complete a task, read and observe what your
 partner is doing. The steps here mimic a real-world collaborative Git workflow.
@@ -279,12 +295,13 @@ your GitHub repository, you must invite them to collaborate.
 Step 4: Clone Project from GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Pilot**, this next step is a little inconvenient, but we know you can handle
-it! You will be changing *Control's* ``communication-log`` repo, not yours.
-Unfortunately, both projects have the same name. To avoid confusion, find your
-*local* ``communication-log`` folder on your machine. RENAME IT!
+.. admonition:: Warning
 
-Once that change is made, continue on with the steps.
+   **Pilot**, did you and your partner give :ref:`different names <important-note>`
+   to your ``communication-log`` repositories?
+   
+   If not, take a moment to find your *local* ``communication-log`` folder on
+   your machine. RENAME IT!
 
 #. **Pilot**: Go to Control's GitHub profile and find their
    ``communication-log`` repo. Click on the green *Code* button. Select the
@@ -296,7 +313,9 @@ Once that change is made, continue on with the steps.
       Cloning a repository in GitHub
 
 #. **Pilot**: In your terminal, navigate back to your development folder and
-   clone Control's repo. The command should look something like this:
+   clone Control's repo. You should be OUTSIDE of any other Git repositories.
+   
+   The clone command looks something like this:
 
    ::
 
