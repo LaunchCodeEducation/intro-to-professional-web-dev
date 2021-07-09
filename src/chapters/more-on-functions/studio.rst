@@ -117,7 +117,7 @@ So Why Write A Sorting Function?
 Each programming language (Python, Java, C#, JavaScript, etc.) has built-in
 sorting methods, so why did we ask you to build one?
 
-It's kind of a programming right of passage - design an efficient sorting
+It's kind of a programming rite of passage - design an efficient sorting
 function. Also, sorting can help you land a job.
 
 As part of a tech interview, you will probably be asked to do some live-coding.
