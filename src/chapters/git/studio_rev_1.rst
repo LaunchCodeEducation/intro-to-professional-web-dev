@@ -68,6 +68,9 @@ Step 1: Create a New Local Repository
    symbol in the sample code represents the terminal prompt. The symbol is NOT
    part of the commands.
 
+**Control and Pilot**: Both of you need to complete steps 1 - 6 on your own
+machines.
+
 #. In the terminal, navigate to your development folder. Enter the following 3
    commands to create a new project. Replace ``-ROLE`` with your part in this
    studio, either ``-pilot`` or ``-control``.
@@ -173,6 +176,9 @@ GitHub.
 Step 2: Push Your Repository To GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Control and Pilot**: Complete steps 1 - 5 on your separate devices and GitHub
+accounts.
+
 #. Go to your GitHub profile in a web browser. Click on the "+" button to add a
    new repository (called a *repo* for short).
 
@@ -248,12 +254,13 @@ Step 2: Push Your Repository To GitHub
 Git the Teamwork Started!
 -------------------------
 
-You've successfully created a new repository in GitHub and pushed content to
-it. Now it's time for you and your partner to start collaborating on the same
-repo.
+You've successfully created a new GitHub repository and pushed content to it.
+Now it's time for you and your partner to start collaborating on the same repo.
 
-One of you decided to play the **Pilot**, while the other chose to play the
-**Control**.
+For the remaining sections of this studio, keep an eye on the *Control* and
+*Pilot* role tags. Make sure that you both perform your tasks in the
+recommended order. Mixing things up won't destroy the universe, but it will
+make finishing the studio more complicated.
 
 Even when it is not your turn to complete a task, read and observe what your
 partner is doing. The steps here mimic a real-world collaborative Git workflow.
@@ -291,6 +298,8 @@ your GitHub repository, you must invite them to collaborate.
    don't have the email, login to your GitHub account. Visit the URL for 
    Control's copy of the repo. You should see an invite notification at the
    top of the page.
+
+.. _clone-from-git:
 
 Step 4: Clone Project from GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
