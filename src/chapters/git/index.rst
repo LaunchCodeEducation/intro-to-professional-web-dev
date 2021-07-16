@@ -12,3 +12,4 @@ Git More Collaboration
    merge
    exercises
    studio
+   studio-page2
