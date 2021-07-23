@@ -26,7 +26,7 @@ Catching an Exception
 JavaScript provides ``try`` and ``catch`` statements that allow us to keep our programs running even if there
 is an exception. We can tell JavaScript to *try* to run a block of code, and if an exception is thrown, to *catch* the
 exception and run a specific block of code. Anticipating and catching the exception makes the exception now part of
-the control flow.
+the control flow. 
 
 .. note:: Catching an exception is also known as *handling* an exception.
 
@@ -74,7 +74,13 @@ the control flow.
       animal at index: cat
       the code goes on...
 
-.. tip:: ``catch`` blocks only execute if an exception is thrown
+On line 8 of the above code sample, a variable called ``err`` is passed to ``catch``. ``err`` can be any type of error in JavaScript.
+For the above example, that is a ``TypeError``, but we could have had a ``ReferenceError`` or ``EvalError``.
+If necessary, we could output different statements based on what kind of error ``err`` is.  
+
+.. admonition:: Tip
+   
+   ``catch`` blocks only execute if an exception is thrown
 
 
 Finally
