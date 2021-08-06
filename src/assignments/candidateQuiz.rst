@@ -36,9 +36,7 @@ this assignment, but it provides a framework for thinking through the project.
 Get the Starter Code
 ^^^^^^^^^^^^^^^^^^^^
 
-In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #1: Candidate Testing** contains a 
-GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from
-**Graded Assignment #0: Hello World** for submission instructions.
+Fork `this replit <https://replit.com/@launchcode/Candidate-Testing-Autograded#candidate-testing.js>`__.
 
 
 Part 1: Minimum Viable Quiz

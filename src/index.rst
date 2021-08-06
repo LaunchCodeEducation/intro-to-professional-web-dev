@@ -77,7 +77,6 @@ Assignments
    :maxdepth: 1
    :name: assignmentstoc
 
-   assignments/HelloWorld
    assignments/candidateQuiz
    assignments/scrabble-scorer
    assignments/mars-rover
@@ -115,3 +114,4 @@ Appendices
    assignments/mars-rover3
    assignments/orbit-report/orbit-report-demo
    glossary
+   assignments/HelloWorld
