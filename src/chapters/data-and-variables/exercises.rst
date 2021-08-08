@@ -1,3 +1,5 @@
+.. _exercises-data-and-variables:
+
 Exercises: Data and Variables
 =============================
 
@@ -5,15 +7,20 @@ Exercises appear regularly in the book. Just like the concept checks, these
 exercises will check your understanding of the topics in this chapter. They
 also provide good practice for the new skills.
 
+We've included our solutions to some (but not all) of the exercises so that you can check your own work 
+after you practice. As with any learning opportunity, take it seriously and give every 
+exercise a fair shot before peeking at the solution. Our solution may not look exactly like yours,
+but that's ok. There's often more than one way to solve a problem with code.
+
+You don't need to show proof of completing the exercises to pass, so do them for your own benefit. And if they're hard 
+or you get some answers wrong on the first try, keep going!
+Your future self will thank you. 
+
 Unlike the concept checks, you will need a code editor to complete the
 exercises. Fortunately, you :ref:`created a free account <hello-world>` on
 Repl.it as part of the prep work.
 
-If you are enrolled in a LaunchCode program, access these exercises by following the
-repl.it classroom links posted in your class at `<https://learn.launchcode.org>`__.
-
-If you are working through this material on your own, use this 
-`repl.it link <https://repl.it/@launchcode/Exercises-Data-and-Variables>`__.
+Use this `Repl.it link <https://repl.it/@launchcode/Exercises-Data-and-Variables>`__ to get started solving.
 
 The Data
 --------
@@ -49,6 +56,8 @@ A. **Declare and assign variables**
    need to use that variable throughout the rest of the exercises. Make sure
    that you are using the correct data type!
 
+   :ref:`Check your solution <data-and-variables-exercise-solutionsA>`. 
+
 #. **Print out the type of each variable**
 
    For each variable you declared in part A, use the ``typeof``
@@ -63,12 +72,21 @@ A. **Declare and assign variables**
    #. Create and assign a miles to Mars variable. You can get the miles to Mars
       by multiplying the distance to Mars in kilometers by the miles per
       kilometer.
+
+      :ref:`Check your solution <data-and-variables-exercise-solutionsC1>`
+
    #. Next, we need a variable to hold the hours it would take to get to Mars.
       To get the hours, you need to divide the miles to Mars by the
       shuttle's speed.
+
+      :ref:`Check your solution <data-and-variables-exercise-solutionsC2>`
+
+
    #. Finally, declare a variable and assign it the value of days to Mars. In
       order to get the days it will take to reach Mars, you need to divide the
       hours it will take to reach Mars by 24.
+
+      :ref:`Check your solution <data-and-variables-exercise-solutionsC3>`
 
 #. **Print out the results of your calculations**
 
@@ -83,3 +101,6 @@ A. **Declare and assign variables**
    Repeat the calculations, but this time determine the number of days it would
    take to travel to the Moon and print to the screen a sentence that says
    ``"_____ will take ___ days to reach the Moon."``.
+
+   :ref:`Check your solution <data-and-variables-exercise-solutionsE>`
+

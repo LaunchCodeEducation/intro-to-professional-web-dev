@@ -82,7 +82,7 @@ Assignments
    assignments/mars-rover
    assignments/html-me-something
    assignments/launch-checklist
-   assignments/orbit-report
+   assignments/orbit-report/orbit-report
 
 Appendices
 ^^^^^^^^^^
@@ -101,6 +101,7 @@ Appendices
    appendices/math-method-examples/index
    appendices/terminal-commands/index
    appendices/installing-software/index
+   appendices/exercise-solutions/index
 
 .. toctree::
    :hidden:
@@ -109,4 +110,8 @@ Appendices
    index-full
    assignments/html-me-part1
    assignments/html-me-part2
+   assignments/mars-rover2
+   assignments/mars-rover3
+   assignments/orbit-report/orbit-report-demo
    glossary
+   assignments/HelloWorld

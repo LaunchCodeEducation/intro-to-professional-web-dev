@@ -1,3 +1,5 @@
+.. _exercises-objects-and-math:
+
 Exercises: Objects & Math
 ==========================
 
@@ -52,6 +54,8 @@ Store the Objects
 
 Create a ``crew`` array to store all of the animal objects.
 
+:ref:`Check your solution <objects-and-math-exercise-solutions1>`. 
+
 Part 2: Crew Reports
 ---------------------
 
@@ -86,3 +90,5 @@ animal per line).
 *HINT*: There are a lot of different ways to approach this problem. One way
 that works well is to see how many iterations of the ``move`` method it will
 take for each animal to reach 20 steps.
+
+:ref:`Check your solution <objects-and-math-exercise-solutions3>`.

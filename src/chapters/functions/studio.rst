@@ -32,13 +32,6 @@ practice, we will solve the array reversal by defining two functions - one that
 reverses the characters in a string (or the digits in a number) and one that
 flips the order of entries in the array.
 
-Before You Start
-----------------
-
-If you are enrolled in a LaunchCode program, access this studio by following the repl.it classroom links posted in your class at `learn.launchcode.org <https://learn.launchcode.org/>`_.
-
-If you are working through this material on your own, use the repl.it links contained on this page.
-
 Reverse Characters
 -------------------
 

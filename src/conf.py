@@ -15,7 +15,8 @@ site_theme_options = {
     'bootswatch_theme': 'launchcode',
 }
 
-project = 'Introduction to Professional Web Development in JavaScript'
+
+project = 'Introduction to Professional Web Development in JavaScript (Independent Track)'
 
 # -- Project information -----------------------------------------------------
 

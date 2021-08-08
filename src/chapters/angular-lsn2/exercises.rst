@@ -1,11 +1,13 @@
+.. _exercises-angular-lsn2:
+
 Exercises: Angular, Lesson 2
-=============================
+============================
 
 Let's build an interactive web page that allows us to review data for our
 astronaut candidates and select crew members for a space mission.
 
 Starter Code
--------------
+------------
 
 The starter code for the exercises is in the same
 `repository <https://github.com/LaunchCodeEducation/angular-lc101-projects>`_ that you cloned
@@ -38,8 +40,11 @@ open the web page in your browser, it should look like this:
 .. figure:: ./figures/lesson2-exercises-start.png
    :alt: Starting setup for exercises.
 
+
+.. _exercises-angular-lsn2-candidates-column:
+
 Candidates Column
-------------------
+-----------------
 
 Examine the ``candidates`` array in ``candidates.component.ts``. It contains
 one object for each animal astronaut. We want to start by listing the names of
@@ -48,6 +53,9 @@ the animals in the "Candidates" column of the web page.
 #. Find the "Candidates" section in ``candidates.component.html``. Use
    ``*ngFor`` in the ``<li>`` tag to loop over the ``candidates`` array and
    display each name in an ordered list.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsA>`.
+
 #. We want each name to be interactive. Add a ``click`` event to the ``<li>``
    tag. When a user clicks on a name, set the variable ``selected`` to be equal
    to the chosen candidate.
@@ -56,6 +64,9 @@ Properly done, your output should behave something like this:
 
 .. figure:: ./figures/lesson2-exercises-candidates.gif
    :alt: Candidate results.
+
+
+.. _exercises-angular-lsn2-candidate-data-column:
 
 Candidate Data Column
 ----------------------
@@ -66,9 +77,15 @@ the heading to remain blank.
 
 #. In the ``<p></p>`` element underneath the "Candidate Data" heading, add
    labels for a candidate's ``Name``, ``Age``, ``Mass``, and ``Sidekick``.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsB1>`.
+
 #. Add placeholders to display the candidate's data next to each label.
 #. Use ``*ngIf`` inside the ``<p>`` tag to check if a candidate has been
    selected. If so, display the labels and the data.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsB3>`.
+   
 #. Next, create a way to clear the data. In the ``<button>`` tag for "Clear
    Data & Image", add a ``click`` event that sets ``selected`` to ``false``.
 
@@ -76,6 +93,9 @@ Properly done, your output should behave something like this:
 
 .. figure:: ./figures/lesson2-exercises-candidate-data.gif
    :alt: Candidate Data results.
+
+
+.. _exercises-angular-lsn2-sidekick-image-column:
 
 Sidekick Image Column
 ----------------------
@@ -88,6 +108,9 @@ area to remain blank.
 
 #. In the ``<img>`` tag, use ``*ngIf`` to check if a candidate has been
    selected.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsC>`.
+
 #. Replace the generic ``{{placeholder}}`` with the ``image`` property of the
    candidate.
 
@@ -96,30 +119,45 @@ Properly done, your output should behave something like this:
 .. figure:: ./figures/lesson2-exercises-sidekicks.gif
    :alt: Sidekick image results.
 
+
+.. _exercises-angular-lsn2-selected-crew-column:
+
 Selected Crew Column
----------------------
+--------------------
 
 Once we select a candidate, we want an option to add them to the crew of the
 next space mission.
 
 #. In ``candidates.component.ts``, code an ``addToCrew`` function that takes an
    *object* as a parameter.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD1>`.
+
 #. If the candidate is NOT part of the crew, the function should push them into
    the ``crew`` array. Candidates who are already part of the crew should be
    ignored.
 #. In ``candidates.component.html``, add a "Send on Mission" button next to the
    "Clear Data & Image" button.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD3>`.
+
 #. Add a ``click`` event to the button to call the ``addToCrew`` function. When
    clicked, pass the selected candidate as the argument.
 #. Under the "Selected Crew" section, use ``*ngFor`` to loop over the ``crew``
    array and display each name.
 
-Clear Crew List
-^^^^^^^^^^^^^^^^
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD5>`.
+   
 
-#. Add a "Clear Crew List" button under the "Selected Crew" list.
+Clear Crew List
+^^^^^^^^^^^^^^^
+
+6. Add a "Clear Crew List" button under the "Selected Crew" list.
 #. This button should only appear when the ``crew`` array contains data. Use
    ``*ngIf`` to make this happen.
+
+   :ref:`Check your solution <angular-lsn2-exercise-solutionsD7>`.
+
 #. Add a ``click`` event that clears the ``crew`` array.
 
 Properly done, your output should behave something like this:
@@ -128,10 +166,10 @@ Properly done, your output should behave something like this:
    :alt: Crew list results.
 
 Bonus Missions
----------------
+--------------
 
 Fine Tune the Buttons
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 #. Update the ``Send on Mission`` button to appear only if a candidate has been
    selected.
