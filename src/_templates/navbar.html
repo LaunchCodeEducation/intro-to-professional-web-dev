@@ -17,6 +17,16 @@
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </li>
             {% if theme_navbar_links %}
               {%- for link in theme_navbar_links %}
                 <li><a href="{{ pathto(*link[1:]) }}">{{ link[0] }}</a></li>
@@ -42,9 +52,7 @@
           {% block navbarsearch %}
             {% include "navbarsearchbox.html" %}
           {% endblock %}
-          {% block navbarsearch2 %}
-            {% include "navbarsearchbox.html" %}
-          {% endblock %}
+          
         </div>
     </div>
   </div>
