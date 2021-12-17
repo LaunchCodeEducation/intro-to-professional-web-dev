@@ -1,7 +1,7 @@
 {% extends "basic/layout.html" %}
 
 {% if theme_bootstrap_version == "3" %}
-  {% set bootstrap_version, navbar_version = "3.3.7", "" %}
+  {% set bootstrap_version, navbar_version = "3.4.1", "" %}
   {% set bs_span_prefix = "col-md-" %}
 {% else %}
   {% set bootstrap_version, navbar_version = "2.3.2", "-2" %}
@@ -17,7 +17,7 @@
 {% endif %}
 
 {% set script_files = script_files + [
-    '_static/js/jquery-1.11.0.min.js',
+    '_static/js/jquery-1.12.4.min.js',
     '_static/js/jquery-fix.js',
     '_static/bootstrap-' + bootstrap_version + '/js/bootstrap.min.js',
     '_static/bootstrap-sphinx.js'
