@@ -53,7 +53,7 @@ Your completed assignment should look something like this:
 Setup and Starter Code
 ----------------------
 
-In `Canvas <https://learn.launchcode.org/>`__, Graded Assignment #6: Orbit Report contains a GitHub Classroom assignment invitation link.
+In `Canvas <https://launchcode.instructure.com/>`__, Graded Assignment #6: Orbit Report contains a GitHub Classroom assignment invitation link.
 Refer back to the GitHub Classroom instructions from Graded Assignment #0: Hello World for submission instructions.
 
 
