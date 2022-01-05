@@ -35,7 +35,7 @@ Sections:
 Getting started
 ----------------
 
-In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #4: Candidate Testing** contains a 
+In `Canvas <https://launchcode.instructure.com/>`__, **Graded Assignment #4: Candidate Testing** contains a 
 GitHub Classroom assignment invitation link. 
 
 From now on, we will not be using repl.it to work on our assignments.
