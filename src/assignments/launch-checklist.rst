@@ -24,7 +24,7 @@ Create a Launch Checklist Form for astronauts to fill out in preparation for lau
 Setting Up Your Project Repository
 ----------------------------------
 
-In `Canvas <https://learn.launchcode.org/>`__, **Graded Assignment #5: Launch Checklist Form** contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from **Graded Assignment #0: Hello World** for submission instructions.
+In `Canvas <https://launchcode.instructure.com/>`__, **Graded Assignment #5: Launch Checklist Form** contains a GitHub Classroom assignment invitation link. Refer back to the GitHub Classroom instructions from **Graded Assignment #0: Hello World** for submission instructions.
 
 To get started, navigate to the directory with your copy of the starter code. Open ``index.html`` with Firefox to verify that your starter code is working.
 
