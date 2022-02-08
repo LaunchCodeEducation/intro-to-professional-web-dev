@@ -1,6 +1,17 @@
 Studio: Making Headlines
 ========================
 
+Studio Setup
+------------
+
+In this course, we will mostly use Firefox as our browser. 
+If you haven't installed Firefox, you can get it from `Mozilla <https://www.mozilla.org/en-US/firefox/new/>`_. 
+Other browsers have good developer tools as well (Chrome, in particular) but we're going to stick with Firefox. 
+If you are more comfortable with another browser, you'll find that most of the developer tools functionality exists in other browsers' dev tools as well.
+
+Firefox's developer tools contain a lot of functionality, and we will only begin to touch on it here, 
+learning more of its functionality later in the unit. In this class, we'll learn about the tools available for working with HTML elements
+
 Getting Ready: Developer Tools
 ------------------------------
 

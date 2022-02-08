@@ -58,11 +58,11 @@ Dynamic Web Page Using the DOM
 ------------------------------
 The DOM plays a key part in making web pages dynamic.
 Since the DOM is a JavaScript representation of the web page, you can use JavaScript to alter the DOM and consequently, the web page.
-The browser will re-render the web page anytime changes are made via the DOM.
+The browser will re-render the web page anytime changes are made via the DOM.  
 
-.. note::
+.. admonition:: Note
 
-    Rendering is not the same action as loading.
+   Rendering is not the same action as loading.
 
 In order to add or edit HTML elements with code, we need to be able to access them.
 The method ``document.getElementById`` will search for a matching element and return a reference to it.
