@@ -16,13 +16,23 @@ Having to constantly refresh the page would be a poor experience for the user an
 
    When you are on a social media page, you may like someone's post.
    When you do like their post, you may notice that several things happen.
-   The counter of how many likes the post has received increases by one and the like button may change color to indicate to you that you liked the post.
-   This is an example of how JavaScript could be used to create an application that dynamically updates without the page having to be refreshed.
+   The counter of how many likes the post has received increases by one and the 
+   like button may change color to indicate to you that you liked the post.
+   This is an example of how JavaScript could be used to create an application 
+   that dynamically updates without the page having to be refreshed.
 
-We have been running all of our JavaScript code in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages.
+We have been running all of our JavaScript code in Node.js, but now it is time to use JavaScript in the browser to make dynamic web pages. 
 Node.js, or just Node, is a JavaScript interpreter with access to lots of different JavaScript libraries. 
-Each browser has their own engine for running JavaScript. JavaScript run in the browser is called client-side JavaScript. 
+Each browser has its own engine for running JavaScript. JavaScript run in the browser is called client-side JavaScript. 
 Firefox uses an engine called Spider Monkey to run client-side JavaScript. 
+Since each browser uses its engine, each browser may handle HTML, CSS, or JavaScript differently. 
+This can lead to discrepancies between browsers.  
+
+.. admonition:: Warning
+
+   The website `Can I Use <https://caniuse.com/>`_ is a great resource to check browser usability of any JavaScript, HTML or CSS.
+
+
 
 The ``<script>`` Tag
 --------------------
