@@ -111,3 +111,23 @@ Check Your Understanding
 .. admonition:: Question
 
    Given ``word = 'Rutabaga'``, why does ``word.length`` return the integer 8, but ``word[8]`` is ``undefined``?
+
+.. admonition:: Question
+
+   What is the length of ``location``?
+   
+   .. sourcecode:: js
+   
+      cityName = "Vienna";
+      stateName = "Virginia";
+      location = cityName + ", " +  stateName;
+
+      console.log(location.length);
+
+   #. 16
+   #. 17
+   #. 15
+   #. 14
+
+   .. ans:: 16
+
