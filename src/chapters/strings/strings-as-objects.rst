@@ -118,14 +118,16 @@ Check Your Understanding
    
    .. sourcecode:: js
    
-      cityName = "New Limerick";
-      stateName = "Maine";
+      cityName = "Vienna";
+      stateName = "Virginia";
       location = cityName + ", " +  stateName;
 
       console.log(location.length);
 
    #. 16
-   #. 19
-   #. 20
-   #. 18
+   #. 17
+   #. 15
+   #. 14
+
+   .. ans:: 16
 
