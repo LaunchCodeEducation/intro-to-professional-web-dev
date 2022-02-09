@@ -129,5 +129,5 @@ Check Your Understanding
    #. 15
    #. 14
 
-   .. ans:: 16
+   .. ans = 16
 
