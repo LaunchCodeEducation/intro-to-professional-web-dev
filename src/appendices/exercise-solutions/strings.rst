@@ -8,15 +8,7 @@ Exercise Solutions: Strings
 Part One
 --------
 
-1. Identify the result for each of the following statements:
-
-a. ``'JavaScript'[8] = 'p'``
-
-c. ``"Wonderful".length = 9``
-
-*There's no code snippet for this one, just try it on your own with old-fashioned pen and paper!*
-
-2. The ``length`` method returns how many characters are in a string. However, the method will NOT give us the length of a number. If ``num = 1001``, ``num.length`` returns ``undefined`` rather than 4.
+1. The ``length`` method returns how many characters are in a string. However, the method will NOT give us the length of a number. If ``num = 1001``, ``num.length`` returns ``undefined`` rather than 4.
 
 a. Use type conversion to print the length (number of digits) of an integer.
 
@@ -42,7 +34,7 @@ c. What if ``num`` could be EITHER an integer or a decimal?  Add an ``if/else`` 
 Part Two
 --------
 
-#. Remember, strings are *immutable*. Consider a string that represents a strand of DNA: ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``. There are some typos in the string that we would like to fix:
+1. Remember, strings are *immutable*. Consider a string that represents a strand of DNA: ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``. There are some typos in the string that we would like to fix:
 
 a. Use the ``trim()`` method to remove the leading and trailing whitespace, and then print the results.	
 
@@ -63,8 +55,7 @@ c. Note that if you try ``console.log(dna)`` after applying the methods, the ori
 	dna = dna.trim().toUpperCase();
 	console.log(dna);
 
-
-#. Let's use string methods to do more work on the DNA strand:
+2. Let's use string methods to do more work on the DNA strand:
 
 a. Replace the sequence ``'GCT'`` with ``'AGG'``, and then print the altered Sstrand.
 
