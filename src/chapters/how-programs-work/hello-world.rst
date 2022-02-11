@@ -15,6 +15,14 @@ single message is one of the simplest tasks a program can carry out.
 
 ``Hello, World`` will be your first program as well. Welcome to the club!
 
+
+.. admonition:: Note
+
+   Below is a guide to walk you through setting up a Replit account, 
+   creating a new repl, and working with repls made by other people.  
+   The images are there to help guide you, but Replit.com may update or change 
+   how it looks.  Don't hesitate to explore the site on your own.
+
 Create a Replit Account
 ------------------------
 
@@ -23,36 +31,34 @@ practice problems, exercises, studios, and assignments. If you have not already
 done so, create a new account with `Replit.com <https://repl.it/signup>`__. The
 site provides a free space to practice coding.
 
+
+After you have created your account, sign in.  
+You will see your **dashboard**, which displays any saved folders or projects. 
+Since you are just starting out, your dashboard will be empty.
+
 .. admonition:: Note
+  
+   If your dashboard is completely empty, click on the "Hamburger" button in the top left corner.
+   The three stacked horizontal lines.  
+   This will reveal a drop-down menu that allows you to create new repls, access your saved repls, etc.
 
-   Since the last updates to this text, the Replit.com website might have changed.  
-   The overall functionality should be the same, despite any changes in locations of buttons or menus.  
-
-.. figure:: figures/replit-sign-up.png
-   :alt: Replit sign-up screen
-
-After you sign in, you will see your *dashboard*, which displays any saved
-folders or projects. Since you are just starting out, your dashboard will be
-empty.
-
-.. figure:: figures/dashboard-replit.png
-   :alt: Replit dashboard
-
-Click on *+ Create* or any of the *+* buttons to begin a new project by using the "Create a repl" window.
- 
-
+Creating a New Repl
+^^^^^^^^^^^^^^^^^^^
+From your dashboard, click on *+ Create* or any of the *+* buttons to open the "Create a repl" window.
 
 .. figure:: figures/create-repl.png
    :alt: Replit new repl
 
-To Create a New Repl:
+Steps to create a new repl:
 
-#. You need to **select the coding language** you want to work with.  
-   Since this textbook teaches JavaScript, select "Node.js".
+#. You need to **select the coding language template** you want to work with.  
+   Select "Node.js" to code in JavaScript.   
 
-#. **Name your project** if a name has not already been provided.
+#. **Name your project** to help you remember what the repl contains. 
 
 #. **Click** "Create Repl".  
+
+These steps will create a blank repl workspace where you can start programming in JavaScript.
 
 The Replit Workspace
 ^^^^^^^^^^^^^^^^^^^^^
@@ -61,12 +67,12 @@ Before you dive into your ``Hello, World!`` program, let's take a look at how
 to use Replit. The workspace consists of three main panels and several menu
 functions.
 
-.. figure:: figures/replit-workspace.png
+.. figure:: figures/repl-workspace.png
    :alt: Replit code editor layout
 
 Features to note:
 
-#. **File panel and menus**: Allows you to add extensions, update settings, and
+#. **File panel and menus**: This allows you to add extensions, update settings, and
    add, open, or delete files.
 
 #. **Editor panel**: Your code goes here. Click on a file to open it in the
@@ -89,22 +95,26 @@ Features to note:
 Begin Your Coding Journey
 -------------------------
 
-Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
-open a prepared workspace for your first program.
-
-This is a prepared repl.  You will not be allowed to code into it since you did not create it.
-In order to add your own code, you will need your own copy of this repl by **forking** it.
-A fork creates a copy in your repl account where you can add your own code without any risk of changing the original codebase.
+Working with a Prepared Repl
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We have prepared a repl for you.  
+You will not be allowed to code into it since you did not create it.
+To add your own code, you will need to **fork** it.
+Forking creates a copy of the original codebase into your repl account.  
+You can code in the forked project without risk of changing the original codebase.
 
 .. figure:: figures/fork-replit.png
    :alt: Replit fork option
 
+Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
+open a prepared workspace for your first program.
 
-On line 2 of the editor, type:
+Your forked copy will open in your workspace. 
+On line 2 of the editor panel, type:
 
    ``console.log("Hello, World!");``
 
-When you finish typing, click the green "Run" button and observe the output.
+When you finish typing, click the green "Run" button and observe the output in the console panel.
 
 .. admonition:: Warning
 
