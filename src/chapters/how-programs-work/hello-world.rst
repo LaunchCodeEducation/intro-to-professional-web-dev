@@ -67,7 +67,7 @@ Before you dive into your ``Hello, World!`` program, let's take a look at how
 to use Replit. The workspace consists of three main panels and several menu
 functions.
 
-.. figure:: figures/repl-workspace.png
+.. figure:: figures/workspace-repl.png
    :alt: Replit code editor layout
 
 Features to note:
@@ -83,12 +83,12 @@ Features to note:
    panel. The console also displays error messages, test results, and other
    information.
 
-#. **Fork button**: If you are viewing someone else's project, you can *fork*
-   the content (4) and store a copy of that project to your own account. This
-   allows you to edit the files without changing the originals, and it lets
-   you use other programmers' work (with permission) to enhance your own.
-
 #. **Run button**: Executes any code written in the ``index`` file.
+
+.. admonition:: Note
+
+   The workspace shown above uses the "light" theme (dark text on a light background). 
+   If you prefer the reverse (light text on a dark background), click the gear icon and select the "dark" theme.
 
 
 
@@ -156,8 +156,7 @@ code. Make a change, click "Run", and see what happens. Try to:
 
 Spend a few minutes trying these changes. Do not worry if you miss some of the
 targets. Learning comes through experience, and you WILL learn all the details
-behind ``console.log`` soon.
-
+behind ``console.log`` soon.  
 Once you finish practicing (and hopefully making some mistakes), you will have
 a pretty good idea of how the ``console.log`` function in JavaScript works.
 
