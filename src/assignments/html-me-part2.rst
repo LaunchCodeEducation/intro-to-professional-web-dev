@@ -53,15 +53,16 @@ Notes
 Resources
 ----------
 
-General CSS:
-^^^^^^^^^^^^^
+General CSS Examples and References:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. `w3schools CSS Reference <http://www.w3schools.com/css/default.asp>`__
-#. `CSS Zen Garden <http://www.csszengarden.com>`__
+#. `w3schools CSS Reference <http://www.w3schools.com/css/default.asp>`__ Great site for syntax examples
+#. `CSS Zen Garden <http://www.csszengarden.com>`__ This site provides multiple examples of what you can do with CSS in a browser.
 #. (Advanced) `Specifics on CSS Specificity
    <https://css-tricks.com/specifics-on-css-specificity/>`__
 #. (Advanced) `Specificity (MDN)
    <https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity>`__
+#. (Advanced)  `CSS Design Awards <https://www.cssdesignawards.com/>`__  Showcase for CSS designers to share their work. 
 
 .. _normalization:
 
