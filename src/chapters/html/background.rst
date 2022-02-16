@@ -19,9 +19,14 @@ When you visit a web page in a browser, three main steps happen:
 
 When the browser renders the page, HTML outlines the structure of the page's content.
 
-.. note::
+.. admonition:: Note
 
-   In later chapters, request and response between browsers and servers will be covered in greater detail. 
+   Not all browsers handle code the same way.  
+   You might notice discrepancies between browsers, such as font or spacing of elements.  
+   If you are confident that your code is correct, the discrepancy is likely browser-related. 
+   
+
+In later chapters, request and response between browsers and servers will be covered in greater detail. 
 
 What is HTML?
 -------------

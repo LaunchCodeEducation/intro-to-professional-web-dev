@@ -15,76 +15,106 @@ single message is one of the simplest tasks a program can carry out.
 
 ``Hello, World`` will be your first program as well. Welcome to the club!
 
-Create a Repl.it Account
+
+.. admonition:: Note
+
+   Below is a guide to walk you through setting up a Replit account, 
+   creating a new repl, and working with repls made by other people.  
+   The images are there to help guide you, but Replit.com may update or change 
+   how it looks.  Don't hesitate to explore the site on your own.
+
+Create a Replit Account
 ------------------------
 
 Throughout this book, you will need to access a code editor to complete
 practice problems, exercises, studios, and assignments. If you have not already
-done so, create a new account with `Repl.it <https://repl.it/signup>`__. The
+done so, create a new account with `Replit.com <https://repl.it/signup>`__. The
 site provides a free space to practice coding.
 
-.. figure:: figures/replit-signup.png
-   :alt: Repl.it sign-up screen
 
-After you sign in, you will see your *dashboard*, which displays any saved
-folders or projects. Since you are just starting out, your dashboard will be
-empty.
+After you have created your account, sign in.  
+You will see your **dashboard**, which displays any saved folders or projects. 
+Since you are just starting out, your dashboard will be empty.
 
-.. figure:: figures/replit-dashboard.png
-   :alt: Repl.it dashboard
+.. admonition:: Note
+  
+   If your dashboard is completely empty, click on the "Hamburger" button in the top left corner.
+   The three stacked horizontal lines.  
+   This will reveal a drop-down menu that allows you to create new repls, access your saved repls, etc.
 
+Creating a New Repl
+^^^^^^^^^^^^^^^^^^^
+From your dashboard, click on *+ Create* or any of the *+* buttons to open the "Create a repl" window.
 
-Click on *new repl* to begin a new project. Scroll through the options and
-select "Node.js". Next, name your project and click "Create Repl".
+.. figure:: figures/create-repl.png
+   :alt: Replit new repl
 
-.. figure:: figures/replit-newrepl.png
-   :alt: Repl.it new repl
+Steps to create a new repl:
 
-The Repl.it Workspace
+#. You need to **select the coding language template** you want to work with.  
+   Select "Node.js" to code in JavaScript.   
+
+#. **Name your project** to help you remember what the repl contains. 
+
+#. **Click** "Create Repl".  
+
+These steps will create a blank repl workspace where you can start programming in JavaScript.
+
+The Replit Workspace
 ^^^^^^^^^^^^^^^^^^^^^
 
 Before you dive into your ``Hello, World!`` program, let's take a look at how
-to use Repl.it. The workspace consists of three main panels and several menu
+to use Replit. The workspace consists of three main panels and several menu
 functions.
 
-.. figure:: figures/replit-overview.png
-   :alt: Repl.it code editor layout
+.. figure:: figures/workspace-repl.png
+   :alt: Replit code editor layout
 
 Features to note:
 
-#. **File panel and menus**: Allows you to add extensions, update settings, and
+#. **File panel and menus**: This allows you to add extensions, update settings, and
    add, open, or delete files.
+
 #. **Editor panel**: Your code goes here. Click on a file to open it in the
    editor. For most new projects, an ``index`` file will be created and opened
    by default.
+
 #. **Console panel**: Any output produced by your code will appear in this
    panel. The console also displays error messages, test results, and other
    information.
-#. **Fork button**: If you are viewing someone else's project, you can *fork*
-   the content (4) and store a copy of that project to your own account. This
-   allows you to edit the files without changing the originals, and it lets
-   you use other programmers' work (with permission) to enhance your own.
+
 #. **Run button**: Executes any code written in the ``index`` file.
-#. **Managing projects**: When logged into Repl.it, you can create a new
-   project, view saved projects, or share your projects.
 
 .. admonition:: Note
 
-   The workspace shown above uses the "dark" theme (light text on a black
-   background). If you prefer the reverse (dark text on a white background),
-   click the gear icon and select the "light" theme.
+   The workspace shown above uses the "light" theme (dark text on a light background). 
+   If you prefer the reverse (light text on a dark background), click the gear icon and select the "dark" theme.
+
+
 
 Begin Your Coding Journey
 -------------------------
 
+Working with a Prepared Repl
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We have prepared a repl for you.  
+You will not be allowed to code into it since you did not create it.
+To add your own code, you will need to **fork** it.
+Forking creates a copy of the original codebase into your repl account.  
+You can code in the forked project without risk of changing the original codebase.
+
+.. figure:: figures/fork-replit.png
+   :alt: Replit fork option
+
 Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
 open a prepared workspace for your first program.
 
-On line 2 of the editor, type:
+Your forked copy will open in your workspace. 
+On line 2 of the editor panel, type:
 
    ``console.log("Hello, World!");``
 
-When you finish typing, click the green "Run" button and observe the output.
+When you finish typing, click the green "Run" button and observe the output in the console panel.
 
 .. admonition:: Warning
 
@@ -104,22 +134,29 @@ Once you print ``Hello, World!`` successfully, go back and play around with the
 code. Make a change, click "Run", and see what happens. Try to:
 
 #. Change the message that is printed.
+
 #. Figure out what the parentheses do. Will the code work without them?
+
 #. Remove one or both quotation marks. Do we need to include both opening and
    closing quote marks? Is there a difference between using a single or a
    double quote (``'`` vs. ``"``)?
+
 #. Remove the semi-colon, ``;``.
+
 #. Print a number. (Bonus: Print two numbers added together).
+
 #. Print multiple messages one after the other.
+
 #. Print two messages on the same line.
+
 #. Print a message that contains quote marks, such as ``Quoth the Raven
    "Nevermore"``.
+
 #. Other. You choose!
 
 Spend a few minutes trying these changes. Do not worry if you miss some of the
 targets. Learning comes through experience, and you WILL learn all the details
-behind ``console.log`` soon.
-
+behind ``console.log`` soon.  
 Once you finish practicing (and hopefully making some mistakes), you will have
 a pretty good idea of how the ``console.log`` function in JavaScript works.
 

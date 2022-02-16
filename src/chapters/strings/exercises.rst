@@ -6,16 +6,6 @@ Exercises: Strings
 Part One
 --------
 
-#. Identify the result for each of the following statements:
-
-   #. ``'JavaScript'[8]``
-   #. ``"Strings are sequences of characters."[5]``
-   #. ``"Wonderful".length``
-   #. ``"Do spaces count?".length``
-
-   *There's no code snippet for this one, just try it on your own with old-fashioned 
-   pen and paper!*
-
 #. The ``length`` method returns how many characters are in a string. However,
    the method will NOT give us the length of a number. If ``num = 1001``,
    ``num.length`` returns ``undefined`` rather than 4.
@@ -37,7 +27,7 @@ Part One
 Part Two
 --------
 
-1. Remember, strings are *immutable*. Consider a string that represents a
+#. Remember, strings are *immutable*. Consider a string that represents a
    strand of DNA: ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``.
    There are some typos in the string that we would like to fix:
 
@@ -53,7 +43,7 @@ Part Two
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises03/>`__
 
-2. Let's use string methods to do more work on the DNA strand:
+#. Let's use string methods to do more work on the DNA strand:
 
    #. Replace the sequence ``'GCT'`` with ``'AGG'``, and then print the altered
       strand.
@@ -72,7 +62,7 @@ Part Two
 Part Three
 ----------
 
-1. If we want to turn the string ``'JavaScript'`` into ``'JS'``, we might try
+#. If we want to turn the string ``'JavaScript'`` into ``'JS'``, we might try
    ``.remove()``. Unfortunately, there is no such method in JavaScript.
    However, we can use our cleverness to achieve the same result.
 
@@ -87,7 +77,7 @@ Part Three
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises05/>`__
 
-2. Some programming languages (like Python) include a ``title()`` method to
+#. Some programming languages (like Python) include a ``title()`` method to
    return a string with Every Word Capitalized (e.g. ``'title case'.title()``
    returns ``Title Case``).  JavaScript has no ``title()`` method, but that
    won't stop us! Use the string methods you know to print ``'Title Case'``
