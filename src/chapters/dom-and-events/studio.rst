@@ -58,6 +58,13 @@ The Requirements
    c. The background color of the shuttle flight screen (``id = "shuttleBackground"``) should change from green to blue.
    d. The shuttle height should increase by 10,000 miles.
 
+   .. admonition:: Note
+
+      When you are moving the shuttle, you want to use absolute positioning in CSS. Absolute positioning means positioning the object based on its location in the parent object.
+      In the case of our flight simulator, the parent object is a div with the id, ``shuttleBackground``.
+      Relative positioning means positioning the object based on its fellow child objects. 
+      We might use relative positioning if there were planet objects within our ``shuttleBackground`` div.
+
 #. When the "Land" button is clicked, the following should happen:
 
    a. A window alert should let the user know "The shuttle is landing. Landing gear engaged."
