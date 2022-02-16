@@ -3,7 +3,7 @@ Feedback
 
 Welcome LaunchCoder! We're so glad you're here. LaunchCoders help make 
 our curriculum stronger. You're a part of this community as a learner 
-and we want you to contribute to making our classes stronger.
+and we want you to contribute to our classes.
 
 Questions
 ---------
@@ -13,7 +13,7 @@ Check out our `discourse forum <help.launchcode.org>`__.
 
 Use the *Sign Up* button to create an account and get started 
 asking questions. Before you do, you'll want to read 
-`this helpful post <https://help.launchcode.org/t/how-to-ask-for-help/4756/2>`__
+`this helpful post <https://help.launchcode.org/t/how-to-ask-for-help/4756>`__
 on how to best ask for help. When it comes to technical problems, there is 
 such a thing as a bad question. Or at least, a question that does not provide 
 enough detail.
