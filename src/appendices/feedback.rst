@@ -2,8 +2,8 @@ Feedback
 ========
 
 Welcome LaunchCoder! We're so glad you're here. LaunchCoders help make 
-our curriculum stronger. You're a part of this community as a learner 
-and we want you to contribute to our classes.
+our curriculum stronger. You're a part of this community - as a learner or 
+an educator - and we want you to contribute to our classes.
 
 Questions
 ---------
@@ -18,8 +18,8 @@ on how to best ask for help. When it comes to technical problems, there is
 such a thing as a bad question. Or at least, a question that does not provide 
 enough detail.
 
-If you have a question about the material, chances are someone else has one too! 
-Maybe they've already asked it here and you'll find the help you need. 
+If you have a question about the material, chances are someone else has one 
+that one too! Maybe they've already asked it here and you'll find the help you need. 
 Maybe the question hasn't been asked yet. If you don't see an answer, 
 make a new post about what you're looking to have answered. Questions 
 work best when they are tied to a part of a lesson or assignment - that 
@@ -43,12 +43,12 @@ There's a convention in software development called
 that evolve over time. Basically, software versions are tracked using 
 three tiers of updates - major, minor, and patch. Patch updates happen more 
 frequently than updates to this book. For the most part, your learning will 
-not be affected by these kinds of changes but its wise to make note of this 
+not be affected by these kinds of changes but it's wise to make a note of this 
 for yourself and your classmates if you notice that a solution we provide 
 doesn't match your own in the presence of a patch update.
 The same can be said of minor updates but it is slightly more likely that 
 a minor software update can cause differences in your experience to what is 
-described in this book. If that's the case, make note of it and let us know.
+described in this book. If that's the case, let us know.
 
 Suggested Updates
 ^^^^^^^^^^^^^^^^^
