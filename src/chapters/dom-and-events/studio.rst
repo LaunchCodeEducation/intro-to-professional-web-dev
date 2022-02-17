@@ -45,6 +45,13 @@ Use the command, ``git clone <url>``, with the url you just copied to put the pr
 
 Open Visual Studio Code and go to `File > Open` to find your new project and get started!
 
+.. admonition:: Warning
+
+   When you push your work up to your Github repository, you may notice the option to create a pull request. Please do NOT do so.
+   This pull request will be linking your work back the shared starter code.
+   If you accidentally do so, you can navigate to the starter code repository page and find your submission under "Pull Requests".
+   Click on your submission and close the pull request at the bottom of the page.
+
 The Requirements
 ----------------
 
@@ -64,6 +71,9 @@ The Requirements
       In the case of our flight simulator, the parent object is a div with the id, ``shuttleBackground``.
       Relative positioning means positioning the object based on its fellow child objects. 
       We might use relative positioning if there were planet objects within our ``shuttleBackground`` div.
+
+      When setting the position of an object in CSS, you use a string that ends in "px". So the position of 10 pixels is "10px".
+      To add a number of pixels to the position, you may first have to use ``parseInt`` to convert the current position to a number.
 
 #. When the "Land" button is clicked, the following should happen:
 
