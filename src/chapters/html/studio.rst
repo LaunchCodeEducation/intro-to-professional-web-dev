@@ -47,9 +47,18 @@ When linking to an image, pay attention to the protocol of both the site you are
 
 If the site loads over ``https`` and your image uses ``http`` then the image may not load properly due to browser security restrictions. You should try to add ``s`` to the image protocol, and if that doesn't work, look for another image.
 
-If you want to use an image of your own that is not already available via the internet, here's how:
+Resources
+---------
 
-- Upload the photo to a `Dropbox <https://www.dropbox.com/>`_ account
+* `Using Firefox's Page Inspector <https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector>`_
+* `Firefox DevTools Documentation <https://developer.mozilla.org/en-US/docs/Tools>`_
+
+Bonus Mission
+-------------
+
+Try adding your own image! If you want to use an image of your own that is not already available via the internet, here's how:
+
+- Upload the photo to a `Dropbox <https://www.dropbox.com/>`_ account. You can use Dropbox Basic for this!
 - View the photo on Dropbox and select *Share*, then *Get link*, then *Go to link*
 - You should now be viewing the image on the Dropbox site. If the URL contains ``?dl=0``, remove it. Add ``?raw=1`` to the end of the URL in the location bar of your browser and hit *Enter*. The URL should look something like this:
 
@@ -58,9 +67,3 @@ If you want to use an image of your own that is not already available via the in
    https://www.dropbox.com/sc/qc3htnhv7fb3i2x/AAC5OzECOyBynstMDWawCZhxa?raw=1
 
 - Copy the URL of the loaded image. You can use this URL within any HTML.
-
-Resources
----------
-
-* `Using Firefox's Page Inspector <https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector>`_
-* `Firefox DevTools Documentation <https://developer.mozilla.org/en-US/docs/Tools>`_
