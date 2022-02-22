@@ -22,10 +22,17 @@ To start working with the terminal, go to `Terminal > New Terminal`. The new ter
 Windows Users
 -------------
 
-The terminal is in powershell, not Git Bash. To change this, open the Command Palette by going to `View > Command Palette`. Type "Select Default Shell" in the search window and select "Select Default Shell" from the menu.
+The terminal is in powershell, not Git Bash. To change this, open the Command Palette by going to `View > Command Palette`. Type "Select Default Profile" in the search window and select "Terminal: Select Default Profile" from the menu.
 Change the default to Git Bash.
 
 Now every time you open the terminal, it will default to bash!
+
+.. admonition:: Note
+
+   If Git Bash is not an option when attempting to change the terminal profile, try downloading the `Github Pull Requests and Issues extension <https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github>`__.
+   This extension comes with terminal integration.
+
+   Restart Visual Studio Code and then go into the Command Palette again to change the terminal profile.
 
 
 
