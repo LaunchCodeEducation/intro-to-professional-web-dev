@@ -53,7 +53,7 @@ described in this book. If that's the case, let us know.
 Suggested Updates
 ^^^^^^^^^^^^^^^^^
 
-If you're ready for it, we want to work with you to make the change yourself and 
+When you're ready to try it, we want to work with you to make the change yourself and 
 join us as contributors to this text.
 
 Opening Issues
