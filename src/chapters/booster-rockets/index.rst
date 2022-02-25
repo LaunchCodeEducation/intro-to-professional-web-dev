@@ -5,3 +5,5 @@ Booster Rockets
    :maxdepth: 2
 
    bestpractices
+   personaldrive
+   sportsstuff
