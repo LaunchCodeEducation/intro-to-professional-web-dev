@@ -31,33 +31,11 @@ help another learner out and answer someone's query.
 Updates
 -------
 
-Software Versions
-^^^^^^^^^^^^^^^^^
-
-We try our best to keep this book up to date with the technologies 
-this book depends on. If the book tells you to use a software
-version that is older than the one listed on the site to download, 
-don't fret.
-There's a convention in software development called 
-`semantic versioning <https://semver.org/>`__ that accounts for software projects 
-that evolve over time. Basically, software versions are tracked using 
-three tiers of updates - major, minor, and patch. Patch updates happen more 
-frequently than updates to this book. For the most part, your learning will 
-not be affected by these kinds of changes but it's wise to make a note of this 
-for yourself and your classmates if you notice that a solution we provide 
-doesn't match your own in the presence of a patch update.
-The same can be said of minor updates but it is slightly more likely that 
-a minor software update can cause differences in your experience to what is 
-described in this book. If that's the case, let us know.
-
-Suggested Updates
-^^^^^^^^^^^^^^^^^
-
 When you're ready to try it, we want to work with you to make the change yourself and 
 join us as contributors to this text.
 
 Opening Issues
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 If you're a new learner, you should make an issue on GitHub to describe the 
 update as you suggest it.
@@ -69,7 +47,7 @@ when you're ready to open an issue.
 
 
 Opening Pull Requests
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 If you're more familiar with version control and GitHub specifically, 
 we want you to make a pull request with the change you want. It's not your 
@@ -79,4 +57,22 @@ this open-source textbook. That's no small feat.
 First, you'll need to `fork the textbook repository <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`__.
 Once it's forked, clone the repo onto your computer and follow `our instructions 
 here <https://education.launchcode.org/curriculum-docs/building/setup.html>`__ to build the project and make the edits you want to see.
+
+.. admonition:: Note
+
+    We try our best to keep this book up to date with the technologies 
+    this book depends on. If the book tells you to use a software
+    version that is older than the one listed on the site to download, 
+    don't fret.
+    There's a convention in software development called 
+    `semantic versioning <https://semver.org/>`__ that accounts for software projects 
+    that evolve over time. Basically, software versions are tracked using 
+    three tiers of updates - major, minor, and patch. Patch updates happen more 
+    frequently than updates to this book. For the most part, your learning will 
+    not be affected by these kinds of changes but it's wise to make a note of this 
+    for yourself and your classmates if you notice that a solution we provide 
+    doesn't match your own in the presence of a patch update.
+    The same can be said of minor updates but it is slightly more likely that 
+    a minor software update can cause differences in your experience to what is 
+    described in this book. If that's the case, let us know.
 
