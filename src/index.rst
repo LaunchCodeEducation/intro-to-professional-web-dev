@@ -102,6 +102,7 @@ Appendices
    appendices/terminal-commands/index
    appendices/installing-software/index
    appendices/exercise-solutions/index
+   appendices/feedback
 
 .. toctree::
    :hidden:
