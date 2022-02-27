@@ -56,7 +56,7 @@ this open-source textbook. That's no small feat.
 
 First, you'll need to `fork the textbook repository <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`__.
 Once it's forked, clone the repo onto your computer and follow `our instructions 
-here <https://education.launchcode.org/curriculum-docs/building/setup.html>`__ to build the project and make the edits you want to see.
+here <https://education.launchcode.org/curriculum-docs/building/contributing-a-pr.html>`__ to build the project and make the edits you want to see.
 
 .. admonition:: Note
 
