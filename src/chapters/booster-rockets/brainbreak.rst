@@ -9,7 +9,7 @@ Brain Breaks
     <iframe src="https://giphy.com/embed/3ohs81rDuEz9ioJzAA" width="480" height="358" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/angry-mad-computer-3ohs81rDuEz9ioJzAA">via GIPHY</a></p>
 
 
-Step Away From Your Computer
+Step Away From Your Code
 ----------------------------
 
 Sometimes you just need to take a break.  When you find yourself getting frustrated 
@@ -30,6 +30,8 @@ Angela Lee Duckworth!  <https://www.ted.com/talks/angela_lee_duckworth_grit_the_
 
 `Start With Why by Simon Sinek  <https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action>`_
 
+`Achieve your goals with practice, persistence and patience by Ryan Roxie <https://www.ted.com/talks/ryan_roxie_achieve_your_goals_with_practice_persistence_and_patience>`_
+
 `Inside the mind of a master procrastinator by Tim Urban <https://www.ted.com/talks/tim_urban_inside_the_mind_of_a_master_procrastinator?referrer=playlist-the_most_popular_talks_of_all&autoplay=true>`_
 
 or if reading is more your thing `Blog Post Master Procrastinator <https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html>`_
@@ -41,7 +43,7 @@ or if reading is more your thing `Blog Post Master Procrastinator <https://waitb
 
 
 
-Remember,
+And remember,
 
 .. pull-quote::
     You Got This!

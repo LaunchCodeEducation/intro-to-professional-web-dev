@@ -14,6 +14,12 @@ Attention sports fans! Embrace your favorite quote(s):
    * - Baseball
      - "There may be people who have more talent than you, but there's
        no excuse for anyone to work harder than you do." - *Derek Jeter*
+   
+   * - Basketball
+     - "I've missed more than 9000 shots in my career. I've lost almost 
+       300 games 26 times I've been trusted to take the game winning shot 
+       ... and missed. I've failed over and over and over again in my life. 
+       That is why I succeed." - *Michael Jordan*
 
    * - Gymnastics
      - "I'd rather regret the risks that didn't work out than the
