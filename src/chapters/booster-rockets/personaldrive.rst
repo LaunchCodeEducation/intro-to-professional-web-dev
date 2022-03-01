@@ -1,16 +1,7 @@
 The Power of Persistence
-=================================
+========================
 
 .. _personal-drive:
-
-A wise programmer once told me that the reassuring thing about coding is that there is always an answer. She said that while much of life is uncertain and we're faced with questions that don't have definite answers, when we program we can be certain that there is an answer to whatever problem that we have. We just need to find it.
-
-This is where persistence (aka "grit", aka "frustration tolerance") comes in. What characterizes people who succeed as computer programmers is not how much math they know, or whether they took apart computers when they were eleven years old, or even whether they have a computer science degree. It is how hard they will work to find a solution.
-
-What it takes to succeed as you go through this course and beyond in your coding journey is a determination to not give up, to keep trying new things, to keep taking another look at the problem and coming up with another idea for how to solve it, and to accept that this maddening process is not some flaw in you or in the field, but rather that it is the nature of the job itself, and that you can learn to love it. And that's why they'll pay you the big bucks. 
-
-Philosophy & An Appeal to Wisdom
----------------------------------
 
 .. pull-quote::
 
@@ -38,8 +29,8 @@ and over again. You would not only understand the words, but also have a
 strong idea of how to convert those words into working code.
 
 
-Personal Drive (Grit)
----------------------
+Embrace Failure
+---------------
 
 Does the following statement resonate with you? If so, perfect.
 
@@ -55,6 +46,9 @@ correct answer on our first try.
 Every genius programmer you see on Facebook or YouTube started out in front of
 a screen saying, "Oops," "ARGH!" or "#*&%%@#!" No one simply "gets" coding
 without some trial-and-error.
+
+`Meet the Robinsons You Failed!  <https://www.youtube.com/watch?v=DNCeFhfp5jg>`_
+
 
 Effort = Outcome
 -----------------
@@ -91,7 +85,7 @@ b. If you know how to solve the problem, COMPLETE THE TASK ANYWAY, because pract
 c. If you tried to solve the problem, but your code did not work, DO NOT DELETE YOUR ATTEMPT. Ask a question. Showing your work to your teacher, TA or classmates will give them a clear idea about your thought process.
 d. If you ran out of time, GO BACK AND FILL IN THE BLANKS LATER. Practice makes better. If you neglect one set of skills, then the tasks that come later and depend on those skills will be more difficult.
 
-.. tip::
+.. pull-quote::
 
    Learning takes work, and you need the practice. *Do your homework*.
 
