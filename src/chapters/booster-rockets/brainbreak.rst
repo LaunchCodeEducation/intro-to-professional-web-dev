@@ -29,6 +29,7 @@ The following are curated lists from fellow LaunchCoders.  By no means are they 
 .. line-block::
 
     Make your own playlist, or search for a tech/it/coding/homework music compilations on your internet player of choice (i.e., pandora, spotify, youtube). Some LaunchCode favorites to get you started:
+    
     `Gloria by Laura Branigan <https://www.youtube.com/watch?v=nNEb2k_EmMg>`_
     `Gonna Fly Now (Theme from 'Rocky') <https://www.youtube.com/watch?v=Qwu5zWTEYVs>`_
     `I Will Survive by Gloria Gaynor <https://www.youtube.com/watch?v=FHhZPp08s74>`_

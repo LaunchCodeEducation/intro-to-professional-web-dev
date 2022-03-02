@@ -28,12 +28,17 @@ without some trial-and-error.
 Where Would We Be?
 ------------------
 
+What if Thomas Edison had given up?
+
 .. line-block::
 
     Thomas Edison's teachers said he was too stupid to learn anything. He was fired from his first two jobs for being non-productive. As an inventor, Edison made 1,000 unsuccessful attempts at inventing the light bulb. 
     
         When a reporter asked, *"How did it feel to fail 1,000 times?"* 
         Edison replied, *"I didn’t fail 1,000 times. The light bulb was an invention with 1,000 steps."*
+
+
+Or if Steve Jobs had taken Hewlett-Packard's advice and finished college?
 
 .. line-block::
     
