@@ -104,9 +104,11 @@ Here are some bits of advice:
    can find complete code posted. A simple copy/paste into the assignment
    box will give you a correct result, but you have completely skipped
    your learning opportunity.
+#. DO make a running list of things you've learned and watch it grow each class.
+
 
 And don't forget:
 
 .. pull-quote::
 
-   Learning takes work, and you need the practice. *Do your homework*.
+   Learning takes work, and you need the practice.  **Do your homework**.

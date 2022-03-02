@@ -80,4 +80,4 @@ And don't forget:
 
 .. pull-quote::
 
-   Your heros worked really hard, so should you. *Do your homework*.
+   Your heros worked really hard, so should you.  **Do your homework**.
