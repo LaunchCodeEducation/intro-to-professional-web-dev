@@ -50,9 +50,7 @@ Or if Steve Jobs had taken Hewlett-Packard's advice and finished college?
         *So then we went to Hewlett-Packard,* 
         *and they said, 'Hey, we don't need you. You haven't got through college yet.'* 
     
-- 
-
-
+  
 
 .. pull-quote::
 

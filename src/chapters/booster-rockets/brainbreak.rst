@@ -15,7 +15,8 @@ Step Away From Your Code
 Sometimes you just need to take a break.  When you find yourself getting frustrated 
 it's time to do something else for a bit and come back with fresh eyes.
 
-Exercise, go for a walk, do the dishes, put on some music and dance, meditate, set a timer and look up memes(bonus share them with your peers).  
+Exercise, go for a walk, do the dishes, put on some music and dance, meditate, set a timer 
+and look up memes (bonus share them with your peers).  
 Does not matter what you do. By giving your brain a break, often times 
 when you come back to the code you'll have new insight to the problem that had frustrated you in the first place. 
 
@@ -34,7 +35,6 @@ The following are curated lists from fellow LaunchCoders.  By no means are they 
     `Gonna Fly Now (Theme from 'Rocky') <https://www.youtube.com/watch?v=Qwu5zWTEYVs>`_
     `I Will Survive by Gloria Gaynor <https://www.youtube.com/watch?v=FHhZPp08s74>`_
     `Happy by Pharrell Williams <https://www.youtube.com/watch?v=ZbZSe6N_BXs>`_
-    `Can't Stop the Feeling by Justin Timberlake <https://www.youtube.com/watch?v=ru0K8uYEZWw>`_
     `Journey - Don't Stop Believin' <https://www.youtube.com/watch?v=1k8craCGpgs>`_
     `Stronger (What Doesn't Kill You) by Kelly Clarkson <https://www.youtube.com/watch?v=Xn676-fLq7I>`_
     `For Once In My Life by Stevie Wonder <https://www.youtube.com/watch?v=imsB543zqSM>`_
@@ -81,7 +81,7 @@ The following are curated lists from fellow LaunchCoders.  By no means are they 
     \* Note that there are a few expletives used in it, so if you are sensitive to swearing, you may not wish to read it.
 
     `Wizard Zines by Julia Evans <https://wizardzines.com>`_
-    `bukola - youtube channel that talks about life as a dev. <https://www.youtube.com/channel/UC-bFgwL_kFKLZA60AiB-CCQ>`_
+    `Bukola's Youtube Channel on Life as a Developer <https://www.youtube.com/channel/UC-bFgwL_kFKLZA60AiB-CCQ>`_
 
 
 

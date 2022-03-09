@@ -8,9 +8,18 @@ Traits of Good Programmers
 
 **Curious. Good communicator. Creative. Detail-oriented. Persistent. Problem solver.**
 
-These are some traits that successful computer programmers share. People come to computer programming from all different walks of life and previous job experiences. But the things they have in common are that they like to solve problems, they can both imagine (or invent) the "big picture" as well as pay attention to the "little details", they can express their ideas and listen attentively to the ideas of others, and they are persistent--they don't give up!
+These are some traits that successful computer programmers share. People come to computer 
+programming from all different walks of life and previous job experiences. But the things 
+they have in common are that they like to solve problems. They can both imagine (or invent) 
+the "big picture" as well as pay attention to the "little details".  They can express their 
+ideas and listen attentively to the ideas of others. Finally, they are persistent--they don't 
+give up!
 
-As you'll soon discover, coding is not easy. It is interesting and often fun (especially as you get more experienced in it), but it is rarely easy. You'll often run into difficulties that you need to work through and solve more or less on your own. So while we'd like to say that "anyone can learn to code", it is more accurate to say that "anyone who is willing to work hard and persist through difficulties can code."
+As you'll soon discover, coding is not easy. It is interesting and often fun (especially as 
+you get more experienced in it), but it is rarely easy. You'll often run into difficulties 
+that you need to work through and solve more or less on your own. So while we'd like to say 
+that "anyone can learn to code", it is more accurate to say that "anyone who is willing to 
+work hard and persist through difficulties can code."
 
 
 #. Yes, there is homework, which consists of prep work, exercises, studios,

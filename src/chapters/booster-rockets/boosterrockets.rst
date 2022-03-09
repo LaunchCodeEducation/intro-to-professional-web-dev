@@ -25,10 +25,10 @@ whether they have a computer science degree. It is how hard they will work to fi
 a solution.
 
 What it takes to succeed as you go through this course and beyond in your coding 
-journey is a determination to not give up, to keep trying new things, to keep 
+journey is a determination to not give up. To keep trying new things. To keep 
 taking another look at the problem and coming up with another idea for how to solve 
-it, and to accept that this maddening process is not some flaw in you or in the 
-field, but rather that it is the nature of the job itself, and that you can learn 
+it. To accept that this maddening process is not some flaw in you or in the 
+field. But rather that it is the nature of the job itself. That you can learn 
 to love it. And that's why you will earn the big bucks. 
 
 Use the following pages when ever you need some motivation/inspiration, i.e., a boost.
