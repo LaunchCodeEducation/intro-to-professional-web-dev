@@ -12,7 +12,7 @@ These tests make sure everything works as intended.
 LaunchCode uses tests to assist with grading assignments, starting with Assignment 1. 
 This is not meant to deter you.  Tests help us provide you with feedback more quickly.  
 By using tests, there will be more code in the starting codebase.  
-When you open an assignment, you might not recognize all the code, such as unit tests or wrapper functions.
+When you open an assignment, you might not recognize all the code, and that is okay.
 Instructions will always be available either in the starter code or the textbook.
 
 In this demo, you will learn how to work within wrapper functions and run the tests to verify your code. 
@@ -41,7 +41,7 @@ Next, read through the names of any code elements.  Are there any variables?  Wh
 Are there any other elements that have names, like functions, or constants?  Focus on the names right now.  Don't worry about what these things are right now.
 Do you see the names used in the codebase?  In the same file?  In a different file?
 
-Comments and names are great places to start.  Let's look at an example.  Fork and open this `replit <https://replit.com/@speudusa/Working-Within-Tests-Demo>`_.  
+Comments and names are great places to start.  Let's look at an example.  Fork and open this `replit <https://replit.com/@launchcode/Wrapper-Demo>`_.  
 Look for comments and the names of elements.  Don't code yet.
 
 ``index.js``
@@ -80,7 +80,7 @@ If you followed the instructions, you should have the following output:
 So far, you have worked with the test function, hello, but you have not actually performed any tests. 
 The tests are located within the spec folder in a file called hello.spec.js. 
 As the comments will tell you, there is nothing that you need to change in this file. 
-This file runs the test on our hello function from the hello.js file. 
+This file runs the test on our hello function from the ``hello.js`` file. 
 The test expectations have already been provided for you.
 
 .. admonition:: note 
@@ -136,7 +136,7 @@ Maybe say hello to your friend or pet?
 
    "Hello, Coder!" was used for demoing the failed test.
 
-   If your console is too crowded, you can clear it in two ways.  One, clear it by clicking the "X" in the top right corner,  Two, type clear directly into the console.
+   If your console is too crowded, you can clear it in two ways.  Either clear it by clicking the "X" in the top right corner or type ``clear`` directly into the console.
 
 Once you have changed the string, run the program.
 
