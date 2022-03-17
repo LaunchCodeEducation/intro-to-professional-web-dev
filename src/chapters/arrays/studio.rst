@@ -37,60 +37,35 @@ The ``split`` and ``join`` methods convert back and forth between strings
 and arrays. Use **delimiters** as reference points to split a string into an
 array, then modify the array and convert it back to a printable string.
 
-.. admonition:: note
+.. admonition:: Note
    
    This section of the studio contains unit tests.  You will see a lot of new code in the starter code.
+   The directions will tell you which function to work in. 
    Look for the ``TODO`` and ``NOTE`` comments for guidance and direction.
-   The ``Working within tests`` appendix page provides more information and tips for working inside code like this.
+   The ``Working-within-tests LINK HERE`` appendix page provides more information and tips for working inside code like this.
 
-   ``ADD LINK TO APPENDIX HERE``
+   ``ADD LINK TO APPENDIX INSIDE THIS NOTE``
 
 a. For a given string, use the ``includes`` method to check to see if the
-   words are separated by commas (``,``), semicolons (``;``) or just spaces.
+   words are separated by commas (``,``), semicolons (``;``), or just spaces.
 
-
-b. If the string uses commas to separate the words, ``split`` it into an array,
-   reverse the entries, and then ``join`` the array into a new comma separated
+b. Use the ``reverseCommas()`` function to code the following.  If the string uses commas to separate the words, ``split`` it into an array,
+   reverse the entries, and then ``join`` the array into a new comma-separated
    string. For example, ``"up,to,code,fun"`` becomes ``"fun,code,to,up"``.
    
-   i. Write your code inside ``{ }`` of the ``function reverseCommas()``.
-   
-   ii.   ``TODO 1.`` You will need to create and instantiate your variables here.  You will need to check one element of the ``strings`` array.  You will need to create a variable to store the outcome of any method chains you create.  Do not update the names of the variables when you instantiate them.
-   
-   iii.  ``TODO 2.`` Write your code below this comment.  
-   
-   iv.   Run your code and check your output.  
-
-
-c. If the string uses semicolons to separate the words, ``split`` it into an
+c. Use the ``semiDash()`` function to code the following. If the string uses semicolons to separate the words, ``split`` it into an
    array, alphabetize the entries, and then ``join`` the array into a new
-   hyphen separated string. For example, ``"up;to;code;fun"`` becomes
+   hyphen-separated string. For example, ``"up;to;code;fun"`` becomes
    ``"code-fun-to-up"``.
 
-   i. ``TODO 1.`` instantiate your variables here.
-
-   ii. ``TODO 2.`` Write your code below this comment.
-
-
-d. If the string uses spaces to separate the words, ``split`` it into an array,
+d. Use the ``reverseSpace()`` function to code the following. If the string uses spaces to separate the words, ``split`` it into an array,
    reverse alphabetize the entries, and then ``join`` the array into a new
-   space separated string. For example, ``"to code up fun"`` becomes
+   space-separated string. For example, ``"to code up fun"`` becomes
    ``"up to fun code"``.
 
-   i. ``TODO 1.`` instantiate your variables here.
-
-   ii. ``TODO 2.`` Write your code below this comment.
-
-
-
-e. *Consider*: What if the string uses 'comma spaces' (, ) to separate the
+e. Use the ``commaSpace()`` function to code the following.  *Consider*: What if the string uses 'comma spaces' (, ) to separate the
    list? Modify your code to produce the same result as part "b", making sure
    that the extra spaces are NOT part of the final string.
-
-   i. ``TODO 1.`` instantiate your variables here.
-
-   ii. ``TODO 2.`` Write your code below this comment.
-
 
 `Code it at repl.it <https://replit.com/@launchcode/Array-Studio-02>`__
 
