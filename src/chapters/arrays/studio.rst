@@ -39,9 +39,7 @@ Array and String Conversion
    The starter code for this section contains unit tests.  You will see a lot of new code in the starter code.
    The directions will tell you which function to work in. 
    Look for the ``TODO`` and ``NOTE`` comments for guidance and direction.
-   The ``Working-within-tests LINK HERE`` appendix page provides more information and tips for working inside code like this.
-
-   ``ADD LINK TO APPENDIX INSIDE THIS NOTE``
+   The :ref:`Test Code appendix<tested-code>` page provides more information and tips for working inside code like this.
 
 The ``split`` and ``join`` methods convert back and forth between strings
 and arrays. Use **delimiters** as reference points to split a string into an
