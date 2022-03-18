@@ -1,7 +1,7 @@
-.. _working-within-test-code:
+.. _tested-code:
 
-How to Work within Test Code
-============================
+Tested Code
+===========
 
 
 We created this page to introduce you to working within projects that contain unit tests. 
@@ -54,7 +54,7 @@ Complete the directions.  You should see the following output:
       node index
       Hello!
 
-Great.  That is all that you need to worry about on this file.
+Great.  That is all that you need to worry about in this file.
 
 
 ``hello.js``
@@ -77,8 +77,8 @@ If you followed the instructions, you should have the following output:
 ``hello.spec.js`` 
 ^^^^^^^^^^^^^^^^^
 
-So far, you have worked with the test function, hello, but you have not actually performed any tests. 
-The tests are located within the spec folder in a file called hello.spec.js. 
+So far, you have worked with the test function, ``hello``, but you have not actually performed any tests. 
+The tests are located within the spec folder in a file called ``hello.spec.js``. 
 As the comments will tell you, there is nothing that you need to change in this file. 
 This file runs the test on our hello function from the ``hello.js`` file. 
 The test expectations have already been provided for you.
@@ -182,8 +182,8 @@ Congrats! You passed!
 Why Tests?
 ----------
 
-The code still worked when we changed the string from ``Hello, World!`` to ``Hello, Coder!`` so why test it? 
-That is a very good question that we will explore in a later chapter. 
+For now, you just need to know that tests are written to see if the code meets the requirements of the instructions. 
+We will be covering more on how we know what to test in a later chapter. 
 At this moment in your learning, testing focuses on elements covered in each lesson.  
 If you recently learned about loops, you can expect a test about a loop. 
 Testing can provide you with specific feedback about your code that you can use to improve your code. 
@@ -195,6 +195,6 @@ Some of the projects and starter codebases you will work on within this class co
 The number of tests and testing code will vary by project.  
 Read through the code and the instructions before changing anything. 
 Your TAs will use the tests to return feedback to you more quickly. 
-You can run the tests too, by typing npm test directly into the console and changing your code as needed.
+You can run the tests too, by typing ``npm test`` directly into the console and changing your code as needed.
 
 Happy coding!
