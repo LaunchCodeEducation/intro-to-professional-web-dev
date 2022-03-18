@@ -47,6 +47,11 @@ Part A: Put dinner together
 2. Inside of ``mealAssembly()``, write a ``for`` loop to assemble ``numMeals`` meals.
 
    a. The meals must include one item from each category in the ``pantry`` array.
+
+      admonition:: Hint
+
+         The computer needs to know how many crew members to prepare food for and what ingredients. Consider creating a nested loop that will create a meal for each crew member and then add it into a larger collection of meals.
+
    b. Each ingredient can only be used ONCE.
    c. Add each meal to ``meals`` once it is assembled.
    d. At the end, return ``meals``.
@@ -89,7 +94,7 @@ Part D: Put it all together!
 
 Finally, turn your attention to ``runProgram()``.
 
-1. Write a ``for`` loop that uses ``mealPrintout()`` to format the printing of each meal in ``mealsFor6``.
+1. Write a ``for`` loop that uses ``mealPrintout()`` to format the printing of each meal in ``mealsFor6``. the loop will iterate through the 'mealPrintout()' function. Make sure that you provide ``mealPrintout()`` with directions for what to iterate through and a counter inside its ``()``.
 2. Write another ``for`` loop that uses ``mealPrintout()`` to format the printing of each meal in ``mealsForX``.
 3. Initialize the two strings, ``password1`` and ``password2``.
 4. Run your program to see how it works!
@@ -104,4 +109,4 @@ If you want to make sure that you have checked all the boxes, run the following 
    npm test
 
 This command runs the Jasmine tests that are checking your work for you. If you have a test that fails, check out the name of the test to get a hint as to what you are missing.
-
+If you need a refresher on how running the tests works, check out the appendix on :ref:`Tested Code <tested-code>`.
