@@ -95,6 +95,7 @@ Appendices
    appendices/style-guide
    appendices/git/workflows
    appendices/git/stash
+   appendices/tested-code
    appendices/array-method-examples/index
    appendices/dom-method-examples/index
    appendices/string-method-examples/index

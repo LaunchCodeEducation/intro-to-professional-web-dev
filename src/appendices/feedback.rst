@@ -9,7 +9,7 @@ Questions
 ---------
 
 Got a question? That's great! Questions mean you're learning. 
-Check out our `discourse forum <help.launchcode.org>`__. 
+Check out our `discourse forum <https://help.launchcode.org>`__. 
 
 Use the *Sign Up* button to create an account and get started 
 asking questions. Before you do, you'll want to read 
