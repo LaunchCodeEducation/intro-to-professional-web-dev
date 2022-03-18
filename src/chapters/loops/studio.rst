@@ -48,7 +48,7 @@ Part A: Put dinner together
 
    a. The meals must include one item from each category in the ``pantry`` array.
 
-      admonition:: Hint
+      .. admonition:: Hint
 
          The computer needs to know how many crew members to prepare food for and what ingredients. Consider creating a nested loop that will create a meal for each crew member and then add it into a larger collection of meals.
 
