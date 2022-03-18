@@ -14,6 +14,7 @@ Strings are **immutable**, whereas arrays can be changed.
 Strings and arrays have **properties** and **methods** that allow us to easily
 perform some useful actions.
 
+
 String Modification
 -------------------
 
@@ -33,18 +34,18 @@ c. Add validation to your code to deal with user inputs that are longer than the
 Array and String Conversion
 ----------------------------
 
-The ``split`` and ``join`` methods convert back and forth between strings
-and arrays. Use **delimiters** as reference points to split a string into an
-array, then modify the array and convert it back to a printable string.
-
 .. admonition:: Note
    
-   This section of the studio contains unit tests.  You will see a lot of new code in the starter code.
+   The starter code for this section contains unit tests.  You will see a lot of new code in the starter code.
    The directions will tell you which function to work in. 
    Look for the ``TODO`` and ``NOTE`` comments for guidance and direction.
    The ``Working-within-tests LINK HERE`` appendix page provides more information and tips for working inside code like this.
 
    ``ADD LINK TO APPENDIX INSIDE THIS NOTE``
+
+The ``split`` and ``join`` methods convert back and forth between strings
+and arrays. Use **delimiters** as reference points to split a string into an
+array, then modify the array and convert it back to a printable string.
 
 a. For a given string, use the ``includes`` method to check to see if the
    words are separated by commas (``,``), semicolons (``;``), or just spaces.
