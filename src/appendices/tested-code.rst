@@ -49,10 +49,10 @@ Look for comments and the names of elements.  Don't code yet.
 This file contains comments and a constant.
 Complete the directions.  You should see the following output:
 
-   .. sourcecode:: bash
-      
-      node index
-      Hello!
+.. sourcecode:: bash
+   
+   node index
+   Hello!
 
 Great.  That is all that you need to worry about in this file.
 
@@ -188,7 +188,7 @@ At this moment in your learning, testing focuses on elements covered in each les
 If you recently learned about loops, you can expect a test about a loop. 
 Testing can provide you with specific feedback about your code that you can use to improve your code. 
 
-TL:DR
+TL;DR
 -----
 
 Some of the projects and starter codebases you will work on within this class contain unit tests. 
