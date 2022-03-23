@@ -14,6 +14,7 @@ Strings are **immutable**, whereas arrays can be changed.
 Strings and arrays have **properties** and **methods** that allow us to easily
 perform some useful actions.
 
+
 String Modification
 -------------------
 
@@ -33,28 +34,40 @@ c. Add validation to your code to deal with user inputs that are longer than the
 Array and String Conversion
 ----------------------------
 
+.. admonition:: Note
+   
+   The starter code for this section contains unit tests.  You will see a lot of new code in the starter code.
+   The directions will tell you which function to work in. 
+   Look for the ``TODO`` and ``NOTE`` comments for guidance and direction.
+   The :ref:`Test Code appendix<tested-code>` page provides more information and tips for working inside code like this.
+
 The ``split`` and ``join`` methods convert back and forth between strings
 and arrays. Use **delimiters** as reference points to split a string into an
 array, then modify the array and convert it back to a printable string.
 
 a. For a given string, use the ``includes`` method to check to see if the
-   words are separated by commas (``,``), semicolons (``;``) or just spaces.
-b. If the string uses commas to separate the words, ``split`` it into an array,
-   reverse the entries, and then ``join`` the array into a new comma separated
+   words are separated by commas (``,``), semicolons (``;``), or just spaces.
+
+b. Use the ``reverseCommas()`` function to code the following.  If the string uses commas to separate the words, ``split`` it into an array,
+   reverse the entries, and then ``join`` the array into a new comma-separated
    string. For example, ``"up,to,code,fun"`` becomes ``"fun,code,to,up"``.
-c. If the string uses semicolons to separate the words, ``split`` it into an
+   
+c. Use the ``semiDash()`` function to code the following. If the string uses semicolons to separate the words, ``split`` it into an
    array, alphabetize the entries, and then ``join`` the array into a new
-   hyphen separated string. For example, ``"up;to;code;fun"`` becomes
+   hyphen-separated string. For example, ``"up;to;code;fun"`` becomes
    ``"code-fun-to-up"``.
-d. If the string uses spaces to separate the words, ``split`` it into an array,
+
+d. Use the ``reverseSpace()`` function to code the following. If the string uses spaces to separate the words, ``split`` it into an array,
    reverse alphabetize the entries, and then ``join`` the array into a new
-   space separated string. For example, ``"to code up fun"`` becomes
+   space-separated string. For example, ``"to code up fun"`` becomes
    ``"up to fun code"``.
-e. *Consider*: What if the string uses 'comma spaces' (, ) to separate the
+
+e. Use the ``commaSpace()`` function to code the following.  *Consider*: What if the string uses 'comma spaces' (, ) to separate the
    list? Modify your code to produce the same result as part "b", making sure
    that the extra spaces are NOT part of the final string.
 
-`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio02>`__
+`Code it at repl.it <https://replit.com/@launchcode/Array-Studio-02>`__
+
 
 Bonus Mission: Multi-dimensional Arrays
 ---------------------------------------
