@@ -10,7 +10,7 @@ Here is what they need the ``launchcode`` object to contain:
 #. A key called ``executiveDirector`` with a value of ``"Jeff"``.
 #. A key called ``percentageCoolEmployees`` with a value of ``100``.
 #. A key called ``programsOffered`` with a value of ``["LC101", "LaunchCode Women+", "CodeCamp"]``.
-#. And a method called ``launchOutput``. This method will return a string.
+#. And a method called ``launchOutput()``. This method will return a string.
 
 Let's use Test-Driven Development to write this code! Rather than complete the code and *then* test it, TDD flips the process:
 
@@ -24,14 +24,12 @@ Let's use Test-Driven Development to write this code! Rather than complete the c
 Source Code
 ------------
 
-Open this repl and note the expected files:
+Open this `repl <https://replit.com/@launchcode/UnitTestingStudio#index.js>`__ and note the files:
 
-#. ``index.js`` holds a helpful script. DO NOT CHANGE THIS FILE.
-#. ``launchcode.js`` holds the object we want to design.
+#. ``index.js`` holds the object we want to design.
 #. ``launchcode.spec.js`` holds the testing script.
 
-Besides ``index.js`` the files are mostly empty.  Only a framework has been
-provided for you.
+The files are mostly empty. Only a framework has been provided for you.
 
 Start With the Properties
 -------------------------
@@ -41,21 +39,21 @@ Let's start our work with the properties we need to add to the object.
 ``organization``
 ^^^^^^^^^^^^^^^^
 
-#. Inside the ``describe`` function in ``launchcode.spec.js``, write a test that will check that the value of ``organization`` is ``"nonprofit"``.
+#. Inside the ``describe`` function in ``launchcode.spec.js``, write a test that will check that the value of ``organization`` is ``"nonprofit"``. Run your test.
 #. With your test complete, turn your attention to ``launchcode.js`` and add the ``organization`` property to ``launchcode``.
 #. Run your tests to make sure that everything works as expected.
 
 ``executiveDirector``
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Write a new test that will check that the value of ``executiveDirector`` is ``"Jeff"``.
+#. Write a new test that will check that the value of ``executiveDirector`` is ``"Jeff"``. Run your test.
 #. Add the ``executiveDirector`` property to ``launchcode``.
 #. Run your tests!
 
 ``percentageCoolEmployees``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Write another test that will check that the value of ``percentageCoolEmployees``.
+#. Write another test that will check that the value of ``percentageCoolEmployees``. Run your test.
 #. Add ``percentageCoolEmployees`` to ``launchcode``.
 #. Run your tests!
 
@@ -63,7 +61,7 @@ Let's start our work with the properties we need to add to the object.
 ^^^^^^^^^^^^^^^^^^^
 
 #. Write a fourth test that will check the value of ``programsOffered``. You should have four ``expect`` statements within your test. Three of them should check that the array contains the appropriate values and the final one should check that the array is the appropriate size.
-   Before moving on, take a moment either individually or with a classmate, to reflect on why you would need these four ``expect`` statements.
+   Before moving on, take a moment either individually or with a classmate, to reflect on why you would need these four ``expect`` statements. Run your test.
 #. Add the ``programsOffered`` property to ``launchcode``.
 #. Run your tests!
 
@@ -94,8 +92,7 @@ Write the First Test
 In ``launchcode.spec.js``, complete the ``describe`` function by adding a
 test for condition #1:
 
-   When passed a number that is ONLY divisible by 2, ``launchOutput()`` returns
-   ``'Launch!'``
+   When passed a number that is ONLY divisible by 2, ``launchOutput()`` returns ``'Launch!'``
 
 Run the test. It should fail because there is no code inside ``launchOutput()``
 yet!
@@ -138,8 +135,7 @@ Hmmm, Tricky
 
 In ``launchCodeRocks.spec.js``, add a test for the condition:
 
-When passed a number that is divisible by 2 AND 3, ``launchOutput()`` returns
-   ``'LaunchCode!'`` (not ``'Launch!Code!'``).
+   When passed a number that is divisible by 2 AND 3, ``launchOutput()`` returns ``'LaunchCode!'`` (not ``'Launch!Code!'``).
 
 Run the tests. Only the new one should fail.
 
@@ -175,7 +171,7 @@ Bonus Missions
 DRYing the Code
 ^^^^^^^^^^^^^^^^
 
-Examine ``launchOutput`` and the ``describe`` functions. Notice that there is
+Examine ``launchOutput()`` and the ``describe`` functions. Notice that there is
 quite a bit of repetition in the code.
 
 Try adding arrays, objects, and/or loops to refactor the code into a more
