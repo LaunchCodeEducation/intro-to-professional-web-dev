@@ -1,5 +1,5 @@
-Fetch & JSON
-============
+Fetch
+=====
 
 .. toctree::
    :maxdepth: 4

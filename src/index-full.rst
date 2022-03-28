@@ -31,7 +31,7 @@ Chapters
    chapters/http/index
    chapters/forms/index
    chapters/json/index
-   chapters/fetch-json/index
+   chapters/fetch/index
    chapters/typescript/index
    chapters/angular-lsn1/index
    chapters/angular-lsn2/index
@@ -63,7 +63,7 @@ Studios
    chapters/git/studio
    chapters/dom-and-events/studio
    chapters/forms/studio
-   chapters/fetch-json/studio
+   chapters/fetch/studio
    chapters/typescript/studio
    chapters/angular-lsn1/studio
    chapters/angular-lsn2/studio
