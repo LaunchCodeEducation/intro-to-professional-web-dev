@@ -30,6 +30,7 @@ Chapters
    chapters/dom-and-events/index
    chapters/http/index
    chapters/forms/index
+   chapters/json/index
    chapters/fetch-json/index
    chapters/typescript/index
    chapters/angular-lsn1/index
