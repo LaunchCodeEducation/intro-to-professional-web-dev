@@ -9,7 +9,7 @@ answers to specific problems. We even use other people like our classmates, TAs,
 instructors to help figure out how to solve problems.
 
 We can also use other people's data in our applications. There are multiple ways of 
-using other people's data, or external data, in our applications. In this chapter, we 
+using other people's data, or external data, in our applications. Over the course of the next two chapters, we 
 will focus on using ``fetch()`` and ``JSON`` to request and use data.
 
 
