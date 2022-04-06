@@ -63,6 +63,8 @@ work clear, we should match our local and remote branch names.
 
    In this case, ``old-branch-name`` becomes ``main``.
 
+.. _push-to-remote:
+
 Contributing to a Remote Repository
 -----------------------------------
 

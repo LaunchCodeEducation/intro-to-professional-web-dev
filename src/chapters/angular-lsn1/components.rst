@@ -52,6 +52,8 @@ Angular components consist of 4 files:
 .. figure:: ./figures/ComponentPieces.png
    :alt: Visual of the files associated with a component.
 
+   Visual of file tree after adding a new component, ``header``, to the project.
+
 Looking at the file tree, we see that all four files contain the name of the
 component---``header``, in this case. Also, the files are located in a folder
 named after the component.
@@ -107,6 +109,8 @@ Creating a ``task-list`` component looks something like this:
 .. figure:: ./figures/GenerateComponent.png
    :alt: Visual of the terminal command to create a new Component.
 
+   Terminal output when creating a new component.  
+
 From the output, we see that the ``ng generate`` command created four new files
 in the ``src/app/task-list`` folder.
 
@@ -137,6 +141,8 @@ When done, your file structure in VSCode should look something like:
 
 .. figure:: ./figures/GenerateComponentResult.png
    :alt: Visual of the results of generate Component.
+
+   File tree of the newly added ``task-list`` component.
 
 ``app.module.ts``
 ------------------
@@ -312,6 +318,8 @@ Your webpage should look similar to:
 .. figure:: ./figures/header-and-task-list.png
    :alt: Two components added to the app template.
 
+   Confirmation that ``task-list`` is properly working in your project.
+
 .. admonition:: Try It
 
    Move ``<app-task-list></app-task-list>`` above ``<app-header></app-header>``
@@ -360,6 +368,8 @@ and it contains the four files we would expect.
 
 .. figure:: ./figures/GenerateNestedComponentResult.png
    :alt: Visual of the result of the running the commands to create a nested component.
+
+   Nested components.
 
 When we place one component inside of another, we must pay attention to how the
 components interact. The nested component is called the *child*, while the
