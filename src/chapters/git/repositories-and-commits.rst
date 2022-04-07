@@ -1,3 +1,5 @@
+.. _repository-setup:
+
 Repositories and Commits
 =========================
 

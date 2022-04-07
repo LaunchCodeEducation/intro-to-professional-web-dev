@@ -173,6 +173,8 @@ machines.
 Great! You've got your project going locally. The next step is to push it up to
 GitHub.
 
+.. _push-to-remote-repo:
+
 Step 2: Push Your Repository To GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

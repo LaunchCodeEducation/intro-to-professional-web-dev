@@ -39,6 +39,8 @@ The starter page should look like this:
 .. figure:: ./figures/lesson1-exercises-start.png
    :alt: Starting setup for exercises.
 
+   Starting set up for the exercises.  Lots of content is missing.  
+
 The page is not pretty yet, but you get to fix that.
 
 Part 1: Modify the CSS
@@ -254,3 +256,5 @@ If you get stuck on a particular exercise:
 
 .. figure:: ./figures/lesson1-exercise-results.png
    :alt: Angular Lesson 1 results.
+
+   Customized and complete angular project example.

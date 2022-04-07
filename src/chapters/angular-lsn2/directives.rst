@@ -24,7 +24,7 @@ There are three types of Angular directives:
    within the DOM.
 
 We learned how to generate and modify components in the
-:ref:`last chapter <angular-1>`. In this lesson, we will focus on how to use
+:ref:`last chapter <fork-repo>`. In this lesson, we will focus on how to use
 structural directives to enhance our work.
 
 Open the Lesson 2 Folder

@@ -13,7 +13,7 @@ There is no need to fork and clone new starter code.
 #. Open your work from Part 2 in Visual Studio Code.
 #. Run ``git status`` to see if you have any uncommitted work. If you do,
    resolve it.
-#. Checkout the ``studio-3`` branch.
+#. Checkout the ``studio-3`` branch:  ``git checkout studio-3``.
 #. Run ``npm install`` to download dependencies.
 #. Run ``ng serve`` to build and serve the project.
 
