@@ -16,7 +16,7 @@ site_theme_options = {
 }
 
 
-project = 'Introduction to Professional Web Development in JavaScript (Independent Track)'
+project = 'Introduction to Professional Web Development in JavaScript'
 
 # -- Project information -----------------------------------------------------
 
