@@ -41,12 +41,12 @@ Create Angular Project
 
    a. You should see a header that says "Welcome to angular-studio-part1!"
 
-#. In the terminal, :ref:`initialize your project with git<repository-setup>`, then stage and commit your files locally before starting on the features.
+#. Stage and commit the files before starting on the features.
 
 .. admonition:: Tip
 
    You will likely still have ``ng serve`` running in your terminal. You can
-   stop ``ng serve`` by pressing the keys "**control+c**", or you can open an
+   stop ``ng serve`` by pressing the keys "control+c", or you can open an
    additional terminal window to run the git commands.
 
 Requirements
@@ -201,9 +201,9 @@ Commit Your Work
 Be sure to stage and commit your changes!
 
 #. Verify the branch and status of the files.
-#. Commit your changes locally.
-#. Create a :ref:`new repository in your GitHub account <push-to-remote-repo>`, then :ref:`push your
-   commits to origin <push-to-remote>`.
+#. Commit your changes.
+#. **Optional**: Create a new repository in your GitHub account, then push your
+   commits to origin.
 
 You will make different versions of the mission planning dashboard in the next
 two studios.

@@ -12,10 +12,9 @@ Getting Started
 For this studio and the next, you will clone some starter code from GitHub.
 
 #. Fork the `Angular Mission Planner repository <https://github.com/LaunchCodeEducation/angular-lc101-mission-planner>`__.
-#. In the terminal, move into your root ``angular_practice`` directory.  
-#. Create a new subdirectory for the Mission Planner repository 
-#. ``cd`` into the new subdirectory.  Do NOT ``git init``.
-#. Clone your fork inside your new subdirectory.
+#. In the terminal, navigate out of the project folder you used for part 1 and
+   into your root ``angular_practice`` directory.
+#. Clone your fork to your computer.
 
    .. admonition:: Warning
 
@@ -23,25 +22,10 @@ For this studio and the next, you will clone some starter code from GitHub.
       control complications that are best avoided.
 
       Before running the ``git clone`` command in the terminal, make sure you
-      are inside the subdirectory you just made!  Cloning into a project that already has a 
-      repo of some kind will throw an error.
+      are NOT inside a current Angular project!
 
-      Using the ``ls`` command in your terminal is a great way to verify your location.
-
-      :ref:`Tips for repository organization and init vs clone <tidy-repos>`. 
-
-#. Use ``git status`` to verify that you are on branch ``studio-2``. If not, use ``git checkout branch-name`` to switch to it.
-
-   .. admonition:: Warning
-
-      When you fork your repo over, ``studio-2`` may have been renamed ``main`` by GitHub.  
-      To verify you have the correct code, compare your ``crew.component.html`` 
-      to LaunchCode's ``crew.component.html`` on the ``studio-2`` branch.
-
-      You can rename your branches to match the LaunchCode's branch names, or keep it as ``main``.
-
-      `How to rename a branch <https://education.launchcode.org/intro-to-programming-csharp/chapters/git/branches.html>`_ (Scroll down to 15.4.5)
-
+#. Use ``git status`` to verify that you are on branch ``studio-2``. If not,
+   use ``git checkout`` to switch to it.
 #. Run ``npm install`` to download dependencies.
 #. Run ``ng serve`` to build and serve the project.
 
@@ -338,7 +322,6 @@ is pressed and the ``<input>`` has focus.
        this.memberBeingEdited = null;
        }
 
-11. Commit and push up your work. 
 
 Bonus Missions
 ---------------

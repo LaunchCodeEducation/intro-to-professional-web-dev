@@ -38,8 +38,6 @@ like. No details yet, just defined spaces where information needs to be added.
 
 Let's see how using a template makes our lives easier.
 
-.. _fork-repo:
-
 No Template
 ^^^^^^^^^^^
 
