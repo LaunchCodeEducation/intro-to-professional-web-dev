@@ -83,8 +83,6 @@ Write your code inside ``generatePassword()``.
       #. If ``string1 = "ABCDEF"`` and ``string2 = "notyet"``, then the output will be "AnBoCtDyEeFt".
       #. If ``string1 = "LoOt"`` and ``string2 = "oku!"``, then the output will be "LookOut!".
 
-2. Return ``code``.
-
 Checking Your Work
 ------------------
 
