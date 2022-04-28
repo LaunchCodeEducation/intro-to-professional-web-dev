@@ -66,8 +66,21 @@ Update ``askForNumber()`` to add user input and validation.
 3. Test your solution to this part by returning to the ``runProgram()`` function in the file and uncommenting the section labelled for testing Part B.
 
 
-Part C: Create a Password Generator
------------------------------------
+Checking Your Work
+------------------
+
+If you want to make sure that you have checked all the boxes, run the following command in your shell on replit.
+
+::
+   
+   npm test
+
+This command runs the Jasmine tests that are checking your work for you. If you have a test that fails, check out the name of the test to get a hint as to what you are missing.
+If you need a refresher on how running the tests works, check out the appendix on :ref:`Tested Code <tested-code>`.
+
+
+Bonus Mission
+-------------
 
 Working and living aboard this amazing space shuttle requires you to pay the utmost attention to cybersecurity.
 Once you are done working on the meal system, you are prompted to create a new password that will be used for the next 24 hours.
@@ -82,15 +95,3 @@ Write your code inside ``generatePassword()``.
       #. If ``string1 = "1234"`` and ``string2 = "5678"``, then the output will be "15263748".
       #. If ``string1 = "ABCDEF"`` and ``string2 = "notyet"``, then the output will be "AnBoCtDyEeFt".
       #. If ``string1 = "LoOt"`` and ``string2 = "oku!"``, then the output will be "LookOut!".
-
-Checking Your Work
-------------------
-
-If you want to make sure that you have checked all the boxes, run the following command in your shell on replit.
-
-::
-   
-   npm test
-
-This command runs the Jasmine tests that are checking your work for you. If you have a test that fails, check out the name of the test to get a hint as to what you are missing.
-If you need a refresher on how running the tests works, check out the appendix on :ref:`Tested Code <tested-code>`.
