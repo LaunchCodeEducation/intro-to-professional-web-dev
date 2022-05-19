@@ -21,7 +21,7 @@ Automatic Testing to Find Errors
 Let's begin with the following, simple code:
 
 .. replit:: js
-   :slug: UnitTestingExercises01Exceptions
+   :slug: UnitTestingExercises02
    :linenos:
 
    function checkFive(num){
@@ -173,7 +173,7 @@ Time for Rock, Paper, Scissors! The function below takes the choices
 It then decides which player won the match and returns a string.
 
 .. replit:: js
-   :slug: UnitTestingExercises02Exceptions
+   :slug: UnitTestingExercises03
    :linenos:
 
    function whoWon(player1,player2){
