@@ -17,8 +17,7 @@ Automatic Testing to Find Errors
       .. sourcecode:: js
          :linenos:
 
-         const test = require('../checkFive.js');
-         const assert = require('assert');
+            const test = require('../checkFive.js');
 
    :ref:`Back to the exercises <exercises-unit-testing>`
 
@@ -33,11 +32,11 @@ Automatic Testing to Find Errors
       .. sourcecode:: js
          :linenos:
 
-         it("returns 'num is less than 5' when num < 5.", function(){
-            // test code //
-         });
+            it("returns 'num is less than 5' when num < 5.", function(){
+               // test code //
+            });
 
-   c. Use ``assert``.
+   c. Use ``expect``.
 
       .. _unit-testing-exercise-solutionsA3c:
 
@@ -45,7 +44,7 @@ Automatic Testing to Find Errors
 
       .. sourcecode:: js
 
-         assert.strictEqual(output, "2 is less than 5.");
+         expect(output).toEqual("2 is less than 5.");
 
    e. Change the sourcecode file and see that the test fails.
 
@@ -56,9 +55,9 @@ Automatic Testing to Find Errors
       .. sourcecode:: js
          :linenos:
 
-         if (num > 5) {
-            // sourcecode //
-         }
+            if (num > 5) {
+               // sourcecode //
+            }
 
    :ref:`Back to the exercises <exercises-unit-testing>`
 
@@ -76,17 +75,16 @@ Try One on Your Own
    .. sourcecode:: js
       :linenos:
 
-      module.exports = {
-            whoWon: whoWon
-      };
+         module.exports = {
+               whoWon: whoWon
+         };
 
    ``RPS.spec.js``:
 
    .. sourcecode:: js
       :linenos:
 
-      const test = require('../RPS.js');
-      const assert = require('assert');
+         const test = require('../RPS.js');
 
    :ref:`Back to the exercises <exercises-unit-testing>`
 
@@ -99,21 +97,21 @@ Try One on Your Own
    .. sourcecode:: js 
       :linenos:
 
-      describe("whoWon", function(){
+         describe("whoWon", function(){
 
-         it("returns 'Player 2 wins!' if P1 = rock & P2 = paper", function(){
-            let output = test.whoWon('rock','paper');
-            assert.strictEqual(output, "Player 2 wins!");
-         });
+            it("returns 'Player 2 wins!' if P1 = rock & P2 = paper", function(){
+               let output = test.whoWon('rock','paper');
+               except(output).toEqual("Player 2 wins!");
+            });
 
-         it("returns 'Player 2 wins!' if P1 = paper & P2 = scissors", function(){
-            let output = test.whoWon('paper','scissors');
-            assert.strictEqual(output, "Player 2 wins!");
-         });
+            it("returns 'Player 2 wins!' if P1 = paper & P2 = scissors", function(){
+               let output = test.whoWon('paper','scissors');
+               expect(output).toEqual("Player 2 wins!");
+            });
 
-         // other test cases //
+            // other test cases //
 
-      }
+         }
    
 Typo to fix:
 ^^^^^^^^^^^^ 
