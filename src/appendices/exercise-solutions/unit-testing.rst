@@ -101,7 +101,7 @@ Try One on Your Own
 
             it("returns 'Player 2 wins!' if P1 = rock & P2 = paper", function(){
                let output = test.whoWon('rock','paper');
-               except(output).toEqual("Player 2 wins!");
+               expect(output).toEqual("Player 2 wins!");
             });
 
             it("returns 'Player 2 wins!' if P1 = paper & P2 = scissors", function(){
