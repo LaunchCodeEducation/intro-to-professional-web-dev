@@ -143,7 +143,7 @@ c. Restore lines 4-6 to ``throw Error("Command type required.");``.
 d. Change 'Command type required.' on line 9 in ``command.spec.js`` to 'Oops'. Click "Run"
    again to verify that the test fails (the error message did not match
    ``"Command type required."``).
-e. Restore line 12 to 'Command type required.'.
+e. Restore line 9 to 'Command type required.'.
 
 Test 2
 ~~~~~~
