@@ -140,10 +140,10 @@ b. Click "Run" to verify that the test passes. Next, comment out lines 4-6 in
    ``command.js``. Click "Run" again to verify that the test fails (the
    expected error is not thrown when the ``Command`` class is called).
 c. Restore lines 4-6 to ``throw Error("Command type required.");``.
-d. Change line 12 in ``command.spec.js`` to ``message: 'Oops'``. Click "Run"
+d. Change 'Command type required.' on line 9 in ``command.spec.js`` to 'Oops'. Click "Run"
    again to verify that the test fails (the error message did not match
    ``"Command type required."``).
-e. Restore line 12 to ``message: "Command type required."``.
+e. Restore line 9 to 'Command type required.'.
 
 Test 2
 ~~~~~~
