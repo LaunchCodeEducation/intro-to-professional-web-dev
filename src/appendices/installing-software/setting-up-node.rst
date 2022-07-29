@@ -37,3 +37,18 @@ Installing Node on your computer also installs the NPM Command Line Interface
       $ node -v
       v##.##.#
 
+#. If the version you downloaded is version 16 or higher, you may need to install an older version when it comes to working with Angular.
+   In order to do so, follow these steps:
+
+   a. Type this command into the terminal
+
+      ::
+         npm install -g node@14.15.1
+      
+      If it doesn't install try adding ``sudo`` before ``npm`` and then run the command again.
+
+   b. Once the install is complete, run this command to verify that you have version 14.15.1
+
+      ::
+         node -v
+
