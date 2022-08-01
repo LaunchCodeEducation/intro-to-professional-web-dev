@@ -39,12 +39,13 @@ command:
 
 .. sourcecode:: bash
 
-   npm install -g @angular/cli@8.2.2
+   npm install -g @angular/cli@12
 
 .. admonition:: Note
 
-   There are more recent versions of this package but we're using the @8.2.2 version 
-   to keep our examples consistent.
+   There are more recent versions of this package but we're using version 12 for generating new code.
+   When you pull down starter code from Github, you will have to run ``npm install`` which will set up that project to use Angular 8.
+   While you may notice differences between the two versions, the core functionality of Angular will remain the same.
    
 .. admonition:: Note
 

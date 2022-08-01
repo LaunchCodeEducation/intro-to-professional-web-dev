@@ -186,11 +186,6 @@ refresh.
 
    Which files did you modify?
 
-Your new webpage might look something like:
-
-.. figure:: ./figures/first-project-play.png
-   :alt: First changes to my-first-project.
-
 Do not worry if you got stuck on some of the tasks. This was a time for
 experimentation. As long as you tried something and saw the result, you still
 learned something valuable.
