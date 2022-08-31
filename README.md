@@ -23,12 +23,13 @@ This template is derived from [LaunchCode's Curriculum Module Template](https://
 ### Creating a New Site
 
 When creating a new LaunchCode Education book, here is how you use this template:
-#. Cloning this repo into your new site directory.
-#. Remove this repo as the origin. If you use the command `git remote -v`, you should now see no remotes.
-#. Add this repo as the upstream repository.
+
+1. Cloning this repo into your new site directory.
+1. Remove this repo as the origin. If you use the command `git remote -v`, you should now see no remotes.
+1. Add this repo as the upstream repository.
 Now you are ready to build curriculum!
 
-#### Customize conf.py
+#### **Customize conf.py**
 
 Change ``site_theme_options.navbar_title`` and ``project`` to match your curriculum content.
 
