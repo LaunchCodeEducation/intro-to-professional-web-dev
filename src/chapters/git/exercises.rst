@@ -59,7 +59,7 @@ To use HTTPS to push and pull from GitHub, users must create a
 process is considered more secure than a username/password verification.
 
 Once you create your PAT, you will use it instead of your password to perform
-HTTPS Git operations.
+HTTPS Git operations. For example, if you are working on a repo with the URL, ``https://github.com/username/repo.git``, your terminal might look like the following:
 
 .. sourcecode:: bash
 
