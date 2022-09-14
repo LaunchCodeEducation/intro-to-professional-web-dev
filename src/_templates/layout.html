@@ -16,14 +16,6 @@
   {% set body_class = "body-bc" %}
 {% endif %}
 
-{% set script_files = script_files + [
-    '_static/js/jquery-1.12.4.min.js',
-    '_static/js/jquery-fix.js',
-    '_static/bootstrap-' + bootstrap_version + '/js/bootstrap.min.js',
-    '_static/bootstrap-sphinx.js'
-  ]
-%}
-
 {%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and sidebars %}
 
 {%- set bs_content_width = "10" %}
@@ -68,6 +60,10 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="{{ pathto('_static/js/jquery-1.12.4.min.js', 1) }}"></script>
+<script type="text/javascript" src="{{ pathto('_static/js/jquery-fix.js', 1) }}"></script>
+<script type="text/javascript" src="{{ pathto('_static', 1) + '/bootstrap-' + bootstrap_version + '/js/bootstrap.min.js' }}"></script>
+<script type="text/javascript" src="{{ pathto('_static/bootstrap-sphinx.js', 1) }}"></script>
 {% endblock %}
 
 {# Silence the sidebar's, relbar's #}
@@ -80,7 +76,6 @@
 
 {%- block content %}
 {{ navBar() }}
-
 {%- if not is_toc %}
 <ol class="breadcrumb container">
     <li><a href="{{ pathto(master_doc) }}">Contents</a></li>
@@ -111,7 +106,7 @@
 <div class="container">
   <div class="row">
     {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
-    <div class="{{ bs_span_prefix }}{{ bs_content_width }} col-md-offset-1 content ">
+    <div class="{{ bs_span_prefix }}{{ bs_content_width }} col-md-offset-1 content " role="main">
 
     {% block body %}{% endblock %}
 
