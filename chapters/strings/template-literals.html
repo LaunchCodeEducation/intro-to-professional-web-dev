@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.8. Template Literals &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.9. Exercises: Strings" href="exercises.html" />
+    <link rel="prev" title="7.7. Special Characters" href="special-characters.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">7. </span>Stringing Characters Together</a></li>
+    <li class="active"><span class="section-number">7.8. </span>Template Literals</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="template-literals">
+<h1><span class="section-number">7.8. </span>Template Literals<a class="headerlink" href="#template-literals" title="Permalink to this headline">¶</a></h1>
+<p>Earlier, we used <em>concatenation</em> to combine strings and variables together in
+order to create specific output:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">currentAge</span> <span class="o">=</span> <span class="mf">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Next year, &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; will be &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mf">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Jack will be 10.
+</pre></div>
+</div>
+</div>
+<p>Unfortunately, this process quickly gets tedious for any output that depends on
+multiple variables. Often, concatenation requires multiple test runs of the
+code in order to check for syntax errors and proper spacing within the output.
+Fortunately, JavaScript offers us a better way to accomplish this process.</p>
+<p id="index-0"><strong>Template literals</strong> allow for the automatic insertion of expressions
+(including variables) into strings.</p>
+<p>While normal strings are enclosed in single or double quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>),
+template literals are enclosed in back-tick characters, <code class="docutils literal notranslate"><span class="pre">`</span></code>. Within a
+template literal, any expression surrounded by <code class="docutils literal notranslate"><span class="pre">${</span> <span class="pre">}</span></code> will be evaluated, with
+the resulting value included in the string.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Template literals allow for variables and other expressions to be directly
+included in strings.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">currentAge</span> <span class="o">=</span> <span class="mf">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Next year, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> will be </span><span class="si">${</span><span class="nx">currentAge</span> <span class="o">+</span> <span class="mf">1</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Jack will be 10.
+</pre></div>
+</div>
+</div>
+<p>Besides allowing us to include data in strings in a cleaner, more readable way,
+template literals also allow us to easily create multi-line strings without
+using string concatenation or special characters.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">poem</span> <span class="o">=</span> <span class="sb">`The mind chases happiness.</span>
+<span class="sb">The heart creates happiness.</span>
+<span class="sb">The soul is happiness</span>
+<span class="sb">And it spreads happiness</span>
+<span class="sb">All-where.</span>
+
+<span class="sb">– Sri Chinmoy`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poem</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>The mind chases happiness.
+The heart creates happiness.
+The soul is happiness
+And it spreads happiness
+All-where.
+
+– Sri Chinmoy
+</pre></div>
+</div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The ECMAScript specifications define the standard for JavaScript. The 6th
+edition, known as ES2015, added template literals. Not only are template
+literals relatively new to JavaScript, but you may encounter
+environments---such as older web browsers---where they are not supported.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">7.8.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Mad Libs are games where one player asks the group to supply random words
+(e.g. &quot;Give me a verb,&quot; or, &quot;I need a color&quot;). The words are substituted
+into blanks within a story, which is then read for everyone's amusement. In
+elementary school classrooms, giggles and hilarity often ensue. TRY IT!</p>
+<p>Refactor the following code to replace the awkward string concatenation with template literals. Be sure to add your own choices for the variables.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">pluralNoun</span> <span class="o">=</span> <span class="p">;</span>
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="p">;</span>
+<span class="kd">let</span> <span class="nx">verb</span> <span class="o">=</span> <span class="p">;</span>
+<span class="kd">let</span> <span class="nx">adjective</span> <span class="o">=</span> <span class="p">;</span>
+<span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;JavaScript provides a &quot;</span><span class="o">+</span> <span class="nx">color</span> <span class="o">+</span><span class="s2">&quot; collection of tools — including &quot;</span> <span class="o">+</span> <span class="nx">adjective</span> <span class="o">+</span> <span class="s2">&quot; syntax and &quot;</span> <span class="o">+</span> <span class="nx">pluralNoun</span> <span class="o">+</span> <span class="s2">&quot; — that allows &quot;</span><span class="o">+</span> <span class="nx">name</span> <span class="o">+</span><span class="s2">&quot; to &quot;</span><span class="o">+</span> <span class="nx">verb</span> <span class="o">+</span><span class="s2">&quot; with strings.&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/String-Mad-Lib" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="special-characters.html"><span aria-hidden="true">&larr;</span> <span class="section-number">7.7. </span>Special Characters</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">7.9. </span>Exercises: Strings <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

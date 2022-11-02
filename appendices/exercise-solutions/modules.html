@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Solutions: Modules &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise Solutions: Unit Testing" href="unit-testing.html" />
+    <link rel="prev" title="Exercise Solutions: Objects &amp; Math" href="objects-and-math.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Exercise Solutions</a></li>
+    <li class="active">Exercise Solutions: Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercise-solutions-modules">
+<span id="modules-solutions"></span><h1>Exercise Solutions: Modules<a class="headerlink" href="#exercise-solutions-modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="export-finished-modules">
+<span id="modules-solutions1"></span><h2>Export Finished Modules<a class="headerlink" href="#export-finished-modules" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">averages.js</span></code>, add code to export all of the functions within an
+object.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">averageForStudent</span><span class="o">:</span> <span class="nx">averageForStudent</span><span class="p">,</span>
+   <span class="nx">averageForTest</span><span class="o">:</span> <span class="nx">averageForTest</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+<div class="section" id="code-and-export-a-new-module">
+<span id="modules-solutions2"></span><h2>Code and Export a New Module<a class="headerlink" href="#code-and-export-a-new-module" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Add code to complete the <code class="docutils literal notranslate"><span class="pre">randomFromArray</span></code> function. It should take an
+array as an argument and then return a randomly selected element from that array.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">randomFromArray</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+   <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+   <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+<div class="section" id="import-required-modules">
+<span id="modules-solutions3"></span><h2>Import Required Modules<a class="headerlink" href="#import-required-modules" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Assign <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> to the <code class="docutils literal notranslate"><span class="pre">input</span></code> variable.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline-sync&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Assign the <code class="docutils literal notranslate"><span class="pre">printAll</span></code> function from <code class="docutils literal notranslate"><span class="pre">display.js</span></code> to the <code class="docutils literal notranslate"><span class="pre">printAll</span></code> variable.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">printAll</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./display.js&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="finish-the-project">
+<span id="modules-solutions4"></span><h2>Finish the Project<a class="headerlink" href="#finish-the-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Line 21 - Call <code class="docutils literal notranslate"><span class="pre">printAll</span></code> to display all of the tests and student
+scores. Be sure to pass in the correct arguments.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">printAll</span><span class="p">(</span><span class="nx">astronauts</span><span class="p">,</span> <span class="nx">testTitles</span><span class="p">,</span> <span class="nx">scores</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Line 29 - Call <code class="docutils literal notranslate"><span class="pre">averageForStudent</span></code> (with the proper arguments) to print
+each astronaut's average score.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">avg</span> <span class="o">=</span> <span class="nx">averages</span><span class="p">.</span><span class="nx">averageForStudent</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="nx">scores</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="objects-and-math.html"><span aria-hidden="true">&larr;</span> Exercise Solutions: Objects &amp; Math</a></li>
+        
+        
+        <li class="next"><a href="unit-testing.html">Exercise Solutions: Unit Testing <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

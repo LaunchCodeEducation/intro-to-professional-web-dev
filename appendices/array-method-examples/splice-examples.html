@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>splice Examples &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="split Examples" href="split-examples.html" />
+    <link rel="prev" title="sort Examples" href="sort-examples.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Array Method Examples</a></li>
+    <li class="active"><code class="docutils literal notranslate"><span class="pre">splice</span></code> Examples</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="splice-examples">
+<span id="id1"></span><h1><code class="docutils literal notranslate"><span class="pre">splice</span></code> Examples<a class="headerlink" href="#splice-examples" title="Permalink to this headline">¶</a></h1>
+<p>The general syntax for this method is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arrayName.splice(index, number of elements to change, item1, item2, ...);
+</pre></div>
+</div>
+<p>Inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>, only the first argument is required.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">splice</span></code> method modifies one or more elements anywhere in the array.
+Entries can be added, removed, or changed. This method requires practice.</p>
+<p>Hang on, here we go:</p>
+<div class="section" id="removing-elements">
+<h2>Removing Elements<a class="headerlink" href="#removing-elements" title="Permalink to this headline">¶</a></h2>
+<p>To remove elements from an array, the <code class="docutils literal notranslate"><span class="pre">splice</span></code> method needs 1 or 2 arguments.</p>
+<ol class="arabic">
+<li><p class="first">Given only one argument, <code class="docutils literal notranslate"><span class="pre">splice(index)</span></code> removes every entry from
+<code class="docutils literal notranslate"><span class="pre">index</span></code> to the end of the array.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>    <span class="c1">//Everything from index 2 and beyond is removed.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;]
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first">With two arguments, <code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">items)</span></code> starts at <code class="docutils literal notranslate"><span class="pre">index</span></code>
+and removes the specified <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">items</span></code> from the array.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">);</span>    <span class="c1">//Start at index 2 and remove 3 total entries.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">);</span>    <span class="c1">//Start at index 1 and remove 1 entry.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;f&#39; ]
+[ &#39;a&#39;, &#39;f&#39; ]
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="adding-or-replacing-elements">
+<h2>Adding or Replacing Elements<a class="headerlink" href="#adding-or-replacing-elements" title="Permalink to this headline">¶</a></h2>
+<p>To add or replace elements in an array, the <code class="docutils literal notranslate"><span class="pre">splice</span></code> method requires 3 or
+more arguments.</p>
+<ol class="arabic">
+<li><p class="first">To add elements, set the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">elements</span></code> argument to <code class="docutils literal notranslate"><span class="pre">0</span></code> and follow
+this with the new items.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">0,</span> <span class="pre">new</span> <span class="pre">item)</span></code> starts at <code class="docutils literal notranslate"><span class="pre">index</span></code> and <em>INSERTS</em> the new
+items. Existing elements get shifted further down the array.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>     <span class="c1">//Start at index 2, remove 0 entries, and add &#39;hello&#39;.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first">To replace elements in an array, the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">elements</span></code> argument must
+be a positive integer. Follow this with the new items for the array.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">items,</span> <span class="pre">new</span> <span class="pre">items)</span></code> starts at <code class="docutils literal notranslate"><span class="pre">index</span></code> and
+<em>REPLACES</em> the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">items</span></code> with the new ones.</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mf">9</span><span class="p">);</span>    <span class="c1">//Start at index 2, replace 3 entries with &#39;hello&#39; and 9.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;hello&#39;, 9, &#39;f&#39; ]
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="sort-examples.html"><span aria-hidden="true">&larr;</span> <code class="docutils literal notranslate"><span class="pre">sort</span></code> Examples</a></li>
+        
+        
+        <li class="next"><a href="split-examples.html"><code class="docutils literal notranslate"><span class="pre">split</span></code> Examples <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

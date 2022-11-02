@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Solutions: Fetch &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise Solutions: TypeScript" href="typescript.html" />
+    <link rel="prev" title="Exercise Solutions: JSON" href="JSON.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Exercise Solutions</a></li>
+    <li class="active">Exercise Solutions: Fetch</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercise-solutions-fetch">
+<span id="fetch-exercise-solutions"></span><h1>Exercise Solutions: Fetch<a class="headerlink" href="#exercise-solutions-fetch" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic" id="fetch-exercise-solutions1">
+<li><p class="first"><strong>Fetch the URL</strong></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+      <span class="c1">// TODO: do something after fetching and receiving a response</span>
+   <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../../chapters/fetch/exercises.html#exercises-fetch"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+<ol class="arabic" id="fetch-exercise-solutions3" start="3">
+<li><p class="first"><strong>Use the .json() method to print response data:</strong></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+   <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+   <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>Your <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement should return the same array of 6 JSON objects containing planetary data found <a class="reference external" href="https://handlers.education.launchcode.org/static/planets.json" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p><a class="reference internal" href="../../chapters/fetch/exercises.html#exercises-fetch"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+<ol class="arabic" id="fetch-exercise-solutions5" start="5">
+<li><p class="first"><strong>Capture the JSON data:</strong></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
+   <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+   <span class="kd">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+   <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;`</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>We can tell that our fetch works because the JSON array is printed to the console.
+However, you should also see an error in the console related to the template literal
+using <code class="docutils literal notranslate"><span class="pre">json[0].name</span></code>.
+This error occurs because of the asynchronous nature of JavaScript. Although we
+now have <code class="docutils literal notranslate"><span class="pre">json</span></code> defined outside of the fetch request, at the point in time that
+we seek it for the template literal, we haven't yet received the json data.
+One clue that asynchronism is at play: the error appears before the printed JSON.</p>
+<p><a class="reference internal" href="../../chapters/fetch/exercises.html#exercises-fetch"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+<ol class="arabic" id="fetch-exercise-solutions7" start="7">
+<li><p class="first"><strong>Dynamically change planet info displayed</strong></p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+      <span class="nx">destination</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="nx">destination</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">            &lt;div&gt;</span>
+<span class="sb">               &lt;h3&gt;Planet </span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+<span class="sb">               &lt;img src=</span><span class="si">${</span><span class="nx">json</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">image</span><span class="si">}</span><span class="sb"> height=250&gt;&lt;/img&gt;</span>
+<span class="sb">            &lt;/div&gt;</span>
+<span class="sb">         `</span><span class="p">;</span>
+         <span class="nx">index</span> <span class="o">=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mf">1</span><span class="p">)</span> <span class="o">%</span> <span class="nx">json</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+      <span class="p">});</span>
+   <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../../chapters/fetch/exercises.html#exercises-fetch"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="JSON.html"><span aria-hidden="true">&larr;</span> Exercise Solutions: JSON</a></li>
+        
+        
+        <li class="next"><a href="typescript.html">Exercise Solutions: TypeScript <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

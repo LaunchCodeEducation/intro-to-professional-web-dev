@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.8. Studio: Communication Log (cont.) &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23. The DOM and Events" href="../dom-and-events/index.html" />
+    <link rel="prev" title="22.7. Studio: Communication Log" href="studio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Git More Collaboration</a></li>
+    <li class="active"><span class="section-number">22.8. </span>Studio: Communication Log (cont.)</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="studio-communication-log-cont">
+<span id="comm-log-part2"></span><h1><span class="section-number">22.8. </span>Studio: Communication Log (cont.)<a class="headerlink" href="#studio-communication-log-cont" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>As you go through these steps, you'll be working with <em>branches</em>.</p>
+<p class="last">It's very likely you will make changes to the code only to realize that you
+did so in the wrong branch. When this happens (and it happens to all of us)
+you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch.
+Read about how to do this in our <a class="reference internal" href="../../appendices/git/stash.html#git-stash"><span class="std std-ref">Git Stash</span></a> tutorial.</p>
+</div>
+<div class="section" id="step-5-first-message-exchange">
+<h2><span class="section-number">22.8.1. </span>Step 5: First Message Exchange<a class="headerlink" href="#step-5-first-message-exchange" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>Pilot</strong>: Use the <em>File</em> menu in Visual Studio Code to open the cloned
+<code class="docutils literal notranslate"><span class="pre">communication-log-control</span></code> directory. Double click the <code class="docutils literal notranslate"><span class="pre">index.html</span></code>
+file to open it in the editor.</p>
+<p>Modify the HTML to add your response to mission control. Be creative, the
+communication can go anywhere! Just don't ask your partner what you should
+write.</p>
+</li>
+<li><p class="first"><strong>Pilot</strong>: After you finish, commit your change with the usual
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status/git</span> <span class="pre">add</span> <span class="pre">./git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> process.</p>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Push up your changes up to GitHub so <strong>Control</strong> can see them as
+well. Use the command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
+Counting objects: 9, done.
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+To git@github.com:username/communication-log.git
+   511239a..679de77  main -&gt; main
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Control</strong>: Pull Pilot's changes down from GitHub with the command</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin main
+From github.com:username/communication-log
+   e0de62d..e851b7e  main     -&gt; origin/main
+Updating e0de62d..e851b7e
+Fast-forward
+index.html | 1 +
+1 file changed, 1 insertion(+)
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Control</strong>: Notice that the code your local <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file changes to
+reflect the line(s) Pilot added. Cool!</p>
+<p>Respond by adding a new HTML element and some text. Save, commit, and push
+your changes up to GitHub.</p>
+</li>
+<li><p class="first"><strong>Pilot and Control</strong>: Play with the <code class="docutils literal notranslate"><span class="pre">pull/edit/push</span></code> process for a while!
+Repeat the cycle a few more times to add to your story.</p>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>In VS Code, right-click on the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> tab. Choose the <em>Copy Path</em>
+option.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/copy-path.png"><img alt="Menu options that appear after right-clicking a file tab in VS Code. &quot;Copy Path&quot; is highlighted." src="../../_images/copy-path.png" style="width: 30%;" /></a>
+</div>
+<p>Next, open a web browser and paste the path into the address bar. Ta da!
+Your webpage appears. Opening <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser lets you track
+your progress by refreshing the page.</p>
+<p class="last">Notice that the path in the address bar looks very similar to the result we
+would see from the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command in the terminal.</p>
+</div>
+</div>
+<div class="section" id="step-6-create-a-branch-in-git">
+<h2><span class="section-number">22.8.2. </span>Step 6: Create a Branch In Git<a class="headerlink" href="#step-6-create-a-branch-in-git" title="Permalink to this headline">¶</a></h2>
+<p>This back-and-forth workflow is nice, but it can get in the way. After all,
+professional developers don't sit around waiting for their teammates to commit
+and push a change before starting their own work. Fortunately, Git branches
+allow partners to work on a project at the same time and at their own pace.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Pilot</strong>: While Control is working on the next part of the story, use the
+terminal to create a new branch called <code class="docutils literal notranslate"><span class="pre">open-mic</span></code>. Recall that a <em>branch</em>
+is a separate copy of the codebase. This lets you commit changes without
+affecting the code in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b open-mic
+Switched to a new branch &#39;open-mic&#39;
+
+$ git branch
+  main
+* open-mic
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Pilot</strong>: In VS Code, create a new file called <code class="docutils literal notranslate"><span class="pre">style.css</span></code> and add the
+following CSS style rule:</p>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+   <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Next, open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and link to the stylesheet. Your HTML
+should look something like this:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Radio check. Pilot, please confirm.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Your ongoing conversation here... --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Save and commit your changes, then push the new branch up to
+GitHub with the command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin open-mic
+</pre></div>
+</div>
+<p>Note that the command is a little different than what you used before
+(<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code>). The final part is the name of the branch that
+you want to push to GitHub.</p>
+</li>
+<li><p class="first"><strong>Control</strong>: To pull down the new <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch, enter the command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin open-mic
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you don't know the name of the new branch, then just enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.
+This will pull down <em>all</em> new branches and show you a list of the options.</p>
+</div>
+</li>
+<li><p class="first"><strong>Pilot and Control</strong>: If you haven't already done so, open <code class="docutils literal notranslate"><span class="pre">index.html</span></code>
+in a browser to see what it looks like.</p>
+</li>
+</ol>
+<p>Good! Now let's take a look at GitHub and find the new <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch.</p>
+<div class="section" id="view-branches-in-github">
+<h3><span class="section-number">22.8.2.1. </span>View Branches in GitHub<a class="headerlink" href="#view-branches-in-github" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pilot and Control</strong>: To view the available branches on GitHub, select
+<em>Branches</em> from the navigation section just below the repository title.</p>
+<div class="figure align-default" id="id1">
+<img alt="A GitHub repository page with the Branches button highlighted." src="../../_images/two-branches.png" />
+<p class="caption"><span class="caption-text">The branches Button in GitHub</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Great progress! Now let's figure out how to merge two branches in GitHub.</p>
+</div>
+</div>
+<div class="section" id="step-7-open-a-pull-request-in-github">
+<h2><span class="section-number">22.8.3. </span>Step 7: Open a Pull Request in GitHub<a class="headerlink" href="#step-7-open-a-pull-request-in-github" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>Pilot</strong>: In your browser, go to the GitHub project and click on <em>Branches</em>
+and make sure you see the new branch name, <em>open-mic</em>.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/new-pr-button1.png"><img alt="The Branches page of a repo, with a button to open a new pull request to the right of each feature branch." src="../../_images/new-pr-button1.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The branches page in GitHub.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Click <em>New Pull Request</em> to ask Control to review your changes in
+the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch before merging them into <code class="docutils literal notranslate"><span class="pre">main</span></code>. Add some text in
+the description box to let Control know what you did and why.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The branch selected in the <em>base</em> dropdown is the one you want to merge
+<em>into</em>, while the selected branch in the <em>compare</em> dropdown is the one
+you want to merge <em>from</em>.</p>
+<div class="last figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/PR-window.png"><img alt="The form for creating a new pull request." src="../../_images/PR-window.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Open a PR in GitHub.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</li>
+</ol>
+<p>This is what an opened pull request looks like:</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/open-pr1.png"><img alt="An open pull request." src="../../_images/open-pr1.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-text">An open PR in GitHub</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="step-8-merge-the-pull-request">
+<h2><span class="section-number">22.8.4. </span>Step 8: Merge the Pull Request<a class="headerlink" href="#step-8-merge-the-pull-request" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>Control</strong>: Go to your repo in GitHub. Click on <em>Pull Requests</em>. Next,
+click on the title for the one and only PR.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/check-pr-info.png"><img alt="Review the PR details." src="../../_images/check-pr-info.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">PR Open in GitHub</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first"><strong>Control</strong>: The page that opens shows the history of all the commits made
+to the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch. When ready, click the green <em>Merge Pull Request</em>
+button, followed by <em>Confirm Merge</em>.</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../_images/confirm-merge.png"><img alt="Confirm the merge request." src="../../_images/confirm-merge.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Finally! Merge the pull request.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Upon a successful merge, you should see a screen similar to the following:</p>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../../_images/pr-merged1.png"><img alt="The screen displayed after a PR is merged" src="../../_images/pr-merged1.png" style="width: 65%;" /></a>
+<p class="caption"><span class="caption-text">PR Merged in GitHub</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first"><strong>Pilot and Control</strong>: The changes from <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> are now in the <code class="docutils literal notranslate"><span class="pre">main</span></code>
+branch, but only in the remote repository on GitHub. You will need to pull
+the updates to your <code class="docutils literal notranslate"><span class="pre">main</span></code> for them to be present locally.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout main
+$ git pull origin main
+</pre></div>
+</div>
+<p>Git is able to merge these files on its own.</p>
+</li>
+</ol>
+<p>Notice that the changes made in the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch now appear in <code class="docutils literal notranslate"><span class="pre">main</span></code>.
+Refreshing the tab in your browser should display the styled webpage!</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>When you save a change to our HTML code, clicking the <em>Refresh</em> button in
+the browser displays the new layout. However, this doesn't always work for
+changes made to the CSS. Browsers often save the stylesheet in memory to
+speed up reloading. If the browser continues to use the old code, you won't
+see your new styles.</p>
+<p class="last">To fix this, force a clean reload of the page. For most browsers (like
+Firefox, Chrome, and Safari), hold down the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key and click
+<em>Refresh</em>. For Microsoft Edge, use the <code class="docutils literal notranslate"><span class="pre">Control</span></code> key plus <em>Refresh</em>.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h2><span class="section-number">22.8.5. </span>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>Before moving on to the bonus studio content, here are some external resources
+for using Git and GitHub.</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git Branching - Basic Branching and Merging<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/" target="_blank">Adding Another Person To Your Repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank">Resolving Conflicts In the Command Line<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+<div class="section" id="bonus-merge-conflicts">
+<h2><span class="section-number">22.8.6. </span>Bonus: Merge Conflicts!<a class="headerlink" href="#bonus-merge-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>When teaming up on a project, things won't always go smoothly. It's common for
+two people to change the same line(s) of code on their separate machines. This
+prevents Git from being able to automatically finish a merge.</p>
+<div class="figure align-default" id="id8">
+<img alt="An animated GIF file showing two opposing armies colliding in a mess." src="../../_images/git-merge.gif" />
+<p class="caption"><span class="caption-text">Merge conflicts!</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>Merge conflicts often occur, and they are not a big deal. To see how to handle
+this situation, you will intentionally create a merge conflict and then resolve
+it.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Pilot</strong>: In VS Code, switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Change the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. The webpage is looking pretty
+plain, so spice up the <code class="docutils literal notranslate"><span class="pre">body</span></code> style rule to look like this:</p>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+   <span class="k">background-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+   <span class="k">font-size</span><span class="p">:</span> <span class="mi">150</span><span class="kt">%</span><span class="p">;</span>
+   <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Satisfy&#39;</span><span class="p">,</span> <span class="kc">cursive</span><span class="p">;</span>
+   <span class="k">margin</span><span class="p">:</span> <span class="mi">5</span><span class="kt">em</span> <span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The result:</p>
+<div class="figure align-default" id="id9">
+<a class="reference internal image-reference" href="../../_images/fancy-text.png"><img alt="Our HTML page with a fancy font." src="../../_images/fancy-text.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Satisfying!</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Save and commit the changes, then push them up to GitHub.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Meanwhile...</p>
+<ol class="arabic">
+<li><p class="first"><strong>Control</strong>: In VS Code, switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+</li>
+<li><p class="first"><strong>Control</strong>: In your local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file, change the <code class="docutils literal notranslate"><span class="pre">body</span></code> rule to
+look like this:</p>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+   <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+   <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Sacramento&#39;</span><span class="p">,</span> <span class="kc">cursive</span><span class="p">;</span>
+   <span class="k">font-size</span><span class="p">:</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+   <span class="k">margin-top</span><span class="p">:</span> <span class="mi">5</span><span class="kt">%</span><span class="p">;</span>
+   <span class="k">margin-left</span><span class="p">:</span> <span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+   <span class="k">margin-right</span><span class="p">:</span> <span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first"><strong>Control</strong>: Save and commit your changes to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+</li>
+</ol>
+<div class="section" id="resolve-the-merge-conflicts">
+<h3><span class="section-number">22.8.6.1. </span>Resolve the Merge Conflicts<a class="headerlink" href="#resolve-the-merge-conflicts" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first"><strong>Control</strong>: Try to push your changes up to GitHub. You should get an error
+message. How exciting!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
+
+To git@github.com:username/communication-log.git
+! [rejected]        main -&gt; main (fetch first)
+error: failed to push some refs to &#39;git@github.com:username/communication-log.git&#39;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., &#39;git pull ...&#39;) before pushing again.
+
+There&#39;s a lot of text in the message. However, the main idea is clear:
+``Updates were rejected because the remote contains work that you do not have
+locally.``
+</pre></div>
+</div>
+</li>
+<li><p class="first">Somebody (<strong>Pilot</strong>, in this case), pushed changes to <code class="docutils literal notranslate"><span class="pre">main</span></code>, and you
+don't have those commits on your computer. To fix this, begin by pulling
+those changes down from GitHub:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull
+
+From github.com:username/communication-log
+   7d7e42e..0c21659  main     -&gt; origin/main
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
+Automatic merge failed; fix conflicts and then commit the result.
+</pre></div>
+</div>
+<p>Since <strong>Pilot</strong> and <strong>Control</strong> both made changes to the same lines of code,
+Git cannot automatically merge the changes.</p>
+</li>
+<li><p class="first"><strong>Control</strong>: The specific locations where Git could not automatically merge
+files are indicated by lines that begin with <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code>. You will have to
+edit these files yourself to incorporate Pilot's changes. Open the
+<code class="docutils literal notranslate"><span class="pre">style.css</span></code> file.</p>
+<div class="figure align-default" id="id10">
+<a class="reference internal image-reference" href="../../_images/conflicts-css.png"><img alt="VS Code shows merge conflicts in the editor window" src="../../_images/conflicts-css.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Merge conflicts in <code class="docutils literal notranslate"><span class="pre">style.css</span></code>, viewed in VS Code</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>At the top and bottom, there is some code that could be merged without
+issue. Between the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">=======</span></code> symbols is the version
+of the code that exists locally. These are <em>your</em> changes.</p>
+<p>Between <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">a48e8a75...</span></code> are the changes that
+<strong>Pilot</strong> made (the hash <code class="docutils literal notranslate"><span class="pre">a48e8a75...</span></code> will be unique to the commit, so
+you'll see something slightly different on your screen).</p>
+</li>
+<li><p class="first"><strong>Control</strong>: To fix the conflicts, you need to tell Git what code to keep.
+You can use the provided buttons to either <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Current</span> <span class="pre">Change</span></code> (which
+is your code), <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Incoming</span> <span class="pre">Change</span></code> (from <strong>Pilot</strong>), or you can
+update the highlighted statements directly in the editor. We'll let you
+decide how to handle this!</p>
+</li>
+<li><p class="first"><strong>Control</strong>: Save, commit, and push your changes. You should see no error
+message this time.</p>
+</li>
+<li><p class="first"><strong>Pilot</strong>: Pull down the new updates. Notice that since <strong>Control</strong> dealt
+with the merge conflicts, you don't have to!</p>
+</li>
+</ol>
+<p>Congratulations! You just fixed your first merge conflict!</p>
+</div>
+<div class="section" id="more-merge-conflicts">
+<h3><span class="section-number">22.8.6.2. </span>More Merge Conflicts!<a class="headerlink" href="#more-merge-conflicts" title="Permalink to this headline">¶</a></h3>
+<p>Turn the tables so <strong>Pilot</strong> can practice resolving a merge conflict.</p>
+<ol class="arabic simple">
+<li><strong>Control and Pilot</strong>: Decide which file and lines of code you will both
+change. Make <em>different</em> changes in those places.</li>
+<li><strong>Control</strong>: Save, commit, and push your changes up to GitHub.</li>
+<li><strong>Pilot</strong>: Try to pull down the changes, and notice that there are merge
+conflicts. Resolve them, then save, commit, and push the result.</li>
+<li><strong>Control</strong>: Pull down the final, resolved code.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="avoiding-conflicts">
+<h2><span class="section-number">22.8.7. </span>Avoiding Conflicts<a class="headerlink" href="#avoiding-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>Git happens. Merge conflicts will pop up, but they're not a big deal. Still,
+the best way to handle them is to try to avoid them in the first place. Here
+are some tips:</p>
+<ol class="arabic simple">
+<li>Deal with any uncommitted work before trying to merge.</li>
+<li>Partners should avoid working on the same file at the same time.</li>
+<li>Try to avoid adding code directly into <code class="docutils literal notranslate"><span class="pre">main</span></code>. New ideas should be
+explored in a different branch first and then merged.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="studio.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.7. </span>Studio: Communication Log</a></li>
+        
+        
+        <li class="next"><a href="../dom-and-events/index.html"><span class="section-number">23. </span>The DOM and Events <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Solutions: Unit Testing &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise Solutions: Exceptions" href="exceptions.html" />
+    <link rel="prev" title="Exercise Solutions: Modules" href="modules.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Exercise Solutions</a></li>
+    <li class="active">Exercise Solutions: Unit Testing</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercise-solutions-unit-testing">
+<span id="unit-testing-exercise-solutions"></span><h1>Exercise Solutions: Unit Testing<a class="headerlink" href="#exercise-solutions-unit-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="automatic-testing-to-find-errors">
+<h2>Automatic Testing to Find Errors<a class="headerlink" href="#automatic-testing-to-find-errors" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic" id="unit-testing-exercise-solutionsa1">
+<li><p class="first">Get the sourcecode file and the test code file to talk to each other.</p>
+<ol class="loweralpha">
+<li><p class="first">Add two <code class="docutils literal notranslate"><span class="pre">require</span></code> statements.</p>
+<p><code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="kd">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../checkFive.js&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/unit-testing/exercises.html#exercises-unit-testing"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Check that <code class="docutils literal notranslate"><span class="pre">checkFive</span></code> produces the correct output when passed a number less than 5.</p>
+<ol class="loweralpha">
+<li><p class="first">Write a descriptive test name.</p>
+<p id="unit-testing-exercise-solutionsa3a"><code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns &#39;num is less than 5&#39; when num &lt; 5.&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// test code //</span>
+   <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="loweralpha" start="3">
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">expect</span></code>.</p>
+<p id="unit-testing-exercise-solutionsa3c"><code class="docutils literal notranslate"><span class="pre">checkFive.spec.js</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;2 is less than 5.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="loweralpha" start="5">
+<li><p class="first">Change the sourcecode file and see that the test fails.</p>
+<p id="unit-testing-exercise-solutionsa3e"><code class="docutils literal notranslate"><span class="pre">checkFive.js</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="mf">5</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// sourcecode //</span>
+   <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/unit-testing/exercises.html#exercises-unit-testing"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="try-one-on-your-own">
+<span id="unit-testing-exercise-solutionsb"></span><h2>Try One on Your Own<a class="headerlink" href="#try-one-on-your-own" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Set up the <code class="docutils literal notranslate"><span class="pre">RPS.js</span></code> and <code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code> files to talk to each other.</p>
+<p id="unit-testing-exercise-solutionsb1"><code class="docutils literal notranslate"><span class="pre">RPS.js</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="nx">whoWon</span><span class="o">:</span> <span class="nx">whoWon</span>
+   <span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="kd">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../RPS.js&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../../chapters/unit-testing/exercises.html#exercises-unit-testing"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Two sample tests.</p>
+<p id="unit-testing-exercise-solutionsb3"><code class="docutils literal notranslate"><span class="pre">RPS.spec.js</span></code>:</p>
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;whoWon&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+
+      <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns &#39;Player 2 wins!&#39; if P1 = rock &amp; P2 = paper&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">test</span><span class="p">.</span><span class="nx">whoWon</span><span class="p">(</span><span class="s1">&#39;rock&#39;</span><span class="p">,</span><span class="s1">&#39;paper&#39;</span><span class="p">);</span>
+         <span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;Player 2 wins!&quot;</span><span class="p">);</span>
+      <span class="p">});</span>
+
+      <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns &#39;Player 2 wins!&#39; if P1 = paper &amp; P2 = scissors&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+         <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">test</span><span class="p">.</span><span class="nx">whoWon</span><span class="p">(</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span><span class="s1">&#39;scissors&#39;</span><span class="p">);</span>
+         <span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;Player 2 wins!&quot;</span><span class="p">);</span>
+      <span class="p">});</span>
+
+      <span class="c1">// other test cases //</span>
+
+   <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<div class="section" id="typo-to-fix">
+<h3>Typo to fix:<a class="headerlink" href="#typo-to-fix" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">RPS.js</span></code>, there is a conditional block that checks if <code class="docutils literal notranslate"><span class="pre">player1</span></code> plays <code class="docutils literal notranslate"><span class="pre">'scissors'</span></code> and <code class="docutils literal notranslate"><span class="pre">player2</span></code> plays <code class="docutils literal notranslate"><span class="pre">'rock</span> <span class="pre">'</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">'rock</span> <span class="pre">'</span></code> string contains a trailing space that should be removed.</p>
+<p><a class="reference internal" href="../../chapters/unit-testing/exercises.html#exercises-unit-testing"><span class="std std-ref">Back to the exercises</span></a></p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="modules.html"><span aria-hidden="true">&larr;</span> Exercise Solutions: Modules</a></li>
+        
+        
+        <li class="next"><a href="exceptions.html">Exercise Solutions: Exceptions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

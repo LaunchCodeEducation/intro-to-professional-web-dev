@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.4. Test-Driven Development &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14.5. TDD in Action" href="tdd-example.html" />
+    <link rel="prev" title="14.3. Unit Testing in Action" href="unit-testing-in-action.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">14. </span>Unit Testing</a></li>
+    <li class="active"><span class="section-number">14.4. </span>Test-Driven Development</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="test-driven-development">
+<span id="tdd"></span><h1><span class="section-number">14.4. </span>Test-Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><span class="target" id="index-1"></span><p id="index-2">Now that we know more about unit tests, we are going to learn a new way of using them.
+So far we have written tests to verify functionality of <em>existing</em> code. Next we are going
+to use tests to verify functionality of code that does NOT already exist. This may sound
+odd, but this process has many benefits as we will learn.</p>
+<p>As the name sounds, <strong>Test-driven development (TDD)</strong> is a software development
+process where the unit tests are written first. However, that doesn't tell the
+entire story. Writing the tests first and intentionally thinking more about the
+code design leads to better code. The name comes from the idea of the tests
+<em>driving</em> the development process.</p>
+<p>Before we can start using TDD, we need a list of discrete features that can be turned into
+unit tests. This will help keep our tests focused on specific functionality which should
+lead to code that is easy to read. Along the way we will build confidence as we add features.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">TDD is a process that some organizations choose to use. Using the TDD
+process is not required when using unit tests.</p>
+</div>
+<div class="section" id="the-test-code-cycle">
+<span id="test-code-cycle"></span><h2><span class="section-number">14.4.1. </span>The Test/Code Cycle<a class="headerlink" href="#the-test-code-cycle" title="Permalink to this headline">¶</a></h2>
+<p>With TDD you start with the unit test first. Each test must <em>clearly describe</em>
+the behavior it is testing.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Example test case for a data parsing project:</p>
+<ul class="last simple">
+<li>Take in a string of numbers delimited by a character and return an array.</li>
+</ul>
+</div>
+<p>Because the test is for a feature that does NOT exist <em>yet</em>, we need to think
+about how the feature will be implemented. This is the time to ask questions
+like: <em>Should we add a new parameter? What about an entirely new function?
+What will the function return?</em></p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>How could we implement our test case? Remember we aren't writing the code
+yet, only thinking about the design.</p>
+<ul class="last simple">
+<li>The test case will evaluate the function named <code class="docutils literal notranslate"><span class="pre">parseData</span></code></li>
+<li>The <code class="docutils literal notranslate"><span class="pre">parseData</span></code> function will:<ul>
+<li>contain a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter that gets assigned a string of data</li>
+<li>contain a <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> parameter that will be used to split the string
+into an array</li>
+<li>return an array</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">parseData</span></code> will be defined in a module</li>
+</ul>
+</div>
+<p>Next, write the unit test as if the parameter or function you imagined already
+exists. This may seem a bit odd, but considering how the new code will be used
+helps find bugs and flaws earlier. We also have to use test utilities such as
+<code class="docutils literal notranslate"><span class="pre">expect().toEqual()</span></code> to clearly demonstrate that the proposed new code
+functions properly.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Next, type out the ideas into an actual test. In this example, the test
+references a module and a function that have not been created yet. The code
+follows the plan we came up with earlier. Very importantly, there is an
+<code class="docutils literal notranslate"><span class="pre">expect().toBeTrue()</span></code> that verifies an array is returned.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">parse</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../parse-numbers&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;parse numbers&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns array when passed comma separated list of numbers&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="s2">&quot;5,8,0,17,6,4,9,3&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">items</span><span class="p">)).</span><span class="nx">toBeTrue</span><span class="p">();</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Now run the test! The test should fail (or not compile at all) because you have
+referenced code that does not exist yet.</p>
+<p>Finally, write code to pass the new test. In the earlier chapters, this is
+where you started, but with TDD writing new code is the <em>last</em> step.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>To make the new test pass, a file must be created that exports a
+<code class="docutils literal notranslate"><span class="pre">parseData</span></code> function with logic that satisfies the expected result.</p>
+<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">parseData</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">delimiter</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">delimiter</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">parseData</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Coding this way builds confidence in your work. No matter how large your code
+base may get, you know that each part has a test to validate its functionality.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">Now that we have one passing test for our data parser project, we could
+confidently move on to writing tests and code for the remaining features.</p>
+</div>
+</div>
+<div class="section" id="red-green-refactor">
+<h2><span class="section-number">14.4.2. </span>Red, Green, Refactor<a class="headerlink" href="#red-green-refactor" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-3"></span><span class="target" id="index-4"></span><span class="target" id="index-5"></span><p id="index-6">While adding new features and making our code work is the main goal, we also
+want to write readable, efficient code that makes us proud. The <strong>red, green,
+refactor</strong> mantra describes the process of writing tests, seeing them pass, and
+then making the code better. As the name suggests, the cycle consists of three
+steps. Red refers to test results that fail, while green represents tests that
+pass. The colors refer to test results which are often styled with red for
+failing tests and green for passing tests.</p>
+<ol class="arabic">
+<li><p class="first">Red -&gt; Write a failing test.</p>
+</li>
+<li><p class="first">Green -&gt; Make it pass by implementing the code.</p>
+</li>
+<li><p class="first">Refactor -&gt; Make the code better.</p>
+<div class="figure align-default" id="id1">
+<img alt="Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red." src="../../_images/red-green-refactor.png" />
+<p class="caption"><span class="caption-text">Red, green, refactor cycle.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p id="index-7"><strong>Refactoring code</strong> means to keep the same overall feature, but change how
+that feature is implemented. Since we have a test to verify our code, we can
+change the code with confidence, knowing that any error will be immediately
+identified by the test. Here are a few examples of refactoring:</p>
+<ol class="arabic simple">
+<li>Using different data structures,</li>
+<li>Reducing the number of times needed to loop through an array,</li>
+<li>Moving duplicate logic into a function so it can be reused.</li>
+</ol>
+<p>The refactor is also done in a TDD process:</p>
+<ol class="arabic simple">
+<li>Decide how to improve the implementation of the feature,</li>
+<li>Change the unit test to use this new idea,</li>
+<li>Run the code to see the test fail,</li>
+<li>Refactor the code to implement the new idea,</li>
+<li>Finally, see the test pass with the refactored design.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="unit-testing-in-action.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14.3. </span>Unit Testing in Action</a></li>
+        
+        
+        <li class="next"><a href="tdd-example.html"><span class="section-number">14.5. </span>TDD in Action <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

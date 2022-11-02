@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mars Rover, Part 2 &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mars Rover, Part 3" href="mars-rover3.html" />
+    <link rel="prev" title="HTML Me Something, Part 2" href="html-me-part2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li><a href="../index-full.html">Chapters</a></li>
+    <li class="active">Mars Rover, Part 2</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="mars-rover-part-2">
+<span id="mars-rover2"></span><h1>Mars Rover, Part 2<a class="headerlink" href="#mars-rover-part-2" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference internal" href="mars-rover.html#mars-rover1"><span class="std std-ref">Part 1</span></a>, you have got a copy of the starter code and taken an initial dive into how the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class.
+Now's let turn our focus to the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class!</p>
+<div class="section" id="message">
+<h2><code class="docutils literal notranslate"><span class="pre">Message</span></code><a class="headerlink" href="#message" title="Permalink to this headline">¶</a></h2>
+<p>Recall, the role of a message object is to bundle commands to send to the rover.</p>
+<p>Remember with TDD, to first read through the description of the class. Then read through the given tests and think about what each test means for the desired behavior of the class.
+Only then should you start coding the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class.</p>
+<div class="section" id="message-class-description">
+<span id="message-class"></span><h3><code class="docutils literal notranslate"><span class="pre">Message</span></code> Class Description<a class="headerlink" href="#message-class-description" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>This class builds an object with two properties.
+<code class="docutils literal notranslate"><span class="pre">constructor(name,</span> <span class="pre">commands)</span></code><ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> is a string that is the name of the message.</li>
+<li><code class="docutils literal notranslate"><span class="pre">commands</span></code> is an array of <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commands</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;STATUS_CHECK&#39;</span><span class="p">)];</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s1">&#39;Test message with two commands&#39;</span><span class="p">,</span> <span class="nx">commands</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="message-tests">
+<h3><code class="docutils literal notranslate"><span class="pre">Message</span></code> Tests<a class="headerlink" href="#message-tests" title="Permalink to this headline">¶</a></h3>
+<p>At the same level as <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code>, look for a file called <code class="docutils literal notranslate"><span class="pre">message.spec.js</span></code> and
+read the unit tests for the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class as described below. After reading about the test, add the necessary code to the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class.</p>
+<div class="section" id="test-4">
+<h4>Test 4<a class="headerlink" href="#test-4" title="Permalink to this headline">¶</a></h4>
+<p>This test description is &quot;throws error if a name is NOT
+passed into the constructor as the first parameter&quot;. Review the first test
+in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> for an example of how this test works.</p>
+<ol class="loweralpha simple">
+<li>Look at the code in <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Use that to help you write the
+<code class="docutils literal notranslate"><span class="pre">Message</span></code> class in <code class="docutils literal notranslate"><span class="pre">message.js</span></code> so that your test passes. Refer to
+the <a class="reference internal" href="#message-class"><span class="std std-ref">Message Class</span></a> description above for more
+details.</li>
+</ol>
+</div>
+<div class="section" id="test-5">
+<h4>Test 5<a class="headerlink" href="#test-5" title="Permalink to this headline">¶</a></h4>
+<p>The description is &quot;constructor sets name&quot;. The test confirms
+that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class correctly sets the
+<code class="docutils literal notranslate"><span class="pre">name</span></code> property in a new message object.</p>
+</div>
+<div class="section" id="test-6">
+<h4>Test 6<a class="headerlink" href="#test-6" title="Permalink to this headline">¶</a></h4>
+<p>The description reads &quot;contains a commands array passed into the constructor as 2nd argument&quot;.
+This test confirms that the <code class="docutils literal notranslate"><span class="pre">commands</span></code> property of a new message object
+contains the data passed in from the <code class="docutils literal notranslate"><span class="pre">Message(name,</span> <span class="pre">commands)</span></code> call.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">You are moving onto the red planet now. Be prepared for fewer instructions.</p>
+</div>
+<p>The final class we need to work on is <code class="docutils literal notranslate"><span class="pre">Rover</span></code>. Let's check it out in <a class="reference internal" href="mars-rover3.html#mars-rover3"><span class="std std-ref">Part 3</span></a>!</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="html-me-part2.html"><span aria-hidden="true">&larr;</span> HTML Me Something, Part 2</a></li>
+        
+        
+        <li class="next"><a href="mars-rover3.html">Mars Rover, Part 3 <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

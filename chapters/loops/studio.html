@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.10. Studio: Loops &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10. Functions Are at Your Beck and Call" href="../functions/index.html" />
+    <link rel="prev" title="9.9. Exercises: Loops" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">9. </span>Repeating With Loops</a></li>
+    <li class="active"><span class="section-number">9.10. </span>Studio: Loops</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="studio-loops">
+<span id="loop-studio"></span><h1><span class="section-number">9.10. </span>Studio: Loops<a class="headerlink" href="#studio-loops" title="Permalink to this headline">¶</a></h1>
+<p>Now that we've launched our shuttle, let's use loops (iteration) to
+automate some tasks.</p>
+<p>Fork this <a class="reference external" href="https://replit.com/&#64;launchcode/loopsstudio" target="_blank">repl<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to start coding. Before you dive in, you might notice that we have several files and folders inside.
+Your work will go into <code class="docutils literal notranslate"><span class="pre">solution.js</span></code>, but please feel free to explore the program and please don't edit anything outside <code class="docutils literal notranslate"><span class="pre">solution.js</span></code>.</p>
+<div class="section" id="part-a-put-dinner-together">
+<h2><span class="section-number">9.10.1. </span>Part A: Put dinner together<a class="headerlink" href="#part-a-put-dinner-together" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">First, inside <code class="docutils literal notranslate"><span class="pre">solution.js</span></code>, use the variables provided to store the following arrays.</p>
+<ul>
+<li><p class="first">Protein options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;chicken&#39;, &#39;pork&#39;, &#39;tofu&#39;, &#39;beef&#39;, &#39;fish&#39;, &#39;beans&#39;]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Grain options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;rice&#39;, &#39;pasta&#39;, &#39;corn&#39;, &#39;potato&#39;, &#39;quinoa&#39;, &#39;crackers&#39;]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Vegetable options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;peas&#39;, &#39;green beans&#39;, &#39;kale&#39;, &#39;edamame&#39;, &#39;broccoli&#39;, &#39;asparagus&#39;]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Beverage options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;juice&#39;, &#39;milk&#39;, &#39;water&#39;, &#39;soy milk&#39;, &#39;soda&#39;, &#39;tea&#39;]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Dessert options</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;apple&#39;, &#39;banana&#39;, &#39;more kale&#39;, &#39;ice cream&#39;, &#39;chocolate&#39;, &#39;kiwi&#39;]
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p class="first">Inside of <code class="docutils literal notranslate"><span class="pre">mealAssembly()</span></code>, write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to assemble <code class="docutils literal notranslate"><span class="pre">numMeals</span></code> meals.</p>
+<ol class="loweralpha">
+<li><p class="first">The meals must include one item from each category in the <code class="docutils literal notranslate"><span class="pre">pantry</span></code> array.</p>
+<div class="admonition-hint admonition">
+<p class="first admonition-title">Hint</p>
+<p class="last">The computer needs to know how many crew members to prepare food for and what ingredients. Consider creating a nested loop that will create a meal for each crew member and then add it into a larger collection of meals.</p>
+</div>
+</li>
+<li><p class="first">Each ingredient can only be used ONCE.</p>
+</li>
+<li><p class="first">Add each meal to the <code class="docutils literal notranslate"><span class="pre">meals</span></code> array once it is assembled.</p>
+</li>
+<li><p class="first">To test your own solution, scroll down to another function defined in this file called <code class="docutils literal notranslate"><span class="pre">runProgram()</span></code>. Uncomment the lines that call the <code class="docutils literal notranslate"><span class="pre">mealAssembly</span></code> function and print the result. Use the repl.it 'Run' button as usual to see your results printed to the console.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="part-b-collect-user-input">
+<h2><span class="section-number">9.10.2. </span>Part B: Collect User Input<a class="headerlink" href="#part-b-collect-user-input" title="Permalink to this headline">¶</a></h2>
+<p>Update <code class="docutils literal notranslate"><span class="pre">askForNumber()</span></code> to add user input and validation.</p>
+<ol class="arabic simple">
+<li>Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, ask the user to select the number of meals to assemble. Validate the input to make sure it is an integer from 1 - 6.</li>
+<li>Save the result to the <code class="docutils literal notranslate"><span class="pre">numMeals</span></code> variable returned by the function.</li>
+<li>Test your solution to this part by returning to the <code class="docutils literal notranslate"><span class="pre">runProgram()</span></code> function in the file and uncommenting the section labelled for testing Part B.</li>
+</ol>
+</div>
+<div class="section" id="checking-your-work">
+<h2><span class="section-number">9.10.3. </span>Checking Your Work<a class="headerlink" href="#checking-your-work" title="Permalink to this headline">¶</a></h2>
+<p>If you want to make sure that you have checked all the boxes, run the following command in your shell on replit.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>npm test
+</pre></div>
+</div>
+<p>This command runs the Jasmine tests that are checking your work for you. If you have a test that fails, check out the name of the test to get a hint as to what you are missing.
+If you need a refresher on how running the tests works, check out the appendix on <a class="reference internal" href="../../appendices/tested-code.html#tested-code"><span class="std std-ref">Tested Code</span></a>.</p>
+</div>
+<div class="section" id="bonus-mission">
+<h2><span class="section-number">9.10.4. </span>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>Working and living aboard this amazing space shuttle requires you to pay the utmost attention to cybersecurity.
+Once you are done working on the meal system, you are prompted to create a new password that will be used for the next 24 hours.
+Having run out of strong password ideas, your shuttle captain has encouraged you to make a password generator for yourself.</p>
+<p>Write your code inside <code class="docutils literal notranslate"><span class="pre">generatePassword()</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">Construct a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that combines the two strings together, alternating the characters from each source, and saves the combined string to the <code class="docutils literal notranslate"><span class="pre">code</span></code> variable.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<ol class="last arabic simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">string1</span> <span class="pre">=</span> <span class="pre">&quot;1234&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">string2</span> <span class="pre">=</span> <span class="pre">&quot;5678&quot;</span></code>, then the output will be &quot;15263748&quot;.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">string1</span> <span class="pre">=</span> <span class="pre">&quot;ABCDEF&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">string2</span> <span class="pre">=</span> <span class="pre">&quot;notyet&quot;</span></code>, then the output will be &quot;AnBoCtDyEeFt&quot;.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">string1</span> <span class="pre">=</span> <span class="pre">&quot;LoOt&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">string2</span> <span class="pre">=</span> <span class="pre">&quot;oku!&quot;</span></code>, then the output will be &quot;LookOut!&quot;.</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">9.9. </span>Exercises: Loops</a></li>
+        
+        
+        <li class="next"><a href="../functions/index.html"><span class="section-number">10. </span>Functions Are at Your Beck and Call <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

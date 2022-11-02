@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>28.6. Compiling TypeScript &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="28.7. Exercises: TypeScript" href="exercises.html" />
+    <link rel="prev" title="28.5. Classes and Interfaces in TypeScript" href="classes.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">28. </span>TypeScript</a></li>
+    <li class="active"><span class="section-number">28.6. </span>Compiling TypeScript</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="compiling-typescript">
+<h1><span class="section-number">28.6. </span>Compiling TypeScript<a class="headerlink" href="#compiling-typescript" title="Permalink to this headline">¶</a></h1>
+<p>To work with TypeScript in our Node environment, we'll need to install the TypeScript
+module. We talked before about running JavaScript in Node. Unlike JavaScript, TypeScript
+cannot be run directly in Node. TypeScript files must first be transformed, or compiled,
+into JavaScript.</p>
+<p>In this section, you will install the compiler and then practice compiling and
+running a small TypeScript program from the terminal.</p>
+<p>To install TypeScript, in your terminal, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npm install -g typescript
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last"><strong>Mac users:</strong> You may receive a permissions error when running this install command.
+If you do, try running it as <a class="reference internal" href="../../appendices/installing-software/setting-up-terminal.html#terminal-setupinstructions-sudo"><span class="std std-ref">sudo</span></a>.</p>
+</div>
+<p>Once you have TypeScript installed, you'll be able to run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tsc -v
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tsc</span></code> is the TypeScript compiler and <code class="docutils literal notranslate"><span class="pre">-v</span></code> is the version flag to show us that
+we have TypeScript and it's compiler installed.</p>
+<div class="section" id="hello-world-ts">
+<h2><span class="section-number">28.6.1. </span><code class="docutils literal notranslate"><span class="pre">hello_world.ts</span></code><a class="headerlink" href="#hello-world-ts" title="Permalink to this headline">¶</a></h2>
+<p>In true tutorial form, let's write a quick <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> program so we can see this
+compiling in action.</p>
+<p>In your code editor, create a new file called <code class="docutils literal notranslate"><span class="pre">hello_world.ts</span></code>. In it, initialize a
+variable called <code class="docutils literal notranslate"><span class="pre">message</span></code> with the string value <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World'</span></code>. Print the message.</p>
+<div class="highlight-ts notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">message</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;Hello, World&#39;</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Make sure to save your <code class="docutils literal notranslate"><span class="pre">hello_world.ts</span></code> changes before continuing forward!</p>
+<p>In the terminal, navigate into the directory that houses your <code class="docutils literal notranslate"><span class="pre">hello_world.ts</span></code> file.
+Compile the code with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Desktop/
+$ ls
+hello_world.ts
+$ tsc hello_world.ts
+$ ls
+hello_world.js hello_world.ts
+</pre></div>
+</div>
+<p>If your TypeScript file is free of syntax errors, you won't see a response from the
+terminal directly. However, you should see that you now have a newly generated file
+in your working directory called <code class="docutils literal notranslate"><span class="pre">hello_world.js</span></code>. Open it up and take a look!</p>
+<p>Back in the terminal, run that JavaScript file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ node hello_world.js
+Hello, World
+</pre></div>
+</div>
+<p>Look at that! Your message printed. You're now running your own code straight from
+the terminal!</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Changing your TypeScript file won't update the corresponding JavaScript file
+unless you re-compile.</p>
+</div>
+<p>You'll need these compiling and executing steps for the exercises in the following
+section, so refer back here as needed.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="classes.html"><span aria-hidden="true">&larr;</span> <span class="section-number">28.5. </span>Classes and Interfaces in TypeScript</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">28.7. </span>Exercises: TypeScript <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

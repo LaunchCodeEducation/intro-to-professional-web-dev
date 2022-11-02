@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment #1: Candidate Testing &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #2: Scrabble Scorer" href="scrabble-scorer.html" />
+    <link rel="prev" title="Index" href="../genindex.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Assignment #1: Candidate Testing</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="assignment-1-candidate-testing">
+<span id="candidatequiz"></span><h1>Assignment #1: Candidate Testing<a class="headerlink" href="#assignment-1-candidate-testing" title="Permalink to this headline">¶</a></h1>
+<p>OK, staff, we received many applications for our astronaut training program,
+and we need to do an initial evaluation of the candidates.  Management needs
+you to create a quick quiz to help select the best candidates.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The requirements below are what your END assignment will look like.
+This assignment is broken down so you can complete small pieces as you go. You need to move sequentially starting at Part 1.
+Please read the WHOLE assignment page before starting.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Ask the candidate (user) to enter their name</li>
+<li>Use a loop to ask five questions, one at a time, to the candidate</li>
+<li>Collect the candidate's answers</li>
+<li>Check those answers for accuracy (case insensitive equality check)</li>
+<li>Calculate the candidate's overall percentage</li>
+<li>Determine if the candidate did well enough to enter our program (need &gt;= 80%
+to pass)</li>
+<li>Display the results.</li>
+</ol>
+</div>
+<div class="section" id="take-it-step-by-step">
+<h2>Take It Step by Step<a class="headerlink" href="#take-it-step-by-step" title="Permalink to this headline">¶</a></h2>
+<p>When starting any project, it's best to approach it as a series of smaller,
+testable parts. The goal is to get simple parts working first and then expand
+the code in a systematic way. The following is NOT the only way to complete
+this assignment, but it provides a framework for thinking through the project.</p>
+<div class="section" id="get-the-starter-code">
+<h3>Get the Starter Code<a class="headerlink" href="#get-the-starter-code" title="Permalink to this headline">¶</a></h3>
+<p>Fork <a class="reference external" href="https://replit.com/&#64;launchcode/Candidate-Testing-Autograded#candidate-testing.js" target="_blank">this replit<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="part-1-minimum-viable-quiz">
+<h3>Part 1: Minimum Viable Quiz<a class="headerlink" href="#part-1-minimum-viable-quiz" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="candidatename">
+<h4>1.1 <code class="docutils literal notranslate"><span class="pre">candidateName</span></code><a class="headerlink" href="#candidatename" title="Permalink to this headline">¶</a></h4>
+<ol class="loweralpha simple">
+<li>Ask for the candidate's name. Look for <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.1a</span></code> in the starter code.
+On the line below this TODO comment, define a variable called <code class="docutils literal notranslate"><span class="pre">candidateName</span></code>
+with an initial value of the empty string.</li>
+<li>Look for <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.1b</span></code>. Inside of the function <code class="docutils literal notranslate"><span class="pre">askForName()</span></code>, write code
+asking the user to enter their name into the program and store the value as
+<code class="docutils literal notranslate"><span class="pre">candidateName</span></code>.</li>
+<li>Look for <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.1c</span></code>. Underneath it, write a message to the console greeting
+the user using the name they just provided.</li>
+</ol>
+</div>
+<div class="section" id="single-question-quiz">
+<h4>1.2 Single Question Quiz<a class="headerlink" href="#single-question-quiz" title="Permalink to this headline">¶</a></h4>
+<ol class="loweralpha">
+<li><p class="first">Ask the user to answer a single quiz question. Look for <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.2a</span></code>.
+Below the TODO comment, define variables called <code class="docutils literal notranslate"><span class="pre">question</span></code>, <code class="docutils literal notranslate"><span class="pre">correctAnswer</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">candidateAnswer</span></code>.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">question</span></code> should be initialized to the following string: <code class="docutils literal notranslate"><span class="pre">&quot;Who</span> <span class="pre">was</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">American</span> <span class="pre">woman</span> <span class="pre">in</span> <span class="pre">space?</span> <span class="pre">&quot;</span></code>.</li>
+</ul>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Note the trailing space at the end of this string is required.</p>
+</div>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">correctAnswer</span></code> should be initialized to <code class="docutils literal notranslate"><span class="pre">&quot;Sally</span> <span class="pre">Ride&quot;</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">candidateAnswer</span></code> will initially be set to the empty string.</li>
+</ul>
+</li>
+<li><p class="first">Find <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.2b</span></code>. Using your question variable, display the question and prompt the candidate for
+their answer. Store their response in one of the variables you defined just above.</p>
+</li>
+<li><p class="first">Under <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.2c</span></code>, check the candidate's answer to see if it is correct.
+Provide basic feedback to the candidate, letting them know if their answer is correct
+or not.</p>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Make sure your small app works properly before moving on to part 2.</p>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-multiple-questions">
+<h3>Part 2: Multiple Questions<a class="headerlink" href="#part-2-multiple-questions" title="Permalink to this headline">¶</a></h3>
+<p>Now that your small app is working, expand it to deal with multiple questions.
+This time, you only have one <code class="docutils literal notranslate"><span class="pre">TODO</span></code> item in the starter code. You will need
+to determine which lines need to be modified.</p>
+<ol class="arabic simple">
+<li>Define <code class="docutils literal notranslate"><span class="pre">questions</span></code> and <code class="docutils literal notranslate"><span class="pre">correctAnswers</span></code> variables as arrays. Use the table below to fill these arrays.</li>
+<li>Replace your code from <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.2b</span></code> with a loop that programmatically asks each question in the array and stores
+the user's responses.</li>
+<li>Replace the basic feedback from <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.2c</span></code> with a template literal that displays each of the candidate's responses in
+addition to the corresponding correct answers.</li>
+</ol>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Question</th>
+<th class="head">Answer</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Who was the first American woman in space?</td>
+<td>&quot;Sally Ride&quot;</td>
+</tr>
+<tr class="row-odd"><td>True or false: 5 kilometer == 5000 meters?</td>
+<td>&quot;true&quot;</td>
+</tr>
+<tr class="row-even"><td>(5 + 3)/2 * 10 = ?</td>
+<td>&quot;40&quot;</td>
+</tr>
+<tr class="row-odd"><td>Given the array <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">'Orbit',</span> <span class="pre">'Trajectory',</span> <span class="pre">45]</span></code>, what entry is at index 2?</td>
+<td>&quot;Trajectory&quot;</td>
+</tr>
+<tr class="row-even"><td>What is the minimum crew size for the ISS?</td>
+<td>&quot;3&quot;</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Keep the questions and correct answers stored in this exact order.</p>
+</div>
+</div>
+<div class="section" id="part-3-grade-the-quiz">
+<h3>Part 3: Grade the Quiz<a class="headerlink" href="#part-3-grade-the-quiz" title="Permalink to this headline">¶</a></h3>
+<p>Finally, calculate the candidate's score and print the results. There are no <code class="docutils literal notranslate"><span class="pre">TODOs</span></code> in this section,
+just be sure to only modify code that you have written, or add code. Don't remove anything in the file
+that you haven't written. Doing so may cause your program to behave unexpectedly - and we might not be able to grade it!</p>
+<p>Your task here is to:</p>
+<ol class="arabic simple">
+<li>Compare the candidate answers with the correct answers,</li>
+<li>Calculate the candidate's score as a percentage,</li>
+<li>Convey to the candidate if they have passed the quiz with an 80% or if they have failed.</li>
+</ol>
+<p>Some tips:</p>
+<ol class="arabic">
+<li><p class="first">Checking for the correct answer should be case insensitive (e.g. &quot;Orbit&quot; is the same as &quot;orbit&quot;).</p>
+</li>
+<li><p class="first">Somewhere below <code class="docutils literal notranslate"><span class="pre">TODO</span> <span class="pre">1.2c</span></code> you should see a variable declaration for <code class="docutils literal notranslate"><span class="pre">grade</span></code>. Use this to calculate the candidate's
+score.</p>
+</li>
+<li><p class="first">To calculate the candidate's percentage, use the equation:</p>
+<p><strong>(Number of Correct Answers) / (Number of Quiz Questions) * 100</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="example-output">
+<h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
+<p>The results output should include the candidate's name, the candidate's
+responses, the correct answers, the final percentage, and if the candidate
+passed the quiz.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Candidate Name: Can Twin
+1) Who was the first American woman in space?
+Your Answer: sally ride
+Correct Answer: Sally Ride
+
+2) True or false: 5000 meters = 5 kilometers.
+Your Answer: false
+Correct Answer: true
+
+3) (5 + 3)/2 * 10 = ?
+Your Answer: 45
+Correct Answer: 40
+
+4) Given the array [8, &quot;Orbit&quot;, &quot;Trajectory&quot;, 45], what entry is at index 2?
+Your Answer: trajectory
+Correct Answer: Trajectory
+
+5) What is the minimum crew size for the ISS?
+Your Answer: 10
+Correct Answer: 3
+
+&gt;&gt;&gt; Overall Grade: 40% (2 of 5 responses correct) &lt;&lt;&lt;
+&gt;&gt;&gt; Status: FAILED &lt;&lt;&lt;
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The output will vary slightly based on the candidate's answers to each question.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../genindex.html"><span aria-hidden="true">&larr;</span> Index</a></li>
+        
+        
+        <li class="next"><a href="scrabble-scorer.html">Assignment #2: Scrabble Scorer <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Solutions: The DOM and Events &#8212; Introduction to Professional Web Development in JavaScript  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise Solutions: Forms" href="forms.html" />
+    <link rel="prev" title="Exercise Solutions: Git" href="git.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+        </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Exercise Solutions</a></li>
+    <li class="active">Exercise Solutions: The DOM and Events</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercise-solutions-the-dom-and-events">
+<span id="dom-exercise-solutions"></span><h1>Exercise Solutions: The DOM and Events<a class="headerlink" href="#exercise-solutions-the-dom-and-events" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic" id="dom-exercise-solutions1">
+<li><p class="first">When the <em>Take off</em> button is clicked, the text <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">shuttle</span> <span class="pre">is</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">ground</span></code> changes to <code class="docutils literal notranslate"><span class="pre">Houston,</span> <span class="pre">we</span> <span class="pre">have</span> <span class="pre">liftoff!</span></code>. The <em>Take off</em> button has an <code class="docutils literal notranslate"><span class="pre">id=&quot;liftoffButton&quot;</span></code> attribute.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="nx">paragraph</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;Houston! We have liftoff!&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/dom-and-events/exercises.html#dom-exercises"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+<ol class="arabic" id="dom-exercise-solutions3" start="3">
+<li><p class="first">When the user's cursor <em>leaves</em> the <em>Abort Mission</em> button, the button's background returns to its original state (<em>Hint:</em> Setting the background color to the empty string, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, will force it to revert to the default browser styles.)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">missionAbort</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mouseout&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/dom-and-events/exercises.html#dom-exercises"><span class="std std-ref">Back to the exercises</span></a></p>
+</li>
+</ol>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="git.html"><span aria-hidden="true">&larr;</span> Exercise Solutions: Git</a></li>
+        
+        
+        <li class="next"><a href="forms.html">Exercise Solutions: Forms <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
