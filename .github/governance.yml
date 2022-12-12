@@ -1,0 +1,75 @@
+# .github/governance.yml
+
+version: v1
+
+issue:
+  labels:
+    - prefix: triage
+      list: [ "accepted" ]
+      multiple: false
+      author_association:
+        collaborator: true
+        member: true
+        owner: true
+      needs:
+        comment: |
+          @$AUTHOR: This issue is currently awaiting triage.
+
+          The triage/accepted label can be added by org members by writing /triage accepted in a comment.
+
+    - prefix: kind
+      list: [ "copy-edit", "bug", "enhancement" ]
+      multiple: false
+      needs:
+        comment: |
+          @$AUTHOR: There are no 'kind' label on this PR. You need a 'kind' label to generate the release note automatically.
+
+          * `/kind copy-edit`
+          * `/kind bug`
+          * `/kind enhancement`
+
+    - prefix: area
+      list: [ "starter-code", "textbook" ]
+      multiple: true
+      needs:
+        comment: |
+          @$AUTHOR: There are no area labels on this issue. Adding an appropriate label will greatly expedite the process for us. You can add as many areas as you see fit. **If you are unsure what to do you can ignore this!**
+
+          * `/area starter-code`
+          * `/area textbook`
+
+    - prefix: browser
+      list: [ "chrome", "safari", "edge" ]
+      multiple: true
+      needs:
+        comment: |
+          @$AUTHOR: There are no browser labels on this issue. Adding an appropriate label will greatly expedite the process for us. You can add as many browsers as you see fit. **If you are unsure what to do you can ignore this!**
+
+          * `/browser chrome`
+          * `/browser safari`
+          * `/browser edge`
+
+  chat_ops:
+    - cmd: /close
+      type: close
+      author_association:
+        author: true
+        collaborator: true
+        member: true
+        owner: true
+
+    - cmd: /cc
+      type: none
+
+    - cmd: /assign
+      type: assign
+      author_association:
+        collaborator: true
+        member: true
+        owner: true
+
+    - cmd: /comment issue
+      type: comment
+      comment: |
+        @$ISSUE_AUTHOR: Hey this is comment issue example for issue/pr author.
+        @$AUTHOR: Hey this is comment issue example for sender author.
