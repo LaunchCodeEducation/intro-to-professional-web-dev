@@ -99,8 +99,8 @@ code design leads to better code. The name comes from the idea of the tests
 unit tests. This will help keep our tests focused on specific functionality which should
 lead to code that is easy to read. Along the way we will build confidence as we add features.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">TDD is a process that some organizations choose to use. Using the TDD
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>TDD is a process that some organizations choose to use. Using the TDD
 process is not required when using unit tests.</p>
 </div>
 <div class="section" id="the-test-code-cycle">
@@ -108,10 +108,10 @@ process is not required when using unit tests.</p>
 <p>With TDD you start with the unit test first. Each test must <em>clearly describe</em>
 the behavior it is testing.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Example test case for a data parsing project:</p>
-<ul class="last simple">
-<li>Take in a string of numbers delimited by a character and return an array.</li>
+<ul class="simple">
+<li><p>Take in a string of numbers delimited by a character and return an array.</p></li>
 </ul>
 </div>
 <p>Because the test is for a feature that does NOT exist <em>yet</em>, we need to think
@@ -119,19 +119,20 @@ about how the feature will be implemented. This is the time to ask questions
 like: <em>Should we add a new parameter? What about an entirely new function?
 What will the function return?</em></p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>How could we implement our test case? Remember we aren't writing the code
 yet, only thinking about the design.</p>
-<ul class="last simple">
-<li>The test case will evaluate the function named <code class="docutils literal notranslate"><span class="pre">parseData</span></code></li>
-<li>The <code class="docutils literal notranslate"><span class="pre">parseData</span></code> function will:<ul>
-<li>contain a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter that gets assigned a string of data</li>
-<li>contain a <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> parameter that will be used to split the string
-into an array</li>
-<li>return an array</li>
+<ul class="simple">
+<li><p>The test case will evaluate the function named <code class="docutils literal notranslate"><span class="pre">parseData</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">parseData</span></code> function will:</p>
+<ul>
+<li><p>contain a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter that gets assigned a string of data</p></li>
+<li><p>contain a <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> parameter that will be used to split the string
+into an array</p></li>
+<li><p>return an array</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">parseData</span></code> will be defined in a module</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parseData</span></code> will be defined in a module</p></li>
 </ul>
 </div>
 <p>Next, write the unit test as if the parameter or function you imagined already
@@ -140,12 +141,12 @@ helps find bugs and flaws earlier. We also have to use test utilities such as
 <code class="docutils literal notranslate"><span class="pre">expect().toEqual()</span></code> to clearly demonstrate that the proposed new code
 functions properly.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Next, type out the ideas into an actual test. In this example, the test
 references a module and a function that have not been created yet. The code
 follows the plan we came up with earlier. Very importantly, there is an
 <code class="docutils literal notranslate"><span class="pre">expect().toBeTrue()</span></code> that verifies an array is returned.</p>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -172,10 +173,10 @@ referenced code that does not exist yet.</p>
 <p>Finally, write code to pass the new test. In the earlier chapters, this is
 where you started, but with TDD writing new code is the <em>last</em> step.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>To make the new test pass, a file must be created that exports a
 <code class="docutils literal notranslate"><span class="pre">parseData</span></code> function with logic that satisfies the expected result.</p>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -190,8 +191,8 @@ where you started, but with TDD writing new code is the <em>last</em> step.</p>
 <p>Coding this way builds confidence in your work. No matter how large your code
 base may get, you know that each part has a test to validate its functionality.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p class="last">Now that we have one passing test for our data parser project, we could
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Now that we have one passing test for our data parser project, we could
 confidently move on to writing tests and code for the remaining features.</p>
 </div>
 </div>
@@ -205,11 +206,9 @@ steps. Red refers to test results that fail, while green represents tests that
 pass. The colors refer to test results which are often styled with red for
 failing tests and green for passing tests.</p>
 <ol class="arabic">
-<li><p class="first">Red -&gt; Write a failing test.</p>
-</li>
-<li><p class="first">Green -&gt; Make it pass by implementing the code.</p>
-</li>
-<li><p class="first">Refactor -&gt; Make the code better.</p>
+<li><p>Red -&gt; Write a failing test.</p></li>
+<li><p>Green -&gt; Make it pass by implementing the code.</p></li>
+<li><p>Refactor -&gt; Make the code better.</p>
 <div class="figure align-default" id="id1">
 <img alt="Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red." src="../../_images/red-green-refactor.png" />
 <p class="caption"><span class="caption-text">Red, green, refactor cycle.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -221,17 +220,17 @@ that feature is implemented. Since we have a test to verify our code, we can
 change the code with confidence, knowing that any error will be immediately
 identified by the test. Here are a few examples of refactoring:</p>
 <ol class="arabic simple">
-<li>Using different data structures,</li>
-<li>Reducing the number of times needed to loop through an array,</li>
-<li>Moving duplicate logic into a function so it can be reused.</li>
+<li><p>Using different data structures,</p></li>
+<li><p>Reducing the number of times needed to loop through an array,</p></li>
+<li><p>Moving duplicate logic into a function so it can be reused.</p></li>
 </ol>
 <p>The refactor is also done in a TDD process:</p>
 <ol class="arabic simple">
-<li>Decide how to improve the implementation of the feature,</li>
-<li>Change the unit test to use this new idea,</li>
-<li>Run the code to see the test fail,</li>
-<li>Refactor the code to implement the new idea,</li>
-<li>Finally, see the test pass with the refactored design.</li>
+<li><p>Decide how to improve the implementation of the feature,</p></li>
+<li><p>Change the unit test to use this new idea,</p></li>
+<li><p>Run the code to see the test fail,</p></li>
+<li><p>Refactor the code to implement the new idea,</p></li>
+<li><p>Finally, see the test pass with the refactored design.</p></li>
 </ol>
 </div>
 </div>

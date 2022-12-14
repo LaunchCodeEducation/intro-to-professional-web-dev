@@ -92,20 +92,20 @@
 <p id="index-0">In JavaScript, strings are objects, so to understand how we can use them in our programs, we must first understand some basics about objects.</p>
 <p>An <strong>object</strong> is a collection of related data and operations. An operation that can be carried out on an object is known as a <strong>method</strong>. A piece of data associated with an object is known as a <strong>property</strong>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Suppose we had a <code class="docutils literal notranslate"><span class="pre">square</span></code> object in JavaScript. (While no such object is built into JavaScript, we will learn how we could make one in a later chapter.)</p>
 <p>Since a square has four sides of the same length, it should have a property to represent this length. This property could be called <code class="docutils literal notranslate"><span class="pre">length</span></code>. For a given square, it will have a specific value, such as 4.</p>
-<p class="last">Since a square has an area, it should have a method to calculate the area. This method could be called <code class="docutils literal notranslate"><span class="pre">area</span></code>, and it should calculate the area of a square using its <code class="docutils literal notranslate"><span class="pre">length</span></code> property.</p>
+<p>Since a square has an area, it should have a method to calculate the area. This method could be called <code class="docutils literal notranslate"><span class="pre">area</span></code>, and it should calculate the area of a square using its <code class="docutils literal notranslate"><span class="pre">length</span></code> property.</p>
 </div>
 <p>You can think of methods and properties as functions and variables, respectively, that &quot;belong to&quot; an object. Properties and methods are accessed using <strong>dot notation</strong>, which dictates that we use the object name, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code>, followed by the property or method name. When using a method, we must also use parentheses as we do when calling regular functions.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Returning to the <code class="docutils literal notranslate"><span class="pre">square</span></code> example, we can access its length by typing <code class="docutils literal notranslate"><span class="pre">square.length</span></code>.</p>
-<p class="last">We can calculate the area by calling <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>.</p>
+<p>We can calculate the area by calling <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>.</p>
 </div>
 <p>Referencing <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">area</span></code> by itself in code <em>does not</em> give you the value of <code class="docutils literal notranslate"><span class="pre">square.length</span></code> or carry out the calculation in <code class="docutils literal notranslate"><span class="pre">square.area()</span></code>. It does not make sense to refer to a property or method without also referring to the associated object. Typing simply <code class="docutils literal notranslate"><span class="pre">length</span></code> or <code class="docutils literal notranslate"><span class="pre">area()</span></code> is ambiguous. There might be multiple squares, and it would be unclear which one you were asking about.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We have already encountered one object, the built-in object <code class="docutils literal notranslate"><span class="pre">console</span></code>, which we use to output messages.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">console</span><span class="p">);</span>
 </pre></div>
@@ -115,7 +115,7 @@
 </pre></div>
 </div>
 <p>JavaScript reports that the type of <code class="docutils literal notranslate"><span class="pre">console</span></code> is indeed <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
-<p class="last">When calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we are calling the <code class="docutils literal notranslate"><span class="pre">log</span></code> method of the <code class="docutils literal notranslate"><span class="pre">console</span></code> object.</p>
+<p>When calling <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, we are calling the <code class="docutils literal notranslate"><span class="pre">log</span></code> method of the <code class="docutils literal notranslate"><span class="pre">console</span></code> object.</p>
 </div>
 <p>We will learn quite a bit more about objects in this course, including how to
 use objects to create your own custom data types. This powerful JavaScript
@@ -126,7 +126,7 @@ feature allows us to bundle up data and functionality in useful, modular ways.</
 <p>The fact that strings are objects means that they have associated data and operations, or properties and methods as we will call them from now on.</p>
 <p id="index-1">Every string that we work with will have the same properties and methods. The most useful string property is named <code class="docutils literal notranslate"><span class="pre">length</span></code>, and it tells us how many characters are in a string.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -139,7 +139,7 @@ feature allows us to bundle up data and functionality in useful, modular ways.</
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Grace has 5 characters
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Grace has 5 characters
 Hopper has 6 characters
 </pre></div>
 </div>
@@ -148,7 +148,7 @@ Hopper has 6 characters
 <p>The <code class="docutils literal notranslate"><span class="pre">length</span></code> property is the only string property that we will use, but there are many useful string methods. We will explore these in depth in the section <a class="reference internal" href="string-methods.html#string-methods"><span class="std std-ref">String Methods</span></a>, but let's look at one now to give you an idea of what's ahead.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> string method returns the value of its string in all lowercase letters. Since it is a method, we must precede it with a specific string in order to use it.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -159,7 +159,7 @@ Hopper has 6 characters
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>launchcode
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>launchcode
 LaunchCode
 </pre></div>
 </div>
@@ -169,11 +169,11 @@ LaunchCode
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">7.3.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'Rutabaga'</span></code>, why does <code class="docutils literal notranslate"><span class="pre">word.length</span></code> return the integer 8, but <code class="docutils literal notranslate"><span class="pre">word[8]</span></code> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'Rutabaga'</span></code>, why does <code class="docutils literal notranslate"><span class="pre">word.length</span></code> return the integer 8, but <code class="docutils literal notranslate"><span class="pre">word[8]</span></code> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the length of <code class="docutils literal notranslate"><span class="pre">location</span></code>?</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cityName</span> <span class="o">=</span> <span class="s2">&quot;Vienna&quot;</span><span class="p">;</span>
 <span class="nx">stateName</span> <span class="o">=</span> <span class="s2">&quot;Virginia&quot;</span><span class="p">;</span>
@@ -182,11 +182,11 @@ LaunchCode
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 </pre></div>
 </div>
-<ol class="last arabic simple">
-<li>16</li>
-<li>17</li>
-<li>15</li>
-<li>14</li>
+<ol class="arabic simple">
+<li><p>16</p></li>
+<li><p>17</p></li>
+<li><p>15</p></li>
+<li><p>14</p></li>
 </ol>
 </div>
 </div>

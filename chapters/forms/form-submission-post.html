@@ -94,9 +94,9 @@ Form data submitted via POST will be submitted in the body of the HTTP request.
 Data submitted by GET requests is less secure than POST because GET request URLs
 and the query parameters are cached and logged, possibly leaking sensitive data.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Form with <code class="docutils literal notranslate"><span class="pre">method=&quot;POST&quot;</span></code></p>
-<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -114,7 +114,7 @@ a form submission?</p>
 They then send a response to the client. For this unit we are going to use form handlers that have already
 been created for us.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>When submitted, this form will send a POST request to the form handler defined by the
 <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -128,42 +128,43 @@ been created for us.</p>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/form-post" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/form-post" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic simple">
-<li>Open <a class="reference external" href="https://form-post--launchcode.repl.co/" target="_blank">example form that uses POST<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in a browser.</li>
-<li>Open the network tab of the developer tools</li>
-<li>Check &quot;Persist Logs&quot; in the network tab</li>
+<li><p>Open <a class="reference external" href="https://form-post--launchcode.repl.co/" target="_blank">example form that uses POST<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in a browser.</p></li>
+<li><p>Open the network tab of the developer tools</p></li>
+<li><p>Check &quot;Persist Logs&quot; in the network tab</p></li>
 </ol>
 <div class="figure align-default" id="id1">
 <img alt="Screen shot of firefox browser with form loaded and network tab open." src="../../_images/network-tab-before-submission.png" />
 <p class="caption"><span class="caption-text">Firefox browser with form loaded, network tab open, and Persist logs checked</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="4">
-<li>Enter data into the inputs<ul>
-<li>Type <code class="docutils literal notranslate"><span class="pre">tracking</span></code> into Username input</li>
-<li>Type <code class="docutils literal notranslate"><span class="pre">Requests</span></code> into Team Name input</li>
+<li><p>Enter data into the inputs</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">tracking</span></code> into Username input</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Requests</span></code> into Team Name input</p></li>
 </ul>
 </li>
-<li>Click Submit button</li>
+<li><p>Click Submit button</p></li>
 </ol>
 <div class="figure align-default" id="id2">
 <img alt="Web page showing submitted values and the entries in network tab." src="../../_images/network-tab-after-submission.png" />
 <p class="caption"><span class="caption-text">Firefox browser with request handler loaded and network tab showing requests</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="6">
-<li>Inspect the data sent in the POST request</li>
+<li><p>Inspect the data sent in the POST request</p></li>
 </ol>
-<div class="last figure align-default" id="id3">
+<div class="figure align-default" id="id3">
 <img alt="POST request highlighted with Params tab open showing Form data." src="../../_images/inspecting-post-request.png" />
 <p class="caption"><span class="caption-text">POST request highlighted with Params tab open showing Form data</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Using POST for form submissions adds a very low level of security. Using
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Using POST for form submissions adds a very low level of security. Using
 <a class="reference external" href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> instead of HTTP adds a
 higher level of security. Configuring HTTPS is beyond the scope of this
 class.</p>
@@ -172,12 +173,12 @@ class.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">25.3.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What attribute on <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> determines if the form is submitted with GET or POST?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What attribute on <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> determines if the form is submitted with GET or POST?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What attribute on <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> determines <em>where</em> the request is sent?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What attribute on <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> determines <em>where</em> the request is sent?</p>
 </div>
 </div>
 </div>

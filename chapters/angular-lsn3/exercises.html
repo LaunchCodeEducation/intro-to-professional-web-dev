@@ -105,30 +105,34 @@ that you cloned for the all of the Angular lessons.</p>
 <h2><span class="section-number">31.6.2. </span>The Requirements Review<a class="headerlink" href="#the-requirements-review" title="Permalink to this headline">¶</a></h2>
 <p>The requirements are the same as before:</p>
 <ol class="arabic simple">
-<li>When the &quot;Take off&quot; button is clicked, the following should happen:<ol class="arabic">
-<li>A confirmation window should let the user know &quot;Confirm that the shuttle is ready for takeoff.&quot; If the shuttle is ready for liftoff, then add steps b-d.</li>
-<li>The flight status should change to &quot;Shuttle in flight.&quot;</li>
-<li>The background color of the shuttle flight screen should change from green to blue.</li>
-<li>The shuttle height should increase by 10,000 km.</li>
+<li><p>When the &quot;Take off&quot; button is clicked, the following should happen:</p>
+<ol class="arabic simple">
+<li><p>A confirmation window should let the user know &quot;Confirm that the shuttle is ready for takeoff.&quot; If the shuttle is ready for liftoff, then add steps b-d.</p></li>
+<li><p>The flight status should change to &quot;Shuttle in flight.&quot;</p></li>
+<li><p>The background color of the shuttle flight screen should change from green to blue.</p></li>
+<li><p>The shuttle height should increase by 10,000 km.</p></li>
 </ol>
 </li>
-<li>When the &quot;Land&quot; button is clicked, the following should happen:<ol class="arabic">
-<li>A window alert should let the user know &quot;The shuttle is landing. Landing gear engaged.&quot;</li>
-<li>The flight status should change to &quot;The shuttle has landed.&quot;</li>
-<li>The background color of the shuttle flight screen should change from blue to green.</li>
-<li>The shuttle height should go down to 0.</li>
+<li><p>When the &quot;Land&quot; button is clicked, the following should happen:</p>
+<ol class="arabic simple">
+<li><p>A window alert should let the user know &quot;The shuttle is landing. Landing gear engaged.&quot;</p></li>
+<li><p>The flight status should change to &quot;The shuttle has landed.&quot;</p></li>
+<li><p>The background color of the shuttle flight screen should change from blue to green.</p></li>
+<li><p>The shuttle height should go down to 0.</p></li>
 </ol>
 </li>
-<li>When the &quot;Abort Mission&quot; button is clicked, the following should happen:<ol class="arabic">
-<li>A confirmation window should prompt the user if they really want to abort the mission. If the user wants to abort the mission, then add steps b-d.</li>
-<li>The flight status should change to &quot;Mission aborted.&quot;</li>
-<li>The background color of the shuttle flight screen should change from blue to red.</li>
-<li>The shuttle height should go down to 0.</li>
+<li><p>When the &quot;Abort Mission&quot; button is clicked, the following should happen:</p>
+<ol class="arabic simple">
+<li><p>A confirmation window should prompt the user if they really want to abort the mission. If the user wants to abort the mission, then add steps b-d.</p></li>
+<li><p>The flight status should change to &quot;Mission aborted.&quot;</p></li>
+<li><p>The background color of the shuttle flight screen should change from blue to red.</p></li>
+<li><p>The shuttle height should go down to 0.</p></li>
 </ol>
 </li>
-<li>When the &quot;Up&quot;, &quot;Down&quot;, &quot;Right&quot;, and &quot;Left&quot; buttons are clicked, the following should happen:<ol class="arabic">
-<li>The rocket image should move 10 px in the direction of the button that was clicked.</li>
-<li>If the &quot;Up&quot; or &quot;Down&quot; buttons were clicked, then the shuttle height should increase or decrease by 10,000 km.</li>
+<li><p>When the &quot;Up&quot;, &quot;Down&quot;, &quot;Right&quot;, and &quot;Left&quot; buttons are clicked, the following should happen:</p>
+<ol class="arabic simple">
+<li><p>The rocket image should move 10 px in the direction of the button that was clicked.</p></li>
+<li><p>If the &quot;Up&quot; or &quot;Down&quot; buttons were clicked, then the shuttle height should increase or decrease by 10,000 km.</p></li>
 </ol>
 </li>
 </ol>
@@ -158,16 +162,14 @@ update the view.</p>
 <div class="section" id="update-the-html">
 <span id="exercises-angular-lsn3a"></span><h3><span class="section-number">31.6.3.1. </span>Update the HTML<a class="headerlink" href="#update-the-html" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Pass in the <code class="docutils literal notranslate"><span class="pre">message</span></code> variable to the app html:</p>
+<li><p>Pass in the <code class="docutils literal notranslate"><span class="pre">message</span></code> variable to the app html:</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsa1"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Add this style directive to line 19: <code class="docutils literal notranslate"><span class="pre">[style.backgroundColor]=&quot;color&quot;</span></code>.</p>
-</li>
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">height</span></code> property to determine the displayed height.</p>
+<li><p>Add this style directive to line 19: <code class="docutils literal notranslate"><span class="pre">[style.backgroundColor]=&quot;color&quot;</span></code>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">height</span></code> property to determine the displayed height.</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsa3"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Refresh the page to ensure your template variables are assigned correctly.</p>
-</li>
+<li><p>Refresh the page to ensure your template variables are assigned correctly.</p></li>
 </ol>
 </div>
 </div>
@@ -178,10 +180,10 @@ update the view.</p>
 <p>Now, we'll add some event listeners to the three control buttons on the bottom of the page.
 These listeners will reassign the values of <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, and <code class="docutils literal notranslate"><span class="pre">message</span></code>.</p>
 <ol class="arabic">
-<li><p class="first">Add an event listener to the <em>Take Off</em> button.</p>
+<li><p>Add an event listener to the <em>Take Off</em> button.</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsb1"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, we'll define this listener. The <code class="docutils literal notranslate"><span class="pre">confirm()</span></code> method will look the
+<li><p>Back in <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, we'll define this listener. The <code class="docutils literal notranslate"><span class="pre">confirm()</span></code> method will look the
 same as before, but this time we can use a few less lines of code to update the view.</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -203,8 +205,7 @@ same as before, but this time we can use a few less lines of code to update the 
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Follow the same pattern to handle the <em>Land</em> and <em>Abort Mission</em> click events.</p>
-</li>
+<li><p>Follow the same pattern to handle the <em>Land</em> and <em>Abort Mission</em> click events.</p></li>
 </ol>
 </div>
 <div class="section" id="movement-buttons">
@@ -218,18 +219,16 @@ move the rocket. The <code class="docutils literal notranslate"><span class="pre
 access the <code class="docutils literal notranslate"><span class="pre">img</span></code> element by passing it in to the click
 event.</p>
 <ol class="arabic">
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, label the <code class="docutils literal notranslate"><span class="pre">img</span></code> element so we can reference it.</p>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, label the <code class="docutils literal notranslate"><span class="pre">img</span></code> element so we can reference it.</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsc1"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">While you're here, add this click handler to the <em>Right</em> button: <code class="docutils literal notranslate"><span class="pre">(click)=&quot;moveRocket(rocketImage,</span> <span class="pre">'right')&quot;</span></code></p>
-</li>
-<li><p class="first">Complete the <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code> method in the app's component class to handle rocket movement to the right:</p>
+<li><p>While you're here, add this click handler to the <em>Right</em> button: <code class="docutils literal notranslate"><span class="pre">(click)=&quot;moveRocket(rocketImage,</span> <span class="pre">'right')&quot;</span></code></p></li>
+<li><p>Complete the <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code> method in the app's component class to handle rocket movement to the right:</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsc3"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Add conditional logic to this <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code> method to account for the other movement
+<li><p>Add conditional logic to this <code class="docutils literal notranslate"><span class="pre">moveRocket()</span></code> method to account for the other movement
 directions, modifying the movement formula as needed. Be sure to also update the
-<code class="docutils literal notranslate"><span class="pre">height</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> property where appropriate.</p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">height</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code> property where appropriate.</p></li>
 </ol>
 </div>
 <div class="section" id="update-the-control-button-click-handlers">
@@ -246,14 +245,14 @@ handlers and add the following:</p>
 <div class="section" id="new-requirements">
 <span id="exercises-angular-lsn3d"></span><h2><span class="section-number">31.6.5. </span>New Requirements<a class="headerlink" href="#new-requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Right now, a user can move the rocket before it has officially taken
+<li><p>Right now, a user can move the rocket before it has officially taken
 off or abort the mission while the rocket is still on the ground. This
 doesn't make much sense. With attribute directives, we can dynamically
 set those buttons to only be enabled in some states.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">app.component.ts</span></code>, let's add a check for the take off status of the shuttle.</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsd1"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">When the app is first loaded, we want the user to be able to click the <em>Take Off</em>
+<li><p>When the app is first loaded, we want the user to be able to click the <em>Take Off</em>
 button, but not the <em>Land</em> or <em>Abort Mission</em> button. In <code class="docutils literal notranslate"><span class="pre">app.component.html</span></code>, update the control buttons
 to add some <code class="docutils literal notranslate"><span class="pre">[disabled]</span></code> attribute directives.</p>
 <p>Based on the boolean <code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code> property, only the <em>Take Off</em> control button is
@@ -261,7 +260,7 @@ enabled when the rocket is on the ground.</p>
 <p>Update the control button click handlers to toggle the enabled/disabled status
 of the controls using this value.</p>
 </li>
-<li><p class="first">For another improvement, we shouldn't be able to move the rocket if it hasn't taken off.
+<li><p>For another improvement, we shouldn't be able to move the rocket if it hasn't taken off.
 To toggle the status of the direction buttons, we could add more boolean checks to our
 component. However, we know we only want these buttons to be accessible when the
 <em>Take Off</em> button is not. We can therefore reuse <code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code> to determine if the
@@ -274,18 +273,17 @@ we can take advantage of our old friend <code class="docutils literal notranslat
 <code class="docutils literal notranslate"><span class="pre">takeOffEnabled</span></code>.</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/angular-lsn3.html#angular-lsn3-exercise-solutionsd3"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Lastly, let's change the shuttle's background color to a warning color if the rocket
+<li><p>Lastly, let's change the shuttle's background color to a warning color if the rocket
 image gets too close to the edge. Add a function to your component that will check the
 width and height values and changes the color value to orange if those values are too
-high or low. Call that function in each of the direction button click handlers.</p>
-</li>
+high or low. Call that function in each of the direction button click handlers.</p></li>
 </ol>
 </div>
 <div class="section" id="bonus-mission">
 <h2><span class="section-number">31.6.6. </span>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Just like the original studio, change the code to prevent the rocket image from flying off the colored background.</li>
-<li>Dynamically adjust the enabled/disabled status of the direction buttons based on the position of the rocket.</li>
+<li><p>Just like the original studio, change the code to prevent the rocket image from flying off the colored background.</p></li>
+<li><p>Dynamically adjust the enabled/disabled status of the direction buttons based on the position of the rocket.</p></li>
 </ol>
 </div>
 </div>

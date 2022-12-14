@@ -96,7 +96,7 @@ input, using the <code class="docutils literal notranslate"><span class="pre">pr
 parameter receives a function that does the actual work of validating the
 input.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -154,12 +154,12 @@ Enter an even number: 4
 <p>When we call <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> on line 22, we pass it the string
 <code class="docutils literal notranslate"><span class="pre">'Enter</span> <span class="pre">an</span> <span class="pre">even</span> <span class="pre">number:'</span></code>, which gets assigned to the <code class="docutils literal notranslate"><span class="pre">prompt</span></code>
 parameter.</p>
-<p class="last">Notice that we also pass in the function <code class="docutils literal notranslate"><span class="pre">isEven</span></code> (with no arguments).
+<p>Notice that we also pass in the function <code class="docutils literal notranslate"><span class="pre">isEven</span></code> (with no arguments).
 This gets assigned to the <code class="docutils literal notranslate"><span class="pre">isValid</span></code> parameter.</p>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> handles the work of interacting with the user, while allowing the validation logic to be customized. This separates the different concerns of validation and user interaction, sticking to the idea that <em>a function should do only one thing</em>. It also enables more reusable code. If we need to get different input from the user, we can simply call <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> with different arguments.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This example uses the same <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> function defined above with a different prompt and validator function. In this case, we check that a potential password has at least 8 characters.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -213,7 +213,7 @@ This gets assigned to the <code class="docutils literal notranslate"><span class
 </pre></div>
 </td></tr></table></div>
 <p><strong>Sample Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Create a password: launch
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Create a password: launch
 Invalid input. Try again.
 Create a password: code
 Invalid input. Try again.
@@ -223,12 +223,12 @@ launchcode
 </div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic simple">
-<li>Use our <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> function to ensure user input starts with &quot;a&quot;.</li>
-<li>Create another validator that ensures user input is a vowel.</li>
+<li><p>Use our <code class="docutils literal notranslate"><span class="pre">getValidInput</span></code> function to ensure user input starts with &quot;a&quot;.</p></li>
+<li><p>Create another validator that ensures user input is a vowel.</p></li>
 </ol>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Validator-check" target="_blank">Try it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/Validator-check" target="_blank">Try it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 </div>
 <div class="section" id="example-a-logger">
@@ -238,9 +238,9 @@ launchcode
 <div class="section" id="a-simple-logger">
 <h3><span class="section-number">11.4.2.1. </span>A Simple Logger<a class="headerlink" href="#a-simple-logger" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">logError</span></code> function outputs a standardized error message to a location determined by the parameter <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</p>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -269,24 +269,24 @@ launchcode
 <p>Let's examine this example in more detail.</p>
 <p>There are three main program components:</p>
 <ol class="arabic simple">
-<li>Lines 1-5 define <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>, which takes a string argument, <code class="docutils literal notranslate"><span class="pre">msg</span></code>. We have not discussed writing to a file, but Node.js is capable of doing so.</li>
-<li>Lines 7-10 define <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The first parameter is the message to be logged. The second parameter is the logging function that will do the work of sending the message somewhere. <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn't know the details of how the message will be logged. It simply formats the message, and calls <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</li>
-<li>Line 12 logs an error using the <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>.</li>
+<li><p>Lines 1-5 define <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>, which takes a string argument, <code class="docutils literal notranslate"><span class="pre">msg</span></code>. We have not discussed writing to a file, but Node.js is capable of doing so.</p></li>
+<li><p>Lines 7-10 define <code class="docutils literal notranslate"><span class="pre">logError</span></code>. The first parameter is the message to be logged. The second parameter is the logging function that will do the work of sending the message somewhere. <code class="docutils literal notranslate"><span class="pre">logError</span></code> doesn't know the details of how the message will be logged. It simply formats the message, and calls <code class="docutils literal notranslate"><span class="pre">logger</span></code>.</p></li>
+<li><p>Line 12 logs an error using the <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>.</p></li>
 </ol>
 <p>This is the flow of execution:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">logError</span></code> is called, with a message and the logging function <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code> passed as arguments.</li>
-<li><code class="docutils literal notranslate"><span class="pre">logError</span></code> runs, passing the constructed message to <code class="docutils literal notranslate"><span class="pre">logger</span></code>, which refers to <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">fileLogger</span></code> executes, sending the message to a file.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logError</span></code> is called, with a message and the logging function <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code> passed as arguments.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logError</span></code> runs, passing the constructed message to <code class="docutils literal notranslate"><span class="pre">logger</span></code>, which refers to <code class="docutils literal notranslate"><span class="pre">fileLogger</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fileLogger</span></code> executes, sending the message to a file.</p></li>
 </ol>
 </div>
 <div class="section" id="a-more-complex-logger">
 <h3><span class="section-number">11.4.2.2. </span>A More Complex Logger<a class="headerlink" href="#a-more-complex-logger" title="Permalink to this headline">¶</a></h3>
 <p>This example can be made even more powerful by enabling multiple loggers.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The call to <code class="docutils literal notranslate"><span class="pre">logError</span></code> will log the message to both the console and a file.</p>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -342,7 +342,7 @@ launchcode
 <h2><span class="section-number">11.4.3. </span>A Word of Caution<a class="headerlink" href="#a-word-of-caution" title="Permalink to this headline">¶</a></h2>
 <p>What happens if a function expects an argument to be a function, but it isn't?</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -354,11 +354,11 @@ launchcode
 <span class="nx">callMe</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/TypeError-Example" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/TypeError-Example" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What type of error occurs when attempting to use a value that is NOT a function as if it were one?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What type of error occurs when attempting to use a value that is NOT a function as if it were one?</p>
 </div>
 </div>
 </div>

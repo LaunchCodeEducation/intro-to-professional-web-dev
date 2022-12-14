@@ -126,21 +126,21 @@
 </pre></div>
 </td></tr></table></div>
 <ol class="arabic">
-<li><p class="first">The URL where our planet data is located is: <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span></code>.
+<li><p>The URL where our planet data is located is: <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/planets.json&quot;</span></code>.
 Add the code to fetch this URL inside the load event listener.</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/fetch.html#fetch-exercise-solutions1"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Peek at the <code class="docutils literal notranslate"><span class="pre">response</span></code> returned in the request by adding a print statement
+<li><p>Peek at the <code class="docutils literal notranslate"><span class="pre">response</span></code> returned in the request by adding a print statement
 inside of the function.</p>
 <p>Copy the file path of your HTML file and paste it as the URL in your browser.
 You won't see much on the page yet. Open your developer tools and examine both the
 <em>Console</em> tab for the response value, as well as the <em>Network</em> tab for the request status.</p>
 </li>
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">.json()</span></code> method on your response now to see more of the data in the console:
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.json()</span></code> method on your response now to see more of the data in the console:
 What data type do you see printed?</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/fetch.html#fetch-exercise-solutions3"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Replace your <code class="docutils literal notranslate"><span class="pre">console.log(json)</span></code> with the following to view a portion of the JSON
+<li><p>Replace your <code class="docutils literal notranslate"><span class="pre">console.log(json)</span></code> with the following to view a portion of the JSON
 into the app.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">destination</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;destination&quot;</span><span class="p">);</span>
@@ -151,7 +151,7 @@ into the app.</p>
 Play around by changing the index number. Does the planet name change?
 Can you change the planet's property being printed?</p>
 </li>
-<li><p class="first">Now, what happens if we move those last lines we added to outside and after
+<li><p>Now, what happens if we move those last lines we added to outside and after
 the fetch request?</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">json</span></code> hasn't been defined outside of the
 <code class="docutils literal notranslate"><span class="pre">response.json()</span></code> method yet, in order to move the template literal that uses
@@ -160,7 +160,7 @@ call. Let's also put our print statement back so we can verify that our fetch wo
 <p>Refresh the page and try this. See any data? See anything of note in the console?</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/fetch.html#fetch-exercise-solutions5"><span class="std std-ref">Check your solution</span></a>.</p>
 </li>
-<li><p class="first">Our last task left us with some knowledge about where and how we can use the
+<li><p>Our last task left us with some knowledge about where and how we can use the
 fetched data, but we don't really want to keep those changes. Instead, how
 about we use an event to change the planet information we see? Let's move
 the DOM manipulation to inside a click handler.</p>
@@ -196,16 +196,16 @@ the name and image appear.
 Take note, we're still fetching on load, just not displaying the data until the
 the header is clicked.</p>
 </li>
-<li><p class="first">For fun and good measure, let's dynamically change which planet's info we're displaying each time
+<li><p>For fun and good measure, let's dynamically change which planet's info we're displaying each time
 the header is clicked. To do this,</p>
 <ol class="loweralpha simple">
-<li>Declare a counter variable, <code class="docutils literal notranslate"><span class="pre">index</span></code> that changes each time a
-<code class="docutils literal notranslate"><span class="pre">click</span></code> event takes place.</li>
-<li>Use the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> as the position in the planets array to
-use in the template literal.</li>
-<li>Finally, since we want to cap the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> so that it does not
+<li><p>Declare a counter variable, <code class="docutils literal notranslate"><span class="pre">index</span></code> that changes each time a
+<code class="docutils literal notranslate"><span class="pre">click</span></code> event takes place.</p></li>
+<li><p>Use the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> as the position in the planets array to
+use in the template literal.</p></li>
+<li><p>Finally, since we want to cap the value of <code class="docutils literal notranslate"><span class="pre">index</span></code> so that it does not
 exceed the length of the planets array, use a modulo to control how
-large <code class="docutils literal notranslate"><span class="pre">index</span></code> can get.</li>
+large <code class="docutils literal notranslate"><span class="pre">index</span></code> can get.</p></li>
 </ol>
 <p>Et voila! Our destination changes on each click!</p>
 <p><a class="reference internal" href="../../appendices/exercise-solutions/fetch.html#fetch-exercise-solutions7"><span class="std std-ref">Check your solution</span></a>.</p>

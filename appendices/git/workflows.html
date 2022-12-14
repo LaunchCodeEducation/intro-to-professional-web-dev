@@ -91,32 +91,32 @@
 <span id="single-dev-branch"></span><h2>Single Developer / Single Branch<a class="headerlink" href="#single-developer-single-branch" title="Permalink to this headline">¶</a></h2>
 <p>When working on a project by yourself, you will typically follow this workflow:</p>
 <ol class="arabic simple" id="basic-flow">
-<li>Make changes to your code</li>
-<li>Check status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
-<li>Stage changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></li>
-<li>Commit changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Added</span> <span class="pre">feature</span> <span class="pre">X&quot;</span></code></li>
-<li>(If working with a remote repository) Push changes:
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></li>
+<li><p>Make changes to your code</p></li>
+<li><p>Check status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p>Stage changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></li>
+<li><p>Commit changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Added</span> <span class="pre">feature</span> <span class="pre">X&quot;</span></code></p></li>
+<li><p>(If working with a remote repository) Push changes:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="single-developer-feature-branches">
 <span id="single-feature"></span><h2>Single Developer / Feature Branches<a class="headerlink" href="#single-developer-feature-branches" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">As you become more comfortable with Git and begin to build larger projects on your own, you'll want to use <strong>feature branches</strong>. This is a branch created in order to <em>isolate</em> changes related to a <em>single</em> feature or bug. Professional developers use them for a few reasons:</p>
 <ul class="simple">
-<li>They can work on multiple new features at the same time, while keeping the work separated.</li>
-<li>If a bug is found, they can commit changes to their feature branch and switch to the branch containing the bug.</li>
-<li>Working in feature branches allows code to be easily reviewed by other developers before it is merged.</li>
+<li><p>They can work on multiple new features at the same time, while keeping the work separated.</p></li>
+<li><p>If a bug is found, they can commit changes to their feature branch and switch to the branch containing the bug.</p></li>
+<li><p>Working in feature branches allows code to be easily reviewed by other developers before it is merged.</p></li>
 </ul>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
-<p class="last">Some development teams will <em>only</em> work in feature branches. On these teams, developers are NOT allowed to make changes directly to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. They must work in feature branches and create pull requests into <code class="docutils literal notranslate"><span class="pre">master</span></code> to add those changes to the main code base.</p>
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p>Some development teams will <em>only</em> work in feature branches. On these teams, developers are NOT allowed to make changes directly to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. They must work in feature branches and create pull requests into <code class="docutils literal notranslate"><span class="pre">master</span></code> to add those changes to the main code base.</p>
 </div>
 <p>In the workflow below, we use <code class="docutils literal notranslate"><span class="pre">main</span></code> to refer to the branch from which the feature branch is created (often <code class="docutils literal notranslate"><span class="pre">master</span></code>) and <code class="docutils literal notranslate"><span class="pre">feature</span></code> to refer to the feature branch. Remember to use descriptive names for your branches.</p>
 <ol class="arabic simple">
-<li>Create a new branch. While in <code class="docutils literal notranslate"><span class="pre">main</span></code> create and move to the feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature</span></code>.</li>
-<li>Follow the <a class="reference internal" href="#single-dev-branch"><span class="std std-ref">Single Developer / Single Branch</span></a> workflow until work on the feature is complete.</li>
-<li>After all changes in <code class="docutils literal notranslate"><span class="pre">feature</span></code> have been committed and pushed, move back to <code class="docutils literal notranslate"><span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</li>
-<li>Merge your feature branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, resolving any conflicts: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code></li>
+<li><p>Create a new branch. While in <code class="docutils literal notranslate"><span class="pre">main</span></code> create and move to the feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature</span></code>.</p></li>
+<li><p>Follow the <a class="reference internal" href="#single-dev-branch"><span class="std std-ref">Single Developer / Single Branch</span></a> workflow until work on the feature is complete.</p></li>
+<li><p>After all changes in <code class="docutils literal notranslate"><span class="pre">feature</span></code> have been committed and pushed, move back to <code class="docutils literal notranslate"><span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</p></li>
+<li><p>Merge your feature branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, resolving any conflicts: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="team-single-branch">
@@ -124,13 +124,13 @@
 <p>The case of a team working on a project with a single branch is <em>very</em> uncommon. However, multiple developers working on the same branch happens quite a bit. This workflow, therefore, can be thought of as a sub-workflow of the <a class="reference internal" href="#team-feature"><span class="std std-ref">Team / Feature Branches</span></a> workflow.</p>
 <p>This workflow is similar to the <a class="reference internal" href="#single-dev-branch"><span class="std std-ref">Single Developer / Single Branch</span></a> workflow, only now you must be mindful to merge in changes made by others.</p>
 <ol class="arabic simple">
-<li>Make changes to your code</li>
-<li>Check status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
-<li>Stage changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></li>
-<li>Commit changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Added</span> <span class="pre">feature</span> <span class="pre">X&quot;</span></code></li>
-<li>Pull changes made by other: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code></li>
-<li>Merge changes as necessary</li>
-<li>Push changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></li>
+<li><p>Make changes to your code</p></li>
+<li><p>Check status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p>Stage changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></li>
+<li><p>Commit changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Added</span> <span class="pre">feature</span> <span class="pre">X&quot;</span></code></p></li>
+<li><p>Pull changes made by other: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code></p></li>
+<li><p>Merge changes as necessary</p></li>
+<li><p>Push changes: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="team-feature-branches">
@@ -138,10 +138,10 @@
 <p>The workflow for a team of developers using feature branches combines the <a class="reference internal" href="#team-single"><span class="std std-ref">Team / Single Branch</span></a> and <a class="reference internal" href="#single-feature"><span class="std std-ref">Single Developer / Feature Branches</span></a> workflows.</p>
 <p>In the workflow below, we use <code class="docutils literal notranslate"><span class="pre">main</span></code> to refer to the branch from which the feature branch is created (often <code class="docutils literal notranslate"><span class="pre">master</span></code>) and <code class="docutils literal notranslate"><span class="pre">feature</span></code> to refer to the feature branch. Remember to use descriptive names for your branches.</p>
 <ol class="arabic simple">
-<li>Create a new branch. While in <code class="docutils literal notranslate"><span class="pre">main</span></code> create and move to the feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature</span></code>. OR if contributing to a branch made by a team member, fetch and checkout their existing branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">origin</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">feature</span></code></li>
-<li>Follow the <a class="reference internal" href="#team-single"><span class="std std-ref">Team / Single Branch</span></a> workflow until work on the feature is complete.</li>
-<li>After all changes in <code class="docutils literal notranslate"><span class="pre">feature</span></code> have been committed and pushed, move back to <code class="docutils literal notranslate"><span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</li>
-<li>Merge your feature branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, resolving any conflicts: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code>. Alternatively, create a pull request &lt;create-pr&gt; into <code class="docutils literal notranslate"><span class="pre">main</span></code> as described below.</li>
+<li><p>Create a new branch. While in <code class="docutils literal notranslate"><span class="pre">main</span></code> create and move to the feature branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature</span></code>. OR if contributing to a branch made by a team member, fetch and checkout their existing branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">origin</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">feature</span></code></p></li>
+<li><p>Follow the <a class="reference internal" href="#team-single"><span class="std std-ref">Team / Single Branch</span></a> workflow until work on the feature is complete.</p></li>
+<li><p>After all changes in <code class="docutils literal notranslate"><span class="pre">feature</span></code> have been committed and pushed, move back to <code class="docutils literal notranslate"><span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</p></li>
+<li><p>Merge your feature branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, resolving any conflicts: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code>. Alternatively, create a pull request &lt;create-pr&gt; into <code class="docutils literal notranslate"><span class="pre">main</span></code> as described below.</p></li>
 </ol>
 </div>
 <div class="section" id="working-with-pull-requests">
@@ -197,10 +197,10 @@ original project under the project name on your profile.</p>
 <div class="section" id="helpful-git-resources">
 <h2>Helpful Git Resources<a class="headerlink" href="#helpful-git-resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/book/en/v2" target="_blank">Pro Git Book<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A reference book covering Git in depth.</li>
-<li><a class="reference external" href="https://github.com/k88hudson/git-flight-rules" target="_blank">Flight Rules for Git<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A &quot;How to&quot; guide for git</li>
-<li><a class="reference external" href="https://try.github.io" target="_blank">Interactive GitHub Sandbox<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A place to practice git without fear of messing anything up.</li>
-<li><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">Connecting to GitHub with SSH<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2" target="_blank">Pro Git Book<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A reference book covering Git in depth.</p></li>
+<li><p><a class="reference external" href="https://github.com/k88hudson/git-flight-rules" target="_blank">Flight Rules for Git<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A &quot;How to&quot; guide for git</p></li>
+<li><p><a class="reference external" href="https://try.github.io" target="_blank">Interactive GitHub Sandbox<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> - A place to practice git without fear of messing anything up.</p></li>
+<li><p><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">Connecting to GitHub with SSH<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
 </ul>
 </div>
 </div>

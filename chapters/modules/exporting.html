@@ -91,8 +91,8 @@ we write clever code that we want to share? Fortunately, Node allows us to make
 our code available for use in other programs.</p>
 <p>First, some basic points:</p>
 <ol class="arabic simple">
-<li>Every Node.js file is treated as a module (also called a <em>package</em>).</li>
-<li>From a file, we can export a single function or a set of functions.</li>
+<li><p>Every Node.js file is treated as a module (also called a <em>package</em>).</p></li>
+<li><p>From a file, we can export a single function or a set of functions.</p></li>
 </ol>
 <div class="section" id="starter-code">
 <h2><span class="section-number">13.4.1. </span>Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">¶</a></h2>
@@ -144,7 +144,7 @@ This makes the function available to other files.</p>
 <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> gets pulled in and assigned to the new variable
 <code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code>, and we can now call the function from within <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Add the following code to <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, then click &quot;Run&quot;.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -158,7 +158,7 @@ This makes the function available to other files.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>function
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>function
 false
 true
 </pre></div>
@@ -166,14 +166,14 @@ true
 </div>
 <p>There are several points to make about the code and output.</p>
 <ol class="arabic simple">
-<li>Assigning <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> allows us to use that
-function in other files.</li>
-<li>Even though we <code class="docutils literal notranslate"><span class="pre">require</span></code> the file <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code>, it only assigns
+<li><p>Assigning <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> allows us to use that
+function in other files.</p></li>
+<li><p>Even though we <code class="docutils literal notranslate"><span class="pre">require</span></code> the file <code class="docutils literal notranslate"><span class="pre">practiceExports.js</span></code>, it only assigns
 <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code>. Thus, <code class="docutils literal notranslate"><span class="pre">typeof</span>
-<span class="pre">palindromeCheck</span></code> returns <code class="docutils literal notranslate"><span class="pre">function</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code> now behaves in the same way as <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, so
+<span class="pre">palindromeCheck</span></code> returns <code class="docutils literal notranslate"><span class="pre">function</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">palindromeCheck</span></code> now behaves in the same way as <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, so
 calling <code class="docutils literal notranslate"><span class="pre">palindromeCheck('that')</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, since <code class="docutils literal notranslate"><span class="pre">'that'</span></code>
-is not a palindrome.</li>
+is not a palindrome.</p></li>
 </ol>
 </div>
 <div class="section" id="exporting-multiple-functions">
@@ -193,19 +193,19 @@ function, we will create an <em>object</em>.</p>
 the names used in <code class="docutils literal notranslate"><span class="pre">index.js</span></code> to call the functions. The <em>values</em> are the
 functions themselves.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We do not have to make the key match the name of the function, but doing so
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We do not have to make the key match the name of the function, but doing so
 helps maintain consistency between files.</p>
 </div>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>You might be tempted to use three statements to export the three functions:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">isPalindrome</span><span class="p">;</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">evenOrOdd</span><span class="p">;</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">randomArrayElement</span><span class="p">;</span>
 </pre></div>
 </div>
-<p class="last">This will NOT work, because Node expects only ONE <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> statement in a file. No error will be thrown if you use more than one, but <code class="docutils literal notranslate"><span class="pre">require('./practiceExports.js')</span></code> will only pull in the information from the LAST statement.</p>
+<p>This will NOT work, because Node expects only ONE <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> statement in a file. No error will be thrown if you use more than one, but <code class="docutils literal notranslate"><span class="pre">require('./practiceExports.js')</span></code> will only pull in the information from the LAST statement.</p>
 </div>
 <div class="section" id="try-it">
 <h3><span class="section-number">13.4.3.1. </span>Try It<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
@@ -281,18 +281,18 @@ helpful as one called <code class="docutils literal notranslate"><span class="pr
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">13.4.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>A module in Node.js is:</p>
-<ol class="last loweralpha simple">
-<li>A file containing JavaScript code intended for use in other Node programs.</li>
-<li>A separate block of code within a program.</li>
-<li>One line of code in a program.</li>
-<li>A function.</li>
-<li>A file that contains documentation about functions in JavaScript.</li>
+<ol class="loweralpha simple">
+<li><p>A file containing JavaScript code intended for use in other Node programs.</p></li>
+<li><p>A separate block of code within a program.</p></li>
+<li><p>One line of code in a program.</p></li>
+<li><p>A function.</p></li>
+<li><p>A file that contains documentation about functions in JavaScript.</p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume you have the following at the end of a <code class="docutils literal notranslate"><span class="pre">circleStuff.js</span></code> module:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
    <span class="nx">areaOfCircle</span><span class="o">:</span> <span class="nx">areaOfCircle</span><span class="p">,</span>
@@ -308,11 +308,11 @@ helpful as one called <code class="docutils literal notranslate"><span class="pr
 </td></tr></table></div>
 <p>Which of the following is the correct way to find the circumference of a circle
 from within your project?</p>
-<ol class="last loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">circleStuff(argument)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">circleStuff.circumference(argument)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">circleStuff(circumference(argument))</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">circumference(argument)</span></code></li>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">circleStuff(argument)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circleStuff.circumference(argument)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circleStuff(circumference(argument))</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circumference(argument)</span></code></p></li>
 </ol>
 </div>
 </div>

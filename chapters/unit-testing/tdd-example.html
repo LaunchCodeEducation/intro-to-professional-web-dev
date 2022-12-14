@@ -91,13 +91,13 @@ and follow along as we implement a project using TDD.</p>
 <p>We need to write a Node module to process transmissions from the
 <a class="reference external" href="https://voyager.jpl.nasa.gov/mission/" target="_blank">Voyager1 probe<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Transmission</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;1410::&lt;932829840830053761&gt;&quot;</span>
 </pre></div>
 </div>
 <p>Expected Result</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nx">id</span><span class="o">:</span> <span class="mf">1410</span><span class="p">,</span>
    <span class="nx">rawData</span><span class="o">:</span> <span class="mf">932829840830053761</span>
 <span class="p">}</span>
@@ -110,18 +110,20 @@ and follow along as we implement a project using TDD.</p>
 small testable units. Let's review them and then we will
 take it slow, one step at a time.</p>
 <ol class="arabic simple">
-<li>Take in a transmission string and return an object.</li>
-<li>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the transmission does NOT contain <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code>.</li>
-<li>Returned object should contain an <code class="docutils literal notranslate"><span class="pre">id</span></code> property<ul>
-<li>The value of <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
+<li><p>Take in a transmission string and return an object.</p></li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the transmission does NOT contain <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code>.</p></li>
+<li><p>Returned object should contain an <code class="docutils literal notranslate"><span class="pre">id</span></code> property</p>
+<ul class="simple">
+<li><p>The value of <code class="docutils literal notranslate"><span class="pre">id</span></code> is the part of the transmission <em>before</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></p></li>
 </ul>
 </li>
-<li>The <code class="docutils literal notranslate"><span class="pre">id</span></code> property should be of type <code class="docutils literal notranslate"><span class="pre">Number</span></code></li>
-<li>Returned object should contain a <code class="docutils literal notranslate"><span class="pre">rawData</span></code> property<ul>
-<li>The value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> property should be of type <code class="docutils literal notranslate"><span class="pre">Number</span></code></p></li>
+<li><p>Returned object should contain a <code class="docutils literal notranslate"><span class="pre">rawData</span></code> property</p>
+<ul class="simple">
+<li><p>The value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> is the part of the transmission <em>after</em> the <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code></p></li>
 </ul>
 </li>
-<li>Return -1 for the value <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
+<li><p>Return -1 for the value <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if the <code class="docutils literal notranslate"><span class="pre">rawData</span></code> part of the transmission does NOT start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="requirement-1">
@@ -129,8 +131,8 @@ take it slow, one step at a time.</p>
 <p><em>Requirement:</em> Take in a transmission string and return an object.</p>
 <p>To get started on this we need to:</p>
 <ol class="loweralpha simple">
-<li>Create a blank test function.</li>
-<li>Give the test a name that is a clear, testable statement.</li>
+<li><p>Create a blank test function.</p></li>
+<li><p>Give the test a name that is a clear, testable statement.</p></li>
 </ol>
 <p>Creating a blank test is easy, go to <code class="docutils literal notranslate"><span class="pre">processor.spec.js</span></code> and add an empty test method.
 Tests in Jasmine are declared with an <code class="docutils literal notranslate"><span class="pre">it</span></code> function.
@@ -242,8 +244,8 @@ created the file yet. We are officially in the Red phase of Red, Green, Refactor
 <h3><span class="section-number">14.5.2.2. </span>Go Green!<a class="headerlink" href="#go-green" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have a failing test, we have only one choice. Make it pass.</p>
 <ol class="loweralpha simple">
-<li>Add a <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> file to your repl.it.</li>
-<li>Inside of the module declare a <code class="docutils literal notranslate"><span class="pre">processor</span></code> function that takes a parameter and returns an object.</li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> file to your repl.it.</p></li>
+<li><p>Inside of the module declare a <code class="docutils literal notranslate"><span class="pre">processor</span></code> function that takes a parameter and returns an object.</p></li>
 </ol>
 <p>Contents of the new <code class="docutils literal notranslate"><span class="pre">processor.js</span></code> file.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -283,14 +285,14 @@ review your code to make sure that it's efficient and meets your team's standard
 Before jumping into the code, let's review the steps we took to implement requirement #1.</p>
 <p>Review of TDD process:</p>
 <ol class="arabic simple">
-<li>Create a blank test function.</li>
-<li>Give the test a name that is a clear, testable statement.</li>
-<li>Come up with test data that will trigger the described behavior.</li>
-<li>Think about what is needed, then write code that fulfills the stated behavior.</li>
-<li>Run the test and see the it fail.</li>
-<li>Implement the new code or feature used in the test.</li>
-<li>Run the test and see it pass.</li>
-<li>Review to see if refactor needed.</li>
+<li><p>Create a blank test function.</p></li>
+<li><p>Give the test a name that is a clear, testable statement.</p></li>
+<li><p>Come up with test data that will trigger the described behavior.</p></li>
+<li><p>Think about what is needed, then write code that fulfills the stated behavior.</p></li>
+<li><p>Run the test and see the it fail.</p></li>
+<li><p>Implement the new code or feature used in the test.</p></li>
+<li><p>Run the test and see it pass.</p></li>
+<li><p>Review to see if refactor needed.</p></li>
 </ol>
 <p>For requirement #2, the solution for <em>steps 1 - 4</em> can be seen on lines <em>11 - 14</em> below.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -512,8 +514,8 @@ Finished in 0.061 seconds
 </pre></div>
 </div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">You may be wondering what happens if that data is bad and the id can't be
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>You may be wondering what happens if that data is bad and the id can't be
 turned into a number. That is a negative test case related to this feature
 and is left for you to address in the final section.</p>
 </div>
@@ -583,11 +585,11 @@ the transmission does NOT start with <code class="docutils literal notranslate">
 <p>Let's think about what test data to use for this requirement. What ways could the
 transmission data be invalid?</p>
 <ol class="arabic simple">
-<li>It could be missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning</li>
-<li>It could be missing <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> at the end</li>
-<li>It could be missing both <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
-<li>Has <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> but the symbol is in the wrong place</li>
-<li>Has <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> but the symbol is in the wrong place</li>
+<li><p>It could be missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning</p></li>
+<li><p>It could be missing <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> at the end</p></li>
+<li><p>It could be missing both <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p>Has <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> but the symbol is in the wrong place</p></li>
+<li><p>Has <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> but the symbol is in the wrong place</p></li>
 </ol>
 <p>All these cases need to be covered by a test. Let's start with #1, which
 is missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning.</p>
@@ -652,15 +654,15 @@ Finished in 0.056 seconds
 </pre></div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>The test data we used was missing <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> at the beginning. Add tests
 to cover these cases. <code class="docutils literal notranslate"><span class="pre">-1</span></code> should be returned as the value for
 <code class="docutils literal notranslate"><span class="pre">rawData</span></code> for all of these.</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::8729740349572&gt;0912&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::4872&lt;97403495720912&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::487297403495720912&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;9701::&lt;487297403495&lt;720912&gt;&quot;</span></code></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;9701::8729740349572&gt;0912&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;9701::4872&lt;97403495720912&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;9701::487297403495720912&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;9701::&lt;487297403495&lt;720912&gt;&quot;</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -669,13 +671,13 @@ to cover these cases. <code class="docutils literal notranslate"><span class="pr
 <p>Use the steps demonstrated above to implement all or some of the features
 below. Take your time, you can do it!</p>
 <ol class="arabic simple">
-<li>Trim leading and trailing whitespace from <code class="docutils literal notranslate"><span class="pre">transmission</span></code>.</li>
-<li>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the <code class="docutils literal notranslate"><span class="pre">id</span></code> part of the <code class="docutils literal notranslate"><span class="pre">transmission</span></code> cannot be converted
-to a number.</li>
-<li>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if more than one <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code> is found in <code class="docutils literal notranslate"><span class="pre">transmission</span></code>.</li>
-<li>Do not include the <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> symbols in the value assigned to <code class="docutils literal notranslate"><span class="pre">rawData</span></code>.</li>
-<li>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> for the value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if anything besides numbers are
-present between the <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> symbols.</li>
+<li><p>Trim leading and trailing whitespace from <code class="docutils literal notranslate"><span class="pre">transmission</span></code>.</p></li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the <code class="docutils literal notranslate"><span class="pre">id</span></code> part of the <code class="docutils literal notranslate"><span class="pre">transmission</span></code> cannot be converted
+to a number.</p></li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if more than one <code class="docutils literal notranslate"><span class="pre">&quot;::&quot;</span></code> is found in <code class="docutils literal notranslate"><span class="pre">transmission</span></code>.</p></li>
+<li><p>Do not include the <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> symbols in the value assigned to <code class="docutils literal notranslate"><span class="pre">rawData</span></code>.</p></li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> for the value of <code class="docutils literal notranslate"><span class="pre">rawData</span></code> if anything besides numbers are
+present between the <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> symbols.</p></li>
 </ol>
 </div>
 </div>

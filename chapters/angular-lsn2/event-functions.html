@@ -102,7 +102,7 @@ creating an <code class="docutils literal notranslate"><span class="pre">addMovi
 <p>Let's change our code in <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code> to call the function
 <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> and pass the new movie title as the argument.</p>
 <ol class="arabic">
-<li><p class="first">On lines 7 and 8, replace <code class="docutils literal notranslate"><span class="pre">true</span></code> with the function call:</p>
+<li><p>On lines 7 and 8, replace <code class="docutils literal notranslate"><span class="pre">true</span></code> with the function call:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -127,10 +127,9 @@ creating an <code class="docutils literal notranslate"><span class="pre">addMovi
 <p>Now when the user taps &quot;Enter&quot; or clicks the &quot;Add&quot; button after typing, the
 input <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> gets sent to the function.</p>
 </li>
-<li><p class="first">Since our plan is to use a function to add the new movie to the array, we no
+<li><p>Since our plan is to use a function to add the new movie to the array, we no
 longer need the title to appear below the input box. Remove
-<code class="docutils literal notranslate"><span class="pre">&lt;p&gt;{{newMovie.value}}&lt;/p&gt;</span></code> from line 9.</p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">&lt;p&gt;{{newMovie.value}}&lt;/p&gt;</span></code> from line 9.</p></li>
 </ol>
 </div>
 <div class="section" id="define-the-function">
@@ -170,7 +169,7 @@ longer need the title to appear below the input box. Remove
 <p>The <code class="docutils literal notranslate"><span class="pre">movies</span></code> array stores the titles displayed on the web page, and we want to
 update this when the user supplies new information.</p>
 <ol class="arabic" start="3">
-<li><p class="first">Declare a function called <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> that takes one parameter:</p>
+<li><p>Declare a function called <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> that takes one parameter:</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -198,7 +197,7 @@ update this when the user supplies new information.</p>
 </td></tr></table></div>
 <p>Notice that we have to declare the data type for the <code class="docutils literal notranslate"><span class="pre">newTitle</span></code> parameter.</p>
 </li>
-<li><p class="first">Now add code to <code class="docutils literal notranslate"><span class="pre">push</span></code> the new title to the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array:</p>
+<li><p>Now add code to <code class="docutils literal notranslate"><span class="pre">push</span></code> the new title to the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array:</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -228,8 +227,8 @@ update this when the user supplies new information.</p>
 </li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">It is a common practice to put <code class="docutils literal notranslate"><span class="pre">constructor</span></code> and functions like
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>It is a common practice to put <code class="docutils literal notranslate"><span class="pre">constructor</span></code> and functions like
 <code class="docutils literal notranslate"><span class="pre">ngOnInit</span></code> AFTER the variable declarations but BEFORE any custom
 functions.</p>
 </div>
@@ -250,7 +249,7 @@ box. If we click &quot;Add&quot; multiple times in a row, we would see something
 <div class="section" id="clear-the-input-box">
 <h3><span class="section-number">30.6.3.1. </span>Clear the Input Box<a class="headerlink" href="#clear-the-input-box" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic" start="5">
-<li><p class="first">After the user submits a new title, we can clear the input box by setting its
+<li><p>After the user submits a new title, we can clear the input box by setting its
 value to be the empty string (<code class="docutils literal notranslate"><span class="pre">''</span></code>). Open <code class="docutils literal notranslate"><span class="pre">movie-list.component.html</span></code>
 and modify the input statement as follows:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span> <span class="p">(</span><span class="na">keyup.enter</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;addMovie(newMovie.value); newMovie.value = &#39;&#39;&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
@@ -260,7 +259,7 @@ and modify the input statement as follows:</p>
 returns from the function, <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> is set equal to <code class="docutils literal notranslate"><span class="pre">''</span></code>, which
 clears any text from the input box.</p>
 </li>
-<li><p class="first">Since the user can also click the &quot;Add&quot; button to submit a title, we need to
+<li><p>Since the user can also click the &quot;Add&quot; button to submit a title, we need to
 modify the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element as well:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;addMovie(newMovie.value); newMovie.value = &#39;&#39;&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
@@ -270,8 +269,8 @@ to submit data.</p>
 </li>
 </ol>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<p class="last">Refresh the page and verify that the input box gets cleared after each new
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Refresh the page and verify that the input box gets cleared after each new
 title.</p>
 </div>
 </div>
@@ -298,8 +297,8 @@ repeated title. One possibility is:</p>
 method returns <code class="docutils literal notranslate"><span class="pre">true</span></code>. The NOT operator (<code class="docutils literal notranslate"><span class="pre">!</span></code>) flips the result to
 <code class="docutils literal notranslate"><span class="pre">false</span></code>, and line 3 is skipped.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<p class="last">Refresh the page and verify that you cannot enter a duplicate title.</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Refresh the page and verify that you cannot enter a duplicate title.</p>
 </div>
 </div>
 </div>
@@ -307,10 +306,10 @@ method returns <code class="docutils literal notranslate"><span class="pre">true
 <h2><span class="section-number">30.6.4. </span>Bonus<a class="headerlink" href="#bonus" title="Permalink to this headline">¶</a></h2>
 <p>To boost your skills, try these optional tasks to enhance your work:</p>
 <ol class="arabic simple">
-<li>Modify <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> to reject the empty string as a title.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to display an error message if the user does not enter a title
-or submits a title that is already on the list.</li>
-<li>Add CSS to change the color of the error message.</li>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">addMovie</span></code> to reject the empty string as a title.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to display an error message if the user does not enter a title
+or submits a title that is already on the list.</p></li>
+<li><p>Add CSS to change the color of the error message.</p></li>
 </ol>
 <p>The <code class="docutils literal notranslate"><span class="pre">example-solutions</span></code> branch of the Angular repo shows completed code for
 the bonus tasks.</p>
@@ -323,25 +322,25 @@ potential pets:</p>
 <img alt="Potential pet list." src="../../_images/pet-list.png" />
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following calls the <code class="docutils literal notranslate"><span class="pre">addPet</span></code> function when the user clicks
 on one of the potential pets:</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li&gt;{{pet}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">#addPet</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;addPet(pet)&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">#addPet</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(click)</span> <span class="pre">=</span> <span class="pre">&quot;addPet(pet)&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>When the user moves the mouse over an animal, we want to store its name in
 the <code class="docutils literal notranslate"><span class="pre">newFriend</span></code> variable. Which of the following accomplishes this?</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">#newFriend</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;newFriend</span> <span class="pre">=</span> <span class="pre">pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;newFriend&quot;&gt;{{pet}}&lt;/li&gt;</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">#newFriend</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;newFriend</span> <span class="pre">=</span> <span class="pre">pet.name&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">(mouseover)</span> <span class="pre">=</span> <span class="pre">&quot;newFriend&quot;&gt;{{pet}}&lt;/li&gt;</span></code></p></li>
 </ol>
 </div>
 </div>

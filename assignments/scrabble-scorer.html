@@ -96,21 +96,21 @@ some modifications to improve it.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The requirements below are what your assignment should look like when it's
 time to submit. Rome wasn't built in a day and neither was Scrabble.</p>
-<p class="last">This assignment is broken down so you can complete small pieces as you go.
+<p>This assignment is broken down so you can complete small pieces as you go.
 You need to move sequentially starting with Part A below. You'll have a much more
 enjoyable time writing this program if you read this entire page before even opening repl.it.</p>
 </div>
 <ol class="arabic simple">
-<li>Write an <code class="docutils literal notranslate"><span class="pre">initialPrompt()</span></code> function that asks a user to input a word.</li>
-<li>Have the program return a score for the word using <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code>.</li>
-<li>Add additional scoring algorithms and store them in the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">transform()</span></code> function that takes in the <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>
-object and returns a <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">runProgram()</span></code> function to serve as the starting point for your
-program.</li>
+<li><p>Write an <code class="docutils literal notranslate"><span class="pre">initialPrompt()</span></code> function that asks a user to input a word.</p></li>
+<li><p>Have the program return a score for the word using <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code>.</p></li>
+<li><p>Add additional scoring algorithms and store them in the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">transform()</span></code> function that takes in the <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>
+object and returns a <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">runProgram()</span></code> function to serve as the starting point for your
+program.</p></li>
 </ol>
 </div>
 <div class="section" id="starter-code">
@@ -126,8 +126,8 @@ Let&#39;s play some Scrabble!
 </pre></div>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">If you don't see this message printed and have exhausted your troubleshooting skills,
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you don't see this message printed and have exhausted your troubleshooting skills,
 reach out to your classmates or course staff ASAP so you can get started with the real coding.</p>
 </div>
 </div>
@@ -136,8 +136,8 @@ reach out to your classmates or course staff ASAP so you can get started with th
 <div class="section" id="a-initial-prompt">
 <h3>A) Initial Prompt<a class="headerlink" href="#a-initial-prompt" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Modify the provided <code class="docutils literal notranslate"><span class="pre">initialPrompt()</span></code> function to prompt the user to enter a word to score.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> function provided to score the word provided by the user. Print the result to the console.</li>
+<li><p>Modify the provided <code class="docutils literal notranslate"><span class="pre">initialPrompt()</span></code> function to prompt the user to enter a word to score.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> function provided to score the word provided by the user. Print the result to the console.</p></li>
 </ol>
 <p>Before you move on, be sure you're on the right track. At this point, your program should have an output like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; node index
@@ -162,87 +162,85 @@ Points for &#39;E&#39;: 1
 <h3>B) Add and Organize Scoring Algorithms<a class="headerlink" href="#b-add-and-organize-scoring-algorithms" title="Permalink to this headline">¶</a></h3>
 <p>Your job here is to write two other scoring algorithms for the Scrabble player.</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">simpleScore</span></code>: Define a function that takes a word as a parameter and
-returns a numerical score. Each letter within the word is worth 1 point.</li>
-<li><code class="docutils literal notranslate"><span class="pre">vowelBonusScore</span></code>: Define a function that takes a word as a parameter and
+<li><p><code class="docutils literal notranslate"><span class="pre">simpleScore</span></code>: Define a function that takes a word as a parameter and
+returns a numerical score. Each letter within the word is worth 1 point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vowelBonusScore</span></code>: Define a function that takes a word as a parameter and
 returns a score. Each vowel within the word is worth 3 points, and each
-consonant is worth 1 point.</li>
+consonant is worth 1 point.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Make each scoring algorithm case <em>insensitive</em>, meaning that they
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Make each scoring algorithm case <em>insensitive</em>, meaning that they
 should all ignore case when assigning points.</p>
 </div>
 <p>Once you've written these scoring functions, organize all three of the scoring options into an array.
 Your program will use the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array to retrieve information about the
 three scoring algorithms and convey that information to the user.</p>
 <ol class="arabic">
-<li><p class="first">Finish writing the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array. It should be populated with three objects, one for each of the three scoring options.
-Each object should contain three keys: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and <code class="docutils literal notranslate"><span class="pre">scoringFunction</span></code>.</p>
-</li>
-<li><p class="first">Examine the table for the information to store in <code class="docutils literal notranslate"><span class="pre">name</span></code> and
+<li><p>Finish writing the <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> array. It should be populated with three objects, one for each of the three scoring options.
+Each object should contain three keys: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and <code class="docutils literal notranslate"><span class="pre">scoringFunction</span></code>.</p></li>
+<li><p>Examine the table for the information to store in <code class="docutils literal notranslate"><span class="pre">name</span></code> and
 <code class="docutils literal notranslate"><span class="pre">description</span></code>. The <code class="docutils literal notranslate"><span class="pre">scoringFunction</span></code> for each object should be the name of
 one of the three scoring algorithms already defined.</p>
-<table border="1" class="docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
-<th class="head">Score Function</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Score Function</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Simple Score</td>
-<td>Each letter is worth 1 point.</td>
-<td>A function with a parameter for user input that returns a score.</td>
+<tbody>
+<tr class="row-even"><td><p>Simple Score</p></td>
+<td><p>Each letter is worth 1 point.</p></td>
+<td><p>A function with a parameter for user input that returns a score.</p></td>
 </tr>
-<tr class="row-odd"><td>Bonus Vowels</td>
-<td>Vowels are 3 pts, consonants are 1 pt.</td>
-<td>A function that returns a score based on the
-number of vowels and consonants.</td>
+<tr class="row-odd"><td><p>Bonus Vowels</p></td>
+<td><p>Vowels are 3 pts, consonants are 1 pt.</p></td>
+<td><p>A function that returns a score based on the
+number of vowels and consonants.</p></td>
 </tr>
-<tr class="row-even"><td>Scrabble</td>
-<td>The traditional scoring algorithm.</td>
-<td>Uses the <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> function to determine the score for a given
-word.</td>
+<tr class="row-even"><td><p>Scrabble</p></td>
+<td><p>The traditional scoring algorithm.</p></td>
+<td><p>Uses the <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> function to determine the score for a given
+word.</p></td>
 </tr>
 </tbody>
 </table>
 </li>
-<li><p class="first">Finish writing <code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> so that the user can select which scoring algorithm to use when the program scores their word.
+<li><p>Finish writing <code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> so that the user can select which scoring algorithm to use when the program scores their word.
 Use the selected algorithm to determine the score for the word:</p>
 <ol class="loweralpha simple">
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">0</span></code>, have the program output a score using the simple scorer.</li>
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">1</span></code>, use the vowel bonus scoring function.</li>
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">2</span></code>, use the Scrabble scoring option.</li>
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">0</span></code>, have the program output a score using the simple scorer.</p></li>
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">1</span></code>, use the vowel bonus scoring function.</p></li>
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">2</span></code>, use the Scrabble scoring option.</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> should return the object the user has selected.</p>
 <div class="admonition-tips admonition">
-<p class="first admonition-title">Tips</p>
+<p class="admonition-title">Tips</p>
 <p>Your <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> structure now holds all of the scoring information required for the program.</p>
 <p>To access a scoring object and its properties, use a combination of bracket notation and dot notation.</p>
-<div class="admonition-examples last admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Simple scoring</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;algorithm name: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;scoringFunction result: &quot;</span><span class="p">,</span> <span class="nx">scoringAlgorithms</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">scoringFunction</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Console Output</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>algorithm name:  Simple Score
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>algorithm name:  Simple Score
 scoringFunction result:  10
 </pre></div>
 </div>
 </div>
 </div>
 </li>
-<li><p class="first">Call <code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> inside of <code class="docutils literal notranslate"><span class="pre">runProgram()</span></code> so that the program asks the user for a scoring algorithm after prompting for a word.
-Use the scoring object returned from <code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> to score the user's word and let the user know what score their word receives.</p>
-</li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> inside of <code class="docutils literal notranslate"><span class="pre">runProgram()</span></code> so that the program asks the user for a scoring algorithm after prompting for a word.
+Use the scoring object returned from <code class="docutils literal notranslate"><span class="pre">scorerPrompt()</span></code> to score the user's word and let the user know what score their word receives.</p></li>
 </ol>
 <p>Before moving forward, your running program should behave roughly like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; node index
@@ -294,10 +292,10 @@ iterate over each key in <code class="docutils literal notranslate"><span class=
 inside the array paired with that key. <em>This search within a search is
 inefficient</em>.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Think about this for a second. The scoring action takes in letters in a word as input
 and outputs numerical point values.</p>
-<p class="last">We can improve our program by rewriting the data structure to better fit the action
+<p>We can improve our program by rewriting the data structure to better fit the action
 we want to take. Keep this idea in mind as you go on to code your own
 applications.</p>
 </div>
@@ -305,15 +303,15 @@ applications.</p>
 one for each letter. The value of each key will be the Scrabble point value.</p>
 <p>Examples of the new key storage:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code> is worth <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">b</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> is worth <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></p></li>
 </ul>
 <p>In <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code>, the letters themselves are keys, so a <em>single</em> search
 will identify a point value.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Example of <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object usage.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Scrabble scoring values for&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;letter a: &quot;</span><span class="p">,</span> <span class="nx">newPointStructure</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
@@ -322,7 +320,7 @@ will identify a point value.</p>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Scrabble scoring values for
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Scrabble scoring values for
 letter a:  1
 letter j:  8
 letter z:  10
@@ -332,28 +330,25 @@ letter z:  10
 <div class="section" id="transform-the-object">
 <h4>Transform the Object<a class="headerlink" href="#transform-the-object" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
-<li><p class="first">Write the rest of the <code class="docutils literal notranslate"><span class="pre">transform()</span></code> function. It will need to take an object
+<li><p>Write the rest of the <code class="docutils literal notranslate"><span class="pre">transform()</span></code> function. It will need to take an object
 as a parameter - specifically the <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code> object. Calling
 <code class="docutils literal notranslate"><span class="pre">transform(oldPointStructure)</span></code> will return an object with <em>lowercase</em>
 letters as keys. The value for each key will be the points assigned to that
 letter.</p>
 <div class="admonition-tips admonition">
-<p class="first admonition-title">Tips</p>
-<ol class="last loweralpha">
-<li><p class="first">Recall that <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loops iterate over the keys within an object.</p>
-</li>
-<li><p class="first">If you need a reminder of how to assign new key/value pairs, review the
+<p class="admonition-title">Tips</p>
+<ol class="loweralpha">
+<li><p>Recall that <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loops iterate over the keys within an object.</p></li>
+<li><p>If you need a reminder of how to assign new key/value pairs, review the
 <a class="reference internal" href="../chapters/objects-and-math/modifyingobjects.html#add-new-object-properties"><span class="std std-ref">relevant section</span></a> in the
-<code class="docutils literal notranslate"><span class="pre">Objects</span> <span class="pre">and</span> <span class="pre">Math</span></code> chapter.</p>
-</li>
-<li><p class="first">To access the letter arrays within <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>, use bracket
-notation (<code class="docutils literal notranslate"><span class="pre">oldPointStructure['key']</span></code>).</p>
-</li>
-<li><p class="first">To access a particular element within a letter array, add a second set of
+<code class="docutils literal notranslate"><span class="pre">Objects</span> <span class="pre">and</span> <span class="pre">Math</span></code> chapter.</p></li>
+<li><p>To access the letter arrays within <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>, use bracket
+notation (<code class="docutils literal notranslate"><span class="pre">oldPointStructure['key']</span></code>).</p></li>
+<li><p>To access a particular element within a letter array, add a second set of
 brackets (<code class="docutils literal notranslate"><span class="pre">oldPointStructure['key'][index]</span></code>), or assign the array to a
 variable and use <code class="docutils literal notranslate"><span class="pre">variableName[index]</span></code>.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <div class="highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -368,7 +363,7 @@ variable and use <code class="docutils literal notranslate"><span class="pre">va
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Letters with score &#39;4&#39;: [ &#39;F&#39;, &#39;H&#39;, &#39;V&#39;, &#39;W&#39;, &#39;Y&#39; ]
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Letters with score &#39;4&#39;: [ &#39;F&#39;, &#39;H&#39;, &#39;V&#39;, &#39;W&#39;, &#39;Y&#39; ]
 3rd letter within the key &#39;4&#39; array: V
 
 Letters with score &#39;8&#39;: [ &#39;J&#39;, &#39;X&#39; ]
@@ -380,10 +375,10 @@ Letters with score &#39;8&#39;: [ &#39;J&#39;, &#39;X&#39; ]
 </ol>
 </div>
 </li>
-<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object in the starter code and set it equal to
+<li><p>Locate the <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object in the starter code and set it equal to
 <code class="docutils literal notranslate"><span class="pre">transform(oldPointStructure)</span></code>.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>Hard-coding the <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object literal like this:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">newPointStructure</span> <span class="o">=</span>
 <span class="p">{</span>
@@ -394,14 +389,14 @@ Letters with score &#39;8&#39;: [ &#39;J&#39;, &#39;X&#39; ]
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="last">won't pass. And you'll lose an opportunity to practice this skill.</p>
+<p>won't pass. And you'll lose an opportunity to practice this skill.</p>
 </div>
 </li>
-<li><p class="first">Once you've defined <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code>, use it to finish writing the <code class="docutils literal notranslate"><span class="pre">scrabbleScore()</span></code> function and then replace
+<li><p>Once you've defined <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code>, use it to finish writing the <code class="docutils literal notranslate"><span class="pre">scrabbleScore()</span></code> function and then replace
 the <code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> function in <code class="docutils literal notranslate"><span class="pre">scoringAlgorithms</span></code> with this new function.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> uses <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code> and returns a score for each letter in a word. You'll want to write
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">oldScrabbleScorer()</span></code> uses <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code> and returns a score for each letter in a word. You'll want to write
 <code class="docutils literal notranslate"><span class="pre">scrabbleScore()</span></code> to use <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> and return a cumulative score for the whole word entered.</p>
 </div>
 </li>
@@ -411,12 +406,12 @@ the <code class="docutils literal notranslate"><span class="pre">oldScrabbleScor
 <h4>Test Words<a class="headerlink" href="#test-words" title="Permalink to this headline">¶</a></h4>
 <p>Here are some words you can use to test your code:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> = 24 points using Scrabble, 10 using Simple Score, and 16
-using Bonus Vowels.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Scrabble</span></code> = 14 points using Scrabble, 8 using Simple Score, and 12 using
-Bonus Vowels.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
-Vowels.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> = 24 points using Scrabble, 10 using Simple Score, and 16
+using Bonus Vowels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scrabble</span></code> = 14 points using Scrabble, 8 using Simple Score, and 12 using
+Bonus Vowels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
+Vowels.</p></li>
 </ol>
 </div>
 <div class="section" id="example-output">
@@ -442,13 +437,13 @@ Score for &#39;rum&#39;: 5
 <div class="section" id="bonus-missions">
 <h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Currently, the prompts accept ANY input values. The user could enter
+<li><p>Currently, the prompts accept ANY input values. The user could enter
 something <em>other</em> than 0, 1, or 2 when selecting the scoring algorithm, and
 they could enter numbers or symbols when asked for a word. Modify your code
 to reject invalid inputs and then re-prompt the user for the correct
-information.</li>
-<li>Score words spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the
-<code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>
+information.</p></li>
+<li><p>Score words spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 </ol>
 </div>
 </div>

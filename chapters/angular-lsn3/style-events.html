@@ -131,13 +131,13 @@ text is clicked.</p>
 <p>Notice that since the style of the ordered list also depends on
 <code class="docutils literal notranslate"><span class="pre">changeColor</span></code>, its appearance changes as well.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<ol class="last arabic simple">
-<li>Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 12 and examine how the
-interactivity changes.</li>
-<li>What happens if we add <code class="docutils literal notranslate"><span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code> to the
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="arabic simple">
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">(click)</span></code> with <code class="docutils literal notranslate"><span class="pre">(mouseover)</span></code> in line 12 and examine how the
+interactivity changes.</p></li>
+<li><p>What happens if we add <code class="docutils literal notranslate"><span class="pre">(click)=&quot;changeColor</span> <span class="pre">=</span> <span class="pre">!changeColor&quot;</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag in line 9? Does this make a single list element clickable
-or all of them?</li>
+or all of them?</p></li>
 </ol>
 </div>
 </div>
@@ -152,7 +152,7 @@ However, for these examples we will focus on <code class="docutils literal notra
 <p>Adding the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute inside the tag deactivates the button. Any
 time you see a greyed out button on a web page, <code class="docutils literal notranslate"><span class="pre">disabled</span></code> is the cause.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Code:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">[</span><span class="na">style.background</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;lcLightBlue&quot;</span><span class="p">&gt;</span>Click Me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -160,7 +160,7 @@ time you see a greyed out button on a web page, <code class="docutils literal no
 </pre></div>
 </td></tr></table></div>
 <p>Result:</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <img alt="Result of ``disabled`` attribute." src="../../_images/lesson3-disabled-example.png" />
 </div>
 </div>
@@ -173,7 +173,7 @@ variables we control.</p>
 <p>Open the <code class="docutils literal notranslate"><span class="pre">buttons.component.html</span></code> and <code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> files and
 examine the code.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>HTML file:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -191,7 +191,7 @@ examine the code.</p>
 </pre></div>
 </td></tr></table></div>
 <p><code class="docutils literal notranslate"><span class="pre">ButtonsComponent</span></code> class in the <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file:</p>
-<div class="last highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -215,7 +215,7 @@ examine the code.</p>
 to a boolean. In this case, we can use the <code class="docutils literal notranslate"><span class="pre">inactive</span></code> variable defined in the
 <code class="docutils literal notranslate"><span class="pre">buttons.component.ts</span></code> file.</p>
 <ol class="arabic">
-<li><p class="first">Modify line 3 in the HTML file as follows:</p>
+<li><p>Modify line 3 in the HTML file as follows:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">[</span><span class="na">class.gold</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;!inactive&quot;</span> <span class="p">[</span><span class="na">disabled</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;inactive&quot;</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;inactive = true&quot;</span><span class="p">&gt;</span>Gold<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -224,11 +224,10 @@ to a boolean. In this case, we can use the <code class="docutils literal notrans
 attribute to the HTML tag, turning it off. In addition, the <code class="docutils literal notranslate"><span class="pre">gold</span></code> class is
 removed, changing the color of the button.</p>
 </li>
-<li><p class="first">Since the &quot;Gold&quot; button is no longer active, clicking on it again will not
+<li><p>Since the &quot;Gold&quot; button is no longer active, clicking on it again will not
 trigger any events. To re-enable the button, we need to tie <code class="docutils literal notranslate"><span class="pre">inactive</span></code> to
-another tag and event.</p>
-</li>
-<li><p class="first">Modify line 6 in the HTML file as follows:</p>
+another tag and event.</p></li>
+<li><p>Modify line 6 in the HTML file as follows:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&quot;inactive = !inactive&quot;</span><span class="p">&gt;</span>Activate/Deactivate Buttons<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -261,8 +260,8 @@ make the buttons behave like this:</p>
 <img alt="Deactivating one button at a time." src="../../_images/lesson3-final-button-behavior.gif" />
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you find yourself stuck after trying, and trying, and TRYING, remember that
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you find yourself stuck after trying, and trying, and TRYING, remember that
 there is a <code class="docutils literal notranslate"><span class="pre">solutions</span></code> branch in the repository.</p>
 </div>
 </div>
@@ -274,38 +273,38 @@ buttons that behave like this:</p>
 <img alt="Fun but frustrating buttons." src="../../_images/lesson3-joke-buttons.gif" />
 </div>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">These bonus options are ONLY FOR FUN. Using any of these on a business
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>These bonus options are ONLY FOR FUN. Using any of these on a business
 website would be a poor choice.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">31.4.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>To include dynamic styles in a component:</p>
-<ol class="last arabic simple">
-<li>Only data-binding is needed,</li>
-<li>Only an event handler is needed,</li>
-<li>Data-binding and event handling are both necessary,</li>
-<li>Angular, data-binding, and event handling are all necessary.</li>
+<ol class="arabic simple">
+<li><p>Only data-binding is needed,</p></li>
+<li><p>Only an event handler is needed,</p></li>
+<li><p>Data-binding and event handling are both necessary,</p></li>
+<li><p>Angular, data-binding, and event handling are all necessary.</p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following shows the three Angular directives arranged from the
 most general to most specific?</p>
-<ol class="last arabic simple">
-<li>Components, structural directives, attribute directives</li>
-<li>Components, attribute directives, structural directives</li>
-<li>Structural directives, components, attribute directives</li>
-<li>Structural directives, attribute directives, components</li>
-<li>Attribute directives, structural directives, components</li>
-<li>Attribute directives, components, structural directives</li>
+<ol class="arabic simple">
+<li><p>Components, structural directives, attribute directives</p></li>
+<li><p>Components, attribute directives, structural directives</p></li>
+<li><p>Structural directives, components, attribute directives</p></li>
+<li><p>Structural directives, attribute directives, components</p></li>
+<li><p>Attribute directives, structural directives, components</p></li>
+<li><p>Attribute directives, components, structural directives</p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Consider the following code samples:</p>
 <p>CSS:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">special</span> <span class="p">{</span>
@@ -339,11 +338,11 @@ most general to most specific?</p>
 </td></tr></table></div>
 <p>Which of the following, when added to the HTML tag, will render the
 <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> element blue when clicked?</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;!specialFactor&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">3&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">!specialFactor&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">false&quot;</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(click)=&quot;!specialFactor&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">3&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">!specialFactor&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(click)=&quot;specialFactor</span> <span class="pre">=</span> <span class="pre">false&quot;</span></code></p></li>
 </ol>
 </div>
 </div>

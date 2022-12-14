@@ -113,12 +113,13 @@ $ ls
 <div class="section" id="requirements">
 <h2><span class="section-number">28.8.2. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Create classes for <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>. (Details
-below).<ol class="loweralpha">
-<li>All classes should be defined in their own files.</li>
+<li><p>Create classes for <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>. (Details
+below).</p>
+<ol class="loweralpha simple">
+<li><p>All classes should be defined in their own files.</p></li>
 </ol>
 </li>
-<li>Use the new classes to run a simulation in the <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</li>
+<li><p>Use the new classes to run a simulation in the <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file.</p></li>
 </ol>
 <p>In the starter code, you will notice that an interface named <code class="docutils literal notranslate"><span class="pre">Payload</span></code> has
 been declared. This interface ensures that any class that implements it will
@@ -127,14 +128,14 @@ have a <code class="docutils literal notranslate"><span class="pre">massKg</span
 <div class="section" id="classes">
 <h2><span class="section-number">28.8.3. </span>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Create three new files---<code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo.ts</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>. To
+<li><p>Create three new files---<code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo.ts</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>. To
 do this in VSCode, click the &quot;New File&quot; button and enter the file name.
 Another option is to run the command <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">new_file_name</span></code> in the terminal.</p>
 <div class="figure align-default">
 <img alt="VSCode new file button." src="../../_images/VSCode-new-file.png" />
 </div>
 </li>
-<li><p class="first">Define each class (<code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>) in a separate file.
+<li><p>Define each class (<code class="docutils literal notranslate"><span class="pre">Astronaut</span></code>, <code class="docutils literal notranslate"><span class="pre">Cargo</span></code>, <code class="docutils literal notranslate"><span class="pre">Rocket</span></code>) in a separate file.
 Each class should be exported using <code class="docutils literal notranslate"><span class="pre">export</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">class</span> <span class="nx">Astronaut</span> <span class="p">{</span>
    <span class="c1">// properties and methods</span>
@@ -142,7 +143,7 @@ Each class should be exported using <code class="docutils literal notranslate"><
 </pre></div>
 </div>
 </li>
-<li><p class="first">As needed, the classes can be imported using <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<li><p>As needed, the classes can be imported using <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Astronaut</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./Astronaut&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -151,17 +152,19 @@ Each class should be exported using <code class="docutils literal notranslate"><
 <div class="section" id="astronaut-class">
 <h3><span class="section-number">28.8.3.1. </span>Astronaut Class<a class="headerlink" href="#astronaut-class" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Defined in <code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code></li>
-<li>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</li>
-<li>Properties<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</li>
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</li>
+<li><p>Defined in <code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code></p></li>
+<li><p>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</p></li>
+<li><p>Properties</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</p></li>
 </ol>
 </li>
-<li>Constructor<ol class="loweralpha">
-<li>Parameter <code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</li>
-<li>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> should be string.</li>
-<li>Sets value of <code class="docutils literal notranslate"><span class="pre">this.massKg</span></code> and <code class="docutils literal notranslate"><span class="pre">this.name</span></code>.</li>
+<li><p>Constructor</p>
+<ol class="loweralpha simple">
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> should be string.</p></li>
+<li><p>Sets value of <code class="docutils literal notranslate"><span class="pre">this.massKg</span></code> and <code class="docutils literal notranslate"><span class="pre">this.name</span></code>.</p></li>
 </ol>
 </li>
 </ol>
@@ -169,17 +172,19 @@ Each class should be exported using <code class="docutils literal notranslate"><
 <div class="section" id="cargo-class">
 <h3><span class="section-number">28.8.3.2. </span>Cargo Class<a class="headerlink" href="#cargo-class" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Defined in <code class="docutils literal notranslate"><span class="pre">Cargo.ts</span></code></li>
-<li>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</li>
-<li>Properties<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</li>
-<li><code class="docutils literal notranslate"><span class="pre">material</span></code> should be a string.</li>
+<li><p>Defined in <code class="docutils literal notranslate"><span class="pre">Cargo.ts</span></code></p></li>
+<li><p>Implements the <code class="docutils literal notranslate"><span class="pre">Payload</span></code> interface</p></li>
+<li><p>Properties</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">material</span></code> should be a string.</p></li>
 </ol>
 </li>
-<li>Constructor<ol class="loweralpha">
-<li>Parameter <code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</li>
-<li>Parameter <code class="docutils literal notranslate"><span class="pre">material</span></code> should be a string.</li>
-<li>Sets value of <code class="docutils literal notranslate"><span class="pre">this.massKg</span></code> and <code class="docutils literal notranslate"><span class="pre">this.material</span></code></li>
+<li><p>Constructor</p>
+<ol class="loweralpha simple">
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">massKg</span></code> should be a number.</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">material</span></code> should be a string.</p></li>
+<li><p>Sets value of <code class="docutils literal notranslate"><span class="pre">this.massKg</span></code> and <code class="docutils literal notranslate"><span class="pre">this.material</span></code></p></li>
 </ol>
 </li>
 </ol>
@@ -187,51 +192,61 @@ Each class should be exported using <code class="docutils literal notranslate"><
 <div class="section" id="rocket-class">
 <h3><span class="section-number">28.8.3.3. </span>Rocket Class<a class="headerlink" href="#rocket-class" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Defined in <code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>.</li>
-<li>Properties:<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</li>
-<li><code class="docutils literal notranslate"><span class="pre">totalCapacityKg</span></code> should be a number.</li>
-<li><code class="docutils literal notranslate"><span class="pre">cargoItems</span></code> should be an array of <code class="docutils literal notranslate"><span class="pre">Cargo</span></code> objects.<ul>
-<li>Should be initialized to an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code></li>
+<li><p>Defined in <code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>.</p></li>
+<li><p>Properties:</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalCapacityKg</span></code> should be a number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cargoItems</span></code> should be an array of <code class="docutils literal notranslate"><span class="pre">Cargo</span></code> objects.</p>
+<ul class="simple">
+<li><p>Should be initialized to an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">astronauts</span></code> should be an array of <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects.<ul>
-<li>Should be initialized to an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">astronauts</span></code> should be an array of <code class="docutils literal notranslate"><span class="pre">Astronaut</span></code> objects.</p>
+<ul class="simple">
+<li><p>Should be initialized to an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
 </ul>
 </li>
 </ol>
 </li>
-<li>Constructor:<ol class="loweralpha">
-<li>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</li>
-<li>Parameter <code class="docutils literal notranslate"><span class="pre">totalCapacityKg</span></code> should be a number.</li>
-<li>Sets value of <code class="docutils literal notranslate"><span class="pre">this.name</span></code> and <code class="docutils literal notranslate"><span class="pre">this.totalCapacityKg</span></code></li>
+<li><p>Constructor:</p>
+<ol class="loweralpha simple">
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> should be a string.</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">totalCapacityKg</span></code> should be a number.</p></li>
+<li><p>Sets value of <code class="docutils literal notranslate"><span class="pre">this.name</span></code> and <code class="docutils literal notranslate"><span class="pre">this.totalCapacityKg</span></code></p></li>
 </ol>
 </li>
-<li>Methods:<ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">sumMass(</span> <span class="pre">items:</span> <span class="pre">Payload[]</span> <span class="pre">):</span> <span class="pre">number</span></code><ul>
-<li>Returns the sum of all <code class="docutils literal notranslate"><span class="pre">items</span></code> using each item's <code class="docutils literal notranslate"><span class="pre">massKg</span></code> property</li>
+<li><p>Methods:</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sumMass(</span> <span class="pre">items:</span> <span class="pre">Payload[]</span> <span class="pre">):</span> <span class="pre">number</span></code></p>
+<ul class="simple">
+<li><p>Returns the sum of all <code class="docutils literal notranslate"><span class="pre">items</span></code> using each item's <code class="docutils literal notranslate"><span class="pre">massKg</span></code> property</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">currentMassKg():</span> <span class="pre">number</span></code><ul>
-<li>Uses <code class="docutils literal notranslate"><span class="pre">this.sumMass</span></code> to return the combined mass of
-<code class="docutils literal notranslate"><span class="pre">this.astronauts</span></code> and <code class="docutils literal notranslate"><span class="pre">this.cargoItems</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">currentMassKg():</span> <span class="pre">number</span></code></p>
+<ul class="simple">
+<li><p>Uses <code class="docutils literal notranslate"><span class="pre">this.sumMass</span></code> to return the combined mass of
+<code class="docutils literal notranslate"><span class="pre">this.astronauts</span></code> and <code class="docutils literal notranslate"><span class="pre">this.cargoItems</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">canAdd(item:</span> <span class="pre">Payload):</span> <span class="pre">boolean</span></code><ul>
-<li>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">this.currentMassKg()</span> <span class="pre">+</span> <span class="pre">item.massKg</span> <span class="pre">&lt;=</span> <span class="pre">this.totalCapacityKg</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canAdd(item:</span> <span class="pre">Payload):</span> <span class="pre">boolean</span></code></p>
+<ul class="simple">
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">this.currentMassKg()</span> <span class="pre">+</span> <span class="pre">item.massKg</span> <span class="pre">&lt;=</span> <span class="pre">this.totalCapacityKg</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">addCargo(cargo:</span> <span class="pre">Cargo):</span> <span class="pre">boolean</span></code><ul>
-<li>Uses <code class="docutils literal notranslate"><span class="pre">this.canAdd()</span></code> to see if another item can be added.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds <code class="docutils literal notranslate"><span class="pre">cargo</span></code> to <code class="docutils literal notranslate"><span class="pre">this.cargoItems</span></code> and returns
-<code class="docutils literal notranslate"><span class="pre">true</span></code>.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addCargo(cargo:</span> <span class="pre">Cargo):</span> <span class="pre">boolean</span></code></p>
+<ul class="simple">
+<li><p>Uses <code class="docutils literal notranslate"><span class="pre">this.canAdd()</span></code> to see if another item can be added.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds <code class="docutils literal notranslate"><span class="pre">cargo</span></code> to <code class="docutils literal notranslate"><span class="pre">this.cargoItems</span></code> and returns
+<code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">addAstronaut(astronaut:</span> <span class="pre">Astronaut):</span> <span class="pre">boolean</span></code><ul>
-<li>Uses <code class="docutils literal notranslate"><span class="pre">this.canAdd()</span></code> to see if another astronaut can be added.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds <code class="docutils literal notranslate"><span class="pre">astronaut</span></code> to <code class="docutils literal notranslate"><span class="pre">this.astronauts</span></code> and returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addAstronaut(astronaut:</span> <span class="pre">Astronaut):</span> <span class="pre">boolean</span></code></p>
+<ul class="simple">
+<li><p>Uses <code class="docutils literal notranslate"><span class="pre">this.canAdd()</span></code> to see if another astronaut can be added.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds <code class="docutils literal notranslate"><span class="pre">astronaut</span></code> to <code class="docutils literal notranslate"><span class="pre">this.astronauts</span></code> and returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
 </ul>
 </li>
 </ol>
@@ -333,11 +348,11 @@ Each class should be exported using <code class="docutils literal notranslate"><
 <div class="section" id="compile-and-run-index-ts">
 <h2><span class="section-number">28.8.5. </span>Compile and Run <code class="docutils literal notranslate"><span class="pre">index.ts</span></code><a class="headerlink" href="#compile-and-run-index-ts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Use the terminal in VSCode to compile your <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file. This will also
+<li><p>Use the terminal in VSCode to compile your <code class="docutils literal notranslate"><span class="pre">index.ts</span></code> file. This will also
 compile the modules you imported into the file (<code class="docutils literal notranslate"><span class="pre">Astronaut.ts</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>, etc.).</li>
-<li>Use the command <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">index.js</span></code> to run the JavaScript file created during
-the build process.</li>
+<code class="docutils literal notranslate"><span class="pre">Rocket.ts</span></code>, etc.).</p></li>
+<li><p>Use the command <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">index.js</span></code> to run the JavaScript file created during
+the build process.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
    Astronaut.ts    Cargo.ts        Payload.ts      Rocket.ts       index.ts
@@ -366,13 +381,13 @@ Final cargo and astronaut mass: 5656.78 kg.
 <div class="section" id="submitting-your-work">
 <h2><span class="section-number">28.8.6. </span>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Once you have your project working, use the terminal to commit and push your
-changes up to your forked GitHub repository.</li>
-<li>Login to your account and navigate to your project. Copy the URL.</li>
-<li>In Canvas, open the TypeScript studio assignment and click the &quot;Submit&quot;
-button. An input box will appear.</li>
-<li>Paste the URL for your GitHub project into the box, then click &quot;Submit&quot;
-again.</li>
+<li><p>Once you have your project working, use the terminal to commit and push your
+changes up to your forked GitHub repository.</p></li>
+<li><p>Login to your account and navigate to your project. Copy the URL.</p></li>
+<li><p>In Canvas, open the TypeScript studio assignment and click the &quot;Submit&quot;
+button. An input box will appear.</p></li>
+<li><p>Paste the URL for your GitHub project into the box, then click &quot;Submit&quot;
+again.</p></li>
 </ol>
 </div>
 </div>

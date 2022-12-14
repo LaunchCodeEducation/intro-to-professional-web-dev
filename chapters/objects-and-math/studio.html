@@ -91,9 +91,9 @@ our animal astronaut corps. For this studio, we provide you with a ready-made
 set of candidates.</p>
 <p>You must create code to:</p>
 <ol class="upperalpha simple">
-<li>Select the crew.</li>
-<li>Perform critical mission calculations.</li>
-<li>Determine the fuel required for launch.</li>
+<li><p>Select the crew.</p></li>
+<li><p>Perform critical mission calculations.</p></li>
+<li><p>Determine the fuel required for launch.</p></li>
 </ol>
 <div class="section" id="select-the-crew">
 <h2><span class="section-number">12.8.1. </span>Select the Crew<a class="headerlink" href="#select-the-crew" title="Permalink to this headline">¶</a></h2>
@@ -103,17 +103,17 @@ set of candidates.</p>
 <p>Each candidate was assigned an ID number, which is stored in the candidate's
 data file and in the <code class="docutils literal notranslate"><span class="pre">idNumbers</span></code> array.</p>
 <ol class="arabic simple">
-<li>Write a <code class="docutils literal notranslate"><span class="pre">selectRandomEntry</span></code> function to select a random entry from the
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">selectRandomEntry</span></code> function to select a random entry from the
 <code class="docutils literal notranslate"><span class="pre">idNumbers</span></code> array. Review the
 <a class="reference internal" href="math-applications.html#random-array-item"><span class="std std-ref">Combining Math Methods</span></a> section if you need a
-reminder on how to do this.</li>
-<li>Call the function three times to select three ID numbers. Store these
+reminder on how to do this.</p></li>
+<li><p>Call the function three times to select three ID numbers. Store these
 selections in a new array, making sure to avoid repeated numbers. No animal
-can be selected more than once!</li>
+can be selected more than once!</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">arrayName.includes(item)</span></code> can be used to check if the array already contains
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">arrayName.includes(item)</span></code> can be used to check if the array already contains
 <code class="docutils literal notranslate"><span class="pre">item</span></code>. A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop can keep the selection process going until the
 desired number of entries have been added to the array.</p>
 </div>
@@ -134,56 +134,49 @@ Fill in the blanks with the names of the selected animals.</p>
 <p>To access the code for the orbit calculations and first bonus mission, go to
 <a class="reference external" href="https://repl.it/&#64;launchcode/ObjectsStudio02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <ol class="arabic">
-<li><p class="first">Spacecraft orbits are not circular, but we will assume that our mission is
+<li><p>Spacecraft orbits are not circular, but we will assume that our mission is
 special. The animals will achieve a circular orbit with an altitude of
 2000 km.</p>
 <ol class="loweralpha">
-<li><p class="first">Define a function that returns the circumference (C = 2πr) of the orbit.
-Round the circumference to an integer.</p>
-</li>
-<li><p class="first">Define the <code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> function to take three parameters - the
+<li><p>Define a function that returns the circumference (C = 2πr) of the orbit.
+Round the circumference to an integer.</p></li>
+<li><p>Define the <code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> function to take three parameters - the
 number of orbits completed, the orbit radius, and the orbital speed. Set
 the default radius to 2000 km and the default orbital speed to
-28000 km/hr.</p>
-</li>
-<li><p class="first">Calculate how long it will take our animals to complete a certain number
+28000 km/hr.</p></li>
+<li><p>Calculate how long it will take our animals to complete a certain number
 of orbits (<code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">=</span> <span class="pre">distance/speed</span></code>). Round the answer to 2 decimal
 places, then return the result.</p>
 <p>For example, with the default radius and speed, 5 orbits will take about
 <code class="docutils literal notranslate"><span class="pre">2.24</span> <span class="pre">hours</span></code>.</p>
 </li>
-<li><p class="first">Print, <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">mission</span> <span class="pre">will</span> <span class="pre">travel</span> <span class="pre">____</span> <span class="pre">km</span> <span class="pre">around</span> <span class="pre">the</span> <span class="pre">planet,</span> <span class="pre">and</span> <span class="pre">it</span> <span class="pre">will</span>
-<span class="pre">take</span> <span class="pre">____</span> <span class="pre">hours</span> <span class="pre">to</span> <span class="pre">complete.'</span></code></p>
-</li>
+<li><p>Print, <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">mission</span> <span class="pre">will</span> <span class="pre">travel</span> <span class="pre">____</span> <span class="pre">km</span> <span class="pre">around</span> <span class="pre">the</span> <span class="pre">planet,</span> <span class="pre">and</span> <span class="pre">it</span> <span class="pre">will</span>
+<span class="pre">take</span> <span class="pre">____</span> <span class="pre">hours</span> <span class="pre">to</span> <span class="pre">complete.'</span></code></p></li>
 </ol>
 </li>
-<li><p class="first">Time for an excursion! Code an <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code> function to accomplish the
+<li><p>Time for an excursion! Code an <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code> function to accomplish the
 following:</p>
 <ol class="loweralpha">
-<li><p class="first">The function should take a candidate object as a parameter and NOT the
+<li><p>The function should take a candidate object as a parameter and NOT the
 <code class="docutils literal notranslate"><span class="pre">crew</span></code> array.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">When you call <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code>, feel free to use your
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>When you call <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code>, feel free to use your
 <code class="docutils literal notranslate"><span class="pre">selectRandomEntry</span></code> to pick the crew member to pass into the
 function.</p>
 </div>
 </li>
-<li><p class="first">The spacewalk will last for three orbits around the earth. Use
-<code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> to calculate how many hours the spacewalk will take.</p>
-</li>
-<li><p class="first">Use the candidate's <code class="docutils literal notranslate"><span class="pre">o2Used</span></code> method to calculate how much oxygen (O <sub>2</sub>)
-they consume during the spacewalk. Round the answer to 3 decimal places.</p>
-</li>
-<li><p class="first">Return the string, <code class="docutils literal notranslate"><span class="pre">'__</span> <span class="pre">will</span> <span class="pre">perform</span> <span class="pre">the</span> <span class="pre">spacewalk,</span> <span class="pre">which</span> <span class="pre">will</span> <span class="pre">last</span> <span class="pre">__</span>
+<li><p>The spacewalk will last for three orbits around the earth. Use
+<code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> to calculate how many hours the spacewalk will take.</p></li>
+<li><p>Use the candidate's <code class="docutils literal notranslate"><span class="pre">o2Used</span></code> method to calculate how much oxygen (O <sub>2</sub>)
+they consume during the spacewalk. Round the answer to 3 decimal places.</p></li>
+<li><p>Return the string, <code class="docutils literal notranslate"><span class="pre">'__</span> <span class="pre">will</span> <span class="pre">perform</span> <span class="pre">the</span> <span class="pre">spacewalk,</span> <span class="pre">which</span> <span class="pre">will</span> <span class="pre">last</span> <span class="pre">__</span>
 <span class="pre">hours</span> <span class="pre">and</span> <span class="pre">require</span> <span class="pre">__</span> <span class="pre">kg</span> <span class="pre">of</span> <span class="pre">oxygen.'</span></code> Fill in the blanks with the
-animal's name, the spacewalk time, and the amount of O <sub>2</sub> used.</p>
-</li>
-<li><p class="first">We should not restrict our mission to the default values for orbital
+animal's name, the spacewalk time, and the amount of O <sub>2</sub> used.</p></li>
+<li><p>We should not restrict our mission to the default values for orbital
 radius and orbital speed. Refactor <code class="docutils literal notranslate"><span class="pre">oxygenExpended</span></code> to accept values
 for these items. Remember to include the values in the
-<code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> call.</p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">missionDuration</span></code> call.</p></li>
 </ol>
 </li>
 </ol>
@@ -204,18 +197,18 @@ fuel to lift 1 kg of mass into low-earth orbit (LEO). For our mission, we
 will assume a value of 9.5 kg to calculate how much fuel we need to launch
 our crew into space.</p>
 <ol class="arabic simple">
-<li>Write a <code class="docutils literal notranslate"><span class="pre">crewMass</span></code> function that returns the total mass of the selected
-crew members rounded to 1 decimal place.</li>
-<li>The mass of the un-crewed rocket plus the food and other supplies is
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">crewMass</span></code> function that returns the total mass of the selected
+crew members rounded to 1 decimal place.</p></li>
+<li><p>The mass of the un-crewed rocket plus the food and other supplies is
 75,000 kg. Create a <code class="docutils literal notranslate"><span class="pre">fuelRequired</span></code> function to combine the rocket and crew
-masses, then calculate and return the amount of fuel needed to reach LEO.</li>
-<li>Our launch requires a safety margin for the fuel level, especially if the
+masses, then calculate and return the amount of fuel needed to reach LEO.</p></li>
+<li><p>Our launch requires a safety margin for the fuel level, especially if the
 crew members are cute and fuzzy.  Add an extra 200 kg of fuel for each
 dog or cat on board, but only an extra 100 kg for the other species. Update
 <code class="docutils literal notranslate"><span class="pre">fuelRequired</span></code> to account for this, then round the final amount of fuel UP
-to the nearest integer.</li>
-<li>Print <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">mission</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">launch</span> <span class="pre">mass</span> <span class="pre">of</span> <span class="pre">____</span> <span class="pre">kg</span> <span class="pre">and</span> <span class="pre">requires</span> <span class="pre">____</span> <span class="pre">kg</span> <span class="pre">of</span>
-<span class="pre">fuel.'</span></code> Fill in the blanks with the calculated amounts.</li>
+to the nearest integer.</p></li>
+<li><p>Print <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">mission</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">launch</span> <span class="pre">mass</span> <span class="pre">of</span> <span class="pre">____</span> <span class="pre">kg</span> <span class="pre">and</span> <span class="pre">requires</span> <span class="pre">____</span> <span class="pre">kg</span> <span class="pre">of</span>
+<span class="pre">fuel.'</span></code> Fill in the blanks with the calculated amounts.</p></li>
 </ol>
 </div>
 </div>

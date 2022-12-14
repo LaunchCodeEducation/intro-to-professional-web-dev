@@ -127,8 +127,8 @@ step.</p>
 can enter data. This data is retrieved by referencing the input element's
 <code class="docutils literal notranslate"><span class="pre">value</span></code> property.</p>
 <ol class="arabic simple">
-<li>Add <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type='text'</span> <span class="pre">placeholder=&quot;Enter</span> <span class="pre">Movie</span> <span class="pre">Title</span> <span class="pre">Here&quot;/&gt;</span></code> to line 7,
-then reload the page.</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type='text'</span> <span class="pre">placeholder=&quot;Enter</span> <span class="pre">Movie</span> <span class="pre">Title</span> <span class="pre">Here&quot;/&gt;</span></code> to line 7,
+then reload the page.</p></li>
 </ol>
 <div class="figure align-default">
 <img alt="Added an input box." src="../../_images/inputstep1.png" />
@@ -136,14 +136,14 @@ then reload the page.</li>
 <p>Typing characters into the box does not do anything yet, since we have not
 included any instructions to deal with the data.</p>
 <ol class="arabic" start="2">
-<li><p class="first">Angular extends the <code class="docutils literal notranslate"><span class="pre">input</span></code> element by declaring a <em>reference variable</em>
+<li><p>Angular extends the <code class="docutils literal notranslate"><span class="pre">input</span></code> element by declaring a <em>reference variable</em>
 and also an <em>event</em> that triggers data collection. Modify the input element
 in line 7 by adding <code class="docutils literal notranslate"><span class="pre">#newMovie</span></code> inside the tag:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">To store the typed characters in the <code class="docutils literal notranslate"><span class="pre">newMovie</span></code> variable, we need to wait
+<li><p>To store the typed characters in the <code class="docutils literal notranslate"><span class="pre">newMovie</span></code> variable, we need to wait
 for a particular event to occur. One of the simplest is to wait for a
 <code class="docutils literal notranslate"><span class="pre">keyup</span></code>. Modify line 7 one more time:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span> <span class="p">(</span><span class="na">keyup</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
@@ -155,7 +155,7 @@ is in the input box. When this happens, any characters in the box are stored in
 </li>
 </ol>
 <ol class="arabic" start="4">
-<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> element to line 8 of your code, and include a placeholder for
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> element to line 8 of your code, and include a placeholder for
 the value of <code class="docutils literal notranslate"><span class="pre">newMovie</span></code>. Save and reload the page:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -182,13 +182,13 @@ the value of <code class="docutils literal notranslate"><span class="pre">newMov
 variable. The <code class="docutils literal notranslate"><span class="pre">newMovie.value</span></code> placeholder on line 8 displays that data on
 the screen.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Save your work, reload the page, and then play! Type into the input box to
 verify your code works.</p>
 <div class="figure align-default">
 <img alt="Keyup input practice." src="../../_images/input-keyup.png" />
 </div>
-<p class="last">As you add or remove characters from the input box, you should see a
+<p>As you add or remove characters from the input box, you should see a
 real-time update of the text on the screen.</p>
 </div>
 </div>
@@ -208,22 +208,22 @@ record data when the '0' key is released, then we would replace
 to any character on the keyboard---including <code class="docutils literal notranslate"><span class="pre">shift</span></code>, <code class="docutils literal notranslate"><span class="pre">enter</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">space</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Change the <code class="docutils literal notranslate"><span class="pre">keyup</span></code> event in line 7 to:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code>,</li>
-<li><code class="docutils literal notranslate"><span class="pre">keyup.arrowup</span></code>,</li>
-<li><code class="docutils literal notranslate"><span class="pre">keyup.q</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyup.arrowup</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyup.q</span></code></p></li>
 </ol>
 <p>Refresh the page after each change and explore how each one affects
 collecting user input.</p>
-<p class="last">Other key combinations are described at <a class="reference external" href="https://alligator.io/angular/binding-keyup-keydown-events/" target="_blank">alligator.io<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Other key combinations are described at <a class="reference external" href="https://alligator.io/angular/binding-keyup-keydown-events/" target="_blank">alligator.io<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 <div class="section" id="wait-for-a-click">
 <h3><span class="section-number">30.5.3.2. </span>Wait for a Click<a class="headerlink" href="#wait-for-a-click" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic" start="5">
-<li><p class="first">Instead of waiting for a specific key to be pressed, let's wait for the user
+<li><p>Instead of waiting for a specific key to be pressed, let's wait for the user
 to click. Replace the <code class="docutils literal notranslate"><span class="pre">(keyup)</span></code> event with <code class="docutils literal notranslate"><span class="pre">(click)</span></code> in line 7:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="p">#</span><span class="na">newMovie</span> <span class="p">(</span><span class="na">click</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Movie Title Here&quot;</span><span class="p">/&gt;</span>
 </pre></div>
@@ -240,7 +240,7 @@ specific action to perform that records the entry without changing the text.</p>
 clicking inside the box might not be the best option. Fortunately, we know how
 to add a button to our HTML.</p>
 <ol class="arabic" start="6">
-<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element with a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to line 8. Also, change
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element with a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to line 8. Also, change
 the event in line 7 back to <code class="docutils literal notranslate"><span class="pre">keyup.enter</span></code>:</p>
 <div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -278,9 +278,9 @@ clicking the &quot;Add&quot; button should display your text below the box.</p>
 learned how to access the data and display it on the web page.</p>
 <p>To accept user input, Angular requires three items:</p>
 <ol class="arabic simple">
-<li>The HTML <code class="docutils literal notranslate"><span class="pre">input</span></code> tag,</li>
-<li>A variable to store the input, declared as <code class="docutils literal notranslate"><span class="pre">#variableName</span></code>,</li>
-<li>An event that triggers data collection.</li>
+<li><p>The HTML <code class="docutils literal notranslate"><span class="pre">input</span></code> tag,</p></li>
+<li><p>A variable to store the input, declared as <code class="docutils literal notranslate"><span class="pre">#variableName</span></code>,</p></li>
+<li><p>An event that triggers data collection.</p></li>
 </ol>
 <p>On the next page, we will learn how to make that input appear in our list of
 movies.</p>

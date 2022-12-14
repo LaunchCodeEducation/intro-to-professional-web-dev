@@ -105,9 +105,9 @@ LaunchCode weather API is <a class="reference external" href="https://handlers.e
 <code class="docutils literal notranslate"><span class="pre">windSpeed</span></code>. Our goal is to add that data to a Launch Status web page. Note,
 this API is for instruction purposes and does not contain real time data.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Launch Status web page, which we will add weather data to.</p>
-<div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -136,8 +136,8 @@ this API is for instruction purposes and does not contain real time data.</p>
 </td></tr></table></div>
 </div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Before going through the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> examples, please know that <code class="docutils literal notranslate"><span class="pre">fetch</span></code> does
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Before going through the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> examples, please know that <code class="docutils literal notranslate"><span class="pre">fetch</span></code> does
 NOT work in Internet Explorer.
 <a class="reference external" href="https://browsehappy.com/" target="_blank">List of alternative browsers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
@@ -147,17 +147,19 @@ NOT work in Internet Explorer.
 global function that requests, or fetches, resources such as data from an API.</p>
 <p>Take note of two necessary aspects of the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> function:</p>
 <ol class="arabic simple">
-<li>The URL of where the data is located.<ol class="loweralpha">
-<li>For this example, it will be <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span></code></li>
+<li><p>The URL of where the data is located.</p>
+<ol class="loweralpha simple">
+<li><p>For this example, it will be <code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/static/weather.json&quot;</span></code></p></li>
 </ol>
 </li>
-<li>A response handler function to utilize the data that is being fetched.<ol class="loweralpha">
-<li>For this example, it will be <code class="docutils literal notranslate"><span class="pre">function(response){...};</span></code></li>
+<li><p>A response handler function to utilize the data that is being fetched.</p>
+<ol class="loweralpha simple">
+<li><p>For this example, it will be <code class="docutils literal notranslate"><span class="pre">function(response){...};</span></code></p></li>
 </ol>
 </li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Notice a string URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code>. Also notice the anonymous
 <em>request handler function</em> that has a <code class="docutils literal notranslate"><span class="pre">response</span></code> parameter. The <code class="docutils literal notranslate"><span class="pre">.then</span></code>
 method will be explained soon.</p>
@@ -166,7 +168,7 @@ method will be explained soon.</p>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p class="last">In this example, we are requesting data from
+<p>In this example, we are requesting data from
 <code class="docutils literal notranslate"><span class="pre">https://handlers.education.launchcode.org/static/weather.json</span></code> and our
 response handler (the anonymous function) simply logs the response to the
 console.</p>
@@ -176,13 +178,13 @@ console.</p>
 <h2><span class="section-number">27.1.2. </span><code class="docutils literal notranslate"><span class="pre">fetch</span></code> Example<a class="headerlink" href="#fetch-example" title="Permalink to this headline">¶</a></h2>
 <p>Now let's add <code class="docutils literal notranslate"><span class="pre">fetch</span></code> in the Launch Status web page.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag has been added that includes:</p>
 <ol class="arabic simple">
-<li>A <em>load</em> event handler on line 6.</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and <em>response handler function</em> on line 7.</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">console.log(response);</span></code> on line 8 that prints out the <code class="docutils literal notranslate"><span class="pre">response</span></code>
-object.</li>
+<li><p>A <em>load</em> event handler on line 6.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and <em>response handler function</em> on line 7.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">console.log(response);</span></code> on line 8 that prints out the <code class="docutils literal notranslate"><span class="pre">response</span></code>
+object.</p></li>
 </ol>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -225,33 +227,33 @@ object.</li>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt1" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt1" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p>Let's break down how <code class="docutils literal notranslate"><span class="pre">fetch</span></code> works:</p>
 <ol class="arabic simple">
-<li>A URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code> as a parameter.</li>
-<li>This causes an HTTP GET request to be sent from the browser to the API.</li>
-<li>The API processes the request and sends back a response, which contains
-data.</li>
-<li>Once the browser receives the response, the <code class="docutils literal notranslate"><span class="pre">.then()</span></code> statement executes.</li>
-<li>The anonymous <em>response handler function</em> called by
+<li><p>A URL is passed to <code class="docutils literal notranslate"><span class="pre">fetch</span></code> as a parameter.</p></li>
+<li><p>This causes an HTTP GET request to be sent from the browser to the API.</p></li>
+<li><p>The API processes the request and sends back a response, which contains
+data.</p></li>
+<li><p>Once the browser receives the response, the <code class="docutils literal notranslate"><span class="pre">.then()</span></code> statement executes.</p></li>
+<li><p>The anonymous <em>response handler function</em> called by
 <code class="docutils literal notranslate"><span class="pre">.then(function(response)</span></code> runs, and this function deals with the data
-sent back from the API.</li>
-<li>Based on the code in the handler function, the web page gets updated using
-DOM methods.</li>
+sent back from the API.</p></li>
+<li><p>Based on the code in the handler function, the web page gets updated using
+DOM methods.</p></li>
 </ol>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">In this section, <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is used to make GET requests. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> can also
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In this section, <code class="docutils literal notranslate"><span class="pre">fetch</span></code> is used to make GET requests. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> can also
 be used to make other types of HTTP requests such as POST and PUT.</p>
 </div>
 <div class="section" id="view-the-get-request">
 <h3><span class="section-number">27.1.2.1. </span>View the GET Request<a class="headerlink" href="#view-the-get-request" title="Permalink to this headline">¶</a></h3>
 <p>We can see evidence of the GET request by following these steps:</p>
 <ol class="arabic simple">
-<li>Open the <a class="reference external" href="https://fetch-weather-pt1--launchcode.repl.co/" target="_blank">Launch Status web page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in its own tab.</li>
-<li>Open developer tools.</li>
-<li>Open the <em>Network</em> tab in developer tools.</li>
+<li><p>Open the <a class="reference external" href="https://fetch-weather-pt1--launchcode.repl.co/" target="_blank">Launch Status web page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in its own tab.</p></li>
+<li><p>Open developer tools.</p></li>
+<li><p>Open the <em>Network</em> tab in developer tools.</p></li>
 </ol>
 <div class="figure align-default" id="id1">
 <img alt="Screen shot showing developer tools open with the network call to the API highlighted." src="../../_images/weather-developer-tools.png" />
@@ -271,7 +273,7 @@ an instance of the
 The class contains methods that allow us to access the status of an API request
 and the data returned in the response.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>On line 8, the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method is used to gain access to the JSON data
 contained in the <code class="docutils literal notranslate"><span class="pre">response</span></code> object.</p>
 <p>Line 9 logs the JSON to the console. We'll discuss <code class="docutils literal notranslate"><span class="pre">.then()</span></code> later.</p>
@@ -322,7 +324,7 @@ contained in the <code class="docutils literal notranslate"><span class="pre">re
 </td></tr></table></div>
 <p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt2" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Object {
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Object {
    temp: 67,
    windSpeed: 5,
    tempMin: 50,
@@ -340,12 +342,12 @@ contained in the <code class="docutils literal notranslate"><span class="pre">re
 <p>Now that we have JSON weather data, we can add HTML elements to the page to
 display that data.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <ol class="arabic simple">
-<li>On line 8, the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is defined and linked to the HTML element
-with the id <code class="docutils literal notranslate"><span class="pre">weather-conditions</span></code>.</li>
-<li>On line 10, the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> property of the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is set to be
-the HTML elements in lines 11 - 16.</li>
+<li><p>On line 8, the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is defined and linked to the HTML element
+with the id <code class="docutils literal notranslate"><span class="pre">weather-conditions</span></code>.</p></li>
+<li><p>On line 10, the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> property of the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is set to be
+the HTML elements in lines 11 - 16.</p></li>
 </ol>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -408,26 +410,27 @@ the HTML elements in lines 11 - 16.</li>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt3" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/fetch-weather-pt3" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p>Let's take a look at the expected sequence of events:</p>
 <ol class="arabic simple">
-<li>In line 6, the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> command sends a request to the URL.</li>
-<li>When the API returns a response, the <code class="docutils literal notranslate"><span class="pre">then</span></code> method calls the anonymous
-handler function and passes in the <code class="docutils literal notranslate"><span class="pre">response</span></code> object (also line 6).</li>
-<li>On line 7, the handler function tries to retrieve the JSON data from the
+<li><p>In line 6, the <code class="docutils literal notranslate"><span class="pre">fetch</span></code> command sends a request to the URL.</p></li>
+<li><p>When the API returns a response, the <code class="docutils literal notranslate"><span class="pre">then</span></code> method calls the anonymous
+handler function and passes in the <code class="docutils literal notranslate"><span class="pre">response</span></code> object (also line 6).</p></li>
+<li><p>On line 7, the handler function tries to retrieve the JSON data from the
 <code class="docutils literal notranslate"><span class="pre">response</span></code> object. When this is successful, the anonymous
-<code class="docutils literal notranslate"><span class="pre">function(json)</span></code> gets called.<ol class="loweralpha">
-<li>On line 8, the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is defined and linked to the HTML element
-with the id <code class="docutils literal notranslate"><span class="pre">weather-conditions</span></code>.</li>
-<li>On line 10, the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> property of the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is set to be
-the HTML elements in lines 11 - 16.</li>
-<li>The HTML in lines 11 - 16 gets filled in using weather data stored in the
-<code class="docutils literal notranslate"><span class="pre">json</span></code> object.</li>
+<code class="docutils literal notranslate"><span class="pre">function(json)</span></code> gets called.</p>
+<ol class="loweralpha simple">
+<li><p>On line 8, the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is defined and linked to the HTML element
+with the id <code class="docutils literal notranslate"><span class="pre">weather-conditions</span></code>.</p></li>
+<li><p>On line 10, the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> property of the <code class="docutils literal notranslate"><span class="pre">div</span></code> object is set to be
+the HTML elements in lines 11 - 16.</p></li>
+<li><p>The HTML in lines 11 - 16 gets filled in using weather data stored in the
+<code class="docutils literal notranslate"><span class="pre">json</span></code> object.</p></li>
 </ol>
 </li>
-<li>The two anonymous functions end, and the HTML defined in lines 11 - 16
-gets added to the <code class="docutils literal notranslate"><span class="pre">div</span></code> element on line 26.</li>
+<li><p>The two anonymous functions end, and the HTML defined in lines 11 - 16
+gets added to the <code class="docutils literal notranslate"><span class="pre">div</span></code> element on line 26.</p></li>
 </ol>
 <p>Opening the developer tools on the web page shows the added HTML:</p>
 <div class="figure align-default" id="id2">
@@ -435,8 +438,8 @@ gets added to the <code class="docutils literal notranslate"><span class="pre">d
 <p class="caption"><span class="caption-text">Weather data added to web page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">fetch</span></code> was chosen as the tool to request data because it's supported in modern browsers by default
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> was chosen as the tool to request data because it's supported in modern browsers by default
 and is simple to use. When viewing resources other than this book, you will see various other ways to
 request data in a web page with JavaScript. Other ways include, but are not
 limited to, <code class="docutils literal notranslate"><span class="pre">jQuery.get</span></code>, <code class="docutils literal notranslate"><span class="pre">jQuery.ajax</span></code>, and <code class="docutils literal notranslate"><span class="pre">XMLHttpRequest</span></code>.</p>
@@ -446,12 +449,12 @@ limited to, <code class="docutils literal notranslate"><span class="pre">jQuery.
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">27.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the correct syntax for <code class="docutils literal notranslate"><span class="pre">fetch</span></code>?</p>
-<ol class="last loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;GET&quot;,</span> <span class="pre">&quot;https://api.url&quot;).then(...);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).doStuff(...);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).then(...);</span></code></li>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fetch(&quot;GET&quot;,</span> <span class="pre">&quot;https://api.url&quot;).then(...);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).doStuff(...);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fetch(&quot;https://api.url&quot;).then(...);</span></code></p></li>
 </ol>
 </div>
 </div>

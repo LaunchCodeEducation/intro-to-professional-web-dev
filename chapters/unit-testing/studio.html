@@ -90,27 +90,27 @@
 This way if they need to make a change to one of the facts, they just have to change the object in one place as opposed to going through pages of code to make the change in every place.</p>
 <p>Here is what they need the <code class="docutils literal notranslate"><span class="pre">launchcode</span></code> object to contain:</p>
 <ol class="arabic simple">
-<li>A key called <code class="docutils literal notranslate"><span class="pre">organization</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">&quot;nonprofit&quot;</span></code>.</li>
-<li>A key called <code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">&quot;Jeff&quot;</span></code>.</li>
-<li>A key called <code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">100</span></code>.</li>
-<li>A key called <code class="docutils literal notranslate"><span class="pre">programsOffered</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">[&quot;LC101&quot;,</span> <span class="pre">&quot;LaunchCode</span> <span class="pre">Women+&quot;,</span> <span class="pre">&quot;CodeCamp&quot;]</span></code>.</li>
-<li>And a method called <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code>. This method will return a string.</li>
+<li><p>A key called <code class="docutils literal notranslate"><span class="pre">organization</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">&quot;nonprofit&quot;</span></code>.</p></li>
+<li><p>A key called <code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">&quot;Jeff&quot;</span></code>.</p></li>
+<li><p>A key called <code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p></li>
+<li><p>A key called <code class="docutils literal notranslate"><span class="pre">programsOffered</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">[&quot;LC101&quot;,</span> <span class="pre">&quot;LaunchCode</span> <span class="pre">Women+&quot;,</span> <span class="pre">&quot;CodeCamp&quot;]</span></code>.</p></li>
+<li><p>And a method called <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code>. This method will return a string.</p></li>
 </ol>
 <p>Let's use Test-Driven Development to write this code! Rather than complete the code and <em>then</em> test it, TDD flips the process:</p>
 <ol class="arabic simple">
-<li>Write a test first - one that checks the program for a specific outcome.</li>
-<li>Run the test to make sure it fails.</li>
-<li>Write a code snippet that passes the test.</li>
-<li>Repeat steps 1 - 3 for the remaining features of the program.</li>
-<li>Examine the code and test scripts, and refactor them to increase efficiency.
-Remember the DRY idea (Don't Repeat Yourself).</li>
+<li><p>Write a test first - one that checks the program for a specific outcome.</p></li>
+<li><p>Run the test to make sure it fails.</p></li>
+<li><p>Write a code snippet that passes the test.</p></li>
+<li><p>Repeat steps 1 - 3 for the remaining features of the program.</p></li>
+<li><p>Examine the code and test scripts, and refactor them to increase efficiency.
+Remember the DRY idea (Don't Repeat Yourself).</p></li>
 </ol>
 <div class="section" id="source-code">
 <h2><span class="section-number">14.7.1. </span>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
 <p>Open this <a class="reference external" href="https://replit.com/&#64;launchcode/UnitTestingStudio#index.js" target="_blank">repl<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and note the files:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">index.js</span></code> holds the object we want to design.</li>
-<li><code class="docutils literal notranslate"><span class="pre">launchcode.spec.js</span></code> holds the testing script.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index.js</span></code> holds the object we want to design.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">launchcode.spec.js</span></code> holds the testing script.</p></li>
 </ol>
 <p>The files are mostly empty. Only a framework has been provided for you.</p>
 </div>
@@ -120,34 +120,34 @@ Remember the DRY idea (Don't Repeat Yourself).</li>
 <div class="section" id="organization">
 <h3><span class="section-number">14.7.2.1. </span><code class="docutils literal notranslate"><span class="pre">organization</span></code><a class="headerlink" href="#organization" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Inside the <code class="docutils literal notranslate"><span class="pre">describe</span></code> function in <code class="docutils literal notranslate"><span class="pre">launchcode.spec.js</span></code>, write a test that will check that the value of <code class="docutils literal notranslate"><span class="pre">organization</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;nonprofit&quot;</span></code>. Run your test.</li>
-<li>With your test complete, turn your attention to <code class="docutils literal notranslate"><span class="pre">launchcode.js</span></code> and add the <code class="docutils literal notranslate"><span class="pre">organization</span></code> property to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</li>
-<li>Run your tests to make sure that everything works as expected.</li>
+<li><p>Inside the <code class="docutils literal notranslate"><span class="pre">describe</span></code> function in <code class="docutils literal notranslate"><span class="pre">launchcode.spec.js</span></code>, write a test that will check that the value of <code class="docutils literal notranslate"><span class="pre">organization</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;nonprofit&quot;</span></code>. Run your test.</p></li>
+<li><p>With your test complete, turn your attention to <code class="docutils literal notranslate"><span class="pre">launchcode.js</span></code> and add the <code class="docutils literal notranslate"><span class="pre">organization</span></code> property to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</p></li>
+<li><p>Run your tests to make sure that everything works as expected.</p></li>
 </ol>
 </div>
 <div class="section" id="executivedirector">
 <h3><span class="section-number">14.7.2.2. </span><code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code><a class="headerlink" href="#executivedirector" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Write a new test that will check that the value of <code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;Jeff&quot;</span></code>. Run your test.</li>
-<li>Add the <code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code> property to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</li>
-<li>Run your tests!</li>
+<li><p>Write a new test that will check that the value of <code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;Jeff&quot;</span></code>. Run your test.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">executiveDirector</span></code> property to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</p></li>
+<li><p>Run your tests!</p></li>
 </ol>
 </div>
 <div class="section" id="percentagecoolemployees">
 <h3><span class="section-number">14.7.2.3. </span><code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code><a class="headerlink" href="#percentagecoolemployees" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Write another test that will check that the value of <code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code>. Run your test.</li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code> to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</li>
-<li>Run your tests!</li>
+<li><p>Write another test that will check that the value of <code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code>. Run your test.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">percentageCoolEmployees</span></code> to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</p></li>
+<li><p>Run your tests!</p></li>
 </ol>
 </div>
 <div class="section" id="programsoffered">
 <h3><span class="section-number">14.7.2.4. </span><code class="docutils literal notranslate"><span class="pre">programsOffered</span></code><a class="headerlink" href="#programsoffered" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Write a fourth test that will check the value of <code class="docutils literal notranslate"><span class="pre">programsOffered</span></code>. You should have four <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements within your test. Three of them should check that the array contains the appropriate values and the final one should check that the array is the appropriate size.
-Before moving on, take a moment either individually or with a classmate, to reflect on why you would need these four <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements. Run your test.</li>
-<li>Add the <code class="docutils literal notranslate"><span class="pre">programsOffered</span></code> property to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</li>
-<li>Run your tests!</li>
+<li><p>Write a fourth test that will check the value of <code class="docutils literal notranslate"><span class="pre">programsOffered</span></code>. You should have four <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements within your test. Three of them should check that the array contains the appropriate values and the final one should check that the array is the appropriate size.
+Before moving on, take a moment either individually or with a classmate, to reflect on why you would need these four <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements. Run your test.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">programsOffered</span></code> property to <code class="docutils literal notranslate"><span class="pre">launchcode</span></code>.</p></li>
+<li><p>Run your tests!</p></li>
 </ol>
 <p>You now have the properties set up for the <code class="docutils literal notranslate"><span class="pre">launchcode</span></code> object. Time to move on to creating the <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> method.</p>
 </div>
@@ -156,17 +156,17 @@ Before moving on, take a moment either individually or with a classmate, to refl
 <h2><span class="section-number">14.7.3. </span><code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code><a class="headerlink" href="#launchoutput" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> needs to meet the following conditions:</p>
 <ol class="arabic simple">
-<li>When passed a number that is ONLY divisible by 2, return <code class="docutils literal notranslate"><span class="pre">'Launch!'</span></code></li>
-<li>When passed a number that is ONLY divisible by 3, return <code class="docutils literal notranslate"><span class="pre">'Code!'</span></code></li>
-<li>When passed a number that is ONLY divisible by 5, return <code class="docutils literal notranslate"><span class="pre">'Rocks!'</span></code></li>
-<li>When passed a number that is divisible by 2 AND 3, return <code class="docutils literal notranslate"><span class="pre">'LaunchCode!'</span></code></li>
-<li>When passed a number that is divisible by 3 AND 5, return <code class="docutils literal notranslate"><span class="pre">'Code</span> <span class="pre">Rocks!'</span></code></li>
-<li>When passed a number that is divisible by 2 AND 5, return
-<code class="docutils literal notranslate"><span class="pre">'Launch</span> <span class="pre">Rocks!'</span></code></li>
-<li>When passed a number that is divisible by 2, 3, AND 5, return <code class="docutils literal notranslate"><span class="pre">'LaunchCode</span>
-<span class="pre">Rocks!'</span></code></li>
-<li>When passed a number that is NOT divisible by 2, 3, or 5, return
-<code class="docutils literal notranslate"><span class="pre">'Rutabagas!</span> <span class="pre">That</span> <span class="pre">doesn't</span> <span class="pre">work.'</span></code></li>
+<li><p>When passed a number that is ONLY divisible by 2, return <code class="docutils literal notranslate"><span class="pre">'Launch!'</span></code></p></li>
+<li><p>When passed a number that is ONLY divisible by 3, return <code class="docutils literal notranslate"><span class="pre">'Code!'</span></code></p></li>
+<li><p>When passed a number that is ONLY divisible by 5, return <code class="docutils literal notranslate"><span class="pre">'Rocks!'</span></code></p></li>
+<li><p>When passed a number that is divisible by 2 AND 3, return <code class="docutils literal notranslate"><span class="pre">'LaunchCode!'</span></code></p></li>
+<li><p>When passed a number that is divisible by 3 AND 5, return <code class="docutils literal notranslate"><span class="pre">'Code</span> <span class="pre">Rocks!'</span></code></p></li>
+<li><p>When passed a number that is divisible by 2 AND 5, return
+<code class="docutils literal notranslate"><span class="pre">'Launch</span> <span class="pre">Rocks!'</span></code></p></li>
+<li><p>When passed a number that is divisible by 2, 3, AND 5, return <code class="docutils literal notranslate"><span class="pre">'LaunchCode</span>
+<span class="pre">Rocks!'</span></code></p></li>
+<li><p>When passed a number that is NOT divisible by 2, 3, or 5, return
+<code class="docutils literal notranslate"><span class="pre">'Rutabagas!</span> <span class="pre">That</span> <span class="pre">doesn't</span> <span class="pre">work.'</span></code></p></li>
 </ol>
 <p>To make sure that you meet all of these conditions, you need to take it one test at a time.</p>
 <div class="section" id="write-the-first-test">
@@ -174,7 +174,8 @@ Before moving on, take a moment either individually or with a classmate, to refl
 <p>In <code class="docutils literal notranslate"><span class="pre">launchcode.spec.js</span></code>, complete the <code class="docutils literal notranslate"><span class="pre">describe</span></code> function by adding a
 test for condition #1:</p>
 <blockquote>
-<div>When passed a number that is ONLY divisible by 2, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns <code class="docutils literal notranslate"><span class="pre">'Launch!'</span></code></div></blockquote>
+<div><p>When passed a number that is ONLY divisible by 2, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns <code class="docutils literal notranslate"><span class="pre">'Launch!'</span></code></p>
+</div></blockquote>
 <p>Run the test. It should fail because there is no code inside <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code>
 yet!</p>
 </div>
@@ -190,10 +191,10 @@ output. (<em>Hint: modulus</em>).</p>
 <h3><span class="section-number">14.7.3.3. </span>Write the Next Two Tests<a class="headerlink" href="#write-the-next-two-tests" title="Permalink to this headline">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code>, add tests for the conditions:</p>
 <ol class="arabic simple">
-<li>When passed a number that is ONLY divisible by 3, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns
-<code class="docutils literal notranslate"><span class="pre">'Code!'</span></code></li>
-<li>When passed a number that is ONLY divisible by 5, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns
-<code class="docutils literal notranslate"><span class="pre">'Rocks!'</span></code></li>
+<li><p>When passed a number that is ONLY divisible by 3, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'Code!'</span></code></p></li>
+<li><p>When passed a number that is ONLY divisible by 5, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'Rocks!'</span></code></p></li>
 </ol>
 <p>Run the tests. The two new ones should fail, but the first
 should still pass. Modify the <code class="docutils literal notranslate"><span class="pre">it</span></code> statements as needed if you see a
@@ -210,7 +211,8 @@ modify <code class="docutils literal notranslate"><span class="pre">launchOutput
 <h3><span class="section-number">14.7.3.5. </span>Hmmm, Tricky<a class="headerlink" href="#hmmm-tricky" title="Permalink to this headline">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">launchCodeRocks.spec.js</span></code>, add a test for the condition:</p>
 <blockquote>
-<div>When passed a number that is divisible by 2 AND 3, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns <code class="docutils literal notranslate"><span class="pre">'LaunchCode!'</span></code> (not <code class="docutils literal notranslate"><span class="pre">'Launch!Code!'</span></code>).</div></blockquote>
+<div><p>When passed a number that is divisible by 2 AND 3, <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> returns <code class="docutils literal notranslate"><span class="pre">'LaunchCode!'</span></code> (not <code class="docutils literal notranslate"><span class="pre">'Launch!Code!'</span></code>).</p>
+</div></blockquote>
 <p>Run the tests. Only the new one should fail.</p>
 <p>Modify <code class="docutils literal notranslate"><span class="pre">launchOutput()</span></code> until the function passes all four of the tests.</p>
 </div>

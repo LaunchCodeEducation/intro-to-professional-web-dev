@@ -93,15 +93,16 @@ We have four fields that need to be filled out with vital information: the pilot
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Create a Launch Checklist Form for astronauts to fill out in preparation for launch. The form should do the following:</p>
 <ol class="arabic simple">
-<li>Use <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to prevent a request from being sent out and the page reloading.</li>
-<li>Validate the user-submitted data to ensure the following:<ol class="loweralpha">
-<li>The user entered something for every field.</li>
-<li>The user entered text for names and numbers for fuel and cargo levels.</li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to prevent a request from being sent out and the page reloading.</p></li>
+<li><p>Validate the user-submitted data to ensure the following:</p>
+<ol class="loweralpha simple">
+<li><p>The user entered something for every field.</p></li>
+<li><p>The user entered text for names and numbers for fuel and cargo levels.</p></li>
 </ol>
 </li>
-<li>With validation, update a list of what is currently ready or not ready for the shuttle launch.</li>
-<li>Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.</li>
-<li>Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.</li>
+<li><p>With validation, update a list of what is currently ready or not ready for the shuttle launch.</p></li>
+<li><p>Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.</p></li>
+<li><p>Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.</p></li>
 </ol>
 </div>
 <div class="section" id="setting-up-your-project-repository">
@@ -115,8 +116,8 @@ We have four fields that need to be filled out with vital information: the pilot
 <p>Before starting work, go ahead and check out the various files in your starter code. You may notice a file called <code class="docutils literal notranslate"><span class="pre">bundle.js</span></code>. This file contains no code except for a comment. Do NOT delete this file.
 The only files you should be editing when working on this project are <code class="docutils literal notranslate"><span class="pre">script.js</span></code> and <code class="docutils literal notranslate"><span class="pre">scriptHelper.js</span></code>. To modify styles or update HTML, do NOT modify <code class="docutils literal notranslate"><span class="pre">styles.css</span></code> or <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you open up your browser's dev tools, you may see a warning stating that the <code class="docutils literal notranslate"><span class="pre">require</span></code> statement in <code class="docutils literal notranslate"><span class="pre">scriptHelper.js</span></code> is not working.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you open up your browser's dev tools, you may see a warning stating that the <code class="docutils literal notranslate"><span class="pre">require</span></code> statement in <code class="docutils literal notranslate"><span class="pre">scriptHelper.js</span></code> is not working.
 This is okay! That <code class="docutils literal notranslate"><span class="pre">require</span></code> statement is necessary for the autograder to function and this warning will not impact your site's ability to function.</p>
 </div>
 </div>
@@ -136,8 +137,8 @@ In <code class="docutils literal notranslate"><span class="pre">scriptHelper.js<
 Using the values in those strings and the <code class="docutils literal notranslate"><span class="pre">document</span></code> parameter for your HTML document, update the shuttle requirements as described below.
 Make sure to call your <code class="docutils literal notranslate"><span class="pre">formSubmission()</span></code> function at the appropriate time in your <code class="docutils literal notranslate"><span class="pre">script.js</span></code> file!</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you want to check if something is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, you cannot use <code class="docutils literal notranslate"><span class="pre">==</span></code> or <code class="docutils literal notranslate"><span class="pre">===</span></code>.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you want to check if something is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, you cannot use <code class="docutils literal notranslate"><span class="pre">==</span></code> or <code class="docutils literal notranslate"><span class="pre">===</span></code>.
 Instead, JavaScript has a built-in method called <code class="docutils literal notranslate"><span class="pre">isNaN(value)</span></code> that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> is not <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 </div>
 </div>
@@ -158,8 +159,8 @@ The text of <code class="docutils literal notranslate"><span class="pre">launchS
 Our planetary data can be found in <a class="reference external" href="https://handlers.education.launchcode.org/static/planets.json" target="_blank">JSON format<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
 Review the list and decide which planet you want to send our intrepid crew to and make note of the index number.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">When fetching more than one JSON object, we get an array of all of the JSON objects.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>When fetching more than one JSON object, we get an array of all of the JSON objects.
 In this case, that means an array of our possible mission destinations.
 When picking the mission destination, just pick the item in the array you want and start counting at 0.</p>
 </div>
@@ -212,10 +213,10 @@ The list has also updated to indicate that that is not enough fuel for the shutt
 <p>Even if everything is working perfectly with your site, the autograder may still be counting something as wrong.
 Here are some steps you can take to make sure your great work is counted as such!</p>
 <ol class="arabic simple">
-<li>Make sure that all of your methods are complete in <code class="docutils literal notranslate"><span class="pre">scriptHelper.js</span></code>! The autograder needs to check your logic for each of the methods.
-<code class="docutils literal notranslate"><span class="pre">script.js</span></code> should contain calls to these functions.</li>
-<li>If the tests labeled <code class="docutils literal notranslate"><span class="pre">GRADING</span> <span class="pre">DOM</span> <span class="pre">MANIPULATION</span> <span class="pre">TEST</span></code> are failing, make sure that you did not modify <code class="docutils literal notranslate"><span class="pre">bundle.js</span></code> or remove <code class="docutils literal notranslate"><span class="pre">&lt;script</span> <span class="pre">src</span> <span class="pre">=</span> <span class="pre">&quot;bundle.js&gt;&lt;/script&gt;</span></code> from <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.
-The autograder needs <code class="docutils literal notranslate"><span class="pre">bundle.js</span></code> linked as a script in <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in order to run properly.</li>
+<li><p>Make sure that all of your methods are complete in <code class="docutils literal notranslate"><span class="pre">scriptHelper.js</span></code>! The autograder needs to check your logic for each of the methods.
+<code class="docutils literal notranslate"><span class="pre">script.js</span></code> should contain calls to these functions.</p></li>
+<li><p>If the tests labeled <code class="docutils literal notranslate"><span class="pre">GRADING</span> <span class="pre">DOM</span> <span class="pre">MANIPULATION</span> <span class="pre">TEST</span></code> are failing, make sure that you did not modify <code class="docutils literal notranslate"><span class="pre">bundle.js</span></code> or remove <code class="docutils literal notranslate"><span class="pre">&lt;script</span> <span class="pre">src</span> <span class="pre">=</span> <span class="pre">&quot;bundle.js&gt;&lt;/script&gt;</span></code> from <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.
+The autograder needs <code class="docutils literal notranslate"><span class="pre">bundle.js</span></code> linked as a script in <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in order to run properly.</p></li>
 </ol>
 </div>
 </div>

@@ -104,10 +104,10 @@ Request Body
 </div>
 <p>The structure has these components:</p>
 <ol class="arabic simple" id="index-1">
-<li><strong>Request line:</strong> The first line is the request line. It specifies the <strong>request method</strong>, path, and HTTP version being used.</li>
-<li><strong>Request headers:</strong> From line 2 until the first blank line, <strong>request headers</strong> are included as a series of key-value pairs, one per line.</li>
-<li><strong>Blank line:</strong> This signifies the end of the request headers.</li>
-<li><strong>Request body (Optional):</strong> Below the blank line, the request body takes up the remainder of the HTTP request.</li>
+<li><p><strong>Request line:</strong> The first line is the request line. It specifies the <strong>request method</strong>, path, and HTTP version being used.</p></li>
+<li><p><strong>Request headers:</strong> From line 2 until the first blank line, <strong>request headers</strong> are included as a series of key-value pairs, one per line.</p></li>
+<li><p><strong>Blank line:</strong> This signifies the end of the request headers.</p></li>
+<li><p><strong>Request body (Optional):</strong> Below the blank line, the request body takes up the remainder of the HTTP request.</p></li>
 </ol>
 <div class="section" id="request-methods">
 <h2><span class="section-number">24.3.1. </span>Request Methods<a class="headerlink" href="#request-methods" title="Permalink to this headline">¶</a></h2>
@@ -118,12 +118,12 @@ Request Body
 <p id="index-2">Using the <code class="docutils literal notranslate"><span class="pre">GET</span></code> method tells the server that we want to simply <em>retrieve</em> the resource. This is the most commonly used method. It is used for requests for HTML pages, CSS and JS files, and images. When you click on a link in a web page, you are triggering a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request for the linked page.</p>
 <p><code class="docutils literal notranslate"><span class="pre">GET</span></code> requests generally do not have a body, since they are <em>asking</em> rather than <em>sending</em> for information.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p><code class="docutils literal notranslate"><span class="pre">GET</span></code> requests are usually used for:</p>
-<ul class="last simple">
-<li>Loading a page after typing an address into the browser's address bar</li>
-<li>Conducting a search via a search engine</li>
-<li>Loading a page after clicking on a link</li>
+<ul class="simple">
+<li><p>Loading a page after typing an address into the browser's address bar</p></li>
+<li><p>Conducting a search via a search engine</p></li>
+<li><p>Loading a page after clicking on a link</p></li>
 </ul>
 </div>
 </div>
@@ -132,12 +132,12 @@ Request Body
 <p id="index-3">Using the <code class="docutils literal notranslate"><span class="pre">POST</span></code> method tells the server that we want to <em>create</em> new data on the server. As you will learn in the next chapter, <code class="docutils literal notranslate"><span class="pre">POST</span></code> is used when submitting a form.</p>
 <p><code class="docutils literal notranslate"><span class="pre">POST</span></code> requests usually have a body, which contains data that the server processes and stores in some fashion.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Some common situations that use <code class="docutils literal notranslate"><span class="pre">POST</span></code> are:</p>
-<ul class="last simple">
-<li>Signing into a web site</li>
-<li>Sending an email via a web-based email client</li>
-<li>Making an online purchase</li>
+<ul class="simple">
+<li><p>Signing into a web site</p></li>
+<li><p>Sending an email via a web-based email client</p></li>
+<li><p>Making an online purchase</p></li>
 </ul>
 </div>
 </div>
@@ -145,35 +145,35 @@ Request Body
 <div class="section" id="headers">
 <h2><span class="section-number">24.3.2. </span>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
 <p>There are <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields" target="_blank">quite a few request headers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, but only a few will be useful to us.</p>
-<table border="1" class="docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Common HTTP Request Headers</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Header</th>
-<th class="head">Purpose</th>
-<th class="head">Example</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Example</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Host</span></code></td>
-<td>The domain name or IP address of the server the request should be sent to.</td>
-<td><code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Host</span></code></p></td>
+<td><p>The domain name or IP address of the server the request should be sent to.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">User-Agent</span></code></td>
-<td>Information about the client (usually a browser) making the request. The example is for a version of Firefox on a Mac.</td>
-<td><code class="docutils literal notranslate"><span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10.14;</span> <span class="pre">rv:67.0)</span> <span class="pre">Gecko/20100101</span> <span class="pre">Firefox/67.0</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">User-Agent</span></code></p></td>
+<td><p>Information about the client (usually a browser) making the request. The example is for a version of Firefox on a Mac.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10.14;</span> <span class="pre">rv:67.0)</span> <span class="pre">Gecko/20100101</span> <span class="pre">Firefox/67.0</span></code></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Accept</span></code></td>
-<td>The types of data that the client is willing to accept in the response body.</td>
-<td><code class="docutils literal notranslate"><span class="pre">text/html,image/jpeg</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Accept</span></code></p></td>
+<td><p>The types of data that the client is willing to accept in the response body.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">text/html,image/jpeg</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></td>
-<td>The type of data included in the request body. Usually only used for <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</td>
-<td><code class="docutils literal notranslate"><span class="pre">application/json,application/xml</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></p></td>
+<td><p>The type of data included in the request body. Usually only used for <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">application/json,application/xml</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -186,8 +186,8 @@ Request Body
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">24.3.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">Visit <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields" target="_blank">Wikipedia's article on HTTP request headers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. Which request header is used to set cookies? (Cookies are small pieces of data related to your interaction with a web site.)</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Visit <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields" target="_blank">Wikipedia's article on HTTP request headers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. Which request header is used to set cookies? (Cookies are small pieces of data related to your interaction with a web site.)</p>
 </div>
 </div>
 </div>

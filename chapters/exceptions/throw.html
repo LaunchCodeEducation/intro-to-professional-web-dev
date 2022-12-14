@@ -95,7 +95,7 @@ is if your code is being used in an unexpected way.</p>
 <h2><span class="section-number">17.2.1. </span>Throw Default Error<a class="headerlink" href="#throw-default-error" title="Permalink to this headline">¶</a></h2>
 <p>We can throw a default Error by using the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement and passing in a string description as a argument.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;You cannot divide by zero!&quot;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
@@ -108,15 +108,15 @@ at Object.runInContext (vm.js:311:6)
 at evaluate (/run_dir/repl.js:133:14)
 </pre></div>
 </div>
-<p class="last">The error text displays the error name, and it contains details about where the error was thrown.
+<p>The error text displays the error name, and it contains details about where the error was thrown.
 The text <code class="docutils literal notranslate"><span class="pre">at</span> <span class="pre">evalmachine.&lt;anonymous&gt;:1:7</span></code> indicates that the error as thrown from line 1, which we know is
 true because our example only has one line of code.</p>
 </div>
 <div class="admonition-note admonition" id="exception-expectations">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>With all that we have learned about unit testing, you might be wondering how you test if an error is thrown when it should be.
 To do so, let's imagine our example above is inside a function called <code class="docutils literal notranslate"><span class="pre">checkThrow()</span></code>. We need can then use the <code class="docutils literal notranslate"><span class="pre">toThrow()</span></code> matcher like so:</p>
-<div class="last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">expect</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">expect</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
    <span class="nx">checkThrow</span><span class="p">();</span>
 <span class="p">}).</span><span class="nx">toThrow</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;You cannot divide by zero!&#39;</span><span class="p">));</span>
 </pre></div>
@@ -127,7 +127,7 @@ To do so, let's imagine our example above is inside a function called <code clas
 <h2><span class="section-number">17.2.2. </span>Pre-existing Error<a class="headerlink" href="#pre-existing-error" title="Permalink to this headline">¶</a></h2>
 <p>JavaScript also gives us the power to throw a more specific type of error.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nx">SyntaxError</span><span class="p">(</span><span class="s2">&quot;That is the incorrect syntax&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -135,7 +135,7 @@ To do so, let's imagine our example above is inside a function called <code clas
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SyntaxError: That is the incorrect syntax
 </pre></div>
 </div>
-<p class="last">JavaScript gives us flexibility by allowing us to raise standard library errors and to define our own errors. We can use exceptions to allow our program to break and provide useful information as to why something went wrong.</p>
+<p>JavaScript gives us flexibility by allowing us to raise standard library errors and to define our own errors. We can use exceptions to allow our program to break and provide useful information as to why something went wrong.</p>
 </div>
 </div>
 <div class="section" id="custom-error">
@@ -145,12 +145,12 @@ To do so, let's imagine our example above is inside a function called <code clas
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">17.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What statement do we use to raise an exception?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What statement do we use to raise an exception?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">How do we customize the message of an exception?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>How do we customize the message of an exception?</p>
 </div>
 </div>
 </div>

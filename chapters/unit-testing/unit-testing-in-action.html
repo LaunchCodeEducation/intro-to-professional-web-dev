@@ -93,23 +93,23 @@
 <p>When writing tests for your code, what should you test? You can't test <em>every</em> possible situation or input. But you also don't want to
 leave out important cases. A function or program that isn't well-tested might have bugs lurking beneath the surface.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Since we are focused on <em>unit</em> testing, in this chapter we will generally use the term &quot;unit&quot; to refer to the function
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Since we are focused on <em>unit</em> testing, in this chapter we will generally use the term &quot;unit&quot; to refer to the function
 or program under consideration.</p>
 </div>
 <p>Regardless of the situation, there are three types of test cases that you should consider: positive, negative, and edge cases.</p>
 <ol class="arabic simple">
-<li>A <strong>positive test</strong> verifies expected behavior with valid data.</li>
-<li>A <strong>negative test</strong> verifies expected behavior with <em>invalid</em> data.</li>
-<li>An <strong>edge case</strong> is a subset of positive tests, which checks the extreme edges of valid values.</li>
+<li><p>A <strong>positive test</strong> verifies expected behavior with valid data.</p></li>
+<li><p>A <strong>negative test</strong> verifies expected behavior with <em>invalid</em> data.</p></li>
+<li><p>An <strong>edge case</strong> is a subset of positive tests, which checks the extreme edges of valid values.</p></li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Imagine a function named <code class="docutils literal notranslate"><span class="pre">setTemperature</span></code> that accepts a number between <code class="docutils literal notranslate"><span class="pre">50</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p>
-<ol class="last arabic simple">
-<li>Positive test values: <code class="docutils literal notranslate"><span class="pre">56</span></code>, <code class="docutils literal notranslate"><span class="pre">75</span></code>, <code class="docutils literal notranslate"><span class="pre">80</span></code></li>
-<li>Negative test values: <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">101</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;70&quot;</span></code></li>
-<li>Edge case values: <code class="docutils literal notranslate"><span class="pre">50</span></code>, <code class="docutils literal notranslate"><span class="pre">100</span></code></li>
+<ol class="arabic simple">
+<li><p>Positive test values: <code class="docutils literal notranslate"><span class="pre">56</span></code>, <code class="docutils literal notranslate"><span class="pre">75</span></code>, <code class="docutils literal notranslate"><span class="pre">80</span></code></p></li>
+<li><p>Negative test values: <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">101</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;70&quot;</span></code></p></li>
+<li><p>Edge case values: <code class="docutils literal notranslate"><span class="pre">50</span></code>, <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
 </ol>
 </div>
 <p>Considering positive, negative, and edge tests will go a long way toward helping you create well-tested code.</p>
@@ -140,13 +140,13 @@ Note that we have removed the <code class="docutils literal notranslate"><span c
 </pre></div>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">When creating a unit-tested project, <em>always</em> start by copying the Jasmine test runner code into <code class="docutils literal notranslate"><span class="pre">index.js</span></code> and putting the code you want to test in an appropriately named <code class="docutils literal notranslate"><span class="pre">.js</span></code> file.</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>When creating a unit-tested project, <em>always</em> start by copying the Jasmine test runner code into <code class="docutils literal notranslate"><span class="pre">index.js</span></code> and putting the code you want to test in an appropriately named <code class="docutils literal notranslate"><span class="pre">.js</span></code> file.</p>
 </div>
 <p>You have become used to testing your code by running it and printing output with <code class="docutils literal notranslate"><span class="pre">console.log</span></code>. When writing unit-tested code, we no longer need to take this approach.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">If you find yourself tempted to add a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement to your code, write a unit test instead!
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you find yourself tempted to add a <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement to your code, write a unit test instead!
 You would mostly likely remove that <code class="docutils literal notranslate"><span class="pre">console.log</span></code> after getting your code to work, while the test will remain for you and other developers to use in the future.</p>
 </div>
 <p id="set-up">Finally, create <code class="docutils literal notranslate"><span class="pre">spec/</span></code> folder and add a spec file, <code class="docutils literal notranslate"><span class="pre">palindrome.spec.js</span></code>. This file should include imports and a describe block:</p>
@@ -173,10 +173,10 @@ You would mostly likely remove that <code class="docutils literal notranslate"><
 <h3><span class="section-number">14.3.3.1. </span>Positive Test Cases<a class="headerlink" href="#positive-test-cases" title="Permalink to this headline">¶</a></h3>
 <p>We'll start with positive and negative tests. For <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, some positive tests have inputs:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;aaaa&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;aba&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;racecar&quot;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;aaaa&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;aba&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;racecar&quot;</span></code></p></li>
 </ul>
 <p>Calling <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> with these inputs should return <code class="docutils literal notranslate"><span class="pre">true</span></code> in each case. Notice that these tests are as
 simple as possible. Keeping test inputs simple, while still covering your desired test cases, will make it
@@ -232,25 +232,25 @@ easier to fix a bug in the event that a unit test fails.</p>
 <h3><span class="section-number">14.3.3.2. </span>Negative Test Cases<a class="headerlink" href="#negative-test-cases" title="Permalink to this headline">¶</a></h3>
 <p>For <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, some negative tests have inputs:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;launchcode&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;abA&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;so</span> <span class="pre">many</span> <span class="pre">dynamos&quot;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;launchcode&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;abA&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;so</span> <span class="pre">many</span> <span class="pre">dynamos&quot;</span></code></p></li>
 </ul>
 <p>Calling <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> with these inputs should return <code class="docutils literal notranslate"><span class="pre">false</span></code> in each case.
 The last two of these negative tests deserve a bit more discussion.</p>
 <p>When writing our <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> function initially, we made two important decisions:</p>
 <ul class="simple">
-<li>Case should be considered, and</li>
-<li>whitespace should be considered.</li>
+<li><p>Case should be considered, and</p></li>
+<li><p>whitespace should be considered.</p></li>
 </ul>
 <p>The definition of a palindrome differs sometimes on these two matters, so it's important to test them.</p>
 <p>Testing with input <code class="docutils literal notranslate"><span class="pre">&quot;abA&quot;`</span></code> ensures that case is considered, since the lowercase version of this string, <code class="docutils literal notranslate"><span class="pre">&quot;aba&quot;</span></code>,
 <em>is</em> a palindrome. Testing with <code class="docutils literal notranslate"><span class="pre">&quot;so</span> <span class="pre">many</span> <span class="pre">dynamos&quot;</span></code> ensures that whitespace is considered, since the version of
 this string with whitespace removed, <code class="docutils literal notranslate"><span class="pre">&quot;somanydynamos&quot;</span></code>, <em>is</em> a palindrome.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">It's important to isolate your test cases. For example, <code class="docutils literal notranslate"><span class="pre">&quot;So</span> <span class="pre">Many</span> <span class="pre">Dynamos&quot;</span></code> is a poor choice of input
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>It's important to isolate your test cases. For example, <code class="docutils literal notranslate"><span class="pre">&quot;So</span> <span class="pre">Many</span> <span class="pre">Dynamos&quot;</span></code> is a poor choice of input
 for a negative test, since it contains <em>two</em> characteristics that are being tested for - case and whitespace. If
 a test with this input failed, it would NOT be clear why it failed.</p>
 </div>
@@ -295,7 +295,8 @@ make our code <em>self-documenting</em>. Someone can read our tests and easily s
 <h2><span class="section-number">14.3.4. </span>Edge Cases<a class="headerlink" href="#edge-cases" title="Permalink to this headline">¶</a></h2>
 <p>Recall our definition of <strong>edge case</strong>:</p>
 <blockquote class="pull-quote">
-<div>An edge case is a test case that provides input at the extreme edge of what the unit should be able to handle.</div></blockquote>
+<div><p>An edge case is a test case that provides input at the extreme edge of what the unit should be able to handle.</p>
+</div></blockquote>
 <p>Edge cases can look very different for different units of code. Most of the examples we provided above dealt with numerical edge cases. However, edge cases can also be non-numeric.</p>
 <p>In the case of <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>, the most obvious edge case would be that of the empty string, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>. This is the smallest possible string that we can use when calling <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>. Not only is it the smallest, but it is essentially <em>different</em> from the next longest string, <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>---one has characters and one doesn't.</p>
 <p>Should the empty string be considered a palindrome? That decision is up to us, the programmer, and there is no right or wrong answer. In our case, we decided to take a very literal definition of the term &quot;palindrome&quot; by considering case and whitespace. In other words, our definition says that a string is a palindrome exactly when it equals its reverse. Since the reverse of <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> is also <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, it makes sense to consider the empty string a palindrome.</p>
@@ -308,8 +309,8 @@ make our code <em>self-documenting</em>. Someone can read our tests and easily s
 <p>Now run the tests, which should all pass.</p>
 <p>You might think that another edge case is that of the longest possible palindrome. Such a palindrome would be as long as the longest possible string in JavaScript. This case is not worth considering for a couple of reasons:</p>
 <ul class="simple">
-<li>The length of the longest string <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length#Description" target="_blank">can vary across different JavaScript implementations<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li>The most recent JavaScript specification, ES2016, states that the maximum allowed length of a string should be 2 <sup>53</sup> - 1 characters. This is a LOT of characters, and it is unrealistic to expect that our function will ever be given such a string.</li>
+<li><p>The length of the longest string <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length#Description" target="_blank">can vary across different JavaScript implementations<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
+<li><p>The most recent JavaScript specification, ES2016, states that the maximum allowed length of a string should be 2 <sup>53</sup> - 1 characters. This is a LOT of characters, and it is unrealistic to expect that our function will ever be given such a string.</p></li>
 </ul>
 </div>
 <div class="section" id="toward-a-better-testing-workflow">
@@ -319,14 +320,14 @@ pass. Most situations will not be this simple. Your tests will often uncover bug
 update your code. That's okay! This is precisely what tests are for.</p>
 <p>The workflow for this situation is:</p>
 <ol class="arabic simple">
-<li>Write code</li>
-<li>Write tests</li>
-<li>Fix any bugs found while testing</li>
+<li><p>Write code</p></li>
+<li><p>Write tests</p></li>
+<li><p>Fix any bugs found while testing</p></li>
 </ol>
 <p>The rest of the chapter focuses on a programming technique that allows you to completely <em>eliminate</em> the third step, by reversing the order of the first two:</p>
 <ol class="arabic simple">
-<li>Write tests</li>
-<li>Write code</li>
+<li><p>Write tests</p></li>
+<li><p>Write code</p></li>
 </ol>
 <p>As you will soon learn, writing your tests <em>before</em> the code is a great way to enhance your programming efficiency and quality.</p>
 </div>
@@ -335,26 +336,26 @@ update your code. That's okay! This is precisely what tests are for.</p>
 <p>Let's assume we updated <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> to be case-insensitive (e.g.
 <code class="docutils literal notranslate"><span class="pre">isPalindrome('Radar')</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>).</p>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following is an example of <em>positive</em> test case for checking if
 <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code> is case-insensitive?</p>
-<ol class="last loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">aa</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">aBa</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">Mom</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">Taco</span> <span class="pre">Cat</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">AbAb</span></code></li>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aa</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aBa</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mom</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Taco</span> <span class="pre">Cat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AbAb</span></code></p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the <em>negative</em> test cases listed above are no longer valid for our
 case-insensitive <code class="docutils literal notranslate"><span class="pre">isPalindrome</span></code>?</p>
-<ol class="last loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">ab</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">launchcode</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">abA</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">so</span> <span class="pre">many</span> <span class="pre">dynamos</span></code></li>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ab</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">launchcode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">so</span> <span class="pre">many</span> <span class="pre">dynamos</span></code></p></li>
 </ol>
 </div>
 </div>

@@ -119,8 +119,8 @@ manually add or remove <code class="docutils literal notranslate"><span class="p
 through the contents of an array. For a more detailed guide to using <code class="docutils literal notranslate"><span class="pre">ngFor</span></code>
 and all of its variations, refer to the following resources:</p>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://angular.io/guide/template-syntax#ngFor" target="_blank">Angular documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,</li>
-<li><a class="reference external" href="https://malcoded.com/posts/angular-ngfor/" target="_blank">Malcoded website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li><p><a class="reference external" href="https://angular.io/guide/template-syntax#ngFor" target="_blank">Angular documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,</p></li>
+<li><p><a class="reference external" href="https://malcoded.com/posts/angular-ngfor/" target="_blank">Malcoded website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
 </ol>
 <p>Just like a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in JavaScript requires a specific syntax in order to
 operate, loops in Angular must follow a set of rules. Let's explore these rules
@@ -140,24 +140,25 @@ by adding <code class="docutils literal notranslate"><span class="pre">ngFor</sp
 </td></tr></table></div>
 <p>Some items to note:</p>
 <ol class="arabic simple">
-<li>Structural directives all begin with the <code class="docutils literal notranslate"><span class="pre">*</span></code> symbol.</li>
-<li>The string <code class="docutils literal notranslate"><span class="pre">&quot;let</span> <span class="pre">movie</span> <span class="pre">of</span> <span class="pre">movies&quot;</span></code> provides the instructions
-for running the loop.<ol class="loweralpha">
-<li>The <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword declares the <code class="docutils literal notranslate"><span class="pre">movie</span></code> variable.</li>
-<li><code class="docutils literal notranslate"><span class="pre">of</span> <span class="pre">movies</span></code> sets <code class="docutils literal notranslate"><span class="pre">movie</span></code> equal to the first element of the <code class="docutils literal notranslate"><span class="pre">movies</span></code>
+<li><p>Structural directives all begin with the <code class="docutils literal notranslate"><span class="pre">*</span></code> symbol.</p></li>
+<li><p>The string <code class="docutils literal notranslate"><span class="pre">&quot;let</span> <span class="pre">movie</span> <span class="pre">of</span> <span class="pre">movies&quot;</span></code> provides the instructions
+for running the loop.</p>
+<ol class="loweralpha simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword declares the <code class="docutils literal notranslate"><span class="pre">movie</span></code> variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">of</span> <span class="pre">movies</span></code> sets <code class="docutils literal notranslate"><span class="pre">movie</span></code> equal to the first element of the <code class="docutils literal notranslate"><span class="pre">movies</span></code>
 array. Each iteration of the loop sets <code class="docutils literal notranslate"><span class="pre">movie</span></code> equal to the next title
-in the array.</li>
+in the array.</p></li>
 </ol>
 </li>
-<li>The <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement is placed INSIDE the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag.</li>
-<li><code class="docutils literal notranslate"><span class="pre">{{movie}}</span></code> is the placeholder for the current value of <code class="docutils literal notranslate"><span class="pre">movie</span></code>.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement is placed INSIDE the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{{movie}}</span></code> is the placeholder for the current value of <code class="docutils literal notranslate"><span class="pre">movie</span></code>.</p></li>
 </ol>
 <p>By placing the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the tag, the loop generates
 multiple <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> elements. Each iteration adds a new list item to the
 HTML code, one for each title in the <code class="docutils literal notranslate"><span class="pre">movies</span></code> array.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement generates a new HTML tag for each item in the
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement generates a new HTML tag for each item in the
 array. <em>Be careful where you put the statement!</em> If we had added
 <code class="docutils literal notranslate"><span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">movie</span> <span class="pre">of</span> <span class="pre">movies&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag, then the <code class="docutils literal notranslate"><span class="pre">Movies</span>
 <span class="pre">To</span> <span class="pre">Watch</span></code> title would have been repeated multiple times.</p>
@@ -169,11 +170,11 @@ array. <em>Be careful where you put the statement!</em> If we had added
 <p>Where <code class="docutils literal notranslate"><span class="pre">variableName</span></code> is the loop variable, and <code class="docutils literal notranslate"><span class="pre">arrayName</span></code> represents the
 array to iterate through.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> only operates over the contents of an array. If we want to
 iterate over the characters in a string, we must first convert it into an
 array.</p>
-<p class="last">There is a technique for iterating over the key/value pairs of an object,
+<p>There is a technique for iterating over the key/value pairs of an object,
 but that is a more advanced topic. We will not discuss that method here.</p>
 </div>
 </div>
@@ -220,51 +221,49 @@ $ <span class="nb">cd</span> ngfor-practice
 add all of the Angular modules needed to run the project.</p>
 <p>Enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to launch the project, then:</p>
 <ol class="arabic">
-<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> with <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> to loop over the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
 array:</p>
 <ol class="loweralpha simple">
-<li>Replace line 4 with
-<code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">chore</span> <span class="pre">of</span> <span class="pre">chores&quot;&gt;{{chore}}&lt;/li&gt;</span></code>.</li>
-<li>Delete lines 5 and 6.</li>
-<li>Save your changes.</li>
-<li>Reload the web page to verify that all the chores are displayed.</li>
+<li><p>Replace line 4 with
+<code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">chore</span> <span class="pre">of</span> <span class="pre">chores&quot;&gt;{{chore}}&lt;/li&gt;</span></code>.</p></li>
+<li><p>Delete lines 5 and 6.</p></li>
+<li><p>Save your changes.</p></li>
+<li><p>Reload the web page to verify that all the chores are displayed.</p></li>
 </ol>
 </li>
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add &quot;Clean bathroom&quot; to the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add &quot;Clean bathroom&quot; to the <code class="docutils literal notranslate"><span class="pre">chores</span></code>
 array, then save. Reload the web page to make sure the new chore appears.
 Your output should look like this:</p>
 <div class="figure align-default">
 <img alt="*ngFor first solution." src="../../_images/clean-bathroom-solution.png" />
 </div>
 </li>
-<li><p class="first">Remove two chores from the array. Reload the web page to make sure these
-items disappear from the list.</p>
-</li>
-<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code>. Use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> within the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag to
+<li><p>Remove two chores from the array. Reload the web page to make sure these
+items disappear from the list.</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code>. Use <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> within the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag to
 loop over the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array:</p>
 <ol class="loweralpha simple">
-<li>Replace line 1 with
-<code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class='chores'</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">title</span> <span class="pre">of</span> <span class="pre">todoTitles&quot;&gt;</span></code>.</li>
-<li>Replace &quot;Chores To Do Today&quot; in line 2 with a placeholder for <code class="docutils literal notranslate"><span class="pre">title</span></code>.</li>
-<li>Save your changes, then reload the page. Properly done, your page should
-look something like:</li>
+<li><p>Replace line 1 with
+<code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class='chores'</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">&quot;let</span> <span class="pre">title</span> <span class="pre">of</span> <span class="pre">todoTitles&quot;&gt;</span></code>.</p></li>
+<li><p>Replace &quot;Chores To Do Today&quot; in line 2 with a placeholder for <code class="docutils literal notranslate"><span class="pre">title</span></code>.</p></li>
+<li><p>Save your changes, then reload the page. Properly done, your page should
+look something like:</p></li>
 </ol>
 <div class="figure align-default">
 <img alt="*ngFor practice solution." src="../../_images/chore-list-solution.png" />
 </div>
 </li>
-<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add an item to the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array,
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>. Add an item to the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array,
 then save. Check to make sure another list appears on the web page. Next,
 remove two items from the <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> array. Save and make sure the page
-reflects the changes.</p>
-</li>
+reflects the changes.</p></li>
 </ol>
 <div class="section" id="what-if">
 <h3><span class="section-number">30.2.2.1. </span>What If<a class="headerlink" href="#what-if" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>What if you placed the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag instead
-of the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag? Try it and see what happens!</li>
-<li>What if you placed the statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag instead? Try it!</li>
+<li><p>What if you placed the <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag instead
+of the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag? Try it and see what happens!</p></li>
+<li><p>What if you placed the statement inside the <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag instead? Try it!</p></li>
 </ol>
 </div>
 <div class="section" id="bonus-what-if">
@@ -277,7 +276,7 @@ Tomorrow?</p>
 <p>Accomplishing this task is OPTIONAL, but it boosts your skill level and makes
 your page look better.</p>
 <ol class="arabic">
-<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> file, replace the <code class="docutils literal notranslate"><span class="pre">chores</span></code> and
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> file, replace the <code class="docutils literal notranslate"><span class="pre">chores</span></code> and
 <code class="docutils literal notranslate"><span class="pre">todoTitles</span></code> arrays with the following array of <em>objects</em>:</p>
 <div class="highlight-JavaScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -291,20 +290,18 @@ your page look better.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Update line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> to access each <em>object</em> in the
+<li><p>Update line 1 in <code class="docutils literal notranslate"><span class="pre">chores.component.html</span></code> to access each <em>object</em> in the
 <code class="docutils literal notranslate"><span class="pre">chores</span></code> array:</p>
 <ol class="loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class='chores'</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">chores'&gt;</span></code></li>
-<li>Each iteration, <code class="docutils literal notranslate"><span class="pre">list</span></code> will be assigned a new object with <code class="docutils literal notranslate"><span class="pre">title</span></code>
-and <code class="docutils literal notranslate"><span class="pre">tasks</span></code> properties.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class='chores'</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">chores'&gt;</span></code></p></li>
+<li><p>Each iteration, <code class="docutils literal notranslate"><span class="pre">list</span></code> will be assigned a new object with <code class="docutils literal notranslate"><span class="pre">title</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tasks</span></code> properties.</p></li>
 </ol>
 </li>
-<li><p class="first">Update the placeholder in line 2 to access the <code class="docutils literal notranslate"><span class="pre">title</span></code> property of
-<code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
-</li>
-<li><p class="first">Update line 4 to loop over the <code class="docutils literal notranslate"><span class="pre">tasks</span></code> array:
-<code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">chore</span> <span class="pre">of</span> <span class="pre">list.tasks'&gt;</span></code>.</p>
-</li>
+<li><p>Update the placeholder in line 2 to access the <code class="docutils literal notranslate"><span class="pre">title</span></code> property of
+<code class="docutils literal notranslate"><span class="pre">list</span></code>.</p></li>
+<li><p>Update line 4 to loop over the <code class="docutils literal notranslate"><span class="pre">tasks</span></code> array:
+<code class="docutils literal notranslate"><span class="pre">&lt;li</span> <span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">chore</span> <span class="pre">of</span> <span class="pre">list.tasks'&gt;</span></code>.</p></li>
 </ol>
 </div>
 </div>
@@ -326,24 +323,24 @@ and <code class="docutils literal notranslate"><span class="pre">tasks</span></c
 </td></tr></table></div>
 <p>Assume that we have defined a <code class="docutils literal notranslate"><span class="pre">pets</span></code> array that contains 4 animals.</p>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Adding <code class="docutils literal notranslate"><span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">pet</span> <span class="pre">of</span> <span class="pre">pets'</span></code> to the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag produces:</p>
-<ol class="last arabic simple">
-<li>4 headings</li>
-<li>4 unordered lists</li>
-<li>4 list items</li>
-<li>4 headings each with 4 list items</li>
+<ol class="arabic simple">
+<li><p>4 headings</p></li>
+<li><p>4 unordered lists</p></li>
+<li><p>4 list items</p></li>
+<li><p>4 headings each with 4 list items</p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Moving <code class="docutils literal notranslate"><span class="pre">*ngFor</span> <span class="pre">=</span> <span class="pre">'let</span> <span class="pre">pet</span> <span class="pre">of</span> <span class="pre">pets'</span></code> from the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag to the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>
 tag produces:</p>
-<ol class="last arabic simple">
-<li>1 heading and 4 unordered lists with 4 pets each</li>
-<li>4 headings and 4 unordered lists with 4 pets each</li>
-<li>1 heading and 4 unordered lists with 1 pet each</li>
-<li>4 headings and 4 unordered lists with 1 pet each</li>
+<ol class="arabic simple">
+<li><p>1 heading and 4 unordered lists with 4 pets each</p></li>
+<li><p>4 headings and 4 unordered lists with 4 pets each</p></li>
+<li><p>1 heading and 4 unordered lists with 1 pet each</p></li>
+<li><p>4 headings and 4 unordered lists with 1 pet each</p></li>
 </ol>
 </div>
 </div>

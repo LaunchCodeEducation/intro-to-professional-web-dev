@@ -95,7 +95,7 @@ However, when working with functions in TypeScript, we have to keep <em>data typ
 <h3><span class="section-number">28.4.1.1. </span>Named Functions<a class="headerlink" href="#named-functions" title="Permalink to this headline">¶</a></h3>
 <p>Let's take a look at a TypeScript function declaration.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We want to declare a function called <code class="docutils literal notranslate"><span class="pre">myFunction</span></code>.
 <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> has one parameter, a number called <code class="docutils literal notranslate"><span class="pre">x</span></code>.
 <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> returns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2.</p>
@@ -105,12 +105,12 @@ However, when working with functions in TypeScript, we have to keep <em>data typ
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="last">Here you can see that we provided the type of the parameter and the type of the value that is returned after the colons.
+<p>Here you can see that we provided the type of the parameter and the type of the value that is returned after the colons.
 If <code class="docutils literal notranslate"><span class="pre">x</span></code> were a string or a boolean, then we would replace <code class="docutils literal notranslate"><span class="pre">number</span></code> with the data type of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </div>
 <p>What if the function doesn't return a value? In these cases, we use <code class="docutils literal notranslate"><span class="pre">void</span></code> as the return type.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let's change up <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> a little bit!
 <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> still has one parameter, our number called <code class="docutils literal notranslate"><span class="pre">x</span></code>, however, it doesn't return a specific value.</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">y</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
@@ -120,7 +120,7 @@ If <code class="docutils literal notranslate"><span class="pre">x</span></code> 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="last">Instead of returning the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> now assigns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2 to another variable, <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+<p>Instead of returning the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> now assigns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2 to another variable, <code class="docutils literal notranslate"><span class="pre">y</span></code>.
 We can now use <code class="docutils literal notranslate"><span class="pre">void</span></code> to specify that no value is returned.</p>
 </div>
 </div>
@@ -128,9 +128,9 @@ We can now use <code class="docutils literal notranslate"><span class="pre">void
 <h3><span class="section-number">28.4.1.2. </span>Anonymous Functions<a class="headerlink" href="#anonymous-functions" title="Permalink to this headline">¶</a></h3>
 <p>For an anonymous function, you still need to provide types for the value returned and the parameters.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Now we want to declare an anonymous function, <code class="docutils literal notranslate"><span class="pre">myFunction</span></code>, which has one parameter, a number called <code class="docutils literal notranslate"><span class="pre">x</span></code>, and returns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> multiplied by 2.</p>
-<div class="last highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="mf">2</span><span class="p">;</span> <span class="p">};</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="mf">2</span><span class="p">;</span> <span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -143,7 +143,7 @@ We can now use <code class="docutils literal notranslate"><span class="pre">void
 This means that when you are calling the function, you can leave off the optional parameter(s).</p>
 <p>To denote a parameter as optional, we use the <code class="docutils literal notranslate"><span class="pre">?</span></code> notation. Any parameters that are optional must follow the required parameters.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -169,7 +169,7 @@ This means that when you are calling the function, you can leave off the optiona
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8
 6
 13
 8
@@ -183,7 +183,7 @@ When only one argument is provided to the function, then the value of <code clas
 <p>Let's say that in the example above, we wanted to give <code class="docutils literal notranslate"><span class="pre">b</span></code> a default value of 5.
 That way, if no argument is supplied for <code class="docutils literal notranslate"><span class="pre">b</span></code>, then the value returned is that of <code class="docutils literal notranslate"><span class="pre">a+10</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-typescript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -201,7 +201,7 @@ That way, if no argument is supplied for <code class="docutils literal notransla
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>8
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8
 11
 13
 13
@@ -213,9 +213,9 @@ That way, if no argument is supplied for <code class="docutils literal notransla
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">28.4.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is wrong with this function declaration? NOTE there are at least 3 things that should be changed.</p>
-<div class="last highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span>:<span class="kt">number</span><span class="p">,</span><span class="nx">b</span><span class="o">?</span> <span class="o">=</span> <span class="mf">3</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">};</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span>:<span class="kt">number</span><span class="p">,</span><span class="nx">b</span><span class="o">?</span> <span class="o">=</span> <span class="mf">3</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>

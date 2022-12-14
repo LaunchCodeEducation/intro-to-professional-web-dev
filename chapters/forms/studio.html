@@ -100,13 +100,13 @@ use. It will look like this:</p>
 submit data using a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request. Additionally, many of the most popular
 search engines also use the same name for the search parameter, <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Use 2-3 different search engines to search for the same term. On the results page, look at the URL. Did the search happen via <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>? If a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request was made, what is the name of the parameter containing your search term?</p>
-<p class="last"><em>Note:</em> You may have to copy/paste the URL into a text editor to find the search parameter. Some engines add other parameters to the URL, causing it to extend past the end of the browser's address bar.</p>
+<p><em>Note:</em> You may have to copy/paste the URL into a text editor to find the search parameter. Some engines add other parameters to the URL, causing it to extend past the end of the browser's address bar.</p>
 </div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We remarked previously that most forms use <code class="docutils literal notranslate"><span class="pre">POST</span></code> because they cause data to be changed on the server. A web search only <em>retrieves</em> data. It does not change data. Therefore it's safe to use a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request for searches.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We remarked previously that most forms use <code class="docutils literal notranslate"><span class="pre">POST</span></code> because they cause data to be changed on the server. A web search only <em>retrieves</em> data. It does not change data. Therefore it's safe to use a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request for searches.</p>
 </div>
 <p>The fact that most search engines use the name <code class="docutils literal notranslate"><span class="pre">q</span></code> for their search boxes
 will allow us to easily create a form that is capable of sending a search
@@ -120,71 +120,71 @@ sites.</p>
 <div class="section" id="getting-started">
 <h2><span class="section-number">25.11.2. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Go to the <a class="reference external" href="https://github.com/LaunchCodeEducation/HTTP-and-Forms-Studio/" target="_blank">studio repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and fork to your Github account.</li>
-<li>Clone the repository and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the new directory.</li>
+<li><p>Go to the <a class="reference external" href="https://github.com/LaunchCodeEducation/HTTP-and-Forms-Studio/" target="_blank">studio repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and fork to your Github account.</p></li>
+<li><p>Clone the repository and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the new directory.</p></li>
 </ol>
 </div>
 <div class="section" id="create-form-inputs">
 <h2><span class="section-number">25.11.3. </span>Create Form Inputs<a class="headerlink" href="#create-form-inputs" title="Permalink to this headline">¶</a></h2>
 <p>Let's build out the form in <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. We will need some data for the
 search engines we want to work with.</p>
-<table border="1" class="docutils align-default" id="id2">
+<table class="docutils align-default" id="id2">
 <caption><span class="caption-text">Search Engine Options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Label</th>
-<th class="head">Value</th>
-<th class="head">Search URL</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Label</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Search URL</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Google</td>
-<td><code class="docutils literal notranslate"><span class="pre">google</span></code></td>
-<td><a class="reference external" href="https://www.google.com/search" target="_blank">https://www.google.com/search<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></td>
+<tbody>
+<tr class="row-even"><td><p>Google</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">google</span></code></p></td>
+<td><p><a class="reference external" href="https://www.google.com/search" target="_blank">https://www.google.com/search<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></td>
 </tr>
-<tr class="row-odd"><td>DuckDuckGo</td>
-<td><code class="docutils literal notranslate"><span class="pre">duckDuckGo</span></code></td>
-<td><a class="reference external" href="https://duckduckgo.com/" target="_blank">https://duckduckgo.com/<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></td>
+<tr class="row-odd"><td><p>DuckDuckGo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">duckDuckGo</span></code></p></td>
+<td><p><a class="reference external" href="https://duckduckgo.com/" target="_blank">https://duckduckgo.com/<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></td>
 </tr>
-<tr class="row-even"><td>Bing</td>
-<td><code class="docutils literal notranslate"><span class="pre">bing</span></code></td>
-<td><a class="reference external" href="https://www.bing.com/search" target="_blank">https://www.bing.com/search<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></td>
+<tr class="row-even"><td><p>Bing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bing</span></code></p></td>
+<td><p><a class="reference external" href="https://www.bing.com/search" target="_blank">https://www.bing.com/search<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></td>
 </tr>
-<tr class="row-odd"><td>Ask</td>
-<td><code class="docutils literal notranslate"><span class="pre">ask</span></code></td>
-<td><a class="reference external" href="https://www.ask.com/web" target="_blank">https://www.ask.com/web<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></td>
+<tr class="row-odd"><td><p>Ask</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ask</span></code></p></td>
+<td><p><a class="reference external" href="https://www.ask.com/web" target="_blank">https://www.ask.com/web<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></td>
 </tr>
 </tbody>
 </table>
 <ol class="arabic simple">
-<li>Create a text input within the form and set its <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute to the
-value <code class="docutils literal notranslate"><span class="pre">&quot;q&quot;</span></code>.</li>
-<li>Create a radio group with one radio button for each search engine. Recall
+<li><p>Create a text input within the form and set its <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute to the
+value <code class="docutils literal notranslate"><span class="pre">&quot;q&quot;</span></code>.</p></li>
+<li><p>Create a radio group with one radio button for each search engine. Recall
 that radio buttons with the same <code class="docutils literal notranslate"><span class="pre">name</span></code> are grouped, so use the same
-value for this attribute, <code class="docutils literal notranslate"><span class="pre">&quot;engine&quot;</span></code>, on each radio button.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">label</span></code> element for each radio button.</li>
-<li>Finally, add a submit button to the form and set it's <code class="docutils literal notranslate"><span class="pre">value</span></code> to
-<code class="docutils literal notranslate"><span class="pre">&quot;Go!&quot;</span></code>.</li>
+value for this attribute, <code class="docutils literal notranslate"><span class="pre">&quot;engine&quot;</span></code>, on each radio button.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">label</span></code> element for each radio button.</p></li>
+<li><p>Finally, add a submit button to the form and set it's <code class="docutils literal notranslate"><span class="pre">value</span></code> to
+<code class="docutils literal notranslate"><span class="pre">&quot;Go!&quot;</span></code>.</p></li>
 </ol>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">How is the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of a submit button used?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>How is the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of a submit button used?</p>
 </div>
 </div>
 <div class="section" id="submit-event-handler">
 <h2><span class="section-number">25.11.4. </span>Submit Event Handler<a class="headerlink" href="#submit-event-handler" title="Permalink to this headline">¶</a></h2>
 <p>Pop quiz:</p>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What happens if you try to submit the form at this point? Why?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What happens if you try to submit the form at this point? Why?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">Which HTTP method will be used when submitting the form?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which HTTP method will be used when submitting the form?</p>
 </div>
 <p>We now have a form with inputs that has nowhere to send its data. The
 <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute determines where a form submits data, but we can't set the
@@ -195,10 +195,10 @@ the user hits the submit button, but <em>before</em> the form request is sent. F
 trigger a <code class="docutils literal notranslate"><span class="pre">submit</span></code> event at precisely this moment. Therefore, we can create
 an event handler to solve this problem. Our handler will:</p>
 <ol class="arabic simple">
-<li>Retrieve the selected value from the radio group.</li>
-<li>Use this value to determine the <code class="docutils literal notranslate"><span class="pre">action</span></code> URL, based on the selected search
-engine.</li>
-<li>Set the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute of the form.</li>
+<li><p>Retrieve the selected value from the radio group.</p></li>
+<li><p>Use this value to determine the <code class="docutils literal notranslate"><span class="pre">action</span></code> URL, based on the selected search
+engine.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute of the form.</p></li>
 </ol>
 <div class="section" id="create-and-register-the-handler">
 <h3><span class="section-number">25.11.4.1. </span>Create and Register the Handler<a class="headerlink" href="#create-and-register-the-handler" title="Permalink to this headline">¶</a></h3>
@@ -217,8 +217,8 @@ add a <code class="docutils literal notranslate"><span class="pre">console.log</
 form's <code class="docutils literal notranslate"><span class="pre">submit</span></code> event. You will first need to get the form element using one
 of the DOM methods.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The event handler can be added only after the form has been built, so we do
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The event handler can be added only after the form has been built, so we do
 so by adding a <code class="docutils literal notranslate"><span class="pre">load</span></code> event handler to the <code class="docutils literal notranslate"><span class="pre">window</span></code>. This ensures that
 the event is registered <em>after</em> the page has loaded.</p>
 </div>
@@ -278,9 +278,9 @@ not, that's okay. Switch to debugging mode and figure out what needs fixing.</p>
 <div class="section" id="bonus-missions">
 <h2><span class="section-number">25.11.5. </span>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Add validation to your submit handler to make sure that the user has both
-selected a search engine and entered a (non-empty) search term.</li>
-<li>Add some CSS rules to your page to make it look nice.</li>
+<li><p>Add validation to your submit handler to make sure that the user has both
+selected a search engine and entered a (non-empty) search term.</p></li>
+<li><p>Add some CSS rules to your page to make it look nice.</p></li>
 </ol>
 </div>
 </div>

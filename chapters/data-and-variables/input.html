@@ -124,7 +124,8 @@ line of code.</p>
 <p>There is a lot going on here behind the scenes, but for now you should follow
 this bit of wisdom:</p>
 <blockquote>
-<div>I turn the key, and it goes.</div></blockquote>
+<div><p>I turn the key, and it goes.</p>
+</div></blockquote>
 <p>Most of us do not need to know all the details about how cars, phones, or
 microwave ovens work. We just know enough to interact with them in our day to
 day lives. Similarly, we do not need to understand how <code class="docutils literal notranslate"><span class="pre">readline-sync</span></code> works
@@ -144,16 +145,16 @@ that allow us to get data from the user and assigns them to the variable
 <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">info</span> <span class="pre">=</span> <span class="pre">input.question(&quot;Question</span> <span class="pre">text...</span> <span class="pre">&quot;);</span></code>.</p>
 <p>When JavaScript evaluates the expression, it follows the instructions:</p>
 <ol class="arabic simple">
-<li>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</li>
-<li>Wait for the user to respond.</li>
-<li>Store the data in the variable <code class="docutils literal notranslate"><span class="pre">info</span></code>.</li>
+<li><p>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</p></li>
+<li><p>Wait for the user to respond.</p></li>
+<li><p>Store the data in the variable <code class="docutils literal notranslate"><span class="pre">info</span></code>.</p></li>
 </ol>
 <p>For our greeting program, we would code
 <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">input.question(&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">&quot;);</span></code>. The user enters a name and
 presses the Return or Enter key. When this happens, any text entered is
 collected by the input function and stored in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Let's play around with the <code class="docutils literal notranslate"><span class="pre">input</span></code> statement. Open the repl.it link below
 and click the &quot;Run&quot; button.</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -163,7 +164,7 @@ and click the &quot;Run&quot; button.</p>
 <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/InputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/InputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p>Note that after entering a name, the program does not actually DO anything with
 the information. If we want to print the data as part of a message, we need to
@@ -176,10 +177,10 @@ the data and use it when and where we see fit.</p>
 what happens. Next, add code to prompt the user for a second name. Store the
 response in <code class="docutils literal notranslate"><span class="pre">otherName</span></code>, then print both names using <code class="docutils literal notranslate"><span class="pre">console.log</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Update your code to request a user's first and last name, then print an
 output that looks like:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
 Last name: Coder
 Last, First: Coder, Elite
 </pre></div>
@@ -215,27 +216,28 @@ see what you expected?</p>
 strings</em>, so numbers get concatenated rather than added.  Just like
 &quot;Hello, &quot; + &quot;World&quot; outputs as <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code>, &quot;7&quot; + &quot;2&quot; outputs as <code class="docutils literal notranslate"><span class="pre">72</span></code>.</p>
 <blockquote>
-<div>JavaScript treats input entries as strings!</div></blockquote>
+<div><p>JavaScript treats input entries as strings!</p>
+</div></blockquote>
 <p>If we want our program to perform math on the entered numbers, we must
 <a class="reference internal" href="type-conversion.html#type-conversion"><span class="std std-ref">use type conversion</span></a> to change the string values into
 numbers.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<ol class="last arabic simple">
-<li>Use <code class="docutils literal notranslate"><span class="pre">Number</span></code> to convert <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> from strings to numbers.
-Run the program and examine the result.</li>
-<li>Instead of using two steps to assign <code class="docutils literal notranslate"><span class="pre">num1</span></code> and then convert it, combine
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="arabic simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Number</span></code> to convert <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> from strings to numbers.
+Run the program and examine the result.</p></li>
+<li><p>Instead of using two steps to assign <code class="docutils literal notranslate"><span class="pre">num1</span></code> and then convert it, combine
 the steps in line 3. Place <code class="docutils literal notranslate"><span class="pre">input.question(&quot;Enter</span> <span class="pre">a</span> <span class="pre">number:</span> <span class="pre">&quot;)</span></code> inside
-the <code class="docutils literal notranslate"><span class="pre">Number</span></code> function. Run the program and examine the result.</li>
-<li>Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num2</span></code></li>
-<li>What happens if a user enters <code class="docutils literal notranslate"><span class="pre">Hi</span></code> instead of a number?</li>
+the <code class="docutils literal notranslate"><span class="pre">Number</span></code> function. Run the program and examine the result.</p></li>
+<li><p>Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num2</span></code></p></li>
+<li><p>What happens if a user enters <code class="docutils literal notranslate"><span class="pre">Hi</span></code> instead of a number?</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.8.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is printed when the following program runs?</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -250,11 +252,11 @@ the <code class="docutils literal notranslate"><span class="pre">Number</span></
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">info</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">string</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">number</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">info</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">25</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">25</span></code></p></li>
 </ol>
 </div>
 </div>

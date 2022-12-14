@@ -95,18 +95,18 @@ which combines the elements of an array into a single string. If we have
 <div class="section" id="joining-array-elements-with-a-loop">
 <h2><span class="section-number">11.7.1. </span>Joining Array Elements With a Loop<a class="headerlink" href="#joining-array-elements-with-a-loop" title="Permalink to this headline">¶</a></h2>
 <p>Examine the code samples below:</p>
-<table border="1" class="docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through the array and add each entry into the <code class="docutils literal notranslate"><span class="pre">newString</span></code> variable.</th>
-<th class="head">Use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to add the first element in the array to <code class="docutils literal notranslate"><span class="pre">newString</span></code>, then remove that element from the array.</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through the array and add each entry into the <code class="docutils literal notranslate"><span class="pre">newString</span></code> variable.</p></th>
+<th class="head"><p>Use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to add the first element in the array to <code class="docutils literal notranslate"><span class="pre">newString</span></code>, then remove that element from the array.</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<tbody>
+<tr class="row-even"><td><div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -126,12 +126,12 @@ which combines the elements of an array into a single string. If we have
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
 [&#39;L&#39;, &#39;C&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;]
 </pre></div>
 </div>
 </td>
-<td><div class="first highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<td><div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -151,7 +151,7 @@ which combines the elements of an array into a single string. If we have
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;LC101&#39;
 [ ]
 </pre></div>
 </div>
@@ -234,8 +234,8 @@ just needs to return <code class="docutils literal notranslate"><span class="pre
 process. If it is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the single entry gets returned, and the function
 stops. Otherwise, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> gets called again.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We define our base case as <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> rather than
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We define our base case as <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> rather than
 <code class="docutils literal notranslate"><span class="pre">arrayName.length</span> <span class="pre">===</span> <span class="pre">1</span></code> just in case an empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code> gets passed to
 the function.</p>
 </div>
@@ -257,7 +257,7 @@ a working recursive process.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">11.7.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>We can use recursion to remove all of the 'i' entries from the array
 <code class="docutils literal notranslate"><span class="pre">['One',</span> <span class="pre">'i',</span> <span class="pre">'c',</span> <span class="pre">'X',</span> <span class="pre">'i',</span> <span class="pre">'i',</span> <span class="pre">54]</span></code>.</p>
 <p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">removeI</span></code> function.</p>
@@ -283,15 +283,15 @@ a working recursive process.</p>
 <p>Which TWO of the following work as a base case for the function? Feel free to
 test the options in the repl.it to check your thinking.</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">!arr.includes('i')</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">arr.includes('i')</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!arr.includes('i')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arr.includes('i')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')===-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arr.indexOf('i')</span> <span class="pre">!==</span> <span class="pre">-1</span></code></p></li>
 </ol>
-<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>The <strong>factorial</strong> of a number (n!) is the product of a positive, whole number and
 all the positive integers below it.</p>
 <p>For example, four factorial is 4! = 4*3*2*1 = 24, and 5! = 5*4*3*2*1 =
@@ -316,12 +316,12 @@ all the positive integers below it.</p>
 </td></tr></table></div>
 <p>Which of the following should be used as base case for the function?</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">===</span> <span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></p></li>
 </ol>
-<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/BaseCaseCC02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 </div>

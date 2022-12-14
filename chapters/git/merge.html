@@ -90,23 +90,23 @@
 <span id="index-0"></span><h2><span class="section-number">22.5.1. </span>How to Merge<a class="headerlink" href="#how-to-merge" title="Permalink to this headline">¶</a></h2>
 <p>A <strong>merge</strong> in Git occurs when two branches are combined in the repository.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let's say a programmer wants to merge a branch called <code class="docutils literal notranslate"><span class="pre">test</span></code> into
 <code class="docutils literal notranslate"><span class="pre">main</span></code>. To accomplish this:</p>
 <ol class="arabic">
-<li><p class="first">The programmer switches to the branch they want to merge into. In this
+<li><p>The programmer switches to the branch they want to merge into. In this
 case:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout main
 </pre></div>
 </div>
 </li>
-<li><p class="first">The programmer then runs the merge command:</p>
+<li><p>The programmer then runs the merge command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git merge <span class="nb">test</span>
 </pre></div>
 </div>
 </li>
 </ol>
-<p class="last">When successful, the code in the <code class="docutils literal notranslate"><span class="pre">test</span></code> branch is pulled into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>When successful, the code in the <code class="docutils literal notranslate"><span class="pre">test</span></code> branch is pulled into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 </div>
 </div>
 <div class="section" id="merge-conflicts">
@@ -126,26 +126,26 @@ merge conflict is to face it head on and rely on teammates for support!</p>
 <p>Even though merge conflicts are normal in Git, it is also normal for programmers to want to do everything they can to avoid them.
 Here are some tips on how to avoid a merge conflict:</p>
 <ol class="arabic simple">
-<li>Git has a dry-run option for many commands.
+<li><p>Git has a dry-run option for many commands.
 When a programmer uses that option, Git outputs what WILL happen, but doesn't DO it.
 With merging in Git, the command to perform a dry-run and make sure there
 aren't any conflicts is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-commit</span> <span class="pre">--no-ff</span> <span class="pre">&lt;branch&gt;</span></code>. The
 <code class="docutils literal notranslate"><span class="pre">--no-commit</span></code> and <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> syntax tells Git to run the merge without
-committing the result to the repository.</li>
-<li>Before merging in a branch, any uncommitted work that would cause a conflict needs to be dealt with.
+committing the result to the repository.</p></li>
+<li><p>Before merging in a branch, any uncommitted work that would cause a conflict needs to be dealt with.
 A programmer can opt to not commit that work and instead <strong>stash</strong> it.
 By using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> command, the uncommitted work is saved in the
 stash, and the repository is returned to the state at the last commit.
 If the programmer wants to retrieve stashed work later, they can do so with
-the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code>.</li>
+the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code>.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">22.5.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">If a programmer is on the branch <code class="docutils literal notranslate"><span class="pre">test</span></code> and wants to merge a branch called
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>If a programmer is on the branch <code class="docutils literal notranslate"><span class="pre">test</span></code> and wants to merge a branch called
 <code class="docutils literal notranslate"><span class="pre">feature</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>, what steps should they take?</p>
 </div>
 </div>

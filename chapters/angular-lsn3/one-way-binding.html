@@ -97,7 +97,7 @@ encase its name in double braces <code class="docutils literal notranslate"><spa
 studios to display headings, titles from our movie list, astronauts on our
 crew, etc.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">my-list.component.ts</span></code> file:</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -117,7 +117,7 @@ crew, etc.</p>
 </pre></div>
 </td></tr></table></div>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">my-list.component.html</span></code> file:</p>
-<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>{{listHeading}}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>{{listHeading}}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{luckyNumber}}<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -132,7 +132,7 @@ NOT affect the value of <code class="docutils literal notranslate"><span class="
 example, assume the <code class="docutils literal notranslate"><span class="pre">image</span></code> variable holds the URL for a photo we want to use
 on our web page.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">photos.component.ts</span></code> file:</p>
 <div class="highlight-TypeScript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -150,7 +150,7 @@ on our web page.</p>
 </pre></div>
 </td></tr></table></div>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">photos.component.html</span></code> file:</p>
-<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{image}}&quot;</span><span class="p">/&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{image}}&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -165,14 +165,14 @@ modify an HTML attribute.</p>
 <p>To avoid cluttering up our HTML tags with lots of double braces <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code>, we
 simplify the notation as follows:</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>Double braces syntax:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ variableName }}&quot;</span><span class="p">/&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{{ otherVariable }}&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ thirdVariable }}&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 <p>Alternate syntax:</p>
-<div class="last highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="p">[</span><span class="na">src</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;variableName&quot;</span><span class="p">/&gt;</span>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="p">[</span><span class="na">src</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;variableName&quot;</span><span class="p">/&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="p">[</span><span class="na">name</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;otherVariable&quot;</span> <span class="p">[</span><span class="na">value</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;thirdVariable&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
@@ -180,34 +180,35 @@ simplify the notation as follows:</p>
 <p>Instead of <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code>, place the HTML attribute in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> and
 set that equal to the variable name in quotes.</p>
 <blockquote>
-<div>Note: Although the two methods accomplish exactly the same thing, the square
-brackets syntax is recommended as a best practice.</div></blockquote>
+<div><p>Note: Although the two methods accomplish exactly the same thing, the square
+brackets syntax is recommended as a best practice.</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">31.2.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following is NOT a true statement about data-binding?</p>
-<ol class="last arabic simple">
-<li>Data-binding refers to the linking of component information to a view.</li>
-<li>In one-way binding, information flows in one direction only.</li>
-<li>In one-way binding, changing a component variable never updates the application
-view.</li>
-<li>In one-way binding, user input does not affect component data.</li>
+<ol class="arabic simple">
+<li><p>Data-binding refers to the linking of component information to a view.</p></li>
+<li><p>In one-way binding, information flows in one direction only.</p></li>
+<li><p>In one-way binding, changing a component variable never updates the application
+view.</p></li>
+<li><p>In one-way binding, user input does not affect component data.</p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following show proper data-binding syntax? Choose ALL that
 apply.</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;li&gt;{{</span> <span class="pre">variableName</span> <span class="pre">}}&lt;/li&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">[src]=&quot;variableName&quot;/&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;p&gt;[variableName]&lt;/p&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">value=&quot;[variableName]&quot;&gt;Go!&lt;/button&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">placeholder=&quot;{{</span> <span class="pre">variableName</span> <span class="pre">}}&quot;/&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">[name]=&quot;{{</span> <span class="pre">variableName</span> <span class="pre">}}&quot;/&gt;</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li&gt;{{</span> <span class="pre">variableName</span> <span class="pre">}}&lt;/li&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">[src]=&quot;variableName&quot;/&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;p&gt;[variableName]&lt;/p&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">value=&quot;[variableName]&quot;&gt;Go!&lt;/button&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">placeholder=&quot;{{</span> <span class="pre">variableName</span> <span class="pre">}}&quot;/&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">[name]=&quot;{{</span> <span class="pre">variableName</span> <span class="pre">}}&quot;/&gt;</span></code></p></li>
 </ol>
 </div>
 </div>

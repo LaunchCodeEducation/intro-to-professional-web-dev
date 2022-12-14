@@ -121,12 +121,12 @@ so it returns <code class="docutils literal notranslate"><span class="pre">'L'</
 <p>In this case, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> executes the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement. We have no
 code for this yet, but we can still consider the logic:</p>
 <ol class="loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and calls itself again using what is left
-inside the array (<code class="docutils literal notranslate"><span class="pre">['C']</span></code>).</li>
-<li>When passed <code class="docutils literal notranslate"><span class="pre">['C']</span></code>, which is the base case, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns
-<code class="docutils literal notranslate"><span class="pre">'C'</span></code>.</li>
-<li>The strings <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and <code class="docutils literal notranslate"><span class="pre">'C'</span></code> get combined and returned as the final
-result.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and calls itself again using what is left
+inside the array (<code class="docutils literal notranslate"><span class="pre">['C']</span></code>).</p></li>
+<li><p>When passed <code class="docutils literal notranslate"><span class="pre">['C']</span></code>, which is the base case, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'C'</span></code>.</p></li>
+<li><p>The strings <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and <code class="docutils literal notranslate"><span class="pre">'C'</span></code> get combined and returned as the final
+result.</p></li>
 </ol>
 <p>Next, consider an array with three elements <code class="docutils literal notranslate"><span class="pre">['L',</span> <span class="pre">'C',</span> <span class="pre">'1']</span></code>:</p>
 <div class="figure align-default">
@@ -135,15 +135,15 @@ result.</li>
 <p>As before, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> executes the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement, and we can
 follow the logic:</p>
 <ol class="loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and calls itself again using what is left
-inside the array (<code class="docutils literal notranslate"><span class="pre">['C',</span> <span class="pre">'1']</span></code>).</li>
-<li>When passed <code class="docutils literal notranslate"><span class="pre">['C',</span> <span class="pre">'1']</span></code>, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns <code class="docutils literal notranslate"><span class="pre">'C'</span></code> and calls
-itself again using what is left inside the array (<code class="docutils literal notranslate"><span class="pre">['1']</span></code>).</li>
-<li>When passed <code class="docutils literal notranslate"><span class="pre">['1']</span></code>, which is the base case, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns
-<code class="docutils literal notranslate"><span class="pre">'1'</span></code>.</li>
-<li>The strings <code class="docutils literal notranslate"><span class="pre">'C'</span></code> and <code class="docutils literal notranslate"><span class="pre">'1'</span></code> get combined and returned.</li>
-<li>The strings <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and <code class="docutils literal notranslate"><span class="pre">'C1'</span></code> get combined and returned as the final
-result.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and calls itself again using what is left
+inside the array (<code class="docutils literal notranslate"><span class="pre">['C',</span> <span class="pre">'1']</span></code>).</p></li>
+<li><p>When passed <code class="docutils literal notranslate"><span class="pre">['C',</span> <span class="pre">'1']</span></code>, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns <code class="docutils literal notranslate"><span class="pre">'C'</span></code> and calls
+itself again using what is left inside the array (<code class="docutils literal notranslate"><span class="pre">['1']</span></code>).</p></li>
+<li><p>When passed <code class="docutils literal notranslate"><span class="pre">['1']</span></code>, which is the base case, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>.</p></li>
+<li><p>The strings <code class="docutils literal notranslate"><span class="pre">'C'</span></code> and <code class="docutils literal notranslate"><span class="pre">'1'</span></code> get combined and returned.</p></li>
+<li><p>The strings <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and <code class="docutils literal notranslate"><span class="pre">'C1'</span></code> get combined and returned as the final
+result.</p></li>
 </ol>
 <p>As we make the array longer, <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> calls itself more times. Each
 call evaluates a smaller and smaller section of the array until reaching the
@@ -151,27 +151,27 @@ base case. This sets up a series of return events - each one selecting a
 single entry from the array. Rather than building <code class="docutils literal notranslate"><span class="pre">'LC101'</span></code> from left to
 right, recursion constructs the string starting with the base case and
 adding new characters to the front:</p>
-<table border="1" class="colwidths-auto docutils align-default">
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Value Returned</th>
-<th class="head">Description</th>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value Returned</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">'1'</span></code></td>
-<td>Base case. Returns the element from an array of length 1.</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'1'</span></code></p></td>
+<td><p>Base case. Returns the element from an array of length 1.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">'01'</span></code></td>
-<td>Combines the first element from an array of length 2 with the base case value.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'01'</span></code></p></td>
+<td><p>Combines the first element from an array of length 2 with the base case value.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">'101'</span></code></td>
-<td>Combines the first element from an array of length 3 with the two previous values.</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'101'</span></code></p></td>
+<td><p>Combines the first element from an array of length 3 with the two previous values.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">'C101'</span></code></td>
-<td>Combines the first element from an array of length 4 with the three previous values.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'C101'</span></code></p></td>
+<td><p>Combines the first element from an array of length 4 with the three previous values.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></td>
-<td>Combines the first element from an array of length 5 with the four previous values.</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></p></td>
+<td><p>Combines the first element from an array of length 5 with the four previous values.</p></td>
 </tr>
 </tbody>
 </table>
@@ -185,8 +185,8 @@ this creates a starting point for completing all of the previous steps.</p>
 <p>So how do we code the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement in <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code>? Recall what
 needs to happen each time the statement runs:</p>
 <ol class="loweralpha simple">
-<li>Select the first element in the array,</li>
-<li>Call <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> again with a smaller array.</li>
+<li><p>Select the first element in the array,</p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">combineEntries</span></code> again with a smaller array.</p></li>
 </ol>
 <p>Bracket notation takes care of part a: <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span></code>.</p>
 <p>For part b, remember that the <a class="reference internal" href="../../appendices/array-method-examples/slice-examples.html#slice-examples"><span class="std std-ref">slice method</span></a> returns
@@ -212,60 +212,60 @@ selected entries from an array. To return everything BUT the first entry in
 array with <code class="docutils literal notranslate"><span class="pre">arrayName[0]</span></code>, then it calls itself with the remaining array
 elements (<code class="docutils literal notranslate"><span class="pre">arrayName.slice(1)</span></code>).</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">combineEntries(['L',</span> <span class="pre">'C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1']);</span></code>, the sequence would be:</p>
-<table border="1" class="colwidths-given docutils align-default">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Step</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1</td>
-<td>First call: Combine <code class="docutils literal notranslate"><span class="pre">'L'</span></code> with <code class="docutils literal notranslate"><span class="pre">combineEntries(['C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</td>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>First call: Combine <code class="docutils literal notranslate"><span class="pre">'L'</span></code> with <code class="docutils literal notranslate"><span class="pre">combineEntries(['C',</span> <span class="pre">'1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>Second call: Combine <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Second call: Combine <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1',</span> <span class="pre">'0',</span> <span class="pre">'1'])</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td>3</td>
-<td>Third call: Combine <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['0',</span> <span class="pre">'1'])</span></code>.</td>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Third call: Combine <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['0',</span> <span class="pre">'1'])</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>Fourth call: Combine <code class="docutils literal notranslate"><span class="pre">'0'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1'])</span></code>.</td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Fourth call: Combine <code class="docutils literal notranslate"><span class="pre">'0'</span></code>, with <code class="docutils literal notranslate"><span class="pre">combineEntries(['1'])</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td>5</td>
-<td>Fifth call: Base case returns <code class="docutils literal notranslate"><span class="pre">'1'</span></code>.</td>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Fifth call: Base case returns <code class="docutils literal notranslate"><span class="pre">'1'</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
 <p>To get the final result, proceed <em>up the chain</em>:</p>
-<table border="1" class="colwidths-given docutils align-default">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Step</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>5</td>
-<td>Return <code class="docutils literal notranslate"><span class="pre">'1'</span></code> to the fourth call.</td>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">'1'</span></code> to the fourth call.</p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>Return <code class="docutils literal notranslate"><span class="pre">'01'</span></code> to the third call.</td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">'01'</span></code> to the third call.</p></td>
 </tr>
-<tr class="row-even"><td>3</td>
-<td>Return <code class="docutils literal notranslate"><span class="pre">'101'</span></code> to the second call.</td>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">'101'</span></code> to the second call.</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>Return <code class="docutils literal notranslate"><span class="pre">'C101'</span></code> to the first call.</td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">'C101'</span></code> to the first call.</p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>Return <code class="docutils literal notranslate"><span class="pre">'LC101</span></code> as the final result.</td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">'LC101</span></code> as the final result.</p></td>
 </tr>
 </tbody>
 </table>
@@ -274,7 +274,7 @@ elements (<code class="docutils literal notranslate"><span class="pre">arrayName
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">11.8.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What if we wanted to take a number (n) and add it to all of the positive integers below it?
 For example, if n = 5, the function returns 5 + 4 + 3 + 2 + 1 = 15.</p>
 <p>Consider the code sample below, which declares the <code class="docutils literal notranslate"><span class="pre">decreasingSum</span></code> function.</p>
@@ -296,12 +296,12 @@ For example, if n = 5, the function returns 5 + 4 + 3 + 2 + 1 = 15.</p>
 <p>Which of the following should be used in the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement to recursively call <code class="docutils literal notranslate"><span class="pre">decreasingSum</span></code>
 and eventually return the correct answer?</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(integer-1);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(decreasingSum(integer));</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(decreasingSum(integer-1));</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">decreasingSum(integer-1);</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(integer-1);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(decreasingSum(integer));</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">integer</span> <span class="pre">+</span> <span class="pre">(decreasingSum(integer-1));</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">decreasingSum(integer-1);</span></code></p></li>
 </ol>
-<p class="last">Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/RecursionCC01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Experiment with this <a class="reference external" href="https://repl.it/&#64;launchcode/RecursionCC01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 </div>

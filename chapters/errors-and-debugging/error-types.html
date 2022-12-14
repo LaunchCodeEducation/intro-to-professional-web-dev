@@ -107,71 +107,71 @@ SyntaxError: Invalid or unexpected token
 </div>
 <p>We have now seen two error types, <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> and <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. There are several other <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#Fundamental_objects" target="_blank">error types in JavaScript<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, such as <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> and <code class="docutils literal notranslate"><span class="pre">RangeError</span></code>.</p>
 <p>The following table describes all JavaScript error types. Some of these relate to coding concepts we have not covered yet, but we include them here as a reference for future use.</p>
-<table border="1" class="docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">JavaScript Error Types</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Error Type</th>
-<th class="head">Description</th>
-<th class="head">Example of code triggering the error</th>
-<th class="head">Example description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Error Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example of code triggering the error</p></th>
+<th class="head"><p>Example description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></td>
-<td>Occurs when trying to parse syntactically invalid code.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></p></td>
+<td><p>Occurs when trying to parse syntactically invalid code.</p></td>
+<td><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </td>
-<td>The call to <code class="docutils literal notranslate"><span class="pre">console.log</span></code> does not have a required close parenthesis.</td>
+<td><p>The call to <code class="docutils literal notranslate"><span class="pre">console.log</span></code> does not have a required close parenthesis.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code></td>
-<td>Occurs when a non-existent variable is used/referenced.</td>
-<td><div class="first last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code></p></td>
+<td><p>Occurs when a non-existent variable is used/referenced.</p></td>
+<td><div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span><span class="p">;</span>
  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 </td>
-<td>The variable <code class="docutils literal notranslate"><span class="pre">firstname</span></code> does not exist; it is a misspelling of <code class="docutils literal notranslate"><span class="pre">firstName</span></code>.</td>
+<td><p>The variable <code class="docutils literal notranslate"><span class="pre">firstname</span></code> does not exist; it is a misspelling of <code class="docutils literal notranslate"><span class="pre">firstName</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></td>
-<td>Occurs when trying to use a value in an invalid way.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mf">1</span><span class="p">();</span>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></p></td>
+<td><p>Occurs when trying to use a value in an invalid way.</p></td>
+<td><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="mf">1</span><span class="p">();</span>
 </pre></div>
 </div>
 </td>
-<td>The numeric value <code class="docutils literal notranslate"><span class="pre">1</span></code> is not a function, so trying to use it as one results in <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">1</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">function</span></code>.</td>
+<td><p>The numeric value <code class="docutils literal notranslate"><span class="pre">1</span></code> is not a function, so trying to use it as one results in <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">1</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">function</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">RangeError</span></code></td>
-<td>Occurs when passing an invalid value to a function.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nums</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RangeError</span></code></p></td>
+<td><p>Occurs when passing an invalid value to a function.</p></td>
+<td><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">nums</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </td>
-<td>The constructor function <code class="docutils literal notranslate"><span class="pre">Array(n)</span></code> creates an empty array of length <code class="docutils literal notranslate"><span class="pre">n</span></code>. It is not possible to create an array with negative length, so the code results in <code class="docutils literal notranslate"><span class="pre">RangeError:</span> <span class="pre">Invalid</span> <span class="pre">array</span> <span class="pre">length</span></code>.</td>
+<td><p>The constructor function <code class="docutils literal notranslate"><span class="pre">Array(n)</span></code> creates an empty array of length <code class="docutils literal notranslate"><span class="pre">n</span></code>. It is not possible to create an array with negative length, so the code results in <code class="docutils literal notranslate"><span class="pre">RangeError:</span> <span class="pre">Invalid</span> <span class="pre">array</span> <span class="pre">length</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">URIError</span></code></td>
-<td>Occurs when improperly using a global URI-handling function. ('URI' = Uniform Resource Identifier)</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">decodeURI</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">);</span>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">URIError</span></code></p></td>
+<td><p>Occurs when improperly using a global URI-handling function. ('URI' = Uniform Resource Identifier)</p></td>
+<td><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">decodeURI</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </td>
-<td>The <code class="docutils literal notranslate"><span class="pre">%</span></code> character is used to encode characters not otherwise allowed in URIs, such as spaces (<code class="docutils literal notranslate"><span class="pre">%20</span></code>). If an invalid character encoding is given, a <code class="docutils literal notranslate"><span class="pre">URIError</span></code> results.</td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">%</span></code> character is used to encode characters not otherwise allowed in URIs, such as spaces (<code class="docutils literal notranslate"><span class="pre">%20</span></code>). If an invalid character encoding is given, a <code class="docutils literal notranslate"><span class="pre">URIError</span></code> results.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Error</span></code></td>
-<td>The type from which all other errors are built. It can be used to generate programmer-triggered and programmer-defined errors.</td>
-<td><div class="first last highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something bad happened!&quot;</span><span class="p">);</span>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Error</span></code></p></td>
+<td><p>The type from which all other errors are built. It can be used to generate programmer-triggered and programmer-defined errors.</p></td>
+<td><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something bad happened!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </td>
-<td>Manually triggers an error with the given message.</td>
+<td><p>Manually triggers an error with the given message.</p></td>
 </tr>
 </tbody>
 </table>

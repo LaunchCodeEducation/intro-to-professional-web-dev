@@ -99,8 +99,8 @@ error message, your first reaction should be, &quot;Great! My program has an err
 but I have a helpful message to help me fix it.&quot;</p>
 <p>Let's consider a small program with a couple of syntax errors.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let name = Julie;
 console.log(&quot;Hello, name);
 </pre></div>
 </div>
@@ -164,8 +164,8 @@ However, the string does not have a closing <code class="docutils literal notran
 </pre></div>
 </td></tr></table></div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and Node.js on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and Node.js on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
 </div>
 </div>
 <div class="section" id="syntax-errors-and-code-highlighting">
@@ -218,7 +218,8 @@ ReferenceError: Julie is not defined
 </div>
 <p>The type of error is <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>. If we search the web for &quot;JS ReferenceError&quot; then one of the first results is the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError" target="_blank">MDN documentation for ReferenceError<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. No need to read the entire document, however. The first sentence on this page tells us what we need to know:</p>
 <blockquote class="pull-quote">
-<div>The <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> object represents an error when a non-existent variable is referenced.</div></blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code> object represents an error when a non-existent variable is referenced.</p>
+</div></blockquote>
 <p>This information, along with the rest of the message, &quot;Julie is not defined,&quot; makes it clear what JavaScript is complaining about. The error message is saying, <em>Hey, check your variables!</em></p>
 <p>To us, we see that we forgot to enclose the string <code class="docutils literal notranslate"><span class="pre">Julie</span></code> in quotes, because we know that we intended to assign the variable <code class="docutils literal notranslate"><span class="pre">name</span></code> a string value. However, to JavaScript there is nothing in the program to indicate that <code class="docutils literal notranslate"><span class="pre">Julie</span></code> should be a string. In fact, JavaScript sees <code class="docutils literal notranslate"><span class="pre">Julie</span></code> as a variable. Since there is no such defined variable in our program, it returns a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code>.</p>
 <p>This is one of many examples when we, as humans, describe the same error slightly differently than JavaScript. Usually, neither description is better than the other. Humans and computers simply view information differently.</p>

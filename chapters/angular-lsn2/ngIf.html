@@ -91,8 +91,8 @@ adds or removes elements from the DOM based on the result.</p>
 <p>The examples below show the basic usage of <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code>. If you want to explore
 more details about this directive, refer to the following resources:</p>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://angular.io/guide/template-syntax#ngif" target="_blank">Angular documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.,</li>
-<li><a class="reference external" href="https://malcoded.com/posts/angular-ngif-else/" target="_blank">Malcoded website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li><p><a class="reference external" href="https://angular.io/guide/template-syntax#ngif" target="_blank">Angular documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.,</p></li>
+<li><p><a class="reference external" href="https://malcoded.com/posts/angular-ngif-else/" target="_blank">Malcoded website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
 </ol>
 <div class="section" id="ngif-syntax">
 <h2><span class="section-number">30.3.1. </span><code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> Syntax<a class="headerlink" href="#ngif-syntax" title="Permalink to this headline">¶</a></h2>
@@ -106,18 +106,18 @@ evaluates to <code class="docutils literal notranslate"><span class="pre">true</
 content gets displayed. If <code class="docutils literal notranslate"><span class="pre">condition</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>, then the HTML tag
 is NOT generated, and the content stays off the web page.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> determines if content is <em>added or removed</em> from a page. This is
 different from determining if content should be <em>displayed or hidden</em>.</p>
-<p class="last"><em>Hidden</em> content still occupies space on a page and requires some amount of
+<p><em>Hidden</em> content still occupies space on a page and requires some amount of
 memory. <em>Removed</em> content is absent from the page---requiring neither space
 on the page nor memory. This is an important consideration when adding
 items like images or videos to your website.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let's modify our movie list code as follows:</p>
-<div class="last highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -137,8 +137,8 @@ condition <code class="docutils literal notranslate"><span class="pre">movies.le
 <code class="docutils literal notranslate"><span class="pre">h3</span></code>, <code class="docutils literal notranslate"><span class="pre">ol</span></code>, and <code class="docutils literal notranslate"><span class="pre">li</span></code> tags all get generated. If the condition returns
 <code class="docutils literal notranslate"><span class="pre">false</span></code>, then none of the tags are added to the HTML code.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Only one structural directive can be assigned to an element. Since the <code class="docutils literal notranslate"><span class="pre">li</span></code>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Only one structural directive can be assigned to an element. Since the <code class="docutils literal notranslate"><span class="pre">li</span></code>
 tag in the example above already contains <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code>, we cannot add an
 <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> statement.</p>
 </div>
@@ -147,7 +147,7 @@ tag in the example above already contains <code class="docutils literal notransl
 <p>Just like <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, we can use the operators AND (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>), OR
 (<code class="docutils literal notranslate"><span class="pre">||</span></code>), and NOT (<code class="docutils literal notranslate"><span class="pre">!</span></code>) to modify the condition checked by <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code>.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>Logical AND:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="p">*</span><span class="na">ngIf</span> <span class="o">=</span> <span class="s">&quot;conditionA &amp;&amp; conditionB&quot;</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
@@ -164,7 +164,7 @@ return <code class="docutils literal notranslate"><span class="pre">true</span><
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="p">*</span><span class="na">ngIf</span> <span class="o">=</span> <span class="s">&quot;arrayName.length !== 0&quot;</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">Some</span> <span class="pre">text</span></code> appears when <code class="docutils literal notranslate"><span class="pre">arrayName.length</span></code> is NOT equal to 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Some</span> <span class="pre">text</span></code> appears when <code class="docutils literal notranslate"><span class="pre">arrayName.length</span></code> is NOT equal to 0.</p>
 </div>
 </div>
 <div class="section" id="what-about-if-else">
@@ -202,10 +202,10 @@ generate. Unfortunately, setting this up with <code class="docutils literal notr
 </td></tr></table></div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">#</span></code> is required inside the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> tag.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let's modify the movie list example to create an alternate set of HTML tags
 if <code class="docutils literal notranslate"><span class="pre">movies.length</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-<div class="last highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-html+ng2 notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -240,9 +240,9 @@ if <code class="docutils literal notranslate"><span class="pre">movies.length</s
 <p>In line 1, the condition for <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> specifies what to do if
 <code class="docutils literal notranslate"><span class="pre">movies.length</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
 <ol class="arabic simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, Angular executes lines 1 - 6.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, Angular searches for alternate code labeled with the name
-<code class="docutils literal notranslate"><span class="pre">needMoreMovies</span></code>. In this case, Lines 9 - 14 hold the alternate HTML tags.</li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, Angular executes lines 1 - 6.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, Angular searches for alternate code labeled with the name
+<code class="docutils literal notranslate"><span class="pre">needMoreMovies</span></code>. In this case, Lines 9 - 14 hold the alternate HTML tags.</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;ng-template&gt;&lt;/ng-template&gt;</span></code> is a special Angular element. It contains
 content that <em>might</em> be required for a web page. When the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement in
@@ -301,23 +301,23 @@ folder:</p>
 in the terminal, then enter <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> to launch the project.</p>
 <p>Now use <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> to do the following:</p>
 <ol class="arabic simple">
-<li>Display the text &quot;Work harder!&quot; under the <code class="docutils literal notranslate"><span class="pre">Chores</span></code> list if the length of
+<li><p>Display the text &quot;Work harder!&quot; under the <code class="docutils literal notranslate"><span class="pre">Chores</span></code> list if the length of
 the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is longer than the length of the <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code>
-array. Use a <code class="docutils literal notranslate"><span class="pre">p</span></code> tag for the text and make the words a different color.</li>
-<li>Find the <code class="docutils literal notranslate"><span class="pre">chores</span></code> and <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> arrays in <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>
+array. Use a <code class="docutils literal notranslate"><span class="pre">p</span></code> tag for the text and make the words a different color.</p></li>
+<li><p>Find the <code class="docutils literal notranslate"><span class="pre">chores</span></code> and <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> arrays in <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code>
 and modify the number of items. Save your changes and reload the page to
-verify that your code works.</li>
-<li>If the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is empty OR the <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> array has at
+verify that your code works.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is empty OR the <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> array has at
 least 3 more items than the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array, display <code class="docutils literal notranslate"><span class="pre">targetImage</span></code> under
 the <code class="docutils literal notranslate"><span class="pre">Done</span> <span class="pre">Chores</span></code> list. Otherwise, use a <code class="docutils literal notranslate"><span class="pre">p</span></code> tag to display the text,
-&quot;No allowance yet.&quot;</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> and change the number of items in the
+&quot;No allowance yet.&quot;</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">chores.component.ts</span></code> and change the number of items in the
 arrays again. Check to make sure the web page correctly responds to your
-changes.</li>
-<li>Finally, if the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is empty AND <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> contains
+changes.</p></li>
+<li><p>Finally, if the <code class="docutils literal notranslate"><span class="pre">chores</span></code> array is empty AND <code class="docutils literal notranslate"><span class="pre">finishedChores</span></code> contains
 4 or more items, display an <code class="docutils literal notranslate"><span class="pre">h1</span></code> underneath the lists with the text &quot;Ice
 cream treat!&quot; Otherwise, display <code class="docutils literal notranslate"><span class="pre">h3</span></code> and <code class="docutils literal notranslate"><span class="pre">p</span></code> elements that describe
-how to earn ice cream.</li>
+how to earn ice cream.</p></li>
 </ol>
 <p>Properly done, your page should look something like:</p>
 <div class="figure align-default">
@@ -349,30 +349,30 @@ how to earn ice cream.</li>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume we have defined a <code class="docutils literal notranslate"><span class="pre">prepWork</span></code> array to hold the homework tasks for our
 next class. We want the web page to always show the heading. Underneath that
 we want to add either the list of tasks or the paragraph text if the array is
 empty.</p>
 <p>Where should we place an <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> statement to make this happen?</p>
-<ol class="last arabic simple">
-<li>In the <code class="docutils literal notranslate"><span class="pre">div</span></code> tag</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">h3</span></code> tag</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">ul</span></code> tag</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">li</span></code> tag</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> tag</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">p</span></code> tag</li>
+<ol class="arabic simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">div</span></code> tag</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">h3</span></code> tag</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">ul</span></code> tag</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">li</span></code> tag</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">ng-template</span></code> tag</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">p</span></code> tag</p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>For the same code sample, which of the following shows the correct syntax for
 the <code class="docutils literal notranslate"><span class="pre">*ngIf</span></code> statement?</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">===</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">===</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">===</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">noHW&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">===</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*ngIf</span> <span class="pre">=</span> <span class="pre">&quot;prepWork.length</span> <span class="pre">!==</span> <span class="pre">0;</span> <span class="pre">else</span> <span class="pre">#noHW&quot;</span></code></p></li>
 </ol>
 </div>
 </div>

@@ -98,7 +98,7 @@
 <p>To get the result, you would first add 1 and 2 to get 3. Then you would add 3 and 3 to get 6. Then you would add 6 and 4 to get 10, and so on. The final result is 21.</p>
 <p>We can carry out this same procedure in code using a loop.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -117,7 +117,7 @@
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>21
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -146,7 +146,7 @@ individual integers one by one.</p>
 </td></tr></table></div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is our accumulator variable. Our approach to reversing the string will be to loop over <code class="docutils literal notranslate"><span class="pre">str</span></code>, adding each subsequent character to the <em>beginning</em> of <code class="docutils literal notranslate"><span class="pre">reversed</span></code>, so that the first character becomes the last, and the last character becomes the first.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -165,66 +165,66 @@ individual integers one by one.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>eulb
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>eulb
 </pre></div>
 </div>
 </div>
 <p>Notice that we don't use the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator within the loop, since <code class="docutils literal notranslate"><span class="pre">reversed</span> <span class="pre">+=</span> <span class="pre">str[i]</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">reversed</span> <span class="pre">=</span> <span class="pre">reversed</span> <span class="pre">+</span> <span class="pre">str[i]</span></code>.</p>
 <p>Let's break this down step-by-step. This table shows the values of each of our variables <em>after</em> each loop iteration.</p>
-<table border="1" class="docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">The accumulator pattern, step by step</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Loop iteration</th>
-<th class="head"><code class="docutils literal notranslate"><span class="pre">i</span></code></th>
-<th class="head"><code class="docutils literal notranslate"><span class="pre">str[i]</span></code></th>
-<th class="head"><code class="docutils literal notranslate"><span class="pre">reversed</span></code></th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Loop iteration</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">i</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">str[i]</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">reversed</span></code></p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>(before first iteration)</td>
-<td>not defined</td>
-<td>not defined</td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>(before first iteration)</p></td>
+<td><p>not defined</p></td>
+<td><p>not defined</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>0</td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td>2</td>
-<td>1</td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;l&quot;</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;lb&quot;</span></code></td>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;l&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;lb&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>3</td>
-<td>2</td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;u&quot;</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;ulb&quot;</span></code></td>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;u&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;ulb&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td>4</td>
-<td>3</td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;e&quot;</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">&quot;eulb&quot;</span></code></td>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;e&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;eulb&quot;</span></code></p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>What happens if you reverse the order of the assignment statement within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, so that <code class="docutils literal notranslate"><span class="pre">reversed</span> <span class="pre">=</span> <span class="pre">reversed</span> <span class="pre">+</span> <span class="pre">str[i];</span></code>?</p>
-<p class="last"><a class="reference external" href="https://repl.it/&#64;launchcode/Reversing-a-string" target="_blank">Try it at repl.it.<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p><a class="reference external" href="https://repl.it/&#64;launchcode/Reversing-a-string" target="_blank">Try it at repl.it.<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 </div>
 <div class="section" id="summing-an-array">
 <h2><span class="section-number">9.5.3. </span>Summing an Array<a class="headerlink" href="#summing-an-array" title="Permalink to this headline">¶</a></h2>
 <p>Another common use of the accumulator pattern is to compute some value using each of the elements of an array. This is similar to adding 1...n as we did above, with the difference being we will use the items in an array rather than 1...n.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -239,7 +239,7 @@ individual integers one by one.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>52
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>

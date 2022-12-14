@@ -97,31 +97,35 @@ returns the results.</p>
 <p>This class builds a rover object with a few properties, and it also contains
 a function outside of <code class="docutils literal notranslate"><span class="pre">constructor</span></code> to handle updates to its properties.</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">constructor(position)</span></code><ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">position</span></code> is a number representing the rover's position.</li>
-<li>Sets <code class="docutils literal notranslate"><span class="pre">this.position</span></code> to <code class="docutils literal notranslate"><span class="pre">position</span></code></li>
-<li>Sets <code class="docutils literal notranslate"><span class="pre">this.mode</span></code> to <code class="docutils literal notranslate"><span class="pre">'NORMAL'</span></code></li>
-<li>Sets default value for <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> to 110</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constructor(position)</span></code></p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code> is a number representing the rover's position.</p></li>
+<li><p>Sets <code class="docutils literal notranslate"><span class="pre">this.position</span></code> to <code class="docutils literal notranslate"><span class="pre">position</span></code></p></li>
+<li><p>Sets <code class="docutils literal notranslate"><span class="pre">this.mode</span></code> to <code class="docutils literal notranslate"><span class="pre">'NORMAL'</span></code></p></li>
+<li><p>Sets default value for <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code> to 110</p></li>
 </ol>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">receiveMessage(message)</span></code><ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">message</span></code> is a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</li>
-<li>Returns an object containing at least two properties:<ol class="lowerroman">
-<li><code class="docutils literal notranslate"><span class="pre">message</span></code>: the name of the original <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</li>
-<li><code class="docutils literal notranslate"><span class="pre">results</span></code>: an array of <em>results</em>. Each element in the array is an
-object that corresponds to one <code class="docutils literal notranslate"><span class="pre">Command</span></code> in <code class="docutils literal notranslate"><span class="pre">message.commands</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">receiveMessage(message)</span></code></p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code> is a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</p></li>
+<li><p>Returns an object containing at least two properties:</p>
+<ol class="lowerroman simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code>: the name of the original <code class="docutils literal notranslate"><span class="pre">Message</span></code> object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">results</span></code>: an array of <em>results</em>. Each element in the array is an
+object that corresponds to one <code class="docutils literal notranslate"><span class="pre">Command</span></code> in <code class="docutils literal notranslate"><span class="pre">message.commands</span></code>.</p></li>
 </ol>
 </li>
-<li>Updates certain properties of the rover object<ol class="lowerroman">
-<li>Details about how to respond to different commands are in the
-<a class="reference internal" href="#command-types-table"><span class="std std-ref">Command Types table</span></a>.</li>
+<li><p>Updates certain properties of the rover object</p>
+<ol class="lowerroman simple">
+<li><p>Details about how to respond to different commands are in the
+<a class="reference internal" href="#command-types-table"><span class="std std-ref">Command Types table</span></a>.</p></li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">commands</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;STATUS_CHECK&#39;</span><span class="p">)];</span>
 <span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s1">&#39;Test message with two commands&#39;</span><span class="p">,</span> <span class="nx">commands</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">rover</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rover</span><span class="p">(</span><span class="mf">98382</span><span class="p">);</span>    <span class="c1">// Passes 98382 as the rover&#39;s position.</span>
@@ -131,7 +135,7 @@ object that corresponds to one <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>{
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
    message: &#39;Test message with two commands&#39;,
    results: [
       {
@@ -171,21 +175,21 @@ are sent in the message&quot;</p>
 <h4>Test 10<a class="headerlink" href="#test-10" title="Permalink to this headline">¶</a></h4>
 <p>&quot;responds correctly to status check command&quot;</p>
 <ol class="loweralpha simple">
-<li>For the <code class="docutils literal notranslate"><span class="pre">STATUS_CHECK</span></code> command, <code class="docutils literal notranslate"><span class="pre">receiveMessage(message).results</span></code>
+<li><p>For the <code class="docutils literal notranslate"><span class="pre">STATUS_CHECK</span></code> command, <code class="docutils literal notranslate"><span class="pre">receiveMessage(message).results</span></code>
 includes a <code class="docutils literal notranslate"><span class="pre">roverStatus</span></code> object describing the current state of the
 rover object --- <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>, and <code class="docutils literal notranslate"><span class="pre">position</span></code>. The test
-should check each of these for accuracy.</li>
-<li>See the <a class="reference internal" href="#command-types-table"><span class="std std-ref">Rover Command Types</span></a> table for more
-details.</li>
+should check each of these for accuracy.</p></li>
+<li><p>See the <a class="reference internal" href="#command-types-table"><span class="std std-ref">Rover Command Types</span></a> table for more
+details.</p></li>
 </ol>
 </div>
 <div class="section" id="test-11">
 <h4>Test 11<a class="headerlink" href="#test-11" title="Permalink to this headline">¶</a></h4>
 <p>&quot;responds correctly to mode change command&quot;.</p>
 <ol class="loweralpha simple">
-<li>The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property and rover mode for accuracy.</li>
-<li>The rover has two modes that can be passed a values to a mode change command,
-'LOW_POWER' and 'NORMAL'.</li>
+<li><p>The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property and rover mode for accuracy.</p></li>
+<li><p>The rover has two modes that can be passed a values to a mode change command,
+'LOW_POWER' and 'NORMAL'.</p></li>
 </ol>
 </div>
 <div class="section" id="test-12">
@@ -193,70 +197,70 @@ details.</li>
 <p>&quot;responds with false completed value when attempting to move in LOW_POWER
 mode&quot;.</p>
 <ol class="loweralpha simple">
-<li>The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property for accuracy and confirm
-that the rover position did not change.</li>
-<li>Use the <a class="reference internal" href="#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a> for guidance on how
-to handle move commands in different modes.</li>
+<li><p>The test should check the <code class="docutils literal notranslate"><span class="pre">completed</span></code> property for accuracy and confirm
+that the rover position did not change.</p></li>
+<li><p>Use the <a class="reference internal" href="#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a> for guidance on how
+to handle move commands in different modes.</p></li>
 </ol>
 </div>
 <div class="section" id="test-13">
 <h4>Test 13<a class="headerlink" href="#test-13" title="Permalink to this headline">¶</a></h4>
 <p>&quot;responds with position for move command&quot;.</p>
 <ol class="loweralpha simple">
-<li>A <code class="docutils literal notranslate"><span class="pre">MOVE</span></code> command will update the rover's position with the position value in
-the command.</li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">MOVE</span></code> command will update the rover's position with the position value in
+the command.</p></li>
 </ol>
 </div>
 </div>
 </div>
 <div class="section" id="rover-command-types">
 <span id="command-types-table"></span><h2>Rover Command Types<a class="headerlink" href="#rover-command-types" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-auto docutils align-default">
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Command</th>
-<th class="head">Value sent with command</th>
-<th class="head">Updates to <code class="docutils literal notranslate"><span class="pre">Rover</span></code> object</th>
-<th class="head">Result returned</th>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Value sent with command</p></th>
+<th class="head"><p>Updates to <code class="docutils literal notranslate"><span class="pre">Rover</span></code> object</p></th>
+<th class="head"><p>Result returned</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>MOVE</td>
-<td>Number representing the position the rover should move to.</td>
-<td><code class="docutils literal notranslate"><span class="pre">position</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>MOVE</p></td>
+<td><p>Number representing the position the rover should move to.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">position</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>STATUS_CHECK</td>
-<td>No values sent with this command.</td>
-<td>No updates</td>
-<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">roverStatus:</span> <span class="pre">{mode:</span> <span class="pre">'NORMAL',</span> <span class="pre">generatorWatts:</span> <span class="pre">110,</span> <span class="pre">position:</span> <span class="pre">87382098}}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code> will depend on current state of rover.</td>
+<tr class="row-odd"><td><p>STATUS_CHECK</p></td>
+<td><p>No values sent with this command.</p></td>
+<td><p>No updates</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true,</span> <span class="pre">roverStatus:</span> <span class="pre">{mode:</span> <span class="pre">'NORMAL',</span> <span class="pre">generatorWatts:</span> <span class="pre">110,</span> <span class="pre">position:</span> <span class="pre">87382098}}</span></code> Values for <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code> will depend on current state of rover.</p></td>
 </tr>
-<tr class="row-even"><td>MODE_CHANGE</td>
-<td>String representing rover mode (see modes)</td>
-<td><code class="docutils literal notranslate"><span class="pre">mode</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></td>
+<tr class="row-even"><td><p>MODE_CHANGE</p></td>
+<td><p>String representing rover mode (see modes)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{completed:</span> <span class="pre">true}</span></code></p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The response value for <code class="docutils literal notranslate"><span class="pre">completed</span></code> will be <code class="docutils literal notranslate"><span class="pre">false</span></code> if the command could
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The response value for <code class="docutils literal notranslate"><span class="pre">completed</span></code> will be <code class="docutils literal notranslate"><span class="pre">false</span></code> if the command could
 NOT be completed.</p>
 </div>
 </div>
 <div class="section" id="rover-modes">
 <span id="rover-modes-table"></span><h2>Rover Modes<a class="headerlink" href="#rover-modes" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="colwidths-auto docutils align-default">
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Mode</th>
-<th class="head">Restrictions</th>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Restrictions</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>LOW_POWER</td>
-<td>Can't be moved in this state.</td>
+<tbody>
+<tr class="row-even"><td><p>LOW_POWER</p></td>
+<td><p>Can't be moved in this state.</p></td>
 </tr>
-<tr class="row-odd"><td>NORMAL</td>
-<td>None</td>
+<tr class="row-odd"><td><p>NORMAL</p></td>
+<td><p>None</p></td>
 </tr>
 </tbody>
 </table>

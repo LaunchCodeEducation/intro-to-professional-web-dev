@@ -97,31 +97,31 @@ send it to the <em>rover</em>, then have the rover respond to that message.</p>
 <p>We will provide descriptions of the required features you need to implement in
 three separate classes:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">Command</span></code>:
+<li><p><code class="docutils literal notranslate"><span class="pre">Command</span></code>:
 A type of object containing a <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property. <code class="docutils literal notranslate"><span class="pre">commandType</span></code> is one
 of the given strings in the table below. Some <code class="docutils literal notranslate"><span class="pre">commandTypes</span></code> are coupled with
 a <code class="docutils literal notranslate"><span class="pre">value</span></code> property, but not all. Every <code class="docutils literal notranslate"><span class="pre">Command</span></code> object is a single instruction
-to be delivered to the rover.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Message</span></code>:
+to be delivered to the rover.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Message</span></code>:
 A <code class="docutils literal notranslate"><span class="pre">Message</span></code> object has a <code class="docutils literal notranslate"><span class="pre">name</span></code> and contains several <code class="docutils literal notranslate"><span class="pre">Command</span></code> objects.
 <code class="docutils literal notranslate"><span class="pre">Message</span></code> is responsible for bundling the commands from mission control and
-delivering them to the rover.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Rover</span></code>:
+delivering them to the rover.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rover</span></code>:
 An object representing the mars rover. This class contains information on the rover's
 <code class="docutils literal notranslate"><span class="pre">position</span></code>, operating <code class="docutils literal notranslate"><span class="pre">mode</span></code>, and <code class="docutils literal notranslate"><span class="pre">generatorWatts</span></code>. It also contains a function,
 <code class="docutils literal notranslate"><span class="pre">receiveMessage</span></code> that handles the various types of commands it receives and updates
-the rover's properties.</li>
+the rover's properties.</p></li>
 </ol>
 <p>In true TDD form, you will be asked to first write the appropriate units tests for
 these features, then write the code in the given class to pass those tests.</p>
 <div class="section" id="sections">
 <h2>Sections:<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#get-the-starter-code"><span class="std std-ref">Get the Starter Code</span></a></li>
-<li><a class="reference internal" href="#command-class"><span class="std std-ref">Command Class</span></a></li>
-<li><a class="reference internal" href="mars-rover2.html#message-class"><span class="std std-ref">Message Class</span></a></li>
-<li><a class="reference internal" href="mars-rover3.html#rover-class"><span class="std std-ref">Rover Class</span></a></li>
-<li><a class="reference internal" href="#submitting-your-mars-rover"><span class="std std-ref">Submitting Your Work</span></a></li>
+<li><p><a class="reference internal" href="#get-the-starter-code"><span class="std std-ref">Get the Starter Code</span></a></p></li>
+<li><p><a class="reference internal" href="#command-class"><span class="std std-ref">Command Class</span></a></p></li>
+<li><p><a class="reference internal" href="mars-rover2.html#message-class"><span class="std std-ref">Message Class</span></a></p></li>
+<li><p><a class="reference internal" href="mars-rover3.html#rover-class"><span class="std std-ref">Rover Class</span></a></p></li>
+<li><p><a class="reference internal" href="#submitting-your-mars-rover"><span class="std std-ref">Submitting Your Work</span></a></p></li>
 </ol>
 </div>
 <div class="section" id="get-the-starter-code">
@@ -134,18 +134,18 @@ these features, then write the code in the given class to pass those tests.</p>
 actual function. Feel free to review the
 <a class="reference internal" href="../chapters/unit-testing/tdd.html#test-code-cycle"><span class="std std-ref">Test/Code cycle</span></a> while you work on this project.</p>
 <ol class="loweralpha simple">
-<li>Focus on one test at a time.</li>
-<li>Write the test and <em>then</em> create the code to make it pass.</li>
-<li>Only write the minimum amount of code needed to make the test pass.</li>
-<li>There are some constraints on how you can implement these features. A description
-of each class is below.</li>
+<li><p>Focus on one test at a time.</p></li>
+<li><p>Write the test and <em>then</em> create the code to make it pass.</p></li>
+<li><p>Only write the minimum amount of code needed to make the test pass.</p></li>
+<li><p>There are some constraints on how you can implement these features. A description
+of each class is below.</p></li>
 </ol>
 <p>Each numbered item describes a test. <em>You should use the given phrases as the
 test descriptions</em> when creating your <code class="docutils literal notranslate"><span class="pre">it</span></code> statements. You must create 13
 tests for this assignment.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Do NOT try to write all of the tests at once. Doing so will be inefficient and will
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Do NOT try to write all of the tests at once. Doing so will be inefficient and will
 cause excessive frustration.</p>
 </div>
 </div>
@@ -158,22 +158,24 @@ this class, <code class="docutils literal notranslate"><span class="pre">Command
 written for you and you do not need to modify it to write passing tests. Open up and
 examine the file <code class="docutils literal notranslate"><span class="pre">command.js</span></code>.</p>
 <ol class="arabic simple">
-<li>This class builds an object with two properties.
-<code class="docutils literal notranslate"><span class="pre">constructor(commandType,</span> <span class="pre">value)</span></code><ol class="loweralpha">
-<li><code class="docutils literal notranslate"><span class="pre">commandType</span></code> is a string that represents the type of command. We will go over
+<li><p>This class builds an object with two properties.
+<code class="docutils literal notranslate"><span class="pre">constructor(commandType,</span> <span class="pre">value)</span></code></p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">commandType</span></code> is a string that represents the type of command. We will go over
 the details of the types when we get to the <code class="docutils literal notranslate"><span class="pre">Rover</span></code> class and tests. At this
 time, note that a command type will be one of the following: <code class="docutils literal notranslate"><span class="pre">'MODE_CHANGE'</span></code>,
-<code class="docutils literal notranslate"><span class="pre">'MOVE'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'STATUS_CHECK'</span></code>.<ol class="lowerroman">
-<li>To peek ahead at the full functionality of these types, refer to
-<a class="reference internal" href="mars-rover3.html#command-types-table"><span class="std std-ref">Command Types table</span></a>.</li>
+<code class="docutils literal notranslate"><span class="pre">'MOVE'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'STATUS_CHECK'</span></code>.</p>
+<ol class="lowerroman simple">
+<li><p>To peek ahead at the full functionality of these types, refer to
+<a class="reference internal" href="mars-rover3.html#command-types-table"><span class="std std-ref">Command Types table</span></a>.</p></li>
 </ol>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">value</span></code> is a value related to the type of command.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> is a value related to the type of command.</p></li>
 </ol>
 </li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">modeCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MODE_CHANGE&#39;</span><span class="p">,</span> <span class="s1">&#39;LOW_POWER&#39;</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">moveCommand</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Command</span><span class="p">(</span><span class="s1">&#39;MOVE&#39;</span><span class="p">,</span> <span class="mf">12000</span><span class="p">);</span>
 </pre></div>
@@ -181,7 +183,7 @@ time, note that a command type will be one of the following: <code class="docuti
 <p><code class="docutils literal notranslate"><span class="pre">'MODE_CHANGE'</span></code> and <code class="docutils literal notranslate"><span class="pre">'MOVE'</span></code> are passed in as the <code class="docutils literal notranslate"><span class="pre">commandType</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">'LOW_POWER'</span></code> and 12000 are passed in as the <code class="docutils literal notranslate"><span class="pre">value</span></code>. Different command
 types require different kinds of values. <code class="docutils literal notranslate"><span class="pre">'STATUS_CHECK'</span></code> takes no value.</p>
-<p class="last">Don't worry about the mode options for now. To peek ahead, see
+<p>Don't worry about the mode options for now. To peek ahead, see
 <a class="reference internal" href="mars-rover3.html#rover-modes-table"><span class="std std-ref">Rover Modes table</span></a>.</p>
 </div>
 <p>Now that we've gone over the class, let's check out the tests.</p>
@@ -196,17 +198,17 @@ sure they pass a command type as the first argument.</p>
 <p>Note that the test description reads, &quot;throws error if a command type is NOT
 passed into the constructor as the first parameter&quot;.</p>
 <ol class="loweralpha simple">
-<li>So far, you have many used expectations to check for equality.
+<li><p>So far, you have many used expectations to check for equality.
 In the chapter on exceptions, we shared an example of how we might use an expectation to check if an exception is thrown.
-Refer back to that <a class="reference internal" href="../chapters/exceptions/throw.html#exception-expectations"><span class="std std-ref">example</span></a> for guidance on the syntax.</li>
-<li>Click &quot;Run&quot; to verify that the test passes. Next, comment out lines 4-6 in
+Refer back to that <a class="reference internal" href="../chapters/exceptions/throw.html#exception-expectations"><span class="std std-ref">example</span></a> for guidance on the syntax.</p></li>
+<li><p>Click &quot;Run&quot; to verify that the test passes. Next, comment out lines 4-6 in
 <code class="docutils literal notranslate"><span class="pre">command.js</span></code>. Click &quot;Run&quot; again to verify that the test fails (the
-expected error is not thrown when the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is called).</li>
-<li>Restore lines 4-6 to <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">Error(&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;);</span></code>.</li>
-<li>Change 'Command type required.' on line 9 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> to 'Oops'. Click &quot;Run&quot;
+expected error is not thrown when the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class is called).</p></li>
+<li><p>Restore lines 4-6 to <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">Error(&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;);</span></code>.</p></li>
+<li><p>Change 'Command type required.' on line 9 in <code class="docutils literal notranslate"><span class="pre">command.spec.js</span></code> to 'Oops'. Click &quot;Run&quot;
 again to verify that the test fails (the error message did not match
-<code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>).</li>
-<li>Restore line 9 to 'Command type required.'.</li>
+<code class="docutils literal notranslate"><span class="pre">&quot;Command</span> <span class="pre">type</span> <span class="pre">required.&quot;</span></code>).</p></li>
+<li><p>Restore line 9 to 'Command type required.'.</p></li>
 </ol>
 </div>
 <div class="section" id="test-2">
@@ -215,10 +217,10 @@ again to verify that the test fails (the error message did not match
 description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> in the <code class="docutils literal notranslate"><span class="pre">Command</span></code>
 class correctly sets the <code class="docutils literal notranslate"><span class="pre">commandType</span></code> property in the new object.</p>
 <ol class="loweralpha simple">
-<li>Without editing, <code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains the correct code. Click &quot;Run&quot; to verify that the first
-and second tests both pass.</li>
-<li>You do not need to use <code class="docutils literal notranslate"><span class="pre">expect().toThrow()</span></code>.</li>
-<li>You may not need to know the specific types of commands to write this test.</li>
+<li><p>Without editing, <code class="docutils literal notranslate"><span class="pre">command.js</span></code> contains the correct code. Click &quot;Run&quot; to verify that the first
+and second tests both pass.</p></li>
+<li><p>You do not need to use <code class="docutils literal notranslate"><span class="pre">expect().toThrow()</span></code>.</p></li>
+<li><p>You may not need to know the specific types of commands to write this test.</p></li>
 </ol>
 </div>
 <div class="section" id="test-3">
@@ -227,12 +229,12 @@ and second tests both pass.</li>
 argument&quot; as the description. This test checks that the <code class="docutils literal notranslate"><span class="pre">constructor</span></code>
 correctly sets the <code class="docutils literal notranslate"><span class="pre">value</span></code> property in the new object.</p>
 <ol class="loweralpha simple">
-<li>You may not need to know a proper <code class="docutils literal notranslate"><span class="pre">value</span></code> in order to write this test.</li>
+<li><p>You may not need to know a proper <code class="docutils literal notranslate"><span class="pre">value</span></code> in order to write this test.</p></li>
 </ol>
 <p>Click &quot;Run&quot; to verify that all 3 command tests pass.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">As you move through the remaining instructions, the amount of guidance will
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>As you move through the remaining instructions, the amount of guidance will
 decrease. Refer to your earlier, passing tests to help you construct new
 tests and passing code.</p>
 </div>
@@ -244,8 +246,8 @@ tests and passing code.</p>
 <span id="submitting-your-mars-rover"></span><h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Once your <code class="docutils literal notranslate"><span class="pre">Rover</span></code> class is completed and you have written 13 passing specs, you are ready to submit.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Make sure that you did not edit either <code class="docutils literal notranslate"><span class="pre">studentgrading.spec.js</span></code>, <code class="docutils literal notranslate"><span class="pre">grading.js</span></code>, or any file in the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory inside <code class="docutils literal notranslate"><span class="pre">spec</span></code>.
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Make sure that you did not edit either <code class="docutils literal notranslate"><span class="pre">studentgrading.spec.js</span></code>, <code class="docutils literal notranslate"><span class="pre">grading.js</span></code>, or any file in the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory inside <code class="docutils literal notranslate"><span class="pre">spec</span></code>.
 Changes to these files could effect your grade.</p>
 </div>
 <p>In Canvas, open the Mars Rover assignment and click the &quot;Submit&quot; button.
