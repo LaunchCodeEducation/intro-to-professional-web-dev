@@ -23,7 +23,7 @@ Let's use Test-Driven Development to write this code! Rather than complete the c
 
 .. warning::
 
-   After forking the blow replit it will begin to migrate and you will receive a notification that the repl is being upgraded to the latest environment. This migration changes the initial file structure of the repl itself. Once the migration is complete you can run your tests by running the command ``npm test`` within the Shell. You can also reference back to the `Hello, Jasmine! <https://education.launchcode.org/intro-to-professional-web-dev/chapters/unit-testing/hello-jasmine.html>`__ section of the textbook to set up the repl to run tests as described in that chapter. It may also be wise to revisit the `Tested Code chapter <https://education.launchcode.org/intro-to-professional-web-dev/appendices/tested-code.html>`__ for more information.
+   After forking the below replit it will begin to migrate and you will receive a notification that the repl is being upgraded to the latest environment. This migration changes the initial file structure of the repl itself. Once the migration is complete you can run your tests by running the command ``npm test`` within the Shell. You can also reference back to the `Hello, Jasmine! <https://education.launchcode.org/intro-to-professional-web-dev/chapters/unit-testing/hello-jasmine.html>`__ section of the textbook to set up the repl to run tests as described in that chapter. It may also be wise to revisit the `Tested Code chapter <https://education.launchcode.org/intro-to-professional-web-dev/appendices/tested-code.html>`__ for more information.
 
 Source Code
 ------------
