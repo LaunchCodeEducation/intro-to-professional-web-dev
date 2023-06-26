@@ -44,7 +44,7 @@ Let's start our work with the properties we need to add to the object.
 ^^^^^^^^^^^^^^^^
 
 #. Inside the ``describe`` function in ``launchcode.spec.js``, write a test that will check that the value of ``organization`` is ``"nonprofit"``. Run your test.
-#. With your test complete, turn your attention to ``launchcode.js`` and add the ``organization`` property to ``launchcode``.
+#. With your test complete, turn your attention to ``index.js`` and add the ``organization`` property to ``launchcode``.
 #. Run your tests to make sure that everything works as expected.
 
 ``executiveDirector``
