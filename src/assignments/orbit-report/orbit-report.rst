@@ -33,7 +33,7 @@ Your table will have the following features:
    clicked, which will sort the table using that property.
 #. **Counts:** Displays the total number of satellites in the table.
 
-Your completed assignment should look something like this `demo app <http://orbit-report-launchcodeeducation.s3-website-us-east-1.amazonaws.com/>`__. 
+Your completed assignment should look something like this `demo app <https://orbit-report.launchcodetechnicaltraining.org//>`__. 
 
 .. admonition:: Warning
 
