@@ -4,7 +4,7 @@ Orbit Report Demo
 -----------------
 
 Once you complete all of the tasks outlined above, your project should behave
-something like this `demo app <http://orbit-report-launchcodeeducation.s3-website-us-east-1.amazonaws.com/>`__ and you should be able to complete the actions below:
+something like this `demo app <https://orbit-report.launchcodetechnicaltraining.org/>`__ and you should be able to complete the actions below:
 
 Sorting the Table
 ^^^^^^^^^^^^^^^^^
