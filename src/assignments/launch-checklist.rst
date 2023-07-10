@@ -78,9 +78,9 @@ If the user submits a fuel level that is too low (less than 10,000 liters), chan
 The text of the ``h2`` element, ``launchStatus``, should also change to "Shuttle not ready for launch" and the ``color`` should change to red.
 
 If the user submits a cargo mass that is too large (more than 10,000 kilograms), change the list to ``visible`` with an updated cargo status stating that there is too much mass for the shuttle to take off.
-The text of ``launchStatus`` should also change to "Shuttle not ready for launch" and the ``color`` should change to red.
+The text of ``launchStatus`` should also change to "Shuttle not ready for launch" and the ``color`` should change to a particular shade of red, ``#C7254E`` or ``rgb(199, 37, 78)``.
 
-If the shuttle is ready to launch, change the text of ``launchStatus`` to green and display "Shuttle is ready for launch".
+If the shuttle is ready to launch, change the text of ``launchStatus`` to a particular shade of green, ``#419F6A`` or ``rgb(65, 159, 106)``, and display "Shuttle is ready for launch".
 
 Fetching Planetary Data
 -----------------------
