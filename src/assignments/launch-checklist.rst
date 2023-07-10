@@ -6,7 +6,7 @@ We have four fields that need to be filled out with vital information: the pilot
 
 Our pilot, Chris, and the co-pilot, Blake, have been hard at work securing the cargo and filling the shuttle tank. All we need to do is use validation to ensure that we have all of the info for the space shuttle program and make sure no one prematurely launches the shuttle.
 
-Throughout your work, refer to our `demo app <https://launch-checklist.launchcodetechnicaltraining.org//>`__ as needed to clarify questions about intended application behavior.
+Throughout your work, refer to our `demo app <https://launch-checklist.launchcodetechnicaltraining.org/>`__ as needed to clarify questions about intended application behavior.
 
 Requirements
 ------------
